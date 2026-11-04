@@ -348,6 +348,8 @@ struct ChapterReaderView: View {
         .themedScreen()
         .navigationTitle("Chapter \(chapter)")
         .navigationBarTitleDisplayMode(.inline)
+        // Opening a chapter lays the book's foundations (no need to finish it first).
+        .onAppear { context.recordBookStarted(book.id) }
         .sheet(item: $celebration, onDismiss: {
             if reflectAfterCelebration { reflectAfterCelebration = false; reflecting = true }
         }) { CelebrationView(celebration: $0) }

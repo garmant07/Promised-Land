@@ -43,6 +43,18 @@ struct InsightSubject: Identifiable, Equatable {
             return InsightSubject(id: id, title: "Lantern", region: region,
                                   description: "Lit when you memorised a verse from \(book.name).",
                                   bookID: bookID, chapters: [], draftReference: nil)
+        case .book:
+            let name = WorldData.landmark(bookID: bookID)?.name ?? book.name
+            let text: String
+            if item.progress == 0 {
+                text = "Foundations laid when you opened \(book.name). Read a chapter to start building."
+            } else if item.progress >= item.total {
+                text = "Finished: every chapter of \(book.name) is built in."
+            } else {
+                text = "Each chapter of \(book.name) adds to it: \(item.progress) of \(item.total) built so far."
+            }
+            return InsightSubject(id: id, title: name, region: region, description: text,
+                                  bookID: bookID, chapters: [], draftReference: nil)
         case .finished:
             let name = WorldData.landmark(bookID: bookID)?.name ?? book.name
             return InsightSubject(id: id, title: name, region: region,
@@ -76,7 +88,7 @@ struct InsightSubject: Identifiable, Equatable {
         case .house: "House"
         case .fruitTree: "Fruit tree"
         case .lantern: "Lantern"
-        case .landmark: "Landmark"
+        case .landmark, .building: "Landmark"
         case .library: "Library"
         }
     }

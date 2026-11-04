@@ -33,6 +33,6 @@ final class JournalEntry {
 /// Every SwiftData model the app stores, registered once for the app and previews.
 enum AppSchema {
     static let models: [any PersistentModel.Type] = [
-        ChapterRead.self, QuizPass.self, VerseMemorised.self, JournalEntry.self, AvatarProfile.self, CrownCasting.self,
+        ChapterRead.self, QuizPass.self, VerseMemorised.self, JournalEntry.self, AvatarProfile.self, CrownCasting.self, BookStarted.self,
     ]
 }

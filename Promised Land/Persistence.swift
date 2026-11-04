@@ -47,6 +47,18 @@ final class VerseMemorised {
     }
 }
 
+/// A book you've started: opening any of its chapters lays its foundations.
+@Model
+final class BookStarted {
+    var bookID: String
+    var date: Date
+
+    init(bookID: String, date: Date = .now) {
+        self.bookID = bookID
+        self.date = date
+    }
+}
+
 // MARK: - Derived progress
 
 /// How far a landmark's building has got, from the share of its book's chapters read.
@@ -90,7 +102,7 @@ struct GameProgress: Equatable {
     static func == (lhs: GameProgress, rhs: GameProgress) -> Bool {
         lhs.readByBook == rhs.readByBook && lhs.countByChapter == rhs.countByChapter &&
             lhs.lastByChapter == rhs.lastByChapter && lhs.quizzes == rhs.quizzes && lhs.memorised == rhs.memorised &&
-            lhs.castByBook == rhs.castByBook && lhs.cycle == rhs.cycle
+            lhs.castByBook == rhs.castByBook && lhs.cycle == rhs.cycle && lhs.started == rhs.started
     }
 
     private let readByBook: [String: Set<Int>]
@@ -112,7 +124,14 @@ struct GameProgress: Equatable {
 
     func crownsCast(_ bookID: String) -> Int { castByBook[bookID] ?? 0 }
 
-    init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised], castings: [CrownCasting] = [], now: Date = .now) {
+    /// Books opened (foundations laid), even before any chapter is marked read.
+    private let started: Set<String>
+
+    func isStarted(_ bookID: String) -> Bool { started.contains(bookID) || chaptersRead(bookID) > 0 }
+
+    init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised], castings: [CrownCasting] = [],
+         started: [BookStarted] = [], now: Date = .now) {
+        self.started = Set(started.map(\.bookID))
         self.castByBook = castings.reduce(into: [:]) { result, cast in
             for (book, n) in cast.perBook { result[book, default: 0] += n }
         }
@@ -206,7 +225,7 @@ struct GameProgress: Equatable {
     func stage(of bookID: String) -> BuildStage {
         guard let book = BibleCatalog.book(id: bookID) else { return .plot }
         let read = chaptersRead(bookID)
-        if read == 0 { return .plot }
+        if read == 0 { return started.contains(bookID) ? .foundations : .plot }
         if read >= book.chapterCount { return .complete }
         return read * 2 >= book.chapterCount ? .rising : .foundations
     }
@@ -222,7 +241,7 @@ struct GameProgress: Equatable {
     // MARK: World
 
     func isRegionRevealed(_ regionID: String) -> Bool {
-        WorldData.landmarks.contains { $0.regionID == regionID && chaptersRead($0.bookID) > 0 }
+        WorldData.landmarks.contains { $0.regionID == regionID && isStarted($0.bookID) }
     }
 
     var activeConnections: [Connection] {
@@ -251,11 +270,12 @@ struct ProgressQuery: DynamicProperty {
     @Query private var quizzes: [QuizPass]
     @Query private var memorised: [VerseMemorised]
     @Query private var castings: [CrownCasting]
+    @Query private var started: [BookStarted]
 
     init() {}
 
     var wrappedValue: GameProgress {
-        GameProgress(reads: reads, quizzes: quizzes, memorised: memorised, castings: castings)
+        GameProgress(reads: reads, quizzes: quizzes, memorised: memorised, castings: castings, started: started)
     }
 }
 
@@ -265,6 +285,14 @@ extension ModelContext {
     /// Records one read of a chapter. Every read is kept, so rereads count.
     func recordRead(_ bookID: String, _ chapter: Int, date: Date = .now) {
         insert(ChapterRead(bookID: bookID, chapterNumber: chapter, date: date))
+        try? save()
+    }
+
+    /// Lays a book's foundations the first time any of its chapters is opened.
+    func recordBookStarted(_ bookID: String, date: Date = .now) {
+        let existing = (try? fetch(FetchDescriptor<BookStarted>(predicate: #Predicate { $0.bookID == bookID }))) ?? []
+        guard existing.isEmpty else { return }
+        insert(BookStarted(bookID: bookID, date: date))
         try? save()
     }
 
@@ -284,6 +312,7 @@ extension ModelContext {
         try? delete(model: QuizPass.self)
         try? delete(model: VerseMemorised.self)
         try? delete(model: CrownCasting.self)
+        try? delete(model: BookStarted.self)
         try? save()
     }
 

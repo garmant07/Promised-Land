@@ -9,6 +9,7 @@ enum StorageKeys {
     static let builtConnections = "builtConnections"
     static let hasOpenedReading = "hasOpenedReading"
     static let gardenSeenChapters = "gardenSeenChapters"
+    static let islandProgressSeen = "islandProgressSeen"
     static let storyObjectsSeen = "storyObjectsSeen"
     static let offerReflection = "offerReflection"
     static let libraryRevealed = "libraryRevealed"

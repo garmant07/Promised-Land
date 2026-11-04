@@ -31,6 +31,7 @@ struct HomeView: View {
     @Query private var quizAttempts: [QuizPass]
     @Query private var versesMemorised: [VerseMemorised]
     @Query private var journal: [JournalEntry]
+    @Query private var booksStarted: [BookStarted]
 
     @State private var activeSheet: ActiveSheet?
     @State private var selectedItem: Int?
@@ -43,8 +44,12 @@ struct HomeView: View {
 
     /// Items on the island when it was last seen (-1: never), so new things can build in.
     @AppStorage(StorageKeys.gardenSeenChapters) private var gardenSeen = -1
+    /// Each building's chapters when last seen ("book:count,…"), so growth can be shown.
+    @AppStorage(StorageKeys.islandProgressSeen) private var progressSeen = ""
     @State private var revealFrom = 0
     @State private var revealID = 0
+    @State private var grown: Set<Int> = []
+    @State private var growID = 0
     @State private var growthNote: String?
 
     /// Every piece of reading, in order, laid out on the island. A book's quiz grows one
@@ -53,6 +58,7 @@ struct HomeView: View {
         let firstPasses = Dictionary(grouping: quizAttempts.filter(\.passed), by: \.bookID)
             .compactMap { $0.value.min { $0.date < $1.date } }
         return Island.build(chapters: chapterReads.map { ($0.bookID, $0.chapterNumber, $0.date) },
+                            started: booksStarted.map { ($0.bookID, $0.date) },
                             quizzes: firstPasses.map { ($0.bookID, $0.date) },
                             verses: versesMemorised.map { ($0.bookID, $0.date) },
                             features: journal.isEmpty ? [] : [.library])
@@ -64,7 +70,7 @@ struct HomeView: View {
             Color.cream.ignoresSafeArea()
             PlatformScene(avatar: avatar, island: island, revealFrom: revealFrom, revealID: revealID,
                           insets: EdgeInsets(top: 70, leading: 8, bottom: 118, trailing: 8),
-                          selected: $selectedItem) { index in open(index, in: island) }
+                          selected: $selectedItem, grown: grown, growID: growID) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
         .overlay(alignment: .topLeading) { status }
@@ -90,7 +96,7 @@ struct HomeView: View {
             debugOpen(island)
             #endif
         }
-        .onChange(of: island.items.count) { _, _ in
+        .onChange(of: Self.signature(island)) { _, _ in
             if activeSheet == nil && !showingWorld { showNewGrowth() }
         }
         #if DEBUG
@@ -160,17 +166,58 @@ struct HomeView: View {
         }
     }
 
-    /// Builds in whatever was added to the island since it was last seen.
+    /// Each building's chapters, as "book:count,…".
+    private static func signature(_ island: Island) -> String {
+        island.items.compactMap { item -> String? in
+            guard case .book(let id) = item.source else { return nil }
+            return "\(id):\(item.progress)"
+        }.joined(separator: ",")
+    }
+
+    /// Builds in whatever's new since the island was last seen: new buildings pop up, and
+    /// buildings that gained chapters bounce.
     private func showNewGrowth() {
+        let island = island
         let now = island.items.count
-        defer { gardenSeen = now }
-        guard gardenSeen >= 0, now > gardenSeen else { return }
-        let grown = now - gardenSeen
-        revealFrom = gardenSeen
-        revealID += 1
-        withAnimation(.spring(duration: 0.4)) {
-            growthNote = grown == 1 ? "Something new on your island" : "\(grown) new things on your island"
+        let signature = Self.signature(island)
+        defer { gardenSeen = now; progressSeen = signature }
+        guard gardenSeen >= 0 else { return }
+
+        let before = Dictionary(progressSeen.split(separator: ",").compactMap { pair -> (String, Int)? in
+            let parts = pair.split(separator: ":")
+            guard parts.count == 2, let n = Int(parts[1]) else { return nil }
+            return (String(parts[0]), n)
+        }, uniquingKeysWith: { a, _ in a })
+        var grownNow: Set<Int> = []
+        var chaptersAdded = 0
+        var grownName: String?
+        for (index, item) in island.items.enumerated() {
+            guard case .book(let id) = item.source, let old = before[id], item.progress > old else { continue }
+            grownNow.insert(index)
+            chaptersAdded += item.progress - old
+            grownName = WorldData.landmark(bookID: id)?.name
         }
+        let added = max(0, now - gardenSeen)
+        if added > 0 {
+            revealFrom = gardenSeen
+            revealID += 1
+        }
+        if !grownNow.isEmpty {
+            grown = grownNow
+            growID += 1
+        }
+        let note: String? = {
+            if added > 0 && chaptersAdded == 0 {
+                return added == 1 ? "Foundations laid" : "\(added) new things on your island"
+            }
+            if chaptersAdded > 0, grownNow.count == 1, let grownName {
+                return "\(grownName): \(chaptersAdded) more \(chaptersAdded == 1 ? "chapter" : "chapters") built"
+            }
+            if chaptersAdded > 0 { return "\(chaptersAdded) chapters built into your island" }
+            return nil
+        }()
+        guard let note else { return }
+        withAnimation(.spring(duration: 0.4)) { growthNote = note }
         Task {
             try? await Task.sleep(for: .seconds(4))
             withAnimation(.easeOut(duration: 0.6)) { growthNote = nil }
@@ -198,6 +245,7 @@ struct HomeView: View {
             let index = island.items.firstIndex { item in
                 switch item.source {
                 case .chapter: wanted == "chapter"
+                case .book: wanted == "building"
                 case .quiz: wanted == "fruitTree"
                 case .verse: wanted == "lantern"
                 case .finished: wanted == "landmark"
@@ -363,6 +411,9 @@ struct PlatformScene: View {
     /// Room kept clear of the island (for the status pill and the bottom bar).
     var insets = EdgeInsets()
     var selected: Binding<Int?> = .constant(nil)
+    /// Buildings that just grew bounce when `growID` changes.
+    var grown: Set<Int> = []
+    var growID = 0
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -388,6 +439,7 @@ struct PlatformScene: View {
     @State private var popping = false
     @State private var bounceStart = Date.distantPast
     @State private var bouncing = false
+    @State private var bounceTargets: Set<Int> = []
 
     var body: some View {
         GeometryReader { geo in
@@ -430,10 +482,12 @@ struct PlatformScene: View {
                                         IslandPainter.drawItem(&c, item, layout: layout, scale: progress < 1 ? Self.overshoot(progress) : 1)
                                     }
                                 }
-                                if bouncing, let selected = selected.wrappedValue, island.items.indices.contains(selected) {
+                                if bouncing {
                                     let e = now.timeIntervalSince(bounceStart)
                                     let s = 1 + 0.16 * sin(min(1, e / 0.5) * .pi) * (1 - min(1, e / 0.5))
-                                    IslandPainter.drawItem(&c, island.items[selected], layout: layout, scale: s)
+                                    for index in bounceTargets.sorted() where island.items.indices.contains(index) {
+                                        IslandPainter.drawItem(&c, island.items[index], layout: layout, scale: s)
+                                    }
                                 }
                             }
                             AvatarFigure(avatar: avatar)
@@ -463,7 +517,7 @@ struct PlatformScene: View {
             .onChange(of: selected.wrappedValue) { _, index in
                 guard let index, island.items.indices.contains(index) else { return }
                 centre(on: island.items[index], layout: layout, size: geo.size)
-                if !reduceMotion { startBounce() }
+                if !reduceMotion { startBounce([index]) }
             }
         }
         .onAppear { placeCharacter() }
@@ -473,6 +527,7 @@ struct PlatformScene: View {
             await wander()
         }
         .onChange(of: revealID) { _, _ in startPop() }
+        .onChange(of: growID) { _, _ in if !reduceMotion { startBounce(grown, duration: 0.9) } }
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Your island")
         .accessibilityValue(island.items.isEmpty ? "Bare grass" :
@@ -535,11 +590,12 @@ struct PlatformScene: View {
         panStart = eased
     }
 
-    private func startBounce() {
+    private func startBounce(_ targets: Set<Int>, duration: Double = 0.55) {
+        bounceTargets = targets
         bounceStart = .now
         bouncing = true
         Task {
-            try? await Task.sleep(for: .seconds(0.55))
+            try? await Task.sleep(for: .seconds(duration))
             bouncing = false
         }
     }

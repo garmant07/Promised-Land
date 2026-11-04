@@ -71,6 +71,7 @@ enum DebugSeed {
             switch parts[0] {
             case "quiz": context.recordQuizAttempt(parts[1], score: 3, passed: true)
             case "quizfail": context.recordQuizAttempt(parts[1], score: 1, passed: false)
+            case "open": context.recordBookStarted(parts[1])
             case "memo": context.recordMemorised(parts[1], reference: "debug")
             case "journal":
                 // "journal:ruth.1" adds a sample reflection for Ruth 1.

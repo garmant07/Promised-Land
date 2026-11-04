@@ -2,8 +2,10 @@ import SwiftUI
 
 // MARK: - Model
 
-/// The home island. Every piece of reading adds one thing, in the order it happened,
-/// so nothing already placed ever moves. The island grows new grass tiles as it fills.
+/// The home island. Each book you start gets one building, in the order you started them,
+/// so nothing already placed ever moves. Opening a book lays its foundations, and every
+/// chapter you read adds to its building (a floor, a vine, a tent). Quizzes and memorised
+/// verses add fruit trees and lanterns. The island grows new grass tiles as it fills.
 struct Island: Equatable {
     struct Tile: Hashable { let x: Int; let y: Int }
 
@@ -11,13 +13,14 @@ struct Island: Equatable {
         case tuft, flower, flowers, bush, rock, olive, cypress, palm, sheep, tent, well, house
         case fruitTree   // a quiz passed
         case lantern     // a verse memorised
-        case landmark(BuildingStyle) // a book finished
+        case landmark(BuildingStyle) // a book finished (earlier versions)
+        case building(BuildingStyle) // a book's building, growing chapter by chapter
         case library     // a feature building: appears after the first journal entry
 
         /// How much of a tile it takes up (4 = a whole tile).
         var weight: Int {
             switch self {
-            case .landmark, .library: 4
+            case .landmark, .library, .building: 4
             case .house, .well, .tent, .fruitTree: 2
             default: 1
             }
@@ -38,11 +41,13 @@ struct Island: Equatable {
         case quiz(book: String)
         case verse(book: String)
         case finished(book: String)
+        /// A book's growing building.
+        case book(String)
         case feature(Feature)
 
         var bookID: String? {
             switch self {
-            case .chapter(let b, _), .quiz(let b), .verse(let b), .finished(let b): b
+            case .chapter(let b, _), .quiz(let b), .verse(let b), .finished(let b), .book(let b): b
             case .feature: nil
             }
         }
@@ -61,6 +66,9 @@ struct Island: Equatable {
         var source: Source = .feature(.library)
         /// The patch of ground it stands on, in grid units (for hit testing).
         var footprint: CGRect = .zero
+        /// For a book's building: chapters read so far, out of the book's chapters.
+        var progress = 0
+        var total = 0
     }
 
     let tiles: [Tile]
@@ -76,60 +84,62 @@ struct Island: Equatable {
     // MARK: Building
 
     private enum Event {
-        case chapter(book: String, chapter: Int)
+        case book(String)
         case quiz(book: String)
         case verse(book: String)
-        case finished(book: String)
 
         var order: Int {
-            switch self { case .chapter: 0; case .finished: 1; case .quiz: 2; case .verse: 3 }
+            switch self { case .book: 0; case .quiz: 1; case .verse: 2 }
         }
         var key: String {
             switch self {
-            case .chapter(let b, let c): "\(b)#\(String(format: "%04d", c))"
-            case .quiz(let b), .verse(let b), .finished(let b): b
+            case .book(let b): b
+            case .quiz(let b): "quiz-\(b)"
+            case .verse(let b): "verse-\(b)"
             }
         }
     }
 
+    /// - Parameters:
+    ///   - chapters: every read.
+    ///   - started: books opened (their foundations go down even before a chapter is read).
     static func build(chapters: [(book: String, chapter: Int, date: Date)],
+                      started: [(book: String, date: Date)] = [],
                       quizzes: [(book: String, date: Date)],
                       verses: [(book: String, date: Date)],
                       features: Set<Feature> = []) -> Island {
-        // Gather every piece of reading as a dated event.
-        var events: [(Date, Event)] = chapters.map { ($0.date, .chapter(book: $0.book, chapter: $0.chapter)) }
-        events += quizzes.map { ($0.date, .quiz(book: $0.book)) }
-        events += verses.map { ($0.date, .verse(book: $0.book)) }
-        // A finished book counts from the moment its last chapter was read.
-        for (bookID, reads) in Dictionary(grouping: chapters, by: \.book) {
-            guard let book = BibleCatalog.book(id: bookID) else { continue }
-            let distinct = Set(reads.map(\.chapter)).filter { book.chapterNumbers.contains($0) }
-            if distinct.count >= book.chapterCount, let last = reads.map(\.date).max() {
-                events.append((last, .finished(book: bookID)))
+        // Each book's building goes down when the book was started (or first read).
+        var startDate: [String: Date] = [:]
+        var readChapters: [String: Set<Int>] = [:]
+        for read in chapters {
+            startDate[read.book] = min(startDate[read.book] ?? read.date, read.date)
+            if let book = BibleCatalog.book(id: read.book), book.chapterNumbers.contains(read.chapter) {
+                readChapters[read.book, default: []].insert(read.chapter)
             }
         }
+        for start in started { startDate[start.book] = min(startDate[start.book] ?? start.date, start.date) }
+
+        var events: [(Date, Event)] = startDate.compactMap { book, date in
+            BibleCatalog.book(id: book) == nil ? nil : (date, .book(book))
+        }
+        events += quizzes.map { ($0.date, .quiz(book: $0.book)) }
+        events += verses.map { ($0.date, .verse(book: $0.book)) }
         events.sort { ($0.0, $0.1.order, $0.1.key) < ($1.0, $1.1.order, $1.1.key) }
 
-        // Turn events into things, and lay them out tile by tile.
         var placement = IslandPlacement()
         var items: [Item] = []
-        var chapterCount = 0
         for (_, event) in events {
-            let kind: Kind
-            let source: Source
             let seed = Self.hash(event.key)
             switch event {
-            case .chapter(let b, let c):
-                kind = chapterKind(chapterCount, seed: seed)
-                chapterCount += 1
-                source = .chapter(book: b, chapter: c)
-            case .quiz(let b): kind = .fruitTree; source = .quiz(book: b)
-            case .verse(let b): kind = .lantern; source = .verse(book: b)
-            case .finished(let bookID):
-                kind = .landmark(WorldData.landmark(bookID: bookID)?.style ?? .house)
-                source = .finished(book: bookID)
+            case .book(let bookID):
+                var item = placement.place(.building(WorldData.landmark(bookID: bookID)?.style ?? .house),
+                                           seed: seed, source: .book(bookID))
+                item.progress = readChapters[bookID]?.count ?? 0
+                item.total = BibleCatalog.book(id: bookID)?.chapterCount ?? 1
+                items.append(item)
+            case .quiz(let b): items.append(placement.place(.fruitTree, seed: seed, source: .quiz(book: b)))
+            case .verse(let b): items.append(placement.place(.lantern, seed: seed, source: .verse(book: b)))
             }
-            items.append(placement.place(kind, seed: seed, source: source))
         }
         // Feature buildings take their reserved spots near the centre (added last, so they build in).
         for feature in Feature.allCases where features.contains(feature) {
@@ -139,20 +149,6 @@ struct Island: Equatable {
     }
 
     static let tileOrderShared: [Tile] = tileOrder
-
-    /// Chapters add small things mostly, with trees, sheep and buildings mixed in.
-    private static func chapterKind(_ n: Int, seed: Int) -> Kind {
-        if n == 0 { return .flowers }
-        if n % 47 == 46 { return .house }
-        if n % 61 == 30 { return .well }
-        if n % 37 == 18 { return .tent }
-        if n % 23 == 11 { return .sheep }
-        if n % 13 == 6 { return .olive }
-        if n % 17 == 8 { return .cypress }
-        if n % 29 == 20 { return .palm }
-        let small: [Kind] = [.tuft, .flower, .flowers, .bush, .tuft, .rock, .flower]
-        return small[seed % small.count]
-    }
 
     /// The centre of a run of `weight` quarter-spots starting at `start` within a tile.
     static func spotCentre(start: Int, weight: Int) -> CGPoint {
@@ -290,6 +286,8 @@ enum IslandHitTester {
         case .fruitTree: size = (18, 24)
         case .lantern: size = (8, 19)
         case .landmark, .library: size = (40, 50)
+        case .building(let style):
+            size = (36, IslandBuildings.height(style: style, progress: item.progress, total: item.total) + 6)
         case .tuft, .flower, .flowers, .bush, .rock, .sheep: return .zero
         }
         return CGRect(x: base.x - size.w / 2 * u, y: base.y - size.h * u, width: size.w * u, height: size.h * u)
@@ -445,6 +443,8 @@ enum IslandPainter {
             rect(-2, -16, 4, 4.5, .wheat, radius: 1)
             ellipse(0, -14, 2.2, 2.2, .cream)
             poly([(-2.6, -16), (0, -18), (2.6, -16)], Color(hex: "#7A4A2A"))
+        case .building(let style):
+            IslandBuildings.draw(&c, style: style, progress: item.progress, total: item.total, u: u, seed: item.seed)
         case .library:
             guard let art = LandmarkMiniCache.library() else { return }
             let k = tileWidth / Iso.tileWidth / 3 * 0.95
@@ -513,6 +513,8 @@ struct IslandPlacement {
         let jx = kind.weight == 1 ? (Island.unit(seed, 1) - 0.5) * 0.14 : 0
         let jy = kind.weight == 1 ? (Island.unit(seed, 2) - 0.5) * 0.14 : 0
         used += kind.weight
+        // Buildings get a tile of open grass after them, so neighbours don't hide each other.
+        if case .building = kind { tileIndex += 1 }
         let centre = CGPoint(x: CGFloat(tile.x) + spot.x, y: CGFloat(tile.y) + spot.y)
         return Island.Item(kind: kind, gx: centre.x + jx, gy: centre.y + jy, seed: seed, source: source,
                            footprint: Self.footprint(centre: centre, weight: kind.weight))
