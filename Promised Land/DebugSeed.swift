@@ -33,6 +33,7 @@ enum PreviewData {
 ///   -openReading <book:chapter>          open reading at a chapter on launch
 ///   -openStory <id> / -openStats         with -openWorld: open a story card or reading history
 ///   -openLibrary / -openReflection book:ch   open the journal library or a reflection card
+///   -seedAll <n>                         read every chapter n times (crowns, throne room)
 enum DebugSeed {
     static func apply(to context: ModelContext) {
         let args = ProcessInfo.processInfo.arguments
@@ -45,10 +46,23 @@ enum DebugSeed {
             UserDefaults.standard.removeObject(forKey: StorageKeys.libraryRevealed)
             UserDefaults.standard.removeObject(forKey: StorageKeys.journeyStopsSeen)
             UserDefaults.standard.removeObject(forKey: StorageKeys.journeysCompleted)
+            UserDefaults.standard.removeObject(forKey: StorageKeys.throneRevealed)
             try? context.delete(model: JournalEntry.self)
         }
         if args.contains("-skipOnboarding") {
             UserDefaults.standard.set(true, forKey: StorageKeys.hasOnboarded)
+        }
+        // "-seedAll 2" reads every chapter of the Bible twice (for crowns and the throne room).
+        if let i = args.firstIndex(of: "-seedAll"), i + 1 < args.count, let times = Int(args[i + 1]) {
+            for book in BibleCatalog.books {
+                for chapter in book.chapterNumbers {
+                    for k in 0..<times {
+                        context.insert(ChapterRead(bookID: book.id, chapterNumber: chapter,
+                                                   date: .now.addingTimeInterval(-Double(times - k) * 86_400)))
+                    }
+                }
+            }
+            try? context.save()
         }
         guard let start = args.firstIndex(of: "-seed") else { return }
         for token in args[(start + 1)...].prefix(while: { !$0.hasPrefix("-") }) {

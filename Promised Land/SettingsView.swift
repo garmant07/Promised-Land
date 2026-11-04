@@ -14,6 +14,7 @@ enum StorageKeys {
     static let libraryRevealed = "libraryRevealed"
     static let journeyStopsSeen = "journeyStopsSeen"
     static let journeysCompleted = "journeysCompleted"
+    static let throneRevealed = "throneRevealed"
 }
 
 struct SettingsView: View {
@@ -108,6 +109,7 @@ struct SettingsView: View {
         UserDefaults.standard.removeObject(forKey: StorageKeys.storyObjectsSeen)
         UserDefaults.standard.removeObject(forKey: StorageKeys.journeyStopsSeen)
         UserDefaults.standard.removeObject(forKey: StorageKeys.journeysCompleted)
+        UserDefaults.standard.removeObject(forKey: StorageKeys.throneRevealed)
         message = "Progress cleared. A fresh start."
     }
 }

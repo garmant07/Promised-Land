@@ -46,6 +46,8 @@ final class WorldScene: SKScene {
     var onSelectLibrary: (() -> Void)?
     /// Called when a journey stop is tapped, with the journey id.
     var onSelectJourney: ((String) -> Void)?
+    /// Called when the throne room is tapped.
+    var onSelectThrone: (() -> Void)?
 
     // MARK: Layers
 
@@ -59,6 +61,7 @@ final class WorldScene: SKScene {
     let chapterObjectLayer = ChapterObjectLayer()
     let libraryNode = LibraryNode()
     let journeyLayer = JourneyLayer()
+    let throneNode = ThroneNode()
     let avatarNode = PlayerAvatarNode()
     private var avatarIdleUntil: TimeInterval = 0
     private var lastSeenRead: Date?
@@ -132,6 +135,7 @@ final class WorldScene: SKScene {
         objectLayer.addChild(landmarkLayer)
         objectLayer.addChild(chapterObjectLayer)
         objectLayer.addChild(libraryNode)
+        objectLayer.addChild(throneNode)
         objectLayer.addChild(characterLayer)
         addChild(fogLayer)
         addChild(landmarkLayer.labelLayer)
@@ -478,6 +482,8 @@ final class WorldScene: SKScene {
             characterLayer.speak(character, zoom: cameraNode.xScale)
         } else if let id = journeyLayer.journey(near: Iso.grid(scenePoint)) {
             onSelectJourney?(id)
+        } else if throneNode.contains(gridPoint: Iso.grid(scenePoint)) {
+            onSelectThrone?()
         } else if libraryNode.contains(gridPoint: Iso.grid(scenePoint)) {
             onSelectLibrary?()
         } else if let id = chapterObjectLayer.object(at: scenePoint) {
@@ -498,6 +504,7 @@ final class WorldScene: SKScene {
         case story(String)
         case library
         case journey(String)
+        case throne
     }
 
     // MARK: Your avatar
@@ -603,6 +610,11 @@ final class WorldScene: SKScene {
         queueStoryMoments(newProgress)
         journeyLayer.apply(newProgress)
         queueJourneyMoments(newProgress)
+        if newProgress.hasCompletedBible, throneNode.isHidden {
+            if UserDefaults.standard.bool(forKey: StorageKeys.throneRevealed) { throneNode.isHidden = false } else { enqueue(.throne) }
+        } else if !newProgress.hasCompletedBible {
+            throneNode.isHidden = true
+        }
         if !avatarPlaced { placeAvatar(newProgress) }
         walkToLatestRead(newProgress)
         for bookID in completed.subtracting(celebrated) { enqueue(.celebrate(bookID)) }
@@ -723,6 +735,19 @@ final class WorldScene: SKScene {
                     self.avatarIdleUntil = self.lastUpdate + 6
                 }
             }, .wait(forDuration: 0.7 + min(9, Double(span / 4)) + 1.4), .run { [weak self] in
+                self?.playNextMoment()
+            }]), withKey: "moment")
+
+        case .throne:
+            UserDefaults.standard.set(true, forKey: StorageKeys.throneRevealed)
+            flyTo(grid: ThroneNode.center, zoom: min(cameraNode.xScale, 1.2))
+            run(.sequence([.wait(forDuration: 0.7), .run { [weak self] in
+                guard let self else { return }
+                self.throneNode.isHidden = false
+                self.throneNode.alpha = 0
+                self.throneNode.run(.fadeIn(withDuration: 1.2))
+                self.landmarkLayer.puff(at: self.throneNode.position, z: 5_500, big: true)
+            }, .wait(forDuration: 2.0), .run { [weak self] in
                 self?.playNextMoment()
             }]), withKey: "moment")
 

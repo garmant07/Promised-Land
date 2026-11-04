@@ -85,7 +85,8 @@ nonisolated enum GrowthLevel: Int, Comparable, CaseIterable, Sendable {
 struct GameProgress: Equatable {
     static func == (lhs: GameProgress, rhs: GameProgress) -> Bool {
         lhs.readByBook == rhs.readByBook && lhs.countByChapter == rhs.countByChapter &&
-            lhs.lastByChapter == rhs.lastByChapter && lhs.quizzes == rhs.quizzes && lhs.memorised == rhs.memorised
+            lhs.lastByChapter == rhs.lastByChapter && lhs.quizzes == rhs.quizzes && lhs.memorised == rhs.memorised &&
+            lhs.castByBook == rhs.castByBook && lhs.cycle == rhs.cycle
     }
 
     private let readByBook: [String: Set<Int>]
@@ -101,7 +102,17 @@ struct GameProgress: Equatable {
     /// The most recent read of all: where the avatar heads after you finish a chapter.
     let latestRead: (bookID: String, chapter: Int, date: Date)?
 
-    init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised], now: Date = .now) {
+    /// Crowns cast so far, per book, and which cycle of reading the whole Bible we're in.
+    private let castByBook: [String: Int]
+    let cycle: Int
+
+    func crownsCast(_ bookID: String) -> Int { castByBook[bookID] ?? 0 }
+
+    init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised], castings: [CrownCasting] = [], now: Date = .now) {
+        self.castByBook = castings.reduce(into: [:]) { result, cast in
+            for (book, n) in cast.perBook { result[book, default: 0] += n }
+        }
+        self.cycle = castings.count
         var byBook: [String: Set<Int>] = [:]
         var latest: [String: Date] = [:]
         var counts: [String: Int] = [:], last: [String: Date] = [:], thisYear: [String: Int] = [:], perBook: [String: Int] = [:]
@@ -235,11 +246,12 @@ struct ProgressQuery: DynamicProperty {
     @Query private var reads: [ChapterRead]
     @Query private var quizzes: [QuizPass]
     @Query private var memorised: [VerseMemorised]
+    @Query private var castings: [CrownCasting]
 
     init() {}
 
     var wrappedValue: GameProgress {
-        GameProgress(reads: reads, quizzes: quizzes, memorised: memorised)
+        GameProgress(reads: reads, quizzes: quizzes, memorised: memorised, castings: castings)
     }
 }
 
@@ -267,6 +279,7 @@ extension ModelContext {
         try? delete(model: ChapterRead.self)
         try? delete(model: QuizPass.self)
         try? delete(model: VerseMemorised.self)
+        try? delete(model: CrownCasting.self)
         try? save()
     }
 

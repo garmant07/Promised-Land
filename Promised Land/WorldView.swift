@@ -10,6 +10,8 @@ struct WorldView: View {
     @State private var showingStats = false
     @State private var showingLibrary = false
     @State private var selectedJourney: Journey?
+    @State private var showingCrowns = false
+    @State private var showingThrone = false
     @CurrentAvatar private var avatar: Avatar
     @Query private var journal: [JournalEntry]
     @State private var selectedStory: ChapterLandmark?
@@ -27,7 +29,7 @@ struct WorldView: View {
                 .accessibilityLabel("Map of your world")
 
             VStack(spacing: 0) {
-                WorldHeader(progress: progress, onClose: onClose) { showingStats = true }
+                WorldHeader(progress: progress, onClose: onClose, openCrowns: { showingCrowns = true }) { showingStats = true }
                     .padding(.horizontal, 14)
                     .padding(.vertical, 4)
                     .background(Color.cream.opacity(0.92), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
@@ -77,6 +79,7 @@ struct WorldView: View {
             scene.onSelectStoryObject = { id in selectedStory = ChapterLandmarks.entry(id: id) }
             scene.onSelectLibrary = { showingLibrary = true }
             scene.onSelectJourney = { id in selectedJourney = JourneyData.journey(id: id) }
+            scene.onSelectThrone = { showingThrone = true }
             scene.setAvatar(avatar)
             scene.setLibraryVisible(!journal.isEmpty)
             scene.onViewportChange = { [minimap] rect in minimap.viewport = rect }
@@ -87,6 +90,8 @@ struct WorldView: View {
             if let i = args.firstIndex(of: "-openStory"), i + 1 < args.count { selectedStory = ChapterLandmarks.entry(id: args[i + 1]) }
             if args.contains("-openStats") { showingStats = true }
             if let i = args.firstIndex(of: "-openJourney"), i + 1 < args.count { selectedJourney = JourneyData.journey(id: args[i + 1]) }
+            if args.contains("-openCrowns") { showingCrowns = true }
+            if args.contains("-openThrone") { showingThrone = true }
             #endif
         }
         .onDisappear { scene.setOnScreen(false) }
@@ -94,6 +99,8 @@ struct WorldView: View {
         .onChange(of: journal.isEmpty) { _, empty in scene.setLibraryVisible(!empty) }
         .onChange(of: avatar) { _, new in scene.setAvatar(new) }
         .sheet(item: $selectedJourney) { JourneyCard(journey: $0) }
+        .sheet(isPresented: $showingCrowns) { CrownsView() }
+        .sheet(isPresented: $showingThrone) { ThroneRoomView() }
         .sheet(isPresented: $showingLibrary) { LibraryShelfView() }
         .onChange(of: selected) { _, new in scene.setOnScreen(new == nil && selectedStory == nil) }
         .onChange(of: selectedStory) { _, new in scene.setOnScreen(new == nil && selected == nil) }
@@ -126,6 +133,7 @@ struct WorldView: View {
 struct WorldHeader: View {
     let progress: GameProgress
     var onClose: (() -> Void)? = nil
+    var openCrowns: (() -> Void)? = nil
     var openStats: () -> Void
 
     var body: some View {
@@ -135,13 +143,24 @@ struct WorldHeader: View {
                     .font(.serifTitle(.title))
                     .foregroundStyle(Color.bodyText)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.5)
                 Text("\(progress.completedCount) of \(WorldData.landmarks.count) built · \(progress.startedCount) begun")
                     .font(.footnote)
                     .foregroundStyle(Color.secondaryText)
             }
             Spacer(minLength: 4)
             StreakPill(days: progress.streak)
+            // Crowns show up once the first is earned (progressive disclosure).
+            if let openCrowns, progress.totalCrownsEarned > 0 || progress.cycle > 0 {
+                Button(action: openCrowns) {
+                    Image(systemName: "crown.fill")
+                        .font(.headline)
+                        .foregroundStyle(Color.wheat)
+                        .frame(width: 44, height: 44)
+                        .background(Color.card, in: Circle())
+                }
+                .accessibilityLabel("Crowns")
+            }
             Button(action: openStats) {
                 Image(systemName: "chart.bar.fill")
                     .font(.headline)
