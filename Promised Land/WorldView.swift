@@ -12,6 +12,7 @@ struct WorldView: View {
     @State private var selectedJourney: Journey?
     @State private var showingCrowns = false
     @State private var showingThrone = false
+    @State private var shareImage: ShareImage?
     @CurrentAvatar private var avatar: Avatar
     @Query private var journal: [JournalEntry]
     @State private var selectedStory: ChapterLandmark?
@@ -43,8 +44,17 @@ struct WorldView: View {
                 .padding(.horizontal, 12)
                 .padding(.top, 8)
                 Spacer()
-                HStack {
+                HStack(spacing: 10) {
                     Spacer()
+                    Button(action: shareWorld) {
+                        Image(systemName: "square.and.arrow.up")
+                            .font(.headline)
+                            .foregroundStyle(Color.primaryBrown)
+                            .frame(width: 48, height: 48)
+                            .background(Color.cream.opacity(0.94), in: Circle())
+                            .shadow(color: Color.primaryBrown.opacity(0.15), radius: 6, y: 2)
+                    }
+                    .accessibilityLabel("Share your world")
                     Button { scene.recentre() } label: {
                         Image(systemName: "location.fill")
                             .font(.headline)
@@ -92,6 +102,9 @@ struct WorldView: View {
             if let i = args.firstIndex(of: "-openJourney"), i + 1 < args.count { selectedJourney = JourneyData.journey(id: args[i + 1]) }
             if args.contains("-openCrowns") { showingCrowns = true }
             if args.contains("-openThrone") { showingThrone = true }
+            if args.contains("-openShare") {
+                Task { try? await Task.sleep(for: .seconds(4)); shareWorld() }
+            }
             #endif
         }
         .onDisappear { scene.setOnScreen(false) }
@@ -101,6 +114,7 @@ struct WorldView: View {
         .sheet(item: $selectedJourney) { JourneyCard(journey: $0) }
         .sheet(isPresented: $showingCrowns) { CrownsView() }
         .sheet(isPresented: $showingThrone) { ThroneRoomView() }
+        .sheet(item: $shareImage) { SharePreviewSheet(image: $0.image) }
         .sheet(isPresented: $showingLibrary) { LibraryShelfView() }
         .onChange(of: selected) { _, new in scene.setOnScreen(new == nil && selectedStory == nil) }
         .onChange(of: selectedStory) { _, new in scene.setOnScreen(new == nil && selected == nil) }
@@ -118,6 +132,14 @@ struct WorldView: View {
                     }
             }
         }
+    }
+
+    private func shareWorld() {
+        let card = ShareCardView(title: "My Promised Land",
+                                 subtitle: "\(progress.startedCount) of \(WorldData.landmarks.count) places begun",
+                                 artwork: scene.snapshot(), avatar: avatar,
+                                 streak: progress.streak, chaptersThisYear: progress.chaptersReadThisYear)
+        if let image = card.render() { shareImage = ShareImage(image: image) }
     }
 
     private var debugOptions: SpriteView.DebugOptions {

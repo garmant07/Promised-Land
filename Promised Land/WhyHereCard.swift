@@ -8,6 +8,8 @@ struct WhyHereCard: View {
     @ProgressQuery private var progress: GameProgress
     @Environment(\.dismiss) private var dismiss
     @Query(sort: \JournalEntry.created, order: .reverse) private var journal: [JournalEntry]
+    @CurrentAvatar private var avatar: Avatar
+    @State private var shareImage: ShareImage?
 
     private var notes: [JournalEntry] {
         journal.filter { $0.bookID == entry.bookID && ($0.chapter.map { entry.chapters.contains($0) } ?? false) }
@@ -125,7 +127,32 @@ struct WhyHereCard: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }.tint(Color.primaryBrown)
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { share() } label: { Label("Share", systemImage: "square.and.arrow.up") }
+                        .tint(Color.primaryBrown)
+                }
             }
+            .sheet(item: $shareImage) { SharePreviewSheet(image: $0.image) }
+        }
+    }
+
+    private func share() {
+        let look = ChapterObjectLook(kind: entry.kind, depth: max(1, progress.depth(of: entry)), variant: entry.variant, size: 3)
+        let art = ChapterObjectPainter.render(look, scale: 3).map { UIImage(cgImage: $0.image) }
+        let card = ShareCardView(title: entry.name, subtitle: entry.chapterLabel, artwork: art.map { Self.onSand($0) },
+                                 avatar: avatar, streak: progress.streak, chaptersThisYear: progress.chaptersReadThisYear)
+        if let image = card.render() { shareImage = ShareImage(image: image) }
+    }
+
+    /// Puts transparent artwork on a soft sand background for the share card.
+    private static func onSand(_ art: UIImage) -> UIImage {
+        let size = CGSize(width: 936, height: 1020)
+        return UIGraphicsImageRenderer(size: size).image { ctx in
+            UIColor(Color.sand).setFill()
+            ctx.fill(CGRect(origin: .zero, size: size))
+            let scale = min(size.width / art.size.width, size.height / art.size.height) * 0.9
+            let w = art.size.width * scale, h = art.size.height * scale
+            art.draw(in: CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h))
         }
     }
 

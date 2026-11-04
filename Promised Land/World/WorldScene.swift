@@ -786,6 +786,12 @@ final class WorldScene: SKScene {
         characterLayer.arrive(for: bookID)
     }
 
+    /// A picture of what's on screen right now, for sharing.
+    func snapshot() -> UIImage? {
+        guard let view, let texture = view.texture(from: self, crop: visibleRect()) else { return nil }
+        return UIImage(cgImage: texture.cgImage())
+    }
+
     /// Flies to the most recently read landmark (or the starting view).
     func recentre() {
         if let bookID = progress?.newestBookID, let landmark = WorldData.landmark(bookID: bookID) {
