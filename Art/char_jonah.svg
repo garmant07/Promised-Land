@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-62 0 355 355" width="1065" height="1065">
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="softer" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <linearGradient id="mantle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9DB6C0"/>
+      <stop offset="1" stop-color="#7F9BA8"/>
+    </linearGradient>
+    <linearGradient id="tunic" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F6EAD3"/>
+      <stop offset="1" stop-color="#EAD8B9"/>
+    </linearGradient>
+    <radialGradient id="skin" cx="0.42" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#F6CDA6"/>
+      <stop offset="1" stop-color="#EDB98F"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ground -->
+  <ellipse cx="118" cy="334" rx="72" ry="13" fill="#EFE2CC"/>
+  <ellipse cx="118" cy="333" rx="48" ry="8" fill="#E6D6BC" filter="url(#softer)"/>
+
+  <!-- mantle behind -->
+  <path d="M66 196 Q68 166 100 160 L140 160 Q172 166 174 196 C182 250 188 290 186 314 Q184 328 168 328 L72 328 Q56 328 54 314 C52 290 58 250 66 196 Z" fill="url(#mantle)"/>
+
+  <!-- feet -->
+  <ellipse cx="99" cy="326" rx="15" ry="8" fill="#9A6A48"/>
+  <ellipse cx="139" cy="328" rx="15" ry="8" fill="#8E603F"/>
+
+  <!-- neck, showing in the tunic's V -->
+  <rect x="108" y="148" width="24" height="40" rx="8" fill="#E9B28A"/>
+  <!-- tunic -->
+  <path d="M92 170 L109 166 Q120 190 131 166 L148 170 Q154 240 158 322 L82 322 Q86 240 92 170 Z" fill="url(#tunic)"/>
+  <path d="M120 196 L120 316" stroke="#E2CDA9" stroke-width="3" opacity="0.6"/>
+
+  <!-- mantle front panels (open at the front) -->
+  <path d="M66 196 Q70 170 96 168 Q90 250 90 326 L72 328 Q56 326 54 314 C54 282 60 240 66 196 Z" fill="#94AEB9"/>
+  <path d="M146 168 Q170 170 174 196 C180 240 186 282 186 314 Q184 326 168 328 L150 326 Q150 250 146 168 Z" fill="#7F9BA8"/>
+  <!-- mantle trim -->
+  <path d="M95 172 Q89 250 89 324" stroke="#C9B48E" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M147 172 Q151 250 151 324" stroke="#BCA67F" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- rope sash -->
+  <path d="M90 228 Q120 236 150 228" stroke="#A9784F" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M132 232 Q134 246 130 256" stroke="#A9784F" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- satchel strap and bag -->
+  <path d="M150 172 Q120 210 84 252" stroke="#8A5A3C" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <rect x="62" y="244" width="40" height="36" rx="10" fill="#B88A5C"/>
+  <rect x="62" y="244" width="40" height="13" rx="6" fill="#A57A4E"/>
+  <circle cx="82" cy="258" r="3" fill="#8A5A3C"/>
+
+  <!-- arms: sleeves and clasped hands -->
+  <path d="M70 184 Q54 214 68 236 Q82 250 104 240 L104 226 Q88 222 86 202 Q86 186 70 184 Z" fill="#9BB3BE"/>
+  <path d="M170 184 Q186 214 172 236 Q158 250 136 240 L136 226 Q152 222 154 202 Q154 186 170 184 Z" fill="#84A0AC"/>
+  <path d="M98 226 Q104 232 104 240" stroke="#C9B48E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M142 226 Q136 232 136 240" stroke="#BCA67F" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="112" cy="234" rx="11" ry="9" fill="url(#skin)"/>
+  <ellipse cx="128" cy="235" rx="11" ry="9" fill="#EDB98F"/>
+
+  <!-- soft shading on the right of the body -->
+  <path d="M140 176 Q180 220 172 320 L150 320 Q156 240 140 176 Z" fill="#5F7A88" opacity="0.18" filter="url(#soft)"/>
+
+
+  <!-- hair behind the head -->
+  <circle cx="80" cy="94" r="19" fill="#5A3D2C"/>
+  <circle cx="86" cy="68" r="20" fill="#5A3D2C"/>
+  <circle cx="108" cy="52" r="21" fill="#5A3D2C"/>
+  <circle cx="136" cy="50" r="21" fill="#5A3D2C"/>
+  <circle cx="158" cy="62" r="18" fill="#5A3D2C"/>
+  <circle cx="82" cy="116" r="15" fill="#5A3D2C"/>
+
+  <!-- head -->
+  <ellipse cx="124" cy="100" rx="50" ry="54" fill="url(#skin)"/>
+  <!-- ear -->
+  <ellipse cx="80" cy="106" rx="9" ry="12" fill="#EDB98F"/>
+
+  <!-- hair on top: a curly fringe -->
+  <circle cx="100" cy="62" r="14" fill="#634433"/>
+  <circle cx="121" cy="56" r="14" fill="#634433"/>
+  <circle cx="142" cy="60" r="13" fill="#634433"/>
+  <circle cx="160" cy="72" r="10" fill="#634433"/>
+  <circle cx="87" cy="78" r="11" fill="#634433"/>
+  <path d="M113 50 Q121 45 129 48" stroke="#7A5641" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- short beard around the jaw -->
+  <path d="M84 108 Q86 150 122 158 Q160 154 170 116 Q160 132 146 134 Q134 128 124 132 Q112 128 102 132 Q88 128 84 108 Z" fill="#5A3D2C"/>
+  <path d="M110 140 Q122 146 134 140" stroke="#6C4B39" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- eyes and cheeks -->
+  <rect x="106" y="90" width="10" height="18" rx="5" fill="#4E3527"/>
+  <rect x="138" y="90" width="10" height="18" rx="5" fill="#4E3527"/>
+  <ellipse cx="102" cy="118" rx="8" ry="4" fill="#E39A7E" opacity="0.3"/>
+  <ellipse cx="156" cy="118" rx="7" ry="4" fill="#E39A7E" opacity="0.3"/>
+
+  <!-- seaweed draped over his head (Jonah 2:5) -->
+  <path d="M100 50 Q118 38 140 46 Q156 54 162 70 Q166 82 158 94" stroke="#8FA36A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M158 94 Q152 102 156 110" stroke="#8FA36A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="124" cy="42" rx="8" ry="4" fill="#A3B57B" transform="rotate(-14 124 42)"/>
+  <ellipse cx="151" cy="58" rx="7" ry="3.6" fill="#A3B57B" transform="rotate(40 151 58)"/>
+
+</svg>

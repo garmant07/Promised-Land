@@ -45,8 +45,9 @@ any rotation that has no image of its own.
 The characters drawn for the art direction (the *Character style* board) are in the asset
 catalogue as `char_moses`, `char_ruth`, `char_david`, `char_daniel`, `char_paul`,
 `char_jesus` and `char_disciples` (John's picture). Their cream backgrounds were cut out
-and the stray pebbles removed. Jonah has no drawing yet, so he uses the code-drawn chibi
-figure. Characters are drawn bottom-centre at their feet and scaled to the character's
+and the stray pebbles removed. `char_jonah` was drawn afterwards in the same style (curly
+hair and short beard, a sea-blue mantle, a traveller's satchel, and seaweed about his head
+from Jonah 2:5); its editable source is `Art/char_jonah.svg`. Characters are drawn bottom-centre at their feet and scaled to the character's
 height, so any size works; keep the figure standing on the bottom edge.
 
 ## What's drawn in code today
