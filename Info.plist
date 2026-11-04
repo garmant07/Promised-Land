@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!-- Cream launch screen (#FAF0DE), matching the app's background. Merged with the generated Info.plist. -->
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

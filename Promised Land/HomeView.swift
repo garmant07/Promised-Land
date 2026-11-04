@@ -240,16 +240,16 @@ struct HomeView: View {
                 debugReflection = ChapterRef(bookID: book.id, chapter: ch)
             }
         }
-        // "-tapKind fruitTree|lantern|library|chapter" taps the first island item of that kind.
+        // "-tapKind chapter|building|banner|lantern|story|library" taps the first island item of that kind.
         if let i = args.firstIndex(of: "-tapKind"), i + 1 < args.count {
             let wanted = args[i + 1]
             let index = island.items.firstIndex { item in
                 switch item.source {
                 case .chapter: wanted == "chapter"
                 case .book: wanted == "building"
-                case .quiz: wanted == "fruitTree"
+                case .quiz: wanted == "banner"
                 case .verse: wanted == "lantern"
-                case .finished: wanted == "landmark"
+                case .story: wanted == "story"
                 case .feature: wanted == "library"
                 }
             }
@@ -526,7 +526,17 @@ struct PlatformScene: View {
                 if !reduceMotion { startBounce([index]) }
             }
         }
-        .onAppear { placeCharacter() }
+        .onAppear {
+            placeCharacter()
+            #if DEBUG
+            // "-islandZoom 3" starts zoomed in (for checking art).
+            let args = ProcessInfo.processInfo.arguments
+            if let i = args.firstIndex(of: "-islandZoom"), i + 1 < args.count, let z = Double(args[i + 1]) {
+                zoom = min(IslandLayout.maxZoom, max(IslandLayout.minZoom, z))
+                zoomStart = zoom
+            }
+            #endif
+        }
         .onChange(of: island.tiles.count) { _, _ in if !walking { placeCharacter() } }
         .task(id: reduceMotion) {
             guard !reduceMotion else { return }

@@ -2,26 +2,33 @@ import SwiftUI
 
 // MARK: - Model
 
-/// The home island. Each book you start gets one building, in the order you started them,
-/// so nothing already placed ever moves. Opening a book lays its foundations, and every
-/// chapter you read adds to its building (a floor, a vine, a tent). Quizzes and memorised
-/// verses add fruit trees and lanterns. The island grows new grass tiles as it fills.
+/// The home island. Every book you open gets a plot: its foundations go down in the middle,
+/// and each chapter you read places an artifact around it (a story object where the chapter
+/// has one, otherwise something from the book's theme). Finishing the book raises its
+/// building; each full reread adds a floor. Rereading a chapter levels its artifact up to 5.
+/// Passing the quiz raises a banner, and memorising the verse lights a lantern or grows a
+/// fruit tree. Nothing already placed ever moves: plots are laid out in the order books were
+/// opened, and each chapter has its own fixed spot in its plot.
 struct Island: Equatable {
     struct Tile: Hashable { let x: Int; let y: Int }
 
     enum Kind: Hashable {
-        case tuft, flower, flowers, bush, rock, olive, cypress, palm, sheep, tent, well, house
-        case fruitTree   // a quiz passed
-        case lantern     // a verse memorised
-        case landmark(BuildingStyle) // a book finished (earlier versions)
-        case building(BuildingStyle) // a book's building, growing chapter by chapter
-        case library     // a feature building: appears after the first journal entry
+        /// A book's building (by book id).
+        case building(String)
+        /// A chapter's artifact.
+        case artifact(ArtifactKind)
+        /// A story object (a `ChapterLandmark` id).
+        case story(String)
+        /// A quiz banner, or a verse's lantern or fruit tree.
+        case reward(RewardKind)
+        /// A feature building: appears after the first journal entry.
+        case library
 
         /// How much of a tile it takes up (4 = a whole tile).
         var weight: Int {
             switch self {
-            case .landmark, .library, .building: 4
-            case .house, .well, .tent, .fruitTree: 2
+            case .building, .library: 4
+            case .story: 2
             default: 1
             }
         }
@@ -29,7 +36,7 @@ struct Island: Equatable {
         /// Tall things are redrawn in front of the character when it walks behind them.
         var isTall: Bool {
             switch self {
-            case .tuft, .flower, .flowers, .rock, .bush, .sheep: false
+            case .artifact(let kind): ![.bush, .flowers, .sheep, .scroll, .jar, .fishBasket].contains(kind)
             default: true
             }
         }
@@ -38,16 +45,16 @@ struct Island: Equatable {
     /// What put an item on the island, so tapping it can explain itself.
     enum Source: Equatable {
         case chapter(book: String, chapter: Int)
+        case story(id: String, book: String)
         case quiz(book: String)
         case verse(book: String)
-        case finished(book: String)
-        /// A book's growing building.
+        /// A book's building.
         case book(String)
         case feature(Feature)
 
         var bookID: String? {
             switch self {
-            case .chapter(let b, _), .quiz(let b), .verse(let b), .finished(let b), .book(let b): b
+            case .chapter(let b, _), .quiz(let b), .verse(let b), .book(let b), .story(_, let b): b
             case .feature: nil
             }
         }
@@ -66,13 +73,24 @@ struct Island: Equatable {
         var source: Source = .feature(.library)
         /// The patch of ground it stands on, in grid units (for hit testing).
         var footprint: CGRect = .zero
-        /// For a book's building: chapters read so far, out of the book's chapters.
+        /// For a book's building: distinct chapters read, out of the book's chapters.
         var progress = 0
         var total = 0
+        /// Artifacts and story objects: level 1–5 (one per read). Buildings: how many times
+        /// the whole book has been read (0 until finished; each one after the first adds a floor).
+        var level = 0
+    }
+
+    /// A book's plot of land (size × size tiles from x, y).
+    struct Plot: Equatable {
+        let bookID: String
+        let x: Int, y: Int, size: Int
+        var centre: CGPoint { CGPoint(x: CGFloat(x) + CGFloat(size) / 2, y: CGFloat(y) + CGFloat(size) / 2) }
     }
 
     let tiles: [Tile]
     let items: [Item]
+    var plots: [Plot] = []
 
     static let empty = Island.build(chapters: [], quizzes: [], verses: [])
 
@@ -83,95 +101,113 @@ struct Island: Equatable {
 
     // MARK: Building
 
-    private enum Event {
-        case book(String)
-        case quiz(book: String)
-        case verse(book: String)
-
-        var order: Int {
-            switch self { case .book: 0; case .quiz: 1; case .verse: 2 }
-        }
-        var key: String {
-            switch self {
-            case .book(let b): b
-            case .quiz(let b): "quiz-\(b)"
-            case .verse(let b): "verse-\(b)"
-            }
-        }
-    }
+    private static var memo: (key: Int, island: Island)?
 
     /// - Parameters:
     ///   - chapters: every read.
     ///   - started: books opened (their foundations go down even before a chapter is read).
+    ///   - quizzes: first pass of each book's quiz.
+    ///   - verses: memorised verses.
     static func build(chapters: [(book: String, chapter: Int, date: Date)],
                       started: [(book: String, date: Date)] = [],
                       quizzes: [(book: String, date: Date)],
                       verses: [(book: String, date: Date)],
                       features: Set<Feature> = []) -> Island {
-        // Each book's building goes down when the book was started (or first read).
+        var hasher = Hasher()
+        for r in chapters { hasher.combine(r.book); hasher.combine(r.chapter); hasher.combine(r.date) }
+        hasher.combine(-1)
+        for s in started { hasher.combine(s.book); hasher.combine(s.date) }
+        hasher.combine(-2)
+        for q in quizzes { hasher.combine(q.book); hasher.combine(q.date) }
+        hasher.combine(-3)
+        for v in verses { hasher.combine(v.book); hasher.combine(v.date) }
+        hasher.combine(features.map(\.rawValue).sorted())
+        let key = hasher.finalize()
+        if let memo, memo.key == key { return memo.island }
+        let island = make(chapters: chapters, started: started, quizzes: quizzes, verses: verses, features: features)
+        memo = (key, island)
+        return island
+    }
+
+    private static func make(chapters: [(book: String, chapter: Int, date: Date)],
+                             started: [(book: String, date: Date)],
+                             quizzes: [(book: String, date: Date)],
+                             verses: [(book: String, date: Date)],
+                             features: Set<Feature>) -> Island {
+        // Each book's plot goes down when the book was opened (or first read).
         var startDate: [String: Date] = [:]
-        var readChapters: [String: Set<Int>] = [:]
+        var reads: [String: [Int: (count: Int, first: Date)]] = [:]
         for read in chapters {
+            guard let book = BibleCatalog.book(id: read.book), book.chapterNumbers.contains(read.chapter) else { continue }
             startDate[read.book] = min(startDate[read.book] ?? read.date, read.date)
-            if let book = BibleCatalog.book(id: read.book), book.chapterNumbers.contains(read.chapter) {
-                readChapters[read.book, default: []].insert(read.chapter)
+            let old = reads[read.book]?[read.chapter]
+            reads[read.book, default: [:]][read.chapter] = ((old?.count ?? 0) + 1, min(old?.first ?? read.date, read.date))
+        }
+        for start in started where BibleCatalog.book(id: start.book) != nil {
+            startDate[start.book] = min(startDate[start.book] ?? start.date, start.date)
+        }
+        let quizDate = Dictionary(quizzes.map { ($0.book, $0.date) }, uniquingKeysWith: min)
+        let verseDate = Dictionary(verses.map { ($0.book, $0.date) }, uniquingKeysWith: min)
+        let order = Dictionary(uniqueKeysWithValues: BibleCatalog.books.enumerated().map { ($1.id, $0) })
+        let books = startDate.keys.sorted { (startDate[$0]!, order[$0] ?? 0) < (startDate[$1]!, order[$1] ?? 0) }
+
+        var packer = IslandPlots()
+        var plots: [Plot] = []
+        var dated: [(date: Date, rank: Int, item: Item)] = []
+        for bookID in books {
+            guard let book = BibleCatalog.book(id: bookID) else { continue }
+            let spec = BuildingData.spec(for: bookID)
+            let plot = packer.place(bookID, size: IslandPlots.size(chapters: book.chapterCount))
+            plots.append(plot)
+            let slots = IslandPlots.slots(in: plot)
+            let bookReads = reads[bookID] ?? [:]
+            let start = startDate[bookID]!
+
+            // The building, in the middle.
+            let centre = plot.centre
+            var building = Item(kind: .building(bookID), gx: centre.x, gy: centre.y, seed: hash(bookID), source: .book(bookID),
+                                footprint: CGRect(x: centre.x - 0.5, y: centre.y - 0.5, width: 1, height: 1))
+            building.progress = bookReads.count
+            building.total = book.chapterCount
+            building.level = bookReads.count == book.chapterCount ? (bookReads.values.map(\.count).min() ?? 0) : 0
+            dated.append((start, 0, building))
+
+            func item(_ kind: Kind, slot: Int, source: Source, level: Int = 0, salt: String) -> Item {
+                let p = slots[min(slot, slots.count - 1)]
+                return Item(kind: kind, gx: p.x, gy: p.y, seed: hash("\(bookID)-\(salt)"), source: source,
+                            footprint: CGRect(x: p.x - 0.18, y: p.y - 0.18, width: 0.36, height: 0.36), level: level)
+            }
+            if let date = quizDate[bookID] {
+                dated.append((date, 1, item(.reward(RewardData.quiz), slot: RewardData.quizSlot, source: .quiz(book: bookID), salt: "quiz")))
+            }
+            if let date = verseDate[bookID] {
+                dated.append((date, 2, item(.reward(RewardData.verse(for: bookID)), slot: RewardData.verseSlot,
+                                            source: .verse(book: bookID), salt: "verse")))
+            }
+            // Story objects take the spot of their first chapter, once any of their chapters is read.
+            var storyStarts: Set<Int> = []
+            for entry in ChapterLandmarks.visible where entry.bookID == bookID {
+                let inRange = entry.chapters.compactMap { ch in bookReads[ch] }
+                guard let first = inRange.map(\.first).min() else { continue }
+                storyStarts.insert(entry.chapters.lowerBound)
+                let level = min(5, inRange.map(\.count).max() ?? 1)
+                dated.append((first, 3, item(.story(entry.id), slot: RewardData.firstChapterSlot + entry.chapters.lowerBound - 1,
+                                             source: .story(id: entry.id, book: bookID), level: level, salt: entry.id)))
+            }
+            for (chapter, read) in bookReads where !storyStarts.contains(chapter) {
+                let kind = spec.theme[(chapter - 1) % spec.theme.count]
+                dated.append((read.first, 4 + chapter, item(.artifact(kind), slot: RewardData.firstChapterSlot + chapter - 1,
+                                                            source: .chapter(book: bookID, chapter: chapter),
+                                                            level: min(5, read.count), salt: "ch\(chapter)")))
             }
         }
-        for start in started { startDate[start.book] = min(startDate[start.book] ?? start.date, start.date) }
-
-        var events: [(Date, Event)] = startDate.compactMap { book, date in
-            BibleCatalog.book(id: book) == nil ? nil : (date, .book(book))
-        }
-        events += quizzes.map { ($0.date, .quiz(book: $0.book)) }
-        events += verses.map { ($0.date, .verse(book: $0.book)) }
-        events.sort { ($0.0, $0.1.order, $0.1.key) < ($1.0, $1.1.order, $1.1.key) }
-
-        var placement = IslandPlacement()
-        var items: [Item] = []
-        for (_, event) in events {
-            let seed = Self.hash(event.key)
-            switch event {
-            case .book(let bookID):
-                var item = placement.place(.building(WorldData.landmark(bookID: bookID)?.style ?? .house),
-                                           seed: seed, source: .book(bookID))
-                item.progress = readChapters[bookID]?.count ?? 0
-                item.total = BibleCatalog.book(id: bookID)?.chapterCount ?? 1
-                items.append(item)
-            case .quiz(let b): items.append(placement.place(.fruitTree, seed: seed, source: .quiz(book: b)))
-            case .verse(let b): items.append(placement.place(.lantern, seed: seed, source: .verse(book: b)))
-            }
-        }
-        // Feature buildings take their reserved spots near the centre (added last, so they build in).
+        var items = dated.sorted { ($0.date, $0.rank, $0.item.gx + $0.item.gy) < ($1.date, $1.rank, $1.item.gx + $1.item.gy) }.map(\.item)
+        // Feature buildings take their reserved spots near the start (added last, so they build in).
         for feature in Feature.allCases where features.contains(feature) {
-            items.append(placement.place(feature))
+            items.append(IslandPlots.item(for: feature))
         }
-        return Island(tiles: placement.tiles(including: features), items: items)
+        return Island(tiles: packer.tiles(features: features), items: items, plots: plots)
     }
-
-    static let tileOrderShared: [Tile] = tileOrder
-
-    /// The centre of a run of `weight` quarter-spots starting at `start` within a tile.
-    static func spotCentre(start: Int, weight: Int) -> CGPoint {
-        switch weight {
-        case 4: return CGPoint(x: 0.5, y: 0.5)
-        case 2: return [CGPoint(x: 0.5, y: 0.3), CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.5, y: 0.72)][min(start, 2)]
-        default: return [CGPoint(x: 0.3, y: 0.3), CGPoint(x: 0.72, y: 0.32), CGPoint(x: 0.3, y: 0.72), CGPoint(x: 0.7, y: 0.7)][start % 4]
-        }
-    }
-
-    /// Tiles in the order the island grows: outward from the middle, with a little
-    /// randomness so the coastline stays organic.
-    private static let tileOrder: [Tile] = {
-        let n = 26, mid = Double(n - 1) / 2
-        var cells: [(Tile, Double)] = []
-        for y in 0..<n {
-            for x in 0..<n {
-                let d = hypot(Double(x) - mid, Double(y) - mid)
-                cells.append((Tile(x: x, y: y), d + Noise.hash(x, y, seed: 77) * 1.1))
-            }
-        }
-        return cells.sorted { $0.1 < $1.1 }.map(\.0)
-    }()
 
     static func hash(_ s: String) -> Int {
         Int(s.unicodeScalars.reduce(UInt64(1469598103934665603)) { ($0 ^ UInt64($1.value)) &* 1099511628211 } & 0xFFFFFF)
@@ -266,62 +302,80 @@ enum IslandHitTester {
         }
     }
 
-    /// The drawn shape of hand-drawn things, in view points (sizes match `IslandPainter`).
+    /// The drawn shape of code-drawn things, in view points (sizes match the painters).
     static func shape(of item: Island.Item, base: CGPoint, u: CGFloat) -> CGRect {
-        let size: (w: CGFloat, h: CGFloat)
         switch item.kind {
-        case .olive: size = (15, 22)
-        case .cypress: size = (7, 21)
-        case .palm: size = (16, 20)
-        case .house: size = (16, 23)
-        case .well: size = (13, 19)
-        case .tent: size = (16, 12)
-        case .fruitTree: size = (18, 24)
-        case .lantern: size = (8, 19)
-        case .bush: size = (10, 7)
-        case .sheep: size = (10, 8)
-        case .rock: size = (8, 5)
-        case .tuft, .flower, .flowers: size = (7, 6)
-        case .landmark, .library: size = (40, 50)
-        case .building(let style):
-            size = (36, IslandBuildings.height(style: style, progress: item.progress, total: item.total) + 6)
+        case .building(let bookID):
+            let spec = BuildingData.spec(for: bookID)
+            let built = item.total > 0 && item.progress >= item.total
+            let half = BuildingArt.halfSpan(spec) * 44 * u
+            let h = BuildingArt.height(spec, built: built, extraFloors: max(0, item.level - 1)) * u
+            return CGRect(x: base.x - half, y: base.y - h, width: 2 * half, height: h + half * 0.5)
+        case .artifact(let kind):
+            return rect(ArtifactArt.size(kind), base: base, u: u)
+        case .reward(let kind):
+            return rect(RewardArt.size(kind), base: base, u: u)
+        case .story, .library:
+            return rect(CGSize(width: 40, height: 50), base: base, u: u)
         }
-        return CGRect(x: base.x - size.w / 2 * u, y: base.y - size.h * u, width: size.w * u, height: size.h * u)
+    }
+
+    private static func rect(_ size: CGSize, base: CGPoint, u: CGFloat) -> CGRect {
+        CGRect(x: base.x - size.width / 2 * u, y: base.y - size.height * u, width: size.width * u, height: size.height * u + 2 * u)
     }
 }
 
 // MARK: - Drawing
 
 enum IslandPainter {
+    /// The ground: sand on two soft layers of earth, with a warmer courtyard for each book's plot.
     static func drawTiles(_ c: inout GraphicsContext, island: Island, layout: IslandLayout) {
         let set = Set(island.tiles)
+        func corners(_ t: Island.Tile) -> [CGPoint] {
+            [layout.point(CGFloat(t.x), CGFloat(t.y)), layout.point(CGFloat(t.x + 1), CGFloat(t.y)),
+             layout.point(CGFloat(t.x + 1), CGFloat(t.y + 1)), layout.point(CGFloat(t.x), CGFloat(t.y + 1))]
+        }
+        let round = StrokeStyle(lineWidth: layout.u * 3, lineJoin: .round)
         let shadow = Path { p in
             for t in island.tiles {
-                let a = layout.point(CGFloat(t.x), CGFloat(t.y)), b = layout.point(CGFloat(t.x + 1), CGFloat(t.y))
-                let d = layout.point(CGFloat(t.x + 1), CGFloat(t.y + 1)), e = layout.point(CGFloat(t.x), CGFloat(t.y + 1))
-                let off = layout.depth * 1.8
-                p.addLines([a, b, d, e].map { CGPoint(x: $0.x, y: $0.y + off) }); p.closeSubpath()
+                p.addLines(corners(t).map { CGPoint(x: $0.x, y: $0.y + layout.depth * 2.2) }); p.closeSubpath()
             }
         }
-        c.fill(shadow, with: .color(Color.primaryBrown.opacity(0.05)))
+        c.fill(shadow, with: .color(Earthy.shadow.opacity(0.22)))
 
+        // Earth sides where the edge is exposed: an upper and a lower layer, left lighter.
+        let down = layout.depth, half = layout.depth * 0.42
+        func side(_ a: CGPoint, _ b: CGPoint, top: Color, bottom: Color) {
+            let upper = Path { $0.addLines([a, b, CGPoint(x: b.x, y: b.y + half), CGPoint(x: a.x, y: a.y + half)]); $0.closeSubpath() }
+            let lower = Path { $0.addLines([CGPoint(x: a.x, y: a.y + half), CGPoint(x: b.x, y: b.y + half),
+                                            CGPoint(x: b.x, y: b.y + down), CGPoint(x: a.x, y: a.y + down)]); $0.closeSubpath() }
+            c.fill(lower, with: .color(bottom)); c.stroke(lower, with: .color(bottom), style: round)
+            c.fill(upper, with: .color(top)); c.stroke(upper, with: .color(top), style: round)
+        }
         for t in island.tiles.sorted(by: { ($0.x + $0.y, $0.x) < ($1.x + $1.y, $1.x) }) {
-            let n = layout.point(CGFloat(t.x), CGFloat(t.y)), east = layout.point(CGFloat(t.x + 1), CGFloat(t.y))
-            let s = layout.point(CGFloat(t.x + 1), CGFloat(t.y + 1)), w = layout.point(CGFloat(t.x), CGFloat(t.y + 1))
-            let down = CGPoint(x: 0, y: layout.depth)
-            func poly(_ pts: [CGPoint], _ color: Color) {
-                c.fill(Path { p in p.addLines(pts); p.closeSubpath() }, with: .color(color))
-            }
-            // Earth sides only where the island's edge is exposed: left lighter, right darker.
-            if !set.contains(Island.Tile(x: t.x, y: t.y + 1)) {
-                poly([w, s, s + down, w + down], .stoneLight)
-            }
-            if !set.contains(Island.Tile(x: t.x + 1, y: t.y)) {
-                poly([s, east, east + down, s + down], .stoneShade)
-            }
-            let jitter = Noise.hash(t.x, t.y, seed: 31) - 0.5
-            poly([n, east, s, w], Color(hex: "#C9D29A").opacity(0.94 + jitter * 0.12))
-            poly([n, east, s, w], Color.olive.opacity(0.10 + jitter * 0.08))
+            let q = corners(t)
+            if !set.contains(Island.Tile(x: t.x, y: t.y + 1)) { side(q[3], q[2], top: Earthy.strataLeftTop, bottom: Earthy.strataLeft) }
+            if !set.contains(Island.Tile(x: t.x + 1, y: t.y)) { side(q[2], q[1], top: Earthy.strataRightTop, bottom: Earthy.strataRight) }
+        }
+        // The top, as one seamless sheet of sand.
+        let top = Path { p in for t in island.tiles { p.addLines(corners(t)); p.closeSubpath() } }
+        c.fill(top, with: .color(Earthy.ground))
+        c.stroke(top, with: .color(Earthy.ground), style: round)
+
+        // Each plot gets a soft, warmer courtyard.
+        for plot in island.plots {
+            let inset: CGFloat = 0.25
+            let x0 = CGFloat(plot.x) + inset, y0 = CGFloat(plot.y) + inset
+            let x1 = CGFloat(plot.x + plot.size) - inset, y1 = CGFloat(plot.y + plot.size) - inset
+            let yard = Path { $0.addLines([layout.point(x0, y0), layout.point(x1, y0), layout.point(x1, y1), layout.point(x0, y1)]); $0.closeSubpath() }
+            c.fill(yard, with: .color(Earthy.groundWarm.opacity(0.75)))
+            c.stroke(yard, with: .color(Earthy.groundWarm.opacity(0.75)), style: StrokeStyle(lineWidth: layout.u * 14, lineJoin: .round))
+        }
+        // A few light patches, so the sand isn't flat.
+        for t in island.tiles where Noise.hash(t.x, t.y, seed: 41) > 0.9 {
+            let p = layout.point(CGFloat(t.x) + 0.5, CGFloat(t.y) + 0.5)
+            let w = layout.u * (10 + 8 * Noise.hash(t.x, t.y, seed: 43))
+            c.fill(Path(ellipseIn: CGRect(x: p.x - w, y: p.y - w * 0.32, width: 2 * w, height: w * 0.64)), with: .color(Earthy.groundLight))
         }
     }
 
@@ -334,132 +388,66 @@ enum IslandPainter {
     }
 
     private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat) {
-        let petals: [Color] = [.terracotta, .lavender, .wheat, .cream]
-        let hue = item.seed % petals.count
-        let petal = petals[hue]
-        func ellipse(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat, _ color: Color) {
-            c.fill(Path(ellipseIn: CGRect(x: (x - w / 2) * u, y: (y - h / 2) * u, width: w * u, height: h * u)), with: .color(color))
+        if let art = art(for: item) {
+            c.draw(Image(decorative: art.image, scale: 2), in: imageRect(art, item: item, tileWidth: tileWidth))
+            return
         }
-        func rect(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat, _ color: Color, radius: CGFloat = 0) {
-            c.fill(Path(roundedRect: CGRect(x: x * u, y: y * u, width: w * u, height: h * u), cornerRadius: radius * u), with: .color(color))
-        }
-        func poly(_ pts: [(CGFloat, CGFloat)], _ color: Color) {
-            c.fill(Path { p in p.addLines(pts.map { CGPoint(x: $0.0 * u, y: $0.1 * u) }); p.closeSubpath() }, with: .color(color))
-        }
-        func flower(_ x: CGFloat, _ y: CGFloat, _ color: Color) {
-            rect(x - 0.4, y - 4, 0.8, 4, .olive, radius: 0.4)
-            ellipse(x, y - 4.4, 2.8, 2.6, color)
-        }
-        func shadow(_ w: CGFloat) { ellipse(0, 0.6, w, w * 0.32, Color.primaryBrown.opacity(0.10)) }
-        func tree(canopy: CGFloat, trunk: CGFloat, light: Color = .olive) {
-            shadow(canopy * 0.9)
-            rect(-trunk * 0.12, -trunk, trunk * 0.24, trunk, Color(hex: "#A9805C"), radius: trunk * 0.12)
-            ellipse(canopy * 0.12, -trunk - canopy * 0.28, canopy, canopy * 0.82, Color(hex: "#929E66"))
-            ellipse(-canopy * 0.08, -trunk - canopy * 0.36, canopy * 0.95, canopy * 0.8, light)
-        }
-        /// An isometric box with a pyramid roof (base at the origin).
-        func building(width w: CGFloat, height h: CGFloat, roof: Color) {
-            shadow(w * 1.3)
-            poly([(-w / 2, 0), (0, w / 4), (0, w / 4 - h), (-w / 2, -h)], .stoneLight)
-            poly([(0, w / 4), (w / 2, 0), (w / 2, -h), (0, w / 4 - h)], .stoneShade)
-            let rw = w + 2
-            poly([(-rw / 2, -h), (0, -h + rw / 4), (0, -h - w * 0.5)], roof)
-            poly([(0, -h + rw / 4), (rw / 2, -h), (0, -h - w * 0.5)], roof.opacity(0.82))
-            rect(-w * 0.32, -h * 0.55, w * 0.14, h * 0.45, Color.primaryBrown.opacity(0.2), radius: w * 0.07)
-        }
-
+        let pen = IsoPen(c: c, u: u)
         switch item.kind {
-        case .tuft:
-            ellipse(-1.4, 0, 4.6, 2.2, Color.olive.opacity(0.85))
-            ellipse(1.6, -0.4, 4, 2, Color(hex: "#929E66").opacity(0.8))
-        case .flower:
-            ellipse(0, 0.2, 4.6, 2, Color.olive.opacity(0.7))
-            flower(0, 0, petal)
-        case .flowers:
-            ellipse(0, 0.4, 8, 2.6, Color.olive.opacity(0.7))
-            flower(-2.4, 0.6, petal)
-            flower(0.6, -0.4, petals[(hue + 1) % 4])
-            flower(2.8, 0.8, petal)
-        case .bush:
-            shadow(11)
-            ellipse(1.6, -3, 11, 7.5, Color(hex: "#929E66"))
-            ellipse(-0.8, -3.8, 10.5, 7, .olive)
-            ellipse(-2.6, -5.2, 2, 2, petal)
-        case .rock:
-            shadow(9)
-            ellipse(1.4, -1.8, 8, 5, .stoneShade)
-            ellipse(-0.6, -2.4, 7.4, 4.8, .stoneLight)
-        case .olive:
-            tree(canopy: 15, trunk: 9)
-        case .cypress:
-            shadow(7)
-            ellipse(1, -10, 6.4, 20, Color(hex: "#929E66"))
-            ellipse(-0.6, -10.6, 6, 20, .olive)
-        case .palm:
-            shadow(10)
-            rect(-0.9, -16, 1.8, 16, Color(hex: "#A9805C"), radius: 0.9)
-            for (dx, dy) in [(-6.0, -15.0), (6.0, -15.0), (-3.5, -18.0), (3.5, -18.0)] {
-                ellipse(dx, dy, 9, 3.6, Color(hex: "#9DAE6C"))
+        case .building(let bookID):
+            if let custom = ArtAssets.building(bookID, level: buildingLevel(item)) {
+                drawCustom(&c, custom, tileWidth: tileWidth)
+                return
             }
-        case .sheep:
-            shadow(8)
-            for (dx, dy) in [(-2.0, -3.4), (0.4, -4.4), (2.2, -3.2), (0.0, -2.4)] { ellipse(dx, dy, 4.4, 4, .cream) }
-            ellipse(4.6, -4, 2.6, 2.4, Color(hex: "#6A5640"))
-            rect(-2.2, -1.6, 0.8, 1.8, Color(hex: "#6A5640"))
-            rect(1.6, -1.6, 0.8, 1.8, Color(hex: "#6A5640"))
-        case .tent:
-            shadow(16)
-            poly([(-8, 0), (0, 3.5), (0, -11)], petal == .cream ? .terracotta : petal)
-            poly([(0, 3.5), (8, 0), (0, -11)], (petal == .cream ? Color.terracotta : petal).opacity(0.8))
-            poly([(-1.6, 2.8), (0.6, 3.3), (-0.4, -2.2)], Color.primaryBrown.opacity(0.25))
-        case .well:
-            shadow(14)
-            ellipse(0, -2, 11, 5, .stoneShade)
-            rect(-5.5, -6, 11, 4, .stoneLight)
-            ellipse(0, -6, 11, 5, .stoneLight)
-            ellipse(0, -6, 7.6, 3.2, .water)
-            rect(-4.6, -15, 0.9, 9, Color(hex: "#A9805C"))
-            rect(3.7, -15, 0.9, 9, Color(hex: "#A9805C"))
-            poly([(-6.5, -14), (0, -18.5), (6.5, -14)], .terracotta)
-        case .house:
-            building(width: 14, height: 9, roof: item.seed % 3 == 0 ? .lavender : .terracotta)
-        case .fruitTree:
-            tree(canopy: 17, trunk: 10)
-            for i in 0..<9 {
-                let a = CGFloat(i) * 2.4, r = 2 + CGFloat(i % 3) * 2
-                ellipse(cos(a) * r * 1.3 - 1, -16 + sin(a) * r * 0.8, 2.2, 2.2, i % 2 == 0 ? .terracotta : .wheat)
+            BuildingArt.draw(pen, spec: BuildingData.spec(for: bookID), progress: item.progress, total: item.total,
+                             extraFloors: max(0, item.level - 1), seed: item.seed)
+        case .artifact(let kind):
+            if let custom = ArtAssets.artifact(kind.rawValue, level: item.level) {
+                drawCustom(&c, custom, tileWidth: tileWidth)
+                return
             }
-            rect(-1.4, -6.5, 2.8, 1.2, .lavender, radius: 0.6)
-        case .lantern:
-            c.fill(Path(ellipseIn: CGRect(x: -9 * u, y: -21 * u, width: 18 * u, height: 14 * u)),
-                   with: .radialGradient(Gradient(colors: [Color.wheat.opacity(0.55), Color.wheat.opacity(0)]),
-                                         center: CGPoint(x: 0, y: -14 * u), startRadius: 0, endRadius: 9 * u))
-            shadow(5)
-            rect(-0.5, -12, 1, 12, Color(hex: "#7A4A2A"))
-            rect(-2, -16, 4, 4.5, .wheat, radius: 1)
-            ellipse(0, -14, 2.2, 2.2, .cream)
-            poly([(-2.6, -16), (0, -18), (2.6, -16)], Color(hex: "#7A4A2A"))
-        case .building(let style):
-            IslandBuildings.draw(&c, style: style, progress: item.progress, total: item.total, u: u, seed: item.seed)
-        case .library, .landmark:
-            guard let art = art(for: item.kind) else { return }
-            c.draw(Image(decorative: art.image, scale: 2), in: imageRect(art, kind: item.kind, tileWidth: tileWidth))
+            ArtifactArt.draw(pen, kind, level: item.level, seed: item.seed)
+        case .reward(let kind):
+            RewardArt.draw(pen, kind, seed: item.seed)
+        case .story, .library:
+            break // drawn from an image above
         }
     }
 
-    /// The pre-drawn picture for image-based kinds (the Library and landmarks).
-    static func art(for kind: Island.Kind) -> LandmarkImage? {
-        switch kind {
+    /// Art-swap level for a building: 0 foundations, 1 built, 2–4 built with extra floors.
+    static func buildingLevel(_ item: Island.Item) -> Int {
+        guard item.total > 0, item.progress >= item.total else { return 0 }
+        return min(4, max(1, item.level))
+    }
+
+    /// Hand-made art, bottom-centre on the ground point, at `ArtAssets.pointsPerTile` per tile.
+    private static func drawCustom(_ c: inout GraphicsContext, _ art: ArtAssets.Art, tileWidth: CGFloat) {
+        let k = tileWidth / ArtAssets.pointsPerTile
+        let w = art.size.width * k, h = art.size.height * k
+        c.draw(Image(decorative: art.image, scale: 1), in: CGRect(x: -w / 2, y: -h, width: w, height: h))
+    }
+
+    /// The pre-drawn picture for image-based kinds (the Library and story objects).
+    static func art(for item: Island.Item) -> LandmarkImage? {
+        switch item.kind {
         case .library: LandmarkMiniCache.library()
-        case .landmark(let style): LandmarkMiniCache.image(style)
+        case .story(let id): ChapterLandmarks.entry(id: id).flatMap { LandmarkMiniCache.story($0, level: item.level) }
         default: nil
         }
     }
 
-    /// Where an image-based kind is drawn, relative to its ground point. Shared by drawing and tapping.
-    static func imageRect(_ art: LandmarkImage, kind: Island.Kind, tileWidth: CGFloat) -> CGRect {
-        // The Library's picture covers a 3-tile footprint; it's shown on one tile.
-        let k = tileWidth / Iso.tileWidth * 0.95 / (kind == .library ? 3 : 1)
+    /// Where an image-based item is drawn, relative to its ground point. Shared by drawing and tapping.
+    static func imageRect(_ art: LandmarkImage, item: Island.Item, tileWidth: CGFloat) -> CGRect {
+        let k: CGFloat
+        switch item.kind {
+        case .story(let id):
+            // A story object is shown about one tile across, whatever its size on the world map.
+            let size = CGFloat(ChapterLandmarks.entry(id: id)?.size ?? 1)
+            k = tileWidth / Iso.tileWidth * 0.8 / size
+        default:
+            // The Library's picture covers a 3-tile footprint; it's shown on its 2 × 2 spot.
+            k = tileWidth / Iso.tileWidth * 0.95 * 2 / 3
+        }
         let w = art.pointSize.width * k, h = art.pointSize.height * k
         return CGRect(x: -w / 2, y: -(1 - art.anchor.y) * h, width: w, height: h)
     }
@@ -467,11 +455,11 @@ enum IslandPainter {
     /// The bounds of what's actually drawn for an item, in view points (before panning).
     static func drawnBounds(of item: Island.Item, layout: IslandLayout) -> CGRect {
         let base = layout.point(item.gx, item.gy)
-        guard let art = art(for: item.kind) else {
+        guard let art = art(for: item) else {
             return IslandHitTester.shape(of: item, base: base, u: layout.u)
         }
-        let rect = imageRect(art, kind: item.kind, tileWidth: layout.scale * 2).offsetBy(dx: base.x, dy: base.y)
-        let visible = LandmarkMiniCache.opaqueUnitRect(item.kind, art)
+        let rect = imageRect(art, item: item, tileWidth: layout.scale * 2).offsetBy(dx: base.x, dy: base.y)
+        let visible = LandmarkMiniCache.opaqueUnitRect(item.kind, level: item.level, art)
         return CGRect(x: rect.minX + visible.minX * rect.width, y: rect.minY + visible.minY * rect.height,
                       width: visible.width * rect.width, height: visible.height * rect.height)
     }
@@ -480,15 +468,16 @@ enum IslandPainter {
 /// Small finished-landmark pictures for the island, drawn once per style.
 @MainActor
 enum LandmarkMiniCache {
-    private static var images: [BuildingStyle: LandmarkImage] = [:]
+    private static var stories: [ChapterObjectLook: LandmarkImage] = [:]
     private static var libraryArt: LandmarkImage?
-    private static var opaque: [Island.Kind: CGRect] = [:]
+    private static var opaque: [String: CGRect] = [:]
 
-    /// The visible part of an item's picture (a unit rect, y down), measured once per kind.
-    static func opaqueUnitRect(_ kind: Island.Kind, _ art: LandmarkImage) -> CGRect {
-        if let cached = opaque[kind] { return cached }
+    /// The visible part of an item's picture (a unit rect, y down), measured once per picture.
+    static func opaqueUnitRect(_ kind: Island.Kind, level: Int, _ art: LandmarkImage) -> CGRect {
+        let key = "\(kind)-\(level)"
+        if let cached = opaque[key] { return cached }
         let rect = OpaqueBounds.unitRect(of: art.image)
-        opaque[kind] = rect
+        opaque[key] = rect
         return rect
     }
 
@@ -499,11 +488,12 @@ enum LandmarkMiniCache {
         return libraryArt
     }
 
-    static func image(_ style: BuildingStyle) -> LandmarkImage? {
-        if let cached = images[style] { return cached }
-        let look = LandmarkLook(style: style, stage: .complete, level: .base, size: 1, read: 1, total: 1)
-        guard let image = LandmarkPainter.render(look, scale: 2) else { return nil }
-        images[style] = image
+    /// A story object, drawn by the world map's painter (its depth grows with rereads).
+    static func story(_ entry: ChapterLandmark, level: Int) -> LandmarkImage? {
+        let look = ChapterObjectLook(kind: entry.kind, depth: max(1, min(5, level)), variant: entry.variant, size: entry.size)
+        if let cached = stories[look] { return cached }
+        guard let image = ChapterObjectPainter.render(look, scale: 2) else { return nil }
+        stories[look] = image
         return image
     }
 }
@@ -512,61 +502,127 @@ private extension CGPoint {
     static func + (a: CGPoint, b: CGPoint) -> CGPoint { CGPoint(x: a.x + b.x, y: a.y + b.y) }
 }
 
-// MARK: - Placement engine
+// MARK: - Plots
 
-/// Decides where things go on the island. Reading fills tiles outward from the middle;
-/// feature buildings (the Library, and any future ones) have reserved tiles near the centre
-/// that reading never uses, so each building's spot is always free when it unlocks.
-struct IslandPlacement {
-    /// Reserved tile (index into the growth order) for each feature building.
-    static let reserved: [Island.Feature: Int] = [.library: 1]
+/// Lays out books' plots. The starting square sits at the origin, with the Library's spot
+/// beside it; each new book's plot goes in the nearest free place, keeping a one-tile path
+/// between plots. Plot sizes depend only on the book's length, so nothing ever moves.
+struct IslandPlots {
+    /// The starting square (2 × 2 tiles from the origin), where your character begins.
+    static let start = (x: 0, y: 0, size: 2)
+    /// The Library's spot, beside the starting square.
+    static let library = (x: -3, y: 0, size: 2)
 
-    private(set) var tileIndex = 0
-    private var used = 0
-    private var anyPlaced = false
+    private var core: Set<Island.Tile> = []
+    private var regions: [(x: Int, y: Int, size: Int)] = []
 
-    private static var reservedIndices: Set<Int> { Set(reserved.values) }
-
-    /// Places a reading item in the next free quarter-spots.
-    mutating func place(_ kind: Island.Kind, seed: Int, source: Island.Source) -> Island.Item {
-        if anyPlaced, used + kind.weight > 4 { tileIndex += 1; used = 0 }
-        while Self.reservedIndices.contains(tileIndex) { tileIndex += 1; used = 0 }
-        anyPlaced = true
-        let order = Island.tileOrderShared
-        let tile = order[min(tileIndex, order.count - 1)]
-        let spot = Island.spotCentre(start: used, weight: kind.weight)
-        let jx = kind.weight == 1 ? (Island.unit(seed, 1) - 0.5) * 0.14 : 0
-        let jy = kind.weight == 1 ? (Island.unit(seed, 2) - 0.5) * 0.14 : 0
-        used += kind.weight
-        // Buildings get a tile of open grass after them, so neighbours don't hide each other.
-        if case .building = kind { tileIndex += 1 }
-        let centre = CGPoint(x: CGFloat(tile.x) + spot.x, y: CGFloat(tile.y) + spot.y)
-        return Island.Item(kind: kind, gx: centre.x + jx, gy: centre.y + jy, seed: seed, source: source,
-                           footprint: Self.footprint(centre: centre, weight: kind.weight))
+    init() {
+        for r in [Self.start, Self.library] { mark(r.x, r.y, r.size) }
     }
 
-    /// Places a feature building on its reserved tile.
-    func place(_ feature: Island.Feature) -> Island.Item {
-        let tile = Island.tileOrderShared[Self.reserved[feature] ?? 0]
-        let centre = CGPoint(x: CGFloat(tile.x) + 0.5, y: CGFloat(tile.y) + 0.5)
-        return Island.Item(kind: .library, gx: centre.x, gy: centre.y, seed: 0, source: .feature(feature),
-                           footprint: Self.footprint(centre: centre, weight: 4))
+    /// Side of a book's plot (odd, so the building sits on the middle tile): big enough for
+    /// every chapter (four spots a tile) plus the rewards.
+    static func size(chapters: Int) -> Int {
+        var s = 3
+        while 4 * (s * s - 1) < chapters + RewardData.firstChapterSlot { s += 2 }
+        return s
     }
 
-    /// Tiles shown: everything used, the reserved spots of unlocked features, and some open grass.
-    func tiles(including features: Set<Island.Feature>) -> [Island.Tile] {
-        let usedTiles = anyPlaced ? tileIndex + 1 : 0
-        let featureTiles = features.compactMap { Self.reserved[$0] }.map { $0 + 1 }.max() ?? 0
-        let count = min(Island.tileOrderShared.count, max(4, usedTiles + 2 + usedTiles / 5, featureTiles))
-        return Array(Island.tileOrderShared.prefix(count))
-    }
+    private static let candidates: [(dx: Int, dy: Int)] = {
+        let r = 46
+        var all: [(dx: Int, dy: Int, d: Double)] = []
+        for dy in -r...r { for dx in -r...r { all.append((dx, dy, hypot(Double(dx), Double(dy)))) } }
+        return all.sorted { ($0.d, $0.dy, $0.dx) < ($1.d, $1.dy, $1.dx) }.map { ($0.dx, $0.dy) }
+    }()
 
-    /// Ground patch: a quarter tile for small things, half for medium, the whole tile for big ones.
-    static func footprint(centre: CGPoint, weight: Int) -> CGRect {
-        switch weight {
-        case 4: return CGRect(x: centre.x - 0.5, y: centre.y - 0.5, width: 1, height: 1)
-        case 2: return CGRect(x: centre.x - 0.5, y: centre.y - 0.25, width: 1, height: 0.5)
-        default: return CGRect(x: centre.x - 0.25, y: centre.y - 0.25, width: 0.5, height: 0.5)
+    mutating func place(_ bookID: String, size: Int) -> Island.Plot {
+        for c in Self.candidates {
+            // Centre the plot on the candidate offset from the starting square's middle.
+            let x = 1 + c.dx - size / 2, y = 1 + c.dy - size / 2
+            if fits(x, y, size) {
+                mark(x, y, size)
+                regions.append((x, y, size))
+                return Island.Plot(bookID: bookID, x: x, y: y, size: size)
+            }
         }
+        return Island.Plot(bookID: bookID, x: 60, y: 60, size: size) // never reached in practice
+    }
+
+    private func fits(_ x: Int, _ y: Int, _ size: Int) -> Bool {
+        for ty in (y - 1)...(y + size) {
+            for tx in (x - 1)...(x + size) where core.contains(Island.Tile(x: tx, y: ty)) { return false }
+        }
+        return true
+    }
+
+    private mutating func mark(_ x: Int, _ y: Int, _ size: Int) {
+        for ty in y..<(y + size) { for tx in x..<(x + size) { core.insert(Island.Tile(x: tx, y: ty)) } }
+    }
+
+    /// Land: the starting square, every plot (and the Library's spot once it's built), each
+    /// with a one-tile border so plots are joined by paths. The starting square comes first.
+    func tiles(features: Set<Island.Feature>) -> [Island.Tile] {
+        var shown = [Self.start] + regions
+        if features.contains(.library) { shown.append(Self.library) }
+        var seen: Set<Island.Tile> = []
+        var out: [Island.Tile] = []
+        for ty in Self.start.y..<(Self.start.y + Self.start.size) {
+            for tx in Self.start.x..<(Self.start.x + Self.start.size) {
+                let t = Island.Tile(x: tx, y: ty)
+                if seen.insert(t).inserted { out.append(t) }
+            }
+        }
+        for r in shown {
+            for ty in (r.y - 1)...(r.y + r.size) {
+                for tx in (r.x - 1)...(r.x + r.size) {
+                    let t = Island.Tile(x: tx, y: ty)
+                    if seen.insert(t).inserted { out.append(t) }
+                }
+            }
+        }
+        // Fill any water enclosed by land, so there are no holes.
+        let xs = out.map(\.x), ys = out.map(\.y)
+        guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return out }
+        var outside: Set<Island.Tile> = []
+        var queue = [Island.Tile(x: x0 - 1, y: y0 - 1)]
+        while let t = queue.popLast() {
+            guard t.x >= x0 - 1, t.x <= x1 + 1, t.y >= y0 - 1, t.y <= y1 + 1,
+                  !seen.contains(t), outside.insert(t).inserted else { continue }
+            queue += [Island.Tile(x: t.x + 1, y: t.y), Island.Tile(x: t.x - 1, y: t.y),
+                      Island.Tile(x: t.x, y: t.y + 1), Island.Tile(x: t.x, y: t.y - 1)]
+        }
+        for ty in y0...y1 {
+            for tx in x0...x1 {
+                let t = Island.Tile(x: tx, y: ty)
+                if !seen.contains(t), !outside.contains(t) { out.append(t) }
+            }
+        }
+        return out
+    }
+
+    /// The spots in a plot, in the order they're used: nearest the building first, front first.
+    /// Four spots a tile; the building's middle tile is left free.
+    static func slots(in plot: Island.Plot) -> [CGPoint] {
+        let mid = plot.size / 2
+        let c = plot.centre
+        var tiles: [(tx: Int, ty: Int, ring: Int, front: CGFloat, side: CGFloat)] = []
+        for ty in 0..<plot.size {
+            for tx in 0..<plot.size {
+                guard tx != mid || ty != mid else { continue }
+                let ring = max(abs(tx - mid), abs(ty - mid))
+                let dx = CGFloat(plot.x + tx) + 0.5 - c.x, dy = CGFloat(plot.y + ty) + 0.5 - c.y
+                tiles.append((plot.x + tx, plot.y + ty, ring, dx + dy, dx - dy))
+            }
+        }
+        tiles.sort { ($0.ring, -$0.front, abs($0.side), $0.side) < ($1.ring, -$1.front, abs($1.side), $1.side) }
+        let spots: [CGPoint] = [CGPoint(x: 0.72, y: 0.72), CGPoint(x: 0.28, y: 0.72), CGPoint(x: 0.72, y: 0.28), CGPoint(x: 0.28, y: 0.28)]
+        return tiles.flatMap { t in spots.map { CGPoint(x: CGFloat(t.tx) + $0.x, y: CGFloat(t.ty) + $0.y) } }
+    }
+
+    static func item(for feature: Island.Feature) -> Island.Item {
+        let r = Self.library
+        let centre = CGPoint(x: CGFloat(r.x) + CGFloat(r.size) / 2, y: CGFloat(r.y) + CGFloat(r.size) / 2)
+        return Island.Item(kind: .library, gx: centre.x, gy: centre.y, seed: 0, source: .feature(feature),
+                           footprint: CGRect(x: centre.x - 0.95, y: centre.y - 0.95, width: 1.9, height: 1.9))
     }
 }

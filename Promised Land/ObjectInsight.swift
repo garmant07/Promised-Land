@@ -32,37 +32,46 @@ struct InsightSubject: Identifiable, Equatable {
         let id = "island-\(bookID)-\(item.seed)-\(item.gx)-\(item.gy)"
         switch item.source {
         case .chapter(_, let chapter):
+            let times = item.level == 1 ? "once" : item.level == 2 ? "twice" : "\(item.level) times"
+            let level = item.level >= 5 ? "Fully grown: level 5 of 5." : "Level \(item.level) of 5 (read \(times)). Reread it to grow it."
             return InsightSubject(id: id, title: name(of: item.kind), region: region,
-                                  description: "Grew when you read \(book.name) \(chapter).",
+                                  description: "Placed when you read \(book.name) \(chapter). \(level)",
                                   bookID: bookID, chapters: [chapter], draftReference: nil)
+        case .story(let storyID, _):
+            return ChapterLandmarks.entry(id: storyID).map { story($0) }
         case .quiz:
-            return InsightSubject(id: id, title: "Fruit tree", region: region,
-                                  description: "Grew when you passed the \(book.name) quiz.",
+            return InsightSubject(id: id, title: "Banner", region: region,
+                                  description: "Raised when you passed the \(book.name) quiz.",
                                   bookID: bookID, chapters: [], draftReference: nil)
         case .verse:
-            return InsightSubject(id: id, title: "Lantern", region: region,
-                                  description: "Lit when you memorised a verse from \(book.name).",
+            return InsightSubject(id: id, title: name(of: item.kind), region: region,
+                                  description: item.kind == .reward(.lantern)
+                                    ? "Lit when you memorised a verse from \(book.name)."
+                                    : "Grew when you memorised a verse from \(book.name).",
                                   bookID: bookID, chapters: [], draftReference: nil)
         case .book:
             let name = WorldData.landmark(bookID: bookID)?.name ?? book.name
-            let text: String
-            if item.progress == 0 {
-                text = "Foundations laid when you opened \(book.name). Read a chapter to start building."
-            } else if item.progress >= item.total {
-                text = "Finished: every chapter of \(book.name) is built in."
-            } else {
-                text = "Each chapter of \(book.name) adds to it: \(item.progress) of \(item.total) built so far."
-            }
-            return InsightSubject(id: id, title: name, region: region, description: text,
-                                  bookID: bookID, chapters: [], draftReference: nil)
-        case .finished:
-            let name = WorldData.landmark(bookID: bookID)?.name ?? book.name
-            return InsightSubject(id: id, title: name, region: region,
-                                  description: "Built when you finished reading \(book.name).",
+            return InsightSubject(id: id, title: name, region: region, description: buildingText(item, book: book),
                                   bookID: bookID, chapters: [], draftReference: nil)
         case .feature:
             return nil
         }
+    }
+
+    /// What a building's card says: foundations, walls going up, built, or extra floors.
+    static func buildingText(_ item: Island.Item, book: Book) -> String {
+        if item.progress == 0 {
+            return "Foundations laid when you opened \(book.name). Each chapter you read places something on the plot; finish all \(item.total) to raise the building."
+        }
+        if item.progress < item.total {
+            let left = item.total - item.progress
+            return "The walls are going up: \(item.progress) of \(item.total) chapters read. \(left) more to raise the building."
+        }
+        if item.level <= 1 {
+            return "Built when you finished reading \(book.name). Read it all again to add a floor."
+        }
+        let floors = item.level - 1
+        return "Built when you finished \(book.name), and read through \(item.level) times: \(floors) extra \(floors == 1 ? "floor" : "floors")."
     }
 
     static func story(_ entry: ChapterLandmark) -> InsightSubject {
@@ -74,21 +83,33 @@ struct InsightSubject: Identifiable, Equatable {
 
     static func name(of kind: Island.Kind) -> String {
         switch kind {
-        case .tuft: "Grass tuft"
-        case .flower: "Flower"
-        case .flowers: "Flowers"
-        case .bush: "Bush"
-        case .rock: "Stone"
-        case .olive: "Olive tree"
-        case .cypress: "Cypress"
-        case .palm: "Palm"
-        case .sheep: "Sheep"
-        case .tent: "Tent"
-        case .well: "Well"
-        case .house: "House"
-        case .fruitTree: "Fruit tree"
-        case .lantern: "Lantern"
-        case .landmark, .building: "Landmark"
+        case .artifact(let k):
+            switch k {
+            case .olive: "Olive tree"
+            case .palm: "Palm"
+            case .cypress: "Cypress"
+            case .bush: "Bush"
+            case .flowers: "Flowers"
+            case .sheep: "Sheep"
+            case .tent: "Tent"
+            case .well: "Well"
+            case .scroll: "Scroll"
+            case .jar: "Clay jar"
+            case .stele: "Standing stone"
+            case .altar: "Altar"
+            case .boat: "Boat"
+            case .fishBasket: "Basket of fish"
+            case .wheat: "Wheat"
+            case .vine: "Vine"
+            case .oilLamp: "Oil lamp"
+            case .harp: "Harp"
+            case .domedHouse: "House"
+            }
+        case .reward(.banner): "Banner"
+        case .reward(.lantern): "Lantern"
+        case .reward(.fruitTree): "Fruit tree"
+        case .story(let id): ChapterLandmarks.entry(id: id)?.name ?? "Story"
+        case .building: "Building"
         case .library: "Library"
         }
     }
