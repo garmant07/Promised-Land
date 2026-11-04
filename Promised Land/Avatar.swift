@@ -4,19 +4,23 @@ import SwiftData
 // MARK: - Model
 
 /// What your character looks like. Stored in SwiftData as `AvatarProfile`.
-struct Avatar: Equatable {
+struct Avatar: Hashable {
     enum Hair: String, CaseIterable, Identifiable {
-        case headcloth, short, long, curly, bun
+        case short, long, curly, bun, bald
         var id: String { rawValue }
-        var title: String {
-            switch self {
-            case .headcloth: "Headcloth"
-            case .short: "Short"
-            case .long: "Long"
-            case .curly: "Curly"
-            case .bun: "Bun"
-            }
-        }
+        var title: String { rawValue.capitalized }
+    }
+
+    enum Beard: String, CaseIterable, Identifiable {
+        case none, stubble, short, long
+        var id: String { rawValue }
+        var title: String { self == .none ? "None" : rawValue.capitalized }
+    }
+
+    enum Covering: String, CaseIterable, Identifiable {
+        case none, headcloth, veil, turban, wreath
+        var id: String { rawValue }
+        var title: String { self == .none ? "None" : rawValue.capitalized }
     }
 
     enum Sandals: String, CaseIterable, Identifiable {
@@ -29,17 +33,36 @@ struct Avatar: Equatable {
     var name = ""
     var robe = Avatar.robes[0]
     var skin = Avatar.skins[1]
-    var hair: Hair = .headcloth
-    var hairColor = Avatar.hairColors[0]
+    var hair: Hair = .long
+    var hairColor = Avatar.hairColors[3]
     var sash = Avatar.sashes[0]
     var sandals: Sandals = .tan
+    var beard: Beard = .none
+    var covering: Covering = .headcloth
+    var coveringColor = Avatar.cloths[0]
 
     static let `default` = Avatar()
 
     static let robes = ["#E39A7E", "#BFA9DA", "#A9B47C", "#93AECF", "#E9C77F", "#C98F6E", "#F2EBDD", "#7A4A2A"]
     static let skins = ["#F6D9C0", "#EBC3A0", "#D9A57E", "#B98159", "#8E5E3D", "#5E3D28"]
-    static let hairColors = ["#FAF0DE", "#E8C192", "#B48A6A", "#8A5A3C", "#4A3326", "#2F2418", "#A9A29A"]
+    static let hairColors = ["#FAF0DE", "#E8C192", "#B48A6A", "#8A5A3C", "#4A3326", "#2F2418", "#A9A29A", "#EADCC9"]
     static let sashes = ["#FAF0DE", "#E39A7E", "#BFA9DA", "#A9B47C", "#E9C77F", "#7A4A2A"]
+    static let cloths = ["#F1E6D7", "#FAF0DE", "#E39A7E", "#BFA9DA", "#93AECF", "#E9C77F", "#A9B47C"]
+
+    /// A random look (keeps the name).
+    func randomised() -> Avatar {
+        var a = self
+        a.robe = Self.robes.randomElement()!
+        a.skin = Self.skins.randomElement()!
+        a.hair = Hair.allCases.randomElement()!
+        a.hairColor = Self.hairColors.randomElement()!
+        a.sash = Self.sashes.randomElement()!
+        a.sandals = Sandals.allCases.randomElement()!
+        a.beard = Bool.random() ? .none : Beard.allCases.randomElement()!
+        a.covering = Covering.allCases.randomElement()!
+        a.coveringColor = Self.cloths.randomElement()!
+        return a
+    }
 }
 
 /// Your character, saved on this device. There is one.
@@ -52,15 +75,38 @@ final class AvatarProfile {
     var hairColor: String
     var sash: String
     var sandals: String
+    // Added in the avatar creator rebuild; defaults keep earlier characters as they were.
+    var beard: String = "none"
+    /// "legacy" until edited: earlier versions had a headcloth as a hair style.
+    var covering: String = "legacy"
+    var coveringColor: String = ""
 
     init(_ a: Avatar) {
         name = a.name; robe = a.robe; skin = a.skin; hair = a.hair.rawValue
         hairColor = a.hairColor; sash = a.sash; sandals = a.sandals.rawValue
+        beard = a.beard.rawValue; covering = a.covering.rawValue; coveringColor = a.coveringColor
     }
 
     var avatar: Avatar {
-        Avatar(name: name, robe: robe, skin: skin, hair: Avatar.Hair(rawValue: hair) ?? .headcloth,
-               hairColor: hairColor, sash: sash, sandals: Avatar.Sandals(rawValue: sandals) ?? .tan)
+        var a = Avatar(name: name, robe: robe, skin: skin, hair: Avatar.Hair(rawValue: hair) ?? .long,
+                       hairColor: hairColor, sash: sash, sandals: Avatar.Sandals(rawValue: sandals) ?? .tan,
+                       beard: Avatar.Beard(rawValue: beard) ?? .none)
+        if covering == "legacy" {
+            // The old "headcloth" hair style becomes a headcloth in the same colour over long hair.
+            a.covering = hair == "headcloth" ? .headcloth : .none
+            a.coveringColor = hairColor
+            if hair == "headcloth" { a.hairColor = Avatar.hairColors[3] }
+        } else {
+            a.covering = Avatar.Covering(rawValue: covering) ?? .none
+            a.coveringColor = coveringColor.isEmpty ? Avatar.cloths[0] : coveringColor
+        }
+        return a
+    }
+
+    /// Writes a whole look back (from the editor).
+    func apply(_ a: Avatar) {
+        robe = a.robe; skin = a.skin; hair = a.hair.rawValue; hairColor = a.hairColor; sash = a.sash
+        sandals = a.sandals.rawValue; beard = a.beard.rawValue; covering = a.covering.rawValue; coveringColor = a.coveringColor
     }
 
     /// Makes sure a profile exists. The first time, it carries over the character
@@ -73,8 +119,12 @@ final class AvatarProfile {
         legacy.name = d.string(forKey: LegacyAvatarKeys.name) ?? ""
         legacy.robe = d.string(forKey: LegacyAvatarKeys.robe) ?? legacy.robe
         legacy.skin = d.string(forKey: LegacyAvatarKeys.skin) ?? legacy.skin
-        legacy.hair = d.string(forKey: LegacyAvatarKeys.hair).flatMap(Avatar.Hair.init(rawValue:)) ?? legacy.hair
-        legacy.hairColor = d.string(forKey: LegacyAvatarKeys.hairColor) ?? legacy.hairColor
+        let oldHair = d.string(forKey: LegacyAvatarKeys.hair)
+        legacy.hair = oldHair.flatMap(Avatar.Hair.init(rawValue:)) ?? legacy.hair
+        if let oldColor = d.string(forKey: LegacyAvatarKeys.hairColor) {
+            if oldHair == "headcloth" { legacy.coveringColor = oldColor } else { legacy.hairColor = oldColor }
+        }
+        if let oldHair, oldHair != "headcloth" { legacy.covering = .none }
         let profile = AvatarProfile(legacy)
         context.insert(profile)
         try? context.save()
@@ -124,11 +174,12 @@ struct AvatarFigure: View {
             // Shadow
             ellipse(CGRect(x: 3, y: 32.6, width: 14, height: 3.2), Color.primaryBrown.opacity(0.12))
 
+            let cloth = Color(hex: avatar.coveringColor)
             // Hair or cloth that falls behind the head and shoulders
-            switch avatar.hair {
-            case .long: rounded(CGRect(x: 2.2, y: 6, width: 15.6, height: 16), 6, hair)
-            case .headcloth: rounded(CGRect(x: 2, y: 5, width: 16, height: 15), 6, hair)
-            default: break
+            switch avatar.covering {
+            case .headcloth: rounded(CGRect(x: 2, y: 5, width: 16, height: 15), 6, cloth)
+            case .veil: rounded(CGRect(x: 1.6, y: 4, width: 16.8, height: 21), 7, cloth)
+            default: if avatar.hair == .long { rounded(CGRect(x: 2.2, y: 6, width: 15.6, height: 16), 6, hair) }
             }
 
             // Little robe, with the right side in shade
@@ -158,11 +209,34 @@ struct AvatarFigure: View {
             ellipse(CGRect(x: 5, y: 11, width: 2.6, height: 1.4), Color.terracotta.opacity(0.25))
             ellipse(CGRect(x: 12.4, y: 11, width: 2.6, height: 1.4), Color.terracotta.opacity(0.25))
 
-            // Hair or covering on top
+            // Beard (under the eyes, over the chin)
+            let beardColor = hair
+            switch avatar.beard {
+            case .none: break
+            case .stubble:
+                ellipse(CGRect(x: 5.2, y: 11.6, width: 9.6, height: 4.2), beardColor.opacity(0.35))
+            case .short:
+                let b = Path { p in
+                    p.move(to: CGPoint(x: 4.2, y: 10.8))
+                    p.addQuadCurve(to: CGPoint(x: 10, y: 17.4), control: CGPoint(x: 4.6, y: 17))
+                    p.addQuadCurve(to: CGPoint(x: 15.8, y: 10.8), control: CGPoint(x: 15.4, y: 17))
+                    p.addQuadCurve(to: CGPoint(x: 4.2, y: 10.8), control: CGPoint(x: 10, y: 13.6))
+                }
+                context.fill(b, with: .color(beardColor))
+            case .long:
+                let b = Path { p in
+                    p.move(to: CGPoint(x: 3.8, y: 10.2))
+                    p.addQuadCurve(to: CGPoint(x: 10, y: 22.5), control: CGPoint(x: 3.6, y: 21))
+                    p.addQuadCurve(to: CGPoint(x: 16.2, y: 10.2), control: CGPoint(x: 16.4, y: 21))
+                    p.addQuadCurve(to: CGPoint(x: 3.8, y: 10.2), control: CGPoint(x: 10, y: 13.4))
+                }
+                context.fill(b, with: .color(beardColor))
+            }
+
+            // Hair, then any covering, on top
             switch avatar.hair {
-            case .headcloth:
-                ellipse(CGRect(x: 1.8, y: 0.5, width: 16.4, height: 8.2), hair)
-                rounded(CGRect(x: 3, y: 5.6, width: 14, height: 1.4), 0.7, Color.terracotta.opacity(0.5))
+            case .bald:
+                break
             case .short:
                 ellipse(CGRect(x: 2.8, y: 0.8, width: 14.4, height: 7.2), hair)
             case .long:
@@ -175,38 +249,25 @@ struct AvatarFigure: View {
                 ellipse(CGRect(x: 7.4, y: 0.2, width: 5.2, height: 4.2), hair)
                 ellipse(CGRect(x: 2.8, y: 1.6, width: 14.4, height: 6.6), hair)
             }
-        }
-        .accessibilityHidden(true)
-    }
-}
-
-/// A single isometric plot of grass, with soft earth sides.
-struct GrassPlot: View {
-    var body: some View {
-        Canvas { context, size in
-            let w = size.width, depth = size.height * 0.16
-            let h = (size.height - depth)
-            let top = CGPoint(x: w / 2, y: 0), right = CGPoint(x: w, y: h / 2)
-            let bottom = CGPoint(x: w / 2, y: h), left = CGPoint(x: 0, y: h / 2)
-            func poly(_ pts: [CGPoint], _ c: Color) {
-                context.fill(Path { p in p.addLines(pts); p.closeSubpath() }, with: .color(c))
+            switch avatar.covering {
+            case .none: break
+            case .headcloth:
+                ellipse(CGRect(x: 1.8, y: 0.5, width: 16.4, height: 8.2), cloth)
+                rounded(CGRect(x: 3, y: 5.6, width: 14, height: 1.4), 0.7, Color.terracotta.opacity(0.5))
+            case .veil:
+                ellipse(CGRect(x: 1.6, y: 0.2, width: 16.8, height: 9), cloth)
+                rounded(CGRect(x: 2.4, y: 5.2, width: 2.2, height: 12), 1.1, cloth)
+                rounded(CGRect(x: 15.4, y: 5.2, width: 2.2, height: 12), 1.1, cloth)
+            case .turban:
+                ellipse(CGRect(x: 2.4, y: -0.6, width: 15.2, height: 8.6), cloth)
+                rounded(CGRect(x: 2.6, y: 4.2, width: 14.8, height: 2.6), 1.3, Color.primaryBrown.opacity(0.12))
+                ellipse(CGRect(x: 8.6, y: 2.2, width: 2.8, height: 2.8), Color.terracotta.opacity(0.6))
+            case .wreath:
+                for i in 0..<9 {
+                    let a = Double(i) / 8 * .pi
+                    ellipse(CGRect(x: 10 - cos(a) * 7.6 - 1.4, y: 5 - sin(a) * 3 - 0.9, width: 2.8, height: 1.8), Color(hex: "#A9B47C"))
+                }
             }
-            // Soft shadow beneath
-            context.fill(Path(ellipseIn: CGRect(x: w * 0.1, y: h * 0.5, width: w * 0.8, height: size.height - h * 0.5)),
-                         with: .color(Color.primaryBrown.opacity(0.06)))
-            // Earth sides: left lighter, right darker
-            poly([left, bottom, CGPoint(x: bottom.x, y: bottom.y + depth), CGPoint(x: left.x, y: left.y + depth)], .stoneLight)
-            poly([bottom, right, CGPoint(x: right.x, y: right.y + depth), CGPoint(x: bottom.x, y: bottom.y + depth)], .stoneShade)
-            // Grass top
-            poly([top, right, bottom, left], Color(hex: "#C9D29A"))
-            poly([CGPoint(x: w / 2, y: h * 0.12), CGPoint(x: w * 0.88, y: h / 2),
-                  CGPoint(x: w / 2, y: h * 0.88), CGPoint(x: w * 0.12, y: h / 2)], Color.olive.opacity(0.18))
-            // A few tufts and two small flowers
-            for (x, y) in [(0.28, 0.42), (0.7, 0.36), (0.62, 0.7), (0.36, 0.66), (0.5, 0.24)] {
-                context.fill(Path(ellipseIn: CGRect(x: w * x - 4, y: h * y - 2, width: 8, height: 4)), with: .color(Color.olive.opacity(0.7)))
-            }
-            context.fill(Path(ellipseIn: CGRect(x: w * 0.76 - 2, y: h * 0.52 - 2, width: 4, height: 4)), with: .color(.terracotta))
-            context.fill(Path(ellipseIn: CGRect(x: w * 0.22 - 2, y: h * 0.56 - 2, width: 4, height: 4)), with: .color(.lavender))
         }
         .accessibilityHidden(true)
     }
@@ -214,20 +275,20 @@ struct GrassPlot: View {
 
 // MARK: - Editor
 
-/// The quick avatar creator: used in onboarding, Settings and the home menu.
+/// The avatar creator: a live preview, every option, and Randomise. Used in onboarding and
+/// from your Profile.
 struct AvatarEditor: View {
     @Bindable var profile: AvatarProfile
     var showsName = true
+    /// Onboarding shows the preview inline; the full-screen creator pins it above the options.
+    var showsPreview = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            ZStack {
-                GrassPlot().frame(width: 200, height: 118).offset(y: 30)
-                AvatarFigure(avatar: profile.avatar).frame(width: 62, height: 112)
+            if showsPreview {
+                AvatarPreview(avatar: profile.avatar)
+                randomiseButton
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 6)
-
             if showsName {
                 section("Name") {
                     TextField("Your name", text: $profile.name)
@@ -237,15 +298,55 @@ struct AvatarEditor: View {
                         .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 }
             }
-            section("Skin") { swatches(Avatar.skins, selection: $profile.skin, label: "Skin tone") }
+            section("Skin") { swatches(Avatar.skins, selection: binding(\.skin), label: "Skin tone") }
             section("Hair") {
-                chips(Avatar.Hair.allCases.map { ($0.rawValue, $0.title) }, selection: $profile.hair)
-                swatches(Avatar.hairColors, selection: $profile.hairColor, label: "Hair colour")
+                chips(Avatar.Hair.allCases.map { ($0.rawValue, $0.title) }, selection: Binding(
+                    get: { profile.avatar.hair.rawValue },
+                    set: { v in update { $0.hair = Avatar.Hair(rawValue: v) ?? .long } }))
+                swatches(Avatar.hairColors, selection: binding(\.hairColor), label: "Hair colour")
             }
-            section("Robe") { swatches(Avatar.robes, selection: $profile.robe, label: "Robe colour") }
-            section("Sash") { swatches(Avatar.sashes, selection: $profile.sash, label: "Sash colour") }
-            section("Sandals") { chips(Avatar.Sandals.allCases.map { ($0.rawValue, $0.title) }, selection: $profile.sandals) }
+            section("Beard") {
+                chips(Avatar.Beard.allCases.map { ($0.rawValue, $0.title) }, selection: Binding(
+                    get: { profile.avatar.beard.rawValue },
+                    set: { v in update { $0.beard = Avatar.Beard(rawValue: v) ?? .none } }))
+            }
+            section("Head covering") {
+                chips(Avatar.Covering.allCases.map { ($0.rawValue, $0.title) }, selection: Binding(
+                    get: { profile.avatar.covering.rawValue },
+                    set: { v in update { $0.covering = Avatar.Covering(rawValue: v) ?? .none } }))
+                if profile.avatar.covering != .none {
+                    swatches(Avatar.cloths, selection: binding(\.coveringColor), label: "Covering colour")
+                }
+            }
+            section("Robe") { swatches(Avatar.robes, selection: binding(\.robe), label: "Robe colour") }
+            section("Sash") { swatches(Avatar.sashes, selection: binding(\.sash), label: "Sash colour") }
+            section("Sandals") {
+                chips(Avatar.Sandals.allCases.map { ($0.rawValue, $0.title) }, selection: Binding(
+                    get: { profile.avatar.sandals.rawValue },
+                    set: { v in update { $0.sandals = Avatar.Sandals(rawValue: v) ?? .tan } }))
+            }
         }
+    }
+
+    var randomiseButton: some View {
+        Button {
+            withAnimation(.spring(duration: 0.3)) { update { $0 = $0.randomised() } }
+        } label: {
+            Label("Randomise", systemImage: "dice")
+                .frame(maxWidth: .infinity)
+        }
+        .buttonStyle(SoftButtonStyle())
+    }
+
+    /// Changes the look through `Avatar`, so legacy profiles are converted on first edit.
+    private func update(_ change: (inout Avatar) -> Void) {
+        var a = profile.avatar
+        change(&a)
+        profile.apply(a)
+    }
+
+    private func binding(_ key: WritableKeyPath<Avatar, String>) -> Binding<String> {
+        Binding(get: { profile.avatar[keyPath: key] }, set: { v in update { $0[keyPath: key] = v } })
     }
 
     private func section(_ title: String, @ViewBuilder content: () -> some View) -> some View {
@@ -293,7 +394,48 @@ struct AvatarEditor: View {
     }
 }
 
-/// The editor in a sheet (from Settings or the home menu).
+/// The character standing on a little plot of sand, as on the island.
+struct AvatarPreview: View {
+    let avatar: Avatar
+    var height: CGFloat = 112
+
+    var body: some View {
+        ZStack {
+            SandPlot().frame(width: height * 1.8, height: height * 1.05).offset(y: height * 0.27)
+            AvatarFigure(avatar: avatar).frame(width: height * 0.55, height: height)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 6)
+        .accessibilityElement()
+        .accessibilityLabel("Preview of your character")
+    }
+}
+
+/// A single isometric plot of sand with soft earth sides, in the island's style.
+struct SandPlot: View {
+    var body: some View {
+        Canvas { context, size in
+            let w = size.width, depth = size.height * 0.16
+            let h = (size.height - depth)
+            let top = CGPoint(x: w / 2, y: 0), right = CGPoint(x: w, y: h / 2)
+            let bottom = CGPoint(x: w / 2, y: h), left = CGPoint(x: 0, y: h / 2)
+            func poly(_ pts: [CGPoint], _ c: Color) {
+                context.fill(Path { p in p.addLines(pts); p.closeSubpath() }, with: .color(c))
+            }
+            poly([left, bottom, CGPoint(x: bottom.x, y: bottom.y + depth), CGPoint(x: left.x, y: left.y + depth)], Earthy.strataLeftTop)
+            poly([bottom, right, CGPoint(x: right.x, y: right.y + depth), CGPoint(x: bottom.x, y: bottom.y + depth)], Earthy.strataRightTop)
+            poly([top, right, bottom, left], Earthy.ground)
+            context.fill(Path(ellipseIn: CGRect(x: w * 0.3, y: h * 0.3, width: w * 0.4, height: h * 0.3)), with: .color(Earthy.groundLight))
+            for (x, y) in [(0.24, 0.48), (0.74, 0.5)] {
+                context.fill(Path(ellipseIn: CGRect(x: w * x - 5, y: h * y - 3, width: 10, height: 6)), with: .color(Earthy.bush))
+            }
+        }
+        .accessibilityHidden(true)
+    }
+}
+
+/// The avatar creator in a sheet (from your Profile or Settings): the preview stays in view
+/// while you scroll the options.
 struct AvatarCustomizeView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
@@ -301,9 +443,19 @@ struct AvatarCustomizeView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
+            VStack(spacing: 0) {
                 if let profile = profiles.first {
-                    AvatarEditor(profile: profile).padding(16)
+                    VStack(spacing: 8) {
+                        AvatarPreview(avatar: profile.avatar, height: 104)
+                        AvatarEditor(profile: profile, showsName: false, showsPreview: false).randomiseButton
+                            .padding(.horizontal, 16)
+                    }
+                    .padding(.bottom, 10)
+                    .background(Color.cream)
+                    Divider().opacity(0.4)
+                    ScrollView {
+                        AvatarEditor(profile: profile, showsPreview: false).padding(16)
+                    }
                 } else {
                     ProgressView().padding(40)
                 }

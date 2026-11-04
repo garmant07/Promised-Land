@@ -93,7 +93,7 @@ struct ProfileView: View {
                 VStack(spacing: 16) {
                     VStack(spacing: 10) {
                         ZStack {
-                            GrassPlot().frame(width: 170, height: 100).offset(y: 26)
+                            SandPlot().frame(width: 170, height: 100).offset(y: 26)
                             AvatarFigure(avatar: avatar).frame(width: 52, height: 94)
                         }
                         Text(avatar.name.isEmpty ? "Your character" : avatar.name)

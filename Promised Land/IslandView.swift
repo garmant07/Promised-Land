@@ -22,6 +22,10 @@ struct PlatformScene: View {
     var editing: IslandEditing? = nil
     /// Holding a building for half a second (outside edit mode) reports its index.
     var onLongPress: ((Int) -> Void)? = nil
+    /// Unlocked Bible characters strolling around their books' plots.
+    var characters: [IslandCharacter] = []
+    /// "Read their story" in a character's speech bubble.
+    var onReadStory: ((ChapterRef) -> Void)? = nil
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -44,6 +48,8 @@ struct PlatformScene: View {
     @State private var touchDown = false
     @State private var longPressed = false
     @State private var draggingPlot: (key: String, start: CGPoint)?
+    /// The character talking, and since when (they stand still while talking).
+    @State private var speaking: (id: String, since: Date)?
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -96,7 +102,7 @@ struct PlatformScene: View {
                         #endif
                     }
 
-                    TimelineView(.animation(paused: !walking && !popping && !bouncing)) { context in
+                    TimelineView(.animation(paused: !walking && !popping && !bouncing && characters.isEmpty)) { context in
                         let now = context.date
                         let pos = position(at: now)
                         let feet = layout.point(pos.x, pos.y)
@@ -124,6 +130,15 @@ struct PlatformScene: View {
                                     }
                                 }
                             }
+                            ForEach(characters) { c in
+                                let time = characterTime(c.id, now: now)
+                                let p = layout.point(c.position(at: time).x, c.position(at: time).y)
+                                CharacterFigure(id: c.id, look: c.look)
+                                    .frame(width: charH * 0.75, height: charH * 1.05)
+                                    .scaleEffect(x: c.facingLeft(at: time) != layout.mirrored ? -1 : 1, y: 1)
+                                    .position(x: p.x, y: p.y - charH * 0.47)
+                                    .allowsHitTesting(false)
+                            }
                             AvatarFigure(avatar: avatar)
                                 .frame(width: charW, height: charH)
                                 .scaleEffect(x: facingLeft != layout.mirrored ? -1 : 1, y: 1)
@@ -138,6 +153,17 @@ struct PlatformScene: View {
                                           abs(p.x - feet.x) < layout.scale * 1.7 else { continue }
                                     IslandPainter.drawItem(&c, item, layout: layout)
                                 }
+                            }
+                            if let speaking, let c = characters.first(where: { $0.id == speaking.id }),
+                               now.timeIntervalSince(speaking.since) < 7 {
+                                let p = c.position(at: speaking.since.timeIntervalSinceReferenceDate)
+                                let head = layout.point(p.x, p.y)
+                                SpeechBubble(name: c.name, line: c.line, content: CharacterUnlocks.character(id: c.id)) {
+                                    self.speaking = nil
+                                    onReadStory?(c.story)
+                                }
+                                .fixedSize()
+                                .position(x: head.x, y: head.y - charH * 1.05 - 62)
                             }
                         }
                     }
@@ -314,11 +340,35 @@ struct PlatformScene: View {
                 } else if !pinched, !longPressed, TapClassifier.isTap(translation: value.translation) {
                     if let editing {
                         editing.onSelect(nil)
+                    } else if let c = character(at: value.location, layout: layout) {
+                        speaking = (c.id, .now)
                     } else {
+                        speaking = nil
                         onTap?(IslandHitTester.hit(point: value.location, layout: layout, pan: pan, items: island.items))
                     }
                 }
             }
+    }
+
+    /// The time a character's walk is drawn at: frozen while they talk.
+    private func characterTime(_ id: String, now: Date) -> TimeInterval {
+        if let speaking, speaking.id == id, now.timeIntervalSince(speaking.since) < 7 {
+            return speaking.since.timeIntervalSinceReferenceDate
+        }
+        return now.timeIntervalSinceReferenceDate
+    }
+
+    /// The character under a tap, if any (44pt minimum target).
+    private func character(at location: CGPoint, layout: IslandLayout) -> IslandCharacter? {
+        let charH = Self.characterHeight * layout.u
+        let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
+        let candidates = characters.map { c -> HitCandidate<String> in
+            let g = c.position(at: characterTime(c.id, now: .now))
+            let feet = layout.point(g.x, g.y)
+            return HitCandidate(id: c.id, depth: feet.y, onGround: false,
+                                bounds: CGRect(x: feet.x - charH * 0.37, y: feet.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05))
+        }
+        return HitPicker.pick(p, from: candidates, minimumTarget: IslandHitTester.minimumTarget).flatMap { id in characters.first { $0.id == id } }
     }
 
     /// A finger went down: in edit mode, grab the plot under it; otherwise watch for a long press.

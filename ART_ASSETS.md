@@ -11,7 +11,7 @@ instead. No code changes are needed, and if an image is missing the code-drawn a
 |---|---|---|
 | A book's building | `bld_<bookID>_<level>` | `0` foundations (book opened, not finished) · `1` built · `2`–`4` built plus 1–3 extra floors from full rereads |
 | A chapter artifact | `art_<kind>_<level>` | `1`–`5`, one per read of that chapter |
-| A Bible character | `char_<id>` | (from Phase 5) |
+| A Bible character | `char_<id>` | one image (ids in `CharacterUnlocks.swift`: `moses`, `jonah`, `ruth`, `david`, `daniel`, `paul`, `disciples`, `jesus`) |
 
 - `bookID` is the id in `BibleCatalog.swift`, e.g. `genesis`, `1samuel`, `songofsongs`.
 - `kind` is an `ArtifactKind` raw value from `BuildingData.swift`: `olive`, `palm`, `cypress`,
@@ -39,6 +39,15 @@ any rotation that has no image of its own.
   terracotta roofs (`#E39A7E` / `#C97A60`); lavender domes (`#BFA9DA`) or golden domes
   (`#F0C88C`) with gold finials (`#E1B067`); olive trees (`#A9B47C`, trunks `#8E6A4C`); soft
   shadows (`#DCC193`) rather than hard ones.
+
+## Included art
+
+The characters drawn for the art direction (the *Character style* board) are in the asset
+catalogue as `char_moses`, `char_ruth`, `char_david`, `char_daniel`, `char_paul`,
+`char_jesus` and `char_disciples` (John's picture). Their cream backgrounds were cut out
+and the stray pebbles removed. Jonah has no drawing yet, so he uses the code-drawn chibi
+figure. Characters are drawn bottom-centre at their feet and scaled to the character's
+height, so any size works; keep the figure standing on the bottom edge.
 
 ## What's drawn in code today
 

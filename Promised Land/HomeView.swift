@@ -9,6 +9,10 @@ enum ActiveSheet: Identifiable, Equatable {
     case profile
     case library
     case insight(InsightSubject)
+    /// Reading one chapter (from a character's story link or a building's inside).
+    case chapter(ChapterRef)
+    /// A character has just come to the island.
+    case character(String)
 
     var id: String {
         switch self {
@@ -18,6 +22,16 @@ enum ActiveSheet: Identifiable, Equatable {
         case .profile: "profile"
         case .library: "library"
         case .insight(let subject): "insight-\(subject.id)"
+        case .chapter(let ref): "chapter-\(ref.id)"
+        case .character(let id): "character-\(id)"
+        }
+    }
+
+    /// Reading and celebrations open full height; everything else starts at half.
+    var detents: Set<PresentationDetent> {
+        switch self {
+        case .chapter, .character: [.large]
+        default: [.medium, .large]
         }
     }
 }
@@ -60,6 +74,20 @@ struct HomeView: View {
     @State private var editSelected: String?
     @State private var dragBase: IslandPlacement?
 
+    /// Characters already welcomed (so each celebration shows once).
+    @AppStorage("characters.celebrated") private var celebratedCharacters = ""
+    /// False until the first check, when characters you already had are noted silently.
+    @AppStorage("characters.ready") private var charactersReady = false
+
+    /// Books with every chapter read.
+    private var finishedBooks: Set<String> {
+        Set(BibleCatalog.books.filter { progress.chaptersRead($0.id) >= $0.chapterCount }.map(\.id))
+    }
+
+    private var unlockedCharacters: [BibleCharacter] {
+        CharacterUnlocks.unlocked(finishedBooks: finishedBooks, completedJourneys: Set(progress.completedJourneys.map(\.id)))
+    }
+
     /// Every piece of reading, in order, laid out on the island. A book's quiz grows one
     /// fruit tree (its first pass), however many times it's taken.
     private var island: Island {
@@ -87,7 +115,9 @@ struct HomeView: View {
                           insets: EdgeInsets(top: 70, leading: 8, bottom: 118, trailing: 8),
                           selected: $selectedItem, grown: grown, growID: growID,
                           persistsCamera: true, editing: editingIsland ? editing : nil,
-                          onLongPress: { index in startEditing(island.items[index].plotKey) }) { index in open(index, in: island) }
+                          onLongPress: { index in startEditing(island.items[index].plotKey) },
+                          characters: IslandCharacter.make(unlockedCharacters, island: island),
+                          onReadStory: { activeSheet = .chapter($0) }) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
         // The status pill is read-only, so touches on it go through to the island.
@@ -102,7 +132,7 @@ struct HomeView: View {
         }
         .sheet(item: $activeSheet) { sheet in
             content(for: sheet)
-                .presentationDetents([.medium, .large])
+                .presentationDetents(sheet.detents)
                 .presentationDragIndicator(.visible)
         }
         .onChange(of: activeSheet) { _, sheet in
@@ -175,6 +205,15 @@ struct HomeView: View {
             LibraryShelfView()
         case .insight(let subject):
             ObjectInsightCard(subject: subject)
+        case .chapter(let ref):
+            LibraryView(startAt: ref, onClose: { activeSheet = nil })
+        case .character(let id):
+            if let character = CharacterUnlocks.character(id: id) {
+                CharacterUnlockView(character: character) {
+                    let ref = ChapterRef(bookID: character.storyBook, chapter: character.storyChapter)
+                    Task { try? await Task.sleep(for: .milliseconds(450)); activeSheet = .chapter(ref) }
+                }
+            }
         }
     }
 
@@ -290,7 +329,23 @@ struct HomeView: View {
 
     /// Builds in whatever's new since the island was last seen: new buildings pop up, and
     /// buildings that gained chapters bounce.
+    /// Welcomes a newly unlocked character (one at a time).
+    private func welcomeCharacters() {
+        let unlocked = unlockedCharacters.map(\.id)
+        var seen = Set(celebratedCharacters.split(separator: ",").map(String.init))
+        guard charactersReady else {
+            celebratedCharacters = unlocked.joined(separator: ",")
+            charactersReady = true
+            return
+        }
+        guard activeSheet == nil, let new = unlocked.first(where: { !seen.contains($0) }) else { return }
+        seen.insert(new)
+        celebratedCharacters = seen.sorted().joined(separator: ",")
+        activeSheet = .character(new)
+    }
+
     private func showNewGrowth() {
+        welcomeCharacters()
         let island = island
         let now = island.items.count
         let signature = Self.signature(island)
@@ -348,6 +403,7 @@ struct HomeView: View {
         if args.contains("-openJourneys") { activeSheet = .journeys }
         if args.contains("-openRead") { activeSheet = .read }
         if args.contains("-editIsland") { startEditing(island.plots.first?.bookID) }
+        if let i = args.firstIndex(of: "-celebrate"), i + 1 < args.count { activeSheet = .character(args[i + 1]) }
         if let i = args.firstIndex(of: "-openReflection"), i + 1 < args.count {
             let parts = args[i + 1].split(separator: ":")
             if parts.count == 2, let book = BibleCatalog.book(id: String(parts[0])), let ch = Int(parts[1]) {

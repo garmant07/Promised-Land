@@ -280,3 +280,78 @@ struct IslandEditTests {
         #expect(b.turned == 1)
     }
 }
+
+@MainActor
+struct CharacterUnlockTests {
+    func ids(_ books: [String], journeys: [String] = []) -> Set<String> {
+        Set(CharacterUnlocks.unlocked(finishedBooks: Set(books), completedJourneys: Set(journeys)).map(\.id))
+    }
+
+    @Test("Finishing Exodus to Deuteronomy unlocks Moses, and not before")
+    func moses() {
+        #expect(!ids(["exodus", "leviticus", "numbers"]).contains("moses"))
+        #expect(ids(["exodus", "leviticus", "numbers", "deuteronomy"]).contains("moses"))
+    }
+
+    @Test("Each character's books unlock them")
+    func rules() {
+        #expect(ids(["ruth"]) == ["ruth"])
+        #expect(ids(["jonah"]) == ["jonah"])
+        #expect(ids(["daniel"]) == ["daniel"])
+        #expect(ids(["1samuel", "2samuel"]) == ["david"])
+        #expect(ids(["matthew", "mark", "luke", "john"]) == ["disciples"])
+        #expect(!ids(["acts", "romans"]).contains("paul"))
+        let nt = BibleCatalog.books.filter { $0.testament == .new }.map(\.id)
+        #expect(ids(nt).isSuperset(of: ["jesus", "paul", "disciples"]))
+    }
+
+    @Test("Completing a journey unlocks its character")
+    func journeys() {
+        #expect(ids([], journeys: ["jonah"]) == ["jonah"])
+        #expect(ids([], journeys: ["paul-rome"]) == ["paul"])
+        #expect(ids([], journeys: ["galilee"]) == ["disciples"])
+    }
+
+    @Test("Characters have rarities, stories and unreviewed content flags")
+    func data() {
+        #expect(Set(CharacterUnlocks.all.map(\.rarity)) == Set(Rarity.allCases))
+        for c in CharacterUnlocks.all {
+            #expect(BibleCatalog.book(id: c.storyBook).map { (1...$0.chapterCount).contains(c.storyChapter) } == true)
+            #expect(!c.reference.isEmpty && !c.source.isEmpty)
+            #expect(c.books.allSatisfy { BibleCatalog.book(id: $0) != nil })
+        }
+    }
+
+    @Test("Characters walk around their own book's plot")
+    func home() {
+        let start = Date(timeIntervalSince1970: 1_780_000_000)
+        let island = Island.build(chapters: (1...4).map { ("ruth", $0, start) }, quizzes: [], verses: [])
+        let walkers = IslandCharacter.make(CharacterUnlocks.unlocked(finishedBooks: ["ruth"]), island: island)
+        let plot = island.plots.first { $0.bookID == "ruth" }!
+        #expect(walkers.first?.home == plot.centre)
+        for t in stride(from: 0.0, to: 60, by: 7) {
+            let p = walkers[0].position(at: t)
+            #expect(hypot(p.x - plot.centre.x, p.y - plot.centre.y) <= walkers[0].radius + 0.001)
+        }
+    }
+}
+
+struct AvatarTests {
+    @Test("Earlier headcloth characters keep their headcloth")
+    @MainActor func legacyHeadcloth() {
+        let profile = AvatarProfile(Avatar())
+        profile.hair = "headcloth"
+        profile.hairColor = "#E39A7E"
+        profile.covering = "legacy"
+        let a = profile.avatar
+        #expect(a.covering == .headcloth)
+        #expect(a.coveringColor == "#E39A7E")
+    }
+
+    @Test("Randomise keeps the name")
+    func randomise() {
+        var a = Avatar()
+        a.name = "Hannah"
+        #expect(a.randomised().name == "Hannah")
+    }
+}
