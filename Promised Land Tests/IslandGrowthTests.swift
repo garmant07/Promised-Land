@@ -507,3 +507,36 @@ struct SpreadTests {
         #expect(PagePlanner.pages(short, width: 400, height: 700, fontSize: 18, footerHeight: 190, titleHeight: 56).count == 1)
     }
 }
+
+@MainActor
+struct UnlockNoticeTests {
+    let start = Date(timeIntervalSince1970: 1_780_000_000)
+
+    func ids(_ island: Island, journeys: [Journey] = []) -> Set<String> {
+        Set(UnlockNotices.all(island: island, completedJourneys: journeys).map(\.id))
+    }
+
+    @Test("Finishing a book, rereading it, story objects, rewards and the Library are announced")
+    func announced() {
+        let reads = (1...4).flatMap { ch in (0..<3).map { t in ("ruth", ch, start.addingTimeInterval(Double(t * 10 + ch) * 86_400)) } }
+            + [("genesis", 6, start)]
+        let island = Island.build(chapters: reads, quizzes: [("ruth", start)], verses: [("ruth", start)], features: [.library])
+        let found = ids(island)
+        #expect(found.isSuperset(of: ["built:ruth", "floor:ruth:2", "floor:ruth:3", "story:ark", "reward:ruth:banner", "library"]))
+        #expect(found.contains("reward:ruth:\(RewardData.verse(for: "ruth").rawValue)"))
+    }
+
+    @Test("Ordinary chapter artifacts and unfinished buildings aren't announced")
+    func quiet() {
+        let island = Island.build(chapters: [("ruth", 2, start)], quizzes: [], verses: [])
+        #expect(ids(island).isEmpty)
+    }
+
+    @Test("Completed journeys are announced, and every notice can be found again")
+    func journeysAndIndices() {
+        let island = Island.build(chapters: (1...4).map { ("ruth", $0, start) }, quizzes: [], verses: [])
+        let notices = UnlockNotices.all(island: island, completedJourneys: [JourneyData.journey(id: "jonah")!])
+        #expect(notices.contains { $0.id == "journey:jonah" && $0.itemIndex == nil })
+        for n in notices { if let i = n.itemIndex { #expect(island.items.indices.contains(i)) } }
+    }
+}

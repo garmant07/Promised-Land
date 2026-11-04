@@ -86,6 +86,13 @@ struct HomeView: View {
     @State private var visitIndex: Int?
     @State private var interior: InteriorRef?
 
+    /// Unlocks already announced (so each banner shows once).
+    @AppStorage("unlocks.seen") private var unlocksSeen = ""
+    /// False until the first check, when what you already had is noted silently.
+    @AppStorage("unlocks.ready") private var unlocksReady = false
+    /// Banners waiting to be shown, oldest first.
+    @State private var notices: [UnlockNotice] = []
+
     /// Characters already welcomed (so each celebration shows once).
     @AppStorage("characters.celebrated") private var celebratedCharacters = ""
     /// False until the first check, when characters you already had are noted silently.
@@ -133,14 +140,35 @@ struct HomeView: View {
                           onReadStory: { activeSheet = .chapter($0) },
                           visit: visitIndex,
                           onArrived: { index in
-                              guard island.items.indices.contains(index), case .building(let id) = island.items[index].kind else { return }
-                              interior = InteriorRef(id: id)
+                              guard island.items.indices.contains(index) else { return }
+                              switch island.items[index].kind {
+                              case .building(let id): interior = InteriorRef(id: id)
+                              case .library: interior = InteriorRef(id: InteriorRef.library)
+                              default: break
+                              }
                           }) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
         // The status pill is read-only, so touches on it go through to the island.
         .overlay(alignment: .topLeading) { if !editingIsland { status.allowsHitTesting(false) } }
         .overlay(alignment: .top) { if editingIsland { editBar(island) } }
+        .overlay(alignment: .top) {
+            if !editingIsland, let notice = notices.first {
+                UnlockBanner(notice: notice, more: notices.count - 1,
+                             onSee: notice.itemIndex.map { index in { showUnlock(index) } },
+                             onDismiss: nextNotice)
+                    .padding(.horizontal, 12)
+                    .padding(.top, 54)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                    .id(notice.id)
+                    .task(id: notice.id) {
+                        // Moves on by itself after a while.
+                        try? await Task.sleep(for: .seconds(7))
+                        if notices.first?.id == notice.id { nextNotice() }
+                    }
+            }
+        }
+        .sensoryFeedback(.success, trigger: notices.first?.id)
         .overlay(alignment: .bottom) {
             if !editingIsland {
                 MainBar(active: activeSheet) { activeSheet = $0 }
@@ -162,7 +190,11 @@ struct HomeView: View {
             selectedItem = nil
             showNewGrowth()
         }) { ref in
-            InteriorView(bookID: ref.id) { interior = nil }
+            if ref.id == InteriorRef.library {
+                LibraryShelfView()
+            } else {
+                InteriorView(bookID: ref.id) { interior = nil }
+            }
         }
         .fullScreenCover(isPresented: $showingWorld, onDismiss: showNewGrowth) {
             WorldView(scene: worldScene) { showingWorld = false }
@@ -199,7 +231,7 @@ struct HomeView: View {
             .padding(.horizontal, 12)
             .padding(.vertical, 7)
             .background(Color.card.opacity(0.85), in: Capsule())
-            if let growthNote {
+            if let growthNote, notices.isEmpty {
                 Label(growthNote, systemImage: "leaf.fill")
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(Color.olive)
@@ -249,7 +281,8 @@ struct HomeView: View {
         let item = island.items[index]
         selectedItem = index
         if case .feature(.library) = item.source {
-            activeSheet = .library
+            // Walk to the Library's door and step inside, like any building.
+            visitIndex = index
         } else if case .building = item.kind {
             // Step inside: walk to the door, then open the building.
             visitIndex = index
@@ -373,9 +406,42 @@ struct HomeView: View {
         activeSheet = .character(new)
     }
 
+    /// Queues a banner for each unlock not announced before.
+    private func announceUnlocks(_ island: Island) {
+        let all = UnlockNotices.all(island: island, completedJourneys: progress.completedJourneys)
+        var seen = Set(unlocksSeen.split(separator: ",").map(String.init))
+        guard unlocksReady else {
+            // The first time, what you already have is noted without announcing it.
+            unlocksSeen = all.map(\.id).joined(separator: ",")
+            unlocksReady = true
+            return
+        }
+        let new = all.filter { !seen.contains($0.id) }
+        guard !new.isEmpty else { return }
+        seen.formUnion(new.map(\.id))
+        unlocksSeen = seen.sorted().joined(separator: ",")
+        withAnimation(.spring(duration: 0.4)) { notices += new.filter { n in !notices.contains { $0.id == n.id } } }
+    }
+
+    private func nextNotice() {
+        guard !notices.isEmpty else { return }
+        withAnimation(.easeInOut(duration: 0.3)) { _ = notices.removeFirst() }
+    }
+
+    /// "See it": centres the island on the new thing and gives it a bounce.
+    private func showUnlock(_ index: Int) {
+        selectedItem = nil
+        Task {
+            try? await Task.sleep(for: .milliseconds(30))
+            selectedItem = index
+        }
+        nextNotice()
+    }
+
     private func showNewGrowth() {
         welcomeCharacters()
         let island = island
+        announceUnlocks(island)
         let now = island.items.count
         let signature = Self.signature(island)
         defer { gardenSeen = now; progressSeen = signature }
@@ -469,6 +535,7 @@ struct HomeView: View {
 /// A building being visited (for the full-screen inside page).
 struct InteriorRef: Identifiable, Equatable {
     let id: String
+    static let library = "feature:library"
 }
 
 /// Compact buttons for the edit-mode bar.

@@ -620,7 +620,9 @@ struct PlatformScene: View {
     private func startVisit(_ item: Island.Item, index: Int, size: CGSize) {
         speaking = nil
         if cameraBeforeVisit == nil { cameraBeforeVisit = (zoom, pan) }
-        let door = CGPoint(x: item.gx + 0.62, y: item.gy + 0.62)
+        // Just in front of its door (bigger buildings, like the Library, have the door further out).
+        let out = max(0.62, item.footprint.width / 2 + 0.15)
+        let door = CGPoint(x: item.gx + out, y: item.gy + out)
         let newZoom = max(zoom, 3)
         let target = IslandLayout(island: island, size: size, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
         let p = target.point(door.x, door.y)
