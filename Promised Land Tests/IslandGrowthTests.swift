@@ -463,3 +463,31 @@ struct JourneyContextTests {
         #expect(BuildPreview.characterLine("obadiah") == nil)
     }
 }
+
+@MainActor
+struct GroupsTests {
+    @Test("The mock service offers one read-only sample group, labelled Preview")
+    func mock() async throws {
+        let groups = try await MockGroupsService().groups()
+        #expect(groups.count == 1)
+        #expect(groups[0].isPreview)
+        #expect(groups[0].members.count >= 2)
+    }
+
+    @Test("Everyone's reads build one shared island")
+    func sharedIsland() {
+        let group = MockGroupsService.sample
+        #expect(group.combinedReads.count == group.members.map(\.reads.count).reduce(0, +))
+        let island = Island.build(chapters: group.combinedReads, quizzes: [], verses: [])
+        // Every book anyone read has a plot.
+        #expect(Set(island.plots.map(\.bookID)) == Set(group.combinedReads.map(\.book)))
+    }
+
+    @Test("Who read what lists each member's chapters per book")
+    func contributions() {
+        let group = MockGroupsService.sample
+        let psalms = group.contributions.first { $0.book == "psalms" }
+        #expect(psalms?.members.count == 2) // two sample members read Psalms
+        #expect(psalms?.members.first?.chapters == 60) // most first
+    }
+}

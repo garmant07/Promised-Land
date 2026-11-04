@@ -30,13 +30,13 @@ struct MockFriendsService: FriendsService {
 
     static let samples: [FriendSummary] = [
         FriendSummary(id: "sample-hannah", name: "Hannah (sample)",
-                      avatar: Avatar(name: "Hannah", robe: "#BFA9DA", skin: "#D9A57E", hair: .long, hairColor: "#4A3326", sash: "#E9C77F", sandals: .tan),
+                      avatar: Avatar(name: "Hannah", robe: "#BFA9DA", skin: "#D9A57E", hair: .long, hairColor: "#4A3326", sash: "#E9C77F", sandals: .tan, covering: .none),
                       streak: 12, reads: plan([("genesis", 1...50), ("ruth", 1...4), ("psalms", 1...30), ("john", 1...21)])),
         FriendSummary(id: "sample-eli", name: "Eli (sample)",
-                      avatar: Avatar(name: "Eli", robe: "#93AECF", skin: "#8E5E3D", hair: .curly, hairColor: "#2F2418", sash: "#FAF0DE", sandals: .brown),
+                      avatar: Avatar(name: "Eli", robe: "#93AECF", skin: "#8E5E3D", hair: .curly, hairColor: "#2F2418", sash: "#FAF0DE", sandals: .brown, covering: .none),
                       streak: 3, reads: plan([("mark", 1...16), ("acts", 1...12), ("jonah", 1...4)])),
         FriendSummary(id: "sample-joy", name: "Joy (sample)",
-                      avatar: Avatar(name: "Joy", robe: "#A9B47C", skin: "#F6D9C0", hair: .bun, hairColor: "#B48A6A", sash: "#E39A7E", sandals: .tan),
+                      avatar: Avatar(name: "Joy", robe: "#A9B47C", skin: "#F6D9C0", hair: .bun, hairColor: "#B48A6A", sash: "#E39A7E", sandals: .tan, covering: .none),
                       streak: 27, reads: plan([("proverbs", 1...31), ("luke", 1...24), ("psalms", 1...60), ("exodus", 1...20)])),
     ]
 
@@ -53,7 +53,9 @@ struct MockFriendsService: FriendsService {
 
 struct FriendsView: View {
     var service: any FriendsService = MockFriendsService()
+    var groupsService: any GroupsService = MockGroupsService()
     @State private var friends: [FriendSummary] = []
+    @State private var groups: [GroupSummary] = []
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -67,6 +69,20 @@ struct FriendsView: View {
                         .padding(14)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .background(Color.sand, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    if !groups.isEmpty {
+                        Text("Groups")
+                            .font(.serifTitle(.title3))
+                            .foregroundStyle(Color.bodyText)
+                            .padding(.top, 4)
+                        ForEach(groups) { group in
+                            NavigationLink(value: group) { GroupRow(group: group) }
+                                .buttonStyle(.plain)
+                        }
+                        Text("Friends")
+                            .font(.serifTitle(.title3))
+                            .foregroundStyle(Color.bodyText)
+                            .padding(.top, 4)
+                    }
                     ForEach(friends) { friend in
                         NavigationLink(value: friend) {
                             HStack(spacing: 14) {
@@ -97,12 +113,16 @@ struct FriendsView: View {
             .navigationTitle("Friends (preview)")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: FriendSummary.self) { FriendWorldView(friend: $0) }
+            .navigationDestination(for: GroupSummary.self) { GroupIslandView(group: $0) }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }.tint(Color.primaryBrown)
                 }
             }
-            .task { friends = (try? await service.friends()) ?? [] }
+            .task {
+                friends = (try? await service.friends()) ?? []
+                groups = (try? await groupsService.groups()) ?? []
+            }
         }
     }
 }
