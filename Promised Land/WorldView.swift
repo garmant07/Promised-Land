@@ -4,7 +4,9 @@ import SpriteKit
 
 struct WorldView: View {
     @ProgressQuery private var progress: GameProgress
-    @State private var scene = WorldScene()
+    let scene: WorldScene
+    /// Shown as a close button when the map is presented from the home page.
+    var onClose: (() -> Void)? = nil
     @State private var showingSettings = false
     @State private var cardCollapsed = false
     @State private var selected: Landmark?
@@ -20,7 +22,7 @@ struct WorldView: View {
                 .accessibilityLabel("Map of your world")
 
             VStack(spacing: 0) {
-                WorldHeader(progress: progress) { showingSettings = true }
+                WorldHeader(progress: progress, onClose: onClose) { showingSettings = true }
                     .padding(.horizontal, 14)
                     .padding(.vertical, 4)
                     .background(Color.cream.opacity(0.92), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
@@ -101,6 +103,7 @@ struct WorldView: View {
 /// Title, landmark count, streak and settings — floats over the map.
 struct WorldHeader: View {
     let progress: GameProgress
+    var onClose: (() -> Void)? = nil
     var openSettings: () -> Void
 
     var body: some View {
@@ -125,12 +128,22 @@ struct WorldHeader: View {
                     .background(Color.card, in: Circle())
             }
             .accessibilityLabel("Settings")
+            if let onClose {
+                Button(action: onClose) {
+                    Image(systemName: "xmark")
+                        .font(.headline)
+                        .foregroundStyle(Color.primaryBrown)
+                        .frame(width: 44, height: 44)
+                        .background(Color.card, in: Circle())
+                }
+                .accessibilityLabel("Close map")
+            }
         }
         .padding(.vertical, 6)
     }
 }
 
 #Preview {
-    WorldView()
+    WorldView(scene: WorldScene())
         .modelContainer(PreviewData.container)
 }

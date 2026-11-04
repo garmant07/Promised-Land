@@ -7,6 +7,7 @@ enum StorageKeys {
     static let worldCamera = "worldCamera"
     static let celebrated = "celebratedLandmarks"
     static let builtConnections = "builtConnections"
+    static let hasOpenedReading = "hasOpenedReading"
 }
 
 struct SettingsView: View {

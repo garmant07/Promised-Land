@@ -5,15 +5,31 @@ import SwiftData
 
 struct LibraryView: View {
     @ProgressQuery private var progress: GameProgress
+    /// Shown as a close button when reading is presented from the home page.
+    var onClose: (() -> Void)? = nil
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
-                    Text("Read")
-                        .font(.serifTitle(.largeTitle))
-                        .foregroundStyle(Color.bodyText)
-                        .padding(.top, 8)
+                    HStack(spacing: 8) {
+                        Text("Read")
+                            .font(.serifTitle(.largeTitle))
+                            .foregroundStyle(Color.bodyText)
+                        Spacer()
+                        StreakPill(days: progress.streak)
+                        if let onClose {
+                            Button(action: onClose) {
+                                Image(systemName: "xmark")
+                                    .font(.headline)
+                                    .foregroundStyle(Color.primaryBrown)
+                                    .frame(width: 44, height: 44)
+                                    .background(Color.card, in: Circle())
+                            }
+                            .accessibilityLabel("Close reading")
+                        }
+                    }
+                    .padding(.top, 8)
                     Text("All 66 books, in any order. Each one builds a landmark in your world.")
                         .font(.subheadline)
                         .foregroundStyle(Color.secondaryText)
