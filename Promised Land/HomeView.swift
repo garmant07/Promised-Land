@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-/// The opening page: plain cream, and your character standing far off on a patch of grass.
+/// The opening page: plain cream, and your character wandering a large patch of grass.
 /// Tap the character to go into reading.
 struct HomeView: View {
     private let avatarStorage = AvatarStorage()
@@ -16,7 +16,6 @@ struct HomeView: View {
     @State private var showingCustomise = false
     @State private var showingSettings = false
     @State private var hop = false
-    @State private var sway = false
     /// Kept alive between visits so the map doesn't rebuild each time.
     @State private var worldScene = WorldScene()
     @Namespace private var zoom
@@ -27,19 +26,11 @@ struct HomeView: View {
             Color.cream.ignoresSafeArea()
 
             VStack(spacing: 14) {
-                Spacer()
+                Spacer(minLength: 56)
                 Button(action: openReading) {
-                    ZStack {
-                        GrassPlot()
-                            .frame(width: 186, height: 110)
-                            .offset(y: 25)
-                        AvatarFigure(avatar: avatar)
-                            .frame(width: 25, height: 46)
-                            .rotationEffect(.degrees(sway ? 1.5 : -1.5), anchor: .bottom)
-                            .offset(y: hop ? -12 : 0)
-                    }
-                    .frame(width: 220, height: 168)
-                    .contentShape(Rectangle())
+                    PlatformScene(avatar: avatar, hop: hop)
+                        .padding(.horizontal, 12)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .matchedTransitionSource(id: "character", in: zoom)
@@ -75,14 +66,10 @@ struct HomeView: View {
                     .padding(.horizontal, 24)
                     .padding(.top, 12)
                 }
-                Spacer()
-                Spacer()
+                Spacer(minLength: 16)
             }
         }
         .overlay(alignment: .topTrailing) { menu }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 2.6).repeatForever(autoreverses: true)) { sway = true }
-        }
         .fullScreenCover(isPresented: $showingReading) {
             LibraryView(startAt: readingStart) { showingReading = false }
                 .navigationTransition(.zoom(sourceID: readingSource, in: zoom))
@@ -212,4 +199,90 @@ struct ReadingSuggestionCard: View {
         .accessibilityElement(children: .combine)
         .accessibilityHint("Opens this chapter")
     }
+}
+
+// MARK: - Platform
+
+/// The grass platform, sized to the screen, with the character strolling around on it.
+struct PlatformScene: View {
+    let avatar: Avatar
+    var hop = false
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    /// Position on the platform's top face, as (a, b) in 0...1 along its two edges.
+    @State private var spot = CGPoint(x: 0.5, y: 0.5)
+    @State private var walking = false
+    @State private var facingLeft = false
+
+    /// Fraction of the plot's height taken by the earth sides (matches GrassPlot).
+    private let sideFraction: CGFloat = 0.16
+
+    var body: some View {
+        GeometryReader { geo in
+            let plotW = min(geo.size.width, 460)
+            let plotH = plotW * 0.59
+            let topH = plotH * (1 - sideFraction)
+            let charH = plotW * 0.21
+            let charW = charH * 20 / 36
+            // Where the feet touch the grass, in the platform's coordinates.
+            let feet = CGPoint(x: plotW / 2 + (spot.x - spot.y) * plotW / 2,
+                               y: (spot.x + spot.y) * topH / 2)
+            let originY = (geo.size.height - plotH) / 2 + charH * 0.35
+
+            ZStack(alignment: .topLeading) {
+                GrassPlot()
+                    .frame(width: plotW, height: plotH)
+                    .offset(y: originY)
+
+                TimelineView(.animation(paused: !walking)) { context in
+                    let t = context.date.timeIntervalSinceReferenceDate
+                    let bounce = walking ? -abs(sin(t * 9)) * charH * 0.05 : 0
+                    let lean = walking ? sin(t * 9) * 3 : 0
+                    AvatarFigure(avatar: avatar)
+                        .frame(width: charW, height: charH)
+                        .scaleEffect(x: facingLeft ? -1 : 1, y: 1)
+                        .rotationEffect(.degrees(lean), anchor: .bottom)
+                        .offset(y: bounce + (hop ? -charH * 0.25 : 0))
+                }
+                .frame(width: charW, height: charH)
+                // Place the figure so its feet (about 91% down the frame) stand on the spot.
+                .position(x: feet.x, y: originY + feet.y - charH * 0.41)
+            }
+            .frame(width: plotW, height: geo.size.height)
+            .frame(maxWidth: .infinity)
+        }
+        .aspectRatio(1.2, contentMode: .fit)
+        .task(id: reduceMotion) {
+            guard !reduceMotion else { return }
+            await wander()
+        }
+    }
+
+    /// Walk to a random spot, pause, repeat.
+    private func wander() async {
+        while !Task.isCancelled {
+            try? await Task.sleep(for: .seconds(Double.random(in: 1.2...3.5)))
+            guard !Task.isCancelled else { return }
+            var target = spot
+            for _ in 0..<10 {
+                let candidate = CGPoint(x: CGFloat.random(in: 0.18...0.82), y: CGFloat.random(in: 0.18...0.82))
+                let d = hypot(candidate.x - spot.x, candidate.y - spot.y)
+                if d > 0.15 && d < 0.5 { target = candidate; break }
+            }
+            let distance = hypot(target.x - spot.x, target.y - spot.y)
+            guard distance > 0.01 else { continue }
+            let duration = Double(distance) / 0.11
+            facingLeft = (target.x - target.y) < (spot.x - spot.y)
+            walking = true
+            withAnimation(.linear(duration: duration)) { spot = target }
+            try? await Task.sleep(for: .seconds(duration))
+            walking = false
+        }
+    }
+}
+
+#Preview("Platform") {
+    PlatformScene(avatar: AvatarStorage().avatar)
+        .padding()
+        .background(Color.cream)
 }
