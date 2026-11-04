@@ -5,11 +5,14 @@ import SwiftData
 
 struct LibraryView: View {
     @ProgressQuery private var progress: GameProgress
+    /// Opens straight into this chapter (with its book underneath), if given.
+    var startAt: ChapterRef? = nil
     /// Shown as a close button when reading is presented from the home page.
     var onClose: (() -> Void)? = nil
+    @State private var path = NavigationPath()
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
                     HStack(spacing: 8) {
@@ -56,6 +59,11 @@ struct LibraryView: View {
             .navigationTitle("Read")
             .hiddenNavigationBar()
             .readingDestinations()
+        }
+        .onAppear {
+            guard path.isEmpty, let startAt, let book = BibleCatalog.book(id: startAt.bookID) else { return }
+            path.append(book)
+            path.append(startAt)
         }
     }
 }
