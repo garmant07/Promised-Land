@@ -247,6 +247,7 @@ struct ChapterReaderView: View {
     @ProgressQuery private var progress: GameProgress
     @State private var celebration: Celebration?
     @State private var reflecting = false
+    @State private var deepDive: (dive: DeepDive, text: String)?
     @State private var reflectAfterCelebration = false
     @AppStorage(StorageKeys.offerReflection) private var offerReflection = true
 
@@ -265,10 +266,26 @@ struct ChapterReaderView: View {
                             let number = Text("\(verse.number)")
                                 .font(.caption.weight(.bold))
                                 .foregroundStyle(Color.terracotta)
-                            Text("\(number)  \(verse.text)")
+                            let line = Text("\(number)  \(verse.text)")
                                 .foregroundStyle(Color.bodyText)
                                 .lineSpacing(5)
                                 .fixedSize(horizontal: false, vertical: true)
+                            // Verses with a deep dive are tappable, marked with a small sparkle.
+                            if let dive = DeepDiveData.entry(bookID: book.id, chapter: chapter, verse: verse.number) {
+                                Button { deepDive = (dive, verse.text) } label: {
+                                    HStack(alignment: .top, spacing: 6) {
+                                        line.multilineTextAlignment(.leading)
+                                        Image(systemName: "sparkle")
+                                            .font(.caption)
+                                            .foregroundStyle(Color.lavender)
+                                    }
+                                    .contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityHint("Opens a deep dive on this verse")
+                            } else {
+                                line
+                            }
                         }
                     }
                     .cardStyle()
@@ -328,6 +345,9 @@ struct ChapterReaderView: View {
             if reflectAfterCelebration { reflectAfterCelebration = false; reflecting = true }
         }) { CelebrationView(celebration: $0) }
         .sheet(isPresented: $reflecting) { ReflectionCard(book: book, chapter: chapter) }
+        .sheet(isPresented: Binding(get: { deepDive != nil }, set: { if !$0 { deepDive = nil } })) {
+            if let deepDive { DeepDiveSheet(dive: deepDive.dive, verseText: deepDive.text) }
+        }
     }
 
     private func recordRead() {

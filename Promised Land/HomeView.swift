@@ -11,6 +11,7 @@ struct HomeView: View {
     @Query private var versesMemorised: [VerseMemorised]
     @Query private var journal: [JournalEntry]
     @State private var showingLibrary = false
+    @State private var showingFriends = false
     #if DEBUG
     @State private var debugReflection: ChapterRef?
     #endif
@@ -115,6 +116,7 @@ struct HomeView: View {
             let args = ProcessInfo.processInfo.arguments
             if args.contains("-openLibrary") { showingLibrary = true }
             if args.contains("-openCustomize") { showingCustomise = true }
+            if args.contains("-openFriends") { showingFriends = true }
             if let i = args.firstIndex(of: "-openReflection"), i + 1 < args.count {
                 let parts = args[i + 1].split(separator: ":")
                 if parts.count == 2, let book = BibleCatalog.book(id: String(parts[0])), let ch = Int(parts[1]) {
@@ -146,6 +148,7 @@ struct HomeView: View {
         .sheet(isPresented: $showingCustomise) { AvatarCustomizeView() }
         .sheet(isPresented: $showingSettings) { SettingsView() }
         .sheet(isPresented: $showingLibrary) { LibraryShelfView() }
+        .sheet(isPresented: $showingFriends) { FriendsView() }
         #if DEBUG
         .sheet(item: $debugReflection) { ref in
             if let book = BibleCatalog.book(id: ref.bookID) { ReflectionCard(book: book, chapter: ref.chapter) }
@@ -161,6 +164,7 @@ struct HomeView: View {
             if !journal.isEmpty {
                 Button { showingLibrary = true } label: { Label("Library", systemImage: "books.vertical") }
             }
+            Button { showingFriends = true } label: { Label("Friends (preview)", systemImage: "person.2") }
             Button { showingSettings = true } label: { Label("Settings", systemImage: "gearshape") }
         } label: {
             Image(systemName: "ellipsis")
