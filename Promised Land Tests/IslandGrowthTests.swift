@@ -148,3 +148,69 @@ struct BuildingDataTests {
         }
     }
 }
+
+@MainActor
+struct IslandGeographyTests {
+    let start = Date(timeIntervalSince1970: 1_780_000_000)
+
+    func island(_ books: [String]) -> Island {
+        Island.build(chapters: books.enumerated().map { ($1, 1, start.addingTimeInterval(Double($0) * 86_400)) },
+                     quizzes: [], verses: [])
+    }
+
+    @Test("Old Testament books grow to the left, New Testament books to the right")
+    func testamentSides() {
+        let i = island(["genesis", "john", "ruth", "acts", "psalms", "romans"])
+        for plot in i.plots {
+            let across = plot.centre.y - plot.centre.x // > 0 is left on screen
+            if BibleCatalog.book(id: plot.bookID)?.testament == .old {
+                #expect(across > 0, "\(plot.bookID) should be on the left")
+            } else {
+                #expect(across < 0, "\(plot.bookID) should be on the right")
+            }
+        }
+    }
+
+    @Test("Harbour books sit on the coast, beside a bay of open water")
+    func harboursOnTheCoast() {
+        let i = island(["genesis", "john", "ruth", "jonah", "mark", "luke", "acts"])
+        let land = Set(i.tiles)
+        #expect(!i.water.isEmpty)
+        #expect(i.water.allSatisfy { !land.contains($0) })
+        for id in ["john", "jonah"] {
+            guard let plot = i.plots.first(where: { $0.bookID == id }) else { Issue.record("no plot"); continue }
+            // Some tile next to the plot's border is water.
+            let border = (plot.x - 2...plot.x + plot.size + 1).flatMap { x in
+                (plot.y - 2...plot.y + plot.size + 1).map { Island.Tile(x: x, y: $0) } }
+            #expect(border.contains { !land.contains($0) }, "\(id) should touch the sea")
+        }
+    }
+
+    @Test("Turning the island keeps grid and screen in step", arguments: [0, 1, 2, 3])
+    func rotationRoundTrip(quarter: Int) {
+        let i = island(["genesis", "john"])
+        let layout = IslandLayout(island: i, size: CGSize(width: 390, height: 844), zoom: 2, angle: CGFloat(quarter))
+        let g = layout.grid(layout.point(1.37, -0.81))
+        #expect(abs(g.x - 1.37) < 0.0001 && abs(g.y + 0.81) < 0.0001)
+        #expect(layout.quarter == quarter)
+        #expect(layout.mirrored == (quarter % 2 == 1))
+    }
+
+    @Test("A full turn comes back to the same view")
+    func fullTurn() {
+        let i = island(["genesis", "john"])
+        let a = IslandLayout(island: i, size: CGSize(width: 390, height: 844), angle: 0)
+        let b = IslandLayout(island: i, size: CGSize(width: 390, height: 844), angle: 4)
+        let p = a.point(2, 3), q = b.point(2, 3)
+        #expect(abs(p.x - q.x) < 0.001 && abs(p.y - q.y) < 0.001)
+    }
+
+    @Test("Taps still pick the right thing when the island is turned", arguments: [0, 1, 2, 3])
+    func tapsWhenTurned(quarter: Int) {
+        let i = island(["ruth"])
+        let layout = IslandLayout(island: i, size: CGSize(width: 390, height: 844), zoom: 3, angle: CGFloat(quarter))
+        guard let index = i.items.firstIndex(where: { if case .building = $0.kind { true } else { false } }) else { return }
+        let b = i.items[index]
+        #expect(IslandHitTester.hit(point: layout.point(b.gx, b.gy), layout: layout, items: i.items) == index)
+    }
+}

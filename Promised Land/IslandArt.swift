@@ -25,6 +25,7 @@ enum Earthy {
     static let shadow = Color(hex: "#DCC193")
     static let stone = Color(hex: "#E9D3AA"), stoneShade = Color(hex: "#D9BD8E")
     static let water = Color(hex: "#B9D3DA"), waterShine = Color(hex: "#D5E6EA")
+    static let sea = Color(hex: "#BFD9DE"), shallow = Color(hex: "#D3E6E5"), foam = Color(hex: "#F5F1E6")
     static let cloth = Color(hex: "#F1E6D7"), clothShade = Color(hex: "#E2D3BF")
     static let sky = Color(hex: "#FCF3DC")
 

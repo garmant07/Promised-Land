@@ -91,6 +91,8 @@ struct Island: Equatable {
     let tiles: [Tile]
     let items: [Item]
     var plots: [Plot] = []
+    /// Bays of open water cut into the coast beside harbour plots.
+    var water: Set<Tile> = []
 
     static let empty = Island.build(chapters: [], quizzes: [], verses: [])
 
@@ -157,7 +159,8 @@ struct Island: Equatable {
         for bookID in books {
             guard let book = BibleCatalog.book(id: bookID) else { continue }
             let spec = BuildingData.spec(for: bookID)
-            let plot = packer.place(bookID, size: IslandPlots.size(chapters: book.chapterCount))
+            let plot = packer.place(bookID, size: IslandPlots.size(chapters: book.chapterCount),
+                                    side: book.testament == .old ? .old : .new, coastal: spec.family == .harbour)
             plots.append(plot)
             let slots = IslandPlots.slots(in: plot)
             let bookReads = reads[bookID] ?? [:]
@@ -206,7 +209,7 @@ struct Island: Equatable {
         for feature in Feature.allCases where features.contains(feature) {
             items.append(IslandPlots.item(for: feature))
         }
-        return Island(tiles: packer.tiles(features: features), items: items, plots: plots)
+        return Island(tiles: packer.tiles(features: features), items: items, plots: plots, water: packer.water)
     }
 
     static func hash(_ s: String) -> Int {
@@ -221,26 +224,45 @@ struct Island: Equatable {
 // MARK: - Layout
 
 /// Maps island grid coordinates to points, scaled so the whole island fits inside the
-/// area left by `insets`, then zoomed about that area's centre. Panning is applied by the
-/// view as an offset (see `IslandHitTester`).
+/// area left by `insets`, then zoomed about that area's centre. The island can be turned in
+/// quarter turns about its middle (`angle`, in quarter turns; fractional while turning).
+/// Panning is applied by the view as an offset (see `IslandHitTester`).
 struct IslandLayout {
     let scale: CGFloat      // points per grid half-unit (a tile is 2 × scale wide)
     let origin: CGPoint
     let depth: CGFloat      // height of the earth sides
     let zoom: CGFloat
+    /// Quarter turns (0…4, fractional while animating).
+    let angle: CGFloat
+    /// The grid point the island turns about.
+    let pivot: CGPoint
+    private let cosA: CGFloat, sinA: CGFloat
 
     static let minZoom: CGFloat = 1, maxZoom: CGFloat = 4
 
-    init(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets(), zoom: CGFloat = 1) {
-        // Iso units: X = gx - gy, Y = (gx + gy) / 2.
+    /// The nearest whole quarter turn, 0…3.
+    var quarter: Int { ((Int((angle).rounded()) % 4) + 4) % 4 }
+    /// Code-drawn art is mirrored on odd quarter turns, so buildings face the new way.
+    var mirrored: Bool { quarter % 2 == 1 }
+
+    init(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets(), zoom: CGFloat = 1, angle: CGFloat = 0) {
+        let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
+        let pivot = CGPoint(x: CGFloat((xs.min() ?? 0) + (xs.max() ?? 0) + 1) / 2,
+                            y: CGFloat((ys.min() ?? 0) + (ys.max() ?? 0) + 1) / 2)
+        self.pivot = pivot
+        self.angle = angle
+        cosA = cos(angle * .pi / 2)
+        sinA = sin(angle * .pi / 2)
+        // Iso units: X = gx - gy, Y = (gx + gy) / 2 (after turning).
         var minX = CGFloat.infinity, maxX = -CGFloat.infinity, minY = CGFloat.infinity, maxY = -CGFloat.infinity
         for t in island.tiles {
             for (dx, dy) in [(0, 0), (1, 0), (0, 1), (1, 1)] {
-                let gx = CGFloat(t.x + dx), gy = CGFloat(t.y + dy)
-                minX = min(minX, gx - gy); maxX = max(maxX, gx - gy)
-                minY = min(minY, (gx + gy) / 2); maxY = max(maxY, (gx + gy) / 2)
+                let r = Self.turn(CGFloat(t.x + dx), CGFloat(t.y + dy), pivot: pivot, cos: cosA, sin: sinA)
+                minX = min(minX, r.x - r.y); maxX = max(maxX, r.x - r.y)
+                minY = min(minY, (r.x + r.y) / 2); maxY = max(maxY, (r.x + r.y) / 2)
             }
         }
+        if island.tiles.isEmpty { minX = -1; maxX = 1; minY = 0; maxY = 1 }
         let area = CGSize(width: max(1, size.width - insets.leading - insets.trailing),
                           height: max(1, size.height - insets.top - insets.bottom))
         let depthUnits: CGFloat = 0.3, headroom: CGFloat = 1.3
@@ -256,15 +278,24 @@ struct IslandLayout {
         origin = CGPoint(x: centre.x + (fitOrigin.x - centre.x) * z, y: centre.y + (fitOrigin.y - centre.y) * z)
     }
 
+    private static func turn(_ gx: CGFloat, _ gy: CGFloat, pivot: CGPoint, cos c: CGFloat, sin s: CGFloat) -> CGPoint {
+        let dx = gx - pivot.x, dy = gy - pivot.y
+        return CGPoint(x: pivot.x + dx * c - dy * s, y: pivot.y + dx * s + dy * c)
+    }
+
     func point(_ gx: CGFloat, _ gy: CGFloat) -> CGPoint {
-        CGPoint(x: origin.x + (gx - gy) * scale, y: origin.y + (gx + gy) / 2 * scale)
+        let r = Self.turn(gx, gy, pivot: pivot, cos: cosA, sin: sinA)
+        return CGPoint(x: origin.x + (r.x - r.y) * scale, y: origin.y + (r.x + r.y) / 2 * scale)
     }
 
     /// The grid position under a point (the inverse of `point`).
     func grid(_ p: CGPoint) -> CGPoint {
         let X = (p.x - origin.x) / scale, Y = (p.y - origin.y) / scale
-        return CGPoint(x: Y + X / 2, y: Y - X / 2)
+        return Self.turn(Y + X / 2, Y - X / 2, pivot: pivot, cos: cosA, sin: -sinA)
     }
+
+    /// Drawing order: things lower on screen are in front.
+    func depth(_ gx: CGFloat, _ gy: CGFloat) -> CGFloat { point(gx, gy).y }
 
     /// Size unit for drawing things, so they scale with the tiles.
     var u: CGFloat { scale / 22 }
@@ -297,7 +328,7 @@ enum IslandHitTester {
     static func candidates(at p: CGPoint, layout: IslandLayout, items: [Island.Item]) -> [HitCandidate<Int>] {
         let g = layout.grid(p)
         return items.enumerated().map { i, item in
-            HitCandidate(id: i, depth: item.gx + item.gy, onGround: item.footprint.contains(g),
+            HitCandidate(id: i, depth: layout.depth(item.gx, item.gy), onGround: item.footprint.contains(g),
                          bounds: IslandPainter.drawnBounds(of: item, layout: layout))
         }
     }
@@ -328,7 +359,8 @@ enum IslandHitTester {
 // MARK: - Drawing
 
 enum IslandPainter {
-    /// The ground: sand on two soft layers of earth, with a warmer courtyard for each book's plot.
+    /// The ground: sand on two soft layers of earth, a shallow band and foam where it meets
+    /// the sea, and a warmer courtyard for each book's plot.
     static func drawTiles(_ c: inout GraphicsContext, island: Island, layout: IslandLayout) {
         let set = Set(island.tiles)
         func corners(_ t: Island.Tile) -> [CGPoint] {
@@ -336,15 +368,16 @@ enum IslandPainter {
              layout.point(CGFloat(t.x + 1), CGFloat(t.y + 1)), layout.point(CGFloat(t.x), CGFloat(t.y + 1))]
         }
         let round = StrokeStyle(lineWidth: layout.u * 3, lineJoin: .round)
-        let shadow = Path { p in
-            for t in island.tiles {
-                p.addLines(corners(t).map { CGPoint(x: $0.x, y: $0.y + layout.depth * 2.2) }); p.closeSubpath()
-            }
-        }
-        c.fill(shadow, with: .color(Earthy.shadow.opacity(0.22)))
-
-        // Earth sides where the edge is exposed: an upper and a lower layer, left lighter.
         let down = layout.depth, half = layout.depth * 0.42
+
+        // Shallow water and foam around the shore, at sea level.
+        let base = Path { p in
+            for t in island.tiles { p.addLines(corners(t).map { CGPoint(x: $0.x, y: $0.y + down) }); p.closeSubpath() }
+        }
+        c.stroke(base, with: .color(Earthy.shallow), style: StrokeStyle(lineWidth: layout.u * 30, lineJoin: .round))
+        c.stroke(base, with: .color(Earthy.foam), style: StrokeStyle(lineWidth: layout.u * 9, lineJoin: .round))
+
+        // Earth sides where the edge faces you: an upper and a lower layer, left lighter.
         func side(_ a: CGPoint, _ b: CGPoint, top: Color, bottom: Color) {
             let upper = Path { $0.addLines([a, b, CGPoint(x: b.x, y: b.y + half), CGPoint(x: a.x, y: a.y + half)]); $0.closeSubpath() }
             let lower = Path { $0.addLines([CGPoint(x: a.x, y: a.y + half), CGPoint(x: b.x, y: b.y + half),
@@ -352,10 +385,20 @@ enum IslandPainter {
             c.fill(lower, with: .color(bottom)); c.stroke(lower, with: .color(bottom), style: round)
             c.fill(upper, with: .color(top)); c.stroke(upper, with: .color(top), style: round)
         }
-        for t in island.tiles.sorted(by: { ($0.x + $0.y, $0.x) < ($1.x + $1.y, $1.x) }) {
+        // Neighbour across each edge (corner i to i + 1).
+        let across = [(0, -1), (1, 0), (0, 1), (-1, 0)]
+        for t in island.tiles.sorted(by: { corners($0).map(\.y).max()! < corners($1).map(\.y).max()! }) {
             let q = corners(t)
-            if !set.contains(Island.Tile(x: t.x, y: t.y + 1)) { side(q[3], q[2], top: Earthy.strataLeftTop, bottom: Earthy.strataLeft) }
-            if !set.contains(Island.Tile(x: t.x + 1, y: t.y)) { side(q[2], q[1], top: Earthy.strataRightTop, bottom: Earthy.strataRight) }
+            let bottom = q.indices.max { q[$0].y < q[$1].y }!
+            // The two edges meeting at the lowest corner face the viewer.
+            for edge in [(bottom + 3) % 4, bottom] {
+                let n = across[edge]
+                guard !set.contains(Island.Tile(x: t.x + n.0, y: t.y + n.1)) else { continue }
+                let a = q[edge], b = q[(edge + 1) % 4]
+                let isLeft = min(a.x, b.x) < q[bottom].x - 0.5
+                side(a.x < b.x ? a : b, a.x < b.x ? b : a, top: isLeft ? Earthy.strataLeftTop : Earthy.strataRightTop,
+                     bottom: isLeft ? Earthy.strataLeft : Earthy.strataRight)
+            }
         }
         // The top, as one seamless sheet of sand.
         let top = Path { p in for t in island.tiles { p.addLines(corners(t)); p.closeSubpath() } }
@@ -379,15 +422,38 @@ enum IslandPainter {
         }
     }
 
+    /// Gentle waves on the sea around the island (drawn under it, animated by `time`).
+    static func drawWaves(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, time: Double) {
+        let land = Set(island.tiles)
+        let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
+        guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return }
+        let u = layout.u
+        for ty in (y0 - 5)...(y1 + 5) {
+            for tx in (x0 - 5)...(x1 + 5) where Noise.hash(tx, ty, seed: 57) > 0.72 && !land.contains(Island.Tile(x: tx, y: ty)) {
+                let phase = Noise.hash(tx, ty, seed: 59) * 6.28
+                let drift = sin(time * 0.7 + phase) * 0.12
+                let p = layout.point(CGFloat(tx) + 0.5 + drift, CGFloat(ty) + 0.5)
+                let alpha = 0.35 + 0.35 * sin(time * 1.1 + phase)
+                let w = 7 * u, h = 2.2 * u
+                let wave = Path { path in
+                    path.move(to: CGPoint(x: p.x - w, y: p.y + layout.depth))
+                    path.addQuadCurve(to: CGPoint(x: p.x, y: p.y + layout.depth), control: CGPoint(x: p.x - w / 2, y: p.y + layout.depth - h))
+                    path.addQuadCurve(to: CGPoint(x: p.x + w, y: p.y + layout.depth), control: CGPoint(x: p.x + w / 2, y: p.y + layout.depth - h))
+                }
+                c.stroke(wave, with: .color(Earthy.foam.opacity(max(0, alpha))), style: StrokeStyle(lineWidth: 1.4 * u, lineCap: .round))
+            }
+        }
+    }
+
     static func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout, scale: CGFloat = 1) {
         let p = layout.point(item.gx, item.gy)
         var g = c
         g.translateBy(x: p.x, y: p.y)
-        g.scaleBy(x: scale, y: scale)
-        draw(&g, item, u: layout.u, tileWidth: layout.scale * 2)
+        g.scaleBy(x: layout.mirrored ? -scale : scale, y: scale)
+        draw(&g, item, u: layout.u, tileWidth: layout.scale * 2, rotation: layout.quarter)
     }
 
-    private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat) {
+    private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat, rotation: Int) {
         if let art = art(for: item) {
             c.draw(Image(decorative: art.image, scale: 2), in: imageRect(art, item: item, tileWidth: tileWidth))
             return
@@ -395,14 +461,14 @@ enum IslandPainter {
         let pen = IsoPen(c: c, u: u)
         switch item.kind {
         case .building(let bookID):
-            if let custom = ArtAssets.building(bookID, level: buildingLevel(item)) {
+            if let custom = ArtAssets.building(bookID, level: buildingLevel(item), rotation: rotation) {
                 drawCustom(&c, custom, tileWidth: tileWidth)
                 return
             }
             BuildingArt.draw(pen, spec: BuildingData.spec(for: bookID), progress: item.progress, total: item.total,
                              extraFloors: max(0, item.level - 1), seed: item.seed)
         case .artifact(let kind):
-            if let custom = ArtAssets.artifact(kind.rawValue, level: item.level) {
+            if let custom = ArtAssets.artifact(kind.rawValue, level: item.level, rotation: rotation) {
                 drawCustom(&c, custom, tileWidth: tileWidth)
                 return
             }
@@ -505,16 +571,22 @@ private extension CGPoint {
 // MARK: - Plots
 
 /// Lays out books' plots. The starting square sits at the origin, with the Library's spot
-/// beside it; each new book's plot goes in the nearest free place, keeping a one-tile path
-/// between plots. Plot sizes depend only on the book's length, so nothing ever moves.
+/// beside it. Old Testament books grow out to the left (as you look at the island) and New
+/// Testament books to the right; each new book's plot goes in the nearest free place on its
+/// side, keeping a one-tile path between plots. Harbour books get a bay of open water on
+/// their outer side, so they always sit on the coast. Plot sizes depend only on the book's
+/// length, so nothing ever moves.
 struct IslandPlots {
+    enum Side { case old, new }
+
     /// The starting square (2 × 2 tiles from the origin), where your character begins.
     static let start = (x: 0, y: 0, size: 2)
-    /// The Library's spot, beside the starting square.
-    static let library = (x: -3, y: 0, size: 2)
+    /// The Library's spot, beside the starting square (between the two Testaments).
+    static let library = (x: -3, y: -3, size: 2)
 
     private var core: Set<Island.Tile> = []
     private var regions: [(x: Int, y: Int, size: Int)] = []
+    private(set) var water: Set<Island.Tile> = []
 
     init() {
         for r in [Self.start, Self.library] { mark(r.x, r.y, r.size) }
@@ -528,22 +600,44 @@ struct IslandPlots {
         return s
     }
 
-    private static let candidates: [(dx: Int, dy: Int)] = {
+    /// Candidate centres, nearest first, leaning to one side. On screen, grid +y runs down
+    /// to the left and +x down to the right, so "left" is where y − x is large.
+    private static func candidates(_ side: Side) -> [(dx: Int, dy: Int)] {
+        side == .old ? oldSide : newSide
+    }
+    private static let oldSide = ordered(lean: 1)
+    private static let newSide = ordered(lean: -1)
+    private static func ordered(lean: Double) -> [(dx: Int, dy: Int)] {
         let r = 46
-        var all: [(dx: Int, dy: Int, d: Double)] = []
-        for dy in -r...r { for dx in -r...r { all.append((dx, dy, hypot(Double(dx), Double(dy)))) } }
-        return all.sorted { ($0.d, $0.dy, $0.dx) < ($1.d, $1.dy, $1.dx) }.map { ($0.dx, $0.dy) }
-    }()
+        var all: [(dx: Int, dy: Int, cost: Double)] = []
+        for dy in -r...r {
+            for dx in -r...r {
+                let across = Double(dy - dx) * lean // > 0 on its own side
+                let cost = hypot(Double(dx), Double(dy)) + (across < 0 ? -across * 1.4 + 3 : 0)
+                all.append((dx, dy, cost))
+            }
+        }
+        return all.sorted { ($0.cost, $0.dy, $0.dx) < ($1.cost, $1.dy, $1.dx) }.map { ($0.dx, $0.dy) }
+    }
 
-    mutating func place(_ bookID: String, size: Int) -> Island.Plot {
-        for c in Self.candidates {
+    /// Where a harbour plot's bay goes: two tiles of water beyond its outer edge.
+    private static func bay(x: Int, y: Int, size: Int, side: Side) -> [Island.Tile] {
+        switch side {
+        case .old: (x..<(x + size)).flatMap { tx in [Island.Tile(x: tx, y: y + size + 1), Island.Tile(x: tx, y: y + size + 2)] }
+        case .new: (y..<(y + size)).flatMap { ty in [Island.Tile(x: x + size + 1, y: ty), Island.Tile(x: x + size + 2, y: ty)] }
+        }
+    }
+
+    mutating func place(_ bookID: String, size: Int, side: Side = .new, coastal: Bool = false) -> Island.Plot {
+        for c in Self.candidates(side) {
             // Centre the plot on the candidate offset from the starting square's middle.
             let x = 1 + c.dx - size / 2, y = 1 + c.dy - size / 2
-            if fits(x, y, size) {
-                mark(x, y, size)
-                regions.append((x, y, size))
-                return Island.Plot(bookID: bookID, x: x, y: y, size: size)
-            }
+            let bay = coastal ? Self.bay(x: x, y: y, size: size, side: side) : []
+            guard fits(x, y, size), bay.allSatisfy({ !core.contains($0) }) else { continue }
+            mark(x, y, size)
+            for t in bay { core.insert(t); water.insert(t) }
+            regions.append((x, y, size))
+            return Island.Plot(bookID: bookID, x: x, y: y, size: size)
         }
         return Island.Plot(bookID: bookID, x: 60, y: 60, size: size) // never reached in practice
     }
@@ -576,11 +670,11 @@ struct IslandPlots {
             for ty in (r.y - 1)...(r.y + r.size) {
                 for tx in (r.x - 1)...(r.x + r.size) {
                     let t = Island.Tile(x: tx, y: ty)
-                    if seen.insert(t).inserted { out.append(t) }
+                    if !water.contains(t), seen.insert(t).inserted { out.append(t) }
                 }
             }
         }
-        // Fill any water enclosed by land, so there are no holes.
+        // Fill any gaps enclosed by land (but not the bays), so there are no holes.
         let xs = out.map(\.x), ys = out.map(\.y)
         guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return out }
         var outside: Set<Island.Tile> = []
@@ -594,7 +688,7 @@ struct IslandPlots {
         for ty in y0...y1 {
             for tx in x0...x1 {
                 let t = Island.Tile(x: tx, y: ty)
-                if !seen.contains(t), !outside.contains(t) { out.append(t) }
+                if !seen.contains(t), !outside.contains(t), !water.contains(t) { out.append(t) }
             }
         }
         return out
