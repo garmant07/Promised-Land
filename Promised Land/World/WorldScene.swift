@@ -33,6 +33,8 @@ final class WorldScene: SKScene {
     var onViewportChange: ((CGRect) -> Void)?
     /// Called when a landmark is tapped, with its book id.
     var onSelectLandmark: ((String) -> Void)?
+    /// Called when a connection road is tapped, with the connection id.
+    var onSelectConnection: ((String) -> Void)?
 
     // MARK: Layers
 
@@ -42,12 +44,13 @@ final class WorldScene: SKScene {
     let overlayLayer = SKNode()
     let landmarkLayer = LandmarkLayer()
     let fogLayer = FogLayer()
+    let connectionLayer = ConnectionLayer()
 
     // MARK: Progress
 
     private var progress: GameProgress?
     private var appliedProgress = false
-    private var celebrationQueue: [String] = []
+    private var moments: [Moment] = []
     private var isOnScreen = false
 
     // MARK: Terrain chunks
@@ -63,7 +66,7 @@ final class WorldScene: SKScene {
     private var detailTextures: [Int: (scale: CGFloat, texture: SKTexture, lastUsed: TimeInterval)] = [:]
     private var pending: Set<String> = []
     private let lowScale: CGFloat = 0.4
-    private let maxDetailTextures = 18
+    private let maxDetailTextures = 30
 
     let mapBounds = Iso.sceneBounds(width: WorldData.mapWidth, height: WorldData.mapHeight)
 
@@ -99,6 +102,7 @@ final class WorldScene: SKScene {
 
         addChild(terrainLayer)
         addChild(objectLayer)
+        objectLayer.addChild(connectionLayer)
         objectLayer.addChild(landmarkLayer)
         addChild(fogLayer)
         addChild(landmarkLayer.labelLayer)
@@ -137,6 +141,8 @@ final class WorldScene: SKScene {
     private func terrainReady(_ model: TerrainModel) {
         terrain = model
         needsChunkRefresh = true
+        syncRoads()
+        playNextMoment()
         // Low-detail textures for the whole map, so panning never shows a gap.
         let rects = (0..<(chunkColumns * chunkRows)).map { ($0, chunkRect($0)) }
         let scale = lowScale
@@ -211,7 +217,7 @@ final class WorldScene: SKScene {
         let zoom = cameraNode.xScale
         if zoom < 0.9 { return 1.8 }
         if zoom < 2.2 { return 1.0 }
-        return nil
+        return 0.6
     }
 
     private func refreshChunks(currentTime: TimeInterval) {
@@ -412,12 +418,20 @@ final class WorldScene: SKScene {
     private func handleTap(at scenePoint: CGPoint) {
         if let bookID = landmarkLayer.landmark(at: scenePoint) {
             onSelectLandmark?(bookID)
+        } else if let id = connectionLayer.connection(near: Iso.grid(scenePoint)) {
+            onSelectConnection?(id)
         }
     }
 
     // MARK: Progress
 
-    /// Brings landmarks and fog in line with the player's progress.
+    /// Something worth showing the player: a building completing, or a road being built.
+    private enum Moment: Equatable {
+        case celebrate(String)
+        case road(String)
+    }
+
+    /// Brings landmarks, fog and roads in line with the player's progress.
     func apply(_ newProgress: GameProgress) {
         progress = newProgress
         guard didConfigure else { return }
@@ -440,36 +454,67 @@ final class WorldScene: SKScene {
             fogLayer.configure(revealed: revealed)
             landmarkLayer.apply(newProgress, animated: false)
         }
-        queueCelebrations(for: completed)
+        for bookID in completed.subtracting(celebrated) { enqueue(.celebrate(bookID)) }
+        syncRoads()
+        if isOnScreen { playNextMoment() }
     }
 
-    private func queueCelebrations(for completed: Set<String>) {
-        let celebrated = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.celebrated) ?? [])
-        for bookID in completed.subtracting(celebrated) where !celebrationQueue.contains(bookID) {
-            celebrationQueue.append(bookID)
+    /// Shows roads already built; queues newly earned ones. Waits for terrain (to find water).
+    private func syncRoads() {
+        guard let progress, terrain != nil else { return }
+        let active = Set(progress.activeConnections.map(\.id))
+        if UserDefaults.standard.array(forKey: StorageKeys.builtConnections) == nil {
+            UserDefaults.standard.set(Array(active), forKey: StorageKeys.builtConnections)
         }
-        if isOnScreen { playNextCelebration() }
+        let stored = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.builtConnections) ?? []).intersection(active)
+        UserDefaults.standard.set(Array(stored), forKey: StorageKeys.builtConnections)
+        connectionLayer.removeRoads(notIn: active)
+        connectionLayer.show(stored, terrain: terrain)
+        moments.removeAll { if case .road(let id) = $0 { return !active.contains(id) } else { return false } }
+        for id in active.subtracting(stored).subtracting(connectionLayer.built) { enqueue(.road(id)) }
+    }
+
+    private func enqueue(_ moment: Moment) {
+        if !moments.contains(moment) { moments.append(moment) }
     }
 
     /// Call when the World tab becomes visible / hidden.
     func setOnScreen(_ visible: Bool) {
         isOnScreen = visible
-        if visible { playNextCelebration() }
+        if visible { playNextMoment() }
     }
 
-    private func playNextCelebration() {
-        guard !celebrationQueue.isEmpty, action(forKey: "celebrating") == nil,
-              let landmark = WorldData.landmark(bookID: celebrationQueue.removeFirst()) else { return }
-        var celebrated = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.celebrated) ?? [])
-        celebrated.insert(landmark.bookID)
-        UserDefaults.standard.set(Array(celebrated), forKey: StorageKeys.celebrated)
-        flyTo(grid: landmark.center, zoom: min(cameraNode.xScale, 1.3))
-        run(.sequence([.wait(forDuration: 0.75), .run { [weak self] in
-            self?.landmarkLayer.celebrate(landmark.bookID)
-            self?.landmarkDidComplete(landmark.bookID)
-        }, .wait(forDuration: 1.6), .run { [weak self] in
-            self?.playNextCelebration()
-        }]), withKey: "celebrating")
+    private func playNextMoment() {
+        guard isOnScreen, !moments.isEmpty, action(forKey: "moment") == nil else { return }
+        switch moments.removeFirst() {
+        case .celebrate(let bookID):
+            guard let landmark = WorldData.landmark(bookID: bookID) else { return playNextMoment() }
+            var celebrated = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.celebrated) ?? [])
+            celebrated.insert(bookID)
+            UserDefaults.standard.set(Array(celebrated), forKey: StorageKeys.celebrated)
+            flyTo(grid: landmark.center, zoom: min(cameraNode.xScale, 1.3))
+            run(.sequence([.wait(forDuration: 0.75), .run { [weak self] in
+                self?.landmarkLayer.celebrate(bookID)
+                self?.landmarkDidComplete(bookID)
+            }, .wait(forDuration: 1.6), .run { [weak self] in
+                self?.playNextMoment()
+            }]), withKey: "moment")
+
+        case .road(let id):
+            guard let frame = connectionLayer.frame(of: id) else { return playNextMoment() }
+            let fitZoom = frame.length * Iso.tileWidth * 0.75 / max(size.width, 1)
+            flyTo(grid: frame.mid, zoom: min(maxZoom, max(cameraNode.xScale, fitZoom)))
+            run(.sequence([.wait(forDuration: 0.7), .run { [weak self] in
+                guard let self else { return }
+                let duration = self.connectionLayer.animateIn(id, terrain: self.terrain)
+                var built = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.builtConnections) ?? [])
+                built.insert(id)
+                UserDefaults.standard.set(Array(built), forKey: StorageKeys.builtConnections)
+                self.run(.sequence([.wait(forDuration: duration + 0.4), .run { [weak self] in
+                    self?.playNextMoment()
+                }]), withKey: "moment")
+            }]), withKey: "moment")
+        }
     }
 
     /// Hook for characters arriving (Phase 5).

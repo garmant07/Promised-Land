@@ -8,6 +8,8 @@ struct WorldView: View {
     @State private var showingSettings = false
     @State private var cardCollapsed = false
     @State private var selected: Landmark?
+    @State private var selectedConnection: Connection?
+    @State private var minimap = MinimapModel()
 
     var body: some View {
         ZStack {
@@ -23,6 +25,14 @@ struct WorldView: View {
                     .padding(.vertical, 4)
                     .background(Color.cream.opacity(0.92), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
                     .padding(.horizontal, 12)
+                HStack {
+                    Spacer()
+                    MinimapView(progress: progress, model: minimap) { point in
+                        scene.flyTo(point)
+                    }
+                }
+                .padding(.horizontal, 12)
+                .padding(.top, 8)
                 Spacer()
                 HStack {
                     Spacer()
@@ -38,7 +48,12 @@ struct WorldView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 10)
-                if let next = NextUnlock.suggest(from: progress) {
+                if let connection = selectedConnection {
+                    ConnectionCard(connection: connection) { selectedConnection = nil }
+                        .padding(.horizontal, 12)
+                        .padding(.bottom, 8)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                } else if let next = NextUnlock.suggest(from: progress) {
                     NextUnlockCard(next: next, collapsed: $cardCollapsed) { selected = $0 }
                         .padding(.horizontal, 12)
                         .padding(.bottom, 8)
@@ -47,6 +62,12 @@ struct WorldView: View {
         }
         .onAppear {
             scene.onSelectLandmark = { bookID in selected = WorldData.landmark(bookID: bookID) }
+            scene.onSelectConnection = { id in
+                withAnimation(.spring(duration: 0.35)) {
+                    selectedConnection = WorldData.connections.first { $0.id == id }
+                }
+            }
+            scene.onViewportChange = { [minimap] rect in minimap.viewport = rect }
             scene.apply(progress)
             scene.setOnScreen(true)
         }
