@@ -26,6 +26,10 @@ struct PlatformScene: View {
     var characters: [IslandCharacter] = []
     /// "Read their story" in a character's speech bubble.
     var onReadStory: ((ChapterRef) -> Void)? = nil
+    /// Visiting a building: your character walks to its door while the camera eases in,
+    /// then `onArrived` is called. Setting it back to nil restores the camera.
+    var visit: Int? = nil
+    var onArrived: ((Int) -> Void)? = nil
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -50,6 +54,9 @@ struct PlatformScene: View {
     @State private var draggingPlot: (key: String, start: CGPoint)?
     /// The character talking, and since when (they stand still while talking).
     @State private var speaking: (id: String, since: Date)?
+    /// The camera before a visit, to come back to.
+    @State private var cameraBeforeVisit: (zoom: CGFloat, pan: CGSize)?
+    @State private var walkToken = 0
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -180,6 +187,16 @@ struct PlatformScene: View {
                     controls(layout: layout, size: geo.size)
                         .padding(.trailing, 14)
                         .padding(.bottom, insets.bottom + 6)
+                }
+            }
+            .onChange(of: visit) { _, index in
+                if let index, island.items.indices.contains(index) {
+                    startVisit(island.items[index], index: index, size: geo.size)
+                } else if let before = cameraBeforeVisit {
+                    withAnimation(.easeInOut(duration: 0.5)) { zoom = before.zoom; pan = before.pan }
+                    zoomStart = before.zoom
+                    panStart = before.pan
+                    cameraBeforeVisit = nil
                 }
             }
             .onChange(of: selected.wrappedValue) { _, index in
@@ -539,22 +556,53 @@ struct PlatformScene: View {
             let nearby = island.tiles.filter { hypot(Double($0.x) + 0.5 - spot.x, Double($0.y) + 0.5 - spot.y) < 2.6 }
             guard let tile = nearby.randomElement() else { continue }
             let target = CGPoint(x: Double(tile.x) + Double.random(in: 0.2...0.8), y: Double(tile.y) + Double.random(in: 0.2...0.8))
+            guard visit == nil else { continue } // stay at the door while visiting
             await walk(to: target)
         }
     }
 
     /// Walks the character to a grid point at a stroll.
-    private func walk(to target: CGPoint, speed: Double = 0.55) async {
+    private func walk(to target: CGPoint, speed: Double = 0.55, maxDuration: Double = 30) async {
         let distance = hypot(target.x - spot.x, target.y - spot.y)
         guard distance > 0.3 else { return }
+        walkToken += 1
+        let token = walkToken
         facingLeft = (target.x - target.y) < (spot.x - spot.y)
-        walkFrom = spot
-        walkDuration = max(0.8, distance / speed)
+        walkFrom = position(at: .now)
+        walkDuration = min(maxDuration, max(0.8, distance / speed))
         walkStart = .now
         spot = target
         walking = true
         try? await Task.sleep(for: .seconds(walkDuration))
-        walking = false
+        if walkToken == token { walking = false }
+    }
+
+    /// Walks to a building's door (just in front of it) while easing the camera in.
+    private func startVisit(_ item: Island.Item, index: Int, size: CGSize) {
+        speaking = nil
+        if cameraBeforeVisit == nil { cameraBeforeVisit = (zoom, pan) }
+        let door = CGPoint(x: item.gx + 0.62, y: item.gy + 0.62)
+        let newZoom = max(zoom, 3)
+        let target = IslandLayout(island: island, size: size, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
+        let p = target.point(door.x, door.y)
+        let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
+                             y: insets.top + (size.height - insets.top - insets.bottom) * 0.55)
+        let walkTime = min(2.2, max(0.6, hypot(door.x - spot.x, door.y - spot.y) / 2.2))
+        withAnimation(.easeInOut(duration: reduceMotion ? 0.01 : walkTime)) {
+            zoom = newZoom
+            pan = CGSize(width: centre.x - p.x, height: centre.y - p.y)
+        }
+        zoomStart = newZoom
+        panStart = pan
+        Task {
+            if reduceMotion {
+                spot = door; walkFrom = door
+            } else {
+                await walk(to: door, speed: 2.2, maxDuration: walkTime)
+                try? await Task.sleep(for: .milliseconds(150))
+            }
+            onArrived?(index)
+        }
     }
 
     private func startPop() {

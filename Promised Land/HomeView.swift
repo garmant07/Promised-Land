@@ -74,6 +74,10 @@ struct HomeView: View {
     @State private var editSelected: String?
     @State private var dragBase: IslandPlacement?
 
+    // Stepping inside a building
+    @State private var visitIndex: Int?
+    @State private var interior: InteriorRef?
+
     /// Characters already welcomed (so each celebration shows once).
     @AppStorage("characters.celebrated") private var celebratedCharacters = ""
     /// False until the first check, when characters you already had are noted silently.
@@ -117,7 +121,12 @@ struct HomeView: View {
                           persistsCamera: true, editing: editingIsland ? editing : nil,
                           onLongPress: { index in startEditing(island.items[index].plotKey) },
                           characters: IslandCharacter.make(unlockedCharacters, island: island),
-                          onReadStory: { activeSheet = .chapter($0) }) { index in open(index, in: island) }
+                          onReadStory: { activeSheet = .chapter($0) },
+                          visit: visitIndex,
+                          onArrived: { index in
+                              guard island.items.indices.contains(index), case .building(let id) = island.items[index].kind else { return }
+                              interior = InteriorRef(id: id)
+                          }) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
         // The status pill is read-only, so touches on it go through to the island.
@@ -137,6 +146,13 @@ struct HomeView: View {
         }
         .onChange(of: activeSheet) { _, sheet in
             if sheet == nil { selectedItem = nil; showNewGrowth() }
+        }
+        .fullScreenCover(item: $interior, onDismiss: {
+            visitIndex = nil
+            selectedItem = nil
+            showNewGrowth()
+        }) { ref in
+            InteriorView(bookID: ref.id) { interior = nil }
         }
         .fullScreenCover(isPresented: $showingWorld, onDismiss: showNewGrowth) {
             WorldView(scene: worldScene) { showingWorld = false }
@@ -224,6 +240,9 @@ struct HomeView: View {
         selectedItem = index
         if case .feature(.library) = item.source {
             activeSheet = .library
+        } else if case .building = item.kind {
+            // Step inside: walk to the door, then open the building.
+            visitIndex = index
         } else if let subject = InsightSubject.island(item) {
             activeSheet = .insight(subject)
         }
@@ -431,6 +450,11 @@ struct HomeView: View {
         }
     }
     #endif
+}
+
+/// A building being visited (for the full-screen inside page).
+struct InteriorRef: Identifiable, Equatable {
+    let id: String
 }
 
 /// Compact buttons for the edit-mode bar.

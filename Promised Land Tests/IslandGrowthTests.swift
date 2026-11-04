@@ -355,3 +355,20 @@ struct AvatarTests {
         #expect(a.randomised().name == "Hannah")
     }
 }
+
+@MainActor
+struct InteriorTextTests {
+    func text(progress: Int, total: Int, level: Int) -> String {
+        var item = Island.Item(kind: .building("ruth"), gx: 0, gy: 0, seed: 0)
+        item.progress = progress; item.total = total; item.level = level
+        return InsightSubject.buildingText(item, book: BibleCatalog.book(id: "ruth")!)
+    }
+
+    @Test("A building's inside page says how far along it is, with the exact floor count")
+    func states() {
+        #expect(text(progress: 0, total: 4, level: 0).hasPrefix("Foundations laid"))
+        #expect(text(progress: 3, total: 4, level: 0).contains("1 more to raise"))
+        #expect(text(progress: 4, total: 4, level: 1).hasPrefix("Built when you finished"))
+        #expect(text(progress: 4, total: 4, level: 7).contains("6 extra floors"))
+    }
+}
