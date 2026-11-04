@@ -11,9 +11,12 @@ struct ContentView: View {
         .fullScreenCover(isPresented: Binding(get: { !hasOnboarded }, set: { hasOnboarded = !$0 })) {
             OnboardingView { hasOnboarded = true }
         }
-        #if DEBUG
-        .task { DebugSeed.apply(to: context) }
-        #endif
+        .task {
+            #if DEBUG
+            DebugSeed.apply(to: context)
+            #endif
+            AvatarProfile.ensure(in: context)
+        }
     }
 }
 

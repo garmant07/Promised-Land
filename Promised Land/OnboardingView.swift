@@ -1,9 +1,14 @@
 import SwiftUI
+import SwiftData
 
 struct OnboardingView: View {
     var onFinish: () -> Void
 
     @State private var page = 0
+    @Environment(\.modelContext) private var context
+    @Query private var profiles: [AvatarProfile]
+    /// The welcome pages, then the character creator.
+    private var pageCount: Int { pages.count + 1 }
 
     private let pages: [(symbol: String, title: String, text: String)] = [
         ("book.pages.fill", "Read, and the land grows",
@@ -39,12 +44,31 @@ struct OnboardingView: View {
                     .padding(.horizontal, 24)
                     .tag(i)
                 }
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Make your character")
+                            .font(.serifTitle(.largeTitle))
+                            .foregroundStyle(Color.bodyText)
+                        Text("They'll walk your world as you read. You can change this any time.")
+                            .foregroundStyle(Color.secondaryText)
+                        if let profile = profiles.first {
+                            AvatarEditor(profile: profile).padding(.top, 8)
+                        } else {
+                            ProgressView().frame(maxWidth: .infinity).padding(40)
+                        }
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.top, 24)
+                    .padding(.bottom, 40)
+                }
+                .tag(pages.count)
+                .task { AvatarProfile.ensure(in: context) }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
 
-            Button(page < pages.count - 1 ? "Next" : "Begin the journey") {
-                if page < pages.count - 1 {
+            Button(page < pageCount - 1 ? "Next" : "Begin the journey") {
+                if page < pageCount - 1 {
                     withAnimation { page += 1 }
                 } else {
                     onFinish()
@@ -53,11 +77,11 @@ struct OnboardingView: View {
             .buttonStyle(PrimaryButtonStyle())
             .padding(.horizontal, 24)
 
-            Button("Skip") { onFinish() }
+            Button("Skip") { withAnimation { page = pageCount - 1 } }
                 .font(.subheadline)
                 .foregroundStyle(Color.secondaryText)
                 .frame(minHeight: 44)
-                .opacity(page < pages.count - 1 ? 1 : 0)
+                .opacity(page < pageCount - 1 ? 1 : 0)
         }
         .padding(.bottom, 16)
         .background(Color.cream.ignoresSafeArea())
@@ -66,4 +90,5 @@ struct OnboardingView: View {
 
 #Preview {
     OnboardingView(onFinish: {})
+        .modelContainer(PreviewData.container)
 }

@@ -203,6 +203,25 @@ struct StatsView: View {
                         tile("\(progress.streak)", progress.streak == 1 ? "day streak" : "day streak")
                     }
 
+                    if !JourneyData.visible.isEmpty {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Journeys")
+                                .font(.serifTitle(.title3))
+                                .foregroundStyle(Color.bodyText)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 14) {
+                                    ForEach(JourneyData.visible) { journey in
+                                        JourneyBadge(journey: journey, earned: progress.isComplete(journey))
+                                    }
+                                }
+                            }
+                            Text("\(progress.completedJourneys.count) of \(JourneyData.visible.count) journeys complete")
+                                .font(.subheadline)
+                                .foregroundStyle(Color.secondaryText)
+                        }
+                        .cardStyle()
+                    }
+
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Most-read books")
                             .font(.serifTitle(.title3))

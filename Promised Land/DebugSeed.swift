@@ -43,6 +43,8 @@ enum DebugSeed {
             UserDefaults.standard.removeObject(forKey: StorageKeys.worldCamera)
             UserDefaults.standard.removeObject(forKey: StorageKeys.storyObjectsSeen)
             UserDefaults.standard.removeObject(forKey: StorageKeys.libraryRevealed)
+            UserDefaults.standard.removeObject(forKey: StorageKeys.journeyStopsSeen)
+            UserDefaults.standard.removeObject(forKey: StorageKeys.journeysCompleted)
             try? context.delete(model: JournalEntry.self)
         }
         if args.contains("-skipOnboarding") {

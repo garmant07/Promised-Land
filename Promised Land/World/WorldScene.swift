@@ -44,6 +44,8 @@ final class WorldScene: SKScene {
     var onSelectStoryObject: ((String) -> Void)?
     /// Called when the Library is tapped.
     var onSelectLibrary: (() -> Void)?
+    /// Called when a journey stop is tapped, with the journey id.
+    var onSelectJourney: ((String) -> Void)?
 
     // MARK: Layers
 
@@ -56,6 +58,11 @@ final class WorldScene: SKScene {
     let connectionLayer = ConnectionLayer()
     let chapterObjectLayer = ChapterObjectLayer()
     let libraryNode = LibraryNode()
+    let journeyLayer = JourneyLayer()
+    let avatarNode = PlayerAvatarNode()
+    private var avatarIdleUntil: TimeInterval = 0
+    private var lastSeenRead: Date?
+    private var avatarPlaced = false
     let decorationLayer = DecorationLayer()
     let characterLayer = CharacterLayer()
     let ambientLayer = AmbientLayer()
@@ -119,6 +126,8 @@ final class WorldScene: SKScene {
         addChild(terrainLayer)
         addChild(objectLayer)
         objectLayer.addChild(connectionLayer)
+        objectLayer.addChild(journeyLayer)
+        objectLayer.addChild(avatarNode)
         objectLayer.addChild(decorationLayer)
         objectLayer.addChild(landmarkLayer)
         objectLayer.addChild(chapterObjectLayer)
@@ -212,6 +221,7 @@ final class WorldScene: SKScene {
 
         let viewport = visibleRect()
         characterLayer.updateDepths()
+        updateAvatar(currentTime: currentTime)
         ambientLayer.update(dt: dt, visible: viewport, zoom: cameraNode.xScale, terrain: terrain)
         if viewport != lastReportedViewport {
             needsChunkRefresh = true
@@ -466,6 +476,8 @@ final class WorldScene: SKScene {
     private func handleTap(at scenePoint: CGPoint) {
         if let character = characterLayer.character(at: scenePoint) {
             characterLayer.speak(character, zoom: cameraNode.xScale)
+        } else if let id = journeyLayer.journey(near: Iso.grid(scenePoint)) {
+            onSelectJourney?(id)
         } else if libraryNode.contains(gridPoint: Iso.grid(scenePoint)) {
             onSelectLibrary?()
         } else if let id = chapterObjectLayer.object(at: scenePoint) {
@@ -485,6 +497,70 @@ final class WorldScene: SKScene {
         case road(String)
         case story(String)
         case library
+        case journey(String)
+    }
+
+    // MARK: Your avatar
+
+    func setAvatar(_ avatar: Avatar) { avatarNode.show(avatar) }
+
+    private func updateAvatar(currentTime: TimeInterval) {
+        let g = avatarNode.grid
+        avatarNode.zPosition = Iso.depth(g.x, g.y) + 0.3
+        guard avatarPlaced, !avatarNode.isWalking, action(forKey: "moment") == nil,
+              currentTime > avatarIdleUntil, let progress else { return }
+        // Wander to a nearby place you've begun (or potter about if there isn't one yet).
+        let begun = WorldData.landmarks.filter { progress.stage(of: $0.bookID) > .plot }
+        let near = begun.filter { hypot($0.center.x - g.x, $0.center.y - g.y) < 14 }
+        var target: CGPoint
+        if let landmark = (near.isEmpty ? begun : near).randomElement() {
+            target = Self.standingSpot(for: landmark)
+        } else {
+            target = CGPoint(x: g.x + .random(in: -2...2), y: g.y + .random(in: -2...2))
+        }
+        if hypot(target.x - g.x, target.y - g.y) < 0.5 { target.x += 1.2 }
+        avatarIdleUntil = .infinity
+        avatarNode.walk(through: [target], tilesPerSecond: 1.2) { [weak self] in
+            guard let self else { return }
+            self.avatarIdleUntil = self.lastUpdate + .random(in: 3...7)
+        }
+    }
+
+    /// Just in front of a landmark, where the avatar can stand without hiding behind it.
+    private static func standingSpot(for landmark: Landmark) -> CGPoint {
+        CGPoint(x: CGFloat(landmark.x + landmark.size) + 0.7, y: CGFloat(landmark.y) + CGFloat(landmark.size) * 0.6)
+    }
+
+    /// After a chapter is read: walk to what it built (its story object, or its book's landmark).
+    private func walkToLatestRead(_ progress: GameProgress) {
+        guard let latest = progress.latestRead else { return }
+        defer { lastSeenRead = latest.date }
+        guard let seen = lastSeenRead, latest.date > seen else {
+            if !avatarPlaced { placeAvatar(progress) }
+            return
+        }
+        // Journeys walk their own route.
+        if JourneyData.visible.contains(where: { $0.stops.contains { $0.bookID == latest.bookID && $0.chapter == latest.chapter } }) { return }
+        var target: CGPoint?
+        if let object = ChapterLandmarks.entries(for: latest.bookID, chapter: latest.chapter).first {
+            target = CGPoint(x: CGFloat(object.x + object.size) + 0.6, y: CGFloat(object.y) + CGFloat(object.size) * 0.5)
+        } else if let landmark = WorldData.landmark(bookID: latest.bookID) {
+            target = Self.standingSpot(for: landmark)
+        }
+        guard let target else { return }
+        avatarIdleUntil = .infinity
+        avatarNode.walk(through: [target], tilesPerSecond: 3) { [weak self] in
+            guard let self else { return }
+            self.avatarIdleUntil = self.lastUpdate + 8
+        }
+    }
+
+    private func placeAvatar(_ progress: GameProgress) {
+        avatarPlaced = true
+        let start = progress.newestBookID.flatMap { WorldData.landmark(bookID: $0) }.map { Self.standingSpot(for: $0) }
+            ?? CGPoint(x: 52, y: 38)
+        avatarNode.position = Iso.scene(start)
+        avatarIdleUntil = lastUpdate + 2
     }
 
     /// Shows the Library once the first journal entry exists (with a moment the first time).
@@ -525,6 +601,10 @@ final class WorldScene: SKScene {
         }
         chapterObjectLayer.apply(newProgress, animated: false)
         queueStoryMoments(newProgress)
+        journeyLayer.apply(newProgress)
+        queueJourneyMoments(newProgress)
+        if !avatarPlaced { placeAvatar(newProgress) }
+        walkToLatestRead(newProgress)
         for bookID in completed.subtracting(celebrated) { enqueue(.celebrate(bookID)) }
         // Characters live at finished landmarks; new arrivals wait for their celebration.
         characterLayer.sync(present: completed.intersection(celebrated))
@@ -559,6 +639,20 @@ final class WorldScene: SKScene {
         UserDefaults.standard.set(seen, forKey: StorageKeys.storyObjectsSeen)
         for entry in ChapterLandmarks.visible where (current[entry.id] ?? 0) > (seen[entry.id] ?? 0) {
             enqueue(.story(entry.id))
+        }
+    }
+
+    /// Journeys with newly lit stops get a moment (remembered across launches).
+    private func queueJourneyMoments(_ progress: GameProgress) {
+        let current = Dictionary(uniqueKeysWithValues: JourneyData.visible.map { ($0.id, progress.litCount($0)) })
+        guard var seen = UserDefaults.standard.dictionary(forKey: StorageKeys.journeyStopsSeen) as? [String: Int] else {
+            UserDefaults.standard.set(current, forKey: StorageKeys.journeyStopsSeen)
+            return
+        }
+        for (id, lit) in current where lit < (seen[id] ?? 0) { seen[id] = lit }
+        UserDefaults.standard.set(seen, forKey: StorageKeys.journeyStopsSeen)
+        for journey in JourneyData.visible where (current[journey.id] ?? 0) > (seen[journey.id] ?? 0) {
+            enqueue(.journey(journey.id))
         }
     }
 
@@ -599,6 +693,36 @@ final class WorldScene: SKScene {
                 self.chapterObjectLayer.pop(id)
                 self.landmarkLayer.puff(at: point, z: 5_500, big: false)
             }, .wait(forDuration: 1.2), .run { [weak self] in
+                self?.playNextMoment()
+            }]), withKey: "moment")
+
+        case .journey(let id):
+            guard let journey = JourneyData.journey(id: id), let progress else { return playNextMoment() }
+            var seen = UserDefaults.standard.dictionary(forKey: StorageKeys.journeyStopsSeen) as? [String: Int] ?? [:]
+            seen[id] = progress.litCount(journey)
+            UserDefaults.standard.set(seen, forKey: StorageKeys.journeyStopsSeen)
+            // Walk to the furthest lit stop, from the stop before it.
+            let target = journey.stops.lastIndex(where: progress.isLit) ?? 0
+            let leg = Array(journey.stops[max(0, target - 1)...target]).map(\.grid)
+            let mid = CGPoint(x: leg.map(\.x).reduce(0, +) / CGFloat(leg.count), y: leg.map(\.y).reduce(0, +) / CGFloat(leg.count))
+            let span = leg.count > 1 ? hypot(leg[1].x - leg[0].x, leg[1].y - leg[0].y) : 4
+            flyTo(grid: mid, zoom: min(maxZoom, max(1.0, span * Iso.tileWidth * 0.8 / max(size.width, 1))))
+            avatarNode.stop()
+            avatarNode.position = Iso.scene(leg[0])
+            avatarIdleUntil = .infinity
+            let complete = progress.isComplete(journey)
+            var completed = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.journeysCompleted) ?? [])
+            let celebrate = complete && !completed.contains(id)
+            if celebrate { completed.insert(id); UserDefaults.standard.set(Array(completed), forKey: StorageKeys.journeysCompleted) }
+            run(.sequence([.wait(forDuration: 0.7), .run { [weak self] in
+                guard let self else { return }
+                self.avatarNode.walk(through: Array(leg.dropFirst()), tilesPerSecond: 4) { [weak self] in
+                    guard let self else { return }
+                    self.journeyLayer.pulse(journey: id, stop: target)
+                    if celebrate { self.landmarkLayer.puff(at: Iso.scene(leg.last!), z: 5_500, big: true) }
+                    self.avatarIdleUntil = self.lastUpdate + 6
+                }
+            }, .wait(forDuration: 0.7 + min(9, Double(span / 4)) + 1.4), .run { [weak self] in
                 self?.playNextMoment()
             }]), withKey: "moment")
 

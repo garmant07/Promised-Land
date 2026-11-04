@@ -12,6 +12,8 @@ enum StorageKeys {
     static let storyObjectsSeen = "storyObjectsSeen"
     static let offerReflection = "offerReflection"
     static let libraryRevealed = "libraryRevealed"
+    static let journeyStopsSeen = "journeyStopsSeen"
+    static let journeysCompleted = "journeysCompleted"
 }
 
 struct SettingsView: View {
@@ -21,6 +23,7 @@ struct SettingsView: View {
     @AppStorage(StorageKeys.offerReflection) private var offerReflection = true
 
     @State private var confirmingReset = false
+    @State private var editingCharacter = false
     @State private var message: String?
 
     var body: some View {
@@ -28,6 +31,8 @@ struct SettingsView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     section("Your journey") {
+                        Button("Edit your character") { editingCharacter = true }
+                            .buttonStyle(SoftButtonStyle())
                         Button("Show the welcome again") {
                             hasOnboarded = false
                             dismiss()
@@ -77,6 +82,7 @@ struct SettingsView: View {
                         .tint(Color.primaryBrown)
                 }
             }
+            .sheet(isPresented: $editingCharacter) { AvatarCustomizeView() }
             .confirmationDialog("Reset all progress?", isPresented: $confirmingReset, titleVisibility: .visible) {
                 Button("Reset everything", role: .destructive) { resetProgress() }
             } message: {
@@ -100,6 +106,8 @@ struct SettingsView: View {
         UserDefaults.standard.removeObject(forKey: StorageKeys.celebrated)
         UserDefaults.standard.removeObject(forKey: StorageKeys.builtConnections)
         UserDefaults.standard.removeObject(forKey: StorageKeys.storyObjectsSeen)
+        UserDefaults.standard.removeObject(forKey: StorageKeys.journeyStopsSeen)
+        UserDefaults.standard.removeObject(forKey: StorageKeys.journeysCompleted)
         message = "Progress cleared. A fresh start."
     }
 }

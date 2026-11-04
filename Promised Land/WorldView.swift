@@ -9,6 +9,8 @@ struct WorldView: View {
     var onClose: (() -> Void)? = nil
     @State private var showingStats = false
     @State private var showingLibrary = false
+    @State private var selectedJourney: Journey?
+    @CurrentAvatar private var avatar: Avatar
     @Query private var journal: [JournalEntry]
     @State private var selectedStory: ChapterLandmark?
     @State private var cardCollapsed = false
@@ -74,6 +76,8 @@ struct WorldView: View {
             }
             scene.onSelectStoryObject = { id in selectedStory = ChapterLandmarks.entry(id: id) }
             scene.onSelectLibrary = { showingLibrary = true }
+            scene.onSelectJourney = { id in selectedJourney = JourneyData.journey(id: id) }
+            scene.setAvatar(avatar)
             scene.setLibraryVisible(!journal.isEmpty)
             scene.onViewportChange = { [minimap] rect in minimap.viewport = rect }
             scene.apply(progress)
@@ -82,11 +86,14 @@ struct WorldView: View {
             let args = ProcessInfo.processInfo.arguments
             if let i = args.firstIndex(of: "-openStory"), i + 1 < args.count { selectedStory = ChapterLandmarks.entry(id: args[i + 1]) }
             if args.contains("-openStats") { showingStats = true }
+            if let i = args.firstIndex(of: "-openJourney"), i + 1 < args.count { selectedJourney = JourneyData.journey(id: args[i + 1]) }
             #endif
         }
         .onDisappear { scene.setOnScreen(false) }
         .onChange(of: progress) { _, new in scene.apply(new) }
         .onChange(of: journal.isEmpty) { _, empty in scene.setLibraryVisible(!empty) }
+        .onChange(of: avatar) { _, new in scene.setAvatar(new) }
+        .sheet(item: $selectedJourney) { JourneyCard(journey: $0) }
         .sheet(isPresented: $showingLibrary) { LibraryShelfView() }
         .onChange(of: selected) { _, new in scene.setOnScreen(new == nil && selectedStory == nil) }
         .onChange(of: selectedStory) { _, new in scene.setOnScreen(new == nil && selected == nil) }

@@ -83,6 +83,11 @@ nonisolated enum GrowthLevel: Int, Comparable, CaseIterable, Sendable {
 
 /// A read-only snapshot of the player's progress, built from the stored records.
 struct GameProgress: Equatable {
+    static func == (lhs: GameProgress, rhs: GameProgress) -> Bool {
+        lhs.readByBook == rhs.readByBook && lhs.countByChapter == rhs.countByChapter &&
+            lhs.lastByChapter == rhs.lastByChapter && lhs.quizzes == rhs.quizzes && lhs.memorised == rhs.memorised
+    }
+
     private let readByBook: [String: Set<Int>]
     private let latestByBook: [String: Date]
     private let quizzes: Set<String>
@@ -93,11 +98,14 @@ struct GameProgress: Equatable {
     private let lastByChapter: [String: Date]
     private let thisYearByChapter: [String: Int]
     private let readsByBook: [String: Int]
+    /// The most recent read of all: where the avatar heads after you finish a chapter.
+    let latestRead: (bookID: String, chapter: Int, date: Date)?
 
     init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised], now: Date = .now) {
         var byBook: [String: Set<Int>] = [:]
         var latest: [String: Date] = [:]
         var counts: [String: Int] = [:], last: [String: Date] = [:], thisYear: [String: Int] = [:], perBook: [String: Int] = [:]
+        var newest: (bookID: String, chapter: Int, date: Date)?
         let calendar = Calendar.current
         let year = calendar.component(.year, from: now)
         for read in reads {
@@ -108,7 +116,9 @@ struct GameProgress: Equatable {
             last[key] = max(last[key] ?? .distantPast, read.date)
             if calendar.component(.year, from: read.date) == year { thisYear[key, default: 0] += 1 }
             perBook[read.bookID, default: 0] += 1
+            if read.date >= (newest?.date ?? .distantPast) { newest = (read.bookID, read.chapterNumber, read.date) }
         }
+        self.latestRead = newest
         self.readByBook = byBook
         self.latestByBook = latest
         self.countByChapter = counts

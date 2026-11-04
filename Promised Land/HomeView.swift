@@ -4,7 +4,7 @@ import SwiftData
 /// The opening page: plain cream, and your character wandering a large patch of grass.
 /// Tap the character to go into reading.
 struct HomeView: View {
-    private let avatarStorage = AvatarStorage()
+    @CurrentAvatar private var avatar: Avatar
     @ProgressQuery private var progress: GameProgress
     @Query private var chapterReads: [ChapterRead]
     @Query private var quizPasses: [QuizPass]
@@ -41,7 +41,6 @@ struct HomeView: View {
     }
 
     var body: some View {
-        let avatar = avatarStorage.avatar
         ZStack {
             Color.cream.ignoresSafeArea()
 
@@ -115,6 +114,7 @@ struct HomeView: View {
             if ProcessInfo.processInfo.arguments.contains("-openWorld") { showingWorld = true }
             let args = ProcessInfo.processInfo.arguments
             if args.contains("-openLibrary") { showingLibrary = true }
+            if args.contains("-openCustomize") { showingCustomise = true }
             if let i = args.firstIndex(of: "-openReflection"), i + 1 < args.count {
                 let parts = args[i + 1].split(separator: ":")
                 if parts.count == 2, let book = BibleCatalog.book(id: String(parts[0])), let ch = Int(parts[1]) {
@@ -445,7 +445,7 @@ struct PlatformScene: View {
 }
 
 #Preview("Platform") {
-    PlatformScene(avatar: AvatarStorage().avatar, island: .empty)
+    PlatformScene(avatar: .default, island: .empty)
         .padding()
         .background(Color.cream)
 }
