@@ -24,6 +24,11 @@ struct CameraState: Codable, Equatable {
     }
 }
 
+/// Lets a texture cross into a main-actor task after an off-thread preload.
+private struct TextureBox: @unchecked Sendable {
+    let texture: SKTexture
+}
+
 /// The isometric world, rendered with SpriteKit.
 final class WorldScene: SKScene {
 
@@ -83,6 +88,7 @@ final class WorldScene: SKScene {
     private var lastViewportReport: TimeInterval = 0
     private var lastReportedViewport = CGRect.zero
     private var didConfigure = false
+    private var decorationsPending = false
 
     // MARK: Setup
 
@@ -151,7 +157,7 @@ final class WorldScene: SKScene {
         if let progress {
             decorationLayer.setFogged(Set(WorldData.regions.map(\.id).filter { !progress.isRegionRevealed($0) }), animated: false)
         }
-        decorationLayer.update(visible: visibleRect())
+        decorationsPending = decorationLayer.update(visible: visibleRect())
         syncRoads()
         playNextMoment()
         // Low-detail textures for the whole map, so panning never shows a gap.
@@ -190,6 +196,10 @@ final class WorldScene: SKScene {
             }
         }
 
+        #if DEBUG
+        autopan(currentTime: currentTime)
+        #endif
+
         let viewport = visibleRect()
         characterLayer.updateDepths()
         ambientLayer.update(dt: dt, visible: viewport, zoom: cameraNode.xScale, terrain: terrain)
@@ -200,17 +210,22 @@ final class WorldScene: SKScene {
                 lastReportedViewport = viewport
                 onViewportChange?(viewport)
                 viewportDidChange(viewport)
+
             }
         }
         if needsChunkRefresh {
             needsChunkRefresh = false
             refreshChunks(currentTime: currentTime)
         }
+        if decorationsPending {
+            decorationsPending = decorationLayer.update(visible: viewport)
+        }
+
     }
 
     private func viewportDidChange(_ viewport: CGRect) {
         landmarkLayer.updateLabels(zoom: cameraNode.xScale)
-        decorationLayer.update(visible: viewport)
+        decorationsPending = decorationLayer.update(visible: viewport)
     }
 
     func visibleRect() -> CGRect {
@@ -303,18 +318,27 @@ final class WorldScene: SKScene {
     }
 
     private func installLowTexture(_ image: RenderedImage, index: Int) {
-        lowTextures[index] = SKTexture(cgImage: image.image)
-        if chunkSprites[index] == nil || visibleRect().insetBy(dx: -1024, dy: -512).intersects(chunkRect(index)) {
-            needsChunkRefresh = true
+        let box = TextureBox(texture: SKTexture(cgImage: image.image))
+        // Upload to the GPU off the main thread, then swap in.
+        Task { [weak self] in
+            await box.texture.preload()
+            guard let self else { return }
+            self.lowTextures[index] = box.texture
+            self.needsChunkRefresh = true
         }
     }
 
     private func installDetailTexture(_ image: RenderedImage?, index: Int, scale: CGFloat, key: String) {
-        pending.remove(key)
-        guard let image else { return }
-        if let existing = detailTextures[index], existing.scale >= scale { return }
-        detailTextures[index] = (scale, SKTexture(cgImage: image.image), lastUpdate)
-        needsChunkRefresh = true
+        guard let image else { pending.remove(key); return }
+        let box = TextureBox(texture: SKTexture(cgImage: image.image))
+        Task { [weak self] in
+            await box.texture.preload()
+            guard let self else { return }
+            self.pending.remove(key)
+            if let existing = self.detailTextures[index], existing.scale >= scale { return }
+            self.detailTextures[index] = (scale, box.texture, self.lastUpdate)
+            self.needsChunkRefresh = true
+        }
     }
 
     // MARK: Camera
@@ -549,4 +573,40 @@ final class WorldScene: SKScene {
             flyTo(CGPoint(x: state.x, y: state.y), zoom: state.scale)
         }
     }
+
+    // MARK: Performance harness (DEBUG only)
+
+    #if DEBUG
+    private var perfFrames = 0
+    private var perfStart: TimeInterval = 0
+    private var perfWorst: TimeInterval = 0
+    private var perfLast: TimeInterval = 0
+    private var autopanStart: TimeInterval = 0
+
+    /// `-autopan` sweeps the camera around the map with zoom changes and prints frame
+    /// statistics every few seconds, so terrain streaming and culling can be measured.
+    private func autopan(currentTime: TimeInterval) {
+        guard ProcessInfo.processInfo.arguments.contains("-autopan") else { return }
+        if autopanStart == 0 { autopanStart = currentTime; perfStart = currentTime; perfLast = currentTime }
+        let t = currentTime - autopanStart
+        let centre = Iso.scene(64, 48)
+        cameraNode.position = CGPoint(x: centre.x + cos(t * 0.25) * 2600, y: centre.y + sin(t * 0.25) * 1100)
+        cameraNode.setScale(1.6 + sin(t * 0.4) * 1.2)
+        clampCamera()
+
+        perfFrames += 1
+        perfWorst = max(perfWorst, currentTime - perfLast)
+        perfLast = currentTime
+        if currentTime - perfStart >= 4 {
+            let fps = Double(perfFrames) / (currentTime - perfStart)
+            print(String(format: "PERF fps=%.1f worstFrame=%.1fms nodes=%d chunks=%d detail=%d decorations=%d",
+                         fps, perfWorst * 1000, countNodes(self), chunkSprites.count, detailTextures.count, decorationLayer.itemCount))
+            perfFrames = 0; perfWorst = 0; perfStart = currentTime
+        }
+    }
+
+    private func countNodes(_ node: SKNode) -> Int {
+        node.children.reduce(1) { $0 + countNodes($1) }
+    }
+    #endif
 }

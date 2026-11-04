@@ -319,3 +319,11 @@ struct CelebrationView: View {
     }
     .modelContainer(PreviewData.container)
 }
+
+#Preview("Book") {
+    NavigationStack {
+        BookView(book: BibleCatalog.book(id: "genesis")!)
+            .readingDestinations()
+    }
+    .modelContainer(PreviewData.container)
+}

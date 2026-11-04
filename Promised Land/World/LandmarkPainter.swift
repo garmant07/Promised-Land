@@ -66,9 +66,13 @@ private nonisolated struct Painter {
         case .plot:
             plot()
         case .foundations:
+            if look.level >= .flourishing { glow() }
             groundPatch()
             foundations()
+            if look.level >= .growing { decorations() }
+            if look.level >= .flourishing { flag(at: pt(0, -2)) }
         case .rising:
+            if look.level >= .flourishing { glow() }
             groundPatch()
             foundations()
             ctx.saveGState()
@@ -76,6 +80,8 @@ private nonisolated struct Painter {
             _ = building(look.style)
             ctx.restoreGState()
             scaffolding()
+            if look.level >= .growing { decorations() }
+            if look.level >= .flourishing { flag(at: pt(30, -44)) }
         case .complete:
             if look.level >= .flourishing || look.style == .glowCity { glow() }
             groundPatch()

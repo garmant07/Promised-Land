@@ -62,9 +62,11 @@ final class DecorationLayer: SKNode {
         }
     }
 
-    /// Attaches buckets near the view and drops the rest.
-    func update(visible: CGRect) {
-        guard bucketColumns > 0 else { return }
+    /// Attaches buckets near the view (a couple per frame, to avoid hitches) and drops the rest.
+    /// Returns true if more buckets are still waiting to be attached.
+    @discardableResult
+    func update(visible: CGRect) -> Bool {
+        guard bucketColumns > 0 else { return false }
         let area = visible.insetBy(dx: -200, dy: -200)
         let corners = [CGPoint(x: area.minX, y: area.minY), CGPoint(x: area.maxX, y: area.minY),
                        CGPoint(x: area.minX, y: area.maxY), CGPoint(x: area.maxX, y: area.maxY)].map(Iso.grid)
@@ -74,8 +76,12 @@ final class DecorationLayer: SKNode {
         if bx0 <= bx1, by0 <= by1 {
             for by in by0...by1 { for bx in bx0...min(bx1, bucketColumns - 1) { wanted.insert(by * bucketColumns + bx) } }
         }
+        var budget = 2
+        var morePending = false
         for key in wanted where attached[key] == nil {
             guard let items = buckets[key] else { continue }
+            guard budget > 0 else { morePending = true; break }
+            budget -= 1
             let node = SKNode()
             for item in items {
                 let sprite = SKSpriteNode(texture: texture(item.kind))
@@ -95,6 +101,7 @@ final class DecorationLayer: SKNode {
             node.removeFromParent()
             attached[key] = nil
         }
+        return morePending
     }
 
     /// Decorations in fogged regions stay hidden; they fade in when the fog lifts.
