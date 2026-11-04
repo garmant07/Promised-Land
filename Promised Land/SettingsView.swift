@@ -10,12 +10,15 @@ enum StorageKeys {
     static let hasOpenedReading = "hasOpenedReading"
     static let gardenSeenChapters = "gardenSeenChapters"
     static let storyObjectsSeen = "storyObjectsSeen"
+    static let offerReflection = "offerReflection"
+    static let libraryRevealed = "libraryRevealed"
 }
 
 struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     @AppStorage(StorageKeys.hasOnboarded) private var hasOnboarded = false
+    @AppStorage(StorageKeys.offerReflection) private var offerReflection = true
 
     @State private var confirmingReset = false
     @State private var message: String?
@@ -45,10 +48,20 @@ struct SettingsView: View {
                         }
                     }
 
+                    section("Reflection & journal") {
+                        Toggle("Offer a reflection after reading", isOn: $offerReflection)
+                            .tint(Color.olive)
+                            .frame(minHeight: 44)
+                        Label("Your journal is private. Entries are stored only on this device and are never uploaded or shared.",
+                              systemImage: "lock.fill")
+                            .font(.subheadline)
+                            .foregroundStyle(Color.secondaryText)
+                    }
+
                     section("About") {
                         Text("Scripture is from the American Standard Version (1901), which is in the public domain. This early version bundles a small sample; the full text will follow.")
                             .foregroundStyle(Color.secondaryText)
-                        Text("Everything stays on this device. No account, no internet needed.")
+                        Text("Everything stays on this device. No account, no internet needed. \"Reset all progress\" clears reading only; journal entries are kept.")
                             .foregroundStyle(Color.secondaryText)
                     }
                 }

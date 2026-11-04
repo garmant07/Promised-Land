@@ -9,6 +9,11 @@ struct HomeView: View {
     @Query private var chapterReads: [ChapterRead]
     @Query private var quizPasses: [QuizPass]
     @Query private var versesMemorised: [VerseMemorised]
+    @Query private var journal: [JournalEntry]
+    @State private var showingLibrary = false
+    #if DEBUG
+    @State private var debugReflection: ChapterRef?
+    #endif
     @AppStorage(StorageKeys.hasOpenedReading) private var hasOpenedReading = false
     /// Chapters read when the garden was last seen (-1: never), so new growth can pop in.
     @AppStorage(StorageKeys.gardenSeenChapters) private var gardenSeen = -1
@@ -109,6 +114,13 @@ struct HomeView: View {
             #if DEBUG
             if ProcessInfo.processInfo.arguments.contains("-openWorld") { showingWorld = true }
             let args = ProcessInfo.processInfo.arguments
+            if args.contains("-openLibrary") { showingLibrary = true }
+            if let i = args.firstIndex(of: "-openReflection"), i + 1 < args.count {
+                let parts = args[i + 1].split(separator: ":")
+                if parts.count == 2, let book = BibleCatalog.book(id: String(parts[0])), let ch = Int(parts[1]) {
+                    debugReflection = ChapterRef(bookID: book.id, chapter: ch)
+                }
+            }
             if let i = args.firstIndex(of: "-openReading"), i + 1 < args.count {
                 let parts = args[i + 1].split(separator: ":")
                 if parts.count == 2, let chapter = Int(parts[1]) {
@@ -133,6 +145,12 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showingCustomise) { AvatarCustomizeView() }
         .sheet(isPresented: $showingSettings) { SettingsView() }
+        .sheet(isPresented: $showingLibrary) { LibraryShelfView() }
+        #if DEBUG
+        .sheet(item: $debugReflection) { ref in
+            if let book = BibleCatalog.book(id: ref.bookID) { ReflectionCard(book: book, chapter: ref.chapter) }
+        }
+        #endif
     }
 
     /// One quiet button keeps the page bare.
@@ -140,6 +158,9 @@ struct HomeView: View {
         Menu {
             Button { showingCustomise = true } label: { Label("Customise character", systemImage: "person.crop.circle") }
             Button { showingWorld = true } label: { Label("World map", systemImage: "map") }
+            if !journal.isEmpty {
+                Button { showingLibrary = true } label: { Label("Library", systemImage: "books.vertical") }
+            }
             Button { showingSettings = true } label: { Label("Settings", systemImage: "gearshape") }
         } label: {
             Image(systemName: "ellipsis")

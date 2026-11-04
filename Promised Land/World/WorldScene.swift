@@ -42,6 +42,8 @@ final class WorldScene: SKScene {
     var onSelectConnection: ((String) -> Void)?
     /// Called when a story object (ChapterLandmarks) is tapped, with its id.
     var onSelectStoryObject: ((String) -> Void)?
+    /// Called when the Library is tapped.
+    var onSelectLibrary: (() -> Void)?
 
     // MARK: Layers
 
@@ -53,6 +55,7 @@ final class WorldScene: SKScene {
     let fogLayer = FogLayer()
     let connectionLayer = ConnectionLayer()
     let chapterObjectLayer = ChapterObjectLayer()
+    let libraryNode = LibraryNode()
     let decorationLayer = DecorationLayer()
     let characterLayer = CharacterLayer()
     let ambientLayer = AmbientLayer()
@@ -62,6 +65,7 @@ final class WorldScene: SKScene {
     private var progress: GameProgress?
     private var appliedProgress = false
     private var moments: [Moment] = []
+    private var pendingLibrary: Bool?
     private var isOnScreen = false
 
     // MARK: Terrain chunks
@@ -118,6 +122,7 @@ final class WorldScene: SKScene {
         objectLayer.addChild(decorationLayer)
         objectLayer.addChild(landmarkLayer)
         objectLayer.addChild(chapterObjectLayer)
+        objectLayer.addChild(libraryNode)
         objectLayer.addChild(characterLayer)
         addChild(fogLayer)
         addChild(landmarkLayer.labelLayer)
@@ -145,6 +150,7 @@ final class WorldScene: SKScene {
                                                name: .resetWorldCamera, object: nil)
 
         if let progress { apply(progress) }
+        if let pendingLibrary { setLibraryVisible(pendingLibrary) }
         landmarkLayer.updateLabels(zoom: cameraNode.xScale)
 
         let inputs = TerrainInputs.fromWorldData()
@@ -460,6 +466,8 @@ final class WorldScene: SKScene {
     private func handleTap(at scenePoint: CGPoint) {
         if let character = characterLayer.character(at: scenePoint) {
             characterLayer.speak(character, zoom: cameraNode.xScale)
+        } else if libraryNode.contains(gridPoint: Iso.grid(scenePoint)) {
+            onSelectLibrary?()
         } else if let id = chapterObjectLayer.object(at: scenePoint) {
             onSelectStoryObject?(id)
         } else if let bookID = landmarkLayer.landmark(at: scenePoint) {
@@ -476,6 +484,20 @@ final class WorldScene: SKScene {
         case celebrate(String)
         case road(String)
         case story(String)
+        case library
+    }
+
+    /// Shows the Library once the first journal entry exists (with a moment the first time).
+    func setLibraryVisible(_ visible: Bool) {
+        guard didConfigure else { pendingLibrary = visible; return }
+        if !visible { libraryNode.isHidden = true; return }
+        guard libraryNode.isHidden else { return }
+        if UserDefaults.standard.bool(forKey: StorageKeys.libraryRevealed) {
+            libraryNode.isHidden = false
+        } else {
+            enqueue(.library)
+            if isOnScreen { playNextMoment() }
+        }
     }
 
     /// Brings landmarks, fog and roads in line with the player's progress.
@@ -577,6 +599,20 @@ final class WorldScene: SKScene {
                 self.chapterObjectLayer.pop(id)
                 self.landmarkLayer.puff(at: point, z: 5_500, big: false)
             }, .wait(forDuration: 1.2), .run { [weak self] in
+                self?.playNextMoment()
+            }]), withKey: "moment")
+
+        case .library:
+            UserDefaults.standard.set(true, forKey: StorageKeys.libraryRevealed)
+            flyTo(grid: LibraryNode.center, zoom: min(cameraNode.xScale, 1.3))
+            run(.sequence([.wait(forDuration: 0.7), .run { [weak self] in
+                guard let self else { return }
+                self.libraryNode.isHidden = false
+                self.libraryNode.alpha = 0
+                self.libraryNode.setScale(0.6)
+                self.libraryNode.run(.group([.fadeIn(withDuration: 0.4), .scale(to: 1, duration: 0.5)]))
+                self.landmarkLayer.puff(at: self.libraryNode.position, z: 5_500, big: true)
+            }, .wait(forDuration: 1.6), .run { [weak self] in
                 self?.playNextMoment()
             }]), withKey: "moment")
 

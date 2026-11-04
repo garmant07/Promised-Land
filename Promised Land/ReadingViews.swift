@@ -119,7 +119,8 @@ private struct CloseReadingButton: ViewModifier {
     }
 }
 
-struct ChapterRef: Hashable {
+struct ChapterRef: Hashable, Identifiable {
+    var id: String { "\(bookID)#\(chapter)" }
     let bookID: String
     let chapter: Int
 }
@@ -245,6 +246,9 @@ struct ChapterReaderView: View {
     @Environment(\.modelContext) private var context
     @ProgressQuery private var progress: GameProgress
     @State private var celebration: Celebration?
+    @State private var reflecting = false
+    @State private var reflectAfterCelebration = false
+    @AppStorage(StorageKeys.offerReflection) private var offerReflection = true
 
     private var isRead: Bool { progress.isRead(book.id, chapter: chapter) }
 
@@ -320,7 +324,10 @@ struct ChapterReaderView: View {
         .themedScreen()
         .navigationTitle("Chapter \(chapter)")
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(item: $celebration) { CelebrationView(celebration: $0) }
+        .sheet(item: $celebration, onDismiss: {
+            if reflectAfterCelebration { reflectAfterCelebration = false; reflecting = true }
+        }) { CelebrationView(celebration: $0) }
+        .sheet(isPresented: $reflecting) { ReflectionCard(book: book, chapter: chapter) }
     }
 
     private func recordRead() {
@@ -328,6 +335,11 @@ struct ChapterReaderView: View {
         let regionWasHidden = WorldData.landmark(bookID: book.id).map { !progress.isRegionRevealed($0.regionID) } ?? false
         let firstRead = !isRead
         withAnimation { context.recordRead(book.id, chapter) }
+        defer {
+            if offerReflection {
+                if celebration != nil { reflectAfterCelebration = true } else { reflecting = true }
+            }
+        }
         guard firstRead, let landmark = WorldData.landmark(bookID: book.id) else { return }
 
         // Predict the new stage without waiting for the query to refresh.

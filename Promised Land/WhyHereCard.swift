@@ -7,6 +7,11 @@ struct WhyHereCard: View {
 
     @ProgressQuery private var progress: GameProgress
     @Environment(\.dismiss) private var dismiss
+    @Query(sort: \JournalEntry.created, order: .reverse) private var journal: [JournalEntry]
+
+    private var notes: [JournalEntry] {
+        journal.filter { $0.bookID == entry.bookID && ($0.chapter.map { entry.chapters.contains($0) } ?? false) }
+    }
 
     var body: some View {
         let history = progress.history(of: entry)
@@ -62,6 +67,39 @@ struct WhyHereCard: View {
                             .foregroundStyle(Color.secondaryText)
                     }
                     .cardStyle()
+
+                    if !notes.isEmpty {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("From your journal")
+                                .font(.serifTitle(.title3))
+                                .foregroundStyle(Color.bodyText)
+                            ForEach(notes) { note in
+                                NavigationLink {
+                                    JournalPageView(entry: note).themedScreen()
+                                } label: {
+                                    HStack {
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(note.reference ?? "")
+                                                .font(.subheadline.weight(.semibold))
+                                                .foregroundStyle(Color.terracotta)
+                                            Text(note.text)
+                                                .font(.subheadline)
+                                                .foregroundStyle(Color.bodyText)
+                                                .lineLimit(2)
+                                        }
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
+                                            .font(.footnote.weight(.semibold))
+                                            .foregroundStyle(Color.secondaryText.opacity(0.6))
+                                    }
+                                    .frame(minHeight: 44)
+                                    .contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                        .cardStyle()
+                    }
 
                     NavigationLink(value: ChapterRef(bookID: entry.bookID, chapter: chapterToRead)) {
                         Text(history.reads == 0 ? "Read \(entry.chapterLabel)" : "Read again")

@@ -6,7 +6,7 @@ import CoreGraphics
 enum PreviewData {
     static let container: ModelContainer = {
         let container = try! ModelContainer(
-            for: ChapterRead.self, QuizPass.self, VerseMemorised.self,
+            for: Schema(AppSchema.models),
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         let context = container.mainContext
@@ -14,6 +14,9 @@ enum PreviewData {
         context.insert(ChapterRead(bookID: "genesis", chapterNumber: 1, date: .now.addingTimeInterval(-86_400)))
         context.insert(ChapterRead(bookID: "john", chapterNumber: 1))
         context.insert(QuizPass(bookID: "ruth", score: 3))
+        context.insert(JournalEntry(bookID: "ruth", chapter: 1, prompt: ReflectionData.general[0],
+                                    text: "Ruth's loyalty to Naomi, even when it cost her everything."))
+        context.insert(JournalEntry(text: "A free entry: thankful for a quiet morning."))
         return container
     }()
 }
@@ -24,11 +27,12 @@ enum PreviewData {
 /// Launch arguments (all optional):
 ///   -resetProgress                       clear all stored progress first
 ///   -skipOnboarding                      mark onboarding as seen
-///   -seed ruth:1-4 genesis:1 john:15*3 quiz:ruth memo:ruth   (*3 = read three times)
+///   -seed ruth:1-4 genesis:1 john:15*3 quiz:ruth memo:ruth journal:ruth.1   (*3 = read three times)
 ///   -camera <bookID>                     start the map centred on a landmark
 ///   -openWorld                           open the world map on launch
 ///   -openReading <book:chapter>          open reading at a chapter on launch
 ///   -openStory <id> / -openStats         with -openWorld: open a story card or reading history
+///   -openLibrary / -openReflection book:ch   open the journal library or a reflection card
 enum DebugSeed {
     static func apply(to context: ModelContext) {
         let args = ProcessInfo.processInfo.arguments
@@ -38,6 +42,8 @@ enum DebugSeed {
             UserDefaults.standard.removeObject(forKey: StorageKeys.builtConnections)
             UserDefaults.standard.removeObject(forKey: StorageKeys.worldCamera)
             UserDefaults.standard.removeObject(forKey: StorageKeys.storyObjectsSeen)
+            UserDefaults.standard.removeObject(forKey: StorageKeys.libraryRevealed)
+            try? context.delete(model: JournalEntry.self)
         }
         if args.contains("-skipOnboarding") {
             UserDefaults.standard.set(true, forKey: StorageKeys.hasOnboarded)
@@ -49,6 +55,12 @@ enum DebugSeed {
             switch parts[0] {
             case "quiz": context.recordQuizPass(parts[1], score: 3)
             case "memo": context.recordMemorised(parts[1], reference: "debug")
+            case "journal":
+                // "journal:ruth.1" adds a sample reflection for Ruth 1.
+                let ref = parts[1].split(separator: ".")
+                context.insert(JournalEntry(bookID: String(ref[0]), chapter: ref.count > 1 ? Int(ref[1]) : nil,
+                                            prompt: ReflectionData.general[0], text: "Sample reflection for testing."))
+                try? context.save()
             default:
                 // "john:15*3" reads John 15 three times, a day apart (most recent today).
                 let spec = parts[1].split(separator: "*")

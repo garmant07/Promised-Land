@@ -6,6 +6,6 @@ import SwiftData
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [ChapterRead.self, QuizPass.self, VerseMemorised.self])
+        .modelContainer(for: AppSchema.models)
     }
 }

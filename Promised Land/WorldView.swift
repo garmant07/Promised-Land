@@ -8,6 +8,8 @@ struct WorldView: View {
     /// Shown as a close button when the map is presented from the home page.
     var onClose: (() -> Void)? = nil
     @State private var showingStats = false
+    @State private var showingLibrary = false
+    @Query private var journal: [JournalEntry]
     @State private var selectedStory: ChapterLandmark?
     @State private var cardCollapsed = false
     @State private var selected: Landmark?
@@ -71,6 +73,8 @@ struct WorldView: View {
                 }
             }
             scene.onSelectStoryObject = { id in selectedStory = ChapterLandmarks.entry(id: id) }
+            scene.onSelectLibrary = { showingLibrary = true }
+            scene.setLibraryVisible(!journal.isEmpty)
             scene.onViewportChange = { [minimap] rect in minimap.viewport = rect }
             scene.apply(progress)
             scene.setOnScreen(true)
@@ -82,6 +86,8 @@ struct WorldView: View {
         }
         .onDisappear { scene.setOnScreen(false) }
         .onChange(of: progress) { _, new in scene.apply(new) }
+        .onChange(of: journal.isEmpty) { _, empty in scene.setLibraryVisible(!empty) }
+        .sheet(isPresented: $showingLibrary) { LibraryShelfView() }
         .onChange(of: selected) { _, new in scene.setOnScreen(new == nil && selectedStory == nil) }
         .onChange(of: selectedStory) { _, new in scene.setOnScreen(new == nil && selected == nil) }
         .sheet(isPresented: $showingStats) { StatsView() }
