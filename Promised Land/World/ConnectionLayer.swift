@@ -134,15 +134,16 @@ final class ConnectionLayer: SKNode {
     }()
 
     private static let plank: SKTexture = {
-        let size = CGSize(width: 46, height: 14)
+        // Short, flat boards (laid across the direction of travel).
+        let size = CGSize(width: 30, height: 10)
         let format = UIGraphicsImageRendererFormat(); format.scale = 2
         let image = UIGraphicsImageRenderer(size: size, format: format).image { ctx in
             let c = ctx.cgContext
             c.setFillColor(RGB.trunk.shifted(-0.05).cgColor)
-            c.addPath(CGPath(roundedRect: CGRect(x: 1, y: 4, width: 44, height: 9), cornerWidth: 4, cornerHeight: 4, transform: nil))
+            c.addPath(CGPath(roundedRect: CGRect(x: 1, y: 3, width: 28, height: 6), cornerWidth: 3, cornerHeight: 3, transform: nil))
             c.fillPath()
             c.setFillColor(RGB.trunk.shifted(0.12).cgColor)
-            c.addPath(CGPath(roundedRect: CGRect(x: 1, y: 1, width: 44, height: 9), cornerWidth: 4, cornerHeight: 4, transform: nil))
+            c.addPath(CGPath(roundedRect: CGRect(x: 1, y: 1, width: 28, height: 6), cornerWidth: 3, cornerHeight: 3, transform: nil))
             c.fillPath()
         }
         return SKTexture(image: image)

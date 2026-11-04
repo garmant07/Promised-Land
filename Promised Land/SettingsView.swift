@@ -9,6 +9,7 @@ enum StorageKeys {
     static let builtConnections = "builtConnections"
     static let hasOpenedReading = "hasOpenedReading"
     static let gardenSeenChapters = "gardenSeenChapters"
+    static let storyObjectsSeen = "storyObjectsSeen"
 }
 
 struct SettingsView: View {
@@ -85,6 +86,7 @@ struct SettingsView: View {
         context.resetAllProgress()
         UserDefaults.standard.removeObject(forKey: StorageKeys.celebrated)
         UserDefaults.standard.removeObject(forKey: StorageKeys.builtConnections)
+        UserDefaults.standard.removeObject(forKey: StorageKeys.storyObjectsSeen)
         message = "Progress cleared. A fresh start."
     }
 }

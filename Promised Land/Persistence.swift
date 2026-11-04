@@ -88,22 +88,79 @@ struct GameProgress: Equatable {
     private let quizzes: Set<String>
     private let memorised: Set<String>
     private let readDates: [Date]
+    /// Every read is kept (rereads included): counts and latest date per chapter.
+    private let countByChapter: [String: Int]
+    private let lastByChapter: [String: Date]
+    private let thisYearByChapter: [String: Int]
+    private let readsByBook: [String: Int]
 
-    init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised]) {
+    init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised], now: Date = .now) {
         var byBook: [String: Set<Int>] = [:]
         var latest: [String: Date] = [:]
+        var counts: [String: Int] = [:], last: [String: Date] = [:], thisYear: [String: Int] = [:], perBook: [String: Int] = [:]
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: now)
         for read in reads {
             byBook[read.bookID, default: []].insert(read.chapterNumber)
             latest[read.bookID] = max(latest[read.bookID] ?? .distantPast, read.date)
+            let key = Self.key(read.bookID, read.chapterNumber)
+            counts[key, default: 0] += 1
+            last[key] = max(last[key] ?? .distantPast, read.date)
+            if calendar.component(.year, from: read.date) == year { thisYear[key, default: 0] += 1 }
+            perBook[read.bookID, default: 0] += 1
         }
         self.readByBook = byBook
         self.latestByBook = latest
+        self.countByChapter = counts
+        self.lastByChapter = last
+        self.thisYearByChapter = thisYear
+        self.readsByBook = perBook
         self.quizzes = Set(quizzes.map(\.bookID))
         self.memorised = Set(memorised.map(\.bookID))
         self.readDates = reads.map(\.date)
     }
 
     static let empty = GameProgress(reads: [], quizzes: [], memorised: [])
+
+    private static func key(_ bookID: String, _ chapter: Int) -> String { "\(bookID)#\(chapter)" }
+
+    // MARK: Rereads & history
+
+    /// How many times a chapter has been read (rereads count).
+    func readCount(_ bookID: String, chapter: Int) -> Int { countByChapter[Self.key(bookID, chapter)] ?? 0 }
+    func lastRead(_ bookID: String, chapter: Int) -> Date? { lastByChapter[Self.key(bookID, chapter)] }
+    func readsThisYear(_ bookID: String, chapter: Int) -> Int { thisYearByChapter[Self.key(bookID, chapter)] ?? 0 }
+
+    /// Every read this calendar year, rereads included.
+    var totalReadsThisYear: Int { thisYearByChapter.values.reduce(0, +) }
+    /// Distinct chapters read at least once this year.
+    var chaptersReadThisYear: Int { thisYearByChapter.count }
+    var totalReads: Int { countByChapter.values.reduce(0, +) }
+    /// Reads beyond the first of each chapter.
+    var rereads: Int { totalReads - countByChapter.count }
+    var overallFraction: Double { Double(totalChaptersRead) / Double(max(1, totalChapters)) }
+
+    /// Books ordered by how many reads they've had.
+    var mostReadBooks: [(book: Book, reads: Int)] {
+        readsByBook.compactMap { id, n in BibleCatalog.book(id: id).map { ($0, n) } }
+            .sorted { ($0.reads, $1.book.id) > ($1.reads, $0.book.id) }
+    }
+
+    /// A story object's depth: 0 until any of its chapters is read, then 1 + rereads, up to 5.
+    func depth(of object: ChapterLandmark) -> Int {
+        let counts = object.chapters.map { readCount(object.bookID, chapter: $0) }
+        let distinct = counts.filter { $0 > 0 }.count
+        guard distinct > 0 else { return 0 }
+        return min(5, 1 + counts.reduce(0, +) - distinct)
+    }
+
+    /// Reads, most recent date and this year's reads across a story object's chapters.
+    func history(of object: ChapterLandmark) -> (reads: Int, last: Date?, thisYear: Int) {
+        let chapters = Array(object.chapters)
+        return (chapters.reduce(0) { $0 + readCount(object.bookID, chapter: $1) },
+                chapters.compactMap { lastRead(object.bookID, chapter: $0) }.max(),
+                chapters.reduce(0) { $0 + readsThisYear(object.bookID, chapter: $1) })
+    }
 
     // MARK: Books
 
@@ -179,15 +236,20 @@ struct ProgressQuery: DynamicProperty {
 // MARK: - Writing helpers
 
 extension ModelContext {
-    func markChapter(_ bookID: String, _ chapter: Int, read isRead: Bool) {
-        let existing = (try? fetch(FetchDescriptor<ChapterRead>(
-            predicate: #Predicate { $0.bookID == bookID && $0.chapterNumber == chapter }
-        ))) ?? []
-        if isRead {
-            if existing.isEmpty { insert(ChapterRead(bookID: bookID, chapterNumber: chapter)) }
-        } else {
-            existing.forEach(delete)
-        }
+    /// Records one read of a chapter. Every read is kept, so rereads count.
+    func recordRead(_ bookID: String, _ chapter: Int, date: Date = .now) {
+        insert(ChapterRead(bookID: bookID, chapterNumber: chapter, date: date))
+        try? save()
+    }
+
+    /// Removes the most recent read of a chapter (an "undo").
+    func undoLastRead(_ bookID: String, _ chapter: Int) {
+        var descriptor = FetchDescriptor<ChapterRead>(
+            predicate: #Predicate { $0.bookID == bookID && $0.chapterNumber == chapter },
+            sortBy: [SortDescriptor(\.date, order: .reverse)]
+        )
+        descriptor.fetchLimit = 1
+        if let latest = try? fetch(descriptor).first { delete(latest) }
         try? save()
     }
 

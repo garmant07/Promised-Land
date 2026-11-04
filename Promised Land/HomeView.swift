@@ -92,6 +92,18 @@ struct HomeView: View {
             }
         }
         .overlay(alignment: .topTrailing) { menu }
+        .overlay(alignment: .topLeading) {
+            Button { showingWorld = true } label: {
+                Image(systemName: "map")
+                    .font(.headline)
+                    .foregroundStyle(Color.secondaryText.opacity(0.8))
+                    .frame(width: 44, height: 44)
+                    .background(Color.card.opacity(0.7), in: Circle())
+            }
+            .padding(.leading, 16)
+            .padding(.top, 8)
+            .accessibilityLabel("World map")
+        }
         .onAppear {
             showNewGrowth()
             #if DEBUG

@@ -283,14 +283,27 @@ struct ChapterReaderView: View {
                 }
 
                 if isRead {
-                    Label("You've read this chapter", systemImage: "checkmark.circle.fill")
-                        .font(.headline)
-                        .foregroundStyle(Color.olive)
+                    let count = progress.readCount(book.id, chapter: chapter)
+                    VStack(spacing: 4) {
+                        Label(count == 1 ? "You've read this chapter" : "You've read this chapter \(count) times",
+                              systemImage: "checkmark.circle.fill")
+                            .font(.headline)
+                            .foregroundStyle(Color.olive)
+                        if let last = progress.lastRead(book.id, chapter: chapter) {
+                            Text("Most recently \(last.formatted(date: .abbreviated, time: .omitted))")
+                                .font(.footnote)
+                                .foregroundStyle(Color.secondaryText)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 44)
+                    Button("Read again") { recordRead() }
+                        .buttonStyle(PrimaryButtonStyle())
+                    Button("Undo last read") { withAnimation { context.undoLastRead(book.id, chapter) } }
+                        .font(.subheadline)
+                        .foregroundStyle(Color.secondaryText)
                         .frame(maxWidth: .infinity, minHeight: 44)
-                    Button("Mark as unread") { toggle() }
-                        .buttonStyle(SoftButtonStyle())
                 } else {
-                    Button("Mark as read") { toggle() }
+                    Button("Mark as read") { recordRead() }
                         .buttonStyle(PrimaryButtonStyle())
                 }
 
@@ -310,12 +323,12 @@ struct ChapterReaderView: View {
         .sheet(item: $celebration) { CelebrationView(celebration: $0) }
     }
 
-    private func toggle() {
+    private func recordRead() {
         let before = progress.stage(of: book.id)
         let regionWasHidden = WorldData.landmark(bookID: book.id).map { !progress.isRegionRevealed($0.regionID) } ?? false
-        let markingRead = !isRead
-        withAnimation { context.markChapter(book.id, chapter, read: markingRead) }
-        guard markingRead, let landmark = WorldData.landmark(bookID: book.id) else { return }
+        let firstRead = !isRead
+        withAnimation { context.recordRead(book.id, chapter) }
+        guard firstRead, let landmark = WorldData.landmark(bookID: book.id) else { return }
 
         // Predict the new stage without waiting for the query to refresh.
         let read = progress.chaptersRead(book.id) + 1

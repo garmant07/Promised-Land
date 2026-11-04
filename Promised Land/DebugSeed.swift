@@ -24,10 +24,11 @@ enum PreviewData {
 /// Launch arguments (all optional):
 ///   -resetProgress                       clear all stored progress first
 ///   -skipOnboarding                      mark onboarding as seen
-///   -seed ruth:1-4 genesis:1 quiz:ruth memo:ruth
+///   -seed ruth:1-4 genesis:1 john:15*3 quiz:ruth memo:ruth   (*3 = read three times)
 ///   -camera <bookID>                     start the map centred on a landmark
 ///   -openWorld                           open the world map on launch
 ///   -openReading <book:chapter>          open reading at a chapter on launch
+///   -openStory <id> / -openStats         with -openWorld: open a story card or reading history
 enum DebugSeed {
     static func apply(to context: ModelContext) {
         let args = ProcessInfo.processInfo.arguments
@@ -36,6 +37,7 @@ enum DebugSeed {
             UserDefaults.standard.removeObject(forKey: StorageKeys.celebrated)
             UserDefaults.standard.removeObject(forKey: StorageKeys.builtConnections)
             UserDefaults.standard.removeObject(forKey: StorageKeys.worldCamera)
+            UserDefaults.standard.removeObject(forKey: StorageKeys.storyObjectsSeen)
         }
         if args.contains("-skipOnboarding") {
             UserDefaults.standard.set(true, forKey: StorageKeys.hasOnboarded)
@@ -48,7 +50,14 @@ enum DebugSeed {
             case "quiz": context.recordQuizPass(parts[1], score: 3)
             case "memo": context.recordMemorised(parts[1], reference: "debug")
             default:
-                for chapter in chapters(parts[1]) { context.markChapter(parts[0], chapter, read: true) }
+                // "john:15*3" reads John 15 three times, a day apart (most recent today).
+                let spec = parts[1].split(separator: "*")
+                let times = spec.count == 2 ? max(1, Int(spec[1]) ?? 1) : 1
+                for chapter in chapters(String(spec[0])) {
+                    for k in 0..<times {
+                        context.recordRead(parts[0], chapter, date: .now.addingTimeInterval(-Double(times - 1 - k) * 86_400))
+                    }
+                }
             }
         }
     }

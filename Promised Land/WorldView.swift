@@ -7,7 +7,8 @@ struct WorldView: View {
     let scene: WorldScene
     /// Shown as a close button when the map is presented from the home page.
     var onClose: (() -> Void)? = nil
-    @State private var showingSettings = false
+    @State private var showingStats = false
+    @State private var selectedStory: ChapterLandmark?
     @State private var cardCollapsed = false
     @State private var selected: Landmark?
     @State private var selectedConnection: Connection?
@@ -22,7 +23,7 @@ struct WorldView: View {
                 .accessibilityLabel("Map of your world")
 
             VStack(spacing: 0) {
-                WorldHeader(progress: progress, onClose: onClose) { showingSettings = true }
+                WorldHeader(progress: progress, onClose: onClose) { showingStats = true }
                     .padding(.horizontal, 14)
                     .padding(.vertical, 4)
                     .background(Color.cream.opacity(0.92), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
@@ -69,14 +70,22 @@ struct WorldView: View {
                     selectedConnection = WorldData.connections.first { $0.id == id }
                 }
             }
+            scene.onSelectStoryObject = { id in selectedStory = ChapterLandmarks.entry(id: id) }
             scene.onViewportChange = { [minimap] rect in minimap.viewport = rect }
             scene.apply(progress)
             scene.setOnScreen(true)
+            #if DEBUG
+            let args = ProcessInfo.processInfo.arguments
+            if let i = args.firstIndex(of: "-openStory"), i + 1 < args.count { selectedStory = ChapterLandmarks.entry(id: args[i + 1]) }
+            if args.contains("-openStats") { showingStats = true }
+            #endif
         }
         .onDisappear { scene.setOnScreen(false) }
         .onChange(of: progress) { _, new in scene.apply(new) }
-        .onChange(of: selected) { _, new in scene.setOnScreen(new == nil) }
-        .sheet(isPresented: $showingSettings) { SettingsView() }
+        .onChange(of: selected) { _, new in scene.setOnScreen(new == nil && selectedStory == nil) }
+        .onChange(of: selectedStory) { _, new in scene.setOnScreen(new == nil && selected == nil) }
+        .sheet(isPresented: $showingStats) { StatsView() }
+        .sheet(item: $selectedStory) { entry in WhyHereCard(entry: entry) }
         .sheet(item: $selected) { landmark in
             NavigationStack {
                 PlaceDetailView(landmark: landmark)
@@ -104,7 +113,7 @@ struct WorldView: View {
 struct WorldHeader: View {
     let progress: GameProgress
     var onClose: (() -> Void)? = nil
-    var openSettings: () -> Void
+    var openStats: () -> Void
 
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
@@ -120,14 +129,14 @@ struct WorldHeader: View {
             }
             Spacer(minLength: 4)
             StreakPill(days: progress.streak)
-            Button(action: openSettings) {
-                Image(systemName: "gearshape.fill")
-                    .font(.title3)
+            Button(action: openStats) {
+                Image(systemName: "chart.bar.fill")
+                    .font(.headline)
                     .foregroundStyle(Color.primaryBrown)
                     .frame(width: 44, height: 44)
                     .background(Color.card, in: Circle())
             }
-            .accessibilityLabel("Settings")
+            .accessibilityLabel("Reading history")
             if let onClose {
                 Button(action: onClose) {
                     Image(systemName: "xmark")

@@ -69,7 +69,15 @@ struct PlaceDetailView: View {
 
     private func progressCard(_ book: Book) -> some View {
         let read = progress.chaptersRead(book.id)
+        let reads = book.chapterNumbers.reduce(0) { $0 + progress.readCount(book.id, chapter: $1) }
+        let last = book.chapterNumbers.compactMap { progress.lastRead(book.id, chapter: $0) }.max()
         return VStack(alignment: .leading, spacing: 12) {
+            if read > 0 {
+                Text("Built by reading \(book.name): \(reads) \(reads == 1 ? "read" : "reads") in all" +
+                     (last.map { ", most recently \($0.formatted(.dateTime.month(.abbreviated).day()))." } ?? "."))
+                    .font(.subheadline)
+                    .foregroundStyle(Color.secondaryText)
+            }
             HStack {
                 Text(stage.title)
                     .font(.serifTitle(.title3))

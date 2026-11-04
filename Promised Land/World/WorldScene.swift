@@ -40,6 +40,8 @@ final class WorldScene: SKScene {
     var onSelectLandmark: ((String) -> Void)?
     /// Called when a connection road is tapped, with the connection id.
     var onSelectConnection: ((String) -> Void)?
+    /// Called when a story object (ChapterLandmarks) is tapped, with its id.
+    var onSelectStoryObject: ((String) -> Void)?
 
     // MARK: Layers
 
@@ -50,6 +52,7 @@ final class WorldScene: SKScene {
     let landmarkLayer = LandmarkLayer()
     let fogLayer = FogLayer()
     let connectionLayer = ConnectionLayer()
+    let chapterObjectLayer = ChapterObjectLayer()
     let decorationLayer = DecorationLayer()
     let characterLayer = CharacterLayer()
     let ambientLayer = AmbientLayer()
@@ -114,6 +117,7 @@ final class WorldScene: SKScene {
         objectLayer.addChild(connectionLayer)
         objectLayer.addChild(decorationLayer)
         objectLayer.addChild(landmarkLayer)
+        objectLayer.addChild(chapterObjectLayer)
         objectLayer.addChild(characterLayer)
         addChild(fogLayer)
         addChild(landmarkLayer.labelLayer)
@@ -456,6 +460,8 @@ final class WorldScene: SKScene {
     private func handleTap(at scenePoint: CGPoint) {
         if let character = characterLayer.character(at: scenePoint) {
             characterLayer.speak(character, zoom: cameraNode.xScale)
+        } else if let id = chapterObjectLayer.object(at: scenePoint) {
+            onSelectStoryObject?(id)
         } else if let bookID = landmarkLayer.landmark(at: scenePoint) {
             onSelectLandmark?(bookID)
         } else if let id = connectionLayer.connection(near: Iso.grid(scenePoint)) {
@@ -469,6 +475,7 @@ final class WorldScene: SKScene {
     private enum Moment: Equatable {
         case celebrate(String)
         case road(String)
+        case story(String)
     }
 
     /// Brings landmarks, fog and roads in line with the player's progress.
@@ -494,6 +501,8 @@ final class WorldScene: SKScene {
             fogLayer.configure(revealed: revealed)
             landmarkLayer.apply(newProgress, animated: false)
         }
+        chapterObjectLayer.apply(newProgress, animated: false)
+        queueStoryMoments(newProgress)
         for bookID in completed.subtracting(celebrated) { enqueue(.celebrate(bookID)) }
         // Characters live at finished landmarks; new arrivals wait for their celebration.
         characterLayer.sync(present: completed.intersection(celebrated))
@@ -515,6 +524,20 @@ final class WorldScene: SKScene {
         connectionLayer.show(stored, terrain: terrain)
         moments.removeAll { if case .road(let id) = $0 { return !active.contains(id) } else { return false } }
         for id in active.subtracting(stored).subtracting(connectionLayer.built) { enqueue(.road(id)) }
+    }
+
+    /// Story objects that are new or deeper than last seen get a moment (remembered across launches).
+    private func queueStoryMoments(_ progress: GameProgress) {
+        let current = Dictionary(uniqueKeysWithValues: ChapterLandmarks.visible.map { ($0.id, progress.depth(of: $0)) })
+        guard var seen = UserDefaults.standard.dictionary(forKey: StorageKeys.storyObjectsSeen) as? [String: Int] else {
+            UserDefaults.standard.set(current, forKey: StorageKeys.storyObjectsSeen)
+            return
+        }
+        for (id, depth) in current where depth < (seen[id] ?? 0) { seen[id] = depth } // undone reads
+        UserDefaults.standard.set(seen, forKey: StorageKeys.storyObjectsSeen)
+        for entry in ChapterLandmarks.visible where (current[entry.id] ?? 0) > (seen[entry.id] ?? 0) {
+            enqueue(.story(entry.id))
+        }
     }
 
     private func enqueue(_ moment: Moment) {
@@ -540,6 +563,20 @@ final class WorldScene: SKScene {
                 self?.landmarkLayer.celebrate(bookID)
                 self?.landmarkDidComplete(bookID)
             }, .wait(forDuration: 1.6), .run { [weak self] in
+                self?.playNextMoment()
+            }]), withKey: "moment")
+
+        case .story(let id):
+            guard let entry = ChapterLandmarks.entry(id: id), let progress else { return playNextMoment() }
+            var seen = UserDefaults.standard.dictionary(forKey: StorageKeys.storyObjectsSeen) as? [String: Int] ?? [:]
+            seen[id] = progress.depth(of: entry)
+            UserDefaults.standard.set(seen, forKey: StorageKeys.storyObjectsSeen)
+            flyTo(grid: entry.center, zoom: min(cameraNode.xScale, 1.2))
+            run(.sequence([.wait(forDuration: 0.7), .run { [weak self] in
+                guard let self, let point = self.chapterObjectLayer.position(of: id) else { return }
+                self.chapterObjectLayer.pop(id)
+                self.landmarkLayer.puff(at: point, z: 5_500, big: false)
+            }, .wait(forDuration: 1.2), .run { [weak self] in
                 self?.playNextMoment()
             }]), withKey: "moment")
 

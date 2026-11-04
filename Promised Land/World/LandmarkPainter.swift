@@ -26,7 +26,13 @@ nonisolated struct LandmarkImage: @unchecked Sendable {
 nonisolated enum LandmarkPainter {
 
     static func render(_ look: LandmarkLook, scale: CGFloat) -> LandmarkImage? {
-        let W = CGFloat(look.size) * Iso.tileWidth
+        canvas(size: look.size, scale: scale) { $0.draw(look) }
+    }
+
+    /// A transparent canvas for something standing on a `size × size` footprint, drawn in
+    /// footprint units (the diamond spans ±65 × ±32.5 around the centre, y down).
+    static func canvas(size footprint: Int, scale: CGFloat, draw: (inout Painter) -> Void) -> LandmarkImage? {
+        let W = CGFloat(footprint) * Iso.tileWidth
         let H = W / 2
         let u = W / 130
         let pad = 16 * u
@@ -43,7 +49,7 @@ nonisolated enum LandmarkPainter {
 
         let center = CGPoint(x: size.width / 2, y: size.height - pad - H / 2)
         var painter = Painter(ctx: ctx, c: center, u: u, W: W)
-        painter.draw(look)
+        draw(&painter)
 
         guard let image = ctx.makeImage() else { return nil }
         return LandmarkImage(image: image, pointSize: size,
@@ -53,7 +59,8 @@ nonisolated enum LandmarkPainter {
 
 // MARK: - Painter
 
-private nonisolated struct Painter {
+/// Soft-shape drawing helpers shared by landmarks and story objects.
+nonisolated struct Painter {
     let ctx: CGContext
     let c: CGPoint
     let u: CGFloat
