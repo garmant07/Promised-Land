@@ -116,7 +116,8 @@ struct HomeView: View {
                             started: booksStarted.map { ($0.bookID, $0.date) },
                             quizzes: firstPasses.map { ($0.bookID, $0.date) },
                             verses: versesMemorised.map { ($0.bookID, $0.date) },
-                            features: journal.isEmpty ? [] : [.library],
+                            // The Library is the reading hub, so it's always there.
+                            features: [.library],
                             placements: editingIsland ? draft : savedPlacements,
                             unchecked: chapterReads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) })
     }
@@ -171,7 +172,14 @@ struct HomeView: View {
         .sensoryFeedback(.success, trigger: notices.first?.id)
         .overlay(alignment: .bottom) {
             if !editingIsland {
-                MainBar(active: activeSheet) { activeSheet = $0 }
+                MainBar(active: activeSheet) { sheet in
+                    // Read walks you into the Library, where every book is.
+                    if sheet == .read, let library = island.index(of: .library) {
+                        visitIndex = library
+                    } else {
+                        activeSheet = sheet
+                    }
+                }
                     .padding(.horizontal, 16)
                     .padding(.bottom, 6)
             }
@@ -191,7 +199,7 @@ struct HomeView: View {
             showNewGrowth()
         }) { ref in
             if ref.id == InteriorRef.library {
-                LibraryShelfView()
+                LibraryHubView { interior = nil }
             } else {
                 InteriorView(bookID: ref.id) { interior = nil }
             }
@@ -498,6 +506,7 @@ struct HomeView: View {
         if args.contains("-openJourneys") { activeSheet = .journeys }
         if args.contains("-openRead") { activeSheet = .read }
         if args.contains("-editIsland") { startEditing(island.plots.first?.bookID) }
+        if args.contains("-openHub") { interior = InteriorRef(id: InteriorRef.library) }
         if let i = args.firstIndex(of: "-celebrate"), i + 1 < args.count { activeSheet = .character(args[i + 1]) }
         if let i = args.firstIndex(of: "-openChapter"), i + 1 < args.count {
             let parts = args[i + 1].split(separator: ":")

@@ -51,7 +51,7 @@ enum UnlockNotices {
                                         symbol: symbol, itemIndex: index))
             case .library:
                 out.append(UnlockNotice(id: "library", title: "The Library is open",
-                                        detail: "Your journal entries are kept here. Walk in any time.",
+                                        detail: "Every book of the Bible is on its shelves. Walk in to read.",
                                         symbol: "books.vertical.fill", itemIndex: index))
             case .artifact:
                 continue // every chapter adds one; the growth note covers these

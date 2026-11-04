@@ -540,3 +540,15 @@ struct UnlockNoticeTests {
         for n in notices { if let i = n.itemIndex { #expect(island.items.indices.contains(i)) } }
     }
 }
+
+@MainActor
+struct LibraryHubTests {
+    @Test("The Library's shelves hold all 66 books, once each, in order")
+    func shelves() {
+        let shelved = BookSection.all.flatMap(\.books).map(\.id)
+        #expect(shelved == BibleCatalog.books.map(\.id))
+        #expect(BookSection.all.first?.books.last?.id == "deuteronomy")
+        #expect(BookSection.all.first { $0.id == "prophets" }?.books.last?.id == "malachi")
+        #expect(BookSection.all.first { $0.id == "gospels" }?.books.map(\.id) == ["matthew", "mark", "luke", "john"])
+    }
+}
