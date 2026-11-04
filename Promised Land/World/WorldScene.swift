@@ -45,6 +45,9 @@ final class WorldScene: SKScene {
     let landmarkLayer = LandmarkLayer()
     let fogLayer = FogLayer()
     let connectionLayer = ConnectionLayer()
+    let decorationLayer = DecorationLayer()
+    let characterLayer = CharacterLayer()
+    let ambientLayer = AmbientLayer()
 
     // MARK: Progress
 
@@ -103,9 +106,12 @@ final class WorldScene: SKScene {
         addChild(terrainLayer)
         addChild(objectLayer)
         objectLayer.addChild(connectionLayer)
+        objectLayer.addChild(decorationLayer)
         objectLayer.addChild(landmarkLayer)
+        objectLayer.addChild(characterLayer)
         addChild(fogLayer)
         addChild(landmarkLayer.labelLayer)
+        addChild(ambientLayer)
         addChild(overlayLayer)
         overlayLayer.zPosition = 10_000
         addChild(cameraNode)
@@ -141,6 +147,11 @@ final class WorldScene: SKScene {
     private func terrainReady(_ model: TerrainModel) {
         terrain = model
         needsChunkRefresh = true
+        decorationLayer.build(model)
+        if let progress {
+            decorationLayer.setFogged(Set(WorldData.regions.map(\.id).filter { !progress.isRegionRevealed($0) }), animated: false)
+        }
+        decorationLayer.update(visible: visibleRect())
         syncRoads()
         playNextMoment()
         // Low-detail textures for the whole map, so panning never shows a gap.
@@ -180,6 +191,8 @@ final class WorldScene: SKScene {
         }
 
         let viewport = visibleRect()
+        characterLayer.updateDepths()
+        ambientLayer.update(dt: dt, visible: viewport, zoom: cameraNode.xScale, terrain: terrain)
         if viewport != lastReportedViewport {
             needsChunkRefresh = true
             if currentTime - lastViewportReport > 0.1 {
@@ -197,6 +210,7 @@ final class WorldScene: SKScene {
 
     private func viewportDidChange(_ viewport: CGRect) {
         landmarkLayer.updateLabels(zoom: cameraNode.xScale)
+        decorationLayer.update(visible: viewport)
     }
 
     func visibleRect() -> CGRect {
@@ -416,7 +430,9 @@ final class WorldScene: SKScene {
     }
 
     private func handleTap(at scenePoint: CGPoint) {
-        if let bookID = landmarkLayer.landmark(at: scenePoint) {
+        if let character = characterLayer.character(at: scenePoint) {
+            characterLayer.speak(character, zoom: cameraNode.xScale)
+        } else if let bookID = landmarkLayer.landmark(at: scenePoint) {
             onSelectLandmark?(bookID)
         } else if let id = connectionLayer.connection(near: Iso.grid(scenePoint)) {
             onSelectConnection?(id)
@@ -455,6 +471,9 @@ final class WorldScene: SKScene {
             landmarkLayer.apply(newProgress, animated: false)
         }
         for bookID in completed.subtracting(celebrated) { enqueue(.celebrate(bookID)) }
+        // Characters live at finished landmarks; new arrivals wait for their celebration.
+        characterLayer.sync(present: completed.intersection(celebrated))
+        decorationLayer.setFogged(Set(WorldData.regions.map(\.id).filter { !revealed.contains($0) }), animated: true)
         syncRoads()
         if isOnScreen { playNextMoment() }
     }
@@ -517,8 +536,9 @@ final class WorldScene: SKScene {
         }
     }
 
-    /// Hook for characters arriving (Phase 5).
-    private func landmarkDidComplete(_ bookID: String) {}
+    private func landmarkDidComplete(_ bookID: String) {
+        characterLayer.arrive(for: bookID)
+    }
 
     /// Flies to the most recently read landmark (or the starting view).
     func recentre() {
