@@ -107,3 +107,109 @@ struct TapClassifierTests {
         #expect(!TapClassifier.isTap(translation: translation))
     }
 }
+
+/// Large objects: the Library and landmarks are hit on their drawn picture, not just their tile.
+@MainActor
+struct LargeObjectHitTests {
+    static func library(at gx: CGFloat, _ gy: CGFloat) -> Island.Item {
+        Island.Item(kind: .library, gx: gx, gy: gy, seed: 0, source: .feature(.library),
+                    footprint: IslandPlacement.footprint(centre: CGPoint(x: gx, y: gy), weight: 4))
+    }
+
+    @Test("The Library answers taps on its roof, walls and ground", arguments: HitTestingTests.zooms, HitTestingTests.pans)
+    func libraryEverywhere(zoom: CGFloat, pan: CGSize) {
+        let lib = Self.library(at: 12.5, 12.5)
+        let layout = Fixture.layout(zoom: zoom)
+        let bounds = IslandPainter.drawnBounds(of: lib, layout: layout)
+        #expect(bounds.height > 0 && bounds.width > 0)
+        // Near the top of the roof, the middle of the walls, and the ground.
+        for p in [CGPoint(x: bounds.midX, y: bounds.minY + bounds.height * 0.1),
+                  CGPoint(x: bounds.midX, y: bounds.midY),
+                  layout.point(lib.gx, lib.gy)] {
+            let screen = CGPoint(x: p.x + pan.width, y: p.y + pan.height)
+            #expect(IslandHitTester.hit(point: screen, layout: layout, pan: pan, items: [lib]) == 0)
+        }
+    }
+
+    @Test("Drawn bounds sit inside the picture's rectangle (transparent padding is ignored)")
+    func boundsTrimmed() {
+        let lib = Self.library(at: 12.5, 12.5)
+        let layout = Fixture.layout(zoom: 2)
+        guard let art = IslandPainter.art(for: .library) else { Issue.record("no library art"); return }
+        let base = layout.point(lib.gx, lib.gy)
+        let full = IslandPainter.imageRect(art, kind: .library, tileWidth: layout.scale * 2).offsetBy(dx: base.x, dy: base.y)
+        let visible = IslandPainter.drawnBounds(of: lib, layout: layout)
+        #expect(full.insetBy(dx: -0.5, dy: -0.5).contains(visible))
+        #expect(visible.width * visible.height < full.width * full.height)
+    }
+
+    @Test("A small thing in front of a large building still gets its own taps", arguments: HitTestingTests.zooms)
+    func smallInFrontOfLarge(zoom: CGFloat) {
+        let lib = Self.library(at: 12.5, 12.5)
+        let flower = Fixture.item(.flower, 13.3, 13.3, chapter: 7) // in front (higher gx+gy)
+        let layout = Fixture.layout(zoom: zoom)
+        let onFlower = layout.point(flower.gx, flower.gy)
+        #expect(IslandHitTester.hit(point: onFlower, layout: layout, items: [lib, flower]) == 1)
+    }
+}
+
+/// The shared picker on its own.
+struct HitPickerTests {
+    @Test func frontMostDirectHitWins() {
+        let c = [HitCandidate(id: "back", depth: 1, onGround: false, bounds: CGRect(x: 0, y: 0, width: 100, height: 100)),
+                 HitCandidate(id: "front", depth: 5, onGround: false, bounds: CGRect(x: 40, y: 40, width: 20, height: 20))]
+        #expect(HitPicker.pick(CGPoint(x: 50, y: 50), from: c, minimumTarget: 44) == "front")
+        #expect(HitPicker.pick(CGPoint(x: 10, y: 10), from: c, minimumTarget: 44) == "back")
+    }
+
+    @Test func groundCountsEvenOutsideTheDrawing() {
+        let c = [HitCandidate(id: "a", depth: 1, onGround: true, bounds: .zero)]
+        #expect(HitPicker.pick(CGPoint(x: 500, y: 500), from: c, minimumTarget: 44) == "a")
+    }
+
+    @Test func tinyThingsGetFortyFourPoints() {
+        let c = [HitCandidate(id: "tiny", depth: 1, onGround: false, bounds: CGRect(x: 100, y: 100, width: 4, height: 4))]
+        #expect(HitPicker.pick(CGPoint(x: 121, y: 102), from: c, minimumTarget: 44) == "tiny")
+        #expect(HitPicker.pick(CGPoint(x: 125, y: 102), from: c, minimumTarget: 44) == nil)
+    }
+
+    @Test("Direct hits beat a nearby small thing's padded target")
+    func directBeatsPadding() {
+        let c = [HitCandidate(id: "tiny", depth: 9, onGround: false, bounds: CGRect(x: 0, y: 0, width: 4, height: 4)),
+                 HitCandidate(id: "big", depth: 1, onGround: false, bounds: CGRect(x: 10, y: 0, width: 50, height: 50))]
+        #expect(HitPicker.pick(CGPoint(x: 12, y: 2), from: c, minimumTarget: 44) == "big")
+    }
+
+    @Test("Expanding to the minimum keeps the centre and never shrinks")
+    func expanded() {
+        let r = HitPicker.expanded(CGRect(x: 10, y: 10, width: 10, height: 100), to: 44)
+        #expect(r.midX == 15 && r.midY == 60 && r.width == 44 && r.height == 100)
+    }
+}
+
+/// Panning never selects: the tap tracker used on the world map.
+struct TapTrackerTests {
+    @Test func stillTouchIsATap() {
+        var t = TapTracker()
+        t.began(at: .zero)
+        t.moved(to: CGPoint(x: 3, y: 4))
+        let tapped = t.ended(at: CGPoint(x: 6, y: 0))
+        #expect(tapped)
+    }
+
+    @Test("Moving 10pt or more, even and back, is a pan",
+          arguments: [CGPoint(x: 10, y: 0), CGPoint(x: 0, y: -30), CGPoint(x: 8, y: 8)])
+    func panNeverTaps(away: CGPoint) {
+        var t = TapTracker()
+        t.began(at: .zero)
+        t.moved(to: away)
+        let tapped = t.ended(at: .zero)
+        #expect(!tapped)
+    }
+
+    @Test func endWithoutBeginIsNotATap() {
+        var t = TapTracker()
+        let tapped = t.ended(at: .zero)
+        #expect(!tapped)
+    }
+}

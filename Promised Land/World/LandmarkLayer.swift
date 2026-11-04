@@ -172,22 +172,21 @@ final class LandmarkLayer: SKNode {
 
     // MARK: Hit testing & labels
 
-    func landmark(at scenePoint: CGPoint) -> String? {
+    /// Tap candidates: every landmark's footprint, plus the visible drawing of built ones.
+    func hitCandidates(at scenePoint: CGPoint) -> [HitCandidate<WorldHit>] {
         let g = Iso.grid(scenePoint)
-        if let hit = WorldData.landmarks.first(where: {
-            g.x >= CGFloat($0.x) - 0.3 && g.x <= CGFloat($0.x + $0.size) + 0.3 &&
-            g.y >= CGFloat($0.y) - 0.3 && g.y <= CGFloat($0.y + $0.size) + 0.3
-        }) {
-            return hit.bookID
+        return WorldData.landmarks.map { landmark in
+            let sprite = sprites[landmark.bookID]
+            let drawn = sprite.flatMap { looks[landmark.bookID]?.stage != .plot ? WorldHitBounds.visibleFrame(of: $0) : nil }
+            let ground = Iso.scene(CGPoint(x: Double(landmark.x) + Double(landmark.size) / 2,
+                                           y: Double(landmark.y) + Double(landmark.size) / 2))
+            return HitCandidate(id: .landmark(landmark.bookID),
+                                depth: sprite?.zPosition ?? Iso.depth(CGFloat(landmark.x + landmark.size), CGFloat(landmark.y + landmark.size)),
+                                onGround: WorldHitBounds.onFootprint(g, x: landmark.x, y: landmark.y, size: landmark.size, slack: 0.3),
+                                bounds: drawn ?? CGRect(x: ground.x - 4, y: ground.y - 4, width: 8, height: 8))
         }
-        // Tall buildings: accept taps on the drawn shape above the footprint.
-        let candidates = sprites.filter { (bookID, sprite) in
-            guard looks[bookID]?.stage != .plot, sprite.frame.contains(scenePoint) else { return false }
-            let footprintCentre = sprite.position
-            return scenePoint.y > footprintCentre.y && abs(scenePoint.x - footprintCentre.x) < sprite.size.width * 0.3
-        }
-        return candidates.max { $0.value.zPosition < $1.value.zPosition }?.key
     }
+
 
     /// Keeps labels readable at any zoom, and hides them when zoomed far out.
     func updateLabels(zoom: CGFloat) {

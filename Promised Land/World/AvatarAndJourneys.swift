@@ -120,13 +120,21 @@ final class JourneyLayer: SKNode {
         marker.run(.sequence([.scale(to: 1.6, duration: 0.25), .scale(to: 1, duration: 0.3)]))
     }
 
-    /// The journey whose stop marker is nearest a grid point (within a tile).
-    func journey(near grid: CGPoint) -> String? {
-        for journey in JourneyData.visible where routes[journey.id] != nil {
-            if journey.stops.contains(where: { hypot($0.x - grid.x, $0.y - grid.y) < 1.1 }) { return journey.id }
+    /// Tap candidates: each visible journey's stop markers (sorted as if standing on the ground there).
+    func hitCandidates() -> [HitCandidate<WorldHit>] {
+        JourneyData.visible.flatMap { journey -> [HitCandidate<WorldHit>] in
+            guard routes[journey.id] != nil else { return [] }
+            return journey.stops.map { stop in
+                let p = Iso.scene(stop.grid)
+                return HitCandidate(id: .journey(journey.id), depth: Iso.depth(stop.grid.x, stop.grid.y) + 0.3,
+                                    onGround: false, bounds: CGRect(x: p.x - 13, y: p.y - 13, width: 26, height: 26))
+            }
         }
-        return nil
     }
+
+    /// A stop marker of a journey, for tap feedback.
+    func marker(for id: String) -> SKShapeNode? { markers[id]?.first }
+
 }
 
 extension Array {

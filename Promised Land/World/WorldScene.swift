@@ -418,8 +418,9 @@ final class WorldScene: SKScene {
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
         doubleTap.numberOfTapsRequired = 2
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        let tap = SlopTapRecognizer(target: self, action: #selector(handleTap(_:)))
         tap.require(toFail: doubleTap)
+        tap.delegate = self
         [pan, pinch, doubleTap, tap].forEach(view.addGestureRecognizer)
     }
 
@@ -472,27 +473,57 @@ final class WorldScene: SKScene {
         flyTo(point, zoom: zoom, duration: 0.4)
     }
 
-    @objc private func handleTap(_ g: UITapGestureRecognizer) {
+    @objc private func handleTap(_ g: UIGestureRecognizer) {
         guard let view = g.view else { return }
         handleTap(at: convertPoint(fromView: g.location(in: view)))
     }
 
+    /// Every tappable thing on the map, for the shared `HitPicker`.
+    func hitCandidates(at scenePoint: CGPoint) -> [HitCandidate<WorldHit>] {
+        characterLayer.hitCandidates() + journeyLayer.hitCandidates()
+            + [throneNode.hitCandidate(at: scenePoint), libraryNode.hitCandidate(at: scenePoint)].compactMap { $0 }
+            + chapterObjectLayer.hitCandidates(at: scenePoint) + landmarkLayer.hitCandidates(at: scenePoint)
+    }
+
+    /// What a tap at a scene point selects (44pt minimum target at the current zoom).
+    func hit(at scenePoint: CGPoint) -> WorldHit? {
+        HitPicker.pick(scenePoint, from: hitCandidates(at: scenePoint),
+                       minimumTarget: IslandHitTester.minimumTarget * cameraNode.xScale)
+    }
+
     private func handleTap(at scenePoint: CGPoint) {
-        if let character = characterLayer.character(at: scenePoint) {
-            characterLayer.speak(character, zoom: cameraNode.xScale)
-        } else if let id = journeyLayer.journey(near: Iso.grid(scenePoint)) {
-            onSelectJourney?(id)
-        } else if throneNode.contains(gridPoint: Iso.grid(scenePoint)) {
-            onSelectThrone?()
-        } else if libraryNode.contains(gridPoint: Iso.grid(scenePoint)) {
-            onSelectLibrary?()
-        } else if let id = chapterObjectLayer.object(at: scenePoint) {
-            onSelectStoryObject?(id)
-        } else if let bookID = landmarkLayer.landmark(at: scenePoint) {
-            onSelectLandmark?(bookID)
-        } else if let id = connectionLayer.connection(near: Iso.grid(scenePoint)) {
-            onSelectConnection?(id)
+        guard let hit = hit(at: scenePoint) else {
+            // Roads are thin lines, so they're only checked when nothing else was tapped.
+            if let id = connectionLayer.connection(near: Iso.grid(scenePoint)) { onSelectConnection?(id) }
+            return
         }
+        switch hit {
+        case .character(let id):
+            if let character = WorldData.characters.first(where: { $0.id == id }) {
+                characterLayer.speak(character, zoom: cameraNode.xScale)
+            }
+            feedback(characterLayer.sprite(for: id))
+        case .journey(let id):
+            feedback(journeyLayer.marker(for: id))
+            onSelectJourney?(id)
+        case .throne:
+            feedback(throneNode)
+            onSelectThrone?()
+        case .library:
+            feedback(libraryNode)
+            onSelectLibrary?()
+        case .story(let id):
+            feedback(chapterObjectLayer.sprite(for: id))
+            onSelectStoryObject?(id)
+        case .landmark(let bookID):
+            feedback(landmarkLayer.sprite(for: bookID))
+            onSelectLandmark?(bookID)
+        }
+    }
+
+    private func feedback(_ node: SKNode?) {
+        guard let node, let parent = node.parent else { return }
+        TapFeedback.play(on: node, at: node.position, in: parent)
     }
 
     // MARK: Progress
@@ -837,4 +868,11 @@ final class WorldScene: SKScene {
         node.children.reduce(1) { $0 + countNodes($1) }
     }
     #endif
+}
+
+extension WorldScene: UIGestureRecognizerDelegate {
+    /// Taps watch alongside panning and pinching; any real movement makes the tap fail.
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool {
+        g is SlopTapRecognizer
+    }
 }

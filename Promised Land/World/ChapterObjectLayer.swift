@@ -70,18 +70,18 @@ final class ChapterObjectLayer: SKNode {
         sprite.run(grow)
     }
 
-    /// The story object under a tap, preferring the one drawn in front.
-    func object(at scenePoint: CGPoint) -> String? {
+    /// Tap candidates: each placed story object's footprint and visible drawing.
+    func hitCandidates(at scenePoint: CGPoint) -> [HitCandidate<WorldHit>] {
         let g = Iso.grid(scenePoint)
-        let hits = ChapterLandmarks.visible.filter { entry in
-            guard sprites[entry.id] != nil else { return false }
-            let inFootprint = g.x >= CGFloat(entry.x) - 0.2 && g.x <= CGFloat(entry.x + entry.size) + 0.2 &&
-                              g.y >= CGFloat(entry.y) - 0.2 && g.y <= CGFloat(entry.y + entry.size) + 0.2
-            let onDrawing = sprites[entry.id].map { $0.frame.contains(scenePoint) && scenePoint.y > $0.position.y } ?? false
-            return inFootprint || onDrawing
+        return ChapterLandmarks.visible.compactMap { entry in
+            guard let sprite = sprites[entry.id], !sprite.isHidden else { return nil }
+            return HitCandidate(id: .story(entry.id), depth: sprite.zPosition,
+                                onGround: WorldHitBounds.onFootprint(g, x: entry.x, y: entry.y, size: entry.size),
+                                bounds: WorldHitBounds.visibleFrame(of: sprite))
         }
-        return hits.max { $0.x + $0.y < $1.x + $1.y }?.id
     }
+
+    func sprite(for id: String) -> SKSpriteNode? { sprites[id] }
 
     func position(of id: String) -> CGPoint? { sprites[id]?.position }
 

@@ -9,7 +9,7 @@ import SwiftUI
 struct Island: Equatable {
     struct Tile: Hashable { let x: Int; let y: Int }
 
-    enum Kind: Equatable {
+    enum Kind: Hashable {
         case tuft, flower, flowers, bush, rock, olive, cypress, palm, sheep, tent, well, house
         case fruitTree   // a quiz passed
         case lantern     // a verse memorised
@@ -242,7 +242,9 @@ enum TapClassifier {
     static func isTap(translation: CGSize) -> Bool { hypot(translation.width, translation.height) < slop }
 }
 
-/// Finds the island item under a touch.
+/// Finds the island item under a touch, through the shared `HitPicker`: each item's ground
+/// patch, plus the bounds of what is actually drawn (from the same numbers the painter uses),
+/// in reverse depth order, with a 44pt minimum target.
 enum IslandHitTester {
     /// Small things are always at least this easy to hit (in points).
     static let minimumTarget: CGFloat = 44
@@ -250,30 +252,21 @@ enum IslandHitTester {
     /// - Parameters:
     ///   - point: the touch, in the island view's coordinates.
     ///   - pan: the view's current pan offset (subtracted before mapping to the grid).
-    /// - Returns: the index of the top-most item whose ground (or drawn shape, for tall
-    ///   things) is under the touch; failing that, the nearest item within 22pt.
+    /// - Returns: the index of the front-most item under the touch, or nil for empty ground.
     static func hit(point: CGPoint, layout: IslandLayout, pan: CGSize = .zero, items: [Island.Item]) -> Int? {
         let p = CGPoint(x: point.x - pan.width, y: point.y - pan.height)
-        let g = layout.grid(p)
-        var direct: [(index: Int, depth: CGFloat, distance: CGFloat)] = []
-        var near: (index: Int, distance: CGFloat)?
-        for (i, item) in items.enumerated() {
-            let base = layout.point(item.gx, item.gy)
-            let distance = hypot(p.x - base.x, p.y - base.y)
-            let onGround = item.footprint.contains(g)
-            let onShape = shape(of: item, base: base, u: layout.u).contains(p)
-            if onGround || onShape {
-                direct.append((i, item.gx + item.gy, distance))
-            } else if distance <= minimumTarget / 2, distance < (near?.distance ?? .infinity) {
-                near = (i, distance)
-            }
-        }
-        // Reverse depth order: the item drawn in front wins; ties go to the nearest.
-        if let best = direct.max(by: { ($0.depth, -$0.distance) < ($1.depth, -$1.distance) }) { return best.index }
-        return near?.index
+        return HitPicker.pick(p, from: candidates(at: p, layout: layout, items: items), minimumTarget: minimumTarget)
     }
 
-    /// The drawn shape of tall things (above their ground patch), in view points.
+    static func candidates(at p: CGPoint, layout: IslandLayout, items: [Island.Item]) -> [HitCandidate<Int>] {
+        let g = layout.grid(p)
+        return items.enumerated().map { i, item in
+            HitCandidate(id: i, depth: item.gx + item.gy, onGround: item.footprint.contains(g),
+                         bounds: IslandPainter.drawnBounds(of: item, layout: layout))
+        }
+    }
+
+    /// The drawn shape of hand-drawn things, in view points (sizes match `IslandPainter`).
     static func shape(of item: Island.Item, base: CGPoint, u: CGFloat) -> CGRect {
         let size: (w: CGFloat, h: CGFloat)
         switch item.kind {
@@ -285,10 +278,13 @@ enum IslandHitTester {
         case .tent: size = (16, 12)
         case .fruitTree: size = (18, 24)
         case .lantern: size = (8, 19)
+        case .bush: size = (10, 7)
+        case .sheep: size = (10, 8)
+        case .rock: size = (8, 5)
+        case .tuft, .flower, .flowers: size = (7, 6)
         case .landmark, .library: size = (40, 50)
         case .building(let style):
             size = (36, IslandBuildings.height(style: style, progress: item.progress, total: item.total) + 6)
-        case .tuft, .flower, .flowers, .bush, .rock, .sheep: return .zero
         }
         return CGRect(x: base.x - size.w / 2 * u, y: base.y - size.h * u, width: size.w * u, height: size.h * u)
     }
@@ -445,19 +441,39 @@ enum IslandPainter {
             poly([(-2.6, -16), (0, -18), (2.6, -16)], Color(hex: "#7A4A2A"))
         case .building(let style):
             IslandBuildings.draw(&c, style: style, progress: item.progress, total: item.total, u: u, seed: item.seed)
-        case .library:
-            guard let art = LandmarkMiniCache.library() else { return }
-            let k = tileWidth / Iso.tileWidth / 3 * 0.95
-            let w = art.pointSize.width * k, h = art.pointSize.height * k
-            c.draw(Image(decorative: art.image, scale: 2),
-                   in: CGRect(x: -w / 2, y: -(1 - art.anchor.y) * h, width: w, height: h))
-        case .landmark(let style):
-            guard let art = LandmarkMiniCache.image(style) else { return }
-            let k = tileWidth / Iso.tileWidth * 0.95
-            let w = art.pointSize.width * k, h = art.pointSize.height * k
-            c.draw(Image(decorative: art.image, scale: 2),
-                   in: CGRect(x: -w / 2, y: -(1 - art.anchor.y) * h, width: w, height: h))
+        case .library, .landmark:
+            guard let art = art(for: item.kind) else { return }
+            c.draw(Image(decorative: art.image, scale: 2), in: imageRect(art, kind: item.kind, tileWidth: tileWidth))
         }
+    }
+
+    /// The pre-drawn picture for image-based kinds (the Library and landmarks).
+    static func art(for kind: Island.Kind) -> LandmarkImage? {
+        switch kind {
+        case .library: LandmarkMiniCache.library()
+        case .landmark(let style): LandmarkMiniCache.image(style)
+        default: nil
+        }
+    }
+
+    /// Where an image-based kind is drawn, relative to its ground point. Shared by drawing and tapping.
+    static func imageRect(_ art: LandmarkImage, kind: Island.Kind, tileWidth: CGFloat) -> CGRect {
+        // The Library's picture covers a 3-tile footprint; it's shown on one tile.
+        let k = tileWidth / Iso.tileWidth * 0.95 / (kind == .library ? 3 : 1)
+        let w = art.pointSize.width * k, h = art.pointSize.height * k
+        return CGRect(x: -w / 2, y: -(1 - art.anchor.y) * h, width: w, height: h)
+    }
+
+    /// The bounds of what's actually drawn for an item, in view points (before panning).
+    static func drawnBounds(of item: Island.Item, layout: IslandLayout) -> CGRect {
+        let base = layout.point(item.gx, item.gy)
+        guard let art = art(for: item.kind) else {
+            return IslandHitTester.shape(of: item, base: base, u: layout.u)
+        }
+        let rect = imageRect(art, kind: item.kind, tileWidth: layout.scale * 2).offsetBy(dx: base.x, dy: base.y)
+        let visible = LandmarkMiniCache.opaqueUnitRect(item.kind, art)
+        return CGRect(x: rect.minX + visible.minX * rect.width, y: rect.minY + visible.minY * rect.height,
+                      width: visible.width * rect.width, height: visible.height * rect.height)
     }
 }
 
@@ -466,6 +482,15 @@ enum IslandPainter {
 enum LandmarkMiniCache {
     private static var images: [BuildingStyle: LandmarkImage] = [:]
     private static var libraryArt: LandmarkImage?
+    private static var opaque: [Island.Kind: CGRect] = [:]
+
+    /// The visible part of an item's picture (a unit rect, y down), measured once per kind.
+    static func opaqueUnitRect(_ kind: Island.Kind, _ art: LandmarkImage) -> CGRect {
+        if let cached = opaque[kind] { return cached }
+        let rect = OpaqueBounds.unitRect(of: art.image)
+        opaque[kind] = rect
+        return rect
+    }
 
     /// The Library building, drawn by the same painter as on the world map (3-tile footprint).
     static func library() -> LandmarkImage? {

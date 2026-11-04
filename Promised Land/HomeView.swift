@@ -73,7 +73,8 @@ struct HomeView: View {
                           selected: $selectedItem, grown: grown, growID: growID) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
-        .overlay(alignment: .topLeading) { status }
+        // The status pill is read-only, so touches on it go through to the island.
+        .overlay(alignment: .topLeading) { status.allowsHitTesting(false) }
         .overlay(alignment: .bottom) {
             MainBar(active: activeSheet) { activeSheet = $0 }
                 .padding(.horizontal, 16)
@@ -425,6 +426,8 @@ struct PlatformScene: View {
     @State private var pan: CGSize = .zero
     @State private var panStart: CGSize = .zero
     @State private var isPanning = false
+    /// Set while a pinch is under way, so lifting the fingers after a zoom never selects.
+    @State private var pinched = false
 
     // Character
     @State private var spot = CGPoint(x: 13, y: 13)
@@ -460,6 +463,9 @@ struct PlatformScene: View {
                         for item in island.items.prefix(staticCount).sorted(by: { $0.gx + $0.gy < $1.gx + $1.gy }) {
                             IslandPainter.drawItem(&context, item, layout: layout)
                         }
+                        #if DEBUG
+                        if Self.showHitBoxes { Self.drawHitBoxes(&context, island: island, layout: layout) }
+                        #endif
                     }
 
                     TimelineView(.animation(paused: !walking && !popping && !bouncing)) { context in
@@ -547,10 +553,11 @@ struct PlatformScene: View {
                 }
             }
             .onEnded { value in
+                defer { pinched = false }
                 if isPanning {
                     isPanning = false
                     panStart = pan
-                } else if TapClassifier.isTap(translation: value.translation) {
+                } else if !pinched, TapClassifier.isTap(translation: value.translation) {
                     onTap?(IslandHitTester.hit(point: value.location, layout: layout, pan: pan, items: island.items))
                 }
             }
@@ -559,6 +566,7 @@ struct PlatformScene: View {
     private func zoomGesture(size: CGSize) -> some Gesture {
         MagnifyGesture()
             .onChanged { value in
+                pinched = true
                 let z = min(IslandLayout.maxZoom, max(IslandLayout.minZoom, zoomStart * value.magnification))
                 let ratio = z / zoom
                 zoom = z
@@ -606,6 +614,28 @@ struct PlatformScene: View {
         c.fill(Path(ellipseIn: CGRect(x: base.x - w / 2, y: base.y - w * 0.22, width: w, height: w * 0.44)),
                with: .color(Color.wheat.opacity(0.55)))
     }
+
+    #if DEBUG
+    /// `-showHitBoxes`: outlines each item's tap area (drawn bounds in red, ground in blue,
+    /// 44pt minimum in grey) to diagnose taps that miss.
+    private static let showHitBoxes = ProcessInfo.processInfo.arguments.contains("-showHitBoxes")
+
+    private static func drawHitBoxes(_ c: inout GraphicsContext, island: Island, layout: IslandLayout) {
+        for item in island.items {
+            let bounds = IslandPainter.drawnBounds(of: item, layout: layout)
+            c.stroke(Path(HitPicker.expanded(bounds, to: IslandHitTester.minimumTarget)), with: .color(.gray.opacity(0.5)), lineWidth: 1)
+            c.stroke(Path(bounds), with: .color(.red), lineWidth: 1)
+            let f = item.footprint
+            var ground = Path()
+            ground.move(to: layout.point(f.minX, f.minY))
+            ground.addLine(to: layout.point(f.maxX, f.minY))
+            ground.addLine(to: layout.point(f.maxX, f.maxY))
+            ground.addLine(to: layout.point(f.minX, f.maxY))
+            ground.closeSubpath()
+            c.stroke(ground, with: .color(.blue), lineWidth: 1)
+        }
+    }
+    #endif
 
     private static func overshoot(_ t: Double) -> CGFloat {
         let c1 = 1.7, c3 = c1 + 1

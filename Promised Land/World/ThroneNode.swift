@@ -20,6 +20,13 @@ final class ThroneNode: SKSpriteNode {
 
     required init?(coder: NSCoder) { fatalError("init(coder:) is not used") }
 
+    /// Tap candidate: its footprint and its visible drawing (nil while hidden).
+    func hitCandidate(at scenePoint: CGPoint) -> HitCandidate<WorldHit>? {
+        guard !isHidden else { return nil }
+        return HitCandidate(id: .throne, depth: zPosition, onGround: contains(gridPoint: Iso.grid(scenePoint)),
+                            bounds: WorldHitBounds.visibleFrame(of: self))
+    }
+
     func contains(gridPoint g: CGPoint) -> Bool {
         !isHidden && g.x >= CGFloat(Self.gridX) - 0.3 && g.x <= CGFloat(Self.gridX + Self.size) + 0.3 &&
             g.y >= CGFloat(Self.gridY) - 0.3 && g.y <= CGFloat(Self.gridY + Self.size) + 0.3

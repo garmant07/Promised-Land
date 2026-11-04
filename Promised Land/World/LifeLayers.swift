@@ -220,10 +220,16 @@ final class CharacterLayer: SKNode {
         }
     }
 
-    func character(at scenePoint: CGPoint) -> WorldCharacter? {
-        let hit = nodes.first { $0.value.frame.insetBy(dx: -10, dy: -8).contains(scenePoint) }
-        return hit.flatMap { id in WorldData.characters.first { $0.id == id.key } }
+    /// Tap candidates: each character's visible sprite.
+    func hitCandidates() -> [HitCandidate<WorldHit>] {
+        nodes.compactMap { id, sprite in
+            guard !sprite.isHidden else { return nil }
+            return HitCandidate(id: .character(id), depth: sprite.zPosition, onGround: false,
+                                bounds: WorldHitBounds.visibleFrame(of: sprite))
+        }
     }
+
+    func sprite(for id: String) -> SKSpriteNode? { nodes[id] }
 
     /// Shows a speech bubble above a character for a few seconds.
     func speak(_ character: WorldCharacter, zoom: CGFloat) {
