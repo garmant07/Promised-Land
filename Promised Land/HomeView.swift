@@ -32,6 +32,8 @@ struct HomeView: View {
     @Query private var versesMemorised: [VerseMemorised]
     @Query private var journal: [JournalEntry]
     @Query private var booksStarted: [BookStarted]
+    @Query private var placedItems: [PlacedItem]
+    @Environment(\.modelContext) private var context
 
     @State private var activeSheet: ActiveSheet?
     @State private var selectedItem: Int?
@@ -52,6 +54,12 @@ struct HomeView: View {
     @State private var growID = 0
     @State private var growthNote: String?
 
+    // Edit mode
+    @State private var editingIsland = false
+    @State private var draft: [String: IslandPlacement] = [:]
+    @State private var editSelected: String?
+    @State private var dragBase: IslandPlacement?
+
     /// Every piece of reading, in order, laid out on the island. A book's quiz grows one
     /// fruit tree (its first pass), however many times it's taken.
     private var island: Island {
@@ -61,7 +69,14 @@ struct HomeView: View {
                             started: booksStarted.map { ($0.bookID, $0.date) },
                             quizzes: firstPasses.map { ($0.bookID, $0.date) },
                             verses: versesMemorised.map { ($0.bookID, $0.date) },
-                            features: journal.isEmpty ? [] : [.library])
+                            features: journal.isEmpty ? [] : [.library],
+                            placements: editingIsland ? draft : savedPlacements)
+    }
+
+    /// Where you've put things (saved in edit mode).
+    private var savedPlacements: [String: IslandPlacement] {
+        Dictionary(placedItems.map { ($0.key, IslandPlacement(x: $0.x, y: $0.y, rotation: $0.rotation, moved: $0.moved)) },
+                   uniquingKeysWith: { a, _ in a })
     }
 
     var body: some View {
@@ -71,15 +86,19 @@ struct HomeView: View {
             PlatformScene(avatar: avatar, island: island, revealFrom: revealFrom, revealID: revealID,
                           insets: EdgeInsets(top: 70, leading: 8, bottom: 118, trailing: 8),
                           selected: $selectedItem, grown: grown, growID: growID,
-                          persistsCamera: true) { index in open(index, in: island) }
+                          persistsCamera: true, editing: editingIsland ? editing : nil,
+                          onLongPress: { index in startEditing(island.items[index].plotKey) }) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
         // The status pill is read-only, so touches on it go through to the island.
-        .overlay(alignment: .topLeading) { status.allowsHitTesting(false) }
+        .overlay(alignment: .topLeading) { if !editingIsland { status.allowsHitTesting(false) } }
+        .overlay(alignment: .top) { if editingIsland { editBar(island) } }
         .overlay(alignment: .bottom) {
-            MainBar(active: activeSheet) { activeSheet = $0 }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 6)
+            if !editingIsland {
+                MainBar(active: activeSheet) { activeSheet = $0 }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 6)
+            }
         }
         .sheet(item: $activeSheet) { sheet in
             content(for: sheet)
@@ -148,7 +167,10 @@ struct HomeView: View {
         case .friends:
             FriendsView()
         case .profile:
-            ProfileView()
+            ProfileView(onEditIsland: {
+                activeSheet = nil
+                startEditing(nil)
+            })
         case .library:
             LibraryShelfView()
         case .insight(let subject):
@@ -166,6 +188,96 @@ struct HomeView: View {
         } else if let subject = InsightSubject.island(item) {
             activeSheet = .insight(subject)
         }
+    }
+
+    // MARK: Edit mode
+
+    private var editing: IslandEditing {
+        IslandEditing(selected: editSelected, onDrag: { key, dx, dy, ended in editDrag(key, dx, dy, ended: ended) },
+                      onSelect: { editSelected = $0 })
+    }
+
+    /// Freezes every plot where it is now, so only what you move changes.
+    private func startEditing(_ key: String?) {
+        let saved = savedPlacements
+        var current = island.placements
+        for k in current.keys { current[k]?.moved = saved[k]?.moved ?? false }
+        draft = current
+        editSelected = key
+        selectedItem = nil
+        withAnimation(.easeInOut(duration: 0.25)) { editingIsland = true }
+    }
+
+    private func editDrag(_ key: String, _ dx: Int, _ dy: Int, ended: Bool) {
+        if dragBase == nil { dragBase = draft[key] }
+        guard let base = dragBase else { return }
+        editSelected = key
+        var p = base
+        p.x += dx
+        p.y += dy
+        if dx != 0 || dy != 0 { p.moved = true }
+        if draft[key] != p { draft[key] = p }
+        guard ended else { return }
+        // Dropped somewhere it doesn't fit: back to where it started.
+        if island.conflicts.contains(key) {
+            withAnimation(.easeOut(duration: 0.2)) { draft[key] = base }
+        }
+        dragBase = nil
+    }
+
+    private func turnSelected() {
+        guard let key = editSelected, var p = draft[key] else { return }
+        p.rotation = (p.rotation + 1) % 4
+        p.moved = true
+        draft[key] = p
+    }
+
+    /// Lays out again everything you haven't moved yourself.
+    private func tidyUp() {
+        draft = draft.filter { $0.value.moved }
+        // Freeze the new layout, keeping the moved flags.
+        var fresh = island.placements
+        for k in fresh.keys { fresh[k]?.moved = draft[k]?.moved ?? false }
+        draft = fresh
+    }
+
+    private func finishEditing(save: Bool) {
+        if save {
+            var final = island.placements
+            for k in final.keys { final[k]?.moved = draft[k]?.moved ?? false }
+            context.savePlacements(final)
+        }
+        withAnimation(.easeInOut(duration: 0.25)) { editingIsland = false }
+        draft = [:]
+        editSelected = nil
+    }
+
+    private func editBar(_ island: Island) -> some View {
+        let blocked = !island.conflicts.isEmpty
+        return VStack(spacing: 8) {
+            HStack(spacing: 8) {
+                Button("Cancel") { finishEditing(save: false) }
+                    .buttonStyle(EditChipStyle())
+                Spacer(minLength: 0)
+                Button { turnSelected() } label: { Label("Turn", systemImage: "rotate.right") }
+                    .buttonStyle(EditChipStyle())
+                    .disabled(editSelected == nil)
+                Button("Tidy up") { tidyUp() }
+                    .buttonStyle(EditChipStyle())
+                Spacer(minLength: 0)
+                Button("Done") { finishEditing(save: true) }
+                    .buttonStyle(EditChipStyle())
+                    .disabled(blocked)
+            }
+            Text(editSelected == nil ? "Drag a building to move its plot. Tap one to turn it."
+                 : blocked ? "That spot overlaps another plot." : "Green means it fits. Drag, turn, or tap Done.")
+                .font(.footnote)
+                .foregroundStyle(Color.secondaryText)
+        }
+        .padding(12)
+        .background(Color.cream.opacity(0.96), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .padding(.horizontal, 12)
+        .padding(.top, 6)
     }
 
     /// Each building's chapters, as "book:count,…".
@@ -235,6 +347,7 @@ struct HomeView: View {
         if args.contains("-openProfile") { activeSheet = .profile }
         if args.contains("-openJourneys") { activeSheet = .journeys }
         if args.contains("-openRead") { activeSheet = .read }
+        if args.contains("-editIsland") { startEditing(island.plots.first?.bookID) }
         if let i = args.firstIndex(of: "-openReflection"), i + 1 < args.count {
             let parts = args[i + 1].split(separator: ":")
             if parts.count == 2, let book = BibleCatalog.book(id: String(parts[0])), let ch = Int(parts[1]) {
@@ -262,6 +375,21 @@ struct HomeView: View {
         }
     }
     #endif
+}
+
+/// Compact buttons for the edit-mode bar.
+private struct EditChipStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.subheadline.weight(.semibold))
+            .lineLimit(1)
+            .fixedSize()
+            .foregroundStyle(Color.primaryBrown.opacity(isEnabled ? 1 : 0.4))
+            .padding(.horizontal, 14)
+            .frame(minHeight: 44)
+            .background(Color.card.opacity(configuration.isPressed ? 0.7 : 1), in: Capsule())
+    }
 }
 
 /// Icon and number close together, for the small status pill.

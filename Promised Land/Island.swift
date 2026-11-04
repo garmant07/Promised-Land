@@ -79,12 +79,16 @@ struct Island: Equatable {
         /// Artifacts and story objects: level 1–5 (one per read). Buildings: how many times
         /// the whole book has been read (0 until finished; each one after the first adds a floor).
         var level = 0
+        /// Quarter turns of its plot (set in edit mode): odd turns face the art the other way.
+        var turned = 0
     }
 
     /// A book's plot of land (size × size tiles from x, y).
     struct Plot: Equatable {
+        /// A book id, or `IslandPlacement.libraryKey` for the Library.
         let bookID: String
         let x: Int, y: Int, size: Int
+        var rotation = 0
         var centre: CGPoint { CGPoint(x: CGFloat(x) + CGFloat(size) / 2, y: CGFloat(y) + CGFloat(size) / 2) }
     }
 
@@ -93,6 +97,17 @@ struct Island: Equatable {
     var plots: [Plot] = []
     /// Bays of open water cut into the coast beside harbour plots.
     var water: Set<Tile> = []
+    /// The Library's spot, once it's built.
+    var library: Plot?
+    /// Plots placed on top of (or too close to) another: only while editing.
+    var conflicts: Set<String> = []
+
+    /// Every plot's current place (books and the Library), for edit mode.
+    var placements: [String: IslandPlacement] {
+        var out: [String: IslandPlacement] = [:]
+        for p in plots + (library.map { [$0] } ?? []) { out[p.bookID] = IslandPlacement(x: p.x, y: p.y, rotation: p.rotation) }
+        return out
+    }
 
     static let empty = Island.build(chapters: [], quizzes: [], verses: [])
 
@@ -114,7 +129,8 @@ struct Island: Equatable {
                       started: [(book: String, date: Date)] = [],
                       quizzes: [(book: String, date: Date)],
                       verses: [(book: String, date: Date)],
-                      features: Set<Feature> = []) -> Island {
+                      features: Set<Feature> = [],
+                      placements: [String: IslandPlacement] = [:]) -> Island {
         var hasher = Hasher()
         for r in chapters { hasher.combine(r.book); hasher.combine(r.chapter); hasher.combine(r.date) }
         hasher.combine(-1)
@@ -124,9 +140,11 @@ struct Island: Equatable {
         hasher.combine(-3)
         for v in verses { hasher.combine(v.book); hasher.combine(v.date) }
         hasher.combine(features.map(\.rawValue).sorted())
+        for (k, p) in placements.sorted(by: { $0.key < $1.key }) { hasher.combine(k); hasher.combine(p) }
         let key = hasher.finalize()
         if let memo, memo.key == key { return memo.island }
-        let island = make(chapters: chapters, started: started, quizzes: quizzes, verses: verses, features: features)
+        let island = make(chapters: chapters, started: started, quizzes: quizzes, verses: verses, features: features,
+                          placements: placements)
         memo = (key, island)
         return island
     }
@@ -135,7 +153,8 @@ struct Island: Equatable {
                              started: [(book: String, date: Date)],
                              quizzes: [(book: String, date: Date)],
                              verses: [(book: String, date: Date)],
-                             features: Set<Feature>) -> Island {
+                             features: Set<Feature>,
+                             placements: [String: IslandPlacement]) -> Island {
         // Each book's plot goes down when the book was opened (or first read).
         var startDate: [String: Date] = [:]
         var reads: [String: [Int: (count: Int, first: Date)]] = [:]
@@ -153,7 +172,7 @@ struct Island: Equatable {
         let order = Dictionary(uniqueKeysWithValues: BibleCatalog.books.enumerated().map { ($1.id, $0) })
         let books = startDate.keys.sorted { (startDate[$0]!, order[$0] ?? 0) < (startDate[$1]!, order[$1] ?? 0) }
 
-        var packer = IslandPlots()
+        var packer = IslandPlots(placements: placements, books: books)
         var plots: [Plot] = []
         var dated: [(date: Date, rank: Int, item: Item)] = []
         for bookID in books {
@@ -169,7 +188,7 @@ struct Island: Equatable {
             // The building, in the middle.
             let centre = plot.centre
             var building = Item(kind: .building(bookID), gx: centre.x, gy: centre.y, seed: hash(bookID), source: .book(bookID),
-                                footprint: CGRect(x: centre.x - 0.5, y: centre.y - 0.5, width: 1, height: 1))
+                                footprint: CGRect(x: centre.x - 0.5, y: centre.y - 0.5, width: 1, height: 1), turned: plot.rotation)
             building.progress = bookReads.count
             building.total = book.chapterCount
             building.level = bookReads.count == book.chapterCount ? (bookReads.values.map(\.count).min() ?? 0) : 0
@@ -178,7 +197,8 @@ struct Island: Equatable {
             func item(_ kind: Kind, slot: Int, source: Source, level: Int = 0, salt: String) -> Item {
                 let p = slots[min(slot, slots.count - 1)]
                 return Item(kind: kind, gx: p.x, gy: p.y, seed: hash("\(bookID)-\(salt)"), source: source,
-                            footprint: CGRect(x: p.x - 0.18, y: p.y - 0.18, width: 0.36, height: 0.36), level: level)
+                            footprint: CGRect(x: p.x - 0.18, y: p.y - 0.18, width: 0.36, height: 0.36), level: level,
+                            turned: plot.rotation)
             }
             if let date = quizDate[bookID] {
                 dated.append((date, 1, item(.reward(RewardData.quiz), slot: RewardData.quizSlot, source: .quiz(book: bookID), salt: "quiz")))
@@ -206,10 +226,14 @@ struct Island: Equatable {
         }
         var items = dated.sorted { ($0.date, $0.rank, $0.item.gx + $0.item.gy) < ($1.date, $1.rank, $1.item.gx + $1.item.gy) }.map(\.item)
         // Feature buildings take their reserved spots near the start (added last, so they build in).
-        for feature in Feature.allCases where features.contains(feature) {
-            items.append(IslandPlots.item(for: feature))
+        var library: Plot?
+        if features.contains(.library) {
+            let plot = packer.libraryPlot
+            library = plot
+            items.append(IslandPlots.item(for: .library, at: plot))
         }
-        return Island(tiles: packer.tiles(features: features), items: items, plots: plots, water: packer.water)
+        return Island(tiles: packer.tiles(features: features), items: items, plots: plots, water: packer.water,
+                      library: library, conflicts: packer.conflicts)
     }
 
     static func hash(_ s: String) -> Int {
@@ -449,7 +473,7 @@ enum IslandPainter {
         let p = layout.point(item.gx, item.gy)
         var g = c
         g.translateBy(x: p.x, y: p.y)
-        g.scaleBy(x: layout.mirrored ? -scale : scale, y: scale)
+        g.scaleBy(x: layout.mirrored != (item.turned % 2 != 0) ? -scale : scale, y: scale)
         draw(&g, item, u: layout.u, tileWidth: layout.scale * 2, rotation: layout.quarter)
     }
 
@@ -587,9 +611,41 @@ struct IslandPlots {
     private var core: Set<Island.Tile> = []
     private var regions: [(x: Int, y: Int, size: Int)] = []
     private(set) var water: Set<Island.Tile> = []
+    /// Saved places (from edit mode); these plots go exactly there.
+    private let placements: [String: IslandPlacement]
+    /// Saved places that overlap another plot (only possible mid-drag in edit mode).
+    private(set) var conflicts: Set<String> = []
+    private var libraryPlace: (x: Int, y: Int)
 
-    init() {
-        for r in [Self.start, Self.library] { mark(r.x, r.y, r.size) }
+    /// - Parameters:
+    ///   - placements: saved places, reserved before anything is laid out automatically.
+    ///   - books: the books being laid out (their sizes are needed to reserve their places).
+    init(placements: [String: IslandPlacement] = [:], books: [String] = []) {
+        self.placements = placements
+        let lib = placements[IslandPlacement.libraryKey]
+        libraryPlace = lib.map { ($0.x, $0.y) } ?? (Self.library.x, Self.library.y)
+        mark(Self.start.x, Self.start.y, Self.start.size)
+        var reserved: [(key: String, x: Int, y: Int, size: Int, bay: [Island.Tile])] = [
+            (IslandPlacement.libraryKey, libraryPlace.x, libraryPlace.y, Self.library.size, [])
+        ]
+        for id in books {
+            guard let p = placements[id], let book = BibleCatalog.book(id: id) else { continue }
+            let size = Self.size(chapters: book.chapterCount)
+            let coastal = BuildingData.spec(for: id).family == .harbour
+            let side: Side = book.testament == .old ? .old : .new
+            reserved.append((id, p.x, p.y, size, coastal ? Self.bay(x: p.x, y: p.y, size: size, side: side) : []))
+        }
+        for r in reserved {
+            if !fits(r.x, r.y, r.size) || r.bay.contains(where: { core.contains($0) }) { conflicts.insert(r.key) }
+            mark(r.x, r.y, r.size)
+            for t in r.bay { core.insert(t); water.insert(t) }
+        }
+    }
+
+    /// The Library's spot (its saved place, or the default beside the start).
+    var libraryPlot: Island.Plot {
+        Island.Plot(bookID: IslandPlacement.libraryKey, x: libraryPlace.x, y: libraryPlace.y, size: Self.library.size,
+                    rotation: placements[IslandPlacement.libraryKey]?.rotation ?? 0)
     }
 
     /// Side of a book's plot (odd, so the building sits on the middle tile): big enough for
@@ -629,6 +685,10 @@ struct IslandPlots {
     }
 
     mutating func place(_ bookID: String, size: Int, side: Side = .new, coastal: Bool = false) -> Island.Plot {
+        if let p = placements[bookID] { // already reserved
+            regions.append((p.x, p.y, size))
+            return Island.Plot(bookID: bookID, x: p.x, y: p.y, size: size, rotation: p.rotation)
+        }
         for c in Self.candidates(side) {
             // Centre the plot on the candidate offset from the starting square's middle.
             let x = 1 + c.dx - size / 2, y = 1 + c.dy - size / 2
@@ -657,7 +717,7 @@ struct IslandPlots {
     /// with a one-tile border so plots are joined by paths. The starting square comes first.
     func tiles(features: Set<Island.Feature>) -> [Island.Tile] {
         var shown = [Self.start] + regions
-        if features.contains(.library) { shown.append(Self.library) }
+        if features.contains(.library) { shown.append((libraryPlace.x, libraryPlace.y, Self.library.size)) }
         var seen: Set<Island.Tile> = []
         var out: [Island.Tile] = []
         for ty in Self.start.y..<(Self.start.y + Self.start.size) {
@@ -710,13 +770,18 @@ struct IslandPlots {
         }
         tiles.sort { ($0.ring, -$0.front, abs($0.side), $0.side) < ($1.ring, -$1.front, abs($1.side), $1.side) }
         let spots: [CGPoint] = [CGPoint(x: 0.72, y: 0.72), CGPoint(x: 0.28, y: 0.72), CGPoint(x: 0.72, y: 0.28), CGPoint(x: 0.28, y: 0.28)]
-        return tiles.flatMap { t in spots.map { CGPoint(x: CGFloat(t.tx) + $0.x, y: CGFloat(t.ty) + $0.y) } }
+        let all = tiles.flatMap { t in spots.map { CGPoint(x: CGFloat(t.tx) + $0.x, y: CGFloat(t.ty) + $0.y) } }
+        // A turned plot turns its layout about its middle.
+        return all.map { p in
+            var d = CGPoint(x: p.x - c.x, y: p.y - c.y)
+            for _ in 0..<(((plot.rotation % 4) + 4) % 4) { d = CGPoint(x: -d.y, y: d.x) }
+            return CGPoint(x: c.x + d.x, y: c.y + d.y)
+        }
     }
 
-    static func item(for feature: Island.Feature) -> Island.Item {
-        let r = Self.library
-        let centre = CGPoint(x: CGFloat(r.x) + CGFloat(r.size) / 2, y: CGFloat(r.y) + CGFloat(r.size) / 2)
+    static func item(for feature: Island.Feature, at plot: Island.Plot) -> Island.Item {
+        let centre = plot.centre
         return Island.Item(kind: .library, gx: centre.x, gy: centre.y, seed: 0, source: .feature(feature),
-                           footprint: CGRect(x: centre.x - 0.95, y: centre.y - 0.95, width: 1.9, height: 1.9))
+                           footprint: CGRect(x: centre.x - 0.95, y: centre.y - 0.95, width: 1.9, height: 1.9), turned: plot.rotation)
     }
 }

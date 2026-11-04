@@ -214,3 +214,69 @@ struct IslandGeographyTests {
         #expect(IslandHitTester.hit(point: layout.point(b.gx, b.gy), layout: layout, items: i.items) == index)
     }
 }
+
+@MainActor
+struct IslandEditTests {
+    let start = Date(timeIntervalSince1970: 1_780_000_000)
+    var reads: [(book: String, chapter: Int, date: Date)] {
+        ["ruth", "john", "jonah", "acts"].enumerated().map { ($1, 1, start.addingTimeInterval(Double($0) * 86_400)) }
+    }
+
+    func build(_ placements: [String: IslandPlacement] = [:]) -> Island {
+        Island.build(chapters: reads, quizzes: [], verses: [], placements: placements)
+    }
+
+    @Test("A saved place is respected")
+    func savedPlace() {
+        let island = build(["ruth": IslandPlacement(x: 20, y: 20, moved: true)])
+        let plot = island.plots.first { $0.bookID == "ruth" }
+        #expect(plot?.x == 20 && plot?.y == 20)
+        #expect(island.conflicts.isEmpty)
+        // Ruth's building moved with its plot.
+        let building = island.items.first { $0.kind == .building("ruth") }
+        #expect(building.map { $0.gx > 20 && $0.gy > 20 } == true)
+    }
+
+    @Test("Moving one plot leaves frozen plots exactly where they were")
+    func othersStay() {
+        let auto = build()
+        var frozen = auto.placements
+        frozen["ruth"] = IslandPlacement(x: 20, y: 20, moved: true)
+        let moved = build(frozen)
+        for plot in auto.plots where plot.bookID != "ruth" {
+            #expect(moved.plots.contains { $0.bookID == plot.bookID && $0.x == plot.x && $0.y == plot.y })
+        }
+    }
+
+    @Test("Overlapping plots are flagged, so they can't be dropped there")
+    func overlapFlagged() {
+        let auto = build()
+        guard let john = auto.plots.first(where: { $0.bookID == "john" }) else { Issue.record("no john"); return }
+        var frozen = auto.placements
+        frozen["ruth"] = IslandPlacement(x: john.x + 1, y: john.y, moved: true)
+        #expect(!build(frozen).conflicts.isEmpty)
+    }
+
+    @Test("Tidy up re-places only unmoved plots")
+    func tidyUp() {
+        let auto = build()
+        var frozen = auto.placements
+        frozen["ruth"] = IslandPlacement(x: 20, y: 20, moved: true)
+        // What tidy up does: keep moved places, lay the rest out again.
+        let tidied = build(frozen.filter { $0.value.moved })
+        #expect(tidied.plots.first { $0.bookID == "ruth" }.map { $0.x == 20 && $0.y == 20 } == true)
+        #expect(tidied.conflicts.isEmpty)
+    }
+
+    @Test("Turning a plot turns its layout but keeps everything on the plot")
+    func turnedPlot() {
+        let flat = build(["ruth": IslandPlacement(x: 20, y: 20)])
+        let turned = build(["ruth": IslandPlacement(x: 20, y: 20, rotation: 1)])
+        let a = flat.items.first { $0.source == .chapter(book: "ruth", chapter: 1) }!
+        let b = turned.items.first { $0.source == .chapter(book: "ruth", chapter: 1) }!
+        #expect(a.gx != b.gx || a.gy != b.gy)
+        let size = IslandPlots.size(chapters: 4)
+        #expect(CGRect(x: 20, y: 20, width: size, height: size).contains(CGPoint(x: b.gx, y: b.gy)))
+        #expect(b.turned == 1)
+    }
+}

@@ -34,5 +34,6 @@ final class JournalEntry {
 enum AppSchema {
     static let models: [any PersistentModel.Type] = [
         ChapterRead.self, QuizPass.self, VerseMemorised.self, JournalEntry.self, AvatarProfile.self, CrownCasting.self, BookStarted.self,
+        PlacedItem.self,
     ]
 }

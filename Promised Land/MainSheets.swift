@@ -77,6 +77,8 @@ struct JourneysSheet: View {
 
 /// You: your character, your reading, your crowns, and Settings (the gear).
 struct ProfileView: View {
+    /// Opens edit mode on the island (closing this sheet).
+    var onEditIsland: (() -> Void)? = nil
     @CurrentAvatar private var avatar: Avatar
     @ProgressQuery private var progress: GameProgress
     @Environment(\.dismiss) private var dismiss
@@ -111,6 +113,12 @@ struct ProfileView: View {
                         tile("\(progress.startedCount)", progress.startedCount == 1 ? "place begun" : "places begun")
                     }
 
+                    if let onEditIsland {
+                        Button { onEditIsland() } label: {
+                            row("Edit island", systemImage: "square.and.pencil")
+                        }
+                        .buttonStyle(.plain)
+                    }
                     Button { showingStats = true } label: {
                         row("Reading history", systemImage: "chart.bar.fill")
                     }

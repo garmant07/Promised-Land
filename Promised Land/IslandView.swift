@@ -18,6 +18,10 @@ struct PlatformScene: View {
     /// Your own island keeps its camera (zoom, pan, turn) between launches and shows the
     /// turn and "Find me" buttons. Friends' islands don't.
     var persistsCamera = false
+    /// Edit mode: plots can be dragged and turned (see `IslandEditing`). Nil = not editing.
+    var editing: IslandEditing? = nil
+    /// Holding a building for half a second (outside edit mode) reports its index.
+    var onLongPress: ((Int) -> Void)? = nil
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -35,6 +39,11 @@ struct PlatformScene: View {
     @State private var quarter = 0
     @State private var angle: CGFloat = 0
     @State private var cameraLoaded = false
+    // Touches: long press, and dragging plots in edit mode.
+    @State private var touchID = 0
+    @State private var touchDown = false
+    @State private var longPressed = false
+    @State private var draggingPlot: (key: String, start: CGPoint)?
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -80,6 +89,7 @@ struct PlatformScene: View {
                         if let selected = selected.wrappedValue, island.items.indices.contains(selected) {
                             Self.drawHighlight(&context, island.items[selected], layout: layout)
                         }
+                        if let editing { Self.drawEditGrid(&context, island: island, layout: layout, editing: editing) }
                         for item in ordered { IslandPainter.drawItem(&context, item, layout: layout) }
                         #if DEBUG
                         if Self.showHitBoxes { Self.drawHitBoxes(&context, island: island, layout: layout) }
@@ -140,7 +150,7 @@ struct PlatformScene: View {
             .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
             .simultaneousGesture(interactive ? twistGesture : nil)
             .overlay(alignment: .bottomTrailing) {
-                if interactive && persistsCamera {
+                if interactive && persistsCamera && editing == nil {
                     controls(layout: layout, size: geo.size)
                         .padding(.trailing, 14)
                         .padding(.bottom, insets.bottom + 6)
@@ -275,6 +285,13 @@ struct PlatformScene: View {
     private func dragGesture(layout: IslandLayout, size: CGSize) -> some Gesture {
         DragGesture(minimumDistance: 0)
             .onChanged { value in
+                if !touchDown { touchBegan(at: value.startLocation, layout: layout) }
+                // In edit mode, dragging a plot moves it (in whole tiles) instead of panning.
+                if let drag = draggingPlot, let editing {
+                    let g = layout.grid(CGPoint(x: value.location.x - pan.width, y: value.location.y - pan.height))
+                    editing.onDrag(drag.key, Int((g.x - drag.start.x).rounded()), Int((g.y - drag.start.y).rounded()), false)
+                    return
+                }
                 if !isPanning, !TapClassifier.isTap(translation: value.translation) { isPanning = true }
                 if isPanning {
                     pan = clamp(CGSize(width: panStart.width + value.translation.width,
@@ -282,15 +299,54 @@ struct PlatformScene: View {
                 }
             }
             .onEnded { value in
-                defer { pinched = false }
+                defer { pinched = false; touchDown = false; longPressed = false; draggingPlot = nil }
+                if let drag = draggingPlot, let editing {
+                    let g = layout.grid(CGPoint(x: value.location.x - pan.width, y: value.location.y - pan.height))
+                    let moved = !TapClassifier.isTap(translation: value.translation)
+                    editing.onDrag(drag.key, Int((g.x - drag.start.x).rounded()), Int((g.y - drag.start.y).rounded()), true)
+                    if !moved { editing.onSelect(drag.key) }
+                    return
+                }
                 if isPanning {
                     isPanning = false
                     panStart = pan
                     saveCamera()
-                } else if !pinched, TapClassifier.isTap(translation: value.translation) {
-                    onTap?(IslandHitTester.hit(point: value.location, layout: layout, pan: pan, items: island.items))
+                } else if !pinched, !longPressed, TapClassifier.isTap(translation: value.translation) {
+                    if let editing {
+                        editing.onSelect(nil)
+                    } else {
+                        onTap?(IslandHitTester.hit(point: value.location, layout: layout, pan: pan, items: island.items))
+                    }
                 }
             }
+    }
+
+    /// A finger went down: in edit mode, grab the plot under it; otherwise watch for a long press.
+    private func touchBegan(at location: CGPoint, layout: IslandLayout) {
+        touchDown = true
+        touchID += 1
+        let id = touchID
+        let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
+        let g = layout.grid(p)
+        if editing != nil {
+            // The plot under the finger, or the one whose building was touched.
+            let hitKey = IslandHitTester.hit(point: location, layout: layout, pan: pan, items: island.items)
+                .flatMap { island.items[$0].plotKey }
+            let plots = island.plots + (island.library.map { [$0] } ?? [])
+            if let key = hitKey ?? plots.first(where: { CGRect(x: $0.x, y: $0.y, width: $0.size, height: $0.size).contains(g) })?.bookID {
+                draggingPlot = (key, g)
+            }
+            return
+        }
+        guard let onLongPress else { return }
+        Task {
+            try? await Task.sleep(for: .milliseconds(500))
+            guard touchDown, touchID == id, !isPanning, !pinched,
+                  let index = IslandHitTester.hit(point: location, layout: layout, pan: pan, items: island.items),
+                  island.items[index].plotKey != nil else { return }
+            longPressed = true
+            onLongPress(index)
+        }
     }
 
     private func zoomGesture(size: CGSize) -> some Gesture {
@@ -346,6 +402,32 @@ struct PlatformScene: View {
         Task {
             try? await Task.sleep(for: .seconds(duration))
             bouncing = false
+        }
+    }
+
+    /// Edit mode: a faint tile grid, and each plot outlined (green when picked and free,
+    /// red where it would overlap another).
+    private static func drawEditGrid(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, editing: IslandEditing) {
+        let grid = Path { p in
+            for t in island.tiles {
+                p.addLines([layout.point(CGFloat(t.x), CGFloat(t.y)), layout.point(CGFloat(t.x + 1), CGFloat(t.y)),
+                            layout.point(CGFloat(t.x + 1), CGFloat(t.y + 1)), layout.point(CGFloat(t.x), CGFloat(t.y + 1))])
+                p.closeSubpath()
+            }
+        }
+        c.stroke(grid, with: .color(Color.primaryBrown.opacity(0.12)), lineWidth: 0.6)
+        for plot in island.plots + (island.library.map { [$0] } ?? []) {
+            let x0 = CGFloat(plot.x), y0 = CGFloat(plot.y), x1 = x0 + CGFloat(plot.size), y1 = y0 + CGFloat(plot.size)
+            let outline = Path { $0.addLines([layout.point(x0, y0), layout.point(x1, y0), layout.point(x1, y1), layout.point(x0, y1)]); $0.closeSubpath() }
+            if island.conflicts.contains(plot.bookID) {
+                c.fill(outline, with: .color(Color.red.opacity(0.22)))
+                c.stroke(outline, with: .color(Color.red.opacity(0.8)), lineWidth: 2)
+            } else if editing.selected == plot.bookID {
+                c.fill(outline, with: .color(Color.green.opacity(0.16)))
+                c.stroke(outline, with: .color(Color(hex: "#5E8C4A")), lineWidth: 2)
+            } else {
+                c.stroke(outline, with: .color(Color.primaryBrown.opacity(0.35)), style: StrokeStyle(lineWidth: 1, dash: [4, 3]))
+            }
         }
     }
 
