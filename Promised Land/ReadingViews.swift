@@ -96,7 +96,7 @@ struct BookRow: View {
         let read = progress.chaptersRead(book.id)
         HStack(spacing: 14) {
             LandmarkArtView(landmark: landmark, stage: progress.stage(of: book.id),
-                            level: progress.level(of: book.id), size: 52)
+                            level: progress.level(of: book.id), size: 52, read: read)
             VStack(alignment: .leading, spacing: 5) {
                 HStack(spacing: 6) {
                     Text(book.name)

@@ -57,7 +57,9 @@ final class LandmarkLayer: SKNode {
                 sprite.run(.fadeAlpha(to: alpha, duration: animated ? 0.8 : 0))
             }
             let look = LandmarkLook(style: landmark.style, stage: progress.stage(of: landmark.bookID),
-                                    level: progress.level(of: landmark.bookID), size: landmark.size)
+                                    level: progress.level(of: landmark.bookID), size: landmark.size,
+                                    read: progress.chaptersRead(landmark.bookID),
+                                    total: landmark.book?.chapterCount ?? 1)
             if looks[landmark.bookID] != look {
                 setLook(look, for: landmark.bookID, animated: animated)
                 changed.append(landmark.bookID)
@@ -109,6 +111,11 @@ final class LandmarkLayer: SKNode {
     private func cache(_ image: LandmarkImage, look: LandmarkLook) {
         let texture = SKTexture(cgImage: image.image)
         textures[look] = (texture, image.pointSize, image.anchor)
+        // Looks change with every chapter, so drop textures no landmark shows any more.
+        if textures.count > 120 {
+            let inUse = Set(looks.values)
+            for key in textures.keys where !inUse.contains(key) && key.stage != .plot { textures[key] = nil }
+        }
     }
 
     private func install(_ entry: (texture: SKTexture, size: CGSize, anchor: CGPoint), on sprite: SKSpriteNode) {

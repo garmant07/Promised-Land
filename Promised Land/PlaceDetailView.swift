@@ -15,7 +15,8 @@ struct PlaceDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                LandmarkArtView(landmark: landmark, stage: stage, level: level, size: 220)
+                LandmarkArtView(landmark: landmark, stage: stage, level: level, size: 220,
+                                read: progress.chaptersRead(landmark.bookID))
                     .padding(.top, 8)
                     .animation(.spring(duration: 0.5), value: stage)
 
@@ -172,7 +173,8 @@ struct LandmarkRow: View {
     var body: some View {
         let stage = progress.stage(of: landmark.bookID)
         HStack(spacing: 14) {
-            LandmarkArtView(landmark: landmark, stage: stage, level: progress.level(of: landmark.bookID), size: 56)
+            LandmarkArtView(landmark: landmark, stage: stage, level: progress.level(of: landmark.bookID), size: 56,
+                            read: progress.chaptersRead(landmark.bookID))
             VStack(alignment: .leading, spacing: 4) {
                 Text(landmark.name)
                     .font(.headline)

@@ -7,6 +7,11 @@ nonisolated struct LandmarkLook: Hashable, Sendable {
     let stage: BuildStage
     let level: GrowthLevel
     let size: Int
+    /// Chapters read and the book's chapter count, so every chapter changes the drawing.
+    var read: Int = 0
+    var total: Int = 1
+
+    var fraction: CGFloat { total > 0 ? CGFloat(min(read, total)) / CGFloat(total) : 0 }
 }
 
 /// Where the footprint's centre sits inside a rendered landmark image (for sprite anchoring).
@@ -68,15 +73,17 @@ private nonisolated struct Painter {
         case .foundations:
             if look.level >= .flourishing { glow() }
             groundPatch()
-            foundations()
+            foundations(look)
             if look.level >= .growing { decorations() }
             if look.level >= .flourishing { flag(at: pt(0, -2)) }
         case .rising:
             if look.level >= .flourishing { glow() }
             groundPatch()
-            foundations()
+            foundations(look)
+            // Past halfway, each chapter reveals a little more of the building.
+            let built = 24 + 80 * max(0, min(1, (look.fraction - 0.5) / 0.5))
             ctx.saveGState()
-            ctx.clip(to: CGRect(x: 0, y: c.y - 24 * u, width: 10_000, height: 10_000))
+            ctx.clip(to: CGRect(x: 0, y: c.y - built * u, width: 10_000, height: 10_000))
             _ = building(look.style)
             ctx.restoreGState()
             scaffolding()
@@ -244,19 +251,35 @@ private nonisolated struct Painter {
         diamond(c, width: W * 0.9, .stoneLight, alpha: 0.45)
     }
 
-    func foundations() {
+    /// Foundation stones. Before halfway, every chapter lays one more stone (at least):
+    /// longer books stack them in courses, so the low wall visibly grows chapter by chapter.
+    func foundations(_ look: LandmarkLook) {
         let inner = W * 0.62
         let corners = [CGPoint(x: c.x, y: c.y - inner / 4), CGPoint(x: c.x + inner / 2, y: c.y),
                        CGPoint(x: c.x, y: c.y + inner / 4), CGPoint(x: c.x - inner / 2, y: c.y)]
         diamond(c, width: inner, .stoneShade, alpha: 0.35)
-        var stones: [CGPoint] = []
+        var ring: [CGPoint] = []
         for i in 0..<4 {
             let a = corners[i], b = corners[(i + 1) % 4]
             for t in stride(from: 0.0, to: 1.0, by: 0.2) {
-                stones.append(CGPoint(x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t))
+                ring.append(CGPoint(x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t))
             }
         }
-        for p in stones.sorted(by: { $0.y < $1.y }) {
+        let halfChapters = max(1, (look.total + 1) / 2)
+        let total = max(ring.count, halfChapters)
+        let laid: Int
+        if look.stage == .foundations {
+            laid = max(1, min(total, Int((CGFloat(total) * look.fraction / 0.5).rounded())))
+        } else {
+            laid = ring.count // once the building rises, just the base course shows
+        }
+        var stones: [(CGPoint, Int)] = []
+        for k in 0..<laid {
+            let course = k / ring.count
+            let p = ring[k % ring.count]
+            stones.append((CGPoint(x: p.x, y: p.y - CGFloat(course) * 4.6 * u), course))
+        }
+        for (p, _) in stones.sorted(by: { ($0.1, $0.0.y) < ($1.1, $1.0.y) }) {
             box(p, w: 9, h: 5)
         }
         // A small pile of cut stones waiting nearby.

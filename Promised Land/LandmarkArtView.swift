@@ -6,9 +6,15 @@ struct LandmarkArtView: View {
     let stage: BuildStage
     let level: GrowthLevel
     let size: CGFloat
+    /// Chapters read, so the thumbnail shows the same chapter-by-chapter progress as the map.
+    var read: Int? = nil
 
     var body: some View {
-        let look = LandmarkLook(style: landmark.style, stage: stage, level: level, size: 4)
+        let total = landmark.book?.chapterCount ?? 1
+        // Without an exact count, show a typical point within the stage.
+        let shownRead = read ?? (stage == .foundations ? max(1, total / 4) : stage == .rising ? (total * 3) / 4 : total)
+        let look = LandmarkLook(style: landmark.style, stage: stage, level: level, size: 4,
+                                read: shownRead, total: total)
         Group {
             if let image = LandmarkArtCache.image(for: look) {
                 Image(decorative: image, scale: LandmarkArtCache.scale)
