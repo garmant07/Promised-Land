@@ -1,26 +1,6 @@
 import Foundation
 
-// MARK: - Growth
-
-enum GrowthLevel: Int, Comparable, CaseIterable {
-    case locked = 0
-    case unlocked = 1
-    case growing = 2
-    case flourishing = 3
-
-    static func < (lhs: GrowthLevel, rhs: GrowthLevel) -> Bool { lhs.rawValue < rhs.rawValue }
-
-    var title: String {
-        switch self {
-        case .locked: "Locked"
-        case .unlocked: "Unlocked"
-        case .growing: "Growing"
-        case .flourishing: "Flourishing"
-        }
-    }
-}
-
-// MARK: - Quiz & memory verse
+// MARK: - Models
 
 struct QuizQuestion: Identifiable, Hashable {
     let id = UUID()
@@ -37,43 +17,21 @@ struct MemoryVerse: Hashable {
     var words: [String] { text.split(separator: " ").map(String.init) }
 }
 
-// MARK: - Place
-
-enum PlaceKind {
-    case eden, sinai, bethlehem, temple, babylon, galilee
-}
-
-struct Place: Identifiable, Hashable {
-    let id: String
-    let name: String
-    let bookID: String
-    let kind: PlaceKind
-    let blurb: String
-    /// Position on the isometric grid (column, row).
-    let gridColumn: Int
-    let gridRow: Int
+/// A book's quiz and memory verse. Only books with sample text have one so far;
+/// every other book shows "Quiz coming soon".
+struct BookLearning {
     let quiz: [QuizQuestion]
     let memoryVerse: MemoryVerse
 
-    var book: Book? { BibleData.book(id: bookID) }
-
     /// Number of correct answers needed to pass the quiz.
     var passMark: Int { max(1, quiz.count - 1) }
-
-    static func == (lhs: Place, rhs: Place) -> Bool { lhs.id == rhs.id }
-    func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }
 
-extension Place {
-    static func forBook(_ bookID: String) -> Place? {
-        all.first { $0.bookID == bookID }
-    }
+enum LearningData {
+    static func forBook(_ bookID: String) -> BookLearning? { content[bookID] }
 
-    static let all: [Place] = [
-        Place(
-            id: "eden", name: "Eden Garden", bookID: "genesis", kind: .eden,
-            blurb: "A quiet garden of olive trees, where the story begins.",
-            gridColumn: 0, gridRow: 0,
+    private static let content: [String: BookLearning] = [
+        "genesis": BookLearning(
             quiz: [
                 QuizQuestion(prompt: "What did God create in the beginning?",
                              options: ["The heavens and the earth", "The garden of Eden", "The sea and the stars"],
@@ -86,12 +44,9 @@ extension Place {
                              answerIndex: 2),
             ],
             memoryVerse: MemoryVerse(reference: "Genesis 1:1",
-                                     text: "In the beginning God created the heavens and the earth.")
+                                text: "In the beginning God created the heavens and the earth.")
         ),
-        Place(
-            id: "sinai", name: "Mount Sinai", bookID: "exodus", kind: .sinai,
-            blurb: "A stone tower on the mountain of God.",
-            gridColumn: 1, gridRow: 0,
+        "exodus": BookLearning(
             quiz: [
                 QuizQuestion(prompt: "Whose flock was Moses keeping?",
                              options: ["Pharaoh's", "Jethro's", "Aaron's"],
@@ -104,12 +59,9 @@ extension Place {
                              answerIndex: 2),
             ],
             memoryVerse: MemoryVerse(reference: "Exodus 20:3",
-                                     text: "Thou shalt have no other gods before me.")
+                                text: "Thou shalt have no other gods before me.")
         ),
-        Place(
-            id: "bethlehem", name: "Fields of Bethlehem", bookID: "ruth", kind: .bethlehem,
-            blurb: "Golden wheat where Ruth gleaned after the reapers.",
-            gridColumn: 0, gridRow: 1,
+        "ruth": BookLearning(
             quiz: [
                 QuizQuestion(prompt: "Why did the family leave Beth-lehem-judah?",
                              options: ["A war", "A famine", "A flood"],
@@ -122,12 +74,9 @@ extension Place {
                              answerIndex: 2),
             ],
             memoryVerse: MemoryVerse(reference: "Ruth 1:16",
-                                     text: "whither thou goest, I will go; and where thou lodgest, I will lodge;")
+                                text: "whither thou goest, I will go; and where thou lodgest, I will lodge;")
         ),
-        Place(
-            id: "temple", name: "Temple Courts", bookID: "psalms", kind: .temple,
-            blurb: "A domed house of song and prayer.",
-            gridColumn: 1, gridRow: 1,
+        "psalms": BookLearning(
             quiz: [
                 QuizQuestion(prompt: "In Psalm 1, the blessed man is like a…",
                              options: ["Lion in the hills", "Tree planted by streams of water", "Star in the sky"],
@@ -140,12 +89,9 @@ extension Place {
                              answerIndex: 2),
             ],
             memoryVerse: MemoryVerse(reference: "Psalm 23:1",
-                                     text: "Jehovah is my shepherd; I shall not want.")
+                                text: "Jehovah is my shepherd; I shall not want.")
         ),
-        Place(
-            id: "babylon", name: "Babylon Gate", bookID: "daniel", kind: .babylon,
-            blurb: "A great arched gateway into the city of kings.",
-            gridColumn: 0, gridRow: 2,
+        "daniel": BookLearning(
             quiz: [
                 QuizQuestion(prompt: "Which king came to Jerusalem and besieged it?",
                              options: ["Nebuchadnezzar", "Darius", "Pharaoh"],
@@ -158,12 +104,9 @@ extension Place {
                              answerIndex: 2),
             ],
             memoryVerse: MemoryVerse(reference: "Daniel 6:22",
-                                     text: "My God hath sent his angel, and hath shut the lions' mouths,")
+                                text: "My God hath sent his angel, and hath shut the lions' mouths,")
         ),
-        Place(
-            id: "galilee", name: "Sea of Galilee", bookID: "john", kind: .galilee,
-            blurb: "Still water and a small fishing boat.",
-            gridColumn: 1, gridRow: 2,
+        "john": BookLearning(
             quiz: [
                 QuizQuestion(prompt: "In the beginning was the…",
                              options: ["Light", "Word", "Spirit"],
@@ -176,7 +119,7 @@ extension Place {
                              answerIndex: 2),
             ],
             memoryVerse: MemoryVerse(reference: "John 3:16",
-                                     text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life.")
+                                text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life.")
         ),
     ]
 }

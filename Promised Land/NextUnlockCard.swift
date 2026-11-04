@@ -4,34 +4,38 @@ import SwiftUI
 struct NextUnlock {
     let title: String
     let detail: String
-    let place: Place
+    let landmark: Landmark
 
     static func suggest(from progress: GameProgress) -> NextUnlock? {
-        // 1. A book already started: finish it.
-        let started = Place.all.compactMap { place -> (Place, Book, Int)? in
-            guard let book = place.book else { return nil }
-            let read = progress.chaptersRead(in: book)
-            return (read > 0 && read < book.chapters.count) ? (place, book, read) : nil
+        // 1. A book already started: the one closest to its next stage.
+        let started = WorldData.landmarks.compactMap { landmark -> (Landmark, Book, Int, Int)? in
+            guard let book = landmark.book else { return nil }
+            let read = progress.chaptersRead(book.id)
+            guard read > 0, read < book.chapterCount else { return nil }
+            let half = (book.chapterCount + 1) / 2
+            let target = read < half ? half : book.chapterCount
+            return (landmark, book, read, target - read)
         }
-        if let (place, book, read) = started.max(by: { $0.2 < $1.2 }) {
-            let left = book.chapters.count - read
-            return NextUnlock(title: place.name,
-                              detail: "Read \(left) more \(left == 1 ? "chapter" : "chapters") of \(book.name) to unlock it.",
-                              place: place)
+        if let (landmark, book, read, left) = started.min(by: { $0.3 < $1.3 }) {
+            let goal = read < (book.chapterCount + 1) / 2 ? "raise its walls" : "complete it"
+            return NextUnlock(title: landmark.name,
+                              detail: "Read \(left) more \(left == 1 ? "chapter" : "chapters") of \(book.name) to \(goal).",
+                              landmark: landmark)
         }
         // 2. A quiz or verse waiting.
-        for place in Place.all {
-            switch progress.level(of: place) {
-            case .unlocked:
-                return NextUnlock(title: place.name, detail: "Pass the \(place.book?.name ?? "") quiz to help it grow.", place: place)
-            case .growing:
-                return NextUnlock(title: place.name, detail: "Memorise \(place.memoryVerse.reference) to make it flourish.", place: place)
-            default: continue
+        for landmark in WorldData.landmarks where progress.stage(of: landmark.bookID) > .plot {
+            guard let learning = landmark.learning, let book = landmark.book else { continue }
+            if !progress.hasPassedQuiz(book.id) {
+                return NextUnlock(title: landmark.name, detail: "Pass the \(book.name) quiz to add trees and decorations.", landmark: landmark)
+            }
+            if !progress.hasMemorised(book.id) {
+                return NextUnlock(title: landmark.name, detail: "Memorise \(learning.memoryVerse.reference) to make it glow.", landmark: landmark)
             }
         }
-        // 3. Something new.
-        if let place = Place.all.first(where: { progress.level(of: $0) == .locked }), let book = place.book {
-            return NextUnlock(title: place.name, detail: "Start reading \(book.name) to begin building it.", place: place)
+        // 3. Something new — prefer books with bundled text.
+        let fresh = WorldData.landmarks.filter { progress.stage(of: $0.bookID) == .plot }
+        if let landmark = fresh.first(where: { $0.book?.hasSampleText == true }) ?? fresh.first, let book = landmark.book {
+            return NextUnlock(title: landmark.name, detail: "Read a chapter of \(book.name) to lift the fog and lay foundations.", landmark: landmark)
         }
         return nil
     }
@@ -75,7 +79,7 @@ struct NextUnlockCard: View {
                     .font(.subheadline)
                     .foregroundStyle(Color.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
-                NavigationLink(value: next.place) {
+                NavigationLink(value: next.landmark) {
                     Text("Open \(next.title)")
                 }
                 .buttonStyle(PrimaryButtonStyle())

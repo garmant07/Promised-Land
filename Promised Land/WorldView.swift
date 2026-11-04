@@ -1,23 +1,35 @@
 import SwiftUI
+import SwiftData
 
 struct WorldView: View {
     @ProgressQuery private var progress: GameProgress
     @State private var showingSettings = false
     @State private var cardCollapsed = false
 
-    private let columns = 2
-    private let rows = 3
-
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    header
-                    map
-                    placeList
+                LazyVStack(alignment: .leading, spacing: 12) {
+                    ForEach(WorldData.regions) { region in
+                        Text(region.name)
+                            .font(.serifTitle(.title3))
+                            .foregroundStyle(Color.bodyText)
+                            .padding(.top, 8)
+                        ForEach(WorldData.landmarks.filter { $0.regionID == region.id }) { landmark in
+                            NavigationLink(value: landmark) {
+                                LandmarkRow(landmark: landmark, progress: progress)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 200)
+            }
+            .safeAreaInset(edge: .top) {
+                WorldHeader(progress: progress) { showingSettings = true }
+                    .padding(.horizontal, 16)
+                    .background(Color.cream)
             }
             .overlay(alignment: .bottom) {
                 if let next = NextUnlock.suggest(from: progress) {
@@ -30,138 +42,44 @@ struct WorldView: View {
             .themedScreen()
             .navigationTitle("World")
             .hiddenNavigationBar()
-            .navigationDestination(for: Place.self) { PlaceDetailView(place: $0) }
-            .navigationDestination(for: Book.self) { BookView(book: $0) }
+            .readingDestinations()
         }
     }
+}
 
-    private var unlockedCount: Int {
-        Place.all.filter { progress.level(of: $0) > .locked }.count
-    }
+/// Title, landmark count, streak and settings — floats over the map.
+struct WorldHeader: View {
+    let progress: GameProgress
+    var openSettings: () -> Void
 
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 8) {
+    var body: some View {
+        HStack(alignment: .center, spacing: 8) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text("Promised Land")
-                    .font(.serifTitle(.largeTitle))
+                    .font(.serifTitle(.title))
                     .foregroundStyle(Color.bodyText)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
-                Spacer(minLength: 4)
-                StreakPill(days: progress.streak)
-                Button { showingSettings = true } label: {
-                    Image(systemName: "gearshape.fill")
-                        .font(.title3)
-                        .foregroundStyle(Color.primaryBrown)
-                        .frame(width: 44, height: 44)
-                        .background(Color.card, in: Circle())
-                }
-                .accessibilityLabel("Settings")
-            }
-            Text("\(unlockedCount) of \(Place.all.count) places unlocked · \(progress.totalChaptersRead) of \(progress.totalChapters) chapters read")
-                .font(.subheadline)
-                .foregroundStyle(Color.secondaryText)
-        }
-        .padding(.top, 8)
-    }
-
-    // MARK: Isometric map
-
-    private var map: some View {
-        GeometryReader { geo in
-            let tileWidth = min(150, geo.size.width / (CGFloat(columns + rows) / 2))
-            let tileHeight = tileWidth / 2
-            ZStack(alignment: .topLeading) {
-                ForEach(sortedPlaces) { place in
-                    let x = CGFloat(place.gridColumn - place.gridRow) * tileWidth / 2 + CGFloat(rows) * tileWidth / 2
-                    let y = CGFloat(place.gridColumn + place.gridRow) * tileHeight / 2 + tileWidth / 2
-                    NavigationLink(value: place) {
-                        PlaceTileView(place: place, level: progress.level(of: place), width: tileWidth)
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("\(place.name), \(progress.level(of: place).title)")
-                    .position(x: x + (geo.size.width - tileWidth * CGFloat(columns + rows) / 2) / 2, y: y)
-                }
-            }
-        }
-        .aspectRatio(CGFloat(columns + rows) / 2 / 1.85, contentMode: .fit)
-        .padding(12)
-        .background(Color.card, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
-    }
-
-    /// Back-to-front drawing order so nearer tiles overlap farther ones.
-    private var sortedPlaces: [Place] {
-        Place.all.sorted { ($0.gridColumn + $0.gridRow, $0.gridColumn) < ($1.gridColumn + $1.gridRow, $1.gridColumn) }
-    }
-
-    // MARK: List
-
-    private var placeList: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Places")
-                .font(.serifTitle(.title3))
-                .foregroundStyle(Color.bodyText)
-            ForEach(Place.all) { place in
-                NavigationLink(value: place) {
-                    PlaceRow(place: place, level: progress.level(of: place),
-                             chaptersRead: place.book.map(progress.chaptersRead(in:)) ?? 0)
-                }
-                .buttonStyle(.plain)
-            }
-        }
-    }
-}
-
-struct PlaceRow: View {
-    let place: Place
-    let level: GrowthLevel
-    let chaptersRead: Int
-
-    var body: some View {
-        HStack(spacing: 14) {
-            PlaceTileView(place: place, level: level, width: 64)
-                .frame(width: 64, height: 64)
-                .allowsHitTesting(false)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(place.name)
-                    .font(.headline)
-                    .foregroundStyle(Color.bodyText)
-                Text(subtitle)
-                    .font(.subheadline)
+                Text("\(progress.completedCount) of \(WorldData.landmarks.count) built · \(progress.startedCount) begun")
+                    .font(.footnote)
                     .foregroundStyle(Color.secondaryText)
             }
-            Spacer(minLength: 8)
-            LevelDots(level: level)
-            Image(systemName: "chevron.right")
-                .font(.footnote.weight(.semibold))
-                .foregroundStyle(Color.secondaryText.opacity(0.6))
+            Spacer(minLength: 4)
+            StreakPill(days: progress.streak)
+            Button(action: openSettings) {
+                Image(systemName: "gearshape.fill")
+                    .font(.title3)
+                    .foregroundStyle(Color.primaryBrown)
+                    .frame(width: 44, height: 44)
+                    .background(Color.card, in: Circle())
+            }
+            .accessibilityLabel("Settings")
         }
         .padding(.vertical, 6)
-        .padding(.horizontal, 12)
-        .frame(minHeight: 64)
-        .background(Color.card, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-    }
-
-    private var subtitle: String {
-        guard let book = place.book else { return "" }
-        if level == .locked { return "Read \(book.name) · \(chaptersRead)/\(book.chapters.count)" }
-        return "\(book.name) · \(level.title)"
     }
 }
 
-struct LevelDots: View {
-    let level: GrowthLevel
-
-    var body: some View {
-        HStack(spacing: 5) {
-            ForEach(1...3, id: \.self) { i in
-                Circle()
-                    .fill(i <= level.rawValue ? Color.olive : Color.stoneShade.opacity(0.6))
-                    .frame(width: 9, height: 9)
-            }
-        }
-        .accessibilityElement()
-        .accessibilityLabel("Level \(level.rawValue) of 3")
-    }
+#Preview {
+    WorldView()
+        .modelContainer(PreviewData.container)
 }

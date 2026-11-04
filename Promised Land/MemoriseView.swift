@@ -3,7 +3,8 @@ import SwiftData
 
 /// Three gentle steps: read the verse, read it with gaps, then rebuild it word by word.
 struct MemoriseView: View {
-    let place: Place
+    let landmark: Landmark
+    let learning: BookLearning
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -21,7 +22,7 @@ struct MemoriseView: View {
     @State private var pool: [Chip] = []
     @State private var wrongChip: Int?
 
-    private var verse: MemoryVerse { place.memoryVerse }
+    private var verse: MemoryVerse { learning.memoryVerse }
     private var words: [String] { verse.words }
 
     var body: some View {
@@ -140,8 +141,8 @@ struct MemoriseView: View {
 
     private var doneStage: some View {
         VStack(spacing: 18) {
-            PlaceTileView(place: place, level: .flourishing, width: 200)
-            Text("\(place.name) is flourishing!")
+            LandmarkArtView(landmark: landmark, stage: .foundations, level: .flourishing, size: 180)
+            Text("\(landmark.name) is flourishing!")
                 .font(.serifTitle(.title))
                 .foregroundStyle(Color.bodyText)
                 .multilineTextAlignment(.center)
@@ -184,7 +185,7 @@ struct MemoriseView: View {
                 pool.removeAll { $0.id == chip.id }
             }
             if placed.count == words.count {
-                context.recordMemorised(place.bookID, reference: verse.reference)
+                context.recordMemorised(landmark.bookID, reference: verse.reference)
                 withAnimation(.easeInOut.delay(0.3)) { stage = .done }
             }
         } else {
@@ -195,6 +196,11 @@ struct MemoriseView: View {
             }
         }
     }
+}
+
+#Preview {
+    MemoriseView(landmark: WorldData.landmark(bookID: "psalms")!, learning: LearningData.forBook("psalms")!)
+        .modelContainer(PreviewData.container)
 }
 
 // MARK: - Flow layout

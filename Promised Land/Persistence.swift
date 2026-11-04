@@ -45,51 +45,121 @@ final class VerseMemorised {
 
 // MARK: - Derived progress
 
+/// How far a landmark's building has got, from the share of its book's chapters read.
+enum BuildStage: Int, Comparable, CaseIterable {
+    case plot = 0        // nothing read: dashed outline under fog
+    case foundations     // at least one chapter
+    case rising          // at least half: scaffolding
+    case complete        // every chapter
+
+    static func < (lhs: BuildStage, rhs: BuildStage) -> Bool { lhs.rawValue < rhs.rawValue }
+
+    var title: String {
+        switch self {
+        case .plot: "Not started"
+        case .foundations: "Foundations laid"
+        case .rising: "Rising"
+        case .complete: "Complete"
+        }
+    }
+}
+
+/// Extra flourish earned through quizzes and memorising.
+enum GrowthLevel: Int, Comparable, CaseIterable {
+    case base = 1        // just reading
+    case growing = 2     // quiz passed: trees and decorations
+    case flourishing = 3 // verse memorised: flag, glow, people
+
+    static func < (lhs: GrowthLevel, rhs: GrowthLevel) -> Bool { lhs.rawValue < rhs.rawValue }
+
+    var title: String {
+        switch self {
+        case .base: "Level 1"
+        case .growing: "Growing"
+        case .flourishing: "Flourishing"
+        }
+    }
+}
+
 /// A read-only snapshot of the player's progress, built from the stored records.
 struct GameProgress {
-    private let read: Set<String>
+    private let readByBook: [String: Set<Int>]
+    private let latestByBook: [String: Date]
     private let quizzes: Set<String>
     private let memorised: Set<String>
     private let readDates: [Date]
 
     init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised]) {
-        self.read = Set(reads.map { Self.key($0.bookID, $0.chapterNumber) })
-        self.readDates = reads.map(\.date)
+        var byBook: [String: Set<Int>] = [:]
+        var latest: [String: Date] = [:]
+        for read in reads {
+            byBook[read.bookID, default: []].insert(read.chapterNumber)
+            latest[read.bookID] = max(latest[read.bookID] ?? .distantPast, read.date)
+        }
+        self.readByBook = byBook
+        self.latestByBook = latest
         self.quizzes = Set(quizzes.map(\.bookID))
         self.memorised = Set(memorised.map(\.bookID))
+        self.readDates = reads.map(\.date)
     }
 
-    private static func key(_ bookID: String, _ chapter: Int) -> String { "\(bookID)#\(chapter)" }
+    static let empty = GameProgress(reads: [], quizzes: [], memorised: [])
+
+    // MARK: Books
 
     func isRead(_ bookID: String, chapter: Int) -> Bool {
-        read.contains(Self.key(bookID, chapter))
+        readByBook[bookID]?.contains(chapter) ?? false
     }
 
-    func chaptersRead(in book: Book) -> Int {
-        book.chapters.filter { isRead(book.id, chapter: $0.number) }.count
+    func chaptersRead(_ bookID: String) -> Int {
+        guard let book = BibleCatalog.book(id: bookID), let read = readByBook[bookID] else { return 0 }
+        return read.filter { book.chapterNumbers.contains($0) }.count
     }
 
-    func isComplete(_ book: Book) -> Bool {
-        chaptersRead(in: book) == book.chapters.count
+    func fraction(_ bookID: String) -> Double {
+        guard let book = BibleCatalog.book(id: bookID) else { return 0 }
+        return Double(chaptersRead(bookID)) / Double(book.chapterCount)
     }
 
-    func level(of place: Place) -> GrowthLevel {
-        guard let book = place.book, isComplete(book) else { return .locked }
-        guard quizzes.contains(place.bookID) else { return .unlocked }
-        guard memorised.contains(place.bookID) else { return .growing }
-        return .flourishing
+    func stage(of bookID: String) -> BuildStage {
+        guard let book = BibleCatalog.book(id: bookID) else { return .plot }
+        let read = chaptersRead(bookID)
+        if read == 0 { return .plot }
+        if read >= book.chapterCount { return .complete }
+        return read * 2 >= book.chapterCount ? .rising : .foundations
     }
+
+    func level(of bookID: String) -> GrowthLevel {
+        guard quizzes.contains(bookID) else { return .base }
+        return memorised.contains(bookID) ? .flourishing : .growing
+    }
+
+    func hasPassedQuiz(_ bookID: String) -> Bool { quizzes.contains(bookID) }
+    func hasMemorised(_ bookID: String) -> Bool { memorised.contains(bookID) }
+
+    // MARK: World
+
+    func isRegionRevealed(_ regionID: String) -> Bool {
+        WorldData.landmarks.contains { $0.regionID == regionID && chaptersRead($0.bookID) > 0 }
+    }
+
+    var activeConnections: [Connection] {
+        WorldData.connections.filter { chaptersRead($0.a) > 0 && chaptersRead($0.b) > 0 }
+    }
+
+    /// The book most recently read from — the camera's "recentre" target.
+    var newestBookID: String? {
+        latestByBook.max { $0.value < $1.value }?.key
+    }
+
+    var completedCount: Int { WorldData.landmarks.filter { stage(of: $0.bookID) == .complete }.count }
+    var startedCount: Int { WorldData.landmarks.filter { stage(of: $0.bookID) > .plot }.count }
 
     /// Consecutive days of reading, ending today or yesterday.
     var streak: Int { Streak.days(from: readDates) }
 
-    var totalChaptersRead: Int {
-        BibleData.books.reduce(0) { $0 + chaptersRead(in: $1) }
-    }
-
-    var totalChapters: Int {
-        BibleData.books.reduce(0) { $0 + $1.chapters.count }
-    }
+    var totalChaptersRead: Int { BibleCatalog.books.reduce(0) { $0 + chaptersRead($1.id) } }
+    var totalChapters: Int { BibleCatalog.totalChapters }
 }
 
 /// Convenience reader for views that need the current progress.

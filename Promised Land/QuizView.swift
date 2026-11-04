@@ -2,7 +2,8 @@ import SwiftUI
 import SwiftData
 
 struct QuizView: View {
-    let place: Place
+    let landmark: Landmark
+    let learning: BookLearning
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -12,8 +13,8 @@ struct QuizView: View {
     @State private var correct = 0
     @State private var finished = false
 
-    private var questions: [QuizQuestion] { place.quiz }
-    private var bookName: String { place.book?.name ?? "" }
+    private var questions: [QuizQuestion] { learning.quiz }
+    private var bookName: String { landmark.book?.name ?? "" }
 
     var body: some View {
         NavigationStack {
@@ -113,17 +114,17 @@ struct QuizView: View {
         return .card
     }
 
-    private var passed: Bool { correct >= place.passMark }
+    private var passed: Bool { correct >= learning.passMark }
 
     private func finish() {
         finished = true
-        if passed { context.recordQuizPass(place.bookID, score: correct) }
+        if passed { context.recordQuizPass(landmark.bookID, score: correct) }
     }
 
     private var results: some View {
         VStack(spacing: 18) {
-            PlaceTileView(place: place, level: passed ? .growing : .unlocked, width: 200)
-            Text(passed ? "\(place.name) is growing!" : "Nearly there")
+            LandmarkArtView(landmark: landmark, stage: .foundations, level: passed ? .growing : .base, size: 180)
+            Text(passed ? "\(landmark.name) is growing!" : "Nearly there")
                 .font(.serifTitle(.title))
                 .foregroundStyle(Color.bodyText)
                 .multilineTextAlignment(.center)
@@ -133,7 +134,7 @@ struct QuizView: View {
                 Button("Back to my world") { dismiss() }
                     .buttonStyle(PrimaryButtonStyle())
             } else {
-                Text("You need \(place.passMark) correct to pass. Have another look at \(bookName) and try again.")
+                Text("You need \(learning.passMark) correct to pass. Have another look at \(bookName) and try again.")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(Color.secondaryText)
                 Button("Try again") {
@@ -148,4 +149,9 @@ struct QuizView: View {
         }
         .frame(maxWidth: .infinity)
     }
+}
+
+#Preview {
+    QuizView(landmark: WorldData.landmark(bookID: "ruth")!, learning: LearningData.forBook("ruth")!)
+        .modelContainer(PreviewData.container)
 }

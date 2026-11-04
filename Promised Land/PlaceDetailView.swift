@@ -1,129 +1,202 @@
 import SwiftUI
+import SwiftData
 
+/// The place sheet for a landmark: progress, plus Read / Take quiz / Memorise.
 struct PlaceDetailView: View {
-    let place: Place
+    let landmark: Landmark
 
     @ProgressQuery private var progress: GameProgress
     @State private var showingQuiz = false
     @State private var showingMemorise = false
 
-    private var level: GrowthLevel { progress.level(of: place) }
+    private var stage: BuildStage { progress.stage(of: landmark.bookID) }
+    private var level: GrowthLevel { progress.level(of: landmark.bookID) }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                PlaceTileView(place: place, level: level, width: 240)
+                LandmarkArtView(landmark: landmark, stage: stage, level: level, size: 220)
                     .padding(.top, 8)
-                    .animation(.spring(duration: 0.5), value: level)
+                    .animation(.spring(duration: 0.5), value: stage)
 
                 VStack(spacing: 6) {
-                    Text(place.name)
+                    Text(landmark.name)
                         .font(.serifTitle(.largeTitle))
                         .foregroundStyle(Color.bodyText)
                         .multilineTextAlignment(.center)
-                    Text(place.blurb)
-                        .font(.body)
+                    Text("\(landmark.book?.name ?? "") · \(landmark.region?.name ?? "")")
+                        .font(.subheadline)
                         .foregroundStyle(Color.secondaryText)
                         .multilineTextAlignment(.center)
                 }
 
-                GrowthSteps(level: level)
+                if let book = landmark.book {
+                    progressCard(book)
+                    actions(book)
+                }
 
-                nextStep
+                if stage == .complete, !landmark.characters.isEmpty {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Living here")
+                            .font(.serifTitle(.title3))
+                            .foregroundStyle(Color.bodyText)
+                        ForEach(landmark.characters) { character in
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(character.name).font(.headline).foregroundStyle(Color.bodyText)
+                                Text("\u{201C}\(character.line)\u{201D}")
+                                    .font(.system(.subheadline, design: .serif).italic())
+                                    .foregroundStyle(Color.secondaryText)
+                            }
+                        }
+                    }
+                    .cardStyle()
+                }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 32)
         }
         .themedScreen()
-        .navigationTitle(place.name)
-        #if os(iOS)
+        .navigationTitle(landmark.name)
         .navigationBarTitleDisplayMode(.inline)
-        #endif
-        .sheet(isPresented: $showingQuiz) { QuizView(place: place) }
-        .sheet(isPresented: $showingMemorise) { MemoriseView(place: place) }
+        .sheet(isPresented: $showingQuiz) {
+            if let learning = landmark.learning { QuizView(landmark: landmark, learning: learning) }
+        }
+        .sheet(isPresented: $showingMemorise) {
+            if let learning = landmark.learning { MemoriseView(landmark: landmark, learning: learning) }
+        }
+    }
+
+    private func progressCard(_ book: Book) -> some View {
+        let read = progress.chaptersRead(book.id)
+        return VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text(stage.title)
+                    .font(.serifTitle(.title3))
+                    .foregroundStyle(Color.bodyText)
+                Spacer()
+                Text("\(read) of \(book.chapterCount) chapters")
+                    .font(.subheadline.monospacedDigit())
+                    .foregroundStyle(Color.secondaryText)
+            }
+            ProgressView(value: Double(read), total: Double(book.chapterCount))
+                .tint(Color.olive)
+            GrowthSteps(stage: stage, level: level)
+        }
+        .cardStyle()
     }
 
     @ViewBuilder
-    private var nextStep: some View {
-        if let book = place.book {
-            VStack(alignment: .leading, spacing: 12) {
-                switch level {
-                case .locked:
-                    stepTitle("Unlock this place")
-                    Text("Read every chapter of \(book.name). You've read \(progress.chaptersRead(in: book)) of \(book.chapters.count).")
-                        .foregroundStyle(Color.secondaryText)
-                    NavigationLink(value: book) {
-                        Text("Read \(book.name)")
-                    }
-                    .buttonStyle(PrimaryButtonStyle())
-                case .unlocked:
-                    stepTitle("Help it grow")
-                    Text("Pass a short quiz on \(book.name) to reach Growing.")
-                        .foregroundStyle(Color.secondaryText)
-                    Button("Take the quiz") { showingQuiz = true }
-                        .buttonStyle(PrimaryButtonStyle())
-                case .growing:
-                    stepTitle("Make it flourish")
-                    Text("Memorise \(place.memoryVerse.reference) to reach Flourishing.")
-                        .foregroundStyle(Color.secondaryText)
-                    Button("Memorise the verse") { showingMemorise = true }
-                        .buttonStyle(PrimaryButtonStyle())
-                case .flourishing:
-                    stepTitle("Flourishing")
-                    Text("\u{201C}\(place.memoryVerse.text)\u{201D}")
-                        .font(.system(.body, design: .serif).italic())
-                        .foregroundStyle(Color.bodyText)
-                    Text(place.memoryVerse.reference)
-                        .font(.subheadline)
-                        .foregroundStyle(Color.secondaryText)
+    private func actions(_ book: Book) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            let next = book.chapterNumbers.first { !progress.isRead(book.id, chapter: $0) }
+            if let next {
+                NavigationLink(value: ChapterRef(bookID: book.id, chapter: next)) {
+                    Text(stage == .plot ? "Start reading \(book.name)" : "Continue: \(book.name) \(next)")
                 }
-                if level > .locked {
-                    NavigationLink(value: book) {
-                        Text("Revisit \(book.name)")
-                    }
-                    .buttonStyle(SoftButtonStyle())
-                }
+                .buttonStyle(PrimaryButtonStyle())
             }
-            .cardStyle()
+            NavigationLink(value: book) {
+                Text("All chapters")
+            }
+            .buttonStyle(SoftButtonStyle())
+
+            if let learning = landmark.learning {
+                Button(progress.hasPassedQuiz(book.id) ? "Quiz passed ✓" : "Take the quiz") { showingQuiz = true }
+                    .buttonStyle(SoftButtonStyle())
+                    .disabled(stage == .plot || progress.hasPassedQuiz(book.id))
+                Button(progress.hasMemorised(book.id) ? "Verse memorised ✓" : "Memorise \(learning.memoryVerse.reference)") {
+                    showingMemorise = true
+                }
+                .buttonStyle(SoftButtonStyle())
+                .disabled(!progress.hasPassedQuiz(book.id) || progress.hasMemorised(book.id))
+                Text(hint(book))
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+            } else {
+                Label("Quiz and memory verse coming soon", systemImage: "hourglass")
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+                    .frame(minHeight: 44)
+            }
         }
+        .cardStyle()
     }
 
-    private func stepTitle(_ text: String) -> some View {
-        Text(text)
-            .font(.serifTitle(.title3))
-            .foregroundStyle(Color.bodyText)
+    private func hint(_ book: Book) -> String {
+        if stage == .plot { return "Read a chapter to lay foundations and unlock the quiz." }
+        if !progress.hasPassedQuiz(book.id) { return "Pass the quiz to add trees and decorations." }
+        if !progress.hasMemorised(book.id) { return "Memorise the verse to make \(landmark.name) glow." }
+        return "\(landmark.name) is flourishing."
     }
 }
 
+/// Build stages followed by quiz / memorise levels.
 struct GrowthSteps: View {
+    let stage: BuildStage
     let level: GrowthLevel
 
-    private let steps: [(GrowthLevel, String, String)] = [
-        (.unlocked, "Unlocked", "book.closed.fill"),
-        (.growing, "Growing", "leaf.fill"),
-        (.flourishing, "Flourishing", "sparkles"),
-    ]
-
     var body: some View {
-        HStack(spacing: 8) {
+        let steps: [(Bool, String, String)] = [
+            (stage >= .foundations, "Foundations", "square.stack.3d.up.fill"),
+            (stage >= .rising, "Rising", "hammer.fill"),
+            (stage >= .complete, "Complete", "building.columns.fill"),
+            (level >= .growing, "Growing", "leaf.fill"),
+            (level >= .flourishing, "Flourishing", "sparkles"),
+        ]
+        HStack(spacing: 4) {
             ForEach(steps, id: \.1) { step in
-                let reached = level >= step.0
-                VStack(spacing: 6) {
+                VStack(spacing: 5) {
                     Image(systemName: step.2)
-                        .font(.title3)
-                        .foregroundStyle(reached ? Color.onPrimary : Color.secondaryText.opacity(0.6))
-                        .frame(width: 44, height: 44)
-                        .background(reached ? Color.olive : Color.sand, in: Circle())
+                        .font(.footnote)
+                        .foregroundStyle(step.0 ? Color.onPrimary : Color.secondaryText.opacity(0.6))
+                        .frame(width: 36, height: 36)
+                        .background(step.0 ? Color.olive : Color.sand, in: Circle())
                     Text(step.1)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(reached ? Color.bodyText : Color.secondaryText)
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(step.0 ? Color.bodyText : Color.secondaryText)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
                 }
                 .frame(maxWidth: .infinity)
                 .accessibilityElement(children: .combine)
-                .accessibilityValue(reached ? "Reached" : "Not yet")
+                .accessibilityValue(step.0 ? "Reached" : "Not yet")
             }
         }
-        .padding(.vertical, 12)
-        .background(Color.card, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
     }
+}
+
+struct LandmarkRow: View {
+    let landmark: Landmark
+    let progress: GameProgress
+
+    var body: some View {
+        let stage = progress.stage(of: landmark.bookID)
+        HStack(spacing: 14) {
+            LandmarkArtView(landmark: landmark, stage: stage, level: progress.level(of: landmark.bookID), size: 56)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(landmark.name)
+                    .font(.headline)
+                    .foregroundStyle(Color.bodyText)
+                Text("\(landmark.book?.name ?? "") · \(stage.title)")
+                    .font(.subheadline)
+                    .foregroundStyle(Color.secondaryText)
+            }
+            Spacer(minLength: 8)
+            Image(systemName: "chevron.right")
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(Color.secondaryText.opacity(0.6))
+        }
+        .padding(12)
+        .frame(minHeight: 64)
+        .background(Color.card, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+    }
+}
+
+#Preview {
+    NavigationStack {
+        PlaceDetailView(landmark: WorldData.landmark(bookID: "ruth")!)
+            .readingDestinations()
+    }
+    .modelContainer(PreviewData.container)
 }
