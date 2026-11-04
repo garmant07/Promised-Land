@@ -40,6 +40,24 @@ struct LibraryView: View {
                             .buttonStyle(.plain)
                             .padding(.bottom, 4)
                     }
+                    NavigationLink(value: CatalogLink()) {
+                        HStack(spacing: 10) {
+                            Image(systemName: "building.columns.fill")
+                                .foregroundStyle(Color.terracotta)
+                                .frame(width: 36, height: 36)
+                                .background(Color.sand, in: Circle())
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("What can I build?").font(.headline).foregroundStyle(Color.bodyText)
+                                Text("Every book's building, artifacts and characters")
+                                    .font(.footnote).foregroundStyle(Color.secondaryText)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right").foregroundStyle(Color.secondaryText)
+                        }
+                        .padding(12)
+                        .background(Color.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
                     Text("All 66 books, in any order. Each one builds a landmark in your world.")
                         .font(.subheadline)
                         .foregroundStyle(Color.secondaryText)
@@ -82,6 +100,7 @@ extension View {
     func readingDestinations() -> some View {
         self
             .navigationDestination(for: Book.self) { BookView(book: $0).closeReadingButton() }
+            .navigationDestination(for: CatalogLink.self) { _ in BuildCatalogView() }
             .navigationDestination(for: Landmark.self) { PlaceDetailView(landmark: $0).closeReadingButton() }
             .navigationDestination(for: ChapterRef.self) { ref in
                 if let book = BibleCatalog.book(id: ref.bookID) {
@@ -125,6 +144,9 @@ private struct CloseReadingButton: ViewModifier {
         }
     }
 }
+
+/// Opens "What can I build?".
+struct CatalogLink: Hashable {}
 
 struct ChapterRef: Hashable, Identifiable {
     var id: String { "\(bookID)#\(chapter)" }
@@ -187,6 +209,8 @@ struct BookView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
+                // What reading this book builds.
+                BuildPreviewRow(book: book, read: progress.chaptersRead(book.id))
                 if let landmark = WorldData.landmark(bookID: book.id) {
                     NavigationLink(value: landmark) {
                         LandmarkRow(landmark: landmark, progress: progress)
@@ -252,98 +276,59 @@ struct ChapterReaderView: View {
 
     @Environment(\.modelContext) private var context
     @ProgressQuery private var progress: GameProgress
+    @Query private var reads: [ChapterRead]
     @State private var celebration: Celebration?
-    @State private var reflecting = false
+    @State private var checking = false
     @State private var deepDive: (dive: DeepDive, text: String)?
-    @State private var reflectAfterCelebration = false
-    @AppStorage(StorageKeys.offerReflection) private var offerReflection = true
+    @State private var checkAfterCelebration = false
+    @AppStorage(StorageKeys.offerReflection) private var offerCheck = true
 
-    private var isRead: Bool { progress.isRead(book.id, chapter: chapter) }
+    init(book: Book, chapter: Int) {
+        self.book = book
+        self.chapter = chapter
+        let id = book.id
+        _reads = Query(filter: #Predicate<ChapterRead> { $0.bookID == id && $0.chapterNumber == chapter },
+                       sort: \ChapterRead.date, order: .reverse)
+    }
+
+    private var isRead: Bool { !reads.isEmpty }
+    /// The latest read is waiting for its quick check.
+    private var needsCheck: Bool { reads.first.map { !$0.checked } ?? false }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
-                Text("\(book.name) \(chapter)")
-                    .font(.serifTitle(.largeTitle))
-                    .foregroundStyle(Color.bodyText)
-
-                if let verses = SampleText.verses(book: book.id, chapter: chapter) {
-                    VStack(alignment: .leading, spacing: 14) {
-                        ForEach(verses) { verse in
-                            let number = Text("\(verse.number)")
-                                .font(.caption.weight(.bold))
-                                .foregroundStyle(Color.terracotta)
-                            let line = Text("\(number)  \(verse.text)")
-                                .foregroundStyle(Color.bodyText)
-                                .lineSpacing(5)
-                                .fixedSize(horizontal: false, vertical: true)
-                            // Verses with a deep dive are tappable, marked with a small sparkle.
-                            if let dive = DeepDiveData.entry(bookID: book.id, chapter: chapter, verse: verse.number) {
-                                Button { deepDive = (dive, verse.text) } label: {
-                                    HStack(alignment: .top, spacing: 6) {
-                                        line.multilineTextAlignment(.leading)
-                                        Image(systemName: "sparkle")
-                                            .font(.caption)
-                                            .foregroundStyle(Color.lavender)
-                                    }
-                                    .contentShape(Rectangle())
-                                }
-                                .buttonStyle(.plain)
-                                .accessibilityHint("Opens a deep dive on this verse")
-                            } else {
-                                line
-                            }
-                        }
+        Group {
+            if let verses = SampleText.verses(book: book.id, chapter: chapter) {
+                VStack(spacing: 4) {
+                    PageReaderView(title: "\(book.name) \(chapter)", verses: verses,
+                                   deepDive: { DeepDiveData.entry(bookID: book.id, chapter: chapter, verse: $0.number) },
+                                   onDeepDive: { dive, verse in deepDive = (dive, verse.text) }) {
+                        actions(compact: true)
                     }
-                    .cardStyle()
                     Text("American Standard Version · sample verses")
-                        .font(.footnote)
+                        .font(.caption2)
                         .foregroundStyle(Color.secondaryText)
-                } else {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Label("Text coming soon", systemImage: "book.closed")
-                            .font(.headline)
-                            .foregroundStyle(Color.primaryBrown)
-                        Text("This chapter isn't bundled yet. Read it in your own Bible, then mark it as read to keep building.")
-                            .foregroundStyle(Color.secondaryText)
-                    }
-                    .cardStyle()
+                        .padding(.bottom, 4)
                 }
-
-                if isRead {
-                    let count = progress.readCount(book.id, chapter: chapter)
-                    VStack(spacing: 4) {
-                        Label(count == 1 ? "You've read this chapter" : "You've read this chapter \(count) times",
-                              systemImage: "checkmark.circle.fill")
-                            .font(.headline)
-                            .foregroundStyle(Color.olive)
-                        if let last = progress.lastRead(book.id, chapter: chapter) {
-                            Text("Most recently \(last.formatted(date: .abbreviated, time: .omitted))")
-                                .font(.footnote)
+            } else {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 18) {
+                        Text("\(book.name) \(chapter)")
+                            .font(.serifTitle(.largeTitle))
+                            .foregroundStyle(Color.bodyText)
+                        VStack(alignment: .leading, spacing: 10) {
+                            Label("Text coming soon", systemImage: "book.closed")
+                                .font(.headline)
+                                .foregroundStyle(Color.primaryBrown)
+                            Text("This chapter isn't bundled yet. Read it in your own Bible, then mark it as read to keep building.")
                                 .foregroundStyle(Color.secondaryText)
                         }
+                        .cardStyle()
+                        actions(compact: false)
                     }
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    Button("Read again") { recordRead() }
-                        .buttonStyle(PrimaryButtonStyle())
-                    Button("Undo last read") { withAnimation { context.undoLastRead(book.id, chapter) } }
-                        .font(.subheadline)
-                        .foregroundStyle(Color.secondaryText)
-                        .frame(maxWidth: .infinity, minHeight: 44)
-                } else {
-                    Button("Mark as read") { recordRead() }
-                        .buttonStyle(PrimaryButtonStyle())
-                }
-
-                if chapter < book.chapterCount {
-                    NavigationLink(value: ChapterRef(bookID: book.id, chapter: chapter + 1)) {
-                        Text("Next: chapter \(chapter + 1)")
-                    }
-                    .buttonStyle(SoftButtonStyle())
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
         }
         .themedScreen()
         .navigationTitle("Chapter \(chapter)")
@@ -351,11 +336,51 @@ struct ChapterReaderView: View {
         // Opening a chapter lays the book's foundations (no need to finish it first).
         .onAppear { context.recordBookStarted(book.id) }
         .sheet(item: $celebration, onDismiss: {
-            if reflectAfterCelebration { reflectAfterCelebration = false; reflecting = true }
+            if checkAfterCelebration { checkAfterCelebration = false; checking = true }
         }) { CelebrationView(celebration: $0) }
-        .sheet(isPresented: $reflecting) { ReflectionCard(book: book, chapter: chapter) }
+        .sheet(isPresented: $checking) { ReadingCheckView(book: book, chapter: chapter) }
         .sheet(isPresented: Binding(get: { deepDive != nil }, set: { if !$0 { deepDive = nil } })) {
             if let deepDive { DeepDiveSheet(dive: deepDive.dive, verseText: deepDive.text) }
+        }
+    }
+
+    /// Mark as read (one tap), what's been read, the reading check, and the next chapter.
+    @ViewBuilder
+    private func actions(compact: Bool) -> some View {
+        VStack(spacing: compact ? 6 : 10) {
+            if isRead {
+                let count = reads.count
+                Label(count == 1 ? "You've read this chapter" : "You've read this chapter \(count) times",
+                      systemImage: "checkmark.circle.fill")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Color.olive)
+                    .frame(maxWidth: .infinity, minHeight: 32)
+                if needsCheck {
+                    Button { checking = true } label: {
+                        Label("Quick check: count it toward the building", systemImage: "hammer")
+                            .font(.footnote.weight(.semibold))
+                    }
+                    .foregroundStyle(Color.primaryBrown)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+                }
+                HStack(spacing: 8) {
+                    Button("Read again") { recordRead() }
+                        .buttonStyle(SoftButtonStyle())
+                    Button("Undo") { withAnimation { context.undoLastRead(book.id, chapter) } }
+                        .font(.subheadline)
+                        .foregroundStyle(Color.secondaryText)
+                        .frame(minWidth: 64, minHeight: 44)
+                }
+            } else {
+                Button("Mark as read") { recordRead() }
+                    .buttonStyle(PrimaryButtonStyle())
+            }
+            if chapter < book.chapterCount {
+                NavigationLink(value: ChapterRef(bookID: book.id, chapter: chapter + 1)) {
+                    Text("Next: chapter \(chapter + 1)")
+                }
+                .buttonStyle(SoftButtonStyle())
+            }
         }
     }
 
@@ -363,10 +388,12 @@ struct ChapterReaderView: View {
         let before = progress.stage(of: book.id)
         let regionWasHidden = WorldData.landmark(bookID: book.id).map { !progress.isRegionRevealed($0.regionID) } ?? false
         let firstRead = !isRead
-        withAnimation { context.recordRead(book.id, chapter) }
+        // One tap records the read (its artifact appears); the quick check then counts it
+        // toward the building.
+        withAnimation { context.recordRead(book.id, chapter, checked: false) }
         defer {
-            if offerReflection {
-                if celebration != nil { reflectAfterCelebration = true } else { reflecting = true }
+            if offerCheck {
+                if celebration != nil { checkAfterCelebration = true } else { checking = true }
             }
         }
         guard firstRead, let landmark = WorldData.landmark(bookID: book.id) else { return }
@@ -376,7 +403,7 @@ struct ChapterReaderView: View {
         let after: BuildStage = read >= book.chapterCount ? .complete : (read * 2 >= book.chapterCount ? .rising : .foundations)
         if after == .complete && before != .complete {
             celebration = Celebration(landmark: landmark, stage: .complete,
-                                      message: "You finished \(book.name). \(landmark.name) is complete!")
+                                      message: "You finished \(book.name). Do the quick check to raise \(landmark.name)!")
         } else if regionWasHidden {
             celebration = Celebration(landmark: landmark, stage: after,
                                       message: "The fog lifts over \(landmark.region?.name ?? "a new region"). Foundations are laid for \(landmark.name).")

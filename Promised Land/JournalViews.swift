@@ -7,6 +7,8 @@ import SwiftData
 struct ReflectionCard: View {
     let book: Book
     let chapter: Int
+    /// Called after something is saved (the reading check counts a reflection).
+    var onSaved: (() -> Void)? = nil
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -67,6 +69,7 @@ struct ReflectionCard: View {
             context.insert(JournalEntry(bookID: book.id, chapter: chapter, prompt: prompt, text: text))
         }
         try? context.save()
+        onSaved?()
         dismiss()
     }
 }

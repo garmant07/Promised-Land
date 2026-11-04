@@ -9,11 +9,15 @@ final class ChapterRead {
     var bookID: String
     var chapterNumber: Int
     var date: Date
+    /// True once the quick reading check is done (a question, reflection or journal note).
+    /// Only checked reads count toward a building's levels; earlier reads count as checked.
+    var checked: Bool = true
 
-    init(bookID: String, chapterNumber: Int, date: Date = .now) {
+    init(bookID: String, chapterNumber: Int, date: Date = .now, checked: Bool = true) {
         self.bookID = bookID
         self.chapterNumber = chapterNumber
         self.date = date
+        self.checked = checked
     }
 }
 
@@ -283,8 +287,20 @@ struct ProgressQuery: DynamicProperty {
 
 extension ModelContext {
     /// Records one read of a chapter. Every read is kept, so rereads count.
-    func recordRead(_ bookID: String, _ chapter: Int, date: Date = .now) {
-        insert(ChapterRead(bookID: bookID, chapterNumber: chapter, date: date))
+    /// Records a read. From the reader it starts unchecked, until the quick check is done.
+    func recordRead(_ bookID: String, _ chapter: Int, date: Date = .now, checked: Bool = true) {
+        insert(ChapterRead(bookID: bookID, chapterNumber: chapter, date: date, checked: checked))
+        try? save()
+    }
+
+    /// Marks the most recent unchecked read of a chapter as checked (the quick check is done).
+    func markLatestChecked(_ bookID: String, _ chapter: Int) {
+        var descriptor = FetchDescriptor<ChapterRead>(
+            predicate: #Predicate { $0.bookID == bookID && $0.chapterNumber == chapter && !$0.checked },
+            sortBy: [SortDescriptor(\.date, order: .reverse)]
+        )
+        descriptor.fetchLimit = 1
+        if let latest = try? fetch(descriptor).first { latest.checked = true }
         try? save()
     }
 

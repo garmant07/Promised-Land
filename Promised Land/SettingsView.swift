@@ -56,7 +56,7 @@ struct SettingsView: View {
                     }
 
                     section("Reflection & journal") {
-                        Toggle("Offer a reflection after reading", isOn: $offerReflection)
+                        Toggle("Offer the quick check after reading", isOn: $offerReflection)
                             .tint(Color.olive)
                             .frame(minHeight: 44)
                         Label("Your journal is private. Entries are stored only on this device and are never uploaded or shared.",

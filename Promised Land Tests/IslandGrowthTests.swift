@@ -1,6 +1,7 @@
 import Testing
 import Foundation
 import CoreGraphics
+import SwiftData
 @testable import Promised_Land
 
 @MainActor
@@ -370,5 +371,95 @@ struct InteriorTextTests {
         #expect(text(progress: 3, total: 4, level: 0).contains("1 more to raise"))
         #expect(text(progress: 4, total: 4, level: 1).hasPrefix("Built when you finished"))
         #expect(text(progress: 4, total: 4, level: 7).contains("6 extra floors"))
+    }
+}
+
+@MainActor
+struct ReadingCheckTests {
+    let start = Date(timeIntervalSince1970: 1_780_000_000)
+
+    @Test("Unchecked reads place artifacts but don't build until checked")
+    func uncheckedReads() {
+        let reads = (1...4).map { (book: "ruth", chapter: $0, date: start.addingTimeInterval(Double($0) * 86_400)) }
+        let waiting = Island.build(chapters: reads, quizzes: [], verses: [], unchecked: [("ruth", 4)])
+        let building = waiting.items.first { $0.kind == .building("ruth") }!
+        #expect(building.progress == 3)
+        #expect(IslandPainter.buildingLevel(building) == 0)
+        #expect(waiting.items.contains { $0.source == .chapter(book: "ruth", chapter: 4) })
+        let checked = Island.build(chapters: reads, quizzes: [], verses: [])
+        #expect(IslandPainter.buildingLevel(checked.items.first { $0.kind == .building("ruth") }!) == 1)
+    }
+
+    @Test("Marking as read is one tap; the check then counts it")
+    func markLatestChecked() throws {
+        let container = try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let context = container.mainContext
+        context.recordRead("ruth", 1, checked: false)
+        #expect(try context.fetch(FetchDescriptor<ChapterRead>()).first?.checked == false)
+        context.markLatestChecked("ruth", 1)
+        #expect(try context.fetch(FetchDescriptor<ChapterRead>()).first?.checked == true)
+    }
+
+    @Test("Earlier reads count as checked")
+    func defaultsChecked() {
+        #expect(ChapterRead(bookID: "ruth", chapterNumber: 1).checked)
+    }
+}
+
+struct PagePlannerTests {
+    let verses = (1...30).map { Verse(number: $0, text: String(repeating: "word ", count: 20 + $0 % 7)) }
+
+    @Test("Every verse appears once, in order")
+    func allVerses() {
+        let pages = PagePlanner.pages(verses, width: 300, height: 500, fontSize: 18, footerHeight: 200, titleHeight: 60)
+        #expect(pages.flatMap { $0 }.map(\.number) == Array(1...30))
+        #expect(pages.count > 1)
+    }
+
+    @Test("A wider page (an iPad spread page) needs fewer pages")
+    func widerFewer() {
+        let narrow = PagePlanner.pages(verses, width: 300, height: 600, fontSize: 18, footerHeight: 200, titleHeight: 60)
+        let wide = PagePlanner.pages(verses, width: 600, height: 600, fontSize: 18, footerHeight: 200, titleHeight: 60)
+        #expect(wide.count < narrow.count)
+    }
+
+    @Test("The last page has room for Mark as read")
+    func footerRoom() {
+        let short = [Verse(number: 1, text: "In the beginning God created the heavens and the earth.")]
+        #expect(PagePlanner.pages(short, width: 300, height: 600, fontSize: 18, footerHeight: 200, titleHeight: 60).count == 1)
+        #expect(PagePlanner.pages(short, width: 300, height: 200, fontSize: 18, footerHeight: 200, titleHeight: 60).count == 2)
+    }
+}
+
+@MainActor
+struct JourneyContextTests {
+    @Test("Paul's voyage has the six stops in order")
+    func paul() {
+        let names = JourneyData.journey(id: "paul-rome")!.stops.map(\.name)
+        #expect(names == ["Sidon", "Myra", "Fair Havens, Crete", "The storm", "Melita (Malta)", "Rome"])
+    }
+
+    @Test("Every stop has a context card and a real chapter; journeys stay unreviewed")
+    func contextCards() {
+        for journey in JourneyData.all {
+            #expect(!journey.reviewed)
+            for stop in journey.stops {
+                #expect(!stop.place.isEmpty && !stop.happened.isEmpty && !stop.lookedLike.isEmpty)
+                #expect(BibleCatalog.book(id: stop.bookID).map { (1...$0.chapterCount).contains(stop.chapter) } == true)
+            }
+        }
+    }
+
+    @Test("Completing a journey welcomes a character")
+    func rewards() {
+        for journey in JourneyData.all { #expect(JourneyData.reward(journey) != nil) }
+    }
+
+    @Test("What can I build? names a book's artifacts, stories and characters")
+    func catalogue() {
+        #expect(BuildPreview.artifactLine("ruth").hasPrefix("Chapters place: "))
+        #expect(BuildPreview.storyLine("genesis")?.contains("Noah's Ark") == true)
+        #expect(BuildPreview.characterLine("exodus") == "Helps welcome Moses")
+        #expect(BuildPreview.characterLine("obadiah") == nil)
     }
 }

@@ -7,6 +7,64 @@ struct JourneyCard: View {
 
     @ProgressQuery private var progress: GameProgress
     @Environment(\.dismiss) private var dismiss
+    /// The stop whose context card is open.
+    @State private var expanded: Int?
+
+    /// A stop: tap to open its context card (what kind of place, what happened, what it may
+    /// have looked like), with a link to read its chapter.
+    private func stopRow(_ stop: JourneyStop, index: Int) -> some View {
+        let lit = progress.isLit(stop)
+        let open = expanded == index
+        return VStack(alignment: .leading, spacing: 8) {
+            Button { withAnimation(.easeInOut(duration: 0.2)) { expanded = open ? nil : index } } label: {
+                HStack(spacing: 12) {
+                    Image(systemName: lit ? "largecircle.fill.circle" : "circle")
+                        .font(.title3)
+                        .foregroundStyle(lit ? Color.terracotta : Color.lavender)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(stop.name).font(.headline).foregroundStyle(Color.bodyText)
+                        Text("\(stop.chapterLabel) · \(stop.reference)")
+                            .font(.subheadline)
+                            .foregroundStyle(Color.secondaryText)
+                    }
+                    Spacer()
+                    Image(systemName: open ? "chevron.up" : "chevron.down")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Color.secondaryText)
+                }
+                .frame(minHeight: 56)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityHint(open ? "Hides the context card" : "Shows what happened here")
+            if open {
+                VStack(alignment: .leading, spacing: 8) {
+                    if !stop.place.isEmpty {
+                        Text(stop.place.uppercased())
+                            .font(.caption2.weight(.bold))
+                            .tracking(1)
+                            .foregroundStyle(Color.terracotta)
+                    }
+                    if !stop.happened.isEmpty {
+                        Text(stop.happened).font(.subheadline).foregroundStyle(Color.bodyText)
+                    }
+                    if !stop.lookedLike.isEmpty {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("What it may have looked like").font(.caption.weight(.semibold)).foregroundStyle(Color.secondaryText)
+                            Text(stop.lookedLike).font(.subheadline).italic().foregroundStyle(Color.secondaryText)
+                        }
+                    }
+                    NavigationLink(value: ChapterRef(bookID: stop.bookID, chapter: stop.chapter)) {
+                        Text(lit ? "Read \(stop.chapterLabel) again" : "Read \(stop.chapterLabel)")
+                    }
+                    .buttonStyle(SoftButtonStyle())
+                }
+                .padding(12)
+                .background(Color.cream, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .padding(.leading, 36)
+            }
+        }
+    }
 
     var body: some View {
         let complete = progress.isComplete(journey)
@@ -30,27 +88,7 @@ struct JourneyCard: View {
 
                     VStack(alignment: .leading, spacing: 0) {
                         ForEach(Array(journey.stops.enumerated()), id: \.offset) { index, stop in
-                            let lit = progress.isLit(stop)
-                            NavigationLink(value: ChapterRef(bookID: stop.bookID, chapter: stop.chapter)) {
-                                HStack(spacing: 12) {
-                                    Image(systemName: lit ? "largecircle.fill.circle" : "circle")
-                                        .font(.title3)
-                                        .foregroundStyle(lit ? Color.terracotta : Color.lavender)
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(stop.name).font(.headline).foregroundStyle(Color.bodyText)
-                                        Text("\(stop.chapterLabel) · \(stop.reference)")
-                                            .font(.subheadline)
-                                            .foregroundStyle(Color.secondaryText)
-                                    }
-                                    Spacer()
-                                    Text(lit ? "Read" : "Read it")
-                                        .font(.subheadline.weight(.semibold))
-                                        .foregroundStyle(lit ? Color.olive : Color.primaryBrown)
-                                }
-                                .frame(minHeight: 56)
-                                .contentShape(Rectangle())
-                            }
-                            .buttonStyle(.plain)
+                            stopRow(stop, index: index)
                             if index < journey.stops.count - 1 {
                                 Rectangle()
                                     .fill(Color.lavender.opacity(0.5))
@@ -60,6 +98,13 @@ struct JourneyCard: View {
                         }
                     }
                     .cardStyle()
+
+                    if let reward = JourneyData.reward(journey) {
+                        Label(complete ? "\(reward.name) has come to your island." : "Complete this journey to welcome \(reward.name) to your island.",
+                              systemImage: "person.fill.badge.plus")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.terracotta)
+                    }
 
                     Text("\(progress.litCount(journey)) of \(journey.stops.count) stops lit. Reading a stop's chapter lights it, and your character walks the route.")
                         .font(.footnote)

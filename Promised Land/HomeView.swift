@@ -102,7 +102,8 @@ struct HomeView: View {
                             quizzes: firstPasses.map { ($0.bookID, $0.date) },
                             verses: versesMemorised.map { ($0.bookID, $0.date) },
                             features: journal.isEmpty ? [] : [.library],
-                            placements: editingIsland ? draft : savedPlacements)
+                            placements: editingIsland ? draft : savedPlacements,
+                            unchecked: chapterReads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) })
     }
 
     /// Where you've put things (saved in edit mode).
@@ -423,6 +424,10 @@ struct HomeView: View {
         if args.contains("-openRead") { activeSheet = .read }
         if args.contains("-editIsland") { startEditing(island.plots.first?.bookID) }
         if let i = args.firstIndex(of: "-celebrate"), i + 1 < args.count { activeSheet = .character(args[i + 1]) }
+        if let i = args.firstIndex(of: "-openChapter"), i + 1 < args.count {
+            let parts = args[i + 1].split(separator: ":")
+            if parts.count == 2, let ch = Int(parts[1]) { activeSheet = .chapter(ChapterRef(bookID: String(parts[0]), chapter: ch)) }
+        }
         if let i = args.firstIndex(of: "-openReflection"), i + 1 < args.count {
             let parts = args[i + 1].split(separator: ":")
             if parts.count == 2, let book = BibleCatalog.book(id: String(parts[0])), let ch = Int(parts[1]) {

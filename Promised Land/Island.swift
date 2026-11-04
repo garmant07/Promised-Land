@@ -130,7 +130,8 @@ struct Island: Equatable {
                       quizzes: [(book: String, date: Date)],
                       verses: [(book: String, date: Date)],
                       features: Set<Feature> = [],
-                      placements: [String: IslandPlacement] = [:]) -> Island {
+                      placements: [String: IslandPlacement] = [:],
+                      unchecked: [(book: String, chapter: Int)] = []) -> Island {
         var hasher = Hasher()
         for r in chapters { hasher.combine(r.book); hasher.combine(r.chapter); hasher.combine(r.date) }
         hasher.combine(-1)
@@ -141,10 +142,12 @@ struct Island: Equatable {
         for v in verses { hasher.combine(v.book); hasher.combine(v.date) }
         hasher.combine(features.map(\.rawValue).sorted())
         for (k, p) in placements.sorted(by: { $0.key < $1.key }) { hasher.combine(k); hasher.combine(p) }
+        hasher.combine(-4)
+        for u in unchecked { hasher.combine(u.book); hasher.combine(u.chapter) }
         let key = hasher.finalize()
         if let memo, memo.key == key { return memo.island }
         let island = make(chapters: chapters, started: started, quizzes: quizzes, verses: verses, features: features,
-                          placements: placements)
+                          placements: placements, unchecked: unchecked)
         memo = (key, island)
         return island
     }
@@ -154,7 +157,11 @@ struct Island: Equatable {
                              quizzes: [(book: String, date: Date)],
                              verses: [(book: String, date: Date)],
                              features: Set<Feature>,
-                             placements: [String: IslandPlacement]) -> Island {
+                             placements: [String: IslandPlacement],
+                             unchecked: [(book: String, chapter: Int)]) -> Island {
+        // Reads waiting for their quick check still place artifacts, but don't build yet.
+        var waiting: [String: [Int: Int]] = [:]
+        for u in unchecked { waiting[u.book, default: [:]][u.chapter, default: 0] += 1 }
         // Each book's plot goes down when the book was opened (or first read).
         var startDate: [String: Date] = [:]
         var reads: [String: [Int: (count: Int, first: Date)]] = [:]
@@ -189,9 +196,12 @@ struct Island: Equatable {
             let centre = plot.centre
             var building = Item(kind: .building(bookID), gx: centre.x, gy: centre.y, seed: hash(bookID), source: .book(bookID),
                                 footprint: CGRect(x: centre.x - 0.5, y: centre.y - 0.5, width: 1, height: 1), turned: plot.rotation)
-            building.progress = bookReads.count
+            // Building levels count checked reads only.
+            let checkedCounts = bookReads.mapValues(\.count).map { ($0.key, $0.value - (waiting[bookID]?[$0.key] ?? 0)) }
+                .filter { $0.1 > 0 }
+            building.progress = checkedCounts.count
             building.total = book.chapterCount
-            building.level = bookReads.count == book.chapterCount ? (bookReads.values.map(\.count).min() ?? 0) : 0
+            building.level = checkedCounts.count == book.chapterCount ? (checkedCounts.map(\.1).min() ?? 0) : 0
             dated.append((start, 0, building))
 
             func item(_ kind: Kind, slot: Int, source: Source, level: Int = 0, salt: String) -> Item {
