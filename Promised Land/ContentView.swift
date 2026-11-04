@@ -1,17 +1,19 @@
 import SwiftUI
-import Playgrounds
+import SwiftData
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            WorldView()
+                .tabItem { Label("World", systemImage: "map.fill") }
+            LibraryView()
+                .tabItem { Label("Read", systemImage: "book.fill") }
+        }
+        .tint(Color.primaryBrown)
     }
 }
 
 #Preview {
     ContentView()
-}
-
-#Playground {
-    _ = 1 + 2
+        .modelContainer(for: [ChapterRead.self, QuizPass.self, VerseMemorised.self], inMemory: true)
 }
