@@ -7,6 +7,7 @@ struct QuizView: View {
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.closeReading) private var closeReading
 
     @State private var index = 0
     @State private var selected: Int?
@@ -38,6 +39,12 @@ struct QuizView: View {
                     Button("Close") { dismiss() }
                         .frame(minHeight: 44)
                         .tint(Color.primaryBrown)
+                }
+                if let closeReading {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Leave reading", systemImage: "xmark") { closeReading() }
+                            .tint(Color.primaryBrown)
+                    }
                 }
             }
         }

@@ -60,6 +60,7 @@ struct LibraryView: View {
             .hiddenNavigationBar()
             .readingDestinations()
         }
+        .environment(\.closeReading, onClose.map(CloseReadingAction.init))
         .onAppear {
             guard path.isEmpty, let startAt, let book = BibleCatalog.book(id: startAt.bookID) else { return }
             path.append(book)
@@ -69,16 +70,52 @@ struct LibraryView: View {
 }
 
 extension View {
-    /// Navigation destinations shared by every tab's stack.
+    /// Navigation destinations shared by every stack. Each screen gets a close button
+    /// that leaves reading entirely, wherever you are.
     func readingDestinations() -> some View {
         self
-            .navigationDestination(for: Book.self) { BookView(book: $0) }
-            .navigationDestination(for: Landmark.self) { PlaceDetailView(landmark: $0) }
+            .navigationDestination(for: Book.self) { BookView(book: $0).closeReadingButton() }
+            .navigationDestination(for: Landmark.self) { PlaceDetailView(landmark: $0).closeReadingButton() }
             .navigationDestination(for: ChapterRef.self) { ref in
                 if let book = BibleCatalog.book(id: ref.bookID) {
-                    ChapterReaderView(book: book, chapter: ref.chapter)
+                    ChapterReaderView(book: book, chapter: ref.chapter).closeReadingButton()
                 }
             }
+    }
+
+    /// Adds a ✕ that closes reading straight back to the home page (when reading was opened from there).
+    func closeReadingButton() -> some View { modifier(CloseReadingButton()) }
+}
+
+/// Closes the whole reading area. Always compares equal, so passing it down
+/// the environment doesn't cause extra redraws.
+struct CloseReadingAction: Equatable {
+    let action: () -> Void
+    func callAsFunction() { action() }
+    static func == (lhs: Self, rhs: Self) -> Bool { true }
+}
+
+extension EnvironmentValues {
+    /// Closes the whole reading area, from any screen inside it.
+    @Entry var closeReading: CloseReadingAction? = nil
+}
+
+private struct CloseReadingButton: ViewModifier {
+    @Environment(\.closeReading) private var closeReading
+
+    func body(content: Content) -> some View {
+        content.toolbar {
+            if let closeReading {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { closeReading() } label: {
+                        Image(systemName: "xmark")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Color.primaryBrown)
+                    }
+                    .accessibilityLabel("Close reading")
+                }
+            }
+        }
     }
 }
 

@@ -27,6 +27,7 @@ enum PreviewData {
 ///   -seed ruth:1-4 genesis:1 quiz:ruth memo:ruth
 ///   -camera <bookID>                     start the map centred on a landmark
 ///   -openWorld                           open the world map on launch
+///   -openReading <book:chapter>          open reading at a chapter on launch
 enum DebugSeed {
     static func apply(to context: ModelContext) {
         let args = ProcessInfo.processInfo.arguments

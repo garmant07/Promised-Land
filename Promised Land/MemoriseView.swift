@@ -8,6 +8,7 @@ struct MemoriseView: View {
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.closeReading) private var closeReading
 
     private enum Stage { case read, gaps, rebuild, done }
 
@@ -49,6 +50,12 @@ struct MemoriseView: View {
                     Button("Close") { dismiss() }
                         .frame(minHeight: 44)
                         .tint(Color.primaryBrown)
+                }
+                if let closeReading {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Leave reading", systemImage: "xmark") { closeReading() }
+                            .tint(Color.primaryBrown)
+                    }
                 }
             }
         }
