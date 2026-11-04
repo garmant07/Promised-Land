@@ -2,6 +2,8 @@ import SwiftUI
 
 struct WorldView: View {
     @ProgressQuery private var progress: GameProgress
+    @State private var showingSettings = false
+    @State private var cardCollapsed = false
 
     private let columns = 2
     private let rows = 3
@@ -15,8 +17,16 @@ struct WorldView: View {
                     placeList
                 }
                 .padding(.horizontal, 16)
-                .padding(.bottom, 32)
+                .padding(.bottom, 200)
             }
+            .overlay(alignment: .bottom) {
+                if let next = NextUnlock.suggest(from: progress) {
+                    NextUnlockCard(next: next, collapsed: $cardCollapsed)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 8)
+                }
+            }
+            .sheet(isPresented: $showingSettings) { SettingsView() }
             .themedScreen()
             .navigationTitle("World")
             .hiddenNavigationBar()
@@ -31,9 +41,23 @@ struct WorldView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Promised Land")
-                .font(.serifTitle(.largeTitle))
-                .foregroundStyle(Color.bodyText)
+            HStack(spacing: 8) {
+                Text("Promised Land")
+                    .font(.serifTitle(.largeTitle))
+                    .foregroundStyle(Color.bodyText)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                Spacer(minLength: 4)
+                StreakPill(days: progress.streak)
+                Button { showingSettings = true } label: {
+                    Image(systemName: "gearshape.fill")
+                        .font(.title3)
+                        .foregroundStyle(Color.primaryBrown)
+                        .frame(width: 44, height: 44)
+                        .background(Color.card, in: Circle())
+                }
+                .accessibilityLabel("Settings")
+            }
             Text("\(unlockedCount) of \(Place.all.count) places unlocked · \(progress.totalChaptersRead) of \(progress.totalChapters) chapters read")
                 .font(.subheadline)
                 .foregroundStyle(Color.secondaryText)

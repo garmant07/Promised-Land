@@ -50,9 +50,11 @@ struct GameProgress {
     private let read: Set<String>
     private let quizzes: Set<String>
     private let memorised: Set<String>
+    private let readDates: [Date]
 
     init(reads: [ChapterRead], quizzes: [QuizPass], memorised: [VerseMemorised]) {
         self.read = Set(reads.map { Self.key($0.bookID, $0.chapterNumber) })
+        self.readDates = reads.map(\.date)
         self.quizzes = Set(quizzes.map(\.bookID))
         self.memorised = Set(memorised.map(\.bookID))
     }
@@ -77,6 +79,9 @@ struct GameProgress {
         guard memorised.contains(place.bookID) else { return .growing }
         return .flourishing
     }
+
+    /// Consecutive days of reading, ending today or yesterday.
+    var streak: Int { Streak.days(from: readDates) }
 
     var totalChaptersRead: Int {
         BibleData.books.reduce(0) { $0 + chaptersRead(in: $1) }
@@ -113,6 +118,13 @@ extension ModelContext {
         } else {
             existing.forEach(delete)
         }
+        try? save()
+    }
+
+    func resetAllProgress() {
+        try? delete(model: ChapterRead.self)
+        try? delete(model: QuizPass.self)
+        try? delete(model: VerseMemorised.self)
         try? save()
     }
 
