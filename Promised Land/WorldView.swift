@@ -1,49 +1,57 @@
 import SwiftUI
 import SwiftData
+import SpriteKit
 
 struct WorldView: View {
     @ProgressQuery private var progress: GameProgress
+    @State private var scene = WorldScene()
     @State private var showingSettings = false
     @State private var cardCollapsed = false
+    @State private var selected: Landmark?
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 12) {
-                    ForEach(WorldData.regions) { region in
-                        Text(region.name)
-                            .font(.serifTitle(.title3))
-                            .foregroundStyle(Color.bodyText)
-                            .padding(.top, 8)
-                        ForEach(WorldData.landmarks.filter { $0.regionID == region.id }) { landmark in
-                            NavigationLink(value: landmark) {
-                                LandmarkRow(landmark: landmark, progress: progress)
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 200)
-            }
-            .safeAreaInset(edge: .top) {
+        ZStack {
+            SpriteView(scene: scene, preferredFramesPerSecond: 60,
+                       options: [.ignoresSiblingOrder, .shouldCullNonVisibleNodes],
+                       debugOptions: debugOptions)
+                .ignoresSafeArea()
+                .accessibilityLabel("Map of your world")
+
+            VStack(spacing: 0) {
                 WorldHeader(progress: progress) { showingSettings = true }
-                    .padding(.horizontal, 16)
-                    .background(Color.cream)
-            }
-            .overlay(alignment: .bottom) {
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 4)
+                    .background(Color.cream.opacity(0.92), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+                    .padding(.horizontal, 12)
+                Spacer()
                 if let next = NextUnlock.suggest(from: progress) {
-                    NextUnlockCard(next: next, collapsed: $cardCollapsed)
-                        .padding(.horizontal, 16)
+                    NextUnlockCard(next: next, collapsed: $cardCollapsed) { selected = $0 }
+                        .padding(.horizontal, 12)
                         .padding(.bottom, 8)
                 }
             }
-            .sheet(isPresented: $showingSettings) { SettingsView() }
-            .themedScreen()
-            .navigationTitle("World")
-            .hiddenNavigationBar()
-            .readingDestinations()
         }
+        .sheet(isPresented: $showingSettings) { SettingsView() }
+        .sheet(item: $selected) { landmark in
+            NavigationStack {
+                PlaceDetailView(landmark: landmark)
+                    .readingDestinations()
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") { selected = nil }
+                                .tint(Color.primaryBrown)
+                        }
+                    }
+            }
+        }
+    }
+
+    private var debugOptions: SpriteView.DebugOptions {
+        #if DEBUG
+        [.showsFPS, .showsNodeCount, .showsDrawCount]
+        #else
+        []
+        #endif
     }
 }
 

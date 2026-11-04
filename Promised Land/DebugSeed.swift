@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import CoreGraphics
 
 /// In-memory container with some progress, for SwiftUI previews.
 enum PreviewData {
@@ -48,6 +49,24 @@ enum DebugSeed {
                 for chapter in chapters(parts[1]) { context.markChapter(parts[0], chapter, read: true) }
             }
         }
+    }
+
+    /// `-camera <bookID|gx,gy> [-zoom 1.5]` starts the map at a landmark or grid point.
+    static func cameraOverride() -> CameraState? {
+        let args = ProcessInfo.processInfo.arguments
+        guard let i = args.firstIndex(of: "-camera"), i + 1 < args.count else { return nil }
+        let target = args[i + 1]
+        var grid: CGPoint?
+        if let landmark = WorldData.landmark(bookID: target) {
+            grid = landmark.center
+        } else {
+            let parts = target.split(separator: ",").compactMap { Double($0) }
+            if parts.count == 2 { grid = CGPoint(x: parts[0], y: parts[1]) }
+        }
+        guard let grid else { return nil }
+        let zoom = args.firstIndex(of: "-zoom").flatMap { $0 + 1 < args.count ? Double(args[$0 + 1]) : nil } ?? 1.2
+        let p = Iso.scene(grid)
+        return CameraState(x: p.x, y: p.y, scale: zoom)
     }
 
     /// Parses "1,2,5-7" into [1, 2, 5, 6, 7].

@@ -44,6 +44,7 @@ struct NextUnlock {
 struct NextUnlockCard: View {
     let next: NextUnlock
     @Binding var collapsed: Bool
+    var open: (Landmark) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -79,10 +80,8 @@ struct NextUnlockCard: View {
                     .font(.subheadline)
                     .foregroundStyle(Color.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
-                NavigationLink(value: next.landmark) {
-                    Text("Open \(next.title)")
-                }
-                .buttonStyle(PrimaryButtonStyle())
+                Button("Open \(next.title)") { open(next.landmark) }
+                    .buttonStyle(PrimaryButtonStyle())
             }
         }
         .padding(.horizontal, 16)

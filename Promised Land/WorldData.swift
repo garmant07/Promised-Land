@@ -9,7 +9,7 @@ import CoreGraphics
 
 // MARK: - Geometry
 
-struct GridRect: Hashable {
+nonisolated struct GridRect: Hashable, Sendable {
     let x: Int, y: Int, w: Int, h: Int
 
     var center: CGPoint { CGPoint(x: Double(x) + Double(w) / 2, y: Double(y) + Double(h) / 2) }
@@ -79,7 +79,7 @@ struct WorldCharacter: Identifiable, Hashable {
 
 // MARK: - Terrain features
 
-struct Ellipse: Hashable {
+nonisolated struct Ellipse: Hashable, Sendable {
     let cx: Double, cy: Double, rx: Double, ry: Double
 
     func contains(_ x: Double, _ y: Double, padding: Double = 0) -> Bool {

@@ -1,0 +1,400 @@
+import SpriteKit
+import UIKit
+
+/// Saved camera position (scene coordinates) and zoom.
+struct CameraState: Codable, Equatable {
+    var x: Double
+    var y: Double
+    var scale: Double
+
+    static let `default`: CameraState = {
+        let p = Iso.scene(56, 40) // between the Promised Land and Jerusalem
+        return CameraState(x: p.x, y: p.y, scale: 2.0)
+    }()
+
+    static func load() -> CameraState? {
+        guard let data = UserDefaults.standard.data(forKey: StorageKeys.worldCamera) else { return nil }
+        return try? JSONDecoder().decode(CameraState.self, from: data)
+    }
+
+    func save() {
+        if let data = try? JSONEncoder().encode(self) {
+            UserDefaults.standard.set(data, forKey: StorageKeys.worldCamera)
+        }
+    }
+}
+
+/// The isometric world, rendered with SpriteKit.
+final class WorldScene: SKScene {
+
+    // MARK: Public hooks
+
+    /// Called when the visible area changes (throttled), with the visible rect in scene space.
+    var onViewportChange: ((CGRect) -> Void)?
+
+    // MARK: Layers
+
+    let cameraNode = SKCameraNode()
+    let terrainLayer = SKNode()
+    let objectLayer = SKNode()
+    let overlayLayer = SKNode()
+
+    // MARK: Terrain chunks
+
+    private(set) var terrain: TerrainModel?
+    private let chunkSize = CGSize(width: 1024, height: 512)
+    private var chunkOrigin = CGPoint.zero
+    private var chunkColumns = 0
+    private var chunkRows = 0
+    private var chunkSprites: [Int: SKSpriteNode] = [:]
+    private var chunkSpriteScale: [Int: CGFloat] = [:]
+    private var lowTextures: [Int: SKTexture] = [:]
+    private var detailTextures: [Int: (scale: CGFloat, texture: SKTexture, lastUsed: TimeInterval)] = [:]
+    private var pending: Set<String> = []
+    private let lowScale: CGFloat = 0.4
+    private let maxDetailTextures = 18
+
+    let mapBounds = Iso.sceneBounds(width: WorldData.mapWidth, height: WorldData.mapHeight)
+
+    // MARK: Camera state
+
+    let minZoom: CGFloat = 0.45
+    let maxZoom: CGFloat = 4.0
+    private var velocity = CGVector.zero
+    private var lastUpdate: TimeInterval = 0
+    private var needsChunkRefresh = true
+    private var lastViewportReport: TimeInterval = 0
+    private var lastReportedViewport = CGRect.zero
+    private var didConfigure = false
+
+    // MARK: Setup
+
+    override init(size: CGSize) {
+        super.init(size: size)
+        scaleMode = .resizeFill
+        backgroundColor = UIColor(red: RGB.ocean.r, green: RGB.ocean.g, blue: RGB.ocean.b, alpha: 1)
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    }
+
+    convenience override init() { self.init(size: CGSize(width: 390, height: 844)) }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) is not used") }
+
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        installGestures(in: view)
+        guard !didConfigure else { return }
+        didConfigure = true
+
+        addChild(terrainLayer)
+        addChild(objectLayer)
+        addChild(overlayLayer)
+        overlayLayer.zPosition = 10_000
+        addChild(cameraNode)
+        camera = cameraNode
+
+        var state = CameraState.load() ?? .default
+        #if DEBUG
+        state = DebugSeed.cameraOverride() ?? state
+        #endif
+        cameraNode.position = CGPoint(x: state.x, y: state.y)
+        cameraNode.setScale(CGFloat(state.scale))
+        clampCamera()
+
+        chunkOrigin = CGPoint(x: mapBounds.minX - 256, y: mapBounds.minY - 256)
+        chunkColumns = Int(ceil((mapBounds.width + 512) / chunkSize.width))
+        chunkRows = Int(ceil((mapBounds.height + 512) / chunkSize.height))
+
+        NotificationCenter.default.addObserver(self, selector: #selector(saveCamera),
+                                               name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetCamera),
+                                               name: .resetWorldCamera, object: nil)
+
+        let inputs = TerrainInputs.fromWorldData()
+        Task.detached(priority: .userInitiated) { [weak self] in
+            let model = TerrainModel.generate(inputs)
+            await self?.terrainReady(model)
+        }
+    }
+
+    private func terrainReady(_ model: TerrainModel) {
+        terrain = model
+        needsChunkRefresh = true
+        terrainDidLoad(model)
+        // Low-detail textures for the whole map, so panning never shows a gap.
+        let rects = (0..<(chunkColumns * chunkRows)).map { ($0, chunkRect($0)) }
+        let scale = lowScale
+        Task.detached(priority: .utility) { [weak self] in
+            for (index, rect) in rects {
+                guard let image = TerrainRenderer.render(model, rect: rect, scale: scale) else { continue }
+                await self?.installLowTexture(image, index: index)
+            }
+        }
+    }
+
+    /// Hook for subclasses / later phases once terrain data exists.
+    func terrainDidLoad(_ model: TerrainModel) {}
+
+    override func didChangeSize(_ oldSize: CGSize) {
+        super.didChangeSize(oldSize)
+        clampCamera()
+        needsChunkRefresh = true
+    }
+
+    // MARK: Frame loop
+
+    override func update(_ currentTime: TimeInterval) {
+        let dt = lastUpdate == 0 ? 1.0 / 60 : min(0.05, currentTime - lastUpdate)
+        lastUpdate = currentTime
+
+        if hypot(velocity.dx, velocity.dy) > 4 {
+            cameraNode.position.x += velocity.dx * dt
+            cameraNode.position.y += velocity.dy * dt
+            let decay = exp(-5.0 * dt)
+            velocity.dx *= decay
+            velocity.dy *= decay
+            clampCamera()
+            if hypot(velocity.dx, velocity.dy) <= 4 {
+                velocity = .zero
+                saveCamera()
+            }
+        }
+
+        let viewport = visibleRect()
+        if viewport != lastReportedViewport {
+            needsChunkRefresh = true
+            if currentTime - lastViewportReport > 0.1 {
+                lastViewportReport = currentTime
+                lastReportedViewport = viewport
+                onViewportChange?(viewport)
+                viewportDidChange(viewport)
+            }
+        }
+        if needsChunkRefresh {
+            needsChunkRefresh = false
+            refreshChunks(currentTime: currentTime)
+        }
+    }
+
+    /// Hook for later phases (culling objects).
+    func viewportDidChange(_ viewport: CGRect) {}
+
+    func visibleRect() -> CGRect {
+        let w = size.width * cameraNode.xScale, h = size.height * cameraNode.yScale
+        return CGRect(x: cameraNode.position.x - w / 2, y: cameraNode.position.y - h / 2, width: w, height: h)
+    }
+
+    // MARK: Chunks
+
+    private func chunkRect(_ index: Int) -> CGRect {
+        let col = index % chunkColumns, row = index / chunkColumns
+        return CGRect(x: chunkOrigin.x + CGFloat(col) * chunkSize.width,
+                      y: chunkOrigin.y + CGFloat(row) * chunkSize.height,
+                      width: chunkSize.width, height: chunkSize.height)
+    }
+
+    private func desiredDetailScale() -> CGFloat? {
+        let zoom = cameraNode.xScale
+        if zoom < 0.9 { return 1.8 }
+        if zoom < 2.2 { return 1.0 }
+        return nil
+    }
+
+    private func refreshChunks(currentTime: TimeInterval) {
+        guard let terrain else { return }
+        let view = visibleRect().insetBy(dx: -chunkSize.width * 0.5, dy: -chunkSize.height * 0.5)
+        let keep = view.insetBy(dx: -chunkSize.width, dy: -chunkSize.height)
+        let detail = desiredDetailScale()
+
+        var visible: Set<Int> = []
+        let c0 = max(0, Int(floor((view.minX - chunkOrigin.x) / chunkSize.width)))
+        let c1 = min(chunkColumns - 1, Int(floor((view.maxX - chunkOrigin.x) / chunkSize.width)))
+        let r0 = max(0, Int(floor((view.minY - chunkOrigin.y) / chunkSize.height)))
+        let r1 = min(chunkRows - 1, Int(floor((view.maxY - chunkOrigin.y) / chunkSize.height)))
+        if c0 <= c1, r0 <= r1 {
+            for row in r0...r1 { for col in c0...c1 { visible.insert(row * chunkColumns + col) } }
+        }
+
+        for index in visible {
+            var best: (CGFloat, SKTexture)? = lowTextures[index].map { (lowScale, $0) }
+            if let cached = detailTextures[index] {
+                detailTextures[index]?.lastUsed = currentTime
+                if detail != nil { best = (cached.scale, cached.texture) }
+            }
+            if let detail, (detailTextures[index]?.scale ?? 0) < detail {
+                requestDetail(index: index, scale: detail, model: terrain)
+            }
+            guard let (scale, texture) = best else { continue }
+            if let sprite = chunkSprites[index] {
+                if chunkSpriteScale[index] != scale {
+                    sprite.texture = texture
+                    chunkSpriteScale[index] = scale
+                }
+            } else {
+                let sprite = SKSpriteNode(texture: texture, size: chunkSize)
+                sprite.anchorPoint = .zero
+                sprite.position = chunkRect(index).origin
+                sprite.zPosition = 0
+                terrainLayer.addChild(sprite)
+                chunkSprites[index] = sprite
+                chunkSpriteScale[index] = scale
+            }
+        }
+
+        // Drop sprites well outside the view.
+        for (index, sprite) in chunkSprites where !keep.intersects(chunkRect(index)) {
+            sprite.removeFromParent()
+            chunkSprites[index] = nil
+            chunkSpriteScale[index] = nil
+        }
+
+        // Keep the detail cache small, evicting what hasn't been seen for longest.
+        if detailTextures.count > maxDetailTextures {
+            let evict = detailTextures.filter { !visible.contains($0.key) }
+                .sorted { $0.value.lastUsed < $1.value.lastUsed }
+                .prefix(detailTextures.count - maxDetailTextures)
+            for (index, _) in evict { detailTextures[index] = nil }
+        }
+    }
+
+    private func requestDetail(index: Int, scale: CGFloat, model: TerrainModel) {
+        let key = "\(index)@\(scale)"
+        guard !pending.contains(key) else { return }
+        pending.insert(key)
+        let rect = chunkRect(index)
+        Task.detached(priority: .userInitiated) { [weak self] in
+            let image = TerrainRenderer.render(model, rect: rect, scale: scale)
+            await self?.installDetailTexture(image, index: index, scale: scale, key: key)
+        }
+    }
+
+    private func installLowTexture(_ image: RenderedImage, index: Int) {
+        lowTextures[index] = SKTexture(cgImage: image.image)
+        if chunkSprites[index] == nil || visibleRect().insetBy(dx: -1024, dy: -512).intersects(chunkRect(index)) {
+            needsChunkRefresh = true
+        }
+    }
+
+    private func installDetailTexture(_ image: RenderedImage?, index: Int, scale: CGFloat, key: String) {
+        pending.remove(key)
+        guard let image else { return }
+        if let existing = detailTextures[index], existing.scale >= scale { return }
+        detailTextures[index] = (scale, SKTexture(cgImage: image.image), lastUpdate)
+        needsChunkRefresh = true
+    }
+
+    // MARK: Camera
+
+    func clampCamera() {
+        let zoom = min(maxZoom, max(minZoom, cameraNode.xScale))
+        cameraNode.setScale(zoom)
+        let halfW = size.width * zoom / 2, halfH = size.height * zoom / 2
+        let bounds = mapBounds.insetBy(dx: -80, dy: -80)
+        var p = cameraNode.position
+        p.x = bounds.width > halfW * 2 ? min(max(p.x, bounds.minX + halfW), bounds.maxX - halfW) : bounds.midX
+        p.y = bounds.height > halfH * 2 ? min(max(p.y, bounds.minY + halfH), bounds.maxY - halfH) : bounds.midY
+        if p != cameraNode.position { cameraNode.position = p }
+    }
+
+    /// Smoothly moves the camera to a scene point, optionally changing zoom.
+    func flyTo(_ point: CGPoint, zoom: CGFloat? = nil, duration: TimeInterval = 0.6) {
+        velocity = .zero
+        cameraNode.removeAction(forKey: "fly")
+        let targetZoom = min(maxZoom, max(minZoom, zoom ?? cameraNode.xScale))
+        let move = SKAction.move(to: point, duration: duration)
+        let scale = SKAction.scale(to: targetZoom, duration: duration)
+        let group = SKAction.group([move, scale])
+        group.timingMode = .easeInEaseOut
+        cameraNode.run(.sequence([group, .run { [weak self] in
+            self?.clampCamera()
+            self?.saveCamera()
+        }]), withKey: "fly")
+    }
+
+    func flyTo(grid: CGPoint, zoom: CGFloat? = nil) {
+        flyTo(Iso.scene(grid), zoom: zoom)
+    }
+
+    @objc func saveCamera() {
+        CameraState(x: cameraNode.position.x, y: cameraNode.position.y, scale: cameraNode.xScale).save()
+    }
+
+    @objc private func resetCamera() {
+        let state = CameraState.default
+        flyTo(CGPoint(x: state.x, y: state.y), zoom: state.scale)
+    }
+
+    // MARK: Gestures
+
+    private var installedGestureView: SKView?
+
+    private func installGestures(in view: SKView) {
+        guard installedGestureView !== view else { return }
+        installedGestureView = view
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        pan.maximumNumberOfTouches = 1
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tap.require(toFail: doubleTap)
+        [pan, pinch, doubleTap, tap].forEach(view.addGestureRecognizer)
+    }
+
+    @objc private func handlePan(_ g: UIPanGestureRecognizer) {
+        guard let view = g.view else { return }
+        switch g.state {
+        case .began:
+            cameraNode.removeAction(forKey: "fly")
+            velocity = .zero
+        case .changed:
+            let t = g.translation(in: view)
+            g.setTranslation(.zero, in: view)
+            cameraNode.position.x -= t.x * cameraNode.xScale
+            cameraNode.position.y += t.y * cameraNode.yScale
+            clampCamera()
+        case .ended, .cancelled:
+            let v = g.velocity(in: view)
+            velocity = CGVector(dx: -v.x * cameraNode.xScale, dy: v.y * cameraNode.yScale)
+            if hypot(velocity.dx, velocity.dy) <= 4 { saveCamera() }
+        default: break
+        }
+    }
+
+    @objc private func handlePinch(_ g: UIPinchGestureRecognizer) {
+        guard let view = g.view else { return }
+        switch g.state {
+        case .began:
+            cameraNode.removeAction(forKey: "fly")
+            velocity = .zero
+        case .changed:
+            let location = g.location(in: view)
+            let before = convertPoint(fromView: location)
+            let zoom = min(maxZoom, max(minZoom, cameraNode.xScale / g.scale))
+            g.scale = 1
+            cameraNode.setScale(zoom)
+            let after = convertPoint(fromView: location)
+            cameraNode.position.x += before.x - after.x
+            cameraNode.position.y += before.y - after.y
+            clampCamera()
+        case .ended, .cancelled:
+            saveCamera()
+        default: break
+        }
+    }
+
+    @objc private func handleDoubleTap(_ g: UITapGestureRecognizer) {
+        guard let view = g.view else { return }
+        let point = convertPoint(fromView: g.location(in: view))
+        let zoom = cameraNode.xScale <= minZoom * 1.2 ? 1.2 : cameraNode.xScale / 2
+        flyTo(point, zoom: zoom, duration: 0.4)
+    }
+
+    @objc private func handleTap(_ g: UITapGestureRecognizer) {
+        guard let view = g.view else { return }
+        handleTap(at: convertPoint(fromView: g.location(in: view)))
+    }
+
+    /// Hook for later phases (landmarks, roads, characters).
+    func handleTap(at scenePoint: CGPoint) {}
+}
