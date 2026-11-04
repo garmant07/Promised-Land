@@ -69,7 +69,8 @@ enum DebugSeed {
             let parts = token.split(separator: ":").map(String.init)
             guard parts.count == 2 else { continue }
             switch parts[0] {
-            case "quiz": context.recordQuizPass(parts[1], score: 3)
+            case "quiz": context.recordQuizAttempt(parts[1], score: 3, passed: true)
+            case "quizfail": context.recordQuizAttempt(parts[1], score: 1, passed: false)
             case "memo": context.recordMemorised(parts[1], reference: "debug")
             case "journal":
                 // "journal:ruth.1" adds a sample reflection for Ruth 1.

@@ -15,7 +15,7 @@ struct WorldView: View {
     @State private var shareImage: ShareImage?
     @CurrentAvatar private var avatar: Avatar
     @Query private var journal: [JournalEntry]
-    @State private var selectedStory: ChapterLandmark?
+    @State private var selectedStory: InsightSubject?
     @State private var cardCollapsed = false
     @State private var selected: Landmark?
     @State private var selectedConnection: Connection?
@@ -86,7 +86,7 @@ struct WorldView: View {
                     selectedConnection = WorldData.connections.first { $0.id == id }
                 }
             }
-            scene.onSelectStoryObject = { id in selectedStory = ChapterLandmarks.entry(id: id) }
+            scene.onSelectStoryObject = { id in selectedStory = ChapterLandmarks.entry(id: id).map { InsightSubject.story($0) } }
             scene.onSelectLibrary = { showingLibrary = true }
             scene.onSelectJourney = { id in selectedJourney = JourneyData.journey(id: id) }
             scene.onSelectThrone = { showingThrone = true }
@@ -97,7 +97,7 @@ struct WorldView: View {
             scene.setOnScreen(true)
             #if DEBUG
             let args = ProcessInfo.processInfo.arguments
-            if let i = args.firstIndex(of: "-openStory"), i + 1 < args.count { selectedStory = ChapterLandmarks.entry(id: args[i + 1]) }
+            if let i = args.firstIndex(of: "-openStory"), i + 1 < args.count { selectedStory = ChapterLandmarks.entry(id: args[i + 1]).map { InsightSubject.story($0) } }
             if args.contains("-openStats") { showingStats = true }
             if let i = args.firstIndex(of: "-openJourney"), i + 1 < args.count { selectedJourney = JourneyData.journey(id: args[i + 1]) }
             if args.contains("-openCrowns") { showingCrowns = true }
@@ -119,7 +119,9 @@ struct WorldView: View {
         .onChange(of: selected) { _, new in scene.setOnScreen(new == nil && selectedStory == nil) }
         .onChange(of: selectedStory) { _, new in scene.setOnScreen(new == nil && selected == nil) }
         .sheet(isPresented: $showingStats) { StatsView() }
-        .sheet(item: $selectedStory) { entry in WhyHereCard(entry: entry) }
+        .sheet(item: $selectedStory) { subject in
+            ObjectInsightCard(subject: subject).presentationDetents([.medium, .large])
+        }
         .sheet(item: $selected) { landmark in
             NavigationStack {
                 PlaceDetailView(landmark: landmark)

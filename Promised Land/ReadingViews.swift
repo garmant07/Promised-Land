@@ -9,6 +9,8 @@ struct LibraryView: View {
     var startAt: ChapterRef? = nil
     /// Shown as a close button when reading is presented from the home page.
     var onClose: (() -> Void)? = nil
+    /// Shows "Continue reading" at the top (in the Read sheet).
+    var showsSuggestion = false
     @State private var path = NavigationPath()
 
     var body: some View {
@@ -33,6 +35,11 @@ struct LibraryView: View {
                         }
                     }
                     .padding(.top, 8)
+                    if showsSuggestion, let suggestion = ReadingSuggestion.make(from: progress) {
+                        NavigationLink(value: suggestion.ref) { ReadingSuggestionCard(suggestion: suggestion) }
+                            .buttonStyle(.plain)
+                            .padding(.bottom, 4)
+                    }
                     Text("All 66 books, in any order. Each one builds a landmark in your world.")
                         .font(.subheadline)
                         .foregroundStyle(Color.secondaryText)

@@ -22,10 +22,14 @@ final class QuizPass {
     var bookID: String
     var score: Int
     var date: Date
+    /// Every attempt is recorded; only passed ones count. (Records from before this field
+    /// existed were all passes, so the default is true.)
+    var passed: Bool = true
 
-    init(bookID: String, score: Int, date: Date = .now) {
+    init(bookID: String, score: Int, passed: Bool = true, date: Date = .now) {
         self.bookID = bookID
         self.score = score
+        self.passed = passed
         self.date = date
     }
 }
@@ -136,7 +140,7 @@ struct GameProgress: Equatable {
         self.lastByChapter = last
         self.thisYearByChapter = thisYear
         self.readsByBook = perBook
-        self.quizzes = Set(quizzes.map(\.bookID))
+        self.quizzes = Set(quizzes.filter(\.passed).map(\.bookID))
         self.memorised = Set(memorised.map(\.bookID))
         self.readDates = reads.map(\.date)
     }
@@ -283,11 +287,9 @@ extension ModelContext {
         try? save()
     }
 
-    func recordQuizPass(_ bookID: String, score: Int) {
-        let existing = (try? fetch(FetchDescriptor<QuizPass>(
-            predicate: #Predicate { $0.bookID == bookID }
-        ))) ?? []
-        if existing.isEmpty { insert(QuizPass(bookID: bookID, score: score)) }
+    /// Records a quiz attempt (passed or not). Every attempt is kept; levels count passes.
+    func recordQuizAttempt(_ bookID: String, score: Int, passed: Bool, date: Date = .now) {
+        insert(QuizPass(bookID: bookID, score: score, passed: passed, date: date))
         try? save()
     }
 

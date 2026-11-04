@@ -176,6 +176,8 @@ struct LibraryShelfView: View {
 /// One journal volume: page through its entries; add, edit and delete pages.
 struct JournalBookView: View {
     let volume: JournalVolume
+    /// Opens at this page, if given.
+    var startAt: UUID? = nil
 
     @Query(sort: \JournalEntry.created) private var all: [JournalEntry]
     @Environment(\.modelContext) private var context
@@ -220,6 +222,9 @@ struct JournalBookView: View {
             }
         }
         .tint(Color.primaryBrown)
+        .onAppear {
+            if let startAt, let index = entries.firstIndex(where: { $0.id == startAt }) { page = index }
+        }
         .sheet(item: $editing) { JournalEditor(entry: $0, bookID: volume.bookID) }
         .sheet(isPresented: $adding) { JournalEditor(entry: nil, bookID: volume.bookID) }
         .confirmationDialog("Delete this page?", isPresented: $confirmingDelete, titleVisibility: .visible) {

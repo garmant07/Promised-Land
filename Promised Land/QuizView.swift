@@ -125,7 +125,7 @@ struct QuizView: View {
 
     private func finish() {
         finished = true
-        if passed { context.recordQuizPass(landmark.bookID, score: correct) }
+        context.recordQuizAttempt(landmark.bookID, score: correct, passed: passed)
     }
 
     private var results: some View {

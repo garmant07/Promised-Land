@@ -124,6 +124,7 @@ struct FriendWorldView: View {
                         .background(Color.terracotta, in: Capsule())
                 }
                 PlatformScene(avatar: friend.avatar, island: island)
+                    .frame(height: 360)
                     .allowsHitTesting(false)
                 HStack(spacing: 12) {
                     stat("\(friend.chaptersRead)", "chapters read")
