@@ -31,7 +31,7 @@ struct Region: Identifiable, Hashable {
 
 // MARK: - Landmarks
 
-enum BuildingStyle: String, CaseIterable {
+nonisolated enum BuildingStyle: String, CaseIterable, Sendable {
     case garden, pyramid, tabernacle, tents, mountain, walls, village, field, palace,
          temple, tower, gate, harbour, house, outpost, portCity, hill, glowCity, well, vineyard
 }

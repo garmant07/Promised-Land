@@ -46,7 +46,7 @@ final class VerseMemorised {
 // MARK: - Derived progress
 
 /// How far a landmark's building has got, from the share of its book's chapters read.
-enum BuildStage: Int, Comparable, CaseIterable {
+nonisolated enum BuildStage: Int, Comparable, CaseIterable, Sendable {
     case plot = 0        // nothing read: dashed outline under fog
     case foundations     // at least one chapter
     case rising          // at least half: scaffolding
@@ -65,7 +65,7 @@ enum BuildStage: Int, Comparable, CaseIterable {
 }
 
 /// Extra flourish earned through quizzes and memorising.
-enum GrowthLevel: Int, Comparable, CaseIterable {
+nonisolated enum GrowthLevel: Int, Comparable, CaseIterable, Sendable {
     case base = 1        // just reading
     case growing = 2     // quiz passed: trees and decorations
     case flourishing = 3 // verse memorised: flag, glow, people
@@ -82,7 +82,7 @@ enum GrowthLevel: Int, Comparable, CaseIterable {
 }
 
 /// A read-only snapshot of the player's progress, built from the stored records.
-struct GameProgress {
+struct GameProgress: Equatable {
     private let readByBook: [String: Set<Int>]
     private let latestByBook: [String: Date]
     private let quizzes: Set<String>

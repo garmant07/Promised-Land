@@ -31,6 +31,8 @@ final class WorldScene: SKScene {
 
     /// Called when the visible area changes (throttled), with the visible rect in scene space.
     var onViewportChange: ((CGRect) -> Void)?
+    /// Called when a landmark is tapped, with its book id.
+    var onSelectLandmark: ((String) -> Void)?
 
     // MARK: Layers
 
@@ -38,6 +40,15 @@ final class WorldScene: SKScene {
     let terrainLayer = SKNode()
     let objectLayer = SKNode()
     let overlayLayer = SKNode()
+    let landmarkLayer = LandmarkLayer()
+    let fogLayer = FogLayer()
+
+    // MARK: Progress
+
+    private var progress: GameProgress?
+    private var appliedProgress = false
+    private var celebrationQueue: [String] = []
+    private var isOnScreen = false
 
     // MARK: Terrain chunks
 
@@ -88,6 +99,9 @@ final class WorldScene: SKScene {
 
         addChild(terrainLayer)
         addChild(objectLayer)
+        objectLayer.addChild(landmarkLayer)
+        addChild(fogLayer)
+        addChild(landmarkLayer.labelLayer)
         addChild(overlayLayer)
         overlayLayer.zPosition = 10_000
         addChild(cameraNode)
@@ -110,6 +124,9 @@ final class WorldScene: SKScene {
         NotificationCenter.default.addObserver(self, selector: #selector(resetCamera),
                                                name: .resetWorldCamera, object: nil)
 
+        if let progress { apply(progress) }
+        landmarkLayer.updateLabels(zoom: cameraNode.xScale)
+
         let inputs = TerrainInputs.fromWorldData()
         Task.detached(priority: .userInitiated) { [weak self] in
             let model = TerrainModel.generate(inputs)
@@ -120,7 +137,6 @@ final class WorldScene: SKScene {
     private func terrainReady(_ model: TerrainModel) {
         terrain = model
         needsChunkRefresh = true
-        terrainDidLoad(model)
         // Low-detail textures for the whole map, so panning never shows a gap.
         let rects = (0..<(chunkColumns * chunkRows)).map { ($0, chunkRect($0)) }
         let scale = lowScale
@@ -131,9 +147,6 @@ final class WorldScene: SKScene {
             }
         }
     }
-
-    /// Hook for subclasses / later phases once terrain data exists.
-    func terrainDidLoad(_ model: TerrainModel) {}
 
     override func didChangeSize(_ oldSize: CGSize) {
         super.didChangeSize(oldSize)
@@ -176,8 +189,9 @@ final class WorldScene: SKScene {
         }
     }
 
-    /// Hook for later phases (culling objects).
-    func viewportDidChange(_ viewport: CGRect) {}
+    private func viewportDidChange(_ viewport: CGRect) {
+        landmarkLayer.updateLabels(zoom: cameraNode.xScale)
+    }
 
     func visibleRect() -> CGRect {
         let w = size.width * cameraNode.xScale, h = size.height * cameraNode.yScale
@@ -395,6 +409,79 @@ final class WorldScene: SKScene {
         handleTap(at: convertPoint(fromView: g.location(in: view)))
     }
 
-    /// Hook for later phases (landmarks, roads, characters).
-    func handleTap(at scenePoint: CGPoint) {}
+    private func handleTap(at scenePoint: CGPoint) {
+        if let bookID = landmarkLayer.landmark(at: scenePoint) {
+            onSelectLandmark?(bookID)
+        }
+    }
+
+    // MARK: Progress
+
+    /// Brings landmarks and fog in line with the player's progress.
+    func apply(_ newProgress: GameProgress) {
+        progress = newProgress
+        guard didConfigure else { return }
+        let revealed = Set(WorldData.regions.map(\.id).filter { newProgress.isRegionRevealed($0) })
+        let completed = Set(WorldData.landmarks.map(\.bookID).filter { newProgress.stage(of: $0) == .complete })
+
+        // Existing installs: don't replay celebrations for books finished before this version.
+        if UserDefaults.standard.array(forKey: StorageKeys.celebrated) == nil {
+            UserDefaults.standard.set(Array(completed), forKey: StorageKeys.celebrated)
+        }
+        // Forget celebrations for books no longer complete, so finishing again celebrates again.
+        let celebrated = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.celebrated) ?? [])
+        UserDefaults.standard.set(Array(celebrated.intersection(completed)), forKey: StorageKeys.celebrated)
+
+        if appliedProgress {
+            fogLayer.reveal(revealed, animated: true)
+            landmarkLayer.apply(newProgress, animated: true)
+        } else {
+            appliedProgress = true
+            fogLayer.configure(revealed: revealed)
+            landmarkLayer.apply(newProgress, animated: false)
+        }
+        queueCelebrations(for: completed)
+    }
+
+    private func queueCelebrations(for completed: Set<String>) {
+        let celebrated = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.celebrated) ?? [])
+        for bookID in completed.subtracting(celebrated) where !celebrationQueue.contains(bookID) {
+            celebrationQueue.append(bookID)
+        }
+        if isOnScreen { playNextCelebration() }
+    }
+
+    /// Call when the World tab becomes visible / hidden.
+    func setOnScreen(_ visible: Bool) {
+        isOnScreen = visible
+        if visible { playNextCelebration() }
+    }
+
+    private func playNextCelebration() {
+        guard !celebrationQueue.isEmpty, action(forKey: "celebrating") == nil,
+              let landmark = WorldData.landmark(bookID: celebrationQueue.removeFirst()) else { return }
+        var celebrated = Set(UserDefaults.standard.stringArray(forKey: StorageKeys.celebrated) ?? [])
+        celebrated.insert(landmark.bookID)
+        UserDefaults.standard.set(Array(celebrated), forKey: StorageKeys.celebrated)
+        flyTo(grid: landmark.center, zoom: min(cameraNode.xScale, 1.3))
+        run(.sequence([.wait(forDuration: 0.75), .run { [weak self] in
+            self?.landmarkLayer.celebrate(landmark.bookID)
+            self?.landmarkDidComplete(landmark.bookID)
+        }, .wait(forDuration: 1.6), .run { [weak self] in
+            self?.playNextCelebration()
+        }]), withKey: "celebrating")
+    }
+
+    /// Hook for characters arriving (Phase 5).
+    private func landmarkDidComplete(_ bookID: String) {}
+
+    /// Flies to the most recently read landmark (or the starting view).
+    func recentre() {
+        if let bookID = progress?.newestBookID, let landmark = WorldData.landmark(bookID: bookID) {
+            flyTo(grid: landmark.center, zoom: 1.1)
+        } else {
+            let state = CameraState.default
+            flyTo(CGPoint(x: state.x, y: state.y), zoom: state.scale)
+        }
+    }
 }

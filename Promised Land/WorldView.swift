@@ -24,6 +24,20 @@ struct WorldView: View {
                     .background(Color.cream.opacity(0.92), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
                     .padding(.horizontal, 12)
                 Spacer()
+                HStack {
+                    Spacer()
+                    Button { scene.recentre() } label: {
+                        Image(systemName: "location.fill")
+                            .font(.headline)
+                            .foregroundStyle(Color.primaryBrown)
+                            .frame(width: 48, height: 48)
+                            .background(Color.cream.opacity(0.94), in: Circle())
+                            .shadow(color: Color.primaryBrown.opacity(0.15), radius: 6, y: 2)
+                    }
+                    .accessibilityLabel("Recentre on your newest landmark")
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
                 if let next = NextUnlock.suggest(from: progress) {
                     NextUnlockCard(next: next, collapsed: $cardCollapsed) { selected = $0 }
                         .padding(.horizontal, 12)
@@ -31,6 +45,14 @@ struct WorldView: View {
                 }
             }
         }
+        .onAppear {
+            scene.onSelectLandmark = { bookID in selected = WorldData.landmark(bookID: bookID) }
+            scene.apply(progress)
+            scene.setOnScreen(true)
+        }
+        .onDisappear { scene.setOnScreen(false) }
+        .onChange(of: progress) { _, new in scene.apply(new) }
+        .onChange(of: selected) { _, new in scene.setOnScreen(new == nil) }
         .sheet(isPresented: $showingSettings) { SettingsView() }
         .sheet(item: $selected) { landmark in
             NavigationStack {

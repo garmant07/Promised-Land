@@ -1,7 +1,6 @@
 import SwiftUI
 
-/// Small artwork for a landmark, used in lists and sheets.
-/// (Phase 1 placeholder: replaced by the world's own drawn textures in Phase 3.)
+/// Landmark artwork for lists and sheets, drawn by the same painter as the world map.
 struct LandmarkArtView: View {
     let landmark: Landmark
     let stage: BuildStage
@@ -9,14 +8,36 @@ struct LandmarkArtView: View {
     let size: CGFloat
 
     var body: some View {
-        RoundedRectangle(cornerRadius: size * 0.28, style: .continuous)
-            .fill(stage == .plot ? Color.sand : Color.stoneLight)
-            .overlay {
-                Image(systemName: "building.columns.fill")
-                    .font(.system(size: size * 0.4))
-                    .foregroundStyle(stage == .plot ? Color.secondaryText.opacity(0.4) : Color.terracotta)
+        let look = LandmarkLook(style: landmark.style, stage: stage, level: level, size: 4)
+        Group {
+            if let image = LandmarkArtCache.image(for: look) {
+                Image(decorative: image, scale: LandmarkArtCache.scale)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Color.clear
             }
-            .frame(width: size, height: size)
-            .accessibilityHidden(true)
+        }
+        .frame(width: size, height: size)
+        .background(Color.sand.opacity(stage == .plot ? 0.5 : 0.35),
+                    in: RoundedRectangle(cornerRadius: size * 0.26, style: .continuous))
+        .accessibilityHidden(true)
+    }
+}
+
+/// Small in-memory cache so list rows don't redraw artwork.
+@MainActor
+enum LandmarkArtCache {
+    static let scale: CGFloat = 1.5
+    private static var images: [LandmarkLook: CGImage] = [:]
+    private static var order: [LandmarkLook] = []
+
+    static func image(for look: LandmarkLook) -> CGImage? {
+        if let cached = images[look] { return cached }
+        guard let rendered = LandmarkPainter.render(look, scale: scale)?.image else { return nil }
+        images[look] = rendered
+        order.append(look)
+        if order.count > 60 { images[order.removeFirst()] = nil }
+        return rendered
     }
 }
