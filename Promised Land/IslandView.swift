@@ -57,6 +57,8 @@ struct PlatformScene: View {
     /// The camera before a visit, to come back to.
     @State private var cameraBeforeVisit: (zoom: CGFloat, pan: CGSize)?
     @State private var walkToken = 0
+    /// Bumped to start (or cancel) a camera glide.
+    @State private var cameraGlide = 0
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -80,7 +82,10 @@ struct PlatformScene: View {
 
     var body: some View {
         GeometryReader { geo in
-            let layout = IslandLayout(island: island, size: geo.size, insets: insets, zoom: zoom, angle: angle)
+            // `base` is the camera without the pan (for touches, which subtract the pan);
+            // `layout` has the pan built in, for drawing.
+            let base = IslandLayout(island: island, size: geo.size, insets: insets, zoom: zoom, angle: angle)
+            let layout = base.panned(pan)
             let charH = Self.characterHeight * layout.u
             let charW = charH * 20 / 36
             let staticCount = popping ? min(revealFrom, island.items.count) : island.items.count
@@ -103,7 +108,11 @@ struct PlatformScene: View {
                             Self.drawHighlight(&context, island.items[selected], layout: layout)
                         }
                         if let editing { Self.drawEditGrid(&context, island: island, layout: layout, editing: editing) }
-                        for item in ordered { IslandPainter.drawItem(&context, item, layout: layout) }
+                        // Only what's on screen (plus a margin for tall things) is drawn.
+                        let visible = CGRect(origin: .zero, size: geo.size).insetBy(dx: -layout.scale * 2, dy: -layout.scale * 2)
+                        for item in ordered where visible.contains(layout.point(item.gx, item.gy)) {
+                            IslandPainter.drawItem(&context, item, layout: layout)
+                        }
                         #if DEBUG
                         if Self.showHitBoxes { Self.drawHitBoxes(&context, island: island, layout: layout) }
                         #endif
@@ -180,16 +189,15 @@ struct PlatformScene: View {
                         }
                     }
                 }
-                .offset(pan)
             }
             .frame(width: geo.size.width, height: geo.size.height)
             .contentShape(Rectangle())
-            .gesture(interactive ? dragGesture(layout: layout, size: geo.size) : nil)
+            .gesture(interactive ? dragGesture(layout: base, size: geo.size) : nil)
             .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
             .simultaneousGesture(interactive ? twistGesture : nil)
             .overlay(alignment: .bottomTrailing) {
                 if interactive && persistsCamera && editing == nil {
-                    controls(layout: layout, size: geo.size)
+                    controls(layout: base, size: geo.size)
                         .padding(.trailing, 14)
                         .padding(.bottom, insets.bottom + 6)
                 }
@@ -198,15 +206,13 @@ struct PlatformScene: View {
                 if let index, island.items.indices.contains(index) {
                     startVisit(island.items[index], index: index, size: geo.size)
                 } else if let before = cameraBeforeVisit {
-                    withAnimation(.easeInOut(duration: 0.5)) { zoom = before.zoom; pan = before.pan }
-                    zoomStart = before.zoom
-                    panStart = before.pan
+                    animateCamera(zoom: before.zoom, pan: before.pan, duration: 0.5)
                     cameraBeforeVisit = nil
                 }
             }
             .onChange(of: selected.wrappedValue) { _, index in
                 guard let index, island.items.indices.contains(index) else { return }
-                centre(on: island.items[index], layout: layout, size: geo.size)
+                centre(on: island.items[index], layout: base, size: geo.size)
                 if !reduceMotion { startBounce([index]) }
             }
         }
@@ -276,13 +282,32 @@ struct PlatformScene: View {
         let feet = target.point(spot.x, spot.y)
         let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
                              y: insets.top + (size.height - insets.top - insets.bottom) / 2)
-        withAnimation(.easeInOut(duration: 0.5)) {
-            zoom = newZoom
-            pan = CGSize(width: centre.x - feet.x, height: centre.y - feet.y)
-        }
-        zoomStart = newZoom
-        panStart = pan
+        animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - feet.x, height: centre.y - feet.y), duration: 0.5)
         saveCamera()
+    }
+
+    /// Glides the camera to a new zoom and pan. Done frame by frame, because the island's
+    /// drawing has the camera built in (SwiftUI can't interpolate a Canvas on its own).
+    /// A new touch or camera move cancels a glide in progress.
+    private func animateCamera(zoom toZoom: CGFloat, pan toPan: CGSize, duration: Double) {
+        cameraGlide += 1
+        let token = cameraGlide
+        let fromZoom = zoom, fromPan = pan
+        zoomStart = toZoom
+        panStart = toPan
+        guard !reduceMotion, duration > 0.05 else { zoom = toZoom; pan = toPan; return }
+        Task {
+            let start = Date.now
+            while cameraGlide == token {
+                let t = min(1, Date.now.timeIntervalSince(start) / duration)
+                let e = t * t * (3 - 2 * t)
+                zoom = fromZoom + (toZoom - fromZoom) * e
+                pan = CGSize(width: fromPan.width + (toPan.width - fromPan.width) * e,
+                             height: fromPan.height + (toPan.height - fromPan.height) * e)
+                if t >= 1 { break }
+                try? await Task.sleep(for: .milliseconds(16))
+            }
+        }
     }
 
     // MARK: Camera persistence
@@ -316,6 +341,11 @@ struct PlatformScene: View {
         if let i = args.firstIndex(of: "-islandTurn"), i + 1 < args.count, let q = Int(args[i + 1]) {
             quarter = q; angle = CGFloat(q)
         }
+        // "-islandPan 300,-200" starts panned (for checking the edges when zoomed in).
+        if let i = args.firstIndex(of: "-islandPan"), i + 1 < args.count {
+            let v = args[i + 1].split(separator: ",").compactMap { Double($0) }
+            if v.count == 2 { pan = CGSize(width: v[0], height: v[1]) }
+        }
         #endif
         zoomStart = zoom
         panStart = pan
@@ -324,9 +354,9 @@ struct PlatformScene: View {
     private func saveCamera() {
         guard persistsCamera else { return }
         let d = UserDefaults.standard
-        d.set(Double(zoom), forKey: Keys.zoom)
-        d.set(Double(pan.width), forKey: Keys.panX)
-        d.set(Double(pan.height), forKey: Keys.panY)
+        d.set(Double(zoomStart), forKey: Keys.zoom)
+        d.set(Double(panStart.width), forKey: Keys.panX)
+        d.set(Double(panStart.height), forKey: Keys.panY)
         d.set(quarter, forKey: Keys.quarter)
     }
 
@@ -399,6 +429,8 @@ struct PlatformScene: View {
     /// A finger went down: in edit mode, grab the plot under it; otherwise watch for a long press.
     private func touchBegan(at location: CGPoint, layout: IslandLayout) {
         touchDown = true
+        if zoom != zoomStart || pan != panStart { zoomStart = zoom; panStart = pan }
+        cameraGlide += 1
         touchID += 1
         let id = touchID
         let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
@@ -466,8 +498,7 @@ struct PlatformScene: View {
         // Ease only part of the way, so it feels like a nudge rather than a jump.
         let eased = CGSize(width: pan.width + (desired.width - pan.width) * 0.6,
                            height: pan.height + (desired.height - pan.height) * 0.6)
-        withAnimation(.easeOut(duration: 0.45)) { pan = eased }
-        panStart = eased
+        animateCamera(zoom: zoom, pan: eased, duration: 0.45)
     }
 
     private func startBounce(_ targets: Set<Int>, duration: Double = 0.55) {
@@ -596,12 +627,7 @@ struct PlatformScene: View {
         let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
                              y: insets.top + (size.height - insets.top - insets.bottom) * 0.55)
         let walkTime = min(2.2, max(0.6, hypot(door.x - spot.x, door.y - spot.y) / 2.2))
-        withAnimation(.easeInOut(duration: reduceMotion ? 0.01 : walkTime)) {
-            zoom = newZoom
-            pan = CGSize(width: centre.x - p.x, height: centre.y - p.y)
-        }
-        zoomStart = newZoom
-        panStart = pan
+        animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - p.x, height: centre.y - p.y), duration: walkTime)
         Task {
             if reduceMotion {
                 spot = door; walkFrom = door

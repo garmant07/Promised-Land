@@ -263,7 +263,7 @@ struct Island: Equatable {
 /// Panning is applied by the view as an offset (see `IslandHitTester`).
 struct IslandLayout {
     let scale: CGFloat      // points per grid half-unit (a tile is 2 × scale wide)
-    let origin: CGPoint
+    private(set) var origin: CGPoint
     let depth: CGFloat      // height of the earth sides
     let zoom: CGFloat
     /// Quarter turns (0…4, fractional while animating).
@@ -326,6 +326,14 @@ struct IslandLayout {
     func grid(_ p: CGPoint) -> CGPoint {
         let X = (p.x - origin.x) / scale, Y = (p.y - origin.y) / scale
         return Self.turn(Y + X / 2, Y - X / 2, pivot: pivot, cos: cosA, sin: -sinA)
+    }
+
+    /// The same layout, slid by a pan offset. The island is drawn with the pan built in, so the
+    /// drawing always fills the screen however far you zoom and pan.
+    func panned(_ d: CGSize) -> IslandLayout {
+        var l = self
+        l.origin = CGPoint(x: origin.x + d.width, y: origin.y + d.height)
+        return l
     }
 
     /// Drawing order: things lower on screen are in front.
