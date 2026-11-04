@@ -17,11 +17,11 @@ struct PageReaderView<Footer: View>: View {
 
     var body: some View {
         GeometryReader { geo in
-            let spread = geo.size.width > geo.size.height && geo.size.width >= 700
+            let spread = PageReaderLayout.isSpread(geo.size)
             let pageWidth = spread ? (geo.size.width - 48) / 2 : geo.size.width - 32
             let pageHeight = max(240, geo.size.height - 56)
             let pages = PagePlanner.pages(verses, width: pageWidth - 48, height: pageHeight - 64,
-                                          fontSize: fontSize, footerHeight: 190, titleHeight: 56)
+                                          fontSize: fontSize, footerHeight: 190, titleHeight: 56, evenCount: spread)
             let sheets: [[Int]] = spread
                 ? stride(from: 0, to: pages.count, by: 2).map { [$0] + ($0 + 1 < pages.count ? [$0 + 1] : []) }
                 : pages.indices.map { [$0] }
@@ -121,6 +121,15 @@ struct PageReaderView<Footer: View>: View {
     }
 }
 
+extension View {
+    /// On iPad, reading opens in a page-sized sheet (wide enough for two pages side by side
+    /// when held sideways). No effect on iPhone.
+    @ViewBuilder
+    func readingSizing(_ reading: Bool) -> some View {
+        if reading { presentationSizing(.page) } else { self }
+    }
+}
+
 /// A sheet of warm paper with a soft edge and a faint fold shadow.
 private struct Paper: View {
     var body: some View {
@@ -135,6 +144,17 @@ private struct Paper: View {
     }
 }
 
+/// When two pages sit side by side: a wide, landscape space (an iPad held sideways).
+enum PageReaderLayout {
+    static func isSpread(_ size: CGSize) -> Bool {
+        #if DEBUG
+        // "-readerSpread" forces the two-page spread (for checking it without rotating).
+        if ProcessInfo.processInfo.arguments.contains("-readerSpread") && size.width >= 700 { return true }
+        #endif
+        return size.width > size.height && size.width >= 700
+    }
+}
+
 /// Splits verses into pages by estimating how much text fits. Pure, so it's testable.
 enum PagePlanner {
     /// Estimated height of a verse at a font size and width.
@@ -145,7 +165,7 @@ enum PagePlanner {
     }
 
     static func pages(_ verses: [Verse], width: CGFloat, height: CGFloat, fontSize: CGFloat,
-                      footerHeight: CGFloat, titleHeight: CGFloat) -> [[Verse]] {
+                      footerHeight: CGFloat, titleHeight: CGFloat, evenCount: Bool = false) -> [[Verse]] {
         var pages: [[Verse]] = [[]]
         var used = titleHeight
         for verse in verses {
@@ -159,6 +179,8 @@ enum PagePlanner {
         }
         // Room for "Mark as read" on the last page, or a page of its own.
         if used + footerHeight > height { pages.append([]) }
+        // In a two-page spread, finish on a full spread: "Mark as read" gets the facing page.
+        if evenCount, pages.count % 2 == 1, !(pages.last?.isEmpty ?? true) { pages.append([]) }
         return pages
     }
 }

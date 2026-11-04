@@ -152,12 +152,17 @@ struct PlatformScene: View {
                                 .rotationEffect(.degrees(lean), anchor: .bottom)
                                 .offset(y: bounce)
                                 .position(x: feet.x, y: feet.y - charH * 0.43)
-                            // Tall things in front of the character are drawn over it.
+                            // Tall things in front of a walking figure (you or a Bible character)
+                            // are drawn over it, unless they're behind another figure there.
                             Canvas { c, _ in
+                                let figures = [feet] + characters.map { ch -> CGPoint in
+                                    let g = ch.position(at: characterTime(ch.id, now: now))
+                                    return layout.point(g.x, g.y)
+                                }
                                 for item in ordered where item.kind.isTall {
                                     let p = layout.point(item.gx, item.gy)
-                                    guard p.y > feet.y, p.y - feet.y < layout.scale * 1.4,
-                                          abs(p.x - feet.x) < layout.scale * 1.7 else { continue }
+                                    let near = figures.filter { abs(p.x - $0.x) < layout.scale * 1.7 && abs(p.y - $0.y) < layout.scale * 1.4 }
+                                    guard near.contains(where: { p.y > $0.y }), !near.contains(where: { p.y <= $0.y }) else { continue }
                                     IslandPainter.drawItem(&c, item, layout: layout)
                                 }
                             }
@@ -297,6 +302,9 @@ struct PlatformScene: View {
                 pan = CGSize(width: d.double(forKey: Keys.panX), height: d.double(forKey: Keys.panY))
                 quarter = d.integer(forKey: Keys.quarter)
                 angle = CGFloat(quarter)
+            } else if island.plots.count >= 3 {
+                // First look at a big island: start a little closer, so buildings read clearly.
+                zoom = min(2, 1 + CGFloat(island.plots.count) * 0.12)
             }
         }
         #if DEBUG

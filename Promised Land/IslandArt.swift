@@ -834,7 +834,7 @@ enum ArtifactArt {
     }
 
     /// Levels 2–5 add small touches: a flower, a second flower, a soft glow, a golden sparkle.
-    private static func decorations(_ pen: IsoPen, level: Int, seed: Int, behind: Bool) {
+    static func decorations(_ pen: IsoPen, level: Int, seed: Int, behind: Bool) {
         let o = pen.p(0, 0), u = pen.u
         if behind {
             if level >= 4 { pen.ellipse(CGPoint(x: o.x, y: o.y - 6 * u), 13, 11, Earthy.gold.opacity(0.18)) }
@@ -891,5 +891,193 @@ enum RewardArt {
         case .fruitTree:
             pen.tree(0, 0, size: 0.95, fruit: true, seed: seed)
         }
+    }
+}
+
+// MARK: - Story objects
+
+/// Story objects (e.g. Noah's Ark for Genesis 6–9), drawn in the island's style. They take
+/// their chapter's spot like an artifact, a little larger, and grow with rereads (1–5).
+enum StoryArt {
+    static func size(_ kind: ChapterObjectKind) -> CGSize {
+        switch kind {
+        case .ladder, .tower, .sinai: CGSize(width: 34, height: 46)
+        default: CGSize(width: 38, height: 32)
+        }
+    }
+
+    static func draw(_ pen: IsoPen, _ kind: ChapterObjectKind, level: Int, variant: Int, seed: Int) {
+        let o = pen.p(0, 0), u = pen.u
+        func pt(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: o.x + x * u, y: o.y + y * u) }
+        let stone = Earthy.Walls(left: Earthy.stone, right: Earthy.stoneShade, top: Color(hex: "#F1E0BC"))
+        let wood = Earthy.Walls(left: Earthy.wood, right: Earthy.woodDark, top: Earthy.woodLight)
+        func pool(_ rx: CGFloat, _ ry: CGFloat, at c: CGPoint? = nil) {
+            let c = c ?? o
+            pen.ellipse(c, rx, ry, Earthy.water)
+            pen.ellipse(CGPoint(x: c.x - rx * 0.25 * u, y: c.y - ry * 0.2 * u), rx * 0.5, ry * 0.35, Earthy.waterShine)
+        }
+        func figure(_ x: CGFloat, _ y: CGFloat, _ robe: Color) {
+            let f = pen.p(x, y)
+            pen.ellipse(CGPoint(x: f.x, y: f.y), 2.2, 1, Earthy.shadow)
+            pen.rect(-1.6, -5.5, 3.2, 5.5, robe, radius: 1.4, at: f)
+            pen.ellipse(CGPoint(x: f.x, y: f.y - 7 * u), 1.8, 1.8, Color(hex: "#EBC3A0"))
+        }
+        func flame(_ c: CGPoint, _ s: CGFloat) {
+            pen.fill([CGPoint(x: c.x - 2 * s * u, y: c.y), CGPoint(x: c.x, y: c.y - 7 * s * u), CGPoint(x: c.x + 2 * s * u, y: c.y)], Earthy.roofLight, soft: 0.8)
+            pen.fill([CGPoint(x: c.x - 1 * s * u, y: c.y), CGPoint(x: c.x, y: c.y - 4.5 * s * u), CGPoint(x: c.x + 1 * s * u, y: c.y)], Earthy.gold, soft: 0.5)
+        }
+
+        ArtifactArt.decorations(pen, level: level, seed: seed, behind: true)
+        switch kind {
+        case .edenTrees:
+            pool(10, 3.5, at: pt(4, 2))
+            pen.tree(-0.25, -0.1, size: 0.8, fruit: true, seed: seed)
+            pen.tree(0.2, -0.3, size: 0.7, fruit: true, seed: seed + 1)
+            pen.tree(-0.05, 0.25, size: 0.6, seed: seed)
+        case .ark:
+            pen.shadow(0, 0, rx: 20)
+            let hull = Path { p in
+                p.move(to: pt(-18, -8)); p.addLine(to: pt(18, -8))
+                p.addQuadCurve(to: pt(10, 3), control: pt(17, 1)); p.addLine(to: pt(-10, 3))
+                p.addQuadCurve(to: pt(-18, -8), control: pt(-17, 1)); p.closeSubpath()
+            }
+            pen.c.fill(hull, with: .color(Earthy.woodDark))
+            pen.rect(-18, -9.5, 36, 2.5, Earthy.woodLight, radius: 1, at: o)
+            pen.box(0, -0.02, hx: 0.22, hy: 0.1, z0: 9, h: 7, wood, soft: 0.6)
+            pen.gable(0, -0.02, hx: 0.22, hy: 0.1, z: 16, h: 5, gableEnd: Earthy.woodDark)
+            for i in 0..<3 { pen.rect(-7 + CGFloat(i) * 5, -13.5, 2, 2.5, Earthy.woodDeep, radius: 0.6, at: o) }
+        case .ladder:
+            pen.ellipse(pt(0, -40), 12, 9, Earthy.gold.opacity(0.25))
+            pen.box(0, 0, hx: 0.1, hy: 0.06, h: 4, stone, soft: 0.5)
+            for x in [-3.0, 3.0] { pen.rect(x - 0.6, -42, 1.2, 38, Earthy.gold, at: o) }
+            for i in 0..<8 { pen.rect(-3, -8 - CGFloat(i) * 4.4, 6, 0.9, Earthy.goldShine, at: o) }
+        case .tower:
+            var z: CGFloat = 0
+            for i in 0..<4 {
+                let k = 1 - CGFloat(i) * 0.2
+                pen.box(0, 0, hx: 0.24 * k, hy: 0.24 * k, z0: z, h: 9, Earthy.walls(.clay), soft: 0.6)
+                pen.arch(.left, box: 0, 0, hx: 0.24 * k, hy: 0.24 * k, t: 0.5, z: z + 1, width: 0.06, h: 6)
+                z += 9
+            }
+            // Unfinished: scaffold on top.
+            pen.rect(-5, -z - 8, 1, 8, Earthy.woodDark, at: o)
+            pen.rect(4, -z - 6, 1, 6, Earthy.woodDark, at: o)
+        case .sinai:
+            let hill = Path { p in
+                p.move(to: pt(-18, 0)); p.addQuadCurve(to: pt(0, -34), control: pt(-12, -30))
+                p.addQuadCurve(to: pt(18, 0), control: pt(12, -30)); p.closeSubpath()
+            }
+            pen.c.fill(hill, with: .color(Color(hex: "#D9B98A")))
+            pen.fill([pt(0, -34), pt(18, 0), pt(6, 4)], Color(hex: "#C8A473"), soft: 1)
+            pen.ellipse(pt(0, -38), 11, 5, Color.white.opacity(0.7))
+            pen.ellipse(pt(5, -40), 7, 4, Color.white.opacity(0.6))
+            for dx in [-3.5, 1.0] { pen.rect(dx, -10, 3.6, 5, Earthy.stone, radius: 1.6, at: o) }
+        case .bush:
+            pen.shadow(0, 0, rx: 9)
+            pen.ellipse(pt(0, -12), 12, 10, Earthy.gold.opacity(0.25))
+            pen.ellipse(pt(-3, -4), 6, 4, Earthy.bush)
+            pen.ellipse(pt(3, -4.5), 6, 4.2, Earthy.leaf)
+            for (dx, s) in [(-4.0, 1.0), (0.0, 1.4), (4.0, 1.1)] { flame(pt(dx, -7), s) }
+        case .plague:
+            pen.box(0, 0, hx: 0.12, hy: 0.08, h: 3, stone, soft: 0.5)
+            pen.fill([pt(-4, -3), pt(-4, -15), pt(0, -18), pt(4, -15), pt(4, -3)], Earthy.stone, soft: 1)
+            let marks: [Color] = [Color(hex: "#B5524A"), Earthy.leaf, Earthy.woodDark, Earthy.gold, Color(hex: "#6A5640"), Earthy.roofLight]
+            pen.ellipse(pt(0, -10), 2.4, 2.4, marks[variant % marks.count])
+        case .redSea:
+            pen.fill([pt(-20, 4), pt(-6, -3), pt(6, 3), pt(-8, 10)], Earthy.path, soft: 2)
+            for side in [-1.0, 1.0] {
+                let c = pt(CGFloat(side) * 12, -2)
+                pen.rect(-7, -14, 14, 14, Earthy.water, radius: 4, at: c)
+                pen.rect(-5, -13, 4, 10, Earthy.waterShine, radius: 2, at: c)
+            }
+        case .fallenWalls:
+            pen.shadow(0, 0, rx: 16)
+            for (i, h) in [8.0, 3.0, 6.0, 2.0].enumerated() {
+                pen.box(-0.3 + CGFloat(i) * 0.18, 0.05, hx: 0.08, hy: 0.06, h: h, stone, soft: 0.5)
+            }
+            for (dx, dy) in [(-8.0, 5.0), (6.0, 6.0), (12.0, 2.0)] {
+                pen.ellipse(pt(dx, dy), 2.6, 1.8, Earthy.stoneShade)
+            }
+        case .valley:
+            for side in [-1.0, 1.0] {
+                let c = pt(CGFloat(side) * 12, -2)
+                pen.c.fill(Path(ellipseIn: CGRect(x: c.x - 9 * u, y: c.y - 7 * u, width: 18 * u, height: 12 * u)), with: .color(Color(hex: "#DCC08F")))
+            }
+            pen.fill([pt(-4, 6), pt(4, -2), pt(7, -1), pt(-1, 7)], Earthy.water, soft: 1)
+            for i in 0..<5 { pen.ellipse(pt(-3 + CGFloat(i) * 1.6, 2 - CGFloat(i % 2)), 0.9, 0.7, Color(hex: "#9A8E80")) }
+        case .stronghold:
+            pen.box(0, 0, hx: 0.2, hy: 0.2, h: 18, Earthy.walls(.sand))
+            pen.arch(.left, box: 0, 0, hx: 0.2, hy: 0.2, t: 0.5, z: 0, width: 0.1, h: 9)
+            pen.battlements(0, 0, hx: 0.2, hy: 0.2, z: 18, Earthy.walls(.sand))
+            BuildingArt.crest(pen, .flag, at: pt(0, -22))
+        case .pasture:
+            pen.ellipse(o, 18, 8, Earthy.bush.opacity(0.7))
+            pool(6, 2.5, at: pt(7, 1))
+            for (x, y) in [(-0.2, -0.05), (0.0, 0.15), (-0.32, 0.2)] {
+                var g = pen.c
+                let p = pen.p(x, y)
+                g.translateBy(x: p.x, y: p.y)
+                ArtifactArt.draw(IsoPen(c: g, u: u * 0.8), .sheep, level: 1, seed: seed)
+            }
+        case .shipAndFish:
+            pool(18, 7)
+            BuildingArt.boat(pen, x: -0.15, y: 0.1, size: 0.8)
+            let fish = pt(9, -1)
+            pen.ellipse(fish, 7, 3.2, Color(hex: "#8FA7B0"))
+            pen.fill([CGPoint(x: fish.x + 6 * u, y: fish.y), CGPoint(x: fish.x + 11 * u, y: fish.y - 3.5 * u), CGPoint(x: fish.x + 11 * u, y: fish.y + 3.5 * u)], Color(hex: "#7C949D"), soft: 0.6)
+            pen.ellipse(CGPoint(x: fish.x - 4 * u, y: fish.y - 0.8 * u), 0.7, 0.7, Color.bodyText)
+        case .lionsDen:
+            pen.ellipse(o, 16, 7.5, Earthy.stoneShade)
+            pen.ellipse(pt(0, -1), 13, 5.8, Color(hex: "#7E6450"))
+            let head = pt(-2, -5)
+            pen.ellipse(head, 5, 4.6, Color(hex: "#C98F4E"))
+            pen.ellipse(head, 3, 2.8, Earthy.gold)
+            for dx in [-1.0, 1.0] { pen.rect(dx - 0.3, -6, 0.6, 0.8, Color.bodyText, at: head) }
+            figure(0.18, -0.02, Earthy.dome)
+        case .boats:
+            pool(19, 7)
+            BuildingArt.boat(pen, x: -0.2, y: 0.05, size: 0.7)
+            BuildingArt.boat(pen, x: 0.25, y: -0.05, size: 0.6)
+        case .weddingHouse:
+            ArtifactArt.draw(pen, .domedHouse, level: 1, seed: seed)
+            for i in 0..<6 {
+                let j = pt(-12 + CGFloat(i % 3) * 3.4 + (i < 3 ? 0 : 1.7), 4 + (i < 3 ? 0 : 2.4))
+                pen.ellipse(j, 1.6, 2, Earthy.stoneShade)
+                pen.ellipse(CGPoint(x: j.x - 0.3 * u, y: j.y - 0.4 * u), 1.1, 1.5, Earthy.stone)
+            }
+        case .vineyard:
+            for (x, y) in [(-0.22, -0.1), (0.15, 0.1)] {
+                var g = pen.c
+                let p = pen.p(x, y)
+                g.translateBy(x: p.x, y: p.y)
+                ArtifactArt.draw(IsoPen(c: g, u: u), .vine, level: 1, seed: seed)
+            }
+        case .hillsideCrowd:
+            let hill = Path { p in
+                p.move(to: pt(-20, 3)); p.addQuadCurve(to: pt(20, 3), control: pt(0, -22)); p.closeSubpath()
+            }
+            pen.c.fill(hill, with: .color(Earthy.bush.opacity(0.85)))
+            let robes = [Earthy.roofLight, Earthy.dome, Earthy.cloth, Earthy.leaf, Earthy.gold]
+            for i in 0..<7 {
+                let x = -0.3 + CGFloat(i % 4) * 0.16, y = 0.12 - CGFloat(i / 4) * 0.18
+                figure(x, y, robes[i % robes.count])
+            }
+            figure(-0.05, -0.32, Earthy.cloth)
+        case .pentecost:
+            pen.box(0, 0, hx: 0.22, hy: 0.18, h: 14, Earthy.walls(.cream))
+            pen.windows(box: 0, 0, hx: 0.22, hy: 0.18, storeys: 1, storey: 14)
+            pen.box(0, 0, hx: 0.21, hy: 0.17, z0: 14, h: 1.2, Earthy.walls(.cream))
+            for (i, dx) in [-6.0, -2.0, 2.0, 6.0].enumerated() {
+                flame(pt(dx, -18 - CGFloat(i % 2) * 3), 0.8)
+            }
+        case .shipwreck:
+            pool(18, 7)
+            var g = pen.c
+            g.translateBy(x: o.x, y: o.y)
+            g.rotate(by: .degrees(-14))
+            BuildingArt.boat(IsoPen(c: g, u: u), x: 0, y: 0, size: 0.9)
+            for (dx, dy) in [(-11.0, 3.0), (9.0, 4.0)] { pen.rect(dx, dy, 6, 1.2, Earthy.wood, radius: 0.5, at: o) }
+        }
+        ArtifactArt.decorations(pen, level: level, seed: seed, behind: false)
     }
 }

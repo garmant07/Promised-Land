@@ -53,7 +53,9 @@ height, so any size works; keep the figure standing on the bottom edge.
 
 - **Buildings:** 66 specs in `BuildingData.swift`, one per book, each with a unique silhouette
   (family × roof × crest × width × storeys × wings), drawn by `BuildingArt` in `IslandArt.swift`.
-- **Artifacts:** `ArtifactArt` in `IslandArt.swift`. Story chapters (e.g. Noah's Ark for
-  Genesis 6–9) use the world map's story-object art from `ChapterObjectPainter.swift`.
+- **Artifacts:** `ArtifactArt` in `IslandArt.swift`.
+- **Story objects** (e.g. Noah's Ark for Genesis 6–9): `StoryArt` in `IslandArt.swift`, one
+  drawing per `ChapterObjectKind`. To replace one, use the story's id from
+  `ChapterLandmarks.swift` as the artifact id: `art_<storyID>_<level>`, level 1–5.
 - **Rewards:** quiz banners, lanterns and fruit trees: `RewardArt` in `IslandArt.swift`
   (rules in `RewardData.swift`).

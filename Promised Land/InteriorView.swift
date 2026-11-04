@@ -66,6 +66,7 @@ struct InteriorView: View {
             }
             .sheet(item: $reading) { ref in
                 LibraryView(startAt: ref, onClose: { reading = nil })
+                    .readingSizing(true)
             }
             .sheet(item: $learningScreen) { screen in
                 if let landmark, let learning = LearningData.forBook(bookID) {

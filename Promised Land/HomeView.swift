@@ -27,6 +27,14 @@ enum ActiveSheet: Identifiable, Equatable {
         }
     }
 
+    /// Reading gets a page-sized sheet on iPad, wide enough for a two-page spread.
+    var isReading: Bool {
+        switch self {
+        case .read, .chapter: true
+        default: false
+        }
+    }
+
     /// Reading and celebrations open full height; everything else starts at half.
     var detents: Set<PresentationDetent> {
         switch self {
@@ -143,6 +151,7 @@ struct HomeView: View {
         .sheet(item: $activeSheet) { sheet in
             content(for: sheet)
                 .presentationDetents(sheet.detents)
+                .readingSizing(sheet.isReading)
                 .presentationDragIndicator(.visible)
         }
         .onChange(of: activeSheet) { _, sheet in

@@ -380,7 +380,9 @@ enum IslandHitTester {
             return rect(ArtifactArt.size(kind), base: base, u: u)
         case .reward(let kind):
             return rect(RewardArt.size(kind), base: base, u: u)
-        case .story, .library:
+        case .story(let id):
+            return rect(ChapterLandmarks.entry(id: id).map { StoryArt.size($0.kind) } ?? CGSize(width: 38, height: 32), base: base, u: u)
+        case .library:
             return rect(CGSize(width: 40, height: 50), base: base, u: u)
         }
     }
@@ -509,7 +511,14 @@ enum IslandPainter {
             ArtifactArt.draw(pen, kind, level: item.level, seed: item.seed)
         case .reward(let kind):
             RewardArt.draw(pen, kind, seed: item.seed)
-        case .story, .library:
+        case .story(let id):
+            guard let entry = ChapterLandmarks.entry(id: id) else { return }
+            if let custom = ArtAssets.artifact(id, level: item.level, rotation: rotation) {
+                drawCustom(&c, custom, tileWidth: tileWidth)
+                return
+            }
+            StoryArt.draw(pen, entry.kind, level: item.level, variant: entry.variant, seed: item.seed)
+        case .library:
             break // drawn from an image above
         }
     }
@@ -527,27 +536,15 @@ enum IslandPainter {
         c.draw(Image(decorative: art.image, scale: 1), in: CGRect(x: -w / 2, y: -h, width: w, height: h))
     }
 
-    /// The pre-drawn picture for image-based kinds (the Library and story objects).
+    /// The pre-drawn picture for image-based kinds (the Library).
     static func art(for item: Island.Item) -> LandmarkImage? {
-        switch item.kind {
-        case .library: LandmarkMiniCache.library()
-        case .story(let id): ChapterLandmarks.entry(id: id).flatMap { LandmarkMiniCache.story($0, level: item.level) }
-        default: nil
-        }
+        item.kind == .library ? LandmarkMiniCache.library() : nil
     }
 
     /// Where an image-based item is drawn, relative to its ground point. Shared by drawing and tapping.
-    static func imageRect(_ art: LandmarkImage, item: Island.Item, tileWidth: CGFloat) -> CGRect {
-        let k: CGFloat
-        switch item.kind {
-        case .story(let id):
-            // A story object is shown about one tile across, whatever its size on the world map.
-            let size = CGFloat(ChapterLandmarks.entry(id: id)?.size ?? 1)
-            k = tileWidth / Iso.tileWidth * 0.8 / size
-        default:
-            // The Library's picture covers a 3-tile footprint; it's shown on its 2 × 2 spot.
-            k = tileWidth / Iso.tileWidth * 0.95 * 2 / 3
-        }
+    static func imageRect(_ art: LandmarkImage, item _: Island.Item, tileWidth: CGFloat) -> CGRect {
+        // The Library's picture covers a 3-tile footprint; it's shown on its 2 × 2 spot.
+        let k = tileWidth / Iso.tileWidth * 0.95 * 2 / 3
         let w = art.pointSize.width * k, h = art.pointSize.height * k
         return CGRect(x: -w / 2, y: -(1 - art.anchor.y) * h, width: w, height: h)
     }
@@ -568,7 +565,6 @@ enum IslandPainter {
 /// Small finished-landmark pictures for the island, drawn once per style.
 @MainActor
 enum LandmarkMiniCache {
-    private static var stories: [ChapterObjectLook: LandmarkImage] = [:]
     private static var libraryArt: LandmarkImage?
     private static var opaque: [String: CGRect] = [:]
 
@@ -586,15 +582,6 @@ enum LandmarkMiniCache {
         if let libraryArt { return libraryArt }
         libraryArt = LandmarkPainter.canvas(size: 3, scale: 2) { $0.libraryBuilding() }
         return libraryArt
-    }
-
-    /// A story object, drawn by the world map's painter (its depth grows with rereads).
-    static func story(_ entry: ChapterLandmark, level: Int) -> LandmarkImage? {
-        let look = ChapterObjectLook(kind: entry.kind, depth: max(1, min(5, level)), variant: entry.variant, size: entry.size)
-        if let cached = stories[look] { return cached }
-        guard let image = ChapterObjectPainter.render(look, scale: 2) else { return nil }
-        stories[look] = image
-        return image
     }
 }
 

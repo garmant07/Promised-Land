@@ -491,3 +491,19 @@ struct GroupsTests {
         #expect(psalms?.members.first?.chapters == 60) // most first
     }
 }
+
+struct SpreadTests {
+    @Test("Two pages side by side only when the space is wide and landscape")
+    func spread() {
+        #expect(PageReaderLayout.isSpread(CGSize(width: 1180, height: 800)))
+        #expect(!PageReaderLayout.isSpread(CGSize(width: 820, height: 1100)))
+        #expect(!PageReaderLayout.isSpread(CGSize(width: 600, height: 390)))
+    }
+
+    @Test("A spread always ends on a full pair of pages")
+    func evenSpread() {
+        let short = [Verse(number: 1, text: "In the beginning God created the heavens and the earth.")]
+        #expect(PagePlanner.pages(short, width: 400, height: 700, fontSize: 18, footerHeight: 190, titleHeight: 56, evenCount: true).count == 2)
+        #expect(PagePlanner.pages(short, width: 400, height: 700, fontSize: 18, footerHeight: 190, titleHeight: 56).count == 1)
+    }
+}
