@@ -22,6 +22,12 @@ those that point at the text, e.g.:
   Jer 17:8; Ezek 31:3, 47:12; Dan 4:10; Hos 14:6; Zech 4:3; Matt 7:17, 13:31–32; Mark 11:13;
   Luke 13:6, 19:4; Rom 11:17; Rev 22:2). Check the ASV wording.
 
+- **Feeding the crowd** — `FeedingTheCrowd` in `Produce.swift`: the ASV quote of John 6:9
+  ("There is a lad here, who hath five barley loaves, and two fishes: but what are these among
+  so many?") and the cross-references (Matt 14:13–21, Mark 6:30–44, Luke 9:10–17, John 6:1–14).
+- **Villager routines** (`VillagerData.swift`) are illustrations (a fisherman, a harvester),
+  not claims, but check they feel right for each style.
+
 ## 1. Character journeys — `CharacterJourneys.swift`
 13 journeys (the 12, plus Jonah as a bonus), 84 stops.
 - **Every stop's "what happened"** paraphrases or quotes the ASV, with a verse reference.

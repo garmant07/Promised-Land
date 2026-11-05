@@ -35,10 +35,12 @@ struct DebugToolsSection: View {
     @ProgressQuery private var progress: GameProgress
     @State private var confirmingWipe = false
     @State private var message: String?
+    @AppStorage("debug.fpsOverlay") private var showsFPS = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Debug tools").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
+            Text("Developer").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
+            Toggle("FPS overlay on the island", isOn: $showsFPS).tint(Color.olive).frame(minHeight: 44)
             Button("Rebuild world") { rebuildWorld() }.buttonStyle(SoftButtonStyle())
             Button("Add 10 random reads") { addRandomReads() }.buttonStyle(SoftButtonStyle())
             Button("Complete a journey") { completeJourney() }.buttonStyle(SoftButtonStyle())

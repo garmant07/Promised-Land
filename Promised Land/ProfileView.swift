@@ -20,6 +20,7 @@ struct ProfileView: View {
     @State private var showingThrone = false
     @State private var openJourney: JourneyLink?
     @State private var sharing: ShareImage?
+    @State private var showingBasket = false
 
     var body: some View {
         NavigationStack {
@@ -34,6 +35,8 @@ struct ProfileView: View {
                         Button { onEditIsland() } label: { row("Edit island", systemImage: "square.and.pencil") }
                             .buttonStyle(.plain)
                     }
+                    Button { showingBasket = true } label: { row("Your basket", systemImage: "basket.fill") }
+                        .buttonStyle(.plain)
                     Button { showingStats = true } label: { row("Reading history", systemImage: "chart.bar.fill") }
                         .buttonStyle(.plain)
                 }
@@ -57,6 +60,7 @@ struct ProfileView: View {
             .sheet(isPresented: $showingSettings) { SettingsView() }
             .sheet(isPresented: $editingCharacter) { AvatarCustomizeView() }
             .sheet(isPresented: $showingStats) { StatsView() }
+            .sheet(isPresented: $showingBasket) { BasketView() }
             .sheet(isPresented: $showingCrowns) { CrownsView() }
             .sheet(isPresented: $showingThrone) { ThroneRoomView() }
             .sheet(item: $sharing) { SharePreviewSheet(image: $0.image) }

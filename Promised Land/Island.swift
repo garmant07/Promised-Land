@@ -226,26 +226,22 @@ enum IslandPainter {
         c.stroke(path, with: .color(Earthy.path), style: StrokeStyle(lineWidth: layout.scale * 0.42, lineCap: .round, lineJoin: .round))
     }
 
-    /// Gentle waves on the sea around the island (drawn under it, animated by `time`).
-    static func drawWaves(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, time: Double) {
-        let land = Set(island.tiles)
-        let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
-        guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return }
+    /// Gentle waves on the sea around the island (drawn under it, animated by `time`). Their
+    /// spots are worked out once per island; only those on screen are drawn.
+    static func drawWaves(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, time: Double, visible: CGRect? = nil) {
         let u = layout.u
-        for ty in (y0 - 5)...(y1 + 5) {
-            for tx in (x0 - 5)...(x1 + 5) where Noise.hash(tx, ty, seed: 57) > 0.72 && !land.contains(Island.Tile(x: tx, y: ty)) {
-                let phase = Noise.hash(tx, ty, seed: 59) * 6.28
-                let drift = sin(time * 0.7 + phase) * 0.12
-                let p = layout.point(CGFloat(tx) + 0.5 + drift, CGFloat(ty) + 0.5)
-                let alpha = 0.35 + 0.35 * sin(time * 1.1 + phase)
-                let w = 7 * u, h = 2.2 * u
-                let wave = Path { path in
-                    path.move(to: CGPoint(x: p.x - w, y: p.y + layout.depth))
-                    path.addQuadCurve(to: CGPoint(x: p.x, y: p.y + layout.depth), control: CGPoint(x: p.x - w / 2, y: p.y + layout.depth - h))
-                    path.addQuadCurve(to: CGPoint(x: p.x + w, y: p.y + layout.depth), control: CGPoint(x: p.x + w / 2, y: p.y + layout.depth - h))
-                }
-                c.stroke(wave, with: .color(Earthy.foam.opacity(max(0, alpha))), style: StrokeStyle(lineWidth: 1.4 * u, lineCap: .round))
+        let w = 7 * u, h = 2.2 * u
+        for spot in WaveSpots.spots(island) {
+            let drift = sin(time * 0.7 + spot.phase) * 0.12
+            let p = layout.point(spot.x + 0.5 + drift, spot.y + 0.5)
+            if let visible, !visible.contains(p) { continue }
+            let alpha = 0.35 + 0.35 * sin(time * 1.1 + spot.phase)
+            let wave = Path { path in
+                path.move(to: CGPoint(x: p.x - w, y: p.y + layout.depth))
+                path.addQuadCurve(to: CGPoint(x: p.x, y: p.y + layout.depth), control: CGPoint(x: p.x - w / 2, y: p.y + layout.depth - h))
+                path.addQuadCurve(to: CGPoint(x: p.x + w, y: p.y + layout.depth), control: CGPoint(x: p.x + w / 2, y: p.y + layout.depth - h))
             }
+            c.stroke(wave, with: .color(Earthy.foam.opacity(max(0, alpha))), style: StrokeStyle(lineWidth: 1.4 * u, lineCap: .round))
         }
     }
 
@@ -349,4 +345,28 @@ enum LandmarkMiniCache {
 
 private extension CGPoint {
     static func + (a: CGPoint, b: CGPoint) -> CGPoint { CGPoint(x: a.x + b.x, y: a.y + b.y) }
+}
+
+/// Where waves ripple around an island: open-sea tiles near it, picked once per island.
+@MainActor
+enum WaveSpots {
+    struct Spot { let x: CGFloat; let y: CGFloat; let phase: Double }
+    private static var memo: (key: Int, spots: [Spot]) = (-1, [])
+
+    static func spots(_ island: Island) -> [Spot] {
+        let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
+        guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return [] }
+        var h = Hasher(); h.combine(x0); h.combine(x1); h.combine(y0); h.combine(y1); h.combine(island.tiles.count); h.combine(island.water.count)
+        let key = h.finalize()
+        if memo.key == key { return memo.spots }
+        let land = Set(island.tiles)
+        var out: [Spot] = []
+        for ty in (y0 - 5)...(y1 + 5) {
+            for tx in (x0 - 5)...(x1 + 5) where Noise.hash(tx, ty, seed: 57) > 0.72 && !land.contains(Island.Tile(x: tx, y: ty)) {
+                out.append(Spot(x: CGFloat(tx), y: CGFloat(ty), phase: Noise.hash(tx, ty, seed: 59) * 6.28))
+            }
+        }
+        memo = (key, out)
+        return out
+    }
 }

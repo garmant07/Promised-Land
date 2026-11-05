@@ -29,11 +29,3 @@ final class JournalEntry {
         return chapter.map { "\(book.name) \($0)" } ?? book.name
     }
 }
-
-/// Every SwiftData model the app stores, registered once for the app and previews.
-enum AppSchema {
-    static let models: [any PersistentModel.Type] = [
-        ChapterRead.self, QuizPass.self, VerseMemorised.self, JournalEntry.self, AvatarProfile.self, CrownCasting.self, BookStarted.self,
-        PlacedItem.self,
-    ]
-}

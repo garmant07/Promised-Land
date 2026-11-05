@@ -65,3 +65,22 @@ option was chosen and noted here.
     more play as one combined reveal. The rest of the island is held at its old growth until each
     beat plays. Rewards (banners, lanterns) and forest trees simply appear; the unlock banner's
     "See it" still points at them. With Reduce Motion the camera stays still and only the caption shows.
+22. **VersionedSchema added.** `AppSchema.swift`: `SchemaV1` is exactly the 8 models stored before
+    this round (unchanged, so the same classes serve both versions), `SchemaV2` adds
+    `ProduceCollection`, `ProduceGift`, `PlacedExtra` and `ReadingPhoto`, and the plan has one
+    lightweight stage. Tested by writing a store the old way (no version) and opening it through
+    the plan: every record is kept. This replaces note 3.
+23. **Villagers** are drawn with shapes each frame rather than cached sprites: each is four small
+    fills, cheaper than looking up and drawing a scaled image. Everything else that's code-drawn
+    is cached (see 25).
+24. **Produce.** One per reading day since the Place was completed (or last collected), capped at
+    3 a Place. "Save for a friend" only records the gift on this device (no networking). The
+    plaza crowd (tap it, or Profile → Your basket) receives gifts; bread and fish together play
+    the "feeding the crowd" moment (John 6:9 quote, unreviewed).
+25. **Performance.** The island stays on SwiftUI `Canvas`; `IslandRenderCache` renders the ground
+    into 512-pt chunks and each Place into one picture (keyed by its contents, so a moved Place
+    reuses it), per zoom bucket and turn, in a memory-capped `NSCache`. Only on-screen chunks,
+    Places, villagers (max 40) and travellers (max 6) are drawn; life pauses in edit mode. In the
+    Simulator a fully built 66-Place island pans at ~56 fps (was 3 fps before caching). **Not
+    yet measured on a real iPhone 11 / SE**: please check with Settings → Developer → FPS overlay.
+    DEBUG `-autoPan` circles the camera for measuring.

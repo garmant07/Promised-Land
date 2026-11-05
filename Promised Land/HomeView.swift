@@ -15,6 +15,8 @@ enum ActiveSheet: Identifiable, Equatable {
     case character(String)
     /// A character's journey map.
     case journey(String)
+    /// Your basket of produce.
+    case basket
 
     var id: String {
         switch self {
@@ -27,6 +29,7 @@ enum ActiveSheet: Identifiable, Equatable {
         case .chapter(let ref): "chapter-\(ref.id)"
         case .character(let id): "character-\(id)"
         case .journey(let id): "journey-\(id)"
+        case .basket: "basket"
         }
     }
 
@@ -58,6 +61,8 @@ struct HomeView: View {
     @Query private var journal: [JournalEntry]
     @Query private var booksStarted: [BookStarted]
     @Query private var placedItems: [PlacedItem]
+    @Query private var produceCollected: [ProduceCollection]
+    @AppStorage("debug.fpsOverlay") private var showsFPS = false
     @Environment(\.modelContext) private var context
 
     @State private var activeSheet: ActiveSheet?
@@ -80,6 +85,8 @@ struct HomeView: View {
     @State private var revealID = 0
     /// The beat of the "see it built" moment playing now (for its caption).
     @State private var revealing: RevealStep?
+    /// A short note under the status pill (e.g. produce collected).
+    @State private var toast: String?
 
     // Edit mode
     @State private var editingIsland = false
@@ -153,7 +160,11 @@ struct HomeView: View {
                               case .throne: interior = InteriorRef(id: InteriorRef.throne)
                               default: break
                               }
-                          }) { index in open(index, in: island) }
+                          },
+                          life: IslandLife.make(island: island, baskets: baskets(island)),
+                          onBasket: { collect($0, island: island) },
+                          onCrowd: { activeSheet = .basket },
+                          showsFPS: showsFPS) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
         // The status pill is read-only, so touches on it go through to the island.
@@ -259,6 +270,15 @@ struct HomeView: View {
             .padding(.horizontal, 12)
             .padding(.vertical, 7)
             .background(Color.card.opacity(0.85), in: Capsule())
+            if let toast {
+                Label(toast, systemImage: "basket.fill")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Color.olive)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(Color.card.opacity(0.85), in: Capsule())
+                    .transition(.opacity.combined(with: .move(edge: .top)))
+            }
         }
         .padding(.leading, 16)
         .padding(.top, 8)
@@ -280,6 +300,8 @@ struct HomeView: View {
             }, island: island)
         case .library:
             LibraryShelfView()
+        case .basket:
+            BasketView()
         case .insight(let subject):
             ObjectInsightCard(subject: subject)
         case .chapter(let ref):
@@ -317,6 +339,34 @@ struct HomeView: View {
             visitIndex = index
         } else if let subject = InsightSubject.island(item) {
             activeSheet = .insight(subject)
+        }
+    }
+
+    // MARK: Produce
+
+    /// What waits in each complete Place's basket: one per reading day since it was completed
+    /// (or last collected), up to a small cap.
+    private func baskets(_ island: Island) -> [String: Int] {
+        guard !island.completed.isEmpty else { return [:] }
+        let days = ProduceRules.readingDays(chapterReads.filter(\.checked).map(\.date))
+        let last = Dictionary(produceCollected.map { ($0.bookID, $0.date) }, uniquingKeysWith: max)
+        var out: [String: Int] = [:]
+        for (bookID, completed) in island.completed {
+            let n = ProduceRules.ready(completed: completed, lastCollected: last[bookID], readingDays: days)
+            if n > 0 { out[bookID] = n }
+        }
+        return out
+    }
+
+    private func collect(_ bookID: String, island: Island) {
+        let n = baskets(island)[bookID] ?? 0
+        guard n > 0 else { return }
+        let kind = PlaceData.spec(for: bookID).produce
+        context.collectProduce(bookID, kind: kind, amount: n)
+        withAnimation(.spring(duration: 0.4)) { toast = "\(n) \(kind.name.lowercased()) from \(PlaceData.spec(for: bookID).name)" }
+        Task {
+            try? await Task.sleep(for: .seconds(3))
+            withAnimation(.easeOut(duration: 0.5)) { toast = nil }
         }
     }
 

@@ -33,6 +33,14 @@ struct PlatformScene: View {
     /// then `onArrived` is called. Setting it back to nil restores the camera.
     var visit: Int? = nil
     var onArrived: ((Int) -> Void)? = nil
+    /// Villagers, travellers, smoke and baskets (paused while editing; only what's on screen moves).
+    var life = IslandLife()
+    /// Tapping a basket of produce above a Place (its book id).
+    var onBasket: ((String) -> Void)? = nil
+    /// Tapping the crowd in the plaza.
+    var onCrowd: (() -> Void)? = nil
+    /// DEBUG: a frames-per-second readout.
+    var showsFPS = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -113,21 +121,41 @@ struct PlatformScene: View {
                     TimelineView(.animation(minimumInterval: 1.0 / 12, paused: reduceMotion)) { context in
                         Canvas { c, _ in
                             IslandPainter.drawWaves(&c, island: island, layout: layout,
-                                                    time: reduceMotion ? 0 : context.date.timeIntervalSinceReferenceDate)
+                                                    time: reduceMotion ? 0 : context.date.timeIntervalSinceReferenceDate,
+                                                    visible: CGRect(origin: .zero, size: geo.size).insetBy(dx: -20, dy: -20))
                         }
                     }
                     // Settled things are drawn once; only the character, new things and the
                     // selected item redraw while animating.
+                    // While turning, the angle is between quarters: draw directly. Otherwise
+                    // use the cached ground chunks and Place pictures.
+                    let cached = angle == CGFloat(Int(angle)) ? IslandRenderCache.shared.frame(
+                        island: island, size: geo.size, insets: insets, zoom: zoom, quarter: layout.quarter, pan: pan,
+                        overrides: overrides, hidden: moving) : nil
                     Canvas { context, _ in
-                        IslandPainter.drawTiles(&context, island: island, layout: layout)
+                        if let cached {
+                            for g in cached.ground { context.draw(Image(decorative: g.image, scale: 1), in: g.rect) }
+                        } else {
+                            IslandPainter.drawTiles(&context, island: island, layout: layout)
+                        }
                         if let selected = selected.wrappedValue, island.items.indices.contains(selected) {
                             Self.drawHighlight(&context, island.items[selected], layout: layout)
                         }
                         if let editing { Self.drawEditGrid(&context, island: island, layout: layout, editing: editing) }
                         // Only what's on screen (plus a margin for tall things) is drawn.
                         let visible = CGRect(origin: .zero, size: geo.size).insetBy(dx: -layout.scale * 2, dy: -layout.scale * 2)
-                        for item in ordered where visible.contains(layout.point(item.gx, item.gy)) {
-                            IslandPainter.drawItem(&context, item, layout: layout)
+                        if let cached {
+                            for layer in cached.layers {
+                                switch layer {
+                                case .picture(let image, let rect): context.draw(Image(decorative: image, scale: 1), in: rect)
+                                case .item(let item):
+                                    if visible.contains(layout.point(item.gx, item.gy)) { IslandPainter.drawItem(&context, item, layout: layout) }
+                                }
+                            }
+                        } else {
+                            for item in ordered where visible.contains(layout.point(item.gx, item.gy)) {
+                                IslandPainter.drawItem(&context, item, layout: layout)
+                            }
                         }
                         #if DEBUG
                         if Self.showHitBoxes { Self.drawHitBoxes(&context, island: island, layout: layout) }
@@ -139,7 +167,8 @@ struct PlatformScene: View {
                         Color.black.opacity(0.16).ignoresSafeArea().allowsHitTesting(false).transition(.opacity)
                     }
 
-                    TimelineView(.animation(paused: !walking && beat == nil && !bouncing && characters.isEmpty)) { context in
+                    TimelineView(.animation(paused: !walking && beat == nil && !bouncing && characters.isEmpty
+                                            && (life.isEmpty || editing != nil || reduceMotion))) { context in
                         let now = context.date
                         let pos = position(at: now)
                         let feet = layout.point(pos.x, pos.y)
@@ -148,6 +177,14 @@ struct PlatformScene: View {
                         let lean = walking ? sin(t * 9) * 3 : 0
 
                         ZStack(alignment: .topLeading) {
+                            // Villagers, travellers, smoke, birds and baskets: only what's on screen.
+                            if editing == nil && !life.isEmpty {
+                                Canvas { c, size in
+                                    IslandLife.draw(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
+                                                    visible: CGRect(origin: .zero, size: size).insetBy(dx: -30, dy: -30))
+                                }
+                                .allowsHitTesting(false)
+                            }
                             // The piece being built, and the selected item's bounce.
                             Canvas { c, _ in
                                 if let beat {
@@ -190,6 +227,13 @@ struct PlatformScene: View {
                                     IslandPainter.drawItem(&c, item, layout: layout)
                                 }
                             }
+                            if editing == nil && !life.baskets.isEmpty {
+                                Canvas { c, size in
+                                    IslandLife.drawBaskets(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
+                                                           visible: CGRect(origin: .zero, size: size).insetBy(dx: -30, dy: -30))
+                                }
+                                .allowsHitTesting(false)
+                            }
                             if let speaking, let c = characters.first(where: { $0.id == speaking.id }),
                                now.timeIntervalSince(speaking.since) < 7 {
                                 let p = c.position(at: speaking.since.timeIntervalSinceReferenceDate)
@@ -212,6 +256,11 @@ struct PlatformScene: View {
             .gesture(interactive ? dragGesture(layout: base, size: geo.size) : nil)
             .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
             .simultaneousGesture(interactive ? twistGesture : nil)
+            #if DEBUG
+            .overlay(alignment: .topTrailing) {
+                if showsFPS { FPSMeter().padding(.top, insets.top - 8).padding(.trailing, 12).allowsHitTesting(false) }
+            }
+            #endif
             .overlay(alignment: .bottomTrailing) {
                 if interactive && (showsControls ?? persistsCamera) && editing == nil && beat == nil && overrides.isEmpty {
                     controls(layout: base, size: geo.size)
@@ -236,6 +285,19 @@ struct PlatformScene: View {
         .onAppear {
             loadCamera()
             placeCharacter()
+            #if DEBUG
+            // "-autoPan" keeps the camera circling, for measuring frame rate while panning.
+            if ProcessInfo.processInfo.arguments.contains("-autoPan") {
+                Task {
+                    let start = Date.now
+                    while true {
+                        let t = Date.now.timeIntervalSince(start)
+                        pan = CGSize(width: cos(t * 0.8) * 160, height: sin(t * 0.8) * 220)
+                        try? await Task.sleep(for: .milliseconds(16))
+                    }
+                }
+            }
+            #endif
         }
         .onChange(of: island.tiles.count) { _, _ in if !walking { placeCharacter() } }
         .task(id: reduceMotion) {
@@ -427,6 +489,10 @@ struct PlatformScene: View {
                 } else if !pinched, !longPressed, TapClassifier.isTap(translation: value.translation) {
                     if let editing {
                         editing.onSelect(nil)
+                    } else if let book = basket(at: value.location, layout: layout) {
+                        onBasket?(book)
+                    } else if onCrowd != nil, crowdTapped(value.location, layout: layout) {
+                        onCrowd?()
                     } else if let c = character(at: value.location, layout: layout) {
                         speaking = (c.id, .now)
                     } else {
@@ -463,6 +529,25 @@ struct PlatformScene: View {
             return speaking.since.timeIntervalSinceReferenceDate
         }
         return now.timeIntervalSinceReferenceDate
+    }
+
+    /// The basket under a tap, if any (generous target).
+    private func basket(at location: CGPoint, layout: IslandLayout) -> String? {
+        guard layout.u >= IslandLife.minimumBasketU else { return nil }
+        let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
+        let t = Date.now.timeIntervalSinceReferenceDate
+        return life.baskets.first { b in
+            let s = IslandLife.basketPoint(layout.point(b.point.x, b.point.y), u: layout.u, time: t)
+            return hypot(s.x - p.x, s.y - p.y) < max(24, 18 * layout.u)
+        }?.bookID
+    }
+
+    /// A tap on the plaza's crowd.
+    private func crowdTapped(_ location: CGPoint, layout: IslandLayout) -> Bool {
+        guard life.villagers.contains(where: { $0.id.hasPrefix("crowd") }) else { return false }
+        let g = layout.grid(CGPoint(x: location.x - pan.width, y: location.y - pan.height))
+        return CGRect(x: IslandPlacer.start.x, y: IslandPlacer.start.y, width: IslandPlacer.start.size, height: IslandPlacer.start.size)
+            .insetBy(dx: -0.2, dy: -0.2).contains(g)
     }
 
     /// The character under a tap, if any (44pt minimum target).

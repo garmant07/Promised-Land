@@ -43,3 +43,58 @@ struct IslandMigrationTests {
         #expect(try context.fetch(FetchDescriptor<PlacedItem>()).count == 2)
     }
 }
+
+@MainActor
+struct SchemaMigrationTests {
+    func tempURL() -> URL {
+        FileManager.default.temporaryDirectory.appendingPathComponent("pl-\(UUID().uuidString).store")
+    }
+
+    /// Writes a store the way the app did before versioning (plain schema of the V1 models).
+    func writeOldStore(at url: URL) throws {
+        let container = try ModelContainer(for: Schema(SchemaV1.models), configurations: ModelConfiguration(url: url))
+        let context = container.mainContext
+        for ch in 1...4 { context.insert(ChapterRead(bookID: "ruth", chapterNumber: ch)) }
+        context.insert(ChapterRead(bookID: "john", chapterNumber: 15, checked: false))
+        context.insert(QuizPass(bookID: "ruth", score: 3))
+        context.insert(VerseMemorised(bookID: "ruth", reference: "Ruth 1:16"))
+        context.insert(JournalEntry(bookID: "ruth", chapter: 1, text: "Kept safe"))
+        context.insert(BookStarted(bookID: "genesis"))
+        context.insert(PlacedItem(key: "ruth", x: 9, y: 9, moved: true))
+        try context.save()
+    }
+
+    @Test("A store from before versioning opens through the migration plan with every record kept")
+    func unversionedStoreMigrates() throws {
+        let url = tempURL()
+        try writeOldStore(at: url)
+        let container = try AppSchema.container(url: url)
+        let context = container.mainContext
+        #expect(try context.fetch(FetchDescriptor<ChapterRead>()).count == 5)
+        #expect(try context.fetch(FetchDescriptor<ChapterRead>()).filter { !$0.checked }.count == 1)
+        #expect(try context.fetch(FetchDescriptor<QuizPass>()).count == 1)
+        #expect(try context.fetch(FetchDescriptor<VerseMemorised>()).count == 1)
+        #expect(try context.fetch(FetchDescriptor<JournalEntry>()).first?.text == "Kept safe")
+        #expect(try context.fetch(FetchDescriptor<BookStarted>()).count == 1)
+        #expect(try context.fetch(FetchDescriptor<PlacedItem>()).first?.moved == true)
+        // The new records work alongside the old ones.
+        context.insert(ProduceCollection(bookID: "ruth", kind: .bread, amount: 2))
+        context.insert(PlacedExtra(kind: .bench, x: 1, y: 2))
+        try context.save()
+        #expect(try context.fetch(FetchDescriptor<ProduceCollection>()).count == 1)
+    }
+
+    @Test("Opening the migrated store again changes nothing")
+    func reopen() throws {
+        let url = tempURL()
+        try writeOldStore(at: url)
+        do {
+            let first = try AppSchema.container(url: url)
+            first.mainContext.insert(ProduceGift(kind: .fish, amount: 1, recipient: "crowd"))
+            try first.mainContext.save()
+        }
+        let again = try AppSchema.container(url: url)
+        #expect(try again.mainContext.fetch(FetchDescriptor<ChapterRead>()).count == 5)
+        #expect(try again.mainContext.fetch(FetchDescriptor<ProduceGift>()).count == 1)
+    }
+}

@@ -115,6 +115,10 @@ struct Island: Equatable {
     var conflicts: Set<String> = []
     /// Each Place's growth, by book (for reveals and cards).
     var growth: [String: PlaceGrowth] = [:]
+    /// When each complete Place was completed (its produce counts from then).
+    var completed: [String: Date] = [:]
+    /// Identifies this exact island (0 = not built from history: drawn without caching).
+    var signature = 0
 
     /// Every plot's current place (books, the Library and the forest), for edit mode.
     var placements: [String: IslandPlacement] {
@@ -172,8 +176,9 @@ struct Island: Equatable {
         hasher.combine(richnessOverride)
         let key = hasher.finalize()
         if let memo, memo.key == key { return memo.island }
-        let island = make(chapters: chapters, quizzes: quizzes, verses: verses, features: features,
+        var island = make(chapters: chapters, quizzes: quizzes, verses: verses, features: features,
                           placements: placements, unchecked: unchecked, extras: extras, richnessOverride: richnessOverride)
+        island.signature = key == 0 ? 1 : key
         memo = (key, island)
         return island
     }
@@ -252,7 +257,7 @@ struct Island: Equatable {
                               footprint: CGRect(x: extra.x - 0.3, y: extra.y - 0.3, width: 0.6, height: 0.6), turned: extra.rotation))
         }
         return Island(tiles: tiles, items: items, plots: plots, water: placer.water, library: library, forest: forestPlot,
-                      roads: roads, conflicts: placer.conflicts, growth: growths)
+                      roads: roads, conflicts: placer.conflicts, growth: growths, completed: reads.completed)
     }
 
     /// One Place on its own patch of land (for its inside page and share card).
