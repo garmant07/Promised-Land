@@ -28,6 +28,54 @@ struct SettingsPreferencesSection: View {
     }
 }
 
+/// How strictly a chapter must be read before it counts. Kids accounts start on Strict, and
+/// changing it there needs a grown-up (a simple sum).
+struct ReadingStrictnessSection: View {
+    @AppStorage(StorageKeys.readingStrictness) private var stored = ""
+    @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
+    @State private var pending: ReadingStrictness?
+    @State private var answer = ""
+    private let sum = (a: 7, b: 8)
+
+    private var current: ReadingStrictness { .current(stored: stored, ageGroup: ageGroup) }
+    private var isKids: Bool { ageGroup == AgeGroup.under13.rawValue }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Reading").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
+            Picker("When a chapter counts", selection: Binding(get: { current }, set: { choose($0) })) {
+                ForEach(ReadingStrictness.allCases) { Text($0.title).tag($0) }
+            }
+            .pickerStyle(.segmented)
+            Text(current.detail)
+                .font(.footnote)
+                .foregroundStyle(Color.secondaryText)
+            if isKids {
+                Label("A grown-up can change this.", systemImage: "person.2.fill")
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+            }
+        }
+        .cardStyle()
+        .alert("Ask a grown-up", isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil; answer = "" } })) {
+            TextField("Answer", text: $answer).keyboardType(.numberPad)
+            Button("Change") {
+                if Int(answer) == sum.a * sum.b, let pending { stored = pending.rawValue }
+                pending = nil
+                answer = ""
+            }
+            Button("Cancel", role: .cancel) { pending = nil; answer = "" }
+        } message: {
+            Text("What is \(sum.a) × \(sum.b)?")
+        }
+    }
+
+    private func choose(_ s: ReadingStrictness) {
+        guard s != current else { return }
+        if isKids { pending = s } else { stored = s.rawValue }
+    }
+}
+
 #if DEBUG
 /// DEBUG-only tools for testing the island and journeys.
 struct DebugToolsSection: View {

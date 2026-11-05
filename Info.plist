@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>To read the book and chapter from a photo of the page in your own Bible. The photo stays on this device.</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

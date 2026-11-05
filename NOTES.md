@@ -88,3 +88,17 @@ option was chosen and noted here.
     days, fences/benches/lamps by longest streak), placed from the Extras tray onto the open
     land nearest the plaza, then dragged (whole tiles) like Places. They can't go in the sea or
     inside a Place (red). Undo keeps the last 50 changes while editing; Cancel discards all.
+27. **Reading that counts.** A chapter now counts only through the gate: reach the last page,
+    spend the minimum time (≈200 words/min Standard, 160 Strict; floor 45/90 s, cap 8/10 min;
+    paused while the app is in the background), then answer one question. The old one-tap
+    "Mark as read" and its optional check are gone; reads saved before still count, and an old
+    unchecked read can be counted by answering its question. Chapters without bundled text use
+    a typical length (650 words). Relaxed skips the timer. Kids (Under 13) default to Strict;
+    changing it on a Kids profile asks a grown-up a simple sum.
+28. **Questions** exist for every bundled chapter and some well-known ones (QuestionData,
+    unreviewed); other chapters get a reflection prompt (anything written counts, saved to the
+    journal).
+29. **Use my Bible** uses the Vision `RecognizeTextRequest` on device; the camera when there is
+    one, otherwise a photo from the library (the Simulator has no camera). With the photo read,
+    Strict also times the reading; picking the chapter by hand goes straight to the question.
+    Photos are kept only if asked, as `ReadingPhoto` linked to a journal entry.

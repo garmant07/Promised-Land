@@ -9,6 +9,8 @@ struct PageReaderView<Footer: View>: View {
     /// Verses with a deep dive get a small sparkle and open it when tapped.
     var deepDive: (Verse) -> DeepDive? = { _ in nil }
     var onDeepDive: (DeepDive, Verse) -> Void = { _, _ in }
+    /// Called once the last page has been reached (for the reading gate).
+    var onReachedEnd: () -> Void = {}
     @ViewBuilder var footer: () -> Footer
 
     @State private var sheet = 0
@@ -21,7 +23,7 @@ struct PageReaderView<Footer: View>: View {
             let pageWidth = spread ? (geo.size.width - 48) / 2 : geo.size.width - 32
             let pageHeight = max(240, geo.size.height - 56)
             let pages = PagePlanner.pages(verses, width: pageWidth - 48, height: pageHeight - 64,
-                                          fontSize: fontSize, footerHeight: 190, titleHeight: 56, evenCount: spread)
+                                          fontSize: fontSize, footerHeight: 250, titleHeight: 56, evenCount: spread)
             let sheets: [[Int]] = spread
                 ? stride(from: 0, to: pages.count, by: 2).map { [$0] + ($0 + 1 < pages.count ? [$0 + 1] : []) }
                 : pages.indices.map { [$0] }
@@ -42,6 +44,8 @@ struct PageReaderView<Footer: View>: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: sheet)
+                .onAppear { if sheets.count <= 1 { onReachedEnd() } }
+                .onChange(of: sheet) { _, s in if s >= sheets.count - 1 { onReachedEnd() } }
 
                 HStack {
                     Button { sheet = max(0, sheet - 1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44) }
@@ -182,157 +186,5 @@ enum PagePlanner {
         // In a two-page spread, finish on a full spread: "Mark as read" gets the facing page.
         if evenCount, pages.count % 2 == 1, !(pages.last?.isEmpty ?? true) { pages.append([]) }
         return pages
-    }
-}
-
-// MARK: - Reading check
-
-/// After "Mark as read": a quick check (a question, a short reflection or a journal note)
-/// makes the chapter count toward its building. Skipping is fine: the chapter's artifact is
-/// already on the island, and the check can be done later from the chapter.
-struct ReadingCheckView: View {
-    let book: Book
-    let chapter: Int
-
-    @Environment(\.modelContext) private var context
-    @Environment(\.dismiss) private var dismiss
-    @State private var mode: Mode?
-    @State private var picked: Int?
-    @State private var note = ""
-    @State private var reflecting = false
-
-    private enum Mode { case question, note }
-
-    private var landmarkName: String { WorldData.landmark(bookID: book.id)?.name ?? book.name }
-    private var question: QuizQuestion? {
-        guard let quiz = LearningData.forBook(book.id)?.quiz, !quiz.isEmpty else { return nil }
-        return quiz[(chapter - 1) % quiz.count]
-    }
-
-    var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("Quick check")
-                        .font(.serifTitle(.title))
-                        .foregroundStyle(Color.bodyText)
-                    Text("\(book.name) \(chapter) has placed something on your island. A quick check counts it toward building \(landmarkName).")
-                        .font(.subheadline)
-                        .foregroundStyle(Color.secondaryText)
-
-                    switch mode {
-                    case nil: choices
-                    case .question: questionView
-                    case .note: noteView
-                    }
-
-                    Button("Skip for now") { dismiss() }
-                        .font(.subheadline)
-                        .foregroundStyle(Color.secondaryText)
-                        .frame(maxWidth: .infinity, minHeight: 44)
-                }
-                .padding(16)
-            }
-            .themedScreen()
-            .navigationBarTitleDisplayMode(.inline)
-            .sheet(isPresented: $reflecting) {
-                ReflectionCard(book: book, chapter: chapter) { finish() }
-            }
-        }
-    }
-
-    private var choices: some View {
-        VStack(spacing: 10) {
-            if question != nil {
-                choice("Answer one question", detail: "A question on \(book.name)", icon: "questionmark.circle") { mode = .question }
-            }
-            choice("Write a short reflection", detail: "Saved privately in your journal", icon: "text.bubble") { reflecting = true }
-            choice("Add a journal note", detail: "A line or two about what you read", icon: "square.and.pencil") { mode = .note }
-        }
-    }
-
-    private func choice(_ title: String, detail: String, icon: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack(spacing: 12) {
-                Image(systemName: icon)
-                    .font(.title3)
-                    .foregroundStyle(Color.terracotta)
-                    .frame(width: 40, height: 40)
-                    .background(Color.sand, in: Circle())
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(title).font(.headline).foregroundStyle(Color.bodyText)
-                    Text(detail).font(.footnote).foregroundStyle(Color.secondaryText)
-                }
-                Spacer()
-                Image(systemName: "chevron.right").foregroundStyle(Color.secondaryText)
-            }
-            .padding(12)
-            .background(Color.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        }
-        .buttonStyle(.plain)
-    }
-
-    @ViewBuilder
-    private var questionView: some View {
-        if let q = question {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(q.prompt)
-                    .font(.system(.title3, design: .serif))
-                    .foregroundStyle(Color.bodyText)
-                    .fixedSize(horizontal: false, vertical: true)
-                ForEach(q.options.indices, id: \.self) { i in
-                    let isPicked = picked == i
-                    let right = i == q.answerIndex
-                    Button {
-                        picked = i
-                        if right { Task { try? await Task.sleep(for: .milliseconds(700)); finish() } }
-                    } label: {
-                        HStack {
-                            Text(q.options[i]).foregroundStyle(Color.bodyText)
-                            Spacer()
-                            if isPicked { Image(systemName: right ? "checkmark.circle.fill" : "xmark.circle").foregroundStyle(right ? Color.olive : Color.terracotta) }
-                        }
-                        .padding(12)
-                        .frame(minHeight: 48)
-                        .background(isPicked ? (right ? Color.olive.opacity(0.2) : Color.terracotta.opacity(0.15)) : Color.card,
-                                    in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                    }
-                    .buttonStyle(.plain)
-                }
-                if let picked, picked != q.answerIndex {
-                    Text("Not quite. Have another go.")
-                        .font(.footnote)
-                        .foregroundStyle(Color.secondaryText)
-                }
-            }
-            .cardStyle()
-        }
-    }
-
-    private var noteView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("What stayed with you from \(book.name) \(chapter)?")
-                .font(.system(.headline, design: .serif))
-                .foregroundStyle(Color.bodyText)
-            TextEditor(text: $note)
-                .scrollContentBackground(.hidden)
-                .frame(minHeight: 100)
-                .padding(8)
-                .background(Color.cream, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .accessibilityLabel("Journal note")
-            Button("Save note") {
-                context.insert(JournalEntry(bookID: book.id, chapter: chapter, text: note.trimmingCharacters(in: .whitespacesAndNewlines)))
-                try? context.save()
-                finish()
-            }
-            .buttonStyle(PrimaryButtonStyle())
-            .disabled(note.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-        }
-        .cardStyle()
-    }
-
-    private func finish() {
-        context.markLatestChecked(book.id, chapter)
-        dismiss()
     }
 }

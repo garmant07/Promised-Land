@@ -285,13 +285,20 @@ struct ChapterReaderView: View {
     let chapter: Int
 
     @Environment(\.modelContext) private var context
-    @ProgressQuery private var progress: GameProgress
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.closeReading) private var closeReading
     @Query private var reads: [ChapterRead]
-    @State private var celebration: Celebration?
-    @State private var checking = false
     @State private var deepDive: (dive: DeepDive, text: String)?
-    @State private var checkAfterCelebration = false
-    @AppStorage(StorageKeys.offerReflection) private var offerCheck = true
+    @AppStorage(StorageKeys.readingStrictness) private var strictnessRaw = ""
+    @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
+
+    // The reading gate: reach the last page, and spend a little time (paused in the background).
+    @State private var reachedEnd = false
+    @State private var readSeconds: Double = 0
+    @State private var segmentStart: Date? = .now
+    @State private var asking = false
+    @State private var scanning = false
+    @State private var counted = false
 
     init(book: Book, chapter: Int) {
         self.book = book
@@ -302,8 +309,13 @@ struct ChapterReaderView: View {
     }
 
     private var isRead: Bool { !reads.isEmpty }
-    /// The latest read is waiting for its quick check.
+    /// A read from before the reading gate, still waiting for its quick check.
     private var needsCheck: Bool { reads.first.map { !$0.checked } ?? false }
+    private var strictness: ReadingStrictness { .current(stored: strictnessRaw, ageGroup: ageGroup) }
+    private var requiredSeconds: Double {
+        ReadingGate.timerApplies(strictness: strictness, ownBible: false)
+            ? ReadingGate.minimumSeconds(words: ReadingGate.words(bookID: book.id, chapter: chapter), strictness: strictness) : 0
+    }
 
     var body: some View {
         Group {
@@ -311,7 +323,8 @@ struct ChapterReaderView: View {
                 VStack(spacing: 4) {
                     PageReaderView(title: "\(book.name) \(chapter)", verses: verses,
                                    deepDive: { DeepDiveData.entry(bookID: book.id, chapter: chapter, verse: $0.number) },
-                                   onDeepDive: { dive, verse in deepDive = (dive, verse.text) }) {
+                                   onDeepDive: { dive, verse in deepDive = (dive, verse.text) },
+                                   onReachedEnd: { reachedEnd = true }) {
                         actions(compact: true)
                     }
                     Text("American Standard Version · sample verses")
@@ -326,10 +339,10 @@ struct ChapterReaderView: View {
                             .font(.serifTitle(.largeTitle))
                             .foregroundStyle(Color.bodyText)
                         VStack(alignment: .leading, spacing: 10) {
-                            Label("Text coming soon", systemImage: "book.closed")
+                            Label("Read it in your own Bible", systemImage: "book.closed")
                                 .font(.headline)
                                 .foregroundStyle(Color.primaryBrown)
-                            Text("This chapter isn't bundled yet. Read it in your own Bible, then mark it as read to keep building.")
+                            Text("This chapter's text isn't in the app yet. Read it in your own Bible: take a photo of the page and answer one quick question to build your island.")
                                 .foregroundStyle(Color.secondaryText)
                         }
                         .cardStyle()
@@ -343,47 +356,70 @@ struct ChapterReaderView: View {
         .themedScreen()
         .navigationTitle("Chapter \(chapter)")
         .navigationBarTitleDisplayMode(.inline)
-        // Opening a chapter lays the book's foundations (no need to finish it first).
         .onAppear { context.recordBookStarted(book.id) }
-        .sheet(item: $celebration, onDismiss: {
-            if checkAfterCelebration { checkAfterCelebration = false; checking = true }
-        }) { CelebrationView(celebration: $0) }
-        .sheet(isPresented: $checking) { ReadingCheckView(book: book, chapter: chapter) }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active { segmentStart = .now } else { pauseTimer() }
+        }
+        .sheet(isPresented: $asking) {
+            ReadingQuestionView(book: book, chapter: chapter, onCounted: { countRead() }, onLookAgain: { asking = false })
+        }
+        .sheet(isPresented: $scanning) {
+            BibleScanView(suggested: ChapterRef(bookID: book.id, chapter: chapter)) { scanning = false; finishedReading() }
+        }
         .sheet(isPresented: Binding(get: { deepDive != nil }, set: { if !$0 { deepDive = nil } })) {
             if let deepDive { DeepDiveSheet(dive: deepDive.dive, verseText: deepDive.text) }
         }
     }
 
-    /// Mark as read (one tap), what's been read, the reading check, and the next chapter.
+    private func pauseTimer() {
+        if let start = segmentStart { readSeconds += Date.now.timeIntervalSince(start) }
+        segmentStart = nil
+    }
+
+    private func elapsed(at now: Date) -> Double { readSeconds + (segmentStart.map { now.timeIntervalSince($0) } ?? 0) }
+
+    /// Finish (after the gate), "Use my Bible", what's been read, and the next chapter.
     @ViewBuilder
     private func actions(compact: Bool) -> some View {
+        let hasText = SampleText.verses(book: book.id, chapter: chapter) != nil
         VStack(spacing: compact ? 6 : 10) {
-            if isRead {
-                let count = reads.count
-                Label(count == 1 ? "You've read this chapter" : "You've read this chapter \(count) times",
-                      systemImage: "checkmark.circle.fill")
-                    .font(.subheadline.weight(.semibold))
+            if counted {
+                Label("Counted! Your island is growing.", systemImage: "checkmark.seal.fill")
+                    .font(.headline)
                     .foregroundStyle(Color.olive)
-                    .frame(maxWidth: .infinity, minHeight: 32)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+            } else if hasText {
+                TimelineView(.periodic(from: .now, by: 1)) { context in
+                    let e = elapsed(at: context.date)
+                    FinishButton(progress: ReadingGate.progress(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),
+                                 enabled: ReadingGate.canFinish(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),
+                                 title: isRead ? "Finish (read again)" : "Finish") { asking = true }
+                }
+            }
+            if !counted {
+                Button { scanning = true } label: { Label("Use my Bible", systemImage: "camera.viewfinder") }
+                    .buttonStyle(hasText ? AnyButtonStyle(SoftButtonStyle()) : AnyButtonStyle(PrimaryButtonStyle()))
+            }
+            if isRead {
+                let count = reads.filter(\.checked).count
+                if count > 0 {
+                    Label(count == 1 ? "You've read this chapter" : "You've read this chapter \(count) times",
+                          systemImage: "checkmark.circle.fill")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Color.olive)
+                }
                 if needsCheck {
-                    Button { checking = true } label: {
-                        Label("Quick check: count it toward the building", systemImage: "hammer")
+                    Button { asking = true } label: {
+                        Label("Answer the question to count your earlier read", systemImage: "questionmark.circle")
                             .font(.footnote.weight(.semibold))
                     }
                     .foregroundStyle(Color.primaryBrown)
                     .frame(maxWidth: .infinity, minHeight: 44)
                 }
-                HStack(spacing: 8) {
-                    Button("Read again") { recordRead() }
-                        .buttonStyle(SoftButtonStyle())
-                    Button("Undo") { withAnimation { context.undoLastRead(book.id, chapter) } }
-                        .font(.subheadline)
-                        .foregroundStyle(Color.secondaryText)
-                        .frame(minWidth: 64, minHeight: 44)
-                }
-            } else {
-                Button("Mark as read") { recordRead() }
-                    .buttonStyle(PrimaryButtonStyle())
+                Button("Undo last read") { withAnimation { context.undoLastRead(book.id, chapter) } }
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+                    .frame(minHeight: 44)
             }
             if chapter < book.chapterCount {
                 NavigationLink(value: ChapterRef(bookID: book.id, chapter: chapter + 1)) {
@@ -394,70 +430,34 @@ struct ChapterReaderView: View {
         }
     }
 
-    private func recordRead() {
-        let before = progress.stage(of: book.id)
-        let regionWasHidden = WorldData.landmark(bookID: book.id).map { !progress.isRegionRevealed($0.regionID) } ?? false
-        let firstRead = !isRead
-        // One tap records the read (its artifact appears); the quick check then counts it
-        // toward the building.
-        withAnimation { context.recordRead(book.id, chapter, checked: false) }
-        defer {
-            if offerCheck {
-                if celebration != nil { checkAfterCelebration = true } else { checking = true }
-            }
+    /// The question was answered: the chapter counts.
+    private func countRead() {
+        if needsCheck {
+            context.markLatestChecked(book.id, chapter)
+        } else {
+            context.recordRead(book.id, chapter, checked: true)
         }
-        guard firstRead, let landmark = WorldData.landmark(bookID: book.id) else { return }
+        asking = false
+        finishedReading()
+    }
 
-        // Predict the new stage without waiting for the query to refresh.
-        let read = progress.chaptersRead(book.id) + 1
-        let after: BuildStage = read >= book.chapterCount ? .complete : (read * 2 >= book.chapterCount ? .rising : .foundations)
-        if after == .complete && before != .complete {
-            celebration = Celebration(landmark: landmark, stage: .complete,
-                                      message: "You finished \(book.name). Do the quick check to raise \(landmark.name)!")
-        } else if regionWasHidden {
-            celebration = Celebration(landmark: landmark, stage: after,
-                                      message: "The fog lifts over \(landmark.region?.name ?? "a new region"). Foundations are laid for \(landmark.name).")
+    /// Back to the island, where the new piece is built.
+    private func finishedReading() {
+        withAnimation { counted = true }
+        readSeconds = 0
+        segmentStart = .now
+        Task {
+            try? await Task.sleep(for: .milliseconds(900))
+            closeReading?()
         }
     }
 }
 
-// MARK: - Celebration
-
-struct Celebration: Identifiable {
-    let landmark: Landmark
-    let stage: BuildStage
-    var level: GrowthLevel = .base
-    let message: String
-    var id: String { landmark.id + "\(stage.rawValue)\(level.rawValue)" }
-}
-
-struct CelebrationView: View {
-    let celebration: Celebration
-    @Environment(\.dismiss) private var dismiss
-
-    var body: some View {
-        VStack(spacing: 20) {
-            Spacer()
-            LandmarkArtView(landmark: celebration.landmark, stage: celebration.stage,
-                            level: celebration.level, size: 200)
-            Text(celebration.landmark.name)
-                .font(.serifTitle(.largeTitle))
-                .foregroundStyle(Color.bodyText)
-                .multilineTextAlignment(.center)
-            Text(celebration.stage.title)
-                .font(.headline)
-                .foregroundStyle(Color.terracotta)
-            Text(celebration.message)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(Color.secondaryText)
-            Spacer()
-            Button("Wonderful") { dismiss() }
-                .buttonStyle(PrimaryButtonStyle())
-        }
-        .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.cream.ignoresSafeArea())
-    }
+/// Lets two different button styles be chosen at runtime.
+struct AnyButtonStyle: ButtonStyle {
+    private let make: (Configuration) -> AnyView
+    init<S: ButtonStyle>(_ style: S) { make = { AnyView(style.makeBody(configuration: $0)) } }
+    func makeBody(configuration: Configuration) -> some View { make(configuration) }
 }
 
 #Preview("Library") {

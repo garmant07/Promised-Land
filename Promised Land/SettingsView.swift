@@ -18,13 +18,13 @@ enum StorageKeys {
     static let journeyStopsSeen = "journeyStopsSeen"
     static let journeysCompleted = "journeysCompleted"
     static let throneRevealed = "throneRevealed"
+    static let readingStrictness = "reading.strictness"
 }
 
 struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     @AppStorage(StorageKeys.hasOnboarded) private var hasOnboarded = false
-    @AppStorage(StorageKeys.offerReflection) private var offerReflection = true
 
     @State private var confirmingReset = false
     @State private var editingCharacter = false
@@ -59,10 +59,9 @@ struct SettingsView: View {
 
                     SettingsPreferencesSection()
 
+                    ReadingStrictnessSection()
+
                     section("Reflection & journal") {
-                        Toggle("Offer the quick check after reading", isOn: $offerReflection)
-                            .tint(Color.olive)
-                            .frame(minHeight: 44)
                         Label("Your journal is private. Entries are stored only on this device and are never uploaded or shared.",
                               systemImage: "lock.fill")
                             .font(.subheadline)

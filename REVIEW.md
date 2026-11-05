@@ -28,6 +28,11 @@ those that point at the text, e.g.:
 - **Villager routines** (`VillagerData.swift`) are illustrations (a fisherman, a harvester),
   not claims, but check they feel right for each style.
 
+- **Chapter questions** — `QuestionData.swift`: 34 questions (every bundled chapter, plus
+  Gen 6, 12; Exod 14; 1 Sam 17; Dan 3; Jonah 1, 3; Matt 2; Mark 4; Luke 2, 15; John 2, 11;
+  Acts 2, 9; 1 Cor 13; Rev 21). Check each answer against the ASV and its reference, and that
+  the wrong options are clearly wrong.
+
 ## 1. Character journeys — `CharacterJourneys.swift`
 13 journeys (the 12, plus Jonah as a bonus), 84 stops.
 - **Every stop's "what happened"** paraphrases or quotes the ASV, with a verse reference.
