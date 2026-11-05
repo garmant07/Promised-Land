@@ -60,3 +60,8 @@ option was chosen and noted here.
 20. **Layout migration.** `IslandMigration` (version 2, run once at launch) drops the old
     auto-pinned plot positions, keeps positions the reader chose if they still fit, and resets
     the "seen" markers so the first look is quiet. Reading history is never touched.
+21. **"See it built".** After reading, HomeView compares each Place's chapter count with what was
+    last seen and plays the beats (RevealPlan.swift). Up to three chapters play one after another,
+    more play as one combined reveal. The rest of the island is held at its old growth until each
+    beat plays. Rewards (banners, lanterns) and forest trees simply appear; the unlock banner's
+    "See it" still points at them. With Reduce Motion the camera stays still and only the caption shows.

@@ -75,11 +75,11 @@ struct HomeView: View {
     @AppStorage(StorageKeys.gardenSeenChapters) private var gardenSeen = -1
     /// Each building's chapters when last seen ("book:count,…"), so growth can be shown.
     @AppStorage(StorageKeys.islandProgressSeen) private var progressSeen = ""
-    @State private var revealFrom = 0
+    @State private var reveal: [RevealStep] = []
+    @State private var revealInitial: [Int: CGFloat] = [:]
     @State private var revealID = 0
-    @State private var grown: Set<Int> = []
-    @State private var growID = 0
-    @State private var growthNote: String?
+    /// The beat of the "see it built" moment playing now (for its caption).
+    @State private var revealing: RevealStep?
 
     // Edit mode
     @State private var editingIsland = false
@@ -135,9 +135,10 @@ struct HomeView: View {
         let island = island
         ZStack {
             Earthy.sea.ignoresSafeArea()
-            PlatformScene(avatar: avatar, island: island, revealFrom: revealFrom, revealID: revealID,
+            PlatformScene(avatar: avatar, island: island, reveal: reveal, revealInitial: revealInitial, revealID: revealID,
+                          onRevealStep: { step in withAnimation(.easeInOut(duration: 0.35)) { revealing = step } },
                           insets: EdgeInsets(top: 70, leading: 8, bottom: 118, trailing: 8),
-                          selected: $selectedItem, grown: grown, growID: growID,
+                          selected: $selectedItem,
                           persistsCamera: true, editing: editingIsland ? editing : nil,
                           onLongPress: { index in startEditing(island.items[index].plotKey) },
                           characters: IslandCharacter.make(unlockedCharacters, island: island),
@@ -157,6 +158,16 @@ struct HomeView: View {
         }
         // The status pill is read-only, so touches on it go through to the island.
         .overlay(alignment: .topLeading) { if !editingIsland { status.allowsHitTesting(false) } }
+        .overlay(alignment: .bottom) {
+            if let revealing {
+                RevealCaption(step: revealing)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 92)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .allowsHitTesting(false)
+                    .id(revealing.id)
+            }
+        }
         .overlay(alignment: .top) { if editingIsland { editBar(island) } }
         .overlay(alignment: .top) {
             if !editingIsland, let notice = notices.first {
@@ -221,7 +232,7 @@ struct HomeView: View {
             #endif
         }
         .onChange(of: Self.signature(island)) { _, _ in
-            if activeSheet == nil && !showingWorld { showNewGrowth() }
+            if activeSheet == nil && !showingWorld && interior == nil { showNewGrowth() }
         }
         #if DEBUG
         .fullScreenCover(isPresented: $debugGallery) { AvatarGallery() }
@@ -248,15 +259,6 @@ struct HomeView: View {
             .padding(.horizontal, 12)
             .padding(.vertical, 7)
             .background(Color.card.opacity(0.85), in: Capsule())
-            if let growthNote, notices.isEmpty {
-                Label(growthNote, systemImage: "leaf.fill")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Color.olive)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .background(Color.card.opacity(0.85), in: Capsule())
-                    .transition(.opacity.combined(with: .move(edge: .top)))
-            }
         }
         .padding(.leading, 16)
         .padding(.top, 8)
@@ -408,7 +410,7 @@ struct HomeView: View {
         .padding(.top, 6)
     }
 
-    /// Each building's chapters, as "book:count,…".
+    /// Each Place's chapters, as "book:count,…".
     private static func signature(_ island: Island) -> String {
         island.items.compactMap { item -> String? in
             guard case .place(let id, 0) = item.source else { return nil }
@@ -486,50 +488,30 @@ struct HomeView: View {
             welcomeCharacters()
             announceUnlocks(island)
         }
-        let now = island.items.count
         let signature = Self.signature(island)
-        defer { gardenSeen = now; progressSeen = signature }
+        defer { gardenSeen = island.items.count; progressSeen = signature }
+        // The first look (or the first after the move to growing Places) is quiet.
         guard gardenSeen >= 0 else { return }
-
         let before = Dictionary(progressSeen.split(separator: ",").compactMap { pair -> (String, Int)? in
             let parts = pair.split(separator: ":")
             guard parts.count == 2, let n = Int(parts[1]) else { return nil }
             return (String(parts[0]), n)
         }, uniquingKeysWith: { a, _ in a })
-        var grownNow: Set<Int> = []
-        var chaptersAdded = 0
-        var grownName: String?
-        for (index, item) in island.items.enumerated() {
-            guard case .place(let id, 0) = item.source, let old = before[id], item.progress > old else { continue }
-            grownNow.insert(index)
-            chaptersAdded += item.progress - old
-            grownName = PlaceData.spec(for: id).name
+        let plan = RevealPlanner.plan(island: island, before: before, chapterOrder: chapterOrder)
+        guard !plan.steps.isEmpty else { return }
+        reveal = plan.steps
+        revealInitial = plan.initial
+        revealID += 1
+    }
+
+    /// Each book's distinct checked chapters, in the order first read.
+    private var chapterOrder: [String: [Int]] {
+        var out: [String: [Int]] = [:]
+        var seen: Set<String> = []
+        for read in chapterReads.filter(\.checked).sorted(by: { $0.date < $1.date }) where seen.insert("\(read.bookID)#\(read.chapterNumber)").inserted {
+            out[read.bookID, default: []].append(read.chapterNumber)
         }
-        let added = max(0, now - gardenSeen)
-        if added > 0 {
-            revealFrom = gardenSeen
-            revealID += 1
-        }
-        if !grownNow.isEmpty {
-            grown = grownNow
-            growID += 1
-        }
-        let note: String? = {
-            if added > 0 && chaptersAdded == 0 {
-                return added == 1 ? "Foundations laid" : "\(added) new things on your island"
-            }
-            if chaptersAdded > 0, grownNow.count == 1, let grownName {
-                return "\(grownName): \(chaptersAdded) more \(chaptersAdded == 1 ? "chapter" : "chapters") built"
-            }
-            if chaptersAdded > 0 { return "\(chaptersAdded) chapters built into your island" }
-            return nil
-        }()
-        guard let note else { return }
-        withAnimation(.spring(duration: 0.4)) { growthNote = note }
-        Task {
-            try? await Task.sleep(for: .seconds(4))
-            withAnimation(.easeOut(duration: 0.6)) { growthNote = nil }
-        }
+        return out
     }
 
     #if DEBUG
@@ -742,4 +724,40 @@ struct ReadingSuggestionCard: View {
 #Preview {
     HomeView()
         .modelContainer(PreviewData.container)
+}
+
+/// The caption under the "see it built" moment: what the chapter built, and how far the Place is.
+struct RevealCaption: View {
+    let step: RevealStep
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if step.kind == .found || step.kind == .complete {
+                Text(step.kind == .found ? "A new Place is founded" : "Complete!")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(Color.terracotta)
+                    .textCase(.uppercase)
+            }
+            Text(step.caption)
+                .font(.serifTitle(.headline))
+                .foregroundStyle(Color.bodyText)
+                .fixedSize(horizontal: false, vertical: true)
+            HStack(spacing: 8) {
+                ProgressView(value: step.progress).tint(Color.olive)
+                Text(step.progressLabel)
+                    .font(.caption.monospacedDigit())
+                    .foregroundStyle(Color.secondaryText)
+                    .lineLimit(1)
+                    .layoutPriority(1)
+            }
+            Text("Tap anywhere to skip")
+                .font(.caption2)
+                .foregroundStyle(Color.secondaryText.opacity(0.7))
+        }
+        .padding(16)
+        .frame(maxWidth: 420, alignment: .leading)
+        .background(Color.cream.opacity(0.97), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .shadow(color: Color.primaryBrown.opacity(0.16), radius: 12, y: 4)
+        .accessibilityElement(children: .combine)
+    }
 }

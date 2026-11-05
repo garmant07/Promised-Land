@@ -6,15 +6,16 @@ import SwiftUI
 struct PlatformScene: View {
     let avatar: Avatar
     let island: Island
-    /// Items from this index onward build in when `revealID` changes.
-    var revealFrom = 0
+    /// The "see it built" moment: these beats play when `revealID` changes, starting from
+    /// `revealInitial` (the growth each changing item showed before).
+    var reveal: [RevealStep] = []
+    var revealInitial: [Int: CGFloat] = [:]
     var revealID = 0
+    /// Told which beat is playing (nil when none), for the caption.
+    var onRevealStep: ((RevealStep?) -> Void)? = nil
     /// Room kept clear of the island (for the status pill and the bottom bar).
     var insets = EdgeInsets()
     var selected: Binding<Int?> = .constant(nil)
-    /// Buildings that just grew bounce when `growID` changes.
-    var grown: Set<Int> = []
-    var growID = 0
     /// Your own island keeps its camera (zoom, pan, turn) between launches and shows the
     /// turn and "Find me" buttons. Friends' islands don't.
     var persistsCamera = false
@@ -65,8 +66,10 @@ struct PlatformScene: View {
     @State private var viewSize: CGSize = .zero
     /// The last tap on empty ground, for double-tap to zoom.
     @State private var lastGroundTap: (time: Date, at: CGPoint)?
-    /// The item the build moment focuses on (it gets dust and sparkles).
-    @State private var buildFocus: Int?
+    /// While revealing: the growth each changing item shows (0 = hidden), and the beat playing.
+    @State private var overrides: [Int: CGFloat] = [:]
+    @State private var beat: (step: RevealStep, start: Date)?
+    @State private var revealToken = 0
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -76,9 +79,7 @@ struct PlatformScene: View {
     @State private var walking = false
     @State private var facingLeft = false
 
-    // Building in & selection
-    @State private var popStart = Date.distantPast
-    @State private var popping = false
+    // Selection
     @State private var bounceStart = Date.distantPast
     @State private var bouncing = false
     @State private var bounceTargets: Set<Int> = []
@@ -96,8 +97,15 @@ struct PlatformScene: View {
             let layout = base.panned(pan)
             let charH = Self.characterHeight * layout.u
             let charW = charH * 0.625 // the avatar canvas is 100 × 160
-            let staticCount = popping ? min(revealFrom, island.items.count) : island.items.count
-            let ordered = island.items.prefix(staticCount).sorted { layout.depth($0.gx, $0.gy) < layout.depth($1.gx, $1.gy) }
+            let moving = Set(beat?.step.changes.map(\.index) ?? [])
+            let ordered = island.items.indices.compactMap { i -> Island.Item? in
+                guard !moving.contains(i) else { return nil }
+                guard let g = overrides[i] else { return island.items[i] }
+                guard g > 0 else { return nil }
+                var item = island.items[i]
+                item.growth = g
+                return item
+            }.sorted { layout.depth($0.gx, $0.gy) < layout.depth($1.gx, $1.gy) }
 
             ZStack(alignment: .topLeading) {
                 Earthy.sea
@@ -126,30 +134,24 @@ struct PlatformScene: View {
                         #endif
                     }
 
-                    TimelineView(.animation(paused: !walking && !popping && !bouncing && characters.isEmpty)) { context in
+                    if beat != nil || !overrides.isEmpty {
+                        // The rest of the island dims a little while something is built.
+                        Color.black.opacity(0.16).ignoresSafeArea().allowsHitTesting(false).transition(.opacity)
+                    }
+
+                    TimelineView(.animation(paused: !walking && beat == nil && !bouncing && characters.isEmpty)) { context in
                         let now = context.date
                         let pos = position(at: now)
                         let feet = layout.point(pos.x, pos.y)
                         let t = now.timeIntervalSinceReferenceDate
                         let bounce = walking ? -abs(sin(t * 9)) * charH * 0.05 : 0
                         let lean = walking ? sin(t * 9) * 3 : 0
-                        let popElapsed = now.timeIntervalSince(popStart)
-                        let popStep = min(0.1, 2.0 / Double(max(1, island.items.count - staticCount)))
 
                         ZStack(alignment: .topLeading) {
-                            // New things building in, and the selected item's bounce.
+                            // The piece being built, and the selected item's bounce.
                             Canvas { c, _ in
-                                if popping {
-                                    for (rank, item) in island.items.enumerated().dropFirst(staticCount) {
-                                        let progress = (popElapsed - Double(rank - staticCount) * popStep) / 0.45
-                                        guard progress > 0 else { continue }
-                                        // Rises up out of the ground as it grows, with a puff of dust.
-                                        var g = c
-                                        g.translateBy(x: 0, y: progress < 1 ? (1 - progress) * 14 * layout.u : 0)
-                                        IslandPainter.drawItem(&g, item, layout: layout, scale: progress < 1 ? Self.overshoot(progress) : 1)
-                                        Self.drawDust(&c, at: layout.point(item.gx, item.gy), progress: progress, u: layout.u,
-                                                      sparkles: rank == buildFocus)
-                                    }
+                                if let beat {
+                                    Self.drawBeat(&c, beat.step, elapsed: now.timeIntervalSince(beat.start), island: island, layout: layout)
                                 }
                                 if bouncing {
                                     let e = now.timeIntervalSince(bounceStart)
@@ -211,7 +213,7 @@ struct PlatformScene: View {
             .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
             .simultaneousGesture(interactive ? twistGesture : nil)
             .overlay(alignment: .bottomTrailing) {
-                if interactive && (showsControls ?? persistsCamera) && editing == nil {
+                if interactive && (showsControls ?? persistsCamera) && editing == nil && beat == nil && overrides.isEmpty {
                     controls(layout: base, size: geo.size)
                         .padding(.trailing, 14)
                         .padding(.bottom, insets.bottom + 6)
@@ -240,8 +242,15 @@ struct PlatformScene: View {
             guard !reduceMotion else { return }
             await wander()
         }
-        .onChange(of: revealID) { _, _ in startPop() }
-        .onChange(of: growID) { _, _ in if !reduceMotion { startBounce(grown, duration: 0.9) } }
+        .onChange(of: revealID) { _, _ in startReveal() }
+        .overlay {
+            // Tap anywhere to skip the moment.
+            if beat != nil || !overrides.isEmpty {
+                Color.clear.contentShape(Rectangle()).onTapGesture { skipReveal() }
+                    .accessibilityLabel("Skip")
+                    .accessibilityAddTraits(.isButton)
+            }
+        }
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Your island")
         .accessibilityValue(island.items.isEmpty ? "Bare ground" :
@@ -686,62 +695,95 @@ struct PlatformScene: View {
         }
     }
 
-    /// New things build in. On your own island this is a little moment: the camera eases to
-    /// the most important new thing, it rises with dust and sparkles, your character walks over
-    /// to look, and the camera eases back.
-    private func startPop() {
-        let count = island.items.count - revealFrom
-        guard count > 0, !reduceMotion else { return }
-        let newOnes = Array(island.items.indices.dropFirst(revealFrom))
-        let focus = newOnes.max { Self.importance(island.items[$0]) < Self.importance(island.items[$1]) }
-        guard persistsCamera, interactive, let focus, viewSize != .zero, visit == nil else {
-            pop(count: count)
-            return
-        }
-        buildFocus = focus
-        let item = island.items[focus]
+    /// The "see it built" moment. For each beat: the camera glides to the Place, the new piece
+    /// rises with a bounce, dust and sparkles (or a field or village spreads), the caption shows,
+    /// your character walks over to look; then the next beat, and the camera eases back.
+    private func startReveal() {
+        guard !reveal.isEmpty else { return }
+        revealToken += 1
+        let token = revealToken
+        let steps = reveal
         let before = (zoom: zoomStart, pan: panStart)
-        let newZoom = max(zoom, 2.4)
-        let target = IslandLayout(island: island, size: viewSize, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
-        let p = target.point(item.gx, item.gy)
-        let centre = CGPoint(x: insets.leading + (viewSize.width - insets.leading - insets.trailing) / 2,
-                             y: insets.top + (viewSize.height - insets.top - insets.bottom) * 0.55)
-        animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - p.x, height: centre.y - p.y), duration: 0.6)
+        withAnimation(.easeInOut(duration: 0.3)) { overrides = revealInitial }
         Task {
-            try? await Task.sleep(for: .milliseconds(600))
-            pop(count: count)
-            let spot = CGPoint(x: item.gx + 0.55, y: item.gy + 0.45)
-            await walk(to: spot, speed: 1.6, maxDuration: 2)
-            try? await Task.sleep(for: .milliseconds(700))
-            if visit == nil { animateCamera(zoom: before.zoom, pan: before.pan, duration: 0.7) }
-            buildFocus = nil
+            // Let the reading sheet slide away first.
+            try? await Task.sleep(for: .milliseconds(350))
+            for step in steps {
+                guard revealToken == token else { return }
+                let focus = island.items.indices.contains(step.focus) ? island.items[step.focus] : nil
+                if let focus, !reduceMotion, persistsCamera, viewSize != .zero {
+                    let newZoom = max(zoom, step.kind == .combined ? 2 : 2.6)
+                    let target = IslandLayout(island: island, size: viewSize, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
+                    let p = target.point(focus.gx, focus.gy)
+                    let centre = CGPoint(x: insets.leading + (viewSize.width - insets.leading - insets.trailing) / 2,
+                                         y: insets.top + (viewSize.height - insets.top - insets.bottom) * 0.55)
+                    animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - p.x, height: centre.y - p.y), duration: 0.6)
+                    try? await Task.sleep(for: .milliseconds(750))
+                }
+                guard revealToken == token else { return }
+                beat = (step, .now)
+                onRevealStep?(step)
+                if let focus, !reduceMotion {
+                    Task {
+                        try? await Task.sleep(for: .milliseconds(700))
+                        guard revealToken == token else { return }
+                        await walk(to: CGPoint(x: focus.gx + 0.6, y: focus.gy + 0.5), speed: 1.8, maxDuration: 1.4)
+                    }
+                }
+                try? await Task.sleep(for: .seconds(reduceMotion ? 1.6 : step.duration - 0.75))
+                guard revealToken == token else { return }
+                for change in step.changes { overrides[change.index] = change.to }
+                beat = nil
+            }
+            guard revealToken == token else { return }
+            finishReveal(cameraBack: before, duration: 0.7)
         }
     }
 
-    private func pop(count: Int) {
-        popStart = .now
-        popping = true
-        let duration = min(0.1, 2.0 / Double(count)) * Double(count) + 0.9
-        Task {
-            try? await Task.sleep(for: .seconds(duration))
-            popping = false
-        }
+    private func skipReveal() {
+        revealToken += 1
+        finishReveal(cameraBack: nil, duration: 0.3)
     }
 
-    /// What deserves the camera most when several things build at once.
-    private static func importance(_ item: Island.Item) -> Int {
-        switch item.kind {
-        case .piece: item.progress >= item.total ? 4 : 2
-        case .library: 4
-        case .throne: 5
-        case .reward: 3
-        case .tree, .flourish, .extra: 1
+    private func finishReveal(cameraBack: (zoom: CGFloat, pan: CGSize)?, duration: Double) {
+        beat = nil
+        withAnimation(.easeOut(duration: 0.3)) { overrides = [:] }
+        onRevealStep?(nil)
+        if let cameraBack, visit == nil, persistsCamera { animateCamera(zoom: cameraBack.zoom, pan: cameraBack.pan, duration: duration) }
+    }
+
+    /// Draws one beat's changing items: new ones rise from the ground with an overshoot and a
+    /// puff of dust; growing ones spread from their old size to the new one.
+    private static func drawBeat(_ c: inout GraphicsContext, _ step: RevealStep, elapsed: Double, island: Island, layout: IslandLayout) {
+        let big = step.kind != .grow
+        let t = min(1, max(0, (elapsed - 0.15) / (big ? 0.9 : 0.7)))
+        for change in step.changes.sorted(by: { a, b in
+            let ia = island.items[a.index], ib = island.items[b.index]
+            return layout.depth(ia.gx, ia.gy) < layout.depth(ib.gx, ib.gy)
+        }) where island.items.indices.contains(change.index) {
+            var item = island.items[change.index]
+            let e = 1 - pow(1 - t, 3)
+            if change.from == 0 {
+                // Pops up: rises out of the ground with a little bounce.
+                guard t > 0 else { continue }
+                item.growth = change.to
+                var g = c
+                g.translateBy(x: 0, y: t < 1 ? (1 - t) * 14 * layout.u : 0)
+                IslandPainter.drawItem(&g, item, layout: layout, scale: t < 1 ? overshoot(t) : 1)
+            } else {
+                // Spreads outward.
+                item.growth = change.from + (change.to - change.from) * CGFloat(e)
+                IslandPainter.drawItem(&c, item, layout: layout)
+            }
+            drawDust(&c, at: layout.point(item.gx, item.gy), progress: (elapsed - 0.15) / 0.45, u: layout.u,
+                     sparkles: change.index == step.focus, burst: big ? 2 : 1)
         }
     }
 
     /// A puff of dust at the base while something builds in, and sparkles for the focus.
-    private static func drawDust(_ c: inout GraphicsContext, at base: CGPoint, progress: Double, u: CGFloat, sparkles: Bool) {
-        guard progress < 1.6 else { return }
+    private static func drawDust(_ c: inout GraphicsContext, at base: CGPoint, progress: Double, u: CGFloat, sparkles: Bool,
+                                 burst: Int = 1) {
+        guard progress > 0, progress < 1.6 + Double(burst - 1) * 0.8 else { return }
         let t = CGFloat(min(1, progress / 1.6))
         for i in 0..<5 {
             let a = CGFloat(i) / 5 * .pi * 2
@@ -752,7 +794,7 @@ struct PlatformScene: View {
                    with: .color(Earthy.stone.opacity(Double(0.7 * (1 - t)))))
         }
         guard sparkles else { return }
-        for i in 0..<6 {
+        for i in 0..<(6 * burst) {
             let x = base.x + CGFloat(i - 3) * 6 * u + sin(CGFloat(i) * 1.7) * 4 * u
             let y = base.y - (18 + CGFloat(i % 3) * 8 + 30 * t) * u
             let s = (2.4 + CGFloat(i % 2)) * u
