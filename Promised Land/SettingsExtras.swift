@@ -84,11 +84,14 @@ struct DebugToolsSection: View {
     @State private var confirmingWipe = false
     @State private var message: String?
     @AppStorage("debug.fpsOverlay") private var showsFPS = false
+    @State private var previewingBible = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Developer").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
             Toggle("FPS overlay on the island", isOn: $showsFPS).tint(Color.olive).frame(minHeight: 44)
+            // TEMPORARY: remove with Debug/FullBiblePreview before release (NOTES.md).
+            Button("Preview full Bible") { previewingBible = true }.buttonStyle(SoftButtonStyle())
             Button("Rebuild world") { rebuildWorld() }.buttonStyle(SoftButtonStyle())
             Button("Add 10 random reads") { addRandomReads() }.buttonStyle(SoftButtonStyle())
             Button("Complete a journey") { completeJourney() }.buttonStyle(SoftButtonStyle())
@@ -96,6 +99,7 @@ struct DebugToolsSection: View {
             if let message { Text(message).font(.footnote).foregroundStyle(Color.secondaryText) }
         }
         .cardStyle()
+        .fullScreenCover(isPresented: $previewingBible) { FullBiblePreviewView { previewingBible = false } }
         .confirmationDialog("Reset all data?", isPresented: $confirmingWipe, titleVisibility: .visible) {
             Button("Erase everything", role: .destructive) { wipe() }
         } message: {

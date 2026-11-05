@@ -102,3 +102,16 @@ option was chosen and noted here.
     one, otherwise a photo from the library (the Simulator has no camera). With the photo read,
     Strict also times the reading; picking the chapter by hand goes straight to the question.
     Photos are kept only if asked, as `ReadingPhoto` linked to a journal entry.
+30. **Preview full Bible (DEBUG).** Settings → Developer → Preview full Bible (or launch with
+    `-fullBiblePreview`). It builds an in-memory `ModelContainer` with a `ChapterRead` for every
+    chapter and shows the complete island; richness, replay, jump-to-book, FPS and edit mode
+    changes live only while it's open. Tested not to write to the real store.
+
+## Remove before release
+
+- **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.
+- In `SettingsExtras.swift`, the "Preview full Bible" button and its `fullScreenCover` (inside
+  `#if DEBUG`), and in `HomeView.swift` the `-fullBiblePreview` launch option and
+  `debugBiblePreview` state (also DEBUG only).
+- `Promised Land Tests/FullBiblePreviewTests.swift`.
+Everything above is compiled only in DEBUG builds, so Release is unaffected even if it stays.
