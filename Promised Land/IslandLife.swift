@@ -68,10 +68,13 @@ struct IslandLife: Equatable {
 
     /// A grid rect's bounds on screen (with a margin for the figure's height).
     static func screenRect(_ r: CGRect, layout: IslandLayout) -> CGRect {
-        let pts = [layout.point(r.minX, r.minY), layout.point(r.maxX, r.minY), layout.point(r.minX, r.maxY), layout.point(r.maxX, r.maxY)]
-        let xs = pts.map(\.x), ys = pts.map(\.y)
+        // Called for every figure every frame: no arrays.
+        let a = layout.point(r.minX, r.minY), b = layout.point(r.maxX, r.minY)
+        let c = layout.point(r.minX, r.maxY), d = layout.point(r.maxX, r.maxY)
+        let x0 = min(a.x, b.x, c.x, d.x), x1 = max(a.x, b.x, c.x, d.x)
+        let y0 = min(a.y, b.y, c.y, d.y), y1 = max(a.y, b.y, c.y, d.y)
         let m = 16 * layout.u
-        return CGRect(x: xs.min()! - m, y: ys.min()! - 2 * m, width: xs.max()! - xs.min()! + 2 * m, height: ys.max()! - ys.min()! + 3 * m)
+        return CGRect(x: x0 - m, y: y0 - 2 * m, width: x1 - x0 + 2 * m, height: y1 - y0 + 3 * m)
     }
 
     /// Draws the life the director chose (each at its own time and fade), smoke from chimneys on

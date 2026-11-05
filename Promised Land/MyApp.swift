@@ -9,6 +9,13 @@ import SwiftData
         }
     }()
 
+    init() {
+        #if DEBUG
+        // "-perfLog" prints frame rate and the island's main-thread time once a second.
+        if PerfProbe.logging { FrameCounter.logger.start() }
+        #endif
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()

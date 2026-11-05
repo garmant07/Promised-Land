@@ -127,8 +127,14 @@ final class LifeDirector {
 
     /// Works out which figures show this frame, and how strongly (fading over `IslandLOD.fade`).
     /// Figures whose home is off screen aren't looked at at all: their clocks stay paused.
-    func plan(_ figures: [Figure], now: Double, viewport: CGRect) -> [Shown] {
+    func plan(_ figures: @autoclosure () -> [Figure], now: Double, viewport: CGRect) -> [Shown] {
         let tier = tier ?? .far
+        // Far out nobody shows: once the last has faded, nothing is worked out at all.
+        if tier == .far && opacities.isEmpty {
+            showing = []
+            return []
+        }
+        let figures = figures()
         var candidates: [IslandLOD.Candidate] = []
         var awake: [String: (time: Double, point: CGPoint)] = [:]
         for f in figures where f.home.intersects(viewport) {
@@ -165,5 +171,7 @@ enum RenderStats {
     static var staticLayer = 0
     static var life = 0
     static var figures = 0
+    /// Everything the island holds (items and figures): its "node count".
+    static var nodes = 0
     static var total: Int { staticLayer + life + figures }
 }

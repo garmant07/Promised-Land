@@ -133,6 +133,14 @@ struct HomeView: View {
     /// Same for crowns (announced since the master build).
     @AppStorage("unlocks.crownsReady") private var crownsReady = false
 
+    /// A full-screen view covers the island, so its animation can hold still.
+    private var islandCovered: Bool {
+        #if DEBUG
+        if debugBiblePreview || debugGallery { return true }
+        #endif
+        return interior != nil
+    }
+
     /// Characters whose journeys are complete.
     private var unlockedCharacters: [CharacterJourney] { progress.unlockedJourneys }
 
@@ -180,7 +188,7 @@ struct HomeView: View {
     }
 
     var body: some View {
-        let island = island
+        let island = PerfProbe.measure("home") { island }
         let baskets = baskets(island)
         let waiting = baskets.values.reduce(0, +)
         ZStack {
@@ -215,7 +223,8 @@ struct HomeView: View {
                           collectFlight: collectFlight,
                           collectTarget: collectTarget,
                           onCollectLanded: collectLanded,
-                          showsFPS: showsFPS) { index in open(index, in: island) }
+                          showsFPS: showsFPS,
+                          paused: islandCovered) { index in open(index, in: island) }
                 .ignoresSafeArea()
         }
         .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.top } action: { safeTop = $0 }

@@ -66,7 +66,11 @@ struct Villager: Identifiable, Equatable {
         }
     }
 
-    var period: Double { legs.reduce(0) { $0 + $1.walk + $1.pause } }
+    var period: Double { Self.period(legs) }
+
+    private static func period(_ legs: [(from: CGPoint, to: CGPoint, walk: Double, pause: Double, arrive: Waypoint)]) -> Double {
+        legs.reduce(0) { $0 + $1.walk + $1.pause }
+    }
 
     /// Everywhere the routine goes, as a grid rect (for culling before any pose maths).
     var bounds: CGRect {
@@ -81,6 +85,7 @@ struct Villager: Identifiable, Equatable {
         guard legs.count > 1 else {
             return Pose(point: grid(routine.waypoints.first ?? Waypoint(0.5, 0.5)), pose: .idle, carrying: false, facingLeft: false)
         }
+        let period = Self.period(legs)
         var t = (time + phase).truncatingRemainder(dividingBy: period)
         if t < 0 { t += period }
         for leg in legs {

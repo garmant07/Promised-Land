@@ -179,6 +179,49 @@ option was chosen and noted here.
     zoom bucket was past the island's limit and got clamped). Pinching now visibly rubber-bands up to
     30% past either limit, then eases back.
 
+## Round: performance pass (Nov 2026)
+
+45. **No SpriteKit.** The brief was written for a SpriteKit scene; the island is a SwiftUI `Canvas`
+    (notes 13, 34), so each step was mapped onto that instead of rewriting the renderer:
+    - *Bake ground into chunks* and *cache code-drawn textures by key*: already done (`IslandRenderCache`,
+      512-pt chunks, Place and item pictures). Added: the ground's extent and the wave spots are now
+      remembered per island instead of walking every tile each frame.
+    - *Only keep nodes for what's on screen*: there are no nodes; chunks, Places, items and figures were
+      already culled to the screen. The still layers now don't even re-plan while panning (below).
+    - *Pause off screen / cap figures*: clocks already paused off screen and caps were already 15/30
+      figures and 6 travellers. Added: far out, once everyone has faded, villagers aren't listed at all;
+      and the whole island (waves, life, characters) holds still while a full-screen view (an interior,
+      the Library) covers it. It used to keep animating behind it at 60 fps.
+    - *Re-sort depth only when something changes*: `IslandDepthOrder` sorts when the island, turn or a
+      reveal changes, never per pan/zoom frame (depth order doesn't depend on them).
+    - *No SwiftData per frame*: confirmed: nothing in the render path fetches; `HomeView.body` (the only
+      place the `@Query`s are read) runs 0 times a second while panning.
+    - *SpriteView not recreated*: `PlatformScene` keeps its identity, and its still layers are
+      `Equatable`, so streak pill / sheet / bar changes don't redraw them.
+    - *ignoresSiblingOrder / zPosition / shouldRasterize / atlases*: SpriteKit and CALayer settings with
+      no Canvas equivalent. Draw order is explicit back-to-front, and the cached chunk and Place
+      pictures play the part of rasterised layers and atlases.
+46. **Panning slides layers instead of redrawing them** (`IslandLayers.swift`). The profile showed most
+    of the main thread going to Core Animation redrawing up to seven full-screen canvases every frame.
+    The ground and waves are drawn at the pan rounded to 96 pt onto canvases 96 pt bigger than the
+    screen, and slid by the remainder; they redraw about twice a second while panning instead of every
+    frame. The life, build, bounce, in-front, basket and Collect All canvases are merged into two, and
+    a canvas with nothing to draw is left out.
+47. **Measured** (simulator, iPhone 17, store seeded with every chapter, `-autoPan`, 600 nodes):
+
+    | zoom | fps before → after | island main-thread ms/frame before → after |
+    |---|---|---|
+    | far (1×) | 25 (min 11) → 57 (min 52) | 12.7 → 0.7 |
+    | middle (3×) | 45 → 58 | 7.8 → 0.7 |
+    | close (8×) | 51 → 58 | 8.0 → 2.2 |
+    | idle | 60 → 60 | 2.1 → 1.4 |
+    | behind the Library | 59 → 60 | 1.9 → 0.0 |
+
+    **Still not measured on a real iPhone 11** (none was attached). The CPU work per frame is now far
+    under budget. What's left in the simulator is mostly waiting on its emulated GPU. Check on a device
+    with Settings → Developer → FPS overlay (now `fps · nodes · draws · ms`). DEBUG `-perfLog` prints fps,
+    nodes, draws and the time in each part of the island once a second.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

@@ -404,7 +404,17 @@ enum WaveSpots {
     struct Spot { let x: CGFloat; let y: CGFloat; let phase: Double }
     private static var memo: (key: Int, spots: [Spot]) = (-1, [])
 
+    private static var bySignature: (signature: Int, spots: [Spot]) = (0, [])
+
     static func spots(_ island: Island) -> [Spot] {
+        // Called every wave frame: a built island's spots are looked up by its signature.
+        if island.signature != 0, bySignature.signature == island.signature { return bySignature.spots }
+        let spots = compute(island)
+        if island.signature != 0 { bySignature = (island.signature, spots) }
+        return spots
+    }
+
+    private static func compute(_ island: Island) -> [Spot] {
         let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
         guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return [] }
         var h = Hasher(); h.combine(x0); h.combine(x1); h.combine(y0); h.combine(y1); h.combine(island.tiles.count); h.combine(island.water.count)

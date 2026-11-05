@@ -15,6 +15,8 @@ final class IslandRenderCache {
 
     private let images = NSCache<NSString, ImageBox>()
     private var placeKeys: (signature: Int, keys: [String: Int]) = (0, [:])
+    /// `groundBounds` per ground key (it walks every tile, so never per frame).
+    private var groundExtents: [String: CGRect] = [:]
 
     private init() { images.totalCostLimit = 160 * 1024 * 1024 }
 
@@ -49,8 +51,9 @@ final class IslandRenderCache {
 
     /// Plans the static layer for the current camera. `base` is the camera at `zoom` without
     /// the pan; `overrides` are items held at another growth (during a reveal), drawn directly.
+    /// `viewport` is the area drawn into (defaults to the view, with a small margin).
     func frame(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
-               overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool = true) -> Frame? {
+               overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool = true, viewport: CGRect? = nil) -> Frame? {
         guard island.signature != 0, size.width > 0 else { return nil }
         let zb = Self.bucket(for: zoom)
         let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb, angle: CGFloat(quarter))
@@ -62,7 +65,7 @@ final class IslandRenderCache {
             CGRect(x: centre.x + (r.minX - centre.x) * k + pan.width, y: centre.y + (r.minY - centre.y) * k + pan.height,
                    width: r.width * k, height: r.height * k)
         }
-        let view = CGRect(origin: .zero, size: size).insetBy(dx: -20, dy: -20)
+        let view = (viewport ?? CGRect(origin: .zero, size: size)).insetBy(dx: -20, dy: -20)
         var frame = Frame()
 
         // Ground chunks.
@@ -70,7 +73,13 @@ final class IslandRenderCache {
         // chunks too: a handful of images instead of a picture per Place and hundreds of items.
         let baked = bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty
         let groundKey = "\(baked ? "b" : "g")\(island.signature)|\(Int(lb.scale * 100))|\(quarter)|\(Int(size.width))x\(Int(size.height))"
-        let bounds = groundBounds(island, layout: lb)
+        // The ground's extent only changes with the island, zoom bucket, turn and size: worked out once.
+        let bounds: CGRect
+        if let known = groundExtents[groundKey] { bounds = known } else {
+            bounds = groundBounds(island, layout: lb)
+            if groundExtents.count > 64 { groundExtents.removeAll() }
+            groundExtents[groundKey] = bounds
+        }
         let chunk: CGFloat = 512
         let x0 = Int(floor(bounds.minX / chunk)), x1 = Int(floor(bounds.maxX / chunk))
         let y0 = Int(floor(bounds.minY / chunk)), y1 = Int(floor(bounds.maxY / chunk))

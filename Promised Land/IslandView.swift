@@ -46,6 +46,8 @@ struct PlatformScene: View {
     var onCollectLanded: (() -> Void)? = nil
     /// DEBUG: a frames-per-second readout.
     var showsFPS = false
+    /// Covered by a full-screen view (an interior): all animation holds still until it closes.
+    var paused = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -85,6 +87,8 @@ struct PlatformScene: View {
     @State private var revealToken = 0
     /// Level of detail and each figure's own clock (see IslandLOD.swift).
     @State private var director = LifeDirector()
+    /// Items in drawing order, sorted only when something changes (see IslandLayers.swift).
+    @State private var depthOrder = IslandDepthOrder()
     // Pinch: the point it started at, and the camera then.
     @State private var pinchAnchor: CGPoint?
     @State private var pinchFrom: (zoom: CGFloat, pan: CGSize)?
@@ -120,73 +124,40 @@ struct PlatformScene: View {
             let charH = Self.characterHeight * layout.u
             let charW = charH * 0.625 // the avatar canvas is 100 × 160
             let moving = Set(beat?.step.changes.map(\.index) ?? [])
-            let ordered = island.items.indices.compactMap { i -> Island.Item? in
-                guard !moving.contains(i) else { return nil }
-                guard let g = overrides[i] else { return island.items[i] }
-                guard g > 0 else { return nil }
-                var item = island.items[i]
-                item.growth = g
-                return item
-            }.sorted { layout.depth($0.gx, $0.gy) < layout.depth($1.gx, $1.gy) }
+            // Back-to-front order, worked out only when something is added, moves or turns.
+            let _ = depthOrder.update(island: island, layout: layout, overrides: overrides, hidden: moving)
+            let ordered = depthOrder.all
+            let _ = { RenderStats.nodes = island.items.count + life.villagers.count + life.travellers.count + characters.count }()
+            let drawPan = PanStep.drawPan(pan)
+            let slide = PanStep.offset(pan)
 
             ZStack(alignment: .topLeading) {
                 Earthy.sea
                 ZStack(alignment: .topLeading) {
-                    TimelineView(.animation(minimumInterval: 1.0 / 12, paused: reduceMotion)) { context in
-                        Canvas { c, _ in
-                            IslandPainter.drawWaves(&c, island: island, layout: layout,
-                                                    time: reduceMotion ? 0 : context.date.timeIntervalSinceReferenceDate,
-                                                    visible: CGRect(origin: .zero, size: geo.size).insetBy(dx: -20, dy: -20))
-                        }
-                    }
-                    // Settled things are drawn once; only the character, new things and the
-                    // selected item redraw while animating.
-                    // While turning, the angle is between quarters: draw directly. Otherwise
-                    // use the cached ground chunks and Place pictures.
-                    let cached = angle == CGFloat(Int(angle)) ? IslandRenderCache.shared.frame(
-                        island: island, size: geo.size, insets: insets, zoom: zoom, quarter: layout.quarter, pan: pan,
-                        overrides: overrides, hidden: moving, bake: editing == nil) : nil
-                    Canvas { context, _ in
-                        RenderStats.staticLayer = cached.map { $0.ground.count + $0.layers.count } ?? ordered.count
-                        if let cached {
-                            for g in cached.ground { context.draw(Image(decorative: g.image, scale: 1), in: g.rect) }
-                        } else {
-                            IslandPainter.drawTiles(&context, island: island, layout: layout)
-                        }
-                        if let selected = selected.wrappedValue, island.items.indices.contains(selected) {
-                            Self.drawHighlight(&context, island.items[selected], layout: layout)
-                        }
-                        if let editing {
-                            Self.drawEditGrid(&context, island: island, layout: layout, editing: editing)
-                            Self.drawExtraRings(&context, island: island, layout: layout, editing: editing)
-                        }
-                        // Only what's on screen (plus a margin for tall things) is drawn.
-                        let visible = CGRect(origin: .zero, size: geo.size).insetBy(dx: -layout.scale * 2, dy: -layout.scale * 2)
-                        if let cached {
-                            for layer in cached.layers {
-                                switch layer {
-                                case .picture(let image, let rect): context.draw(Image(decorative: image, scale: 1), in: rect)
-                                case .item(let item):
-                                    if visible.contains(layout.point(item.gx, item.gy)) { IslandPainter.drawItem(&context, item, layout: layout) }
-                                }
-                            }
-                        } else {
-                            for item in ordered where visible.contains(layout.point(item.gx, item.gy)) {
-                                IslandPainter.drawItem(&context, item, layout: layout)
-                            }
-                        }
-                        #if DEBUG
-                        if Self.showHitBoxes { Self.drawHitBoxes(&context, island: island, layout: layout) }
-                        #endif
-                    }
+                    // The waves and the still island are drawn at a rounded pan and slid into place,
+                    // so panning only moves them (see IslandLayers.swift).
+                    IslandWavesLayer(key: .init(signature: island.signature, zoom: zoom, angle: angle, pan: drawPan, size: geo.size,
+                                                insets: insets, reduceMotion: reduceMotion, paused: paused),
+                                     island: island)
+                        .equatable()
+                        // Bigger than the screen: overflow down and right, never resizing the stack.
+                        .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
+                        .offset(slide)
+                    IslandGroundLayer(key: .init(signature: island.signature, zoom: zoom, angle: angle, pan: drawPan, size: geo.size,
+                                                 insets: insets, selected: selected.wrappedValue, editing: editing != nil,
+                                                 editSelected: editing?.selected, overrides: overrides, hidden: moving),
+                                      island: island, ordered: ordered, editing: editing)
+                        .equatable()
+                        .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
+                        .offset(slide)
 
                     if beat != nil || !overrides.isEmpty {
                         // The rest of the island dims a little while something is built.
                         Color.black.opacity(0.16).ignoresSafeArea().allowsHitTesting(false).transition(.opacity)
                     }
 
-                    TimelineView(.animation(paused: !walking && beat == nil && !bouncing && characters.isEmpty && flight == nil
-                                            && (life.isEmpty || editing != nil || reduceMotion))) { context in
+                    TimelineView(.animation(paused: paused || (!walking && beat == nil && !bouncing && characters.isEmpty && flight == nil
+                                            && (life.isEmpty || editing != nil || reduceMotion)))) { context in
                         let now = context.date
                         let pos = position(at: now)
                         let feet = layout.point(pos.x, pos.y)
@@ -198,41 +169,58 @@ struct PlatformScene: View {
                         let viewport = CGRect(origin: .zero, size: geo.size).insetBy(dx: -30, dy: -30)
                         let lifeTime = reduceMotion ? 0 : t
                         let tier = director.begin(now: lifeTime, u: layout.u)
-                        let shown = editing == nil
-                            ? director.plan(life.figures(layout: layout, viewport: viewport) + characterFigures(layout: layout, charH: charH),
-                                            now: lifeTime, viewport: viewport)
-                            : []
-                        let shownCharacters = Dictionary(shown.filter { $0.id.hasPrefix("c:") }.map { (String($0.id.dropFirst(2)), $0) },
-                                                         uniquingKeysWith: { a, _ in a })
+                        let shown: [LifeDirector.Shown] = editing == nil ? PerfProbe.measure("tick.plan") {
+                            let figures: () -> [LifeDirector.Figure] = {
+                                life.figures(layout: layout, viewport: viewport) + characterFigures(layout: layout, charH: charH)
+                            }
+                            return director.plan(figures(), now: lifeTime, viewport: viewport)
+                        } : []
+                        let shownCharacters: [String: LifeDirector.Shown] = Self.characterMap(shown)
+
+                        // Two canvases redraw each frame: life (and anything being built) below the
+                        // figures, and what stands in front of them, baskets and Collect All above.
+                        let lifeOn = editing == nil && !life.isEmpty
+                        let occluders: [Island.Item] = lifeOn ? PerfProbe.measure("tick.occluders") {
+                            // Buildings in front of villagers and travellers hide them.
+                            let lifeFigures = shown.filter { !$0.id.hasPrefix("c:") }.map { f in
+                                CGRect(x: f.point.x - 4 * layout.u, y: f.point.y - 15 * layout.u, width: 8 * layout.u, height: 15 * layout.u)
+                            }
+                            return Self.occluders(depthOrder.tall, figures: lifeFigures, layout: layout, viewport: viewport,
+                                                  onlyIfNoneInFront: false)
+                        } : []
+                        // Tall things in front of you or a Bible character are drawn over them,
+                        // unless another figure there stands in front of the thing.
+                        let figureRects: [CGRect] = [CGRect(x: feet.x - charW / 2, y: feet.y - charH, width: charW, height: charH)]
+                            + shownCharacters.values.map { f in
+                                CGRect(x: f.point.x - charH * 0.37, y: f.point.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05)
+                            }
+                        let inFront: [Island.Item] = PerfProbe.measure("tick.front") { Self.occluders(depthOrder.tall, figures: figureRects, layout: layout,
+                                                                                       viewport: viewport, onlyIfNoneInFront: true) }
+                        let basketsOn = editing == nil && !life.baskets.isEmpty && layout.u >= IslandLife.minimumBasketU
 
                         ZStack(alignment: .topLeading) {
-                            // Villagers, travellers, smoke, birds and baskets: only what's on screen.
-                            if editing == nil && !life.isEmpty {
-                                // Buildings in front of villagers and travellers hide them.
-                                let lifeFigures = shown.filter { !$0.id.hasPrefix("c:") }.map { f in
-                                    CGRect(x: f.point.x - 4 * layout.u, y: f.point.y - 15 * layout.u, width: 8 * layout.u, height: 15 * layout.u)
-                                }
-                                let occluders = Self.occluders(ordered, figures: lifeFigures, layout: layout, viewport: viewport,
-                                                               onlyIfNoneInFront: false)
+                            if lifeOn || beat != nil || bouncing {
                                 Canvas { c, _ in
-                                    let n = IslandLife.draw(&c, life: life, shown: shown, tier: tier, director: director, layout: layout,
-                                                            time: lifeTime, visible: viewport, occluders: occluders)
-                                    RenderStats.life = n
-                                }
-                                .allowsHitTesting(false)
-                            }
-                            // The piece being built, and the selected item's bounce.
-                            Canvas { c, _ in
-                                if let beat {
-                                    Self.drawBeat(&c, beat.step, elapsed: now.timeIntervalSince(beat.start), island: island, layout: layout)
-                                }
-                                if bouncing {
-                                    let e = now.timeIntervalSince(bounceStart)
-                                    let s = 1 + 0.16 * sin(min(1, e / 0.5) * .pi) * (1 - min(1, e / 0.5))
-                                    for index in bounceTargets.sorted() where island.items.indices.contains(index) {
-                                        IslandPainter.drawItem(&c, island.items[index], layout: layout, scale: s)
+                                    PerfProbe.measure("life") {
+                                        // Villagers, travellers, smoke and birds: only what's on screen.
+                                        RenderStats.life = lifeOn
+                                            ? IslandLife.draw(&c, life: life, shown: shown, tier: tier, director: director, layout: layout,
+                                                              time: lifeTime, visible: viewport, occluders: occluders)
+                                            : 0
+                                        // The piece being built, and the selected item's bounce.
+                                        if let beat {
+                                            Self.drawBeat(&c, beat.step, elapsed: now.timeIntervalSince(beat.start), island: island, layout: layout)
+                                        }
+                                        if bouncing {
+                                            let e = now.timeIntervalSince(bounceStart)
+                                            let s = 1 + 0.16 * sin(min(1, e / 0.5) * .pi) * (1 - min(1, e / 0.5))
+                                            for index in bounceTargets.sorted() where island.items.indices.contains(index) {
+                                                IslandPainter.drawItem(&c, island.items[index], layout: layout, scale: s)
+                                            }
+                                        }
                                     }
                                 }
+                                .allowsHitTesting(false)
                             }
                             ForEach(characters.filter { shownCharacters[$0.id] != nil }) { c in
                                 let f = shownCharacters[c.id]!
@@ -249,33 +237,22 @@ struct PlatformScene: View {
                                 .rotationEffect(.degrees(lean), anchor: .bottom)
                                 .offset(y: bounce)
                                 .position(x: feet.x, y: feet.y - charH * 0.43)
-                            // Tall things in front of a walking figure (you or a Bible character)
-                            // are drawn over it, unless they're behind another figure there.
-                            // Tall things in front of you or a Bible character are drawn over them,
-                            // unless another figure there stands in front of the thing.
-                            let figureRects = [CGRect(x: feet.x - charW / 2, y: feet.y - charH, width: charW, height: charH)]
-                                + shownCharacters.values.map { f in
-                                    CGRect(x: f.point.x - charH * 0.37, y: f.point.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05)
-                                }
-                            let inFront = Self.occluders(ordered, figures: figureRects, layout: layout, viewport: viewport,
-                                                         onlyIfNoneInFront: true)
-                            Canvas { c, _ in
-                                RenderStats.figures = figureRects.count + inFront.count
-                                for item in inFront { IslandRenderCache.shared.drawItem(&c, item, layout: layout) }
-                            }
-                            .allowsHitTesting(false)
-                            if editing == nil && !life.baskets.isEmpty {
+                            let _ = { RenderStats.figures = figureRects.count + inFront.count }()
+                            if !inFront.isEmpty || basketsOn || flight != nil {
                                 Canvas { c, size in
-                                    IslandLife.drawBaskets(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
-                                                           visible: CGRect(origin: .zero, size: size).insetBy(dx: -30, dy: -30))
-                                }
-                                .allowsHitTesting(false)
-                            }
-                            if let flight {
-                                Canvas { c, _ in
-                                    let target = CGPoint(x: collectTarget.midX - globalOrigin.x, y: collectTarget.midY - globalOrigin.y)
-                                    _ = CollectFlightPlan.draw(&c, sprites: flight.sprites, elapsed: now.timeIntervalSince(flight.start),
-                                                               layout: layout, target: target)
+                                    PerfProbe.measure("front") {
+                                        for item in inFront { IslandRenderCache.shared.drawItem(&c, item, layout: layout) }
+                                        // Baskets go on top of everything, so they're always easy to see and tap.
+                                        if basketsOn {
+                                            IslandLife.drawBaskets(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
+                                                                   visible: CGRect(origin: .zero, size: size).insetBy(dx: -30, dy: -30))
+                                        }
+                                        if let flight {
+                                            let target = CGPoint(x: collectTarget.midX - globalOrigin.x, y: collectTarget.midY - globalOrigin.y)
+                                            _ = CollectFlightPlan.draw(&c, sprites: flight.sprites, elapsed: now.timeIntervalSince(flight.start),
+                                                                       layout: layout, target: target)
+                                        }
+                                    }
                                 }
                                 .allowsHitTesting(false)
                             }
@@ -603,6 +580,13 @@ struct PlatformScene: View {
         return out
     }
 
+    /// The Bible characters showing this frame, by character id.
+    private static func characterMap(_ shown: [LifeDirector.Shown]) -> [String: LifeDirector.Shown] {
+        var out: [String: LifeDirector.Shown] = [:]
+        for f in shown where f.id.hasPrefix("c:") && out[String(f.id.dropFirst(2))] == nil { out[String(f.id.dropFirst(2))] = f }
+        return out
+    }
+
     /// Bible characters for the level of detail (ids "c:<id>"); each stands still while talking.
     private func characterFigures(layout: IslandLayout, charH: CGFloat) -> [LifeDirector.Figure] {
         characters.map { c in
@@ -807,7 +791,7 @@ struct PlatformScene: View {
 
     /// Edit mode: a faint tile grid, and each plot outlined (green when picked and free,
     /// red where it would overlap another).
-    private static func drawEditGrid(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, editing: IslandEditing) {
+    static func drawEditGrid(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, editing: IslandEditing) {
         let grid = Path { p in
             for t in island.tiles {
                 p.addLines([layout.point(CGFloat(t.x), CGFloat(t.y)), layout.point(CGFloat(t.x + 1), CGFloat(t.y)),
@@ -832,7 +816,7 @@ struct PlatformScene: View {
     }
 
     /// Extras in edit mode: a ring under each, green when picked, red where it can't go.
-    private static func drawExtraRings(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, editing: IslandEditing) {
+    static func drawExtraRings(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, editing: IslandEditing) {
         for item in island.items {
             guard case .extra(let id) = item.source else { continue }
             let key = "extra:\(id)"
@@ -849,7 +833,7 @@ struct PlatformScene: View {
         }
     }
 
-    private static func drawHighlight(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout) {
+    static func drawHighlight(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout) {
         let base = layout.point(item.gx, item.gy)
         let w = max(item.footprint.width, 0.5) * layout.scale * 2.2
         c.fill(Path(ellipseIn: CGRect(x: base.x - w / 2, y: base.y - w * 0.22, width: w, height: w * 0.44)),
@@ -859,9 +843,9 @@ struct PlatformScene: View {
     #if DEBUG
     /// `-showHitBoxes`: outlines each item's tap area (drawn bounds in red, ground in blue,
     /// 44pt minimum in grey) to diagnose taps that miss.
-    private static let showHitBoxes = ProcessInfo.processInfo.arguments.contains("-showHitBoxes")
+    static let showHitBoxes = ProcessInfo.processInfo.arguments.contains("-showHitBoxes")
 
-    private static func drawHitBoxes(_ c: inout GraphicsContext, island: Island, layout: IslandLayout) {
+    static func drawHitBoxes(_ c: inout GraphicsContext, island: Island, layout: IslandLayout) {
         for item in island.items {
             let bounds = IslandPainter.drawnBounds(of: item, layout: layout)
             c.stroke(Path(HitPicker.expanded(bounds, to: IslandHitTester.minimumTarget)), with: .color(.gray.opacity(0.5)), lineWidth: 1)
