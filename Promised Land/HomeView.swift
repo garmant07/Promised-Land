@@ -64,6 +64,8 @@ struct HomeView: View {
     @State private var worldScene = WorldScene()
     #if DEBUG
     @State private var debugReflection: ChapterRef?
+    @State private var debugGallery = false
+    @State private var debugCreator = false
     #endif
 
     /// Items on the island when it was last seen (-1: never), so new things can build in.
@@ -217,6 +219,8 @@ struct HomeView: View {
             if activeSheet == nil && !showingWorld { showNewGrowth() }
         }
         #if DEBUG
+        .fullScreenCover(isPresented: $debugGallery) { AvatarGallery() }
+        .sheet(isPresented: $debugCreator) { AvatarCustomizeView() }
         .sheet(item: $debugReflection) { ref in
             if let book = BibleCatalog.book(id: ref.bookID) { ReflectionCard(book: book, chapter: ref.chapter) }
         }
@@ -515,6 +519,8 @@ struct HomeView: View {
         if args.contains("-openRead") { activeSheet = .read }
         if args.contains("-editIsland") { startEditing(island.plots.first?.bookID) }
         if args.contains("-openHub") { interior = InteriorRef(id: InteriorRef.library) }
+        if args.contains("-avatarGallery") { debugGallery = true }
+        if args.contains("-openCreator") { debugCreator = true }
         if let i = args.firstIndex(of: "-celebrate"), i + 1 < args.count { activeSheet = .character(args[i + 1]) }
         if let i = args.firstIndex(of: "-openChapter"), i + 1 < args.count {
             let parts = args[i + 1].split(separator: ":")

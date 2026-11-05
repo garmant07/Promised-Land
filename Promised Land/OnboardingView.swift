@@ -6,9 +6,9 @@ struct OnboardingView: View {
 
     @State private var page = 0
     @Environment(\.modelContext) private var context
-    @Query private var profiles: [AvatarProfile]
-    /// The welcome pages, then the character creator.
-    private var pageCount: Int { pages.count + 1 }
+    @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
+    /// The welcome pages, then your age group, then the character creator.
+    private var pageCount: Int { pages.count + 2 }
 
     private let pages: [(symbol: String, title: String, text: String)] = [
         ("book.pages.fill", "Read, and the land grows",
@@ -44,6 +44,9 @@ struct OnboardingView: View {
                     .padding(.horizontal, 24)
                     .tag(i)
                 }
+                AgeGroupPicker(selection: $ageGroup)
+                    .padding(.horizontal, 24)
+                    .tag(pages.count)
                 ScrollView {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Make your character")
@@ -51,17 +54,13 @@ struct OnboardingView: View {
                             .foregroundStyle(Color.bodyText)
                         Text("They'll walk your world as you read. You can change this any time.")
                             .foregroundStyle(Color.secondaryText)
-                        if let profile = profiles.first {
-                            AvatarEditor(profile: profile).padding(.top, 8)
-                        } else {
-                            ProgressView().frame(maxWidth: .infinity).padding(40)
-                        }
+                        AvatarCreatorView().padding(.top, 8)
                     }
                     .padding(.horizontal, 24)
                     .padding(.top, 24)
                     .padding(.bottom, 40)
                 }
-                .tag(pages.count)
+                .tag(pages.count + 1)
                 .task { AvatarProfile.ensure(in: context) }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))

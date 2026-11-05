@@ -93,7 +93,7 @@ struct PlatformScene: View {
             let base = IslandLayout(island: island, size: geo.size, insets: insets, zoom: zoom, angle: angle)
             let layout = base.panned(pan)
             let charH = Self.characterHeight * layout.u
-            let charW = charH * 20 / 36
+            let charW = charH * 0.625 // the avatar canvas is 100 × 160
             let staticCount = popping ? min(revealFrom, island.items.count) : island.items.count
             let ordered = island.items.prefix(staticCount).sorted { layout.depth($0.gx, $0.gy) < layout.depth($1.gx, $1.gy) }
 

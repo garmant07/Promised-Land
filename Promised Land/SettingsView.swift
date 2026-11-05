@@ -12,6 +12,8 @@ enum StorageKeys {
     static let islandProgressSeen = "islandProgressSeen"
     static let storyObjectsSeen = "storyObjectsSeen"
     static let offerReflection = "offerReflection"
+    static let ageGroup = "profile.ageGroup"
+    static let readingUnlocksApps = "settings.readingUnlocksApps"
     static let libraryRevealed = "libraryRevealed"
     static let journeyStopsSeen = "journeyStopsSeen"
     static let journeysCompleted = "journeysCompleted"

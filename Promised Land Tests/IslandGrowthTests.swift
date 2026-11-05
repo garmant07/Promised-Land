@@ -2,6 +2,7 @@ import Testing
 import Foundation
 import CoreGraphics
 import SwiftData
+import SwiftUI
 @testable import Promised_Land
 
 @MainActor
@@ -338,22 +339,23 @@ struct CharacterUnlockTests {
 }
 
 struct AvatarTests {
-    @Test("Earlier headcloth characters keep their headcloth")
+    @Test("A saved profile from before the rebuild still shows its headcloth")
     @MainActor func legacyHeadcloth() {
         let profile = AvatarProfile(Avatar())
+        profile.configData = nil
         profile.hair = "headcloth"
         profile.hairColor = "#E39A7E"
         profile.covering = "legacy"
-        let a = profile.avatar
-        #expect(a.covering == .headcloth)
-        #expect(a.coveringColor == "#E39A7E")
+        #expect(profile.config.head == .veil)
+        #expect(profile.config.headColour == .terracotta || profile.config.headColour == .rose)
     }
 
-    @Test("Randomise keeps the name")
-    func randomise() {
-        var a = Avatar()
-        a.name = "Hannah"
-        #expect(a.randomised().name == "Hannah")
+    @Test("Saving a look keeps it, and the name is separate")
+    @MainActor func saving() {
+        let profile = AvatarProfile(Avatar(name: "Hannah"))
+        profile.apply(AvatarPresets.config(for: "ruth"))
+        #expect(profile.avatar.config == AvatarPresets.config(for: "ruth"))
+        #expect(profile.avatar.name == "Hannah")
     }
 }
 
@@ -610,5 +612,84 @@ struct RevealOrderTests {
         #expect(after.items.count == before.items.count + 1)
         #expect(after.items.last?.source == .chapter(book: "ruth", chapter: 2))
         #expect(after.items.first?.kind == .library)
+    }
+}
+
+@MainActor
+struct AvatarRenderingTests {
+    let canvas = CGRect(origin: .zero, size: AvatarRenderer.canvas)
+
+    func check(_ c: AvatarConfig) {
+        let layers = AvatarRenderer.layers(c)
+        #expect(layers.count == 12) // every layer is always present (maybe empty)
+        let b = AvatarRenderer.bounds(c)
+        #expect(canvas.insetBy(dx: -0.5, dy: -0.5).contains(b), "\(c) draws outside the canvas: \(b)")
+        // The sandalled feet stand on the shared anchor.
+        let feet = layers.first { $0.name == "body" }!.shapes.map { $0.path.boundingRect }.reduce(CGRect.null) { $0.union($1) }
+        #expect(abs(feet.maxY - AvatarRenderer.footAnchor.y) < 3)
+    }
+
+    @Test("Every single option renders inside the canvas, feet on the anchor")
+    func everyOption() {
+        let base = AvatarConfig()
+        for v in SkinTone.allCases { var c = base; c.skin = v; check(c) }
+        for v in HairStyle.allCases { var c = base; c.hair = v; c.head = .none; check(c) }
+        for v in HairColour.allCases { var c = base; c.hairColour = v; check(c) }
+        for v in BeardStyle.allCases { var c = base; c.beard = v; check(c) }
+        for v in HeadCovering.allCases { var c = base; c.head = v; check(c) }
+        for v in RobeStyle.allCases { var c = base; c.robe = v; check(c) }
+        for v in SashStyle.allCases { var c = base; c.sash = v; check(c) }
+        for v in CloakStyle.allCases { var c = base; c.cloak = v; check(c) }
+        for v in HeldItem.allCases { var c = base; c.item = v; check(c) }
+        for v in SandalColour.allCases { var c = base; c.sandals = v; check(c) }
+    }
+
+    @Test("Hundreds of random combinations render without trouble")
+    func randomCombinations() {
+        var g = SeededGenerator(seed: 7)
+        for _ in 0..<300 { check(AvatarConfig.random(using: &g)) }
+    }
+
+    @Test("Every character preset renders")
+    func presets() {
+        for id in PresetAccess.ids { check(AvatarPresets.config(for: id)) }
+        #expect(AvatarPresets.config(for: "solomon").head == .crown)
+        #expect(AvatarPresets.config(for: "paul").hair == .baldWithSides)
+    }
+
+    @Test("Old or partial saved looks decode with sensible defaults")
+    func decoding() throws {
+        let empty = try JSONDecoder().decode(AvatarConfig.self, from: Data("{}".utf8))
+        #expect(empty == AvatarConfig())
+        let partial = try JSONDecoder().decode(AvatarConfig.self, from: Data(#"{"hair":"bald","robeColour":"sage","unknown":1}"#.utf8))
+        #expect(partial.hair == .bald && partial.robeColour == .sage && partial.skin == AvatarConfig().skin)
+        let bad = try JSONDecoder().decode(AvatarConfig.self, from: Data(#"{"hair":"mohawk"}"#.utf8))
+        #expect(bad.hair == AvatarConfig().hair)
+        let round = try JSONDecoder().decode(AvatarConfig.self, from: JSONEncoder().encode(AvatarPresets.config(for: "moses")))
+        #expect(round == AvatarPresets.config(for: "moses"))
+    }
+
+    @Test("The first avatar carries over to the nearest new look")
+    func migration() {
+        let old = AvatarConfig.migrated(robe: "#93AECF", skin: "#5E3D28", hair: "headcloth", hairColor: "#E39A7E",
+                                        sash: "#7A4A2A", sandals: "brown", beard: "long", covering: "legacy", coveringColor: "")
+        #expect(old.robeColour == .skyBlue)
+        #expect(old.skin == .deep)
+        #expect(old.head == .veil)
+        #expect(old.beard == .longFlowing)
+        #expect(old.sash == .brownBelt)
+    }
+}
+
+/// A repeatable random number generator for tests.
+struct SeededGenerator: RandomNumberGenerator {
+    var state: UInt64
+    init(seed: UInt64) { state = seed &+ 0x9E3779B97F4A7C15 }
+    mutating func next() -> UInt64 {
+        state &+= 0x9E3779B97F4A7C15
+        var z = state
+        z = (z ^ (z >> 30)) &* 0xBF58476D1CE4E5B9
+        z = (z ^ (z >> 27)) &* 0x94D049BB133111EB
+        return z ^ (z >> 31)
     }
 }

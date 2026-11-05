@@ -24,19 +24,36 @@ protocol FriendsService {
     func friends() async throws -> [FriendSummary]
 }
 
+/// The sample friends' looks.
+enum FriendLooks {
+    static var hannah: AvatarConfig {
+        var a = AvatarConfig(); a.skin = .warm; a.hair = .longStraight; a.hairColour = .darkBrown; a.head = .none
+        a.robeColour = .slatePurple; a.sash = .goldTrim; a.sandals = .tan; a.item = .scroll; return a
+    }
+    static var eli: AvatarConfig {
+        var a = AvatarConfig(); a.skin = .brown; a.hair = .shortCurly; a.hairColour = .darkBrown; a.head = .none
+        a.robe = .kneeTunic; a.robeColour = .skyBlue; a.sash = .brownBelt; a.cloak = .shoulderCloak; a.cloakColour = .sand
+        a.sandals = .darkBrown; return a
+    }
+    static var joy: AvatarConfig {
+        var a = AvatarConfig(); a.skin = .porcelain; a.hair = .longWavy; a.hairColour = .lightBrown; a.head = .headband
+        a.headColour = .rose; a.robeColour = .sage; a.sash = .none; a.item = .dove; a.sandals = .tan; return a
+    }
+}
+
 /// Sample friends for the preview. Clearly labelled; nothing leaves the device.
 struct MockFriendsService: FriendsService {
     func friends() async throws -> [FriendSummary] { Self.samples }
 
     static let samples: [FriendSummary] = [
         FriendSummary(id: "sample-hannah", name: "Hannah (sample)",
-                      avatar: Avatar(name: "Hannah", robe: "#BFA9DA", skin: "#D9A57E", hair: .long, hairColor: "#4A3326", sash: "#E9C77F", sandals: .tan, covering: .none),
+                      avatar: Avatar(name: "Hannah", config: FriendLooks.hannah),
                       streak: 12, reads: plan([("genesis", 1...50), ("ruth", 1...4), ("psalms", 1...30), ("john", 1...21)])),
         FriendSummary(id: "sample-eli", name: "Eli (sample)",
-                      avatar: Avatar(name: "Eli", robe: "#93AECF", skin: "#8E5E3D", hair: .curly, hairColor: "#2F2418", sash: "#FAF0DE", sandals: .brown, covering: .none),
+                      avatar: Avatar(name: "Eli", config: FriendLooks.eli),
                       streak: 3, reads: plan([("mark", 1...16), ("acts", 1...12), ("jonah", 1...4)])),
         FriendSummary(id: "sample-joy", name: "Joy (sample)",
-                      avatar: Avatar(name: "Joy", robe: "#A9B47C", skin: "#F6D9C0", hair: .bun, hairColor: "#B48A6A", sash: "#E39A7E", sandals: .tan, covering: .none),
+                      avatar: Avatar(name: "Joy", config: FriendLooks.joy),
                       streak: 27, reads: plan([("proverbs", 1...31), ("luke", 1...24), ("psalms", 1...60), ("exodus", 1...20)])),
     ]
 
