@@ -114,10 +114,6 @@ enum JourneyData {
             note: "Stops are in the order given in the brief, not a single continuous trip in the Gospels. Context cards quote or closely follow the ASV; check wording."),
     ]
 
-    /// What finishing a journey brings to your island.
-    static func reward(_ journey: Journey) -> BibleCharacter? {
-        CharacterUnlocks.all.first { $0.journeyID == journey.id }
-    }
 }
 
 extension GameProgress {

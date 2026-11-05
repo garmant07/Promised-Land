@@ -55,7 +55,7 @@ struct InteriorView: View {
                     if let book {
                         InteriorJournalSection(book: book, entries: journal) { reflecting = true }
                     }
-                    charactersSection
+                    InteriorCharactersSection(bookID: bookID)
                 }
                 .padding(16)
                 .frame(maxWidth: 720)
@@ -235,43 +235,6 @@ struct InteriorView: View {
         if let image { sharing = ShareImage(image: image) }
     }
 
-    // MARK: Characters
-
-    private var charactersSection: some View {
-        let here = CharacterUnlocks.visible.filter { $0.books.contains(bookID) }
-        let finished = Set(BibleCatalog.books.filter { progress.chaptersRead($0.id) >= $0.chapterCount }.map(\.id))
-        let unlocked = Set(CharacterUnlocks.unlocked(finishedBooks: finished, completedJourneys: Set(progress.completedJourneys.map(\.id))).map(\.id))
-        return VStack(alignment: .leading, spacing: 10) {
-            Text("Who lives here")
-                .font(.serifTitle(.title3))
-                .foregroundStyle(Color.bodyText)
-            if here.isEmpty {
-                Text("No character is tied to this book yet.")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.secondaryText)
-            }
-            ForEach(here) { c in
-                let isHere = unlocked.contains(c.id)
-                HStack(spacing: 12) {
-                    CharacterFigure(id: c.id, look: c.look)
-                        .frame(width: 54, height: 70)
-                        .saturation(isHere ? 1 : 0)
-                        .opacity(isHere ? 1 : 0.35)
-                    VStack(alignment: .leading, spacing: 3) {
-                        HStack(spacing: 6) {
-                            Text(c.name).font(.headline).foregroundStyle(Color.bodyText)
-                            Text(c.rarity.title).font(.caption2.weight(.bold)).foregroundStyle(Color.secondaryText)
-                            DraftBadge(item: c)
-                        }
-                        Text(isHere ? c.line : c.unlockText + " to welcome them.")
-                            .font(.footnote)
-                            .foregroundStyle(Color.secondaryText)
-                    }
-                }
-            }
-        }
-        .cardStyle()
-    }
 }
 
 /// The building, drawn large on its plot of sand, for the top of its inside page.

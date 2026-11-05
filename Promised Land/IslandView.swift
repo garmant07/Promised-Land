@@ -25,7 +25,7 @@ struct PlatformScene: View {
     /// Unlocked Bible characters strolling around their books' plots.
     var characters: [IslandCharacter] = []
     /// "Read their story" in a character's speech bubble.
-    var onReadStory: ((ChapterRef) -> Void)? = nil
+    var onViewJourney: ((String) -> Void)? = nil
     /// Visiting a building: your character walks to its door while the camera eases in,
     /// then `onArrived` is called. Setting it back to nil restores the camera.
     var visit: Int? = nil
@@ -160,7 +160,7 @@ struct PlatformScene: View {
                             ForEach(characters) { c in
                                 let time = characterTime(c.id, now: now)
                                 let p = layout.point(c.position(at: time).x, c.position(at: time).y)
-                                CharacterFigure(id: c.id, look: c.look)
+                                CharacterFigure(id: c.characterId, look: c.look)
                                     .frame(width: charH * 0.75, height: charH * 1.05)
                                     .scaleEffect(x: c.facingLeft(at: time) != layout.mirrored ? -1 : 1, y: 1)
                                     .position(x: p.x, y: p.y - charH * 0.47)
@@ -190,9 +190,9 @@ struct PlatformScene: View {
                                now.timeIntervalSince(speaking.since) < 7 {
                                 let p = c.position(at: speaking.since.timeIntervalSinceReferenceDate)
                                 let head = layout.point(p.x, p.y)
-                                SpeechBubble(name: c.name, line: c.line, content: CharacterUnlocks.character(id: c.id)) {
+                                SpeechBubble(name: c.name, line: c.line, content: CharacterJourneys.journey(id: c.id)) {
                                     self.speaking = nil
-                                    onReadStory?(c.story)
+                                    onViewJourney?(c.id)
                                 }
                                 .fixedSize()
                                 .position(x: head.x, y: head.y - charH * 1.05 - 62)

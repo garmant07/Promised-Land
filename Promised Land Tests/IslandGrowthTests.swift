@@ -284,51 +284,71 @@ struct IslandEditTests {
 }
 
 @MainActor
-struct CharacterUnlockTests {
-    func ids(_ books: [String], journeys: [String] = []) -> Set<String> {
-        Set(CharacterUnlocks.unlocked(finishedBooks: Set(books), completedJourneys: Set(journeys)).map(\.id))
+struct CharacterJourneyTests {
+    func progress(_ journey: CharacterJourney, read: [(String, ClosedRange<Int>)]) -> JourneyProgress {
+        let set = Set(read.flatMap { b, r in r.map { "\(b)#\($0)" } })
+        return JourneyProgress.make(journey) { set.contains("\($0)#\($1)") }
     }
 
-    @Test("Finishing Exodus to Deuteronomy unlocks Moses, and not before")
-    func moses() {
-        #expect(!ids(["exodus", "leviticus", "numbers"]).contains("moses"))
-        #expect(ids(["exodus", "leviticus", "numbers", "deuteronomy"]).contains("moses"))
-    }
-
-    @Test("Each character's books unlock them")
-    func rules() {
-        #expect(ids(["ruth"]) == ["ruth"])
-        #expect(ids(["jonah"]) == ["jonah"])
-        #expect(ids(["daniel"]) == ["daniel"])
-        #expect(ids(["1samuel", "2samuel"]) == ["david"])
-        #expect(ids(["matthew", "mark", "luke", "john"]) == ["disciples"])
-        #expect(!ids(["acts", "romans"]).contains("paul"))
-        let nt = BibleCatalog.books.filter { $0.testament == .new }.map(\.id)
-        #expect(ids(nt).isSuperset(of: ["jesus", "paul", "disciples"]))
-    }
-
-    @Test("Completing a journey unlocks its character")
-    func journeys() {
-        #expect(ids([], journeys: ["jonah"]) == ["jonah"])
-        #expect(ids([], journeys: ["paul-rome"]) == ["paul"])
-        #expect(ids([], journeys: ["galilee"]) == ["disciples"])
-    }
-
-    @Test("Characters have rarities, stories and unreviewed content flags")
+    @Test("The 12 journeys (and Jonah) are there, shortest first, with art and stops")
     func data() {
-        #expect(Set(CharacterUnlocks.all.map(\.rarity)) == Set(Rarity.allCases))
-        for c in CharacterUnlocks.all {
-            #expect(BibleCatalog.book(id: c.storyBook).map { (1...$0.chapterCount).contains(c.storyChapter) } == true)
-            #expect(!c.reference.isEmpty && !c.source.isEmpty)
-            #expect(c.books.allSatisfy { BibleCatalog.book(id: $0) != nil })
+        let ids = CharacterJourneys.all.map(\.id)
+        #expect(Set(ids).isSuperset(of: ["ruth", "samson", "daniel", "sarah", "mary", "abraham", "solomon", "david", "john", "paul", "moses", "jesus"]))
+        let counts = CharacterJourneys.all.map { $0.requiredChapters.count }
+        #expect(counts == counts.sorted())
+        for j in CharacterJourneys.all {
+            #expect(!j.stops.isEmpty && !j.reviewed && !j.unlockLine.isEmpty)
+            for stop in j.stops {
+                #expect(!stop.happened.isEmpty && !stop.reviewed)
+                for span in stop.spans {
+                    #expect(BibleCatalog.book(id: span.bookID).map { span.chapters.upperBound <= $0.chapterCount } == true, "\(stop.id)")
+                }
+            }
         }
+        #expect(Set(CharacterJourneys.all.map(\.rarity)) == Set(Rarity.allCases))
     }
 
-    @Test("Characters walk around their own book's plot")
+    @Test("Finishing Exodus to Deuteronomy completes Moses's journey, and not before")
+    func moses() {
+        let moses = CharacterJourneys.journey(id: "moses")!
+        #expect(!progress(moses, read: [("exodus", 1...40), ("leviticus", 1...27), ("numbers", 1...36)]).isComplete)
+        #expect(progress(moses, read: [("exodus", 1...40), ("leviticus", 1...27), ("numbers", 1...36), ("deuteronomy", 1...34)]).isComplete)
+    }
+
+    @Test("Stops complete when all their chapters are read; next stop and chapter follow")
+    func stops() {
+        let ruth = CharacterJourneys.journey(id: "ruth")!
+        let p = progress(ruth, read: [("ruth", 1...2)])
+        #expect(p.completedStops == ["ruth-moab", "ruth-road", "ruth-field"])
+        #expect(p.nextStop?.id == "ruth-floor")
+        #expect(p.nextChapter == ChapterRef(bookID: "ruth", chapter: 3))
+        #expect(p.read == 2 && p.required == 4)
+    }
+
+    @Test("Reading done before this update counts (progress comes from every read)")
+    @MainActor func pastReading() throws {
+        let container = try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let context = container.mainContext
+        for ch in 1...4 { context.insert(ChapterRead(bookID: "ruth", chapterNumber: ch, date: Date(timeIntervalSince1970: 1_600_000_000))) }
+        try context.save()
+        let reads = try context.fetch(FetchDescriptor<ChapterRead>())
+        let set = Set(reads.map { "\($0.bookID)#\($0.chapterNumber)" })
+        #expect(JourneyProgress.make(CharacterJourneys.journey(id: "ruth")!) { set.contains("\($0)#\($1)") }.isComplete)
+    }
+
+    @Test("Paul needs Acts 7–28 and every letter from Romans to Philemon")
+    func paul() {
+        let paul = CharacterJourneys.journey(id: "paul")!
+        let books = Set(paul.requiredChapters.map(\.book))
+        #expect(books.contains("romans") && books.contains("philemon") && !books.contains("hebrews"))
+        #expect(!paul.requiredChapters.contains { $0.book == "acts" && $0.chapter < 7 })
+    }
+
+    @Test("Characters walk around their own story's plot")
     func home() {
         let start = Date(timeIntervalSince1970: 1_780_000_000)
         let island = Island.build(chapters: (1...4).map { ("ruth", $0, start) }, quizzes: [], verses: [])
-        let walkers = IslandCharacter.make(CharacterUnlocks.unlocked(finishedBooks: ["ruth"]), island: island)
+        let walkers = IslandCharacter.make([CharacterJourneys.journey(id: "ruth")!], island: island)
         let plot = island.plots.first { $0.bookID == "ruth" }!
         #expect(walkers.first?.home == plot.centre)
         for t in stride(from: 0.0, to: 60, by: 7) {
@@ -452,16 +472,11 @@ struct JourneyContextTests {
         }
     }
 
-    @Test("Completing a journey welcomes a character")
-    func rewards() {
-        for journey in JourneyData.all { #expect(JourneyData.reward(journey) != nil) }
-    }
-
     @Test("What can I build? names a book's artifacts, stories and characters")
     func catalogue() {
         #expect(BuildPreview.artifactLine("ruth").hasPrefix("Chapters place: "))
         #expect(BuildPreview.storyLine("genesis")?.contains("Noah's Ark") == true)
-        #expect(BuildPreview.characterLine("exodus") == "Helps welcome Moses")
+        #expect(BuildPreview.characterLine("exodus") == "Counts toward Moses's journey")
         #expect(BuildPreview.characterLine("obadiah") == nil)
     }
 }

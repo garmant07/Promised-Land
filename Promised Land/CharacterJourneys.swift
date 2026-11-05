@@ -84,8 +84,12 @@ enum CharacterJourneys {
     }
     private static let pauline = Array(44...56) // Romans … Philemon (canon positions)
 
-    /// Shortest first.
-    static let all: [CharacterJourney] = [
+    /// Shortest first (by chapters needed; ties keep the order below).
+    static let all: [CharacterJourney] = written.enumerated()
+        .sorted { ($0.element.requiredChapters.count, $0.offset) < ($1.element.requiredChapters.count, $1.offset) }
+        .map(\.element)
+
+    private static let written: [CharacterJourney] = [
         CharacterJourney(
             id: "ruth", characterId: "ruth", title: "Ruth's journey", subtitle: "From Moab to Bethlehem", rarity: .common,
             required: [ChapterSpan("ruth", 1...4)],

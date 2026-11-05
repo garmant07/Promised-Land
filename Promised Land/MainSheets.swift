@@ -7,73 +7,10 @@ import SwiftData
 struct JourneysSheet: View {
     var openWorldMap: () -> Void
 
-    @ProgressQuery private var progress: GameProgress
-    @Environment(\.dismiss) private var dismiss
-    @State private var selected: Journey?
-
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    Button(action: openWorldMap) {
-                        Label("Open the world map", systemImage: "map.fill")
-                    }
-                    .buttonStyle(PrimaryButtonStyle())
-
-                    if JourneyData.visible.isEmpty {
-                        Text("Journeys will appear here.")
-                            .foregroundStyle(Color.secondaryText)
-                            .cardStyle()
-                    }
-                    ForEach(JourneyData.visible) { journey in
-                        Button { selected = journey } label: { row(journey) }
-                            .buttonStyle(.plain)
-                    }
-                    Text("Reading a stop's chapter lights it on the world map, and your character walks the route.")
-                        .font(.footnote)
-                        .foregroundStyle(Color.secondaryText)
-                }
-                .padding(16)
-            }
-            .themedScreen()
-            .navigationTitle("Journeys")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }.tint(Color.primaryBrown)
-                }
-            }
-            .sheet(item: $selected) { JourneyCard(journey: $0) }
-        }
-    }
-
-    private func row(_ journey: Journey) -> some View {
-        let lit = progress.litCount(journey)
-        return HStack(spacing: 14) {
-            JourneyBadge(journey: journey, earned: progress.isComplete(journey))
-                .frame(width: 96)
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 6) {
-                    Text(journey.name).font(.headline).foregroundStyle(Color.bodyText)
-                    DraftBadge(item: journey)
-                }
-                Text("\(lit) of \(journey.stops.count) stops")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.secondaryText)
-                ProgressView(value: Double(lit), total: Double(journey.stops.count))
-                    .tint(Color.terracotta)
-            }
-            Image(systemName: "chevron.right")
-                .font(.footnote.weight(.semibold))
-                .foregroundStyle(Color.secondaryText.opacity(0.6))
-        }
-        .padding(12)
-        .background(Color.card, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .contentShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        CharacterJourneysView(onOpenWorld: openWorldMap)
     }
 }
-
-// MARK: - Profile
 
 /// You: your character, your reading, your crowns, and Settings (the gear).
 struct ProfileView: View {

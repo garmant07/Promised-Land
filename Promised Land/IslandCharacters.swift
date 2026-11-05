@@ -1,11 +1,12 @@
 import SwiftUI
 
-/// An unlocked Bible character on the island: who they are and where they stroll.
+/// A character whose journey is complete, strolling on the island near their story's buildings.
 struct IslandCharacter: Identifiable, Equatable {
+    /// The journey's id (also the character's).
     let id: String
+    let characterId: String
     let name: String
     let line: String
-    let story: ChapterRef
     let look: Avatar
     /// Grid centre of the plot they walk around, and how far out they walk.
     let home: CGPoint
@@ -25,19 +26,20 @@ struct IslandCharacter: Identifiable, Equatable {
         return (b.x - b.y) < (a.x - a.y)
     }
 
-    /// Characters to show, from those unlocked, each beside one of their books' plots.
-    static func make(_ unlocked: [BibleCharacter], island: Island) -> [IslandCharacter] {
-        unlocked.map { c in
-            let plot = ([c.homeBook] + c.books).lazy.compactMap { id in island.plots.first { $0.bookID == id } }.first
-            let home = plot?.centre ?? CGPoint(x: 1, y: 1)
-            return IslandCharacter(id: c.id, name: c.name, line: c.line, story: ChapterRef(bookID: c.storyBook, chapter: c.storyChapter),
-                                   look: c.look, home: home, radius: CGFloat(plot?.size ?? 2) / 2 + 0.25)
+    /// Characters to show, from the journeys completed, each beside one of their story's plots.
+    static func make(_ journeys: [CharacterJourney], island: Island) -> [IslandCharacter] {
+        journeys.map { j in
+            let plot = j.homeBooks.lazy.compactMap { id in island.plots.first { $0.bookID == id } }.first
+            let line = j.reviewed || ContentGate.showsDrafts ? "\u{201C}\(j.unlockLine)\u{201D} (\(j.unlockReference))" : "Finished \(j.name)'s journey."
+            return IslandCharacter(id: j.id, characterId: j.characterId, name: j.name, line: line,
+                                   look: Avatar(config: AvatarPresets.config(for: j.characterId)),
+                                   home: plot?.centre ?? CGPoint(x: 1, y: 1), radius: CGFloat(plot?.size ?? 2) / 2 + 0.25)
         }
     }
 }
 
-/// A character's picture: the hand-drawn `char_<id>` art when there is some, otherwise the
-/// code-drawn chibi figure in their look.
+/// A character's picture: the hand-drawn `char_<id>` art when there is some, otherwise their
+/// look drawn by the avatar renderer.
 struct CharacterFigure: View {
     let id: String
     let look: Avatar
@@ -54,13 +56,13 @@ struct CharacterFigure: View {
     }
 }
 
-/// What a character says when tapped, with a link to their story.
+/// What a character says when tapped, with a link to their journey.
 struct SpeechBubble: View {
     let name: String
     let line: String
     /// The content behind the line (for the Draft badge).
     var content: (any ReviewableContent)?
-    var onRead: () -> Void
+    var onView: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -72,7 +74,7 @@ struct SpeechBubble: View {
                 .font(.footnote)
                 .foregroundStyle(Color.bodyText)
                 .fixedSize(horizontal: false, vertical: true)
-            Button("Read their story", action: onRead)
+            Button("View journey", action: onView)
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(Color.primaryBrown)
                 .frame(minHeight: 44)
@@ -96,48 +98,55 @@ struct SpeechBubble: View {
 
 // MARK: - Unlock celebration
 
-/// Shown once when a character first comes to your island.
+/// Shown once when a journey is completed and its character comes to your island. Scaled to
+/// rarity: a soft sparkle for common, a burst for rare, a golden glow for legendary.
 struct CharacterUnlockView: View {
-    let character: BibleCharacter
-    var onRead: () -> Void
+    let journey: CharacterJourney
+    var onView: () -> Void
     @Environment(\.dismiss) private var dismiss
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var appeared = Date.now
+    @State private var revealed = false
 
     var body: some View {
         ZStack {
             Color.cream.ignoresSafeArea()
-            if !reduceMotion { Confetti(start: appeared).ignoresSafeArea().allowsHitTesting(false) }
+            if journey.rarity == .legendary {
+                RadialGradient(colors: [Earthy.gold.opacity(revealed ? 0.45 : 0), .clear], center: .center, startRadius: 10, endRadius: 360)
+                    .ignoresSafeArea()
+            }
+            if !reduceMotion {
+                Confetti(start: appeared, count: journey.rarity == .common ? 18 : journey.rarity == .rare ? 70 : 110,
+                         golden: journey.rarity == .legendary)
+                    .ignoresSafeArea()
+                    .allowsHitTesting(false)
+            }
             VStack(spacing: 14) {
                 Spacer(minLength: 10)
-                Text(character.rarity.title.uppercased())
-                    .font(.caption.weight(.bold))
-                    .tracking(1.5)
-                    .foregroundStyle(rarityColor)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .background(rarityColor.opacity(0.14), in: Capsule())
-                CharacterFigure(id: character.id, look: character.look)
+                RarityBadge(rarity: journey.rarity).scaleEffect(1.4)
+                CharacterFigure(id: journey.characterId, look: Avatar(config: AvatarPresets.config(for: journey.characterId)))
                     .frame(width: 170, height: 220)
-                Text("\(character.name) has come to your island")
+                    .scaleEffect(revealed ? 1 : 0.6)
+                    .opacity(revealed ? 1 : 0)
+                Text("\(journey.name) has come to your island")
                     .font(.serifTitle(.title))
                     .foregroundStyle(Color.bodyText)
                     .multilineTextAlignment(.center)
-                Text(character.line)
-                    .font(.body)
-                    .italic()
-                    .foregroundStyle(Color.secondaryText)
-                    .multilineTextAlignment(.center)
-                HStack(spacing: 6) {
-                    Text(character.reference).font(.footnote).foregroundStyle(Color.secondaryText)
-                    DraftBadge(item: character)
+                if journey.reviewed || ContentGate.showsDrafts {
+                    Text("\u{201C}\(journey.unlockLine)\u{201D}")
+                        .font(.body).italic()
+                        .foregroundStyle(Color.secondaryText)
+                        .multilineTextAlignment(.center)
+                    HStack(spacing: 6) {
+                        Text(journey.unlockReference).font(.footnote).foregroundStyle(Color.secondaryText)
+                        DraftBadge(item: journey)
+                    }
                 }
-                Text(character.unlockText + ".")
+                Text("You finished \(journey.title.lowercased().replacingOccurrences(of: journey.name.lowercased(), with: journey.name)).")
                     .font(.footnote)
                     .foregroundStyle(Color.secondaryText)
-                    .multilineTextAlignment(.center)
                 Spacer(minLength: 10)
-                Button("Read their story") { dismiss(); onRead() }
+                Button("View journey") { dismiss(); onView() }
                     .buttonStyle(PrimaryButtonStyle())
                 Button("Back to the island") { dismiss() }
                     .font(.subheadline.weight(.semibold))
@@ -146,13 +155,9 @@ struct CharacterUnlockView: View {
             }
             .padding(24)
         }
-    }
-
-    private var rarityColor: Color {
-        switch character.rarity {
-        case .common: Color.olive
-        case .rare: Color(hex: "#7C67A8")
-        case .legendary: Color(hex: "#B07A2A")
+        .onAppear {
+            // Legendary characters are revealed slowly and reverently.
+            withAnimation(.easeOut(duration: reduceMotion ? 0 : journey.rarity == .legendary ? 1.6 : 0.6)) { revealed = true }
         }
     }
 }
@@ -160,14 +165,16 @@ struct CharacterUnlockView: View {
 /// Soft paper confetti drifting down for a few seconds.
 private struct Confetti: View {
     let start: Date
+    var count = 70
+    var golden = false
 
     var body: some View {
         TimelineView(.animation) { context in
             Canvas { c, size in
                 let t = context.date.timeIntervalSince(start)
                 guard t < 6 else { return }
-                let colours = [Color.terracotta, Color.lavender, Color.wheat, Color.olive, Earthy.gold]
-                for i in 0..<70 {
+                let colours = golden ? [Earthy.gold, Earthy.goldShine, Color.wheat] : [Color.terracotta, Color.lavender, Color.wheat, Color.olive, Earthy.gold]
+                for i in 0..<count {
                     let seed = Double(i)
                     let x = (sin(seed * 12.9898) * 43758.5453).truncatingRemainder(dividingBy: 1)
                     let speed = 120 + 80 * abs(sin(seed * 3.1))

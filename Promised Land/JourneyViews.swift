@@ -99,12 +99,6 @@ struct JourneyCard: View {
                     }
                     .cardStyle()
 
-                    if let reward = JourneyData.reward(journey) {
-                        Label(complete ? "\(reward.name) has come to your island." : "Complete this journey to welcome \(reward.name) to your island.",
-                              systemImage: "person.fill.badge.plus")
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Color.terracotta)
-                    }
 
                     Text("\(progress.litCount(journey)) of \(journey.stops.count) stops lit. Reading a stop's chapter lights it, and your character walks the route.")
                         .font(.footnote)

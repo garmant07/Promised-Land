@@ -92,9 +92,9 @@ enum BuildPreview {
     }
 
     static func characterLine(_ bookID: String) -> String? {
-        let names = CharacterUnlocks.visible.filter { $0.books.contains(bookID) }.map(\.name)
+        let names = CharacterJourneys.all.filter { j in j.required.contains { $0.bookID == bookID } }.map(\.name)
         guard !names.isEmpty else { return nil }
-        return "Helps welcome " + names.joined(separator: " and ")
+        return "Counts toward " + names.map { "\($0)'s" }.joined(separator: ", ") + (names.count == 1 ? " journey" : " journeys")
     }
 }
 

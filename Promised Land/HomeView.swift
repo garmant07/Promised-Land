@@ -13,6 +13,8 @@ enum ActiveSheet: Identifiable, Equatable {
     case chapter(ChapterRef)
     /// A character has just come to the island.
     case character(String)
+    /// A character's journey map.
+    case journey(String)
 
     var id: String {
         switch self {
@@ -24,6 +26,7 @@ enum ActiveSheet: Identifiable, Equatable {
         case .insight(let subject): "insight-\(subject.id)"
         case .chapter(let ref): "chapter-\(ref.id)"
         case .character(let id): "character-\(id)"
+        case .journey(let id): "journey-\(id)"
         }
     }
 
@@ -38,7 +41,7 @@ enum ActiveSheet: Identifiable, Equatable {
     /// Reading and celebrations open full height; everything else starts at half.
     var detents: Set<PresentationDetent> {
         switch self {
-        case .chapter, .character: [.large]
+        case .chapter, .character, .journey: [.large]
         default: [.medium, .large]
         }
     }
@@ -100,14 +103,8 @@ struct HomeView: View {
     /// False until the first check, when characters you already had are noted silently.
     @AppStorage("characters.ready") private var charactersReady = false
 
-    /// Books with every chapter read.
-    private var finishedBooks: Set<String> {
-        Set(BibleCatalog.books.filter { progress.chaptersRead($0.id) >= $0.chapterCount }.map(\.id))
-    }
-
-    private var unlockedCharacters: [BibleCharacter] {
-        CharacterUnlocks.unlocked(finishedBooks: finishedBooks, completedJourneys: Set(progress.completedJourneys.map(\.id)))
-    }
+    /// Characters whose journeys are complete.
+    private var unlockedCharacters: [CharacterJourney] { progress.unlockedJourneys }
 
     /// Every piece of reading, in order, laid out on the island. A book's quiz grows one
     /// fruit tree (its first pass), however many times it's taken.
@@ -140,7 +137,7 @@ struct HomeView: View {
                           persistsCamera: true, editing: editingIsland ? editing : nil,
                           onLongPress: { index in startEditing(island.items[index].plotKey) },
                           characters: IslandCharacter.make(unlockedCharacters, island: island),
-                          onReadStory: { activeSheet = .chapter($0) },
+                          onViewJourney: { activeSheet = .journey($0) },
                           visit: visitIndex,
                           onArrived: { index in
                               guard island.items.indices.contains(index) else { return }
@@ -278,11 +275,21 @@ struct HomeView: View {
         case .chapter(let ref):
             LibraryView(startAt: ref, onClose: { activeSheet = nil })
         case .character(let id):
-            if let character = CharacterUnlocks.character(id: id) {
-                CharacterUnlockView(character: character) {
-                    let ref = ChapterRef(bookID: character.storyBook, chapter: character.storyChapter)
-                    Task { try? await Task.sleep(for: .milliseconds(450)); activeSheet = .chapter(ref) }
+            if let journey = CharacterJourneys.journey(id: id) {
+                CharacterUnlockView(journey: journey) {
+                    Task { try? await Task.sleep(for: .milliseconds(450)); activeSheet = .journey(journey.id) }
                 }
+            }
+        case .journey(let id):
+            if let journey = CharacterJourneys.journey(id: id) {
+                NavigationStack {
+                    JourneyMapView(journey: journey)
+                        .readingDestinations()
+                        .toolbar {
+                            ToolbarItem(placement: .confirmationAction) { Button("Done") { activeSheet = nil }.tint(Color.primaryBrown) }
+                        }
+                }
+                .environment(\.closeReading, CloseReadingAction(action: { activeSheet = nil }))
             }
         }
     }
@@ -420,7 +427,8 @@ struct HomeView: View {
 
     /// Queues a banner for each unlock not announced before.
     private func announceUnlocks(_ island: Island) {
-        let all = UnlockNotices.all(island: island, completedJourneys: progress.completedJourneys)
+        // Character journeys get their own celebration; the world map's routes aren't announced.
+        let all = UnlockNotices.all(island: island, completedJourneys: [])
         var seen = Set(unlocksSeen.split(separator: ",").map(String.init))
         guard unlocksReady else {
             // The first time, what you already have is noted without announcing it.
@@ -520,6 +528,7 @@ struct HomeView: View {
         if args.contains("-editIsland") { startEditing(island.plots.first?.bookID) }
         if args.contains("-openHub") { interior = InteriorRef(id: InteriorRef.library) }
         if args.contains("-avatarGallery") { debugGallery = true }
+        if let i = args.firstIndex(of: "-openJourneyMap"), i + 1 < args.count { activeSheet = .journey(args[i + 1]) }
         if args.contains("-openCreator") { debugCreator = true }
         if let i = args.firstIndex(of: "-celebrate"), i + 1 < args.count { activeSheet = .character(args[i + 1]) }
         if let i = args.firstIndex(of: "-openChapter"), i + 1 < args.count {

@@ -49,6 +49,46 @@ struct InteriorJournalSection: View {
     }
 }
 
+/// Inside a building: the characters whose journeys pass through this book (greyed until
+/// their journey is complete).
+struct InteriorCharactersSection: View {
+    let bookID: String
+    @ProgressQuery private var progress: GameProgress
+
+    var body: some View {
+        let here = CharacterJourneys.all.filter { j in j.required.contains { $0.bookID == bookID } }
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Who belongs here")
+                .font(.serifTitle(.title3))
+                .foregroundStyle(Color.bodyText)
+            if here.isEmpty {
+                Text("No character's journey passes through this book.")
+                    .font(.subheadline)
+                    .foregroundStyle(Color.secondaryText)
+            }
+            ForEach(here) { j in
+                let p = progress.journeyProgress(j)
+                HStack(spacing: 12) {
+                    CharacterFigure(id: j.characterId, look: Avatar(config: AvatarPresets.config(for: j.characterId)))
+                        .frame(width: 54, height: 70)
+                        .saturation(p.isComplete ? 1 : 0)
+                        .opacity(p.isComplete ? 1 : 0.35)
+                    VStack(alignment: .leading, spacing: 3) {
+                        HStack(spacing: 6) {
+                            Text(j.name).font(.headline).foregroundStyle(Color.bodyText)
+                            RarityBadge(rarity: j.rarity)
+                        }
+                        Text(p.isComplete ? "Lives on your island." : "\(p.read) of \(p.required) chapters of their journey read.")
+                            .font(.footnote)
+                            .foregroundStyle(Color.secondaryText)
+                    }
+                }
+            }
+        }
+        .cardStyle()
+    }
+}
+
 /// Renders share images of the island or of one building, with your character and stats.
 @MainActor
 enum ShareRender {
