@@ -245,6 +245,15 @@ struct InteriorHeaderArt: View {
     let fullReads: Int
 
     var body: some View {
+        // Hand-made interior art (`int_<bookID>`) replaces the drawing when present.
+        if let art = ArtAssets.image("int_\(spec.bookID)") {
+            Image(decorative: art.image, scale: 1).resizable().scaledToFit()
+        } else {
+            drawing
+        }
+    }
+
+    private var drawing: some View {
         Canvas { c, size in
             let u = min(size.width / 120, size.height / 82)
             let ground = CGPoint(x: size.width / 2, y: size.height * 0.68)

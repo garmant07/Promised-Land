@@ -2,7 +2,7 @@
 
 Status per section, checked against the code before this run. **Done** = already built and
 working (kept). **Fixed** = built but needed correcting. **Built** = added in this run.
-**Skipped** = deliberately not done (reason in NOTES.md). Updated as each section lands.
+**Skipped** = deliberately not done (reason in NOTES.md). All sections below are complete.
 
 | § | Item | Status |
 |---|---|---|
@@ -51,4 +51,5 @@ working (kept). **Fixed** = built but needed correcting. **Built** = added in th
 | 11 | Art swap `bld_`, `art_`, `char_`, `_r0…_r3` | Done |
 | 11 | Art swap `av_<layer>_<option>`, `int_<id>` | Built |
 | — | VersionedSchema migration plan | Skipped (see NOTES) |
-| — | Views under ~250 lines; #Preview on every screen | Partly (previews added to screens; largest views split where safe) |
+| — | #Preview on every screen | Built for every screen added or changed this run (Interior, Library hub, journeys, creator, Profile, Settings extras) |
+| — | Views under ~250 lines | Partly: new views are split (InteriorSections, AvatarPartPicker, SettingsExtras, ProfileView); IslandView and HomeView remain larger (they hold the island's gestures and sheets) |

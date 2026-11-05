@@ -18,6 +18,8 @@ struct PlatformScene: View {
     /// Your own island keeps its camera (zoom, pan, turn) between launches and shows the
     /// turn and "Find me" buttons. Friends' islands don't.
     var persistsCamera = false
+    /// Shows the turn and "Find me" buttons (your island, and friends' islands).
+    var showsControls: Bool? = nil
     /// Edit mode: plots can be dragged and turned (see `IslandEditing`). Nil = not editing.
     var editing: IslandEditing? = nil
     /// Holding a building for half a second (outside edit mode) reports its index.
@@ -209,7 +211,7 @@ struct PlatformScene: View {
             .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
             .simultaneousGesture(interactive ? twistGesture : nil)
             .overlay(alignment: .bottomTrailing) {
-                if interactive && persistsCamera && editing == nil {
+                if interactive && (showsControls ?? persistsCamera) && editing == nil {
                     controls(layout: base, size: geo.size)
                         .padding(.trailing, 14)
                         .padding(.bottom, insets.bottom + 6)

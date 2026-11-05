@@ -11,11 +11,21 @@ struct FriendSummary: Identifiable, Hashable {
     /// Every read, for drawing their island.
     let reads: [(book: String, chapter: Int, date: Date)]
     var isSample = true
+    /// Notes they've chosen to share (journal entries stay private unless shared).
+    var notes: [SharedNote] = []
 
     var chaptersRead: Int { Set(reads.map { "\($0.book)#\($0.chapter)" }).count }
 
     static func == (lhs: FriendSummary, rhs: FriendSummary) -> Bool { lhs.id == rhs.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }
+}
+
+/// A note a friend chose to share about a chapter.
+struct SharedNote: Hashable, Identifiable {
+    let bookID: String
+    let chapter: Int
+    let text: String
+    var id: String { "\(bookID)#\(chapter)#\(text.hashValue)" }
 }
 
 /// Where friends come from. Today: sample data on the device. Later: a real backend
@@ -48,13 +58,17 @@ struct MockFriendsService: FriendsService {
     static let samples: [FriendSummary] = [
         FriendSummary(id: "sample-hannah", name: "Hannah (sample)",
                       avatar: Avatar(name: "Hannah", config: FriendLooks.hannah),
-                      streak: 12, reads: plan([("genesis", 1...50), ("ruth", 1...4), ("psalms", 1...30), ("john", 1...21)])),
+                      streak: 12, reads: plan([("genesis", 1...50), ("ruth", 1...4), ("psalms", 1...30), ("john", 1...21)]),
+                      notes: [SharedNote(bookID: "ruth", chapter: 1, text: "Sample note: Ruth staying with Naomi really stuck with me this week."),
+                              SharedNote(bookID: "psalms", chapter: 23, text: "Sample note: read this one slowly before school.")]),
         FriendSummary(id: "sample-eli", name: "Eli (sample)",
                       avatar: Avatar(name: "Eli", config: FriendLooks.eli),
-                      streak: 3, reads: plan([("mark", 1...16), ("acts", 1...12), ("jonah", 1...4)])),
+                      streak: 3, reads: plan([("mark", 1...16), ("acts", 1...12), ("jonah", 1...4)]),
+                      notes: [SharedNote(bookID: "jonah", chapter: 4, text: "Sample note: I didn't expect the book to end with a question.")]),
         FriendSummary(id: "sample-joy", name: "Joy (sample)",
                       avatar: Avatar(name: "Joy", config: FriendLooks.joy),
-                      streak: 27, reads: plan([("proverbs", 1...31), ("luke", 1...24), ("psalms", 1...60), ("exodus", 1...20)])),
+                      streak: 27, reads: plan([("proverbs", 1...31), ("luke", 1...24), ("psalms", 1...60), ("exodus", 1...20)]),
+                      notes: [SharedNote(bookID: "luke", chapter: 15, text: "Sample note: three lost things, three parties.")]),
     ]
 
     /// Spreads a reading plan over the past months, one chapter a day.
@@ -68,6 +82,47 @@ struct MockFriendsService: FriendsService {
 
 // MARK: - Views
 
+/// A friend's building or artifact: what built it, and any notes they shared about it.
+struct FriendItemCard: View {
+    struct Subject: Identifiable {
+        let item: Island.Item
+        let notes: [SharedNote]
+        var id: String { "\(item.gx),\(item.gy)" }
+    }
+    let subject: Subject
+
+    var body: some View {
+        let bookID = subject.item.source.bookID
+        let book = bookID.flatMap { BibleCatalog.book(id: $0) }
+        VStack(alignment: .leading, spacing: 10) {
+            Text(title).font(.serifTitle(.title2)).foregroundStyle(Color.bodyText)
+            if let book {
+                Text(detail(book)).font(.subheadline).foregroundStyle(Color.secondaryText)
+            }
+            ForEach(subject.notes.filter { $0.bookID == bookID }) { note in
+                Text("\u{201C}\(note.text)\u{201D}").italic().foregroundStyle(Color.bodyText)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.cream.ignoresSafeArea())
+    }
+
+    private var title: String {
+        if case .building(let id) = subject.item.kind { return WorldData.landmark(bookID: id)?.name ?? id }
+        return InsightSubject.name(of: subject.item.kind)
+    }
+
+    private func detail(_ book: Book) -> String {
+        switch subject.item.source {
+        case .chapter(_, let ch): "Built by reading \(book.name) \(ch)."
+        case .book: subject.item.progress >= subject.item.total ? "Built by reading all of \(book.name)." : "\(subject.item.progress) of \(book.name)'s \(subject.item.total) chapters read."
+        default: "From reading \(book.name)."
+        }
+    }
+}
+
 struct FriendsView: View {
     var service: any FriendsService = MockFriendsService()
     var groupsService: any GroupsService = MockGroupsService()
@@ -79,7 +134,7 @@ struct FriendsView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    Label("Preview: these are sample friends, not real people. Reading together with real friends is coming later.",
+                    Label("Preview: friends coming soon. These are sample friends, not real people.",
                           systemImage: "sparkles")
                         .font(.subheadline)
                         .foregroundStyle(Color.primaryBrown)
@@ -147,26 +202,50 @@ struct FriendsView: View {
 /// A read-only look at a friend's island.
 struct FriendWorldView: View {
     let friend: FriendSummary
+    @State private var selected: Int?
+    @State private var card: FriendItemCard.Subject?
 
     var body: some View {
         let island = Island.build(chapters: friend.reads, quizzes: [], verses: [])
         ScrollView {
             VStack(spacing: 16) {
                 if friend.isSample {
-                    Text("Sample friend · preview")
+                    Text("Preview: friends coming soon")
                         .font(.caption.weight(.bold))
                         .foregroundStyle(Color.onPrimary)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
                         .background(Color.terracotta, in: Capsule())
                 }
-                PlatformScene(avatar: friend.avatar, island: island)
-                    .frame(height: 360)
-                    .allowsHitTesting(false)
+                // Read-only, but you can pan, zoom, turn it and tap their buildings.
+                PlatformScene(avatar: friend.avatar, island: island, selected: $selected, showsControls: true, onTap: { index in
+                    selected = index
+                    if let index, island.items.indices.contains(index) {
+                        card = FriendItemCard.Subject(item: island.items[index], notes: friend.notes)
+                    }
+                })
+                .frame(height: 420)
+                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
                 HStack(spacing: 12) {
                     stat("\(friend.chaptersRead)", "chapters read")
                     stat("\(friend.streak)", "day streak")
                     stat("\(island.items.count)", "things built")
+                }
+                if !friend.notes.isEmpty {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Shared notes").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
+                        ForEach(friend.notes) { note in
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("\(BibleCatalog.book(id: note.bookID)?.name ?? note.bookID) \(note.chapter)")
+                                    .font(.caption.weight(.semibold)).foregroundStyle(Color.secondaryText)
+                                Text(note.text).foregroundStyle(Color.bodyText)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(12)
+                            .background(Color.cream, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        }
+                    }
+                    .cardStyle()
                 }
             }
             .padding(16)
@@ -174,6 +253,7 @@ struct FriendWorldView: View {
         .themedScreen()
         .navigationTitle(friend.name)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(item: $card) { FriendItemCard(subject: $0).presentationDetents([.medium]) }
     }
 
     private func stat(_ value: String, _ label: String) -> some View {
