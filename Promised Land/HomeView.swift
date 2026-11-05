@@ -102,6 +102,10 @@ struct HomeView: View {
     @AppStorage("characters.celebrated") private var celebratedCharacters = ""
     /// False until the first check, when characters you already had are noted silently.
     @AppStorage("characters.ready") private var charactersReady = false
+    /// Same for the character journeys (they replaced the first character unlocks).
+    @AppStorage("characters.journeysReady") private var journeysReady = false
+    /// Same for crowns (announced since the master build).
+    @AppStorage("unlocks.crownsReady") private var crownsReady = false
 
     /// Characters whose journeys are complete.
     private var unlockedCharacters: [CharacterJourney] { progress.unlockedJourneys }
@@ -116,7 +120,7 @@ struct HomeView: View {
                             quizzes: firstPasses.map { ($0.bookID, $0.date) },
                             verses: versesMemorised.map { ($0.bookID, $0.date) },
                             // The Library is the reading hub, so it's always there.
-                            features: [.library],
+                            features: progress.hasCompletedBible ? [.library, .throne] : [.library],
                             placements: editingIsland ? draft : savedPlacements,
                             unchecked: chapterReads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) })
     }
@@ -144,6 +148,7 @@ struct HomeView: View {
                               switch island.items[index].kind {
                               case .building(let id): interior = InteriorRef(id: id)
                               case .library: interior = InteriorRef(id: InteriorRef.library)
+                              case .throne: interior = InteriorRef(id: InteriorRef.throne)
                               default: break
                               }
                           }) { index in open(index, in: island) }
@@ -199,6 +204,8 @@ struct HomeView: View {
         }) { ref in
             if ref.id == InteriorRef.library {
                 LibraryHubView { interior = nil }
+            } else if ref.id == InteriorRef.throne {
+                ThroneRoomView()
             } else {
                 InteriorView(bookID: ref.id) { interior = nil }
             }
@@ -299,8 +306,8 @@ struct HomeView: View {
         guard let index, island.items.indices.contains(index) else { selectedItem = nil; return }
         let item = island.items[index]
         selectedItem = index
-        if case .feature(.library) = item.source {
-            // Walk to the Library's door and step inside, like any building.
+        if case .feature = item.source {
+            // Walk to the Library's (or throne room's) door and step inside, like any building.
             visitIndex = index
         } else if case .building = item.kind {
             // Step inside: walk to the door, then open the building.
@@ -414,7 +421,8 @@ struct HomeView: View {
     private func welcomeCharacters() {
         let unlocked = unlockedCharacters.map(\.id)
         var seen = Set(celebratedCharacters.split(separator: ",").map(String.init))
-        guard charactersReady else {
+        guard charactersReady, journeysReady else {
+            journeysReady = true
             celebratedCharacters = unlocked.joined(separator: ",")
             charactersReady = true
             return
@@ -428,13 +436,20 @@ struct HomeView: View {
     /// Queues a banner for each unlock not announced before.
     private func announceUnlocks(_ island: Island) {
         // Character journeys get their own celebration; the world map's routes aren't announced.
-        let all = UnlockNotices.all(island: island, completedJourneys: [])
+        let crowns = Dictionary(uniqueKeysWithValues: BibleCatalog.books.map { ($0.id, progress.crownsEarned($0.id)) })
+        let all = UnlockNotices.all(island: island, completedJourneys: [], crowns: crowns)
         var seen = Set(unlocksSeen.split(separator: ",").map(String.init))
         guard unlocksReady else {
             // The first time, what you already have is noted without announcing it.
             unlocksSeen = all.map(\.id).joined(separator: ",")
             unlocksReady = true
             return
+        }
+        if !crownsReady {
+            // Crowns earned before crowns were announced are noted silently.
+            seen.formUnion(all.filter { $0.id.hasPrefix("crown:") }.map(\.id))
+            crownsReady = true
+            unlocksSeen = seen.sorted().joined(separator: ",")
         }
         let new = all.filter { !seen.contains($0.id) }
         guard !new.isEmpty else { return }
@@ -568,6 +583,7 @@ struct HomeView: View {
 struct InteriorRef: Identifiable, Equatable {
     let id: String
     static let library = "feature:library"
+    static let throne = "feature:throne"
 }
 
 /// Compact buttons for the edit-mode bar.

@@ -21,13 +21,15 @@ struct Island: Equatable {
         case story(String)
         /// A quiz banner, or a verse's lantern or fruit tree.
         case reward(RewardKind)
-        /// A feature building: appears after the first journal entry.
+        /// The Library: the reading hub, always on the island.
         case library
+        /// The throne room: appears at the far edge once the whole Bible is read.
+        case throne
 
         /// How much of a tile it takes up (4 = a whole tile).
         var weight: Int {
             switch self {
-            case .building, .library: 4
+            case .building, .library, .throne: 4
             case .story: 2
             default: 1
             }
@@ -62,7 +64,7 @@ struct Island: Equatable {
 
     /// Feature buildings: features unlock as buildings on the island.
     enum Feature: String, CaseIterable {
-        case library
+        case library, throne
     }
 
     struct Item: Equatable {
@@ -243,6 +245,13 @@ struct Island: Equatable {
             // First in the list, so things you add later are always at the end (they build in).
             items.insert(IslandPlots.item(for: .library, at: plot), at: 0)
         }
+        if features.contains(.throne) {
+            // Beyond everything else, on the Revelation side.
+            let plot = packer.placeThrone()
+            let c = plot.centre
+            items.insert(Item(kind: .throne, gx: c.x, gy: c.y, seed: 1, source: .feature(.throne),
+                              footprint: CGRect(x: c.x - 0.95, y: c.y - 0.95, width: 1.9, height: 1.9)), at: 0)
+        }
         return Island(tiles: packer.tiles(features: features), items: items, plots: plots, water: packer.water,
                       library: library, conflicts: packer.conflicts)
     }
@@ -393,6 +402,8 @@ enum IslandHitTester {
             return rect(ChapterLandmarks.entry(id: id).map { StoryArt.size($0.kind) } ?? CGSize(width: 38, height: 32), base: base, u: u)
         case .library:
             return rect(CGSize(width: 40, height: 50), base: base, u: u)
+        case .throne:
+            return rect(CGSize(width: 46, height: 66), base: base, u: u)
         }
     }
 
@@ -529,6 +540,8 @@ enum IslandPainter {
             StoryArt.draw(pen, entry.kind, level: item.level, variant: entry.variant, seed: item.seed)
         case .library:
             break // drawn from an image above
+        case .throne:
+            ThroneArt.draw(pen)
         }
     }
 
@@ -649,6 +662,16 @@ struct IslandPlots {
     }
 
     /// The Library's spot (its saved place, or the default beside the start).
+    /// The throne room's spot: past the furthest land on the Revelation (right) side.
+    mutating func placeThrone() -> Island.Plot {
+        let all = regions + [(x: Self.start.x, y: Self.start.y, size: Self.start.size)]
+        let far = all.max { ($0.x - $0.y) < ($1.x - $1.y) }!
+        let x = far.x + far.size + 2, y = far.y
+        mark(x, y, 2)
+        regions.append((x, y, 2))
+        return Island.Plot(bookID: "feature:throne", x: x, y: y, size: 2)
+    }
+
     var libraryPlot: Island.Plot {
         Island.Plot(bookID: IslandPlacement.libraryKey, x: libraryPlace.x, y: libraryPlace.y, size: Self.library.size,
                     rotation: placements[IslandPlacement.libraryKey]?.rotation ?? 0)

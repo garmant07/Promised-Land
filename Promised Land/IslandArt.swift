@@ -894,6 +894,23 @@ enum RewardArt {
     }
 }
 
+// MARK: - Throne room
+
+/// The throne room: a glowing cream hall with a golden dome and a crown on top.
+enum ThroneArt {
+    static func draw(_ pen: IsoPen) {
+        let o = pen.p(0, 0)
+        pen.ellipse(CGPoint(x: o.x, y: o.y - 26 * pen.u), 40, 34, Earthy.gold.opacity(0.22))
+        pen.shadow(0, 0, rx: 34)
+        let walls = Earthy.walls(.cream)
+        pen.box(0, 0, hx: 0.5, hy: 0.5, h: 4, Earthy.Walls(left: Earthy.stone, right: Earthy.stoneShade, top: walls.top))
+        pen.box(0, 0, hx: 0.4, hy: 0.4, z0: 4, h: 20, walls)
+        pen.windows(box: 0, 0, hx: 0.4, hy: 0.4, z0: 4, storeys: 1, storey: 20)
+        let top = pen.dome(0, 0, r: 0.3, z: 24, gold: true, drum: walls)
+        BuildingArt.crest(pen, .crown, at: pen.p(0, 0, top))
+    }
+}
+
 // MARK: - Story objects
 
 /// Story objects (e.g. Noah's Ark for Genesis 6–9), drawn in the island's style. They take

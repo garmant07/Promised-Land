@@ -49,7 +49,7 @@ struct CharacterJourneysView: View {
 }
 
 /// Opens a journey's map.
-struct JourneyLink: Hashable { let id: String }
+struct JourneyLink: Hashable, Identifiable { let id: String }
 
 /// A journey card: portrait (locked until complete), name, rarity, progress and next stop.
 struct JourneyCardRow: View {

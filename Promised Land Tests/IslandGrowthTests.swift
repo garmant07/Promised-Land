@@ -708,3 +708,32 @@ struct SeededGenerator: RandomNumberGenerator {
         return z ^ (z >> 31)
     }
 }
+
+@MainActor
+struct CrownTests {
+    func reads(_ book: String, _ chapters: ClosedRange<Int>, times: Int) -> [ChapterRead] {
+        (0..<times).flatMap { _ in chapters.map { ChapterRead(bookID: book, chapterNumber: $0) } }
+    }
+
+    @Test("The first full read earns no crown; each further full reread earns one")
+    func crowns() {
+        let once = GameProgress(reads: reads("ruth", 1...4, times: 1), quizzes: [], memorised: [])
+        #expect(once.crownsEarned("ruth") == 0)
+        let thrice = GameProgress(reads: reads("ruth", 1...4, times: 3), quizzes: [], memorised: [])
+        #expect(thrice.crownsEarned("ruth") == 2)
+        // A partial reread doesn't count.
+        let partial = GameProgress(reads: reads("ruth", 1...4, times: 1) + reads("ruth", 1...3, times: 1), quizzes: [], memorised: [])
+        #expect(partial.crownsEarned("ruth") == 0)
+    }
+
+    @Test("Each crown is announced once, and the throne room is announced when it appears")
+    func notices() {
+        let island = Island.build(chapters: (1...4).map { ("ruth", $0, Date()) }, quizzes: [], verses: [], features: [.library, .throne])
+        let ids = Set(UnlockNotices.all(island: island, completedJourneys: [], crowns: ["ruth": 2]).map(\.id))
+        #expect(ids.isSuperset(of: ["crown:ruth:1", "crown:ruth:2", "throne"]))
+        // The throne sits beyond everything on the Revelation (right) side.
+        let throne = island.items.first { $0.kind == .throne }!
+        let others = island.plots.map { $0.centre.x - $0.centre.y }
+        #expect(others.allSatisfy { throne.gx - throne.gy > $0 })
+    }
+}

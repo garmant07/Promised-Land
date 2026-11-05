@@ -731,6 +731,7 @@ struct PlatformScene: View {
         switch item.kind {
         case .building: item.progress >= item.total ? 5 : 2
         case .library: 4
+        case .throne: 5
         case .story: 3
         case .reward: 3
         case .artifact: 1

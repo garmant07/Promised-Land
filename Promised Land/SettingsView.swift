@@ -57,6 +57,8 @@ struct SettingsView: View {
                         }
                     }
 
+                    SettingsPreferencesSection()
+
                     section("Reflection & journal") {
                         Toggle("Offer the quick check after reading", isOn: $offerReflection)
                             .tint(Color.olive)
@@ -66,6 +68,10 @@ struct SettingsView: View {
                             .font(.subheadline)
                             .foregroundStyle(Color.secondaryText)
                     }
+
+                    #if DEBUG
+                    DebugToolsSection()
+                    #endif
 
                     section("About") {
                         Text("Scripture is from the American Standard Version (1901), which is in the public domain. This early version bundles a small sample; the full text will follow.")

@@ -111,6 +111,7 @@ struct InsightSubject: Identifiable, Equatable {
         case .story(let id): ChapterLandmarks.entry(id: id)?.name ?? "Story"
         case .building: "Building"
         case .library: "Library"
+        case .throne: "Throne room"
         }
     }
 }

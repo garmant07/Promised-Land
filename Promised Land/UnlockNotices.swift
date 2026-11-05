@@ -14,8 +14,17 @@ struct UnlockNotice: Identifiable, Equatable {
 /// Works out what's been unlocked. Pure, so it's testable: compare against the keys already
 /// announced to find what's new.
 enum UnlockNotices {
-    static func all(island: Island, completedJourneys: [Journey]) -> [UnlockNotice] {
+    /// - Parameter crowns: crowns earned per book (each full reread after the first).
+    static func all(island: Island, completedJourneys: [Journey], crowns: [String: Int] = [:]) -> [UnlockNotice] {
         var out: [UnlockNotice] = []
+        for (bookID, count) in crowns.sorted(by: { $0.key < $1.key }) where count > 0 {
+            let name = BibleCatalog.book(id: bookID)?.name ?? bookID
+            for n in 1...count {
+                out.append(UnlockNotice(id: "crown:\(bookID):\(n)", title: "A crown for \(name)",
+                                        detail: "You read \(name) all the way through again.", symbol: "crown.fill",
+                                        itemIndex: island.items.firstIndex { $0.kind == .building(bookID) }))
+            }
+        }
         for (index, item) in island.items.enumerated() {
             switch item.kind {
             case .building(let bookID):
@@ -49,6 +58,10 @@ enum UnlockNotices {
                 }
                 out.append(UnlockNotice(id: "reward:\(bookID):\(kind.rawValue)", title: title, detail: detail,
                                         symbol: symbol, itemIndex: index))
+            case .throne:
+                out.append(UnlockNotice(id: "throne", title: "The throne room has appeared",
+                                        detail: "You've read the whole Bible. Walk in to lay down your crowns.",
+                                        symbol: "crown.fill", itemIndex: index))
             case .library:
                 out.append(UnlockNotice(id: "library", title: "The Library is open",
                                         detail: "Every book of the Bible is on its shelves. Walk in to read.",
