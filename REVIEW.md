@@ -51,20 +51,10 @@ those that point at the text, e.g.:
   Revelation are John is church tradition, not stated in the texts (see the journey's note).
 - Map positions are not used (journeys are a level map, not geography).
 
-## 2. Story objects — `ChapterLandmarks.swift`
-- **New:** "Altar of Burnt-Offering" (Leviticus 1–7, ref. Leviticus 1:1–9), and its world-map
-  position beside the Tabernacle (check it doesn't overlap).
-- The 25 existing entries (names, one-line summaries, references) are still unreviewed.
-
 ## 3. Bible text and deep dives
 - **New sample text:** John 15:12–14 (ASV) in `BibleData.swift`. Check against the ASV.
 - **Deep dives** — `DeepDiveData.swift`: John 15:13 (new), Genesis 1:1, Ruth 1:16, Psalm 23:1,
   John 1:1, John 3:16. Context lines, key words, themes and cross-references.
-
-## 4. World-map journeys — `JourneyData.swift`
-Jonah, Paul's voyage (Sidon, Myra, Fair Havens, the storm, Melita, Rome) and Galilee. These
-are now map decoration only, but their stop cards (place, what happened, looked like) still
-show from the world map. Myra and the storm are placed approximately; "Melita (Malta)".
 
 ## 5. Buildings and themes — `BuildingData.swift`, `RewardData.swift`
 Design choices, not claims, but check they feel right: which family, roof and crest each book
@@ -73,7 +63,7 @@ gets (e.g. a cross on 1 John, a harp on Psalms), and each book's three chapter a
 ## 6. Other existing content (unchanged this round, still unreviewed)
 - `ReflectionData.swift`: chapter-specific reflection prompts.
 - `LearningData.swift`: quiz questions (also used by the reading check) and memory verses.
-- `WorldData.swift`: landmark names, regions and connections.
+- `WorldData.swift`: landmark and region names (used in the reading lists).
 - `Crowns.swift`: the Revelation 4:10 casting verse.
 
 ## 7. Not content, but worth a look

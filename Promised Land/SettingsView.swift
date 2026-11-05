@@ -4,13 +4,10 @@ import SwiftData
 /// UserDefaults keys for UI state that isn't reading progress.
 enum StorageKeys {
     static let hasOnboarded = "hasOnboarded"
-    static let worldCamera = "worldCamera"
     static let celebrated = "celebratedLandmarks"
-    static let builtConnections = "builtConnections"
     static let hasOpenedReading = "hasOpenedReading"
     static let gardenSeenChapters = "gardenSeenChapters"
     static let islandProgressSeen = "islandProgressSeen"
-    static let storyObjectsSeen = "storyObjectsSeen"
     static let offerReflection = "offerReflection"
     static let ageGroup = "profile.ageGroup"
     static let readingUnlocksApps = "settings.readingUnlocksApps"
@@ -40,12 +37,6 @@ struct SettingsView: View {
                         Button("Show the welcome again") {
                             hasOnboarded = false
                             dismiss()
-                        }
-                        .buttonStyle(SoftButtonStyle())
-                        Button("Reset map view") {
-                            UserDefaults.standard.removeObject(forKey: StorageKeys.worldCamera)
-                            NotificationCenter.default.post(name: .resetWorldCamera, object: nil)
-                            message = "The map will return to its starting view."
                         }
                         .buttonStyle(SoftButtonStyle())
                         Button("Reset all progress", role: .destructive) { confirmingReset = true }
@@ -113,8 +104,6 @@ struct SettingsView: View {
     private func resetProgress() {
         context.resetAllProgress()
         UserDefaults.standard.removeObject(forKey: StorageKeys.celebrated)
-        UserDefaults.standard.removeObject(forKey: StorageKeys.builtConnections)
-        UserDefaults.standard.removeObject(forKey: StorageKeys.storyObjectsSeen)
         UserDefaults.standard.removeObject(forKey: StorageKeys.journeyStopsSeen)
         UserDefaults.standard.removeObject(forKey: StorageKeys.journeysCompleted)
         UserDefaults.standard.removeObject(forKey: StorageKeys.throneRevealed)
@@ -122,9 +111,6 @@ struct SettingsView: View {
     }
 }
 
-extension Notification.Name {
-    static let resetWorldCamera = Notification.Name("resetWorldCamera")
-}
 
 #Preview {
     SettingsView()

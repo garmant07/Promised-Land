@@ -107,6 +107,16 @@ option was chosen and noted here.
     chapter and shows the complete island; richness, replay, jump-to-book, FPS and edit mode
     changes live only while it's open. Tested not to write to the real store.
 
+31. **The world map is deleted** (by request). The SpriteKit map (`WorldView`, `WorldScene` and its
+    layers) is gone, along with what only it showed: the dotted route journeys (`JourneyData`,
+    Jonah / Paul to Rome / Galilee, and their Profile badges), the story objects
+    (`ChapterLandmarks`, now unused since the island has Places), fog and connections, the
+    "Reset map view" setting and the map's camera keys. Character journeys, the throne room and
+    crowns live on the island and are unchanged. Kept from `World/`: `IsoMath.swift` (noise and
+    iso maths), `LandmarkPainter.swift` (the Library and the small landmark pictures in the
+    reading lists). Notes 6 and 9 above describe the map as it was. `WorldData` stays for book
+    and landmark names.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

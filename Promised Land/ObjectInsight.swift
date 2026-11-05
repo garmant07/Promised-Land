@@ -1,6 +1,6 @@
 import Foundation
 
-/// What a tapped object is: either something on your island, or a story object on the world map.
+/// What a tapped object on your island is.
 struct InsightSubject: Identifiable, Equatable {
     let id: String
     let title: String
@@ -9,8 +9,6 @@ struct InsightSubject: Identifiable, Equatable {
     let bookID: String
     /// The chapters behind it. Empty for book-level objects (a fruit tree, a lantern, a finished book).
     let chapters: [Int]
-    /// The reviewable content behind it, if any (world-map story objects).
-    let draftReference: ChapterLandmark?
 
     var isBookLevel: Bool { chapters.isEmpty }
     var book: Book? { BibleCatalog.book(id: bookID) }
@@ -34,23 +32,23 @@ struct InsightSubject: Identifiable, Equatable {
         case .place, .flourish:
             return InsightSubject(id: id, title: PlaceData.spec(for: bookID).name, region: region,
                                   description: placeText(bookID: bookID, read: item.progress, total: item.total, richness: item.level),
-                                  bookID: bookID, chapters: [], draftReference: nil)
+                                  bookID: bookID, chapters: [])
         case .forest(_, let chapter):
             let entry = ForestData.entry(bookID, chapter)
             let tree = entry.flatMap { ContentGate.isVisible($0) ? "\u{201C}\($0.tree)\u{201D} (\($0.reference)). " : nil } ?? ""
             return InsightSubject(id: id, title: "Forest tree", region: region,
                                   description: "\(tree)Grew when you read \(book.name) \(chapter). Every chapter with trees in it adds to the forest.",
-                                  bookID: bookID, chapters: [chapter], draftReference: nil)
+                                  bookID: bookID, chapters: [chapter])
         case .quiz:
             return InsightSubject(id: id, title: "Banner", region: region,
                                   description: "Raised when you passed the \(book.name) quiz.",
-                                  bookID: bookID, chapters: [], draftReference: nil)
+                                  bookID: bookID, chapters: [])
         case .verse:
             return InsightSubject(id: id, title: name(of: item.kind), region: region,
                                   description: item.kind == .reward(.lantern)
                                     ? "Lit when you memorised a verse from \(book.name)."
                                     : "Grew when you memorised a verse from \(book.name).",
-                                  bookID: bookID, chapters: [], draftReference: nil)
+                                  bookID: bookID, chapters: [])
         case .feature, .extra:
             return nil
         }
@@ -67,13 +65,6 @@ struct InsightSubject: Identifiable, Equatable {
         }
         if richness <= 1 { return "Complete: you read all of \(book). Read it again to make \(name) richer." }
         return "Complete, and read through \(richness) times: richness \(min(5, richness)) of 5."
-    }
-
-    static func story(_ entry: ChapterLandmark) -> InsightSubject {
-        InsightSubject(id: "story-\(entry.id)", title: entry.name,
-                       region: WorldData.landmark(bookID: entry.bookID)?.region?.name ?? "",
-                       description: entry.summary, bookID: entry.bookID,
-                       chapters: Array(entry.chapters), draftReference: entry)
     }
 
     static func name(of kind: Island.Kind) -> String {

@@ -54,7 +54,7 @@ struct ObjectInsightTests {
 
     func subject(chapters: [Int]) -> InsightSubject {
         InsightSubject(id: "t", title: "Test", region: "Galilee", description: "", bookID: "john",
-                       chapters: chapters, draftReference: nil)
+                       chapters: chapters)
     }
 
     @Test func chapterObjectCountsAndDates() {
@@ -101,7 +101,7 @@ struct ObjectInsightTests {
 
     @Test func nothingReadMeansNoData() {
         let other = InsightSubject(id: "x", title: "X", region: "", description: "", bookID: "daniel",
-                                   chapters: [6], draftReference: nil)
+                                   chapters: [6])
         let insight = ObjectInsight.make(other, reads: reads, quizzes: quizzes, verses: verses, journal: journal,
                                          now: date(2026, 7, 1), calendar: calendar)
         #expect(insight.totalReads == 0)

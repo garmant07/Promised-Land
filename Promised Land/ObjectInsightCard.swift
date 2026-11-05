@@ -47,11 +47,6 @@ struct ObjectInsightCard: View {
                         Label(insight.totalReads == 0 ? "Read \(subject.chapterLabel)" : "Read again", systemImage: "book")
                     }
                     .buttonStyle(PrimaryButtonStyle())
-                    if let draft = subject.draftReference {
-                        Text("\(draft.reference) · Source: \(draft.source)")
-                            .font(.caption)
-                            .foregroundStyle(Color.secondaryText)
-                    }
                 }
                 .padding(16)
             }
@@ -84,16 +79,10 @@ struct ObjectInsightCard: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if let draft = subject.draftReference {
-                ChapterObjectArtView(entry: draft, depth: max(1, insight.depth ?? 1))
-                    .frame(height: 180)
-                    .frame(maxWidth: .infinity)
-            }
             HStack(spacing: 8) {
                 Text(subject.title)
                     .font(.serifTitle(.title2))
                     .foregroundStyle(Color.bodyText)
-                if let draft = subject.draftReference { DraftBadge(item: draft) }
             }
             if !subject.region.isEmpty {
                 Label(subject.region, systemImage: "mappin.and.ellipse")
@@ -268,22 +257,8 @@ struct DepthDots: View {
     }
 }
 
-/// The story object's artwork, drawn by the same painter as the map.
-struct ChapterObjectArtView: View {
-    let entry: ChapterLandmark
-    let depth: Int
-
-    var body: some View {
-        let look = ChapterObjectLook(kind: entry.kind, depth: depth, variant: entry.variant, size: 3)
-        if let art = ChapterObjectPainter.render(look, scale: 2) {
-            Image(decorative: art.image, scale: 2)
-                .resizable()
-                .scaledToFit()
-                .accessibilityHidden(true)
-        }
-    }
-}
 #Preview {
-    ObjectInsightCard(subject: .story(ChapterLandmarks.all.first { $0.id == "true-vine" }!))
+    ObjectInsightCard(subject: InsightSubject(id: "preview", title: "Forest tree", region: "", description: "Grew when you read John 15.",
+                                              bookID: "john", chapters: [15]))
         .modelContainer(PreviewData.container)
 }

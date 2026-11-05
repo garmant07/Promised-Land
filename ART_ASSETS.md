@@ -10,7 +10,7 @@ instead. No code changes are needed, and if an image is missing the code-drawn a
 | What | Name | Levels |
 |---|---|---|
 | A book's Place piece (island) | `place_<bookID>_<piece>_<level>` | `1`–`5` richness. `piece` is a `PieceKind` raw value from `PlaceData.swift` (e.g. `place_ruth_barn_1`, `place_genesis_garden_3`). Growable pieces (fields, gardens, villages) are drawn whole at their current size, so code drawing suits them best |
-| A book's building (world map, catalog) | `bld_<bookID>_<level>` | `0` foundations (book opened, not finished) · `1` built · `2`–`4` built plus 1–3 extra floors from full rereads |
+| A book's building (quiz and memorise screens) | `bld_<bookID>_<level>` | `0` foundations (book opened, not finished) · `1` built · `2`–`4` built plus 1–3 extra floors from full rereads |
 | A chapter artifact | `art_<kind>_<level>` | `1`–`5`, one per read of that chapter |
 | An avatar layer | `av_<layer>_<option>` | one image per option; layers: `shadow`, `hairBack`, `cloakBack`, `body`, `robe`, `sash`, `cloakFront`, `head`, `beard`, `hairFront`, `covering`, `item` (options are the raw values in `AvatarParts.swift`, e.g. `av_hairFront_shortCurly`, `av_item_staff`) |
 | A building's inside page | `int_<bookID>` | one image (the header illustration inside the building) |
@@ -72,8 +72,5 @@ height, so any size works; keep the figure standing on the bottom edge.
 - **Buildings:** 66 specs in `BuildingData.swift`, one per book, each with a unique silhouette
   (family × roof × crest × width × storeys × wings), drawn by `BuildingArt` in `IslandArt.swift`.
 - **Artifacts:** `ArtifactArt` in `IslandArt.swift`.
-- **Story objects** (e.g. Noah's Ark for Genesis 6–9): `StoryArt` in `IslandArt.swift`, one
-  drawing per `ChapterObjectKind`. To replace one, use the story's id from
-  `ChapterLandmarks.swift` as the artifact id: `art_<storyID>_<level>`, level 1–5.
 - **Rewards:** quiz banners, lanterns and fruit trees: `RewardArt` in `IslandArt.swift`
   (rules in `RewardData.swift`).

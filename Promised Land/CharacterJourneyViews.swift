@@ -3,8 +3,6 @@ import SwiftData
 
 /// The Journeys sheet: every character journey as a card, shortest first.
 struct CharacterJourneysView: View {
-    /// Opens the SpriteKit world map (its routes are kept as map decoration).
-    var onOpenWorld: (() -> Void)?
     @ProgressQuery private var progress: GameProgress
     @Environment(\.dismiss) private var dismiss
 
@@ -20,14 +18,6 @@ struct CharacterJourneysView: View {
                             JourneyCardRow(journey: journey, progress: progress.journeyProgress(journey))
                         }
                         .buttonStyle(.plain)
-                    }
-                    if let onOpenWorld {
-                        Button { onOpenWorld() } label: {
-                            Label("Open the world map", systemImage: "map")
-                                .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(SoftButtonStyle())
-                        .padding(.top, 6)
                     }
                 }
                 .padding(16)
@@ -337,7 +327,7 @@ struct StopCardView: View {
 }
 
 #Preview("Journeys") {
-    CharacterJourneysView(onOpenWorld: {})
+    CharacterJourneysView()
         .modelContainer(PreviewData.container)
 }
 

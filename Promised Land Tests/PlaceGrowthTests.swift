@@ -107,11 +107,11 @@ struct PlaceGrowthTests {
     @Test("Completing a Place and each richer level are announced; growing ones aren't")
     func notices() {
         let partial = Island.build(chapters: reads("ruth", 1...2), quizzes: [], verses: [])
-        #expect(UnlockNotices.all(island: partial, completedJourneys: []).isEmpty)
+        #expect(UnlockNotices.all(island: partial).isEmpty)
         let done = Island.build(chapters: reads("ruth", 1...4, times: 3), quizzes: [("ruth", start)], verses: [], features: [.library])
-        let ids = Set(UnlockNotices.all(island: done, completedJourneys: []).map(\.id))
+        let ids = Set(UnlockNotices.all(island: done).map(\.id))
         #expect(ids.isSuperset(of: ["built:ruth", "floor:ruth:2", "floor:ruth:3", "reward:ruth:banner", "library"]))
-        for n in UnlockNotices.all(island: done, completedJourneys: []) { if let i = n.itemIndex { #expect(done.items.indices.contains(i)) } }
+        for n in UnlockNotices.all(island: done) { if let i = n.itemIndex { #expect(done.items.indices.contains(i)) } }
     }
 
     @Test("What can I build? lists what grows in a Place")

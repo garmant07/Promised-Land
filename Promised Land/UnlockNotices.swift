@@ -15,7 +15,7 @@ struct UnlockNotice: Identifiable, Equatable {
 /// announced to find what's new.
 enum UnlockNotices {
     /// - Parameter crowns: crowns earned per book (each full reread after the first).
-    static func all(island: Island, completedJourneys: [Journey], crowns: [String: Int] = [:]) -> [UnlockNotice] {
+    static func all(island: Island, crowns: [String: Int] = [:]) -> [UnlockNotice] {
         var out: [UnlockNotice] = []
         for (bookID, count) in crowns.sorted(by: { $0.key < $1.key }) where count > 0 {
             let name = BibleCatalog.book(id: bookID)?.name ?? bookID
@@ -69,10 +69,6 @@ enum UnlockNotices {
         if let forest = island.index(of: .forest) ?? island.items.firstIndex(where: { $0.kind == .tree }) {
             out.append(UnlockNotice(id: "forest", title: "A forest begins", detail: "Chapters with trees in them grow a forest at the island's edge.",
                                     symbol: "tree.fill", itemIndex: forest))
-        }
-        for journey in completedJourneys {
-            out.append(UnlockNotice(id: "journey:\(journey.id)", title: "\(journey.name) complete",
-                                    detail: "Every stop is lit. Its badge is yours.", symbol: "map.fill"))
         }
         return out
     }

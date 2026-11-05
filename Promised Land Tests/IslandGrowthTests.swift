@@ -176,27 +176,6 @@ struct PagePlannerTests {
 }
 
 @MainActor
-struct JourneyContextTests {
-    @Test("Paul's voyage has the six stops in order")
-    func paul() {
-        let names = JourneyData.journey(id: "paul-rome")!.stops.map(\.name)
-        #expect(names == ["Sidon", "Myra", "Fair Havens, Crete", "The storm", "Melita (Malta)", "Rome"])
-    }
-
-    @Test("Every stop has a context card and a real chapter; journeys stay unreviewed")
-    func contextCards() {
-        for journey in JourneyData.all {
-            #expect(!journey.reviewed)
-            for stop in journey.stops {
-                #expect(!stop.place.isEmpty && !stop.happened.isEmpty && !stop.lookedLike.isEmpty)
-                #expect(BibleCatalog.book(id: stop.bookID).map { (1...$0.chapterCount).contains(stop.chapter) } == true)
-            }
-        }
-    }
-
-}
-
-@MainActor
 struct GroupsTests {
     @Test("The mock service offers one read-only sample group, labelled Preview")
     func mock() async throws {
@@ -354,7 +333,7 @@ struct CrownTests {
     @Test("Each crown is announced once, and the throne room is announced when it appears")
     func notices() {
         let island = Island.build(chapters: (1...4).map { ("ruth", $0, Date()) }, quizzes: [], verses: [], features: [.library, .throne])
-        let ids = Set(UnlockNotices.all(island: island, completedJourneys: [], crowns: ["ruth": 2]).map(\.id))
+        let ids = Set(UnlockNotices.all(island: island, crowns: ["ruth": 2]).map(\.id))
         #expect(ids.isSuperset(of: ["crown:ruth:1", "crown:ruth:2", "throne"]))
         // The throne sits beyond everything on the Revelation (right) side.
         let throne = island.items.first { $0.kind == .throne }!

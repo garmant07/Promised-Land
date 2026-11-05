@@ -194,22 +194,6 @@ struct GameProgress: Equatable {
             .sorted { ($0.reads, $1.book.id) > ($1.reads, $0.book.id) }
     }
 
-    /// A story object's depth: 0 until any of its chapters is read, then 1 + rereads, up to 5.
-    func depth(of object: ChapterLandmark) -> Int {
-        let counts = object.chapters.map { readCount(object.bookID, chapter: $0) }
-        let distinct = counts.filter { $0 > 0 }.count
-        guard distinct > 0 else { return 0 }
-        return min(5, 1 + counts.reduce(0, +) - distinct)
-    }
-
-    /// Reads, most recent date and this year's reads across a story object's chapters.
-    func history(of object: ChapterLandmark) -> (reads: Int, last: Date?, thisYear: Int) {
-        let chapters = Array(object.chapters)
-        return (chapters.reduce(0) { $0 + readCount(object.bookID, chapter: $1) },
-                chapters.compactMap { lastRead(object.bookID, chapter: $0) }.max(),
-                chapters.reduce(0) { $0 + readsThisYear(object.bookID, chapter: $1) })
-    }
-
     // MARK: Books
 
     func isRead(_ bookID: String, chapter: Int) -> Bool {
@@ -243,14 +227,6 @@ struct GameProgress: Equatable {
     func hasMemorised(_ bookID: String) -> Bool { memorised.contains(bookID) }
 
     // MARK: World
-
-    func isRegionRevealed(_ regionID: String) -> Bool {
-        WorldData.landmarks.contains { $0.regionID == regionID && isStarted($0.bookID) }
-    }
-
-    var activeConnections: [Connection] {
-        WorldData.connections.filter { chaptersRead($0.a) > 0 && chaptersRead($0.b) > 0 }
-    }
 
     /// The book most recently read from — the camera's "recentre" target.
     var newestBookID: String? {

@@ -3,16 +3,14 @@ import SwiftData
 
 // MARK: - Journeys
 
-/// Your journeys and their progress, with the world map one tap away.
+/// Your journeys and their progress.
 struct JourneysSheet: View {
-    var openWorldMap: () -> Void
-
     var body: some View {
-        CharacterJourneysView(onOpenWorld: openWorldMap)
+        CharacterJourneysView()
     }
 }
 
 
 #Preview("Journeys") {
-    JourneysSheet {}.modelContainer(PreviewData.container)
+    JourneysSheet().modelContainer(PreviewData.container)
 }

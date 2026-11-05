@@ -68,9 +68,6 @@ struct HomeView: View {
 
     @State private var activeSheet: ActiveSheet?
     @State private var selectedItem: Int?
-    @State private var showingWorld = false
-    /// Kept alive between visits so the map doesn't rebuild each time.
-    @State private var worldScene = WorldScene()
     #if DEBUG
     @State private var debugReflection: ChapterRef?
     @State private var debugGallery = false
@@ -258,9 +255,6 @@ struct HomeView: View {
                 InteriorView(bookID: ref.id) { interior = nil }
             }
         }
-        .fullScreenCover(isPresented: $showingWorld, onDismiss: showNewGrowth) {
-            WorldView(scene: worldScene) { showingWorld = false }
-        }
         .onAppear {
             showNewGrowth()
             #if DEBUG
@@ -268,7 +262,7 @@ struct HomeView: View {
             #endif
         }
         .onChange(of: Self.signature(island)) { _, _ in
-            if activeSheet == nil && !showingWorld && interior == nil { showNewGrowth() }
+            if activeSheet == nil && interior == nil { showNewGrowth() }
         }
         #if DEBUG
         .fullScreenCover(isPresented: $debugGallery) { AvatarGallery() }
@@ -316,7 +310,7 @@ struct HomeView: View {
         case .read:
             LibraryView(onClose: { activeSheet = nil }, showsSuggestion: true)
         case .journeys:
-            JourneysSheet { activeSheet = nil; showingWorld = true }
+            JourneysSheet()
         case .friends:
             FriendsView()
         case .profile:
@@ -590,7 +584,7 @@ struct HomeView: View {
     private func announceUnlocks(_ island: Island) {
         // Character journeys get their own celebration; the world map's routes aren't announced.
         let crowns = Dictionary(uniqueKeysWithValues: BibleCatalog.books.map { ($0.id, progress.crownsEarned($0.id)) })
-        let all = UnlockNotices.all(island: island, completedJourneys: [], crowns: crowns)
+        let all = UnlockNotices.all(island: island, crowns: crowns)
         var seen = Set(unlocksSeen.split(separator: ",").map(String.init))
         guard unlocksReady else {
             // The first time, what you already have is noted without announcing it.
@@ -667,7 +661,6 @@ struct HomeView: View {
     #if DEBUG
     private func debugOpen(_ island: Island) {
         let args = ProcessInfo.processInfo.arguments
-        if args.contains("-openWorld") { showingWorld = true }
         if args.contains("-openLibrary") { activeSheet = .library }
         if args.contains("-openFriends") { activeSheet = .friends }
         if args.contains("-openProfile") { activeSheet = .profile }

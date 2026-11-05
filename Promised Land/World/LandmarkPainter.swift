@@ -615,3 +615,33 @@ nonisolated struct Painter {
         return roof(pt(36, -44), w: 14, rise: 10)
     }
 }
+
+// MARK: - The Library (drawn on the island)
+
+nonisolated extension Painter {
+    /// A small columned library with a lavender roof and a row of book-spine windows.
+    func libraryBuilding() {
+        groundPatch()
+        shadow(pt(0, 8), 100)
+        box(pt(0, 8), w: 74, h: 30, top: .cream, left: .cream, right: Painter.creamShade)
+        // Book spines in the windows
+        let spines: [RGB] = [.terracotta, .lavender, .olive, .wheat, RGB(hex: "#93AECF"), .terracotta]
+        for (i, color) in spines.enumerated() {
+            let x = -32 + CGFloat(i) * 5
+            rounded(CGRect(x: c.x + x * u, y: c.y + (CGFloat(i) * 2.5 - 14) * u, width: 3.6 * u, height: 12 * u), radius: u, color)
+        }
+        for (i, color) in spines.reversed().enumerated() {
+            let x = 6 + CGFloat(i) * 5
+            rounded(CGRect(x: c.x + x * u, y: c.y + (12 - CGFloat(i) * 2.5 - 14) * u, width: 3.6 * u, height: 12 * u), radius: u, color.shifted(-0.05))
+        }
+        // Columns at the front corner, and a door
+        for i in 0..<3 {
+            let x = -18 + CGFloat(i) * 9, y = 16 + CGFloat(i) * 4.5
+            rounded(CGRect(x: c.x + x * u - 1.6 * u, y: c.y + y * u - 20 * u, width: 3.2 * u, height: 20 * u), radius: 1.6 * u, .cream)
+        }
+        rounded(CGRect(x: c.x + 6 * u, y: c.y + 4 * u, width: 9 * u, height: 14 * u), radius: 4.5 * u, .brown, alpha: 0.22)
+        roof(pt(0, -22), w: 74, rise: 22, left: .lavender, right: Painter.lavDark)
+        tree(pt(-50, 10), 0.7)
+        cypress(pt(48, 8), 0.8)
+    }
+}
