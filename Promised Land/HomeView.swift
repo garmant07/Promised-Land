@@ -62,6 +62,7 @@ struct HomeView: View {
     @Query private var booksStarted: [BookStarted]
     @Query private var placedItems: [PlacedItem]
     @Query private var produceCollected: [ProduceCollection]
+    @Query private var placedExtras: [PlacedExtra]
     @AppStorage("debug.fpsOverlay") private var showsFPS = false
     @Environment(\.modelContext) private var context
 
@@ -93,6 +94,10 @@ struct HomeView: View {
     @State private var draft: [String: IslandPlacement] = [:]
     @State private var editSelected: String?
     @State private var dragBase: IslandPlacement?
+    @State private var draftExtras: [PlacedExtraInfo] = []
+    @State private var extraDragBase: PlacedExtraInfo?
+    /// Earlier states while editing, for Undo.
+    @State private var undoStack: [(placements: [String: IslandPlacement], extras: [PlacedExtraInfo])] = []
 
     // Stepping inside a building
     @State private var visitIndex: Int?
@@ -129,7 +134,25 @@ struct HomeView: View {
                             // The Library is the reading hub, so it's always there.
                             features: progress.hasCompletedBible ? [.library, .throne] : [.library],
                             placements: editingIsland ? draft : savedPlacements,
-                            unchecked: chapterReads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) })
+                            unchecked: chapterReads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) },
+                            extras: editingIsland ? draftExtras : savedExtras)
+    }
+
+    /// Extras you've placed (saved in edit mode).
+    private var savedExtras: [PlacedExtraInfo] {
+        placedExtras.compactMap { e in
+            ExtraKind(rawValue: e.kind).map { PlacedExtraInfo(id: e.uid, kind: $0, x: CGFloat(e.x), y: CGFloat(e.y), rotation: e.rotation) }
+        }.sorted { $0.id < $1.id }
+    }
+
+    /// Extras earned by reading streaks, less those already placed.
+    private var extrasLeft: [ExtraKind: Int] {
+        let dates = chapterReads.map(\.date)
+        let earned = RewardData.extrasEarned(longestStreak: Streak.longest(from: dates),
+                                             readingDays: ProduceRules.readingDays(dates).count)
+        var left = earned
+        for e in draftExtras { left[e.kind, default: 0] -= 1 }
+        return left
     }
 
     /// Where you've put things (saved in edit mode).
@@ -180,6 +203,7 @@ struct HomeView: View {
             }
         }
         .overlay(alignment: .top) { if editingIsland { editBar(island) } }
+        .overlay(alignment: .bottom) { if editingIsland { extrasTray } }
         .overlay(alignment: .top) {
             if !editingIsland, let notice = notices.first {
                 UnlockBanner(notice: notice, more: notices.count - 1,
@@ -383,13 +407,29 @@ struct HomeView: View {
         var current = island.placements
         for k in current.keys { current[k]?.moved = saved[k]?.moved ?? false }
         draft = current
+        draftExtras = savedExtras
+        undoStack = []
         editSelected = key
         selectedItem = nil
         withAnimation(.easeInOut(duration: 0.25)) { editingIsland = true }
     }
 
+    private func remember() {
+        undoStack.append((draft, draftExtras))
+        if undoStack.count > 50 { undoStack.removeFirst() }
+    }
+
+    private func undo() {
+        guard let last = undoStack.popLast() else { return }
+        withAnimation(.easeOut(duration: 0.2)) {
+            draft = last.placements
+            draftExtras = last.extras
+        }
+    }
+
     private func editDrag(_ key: String, _ dx: Int, _ dy: Int, ended: Bool) {
-        if dragBase == nil { dragBase = draft[key] }
+        if key.hasPrefix("extra:") { extraDrag(String(key.dropFirst(6)), dx, dy, ended: ended); return }
+        if dragBase == nil { dragBase = draft[key]; remember() }
         guard let base = dragBase else { return }
         editSelected = key
         var p = base
@@ -402,18 +442,63 @@ struct HomeView: View {
         if island.conflicts.contains(key) {
             withAnimation(.easeOut(duration: 0.2)) { draft[key] = base }
         }
+        if dx == 0 && dy == 0 { undoStack.removeLast() } // just a tap
         dragBase = nil
     }
 
+    private func extraDrag(_ id: String, _ dx: Int, _ dy: Int, ended: Bool) {
+        guard let index = draftExtras.firstIndex(where: { $0.id == id }) else { return }
+        if extraDragBase == nil { extraDragBase = draftExtras[index]; remember() }
+        guard let base = extraDragBase else { return }
+        editSelected = "extra:\(id)"
+        let moved = PlacedExtraInfo(id: id, kind: base.kind, x: base.x + CGFloat(dx), y: base.y + CGFloat(dy), rotation: base.rotation)
+        if draftExtras[index] != moved { draftExtras[index] = moved }
+        guard ended else { return }
+        if island.conflicts.contains("extra:\(id)") {
+            withAnimation(.easeOut(duration: 0.2)) { draftExtras[index] = base }
+        }
+        if dx == 0 && dy == 0 { undoStack.removeLast() }
+        extraDragBase = nil
+    }
+
     private func turnSelected() {
-        guard let key = editSelected, var p = draft[key] else { return }
+        guard let key = editSelected else { return }
+        remember()
+        if key.hasPrefix("extra:"), let i = draftExtras.firstIndex(where: { "extra:\($0.id)" == key }) {
+            draftExtras[i].rotation = (draftExtras[i].rotation + 1) % 4
+            return
+        }
+        guard var p = draft[key] else { return }
         p.rotation = (p.rotation + 1) % 4
         p.moved = true
         draft[key] = p
     }
 
+    /// Puts a new extra from the tray on the nearest open land to the plaza (then drag it).
+    private func addExtra(_ kind: ExtraKind) {
+        guard (extrasLeft[kind] ?? 0) > 0 else { return }
+        let island = island
+        let taken = Set(draftExtras.map { Island.Tile(x: Int(floor($0.x)), y: Int(floor($0.y))) })
+        let inside: (Island.Tile) -> Bool = { t in island.allPlots.contains { $0.rect.contains(CGPoint(x: CGFloat(t.x) + 0.5, y: CGFloat(t.y) + 0.5)) } }
+        let spot = island.tiles.filter { !taken.contains($0) && !inside($0) }
+            .min { hypot(Double($0.x) - 1, Double($0.y) - 1) < hypot(Double($1.x) - 1, Double($1.y) - 1) }
+        guard let spot else { return }
+        remember()
+        let extra = PlacedExtraInfo(id: UUID().uuidString, kind: kind, x: CGFloat(spot.x) + 0.5, y: CGFloat(spot.y) + 0.5)
+        draftExtras.append(extra)
+        editSelected = "extra:\(extra.id)"
+    }
+
+    private func removeSelectedExtra() {
+        guard let key = editSelected, key.hasPrefix("extra:") else { return }
+        remember()
+        draftExtras.removeAll { "extra:\($0.id)" == key }
+        editSelected = nil
+    }
+
     /// Lays out again everything you haven't moved yourself.
     private func tidyUp() {
+        remember()
         draft = draft.filter { $0.value.moved }
         // Freeze the new layout, keeping the moved flags.
         var fresh = island.placements
@@ -426,22 +511,35 @@ struct HomeView: View {
             var final = island.placements
             for k in final.keys { final[k]?.moved = draft[k]?.moved ?? false }
             context.savePlacements(final)
+            context.saveExtras(draftExtras)
         }
         withAnimation(.easeInOut(duration: 0.25)) { editingIsland = false }
         draft = [:]
+        draftExtras = []
+        undoStack = []
         editSelected = nil
     }
 
     private func editBar(_ island: Island) -> some View {
         let blocked = !island.conflicts.isEmpty
+        let extraPicked = editSelected?.hasPrefix("extra:") == true
         return VStack(spacing: 8) {
-            HStack(spacing: 8) {
+            HStack(spacing: 6) {
                 Button("Cancel") { finishEditing(save: false) }
                     .buttonStyle(EditChipStyle())
+                Button { undo() } label: { Image(systemName: "arrow.uturn.backward").accessibilityLabel("Undo") }
+                    .buttonStyle(EditChipStyle())
+                    .disabled(undoStack.isEmpty)
                 Spacer(minLength: 0)
-                Button { turnSelected() } label: { Label("Turn", systemImage: "rotate.right") }
+                Button { turnSelected() } label: { Label("Turn", systemImage: "rotate.right").labelStyle(.iconOnly) }
                     .buttonStyle(EditChipStyle())
                     .disabled(editSelected == nil)
+                    .accessibilityLabel("Turn")
+                if extraPicked {
+                    Button { removeSelectedExtra() } label: { Label("Remove", systemImage: "trash").labelStyle(.iconOnly) }
+                        .buttonStyle(EditChipStyle())
+                        .accessibilityLabel("Remove")
+                }
                 Button("Tidy up") { tidyUp() }
                     .buttonStyle(EditChipStyle())
                 Spacer(minLength: 0)
@@ -449,8 +547,8 @@ struct HomeView: View {
                     .buttonStyle(EditChipStyle())
                     .disabled(blocked)
             }
-            Text(editSelected == nil ? "Drag a building to move its plot. Tap one to turn it."
-                 : blocked ? "That spot overlaps another plot." : "Green means it fits. Drag, turn, or tap Done.")
+            Text(editSelected == nil ? "Drag a Place or an extra to move it. Tap one to turn it."
+                 : blocked ? "That spot overlaps something, or isn't on land." : "Green means it fits. Drag, turn, or tap Done.")
                 .font(.footnote)
                 .foregroundStyle(Color.secondaryText)
         }
@@ -611,6 +709,41 @@ struct HomeView: View {
         }
     }
     #endif
+
+    /// The Extras tray: decorations earned through reading streaks.
+    private var extrasTray: some View {
+        let left = extrasLeft
+        return VStack(alignment: .leading, spacing: 6) {
+            Text("Extras").font(.caption.weight(.bold)).foregroundStyle(Color.secondaryText).textCase(.uppercase)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(ExtraKind.allCases, id: \.self) { kind in
+                        let n = max(0, left[kind] ?? 0)
+                        Button { addExtra(kind) } label: {
+                            VStack(spacing: 2) {
+                                Image(systemName: kind.symbol).font(.title3)
+                                Text("\(kind.name) ×\(n)").font(.caption2.weight(.semibold))
+                            }
+                            .foregroundStyle(Color.primaryBrown.opacity(n > 0 ? 1 : 0.4))
+                            .frame(width: 76, height: 56)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(n == 0)
+                        .accessibilityHint(n == 0 ? RewardData.extraHint(kind) : "Places one on the island")
+                    }
+                }
+            }
+            if left.values.allSatisfy({ $0 <= 0 }) {
+                Text("Keep a reading streak to earn paths, fences, benches, trees and lamps.")
+                    .font(.caption).foregroundStyle(Color.secondaryText)
+            }
+        }
+        .padding(12)
+        .background(Color.cream.opacity(0.96), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .padding(.horizontal, 12)
+        .padding(.bottom, 10)
+    }
 }
 
 /// A building being visited (for the full-screen inside page).

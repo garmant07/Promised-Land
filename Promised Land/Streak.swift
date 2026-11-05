@@ -43,3 +43,18 @@ struct StreakPill: View {
         .padding()
         .background(Color.cream)
 }
+
+extension Streak {
+    /// The longest run of consecutive reading days ever.
+    static func longest(from dates: [Date], calendar: Calendar = .current) -> Int {
+        let days = Set(dates.map { calendar.startOfDay(for: $0) }).sorted()
+        var best = 0, run = 0
+        var previous: Date?
+        for day in days {
+            if let previous, calendar.date(byAdding: .day, value: 1, to: previous) == day { run += 1 } else { run = 1 }
+            best = max(best, run)
+            previous = day
+        }
+        return best
+    }
+}

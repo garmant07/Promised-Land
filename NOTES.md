@@ -84,3 +84,7 @@ option was chosen and noted here.
     Simulator a fully built 66-Place island pans at ~56 fps (was 3 fps before caching). **Not
     yet measured on a real iPhone 11 / SE**: please check with Settings → Developer → FPS overlay.
     DEBUG `-autoPan` circles the camera for measuring.
+26. **Edit mode extras.** Earned by reading (RewardData.extrasEarned: paths and trees by reading
+    days, fences/benches/lamps by longest streak), placed from the Extras tray onto the open
+    land nearest the plaza, then dragged (whole tiles) like Places. They can't go in the sea or
+    inside a Place (red). Undo keeps the last 50 changes while editing; Cancel discards all.

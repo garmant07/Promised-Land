@@ -141,7 +141,10 @@ struct PlatformScene: View {
                         if let selected = selected.wrappedValue, island.items.indices.contains(selected) {
                             Self.drawHighlight(&context, island.items[selected], layout: layout)
                         }
-                        if let editing { Self.drawEditGrid(&context, island: island, layout: layout, editing: editing) }
+                        if let editing {
+                            Self.drawEditGrid(&context, island: island, layout: layout, editing: editing)
+                            Self.drawExtraRings(&context, island: island, layout: layout, editing: editing)
+                        }
                         // Only what's on screen (plus a margin for tall things) is drawn.
                         let visible = CGRect(origin: .zero, size: geo.size).insetBy(dx: -layout.scale * 2, dy: -layout.scale * 2)
                         if let cached {
@@ -672,6 +675,24 @@ struct PlatformScene: View {
                 c.stroke(outline, with: .color(Color(hex: "#5E8C4A")), lineWidth: 2)
             } else {
                 c.stroke(outline, with: .color(Color.primaryBrown.opacity(0.35)), style: StrokeStyle(lineWidth: 1, dash: [4, 3]))
+            }
+        }
+    }
+
+    /// Extras in edit mode: a ring under each, green when picked, red where it can't go.
+    private static func drawExtraRings(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, editing: IslandEditing) {
+        for item in island.items {
+            guard case .extra(let id) = item.source else { continue }
+            let key = "extra:\(id)"
+            let base = layout.point(item.gx, item.gy)
+            let w = layout.scale * 0.9
+            let ring = Path(ellipseIn: CGRect(x: base.x - w / 2, y: base.y - w * 0.22, width: w, height: w * 0.44))
+            if island.conflicts.contains(key) {
+                c.fill(ring, with: .color(Color.red.opacity(0.22))); c.stroke(ring, with: .color(Color.red.opacity(0.8)), lineWidth: 2)
+            } else if editing.selected == key {
+                c.fill(ring, with: .color(Color.green.opacity(0.16))); c.stroke(ring, with: .color(Color(hex: "#5E8C4A")), lineWidth: 2)
+            } else {
+                c.stroke(ring, with: .color(Color.primaryBrown.opacity(0.35)), style: StrokeStyle(lineWidth: 1, dash: [3, 3]))
             }
         }
     }

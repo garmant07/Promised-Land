@@ -71,6 +71,7 @@ extension Island.Item {
         case .feature(.library): IslandPlacement.libraryKey
         case .forest: IslandPlacement.forestKey
         case .quiz(let b), .verse(let b), .place(let b, _), .flourish(let b): b
+        case .extra(let id): "extra:\(id)"
         default: nil
         }
     }
@@ -101,6 +102,25 @@ nonisolated enum ExtraKind: String, Sendable, CaseIterable, Codable {
     }
 
     var isTall: Bool { self == .tree || self == .lamp }
+}
+
+extension ModelContext {
+    /// Saves the extras placed in edit mode (adding, moving and removing as needed).
+    func saveExtras(_ extras: [PlacedExtraInfo]) {
+        let existing = (try? fetch(FetchDescriptor<PlacedExtra>())) ?? []
+        var byID = Dictionary(existing.map { ($0.uid, $0) }, uniquingKeysWith: { a, _ in a })
+        for e in extras {
+            if let row = byID.removeValue(forKey: e.id) {
+                row.x = Double(e.x); row.y = Double(e.y); row.rotation = e.rotation; row.kind = e.kind.rawValue
+            } else {
+                let row = PlacedExtra(kind: e.kind, x: Double(e.x), y: Double(e.y), rotation: e.rotation)
+                row.uid = e.id
+                insert(row)
+            }
+        }
+        for gone in byID.values { delete(gone) }
+        try? save()
+    }
 }
 
 /// A placed extra, as the island builder needs it.

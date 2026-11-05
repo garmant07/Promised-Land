@@ -252,12 +252,16 @@ struct Island: Equatable {
         let land = Set(tiles)
         let roads = IslandRoads.route(plots: plots + (forestPlot.map { [$0] } ?? []), library: library, land: land,
                                       blocked: placer.blocked)
+        var conflicts = placer.conflicts
         for extra in extras {
+            // An extra must stand on open land: not in the sea, not inside a Place.
+            let tile = Tile(x: Int(floor(extra.x)), y: Int(floor(extra.y)))
+            if !land.contains(tile) || placer.blocked.contains(tile) { conflicts.insert("extra:\(extra.id)") }
             items.append(Item(kind: .extra(extra.kind), gx: extra.x, gy: extra.y, seed: hash(extra.id), source: .extra(extra.id),
                               footprint: CGRect(x: extra.x - 0.3, y: extra.y - 0.3, width: 0.6, height: 0.6), turned: extra.rotation))
         }
         return Island(tiles: tiles, items: items, plots: plots, water: placer.water, library: library, forest: forestPlot,
-                      roads: roads, conflicts: placer.conflicts, growth: growths, completed: reads.completed)
+                      roads: roads, conflicts: conflicts, growth: growths, completed: reads.completed)
     }
 
     /// One Place on its own patch of land (for its inside page and share card).
