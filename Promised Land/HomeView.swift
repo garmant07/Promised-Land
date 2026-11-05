@@ -86,6 +86,20 @@ struct HomeView: View {
     @State private var revealing: RevealStep?
     /// A short note under the status pill (e.g. produce collected).
     @State private var toast: String?
+    /// The Library's stage when the island was last seen (-1: never), so its growth can be shown.
+    @AppStorage("library.stageSeen") private var libraryStageSeen = -1
+    /// True from when a "see it built" moment is planned until it has finished.
+    @State private var revealActive = false
+
+    // Collect All
+    @State private var collectFlight: CollectFlight?
+    @State private var collectBounce = 0
+    @State private var collectSummary: String?
+    @State private var collectTarget: CGRect = .zero
+    @State private var pendingSummary: String?
+    /// The count the button keeps showing while a Collect All lands.
+    @State private var collectHolding: Int?
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     // Edit mode
     @State private var editingIsland = false
@@ -133,7 +147,11 @@ struct HomeView: View {
                             features: progress.hasCompletedBible ? [.library, .throne] : [.library],
                             placements: editingIsland ? draft : savedPlacements,
                             unchecked: chapterReads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) },
-                            extras: editingIsland ? draftExtras : savedExtras)
+                            extras: editingIsland ? draftExtras : savedExtras,
+                            journalNotes: journal.count,
+                            // While editing, the Library keeps the size it has (dropping a Place on it
+                            // is a conflict, not a reason for it to shrink).
+                            libraryAvoid: editingIsland ? savedPlacements : nil)
     }
 
     /// Extras you've placed (saved in edit mode).
@@ -161,10 +179,15 @@ struct HomeView: View {
 
     var body: some View {
         let island = island
+        let baskets = baskets(island)
+        let waiting = baskets.values.reduce(0, +)
         ZStack {
             Earthy.sea.ignoresSafeArea()
             PlatformScene(avatar: avatar, island: island, reveal: reveal, revealInitial: revealInitial, revealID: revealID,
-                          onRevealStep: { step in withAnimation(.easeInOut(duration: 0.35)) { revealing = step } },
+                          onRevealStep: { step in
+                              withAnimation(.easeInOut(duration: 0.35)) { revealing = step }
+                              if step == nil { revealActive = false }
+                          },
                           insets: EdgeInsets(top: 70, leading: 8, bottom: 118, trailing: 8),
                           selected: $selectedItem,
                           persistsCamera: true, editing: editingIsland ? editing : nil,
@@ -182,9 +205,12 @@ struct HomeView: View {
                               default: break
                               }
                           },
-                          life: IslandLife.make(island: island, baskets: baskets(island)),
+                          life: IslandLife.make(island: island, baskets: baskets),
                           onBasket: { collect($0, island: island) },
                           onCrowd: { activeSheet = .basket },
+                          collectFlight: collectFlight,
+                          collectTarget: collectTarget,
+                          onCollectLanded: collectLanded,
                           showsFPS: showsFPS) { index in open(index, in: island) }
                 .ignoresSafeArea(edges: .bottom)
         }
@@ -200,6 +226,31 @@ struct HomeView: View {
                     .id(revealing.id)
             }
         }
+        .overlay(alignment: .bottomLeading) {
+            // Collect All: just above the bar, only while something is ready and nothing else is open.
+            // While produce flies in (and a moment after it lands), the button stays to catch it.
+            let shownTotal = collectHolding ?? waiting
+            let visible = CollectAll.isButtonVisible(total: shownTotal, editing: editingIsland, revealing: revealActive || revealing != nil,
+                                                     sheetOpen: activeSheet != nil || interior != nil || visitIndex != nil)
+            VStack(alignment: .leading, spacing: 10) {
+                if let collectSummary {
+                    CollectSummaryToast(text: collectSummary)
+                        .transition(.opacity.combined(with: .move(edge: .bottom)))
+                        .allowsHitTesting(false)
+                }
+                if visible {
+                    CollectAllButton(total: shownTotal, bounce: collectBounce) { collectAll(island) }
+                        .disabled(collectHolding != nil)
+                        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { collectTarget = $0 }
+                        .transition(.opacity.combined(with: .scale(scale: 0.6)))
+                }
+            }
+            .padding(.leading, 16)
+            .padding(.bottom, 92)
+            .animation(.spring(duration: 0.35), value: visible)
+            .animation(.easeInOut(duration: 0.3), value: collectSummary)
+        }
+        .sensoryFeedback(.impact(weight: .light), trigger: collectBounce)
         .overlay(alignment: .top) { if editingIsland { editBar(island) } }
         .overlay(alignment: .bottom) { if editingIsland { extrasTray } }
         .overlay(alignment: .top) {
@@ -367,15 +418,41 @@ struct HomeView: View {
     /// What waits in each complete Place's basket: one per reading day since it was completed
     /// (or last collected), up to a small cap.
     private func baskets(_ island: Island) -> [String: Int] {
-        guard !island.completed.isEmpty else { return [:] }
-        let days = ProduceRules.readingDays(chapterReads.filter(\.checked).map(\.date))
-        let last = Dictionary(produceCollected.map { ($0.bookID, $0.date) }, uniquingKeysWith: max)
-        var out: [String: Int] = [:]
-        for (bookID, completed) in island.completed {
-            let n = ProduceRules.ready(completed: completed, lastCollected: last[bookID], readingDays: days)
-            if n > 0 { out[bookID] = n }
+        ProduceRules.baskets(completed: island.completed, readDates: chapterReads.filter(\.checked).map(\.date),
+                             collections: produceCollected.map { ($0.bookID, $0.date) })
+    }
+
+    /// Collect All: empties every basket on the island (on screen or not) into your store at once;
+    /// the on-screen ones fly into the button, then a summary shows.
+    private func collectAll(_ island: Island) {
+        let baskets = baskets(island)
+        let plan = CollectAll.plan(baskets)
+        guard !plan.entries.isEmpty else { return }
+        let totals = context.collectAllProduce(baskets)
+        collectSummary = nil
+        collectHolding = totals.values.reduce(0, +)
+        pendingSummary = CollectAll.summary(totals)
+        if !reduceMotion { SoftSound.whoosh() }
+        collectFlight = CollectFlight(id: (collectFlight?.id ?? 0) + 1, entries: plan.entries)
+    }
+
+    /// The produce has landed in the button: a bounce, then the summary.
+    private func collectLanded() {
+        collectBounce += 1
+        collectFlight = nil
+        Task {
+            // A moment to see the bounce, then it fades away (nothing is left to collect).
+            try? await Task.sleep(for: .milliseconds(450))
+            collectHolding = nil
         }
-        return out
+        guard let text = pendingSummary else { return }
+        pendingSummary = nil
+        collectSummary = text
+        AccessibilityNotification.Announcement("Collected \(text)").post()
+        Task {
+            try? await Task.sleep(for: .seconds(2.6))
+            if collectSummary == text { collectSummary = nil }
+        }
     }
 
     private func collect(_ bookID: String, island: Island) {
@@ -557,6 +634,7 @@ struct HomeView: View {
     /// Each Place's chapters, as "book:count,…".
     private static func signature(_ island: Island) -> String {
         island.items.compactMap { item -> String? in
+            if item.kind == .library { return "library:\(Int(item.growth))" }
             guard case .place(let id, 0) = item.source else { return nil }
             return "\(id):\(item.progress)"
         }.joined(separator: ",")
@@ -633,7 +711,13 @@ struct HomeView: View {
             announceUnlocks(island)
         }
         let signature = Self.signature(island)
-        defer { gardenSeen = island.items.count; progressSeen = signature }
+        let libraryStage = island.index(of: .library).map { LibraryArt.stage(of: island.items[$0]) }
+        let librarySeen = libraryStageSeen
+        defer {
+            gardenSeen = island.items.count
+            progressSeen = signature.split(separator: ",").filter { !$0.hasPrefix("library:") }.joined(separator: ",")
+            if let libraryStage { libraryStageSeen = libraryStage.rawValue }
+        }
         // The first look (or the first after the move to growing Places) is quiet.
         guard gardenSeen >= 0 else { return }
         let before = Dictionary(progressSeen.split(separator: ",").compactMap { pair -> (String, Int)? in
@@ -641,10 +725,17 @@ struct HomeView: View {
             guard parts.count == 2, let n = Int(parts[1]) else { return nil }
             return (String(parts[0]), n)
         }, uniquingKeysWith: { a, _ in a })
-        let plan = RevealPlanner.plan(island: island, before: before, chapterOrder: chapterOrder)
+        var plan = RevealPlanner.plan(island: island, before: before, chapterOrder: chapterOrder)
+        // The Library growing plays last, as the biggest moment (the first look at it is quiet).
+        if librarySeen >= 0, let seen = LibraryStage(rawValue: librarySeen),
+           let step = RevealPlanner.libraryStep(island: island, seen: seen) {
+            plan.steps.append(step)
+            for change in step.changes { plan.initial[change.index] = change.from }
+        }
         guard !plan.steps.isEmpty else { return }
         reveal = plan.steps
         revealInitial = plan.initial
+        revealActive = true
         revealID += 1
     }
 
@@ -911,8 +1002,8 @@ struct RevealCaption: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if step.kind == .found || step.kind == .complete {
-                Text(step.kind == .found ? "A new Place is founded" : "Complete!")
+            if step.kind == .found || step.kind == .complete || step.kind == .library {
+                Text(step.kind == .found ? "A new Place is founded" : step.kind == .library ? "The Library grows" : "Complete!")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(Color.terracotta)
                     .textCase(.uppercase)

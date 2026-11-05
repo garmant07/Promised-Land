@@ -23,8 +23,9 @@ final class IslandRenderCache {
         init(_ image: CGImage) { self.image = image }
     }
 
-    /// Zoom buckets: pictures are rendered at these zooms and scaled in between.
-    static let buckets: [CGFloat] = [1, 1.25, 1.6, 2, 2.5, 3.2, 4]
+    /// Zoom buckets: pictures are rendered at these zooms and scaled in between (×1.25 apart,
+    /// up to the closest zoom on the biggest island).
+    static let buckets: [CGFloat] = [1, 1.25, 1.6, 2, 2.5, 3.2, 4, 5, 6.4, 8, 10, 12.5, 16, 20, 25, 32, 40, 50, 64, 80]
 
     static func bucket(for zoom: CGFloat) -> CGFloat {
         buckets.first { $0 >= zoom - 0.001 } ?? buckets.last!
@@ -49,7 +50,7 @@ final class IslandRenderCache {
     /// Plans the static layer for the current camera. `base` is the camera at `zoom` without
     /// the pan; `overrides` are items held at another growth (during a reveal), drawn directly.
     func frame(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
-               overrides: [Int: CGFloat], hidden: Set<Int>) -> Frame? {
+               overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool = true) -> Frame? {
         guard island.signature != 0, size.width > 0 else { return nil }
         let zb = Self.bucket(for: zoom)
         let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb, angle: CGFloat(quarter))
@@ -64,7 +65,10 @@ final class IslandRenderCache {
         var frame = Frame()
 
         // Ground chunks.
-        let groundKey = "g\(island.signature)|\(Int(lb.scale * 100))|\(quarter)|\(Int(size.width))x\(Int(size.height))"
+        // Far out (and not mid-reveal), everything that stands still is baked into the ground
+        // chunks too: a handful of images instead of a picture per Place and hundreds of items.
+        let baked = bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty
+        let groundKey = "\(baked ? "b" : "g")\(island.signature)|\(Int(lb.scale * 100))|\(quarter)|\(Int(size.width))x\(Int(size.height))"
         let bounds = groundBounds(island, layout: lb)
         let chunk: CGFloat = 512
         let x0 = Int(floor(bounds.minX / chunk)), x1 = Int(floor(bounds.maxX / chunk))
@@ -76,18 +80,30 @@ final class IslandRenderCache {
                 guard dest.intersects(view) else { continue }
                 let key = "\(groundKey)|\(cx),\(cy)" as NSString
                 let image = images.object(forKey: key)?.image ?? render(key: key, size: rect.size) { c in
-                    IslandPainter.drawTiles(&c, island: island, layout: lb.panned(CGSize(width: -rect.minX, height: -rect.minY)))
+                    let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
+                    let local = CGRect(origin: .zero, size: rect.size)
+                    IslandPainter.drawTiles(&c, island: island, layout: l, visible: local)
+                    if baked {
+                        // Every item whose drawing reaches into this chunk, back to front.
+                        let margin = l.u * 240
+                        for item in island.items.sorted(by: { l.depth($0.gx, $0.gy) < l.depth($1.gx, $1.gy) }) {
+                            let p = l.point(item.gx, item.gy)
+                            guard local.insetBy(dx: -margin, dy: -margin).contains(p) else { continue }
+                            IslandPainter.drawItem(&c, item, layout: l)
+                        }
+                    }
                 }
                 if let image { frame.ground.append((image, dest)) }
             }
         }
+        if baked { return frame }
 
         // Places as pictures; everything else (and anything mid-reveal) item by item.
         let keys = placeContentKeys(island)
         var byPlot: [String: [Int]] = [:]
         var loose: [Int] = []
         for (i, item) in island.items.enumerated() where !hidden.contains(i) {
-            if let key = item.plotKey, key != IslandPlacement.libraryKey, keys[key] != nil { byPlot[key, default: []].append(i) } else { loose.append(i) }
+            if let key = item.plotKey, keys[key] != nil { byPlot[key, default: []].append(i) } else { loose.append(i) }
         }
         var layers: [(depth: CGFloat, layer: Frame.Layer)] = []
         for plot in island.allPlots {
@@ -142,7 +158,8 @@ final class IslandRenderCache {
         let corners = [(plot.x - 1, plot.y - 1), (plot.x + plot.size + 1, plot.y - 1), (plot.x - 1, plot.y + plot.size + 1),
                        (plot.x + plot.size + 1, plot.y + plot.size + 1)].map { layout.point(CGFloat($0.0), CGFloat($0.1)) }
         let xs = corners.map(\.x), ys = corners.map(\.y)
-        let head = layout.u * 90
+        // The Library stands much taller than any Place.
+        let head = layout.u * (plot.bookID == IslandPlacement.libraryKey ? 250 : 90)
         return CGRect(x: xs.min()!, y: ys.min()! - head, width: ceil(xs.max()! - xs.min()!), height: ceil(ys.max()! - ys.min()! + head))
     }
 
@@ -152,13 +169,13 @@ final class IslandRenderCache {
         var hashers: [String: Hasher] = [:]
         let plots = Dictionary(island.allPlots.map { ($0.bookID, $0) }, uniquingKeysWith: { a, _ in a })
         for item in island.items {
-            guard let key = item.plotKey, let plot = plots[key], key != IslandPlacement.libraryKey else { continue }
+            guard let key = item.plotKey, let plot = plots[key] else { continue }
             var h = hashers[key] ?? { var h = Hasher(); h.combine(key); h.combine(plot.size); h.combine(plot.rotation); h.combine(plot.bay); return h }()
             h.combine(item.kind)
             h.combine(Int(((item.gx - CGFloat(plot.x)) * 1000).rounded()))
             h.combine(Int(((item.gy - CGFloat(plot.y)) * 1000).rounded()))
             h.combine(item.growth); h.combine(item.level); h.combine(item.turned); h.combine(item.facing); h.combine(item.seed)
-            h.combine(item.progress); h.combine(item.total)
+            h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
             hashers[key] = h
         }
         let keys = hashers.mapValues { $0.finalize() }

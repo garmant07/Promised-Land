@@ -16,8 +16,23 @@ struct IslandLayout {
     /// The grid point the island turns about.
     let pivot: CGPoint
     private let cosA: CGFloat, sinA: CGFloat
+    /// The scale that fits the whole island (zoom 1), and the furthest you can zoom in.
+    let fit: CGFloat
+    let maxZoom: CGFloat
 
-    static let minZoom: CGFloat = 1, maxZoom: CGFloat = 4
+    /// Zoom 1 shows the whole island with a margin. Zooming in goes at least to 4×, and further
+    /// on big islands: until a tile is about a quarter of the screen across, so a single Place
+    /// (3–6 tiles) fills most of the screen.
+    static let minZoom: CGFloat = 1, baseMaxZoom: CGFloat = 4
+    /// Points per half tile when fully zoomed in, for a free area this wide.
+    static func closestScale(width: CGFloat) -> CGFloat { max(30, width / 9) }
+
+    static func maxZoom(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets()) -> CGFloat {
+        IslandLayout(island: island, size: size, insets: insets).maxZoom
+    }
+
+    /// Iso bounds of the island's tiles, per island and turn (worked out once, not every frame).
+    private static var boundsMemo: [Int: (minX: CGFloat, maxX: CGFloat, minY: CGFloat, maxY: CGFloat, pivot: CGPoint)] = [:]
 
     /// The nearest whole quarter turn, 0…3.
     var quarter: Int { ((Int((angle).rounded()) % 4) + 4) % 4 }
@@ -25,29 +40,44 @@ struct IslandLayout {
     var mirrored: Bool { quarter % 2 == 1 }
 
     init(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets(), zoom: CGFloat = 1, angle: CGFloat = 0) {
-        let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
-        let pivot = CGPoint(x: CGFloat((xs.min() ?? 0) + (xs.max() ?? 0) + 1) / 2,
-                            y: CGFloat((ys.min() ?? 0) + (ys.max() ?? 0) + 1) / 2)
-        self.pivot = pivot
         self.angle = angle
         cosA = cos(angle * .pi / 2)
         sinA = sin(angle * .pi / 2)
         // Iso units: X = gx - gy, Y = (gx + gy) / 2 (after turning).
         var minX = CGFloat.infinity, maxX = -CGFloat.infinity, minY = CGFloat.infinity, maxY = -CGFloat.infinity
-        for t in island.tiles {
-            for (dx, dy) in [(0, 0), (1, 0), (0, 1), (1, 1)] {
-                let r = Self.turn(CGFloat(t.x + dx), CGFloat(t.y + dy), pivot: pivot, cos: cosA, sin: sinA)
-                minX = min(minX, r.x - r.y); maxX = max(maxX, r.x - r.y)
-                minY = min(minY, (r.x + r.y) / 2); maxY = max(maxY, (r.x + r.y) / 2)
+        var memoKey: Int?
+        if island.signature != 0 {
+            var h = Hasher(); h.combine(island.signature); h.combine(angle); memoKey = h.finalize()
+        }
+        if let memoKey, let b = Self.boundsMemo[memoKey] {
+            (minX, maxX, minY, maxY) = (b.minX, b.maxX, b.minY, b.maxY)
+            pivot = b.pivot
+        } else {
+            let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
+            let pivot = CGPoint(x: CGFloat((xs.min() ?? 0) + (xs.max() ?? 0) + 1) / 2,
+                                y: CGFloat((ys.min() ?? 0) + (ys.max() ?? 0) + 1) / 2)
+            self.pivot = pivot
+            for t in island.tiles {
+                for (dx, dy) in [(0, 0), (1, 0), (0, 1), (1, 1)] {
+                    let r = Self.turn(CGFloat(t.x + dx), CGFloat(t.y + dy), pivot: pivot, cos: cosA, sin: sinA)
+                    minX = min(minX, r.x - r.y); maxX = max(maxX, r.x - r.y)
+                    minY = min(minY, (r.x + r.y) / 2); maxY = max(maxY, (r.x + r.y) / 2)
+                }
+            }
+            if island.tiles.isEmpty { minX = -1; maxX = 1; minY = 0; maxY = 1 }
+            if let memoKey {
+                if Self.boundsMemo.count > 64 { Self.boundsMemo.removeAll() }
+                Self.boundsMemo[memoKey] = (minX, maxX, minY, maxY, pivot)
             }
         }
-        if island.tiles.isEmpty { minX = -1; maxX = 1; minY = 0; maxY = 1 }
         let area = CGSize(width: max(1, size.width - insets.leading - insets.trailing),
                           height: max(1, size.height - insets.top - insets.bottom))
         let depthUnits: CGFloat = 0.3, headroom: CGFloat = 1.3
         let w = maxX - minX, h = maxY - minY + depthUnits + headroom
         let fit = min(area.width / w, area.height / h, 92)
-        let z = min(Self.maxZoom, max(Self.minZoom, zoom))
+        self.fit = fit
+        maxZoom = max(Self.baseMaxZoom, Self.closestScale(width: area.width) / fit)
+        let z = min(maxZoom, max(Self.minZoom, zoom))
         let fitOrigin = CGPoint(x: insets.leading + (area.width - w * fit) / 2 - minX * fit,
                                 y: insets.top + (area.height - h * fit) / 2 + headroom * fit - minY * fit)
         let centre = CGPoint(x: insets.leading + area.width / 2, y: insets.top + area.height / 2)
@@ -134,7 +164,7 @@ enum IslandHitTester {
         case .extra(let kind):
             return rect(PlaceArt.extraSize(kind), base: base, u: u)
         case .library:
-            return rect(CGSize(width: 40, height: 50), base: base, u: u)
+            return rect(LibraryArt.size(LibraryArt.stage(of: item)), base: base, u: u)
         case .throne:
             return rect(CGSize(width: 46, height: 66), base: base, u: u)
         }
@@ -150,8 +180,17 @@ enum IslandHitTester {
 enum IslandPainter {
     /// The ground: sand on two soft layers of earth, a shallow band and foam where it meets
     /// the sea, and a warmer courtyard for each book's plot.
-    static func drawTiles(_ c: inout GraphicsContext, island: Island, layout: IslandLayout) {
+    /// - Parameter visible: only tiles near this rect (in the layout's points) are drawn, so a
+    ///   ground chunk draws just its own part of a big island.
+    static func drawTiles(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, visible: CGRect? = nil) {
         let set = Set(island.tiles)
+        let reach = layout.scale * 2 + layout.u * 30 + layout.depth
+        let near: (Island.Tile) -> Bool = { t in
+            guard let visible else { return true }
+            let p = layout.point(CGFloat(t.x) + 0.5, CGFloat(t.y) + 0.5)
+            return visible.insetBy(dx: -reach, dy: -reach).contains(p)
+        }
+        let tiles = visible == nil ? island.tiles : island.tiles.filter(near)
         func corners(_ t: Island.Tile) -> [CGPoint] {
             [layout.point(CGFloat(t.x), CGFloat(t.y)), layout.point(CGFloat(t.x + 1), CGFloat(t.y)),
              layout.point(CGFloat(t.x + 1), CGFloat(t.y + 1)), layout.point(CGFloat(t.x), CGFloat(t.y + 1))]
@@ -161,7 +200,7 @@ enum IslandPainter {
 
         // Shallow water and foam around the shore, at sea level.
         let base = Path { p in
-            for t in island.tiles { p.addLines(corners(t).map { CGPoint(x: $0.x, y: $0.y + down) }); p.closeSubpath() }
+            for t in tiles { p.addLines(corners(t).map { CGPoint(x: $0.x, y: $0.y + down) }); p.closeSubpath() }
         }
         c.stroke(base, with: .color(Earthy.shallow), style: StrokeStyle(lineWidth: layout.u * 30, lineJoin: .round))
         c.stroke(base, with: .color(Earthy.foam), style: StrokeStyle(lineWidth: layout.u * 9, lineJoin: .round))
@@ -176,7 +215,7 @@ enum IslandPainter {
         }
         // Neighbour across each edge (corner i to i + 1).
         let across = [(0, -1), (1, 0), (0, 1), (-1, 0)]
-        for t in island.tiles.sorted(by: { corners($0).map(\.y).max()! < corners($1).map(\.y).max()! }) {
+        for t in tiles.sorted(by: { corners($0).map(\.y).max()! < corners($1).map(\.y).max()! }) {
             let q = corners(t)
             let bottom = q.indices.max { q[$0].y < q[$1].y }!
             // The two edges meeting at the lowest corner face the viewer.
@@ -190,7 +229,7 @@ enum IslandPainter {
             }
         }
         // The top, as one seamless sheet of sand.
-        let top = Path { p in for t in island.tiles { p.addLines(corners(t)); p.closeSubpath() } }
+        let top = Path { p in for t in tiles { p.addLines(corners(t)); p.closeSubpath() } }
         c.fill(top, with: .color(Earthy.ground))
         c.stroke(top, with: .color(Earthy.ground), style: round)
 
@@ -206,7 +245,7 @@ enum IslandPainter {
         }
         drawRoads(&c, island: island, layout: layout)
         // A few light patches, so the sand isn't flat.
-        for t in island.tiles where Noise.hash(t.x, t.y, seed: 41) > 0.9 {
+        for t in tiles where Noise.hash(t.x, t.y, seed: 41) > 0.9 {
             let p = layout.point(CGFloat(t.x) + 0.5, CGFloat(t.y) + 0.5)
             let w = layout.u * (10 + 8 * Noise.hash(t.x, t.y, seed: 43))
             c.fill(Path(ellipseIn: CGRect(x: p.x - w, y: p.y - w * 0.32, width: 2 * w, height: w * 0.64)), with: .color(Earthy.groundLight))
@@ -281,7 +320,12 @@ enum IslandPainter {
         case .extra(let kind):
             PlaceArt.extra(pen, kind, seed: item.seed)
         case .library:
-            break // drawn from an image above
+            let stage = LibraryArt.stage(of: item)
+            if let custom = LibraryArt.custom(stage, rotation: rotation) {
+                drawCustom(&c, custom, tileWidth: tileWidth)
+                return
+            }
+            LibraryArt.draw(pen, item: item)
         case .throne:
             ThroneArt.draw(pen)
         }
@@ -294,10 +338,9 @@ enum IslandPainter {
         c.draw(Image(decorative: art.image, scale: 1), in: CGRect(x: -w / 2, y: -h, width: w, height: h))
     }
 
-    /// The pre-drawn picture for image-based kinds (the Library).
-    static func art(for item: Island.Item) -> LandmarkImage? {
-        item.kind == .library ? LandmarkMiniCache.library() : nil
-    }
+    /// The pre-drawn picture for image-based kinds. None on the island now: the Library is drawn
+    /// in code for its stage (LibraryArt); `LandmarkMiniCache.library()` stays for the reading lists.
+    static func art(for item: Island.Item) -> LandmarkImage? { nil }
 
     /// Where an image-based item is drawn, relative to its ground point. Shared by drawing and tapping.
     static func imageRect(_ art: LandmarkImage, item _: Island.Item, tileWidth: CGFloat) -> CGRect {

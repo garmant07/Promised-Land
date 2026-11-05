@@ -4,7 +4,7 @@ import Foundation
 /// One beat of the "see it built" moment: the camera glides to a Place, the new piece rises
 /// (or a field or village spreads), and a caption says what the chapter built.
 struct RevealStep: Equatable, Identifiable {
-    enum Kind: Equatable { case found, grow, complete, combined }
+    enum Kind: Equatable { case found, grow, complete, combined, library }
 
     /// An island item changing during this step: its growth goes from `from` to `to`
     /// (0 = not there yet, so it pops up; otherwise it spreads).
@@ -32,12 +32,27 @@ struct RevealStep: Equatable, Identifiable {
         case .grow: 2.8
         case .found, .complete: 3.4
         case .combined: 3.4
+        case .library: 3.8
         }
     }
 }
 
 /// Works out the reveal after reading. Pure, so it's testable.
 enum RevealPlanner {
+    /// The Library growing to a new stage: the new wing or floor rises where the old one stood.
+    /// - Parameter seen: the stage it had when the island was last seen.
+    static func libraryStep(island: Island, seen: LibraryStage) -> RevealStep? {
+        guard let index = island.index(of: .library) else { return nil }
+        let item = island.items[index]
+        let now = LibraryArt.stage(of: item)
+        guard now > seen else { return nil }
+        let g = island.libraryGrowth
+        let label = "The Library · \(g.volumes) \(g.volumes == 1 ? "volume" : "volumes"), \(g.notes) \(g.notes == 1 ? "note" : "notes")"
+        return RevealStep(id: "library-\(now.rawValue)", bookID: "library", kind: .library, caption: now.caption,
+                          progressLabel: label, progress: g.progressToNext,
+                          changes: [.init(index: index, from: CGFloat(seen.rawValue + 1), to: CGFloat(now.rawValue + 1))], focus: index)
+    }
+
     /// More than this many chapters at once play as one combined reveal.
     static let maxSequence = 3
 

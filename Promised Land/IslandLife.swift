@@ -10,6 +10,9 @@ struct IslandLife: Equatable {
     var chimneys: [(point: CGPoint, height: CGFloat)] = []
     /// Baskets waiting above complete Places.
     var baskets: [Basket] = []
+    /// Where each villager and traveller can be (grid rects), for culling before any pose maths.
+    var villagerHomes: [CGRect] = []
+    var travellerHomes: [CGRect] = []
 
     struct Basket: Equatable {
         let bookID: String
@@ -28,6 +31,8 @@ struct IslandLife: Equatable {
     /// Everything for an island; `baskets` maps complete books to what's waiting in them.
     static func make(island: Island, baskets: [String: Int] = [:]) -> IslandLife {
         var life = IslandLife(villagers: VillagerData.villagers(island: island), travellers: Traveller.make(island: island))
+        life.villagerHomes = life.villagers.map(\.bounds)
+        life.travellerHomes = life.travellers.map(\.bounds)
         let homes: Set<PieceKind> = [.hut, .farmhouse, .house, .oven, .mill, .upperRoom, .houses]
         for item in island.items {
             guard case .piece(let kind) = item.kind, homes.contains(kind), item.total > 0, item.progress >= item.total else { continue }
@@ -44,38 +49,78 @@ struct IslandLife: Equatable {
 
     // MARK: Drawing
 
-    /// Draws the life that's on screen (`visible`, in view points), capped so it stays smooth.
-    static func draw(_ c: inout GraphicsContext, life: IslandLife, layout: IslandLayout, time: TimeInterval, visible: CGRect) {
+    /// The figures near the screen this frame, for the `LifeDirector` (ids "v<i>" villagers,
+    /// "t<i>" travellers). Anything whose home is off screen isn't even listed.
+    func figures(layout: IslandLayout, viewport: CGRect) -> [LifeDirector.Figure] {
+        var out: [LifeDirector.Figure] = []
+        for (i, v) in villagers.enumerated() {
+            let home = Self.screenRect(villagerHomes[i], layout: layout)
+            guard home.intersects(viewport) else { continue }
+            out.append(.init(id: "v\(i)", home: home, position: { t in let p = v.pose(at: t).point; return layout.point(p.x, p.y) }))
+        }
+        for (i, tr) in travellers.enumerated() {
+            let home = Self.screenRect(travellerHomes[i], layout: layout)
+            guard home.intersects(viewport) else { continue }
+            out.append(.init(id: "t\(i)", home: home, position: { t in let p = tr.position(at: t).point; return layout.point(p.x, p.y) }))
+        }
+        return out
+    }
+
+    /// A grid rect's bounds on screen (with a margin for the figure's height).
+    static func screenRect(_ r: CGRect, layout: IslandLayout) -> CGRect {
+        let pts = [layout.point(r.minX, r.minY), layout.point(r.maxX, r.minY), layout.point(r.minX, r.maxY), layout.point(r.maxX, r.maxY)]
+        let xs = pts.map(\.x), ys = pts.map(\.y)
+        let m = 16 * layout.u
+        return CGRect(x: xs.min()! - m, y: ys.min()! - 2 * m, width: xs.max()! - xs.min()! + 2 * m, height: ys.max()! - ys.min()! + 3 * m)
+    }
+
+    /// Draws the life the director chose (each at its own time and fade), smoke from chimneys on
+    /// screen, a couple of boats when far out, and birds.
+    static func draw(_ c: inout GraphicsContext, life: IslandLife, shown: [LifeDirector.Shown], tier: LODTier,
+                     director: LifeDirector, layout: IslandLayout, time: TimeInterval, visible: CGRect) -> Int {
         let u = layout.u
-        // Smoke first (it's behind the figures).
+        var count = 0
+        // Smoke first (it's behind the figures); a single soft puff when far out.
         for chimney in life.chimneys {
             let base = layout.point(chimney.point.x, chimney.point.y)
             guard visible.contains(base) else { continue }
-            smoke(&c, at: CGPoint(x: base.x, y: base.y - chimney.height * u), time: time, u: u, seed: Int(chimney.point.x * 31 + chimney.point.y * 7))
+            smoke(&c, at: CGPoint(x: base.x, y: base.y - chimney.height * u), time: time, u: u,
+                  seed: Int(chimney.point.x * 31 + chimney.point.y * 7), puffs: tier == .far ? 1 : 3)
+            count += 1
         }
-        var figures: [(depth: CGFloat, draw: (inout GraphicsContext) -> Void)] = []
-        var shown = 0
-        for v in life.villagers {
-            let p = v.pose(at: time)
-            let s = layout.point(p.point.x, p.point.y)
-            guard visible.contains(s), shown < VillagerData.maxVisible else { continue }
-            shown += 1
-            figures.append((s.y, { g in villager(&g, at: s, pose: p, robe: v.robe, produce: v.produce, u: u, time: time) }))
+        if tier == .far {
+            // Just a couple of boats out on the water.
+            var boats = 0
+            for (i, v) in life.villagers.enumerated() where boats < IslandLOD.farBoats && v.routine.waypoints.contains(where: { $0.pose == .boat }) {
+                guard screenRect(life.villagerHomes[i], layout: layout).intersects(visible) else { continue }
+                let p = v.pose(at: director.time("v\(i)", now: time))
+                guard p.pose == .boat else { continue }
+                villager(&c, at: layout.point(p.point.x, p.point.y), pose: p, robe: v.robe, produce: v.produce, u: u, time: time)
+                boats += 1
+            }
+            count += boats
         }
-        for t in life.travellers {
-            let p = t.position(at: time)
-            let s = layout.point(p.point.x, p.point.y)
-            guard visible.contains(s) else { continue }
-            figures.append((s.y, { g in
-                if t.cart { cart(&g, at: s, u: u, flip: p.facingLeft != layout.mirrored) }
+        for f in shown {
+            var g = c
+            g.opacity = f.opacity
+            if f.id.hasPrefix("v"), let i = Int(f.id.dropFirst()), life.villagers.indices.contains(i) {
+                let v = life.villagers[i]
+                let p = v.pose(at: f.time)
+                villager(&g, at: f.point, pose: p, robe: v.robe, produce: v.produce, u: u, time: f.time)
+                count += 1
+            } else if f.id.hasPrefix("t"), let i = Int(f.id.dropFirst()), life.travellers.indices.contains(i) {
+                let t = life.travellers[i]
+                let p = t.position(at: f.time)
+                if t.cart { cart(&g, at: f.point, u: u, flip: p.facingLeft != layout.mirrored) }
                 else {
-                    villager(&g, at: s, pose: Villager.Pose(point: p.point, pose: .walk, carrying: true, facingLeft: p.facingLeft),
-                             robe: t.robe, produce: .wool, u: u, time: time)
+                    villager(&g, at: f.point, pose: Villager.Pose(point: p.point, pose: .walk, carrying: true, facingLeft: p.facingLeft),
+                             robe: t.robe, produce: t.carrying, u: u, time: f.time)
                 }
-            }))
+                count += 1
+            }
         }
-        for f in figures.sorted(by: { $0.depth < $1.depth }) { f.draw(&c) }
         birds(&c, size: visible.size, origin: visible.origin, time: time)
+        return count + 1
     }
 
     /// Baskets go on top of everything, so they're always easy to see and tap.
@@ -139,8 +184,8 @@ struct IslandLife: Equatable {
         c.fill(Path(ellipseIn: CGRect(x: d.x + dir * 3 * s - 1.5 * s, y: d.y - 9.5 * s, width: 3 * s, height: 3.5 * s)), with: .color(Color(hex: "#A29081")))
     }
 
-    static func smoke(_ c: inout GraphicsContext, at p: CGPoint, time: TimeInterval, u: CGFloat, seed: Int) {
-        for i in 0..<3 {
+    static func smoke(_ c: inout GraphicsContext, at p: CGPoint, time: TimeInterval, u: CGFloat, seed: Int, puffs: Int = 3) {
+        for i in 0..<puffs {
             let t = (time * 0.25 + Double(i) / 3 + Double(abs(seed) % 10) / 10).truncatingRemainder(dividingBy: 1)
             let y = p.y - CGFloat(t) * 26 * u
             let x = p.x + CGFloat(sin(t * 5 + Double(seed))) * 3 * u + CGFloat(t) * 6 * u

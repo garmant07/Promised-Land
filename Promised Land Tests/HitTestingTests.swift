@@ -40,7 +40,7 @@ enum Fixture {
 
 @MainActor
 struct HitTestingTests {
-    nonisolated static let zooms: [CGFloat] = [1, 4] // IslandLayout.minZoom, IslandLayout.maxZoom
+    nonisolated static let zooms: [CGFloat] = [1, 4] // IslandLayout.minZoom, IslandLayout.baseMaxZoom
     nonisolated static let pans: [CGSize] = [.zero, CGSize(width: 63, height: -41)]
 
     @Test("Tapping a tree's canopy picks the tree, even where it covers a flower behind it",
@@ -78,13 +78,13 @@ struct HitTestingTests {
 
     @Test("Empty ground hits nothing")
     func emptyGround() {
-        let layout = Fixture.layout(zoom: IslandLayout.maxZoom)
+        let layout = Fixture.layout(zoom: IslandLayout.baseMaxZoom)
         let corner = layout.point(11.15, 13.85)
         #expect(IslandHitTester.hit(point: corner, layout: layout, items: Fixture.island.items) == nil)
     }
 
     @Test func zoomLimitsMatchTheTests() {
-        #expect(Self.zooms == [IslandLayout.minZoom, IslandLayout.maxZoom])
+        #expect(Self.zooms == [IslandLayout.minZoom, IslandLayout.baseMaxZoom])
     }
 
     @Test("Grid and screen mapping round-trip at any zoom", arguments: zooms)
@@ -131,16 +131,17 @@ struct LargeObjectHitTests {
         }
     }
 
-    @Test("Drawn bounds sit inside the picture's rectangle (transparent padding is ignored)")
-    func boundsTrimmed() {
-        let lib = Self.library(at: 12.5, 12.5)
+    @Test("The Library's tap area grows with its stage")
+    func boundsGrowWithStage() {
         let layout = Fixture.layout(zoom: 2)
-        guard let art = IslandPainter.art(for: lib) else { Issue.record("no library art"); return }
-        let base = layout.point(lib.gx, lib.gy)
-        let full = IslandPainter.imageRect(art, item: lib, tileWidth: layout.scale * 2).offsetBy(dx: base.x, dy: base.y)
-        let visible = IslandPainter.drawnBounds(of: lib, layout: layout)
-        #expect(full.insetBy(dx: -0.5, dy: -0.5).contains(visible))
-        #expect(visible.width * visible.height < full.width * full.height)
+        var hut = Self.library(at: 12.5, 12.5)
+        hut.growth = CGFloat(LibraryStage.hut.rawValue + 1)
+        var grand = hut
+        grand.growth = CGFloat(LibraryStage.grand.rawValue + 1)
+        let small = IslandPainter.drawnBounds(of: hut, layout: layout)
+        let big = IslandPainter.drawnBounds(of: grand, layout: layout)
+        #expect(big.width > small.width * 2 && big.height > small.height * 2)
+        #expect(IslandPainter.art(for: grand) == nil) // drawn in code for its stage
     }
 
     @Test("A small thing in front of a large building still gets its own taps", arguments: HitTestingTests.zooms)

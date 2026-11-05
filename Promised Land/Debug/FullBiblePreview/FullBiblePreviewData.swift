@@ -30,6 +30,17 @@ enum FullBiblePreviewData {
         return container
     }
 
+    /// Every complete Place starts with two waiting in its basket.
+    static func baskets(_ island: Island) -> [String: Int] {
+        Dictionary(uniqueKeysWithValues: island.completed.keys.map { ($0, 2) })
+    }
+
+    /// Collect All in the preview: written only to the preview's own in-memory store.
+    @discardableResult
+    static func collectAll(_ baskets: [String: Int], into container: ModelContainer) -> [ProduceKind: Int] {
+        container.mainContext.collectAllProduce(baskets)
+    }
+
     /// The reads of the first `books` books (for "Replay the build").
     static func reads(firstBooks books: Int) -> [(book: String, chapter: Int, date: Date)] {
         let ids = Set(BibleCatalog.books.prefix(books).map(\.id))

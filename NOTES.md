@@ -117,6 +117,55 @@ option was chosen and noted here.
     reading lists). Notes 6 and 9 above describe the map as it was. `WorldData` stays for book
     and landmark names.
 
+## Round: Collect All, zoom and level of detail, the growing Library (Nov 2026)
+
+32. **Still no CLAUDE.md**; this round follows NOTES.md, AUDIT.md and the existing code.
+33. **Collect All.** A basket button floats above the bottom bar (bottom-left; the turn and Find me
+    buttons stay bottom-right) only while something is waiting, with the total as a badge. One tap
+    writes every Place's basket at once (`ModelContext.collectAllProduce`, one save); the baskets on
+    screen fly into the button (at most 12 sprites, extras grouped as one "+N" bundle), off-screen
+    ones are simply collected, then "+3 fish, +2 bread…" fades in. Hidden in edit mode, during a
+    reveal and while any sheet, interior or visit is open. Reduce Motion skips the flight. The whoosh is
+    synthesised on device (filtered noise through AVAudioEngine, "ambient" session, so the silent
+    switch mutes it). `ProduceRules.baskets` is now shared by the island, tests and the preview; the
+    reading-day rule and cap are unchanged. In Preview full Bible the button works on the preview's
+    own baskets and in-memory store only.
+34. **"Node count" = draw calls.** The island is a SwiftUI `Canvas`, not SpriteKit (note 13), so the
+    DEBUG overlay shows draws per frame (images, items and figures; `RenderStats`) beside the fps.
+35. **Zoom.** The zoom-in limit is now per island: at least 4×, and on big islands until a tile is
+    about a quarter of the free width (`IslandLayout.maxZoom`), so a single Place fills the screen.
+    Pinch zooms about the fingers, rubber-bands a little past either limit and eases back. Render
+    buckets go up to 80×. Ground chunks draw only their own tiles.
+36. **Level of detail** (IslandLOD.swift), by absolute size `u`: far (< 0.55/0.62) shows no figures,
+    only up to 2 boats, birds, waves and one puff of smoke per chimney. Middle shows up to 15 near the
+    middle of the screen. Close shows up to 30 on screen. The thresholds differ going in and out, and
+    figures fade over 0.3 s. Each figure has its own clock that runs only while its home is on screen,
+    so off screen nothing is worked out and it resumes where it left off. Bible characters count
+    towards the caps. Far out, Places and items are baked into the ground chunks (a handful of
+    images), except while editing or mid-reveal.
+37. **Measured in the Simulator only** (iPhone 17, full Bible preview): about 56 fps far out
+    (87 draws) and 58 fps close in (41 draws). **Not measured on a real iPhone 11 / SE**: please check
+    with Settings → Developer → FPS overlay (and `-autoPan`).
+38. **The Library grows** (LibraryData.swift). Volumes are distinct checked chapters, notes are
+    journal entries, and points = volumes + 2 × notes. The stages unlock at 0 / 12 / 50 / 150 / 400 /
+    900 points: hut 2×2, room 3×3, wings 4×4, second floor 5×5, reading tower 6×6, grand 7×7, each
+    taller. Small touches come between stages (by volumes or notes). It's drawn in code
+    (LibraryArt.swift), with art swap `bld_library_<stage>`.
+39. **Where it grows.** The hut keeps its spot beside the plaza. Bigger stages spread away from the
+    plaza (−x, −y, so back on screen), anchored at the hut's corner nearest the plaza, so it never
+    covers the start square. Its edit-mode placement is still the hut's corner. Places you moved
+    yourself are never touched: the Library shifts, or as a last resort stays a size smaller, to
+    avoid them. Auto-placed Places are first laid out around the hut (exactly today's layout). Only
+    those in the grown Library's way are nudged to the nearest free spot outward, so nothing else
+    reshuffles. While editing, the Library keeps its saved size, so dropping a Place on it is a red
+    conflict. Roads now start at the Library (the plaza joins it), so every road leads there.
+40. **Library reveal.** When it reaches a new stage, the "see it built" moment plays last: the old
+    building fades as the new one rises with a big dust burst and sparkles ("Your library added a
+    reading tower"). The first look after updating is quiet (`library.stageSeen`).
+41. **Inside the Library**: a stage card (volumes, notes, progress to the next stage), a Volumes shelf
+    with a thin spine for every chapter read, and handwritten note slips tucked into each book that
+    has journal entries.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

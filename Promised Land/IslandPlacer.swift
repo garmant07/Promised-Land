@@ -23,25 +23,60 @@ struct IslandPlacer {
     private let placements: [String: IslandPlacement]
     /// Saved places that overlap another (only possible mid-drag in edit mode).
     private(set) var conflicts: Set<String> = []
-    private var libraryPlace: (x: Int, y: Int)
+    /// The hut's spot (the Library's anchor) and its footprint now (it grows from the hut).
+    private(set) var libraryHut: (x: Int, y: Int)
+    private(set) var libraryRect: (x: Int, y: Int, size: Int)
     private var reservedBays: [String: Int] = [:]
+    /// Saved spots that aren't kept (auto-placed ones the Library grew over): laid out again,
+    /// as near their old spot as they fit.
+    private var nudged: [String: (x: Int, y: Int)] = [:]
 
     /// - Parameters:
     ///   - placements: saved places, reserved before anything is laid out automatically.
     ///   - keys: the books (and feature keys) being laid out, to reserve their saved places.
-    init(placements: [String: IslandPlacement] = [:], keys: [String] = []) {
+    ///   - library: how big the Library has grown.
+    ///   - libraryAvoid: the places the Library grows around (only ones you moved yourself count).
+    ///     Defaults to `placements`; edit mode passes the saved places, so dropping something on
+    ///     the Library is a conflict rather than a reason for it to shrink.
+    init(placements: [String: IslandPlacement] = [:], keys: [String] = [], library: LibraryStage = .hut,
+         libraryAvoid: [String: IslandPlacement]? = nil) {
         self.placements = placements
         let lib = placements[IslandPlacement.libraryKey]
-        libraryPlace = lib.map { ($0.x, $0.y) } ?? (Self.library.x, Self.library.y)
+        let hut = lib.map { ($0.x, $0.y) } ?? (Self.library.x, Self.library.y)
+        libraryHut = hut
+        // What the Library must grow around: the plaza, and everything you moved yourself
+        // (with its bay), except anything sitting on the hut itself (that's a conflict instead).
+        var avoid: [(x: Int, y: Int, size: Int)] = [(Self.start.x, Self.start.y, Self.start.size)]
+        let hutRect = (x: hut.0, y: hut.1, size: Self.library.size)
+        for (key, p) in libraryAvoid ?? placements where key != IslandPlacement.libraryKey && p.moved {
+            guard let size = Self.size(of: key) else { continue }
+            let square = (x: p.x, y: p.y, size: size)
+            guard !Self.overlaps(square, hutRect, gap: 1) else { continue }
+            avoid.append(square)
+            if BibleCatalog.book(id: key) != nil, PlaceData.spec(for: key).isWaterside {
+                for t in Self.bay(x: p.x, y: p.y, size: size, side: Self.outwardSide(x: p.x, y: p.y, size: size)) {
+                    avoid.append((t.x, t.y, 1))
+                }
+            }
+        }
+        libraryRect = library == .hut ? (hut.0, hut.1, Self.library.size)
+            : LibraryFootprint.place(hutX: hut.0, hutY: hut.1, stage: library, avoid: avoid)
         mark(Self.start.x, Self.start.y, Self.start.size)
         var reserved: [(key: String, x: Int, y: Int, size: Int, bay: [Island.Tile], side: Int?)] = [
-            (IslandPlacement.libraryKey, libraryPlace.x, libraryPlace.y, Self.library.size, [], nil)
+            (IslandPlacement.libraryKey, libraryRect.x, libraryRect.y, libraryRect.size, [], nil)
         ]
         for key in keys {
             guard let p = placements[key], let size = Self.size(of: key) else { continue }
             let waterside = BibleCatalog.book(id: key) != nil && PlaceData.spec(for: key).isWaterside
             let side = waterside ? Self.outwardSide(x: p.x, y: p.y, size: size) : nil
-            reserved.append((key, p.x, p.y, size, side.map { Self.bay(x: p.x, y: p.y, size: size, side: $0) } ?? [], side))
+            let bay = side.map { Self.bay(x: p.x, y: p.y, size: size, side: $0) } ?? []
+            // An auto-placed spot the Library has grown over is nudged out of the way.
+            if !p.moved, Self.overlaps((p.x, p.y, size), libraryRect, gap: 1)
+                || bay.contains(where: { Self.overlaps(($0.x, $0.y, 1), libraryRect, gap: 1) }) {
+                nudged[key] = (p.x, p.y)
+                continue
+            }
+            reserved.append((key, p.x, p.y, size, bay, side))
         }
         for r in reserved {
             if !fits(r.x, r.y, r.size, gap: 1) || r.bay.contains(where: { core.contains($0) }) { conflicts.insert(r.key) }
@@ -51,13 +86,19 @@ struct IslandPlacer {
         }
     }
 
+    /// True if two squares are closer than `gap` tiles.
+    static func overlaps(_ a: (x: Int, y: Int, size: Int), _ b: (x: Int, y: Int, size: Int), gap: Int) -> Bool {
+        a.x - gap < b.x + b.size && b.x < a.x + a.size + gap && a.y - gap < b.y + b.size && b.y < a.y + a.size + gap
+    }
+
     static func size(of key: String) -> Int? {
         if key == IslandPlacement.forestKey { return forestSize }
         return BibleCatalog.book(id: key).map { _ in PlaceData.spec(for: key).size }
     }
 
+    /// The Library's footprint now.
     var libraryPlot: Island.Plot {
-        Island.Plot(bookID: IslandPlacement.libraryKey, x: libraryPlace.x, y: libraryPlace.y, size: Self.library.size,
+        Island.Plot(bookID: IslandPlacement.libraryKey, x: libraryRect.x, y: libraryRect.y, size: libraryRect.size,
                     rotation: placements[IslandPlacement.libraryKey]?.rotation ?? 0)
     }
 
@@ -92,12 +133,57 @@ struct IslandPlacer {
         return all.sorted { ($0.cost, $0.dy, $0.dx) < ($1.cost, $1.dy, $1.dx) }.map { ($0.dx, $0.dy) }
     }
 
+    /// Offsets around a spot, nearest first (for nudging a Place out of the Library's way).
+    private static let nearby: [(dx: Int, dy: Int)] = {
+        var all: [(dx: Int, dy: Int)] = []
+        for dy in -16...16 { for dx in -16...16 { all.append((dx, dy)) } }
+        return all.sorted { (hypot(Double($0.dx), Double($0.dy)), $0.dy, $0.dx) < (hypot(Double($1.dx), Double($1.dy)), $1.dy, $1.dx) }
+    }()
+
     /// Places a Place (or the forest), or returns its saved spot.
-    mutating func place(_ key: String, size: Int, waterside: Bool, testament: Testament) -> Island.Plot {
-        if let p = placements[key] {
+    /// - Parameter preferred: where it stood before the Library grew (kept if it still fits,
+    ///   otherwise the nearest free spot, a little further out).
+    mutating func place(_ key: String, size: Int, waterside: Bool, testament: Testament,
+                        preferred: (x: Int, y: Int)? = nil) -> Island.Plot {
+        if let p = placements[key], nudged[key] == nil {
             regions.append((p.x, p.y, size))
             blockInside(p.x, p.y, size)
-            return Island.Plot(bookID: key, x: p.x, y: p.y, size: size, rotation: p.rotation, bay: reservedBays[key])
+            let rotation = p.rotation
+            return Island.Plot(bookID: key, x: p.x, y: p.y, size: size, rotation: rotation, bay: reservedBays[key])
+        }
+        let rotation = placements[key]?.rotation ?? 0
+        if let start = nudged[key] ?? preferred {
+            // Away from the Library's middle counts as a little nearer, so things move outward.
+            let lc = (x: Double(libraryRect.x) + Double(libraryRect.size) / 2, y: Double(libraryRect.y) + Double(libraryRect.size) / 2)
+            let from = hypot(Double(start.x) + Double(size) / 2 - lc.x, Double(start.y) + Double(size) / 2 - lc.y)
+            var best: (cost: Double, plot: Island.Plot, bay: [Island.Tile])?
+            for o in Self.nearby {
+                let d = hypot(Double(o.dx), Double(o.dy))
+                if let best, d - 1 > best.cost { break }
+                let x = start.x + o.dx, y = start.y + o.dy
+                guard fits(x, y, size, gap: 1), touchesLand(x, y, size, landOnly: true) else { continue }
+                var bay: [Island.Tile] = []
+                var side: Int?
+                if waterside {
+                    let s = Self.outwardSide(x: x, y: y, size: size)
+                    bay = Self.bay(x: x, y: y, size: size, side: s)
+                    guard bay.allSatisfy({ !core.contains($0) && !near($0, distance: 1) }) else { continue }
+                    side = s
+                }
+                let to = hypot(Double(x) + Double(size) / 2 - lc.x, Double(y) + Double(size) / 2 - lc.y)
+                let cost = d - (to > from ? 0.5 : 0)
+                if best == nil || cost < best!.cost {
+                    best = (cost, Island.Plot(bookID: key, x: x, y: y, size: size, rotation: rotation, bay: side), bay)
+                }
+            }
+            if let best {
+                let p = best.plot
+                mark(p.x, p.y, size)
+                for t in best.bay { core.insert(t); water.insert(t) }
+                regions.append((p.x, p.y, size))
+                blockInside(p.x, p.y, size)
+                return p
+            }
         }
         let candidates = testament == .old ? Self.candidatesOld : Self.candidatesNew
         // Waterside Places look a little further out first, so their bay faces open sea.
@@ -150,8 +236,16 @@ struct IslandPlacer {
     }
 
     /// Within two tiles of something already built (so the land joins up).
-    private func touchesLand(_ x: Int, _ y: Int, _ size: Int) -> Bool {
-        !fits(x, y, size, gap: 3)
+    /// - Parameter landOnly: count only land (not bays) as something to join.
+    private func touchesLand(_ x: Int, _ y: Int, _ size: Int, landOnly: Bool = false) -> Bool {
+        guard landOnly else { return !fits(x, y, size, gap: 3) }
+        for ty in (y - 3)..<(y + size + 3) {
+            for tx in (x - 3)..<(x + size + 3) {
+                let t = Island.Tile(x: tx, y: ty)
+                if core.contains(t), !water.contains(t) { return true }
+            }
+        }
+        return false
     }
 
     private func near(_ t: Island.Tile, distance d: Int) -> Bool {
@@ -175,7 +269,7 @@ struct IslandPlacer {
     /// gaps enclosed by land filled in. The starting square comes first.
     func tiles(features: Set<Island.Feature>) -> [Island.Tile] {
         var shown = [Self.start] + regions
-        if features.contains(.library) { shown.append((libraryPlace.x, libraryPlace.y, Self.library.size)) }
+        if features.contains(.library) { shown.append((libraryRect.x, libraryRect.y, libraryRect.size)) }
         var seen: Set<Island.Tile> = []
         var out: [Island.Tile] = []
         for ty in Self.start.y..<(Self.start.y + Self.start.size) {
@@ -220,26 +314,56 @@ struct IslandPlacer {
     }
 }
 
-/// Soft dirt roads: each Place joins the nearest Place laid out before it (or the plaza), along
-/// the land between Places. Worked out afresh every time, so roads follow Places you move.
+/// Soft dirt roads: the Library is the heart of the network. The plaza joins the Library, and each
+/// Place joins the nearest Place laid out before it (or the plaza or the Library), along the land
+/// between Places, so every road leads, one way or another, to the Library. Worked out afresh
+/// every time, so roads follow Places you move.
 enum IslandRoads {
+    /// Which road leaves each plot (by key; "plaza" for the plaza), and the plot it leads to.
+    typealias Links = [String: (road: Int, to: String)]
+
     static func route(plots: [Island.Plot], library: Island.Plot?, land: Set<Island.Tile>,
                       blocked: Set<Island.Tile>) -> [[Island.Tile]] {
+        network(plots: plots, library: library, land: land, blocked: blocked).roads
+    }
+
+    static func network(plots: [Island.Plot], library: Island.Plot?, land: Set<Island.Tile>,
+                        blocked: Set<Island.Tile>) -> (roads: [[Island.Tile]], links: Links) {
         let plaza = Island.Plot(bookID: "plaza", x: IslandPlacer.start.x, y: IslandPlacer.start.y, size: IslandPlacer.start.size)
-        var joined: [Island.Plot] = [plaza]
+        var joined: [Island.Plot] = (library.map { [$0] } ?? []) + [plaza]
         var roads: [[Island.Tile]] = []
+        var links: Links = [:]
         var open = blocked
         // The plaza itself is walkable.
         for p in [plaza] + (library.map { [$0] } ?? []) {
             for ty in p.y..<(p.y + p.size) { for tx in p.x..<(p.x + p.size) { open.remove(Island.Tile(x: tx, y: ty)) } }
         }
-        if let library, let path = path(from: library, to: plaza, land: land, blocked: open) { roads.append(path) }
+        if let library, let path = path(from: plaza, to: library, land: land, blocked: open) {
+            links["plaza"] = (roads.count, library.bookID)
+            roads.append(path)
+        }
         for plot in plots {
             let target = joined.min { dist($0, plot) < dist($1, plot) }!
-            if let path = path(from: plot, to: target, land: land, blocked: open) { roads.append(path) }
+            if let path = path(from: plot, to: target, land: land, blocked: open) {
+                links[plot.bookID] = (roads.count, target.bookID)
+                roads.append(path)
+            }
             joined.append(plot)
         }
-        return roads
+        return (roads, links)
+    }
+
+    /// The whole walk from a plot to the Library, following its road and the ones after it.
+    static func toLibrary(from key: String, roads: [[Island.Tile]], links: Links) -> [Island.Tile] {
+        var out: [Island.Tile] = []
+        var key = key
+        var seen: Set<String> = []
+        while let link = links[key], seen.insert(key).inserted, roads.indices.contains(link.road) {
+            let road = roads[link.road]
+            out += out.last == road.first ? Array(road.dropFirst()) : road
+            key = link.to
+        }
+        return key == IslandPlacement.libraryKey ? out : []
     }
 
     private static func dist(_ a: Island.Plot, _ b: Island.Plot) -> CGFloat {

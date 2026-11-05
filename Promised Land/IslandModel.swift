@@ -86,6 +86,8 @@ struct Island: Equatable {
         var span: CGFloat = 3
         /// Which way the Place's bay lies (0 +y, 1 +x, 2 −y, 3 −x), for docks and boats.
         var facing = 1
+        /// The Library: its small touches, one bit per `LibraryTouch` (in `allCases` order).
+        var libraryTouches = 0
     }
 
     /// A Place's square of land (size × size tiles from x, y).
@@ -119,11 +121,33 @@ struct Island: Equatable {
     var completed: [String: Date] = [:]
     /// Identifies this exact island (0 = not built from history: drawn without caching).
     var signature = 0
+    /// How grown the Library is (from volumes read and journal notes).
+    var libraryGrowth = LibraryGrowth.empty
+    /// The Library's first tile (the hut's corner): where it's anchored as it grows.
+    var libraryHut: Tile?
+    /// Which road leaves each plot, and where it leads (towards the Library).
+    var roadLinks: IslandRoads.Links = [:]
+
+    static func == (a: Island, b: Island) -> Bool {
+        a.signature == b.signature && a.signature != 0 ? true
+            : a.tiles == b.tiles && a.items == b.items && a.plots == b.plots && a.water == b.water && a.library == b.library
+                && a.forest == b.forest && a.roads == b.roads && a.conflicts == b.conflicts && a.growth == b.growth
+                && a.completed == b.completed && a.libraryGrowth == b.libraryGrowth && a.libraryHut == b.libraryHut
+    }
+
+    /// The walk from a Place (by key) along the roads to the Library (empty if there's no road).
+    func routeToLibrary(from key: String) -> [Tile] {
+        IslandRoads.toLibrary(from: key, roads: roads, links: roadLinks)
+    }
 
     /// Every plot's current place (books, the Library and the forest), for edit mode.
     var placements: [String: IslandPlacement] {
         var out: [String: IslandPlacement] = [:]
         for p in allPlots { out[p.bookID] = IslandPlacement(x: p.x, y: p.y, rotation: p.rotation) }
+        // The Library is placed by its hut (it grows from there).
+        if let library, let hut = libraryHut {
+            out[library.bookID] = IslandPlacement(x: hut.x, y: hut.y, rotation: library.rotation)
+        }
         return out
     }
 
@@ -153,6 +177,8 @@ struct Island: Equatable {
     ///   - verses: memorised verses.
     ///   - unchecked: reads still waiting for their reading check (they don't build yet).
     ///   - richnessOverride: DEBUG preview: show every Place at this richness.
+    ///   - journalNotes: journal entries and reflections (they grow the Library).
+    ///   - libraryAvoid: the places the Library grows around (edit mode passes the saved ones).
     static func build(chapters: [(book: String, chapter: Int, date: Date)],
                       started: [(book: String, date: Date)] = [],
                       quizzes: [(book: String, date: Date)],
@@ -161,7 +187,9 @@ struct Island: Equatable {
                       placements: [String: IslandPlacement] = [:],
                       unchecked: [(book: String, chapter: Int)] = [],
                       extras: [PlacedExtraInfo] = [],
-                      richnessOverride: Int? = nil) -> Island {
+                      richnessOverride: Int? = nil,
+                      journalNotes: Int = 0,
+                      libraryAvoid: [String: IslandPlacement]? = nil) -> Island {
         var hasher = Hasher()
         for r in chapters { hasher.combine(r.book); hasher.combine(r.chapter); hasher.combine(r.date) }
         hasher.combine(-2)
@@ -174,10 +202,13 @@ struct Island: Equatable {
         for u in unchecked { hasher.combine(u.book); hasher.combine(u.chapter) }
         hasher.combine(extras)
         hasher.combine(richnessOverride)
+        hasher.combine(journalNotes)
+        if let libraryAvoid { for (k, p) in libraryAvoid.sorted(by: { $0.key < $1.key }) { hasher.combine(k); hasher.combine(p) } }
         let key = hasher.finalize()
         if let memo, memo.key == key { return memo.island }
         var island = make(chapters: chapters, quizzes: quizzes, verses: verses, features: features,
-                          placements: placements, unchecked: unchecked, extras: extras, richnessOverride: richnessOverride)
+                          placements: placements, unchecked: unchecked, extras: extras, richnessOverride: richnessOverride,
+                          journalNotes: journalNotes, libraryAvoid: libraryAvoid)
         island.signature = key == 0 ? 1 : key
         memo = (key, island)
         return island
@@ -190,7 +221,9 @@ struct Island: Equatable {
                              placements: [String: IslandPlacement],
                              unchecked: [(book: String, chapter: Int)],
                              extras: [PlacedExtraInfo],
-                             richnessOverride: Int?) -> Island {
+                             richnessOverride: Int?,
+                             journalNotes: Int,
+                             libraryAvoid: [String: IslandPlacement]?) -> Island {
         let reads = ReadTally(chapters: chapters, unchecked: unchecked)
         let quizDate = Dictionary(quizzes.map { ($0.book, $0.date) }, uniquingKeysWith: min)
         let verseDate = Dictionary(verses.map { ($0.book, $0.date) }, uniquingKeysWith: min)
@@ -202,20 +235,36 @@ struct Island: Equatable {
             keys.insert(IslandPlacement.forestKey, at: min(index, keys.count))
         }
 
-        var placer = IslandPlacer(placements: placements, keys: keys)
+        let libraryGrowth = LibraryGrowth(volumes: reads.distinct.values.reduce(0, +), notes: journalNotes)
+        let stage = features.contains(.library) ? libraryGrowth.stage : .hut
+        // Where everything stood around the hut: as the Library grows, only the Places in its
+        // way move (to the nearest free spot outward), so the island never reshuffles.
+        var before: [String: (x: Int, y: Int)] = [:]
+        if stage != .hut {
+            var first = IslandPlacer(placements: placements, keys: keys)
+            for key in keys where placements[key] == nil {
+                guard let size = IslandPlacer.size(of: key) else { continue }
+                let book = BibleCatalog.book(id: key)
+                let waterside = book != nil && PlaceData.spec(for: key).isWaterside
+                let plot = first.place(key, size: size, waterside: waterside, testament: book?.testament ?? .old)
+                before[key] = (plot.x, plot.y)
+            }
+        }
+        var placer = IslandPlacer(placements: placements, keys: keys, library: stage, libraryAvoid: libraryAvoid)
         var plots: [Plot] = []
         var items: [Item] = []
         var growths: [String: PlaceGrowth] = [:]
         var forestPlot: Plot?
         for key in keys {
             if key == IslandPlacement.forestKey {
-                let plot = placer.place(key, size: IslandPlacer.forestSize, waterside: false, testament: .old)
+                let plot = placer.place(key, size: IslandPlacer.forestSize, waterside: false, testament: .old, preferred: before[key])
                 forestPlot = plot
                 continue
             }
             guard let book = BibleCatalog.book(id: key) else { continue }
             let spec = PlaceData.spec(for: key)
-            let plot = placer.place(key, size: spec.size, waterside: spec.isWaterside, testament: book.testament)
+            let plot = placer.place(key, size: spec.size, waterside: spec.isWaterside, testament: book.testament,
+                                    preferred: before[key])
             plots.append(plot)
             let n = reads.distinct[key] ?? 0
             let growth = PlaceGrowth.after(n, spec: spec, chapters: book.chapterCount)
@@ -240,7 +289,14 @@ struct Island: Equatable {
             let plot = placer.libraryPlot
             library = plot
             // First in the list, so things added later are always at the end.
-            items.insert(Self.featureItem(.library, at: plot), at: 0)
+            var item = Self.featureItem(.library, at: plot)
+            // The stage it shows: the one earned, or a size smaller if boxed in by things you moved.
+            let shown = LibraryStage.allCases.last { $0 <= stage && $0.size <= plot.size } ?? .hut
+            item.growth = CGFloat(shown.rawValue + 1)
+            item.level = libraryGrowth.touches.count
+            item.span = CGFloat(plot.size)
+            item.libraryTouches = libraryGrowth.touches.reduce(0) { $0 | (1 << (LibraryTouch.allCases.firstIndex(of: $1) ?? 0)) }
+            items.insert(item, at: 0)
         }
         if features.contains(.throne) {
             let plot = placer.placeThrone()
@@ -250,8 +306,9 @@ struct Island: Equatable {
         }
         let tiles = placer.tiles(features: features)
         let land = Set(tiles)
-        let roads = IslandRoads.route(plots: plots + (forestPlot.map { [$0] } ?? []), library: library, land: land,
-                                      blocked: placer.blocked)
+        let network = IslandRoads.network(plots: plots + (forestPlot.map { [$0] } ?? []), library: library, land: land,
+                                          blocked: placer.blocked)
+        let roads = network.roads
         var conflicts = placer.conflicts
         for extra in extras {
             // An extra must stand on open land: not in the sea, not inside a Place.
@@ -260,8 +317,12 @@ struct Island: Equatable {
             items.append(Item(kind: .extra(extra.kind), gx: extra.x, gy: extra.y, seed: hash(extra.id), source: .extra(extra.id),
                               footprint: CGRect(x: extra.x - 0.3, y: extra.y - 0.3, width: 0.6, height: 0.6), turned: extra.rotation))
         }
-        return Island(tiles: tiles, items: items, plots: plots, water: placer.water, library: library, forest: forestPlot,
-                      roads: roads, conflicts: conflicts, growth: growths, completed: reads.completed)
+        var island = Island(tiles: tiles, items: items, plots: plots, water: placer.water, library: library, forest: forestPlot,
+                            roads: roads, conflicts: conflicts, growth: growths, completed: reads.completed)
+        island.libraryGrowth = libraryGrowth
+        island.libraryHut = library.map { _ in Tile(x: placer.libraryHut.x, y: placer.libraryHut.y) }
+        island.roadLinks = network.links
+        return island
     }
 
     /// One Place on its own patch of land (for its inside page and share card).
@@ -358,8 +419,9 @@ struct Island: Equatable {
 
     static func featureItem(_ feature: Feature, at plot: Plot) -> Item {
         let centre = plot.centre
+        let half = CGFloat(plot.size) / 2 - 0.05
         return Item(kind: .library, gx: centre.x, gy: centre.y, seed: 0, source: .feature(feature),
-                    footprint: CGRect(x: centre.x - 0.95, y: centre.y - 0.95, width: 1.9, height: 1.9), turned: plot.rotation)
+                    footprint: CGRect(x: centre.x - half, y: centre.y - half, width: 2 * half, height: 2 * half), turned: plot.rotation)
     }
 
     static func hash(_ s: String) -> Int {

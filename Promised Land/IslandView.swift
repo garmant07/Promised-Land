@@ -39,6 +39,11 @@ struct PlatformScene: View {
     var onBasket: ((String) -> Void)? = nil
     /// Tapping the crowd in the plaza.
     var onCrowd: (() -> Void)? = nil
+    /// Collect All: the produce flying from on-screen baskets into the button, whose frame (in
+    /// global coordinates) is `collectTarget`. `onCollectLanded` is called when it has all landed.
+    var collectFlight: CollectFlight? = nil
+    var collectTarget: CGRect = .zero
+    var onCollectLanded: (() -> Void)? = nil
     /// DEBUG: a frames-per-second readout.
     var showsFPS = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
@@ -78,6 +83,15 @@ struct PlatformScene: View {
     @State private var overrides: [Int: CGFloat] = [:]
     @State private var beat: (step: RevealStep, start: Date)?
     @State private var revealToken = 0
+    /// Level of detail and each figure's own clock (see IslandLOD.swift).
+    @State private var director = LifeDirector()
+    // Pinch: the point it started at, and the camera then.
+    @State private var pinchAnchor: CGPoint?
+    @State private var pinchFrom: (zoom: CGFloat, pan: CGSize)?
+    // Collect All in flight.
+    @State private var flight: (sprites: [CollectFlightPlan.Sprite], start: Date)?
+    /// The view's frame in global coordinates (to aim the flight at the button).
+    @State private var globalOrigin: CGPoint = .zero
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -131,8 +145,9 @@ struct PlatformScene: View {
                     // use the cached ground chunks and Place pictures.
                     let cached = angle == CGFloat(Int(angle)) ? IslandRenderCache.shared.frame(
                         island: island, size: geo.size, insets: insets, zoom: zoom, quarter: layout.quarter, pan: pan,
-                        overrides: overrides, hidden: moving) : nil
+                        overrides: overrides, hidden: moving, bake: editing == nil) : nil
                     Canvas { context, _ in
+                        RenderStats.staticLayer = cached.map { $0.ground.count + $0.layers.count } ?? ordered.count
                         if let cached {
                             for g in cached.ground { context.draw(Image(decorative: g.image, scale: 1), in: g.rect) }
                         } else {
@@ -170,7 +185,7 @@ struct PlatformScene: View {
                         Color.black.opacity(0.16).ignoresSafeArea().allowsHitTesting(false).transition(.opacity)
                     }
 
-                    TimelineView(.animation(paused: !walking && beat == nil && !bouncing && characters.isEmpty
+                    TimelineView(.animation(paused: !walking && beat == nil && !bouncing && characters.isEmpty && flight == nil
                                             && (life.isEmpty || editing != nil || reduceMotion))) { context in
                         let now = context.date
                         let pos = position(at: now)
@@ -178,13 +193,25 @@ struct PlatformScene: View {
                         let t = now.timeIntervalSinceReferenceDate
                         let bounce = walking ? -abs(sin(t * 9)) * charH * 0.05 : 0
                         let lean = walking ? sin(t * 9) * 3 : 0
+                        // Level of detail: which villagers, travellers and characters show, each at
+                        // its own (paused off screen) time and fade.
+                        let viewport = CGRect(origin: .zero, size: geo.size).insetBy(dx: -30, dy: -30)
+                        let lifeTime = reduceMotion ? 0 : t
+                        let tier = director.begin(now: lifeTime, u: layout.u)
+                        let shown = editing == nil
+                            ? director.plan(life.figures(layout: layout, viewport: viewport) + characterFigures(layout: layout, charH: charH),
+                                            now: lifeTime, viewport: viewport)
+                            : []
+                        let shownCharacters = Dictionary(shown.filter { $0.id.hasPrefix("c:") }.map { (String($0.id.dropFirst(2)), $0) },
+                                                         uniquingKeysWith: { a, _ in a })
 
                         ZStack(alignment: .topLeading) {
                             // Villagers, travellers, smoke, birds and baskets: only what's on screen.
                             if editing == nil && !life.isEmpty {
-                                Canvas { c, size in
-                                    IslandLife.draw(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
-                                                    visible: CGRect(origin: .zero, size: size).insetBy(dx: -30, dy: -30))
+                                Canvas { c, _ in
+                                    let n = IslandLife.draw(&c, life: life, shown: shown, tier: tier, director: director, layout: layout,
+                                                            time: lifeTime, visible: viewport)
+                                    RenderStats.life = n
                                 }
                                 .allowsHitTesting(false)
                             }
@@ -201,13 +228,13 @@ struct PlatformScene: View {
                                     }
                                 }
                             }
-                            ForEach(characters) { c in
-                                let time = characterTime(c.id, now: now)
-                                let p = layout.point(c.position(at: time).x, c.position(at: time).y)
+                            ForEach(characters.filter { shownCharacters[$0.id] != nil }) { c in
+                                let f = shownCharacters[c.id]!
                                 CharacterFigure(id: c.characterId, look: c.look)
                                     .frame(width: charH * 0.75, height: charH * 1.05)
-                                    .scaleEffect(x: c.facingLeft(at: time) != layout.mirrored ? -1 : 1, y: 1)
-                                    .position(x: p.x, y: p.y - charH * 0.47)
+                                    .scaleEffect(x: c.facingLeft(at: f.time) != layout.mirrored ? -1 : 1, y: 1)
+                                    .position(x: f.point.x, y: f.point.y - charH * 0.47)
+                                    .opacity(f.opacity)
                                     .allowsHitTesting(false)
                             }
                             AvatarFigure(avatar: avatar)
@@ -219,12 +246,11 @@ struct PlatformScene: View {
                             // Tall things in front of a walking figure (you or a Bible character)
                             // are drawn over it, unless they're behind another figure there.
                             Canvas { c, _ in
-                                let figures = [feet] + characters.map { ch -> CGPoint in
-                                    let g = ch.position(at: characterTime(ch.id, now: now))
-                                    return layout.point(g.x, g.y)
-                                }
+                                let figures = [feet] + shownCharacters.values.map(\.point)
+                                RenderStats.figures = figures.count
                                 for item in ordered where item.kind.isTall {
                                     let p = layout.point(item.gx, item.gy)
+                                    guard viewport.contains(p) else { continue }
                                     let near = figures.filter { abs(p.x - $0.x) < layout.scale * 1.7 && abs(p.y - $0.y) < layout.scale * 1.4 }
                                     guard near.contains(where: { p.y > $0.y }), !near.contains(where: { p.y <= $0.y }) else { continue }
                                     IslandPainter.drawItem(&c, item, layout: layout)
@@ -237,9 +263,17 @@ struct PlatformScene: View {
                                 }
                                 .allowsHitTesting(false)
                             }
+                            if let flight {
+                                Canvas { c, _ in
+                                    let target = CGPoint(x: collectTarget.midX - globalOrigin.x, y: collectTarget.midY - globalOrigin.y)
+                                    _ = CollectFlightPlan.draw(&c, sprites: flight.sprites, elapsed: now.timeIntervalSince(flight.start),
+                                                               layout: layout, target: target)
+                                }
+                                .allowsHitTesting(false)
+                            }
                             if let speaking, let c = characters.first(where: { $0.id == speaking.id }),
-                               now.timeIntervalSince(speaking.since) < 7 {
-                                let p = c.position(at: speaking.since.timeIntervalSinceReferenceDate)
+                               now.timeIntervalSince(speaking.since) < 7, let time = director.peek("c:\(c.id)") {
+                                let p = c.position(at: time)
                                 let head = layout.point(p.x, p.y)
                                 SpeechBubble(name: c.name, line: c.line, content: CharacterJourneys.journey(id: c.id)) {
                                     self.speaking = nil
@@ -254,8 +288,18 @@ struct PlatformScene: View {
             }
             .frame(width: geo.size.width, height: geo.size.height)
             .contentShape(Rectangle())
-            .onAppear { viewSize = geo.size }
-            .onChange(of: geo.size) { _, size in viewSize = size }
+            .onAppear {
+                viewSize = geo.size
+                globalOrigin = geo.frame(in: .global).origin
+                // A saved zoom from a bigger island can't go past this one's limit.
+                let limit = maxZoom(geo.size)
+                if zoom > limit { zoom = limit; zoomStart = limit; pan = clamp(pan, size: geo.size); panStart = pan }
+            }
+            .onChange(of: geo.size) { _, size in viewSize = size; globalOrigin = geo.frame(in: .global).origin }
+            .onChange(of: geo.frame(in: .global).origin) { _, origin in globalOrigin = origin }
+            .onChange(of: collectFlight?.id) { _, _ in
+                if let collectFlight { startFlight(collectFlight, layout: layout, size: geo.size) }
+            }
             .gesture(interactive ? dragGesture(layout: base, size: geo.size) : nil)
             .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
             .simultaneousGesture(interactive ? twistGesture : nil)
@@ -412,7 +456,7 @@ struct PlatformScene: View {
         if persistsCamera {
             let d = UserDefaults.standard
             if d.object(forKey: Keys.zoom) != nil {
-                zoom = min(IslandLayout.maxZoom, max(IslandLayout.minZoom, d.double(forKey: Keys.zoom)))
+                zoom = min(Self.zoomCeiling, max(IslandLayout.minZoom, d.double(forKey: Keys.zoom)))
                 pan = CGSize(width: d.double(forKey: Keys.panX), height: d.double(forKey: Keys.panY))
                 quarter = d.integer(forKey: Keys.quarter)
                 angle = CGFloat(quarter)
@@ -425,7 +469,7 @@ struct PlatformScene: View {
         // "-islandZoom 3" starts zoomed in, "-islandTurn 1" turned (for checking art).
         let args = ProcessInfo.processInfo.arguments
         if let i = args.firstIndex(of: "-islandZoom"), i + 1 < args.count, let z = Double(args[i + 1]) {
-            zoom = min(IslandLayout.maxZoom, max(IslandLayout.minZoom, z)); pan = .zero
+            zoom = min(Self.zoomCeiling, max(IslandLayout.minZoom, z)); pan = .zero
         }
         if let i = args.firstIndex(of: "-islandTurn"), i + 1 < args.count, let q = Int(args[i + 1]) {
             quarter = q; angle = CGFloat(q)
@@ -462,6 +506,8 @@ struct PlatformScene: View {
                     editing.onDrag(drag.key, Int((g.x - drag.start.x).rounded()), Int((g.y - drag.start.y).rounded()), false)
                     return
                 }
+                // While pinching, the pinch moves the camera (about the fingers).
+                if pinchAnchor != nil { return }
                 if !isPanning, !TapClassifier.isTap(translation: value.translation) { isPanning = true }
                 if isPanning {
                     pan = clamp(CGSize(width: panStart.width + value.translation.width,
@@ -514,7 +560,8 @@ struct PlatformScene: View {
         guard let last = lastGroundTap, Date.now.timeIntervalSince(last.time) < 0.35,
               hypot(point.x - last.at.x, point.y - last.at.y) < 30 else { return }
         lastGroundTap = nil
-        let newZoom: CGFloat = zoom >= IslandLayout.maxZoom * 0.85 ? IslandLayout.minZoom : min(IslandLayout.maxZoom, zoom * 1.8)
+        let limit = maxZoom(size)
+        let newZoom: CGFloat = zoom >= limit * 0.85 ? IslandLayout.minZoom : min(limit, zoom * 1.8)
         // Keep the tapped spot under the finger (zoom scales about the free area's centre).
         let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
                              y: insets.top + (size.height - insets.top - insets.bottom) / 2)
@@ -526,12 +573,40 @@ struct PlatformScene: View {
         saveCamera()
     }
 
-    /// The time a character's walk is drawn at: frozen while they talk.
-    private func characterTime(_ id: String, now: Date) -> TimeInterval {
-        if let speaking, speaking.id == id, now.timeIntervalSince(speaking.since) < 7 {
-            return speaking.since.timeIntervalSinceReferenceDate
+    /// Bible characters for the level of detail (ids "c:<id>"); each stands still while talking.
+    private func characterFigures(layout: IslandLayout, charH: CGFloat) -> [LifeDirector.Figure] {
+        characters.map { c in
+            let a = layout.point(c.home.x - c.radius, c.home.y - c.radius), b = layout.point(c.home.x + c.radius, c.home.y + c.radius)
+            let l = layout.point(c.home.x - c.radius, c.home.y + c.radius), r = layout.point(c.home.x + c.radius, c.home.y - c.radius)
+            let home = CGRect(x: l.x, y: a.y - charH * 1.1, width: r.x - l.x, height: b.y - a.y + charH * 1.2)
+            let talking = speaking.map { $0.id == c.id && Date.now.timeIntervalSince($0.since) < 7 } ?? false
+            return LifeDirector.Figure(id: "c:\(c.id)", home: home,
+                                       position: { t in let g = c.position(at: t); return layout.point(g.x, g.y) }, frozen: talking)
         }
-        return now.timeIntervalSinceReferenceDate
+    }
+
+    /// Collect All: the baskets on screen fly into the button (nearest first); the rest were
+    /// simply collected. With Reduce Motion nothing flies.
+    private func startFlight(_ f: CollectFlight, layout: IslandLayout, size: CGSize) {
+        let view = CGRect(origin: .zero, size: size)
+        let target = CGPoint(x: collectTarget.midX - globalOrigin.x, y: collectTarget.midY - globalOrigin.y)
+        var onScreen: [(grid: CGPoint, kind: ProduceKind, count: Int, distance: CGFloat)] = []
+        for e in f.entries {
+            guard let index = island.placeIndex(e.bookID) else { continue }
+            let item = island.items[index]
+            let s = IslandLife.basketPoint(layout.point(item.gx, item.gy), u: layout.u, time: 0)
+            guard view.contains(s) else { continue }
+            onScreen.append((CGPoint(x: item.gx, y: item.gy), e.kind, e.amount, hypot(s.x - target.x, s.y - target.y)))
+        }
+        let sprites = reduceMotion ? [] : CollectFlightPlan.sprites(onScreen.sorted { $0.distance < $1.distance }.map { ($0.grid, $0.kind, $0.count) })
+        guard !sprites.isEmpty else { onCollectLanded?(); return }
+        let start = Date.now
+        flight = (sprites, start)
+        Task {
+            try? await Task.sleep(for: .seconds(CollectFlightPlan.length(sprites)))
+            if flight?.start == start { flight = nil }
+            onCollectLanded?()
+        }
     }
 
     /// The basket under a tap, if any (generous target).
@@ -557,8 +632,9 @@ struct PlatformScene: View {
     private func character(at location: CGPoint, layout: IslandLayout) -> IslandCharacter? {
         let charH = Self.characterHeight * layout.u
         let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
-        let candidates = characters.map { c -> HitCandidate<String> in
-            let g = c.position(at: characterTime(c.id, now: .now))
+        let candidates = characters.compactMap { c -> HitCandidate<String>? in
+            guard let time = director.peek("c:\(c.id)"), director.opacity("c:\(c.id)") > 0.5 else { return nil }
+            let g = c.position(at: time)
             let feet = layout.point(g.x, g.y)
             return HitCandidate(id: c.id, depth: feet.y, onGround: false,
                                 bounds: CGRect(x: feet.x - charH * 0.37, y: feet.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05))
@@ -596,20 +672,65 @@ struct PlatformScene: View {
         }
     }
 
+    /// The furthest in you can zoom on this island, at this size.
+    private func maxZoom(_ size: CGSize) -> CGFloat { IslandLayout.maxZoom(island: island, size: size, insets: insets) }
+
+    /// Saved zooms are trusted only up to this before the view's size is known.
+    static let zoomCeiling: CGFloat = 80
+
+    /// Pinch to zoom about the point between your fingers. Past either limit it gives a little
+    /// (rubber-band), then eases back when you let go.
     private func zoomGesture(size: CGSize) -> some Gesture {
         MagnifyGesture()
             .onChanged { value in
                 pinched = true
-                let z = min(IslandLayout.maxZoom, max(IslandLayout.minZoom, zoomStart * value.magnification))
-                let ratio = z / zoom
+                if pinchAnchor == nil {
+                    cameraGlide += 1
+                    isPanning = false
+                    pinchAnchor = value.startLocation
+                    pinchFrom = (zoom, pan)
+                }
+                guard let anchor = pinchAnchor, let from = pinchFrom else { return }
+                let z = Self.rubberBand(from.zoom * value.magnification, min: IslandLayout.minZoom, max: maxZoom(size))
                 zoom = z
-                pan = clamp(CGSize(width: pan.width * ratio, height: pan.height * ratio), size: size)
+                pan = clampPan(Self.panKeeping(anchor, from: from, toZoom: z, centre: freeCentre(size)), zoom: z, size: size, slack: 60)
             }
             .onEnded { _ in
-                zoomStart = zoom
-                panStart = pan
+                defer { pinchAnchor = nil; pinchFrom = nil }
+                let limit = maxZoom(size)
+                let settled = min(limit, max(IslandLayout.minZoom, zoom))
+                if settled != zoom, let anchor = pinchAnchor, let from = pinchFrom {
+                    // Ease back inside the limit, still about the fingers.
+                    let target = clampPan(Self.panKeeping(anchor, from: from, toZoom: settled, centre: freeCentre(size)), zoom: settled, size: size)
+                    animateCamera(zoom: settled, pan: settled == IslandLayout.minZoom ? clampPan(target, zoom: settled, size: size) : target,
+                                  duration: 0.35, easeOut: true)
+                } else {
+                    let clamped = clamp(pan, size: size)
+                    if clamped != pan { animateCamera(zoom: zoom, pan: clamped, duration: 0.3, easeOut: true) } else { zoomStart = zoom; panStart = pan }
+                }
                 saveCamera()
             }
+    }
+
+    /// The middle of the free area (zoom scales about it).
+    private func freeCentre(_ size: CGSize) -> CGPoint {
+        CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
+                y: insets.top + (size.height - insets.top - insets.bottom) / 2)
+    }
+
+    /// The pan that keeps `anchor` (a point on screen) over the same spot of the island when
+    /// zooming from `from` to `toZoom`.
+    static func panKeeping(_ anchor: CGPoint, from: (zoom: CGFloat, pan: CGSize), toZoom z: CGFloat, centre: CGPoint) -> CGSize {
+        let k = z / from.zoom
+        return CGSize(width: anchor.x - centre.x - (anchor.x - from.pan.width - centre.x) * k,
+                      height: anchor.y - centre.y - (anchor.y - from.pan.height - centre.y) * k)
+    }
+
+    /// Past a limit, zoom gives only a little (and less the further you push).
+    static func rubberBand(_ z: CGFloat, min lo: CGFloat, max hi: CGFloat) -> CGFloat {
+        if z > hi { return hi * pow(z / hi, 0.25) }
+        if z < lo { return lo * pow(z / lo, 0.25) }
+        return z
     }
 
     /// A two-finger twist of more than 30° turns the island a quarter turn that way.
@@ -625,9 +746,10 @@ struct PlatformScene: View {
     /// Keeps the island on screen however far you zoom.
     private func clamp(_ p: CGSize, size: CGSize) -> CGSize { clampPan(p, zoom: zoom, size: size) }
 
-    private func clampPan(_ p: CGSize, zoom: CGFloat, size: CGSize) -> CGSize {
-        let maxX = (zoom - 1) * size.width / 2 + size.width * 0.25
-        let maxY = (zoom - 1) * size.height / 2 + size.height * 0.25
+    private func clampPan(_ p: CGSize, zoom: CGFloat, size: CGSize, slack: CGFloat = 0) -> CGSize {
+        let z = max(1, zoom)
+        let maxX = (z - 1) * size.width / 2 + size.width * 0.25 + slack
+        let maxY = (z - 1) * size.height / 2 + size.height * 0.25 + slack
         return CGSize(width: min(maxX, max(-maxX, p.width)), height: min(maxY, max(-maxY, p.height)))
     }
 
@@ -869,7 +991,22 @@ struct PlatformScene: View {
         }) where island.items.indices.contains(change.index) {
             var item = island.items[change.index]
             let e = 1 - pow(1 - t, 3)
-            if change.from == 0 {
+            if item.kind == .library {
+                // The new stage rises out of the old: the old fades as the new one grows up.
+                if t < 1 {
+                    var old = item
+                    old.growth = change.from
+                    var g = c
+                    g.opacity = 1 - t
+                    IslandPainter.drawItem(&g, old, layout: layout)
+                }
+                guard t > 0 else { continue }
+                item.growth = change.to
+                var g = c
+                g.translateBy(x: 0, y: t < 1 ? (1 - t) * 24 * layout.u : 0)
+                g.opacity = min(1, t * 2)
+                IslandPainter.drawItem(&g, item, layout: layout, scale: t < 1 ? overshoot(t) : 1)
+            } else if change.from == 0 {
                 // Pops up: rises out of the ground with a little bounce.
                 guard t > 0 else { continue }
                 item.growth = change.to
@@ -882,18 +1019,20 @@ struct PlatformScene: View {
                 IslandPainter.drawItem(&c, item, layout: layout)
             }
             drawDust(&c, at: layout.point(item.gx, item.gy), progress: (elapsed - 0.15) / 0.45, u: layout.u,
-                     sparkles: change.index == step.focus, burst: big ? 2 : 1)
+                     sparkles: change.index == step.focus, burst: step.kind == .library ? 3 : big ? 2 : 1,
+                     spread: item.kind == .library ? item.span / 2 : 1)
         }
     }
 
     /// A puff of dust at the base while something builds in, and sparkles for the focus.
     private static func drawDust(_ c: inout GraphicsContext, at base: CGPoint, progress: Double, u: CGFloat, sparkles: Bool,
-                                 burst: Int = 1) {
+                                 burst: Int = 1, spread: CGFloat = 1) {
         guard progress > 0, progress < 1.6 + Double(burst - 1) * 0.8 else { return }
         let t = CGFloat(min(1, progress / 1.6))
-        for i in 0..<5 {
-            let a = CGFloat(i) / 5 * .pi * 2
-            let r = (6 + 16 * t) * u
+        let puffs = spread > 1 ? 9 : 5
+        for i in 0..<puffs {
+            let a = CGFloat(i) / CGFloat(puffs) * .pi * 2
+            let r = (6 + 16 * t) * u * max(1, spread)
             let p = CGPoint(x: base.x + cos(a) * r, y: base.y + sin(a) * r * 0.45)
             let s = (5 + 4 * t) * u
             c.fill(Path(ellipseIn: CGRect(x: p.x - s, y: p.y - s * 0.6, width: 2 * s, height: 1.2 * s)),

@@ -2,12 +2,14 @@
 import SwiftUI
 import QuartzCore
 
-/// DEBUG: frames per second, measured with a display link (Settings → Developer → FPS overlay).
+/// DEBUG: frames per second, measured with a display link (Settings → Developer → FPS overlay),
+/// and how many things the island drew in the last frame (its "node count": the island is a
+/// `Canvas`, so this counts images, items and figures drawn; see `RenderStats`).
 struct FPSMeter: View {
     @State private var counter = FrameCounter()
 
     var body: some View {
-        Text("\(counter.fps) fps")
+        Text("\(counter.fps) fps · \(counter.draws) draws")
             .font(.caption.monospacedDigit().weight(.bold))
             .foregroundStyle(counter.fps >= 55 ? Color.olive : counter.fps >= 40 ? Color.wheat : Color.terracotta)
             .padding(.horizontal, 8)
@@ -22,6 +24,7 @@ struct FPSMeter: View {
 @MainActor @Observable
 final class FrameCounter {
     private(set) var fps = 0
+    private(set) var draws = 0
     @ObservationIgnored private var link: CADisplayLink?
     @ObservationIgnored private var frames = 0
     @ObservationIgnored private var since = CACurrentMediaTime()
@@ -40,6 +43,7 @@ final class FrameCounter {
         let now = CACurrentMediaTime()
         if now - since >= 0.5 {
             fps = Int((Double(frames) / (now - since)).rounded())
+            draws = RenderStats.total
             frames = 0
             since = now
         }

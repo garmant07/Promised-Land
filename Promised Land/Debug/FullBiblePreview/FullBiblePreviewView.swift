@@ -27,6 +27,14 @@ struct FullBiblePreviewView: View {
     @State private var kept: [String: IslandPlacement] = [:]
     @State private var editSelected: String?
     @State private var dragBase: IslandPlacement?
+    // Collect All (preview baskets; collecting writes only to the preview's store).
+    @State private var baskets: [String: Int]?
+    @State private var flight: CollectFlight?
+    @State private var holding: Int?
+    @State private var bounce = 0
+    @State private var summary: String?
+    @State private var target: CGRect = .zero
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private var replaying: Bool { shownBooks < 66 }
 
@@ -47,13 +55,31 @@ struct FullBiblePreviewView: View {
                 PlatformScene(avatar: Avatar(), island: island, insets: EdgeInsets(top: 110, leading: 8, bottom: panelOpen ? 300 : 90, trailing: 8),
                               selected: $selected, showsControls: true,
                               editing: editing ? IslandEditing(selected: editSelected, onDrag: drag, onSelect: { editSelected = $0 }) : nil,
-                              life: IslandLife.make(island: island, baskets: Dictionary(uniqueKeysWithValues: island.completed.keys.map { ($0, 2) })),
+                              life: IslandLife.make(island: island, baskets: waiting(island)),
+                              collectFlight: flight, collectTarget: target, onCollectLanded: landed,
                               showsFPS: showsFPS) { selected = $0 }
                     .ignoresSafeArea(edges: .bottom)
             }
         }
         .overlay(alignment: .top) { banner }
-        .overlay(alignment: .bottom) { panel(island) }
+        .overlay(alignment: .bottom) {
+            let total = holding ?? waiting(island).values.reduce(0, +)
+            VStack(alignment: .leading, spacing: 10) {
+                if let summary {
+                    CollectSummaryToast(text: summary).padding(.leading, 16).allowsHitTesting(false).transition(.opacity)
+                }
+                if CollectAll.isButtonVisible(total: total, editing: editing, revealing: replaying, sheetOpen: false) {
+                    CollectAllButton(total: total, bounce: bounce) { collectAll(island) }
+                        .disabled(holding != nil)
+                        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { target = $0 }
+                        .padding(.leading, 16)
+                        .transition(.opacity.combined(with: .scale(scale: 0.6)))
+                }
+                panel(island)
+            }
+            .animation(.spring(duration: 0.35), value: total)
+            .animation(.easeInOut(duration: 0.3), value: summary)
+        }
         .task { load() }
     }
 
@@ -133,6 +159,40 @@ struct FullBiblePreviewView: View {
     }
 
     // MARK: Actions
+
+    /// What waits in the preview's baskets (two in every complete Place until collected).
+    private func waiting(_ island: Island) -> [String: Int] {
+        (baskets ?? FullBiblePreviewData.baskets(island)).filter { island.completed[$0.key] != nil }
+    }
+
+    private func collectAll(_ island: Island) {
+        let waiting = waiting(island)
+        guard let container, !waiting.isEmpty else { return }
+        let totals = FullBiblePreviewData.collectAll(waiting, into: container)
+        baskets = [:]
+        holding = totals.values.reduce(0, +)
+        summary = nil
+        if !reduceMotion { SoftSound.whoosh() }
+        pendingSummary = CollectAll.summary(totals)
+        flight = CollectFlight(id: (flight?.id ?? 0) + 1, entries: CollectAll.plan(waiting).entries)
+    }
+
+    @State private var pendingSummary: String?
+
+    private func landed() {
+        bounce += 1
+        flight = nil
+        let text = pendingSummary
+        pendingSummary = nil
+        summary = text
+        if let text { AccessibilityNotification.Announcement("Collected \(text)").post() }
+        Task {
+            try? await Task.sleep(for: .milliseconds(450))
+            holding = nil
+            try? await Task.sleep(for: .seconds(2.2))
+            if summary == text { summary = nil }
+        }
+    }
 
     private func load() {
         guard reads.isEmpty else { return }

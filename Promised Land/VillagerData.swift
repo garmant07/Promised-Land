@@ -68,6 +68,14 @@ struct Villager: Identifiable, Equatable {
 
     var period: Double { legs.reduce(0) { $0 + $1.walk + $1.pause } }
 
+    /// Everywhere the routine goes, as a grid rect (for culling before any pose maths).
+    var bounds: CGRect {
+        let pts = routine.waypoints.map(grid)
+        let xs = pts.map(\.x), ys = pts.map(\.y)
+        guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return .zero }
+        return CGRect(x: x0, y: y0, width: x1 - x0, height: y1 - y0).insetBy(dx: -0.3, dy: -0.3)
+    }
+
     func pose(at time: TimeInterval) -> Pose {
         let legs = legs
         guard legs.count > 1 else {
@@ -192,6 +200,15 @@ struct Traveller: Equatable {
     let cart: Bool
     let phase: Double
     let robe: Int
+    /// What they carry (readers walking to the Library carry a book, drawn in the bread colour).
+    var carrying: ProduceKind = .wool
+
+    /// Everywhere the road goes, as a grid rect.
+    var bounds: CGRect {
+        let xs = road.map(\.x), ys = road.map(\.y)
+        guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return .zero }
+        return CGRect(x: x0, y: y0, width: x1 - x0 + 1, height: y1 - y0 + 1)
+    }
 
     /// Out and back along the road at a stroll, with a rest at each end.
     func position(at time: TimeInterval) -> (point: CGPoint, facingLeft: Bool) {
@@ -212,10 +229,20 @@ struct Traveller: Equatable {
         return (p, CGFloat((b.x - a.x) - (b.y - a.y)) * CGFloat(dir) < 0)
     }
 
-    /// The longest roads get travellers (at most `VillagerData.maxTravellers`).
+    /// The longest roads get travellers (at most `VillagerData.maxTravellers`). Once the Library
+    /// has two storeys, readers also walk the roads to it from the furthest Places.
     static func make(island: Island) -> [Traveller] {
-        island.roads.filter { $0.count >= 4 }.sorted { ($0.count, $0.first?.x ?? 0) > ($1.count, $1.first?.x ?? 0) }
+        var out = island.roads.filter { $0.count >= 4 }.sorted { ($0.count, $0.first?.x ?? 0) > ($1.count, $1.first?.x ?? 0) }
             .prefix(VillagerData.maxTravellers).enumerated()
             .map { Traveller(road: $1, cart: $0 % 3 == 1, phase: Double($0) * 11.3, robe: $0 * 5 + 2) }
+        if island.library != nil, island.libraryGrowth.stage >= .upperFloor {
+            let readers = island.libraryGrowth.stage == .upperFloor ? 2 : 4
+            let routes = island.plots.map { island.routeToLibrary(from: $0.bookID) }.filter { $0.count >= 6 }
+                .sorted { ($0.count, $0.first?.x ?? 0, $0.first?.y ?? 0) > ($1.count, $1.first?.x ?? 0, $1.first?.y ?? 0) }
+            for (i, route) in routes.prefix(readers).enumerated() {
+                out.append(Traveller(road: route, cart: false, phase: Double(i) * 17.9, robe: i * 3 + 1, carrying: .bread))
+            }
+        }
+        return out
     }
 }

@@ -9,6 +9,7 @@ struct LibraryHubView: View {
 
     @ProgressQuery private var progress: GameProgress
     @Query private var journal: [JournalEntry]
+    @Query private var reads: [ChapterRead]
     @State private var path = NavigationPath()
     @State private var showingJournals = false
 
@@ -17,8 +18,10 @@ struct LibraryHubView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
                     header
+                    LibraryStageCard(growth: growth)
                     readingDesk
                     readingRoom
+                    volumesShelf
                     ForEach(BookSection.all) { section in
                         bookShelf(section)
                     }
@@ -114,7 +117,8 @@ struct LibraryHubView: View {
                     HStack(alignment: .bottom, spacing: 6) {
                         ForEach(books) { book in
                             NavigationLink(value: book) {
-                                BookSpine(book: book, read: progress.chaptersRead(book.id), color: section.color)
+                                BookSpine(book: book, read: progress.chaptersRead(book.id), color: section.color,
+                                          notes: notesByBook[book.id] ?? 0)
                             }
                             .buttonStyle(.plain)
                         }
@@ -124,6 +128,44 @@ struct LibraryHubView: View {
                 }
                 Plank()
             }
+        }
+    }
+
+    /// How grown the Library is: the same count the island uses (distinct checked chapters, and
+    /// every journal entry).
+    private var growth: LibraryGrowth {
+        let tally = ReadTally(chapters: reads.map { ($0.bookID, $0.chapterNumber, $0.date) },
+                              unchecked: reads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) })
+        return LibraryGrowth(volumes: tally.distinct.values.reduce(0, +), notes: journal.count)
+    }
+
+    private var notesByBook: [String: Int] {
+        Dictionary(grouping: journal.compactMap(\.bookID), by: { $0 }).mapValues(\.count)
+    }
+
+    /// The Library's own shelves: a thin spine for every chapter read, in its part's colour.
+    private var volumesShelf: some View {
+        let counts = BookSection.all.map { section in
+            (section.color, section.books.reduce(0) { $0 + progress.chaptersRead($1.id) })
+        }
+        let total = counts.reduce(0) { $0 + $1.1 }
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                shelfTitle("Volumes", systemImage: "books.vertical")
+                Spacer()
+                Text("\(total) of \(BibleCatalog.totalChapters)")
+                    .font(.caption.monospacedDigit())
+                    .foregroundStyle(Color.secondaryText)
+            }
+            VStack(spacing: 0) {
+                VolumeSpines(counts: counts)
+                    .frame(height: VolumeSpines.height(for: total))
+                    .padding(.horizontal, 10)
+                    .padding(.top, 4)
+                Plank()
+            }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(total) volumes on the Library's shelves, one for every chapter read")
         }
     }
 
@@ -163,6 +205,8 @@ struct BookSpine: View {
     let book: Book
     let read: Int
     let color: Color
+    /// Journal entries about this book: shown as handwritten notes tucked into its top.
+    var notes = 0
 
     private var fraction: CGFloat { CGFloat(min(read, book.chapterCount)) / CGFloat(max(1, book.chapterCount)) }
     private var height: CGFloat { 118 + CGFloat(min(book.chapterCount, 50)) * 0.9 }
@@ -196,10 +240,15 @@ struct BookSpine: View {
             }
         }
         .frame(width: 40, height: height)
+        .overlay(alignment: .top) {
+            if notes > 0 { TuckedNotes(count: notes).offset(y: -12) }
+        }
+        .padding(.top, notes > 0 ? 12 : 0)
         .shadow(color: Color.primaryBrown.opacity(0.12), radius: 1.5, x: 1, y: 0)
         .contentShape(Rectangle())
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(book.name), \(read) of \(book.chapterCount) chapters read")
+        .accessibilityLabel("\(book.name), \(read) of \(book.chapterCount) chapters read"
+            + (notes > 0 ? ", \(notes) \(notes == 1 ? "note" : "notes") tucked in" : ""))
         .accessibilityHint("Opens the book")
     }
 }
@@ -241,5 +290,102 @@ private struct Plank: View {
 private struct LibraryBackdrop: View {
     var body: some View {
         LinearGradient(colors: [Color(hex: "#F6EAD4"), Color(hex: "#EFDDBE")], startPoint: .top, endPoint: .bottom)
+    }
+}
+
+/// Handwritten notes tucked into the top of a book: one slip per journal entry (up to three).
+private struct TuckedNotes: View {
+    let count: Int
+
+    var body: some View {
+        ZStack(alignment: .top) {
+            ForEach(0..<min(3, count), id: \.self) { i in
+                RoundedRectangle(cornerRadius: 1.5, style: .continuous)
+                    .fill(Color(hex: i % 2 == 0 ? "#FFFBF1" : "#FBF3DF"))
+                    .overlay(alignment: .top) {
+                        VStack(spacing: 2) {
+                            ForEach(0..<3, id: \.self) { _ in
+                                Capsule().fill(Color.primaryBrown.opacity(0.35)).frame(width: 9, height: 1)
+                            }
+                        }
+                        .padding(.top, 3)
+                    }
+                    .frame(width: 14, height: 20)
+                    .rotationEffect(.degrees(Double(i - 1) * 9))
+                    .offset(x: CGFloat(i - 1) * 6)
+                    .shadow(color: Color.primaryBrown.opacity(0.15), radius: 0.8, y: 0.5)
+            }
+            if count > 3 {
+                Text("+\(count - 3)")
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundStyle(Color.primaryBrown)
+                    .offset(x: 14, y: -6)
+            }
+        }
+    }
+}
+
+/// The Library's stage, what it's made of, and how far to the next.
+struct LibraryStageCard: View {
+    let growth: LibraryGrowth
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 10) {
+                Image(systemName: "building.columns.fill")
+                    .font(.title3)
+                    .foregroundStyle(Color.lavender)
+                    .frame(width: 40, height: 40)
+                    .background(Color.cream, in: Circle())
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(growth.stage.name).font(.headline).foregroundStyle(Color.bodyText)
+                    Text("\(growth.volumes) \(growth.volumes == 1 ? "volume" : "volumes") · \(growth.notes) \(growth.notes == 1 ? "note" : "notes")")
+                        .font(.subheadline.monospacedDigit())
+                        .foregroundStyle(Color.secondaryText)
+                }
+            }
+            if let next = growth.stage.next, let left = growth.pointsToNext {
+                ProgressView(value: growth.progressToNext).tint(Color.olive)
+                Text("\(next.name) in \(left) more: each chapter read adds a volume, each journal entry adds two.")
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+            } else {
+                Text("The grand central library: the heart of your island.")
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.card, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// One thin spine per chapter read, rows of them, in each part's colour (drawn in one Canvas).
+private struct VolumeSpines: View {
+    let counts: [(Color, Int)]
+    static let perRow = 60
+
+    static func height(for total: Int) -> CGFloat {
+        let rows = max(1, Int(ceil(Double(total) / Double(perRow))))
+        return CGFloat(min(rows, 20)) * 26
+    }
+
+    var body: some View {
+        Canvas { c, size in
+            let w = size.width / CGFloat(Self.perRow)
+            var n = 0
+            for (colour, count) in counts {
+                for k in 0..<count {
+                    let row = n / Self.perRow, col = n % Self.perRow
+                    guard row < 20 else { return }
+                    let h: CGFloat = 18 + CGFloat((n * 7 + k) % 5)
+                    let rect = CGRect(x: CGFloat(col) * w + 0.5, y: CGFloat(row) * 26 + (24 - h), width: max(1, w - 1), height: h)
+                    c.fill(Path(roundedRect: rect, cornerRadius: 1), with: .color(colour.opacity(0.75 + Double((n % 3)) * 0.08)))
+                    n += 1
+                }
+            }
+        }
     }
 }
