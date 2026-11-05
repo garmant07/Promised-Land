@@ -41,6 +41,21 @@ nonisolated extension Painter {
         case .hillsideCrowd: hillside(d)
         case .pentecost: pentecost(d)
         case .shipwreck: shipwreck(d)
+        case .altarCourt: altarCourt(d)
+        }
+    }
+
+    /// The altar of burnt-offering in the court: a stone altar with a small fire; rereads add
+    /// a laver and the court's curtain posts.
+    private func altarCourt(_ d: Int) {
+        fill([pt(-50, 8), pt(0, 30), pt(50, 8), pt(0, -14)], .stoneShade, alpha: 0.45)
+        box(pt(0, 6), w: 26, h: 16)
+        fill([pt(-6, -12), pt(0, -26), pt(6, -12)], .terracotta)
+        fill([pt(-3, -12), pt(0, -20), pt(3, -12)], .wheat)
+        if d >= 2 { ellipse(pt(26, 10), 9, 4, .water) }
+        for i in 0..<min(6, d + 1) {
+            let x = -44 + CGFloat(i) * 16
+            rounded(CGRect(x: c.x + x * u, y: c.y + (6 - CGFloat(i % 2) * 4 - 22) * u, width: 2 * u, height: 22 * u), radius: u, .trunk)
         }
     }
 

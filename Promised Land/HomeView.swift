@@ -447,9 +447,17 @@ struct HomeView: View {
     }
 
     private func showNewGrowth() {
-        welcomeCharacters()
         let island = island
-        announceUnlocks(island)
+        #if DEBUG
+        // "-quiet" skips welcomes and banners (for screenshots).
+        let quiet = ProcessInfo.processInfo.arguments.contains("-quiet")
+        #else
+        let quiet = false
+        #endif
+        if !quiet {
+            welcomeCharacters()
+            announceUnlocks(island)
+        }
         let now = island.items.count
         let signature = Self.signature(island)
         defer { gardenSeen = now; progressSeen = signature }

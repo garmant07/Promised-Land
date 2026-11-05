@@ -1070,6 +1070,15 @@ enum StoryArt {
             for (i, dx) in [-6.0, -2.0, 2.0, 6.0].enumerated() {
                 flame(pt(dx, -18 - CGFloat(i % 2) * 3), 0.8)
             }
+        case .altarCourt:
+            pen.fill([pen.p(-0.45, -0.45), pen.p(0.45, -0.45), pen.p(0.45, 0.45), pen.p(-0.45, 0.45)], Earthy.path, soft: 2)
+            for i in 0..<5 { // curtain posts along the back of the court
+                let post = pen.p(-0.42 + CGFloat(i) * 0.21, -0.42)
+                pen.rect(-0.6, -10, 1.2, 10, Earthy.woodDark, at: post)
+            }
+            pen.box(0, 0, hx: 0.16, hy: 0.16, h: 8, stone, soft: 0.6)
+            BuildingArt.crest(pen, .flame, at: pt(0, -8))
+            pool(4, 1.8, at: pt(12, 4))
         case .shipwreck:
             pool(18, 7)
             var g = pen.c

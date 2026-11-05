@@ -552,3 +552,49 @@ struct LibraryHubTests {
         #expect(BookSection.all.first { $0.id == "gospels" }?.books.map(\.id) == ["matthew", "mark", "luke", "john"])
     }
 }
+
+@MainActor
+struct SectionLayoutTests {
+    let start = Date(timeIntervalSince1970: 1_780_000_000)
+
+    func island(_ books: [String]) -> Island {
+        Island.build(chapters: books.enumerated().map { ($1, 1, start.addingTimeInterval(Double($0) * 3600)) }, quizzes: [], verses: [])
+    }
+
+    @Test("Each part of the Bible grows its own way: the Law up-left, the Gospels up-right")
+    func directions() {
+        let law = ["genesis", "exodus", "leviticus", "numbers", "deuteronomy"]
+        let gospels = ["matthew", "mark", "luke", "john"]
+        let i = island(law + gospels)
+        func mean(_ ids: [String]) -> CGPoint {
+            let ps = i.plots.filter { ids.contains($0.bookID) }.map(\.centre)
+            return CGPoint(x: ps.map(\.x).reduce(0, +) / CGFloat(ps.count) - 1, y: ps.map(\.y).reduce(0, +) / CGFloat(ps.count) - 1)
+        }
+        let l = mean(law), g = mean(gospels)
+        #expect(l.y - l.x > 0 && g.y - g.x < 0) // opposite Testament halves
+        #expect(l.x < 0) // the Law leans towards -x (up-left on screen)
+        #expect(g.y < 0) // the Gospels lean towards -y (up-right on screen)
+    }
+
+    @Test("All 66 books: no plots overlap and the island is one piece of land")
+    func wholeBible() {
+        let i = island(BibleCatalog.books.map(\.id))
+        let rects = i.plots.map { CGRect(x: $0.x, y: $0.y, width: $0.size, height: $0.size) }
+        for a in rects.indices { for b in rects.indices where a < b { #expect(!rects[a].intersects(rects[b])) } }
+        // Flood fill the land from the starting square.
+        let land = Set(i.tiles)
+        var seen: Set<Island.Tile> = [i.tiles[0]]
+        var queue = [i.tiles[0]]
+        while let t = queue.popLast() {
+            for n in [Island.Tile(x: t.x + 1, y: t.y), Island.Tile(x: t.x - 1, y: t.y), Island.Tile(x: t.x, y: t.y + 1), Island.Tile(x: t.x, y: t.y - 1)]
+            where land.contains(n) && seen.insert(n).inserted { queue.append(n) }
+        }
+        #expect(seen.count == land.count)
+    }
+
+    @Test("Leviticus has its tabernacle story object")
+    func leviticus() {
+        let i = island(["leviticus"])
+        #expect(i.items.contains { $0.kind == .story("altar-offerings") })
+    }
+}

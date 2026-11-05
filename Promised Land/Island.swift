@@ -186,7 +186,8 @@ struct Island: Equatable {
             guard let book = BibleCatalog.book(id: bookID) else { continue }
             let spec = BuildingData.spec(for: bookID)
             let plot = packer.place(bookID, size: IslandPlots.size(chapters: book.chapterCount),
-                                    side: book.testament == .old ? .old : .new, coastal: spec.family == .harbour)
+                                    side: book.testament == .old ? .old : .new, coastal: spec.family == .harbour,
+                                    section: IslandPlots.section(of: order[bookID] ?? 0))
             plots.append(plot)
             let slots = IslandPlots.slots(in: plot)
             let bookReads = reads[bookID] ?? [:]
@@ -661,20 +662,38 @@ struct IslandPlots {
         return s
     }
 
-    /// Candidate centres, nearest first, leaning to one side. On screen, grid +y runs down
-    /// to the left and +x down to the right, so "left" is where y − x is large.
-    private static func candidates(_ side: Side) -> [(dx: Int, dy: Int)] {
-        side == .old ? oldSide : newSide
+    /// The parts of the Bible, by position in the canon: Law, History, Poetry & Wisdom,
+    /// Prophets, Gospels, Acts & Letters, Revelation.
+    static let sections: [Range<Int>] = [0..<5, 5..<17, 17..<22, 22..<39, 39..<43, 43..<65, 65..<66]
+
+    static func section(of canonIndex: Int) -> Int {
+        sections.firstIndex { $0.contains(canonIndex) } ?? 0
     }
-    private static let oldSide = ordered(lean: 1)
-    private static let newSide = ordered(lean: -1)
-    private static func ordered(lean: Double) -> [(dx: Int, dy: Int)] {
+
+    /// Each part of the Bible grows in its own direction (grid vectors). On screen, grid +y
+    /// runs down to the left and +x down to the right, so the Old Testament (left) has y − x > 0.
+    /// Law up-left, History left, Wisdom down-left, Prophets further down-left; Gospels
+    /// up-right, Acts & Letters right, Revelation down-right.
+    private static let directions: [(Double, Double)] = [(-1, 0), (-0.7, 0.7), (0, 1), (-0.45, 0.9),
+                                                         (0, -1), (0.7, -0.7), (1, 0)]
+
+    /// Candidate centres for a section: near the start and towards the section's direction.
+    private static func candidates(_ section: Int) -> [(dx: Int, dy: Int)] { orderings[min(section, orderings.count - 1)] }
+    private static let orderings: [[(dx: Int, dy: Int)]] = directions.map { ordered(toward: $0) }
+    private static func ordered(toward dir: (Double, Double)) -> [(dx: Int, dy: Int)] {
         let r = 46
+        let len = hypot(dir.0, dir.1)
+        let (ux, uy) = (dir.0 / len, dir.1 / len)
+        let side = uy - ux // which Testament half this section belongs to
         var all: [(dx: Int, dy: Int, cost: Double)] = []
         for dy in -r...r {
             for dx in -r...r {
-                let across = Double(dy - dx) * lean // > 0 on its own side
-                let cost = hypot(Double(dx), Double(dy)) + (across < 0 ? -across * 1.4 + 3 : 0)
+                let d = hypot(Double(dx), Double(dy))
+                let cosine = d == 0 ? 1 : (Double(dx) * ux + Double(dy) * uy) / d
+                // Wrong Testament half is strongly avoided; within it, stay near the direction.
+                let across = Double(dy - dx) * (side >= 0 ? 1 : -1)
+                let wrongSide = across < 0 ? -across * 1.4 + 3 : 0
+                let cost = d * (1 + 0.9 * (1 - cosine)) + wrongSide
                 all.append((dx, dy, cost))
             }
         }
@@ -689,12 +708,12 @@ struct IslandPlots {
         }
     }
 
-    mutating func place(_ bookID: String, size: Int, side: Side = .new, coastal: Bool = false) -> Island.Plot {
+    mutating func place(_ bookID: String, size: Int, side: Side = .new, coastal: Bool = false, section: Int? = nil) -> Island.Plot {
         if let p = placements[bookID] { // already reserved
             regions.append((p.x, p.y, size))
             return Island.Plot(bookID: bookID, x: p.x, y: p.y, size: size, rotation: p.rotation)
         }
-        for c in Self.candidates(side) {
+        for c in Self.candidates(section ?? (side == .old ? 1 : 5)) {
             // Centre the plot on the candidate offset from the starting square's middle.
             let x = 1 + c.dx - size / 2, y = 1 + c.dy - size / 2
             let bay = coastal ? Self.bay(x: x, y: y, size: size, side: side) : []

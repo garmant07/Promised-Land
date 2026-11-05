@@ -11,7 +11,7 @@ import CoreGraphics
 nonisolated enum ChapterObjectKind: String, Sendable {
     case edenTrees, ark, ladder, tower, sinai, bush, plague, redSea, fallenWalls
     case valley, stronghold, pasture, shipAndFish, lionsDen, boats, weddingHouse
-    case vineyard, hillsideCrowd, pentecost, shipwreck
+    case vineyard, hillsideCrowd, pentecost, shipwreck, altarCourt
 }
 
 struct ChapterLandmark: Identifiable, Hashable, ReviewableContent {
@@ -58,6 +58,12 @@ enum ChapterLandmarks {
 
     static let all: [ChapterLandmark] = [
         // MARK: Genesis (Eden & Beginnings)
+        // MARK: Leviticus (the Tabernacle)
+        ChapterLandmark(id: "altar-offerings", bookID: "leviticus", chapters: 1...7, name: "Altar of Burnt-Offering",
+                        summary: "The LORD calls to Moses out of the tent of meeting and gives the laws of the offerings brought to the altar.",
+                        kind: .altarCourt, x: 66, y: 71, size: 2,
+                        reference: "Leviticus 1:1–9", source: "Leviticus 1–7 (ASV)",
+                        note: "Placed beside the Tabernacle landmark on the world map; check it doesn't overlap."),
         ChapterLandmark(id: "eden-garden", bookID: "genesis", chapters: 1...2, name: "Garden of Eden",
                         summary: "God plants a garden eastward in Eden, with a river to water it.",
                         kind: .edenTrees, x: 94, y: 12, size: 3,
