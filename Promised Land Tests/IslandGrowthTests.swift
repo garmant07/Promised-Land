@@ -598,3 +598,17 @@ struct SectionLayoutTests {
         #expect(i.items.contains { $0.kind == .story("altar-offerings") })
     }
 }
+
+@MainActor
+struct RevealOrderTests {
+    @Test("Reading adds new things at the end, even with the Library on the island")
+    func appendOnly() {
+        let start = Date(timeIntervalSince1970: 1_780_000_000)
+        let before = Island.build(chapters: [("ruth", 1, start)], quizzes: [], verses: [], features: [.library])
+        let after = Island.build(chapters: [("ruth", 1, start), ("ruth", 2, start.addingTimeInterval(86_400))],
+                                 quizzes: [], verses: [], features: [.library])
+        #expect(after.items.count == before.items.count + 1)
+        #expect(after.items.last?.source == .chapter(book: "ruth", chapter: 2))
+        #expect(after.items.first?.kind == .library)
+    }
+}

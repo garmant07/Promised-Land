@@ -236,12 +236,12 @@ struct Island: Equatable {
             }
         }
         var items = dated.sorted { ($0.date, $0.rank, $0.item.gx + $0.item.gy) < ($1.date, $1.rank, $1.item.gx + $1.item.gy) }.map(\.item)
-        // Feature buildings take their reserved spots near the start (added last, so they build in).
         var library: Plot?
         if features.contains(.library) {
             let plot = packer.libraryPlot
             library = plot
-            items.append(IslandPlots.item(for: .library, at: plot))
+            // First in the list, so things you add later are always at the end (they build in).
+            items.insert(IslandPlots.item(for: .library, at: plot), at: 0)
         }
         return Island(tiles: packer.tiles(features: features), items: items, plots: plots, water: packer.water,
                       library: library, conflicts: packer.conflicts)

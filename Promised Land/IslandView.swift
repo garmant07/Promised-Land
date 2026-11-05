@@ -59,6 +59,12 @@ struct PlatformScene: View {
     @State private var walkToken = 0
     /// Bumped to start (or cancel) a camera glide.
     @State private var cameraGlide = 0
+    /// The view's size (for camera moves started outside the geometry reader).
+    @State private var viewSize: CGSize = .zero
+    /// The last tap on empty ground, for double-tap to zoom.
+    @State private var lastGroundTap: (time: Date, at: CGPoint)?
+    /// The item the build moment focuses on (it gets dust and sparkles).
+    @State private var buildFocus: Int?
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -135,7 +141,12 @@ struct PlatformScene: View {
                                     for (rank, item) in island.items.enumerated().dropFirst(staticCount) {
                                         let progress = (popElapsed - Double(rank - staticCount) * popStep) / 0.45
                                         guard progress > 0 else { continue }
-                                        IslandPainter.drawItem(&c, item, layout: layout, scale: progress < 1 ? Self.overshoot(progress) : 1)
+                                        // Rises up out of the ground as it grows, with a puff of dust.
+                                        var g = c
+                                        g.translateBy(x: 0, y: progress < 1 ? (1 - progress) * 14 * layout.u : 0)
+                                        IslandPainter.drawItem(&g, item, layout: layout, scale: progress < 1 ? Self.overshoot(progress) : 1)
+                                        Self.drawDust(&c, at: layout.point(item.gx, item.gy), progress: progress, u: layout.u,
+                                                      sparkles: rank == buildFocus)
                                     }
                                 }
                                 if bouncing {
@@ -192,6 +203,8 @@ struct PlatformScene: View {
             }
             .frame(width: geo.size.width, height: geo.size.height)
             .contentShape(Rectangle())
+            .onAppear { viewSize = geo.size }
+            .onChange(of: geo.size) { _, size in viewSize = size }
             .gesture(interactive ? dragGesture(layout: base, size: geo.size) : nil)
             .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
             .simultaneousGesture(interactive ? twistGesture : nil)
@@ -289,7 +302,7 @@ struct PlatformScene: View {
     /// Glides the camera to a new zoom and pan. Done frame by frame, because the island's
     /// drawing has the camera built in (SwiftUI can't interpolate a Canvas on its own).
     /// A new touch or camera move cancels a glide in progress.
-    private func animateCamera(zoom toZoom: CGFloat, pan toPan: CGSize, duration: Double) {
+    private func animateCamera(zoom toZoom: CGFloat, pan toPan: CGSize, duration: Double, easeOut: Bool = false) {
         cameraGlide += 1
         let token = cameraGlide
         let fromZoom = zoom, fromPan = pan
@@ -300,7 +313,7 @@ struct PlatformScene: View {
             let start = Date.now
             while cameraGlide == token {
                 let t = min(1, Date.now.timeIntervalSince(start) / duration)
-                let e = t * t * (3 - 2 * t)
+                let e = easeOut ? 1 - pow(1 - t, 3) : t * t * (3 - 2 * t)
                 zoom = fromZoom + (toZoom - fromZoom) * e
                 pan = CGSize(width: fromPan.width + (toPan.width - fromPan.width) * e,
                              height: fromPan.height + (toPan.height - fromPan.height) * e)
@@ -390,7 +403,15 @@ struct PlatformScene: View {
                 }
                 if isPanning {
                     isPanning = false
-                    panStart = pan
+                    // Keep gliding a little in the direction of the flick.
+                    let carry = CGSize(width: (value.predictedEndTranslation.width - value.translation.width) * 0.6,
+                                       height: (value.predictedEndTranslation.height - value.translation.height) * 0.6)
+                    let target = clamp(CGSize(width: pan.width + carry.width, height: pan.height + carry.height), size: size)
+                    if hypot(carry.width, carry.height) > 8 {
+                        animateCamera(zoom: zoom, pan: target, duration: 0.55, easeOut: true)
+                    } else {
+                        panStart = pan
+                    }
                     saveCamera()
                 } else if !pinched, !longPressed, TapClassifier.isTap(translation: value.translation) {
                     if let editing {
@@ -399,10 +420,30 @@ struct PlatformScene: View {
                         speaking = (c.id, .now)
                     } else {
                         speaking = nil
-                        onTap?(IslandHitTester.hit(point: value.location, layout: layout, pan: pan, items: island.items))
+                        let hit = IslandHitTester.hit(point: value.location, layout: layout, pan: pan, items: island.items)
+                        onTap?(hit)
+                        if hit == nil { groundTapped(at: value.location, size: size) }
                     }
                 }
             }
+    }
+
+    /// Double-tap empty ground to zoom in there (or back out when already close in).
+    private func groundTapped(at point: CGPoint, size: CGSize) {
+        defer { lastGroundTap = (.now, point) }
+        guard let last = lastGroundTap, Date.now.timeIntervalSince(last.time) < 0.35,
+              hypot(point.x - last.at.x, point.y - last.at.y) < 30 else { return }
+        lastGroundTap = nil
+        let newZoom: CGFloat = zoom >= IslandLayout.maxZoom * 0.85 ? IslandLayout.minZoom : min(IslandLayout.maxZoom, zoom * 1.8)
+        // Keep the tapped spot under the finger (zoom scales about the free area's centre).
+        let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
+                             y: insets.top + (size.height - insets.top - insets.bottom) / 2)
+        let k = newZoom / zoom
+        let newPan = CGSize(width: point.x - centre.x - (point.x - pan.width - centre.x) * k,
+                            height: point.y - centre.y - (point.y - pan.height - centre.y) * k)
+        let target = newZoom == IslandLayout.minZoom ? .zero : clampPan(newPan, zoom: newZoom, size: size)
+        animateCamera(zoom: newZoom, pan: target, duration: 0.35)
+        saveCamera()
     }
 
     /// The time a character's walk is drawn at: frozen while they talk.
@@ -483,7 +524,9 @@ struct PlatformScene: View {
     }
 
     /// Keeps the island on screen however far you zoom.
-    private func clamp(_ p: CGSize, size: CGSize) -> CGSize {
+    private func clamp(_ p: CGSize, size: CGSize) -> CGSize { clampPan(p, zoom: zoom, size: size) }
+
+    private func clampPan(_ p: CGSize, zoom: CGFloat, size: CGSize) -> CGSize {
         let maxX = (zoom - 1) * size.width / 2 + size.width * 0.25
         let maxY = (zoom - 1) * size.height / 2 + size.height * 0.25
         return CGSize(width: min(maxX, max(-maxX, p.width)), height: min(maxY, max(-maxY, p.height)))
@@ -641,15 +684,83 @@ struct PlatformScene: View {
         }
     }
 
+    /// New things build in. On your own island this is a little moment: the camera eases to
+    /// the most important new thing, it rises with dust and sparkles, your character walks over
+    /// to look, and the camera eases back.
     private func startPop() {
         let count = island.items.count - revealFrom
         guard count > 0, !reduceMotion else { return }
+        let newOnes = Array(island.items.indices.dropFirst(revealFrom))
+        let focus = newOnes.max { Self.importance(island.items[$0]) < Self.importance(island.items[$1]) }
+        guard persistsCamera, interactive, let focus, viewSize != .zero, visit == nil else {
+            pop(count: count)
+            return
+        }
+        buildFocus = focus
+        let item = island.items[focus]
+        let before = (zoom: zoomStart, pan: panStart)
+        let newZoom = max(zoom, 2.4)
+        let target = IslandLayout(island: island, size: viewSize, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
+        let p = target.point(item.gx, item.gy)
+        let centre = CGPoint(x: insets.leading + (viewSize.width - insets.leading - insets.trailing) / 2,
+                             y: insets.top + (viewSize.height - insets.top - insets.bottom) * 0.55)
+        animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - p.x, height: centre.y - p.y), duration: 0.6)
+        Task {
+            try? await Task.sleep(for: .milliseconds(600))
+            pop(count: count)
+            let spot = CGPoint(x: item.gx + 0.55, y: item.gy + 0.45)
+            await walk(to: spot, speed: 1.6, maxDuration: 2)
+            try? await Task.sleep(for: .milliseconds(700))
+            if visit == nil { animateCamera(zoom: before.zoom, pan: before.pan, duration: 0.7) }
+            buildFocus = nil
+        }
+    }
+
+    private func pop(count: Int) {
         popStart = .now
         popping = true
-        let duration = min(0.1, 2.0 / Double(count)) * Double(count) + 0.6
+        let duration = min(0.1, 2.0 / Double(count)) * Double(count) + 0.9
         Task {
             try? await Task.sleep(for: .seconds(duration))
             popping = false
+        }
+    }
+
+    /// What deserves the camera most when several things build at once.
+    private static func importance(_ item: Island.Item) -> Int {
+        switch item.kind {
+        case .building: item.progress >= item.total ? 5 : 2
+        case .library: 4
+        case .story: 3
+        case .reward: 3
+        case .artifact: 1
+        }
+    }
+
+    /// A puff of dust at the base while something builds in, and sparkles for the focus.
+    private static func drawDust(_ c: inout GraphicsContext, at base: CGPoint, progress: Double, u: CGFloat, sparkles: Bool) {
+        guard progress < 1.6 else { return }
+        let t = CGFloat(min(1, progress / 1.6))
+        for i in 0..<5 {
+            let a = CGFloat(i) / 5 * .pi * 2
+            let r = (6 + 16 * t) * u
+            let p = CGPoint(x: base.x + cos(a) * r, y: base.y + sin(a) * r * 0.45)
+            let s = (5 + 4 * t) * u
+            c.fill(Path(ellipseIn: CGRect(x: p.x - s, y: p.y - s * 0.6, width: 2 * s, height: 1.2 * s)),
+                   with: .color(Earthy.stone.opacity(Double(0.7 * (1 - t)))))
+        }
+        guard sparkles else { return }
+        for i in 0..<6 {
+            let x = base.x + CGFloat(i - 3) * 6 * u + sin(CGFloat(i) * 1.7) * 4 * u
+            let y = base.y - (18 + CGFloat(i % 3) * 8 + 30 * t) * u
+            let s = (2.4 + CGFloat(i % 2)) * u
+            let star = Path { p in
+                p.move(to: CGPoint(x: x, y: y - s)); p.addLine(to: CGPoint(x: x + s * 0.3, y: y - s * 0.3))
+                p.addLine(to: CGPoint(x: x + s, y: y)); p.addLine(to: CGPoint(x: x + s * 0.3, y: y + s * 0.3))
+                p.addLine(to: CGPoint(x: x, y: y + s)); p.addLine(to: CGPoint(x: x - s * 0.3, y: y + s * 0.3))
+                p.addLine(to: CGPoint(x: x - s, y: y)); p.addLine(to: CGPoint(x: x - s * 0.3, y: y - s * 0.3)); p.closeSubpath()
+            }
+            c.fill(star, with: .color(Earthy.gold.opacity(Double(1 - t))))
         }
     }
 }
