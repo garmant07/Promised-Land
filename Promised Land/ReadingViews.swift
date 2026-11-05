@@ -264,7 +264,17 @@ struct BookView: View {
                     Circle().fill(Color.terracotta).frame(width: 7, height: 7).padding(6)
                 }
             }
-            .accessibilityLabel("Chapter \(number), \(isRead ? "read" : "not read")\(hasText ? ", text available" : "")")
+            .overlay(alignment: .bottom) {
+                // One dot per read, up to five.
+                let reads = min(5, progress.readCount(book.id, chapter: number))
+                if reads > 0 {
+                    HStack(spacing: 3) {
+                        ForEach(0..<reads, id: \.self) { _ in Circle().fill(Color.onPrimary.opacity(0.85)).frame(width: 4, height: 4) }
+                    }
+                    .padding(.bottom, 5)
+                }
+            }
+            .accessibilityLabel("Chapter \(number), \(isRead ? "read \(progress.readCount(book.id, chapter: number)) \(progress.readCount(book.id, chapter: number) == 1 ? "time" : "times")" : "not read")\(hasText ? ", text available" : "")")
     }
 }
 

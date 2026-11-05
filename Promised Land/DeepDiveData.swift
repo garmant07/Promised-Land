@@ -28,6 +28,13 @@ enum DeepDiveData {
     // original-language notes are deliberately left out until reviewed sources are chosen.
     // TODO(review): add original-language word studies with cited sources.
     static let all: [DeepDive] = [
+        DeepDive(bookID: "john", chapter: 15, verse: 13,
+                 context: "Part of Jesus' words to his disciples on the night before the crucifixion (John 13–17), straight after \"love one another, even as I have loved you\" (15:12).",
+                 genre: "Gospel (discourse)",
+                 keyWords: ["greater love", "lay down his life", "friends"],
+                 themes: ["Love", "Friendship", "Self-giving"],
+                 crossReferences: ["John 10:11", "Romans 5:8", "1 John 3:16"],
+                 reference: "John 15:13", source: "John 15 (ASV)"),
         DeepDive(bookID: "genesis", chapter: 1, verse: 1,
                  context: "The first verse of the Bible, opening the account of creation (Genesis 1:1–2:3).",
                  genre: "Narrative, at the start of the Pentateuch",

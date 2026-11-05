@@ -113,6 +113,11 @@ enum SampleText {
                 Verse(number: 16, text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life."),
                 Verse(number: 17, text: "For God sent not the Son into the world to judge the world; but that the world should be saved through him."),
             ]),
+            Chapter(number: 15, verses: [
+                Verse(number: 12, text: "This is my commandment, that ye love one another, even as I have loved you."),
+                Verse(number: 13, text: "Greater love hath no man than this, that a man lay down his life for his friends."),
+                Verse(number: 14, text: "Ye are my friends, if ye do the things which I command you."),
+            ]),
         ],
     ]
 }

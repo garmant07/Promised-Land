@@ -68,7 +68,7 @@ struct SettingsView: View {
                     section("About") {
                         Text("Scripture is from the American Standard Version (1901), which is in the public domain. This early version bundles a small sample; the full text will follow.")
                             .foregroundStyle(Color.secondaryText)
-                        Text("Everything stays on this device. No account, no internet needed. \"Reset all progress\" clears reading only; journal entries are kept.")
+                        Text("Everything stays on this device. No account, no internet needed. Your journal is private: it never leaves your phone. \"Reset all progress\" clears reading only; journal entries are kept.")
                             .foregroundStyle(Color.secondaryText)
                     }
                 }

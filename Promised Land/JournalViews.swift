@@ -95,7 +95,7 @@ struct LibraryShelfView: View {
             return n > 0 ? JournalVolume(id: book.id, title: book.name, count: n) : nil
         }
         let free = entries.filter { $0.bookID == nil }.count
-        if free > 0 { result.append(JournalVolume(id: "free", title: "Free entries", count: free)) }
+        if free > 0 { result.append(JournalVolume(id: "free", title: "My notes", count: free)) }
         return result
     }
 
