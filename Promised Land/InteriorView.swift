@@ -35,15 +35,9 @@ struct InteriorView: View {
 
     private var book: Book? { BibleCatalog.book(id: bookID) }
     private var landmark: Landmark? { WorldData.landmark(bookID: bookID) }
-    private var spec: BuildingSpec { BuildingData.spec(for: bookID) }
 
     /// Reads per chapter.
     private var counts: [Int: Int] { Dictionary(reads.map { ($0.chapterNumber, 1) }, uniquingKeysWith: +) }
-    /// Whole-book reads (0 until finished).
-    private var fullReads: Int {
-        guard let book, counts.count >= book.chapterCount else { return 0 }
-        return (1...book.chapterCount).map { counts[$0] ?? 0 }.min() ?? 0
-    }
 
     var body: some View {
         NavigationStack {
@@ -106,7 +100,7 @@ struct InteriorView: View {
 
     private var header: some View {
         VStack(spacing: 10) {
-            InteriorHeaderArt(spec: spec, progress: counts.count, total: book?.chapterCount ?? 1, fullReads: fullReads)
+            InteriorHeaderArt(bookID: bookID, distinct: counts.count, totalReads: totalChecked)
                 .frame(height: 230)
                 .frame(maxWidth: .infinity)
                 .background(
@@ -134,12 +128,12 @@ struct InteriorView: View {
     }
 
     private func statusText(_ book: Book) -> String {
-        var item = Island.Item(kind: .building(bookID), gx: 0, gy: 0, seed: 0)
-        item.progress = counts.count
-        item.total = book.chapterCount
-        item.level = fullReads
-        return InsightSubject.buildingText(item, book: book)
+        InsightSubject.placeText(bookID: bookID, read: counts.count, total: book.chapterCount,
+                                 richness: PlaceGrowth.richness(totalReads: totalChecked, chapters: book.chapterCount))
     }
+
+    /// Checked reads of this book (the ones that build).
+    private var totalChecked: Int { reads.filter(\.checked).count }
 
     // MARK: Chapters
 
@@ -167,7 +161,7 @@ struct InteriorView: View {
                         .accessibilityLabel(n == 0 ? "Read chapter \(chapter)" : "Chapter \(chapter), read \(n) \(n == 1 ? "time" : "times"). Read again")
                     }
                 }
-                Text("Each chapter places something on the plot; rereads grow it. Tap a chapter to read it.")
+                Text("Every chapter adds something to this Place; rereads make it richer. Tap a chapter to read it.")
                     .font(.footnote)
                     .foregroundStyle(Color.secondaryText)
             }
@@ -229,7 +223,7 @@ struct InteriorView: View {
         let name = landmark?.name ?? book?.name ?? bookID
         let subtitle = book.map { counts.count >= $0.chapterCount ? "Built by reading \($0.name)" : "\(counts.count) of \($0.chapterCount) chapters of \($0.name)" } ?? ""
         let image = ShareRender.card(title: name, subtitle: subtitle,
-                                     artwork: InteriorHeaderArt(spec: spec, progress: counts.count, total: book?.chapterCount ?? 1, fullReads: fullReads)
+                                     artwork: InteriorHeaderArt(bookID: bookID, distinct: counts.count, totalReads: totalChecked)
                                         .background(Earthy.groundLight),
                                      avatar: avatar, streak: progress.streak, chaptersThisYear: progress.chaptersReadThisYear)
         if let image { sharing = ShareImage(image: image) }
@@ -237,37 +231,18 @@ struct InteriorView: View {
 
 }
 
-/// The building, drawn large on its plot of sand, for the top of its inside page.
+/// The Place, drawn large on its own patch of land, for the top of its inside page.
 struct InteriorHeaderArt: View {
-    let spec: BuildingSpec
-    let progress: Int
-    let total: Int
-    let fullReads: Int
+    let bookID: String
+    let distinct: Int
+    let totalReads: Int
 
     var body: some View {
         // Hand-made interior art (`int_<bookID>`) replaces the drawing when present.
-        if let art = ArtAssets.image("int_\(spec.bookID)") {
+        if let art = ArtAssets.image("int_\(bookID)") {
             Image(decorative: art.image, scale: 1).resizable().scaledToFit()
         } else {
-            drawing
-        }
-    }
-
-    private var drawing: some View {
-        Canvas { c, size in
-            let u = min(size.width / 120, size.height / 82)
-            let ground = CGPoint(x: size.width / 2, y: size.height * 0.68)
-            var g = c
-            g.translateBy(x: ground.x, y: ground.y)
-            // A plot of sand with soft earth sides.
-            let pen = IsoPen(c: g, u: u)
-            let r: CGFloat = 1.05
-            let corners = [pen.p(-r, -r), pen.p(r, -r), pen.p(r, r), pen.p(-r, r)]
-            let down = 7 * u
-            pen.fill([corners[3], corners[2], CGPoint(x: corners[2].x, y: corners[2].y + down), CGPoint(x: corners[3].x, y: corners[3].y + down)], Earthy.strataLeftTop, soft: 2)
-            pen.fill([corners[2], corners[1], CGPoint(x: corners[1].x, y: corners[1].y + down), CGPoint(x: corners[2].x, y: corners[2].y + down)], Earthy.strataRightTop, soft: 2)
-            pen.fill(corners, Earthy.ground, soft: 2)
-            BuildingArt.draw(pen, spec: spec, progress: progress, total: total, extraFloors: max(0, fullReads - 1), seed: Island.hash(spec.bookID))
+            IslandPicture(island: .single(bookID: bookID, distinct: max(1, distinct), totalReads: totalReads))
         }
     }
 }

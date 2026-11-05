@@ -48,3 +48,10 @@ enum ArtAssets {
         return art
     }
 }
+
+extension ArtAssets {
+    /// A Place piece: `place_<bookID>_<piece>_<level>` (level = richness 1–5).
+    static func place(_ bookID: String, piece: String, level: Int, rotation: Int = 0) -> Art? {
+        image("place_\(bookID)_\(piece)_\(level)", rotation: rotation)
+    }
+}

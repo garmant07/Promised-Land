@@ -16,6 +16,7 @@ struct ContentView: View {
             DebugSeed.apply(to: context)
             #endif
             AvatarProfile.ensure(in: context)
+            IslandMigration.run(context)
         }
     }
 }

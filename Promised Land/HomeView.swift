@@ -145,8 +145,9 @@ struct HomeView: View {
                           visit: visitIndex,
                           onArrived: { index in
                               guard island.items.indices.contains(index) else { return }
-                              switch island.items[index].kind {
-                              case .building(let id): interior = InteriorRef(id: id)
+                              let item = island.items[index]
+                              switch item.kind {
+                              case .piece, .flourish: if let id = item.source.bookID { interior = InteriorRef(id: id) }
                               case .library: interior = InteriorRef(id: InteriorRef.library)
                               case .throne: interior = InteriorRef(id: InteriorRef.throne)
                               default: break
@@ -309,8 +310,8 @@ struct HomeView: View {
         if case .feature = item.source {
             // Walk to the Library's (or throne room's) door and step inside, like any building.
             visitIndex = index
-        } else if case .building = item.kind {
-            // Step inside: walk to the door, then open the building.
+        } else if case .place = item.source {
+            // Step inside: walk to the Place, then open its page.
             visitIndex = index
         } else if let subject = InsightSubject.island(item) {
             activeSheet = .insight(subject)
@@ -410,7 +411,7 @@ struct HomeView: View {
     /// Each building's chapters, as "book:count,…".
     private static func signature(_ island: Island) -> String {
         island.items.compactMap { item -> String? in
-            guard case .book(let id) = item.source else { return nil }
+            guard case .place(let id, 0) = item.source else { return nil }
             return "\(id):\(item.progress)"
         }.joined(separator: ",")
     }
@@ -499,10 +500,10 @@ struct HomeView: View {
         var chaptersAdded = 0
         var grownName: String?
         for (index, item) in island.items.enumerated() {
-            guard case .book(let id) = item.source, let old = before[id], item.progress > old else { continue }
+            guard case .place(let id, 0) = item.source, let old = before[id], item.progress > old else { continue }
             grownNow.insert(index)
             chaptersAdded += item.progress - old
-            grownName = WorldData.landmark(bookID: id)?.name
+            grownName = PlaceData.spec(for: id).name
         }
         let added = max(0, now - gardenSeen)
         if added > 0 {
@@ -556,17 +557,18 @@ struct HomeView: View {
                 debugReflection = ChapterRef(bookID: book.id, chapter: ch)
             }
         }
-        // "-tapKind chapter|building|banner|lantern|story|library" taps the first island item of that kind.
+        // "-tapKind place|tree|banner|lantern|library" taps the first island item of that kind.
         if let i = args.firstIndex(of: "-tapKind"), i + 1 < args.count {
             let wanted = args[i + 1]
             let index = island.items.firstIndex { item in
                 switch item.source {
-                case .chapter: wanted == "chapter"
-                case .book: wanted == "building"
+                case .place: wanted == "place"
+                case .flourish: wanted == "flourish"
+                case .forest: wanted == "tree"
                 case .quiz: wanted == "banner"
                 case .verse: wanted == "lantern"
-                case .story: wanted == "story"
                 case .feature: wanted == "library"
+                case .extra: wanted == "extra"
                 }
             }
             open(index, in: island)

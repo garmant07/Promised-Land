@@ -482,7 +482,7 @@ struct PlatformScene: View {
             // The plot under the finger, or the one whose building was touched.
             let hitKey = IslandHitTester.hit(point: location, layout: layout, pan: pan, items: island.items)
                 .flatMap { island.items[$0].plotKey }
-            let plots = island.plots + (island.library.map { [$0] } ?? [])
+            let plots = island.allPlots
             if let key = hitKey ?? plots.first(where: { CGRect(x: $0.x, y: $0.y, width: $0.size, height: $0.size).contains(g) })?.bookID {
                 draggingPlot = (key, g)
             }
@@ -567,7 +567,7 @@ struct PlatformScene: View {
             }
         }
         c.stroke(grid, with: .color(Color.primaryBrown.opacity(0.12)), lineWidth: 0.6)
-        for plot in island.plots + (island.library.map { [$0] } ?? []) {
+        for plot in island.allPlots {
             let x0 = CGFloat(plot.x), y0 = CGFloat(plot.y), x1 = x0 + CGFloat(plot.size), y1 = y0 + CGFloat(plot.size)
             let outline = Path { $0.addLines([layout.point(x0, y0), layout.point(x1, y0), layout.point(x1, y1), layout.point(x0, y1)]); $0.closeSubpath() }
             if island.conflicts.contains(plot.bookID) {
@@ -731,12 +731,11 @@ struct PlatformScene: View {
     /// What deserves the camera most when several things build at once.
     private static func importance(_ item: Island.Item) -> Int {
         switch item.kind {
-        case .building: item.progress >= item.total ? 5 : 2
+        case .piece: item.progress >= item.total ? 4 : 2
         case .library: 4
         case .throne: 5
-        case .story: 3
         case .reward: 3
-        case .artifact: 1
+        case .tree, .flourish, .extra: 1
         }
     }
 

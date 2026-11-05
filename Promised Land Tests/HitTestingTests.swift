@@ -13,14 +13,14 @@ enum Fixture {
     static let insets = EdgeInsets(top: 70, leading: 8, bottom: 118, trailing: 8)
 
     static func item(_ kind: Island.Kind, _ gx: CGFloat, _ gy: CGFloat, chapter: Int) -> Island.Item {
-        Island.Item(kind: kind, gx: gx, gy: gy, seed: chapter, source: .chapter(book: "john", chapter: chapter),
+        Island.Item(kind: kind, gx: gx, gy: gy, seed: chapter, source: .forest(book: "john", chapter: chapter),
                     footprint: CGRect(x: gx - 0.18, y: gy - 0.18, width: 0.36, height: 0.36))
     }
 
-    static let behindFlower = item(.artifact(.flowers), 12.28, 12.28, chapter: 1) // index 0
-    static let tree = item(.artifact(.olive), 12.72, 12.72, chapter: 2)          // index 1 (in front of the flowers)
-    static let rock = item(.artifact(.jar), 12.72, 12.28, chapter: 3)            // index 2 (adjacent spot)
-    static let leftFlower = item(.artifact(.flowers), 12.28, 12.72, chapter: 4)  // index 3 (adjacent spot)
+    static let behindFlower = item(.extra(.path), 12.28, 12.28, chapter: 1) // index 0
+    static let tree = item(.tree, 12.72, 12.72, chapter: 2)          // index 1 (in front of the flowers)
+    static let rock = item(.extra(.bench), 12.72, 12.28, chapter: 3)            // index 2 (adjacent spot)
+    static let leftFlower = item(.extra(.path), 12.28, 12.72, chapter: 4)  // index 3 (adjacent spot)
 
     static let island = Island(
         tiles: (11...13).flatMap { y in (11...13).map { x in Island.Tile(x: x, y: y) } },
@@ -68,7 +68,7 @@ struct HitTestingTests {
     @Test("Small things have at least a 44pt target", arguments: zooms)
     func minimumTarget(zoom: CGFloat) {
         let layout = Fixture.layout(zoom: zoom)
-        let lone = Fixture.item(.artifact(.bush), 11.5, 11.5, chapter: 9)
+        let lone = Fixture.item(.extra(.lamp), 11.5, 11.5, chapter: 9)
         let base = Fixture.screenPoint(lone, layout: layout)
         // Just off its tiny footprint, but within 22pt of its base.
         let nearby = CGPoint(x: base.x + 20, y: base.y + 4)
@@ -146,7 +146,7 @@ struct LargeObjectHitTests {
     @Test("A small thing in front of a large building still gets its own taps", arguments: HitTestingTests.zooms)
     func smallInFrontOfLarge(zoom: CGFloat) {
         let lib = Self.library(at: 12.5, 12.5)
-        let flower = Fixture.item(.artifact(.flowers), 13.5, 13.5, chapter: 7) // in front (higher gx+gy)
+        let flower = Fixture.item(.extra(.path), 13.5, 13.5, chapter: 7) // in front (higher gx+gy)
         let layout = Fixture.layout(zoom: zoom)
         let onFlower = layout.point(flower.gx, flower.gy)
         #expect(IslandHitTester.hit(point: onFlower, layout: layout, items: [lib, flower]) == 1)

@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// "What can I build?": every book's building, the artifacts its chapters place, its story
-/// objects, and the characters it helps bring to your island.
+/// "What can I build?": every book's Place, what its chapters add to it, and the characters it
+/// helps bring to your island.
 struct BuildCatalogView: View {
     @ProgressQuery private var progress: GameProgress
     @State private var testament: Testament = .old
@@ -9,7 +9,7 @@ struct BuildCatalogView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 12) {
-                Text("Every book raises its own building. Each chapter places something on its plot, and finishing the book raises the building itself.")
+                Text("Every book builds one Place on your island. Its first chapter founds it, every chapter adds something, and rereads make it richer.")
                     .font(.subheadline)
                     .foregroundStyle(Color.secondaryText)
                 Picker("Testament", selection: $testament) {
@@ -35,21 +35,19 @@ struct BuildCatalogView: View {
     }
 }
 
-/// One book's building, artifacts and characters.
+/// One book's Place, what grows there, and its characters.
 struct BuildPreviewRow: View {
     let book: Book
     let read: Int
 
-    private var spec: BuildingSpec { BuildingData.spec(for: book.id) }
-
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            InteriorHeaderArt(spec: spec, progress: book.chapterCount, total: book.chapterCount, fullReads: 1)
+            InteriorHeaderArt(bookID: book.id, distinct: book.chapterCount, totalReads: book.chapterCount)
                 .frame(width: 92, height: 80)
                 .background(Earthy.groundLight.opacity(0.6), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 4) {
-                Text(WorldData.landmark(bookID: book.id)?.name ?? book.name)
+                Text(PlaceData.spec(for: book.id).name)
                     .font(.headline)
                     .foregroundStyle(Color.bodyText)
                 Text("\(book.name) · \(read) of \(book.chapterCount) chapters")
@@ -58,9 +56,6 @@ struct BuildPreviewRow: View {
                 Text(BuildPreview.artifactLine(book.id))
                     .font(.footnote)
                     .foregroundStyle(Color.secondaryText)
-                if let stories = BuildPreview.storyLine(book.id) {
-                    Text(stories).font(.footnote).foregroundStyle(Color.secondaryText)
-                }
                 if let who = BuildPreview.characterLine(book.id) {
                     Label(who, systemImage: "person.2.fill")
                         .font(.footnote.weight(.semibold))
@@ -76,19 +71,11 @@ struct BuildPreviewRow: View {
 
 /// Words for what a book builds. Pure, so it's testable.
 enum BuildPreview {
+    /// What grows in a book's Place, in order (plain wording in Release until reviewed).
     static func artifactLine(_ bookID: String) -> String {
-        var seen: [String] = []
-        for kind in BuildingData.spec(for: bookID).theme {
-            let name = InsightSubject.name(of: .artifact(kind))
-            if !seen.contains(name) { seen.append(name) }
-        }
-        return "Chapters place: " + seen.joined(separator: ", ").lowercased().capitalizedFirst
-    }
-
-    static func storyLine(_ bookID: String) -> String? {
-        let stories = ChapterLandmarks.visible.filter { $0.bookID == bookID }
-        guard !stories.isEmpty else { return nil }
-        return "Stories: " + stories.map { "\($0.name) (\($0.chapterLabel))" }.joined(separator: ", ")
+        let spec = PlaceData.spec(for: bookID)
+        guard ContentGate.isVisible(spec) else { return "Grows with every chapter you read." }
+        return "Grows: " + spec.pieces.map(\.caption).joined(separator: ", then ").capitalizedFirst + "."
     }
 
     static func characterLine(_ bookID: String) -> String? {

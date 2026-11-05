@@ -34,3 +34,29 @@ option was chosen and noted here.
    the far New Testament edge once every book is read in the current cycle.
 10. **"Reading unlocks apps"** is a stored preference only; FamilyControls is not used.
 11. **Deep dives.** Existing entries are kept (all unreviewed); John 15:13 is added.
+
+## Round: growing Places, living island (Nov 2026)
+
+12. **No CLAUDE.md.** The prompt says to read CLAUDE.md first; the repo has none, so this round
+    follows the conventions in NOTES.md, AUDIT.md and the existing code.
+13. **The island is drawn with SwiftUI `Canvas`, not SpriteKit.** SpriteKit is only used for the
+    world map. The island keeps its Canvas renderer, with caching added for performance
+    (Section 4), rather than a rewrite.
+14. **Growth counts chapters, not which chapter.** A Place's pieces appear by the share of its
+    book's chapters read (distinct, checked reads), whatever order they're read in, so no one
+    ever stares at a bare plot after skipping ahead. The caption uses the chapter actually read
+    ("Ruth 2: the barn is built"). Short books share steps (bigger increments); long books
+    grow one piece a step. When every piece is full, a step adds flowers ("flourish") instead.
+15. **Opening a book no longer lays foundations.** A Place is founded by its first read chapter,
+    as the brief says. `BookStarted` is still recorded (other screens use it).
+16. **Chapter artifacts and story objects are gone from the island.** They're replaced by the one
+    growing Place per book. The world map still uses `ChapterLandmarks`, and `BuildingData` is
+    kept for the world map; the island no longer draws `BuildingArt`/`ArtifactArt`/`StoryArt`.
+17. **Richness** = checked reads of the book ÷ its chapters (1–5), so a reread counts as it goes.
+18. **The forest is its own Place.** Tree chapters (ForestData, unreviewed) found a forest that
+    is placed like a Place (so it never shifts as the coast changes) and fills with trees.
+    It can be moved in edit mode like any Place.
+19. **Sections 1 and 2 were committed together**: the new Place builder needs the new placer.
+20. **Layout migration.** `IslandMigration` (version 2, run once at launch) drops the old
+    auto-pinned plot positions, keeps positions the reader chose if they still fit, and resets
+    the "seen" markers so the first look is quiet. Reading history is never touched.

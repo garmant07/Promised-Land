@@ -22,33 +22,29 @@ enum UnlockNotices {
             for n in 1...count {
                 out.append(UnlockNotice(id: "crown:\(bookID):\(n)", title: "A crown for \(name)",
                                         detail: "You read \(name) all the way through again.", symbol: "crown.fill",
-                                        itemIndex: island.items.firstIndex { $0.kind == .building(bookID) }))
+                                        itemIndex: island.placeIndex(bookID)))
+            }
+        }
+        // Each Place: founded, completed, and each richer level from rereads.
+        for (bookID, growth) in island.growth.sorted(by: { $0.key < $1.key }) where growth.isFounded {
+            guard let book = BibleCatalog.book(id: bookID), let index = island.placeIndex(bookID) else { continue }
+            let item = island.items[index]
+            let name = PlaceData.spec(for: bookID).name
+            if item.progress >= item.total {
+                out.append(UnlockNotice(id: "built:\(bookID)", title: "\(name) is complete",
+                                        detail: "You finished \(book.name). Villagers are moving in.",
+                                        symbol: "building.columns.fill", itemIndex: index))
+                if item.level >= 2 {
+                    for level in 2...item.level {
+                        out.append(UnlockNotice(id: "floor:\(bookID):\(level)", title: "\(name) grows richer",
+                                                detail: "You read \(book.name) through again (richness \(level) of 5).",
+                                                symbol: "sparkles", itemIndex: index))
+                    }
+                }
             }
         }
         for (index, item) in island.items.enumerated() {
             switch item.kind {
-            case .building(let bookID):
-                guard let book = BibleCatalog.book(id: bookID) else { continue }
-                let name = WorldData.landmark(bookID: bookID)?.name ?? book.name
-                let level = IslandPainter.buildingLevel(item)
-                if level >= 1 {
-                    out.append(UnlockNotice(id: "built:\(bookID)", title: "\(name) is built",
-                                            detail: "You finished \(book.name). Tap the building to step inside.",
-                                            symbol: "building.columns.fill", itemIndex: index))
-                }
-                if item.level >= 2 {
-                    // One notice per extra floor (from full rereads).
-                    for floor in 2...item.level {
-                        out.append(UnlockNotice(id: "floor:\(bookID):\(floor)", title: "A new floor on \(name)",
-                                                detail: "You read \(book.name) through again (\(floor) times).",
-                                                symbol: "square.stack.3d.up.fill", itemIndex: index))
-                    }
-                }
-            case .story(let id):
-                guard let entry = ChapterLandmarks.entry(id: id) else { continue }
-                out.append(UnlockNotice(id: "story:\(id)", title: "\(entry.name) appeared",
-                                        detail: "From \(entry.chapterLabel). Tap it to see why it's here.",
-                                        symbol: "sparkles", itemIndex: index))
             case .reward(let kind):
                 guard let bookID = item.source.bookID, let book = BibleCatalog.book(id: bookID) else { continue }
                 let (title, detail, symbol): (String, String, String) = switch kind {
@@ -66,9 +62,13 @@ enum UnlockNotices {
                 out.append(UnlockNotice(id: "library", title: "The Library is open",
                                         detail: "Every book of the Bible is on its shelves. Walk in to read.",
                                         symbol: "books.vertical.fill", itemIndex: index))
-            case .artifact:
-                continue // every chapter adds one; the growth note covers these
+            default:
+                continue // growth itself is shown by the "see it built" moment
             }
+        }
+        if let forest = island.index(of: .forest) ?? island.items.firstIndex(where: { $0.kind == .tree }) {
+            out.append(UnlockNotice(id: "forest", title: "A forest begins", detail: "Chapters with trees in them grow a forest at the island's edge.",
+                                    symbol: "tree.fill", itemIndex: forest))
         }
         for journey in completedJourneys {
             out.append(UnlockNotice(id: "journey:\(journey.id)", title: "\(journey.name) complete",

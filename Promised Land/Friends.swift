@@ -110,14 +110,14 @@ struct FriendItemCard: View {
     }
 
     private var title: String {
-        if case .building(let id) = subject.item.kind { return WorldData.landmark(bookID: id)?.name ?? id }
+        if case .place(let id, _) = subject.item.source { return PlaceData.spec(for: id).name }
         return InsightSubject.name(of: subject.item.kind)
     }
 
     private func detail(_ book: Book) -> String {
         switch subject.item.source {
-        case .chapter(_, let ch): "Built by reading \(book.name) \(ch)."
-        case .book: subject.item.progress >= subject.item.total ? "Built by reading all of \(book.name)." : "\(subject.item.progress) of \(book.name)'s \(subject.item.total) chapters read."
+        case .forest(_, let ch): "Grown by reading \(book.name) \(ch)."
+        case .place: subject.item.progress >= subject.item.total ? "Built by reading all of \(book.name)." : "\(subject.item.progress) of \(book.name)'s \(subject.item.total) chapters read."
         default: "From reading \(book.name)."
         }
     }
