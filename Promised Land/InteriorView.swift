@@ -15,6 +15,9 @@ struct InteriorView: View {
     @ProgressQuery private var progress: GameProgress
     @State private var reading: ChapterRef?
     @State private var learningScreen: LearningScreen?
+    @State private var reflecting = false
+    @State private var sharing: ShareImage?
+    @CurrentAvatar private var avatar: Avatar
 
     private enum LearningScreen: String, Identifiable {
         case quiz, memorise
@@ -49,7 +52,9 @@ struct InteriorView: View {
                     header
                     chaptersSection
                     learningSection
-                    journalSection
+                    if let book {
+                        InteriorJournalSection(book: book, entries: journal) { reflecting = true }
+                    }
                     charactersSection
                 }
                 .padding(16)
@@ -59,11 +64,22 @@ struct InteriorView: View {
             .themedScreen()
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { share() } label: { Label("Share", systemImage: "square.and.arrow.up") }
+                        .tint(Color.primaryBrown)
+                }
                 ToolbarItem(placement: .topBarLeading) {
                     Button { onClose() } label: { Label("Back to the island", systemImage: "chevron.backward") }
                         .tint(Color.primaryBrown)
                 }
             }
+            .navigationDestination(for: JournalOpen.self) { open in
+                JournalBookView(volume: open.volume, startAt: open.entryID)
+            }
+            .sheet(isPresented: $reflecting) {
+                if let book { ReflectionCard(book: book, chapter: latestChapter) }
+            }
+            .sheet(item: $sharing) { SharePreviewSheet(image: $0.image) }
             .sheet(item: $reading) { ref in
                 LibraryView(startAt: ref, onClose: { reading = nil })
                     .readingSizing(true)
@@ -97,6 +113,12 @@ struct InteriorView: View {
                     LinearGradient(colors: [Earthy.sky, Earthy.groundLight], startPoint: .top, endPoint: .bottom),
                     in: RoundedRectangle(cornerRadius: 24, style: .continuous))
                 .accessibilityHidden(true)
+            if let region = landmark?.region?.name {
+                Text(region.uppercased())
+                    .font(.caption.weight(.bold))
+                    .tracking(1.2)
+                    .foregroundStyle(Color.terracotta)
+            }
             Text(landmark?.name ?? book?.name ?? bookID)
                 .font(.serifTitle(.largeTitle))
                 .foregroundStyle(Color.bodyText)
@@ -200,34 +222,17 @@ struct InteriorView: View {
 
     // MARK: Journal
 
-    private var journalSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Your journal")
-                .font(.serifTitle(.title3))
-                .foregroundStyle(Color.bodyText)
-            if journal.isEmpty {
-                Text("Nothing written about \(book?.name ?? "this book") yet. After reading a chapter you can add a reflection.")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.secondaryText)
-            } else {
-                ForEach(journal.prefix(6)) { entry in
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text([entry.chapter.map { "\(book?.name ?? "") \($0)" }, entry.created.formatted(date: .abbreviated, time: .omitted)]
-                            .compactMap { $0 }.joined(separator: " · "))
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(Color.secondaryText)
-                        if let prompt = entry.prompt {
-                            Text(prompt).font(.footnote).italic().foregroundStyle(Color.secondaryText)
-                        }
-                        Text(entry.text).font(.body).foregroundStyle(Color.bodyText)
-                    }
-                    .padding(12)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color.cream, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                }
-            }
-        }
-        .cardStyle()
+    /// The chapter most recently read (for a new reflection), or the first.
+    private var latestChapter: Int { reads.max { $0.date < $1.date }?.chapterNumber ?? 1 }
+
+    private func share() {
+        let name = landmark?.name ?? book?.name ?? bookID
+        let subtitle = book.map { counts.count >= $0.chapterCount ? "Built by reading \($0.name)" : "\(counts.count) of \($0.chapterCount) chapters of \($0.name)" } ?? ""
+        let image = ShareRender.card(title: name, subtitle: subtitle,
+                                     artwork: InteriorHeaderArt(spec: spec, progress: counts.count, total: book?.chapterCount ?? 1, fullReads: fullReads)
+                                        .background(Earthy.groundLight),
+                                     avatar: avatar, streak: progress.streak, chaptersThisYear: progress.chaptersReadThisYear)
+        if let image { sharing = ShareImage(image: image) }
     }
 
     // MARK: Characters
@@ -293,4 +298,9 @@ struct InteriorHeaderArt: View {
             BuildingArt.draw(pen, spec: spec, progress: progress, total: total, extraFloors: max(0, fullReads - 1), seed: Island.hash(spec.bookID))
         }
     }
+}
+
+#Preview {
+    InteriorView(bookID: "ruth") {}
+        .modelContainer(PreviewData.container)
 }

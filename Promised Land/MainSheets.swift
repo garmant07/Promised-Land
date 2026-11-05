@@ -79,6 +79,9 @@ struct JourneysSheet: View {
 struct ProfileView: View {
     /// Opens edit mode on the island (closing this sheet).
     var onEditIsland: (() -> Void)? = nil
+    /// Your island, for the share image.
+    var island: Island = .empty
+    @State private var sharing: ShareImage?
     @CurrentAvatar private var avatar: Avatar
     @ProgressQuery private var progress: GameProgress
     @Environment(\.dismiss) private var dismiss

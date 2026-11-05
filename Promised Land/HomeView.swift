@@ -266,7 +266,7 @@ struct HomeView: View {
             ProfileView(onEditIsland: {
                 activeSheet = nil
                 startEditing(nil)
-            })
+            }, island: island)
         case .library:
             LibraryShelfView()
         case .insight(let subject):
