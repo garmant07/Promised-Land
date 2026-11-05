@@ -76,8 +76,11 @@ struct IslandLife: Equatable {
 
     /// Draws the life the director chose (each at its own time and fade), smoke from chimneys on
     /// screen, a couple of boats when far out, and birds.
+    /// - Parameter occluders: buildings and trees standing in front of a figure: drawn again in depth
+    ///   order with the figures, so people behind a building are hidden by it, never drawn on top.
     static func draw(_ c: inout GraphicsContext, life: IslandLife, shown: [LifeDirector.Shown], tier: LODTier,
-                     director: LifeDirector, layout: IslandLayout, time: TimeInterval, visible: CGRect) -> Int {
+                     director: LifeDirector, layout: IslandLayout, time: TimeInterval, visible: CGRect,
+                     occluders: [Island.Item] = []) -> Int {
         let u = layout.u
         var count = 0
         // Smoke first (it's behind the figures); a single soft puff when far out.
@@ -100,7 +103,21 @@ struct IslandLife: Equatable {
             }
             count += boats
         }
-        for f in shown {
+        // Figures and the things in front of them, back to front.
+        enum Layer { case figure(LifeDirector.Shown), item(Island.Item) }
+        let layers = (shown.map { (depth: $0.point.y, layer: Layer.figure($0)) }
+            + occluders.map { (depth: layout.depth($0.gx, $0.gy), layer: Layer.item($0)) })
+            .sorted { $0.depth < $1.depth }
+        for layer in layers {
+            let f: LifeDirector.Shown
+            switch layer.layer {
+            case .item(let item):
+                IslandRenderCache.shared.drawItem(&c, item, layout: layout)
+                count += 1
+                continue
+            case .figure(let shown):
+                f = shown
+            }
             var g = c
             g.opacity = f.opacity
             if f.id.hasPrefix("v"), let i = Int(f.id.dropFirst()), life.villagers.indices.contains(i) {

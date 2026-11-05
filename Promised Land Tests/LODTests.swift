@@ -170,4 +170,28 @@ struct LODTests {
         #expect(PlatformScene.rubberBand(0.5, min: 1, max: 4) < 1)
         #expect(PlatformScene.rubberBand(2, min: 1, max: 4) == 2)
     }
+
+    @Test("A building in front of someone hides them; someone in front of a building stays in view")
+    func layering() {
+        let l = layout(zoom: 6)
+        guard let index = Self.island.index(of: .library) else { Issue.record("no library"); return }
+        let lib = Self.island.items[index]
+        let base = l.point(lib.gx, lib.gy)
+        let size = CGSize(width: 8 * l.u, height: 15 * l.u)
+        let viewport = CGRect(x: base.x - 400, y: base.y - 600, width: 800, height: 1000)
+        // Standing just behind the Library (higher up the screen than its base), inside its drawing.
+        let behind = CGRect(x: base.x - size.width / 2, y: base.y - 20 * l.u - size.height, width: size.width, height: size.height)
+        #expect(PlatformScene.occluders([lib], figures: [behind], layout: l, viewport: viewport, onlyIfNoneInFront: false).count == 1)
+        // Standing in front of it (lower on screen than its base): nothing is drawn over them.
+        let inFront = behind.offsetBy(dx: 0, dy: 40 * l.u)
+        #expect(PlatformScene.occluders([lib], figures: [inFront], layout: l, viewport: viewport, onlyIfNoneInFront: false).isEmpty)
+        // Flat things (fields, flowers) never hide anyone.
+        let flat = Self.island.items.first { if case .piece(.field) = $0.kind { true } else { false } }
+        if let flat {
+            let p = l.point(flat.gx, flat.gy)
+            let on = CGRect(x: p.x - 4, y: p.y - 30, width: 8, height: 15)
+            #expect(PlatformScene.occluders([flat], figures: [on], layout: l, viewport: on.insetBy(dx: -500, dy: -500),
+                                            onlyIfNoneInFront: false).isEmpty)
+        }
+    }
 }

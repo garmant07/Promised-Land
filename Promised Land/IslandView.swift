@@ -208,9 +208,15 @@ struct PlatformScene: View {
                         ZStack(alignment: .topLeading) {
                             // Villagers, travellers, smoke, birds and baskets: only what's on screen.
                             if editing == nil && !life.isEmpty {
+                                // Buildings in front of villagers and travellers hide them.
+                                let lifeFigures = shown.filter { !$0.id.hasPrefix("c:") }.map { f in
+                                    CGRect(x: f.point.x - 4 * layout.u, y: f.point.y - 15 * layout.u, width: 8 * layout.u, height: 15 * layout.u)
+                                }
+                                let occluders = Self.occluders(ordered, figures: lifeFigures, layout: layout, viewport: viewport,
+                                                               onlyIfNoneInFront: false)
                                 Canvas { c, _ in
                                     let n = IslandLife.draw(&c, life: life, shown: shown, tier: tier, director: director, layout: layout,
-                                                            time: lifeTime, visible: viewport)
+                                                            time: lifeTime, visible: viewport, occluders: occluders)
                                     RenderStats.life = n
                                 }
                                 .allowsHitTesting(false)
@@ -245,17 +251,19 @@ struct PlatformScene: View {
                                 .position(x: feet.x, y: feet.y - charH * 0.43)
                             // Tall things in front of a walking figure (you or a Bible character)
                             // are drawn over it, unless they're behind another figure there.
-                            Canvas { c, _ in
-                                let figures = [feet] + shownCharacters.values.map(\.point)
-                                RenderStats.figures = figures.count
-                                for item in ordered where item.kind.isTall {
-                                    let p = layout.point(item.gx, item.gy)
-                                    guard viewport.contains(p) else { continue }
-                                    let near = figures.filter { abs(p.x - $0.x) < layout.scale * 1.7 && abs(p.y - $0.y) < layout.scale * 1.4 }
-                                    guard near.contains(where: { p.y > $0.y }), !near.contains(where: { p.y <= $0.y }) else { continue }
-                                    IslandPainter.drawItem(&c, item, layout: layout)
+                            // Tall things in front of you or a Bible character are drawn over them,
+                            // unless another figure there stands in front of the thing.
+                            let figureRects = [CGRect(x: feet.x - charW / 2, y: feet.y - charH, width: charW, height: charH)]
+                                + shownCharacters.values.map { f in
+                                    CGRect(x: f.point.x - charH * 0.37, y: f.point.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05)
                                 }
+                            let inFront = Self.occluders(ordered, figures: figureRects, layout: layout, viewport: viewport,
+                                                         onlyIfNoneInFront: true)
+                            Canvas { c, _ in
+                                RenderStats.figures = figureRects.count + inFront.count
+                                for item in inFront { IslandRenderCache.shared.drawItem(&c, item, layout: layout) }
                             }
+                            .allowsHitTesting(false)
                             if editing == nil && !life.baskets.isEmpty {
                                 Canvas { c, size in
                                     IslandLife.drawBaskets(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
@@ -571,6 +579,28 @@ struct PlatformScene: View {
         let target = newZoom == IslandLayout.minZoom ? .zero : clampPan(newPan, zoom: newZoom, size: size)
         animateCamera(zoom: newZoom, pan: target, duration: 0.35)
         saveCamera()
+    }
+
+    /// Tall things (buildings, trees) standing in front of a figure and covering part of it, back to
+    /// front. A figure's rect is where it's drawn; its feet are at the rect's bottom.
+    /// - Parameter onlyIfNoneInFront: skip a thing if some figure it overlaps stands in front of it
+    ///   (for figures drawn above everything, so it doesn't cover one that's in front).
+    static func occluders(_ items: [Island.Item], figures: [CGRect], layout: IslandLayout, viewport: CGRect,
+                          onlyIfNoneInFront: Bool) -> [Island.Item] {
+        guard !figures.isEmpty else { return [] }
+        let reach = figures.reduce(CGRect.null) { $0.union($1) }
+        var out: [Island.Item] = []
+        for item in items where item.kind.isTall {
+            let base = layout.point(item.gx, item.gy)
+            guard viewport.insetBy(dx: -layout.scale * 3, dy: -layout.scale * 3).contains(base) else { continue }
+            let bounds = IslandPainter.drawnBounds(of: item, layout: layout)
+            guard bounds.intersects(reach) else { continue }
+            let overlapping = figures.filter { $0.intersects(bounds) }
+            guard overlapping.contains(where: { $0.maxY < base.y }) else { continue }
+            if onlyIfNoneInFront, overlapping.contains(where: { $0.maxY >= base.y }) { continue }
+            out.append(item)
+        }
+        return out
     }
 
     /// Bible characters for the level of detail (ids "c:<id>"); each stands still while talking.

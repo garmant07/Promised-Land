@@ -166,6 +166,19 @@ option was chosen and noted here.
     with a thin spine for every chapter read, and handwritten note slips tucked into each book that
     has journal entries.
 
+42. **Layering.** People are never drawn on top of a building that stands in front of them. Villagers
+    and travellers are drawn back to front together with the tall things (buildings, trees) that
+    overlap them, so someone behind a house is hidden by it. Your avatar and Bible characters (drawn
+    above the island) get the tall things in front of them drawn over them again, unless another
+    figure there is in front of the thing. Those buildings come from cached pictures
+    (`IslandRenderCache.drawItem`), so this costs about nothing per frame.
+43. **Full screen.** The island now runs under the status bar too (it used to stop at the safe area).
+    The status pill and banners still sit below the status bar, and fitting the island still keeps
+    clear of them.
+44. **Fixed:** near full zoom, the cached ground and Place pictures were a few percent too big (the
+    zoom bucket was past the island's limit and got clamped). Pinching now visibly rubber-bands up to
+    30% past either limit, then eases back.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

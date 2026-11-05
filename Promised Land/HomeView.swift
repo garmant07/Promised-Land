@@ -90,6 +90,8 @@ struct HomeView: View {
     @AppStorage("library.stageSeen") private var libraryStageSeen = -1
     /// True from when a "see it built" moment is planned until it has finished.
     @State private var revealActive = false
+    /// The status bar's height (the island is drawn under it).
+    @State private var safeTop: CGFloat = 0
 
     // Collect All
     @State private var collectFlight: CollectFlight?
@@ -188,7 +190,9 @@ struct HomeView: View {
                               withAnimation(.easeInOut(duration: 0.35)) { revealing = step }
                               if step == nil { revealActive = false }
                           },
-                          insets: EdgeInsets(top: 70, leading: 8, bottom: 118, trailing: 8),
+                          // The island fills the whole screen, under the status bar too; the insets
+                          // only keep it clear of the status pill and the bar when fitting it.
+                          insets: EdgeInsets(top: 70 + safeTop, leading: 8, bottom: 118, trailing: 8),
                           selected: $selectedItem,
                           persistsCamera: true, editing: editingIsland ? editing : nil,
                           onLongPress: { index in startEditing(island.items[index].plotKey) },
@@ -212,8 +216,9 @@ struct HomeView: View {
                           collectTarget: collectTarget,
                           onCollectLanded: collectLanded,
                           showsFPS: showsFPS) { index in open(index, in: island) }
-                .ignoresSafeArea(edges: .bottom)
+                .ignoresSafeArea()
         }
+        .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.top } action: { safeTop = $0 }
         // The status pill is read-only, so touches on it go through to the island.
         .overlay(alignment: .topLeading) { if !editingIsland { status.allowsHitTesting(false) } }
         .overlay(alignment: .bottom) {

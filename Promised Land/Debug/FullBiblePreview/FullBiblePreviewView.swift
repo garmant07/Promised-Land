@@ -34,6 +34,7 @@ struct FullBiblePreviewView: View {
     @State private var bounce = 0
     @State private var summary: String?
     @State private var target: CGRect = .zero
+    @State private var safeTop: CGFloat = 0
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private var replaying: Bool { shownBooks < 66 }
@@ -52,15 +53,16 @@ struct FullBiblePreviewView: View {
             if reads.isEmpty {
                 ProgressView("Reading all 66 books…")
             } else {
-                PlatformScene(avatar: Avatar(), island: island, insets: EdgeInsets(top: 110, leading: 8, bottom: panelOpen ? 300 : 90, trailing: 8),
+                PlatformScene(avatar: Avatar(), island: island, insets: EdgeInsets(top: 110 + safeTop, leading: 8, bottom: panelOpen ? 300 : 90, trailing: 8),
                               selected: $selected, showsControls: true,
                               editing: editing ? IslandEditing(selected: editSelected, onDrag: drag, onSelect: { editSelected = $0 }) : nil,
                               life: IslandLife.make(island: island, baskets: waiting(island)),
                               collectFlight: flight, collectTarget: target, onCollectLanded: landed,
                               showsFPS: showsFPS) { selected = $0 }
-                    .ignoresSafeArea(edges: .bottom)
+                    .ignoresSafeArea()
             }
         }
+        .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.top } action: { safeTop = $0 }
         .overlay(alignment: .top) { banner }
         .overlay(alignment: .bottom) {
             let total = holding ?? waiting(island).values.reduce(0, +)

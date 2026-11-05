@@ -56,7 +56,8 @@ final class IslandRenderCache {
         let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb, angle: CGFloat(quarter))
         let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
                              y: insets.top + (size.height - insets.top - insets.bottom) / 2)
-        let k = zoom / zb
+        // The bucket layout may be clamped to the island's zoom limit: scale from the zoom it really has.
+        let k = zoom / lb.zoom
         func screen(_ r: CGRect) -> CGRect {
             CGRect(x: centre.x + (r.minX - centre.x) * k + pan.width, y: centre.y + (r.minY - centre.y) * k + pan.height,
                    width: r.width * k, height: r.height * k)
@@ -138,6 +139,34 @@ final class IslandRenderCache {
         }
         frame.layers = layers.sorted { $0.depth < $1.depth }.map(\.layer)
         return frame
+    }
+
+    // MARK: Single items
+
+    /// Draws one item from a cached picture (rendered once per look, zoom bucket and turn): used
+    /// for buildings drawn again in front of people, so they don't cost a full redraw every frame.
+    func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout) {
+        // Render at a bucketed size unit, then scale to the current one.
+        let ub = CGFloat(pow(1.25, ceil(log(Double(max(0.05, layout.u))) / log(1.25))))
+        let shape = IslandHitTester.shape(of: item, base: .zero, u: ub)
+        let frame = shape.insetBy(dx: -shape.width * 0.3 - 4 * ub, dy: -shape.height * 0.2 - 4 * ub).integral
+        guard frame.width > 0, frame.height > 0, frame.width * frame.height < 4_000_000 else {
+            IslandPainter.drawItem(&c, item, layout: layout); return
+        }
+        var h = Hasher()
+        h.combine(item.kind); h.combine(item.growth); h.combine(item.level); h.combine(item.turned); h.combine(item.facing)
+        h.combine(item.seed); h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
+        h.combine(item.cap); h.combine(item.source.bookID)
+        let key = "i\(h.finalize())|\(Int(ub * 1000))|\(layout.quarter)" as NSString
+        let quarter = layout.quarter, mirrored = layout.mirrored
+        guard let image = images.object(forKey: key)?.image ?? render(key: key, size: frame.size, draw: { g in
+            g.translateBy(x: -frame.minX, y: -frame.minY)
+            IslandPainter.drawAtOrigin(&g, item, u: ub, quarter: quarter, layoutMirrored: mirrored)
+        }) else { IslandPainter.drawItem(&c, item, layout: layout); return }
+        let k = layout.u / ub
+        let base = layout.point(item.gx, item.gy)
+        c.draw(Image(decorative: image, scale: 1),
+               in: CGRect(x: base.x + frame.minX * k, y: base.y + frame.minY * k, width: frame.width * k, height: frame.height * k))
     }
 
     /// The ground's extent in a layout's points (with room for the shore and earth sides).

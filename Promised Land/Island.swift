@@ -77,7 +77,8 @@ struct IslandLayout {
         let fit = min(area.width / w, area.height / h, 92)
         self.fit = fit
         maxZoom = max(Self.baseMaxZoom, Self.closestScale(width: area.width) / fit)
-        let z = min(maxZoom, max(Self.minZoom, zoom))
+        // A little past either limit is allowed while pinching (it rubber-bands back on release).
+        let z = min(maxZoom * 1.3, max(Self.minZoom * 0.75, zoom))
         let fitOrigin = CGPoint(x: insets.leading + (area.width - w * fit) / 2 - minX * fit,
                                 y: insets.top + (area.height - h * fit) / 2 + headroom * fit - minY * fit)
         let centre = CGPoint(x: insets.leading + area.width / 2, y: insets.top + area.height / 2)
@@ -291,6 +292,13 @@ enum IslandPainter {
         let mirrored = layout.mirrored != (item.turned % 2 != 0)
         g.scaleBy(x: mirrored ? -scale : scale, y: scale)
         draw(&g, item, u: layout.u, tileWidth: layout.scale * 2, rotation: layout.quarter, mirrored: mirrored)
+    }
+
+    /// Draws an item around the context's origin (its ground point), as `drawItem` does.
+    static func drawAtOrigin(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, quarter: Int, layoutMirrored: Bool) {
+        let mirrored = layoutMirrored != (item.turned % 2 != 0)
+        if mirrored { c.scaleBy(x: -1, y: 1) }
+        draw(&c, item, u: u, tileWidth: u * 44, rotation: quarter, mirrored: mirrored)
     }
 
     private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat, rotation: Int,
