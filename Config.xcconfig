@@ -1,0 +1,10 @@
+// Build settings shared by Debug and Release (the app target's base configuration).
+//
+// The API.Bible key is NOT kept here. Put it in Secrets.xcconfig, next to this file
+// (copy Secrets.example.xcconfig). That file is gitignored, so the key is never committed.
+// Without it the app still builds and runs, showing the bundled ASV sample only.
+
+API_BIBLE_KEY =
+
+// Optional include ("#include?"): no error or warning when the file doesn't exist.
+#include? "Secrets.xcconfig"

@@ -18,6 +18,8 @@ struct BibleScanView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage(StorageKeys.readingStrictness) private var strictnessRaw = ""
     @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
+    @Environment(\.bibleService) private var bible
+    private var translation = TranslationChoice()
 
     @State private var phase: Phase = .capture
     @State private var image: UIImage?
@@ -148,7 +150,9 @@ struct BibleScanView: View {
     private func foundCard(_ ref: ChapterRef) -> some View {
         let name = BibleCatalog.book(id: ref.bookID)?.name ?? ref.bookID
         let timed = ReadingGate.timerApplies(strictness: strictness, ownBible: true)
-        let required = timed ? ReadingGate.minimumSeconds(words: ReadingGate.words(bookID: ref.bookID, chapter: ref.chapter), strictness: strictness) : 0
+        let required = timed ? ReadingGate.minimumSeconds(words: ReadingGate.words(bookID: ref.bookID, chapter: ref.chapter, service: bible,
+                                                                                         translation: translation.current),
+                                                                 strictness: strictness) : 0
         return VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Label("\(name) \(ref.chapter), got it", systemImage: "checkmark.circle.fill")

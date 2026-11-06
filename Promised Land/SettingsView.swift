@@ -52,6 +52,8 @@ struct SettingsView: View {
 
                     ReadingStrictnessSection()
 
+                    BibleTextSettingsSection()
+
                     section("Reflection & journal") {
                         Label("Your journal is private. Entries are stored only on this device and are never uploaded or shared.",
                               systemImage: "lock.fill")
@@ -64,9 +66,9 @@ struct SettingsView: View {
                     #endif
 
                     section("About") {
-                        Text("Scripture is from the American Standard Version (1901), which is in the public domain. This early version bundles a small sample; the full text will follow.")
+                        Text("Scripture text comes from API.Bible (NIV, NLT or CSB; each chapter shows its copyright notice). Chapters load when you open them and are kept on this device for reading offline. A small American Standard Version (1901, public domain) sample is bundled.")
                             .foregroundStyle(Color.secondaryText)
-                        Text("Everything stays on this device. No account, no internet needed. Your journal is private: it never leaves your phone. \"Reset all progress\" clears reading only; journal entries are kept.")
+                        Text("Only Bible text is downloaded. Your reading, island and journal stay on this device, with no account, and everything else works offline. Your journal is private: it never leaves your phone. \"Reset all progress\" clears reading only; journal entries are kept.")
                             .foregroundStyle(Color.secondaryText)
                     }
                 }

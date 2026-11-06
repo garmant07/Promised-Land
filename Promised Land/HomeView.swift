@@ -934,13 +934,13 @@ struct ReadingSuggestion {
 
     var ref: ChapterRef { ChapterRef(bookID: book.id, chapter: chapter) }
 
-    /// First verse of the chapter if bundled, otherwise where it fits in the world.
-    var preview: String {
-        if let verse = SampleText.verses(book: book.id, chapter: chapter)?.first {
+    /// First verse of the chapter if it's on the device, otherwise where it fits in the world.
+    func preview(using bible: any BibleService) -> String {
+        if let verse = bible.cachedChapter(bookID: book.id, chapter: chapter, translation: nil)?.verses.first {
             return verse.text
         }
         let place = WorldData.landmark(bookID: book.id)?.name ?? book.name
-        return "Builds \(place). Text coming soon — read along in your own Bible."
+        return bible.isLive ? "Builds \(place)." : "Builds \(place). Text coming soon — read along in your own Bible."
     }
 
     static func make(from progress: GameProgress) -> ReadingSuggestion? {
@@ -968,6 +968,7 @@ struct ReadingSuggestion {
 
 struct ReadingSuggestionCard: View {
     let suggestion: ReadingSuggestion
+    @Environment(\.bibleService) private var bible
 
     var body: some View {
         HStack(spacing: 14) {
@@ -978,7 +979,7 @@ struct ReadingSuggestionCard: View {
                 Text("\(suggestion.book.name) \(suggestion.chapter)")
                     .font(.serifTitle(.title3))
                     .foregroundStyle(Color.bodyText)
-                Text(suggestion.preview)
+                Text(suggestion.preview(using: bible))
                     .font(.subheadline)
                     .foregroundStyle(Color.secondaryText)
                     .lineLimit(2)

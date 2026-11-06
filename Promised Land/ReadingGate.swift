@@ -56,10 +56,15 @@ enum ReadingGate {
     /// A typical chapter's length, used when the text isn't bundled (reading in your own Bible).
     static let typicalChapterWords = 650
 
-    /// Words in a chapter's bundled text, or a typical length.
-    static func words(bookID: String, chapter: Int) -> Int {
-        guard let verses = SampleText.verses(book: bookID, chapter: chapter) else { return typicalChapterWords }
-        return verses.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
+    /// Words in a chapter's text on the device (cached or bundled), or a typical length. Never
+    /// goes to the network.
+    static func words(bookID: String, chapter: Int, service: any BibleService, translation: BibleTranslation? = nil) -> Int {
+        service.cachedChapter(bookID: bookID, chapter: chapter, translation: translation)?.words ?? typicalChapterWords
+    }
+
+    /// Words in some verses.
+    nonisolated static func words(_ verses: [Verse]) -> Int {
+        verses.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
     }
 
     /// Seconds of reading needed before Finish unlocks (0 = no timer).

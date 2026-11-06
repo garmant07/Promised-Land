@@ -11,7 +11,9 @@ struct ChapterQuestion: ReviewableContent, Equatable {
     let answer: Int
     /// The verse the answer comes from.
     let reference: String
-    var source: String { "\(reference) (ASV)" }
+    /// The translation the question was written from (hand-written ones: ASV).
+    var translation = "ASV"
+    var source: String { "\(reference) (\(translation))" }
     var reviewed = false
 }
 
@@ -19,6 +21,15 @@ enum QuestionData {
     /// The question for a chapter (only reviewed ones in Release builds).
     static func question(bookID: String, chapter: Int) -> ChapterQuestion? {
         all.first { $0.bookID == bookID && $0.chapter == chapter }.flatMap { ContentGate.isVisible($0) ? $0 : nil }
+    }
+
+    /// The hand-written question, or one made from the chapter's text on the device (cached or
+    /// bundled; never fetched just for this), or nil (then a reflection prompt is used).
+    static func question(bookID: String, chapter: Int, service: any BibleService, translation: BibleTranslation?) -> ChapterQuestion? {
+        if let written = question(bookID: bookID, chapter: chapter) { return written }
+        guard let text = service.cachedChapter(bookID: bookID, chapter: chapter, translation: translation),
+              let book = BibleCatalog.book(id: bookID) else { return nil }
+        return TextQuestion.make(from: text, bookName: book.name)
     }
 
     private static func q(_ book: String, _ chapter: Int, _ prompt: String, _ options: [String], _ answer: Int, _ ref: String) -> ChapterQuestion {

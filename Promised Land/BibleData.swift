@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Text models
 
-struct Verse: Identifiable, Hashable {
+nonisolated struct Verse: Identifiable, Hashable, Codable, Sendable {
     let number: Int
     let text: String
     var id: Int { number }

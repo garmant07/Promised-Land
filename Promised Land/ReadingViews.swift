@@ -158,6 +158,7 @@ struct BookRow: View {
     let book: Book
     let landmark: Landmark
     let progress: GameProgress
+    @Environment(\.bibleService) private var bible
 
     var body: some View {
         let read = progress.chaptersRead(book.id)
@@ -169,7 +170,7 @@ struct BookRow: View {
                     Text(book.name)
                         .font(.headline)
                         .foregroundStyle(Color.bodyText)
-                    if book.hasSampleText {
+                    if !bible.isLive && book.hasSampleText {
                         Text("Sample text")
                             .font(.caption2.weight(.semibold))
                             .foregroundStyle(Color.primaryBrown)
@@ -203,6 +204,7 @@ struct BookRow: View {
 struct BookView: View {
     let book: Book
     @ProgressQuery private var progress: GameProgress
+    @Environment(\.bibleService) private var bible
 
     private let columns = [GridItem(.adaptive(minimum: 52), spacing: 10)]
 
@@ -235,7 +237,7 @@ struct BookView: View {
                         .buttonStyle(.plain)
                     }
                 }
-                if !book.hasSampleText {
+                if !bible.isLive && !book.hasSampleText {
                     Label("The text of \(book.name) is coming soon. You can still mark chapters as read from your own Bible.",
                           systemImage: "info.circle")
                         .font(.footnote)
@@ -252,15 +254,17 @@ struct BookView: View {
 
     private func chapterCell(_ number: Int) -> some View {
         let isRead = progress.isRead(book.id, chapter: number)
-        let hasText = SampleText.verses(book: book.id, chapter: number) != nil
+        let hasText = bible.hasText(bookID: book.id, chapter: number)
+        // With live text every chapter has text: no dots needed.
+        let showDot = hasText && !bible.isLive
         return Text("\(number)")
             .font(.headline.monospacedDigit())
             .foregroundStyle(isRead ? Color.onPrimary : Color.bodyText)
             .frame(maxWidth: .infinity, minHeight: 52)
-            .background(isRead ? Color.olive : (hasText ? Color.sand : Color.card),
+            .background(isRead ? Color.olive : (showDot ? Color.sand : Color.card),
                         in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(alignment: .topTrailing) {
-                if hasText && !isRead {
+                if showDot && !isRead {
                     Circle().fill(Color.terracotta).frame(width: 7, height: 7).padding(6)
                 }
             }
@@ -291,6 +295,12 @@ struct ChapterReaderView: View {
     @State private var deepDive: (dive: DeepDive, text: String)?
     @AppStorage(StorageKeys.readingStrictness) private var strictnessRaw = ""
     @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
+    @Environment(\.bibleService) private var bible
+    private var translation = TranslationChoice()
+    @State private var loader = ChapterLoader()
+    #if DEBUG
+    @AppStorage("debug.apiOverlay") private var showsAPIUsage = true
+    #endif
 
     // The reading gate: reach the last page, and spend a little time (paused in the background).
     @State private var reachedEnd = false
@@ -313,26 +323,36 @@ struct ChapterReaderView: View {
     private var needsCheck: Bool { reads.first.map { !$0.checked } ?? false }
     private var strictness: ReadingStrictness { .current(stored: strictnessRaw, ageGroup: ageGroup) }
     private var requiredSeconds: Double {
-        ReadingGate.timerApplies(strictness: strictness, ownBible: false)
-            ? ReadingGate.minimumSeconds(words: ReadingGate.words(bookID: book.id, chapter: chapter), strictness: strictness) : 0
+        guard ReadingGate.timerApplies(strictness: strictness, ownBible: false) else { return 0 }
+        // The words of the text being read (from the cache once loaded), or a typical length.
+        let words = loader.text?.words
+            ?? ReadingGate.words(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)
+        return ReadingGate.minimumSeconds(words: words, strictness: strictness)
     }
 
     var body: some View {
         Group {
-            if let verses = SampleText.verses(book: book.id, chapter: chapter) {
-                VStack(spacing: 4) {
-                    PageReaderView(title: "\(book.name) \(chapter)", verses: verses,
-                                   deepDive: { DeepDiveData.entry(bookID: book.id, chapter: chapter, verse: $0.number) },
-                                   onDeepDive: { dive, verse in deepDive = (dive, verse.text) },
-                                   onReachedEnd: { reachedEnd = true }) {
+            switch loader.state {
+            case .loading:
+                ProgressView("Opening \(book.name) \(chapter)…")
+                    .tint(Color.primaryBrown)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            case .loaded(let text):
+                PageReaderView(title: "\(book.name) \(chapter)", verses: text.verses,
+                               deepDive: { DeepDiveData.entry(bookID: book.id, chapter: chapter, verse: $0.number) },
+                               onDeepDive: { dive, verse in deepDive = (dive, verse.text) },
+                               onReachedEnd: { reachedEnd = true }, footerHeight: 330) {
+                    VStack(spacing: 10) {
                         actions(compact: true)
+                        textNotice(text)
                     }
-                    Text("American Standard Version · sample verses")
-                        .font(.caption2)
-                        .foregroundStyle(Color.secondaryText)
-                        .padding(.bottom, 4)
                 }
-            } else {
+                .padding(.bottom, 4)
+            case .failed(let error):
+                ChapterUnavailableView(title: "\(book.name) \(chapter)", error: error, retry: { Task { await load() } }) {
+                    actions(compact: false)
+                }
+            case .ownBible:
                 ScrollView {
                     VStack(alignment: .leading, spacing: 18) {
                         Text("\(book.name) \(chapter)")
@@ -356,6 +376,11 @@ struct ChapterReaderView: View {
         .themedScreen()
         .navigationTitle("Chapter \(chapter)")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar { ToolbarItem(placement: .topBarTrailing) { TranslationMenu() } }
+        #if DEBUG
+        .overlay(alignment: .top) { if showsAPIUsage && bible.isLive { APIUsageBadge().allowsHitTesting(false) } }
+        #endif
+        .task(id: translation.current) { await load() }
         .onAppear { context.recordBookStarted(book.id) }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { segmentStart = .now } else { pauseTimer() }
@@ -371,6 +396,31 @@ struct ChapterReaderView: View {
         }
     }
 
+    private func load() async {
+        await loader.load(bible, bookID: book.id, chapter: chapter, translation: translation.current)
+    }
+
+    /// At the bottom of every chapter: the translation's copyright, and a note when the text is
+    /// an old copy or the bundled sample.
+    private func textNotice(_ text: ChapterText) -> some View {
+        VStack(spacing: 4) {
+            switch text.origin {
+            case .staleCache:
+                Label("Saved copy (couldn't refresh it just now)", systemImage: "clock.arrow.circlepath")
+            case .bundled where bible.isLive:
+                Label("You're offline: showing the bundled sample", systemImage: "wifi.slash")
+            default:
+                EmptyView()
+            }
+            Text(text.copyright)
+                .multilineTextAlignment(.center)
+        }
+        .font(.caption2)
+        .foregroundStyle(Color.secondaryText)
+        .frame(maxWidth: .infinity)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+
     private func pauseTimer() {
         if let start = segmentStart { readSeconds += Date.now.timeIntervalSince(start) }
         segmentStart = nil
@@ -381,7 +431,7 @@ struct ChapterReaderView: View {
     /// Finish (after the gate), "Use my Bible", what's been read, and the next chapter.
     @ViewBuilder
     private func actions(compact: Bool) -> some View {
-        let hasText = SampleText.verses(book: book.id, chapter: chapter) != nil
+        let hasText = loader.text != nil
         VStack(spacing: compact ? 6 : 10) {
             if counted {
                 Label("Counted! Your island is growing.", systemImage: "checkmark.seal.fill")

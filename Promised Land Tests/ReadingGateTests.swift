@@ -29,8 +29,9 @@ struct ReadingGateTests {
 
     @Test("Bundled chapters are timed by their words; others by a typical length")
     func words() {
-        #expect(ReadingGate.words(bookID: "john", chapter: 15) > 0)
-        #expect(ReadingGate.words(bookID: "obadiah", chapter: 1) == ReadingGate.typicalChapterWords)
+        let bundled = BundledBibleService()
+        #expect(ReadingGate.words(bookID: "john", chapter: 15, service: bundled) > 0)
+        #expect(ReadingGate.words(bookID: "obadiah", chapter: 1, service: bundled) == ReadingGate.typicalChapterWords)
     }
 
     @Test("Kids accounts default to Strict; others to Standard; a saved choice wins")

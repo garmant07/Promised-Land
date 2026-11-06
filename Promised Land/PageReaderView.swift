@@ -11,6 +11,8 @@ struct PageReaderView<Footer: View>: View {
     var onDeepDive: (DeepDive, Verse) -> Void = { _, _ in }
     /// Called once the last page has been reached (for the reading gate).
     var onReachedEnd: () -> Void = {}
+    /// Room kept on the last page for `footer`.
+    var footerHeight: CGFloat = 250
     @ViewBuilder var footer: () -> Footer
 
     @State private var sheet = 0
@@ -23,7 +25,7 @@ struct PageReaderView<Footer: View>: View {
             let pageWidth = spread ? (geo.size.width - 48) / 2 : geo.size.width - 32
             let pageHeight = max(240, geo.size.height - 56)
             let pages = PagePlanner.pages(verses, width: pageWidth - 48, height: pageHeight - 64,
-                                          fontSize: fontSize, footerHeight: 250, titleHeight: 56, evenCount: spread)
+                                          fontSize: fontSize, footerHeight: footerHeight, titleHeight: 56, evenCount: spread)
             let sheets: [[Int]] = spread
                 ? stride(from: 0, to: pages.count, by: 2).map { [$0] + ($0 + 1 < pages.count ? [$0 + 1] : []) }
                 : pages.indices.map { [$0] }

@@ -14,10 +14,15 @@ struct ReadingQuestionView: View {
     var onLookAgain: () -> Void
 
     @Environment(\.modelContext) private var context
+    @Environment(\.bibleService) private var bible
+    private var translation = TranslationChoice()
     @State private var picked: Int?
     @State private var reflection = ""
 
-    private var question: ChapterQuestion? { QuestionData.question(bookID: book.id, chapter: chapter) }
+    /// The hand-written question, or one made from the chapter's text on the device.
+    private var question: ChapterQuestion? {
+        QuestionData.question(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)
+    }
     private var prompt: String { ReflectionData.prompts(bookID: book.id, chapter: chapter).prompts.first ?? ReflectionData.general[0] }
 
     var body: some View {

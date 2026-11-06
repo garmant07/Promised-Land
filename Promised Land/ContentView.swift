@@ -17,6 +17,8 @@ struct ContentView: View {
             #endif
             AvatarProfile.ensure(in: context)
             IslandMigration.run(context)
+            // First run with an API key: find the translations' Bible ids (one request, saved).
+            await BibleServices.shared.prepare()
         }
     }
 }

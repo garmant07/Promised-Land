@@ -84,12 +84,22 @@ struct DebugToolsSection: View {
     @State private var confirmingWipe = false
     @State private var message: String?
     @AppStorage("debug.fpsOverlay") private var showsFPS = false
+    @AppStorage("debug.apiOverlay") private var showsAPIUsage = true
     @State private var previewingBible = false
+    @Environment(\.bibleService) private var bible
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Developer").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
             Toggle("FPS overlay on the island", isOn: $showsFPS).tint(Color.olive).frame(minHeight: 44)
+            Toggle("API.Bible usage in the reader", isOn: $showsAPIUsage).tint(Color.olive).frame(minHeight: 44)
+            APIUsageBadge()
+            if let api = bible as? APIBibleService {
+                Text(api.isLive ? "Key set · \(api.cache.count) chapters cached" : "No API key: bundled sample only (see README)")
+                    .font(.footnote).foregroundStyle(Color.secondaryText)
+                Button("Clear cached Bible text") { api.cache.removeAll(); message = "Cached chapters cleared." }
+                    .buttonStyle(SoftButtonStyle())
+            }
             // TEMPORARY: remove with Debug/FullBiblePreview before release (NOTES.md).
             Button("Preview full Bible") { previewingBible = true }.buttonStyle(SoftButtonStyle())
             Button("Rebuild world") { rebuildWorld() }.buttonStyle(SoftButtonStyle())

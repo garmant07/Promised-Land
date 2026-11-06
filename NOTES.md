@@ -222,6 +222,30 @@ option was chosen and noted here.
     with Settings → Developer → FPS overlay (now `fps · nodes · draws · ms`). DEBUG `-perfLog` prints fps,
     nodes, draws and the time in each part of the island once a second.
 
+## Round: live Bible text from API.Bible (Nov 2026)
+
+48. **Bible text is the one thing that goes online.** It replaces the "fully offline" rule for
+    Bible TEXT only; progress, island, journeys and journal are unchanged and work offline. Setup,
+    caching and error handling are in README.md. Views only use `BibleService` (`\.bibleService`).
+    `APIBibleService` is the live one; `BundledBibleService` (the ASV sample) is its fallback.
+49. **Docs checked** (docs.api.bible, Nov 2026): base `https://rest.api.bible/v1`, header `api-key`.
+    The docs don't document 429 or the error body. Checked against the live API: a wrong key answers
+    **403** `{"statusCode":403,"error":"Forbidden","message":"Invalid API key"}`, not 401. So a 403
+    whose message mentions the key is "bad key", and any other 403 is "not on your plan" (that
+    translation is then hidden). 429 honours `Retry-After` when present.
+50. **Text format.** `content-type=text` with verse numbers and no notes, titles or chapter
+    numbers; verses are split on the `[n]` markers. Not yet seen with a real NIV/NLT/CSB response
+    (no key here): if a translation formats differently, `ChapterParser` is the place to adjust.
+51. **Questions from text.** Chapters without a hand-written question get one made from their saved
+    text: a verse with its longest distinctive word blanked, and two other words from the chapter
+    as choices (the same each time). It's mechanical, taken from Scripture itself, so it's marked
+    reviewed. Chapters with no saved text still get a reflection prompt.
+52. **Offline with nothing cached** shows the bundled ASV sample where one exists (with a note),
+    otherwise the "Connect to the internet" message with Retry.
+53. **Not done:** FUMS reporting. The docs require it for web apps, and say an app used only on
+    mobile with no user-facing web part can skip it. Also not done: any server proxy for the key
+    (see README).
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.
