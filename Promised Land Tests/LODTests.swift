@@ -60,7 +60,11 @@ struct LODTests {
         #expect(director.tier == .close)
         #expect(!shown.isEmpty && shown.count <= IslandLOD.closeCap)
         let screen = CGRect(origin: .zero, size: Self.size)
-        #expect(shown.allSatisfy { screen.contains($0.point) })
+        // Everyone fully showing is on screen; someone who has just walked off the edge is only
+        // fading out (over 0.3 s, rather than vanishing).
+        #expect(shown.filter { $0.opacity >= 1 }.allSatisfy { screen.contains($0.point) })
+        #expect(shown.filter { !screen.contains($0.point) }.allSatisfy { $0.opacity < 1 })
+        #expect(shown.contains { $0.opacity >= 1 })
     }
 
     @Test("Figures fade in over about 0.3 s instead of popping")

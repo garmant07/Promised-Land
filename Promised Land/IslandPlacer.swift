@@ -20,6 +20,8 @@ struct IslandPlacer {
     private(set) var blocked: Set<Island.Tile> = []
     private var regions: [(x: Int, y: Int, size: Int)] = []
     private(set) var water: Set<Island.Tile> = []
+    /// Each waterside Place's bay and the side it's on (its land runs down both sides of it).
+    private(set) var bays: [(tiles: [Island.Tile], side: Int)] = []
     private let placements: [String: IslandPlacement]
     /// Saved places that overlap another (only possible mid-drag in edit mode).
     private(set) var conflicts: Set<String> = []
@@ -102,7 +104,7 @@ struct IslandPlacer {
         for r in reserved {
             mark(r.x, r.y, r.size)
             for t in r.bay { core.insert(t); water.insert(t) }
-            if let side = r.side { reservedBays[r.key] = side }
+            if let side = r.side { reservedBays[r.key] = side; bays.append((r.bay, side)) }
         }
     }
 
@@ -200,6 +202,7 @@ struct IslandPlacer {
                 let p = best.plot
                 mark(p.x, p.y, size)
                 for t in best.bay { core.insert(t); water.insert(t) }
+                if let side = p.bay { bays.append((best.bay, side)) }
                 regions.append((p.x, p.y, size))
                 blockInside(p.x, p.y, size)
                 return p
@@ -217,6 +220,7 @@ struct IslandPlacer {
                 guard bay.allSatisfy({ !core.contains($0) && !near($0, distance: 1) }) else { continue }
                 mark(x, y, size)
                 for t in bay { core.insert(t); water.insert(t) }
+                bays.append((bay, side))
                 regions.append((x, y, size))
                 blockInside(x, y, size)
                 return Island.Plot(bookID: key, x: x, y: y, size: size, bay: side)
@@ -357,6 +361,16 @@ struct IslandPlacer {
                     if !water.contains(t), seen.insert(t).inserted { out.append(t) }
                 }
             }
+        }
+        // A waterside Place's land runs down both sides of its bay to the end of the water, so the
+        // bay reads as its own small body of water (open to the sea only at its far end).
+        for bay in bays where !bay.tiles.isEmpty {
+            let xs = bay.tiles.map(\.x), ys = bay.tiles.map(\.y)
+            let x0 = xs.min()!, x1 = xs.max()!, y0 = ys.min()!, y1 = ys.max()!
+            let flanks: [Island.Tile] = bay.side % 2 == 0
+                ? (y0...y1).flatMap { [Island.Tile(x: x0 - 1, y: $0), Island.Tile(x: x1 + 1, y: $0)] }
+                : (x0...x1).flatMap { [Island.Tile(x: $0, y: y0 - 1), Island.Tile(x: $0, y: y1 + 1)] }
+            for t in flanks where !water.contains(t) && seen.insert(t).inserted { out.append(t) }
         }
         // Close the gaps between neighbouring Places: any straight gap of up to three tiles between
         // two pieces of land, and any notch (a sea tile with land on three sides), is land too, so

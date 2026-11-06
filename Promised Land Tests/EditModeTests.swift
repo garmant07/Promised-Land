@@ -144,3 +144,27 @@ struct EditGapTests {
         #expect(i.conflicts.contains(b.bookID))
     }
 }
+
+@MainActor
+struct BayBorderTests {
+    @Test("A waterside Place's land runs down both sides of its bay, to the end of the water")
+    func bayFlanks() {
+        for island in [EditGapTests.base, Island.build(chapters: FullBiblePreviewData.reads, quizzes: [], verses: [],
+                                                        features: [.library, .throne], richnessOverride: 5)] {
+            let land = Set(island.tiles)
+            let withBays = island.plots.filter { $0.bay != nil }
+            #expect(!withBays.isEmpty)
+            for plot in withBays {
+                let bay = IslandPlacer.bay(x: plot.x, y: plot.y, size: plot.size, side: plot.bay!)
+                let xs = bay.map(\.x), ys = bay.map(\.y)
+                let flanks: [Island.Tile] = plot.bay! % 2 == 0
+                    ? (ys.min()!...ys.max()!).flatMap { [Island.Tile(x: xs.min()! - 1, y: $0), Island.Tile(x: xs.max()! + 1, y: $0)] }
+                    : (xs.min()!...xs.max()!).flatMap { [Island.Tile(x: $0, y: ys.min()! - 1), Island.Tile(x: $0, y: ys.max()! + 1)] }
+                for t in flanks where !island.water.contains(t) {
+                    #expect(land.contains(t), "\(plot.bookID): \(t) beside its bay")
+                }
+                #expect(bay.allSatisfy { island.water.contains($0) && !land.contains($0) }, "\(plot.bookID)'s bay stays water")
+            }
+        }
+    }
+}

@@ -314,6 +314,13 @@ option was chosen and noted here.
     so it keeps its mouth onto open water. Tested in `EditGapTests`.
 65. **Upgrade step.** `IslandMigration` still lets the first of two overlapping saved spots keep its
     place: it adds them in reading order and lets go of the one that causes an overlap.
+66. **Bays have land along both sides.** A waterside Place's bay used to stick out two tiles past
+    its one-tile land border, so its water merged into the open sea. The Place's land now runs down
+    both sides of the bay to the end of the water, so the bay reads as its own small harbour, open
+    to the sea only at its far end (`IslandPlacer.bays`). Tested in `BayBorderTests`. Changing the
+    land's shape moved a close-in LOD test's camera slightly. That test now allows a figure that
+    has just walked off screen to finish its 0.3 s fade-out (as designed); everyone fully shown is
+    still on screen.
 
 ## Remove before release
 
