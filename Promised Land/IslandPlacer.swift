@@ -78,8 +78,28 @@ struct IslandPlacer {
             }
             reserved.append((key, p.x, p.y, size, bay, side))
         }
+        // Saved spots may sit right beside each other (you can build snugly); only overlapping
+        // another, or a bay landing on one, is a conflict, and both of the pair are flagged, so
+        // whichever you dropped springs back.
+        func tiles(_ r: (key: String, x: Int, y: Int, size: Int, bay: [Island.Tile], side: Int?)) -> Set<Island.Tile> {
+            Set((r.y..<(r.y + r.size)).flatMap { ty in (r.x..<(r.x + r.size)).map { Island.Tile(x: $0, y: ty) } })
+        }
+        let start = Set((Self.start.y..<(Self.start.y + Self.start.size)).flatMap { ty in
+            (Self.start.x..<(Self.start.x + Self.start.size)).map { Island.Tile(x: $0, y: ty) }
+        })
+        let footprints = reserved.map(tiles)
+        for (i, a) in reserved.enumerated() {
+            if !footprints[i].isDisjoint(with: start) || a.bay.contains(where: start.contains) { conflicts.insert(a.key) }
+            for j in reserved.indices where j > i {
+                let b = reserved[j]
+                if !footprints[i].isDisjoint(with: footprints[j]) || a.bay.contains(where: footprints[j].contains)
+                    || b.bay.contains(where: footprints[i].contains) {
+                    conflicts.insert(a.key)
+                    conflicts.insert(b.key)
+                }
+            }
+        }
         for r in reserved {
-            if !fits(r.x, r.y, r.size, gap: 1) || r.bay.contains(where: { core.contains($0) }) { conflicts.insert(r.key) }
             mark(r.x, r.y, r.size)
             for t in r.bay { core.insert(t); water.insert(t) }
             if let side = r.side { reservedBays[r.key] = side }
@@ -228,6 +248,58 @@ struct IslandPlacer {
         }
     }
 
+    /// Joins every separate piece of land to the piece with the starting square, by the shortest
+    /// strip (three tiles wide) over tiles that aren't water.
+    private static func joinPieces(_ out: inout [Island.Tile], _ seen: inout Set<Island.Tile>, water: Set<Island.Tile>) {
+        let steps = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+        for _ in 0..<20 {
+            // The main piece: everything connected to the starting square.
+            guard let first = out.first else { return }
+            var main: Set<Island.Tile> = [first]
+            var stack = [first]
+            while let t = stack.popLast() {
+                for (dx, dy) in steps {
+                    let n = Island.Tile(x: t.x + dx, y: t.y + dy)
+                    if seen.contains(n), main.insert(n).inserted { stack.append(n) }
+                }
+            }
+            guard let stray = out.first(where: { !main.contains($0) }) else { return }
+            // Shortest walk from the stray piece to the main piece, over anything but water.
+            var piece: Set<Island.Tile> = [stray]
+            stack = [stray]
+            while let t = stack.popLast() {
+                for (dx, dy) in steps {
+                    let n = Island.Tile(x: t.x + dx, y: t.y + dy)
+                    if seen.contains(n), piece.insert(n).inserted { stack.append(n) }
+                }
+            }
+            var came: [Island.Tile: Island.Tile] = [:]
+            var visited = piece
+            var queue = Array(piece).sorted { ($0.y, $0.x) < ($1.y, $1.x) }
+            var head = 0
+            var reached: Island.Tile?
+            while head < queue.count, reached == nil {
+                let t = queue[head]
+                head += 1
+                for (dx, dy) in steps {
+                    let n = Island.Tile(x: t.x + dx, y: t.y + dy)
+                    guard !water.contains(n), visited.insert(n).inserted, visited.count < 20_000 else { continue }
+                    came[n] = t
+                    if main.contains(n) { reached = n; break }
+                    queue.append(n)
+                }
+            }
+            guard var t = reached else { return }
+            while let prev = came[t], !piece.contains(prev) {
+                for (dx, dy) in [(0, 0)] + steps {
+                    let w = Island.Tile(x: prev.x + dx, y: prev.y + dy)
+                    if !water.contains(w), seen.insert(w).inserted { out.append(w) }
+                }
+                t = prev
+            }
+        }
+    }
+
     private func fits(_ x: Int, _ y: Int, _ size: Int, gap: Int) -> Bool {
         for ty in (y - gap)..<(y + size + gap) {
             for tx in (x - gap)..<(x + size + gap) where core.contains(Island.Tile(x: tx, y: ty)) { return false }
@@ -286,13 +358,49 @@ struct IslandPlacer {
                 }
             }
         }
-        // Bridge any gap between neighbouring Places (they're at most three tiles apart).
-        for t in Array(out) {
-            for (dx, dy) in [(1, 0), (0, 1), (-1, 0), (0, -1)] {
-                let a = Island.Tile(x: t.x + dx, y: t.y + dy), b = Island.Tile(x: t.x + 2 * dx, y: t.y + 2 * dy)
-                if !seen.contains(a), seen.contains(b), !water.contains(a) { seen.insert(a); out.append(a) }
+        // Close the gaps between neighbouring Places: any straight gap of up to three tiles between
+        // two pieces of land, and any notch (a sea tile with land on three sides), is land too, so
+        // moving a Place never leaves a channel or an inlet cutting into the island. Bays stay water.
+        func add(_ t: Island.Tile) {
+            if !water.contains(t), seen.insert(t).inserted { out.append(t) }
+        }
+        /// Beside a bay: left as sea, so the bay keeps its mouth onto open water.
+        func byBay(_ t: Island.Tile) -> Bool {
+            [(1, 0), (0, 1), (-1, 0), (0, -1)].contains { water.contains(Island.Tile(x: t.x + $0.0, y: t.y + $0.1)) }
+        }
+        func closeGaps() {
+            for _ in 0..<2 {
+                for t in Array(out) {
+                    for (dx, dy) in [(1, 0), (0, 1)] {
+                        for gap in 1...3 {
+                            let far = Island.Tile(x: t.x + (gap + 1) * dx, y: t.y + (gap + 1) * dy)
+                            guard seen.contains(far) else { continue }
+                            let between = (1...gap).map { Island.Tile(x: t.x + $0 * dx, y: t.y + $0 * dy) }
+                            if between.allSatisfy({ !seen.contains($0) && !water.contains($0) && !byBay($0) }) { between.forEach(add) }
+                            break
+                        }
+                    }
+                }
+            }
+            for _ in 0..<3 {
+                var notches: [Island.Tile] = []
+                for t in out {
+                    for (dx, dy) in [(1, 0), (0, 1), (-1, 0), (0, -1)] {
+                        let n = Island.Tile(x: t.x + dx, y: t.y + dy)
+                        guard !seen.contains(n), !water.contains(n), !byBay(n) else { continue }
+                        let sides = [(1, 0), (0, 1), (-1, 0), (0, -1)].filter { seen.contains(Island.Tile(x: n.x + $0.0, y: n.y + $0.1)) }.count
+                        if sides >= 3 { notches.append(n) }
+                    }
+                }
+                if notches.isEmpty { break }
+                notches.forEach(add)
             }
         }
+        closeGaps()
+        // A Place dragged out on its own is joined to the island by a strip of land (then any gaps
+        // beside the strip are closed too).
+        Self.joinPieces(&out, &seen, water: water)
+        closeGaps()
         // Fill any gaps enclosed by land (but not the bays), so there are no holes.
         let xs = out.map(\.x), ys = out.map(\.y)
         guard let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max() else { return out }

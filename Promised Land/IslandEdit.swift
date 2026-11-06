@@ -148,12 +148,18 @@ enum IslandMigration {
         let kept = placed.filter(\.moved)
         if !kept.isEmpty {
             let reads = (try? context.fetch(FetchDescriptor<ChapterRead>())) ?? []
-            let placements = Dictionary(kept.map { ($0.key, IslandPlacement(x: $0.x, y: $0.y, rotation: $0.rotation, moved: true)) },
-                                        uniquingKeysWith: { a, _ in a })
-            let island = Island.build(chapters: reads.map { ($0.bookID, $0.chapterNumber, $0.date) }, quizzes: [], verses: [],
-                                      features: [.library], placements: placements)
-            // A moved Place whose new (bigger or smaller) footprint now overlaps goes back to automatic.
-            for item in kept where island.conflicts.contains(item.key) { context.delete(item) }
+            let chapters = reads.map { ($0.bookID, $0.chapterNumber, $0.date) }
+            // A moved Place whose new (bigger or smaller) footprint now overlaps goes back to
+            // automatic. Overlaps flag both Places, so they're added in reading order and the one
+            // that causes an overlap is the one let go: the first keeps its spot.
+            let firstRead = Dictionary(reads.map { ($0.bookID, $0.date) }, uniquingKeysWith: min)
+            var placements: [String: IslandPlacement] = [:]
+            for item in kept.sorted(by: { (firstRead[$0.key] ?? .distantFuture, $0.key) < (firstRead[$1.key] ?? .distantFuture, $1.key) }) {
+                var trial = placements
+                trial[item.key] = IslandPlacement(x: item.x, y: item.y, rotation: item.rotation, moved: true)
+                let island = Island.build(chapters: chapters, quizzes: [], verses: [], features: [.library], placements: trial)
+                if island.conflicts.contains(item.key) { context.delete(item) } else { placements = trial }
+            }
         }
         try? context.save()
         defaults.set(-1, forKey: StorageKeys.gardenSeenChapters)

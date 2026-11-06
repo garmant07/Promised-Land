@@ -298,6 +298,23 @@ option was chosen and noted here.
     island is a SwiftUI `Canvas` (notes 13, 45). Panning already only slides two cached layers
     (note 46); the camera isn't written anywhere during a drag.
 
+## Round: edit mode without gaps (Nov 2026)
+
+63. **What went wrong.** Land is each Place plus a one-tile border, and only one-tile gaps between
+    neighbours were filled. Moving a Place a little away from its neighbours left a 2–3 tile
+    channel or inlet of sea cutting into the island, and dragging it further left a separate islet.
+    Saved spots also had to keep a full tile from every neighbour, so dropping a Place close to
+    another was refused (red). And when you dropped a Place onto one later in the list, only the
+    other Place was flagged: yours stayed overlapping, and Done stayed disabled.
+64. **Now.** Places you place yourself may sit right beside each other; only an actual overlap (or
+    a bay on land) is refused, and it flags both Places, so the one you dropped always springs
+    back. The land fills any straight gap of up to three tiles and any notch. A Place dragged out
+    on its own is joined to the island by a three-tile strip, so the island is always one piece and
+    every road still reaches the Library. Bays stay water, and tiles beside a bay are left as sea
+    so it keeps its mouth onto open water. Tested in `EditGapTests`.
+65. **Upgrade step.** `IslandMigration` still lets the first of two overlapping saved spots keep its
+    place: it adds them in reading order and lets go of the one that causes an overlap.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.
