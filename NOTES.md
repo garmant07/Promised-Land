@@ -267,6 +267,37 @@ option was chosen and noted here.
     for iOS 26 with no warnings. Not yet run on an iOS 26 device or simulator (only iOS 27
     simulators are installed here).
 
+## Round: smooth turning and panning (Nov 2026)
+
+57. **Measured first** (simulator, full Bible seeded, 600 nodes; `-perfLog` now also logs the
+    longest frame each second, and DEBUG `-autoTurn [seconds]` turns the island on a timer). Panning
+    was ~59 fps. Turning was 22–38 fps, with a 0.4–0.75 s freeze on every quarter turn.
+58. **Causes, from the profiler.** (1) The turn redrew the whole island from scratch at every
+    in-between angle (nothing is cached between quarters). (2) Landing on a quarter rendered its
+    ground chunks and Place pictures on the spot. Close in, the 160 MB picture cache had evicted
+    them (NSCache evicts before its limit). (3) Every camera save (each turn, and the end of each
+    pan or pinch) wrote UserDefaults, which made the whole home screen recompute (`@AppStorage`)
+    with a full Bible. (4) Produce baskets were drawn from shapes and text every frame: 15% of
+    the main thread at middle zoom.
+59. **Fixes.** A turn switches quarter at once (only cached pictures, never in-between angles),
+    while a picture of the old quarter turns away and fades out over 0.3 s (`TurnSnapshotView`).
+    Only layer opacity and rotation animate. Turn taps during the animation queue at most one
+    (`TurnQueue`). While the camera is still, the neighbouring quarters' pictures are rendered ahead,
+    one per frame gap (`IslandRenderCache.prewarm`). The cache limit is 512 MB; the whole app
+    measured ~150 MB with every quarter warm. The camera is saved only when the app leaves the
+    foreground or the island goes away. Baskets are cached pictures. Depth order is still sorted
+    once per turn.
+60. **Tried and dropped:** stepping camera glides on the display link (`FrameTicker`) instead of a
+    16 ms sleep. It added a second SwiftUI update each frame and measured slower (52 vs 58 fps), so
+    glides keep the sleep. `FrameTicker` is used only for one-off "after the next frame" waits.
+61. **After** (same runs): pan 58–60 fps at all zooms; turn 57–58 fps far and middle, 56–57 close
+    in. Turns that used to freeze for 0.4–0.75 s now drop at most a few frames (worst 50 ms far
+    and middle, up to 100 ms close in). Node count unchanged (600). Still not measured on a real
+    iPhone 11.
+62. **No SpriteKit.** The brief's SKCameraNode / SKShapeNode / zPosition items don't apply: the
+    island is a SwiftUI `Canvas` (notes 13, 45). Panning already only slides two cached layers
+    (note 46); the camera isn't written anywhere during a drag.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

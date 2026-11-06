@@ -57,6 +57,9 @@ final class FrameCounter {
     @ObservationIgnored private var link: CADisplayLink?
     @ObservationIgnored private var frames = 0
     @ObservationIgnored private var since = CACurrentMediaTime()
+    /// The longest gap between two frames in this window (a hitch shows here, not in the average).
+    @ObservationIgnored private var lastFrame = CACurrentMediaTime()
+    @ObservationIgnored private var worst: Double = 0
     /// With `-perfLog`, one counter runs for the whole session and prints once a second.
     @ObservationIgnored private let logs: Bool
 
@@ -76,6 +79,8 @@ final class FrameCounter {
     @objc private func tick() {
         frames += 1
         let now = CACurrentMediaTime()
+        worst = max(worst, now - lastFrame)
+        lastFrame = now
         let window = logs ? 1.0 : 0.5
         guard now - since >= window else { return }
         let elapsed = now - since
@@ -88,11 +93,13 @@ final class FrameCounter {
             let parts = PerfProbe.totals.sorted { $0.key < $1.key }.map { key, v in
                 String(format: "%@ %.2fms×%d", key, v.time / Double(frames) * 1000, v.calls)
             }
-            print(String(format: "PERF fps=%d nodes=%d draws=%d ms/frame=%.2f | ", fps, nodes, draws, ms) + parts.joined(separator: " | "))
+            print(String(format: "PERF fps=%d worst=%.1fms nodes=%d draws=%d ms/frame=%.2f | ", fps, worst * 1000, nodes, draws, ms)
+                  + parts.joined(separator: " | "))
         }
         // Only the logger empties the totals, so the overlay reads the same numbers it does.
         if logs || !PerfProbe.logging { PerfProbe.totals = [:] }
         frames = 0
+        worst = 0
         since = now
     }
 }

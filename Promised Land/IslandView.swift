@@ -52,6 +52,7 @@ struct PlatformScene: View {
     var onTap: ((Int?) -> Void)? = nil
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.scenePhase) private var scenePhase
 
     // Camera
     @State private var zoom: CGFloat = 1
@@ -89,6 +90,10 @@ struct PlatformScene: View {
     @State private var director = LifeDirector()
     /// Items in drawing order, sorted only when something changes (see IslandLayers.swift).
     @State private var depthOrder = IslandDepthOrder()
+    /// Quarter turns: the one animating (a picture of the old quarter) and at most one waiting.
+    @State private var turnQueue = TurnQueue()
+    @State private var turnSnapshot: TurnSnapshot?
+    @State private var turnFaded = false
     // Pinch: the point it started at, and the camera then.
     @State private var pinchAnchor: CGPoint?
     @State private var pinchFrom: (zoom: CGFloat, pan: CGSize)?
@@ -270,6 +275,18 @@ struct PlatformScene: View {
                         }
                     }
                 }
+                // Turning: the island already shows the new quarter, fading and easing in, while a
+                // picture of how it looked turns away and fades out. Only layer opacity and
+                // rotation animate; nothing is redrawn.
+                .opacity(turnSnapshot == nil || turnFaded ? 1 : 0)
+                .rotationEffect(.degrees(turnSnapshot.map { turnFaded ? 0 : -Double($0.direction) * Self.turnTilt } ?? 0))
+                if let turnSnapshot {
+                    TurnSnapshotView(snapshot: turnSnapshot)
+                        .equatable()
+                        .opacity(turnFaded ? 0 : 1)
+                        .rotationEffect(.degrees(turnFaded ? Double(turnSnapshot.direction) * Self.turnTilt : 0))
+                        .allowsHitTesting(false)
+                }
             }
             .frame(width: geo.size.width, height: geo.size.height)
             .contentShape(Rectangle())
@@ -319,6 +336,18 @@ struct PlatformScene: View {
             placeCharacter()
             #if DEBUG
             // "-autoPan" keeps the camera circling, for measuring frame rate while panning.
+            // "-autoTurn" turns the island a quarter every 1.5 s, for measuring rotation.
+            // "-autoTurn 3" turns every 3 s instead.
+            let args = ProcessInfo.processInfo.arguments
+            if let i = args.firstIndex(of: "-autoTurn") {
+                let every = i + 1 < args.count ? Double(args[i + 1]) ?? 1.5 : 1.5
+                Task {
+                    while true {
+                        try? await Task.sleep(for: .seconds(every))
+                        turn(by: 1)
+                    }
+                }
+            }
             if ProcessInfo.processInfo.arguments.contains("-autoPan") {
                 Task {
                     let start = Date.now
@@ -332,6 +361,13 @@ struct PlatformScene: View {
             #endif
         }
         .onChange(of: island.tiles.count) { _, _ in if !walking { placeCharacter() } }
+        .onChange(of: scenePhase) { _, phase in if phase != .active { saveCamera() } }
+        .onDisappear { saveCamera() }
+        // Once the camera is still, render ahead what the next quarter turn either way will show.
+        .task(id: WarmKey(signature: island.signature, zoom: zoomStart, pan: panStart, quarter: quarter, size: viewSize,
+                          editing: editing != nil, paused: paused)) {
+            await warmNextTurns()
+        }
         .task(id: reduceMotion) {
             guard !reduceMotion else { return }
             await wander()
@@ -374,23 +410,41 @@ struct PlatformScene: View {
         .accessibilityLabel(label)
     }
 
-    /// Turns the island a quarter turn, animating smoothly (instantly with Reduce Motion).
+    /// How long a quarter turn's crossfade takes, and how far the pictures tilt as they swap.
+    static let turnDuration = 0.3
+    static let turnTilt = 10.0
+
+    /// Turns the island a quarter turn. A tap while one is animating waits its turn (at most one).
     private func turn(by step: Int) {
-        let from = angle
+        guard let step = turnQueue.request(step) else { return }
+        startTurn(step)
+    }
+
+    /// The island switches to the new quarter at once (drawn from cached pictures, never at an
+    /// in-between angle), while a picture of the old quarter turns and fades away over 0.3 s.
+    private func startTurn(_ step: Int) {
+        let from = ((quarter % 4) + 4) % 4
+        // The old quarter is on screen, so this is all cached pictures: no drawing.
+        let old = viewSize == .zero || reduceMotion ? nil : IslandRenderCache.shared.frame(
+            island: island, size: viewSize, insets: insets, zoom: zoom, quarter: from, pan: pan,
+            overrides: overrides, hidden: [], bake: editing == nil)
         quarter += step
-        let to = CGFloat(quarter)
-        saveCamera()
-        guard !reduceMotion else { angle = to; return }
+        angle = CGFloat(quarter)
+        guard let old else { finishTurn(); return }
+        turnSnapshot = TurnSnapshot(id: (turnSnapshot?.id ?? 0) + 1, frame: old, direction: step > 0 ? 1 : -1)
+        turnFaded = false
         Task {
-            let start = Date.now, duration = 0.4
-            while true {
-                let t = min(1, Date.now.timeIntervalSince(start) / duration)
-                let e = t * t * (3 - 2 * t)
-                angle = from + (to - from) * e
-                if t >= 1 { break }
-                try? await Task.sleep(for: .milliseconds(16))
-            }
+            // Let the new quarter show once beneath the picture before the fade starts.
+            await FrameTicker.shared.nextFrame()
+            withAnimation(.easeInOut(duration: Self.turnDuration)) { turnFaded = true }
+            try? await Task.sleep(for: .seconds(Self.turnDuration))
+            turnSnapshot = nil
+            finishTurn()
         }
+    }
+
+    private func finishTurn() {
+        if let next = turnQueue.finished() { startTurn(next) }
     }
 
     /// Recentres on your character, zooming in if far out.
@@ -401,7 +455,38 @@ struct PlatformScene: View {
         let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
                              y: insets.top + (size.height - insets.top - insets.bottom) / 2)
         animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - feet.x, height: centre.y - feet.y), duration: 0.5)
-        saveCamera()
+    }
+
+    struct WarmKey: Equatable {
+        let signature: Int
+        let zoom: CGFloat
+        let pan: CGSize
+        let quarter: Int
+        let size: CGSize
+        let editing: Bool
+        let paused: Bool
+    }
+
+    /// Renders the pictures the neighbouring quarter turns will need, one at a time between frames,
+    /// only while nothing moves. A turn then finds them cached instead of drawing them on the spot.
+    private func warmNextTurns() async {
+        guard viewSize != .zero, !paused, island.signature != 0 else { return }
+        try? await Task.sleep(for: .seconds(0.6))
+        let q = ((quarter % 4) + 4) % 4
+        for target in [(q + 1) % 4, (q + 3) % 4] {
+            while !Task.isCancelled {
+                // Never while a finger is down, a glide runs or a turn animates.
+                guard !touchDown, turnSnapshot == nil, zoom == zoomStart, pan == panStart else { return }
+                let done = PerfProbe.measure("prewarm") {
+                    // Exactly what the ground layer will ask for (rounded pan, canvas a step bigger than the screen).
+                    IslandRenderCache.shared.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: target,
+                                                     pan: PanStep.drawPan(pan), bake: editing == nil,
+                                                     viewport: CGRect(origin: .zero, size: PanStep.canvasSize(viewSize)))
+                }
+                if done { break }
+                await FrameTicker.shared.nextFrame()
+            }
+        }
     }
 
     /// Glides the camera to a new zoom and pan. Done frame by frame, because the island's
@@ -423,6 +508,8 @@ struct PlatformScene: View {
                 pan = CGSize(width: fromPan.width + (toPan.width - fromPan.width) * e,
                              height: fromPan.height + (toPan.height - fromPan.height) * e)
                 if t >= 1 { break }
+                // A short sleep, not the display link: changing state from a display-link callback
+                // added a second SwiftUI update every frame and measured slower (52 vs 58 fps).
                 try? await Task.sleep(for: .milliseconds(16))
             }
         }
@@ -469,8 +556,11 @@ struct PlatformScene: View {
         panStart = pan
     }
 
+    /// Writes the camera (zoom, pan, turn) for next launch. Only when the app leaves the
+    /// foreground or the island goes away: every UserDefaults write makes the home screen
+    /// recompute (its `@AppStorage`), which with a full Bible is a visible hitch mid-gesture.
     private func saveCamera() {
-        guard persistsCamera else { return }
+        guard persistsCamera, cameraLoaded else { return }
         let d = UserDefaults.standard
         d.set(Double(zoomStart), forKey: Keys.zoom)
         d.set(Double(panStart.width), forKey: Keys.panX)
@@ -519,7 +609,6 @@ struct PlatformScene: View {
                     } else {
                         panStart = pan
                     }
-                    saveCamera()
                 } else if !pinched, !longPressed, TapClassifier.isTap(translation: value.translation) {
                     if let editing {
                         editing.onSelect(nil)
@@ -555,7 +644,6 @@ struct PlatformScene: View {
                             height: point.y - centre.y - (point.y - pan.height - centre.y) * k)
         let target = newZoom == IslandLayout.minZoom ? .zero : clampPan(newPan, zoom: newZoom, size: size)
         animateCamera(zoom: newZoom, pan: target, duration: 0.35)
-        saveCamera()
     }
 
     /// Tall things (buildings, trees) standing in front of a figure and covering part of it, back to
@@ -722,7 +810,6 @@ struct PlatformScene: View {
                     let clamped = clamp(pan, size: size)
                     if clamped != pan { animateCamera(zoom: zoom, pan: clamped, duration: 0.3, easeOut: true) } else { zoomStart = zoom; panStart = pan }
                 }
-                saveCamera()
             }
     }
 

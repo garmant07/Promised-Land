@@ -17,8 +17,20 @@ final class IslandRenderCache {
     private var placeKeys: (signature: Int, keys: [String: Int]) = (0, [:])
     /// `groundBounds` per ground key (it walks every tile, so never per frame).
     private var groundExtents: [String: CGRect] = [:]
+    /// While warming ahead: how many more pictures may be rendered in this call (nil: no limit),
+    /// and how many were left for later.
+    private var renderBudget: Int?
+    private var skipped = 0
+    #if DEBUG
+    /// For tests: pictures rendered so far.
+    private(set) var renders = 0
+    #endif
 
-    private init() { images.totalCostLimit = 160 * 1024 * 1024 }
+    /// 160 MB evicted pictures a close-in quarter turn needed (NSCache may evict well before its
+    /// limit), so turning there redrew them on the spot. At 512 MB nothing was evicted, and the whole
+    /// app measured about 150 MB with all four quarters warm. The cache also empties itself under
+    /// memory pressure.
+    private init() { images.totalCostLimit = 512 * 1024 * 1024 }
 
     final class ImageBox {
         let image: CGImage
@@ -54,6 +66,26 @@ final class IslandRenderCache {
     /// `viewport` is the area drawn into (defaults to the view, with a small margin).
     func frame(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
                overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool = true, viewport: CGRect? = nil) -> Frame? {
+        renderBudget = nil
+        return plan(island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, pan: pan,
+                    overrides: overrides, hidden: hidden, bake: bake, viewport: viewport)
+    }
+
+    /// Renders ahead what `frame` would need for this camera (e.g. the next quarter turn), at most
+    /// one picture per call so it never holds up a frame. Returns true when everything is ready.
+    @discardableResult
+    func prewarm(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize, bake: Bool,
+                 viewport: CGRect? = nil) -> Bool {
+        renderBudget = 1
+        skipped = 0
+        defer { renderBudget = nil }
+        _ = plan(island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, pan: pan,
+                 overrides: [:], hidden: [], bake: bake, viewport: viewport)
+        return skipped == 0 && renderBudget == 1
+    }
+
+    private func plan(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
+                      overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool, viewport: CGRect?) -> Frame? {
         guard island.signature != 0, size.width > 0 else { return nil }
         let zb = Self.bucket(for: zoom)
         let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb, angle: CGFloat(quarter))
@@ -178,6 +210,12 @@ final class IslandRenderCache {
                in: CGRect(x: base.x + frame.minX * k, y: base.y + frame.minY * k, width: frame.width * k, height: frame.height * k))
     }
 
+    /// Any small code-drawn picture, rendered once per `key` and reused (e.g. produce baskets).
+    func picture(_ key: String, size: CGSize, draw: @escaping (inout GraphicsContext) -> Void) -> CGImage? {
+        let k = key as NSString
+        return images.object(forKey: k)?.image ?? render(key: k, size: size, draw: draw)
+    }
+
     /// The ground's extent in a layout's points (with room for the shore and earth sides).
     private func groundBounds(_ island: Island, layout: IslandLayout) -> CGRect {
         var minX = CGFloat.infinity, minY = CGFloat.infinity, maxX = -CGFloat.infinity, maxY = -CGFloat.infinity
@@ -222,6 +260,13 @@ final class IslandRenderCache {
     }
 
     private func render(key: NSString, size: CGSize, draw: @escaping (inout GraphicsContext) -> Void) -> CGImage? {
+        if let budget = renderBudget {
+            guard budget > 0 else { skipped += 1; return nil }
+            renderBudget = budget - 1
+        }
+        #if DEBUG
+        renders += 1
+        #endif
         let renderer = ImageRenderer(content: Canvas { c, _ in draw(&c) }.frame(width: size.width, height: size.height))
         renderer.scale = renderScale
         guard let image = renderer.cgImage else { return nil }

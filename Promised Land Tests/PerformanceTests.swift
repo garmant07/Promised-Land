@@ -86,4 +86,63 @@ struct PerformanceTests {
         let a = v.pose(at: 10).point, b = v.pose(at: 10 + v.period).point
         #expect(abs(a.x - b.x) < 0.0001 && abs(a.y - b.y) < 0.0001)
     }
+
+    @Test("Turn taps while a turn animates: one waits its turn, the rest are ignored")
+    func turnQueue() {
+        var q = TurnQueue()
+        #expect(q.request(1) == 1)       // starts now
+        #expect(q.request(1) == nil)     // queued
+        #expect(q.request(-1) == nil)    // ignored: one is already waiting
+        #expect(q.finished() == 1)       // the queued one starts
+        #expect(q.turning)
+        #expect(q.finished() == nil)     // done
+        #expect(!q.turning)
+        #expect(q.request(-1) == -1)
+    }
+
+    @Test("Warming ahead renders what a quarter turn needs, one picture per call; the turn then draws nothing new")
+    func prewarmNextQuarter() {
+        let cache = IslandRenderCache.shared
+        let island = Self.island
+        let size = Self.size
+        // A camera close enough to use Place pictures, and a view nobody else in the tests uses.
+        let zoom: CGFloat = 2.2, pan = CGSize(width: 37, height: -61)
+        var calls = 0
+        while !cache.prewarm(island: island, size: size, insets: EdgeInsets(), zoom: zoom, quarter: 1, pan: pan, bake: true) {
+            calls += 1
+            if calls > 500 { break }
+        }
+        #expect(calls > 1)  // more than one picture, rendered one per call
+        let before = cache.renders
+        let frame = cache.frame(island: island, size: size, insets: EdgeInsets(), zoom: zoom, quarter: 1, pan: pan,
+                                overrides: [:], hidden: [])
+        #expect(frame != nil)
+        #expect(cache.renders == before)
+    }
+
+    @Test("Produce baskets are cached pictures, not redrawn every frame")
+    func basketsCached() {
+        var life = IslandLife.make(island: Self.island)
+        let place = Self.island.plots[0]
+        life.baskets = [IslandLife.Basket(bookID: place.bookID, point: place.centre, count: 3, kind: .bread)]
+        let layout = IslandLayout(island: Self.island, size: Self.size, zoom: 6)
+            .panned(CGSize(width: 0, height: 0))
+        // Pan so the basket is on screen.
+        let p = layout.point(place.centre.x, place.centre.y)
+        let centred = layout.panned(CGSize(width: Self.size.width / 2 - p.x, height: Self.size.height / 2 - p.y))
+        let cache = IslandRenderCache.shared
+        func draw() {
+            let renderer = ImageRenderer(content: Canvas { c, size in
+                IslandLife.drawBaskets(&c, life: life, layout: centred, time: 0, visible: CGRect(origin: .zero, size: size))
+            }.frame(width: Self.size.width, height: Self.size.height))
+            _ = renderer.cgImage
+        }
+        let start = cache.renders
+        draw()
+        let after = cache.renders
+        #expect(after == start + 1)  // the basket was on screen and rendered once
+        draw()
+        draw()
+        #expect(cache.renders == after)
+    }
 }

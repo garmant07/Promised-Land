@@ -182,3 +182,30 @@ struct IslandWavesLayer: View, Equatable {
         .allowsHitTesting(false)
     }
 }
+
+/// A picture of the island just before a quarter turn: the old quarter's cached ground and Place
+/// pictures, drawn where they were.
+struct TurnSnapshot {
+    let id: Int
+    let frame: IslandRenderCache.Frame
+    /// +1 turning right, -1 left.
+    let direction: Int
+}
+
+/// Draws a `TurnSnapshot` once; the turn animates only its opacity and rotation.
+struct TurnSnapshotView: View, Equatable {
+    let snapshot: TurnSnapshot
+
+    nonisolated static func == (a: Self, b: Self) -> Bool { a.snapshot.id == b.snapshot.id }
+
+    var body: some View {
+        Canvas { c, _ in
+            for g in snapshot.frame.ground { c.draw(Image(decorative: g.image, scale: 1), in: g.rect) }
+            for layer in snapshot.frame.layers {
+                // Places are pictures; a few loose things (trees, extras) aren't, and are left out
+                // of this 0.3 s picture rather than drawn.
+                if case .picture(let image, let rect) = layer { c.draw(Image(decorative: image, scale: 1), in: rect) }
+            }
+        }
+    }
+}

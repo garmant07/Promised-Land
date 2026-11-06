@@ -147,10 +147,25 @@ struct IslandLife: Equatable {
     static func drawBaskets(_ c: inout GraphicsContext, life: IslandLife, layout: IslandLayout, time: TimeInterval, visible: CGRect) {
         // Zoomed far out they'd cover the island: they appear as you come closer.
         guard layout.u >= minimumBasketU else { return }
+        // Each basket is a cached picture (its shapes and count drawn once per count, produce and
+        // size), not redrawn every frame: laying out the count's text alone was a large share
+        // of a frame with many baskets on screen.
+        let ub = CGFloat(pow(1.25, ceil(log(Double(max(0.05, layout.u))) / log(1.25))))
+        let half = 19 * ub * 1.1
+        let k = layout.u / ub
         for basket in life.baskets {
             let s = layout.point(basket.point.x, basket.point.y)
             guard visible.contains(s) else { continue }
-            Self.basket(&c, at: basketPoint(s, u: layout.u, time: time), count: basket.count, kind: basket.kind, u: layout.u)
+            let p = basketPoint(s, u: layout.u, time: time)
+            let key = "basket|\(basket.kind)|\(basket.count)|\(Int(ub * 1000))"
+            if let image = IslandRenderCache.shared.picture(key, size: CGSize(width: 2 * half, height: 2 * half), draw: { g in
+                Self.basket(&g, at: CGPoint(x: half, y: half), count: basket.count, kind: basket.kind, u: ub)
+            }) {
+                c.draw(Image(decorative: image, scale: 1),
+                       in: CGRect(x: p.x - half * k, y: p.y - half * k, width: 2 * half * k, height: 2 * half * k))
+            } else {
+                Self.basket(&c, at: p, count: basket.count, kind: basket.kind, u: layout.u)
+            }
         }
     }
 
