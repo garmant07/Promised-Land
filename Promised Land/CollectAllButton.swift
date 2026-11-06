@@ -159,7 +159,7 @@ enum SoftSound {
                 let player = AVAudioPlayerNode()
                 engine.attach(player)
                 let format = AVAudioFormat(standardFormatWithSampleRate: 44_100, channels: 1)!
-                try engine.connectNode(player, to: engine.mainMixerNode, format: format)
+                engine.connect(player, to: engine.mainMixerNode, format: format)
                 self.engine = engine
                 self.player = player
                 self.buffer = makeWhoosh(format: format)
@@ -167,7 +167,7 @@ enum SoftSound {
             guard let engine, let player, let buffer else { return }
             if !engine.isRunning { try engine.start() }
             player.scheduleBuffer(buffer, at: nil, options: .interrupts)
-            try player.playAudio()
+            player.play()
         } catch {
             // No sound is fine: the flight and the haptic still say it worked.
         }

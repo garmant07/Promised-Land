@@ -259,6 +259,14 @@ option was chosen and noted here.
     tiles). Walks now follow the road they join from the junction onward, so every step is to a
     neighbouring tile. Tested in `PlaceGrowthTests.roadsConnect`.
 
+## Round: iOS 26 (Nov 2026)
+
+56. **Runs on iOS 26.** The deployment target was 27.0; it's now 26.0. The only iOS 27-only calls were
+    in the Collect All whoosh (`AVAudioEngine.connectNode`, `AVAudioPlayerNode.playAudio`). They use
+    `connect(_:to:format:)` and `play()` instead, which do the same and exist on iOS 26. Compiled
+    for iOS 26 with no warnings. Not yet run on an iOS 26 device or simulator (only iOS 27
+    simulators are installed here).
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

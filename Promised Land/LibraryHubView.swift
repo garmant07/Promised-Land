@@ -12,6 +12,7 @@ struct LibraryHubView: View {
     @Query private var reads: [ChapterRead]
     @State private var path = NavigationPath()
     @State private var showingJournals = false
+    @Environment(\.bibleService) private var bible
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -25,7 +26,9 @@ struct LibraryHubView: View {
                     ForEach(BookSection.all) { section in
                         bookShelf(section)
                     }
-                    Text("American Standard Version sample text for some chapters; mark any chapter as read from your own Bible.")
+                    Text(bible.isLive
+                         ? "Chapters load as you open them and are kept for reading offline. You can also read in your own Bible and mark the chapter as read."
+                         : "American Standard Version sample text for some chapters; mark any chapter as read from your own Bible.")
                         .font(.caption)
                         .foregroundStyle(Color.secondaryText)
                 }

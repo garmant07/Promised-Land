@@ -49,18 +49,25 @@ extension Font {
 // MARK: - Buttons
 
 struct PrimaryButtonStyle: ButtonStyle {
-    @Environment(\.isEnabled) private var isEnabled
-
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.headline)
-            .foregroundStyle(Color.onPrimary)
-            .frame(maxWidth: .infinity, minHeight: 52)
-            .padding(.horizontal, 16)
-            .background(Color.primaryBrown.opacity(isEnabled ? 1 : 0.4),
-                        in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-            .scaleEffect(configuration.isPressed ? 0.97 : 1)
-            .animation(.easeOut(duration: 0.15), value: configuration.isPressed)
+        PrimaryButtonStyleBody(configuration: configuration)
+    }
+
+    private struct PrimaryButtonStyleBody: View {
+        let configuration: PrimaryButtonStyle.Configuration
+        @Environment(\.isEnabled) private var isEnabled
+
+        var body: some View {
+            configuration.label
+                .font(.headline)
+                .foregroundStyle(Color.onPrimary)
+                .frame(maxWidth: .infinity, minHeight: 52)
+                .padding(.horizontal, 16)
+                .background(Color.primaryBrown.opacity(isEnabled ? 1 : 0.4),
+                            in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .scaleEffect(configuration.isPressed ? 0.97 : 1)
+                .animation(.easeOut(duration: 0.15), value: configuration.isPressed)
+        }
     }
 }
 
