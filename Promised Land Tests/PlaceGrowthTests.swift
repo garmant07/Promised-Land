@@ -204,6 +204,40 @@ struct PlacementTests {
         }
     }
 
+    @Test("All the roads are one connected network, and every walk to the Library steps tile by tile")
+    func roadsConnect() {
+        for island in [island(["genesis", "john", "ruth", "jonah", "acts", "psalms", "romans"]),
+                       Island.build(chapters: FullBiblePreviewData.reads, quizzes: [], verses: [], features: [.library, .throne],
+                                    richnessOverride: 5)] {
+            // Road tiles form a single piece (4-way neighbours).
+            let tiles = Set(island.roads.flatMap { $0 })
+            var seen: Set<Island.Tile> = [], pieces = 0
+            for t in tiles where !seen.contains(t) {
+                pieces += 1
+                var stack = [t]
+                seen.insert(t)
+                while let c = stack.popLast() {
+                    for (dx, dy) in [(1, 0), (-1, 0), (0, 1), (0, -1)] {
+                        let n = Island.Tile(x: c.x + dx, y: c.y + dy)
+                        if tiles.contains(n), seen.insert(n).inserted { stack.append(n) }
+                    }
+                }
+            }
+            #expect(pieces == 1)
+            // Every Place's walk to the Library exists and never jumps (no gliding through buildings).
+            for plot in island.plots {
+                let walk = island.routeToLibrary(from: plot.bookID)
+                #expect(!walk.isEmpty, "\(plot.bookID) has no road to the Library")
+                for (a, b) in zip(walk, walk.dropFirst()) { #expect(abs(a.x - b.x) + abs(a.y - b.y) == 1, "\(plot.bookID)") }
+                if let library = island.library { #expect(library.rect.contains(CGPoint(x: CGFloat(walk.last!.x) + 0.5, y: CGFloat(walk.last!.y) + 0.5))) }
+            }
+            // Travellers' roads never jump either.
+            for t in Traveller.make(island: island) {
+                for (a, b) in zip(t.road, t.road.dropFirst()) { #expect(abs(a.x - b.x) + abs(a.y - b.y) <= 1) }
+            }
+        }
+    }
+
     @Test("A Place you moved stays exactly there; others avoid it and roads follow it")
     func moved() {
         let auto = island(["ruth", "john", "jonah", "acts"])

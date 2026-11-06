@@ -246,6 +246,19 @@ option was chosen and noted here.
     mobile with no user-facing web part can skip it. Also not done: any server proxy for the key
     (see README).
 
+## Round: connected roads (Nov 2026)
+
+54. **Roads are one network.** Each road used to run from a Place to its nearest neighbour's edge
+    and stop a tile inside it. Roads arriving at the same Place came in on different sides, so the
+    full island had 63 separate pieces of road. Now the plaza–Library road is laid first. Each
+    Place's road then runs from its nearest side to the nearest tile of the roads already there,
+    and records where it joins (`IslandRoads.Link.join`). The full island is now one piece.
+55. **The glitchy walking was the same bug.** A walk to the Library (Library readers, and some
+    travellers) glued roads end to end. Where one ended inside a Place and the next began on
+    another side, walkers slid straight through the building (63 of 66 routes, jumps of up to 8
+    tiles). Walks now follow the road they join from the junction onward, so every step is to a
+    neighbouring tile. Tested in `PlaceGrowthTests.roadsConnect`.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

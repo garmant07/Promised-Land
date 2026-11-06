@@ -315,12 +315,26 @@ struct IslandPlacer {
 }
 
 /// Soft dirt roads: the Library is the heart of the network. The plaza joins the Library, and each
-/// Place joins the nearest Place laid out before it (or the plaza or the Library), along the land
-/// between Places, so every road leads, one way or another, to the Library. Worked out afresh
+/// Place's road runs from its nearest side to the nearest point of the roads already there, so
+/// all the roads are one connected network and every road leads to the Library. Worked out afresh
 /// every time, so roads follow Places you move.
 enum IslandRoads {
-    /// Which road leaves each plot (by key; "plaza" for the plaza), and the plot it leads to.
-    typealias Links = [String: (road: Int, to: String)]
+    /// Where a road joins the road it meets: that road's index, and the tile's index along it.
+    struct Join: Equatable {
+        let road: Int
+        let at: Int
+    }
+
+    /// Which road leaves a plot, the plot whose road it meets (or the Library, for the plaza's), and
+    /// where it joins (nil for the plaza's road, which ends at the Library).
+    struct Link: Equatable {
+        let road: Int
+        let to: String
+        let join: Join?
+    }
+
+    /// The link for each plot (by key; "plaza" for the plaza).
+    typealias Links = [String: Link]
 
     static func route(plots: [Island.Plot], library: Island.Plot?, land: Set<Island.Tile>,
                       blocked: Set<Island.Tile>) -> [[Island.Tile]] {
@@ -334,55 +348,115 @@ enum IslandRoads {
         var roads: [[Island.Tile]] = []
         var links: Links = [:]
         var open = blocked
-        // The plaza itself is walkable.
+        // The plaza (and the Library's ground) can be walked across.
         for p in [plaza] + (library.map { [$0] } ?? []) {
             for ty in p.y..<(p.y + p.size) { for tx in p.x..<(p.x + p.size) { open.remove(Island.Tile(x: tx, y: ty)) } }
         }
-        if let library, let path = path(from: plaza, to: library, land: land, blocked: open) {
-            links["plaza"] = (roads.count, library.bookID)
-            roads.append(path)
+        /// Every road tile, and where it sits (a new road can join the network at any of them).
+        var network: [Island.Tile: (key: String, join: Join)] = [:]
+        func add(_ road: [Island.Tile], key: String, link: Link) {
+            let index = roads.count
+            links[key] = Link(road: index, to: link.to, join: link.join)
+            for (i, t) in road.enumerated() where network[t] == nil { network[t] = (key, Join(road: index, at: i)) }
+            roads.append(road)
         }
+        // The heart: the plaza to the Library.
+        if let library, let path = path(from: plaza, to: library, land: land, blocked: open) {
+            add(path, key: "plaza", link: Link(road: 0, to: library.bookID, join: nil))
+        }
+        // Without a Library (or a road to it), new roads make for the plaza instead.
+        let plazaTiles: Set<Island.Tile> = network.isEmpty
+            ? Set((plaza.y..<(plaza.y + plaza.size)).flatMap { ty in (plaza.x..<(plaza.x + plaza.size)).map { Island.Tile(x: $0, y: ty) } })
+            : []
+        let heart = library?.centre ?? plaza.centre
         for plot in plots {
-            let target = joined.min { dist($0, plot) < dist($1, plot) }!
-            if let path = path(from: plot, to: target, land: land, blocked: open) {
-                links[plot.bookID] = (roads.count, target.bookID)
-                roads.append(path)
+            if let spur = spur(from: plot, toward: heart, land: land, blocked: open,
+                               reaches: { network[$0].map { ($0.key, $0.join) } ?? (plazaTiles.contains($0) ? ("plaza", nil) : nil) }) {
+                add(spur.path, key: plot.bookID, link: Link(road: 0, to: spur.to, join: spur.join))
+            } else {
+                // Cut off from the network (shouldn't happen on one island): a road to the nearest Place.
+                let target = joined.min { dist($0, plot) < dist($1, plot) }!
+                if let path = path(from: plot, to: target, land: land, blocked: open) {
+                    add(path, key: plot.bookID, link: Link(road: 0, to: target.bookID, join: nil))
+                }
             }
             joined.append(plot)
         }
         return (roads, links)
     }
 
-    /// The whole walk from a plot to the Library, following its road and the ones after it.
-    static func toLibrary(from key: String, roads: [[Island.Tile]], links: Links) -> [Island.Tile] {
-        var out: [Island.Tile] = []
-        var key = key
-        var seen: Set<String> = []
-        while let link = links[key], seen.insert(key).inserted, roads.indices.contains(link.road) {
-            let road = roads[link.road]
-            out += out.last == road.first ? Array(road.dropFirst()) : road
-            key = link.to
+    /// The shortest road (over land, around Places) from any side of `plot` to a tile `reaches`
+    /// accepts, starting a tile inside the plot. Sides nearer `toward` are tried first on a tie.
+    private static func spur(from plot: Island.Plot, toward: CGPoint, land: Set<Island.Tile>, blocked: Set<Island.Tile>,
+                             reaches: (Island.Tile) -> (String, Join?)?) -> (path: [Island.Tile], to: String, join: Join?)? {
+        let ring = ring(of: plot, land: land).filter { !blocked.contains($0) }.sorted { a, b in
+            (hypot(CGFloat(a.x) + 0.5 - toward.x, CGFloat(a.y) + 0.5 - toward.y), a.y, a.x) <
+                (hypot(CGFloat(b.x) + 0.5 - toward.x, CGFloat(b.y) + 0.5 - toward.y), b.y, b.x)
         }
-        return key == IslandPlacement.libraryKey ? out : []
+        var came: [Island.Tile: Island.Tile] = [:]
+        var seen = Set(ring)
+        var queue = ring
+        var head = 0
+        while head < queue.count {
+            let t = queue[head]
+            head += 1
+            if let (to, join) = reaches(t) {
+                var out = [t]
+                var c = t
+                while let prev = came[c] { out.append(prev); c = prev }
+                out.reverse()
+                return ([inward(out[0], plot)] + out, to, join)
+            }
+            for (dx, dy) in [(1, 0), (0, 1), (-1, 0), (0, -1)] {
+                let n = Island.Tile(x: t.x + dx, y: t.y + dy)
+                guard land.contains(n), !blocked.contains(n), seen.insert(n).inserted else { continue }
+                came[n] = t
+                queue.append(n)
+            }
+        }
+        return nil
+    }
+
+    /// The whole walk from a plot to the Library: along its road to where it joins the next one,
+    /// along that one, and so on to the Library. Every step is to a neighbouring tile.
+    static func toLibrary(from key: String, roads: [[Island.Tile]], links: Links) -> [Island.Tile] {
+        guard var link = links[key], roads.indices.contains(link.road) else { return [] }
+        let owner = Dictionary(links.map { ($0.value.road, $0.value) }, uniquingKeysWith: { a, _ in a })
+        var out = roads[link.road]
+        var steps = 0
+        while let join = link.join {
+            steps += 1
+            guard steps <= roads.count, roads.indices.contains(join.road), let next = owner[join.road] else { return [] }
+            let road = roads[join.road]
+            if join.at + 1 < road.count { out += road[(join.at + 1)...] }
+            link = next
+        }
+        // Only the plaza's road ends at the Library.
+        return link.to == IslandPlacement.libraryKey && links["plaza"] == link ? out : []
     }
 
     private static func dist(_ a: Island.Plot, _ b: Island.Plot) -> CGFloat {
         hypot(a.centre.x - b.centre.x, a.centre.y - b.centre.y)
     }
 
-    /// The border tile of `plot` nearest to `toward` (its "gate").
-    static func gate(of plot: Island.Plot, toward p: CGPoint, land: Set<Island.Tile>) -> Island.Tile? {
+    /// The tiles bordering a plot's sides, on land (not its corners, so roads leave from the
+    /// middle of a side).
+    static func ring(of plot: Island.Plot, land: Set<Island.Tile>) -> [Island.Tile] {
         var ring: [Island.Tile] = []
         for ty in (plot.y - 1)...(plot.y + plot.size) {
             for tx in (plot.x - 1)...(plot.x + plot.size) {
                 let inside = tx >= plot.x && tx < plot.x + plot.size && ty >= plot.y && ty < plot.y + plot.size
-                let t = Island.Tile(x: tx, y: ty)
-                // Not the corners, so roads leave from the middle of a side.
                 let corner = (tx == plot.x - 1 || tx == plot.x + plot.size) && (ty == plot.y - 1 || ty == plot.y + plot.size)
+                let t = Island.Tile(x: tx, y: ty)
                 if !inside, !corner, land.contains(t) { ring.append(t) }
             }
         }
-        return ring.min { a, b in
+        return ring
+    }
+
+    /// The border tile of `plot` nearest to `toward` (its "gate").
+    static func gate(of plot: Island.Plot, toward p: CGPoint, land: Set<Island.Tile>) -> Island.Tile? {
+        ring(of: plot, land: land).min { a, b in
             (hypot(CGFloat(a.x) + 0.5 - p.x, CGFloat(a.y) + 0.5 - p.y), a.y, a.x) <
                 (hypot(CGFloat(b.x) + 0.5 - p.x, CGFloat(b.y) + 0.5 - p.y), b.y, b.x)
         }
