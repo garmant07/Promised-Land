@@ -7,20 +7,22 @@ import UIKit
 struct ReadingGateTests {
     @Test("Finish unlocks only after reaching the end AND the minimum time")
     func gate() {
-        let need = ReadingGate.minimumSeconds(words: 1000, strictness: .standard)
-        #expect(need == 300) // 1000 words at 200 a minute
+        let need = ReadingGate.minimumSeconds(words: 1100, strictness: .standard)
+        #expect(need == 300) // 1100 words at 220 a minute
         #expect(!ReadingGate.canFinish(reachedEnd: false, elapsed: 999, required: need))
         #expect(!ReadingGate.canFinish(reachedEnd: true, elapsed: 120, required: need))
         #expect(ReadingGate.canFinish(reachedEnd: true, elapsed: 300, required: need))
         #expect(ReadingGate.progress(reachedEnd: false, elapsed: 999, required: need) < 1)
     }
 
-    @Test("The timer has a floor and a cap; Relaxed has none")
-    func floorCap() {
-        #expect(ReadingGate.minimumSeconds(words: 20, strictness: .standard) == ReadingStrictness.standard.floor)
-        #expect(ReadingGate.minimumSeconds(words: 50_000, strictness: .standard) == ReadingStrictness.standard.cap)
+    @Test("The timer is exactly the words at 220 a minute (no floor or cap); Strict uses the same pace; Relaxed has none")
+    func pace() {
+        #expect(ReadingGate.minimumSeconds(words: 22, strictness: .standard) == 6)
+        #expect(ReadingGate.minimumSeconds(words: 650, strictness: .standard) == 650.0 / 220 * 60)
+        #expect(ReadingGate.minimumSeconds(words: 22_000, strictness: .standard) == 6000)
+        #expect(ReadingGate.minimumSeconds(words: 0, strictness: .standard) == 0)
         #expect(ReadingGate.minimumSeconds(words: 1000, strictness: .relaxed) == 0)
-        #expect(ReadingGate.minimumSeconds(words: 1000, strictness: .strict) > ReadingGate.minimumSeconds(words: 1000, strictness: .standard))
+        #expect(ReadingGate.minimumSeconds(words: 1000, strictness: .strict) == ReadingGate.minimumSeconds(words: 1000, strictness: .standard))
         #expect(!ReadingGate.timerApplies(strictness: .relaxed, ownBible: false))
         #expect(ReadingGate.timerApplies(strictness: .standard, ownBible: false))
         #expect(!ReadingGate.timerApplies(strictness: .standard, ownBible: true))

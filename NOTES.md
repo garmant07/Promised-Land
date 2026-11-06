@@ -321,6 +321,12 @@ option was chosen and noted here.
     land's shape moved a close-in LOD test's camera slightly. That test now allows a figure that
     has just walked off screen to finish its 0.3 s fade-out (as designed); everyone fully shown is
     still on screen.
+67. **Reading timer: 220 words a minute, nothing else.** The time needed before Finish unlocks is
+    the chapter's words ÷ 220 × 60 seconds: no minimum or maximum, and the same pace for Standard
+    and Strict. Strict still also times reading in your own Bible. Words come from the chapter's
+    text on the device (live text once loaded, cached or bundled), or a typical 650 when there's
+    none (about 3 minutes). This replaces note 27's 200/160 words a minute, 45/90 s floor and
+    8/10 min cap.
 
 ## Remove before release
 
