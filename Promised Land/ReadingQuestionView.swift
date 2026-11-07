@@ -131,16 +131,33 @@ struct ReadingQuestionView: View {
     }
 }
 
-/// "Keep reading" while the reading time runs (a ring fills as it passes); once it's done,
-/// "Mark complete", or "Mark complete again" for a chapter already read.
+/// "Keep reading · 2:41" while the reading time runs (counting down, with a ring that fills);
+/// once it's done, "Mark complete", or "Mark complete again" for a chapter already read.
 struct FinishButton: View {
     let progress: Double
     let enabled: Bool
+    /// Seconds of reading time still to go.
+    var remaining: Double = 0
     /// The chapter has been read before.
     var readBefore = false
     let action: () -> Void
 
     static func title(readBefore: Bool) -> String { readBefore ? "Mark complete again" : "Mark complete" }
+
+    /// What the button says: the time left while reading, then Mark complete (again).
+    static func label(enabled: Bool, remaining: Double, readBefore: Bool) -> String {
+        if enabled { return title(readBefore: readBefore) }
+        let left = Int(remaining.rounded(.up))
+        return left > 0 ? "Keep reading \u{00B7} \(left / 60):\(String(format: "%02d", left % 60))" : "Keep reading"
+    }
+
+    /// The time left in words, for VoiceOver ("2 minutes 41 seconds left").
+    static func spokenTimeLeft(_ remaining: Double) -> String {
+        let left = Int(remaining.rounded(.up))
+        let m = left / 60, s = left % 60
+        let parts = (m > 0 ? ["\(m) minute\(m == 1 ? "" : "s")"] : []) + (s > 0 || m == 0 ? ["\(s) second\(s == 1 ? "" : "s")"] : [])
+        return parts.joined(separator: " ") + " left"
+    }
 
     var body: some View {
         Button(action: action) {
@@ -153,13 +170,16 @@ struct FinishButton: View {
                     if enabled { Image(systemName: "checkmark").font(.caption.weight(.bold)) }
                 }
                 .frame(width: 22, height: 22)
-                Text(enabled ? Self.title(readBefore: readBefore) : "Keep reading")
+                Text(Self.label(enabled: enabled, remaining: remaining, readBefore: readBefore))
+                    .monospacedDigit()
+                    .contentTransition(.numericText(countsDown: true))
             }
         }
         .buttonStyle(PrimaryButtonStyle())
         .opacity(enabled ? 1 : 0.75)
         .disabled(!enabled)
-        .accessibilityValue(enabled ? "Ready" : "\(Int(progress * 100)) percent")
+        .accessibilityLabel(enabled ? Self.title(readBefore: readBefore) : "Keep reading")
+        .accessibilityValue(enabled ? "Ready" : remaining > 0 ? Self.spokenTimeLeft(remaining) : "Read to the end")
     }
 }
 

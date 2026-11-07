@@ -174,6 +174,7 @@ struct BibleScanView: View {
                 let elapsed = context.date.timeIntervalSince(readingSince)
                 FinishButton(progress: ReadingGate.progress(reachedEnd: true, elapsed: elapsed, required: required),
                              enabled: ReadingGate.canFinish(reachedEnd: true, elapsed: elapsed, required: required),
+                             remaining: max(0, required - elapsed),
                              readBefore: progress.isRead(ref.bookID, chapter: ref.chapter)) { asking = ref }
             }
         }

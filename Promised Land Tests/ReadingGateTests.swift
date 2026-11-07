@@ -9,6 +9,14 @@ struct ReadingGateTests {
     func buttonTitle() {
         #expect(FinishButton.title(readBefore: false) == "Mark complete")
         #expect(FinishButton.title(readBefore: true) == "Mark complete again")
+        // While reading: the time left, counting down.
+        #expect(FinishButton.label(enabled: false, remaining: 161, readBefore: false) == "Keep reading \u{00B7} 2:41")
+        #expect(FinishButton.label(enabled: false, remaining: 9.2, readBefore: true) == "Keep reading \u{00B7} 0:10")
+        #expect(FinishButton.label(enabled: false, remaining: 0, readBefore: false) == "Keep reading")
+        #expect(FinishButton.label(enabled: true, remaining: 0, readBefore: true) == "Mark complete again")
+        #expect(FinishButton.spokenTimeLeft(161) == "2 minutes 41 seconds left")
+        #expect(FinishButton.spokenTimeLeft(60) == "1 minute left")
+        #expect(FinishButton.spokenTimeLeft(5) == "5 seconds left")
     }
 
     @Test("Mark complete unlocks only after reaching the end AND the minimum time")

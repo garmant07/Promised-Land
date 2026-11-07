@@ -327,6 +327,12 @@ option was chosen and noted here.
     text on the device (live text once loaded, cached or bundled), or a typical 650 when there's
     none (about 3 minutes). This replaces note 27's 200/160 words a minute, 45/90 s floor and
     8/10 min cap.
+68. **The reading button counts down.** While the reading time runs, the button says
+    "Keep reading · 2:41" (time left, counting down every second; VoiceOver reads "2 minutes 41
+    seconds left"). Once you've reached the last page and the time is up, it says "Mark complete",
+    or "Mark complete again" for a chapter already read. At 220 words a minute a real chapter takes
+    3–4 minutes, so without the countdown the button looked stuck. DEBUG `-readerLastPage` opens the
+    reader on its last page (as a swipe would), for checking this.
 
 ## Remove before release
 

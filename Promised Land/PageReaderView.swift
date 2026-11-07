@@ -46,7 +46,13 @@ struct PageReaderView<Footer: View>: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: sheet)
-                .onAppear { if sheets.count <= 1 { onReachedEnd() } }
+                .onAppear {
+                    if sheets.count <= 1 { onReachedEnd() }
+                    #if DEBUG
+                    // "-readerLastPage" turns to the last page on opening (as a swipe would), for checking it.
+                    if ProcessInfo.processInfo.arguments.contains("-readerLastPage") { sheet = sheets.count - 1 }
+                    #endif
+                }
                 .onChange(of: sheet) { _, s in if s >= sheets.count - 1 { onReachedEnd() } }
 
                 HStack {
