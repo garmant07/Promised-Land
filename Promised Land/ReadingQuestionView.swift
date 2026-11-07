@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-/// After "Finish": one easy question about the chapter. A right answer counts it (and the island
+/// After "Mark complete": one easy question about the chapter. A right answer counts it (and the island
 /// grows); a wrong one has no penalty: "Have another look", then try again. Chapters without a
 /// question yet get a gentle reflection instead (anything you write counts, and it's saved to
 /// your journal).
@@ -131,12 +131,16 @@ struct ReadingQuestionView: View {
     }
 }
 
-/// The Finish button, with a ring that fills as the reading time passes.
+/// "Keep reading" while the reading time runs (a ring fills as it passes); once it's done,
+/// "Mark complete", or "Mark complete again" for a chapter already read.
 struct FinishButton: View {
     let progress: Double
     let enabled: Bool
-    var title = "Finish"
+    /// The chapter has been read before.
+    var readBefore = false
     let action: () -> Void
+
+    static func title(readBefore: Bool) -> String { readBefore ? "Mark complete again" : "Mark complete" }
 
     var body: some View {
         Button(action: action) {
@@ -149,7 +153,7 @@ struct FinishButton: View {
                     if enabled { Image(systemName: "checkmark").font(.caption.weight(.bold)) }
                 }
                 .frame(width: 22, height: 22)
-                Text(enabled ? title : "Keep reading")
+                Text(enabled ? Self.title(readBefore: readBefore) : "Keep reading")
             }
         }
         .buttonStyle(PrimaryButtonStyle())

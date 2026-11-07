@@ -443,7 +443,7 @@ struct ChapterReaderView: View {
                     let e = elapsed(at: context.date)
                     FinishButton(progress: ReadingGate.progress(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),
                                  enabled: ReadingGate.canFinish(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),
-                                 title: isRead ? "Finish (read again)" : "Finish") { asking = true }
+                                 readBefore: isRead) { asking = true }
                 }
             }
             if !counted {

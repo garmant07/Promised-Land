@@ -6,7 +6,7 @@ import UIKit
 
 /// "Use my Bible": take a photo of the page you're reading in your own Bible. Apple's Vision
 /// text recognition reads the page heading on this device (nothing is uploaded) to find the book
-/// and chapter ("John 15, got it"). Read it in your Bible, tap "I've finished", and answer the same
+/// and chapter ("John 15, got it"). Read it in your Bible, tap "Mark complete", and answer the same
 /// quick question. If the photo can't be read, pick the chapter yourself and go straight to the
 /// question. You can keep the photo with your journal entry (stored only on this device).
 struct BibleScanView: View {
@@ -18,6 +18,7 @@ struct BibleScanView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage(StorageKeys.readingStrictness) private var strictnessRaw = ""
     @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
+    @ProgressQuery private var progress: GameProgress
     @Environment(\.bibleService) private var bible
     private var translation = TranslationChoice()
 
@@ -164,7 +165,7 @@ struct BibleScanView: View {
                     .foregroundStyle(Color.primaryBrown)
                     .frame(minHeight: 44)
             }
-            Text("Read \(name) \(ref.chapter) in your Bible, then tap \u{201C}I've finished\u{201D}.")
+            Text("Read \(name) \(ref.chapter) in your Bible, then tap \u{201C}\(FinishButton.title(readBefore: progress.isRead(ref.bookID, chapter: ref.chapter)))\u{201D}.")
                 .foregroundStyle(Color.bodyText)
             Toggle("Keep this photo with my journal", isOn: $keepPhoto)
                 .tint(Color.olive)
@@ -173,7 +174,7 @@ struct BibleScanView: View {
                 let elapsed = context.date.timeIntervalSince(readingSince)
                 FinishButton(progress: ReadingGate.progress(reachedEnd: true, elapsed: elapsed, required: required),
                              enabled: ReadingGate.canFinish(reachedEnd: true, elapsed: elapsed, required: required),
-                             title: "I've finished") { asking = ref }
+                             readBefore: progress.isRead(ref.bookID, chapter: ref.chapter)) { asking = ref }
             }
         }
         .cardStyle()

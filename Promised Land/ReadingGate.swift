@@ -41,7 +41,7 @@ enum ReadingStrictness: String, CaseIterable, Identifiable {
     }
 }
 
-/// The rules for when "Finish" unlocks. Pure, so it's testable.
+/// The rules for when "Mark complete" unlocks. Pure, so it's testable.
 enum ReadingGate {
     /// A typical chapter's length, used when the text isn't bundled (reading in your own Bible).
     static let typicalChapterWords = 650

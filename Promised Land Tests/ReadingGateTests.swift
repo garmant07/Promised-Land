@@ -5,7 +5,13 @@ import UIKit
 
 @MainActor
 struct ReadingGateTests {
-    @Test("Finish unlocks only after reaching the end AND the minimum time")
+    @Test("The button says Keep reading until the chapter is done, then Mark complete (again, if read before)")
+    func buttonTitle() {
+        #expect(FinishButton.title(readBefore: false) == "Mark complete")
+        #expect(FinishButton.title(readBefore: true) == "Mark complete again")
+    }
+
+    @Test("Mark complete unlocks only after reaching the end AND the minimum time")
     func gate() {
         let need = ReadingGate.minimumSeconds(words: 1100, strictness: .standard)
         #expect(need == 300) // 1100 words at 220 a minute
