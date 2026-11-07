@@ -83,3 +83,26 @@ enum ReadingGate {
         return reachedEnd ? time : min(time, 0.95)
     }
 }
+
+/// Reading time that only counts while the chapter is actually being read: started and stopped as
+/// the text comes on and off screen (and the app goes to the background).
+struct ReadingClock: Equatable {
+    private(set) var banked: Double = 0
+    private(set) var since: Date?
+
+    var isRunning: Bool { since != nil }
+
+    /// Starts or stops counting at `now` (no change if it's already in that state).
+    mutating func set(running: Bool, at now: Date) {
+        if running, since == nil { since = now }
+        if !running, let start = since { banked += max(0, now.timeIntervalSince(start)); since = nil }
+    }
+
+    func elapsed(at now: Date) -> Double { banked + (since.map { max(0, now.timeIntervalSince($0)) } ?? 0) }
+
+    /// Back to zero (after a read counts), running or not as before.
+    mutating func reset(at now: Date) {
+        banked = 0
+        if since != nil { since = now }
+    }
+}

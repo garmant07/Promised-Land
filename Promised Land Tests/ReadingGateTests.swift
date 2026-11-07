@@ -19,6 +19,22 @@ struct ReadingGateTests {
         #expect(FinishButton.spokenTimeLeft(5) == "5 seconds left")
     }
 
+    @Test("Reading time counts only while the chapter is on screen, and picks up where it left off")
+    func clockPauses() {
+        let t0 = Date(timeIntervalSince1970: 1_000_000)
+        var clock = ReadingClock()
+        #expect(clock.elapsed(at: t0.addingTimeInterval(50)) == 0)       // not started: loading, or not on screen
+        clock.set(running: true, at: t0)
+        #expect(clock.elapsed(at: t0.addingTimeInterval(30)) == 30)
+        clock.set(running: false, at: t0.addingTimeInterval(30))          // a sheet covers it / next chapter / background
+        #expect(clock.elapsed(at: t0.addingTimeInterval(500)) == 30)      // no time passes while away
+        clock.set(running: true, at: t0.addingTimeInterval(500))
+        clock.set(running: true, at: t0.addingTimeInterval(510))          // already running: no change
+        #expect(clock.elapsed(at: t0.addingTimeInterval(520)) == 50)
+        clock.reset(at: t0.addingTimeInterval(520))
+        #expect(clock.elapsed(at: t0.addingTimeInterval(525)) == 5 && clock.isRunning)
+    }
+
     @Test("Mark complete unlocks only after reaching the end AND the minimum time")
     func gate() {
         let need = ReadingGate.minimumSeconds(words: 1100, strictness: .standard)

@@ -333,6 +333,17 @@ option was chosen and noted here.
     or "Mark complete again" for a chapter already read. At 220 words a minute a real chapter takes
     3–4 minutes, so without the countdown the button looked stuck. DEBUG `-readerLastPage` opens the
     reader on its last page (as a swipe would), for checking this.
+69. **The reading timer runs only while you're reading.** It used to start when the reader was
+    created and keep going while the text loaded, behind the question or a deep dive, and after
+    moving on to the next chapter (the earlier reader stays in the navigation stack). It now counts
+    only while the chapter's text is on screen with nothing covering it and the app open
+    (`ReadingClock`).
+70. **"Reached the end" can't be missed.** It was set only when the page index changed to the last
+    page (or the chapter fit on one page when the reader first appeared). If the page count settled
+    after the reader appeared, the last page could be showing without the index changing, so the
+    button stayed on "Keep reading" at 0:00. It's now set whenever the last page is showing,
+    including on first appearance and when the page count changes. DEBUG builds log
+    "READER page x of y" and the timer's running/paused state to the Xcode console.
 
 ## Remove before release
 

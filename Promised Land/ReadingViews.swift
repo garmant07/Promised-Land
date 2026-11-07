@@ -304,8 +304,10 @@ struct ChapterReaderView: View {
 
     // The reading gate: reach the last page, and spend a little time (paused in the background).
     @State private var reachedEnd = false
-    @State private var readSeconds: Double = 0
-    @State private var segmentStart: Date? = .now
+    /// Counts only while the chapter's text is on screen: loaded, this page in front (not behind
+    /// the next chapter or a sheet), and the app open.
+    @State private var clock = ReadingClock()
+    @State private var onScreen = false
     @State private var asking = false
     @State private var scanning = false
     @State private var counted = false
@@ -391,8 +393,13 @@ struct ChapterReaderView: View {
         #endif
         .task(id: translation.current) { await load() }
         .onAppear { context.recordBookStarted(book.id) }
-        .onChange(of: scenePhase) { _, phase in
-            if phase == .active { segmentStart = .now } else { pauseTimer() }
+        .onAppear { onScreen = true }
+        .onDisappear { onScreen = false }
+        .onChange(of: isReading, initial: true) { _, reading in
+            clock.set(running: reading, at: .now)
+            #if DEBUG
+            print("READER \(book.id) \(chapter): timer \(reading ? "running" : "paused") at \(Int(clock.elapsed(at: .now)))s of \(Int(requiredSeconds))s")
+            #endif
         }
         .sheet(isPresented: $asking) {
             ReadingQuestionView(book: book, chapter: chapter, onCounted: { countRead() }, onLookAgain: { asking = false })
@@ -430,12 +437,13 @@ struct ChapterReaderView: View {
         .fixedSize(horizontal: false, vertical: true)
     }
 
-    private func pauseTimer() {
-        if let start = segmentStart { readSeconds += Date.now.timeIntervalSince(start) }
-        segmentStart = nil
+    /// The chapter's text is actually being read: loaded and on screen, nothing covering it, and
+    /// the app in the foreground.
+    private var isReading: Bool {
+        onScreen && scenePhase == .active && loader.text != nil && !asking && !scanning && deepDive == nil && !counted
     }
 
-    private func elapsed(at now: Date) -> Double { readSeconds + (segmentStart.map { now.timeIntervalSince($0) } ?? 0) }
+    private func elapsed(at now: Date) -> Double { clock.elapsed(at: now) }
 
     /// Finish (after the gate), "Use my Bible", what's been read, and the next chapter.
     @ViewBuilder
@@ -503,8 +511,7 @@ struct ChapterReaderView: View {
     /// Back to the island, where the new piece is built.
     private func finishedReading() {
         withAnimation { counted = true }
-        readSeconds = 0
-        segmentStart = .now
+        clock.reset(at: .now)
         Task {
             try? await Task.sleep(for: .milliseconds(900))
             closeReading?()

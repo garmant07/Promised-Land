@@ -47,13 +47,19 @@ struct PageReaderView<Footer: View>: View {
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: sheet)
                 .onAppear {
-                    if sheets.count <= 1 { onReachedEnd() }
                     #if DEBUG
                     // "-readerLastPage" turns to the last page on opening (as a swipe would), for checking it.
                     if ProcessInfo.processInfo.arguments.contains("-readerLastPage") { sheet = sheets.count - 1 }
                     #endif
                 }
-                .onChange(of: sheet) { _, s in if s >= sheets.count - 1 { onReachedEnd() } }
+                // Reached the end whenever the last page is showing: on opening, after a swipe, and
+                // when the page count changes (a resize can make the page you're on the last one).
+                .onChange(of: sheet >= sheets.count - 1, initial: true) { _, last in
+                    if last { onReachedEnd() }
+                    #if DEBUG
+                    print("READER page \(min(sheet, sheets.count - 1) + 1) of \(sheets.count)\(last ? ": last page, reached the end" : "")")
+                    #endif
+                }
 
                 HStack {
                     Button { sheet = max(0, sheet - 1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44) }
