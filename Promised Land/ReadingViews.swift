@@ -364,6 +364,15 @@ struct ChapterReaderView: View {
                                 .foregroundStyle(Color.primaryBrown)
                             Text("This chapter's text isn't in the app yet. Read it in your own Bible: take a photo of the page and answer one quick question to build your island.")
                                 .foregroundStyle(Color.secondaryText)
+                            #if DEBUG
+                            if !bible.isLive {
+                                // Developers: most chapters have no text until an API.Bible key is set.
+                                Label("DEBUG: no API.Bible key is set, so only the bundled sample chapters have text. Put your key in Secrets.xcconfig (see README) and run again.",
+                                      systemImage: "key")
+                                    .font(.footnote)
+                                    .foregroundStyle(Color.terracotta)
+                            }
+                            #endif
                         }
                         .cardStyle()
                         actions(compact: false)
@@ -439,7 +448,7 @@ struct ChapterReaderView: View {
                     .foregroundStyle(Color.olive)
                     .frame(maxWidth: .infinity, minHeight: 44)
             } else if hasText {
-                TimelineView(.periodic(from: .now, by: 1)) { context in
+                TimelineView(.animation(minimumInterval: 1.0 / 30)) { context in
                     let e = elapsed(at: context.date)
                     FinishButton(progress: ReadingGate.progress(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),
                                  enabled: ReadingGate.canFinish(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),

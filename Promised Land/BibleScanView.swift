@@ -170,7 +170,7 @@ struct BibleScanView: View {
             Toggle("Keep this photo with my journal", isOn: $keepPhoto)
                 .tint(Color.olive)
                 .frame(minHeight: 44)
-            TimelineView(.periodic(from: .now, by: 1)) { context in
+            TimelineView(.animation(minimumInterval: 1.0 / 30)) { context in
                 let elapsed = context.date.timeIntervalSince(readingSince)
                 FinishButton(progress: ReadingGate.progress(reachedEnd: true, elapsed: elapsed, required: required),
                              enabled: ReadingGate.canFinish(reachedEnd: true, elapsed: elapsed, required: required),

@@ -173,6 +173,8 @@ struct FinishButton: View {
                 Text(Self.label(enabled: enabled, remaining: remaining, readBefore: readBefore))
                     .monospacedDigit()
                     .contentTransition(.numericText(countsDown: true))
+                    // The digits roll once a second, and the switch to Mark complete eases in.
+                    .animation(.easeInOut(duration: 0.25), value: Self.label(enabled: enabled, remaining: remaining, readBefore: readBefore))
             }
         }
         .buttonStyle(PrimaryButtonStyle())
