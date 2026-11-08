@@ -15,7 +15,13 @@ struct PageReaderView<Footer: View>: View {
     var footerHeight: CGFloat = 250
     @ViewBuilder var footer: () -> Footer
 
-    @State private var sheet = 0
+    /// Which sheet is showing, and whether a turn is under way (taps wait for it to finish).
+    @State private var turner = PageTurner()
+    /// The way the last turn went, set just before it so the old page leaves the right way.
+    @State private var forward = true
+    /// How far a swipe has dragged the page.
+    @State private var drag: CGFloat = 0
+    private var sheet: Int { turner.current }
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -31,25 +37,38 @@ struct PageReaderView<Footer: View>: View {
                 : pages.indices.map { [$0] }
 
             VStack(spacing: 8) {
-                TabView(selection: $sheet) {
-                    ForEach(sheets.indices, id: \.self) { s in
-                        HStack(spacing: 16) {
-                            ForEach(sheets[s], id: \.self) { p in
-                                page(p, of: pages, last: p == pages.count - 1)
-                                    .frame(width: pageWidth, height: pageHeight)
-                            }
-                            if spread && sheets[s].count == 1 { Color.clear.frame(width: pageWidth, height: pageHeight) }
+                // Only the current sheet is in the view tree, identified by its index: a turn slides
+                // the old one out and removes it, so no other page's text can be left behind.
+                ZStack {
+                    let s = min(sheet, sheets.count - 1)
+                    HStack(spacing: 16) {
+                        ForEach(sheets[s], id: \.self) { p in
+                            page(p, of: pages, last: p == pages.count - 1)
+                                .frame(width: pageWidth, height: pageHeight)
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .tag(s)
+                        if spread && sheets[s].count == 1 { Color.clear.frame(width: pageWidth, height: pageHeight) }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .offset(x: drag)
+                    .id(s)
+                    .transition(reduceMotion ? .opacity : .asymmetric(insertion: .move(edge: forward ? .trailing : .leading),
+                                                                      removal: .move(edge: forward ? .leading : .trailing)))
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
+                .contentShape(Rectangle())
+                .gesture(swipe)
+                .accessibilityScrollAction { edge in
+                    switch edge {
+                    case .trailing, .bottom: turn(by: 1)
+                    default: turn(by: -1)
                     }
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: sheet)
+                .onChange(of: sheets.count, initial: true) { _, count in turner.setCount(count) }
                 .onAppear {
                     #if DEBUG
                     // "-readerLastPage" turns to the last page on opening (as a swipe would), for checking it.
-                    if ProcessInfo.processInfo.arguments.contains("-readerLastPage") { sheet = sheets.count - 1 }
+                    if ProcessInfo.processInfo.arguments.contains("-readerLastPage") { turner.setCount(sheets.count); turner.jump(to: sheets.count - 1) }
                     #endif
                 }
                 // Reached the end whenever the last page is showing: on opening, after a swipe, and
@@ -62,7 +81,7 @@ struct PageReaderView<Footer: View>: View {
                 }
 
                 HStack {
-                    Button { sheet = max(0, sheet - 1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44) }
+                    Button { turn(by: -1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44) }
                         .disabled(sheet == 0)
                         .accessibilityLabel("Previous page")
                     Spacer()
@@ -70,13 +89,46 @@ struct PageReaderView<Footer: View>: View {
                         .font(.footnote.monospacedDigit())
                         .foregroundStyle(Color.secondaryText)
                     Spacer()
-                    Button { sheet = min(sheets.count - 1, sheet + 1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44) }
+                    Button { turn(by: 1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44) }
                         .disabled(sheet >= sheets.count - 1)
                         .accessibilityLabel("Next page")
                 }
                 .foregroundStyle(Color.primaryBrown)
                 .padding(.horizontal, 16)
                 .frame(height: 44)
+            }
+        }
+    }
+
+    /// A horizontal swipe turns the page (the page follows the finger a little). Vertical drags
+    /// and taps on verses are left alone.
+    private var swipe: some Gesture {
+        DragGesture(minimumDistance: 20)
+            .onChanged { value in
+                guard !turner.isTurning(at: .now), abs(value.translation.width) > abs(value.translation.height) else { return }
+                drag = value.translation.width * 0.35
+            }
+            .onEnded { value in
+                let dx = value.predictedEndTranslation.width, horizontal = abs(value.translation.width) > abs(value.translation.height)
+                withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) { drag = 0 }
+                guard horizontal, abs(dx) > 80 else { return }
+                turn(by: dx < 0 ? 1 : -1)
+            }
+    }
+
+    /// Turns one sheet, unless a turn is already under way (rapid taps don't stack up).
+    private func turn(by delta: Int) {
+        let now = Date.now
+        guard turner.canTurn(by: delta, at: now) else { return }
+        guard !reduceMotion else { turner.turn(by: delta, at: now); turner.finishTurn(); return }
+        turner.lock(at: now)
+        forward = delta > 0
+        // Turn on the next update, once the old page knows which way to leave.
+        Task { @MainActor in
+            withAnimation(.easeInOut(duration: PageTurner.duration)) {
+                turner.turn(by: delta, at: now)
+            } completion: {
+                turner.finishTurn()
             }
         }
     }
@@ -200,5 +252,51 @@ enum PagePlanner {
         // In a two-page spread, finish on a full spread: "Mark as read" gets the facing page.
         if evenCount, pages.count % 2 == 1, !(pages.last?.isEmpty ?? true) { pages.append([]) }
         return pages
+    }
+}
+
+/// Which sheet of the reader is showing, and the lock that keeps one turn from starting while
+/// another is still animating. Pure, so it's testable. The lock lapses on its own after
+/// `maxLock`, so the pages can never get stuck.
+struct PageTurner: Equatable {
+    static let duration: Double = 0.3
+    static let maxLock: Double = 0.6
+
+    private(set) var current = 0
+    private(set) var count = 1
+    private(set) var lockedAt: Date?
+
+    func isTurning(at now: Date) -> Bool {
+        lockedAt.map { now.timeIntervalSince($0) < Self.maxLock } ?? false
+    }
+
+    /// The sheet a turn would go to, staying in range.
+    func target(by delta: Int) -> Int { min(max(0, current + delta), count - 1) }
+
+    func canTurn(by delta: Int, at now: Date) -> Bool {
+        !isTurning(at: now) && target(by: delta) != current
+    }
+
+    /// Holds off other turns from `now` (until `finishTurn`, or `maxLock` at the latest).
+    mutating func lock(at now: Date) { lockedAt = now }
+
+    /// Moves one turn on (and holds the lock while it animates).
+    mutating func turn(by delta: Int, at now: Date) {
+        current = target(by: delta)
+        lockedAt = now
+    }
+
+    mutating func finishTurn() { lockedAt = nil }
+
+    /// The number of sheets changed (a resize or new text): stay on a page that exists.
+    mutating func setCount(_ n: Int) {
+        count = max(1, n)
+        current = min(current, count - 1)
+    }
+
+    /// Straight to a sheet, no animation.
+    mutating func jump(to index: Int) {
+        current = min(max(0, index), count - 1)
+        lockedAt = nil
     }
 }

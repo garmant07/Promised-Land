@@ -349,7 +349,7 @@ option was chosen and noted here.
 
 ### Bug-fix progress
 - [x] Section 1: Reader timer
-- [ ] Section 2: Leftover text when flipping pages
+- [x] Section 2: Leftover text when flipping pages
 - [ ] Section 3: Lag opening sheets, buildings and the Library
 - [ ] Section 4: Island camera and rendering
 - [ ] Section 5: Friends and group islands
@@ -370,6 +370,15 @@ option was chosen and noted here.
     typical-650 guess to the real count as the text loads. DEBUG builds show
     "DEBUG: n words → s required" under the button. Relaxed still has no timer. The own-Bible
     scan flow keeps its existing timer (same pace rules).
+
+74. **The reader's pages are no longer a paged `TabView`.** Its implicit `.animation(value: sheet)`
+    animated the page contents on top of the TabView's own paging, and rapid taps started new turns
+    mid-slide; the TabView's reused page cells could then keep another page's text on screen. The
+    reader now holds only the current sheet in the view tree (`.id(index)`); a turn slides the old
+    one out and removes it. `PageTurner` ignores taps and swipes while a turn animates (the lock
+    lapses after 0.6 s at most, so it can't stick). Swipes are a horizontal drag (the page follows
+    the finger a little, then slides); taps on verses still open deep dives; VoiceOver turns pages
+    with a three-finger scroll.
 
 ## Remove before release
 
