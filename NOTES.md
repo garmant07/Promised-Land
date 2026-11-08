@@ -345,6 +345,32 @@ option was chosen and noted here.
     including on first appearance and when the page count changes. DEBUG builds log
     "READER page x of y" and the timer's running/paused state to the Xcode console.
 
+## Bug-fix round (Nov 2026)
+
+### Bug-fix progress
+- [x] Section 1: Reader timer
+- [ ] Section 2: Leftover text when flipping pages
+- [ ] Section 3: Lag opening sheets, buildings and the Library
+- [ ] Section 4: Island camera and rendering
+- [ ] Section 5: Friends and group islands
+
+71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
+72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
+    `ReadingSessions.shared` for the life of the app rather than in the reader's view state, so
+    page turns, re-renders, sheets and the reader being rebuilt never reset it. Leaving a chapter
+    and coming back carries on where it was; a counted read starts the next session from zero.
+    The causes it replaces: a 30 fps `TimelineView` on the last page that re-counted every verse's
+    words each frame (the stutter), and "Mark complete" being worked out only inside that
+    TimelineView, which can stop ticking when the paged TabView recycles the page (the freeze
+    at "15 seconds left"). Now a single ticker wakes about once a second, the gate latches
+    "time's up" on every tick, pause and page reached, and only the button redraws.
+73. **Pace: 200 words a minute, 30 s floor, 12 min cap.** This round asks for ~200 wpm with a floor
+    and cap, replacing note 67's 220 with none. The words are counted once from the loaded text
+    (again only if the translation changes), so the required time no longer jumps from the
+    typical-650 guess to the real count as the text loads. DEBUG builds show
+    "DEBUG: n words → s required" under the button. Relaxed still has no timer. The own-Bible
+    scan flow keeps its existing timer (same pace rules).
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

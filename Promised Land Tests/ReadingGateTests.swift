@@ -38,25 +38,108 @@ struct ReadingGateTests {
     @Test("Mark complete unlocks only after reaching the end AND the minimum time")
     func gate() {
         let need = ReadingGate.minimumSeconds(words: 1100, strictness: .standard)
-        #expect(need == 300) // 1100 words at 220 a minute
+        #expect(need == 330) // 1100 words at 200 a minute
         #expect(!ReadingGate.canFinish(reachedEnd: false, elapsed: 999, required: need))
         #expect(!ReadingGate.canFinish(reachedEnd: true, elapsed: 120, required: need))
-        #expect(ReadingGate.canFinish(reachedEnd: true, elapsed: 300, required: need))
+        #expect(ReadingGate.canFinish(reachedEnd: true, elapsed: 330, required: need))
         #expect(ReadingGate.progress(reachedEnd: false, elapsed: 999, required: need) < 1)
     }
 
-    @Test("The timer is exactly the words at 220 a minute (no floor or cap); Strict uses the same pace; Relaxed has none")
+    @Test("The timer is the words at 200 a minute, between 30 s and 12 min; Strict uses the same pace; Relaxed has none")
     func pace() {
-        #expect(ReadingGate.minimumSeconds(words: 22, strictness: .standard) == 6)
-        #expect(ReadingGate.minimumSeconds(words: 650, strictness: .standard) == 650.0 / 220 * 60)
-        #expect(ReadingGate.minimumSeconds(words: 22_000, strictness: .standard) == 6000)
-        #expect(ReadingGate.minimumSeconds(words: 0, strictness: .standard) == 0)
+        #expect(ReadingGate.minimumSeconds(words: 22, strictness: .standard) == 30)       // floor
+        #expect(ReadingGate.minimumSeconds(words: 650, strictness: .standard) == 195)     // 650 / 200 × 60
+        #expect(ReadingGate.minimumSeconds(words: 22_000, strictness: .standard) == 720)  // cap
+        #expect(ReadingGate.minimumSeconds(words: 0, strictness: .standard) == 30)
         #expect(ReadingGate.minimumSeconds(words: 1000, strictness: .relaxed) == 0)
         #expect(ReadingGate.minimumSeconds(words: 1000, strictness: .strict) == ReadingGate.minimumSeconds(words: 1000, strictness: .standard))
         #expect(!ReadingGate.timerApplies(strictness: .relaxed, ownBible: false))
         #expect(ReadingGate.timerApplies(strictness: .standard, ownBible: false))
         #expect(!ReadingGate.timerApplies(strictness: .standard, ownBible: true))
         #expect(ReadingGate.timerApplies(strictness: .strict, ownBible: true))
+    }
+
+    // MARK: Reading session
+
+    private func text(words: Int, translation: String = "ASV") -> ChapterText {
+        let verse = Verse(number: 1, text: Array(repeating: "word", count: words).joined(separator: " "))
+        return ChapterText(bookID: "ruth", chapter: 1, translation: translation, verses: [verse], copyright: "", fetched: .now)
+    }
+
+    @Test("Turning pages, re-rendering and covering the text don't reset the session")
+    func sessionSurvivesPageTurns() {
+        let t0 = Date(timeIntervalSince1970: 2_000_000)
+        let a = ReadingSessions.shared.session(bookID: "test-pages", chapter: 1)
+        a.setText(text(words: 1000), strictness: .standard, at: t0)
+        a.setRunning(true, at: t0)
+        a.tick(at: t0.addingTimeInterval(60))
+        // The reader is rebuilt (a re-render, a page turn, back from the next chapter): same session.
+        let b = ReadingSessions.shared.session(bookID: "test-pages", chapter: 1)
+        #expect(a === b)
+        b.setText(text(words: 1000), strictness: .standard, at: t0.addingTimeInterval(61)) // text set again
+        b.markReachedEnd(at: t0.addingTimeInterval(62))                                     // last page shown
+        b.setRunning(true, at: t0.addingTimeInterval(63))                                   // already running
+        #expect(b.elapsed(at: t0.addingTimeInterval(90)) == 90)
+        #expect(b.words == 1000)
+        #expect(ReadingSessions.shared.session(bookID: "test-pages", chapter: 2) !== a)     // chapters apart
+    }
+
+    @Test("The required time scales with the chapter's words")
+    func sessionScalesWithWords() {
+        let short = ReadingSession(bookID: "ruth", chapter: 1), long = ReadingSession(bookID: "ruth", chapter: 2)
+        short.setText(text(words: 400), strictness: .standard)
+        long.setText(text(words: 1200), strictness: .standard)
+        #expect(short.requiredSeconds == 120)
+        #expect(long.requiredSeconds == 360)
+        let relaxed = ReadingSession(bookID: "ruth", chapter: 3)
+        relaxed.setText(text(words: 1200), strictness: .relaxed)
+        relaxed.markReachedEnd()
+        #expect(relaxed.requiredSeconds == 0 && relaxed.canFinish)                           // Relaxed: no timer
+    }
+
+    @Test("Backgrounding (or a sheet) pauses the time; it resumes on return")
+    func sessionPauses() {
+        let t0 = Date(timeIntervalSince1970: 3_000_000)
+        let s = ReadingSession(bookID: "ruth", chapter: 1)
+        s.setText(text(words: 400), strictness: .standard, at: t0)
+        s.setRunning(true, at: t0)
+        s.setRunning(false, at: t0.addingTimeInterval(40))                                   // background
+        s.tick(at: t0.addingTimeInterval(1000))
+        #expect(s.elapsed(at: t0.addingTimeInterval(1000)) == 40 && !s.timeUp)
+        #expect(s.secondsLeft == 80)
+        s.setRunning(true, at: t0.addingTimeInterval(1000))                                  // back
+        s.tick(at: t0.addingTimeInterval(1010))
+        #expect(s.secondsLeft == 70)
+    }
+
+    @Test("The gate unlocks when the time reaches zero, however the last tick lands")
+    func sessionUnlocksAtZero() {
+        let t0 = Date(timeIntervalSince1970: 4_000_000)
+        // Ticks at exactly zero, past zero after a long gap, and a pause right at zero.
+        for (offset, pauseFirst) in [(120.0, false), (500.0, false), (120.0, true)] {
+            let s = ReadingSession(bookID: "ruth", chapter: 1)
+            s.setText(text(words: 400), strictness: .standard, at: t0)                       // 120 s
+            s.markReachedEnd(at: t0)
+            s.setRunning(true, at: t0)
+            s.tick(at: t0.addingTimeInterval(119.5))
+            #expect(!s.canFinish && s.secondsLeft == 1)
+            if pauseFirst { s.setRunning(false, at: t0.addingTimeInterval(offset)) } else { s.tick(at: t0.addingTimeInterval(offset)) }
+            #expect(s.canFinish && s.timeUp && s.secondsLeft == 0 && s.progress == 1)
+            #expect(s.secondsToNextTick(at: t0.addingTimeInterval(offset)) == 0)
+            s.setRunning(false, at: t0.addingTimeInterval(offset + 1))
+            #expect(s.canFinish)                                                             // stays unlocked
+        }
+        // Reaching the end after the time is up unlocks straight away.
+        let late = ReadingSession(bookID: "ruth", chapter: 1)
+        late.setText(text(words: 400), strictness: .standard, at: t0)
+        late.setRunning(true, at: t0)
+        late.tick(at: t0.addingTimeInterval(200))
+        #expect(late.timeUp && !late.canFinish)
+        late.markReachedEnd(at: t0.addingTimeInterval(201))
+        #expect(late.canFinish)
+        // After a read counts, a reread starts over.
+        late.reset(at: t0.addingTimeInterval(202))
+        #expect(!late.canFinish && late.secondsLeft == 120)
     }
 
     @Test("Bundled chapters are timed by their words; others by a typical length")

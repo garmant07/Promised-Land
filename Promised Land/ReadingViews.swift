@@ -302,11 +302,10 @@ struct ChapterReaderView: View {
     @AppStorage("debug.apiOverlay") private var showsAPIUsage = true
     #endif
 
-    // The reading gate: reach the last page, and spend a little time (paused in the background).
-    @State private var reachedEnd = false
-    /// Counts only while the chapter's text is on screen: loaded, this page in front (not behind
-    /// the next chapter or a sheet), and the app open.
-    @State private var clock = ReadingClock()
+    /// The reading gate (reach the last page, and spend the chapter's reading time). Owned by
+    /// `ReadingSessions`, not this view, so nothing here can recreate or reset it. Time counts only
+    /// while the text is on screen: loaded, this page in front, nothing over it, and the app open.
+    private let session: ReadingSession
     @State private var onScreen = false
     @State private var asking = false
     @State private var scanning = false
@@ -315,6 +314,7 @@ struct ChapterReaderView: View {
     init(book: Book, chapter: Int) {
         self.book = book
         self.chapter = chapter
+        self.session = ReadingSessions.shared.session(bookID: book.id, chapter: chapter)
         let id = book.id
         _reads = Query(filter: #Predicate<ChapterRead> { $0.bookID == id && $0.chapterNumber == chapter },
                        sort: \ChapterRead.date, order: .reverse)
@@ -324,13 +324,6 @@ struct ChapterReaderView: View {
     /// A read from before the reading gate, still waiting for its quick check.
     private var needsCheck: Bool { reads.first.map { !$0.checked } ?? false }
     private var strictness: ReadingStrictness { .current(stored: strictnessRaw, ageGroup: ageGroup) }
-    private var requiredSeconds: Double {
-        guard ReadingGate.timerApplies(strictness: strictness, ownBible: false) else { return 0 }
-        // The words of the text being read (from the cache once loaded), or a typical length.
-        let words = loader.text?.words
-            ?? ReadingGate.words(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)
-        return ReadingGate.minimumSeconds(words: words, strictness: strictness)
-    }
 
     var body: some View {
         Group {
@@ -343,7 +336,7 @@ struct ChapterReaderView: View {
                 PageReaderView(title: "\(book.name) \(chapter)", verses: text.verses,
                                deepDive: { DeepDiveData.entry(bookID: book.id, chapter: chapter, verse: $0.number) },
                                onDeepDive: { dive, verse in deepDive = (dive, verse.text) },
-                               onReachedEnd: { reachedEnd = true }, footerHeight: 330) {
+                               onReachedEnd: { session.markReachedEnd() }, footerHeight: 330) {
                     VStack(spacing: 10) {
                         actions(compact: true)
                         textNotice(text)
@@ -395,11 +388,24 @@ struct ChapterReaderView: View {
         .onAppear { context.recordBookStarted(book.id) }
         .onAppear { onScreen = true }
         .onDisappear { onScreen = false }
+        .onChange(of: loader.text, initial: true) { _, text in
+            if let text { session.setText(text, strictness: strictness) }
+        }
+        .onChange(of: strictness) { _, new in session.setStrictness(new) }
         .onChange(of: isReading, initial: true) { _, reading in
-            clock.set(running: reading, at: .now)
+            session.setRunning(reading)
             #if DEBUG
-            print("READER \(book.id) \(chapter): timer \(reading ? "running" : "paused") at \(Int(clock.elapsed(at: .now)))s of \(Int(requiredSeconds))s")
+            print("READER \(book.id) \(chapter): timer \(reading ? "running" : "paused") at \(Int(session.elapsed(at: .now)))s of \(Int(session.requiredSeconds))s (\(session.words ?? 0) words)")
             #endif
+        }
+        // The one ticker: about once a second while the time runs, then it stops.
+        .task(id: isReading) {
+            guard isReading else { return }
+            while !Task.isCancelled && !session.timeUp {
+                let wait = min(1, max(0.05, session.secondsToNextTick() + 0.02))
+                try? await Task.sleep(for: .seconds(wait))
+                session.tick()
+            }
         }
         .sheet(isPresented: $asking) {
             ReadingQuestionView(book: book, chapter: chapter, onCounted: { countRead() }, onLookAgain: { asking = false })
@@ -443,8 +449,6 @@ struct ChapterReaderView: View {
         onScreen && scenePhase == .active && loader.text != nil && !asking && !scanning && deepDive == nil && !counted
     }
 
-    private func elapsed(at now: Date) -> Double { clock.elapsed(at: now) }
-
     /// Finish (after the gate), "Use my Bible", what's been read, and the next chapter.
     @ViewBuilder
     private func actions(compact: Bool) -> some View {
@@ -456,12 +460,7 @@ struct ChapterReaderView: View {
                     .foregroundStyle(Color.olive)
                     .frame(maxWidth: .infinity, minHeight: 44)
             } else if hasText {
-                TimelineView(.animation(minimumInterval: 1.0 / 30)) { context in
-                    let e = elapsed(at: context.date)
-                    FinishButton(progress: ReadingGate.progress(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),
-                                 enabled: ReadingGate.canFinish(reachedEnd: reachedEnd, elapsed: e, required: requiredSeconds),
-                                 remaining: max(0, requiredSeconds - e), readBefore: isRead) { asking = true }
-                }
+                SessionFinishButton(session: session, readBefore: isRead) { asking = true }
             }
             if !counted {
                 Button { scanning = true } label: { Label("Use my Bible", systemImage: "camera.viewfinder") }
@@ -511,10 +510,33 @@ struct ChapterReaderView: View {
     /// Back to the island, where the new piece is built.
     private func finishedReading() {
         withAnimation { counted = true }
-        clock.reset(at: .now)
+        session.reset()
         Task {
             try? await Task.sleep(for: .milliseconds(900))
             closeReading?()
+        }
+    }
+}
+
+/// Mark complete, driven by the chapter's reading session. Its own view, so the once-a-second
+/// countdown redraws only this button, not the pages around it.
+private struct SessionFinishButton: View {
+    let session: ReadingSession
+    let readBefore: Bool
+    let action: () -> Void
+
+    var body: some View {
+        VStack(spacing: 4) {
+            FinishButton(progress: session.progress, enabled: session.canFinish,
+                         remaining: Double(session.secondsLeft), readBefore: readBefore, action: action)
+                // The ring moves once a second; easing each step keeps it smooth.
+                .animation(.linear(duration: 1), value: session.progress)
+            #if DEBUG
+            // Developers: check the required time against the chapter's length.
+            Text("DEBUG: \(session.words ?? 0) words → \(Int(session.requiredSeconds))s required (\(session.strictness.title))")
+                .font(.caption2.monospacedDigit())
+                .foregroundStyle(Color.secondaryText)
+            #endif
         }
     }
 }
