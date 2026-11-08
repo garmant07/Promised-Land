@@ -37,6 +37,8 @@ struct LibraryHubView: View {
                 .frame(maxWidth: .infinity)
             }
             .background(LibraryBackdrop().ignoresSafeArea())
+            .debugOpenTiming("Library")
+            .debugOpenBook($path)
             .navigationTitle("The Library")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -107,6 +109,7 @@ struct LibraryHubView: View {
         let books = section.books
         let read = books.reduce(0) { $0 + progress.chaptersRead($1.id) }
         let total = books.reduce(0) { $0 + $1.chapterCount }
+        let notesByBook = notesByBook // once, not per book
         return VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
                 shelfTitle(section.name, systemImage: nil)

@@ -243,7 +243,9 @@ struct GameProgress: Equatable {
     var totalChapters: Int { BibleCatalog.totalChapters }
 }
 
-/// Convenience reader for views that need the current progress.
+/// Convenience reader for views that need the current progress. Every view shares one snapshot
+/// (`GameProgressCache`), built only when the stored records change, so reading `progress` in a
+/// list row or a chapter cell costs nothing.
 @propertyWrapper
 struct ProgressQuery: DynamicProperty {
     @Query private var reads: [ChapterRead]
@@ -251,11 +253,62 @@ struct ProgressQuery: DynamicProperty {
     @Query private var memorised: [VerseMemorised]
     @Query private var castings: [CrownCasting]
     @Query private var started: [BookStarted]
+    @Environment(\.modelContext) private var context
 
     init() {}
 
     var wrappedValue: GameProgress {
-        GameProgress(reads: reads, quizzes: quizzes, memorised: memorised, castings: castings, started: started)
+        GameProgressCache.shared.progress(context: context, counts: [reads.count, quizzes.count, memorised.count, castings.count, started.count]) {
+            GameProgress(reads: reads, quizzes: quizzes, memorised: memorised, castings: castings, started: started)
+        }
+    }
+}
+
+/// The one `GameProgress` snapshot every view reads. Building it walks every stored read (slow
+/// through SwiftData with a long history), so it's rebuilt only when something changed: a save,
+/// a record added or removed, a new day (streaks and "this year"), or a different store.
+@MainActor
+final class GameProgressCache {
+    static let shared = GameProgressCache()
+
+    private struct Key: Equatable {
+        let context: ObjectIdentifier
+        let saves: Int
+        let counts: [Int]
+        let day: Date
+    }
+
+    private var key: Key?
+    private var value = GameProgress.empty
+    /// Saves seen so far (any SwiftData save changes what progress could say).
+    private var saves = 0
+    private var observer: (any NSObjectProtocol)?
+    #if DEBUG
+    private(set) var builds = 0
+    #endif
+
+    init() {
+        observer = NotificationCenter.default.addObserver(forName: ModelContext.didSave, object: nil, queue: nil) { _ in
+            if Thread.isMainThread {
+                MainActor.assumeIsolated { GameProgressCache.shared.invalidate() }
+            } else {
+                DispatchQueue.main.async { GameProgressCache.shared.invalidate() }
+            }
+        }
+    }
+
+    /// Something was saved: the next read builds a fresh snapshot.
+    func invalidate() { saves += 1 }
+
+    func progress(context: ModelContext, counts: [Int], now: Date = .now, build: () -> GameProgress) -> GameProgress {
+        let key = Key(context: ObjectIdentifier(context), saves: saves, counts: counts, day: Calendar.current.startOfDay(for: now))
+        if key == self.key { return value }
+        value = build()
+        self.key = key
+        #if DEBUG
+        builds += 1
+        #endif
+        return value
     }
 }
 

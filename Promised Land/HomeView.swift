@@ -68,11 +68,14 @@ struct HomeView: View {
 
     @State private var activeSheet: ActiveSheet?
     @State private var selectedItem: Int?
+    /// How far the open sheet is pulled up (half or full height).
+    @State private var sheetDetent: PresentationDetent = .medium
     #if DEBUG
     @State private var debugReflection: ChapterRef?
     @State private var debugGallery = false
     @State private var debugCreator = false
     @State private var debugBiblePreview = false
+    @State private var debugDelayed = false
     #endif
 
     /// Items on the island when it was last seen (-1: never), so new things can build in.
@@ -138,7 +141,16 @@ struct HomeView: View {
         #if DEBUG
         if debugBiblePreview || debugGallery { return true }
         #endif
-        return interior != nil
+        if interior != nil { return true }
+        // A sheet at full height covers the island too.
+        guard let activeSheet else { return false }
+        return !activeSheet.detents.contains(.medium) || sheetDetent == .large
+    }
+
+    /// The open sheet's height, kept to one of its own detents.
+    private func detentBinding(_ sheet: ActiveSheet) -> Binding<PresentationDetent> {
+        Binding(get: { sheet.detents.contains(sheetDetent) ? sheetDetent : .large },
+                set: { sheetDetent = $0 })
     }
 
     /// Characters whose journeys are complete.
@@ -224,7 +236,8 @@ struct HomeView: View {
                           collectTarget: collectTarget,
                           onCollectLanded: collectLanded,
                           showsFPS: showsFPS,
-                          paused: islandCovered) { index in open(index, in: island) }
+                          paused: islandCovered,
+                          throttled: activeSheet != nil) { index in open(index, in: island) }
                 .ignoresSafeArea()
         }
         .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.top } action: { safeTop = $0 }
@@ -300,11 +313,12 @@ struct HomeView: View {
         }
         .sheet(item: $activeSheet) { sheet in
             content(for: sheet)
-                .presentationDetents(sheet.detents)
+                .presentationDetents(sheet.detents, selection: detentBinding(sheet))
                 .readingSizing(sheet.isReading)
                 .presentationDragIndicator(.visible)
         }
         .onChange(of: activeSheet) { _, sheet in
+            if sheet == nil { sheetDetent = .medium }
             if sheet == nil { selectedItem = nil; showNewGrowth() }
         }
         .fullScreenCover(item: $interior, onDismiss: {
@@ -765,7 +779,17 @@ struct HomeView: View {
 
     #if DEBUG
     private func debugOpen(_ island: Island) {
+        // "-openDelay 3" opens things 3 s after launch, so "OPEN …" timings aren't mixed up with launch.
+        let delay = OpenTiming.launchDelay
+        if delay > 0, !debugDelayed {
+            debugDelayed = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { debugOpen(self.island) }
+            return
+        }
         let args = ProcessInfo.processInfo.arguments
+        if args.contains("-openRead") || args.contains("-openHub") || args.contains("-openPlace") { OpenTiming.begin(args.contains("-openRead") ? "Read" : args.contains("-openHub") ? "Library" : "Place") }
+        // "-openPlace ruth" steps inside a book's building (as if tapped).
+        if let id = OpenTiming.argument("-openPlace") { interior = InteriorRef(id: id) }
         if args.contains("-openLibrary") { activeSheet = .library }
         if args.contains("-openFriends") { activeSheet = .friends }
         if args.contains("-openProfile") { activeSheet = .profile }

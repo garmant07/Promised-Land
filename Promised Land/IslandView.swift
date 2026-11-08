@@ -46,8 +46,12 @@ struct PlatformScene: View {
     var onCollectLanded: (() -> Void)? = nil
     /// DEBUG: a frames-per-second readout.
     var showsFPS = false
-    /// Covered by a full-screen view (an interior): all animation holds still until it closes.
+    /// Covered by a full-screen view (an interior, or a sheet pulled to full height): all animation
+    /// holds still until it closes.
     var paused = false
+    /// Partly covered (a half-height sheet): villagers and characters move at a lower frame rate,
+    /// leaving the main thread to the sheet.
+    var throttled = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -161,7 +165,7 @@ struct PlatformScene: View {
                         Color.black.opacity(0.16).ignoresSafeArea().allowsHitTesting(false).transition(.opacity)
                     }
 
-                    TimelineView(.animation(paused: paused || (!walking && beat == nil && !bouncing && characters.isEmpty && flight == nil
+                    TimelineView(.animation(minimumInterval: throttled ? 1.0 / 30 : nil, paused: paused || (!walking && beat == nil && !bouncing && characters.isEmpty && flight == nil
                                             && (life.isEmpty || editing != nil || reduceMotion)))) { context in
                         let now = context.date
                         let pos = position(at: now)

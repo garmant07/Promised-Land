@@ -350,7 +350,7 @@ option was chosen and noted here.
 ### Bug-fix progress
 - [x] Section 1: Reader timer
 - [x] Section 2: Leftover text when flipping pages
-- [ ] Section 3: Lag opening sheets, buildings and the Library
+- [x] Section 3: Lag opening sheets, buildings and the Library
 - [ ] Section 4: Island camera and rendering
 - [ ] Section 5: Friends and group islands
 
@@ -379,6 +379,45 @@ option was chosen and noted here.
     lapses after 0.6 s at most, so it can't stick). Swipes are a horizontal drag (the page follows
     the finger a little, then slides); taps on verses still open deep dives; VoiceOver turns pages
     with a three-finger scroll.
+
+75. **Why the Library took 5–10 seconds: `GameProgress` was rebuilt on every read of `progress`.**
+    `ProgressQuery.wrappedValue` walked every stored `ChapterRead` (through SwiftData's slow
+    property getters) each time a view touched `progress`, and the Library hub touches it once per
+    book, the book page three times per chapter cell, and the home screen several times. Time
+    Profiler (heavy history: every chapter read twice, 2,378 reads) showed 8.6 s of 12.4 s of
+    main-thread time in it while the Library opened. Now every view shares one snapshot
+    (`GameProgressCache`), rebuilt only when the records change: a SwiftData save, a record added
+    or removed, a new day, or a different store.
+76. **Smaller fixes in the same round.** The building interior counted its book's reads once per
+    chapter cell, and the Library hub grouped the journal once per book; both now do it once.
+    Book thumbnails in lists are drawn off the main thread and fade in, and their cache holds 240
+    (it held 60, fewer than the 66 books, so scrolling back up redrew them all). The island holds
+    still behind a sheet pulled to full height (as it already did behind an interior) and drops to
+    30 fps behind a half-height sheet.
+77. **Measuring.** The island is a SwiftUI `Canvas`, not SpriteKit (note 13), so there is no
+    SpriteKit FPS instrument to use; frame rate comes from the app's display-link meter
+    (`-perfLog`). The SwiftUI instrument records no data on the simulator (the full SwiftUI template
+    fails: "Hitches is not supported on this platform"), so its numbers need a real device. DEBUG
+    launch options added for timing: `-openDelay <s>` (open things a few seconds after launch),
+    `-openPlace <bookID>`, `-openBook <bookID>`, `-autoScroll`; each screen prints
+    "OPEN <name>: n ms" from being asked for to its first frame.
+
+### Section 3 performance (iPhone 17 simulator, iOS 27, Debug, 2,378 reads)
+
+| | Before | After |
+|---|---|---|
+| Open the Library (island building) | 7,490 ms | 357 ms |
+| Tap a book in the Library (Psalms) | 9,280 ms | 205 ms |
+| Open Read | 533 ms | 239 ms |
+| Tap a book in Read (Psalms) | 3,462 ms | 158 ms |
+| Open a building (Psalms) | 443 ms | 267 ms |
+| Scroll the Read book list | 12–60 fps, one 2.9 s freeze | 52–59 fps, worst frame 50 ms |
+| Main thread busy, launch + open Library (Time Profiler) | 12.4 s | 3.3 s (mostly launch) |
+| `ProgressQuery.wrappedValue` during that | 8,622 ms | 58 ms |
+
+Scrolling is measured with a programmatic animated scroll (`-autoScroll`), which is harsher than a
+finger fling. App code is about 200 ms of the main thread's work across the whole scroll; the rest
+is SwiftUI's own list layout.
 
 ## Remove before release
 

@@ -56,6 +56,7 @@ struct InteriorView: View {
                 .frame(maxWidth: .infinity)
             }
             .themedScreen()
+            .debugOpenTiming("Place")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -143,6 +144,7 @@ struct InteriorView: View {
                 .font(.serifTitle(.title3))
                 .foregroundStyle(Color.bodyText)
             if let book {
+                let counts = counts // once, not per chapter
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 64), spacing: 8)], spacing: 8) {
                     ForEach(1...book.chapterCount, id: \.self) { chapter in
                         let n = counts[chapter] ?? 0

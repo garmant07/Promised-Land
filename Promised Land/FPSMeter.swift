@@ -104,3 +104,88 @@ final class FrameCounter {
     }
 }
 #endif
+
+#if DEBUG
+/// DEBUG: how long a screen takes to open, from the moment it's asked for to its first frame.
+/// Prints "OPEN <name>: n ms" to the console (used with the `-open…` launch options).
+@MainActor
+enum OpenTiming {
+    private static var started: [String: CFTimeInterval] = [:]
+
+    static func begin(_ name: String) { started[name] = CACurrentMediaTime() }
+
+    /// Called when the screen appears; reports once its first frame has gone out.
+    static func end(_ name: String) {
+        guard let start = started.removeValue(forKey: name) else { return }
+        DispatchQueue.main.async {
+            print(String(format: "OPEN %@: %.0f ms", name, (CACurrentMediaTime() - start) * 1000))
+        }
+    }
+
+    /// The `-openDelay <seconds>` launch option: wait this long after launch before opening
+    /// anything, so the timing isn't mixed up with launch.
+    static var launchDelay: Double {
+        let args = ProcessInfo.processInfo.arguments
+        guard let i = args.firstIndex(of: "-openDelay"), i + 1 < args.count else { return 0 }
+        return Double(args[i + 1]) ?? 0
+    }
+
+    /// The value after a launch option, if given.
+    static func argument(_ flag: String) -> String? {
+        let args = ProcessInfo.processInfo.arguments
+        guard let i = args.firstIndex(of: flag), i + 1 < args.count else { return nil }
+        return args[i + 1]
+    }
+}
+#endif
+
+extension View {
+    /// DEBUG: ends an `OpenTiming` measurement when this screen appears. No effect in Release.
+    func debugOpenTiming(_ name: String) -> some View {
+        #if DEBUG
+        onAppear { OpenTiming.end(name) }
+        #else
+        self
+        #endif
+    }
+}
+
+extension View {
+    /// DEBUG: "-openBook psalms" takes that book down from the shelf a second after this screen
+    /// appears (as if tapped), timing it as "OPEN Book". No effect in Release.
+    func debugOpenBook(_ path: Binding<NavigationPath>) -> some View {
+        #if DEBUG
+        onAppear {
+            guard let id = OpenTiming.argument("-openBook"), let book = BibleCatalog.book(id: id) else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                OpenTiming.begin("Book")
+                path.wrappedValue.append(book)
+            }
+        }
+        #else
+        self
+        #endif
+    }
+}
+
+extension View {
+    /// DEBUG: "-autoScroll" scrolls this list to `target` and back over a few seconds, to measure
+    /// scrolling with `-perfLog`. No effect in Release.
+    func debugAutoScroll<ID: Hashable>(_ proxy: ScrollViewProxy, to target: ID?) -> some View {
+        #if DEBUG
+        onAppear {
+            guard ProcessInfo.processInfo.arguments.contains("-autoScroll"), let target else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                print("SCROLL start")
+                withAnimation(.linear(duration: 3)) { proxy.scrollTo(target, anchor: .bottom) }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                    withAnimation(.linear(duration: 3)) { proxy.scrollTo("top", anchor: .top) }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { print("SCROLL end") }
+                }
+            }
+        }
+        #else
+        self
+        #endif
+    }
+}

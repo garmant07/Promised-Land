@@ -15,6 +15,7 @@ struct LibraryView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
+          ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
                     HStack(spacing: 8) {
@@ -35,6 +36,7 @@ struct LibraryView: View {
                         }
                     }
                     .padding(.top, 8)
+                    .id("top")
                     if showsSuggestion, let suggestion = ReadingSuggestion.make(from: progress) {
                         NavigationLink(value: suggestion.ref) { ReadingSuggestionCard(suggestion: suggestion) }
                             .buttonStyle(.plain)
@@ -81,6 +83,10 @@ struct LibraryView: View {
                 .padding(.vertical, 12)
             }
             .themedScreen()
+            .debugAutoScroll(proxy, to: WorldData.landmarks.last(where: { $0.book != nil })?.id)
+          }
+            .debugOpenTiming("Read")
+            .debugOpenBook($path)
             .navigationTitle("Read")
             .hiddenNavigationBar()
             .readingDestinations()
@@ -249,6 +255,7 @@ struct BookView: View {
             .padding(.vertical, 12)
         }
         .themedScreen()
+        .debugOpenTiming("Book")
         .navigationTitle(book.name)
     }
 
