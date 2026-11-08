@@ -13,6 +13,8 @@ struct IslandLife: Equatable {
     /// Where each villager and traveller can be (grid rects), for culling before any pose maths.
     var villagerHomes: [CGRect] = []
     var travellerHomes: [CGRect] = []
+    /// The island's extent in grid units (centre and half-size), for the birds' flight across it.
+    var sky = CGRect(x: 0, y: 0, width: 8, height: 8)
 
     struct Basket: Equatable {
         let bookID: String
@@ -23,7 +25,7 @@ struct IslandLife: Equatable {
 
     static func == (a: IslandLife, b: IslandLife) -> Bool {
         a.villagers == b.villagers && a.travellers == b.travellers && a.baskets == b.baskets
-            && a.chimneys.map(\.point) == b.chimneys.map(\.point)
+            && a.chimneys.map(\.point) == b.chimneys.map(\.point) && a.sky == b.sky
     }
 
     var isEmpty: Bool { villagers.isEmpty && travellers.isEmpty && chimneys.isEmpty && baskets.isEmpty }
@@ -33,6 +35,10 @@ struct IslandLife: Equatable {
         var life = IslandLife(villagers: VillagerData.villagers(island: island), travellers: Traveller.make(island: island))
         life.villagerHomes = life.villagers.map(\.bounds)
         life.travellerHomes = life.travellers.map(\.bounds)
+        if let x0 = island.tiles.map(\.x).min(), let x1 = island.tiles.map(\.x).max(),
+           let y0 = island.tiles.map(\.y).min(), let y1 = island.tiles.map(\.y).max() {
+            life.sky = CGRect(x: x0, y: y0, width: x1 - x0 + 1, height: y1 - y0 + 1)
+        }
         let homes: Set<PieceKind> = [.hut, .farmhouse, .house, .oven, .mill, .upperRoom, .houses]
         for item in island.items {
             guard case .piece(let kind) = item.kind, homes.contains(kind), item.total > 0, item.progress >= item.total else { continue }
@@ -109,7 +115,9 @@ struct IslandLife: Equatable {
         // Figures and the things in front of them, back to front.
         enum Layer { case figure(LifeDirector.Shown), item(Island.Item) }
         let layers = (shown.map { (depth: $0.point.y, layer: Layer.figure($0)) }
-            + occluders.map { (depth: layout.depth($0.gx, $0.gy), layer: Layer.item($0)) })
+            // A building sorts by its footprint's front-most corner, so anyone behind it (see
+            // `IslandCamera.isBehind`) is always drawn first and hidden by it.
+            + occluders.map { (depth: IslandCamera.frontDepth(of: $0, layout: layout), layer: Layer.item($0)) })
             .sorted { $0.depth < $1.depth }
         for layer in layers {
             let f: LifeDirector.Shown
@@ -139,7 +147,7 @@ struct IslandLife: Equatable {
                 count += 1
             }
         }
-        birds(&c, size: visible.size, origin: visible.origin, time: time)
+        birds(&c, layout: layout, sky: life.sky, visible: visible, time: time)
         return count + 1
     }
 
@@ -229,22 +237,41 @@ struct IslandLife: Equatable {
         }
     }
 
-    /// A few birds crossing the sky now and then, in screen space.
-    static func birds(_ c: inout GraphicsContext, size: CGSize, origin: CGPoint, time: TimeInterval) {
-        let period = 38.0
-        let t = time.truncatingRemainder(dividingBy: period) / 14 // crossing takes 14 s, then a long pause
+    /// A few birds crossing the island now and then. They fly in the island's own space (a line
+    /// across its grid, high above the ground), so they pan, zoom and turn with it.
+    static func birds(_ c: inout GraphicsContext, layout: IslandLayout, sky: CGRect, visible: CGRect, time: TimeInterval) {
+        let t = birdProgress(time)
         guard t < 1 else { return }
-        let x = origin.x - 40 + CGFloat(t) * (size.width + 80)
-        let y = origin.y + size.height * 0.22 + CGFloat(sin(t * 3)) * 12
+        let leader = birdPoint(t, sky: sky)
+        let u = layout.u
+        let altitude = 70 * u
+        let s = max(0.8, min(2.4, u)) // wing size: grows a little with zoom, never vanishes or swamps
         for i in 0..<3 {
-            let bx = x - CGFloat(i) * 16, by = y + CGFloat(i % 2) * 9 + CGFloat(i) * 4
-            let flap = CGFloat(sin(time * 7 + Double(i))) * 2.5
+            // The flock trails behind the leader along the grid's diagonal.
+            let g = CGPoint(x: leader.x - CGFloat(i) * 0.45, y: leader.y + CGFloat(i % 2) * 0.35 - CGFloat(i) * 0.1)
+            let p = layout.point(g.x, g.y)
+            let bx = p.x, by = p.y - altitude + CGFloat(sin(t * 3)) * 6 * u
+            guard visible.insetBy(dx: -20, dy: -20).contains(CGPoint(x: bx, y: by)) else { continue }
+            let flap = CGFloat(sin(time * 7 + Double(i))) * 2.5 * s
             var path = Path()
-            path.move(to: CGPoint(x: bx - 5, y: by - flap))
-            path.addQuadCurve(to: CGPoint(x: bx, y: by), control: CGPoint(x: bx - 2.5, y: by - 3 - flap))
-            path.addQuadCurve(to: CGPoint(x: bx + 5, y: by - flap), control: CGPoint(x: bx + 2.5, y: by - 3 - flap))
-            c.stroke(path, with: .color(Color.primaryBrown.opacity(0.45)), style: StrokeStyle(lineWidth: 1.4, lineCap: .round))
+            path.move(to: CGPoint(x: bx - 5 * s, y: by - flap))
+            path.addQuadCurve(to: CGPoint(x: bx, y: by), control: CGPoint(x: bx - 2.5 * s, y: by - 3 * s - flap))
+            path.addQuadCurve(to: CGPoint(x: bx + 5 * s, y: by - flap), control: CGPoint(x: bx + 2.5 * s, y: by - 3 * s - flap))
+            c.stroke(path, with: .color(Color.primaryBrown.opacity(0.45)), style: StrokeStyle(lineWidth: 1.4 * min(1.5, s), lineCap: .round))
         }
+    }
+
+    /// How far through a crossing the flock is (0…1), or ≥ 1 during the pause between crossings.
+    static func birdProgress(_ time: TimeInterval) -> Double {
+        time.truncatingRemainder(dividingBy: 38) / 14 // crossing takes 14 s, then a long pause
+    }
+
+    /// Where the flock's leader is on the island's grid, `t` of the way across (from beyond one
+    /// corner of the island to beyond the opposite one).
+    static func birdPoint(_ t: Double, sky: CGRect) -> CGPoint {
+        let from = CGPoint(x: sky.minX - 3, y: sky.midY + sky.height * 0.15)
+        let to = CGPoint(x: sky.maxX + 3, y: sky.midY - sky.height * 0.15)
+        return CGPoint(x: from.x + (to.x - from.x) * CGFloat(t), y: from.y + (to.y - from.y) * CGFloat(t))
     }
 
     /// A little basket with its produce and a count, to tap and collect.

@@ -105,6 +105,8 @@ struct PlatformScene: View {
     @State private var flight: (sprites: [CollectFlightPlan.Sprite], start: Date)?
     /// The view's frame in global coordinates (to aim the flight at the button).
     @State private var globalOrigin: CGPoint = .zero
+    /// The pan step last warmed ahead from (to tell which way the camera is moving).
+    @State private var lastPanStep: CGSize = .zero
 
     // Character
     @State private var spot = CGPoint(x: 1, y: 1)
@@ -123,6 +125,8 @@ struct PlatformScene: View {
 
     /// The character's height in island units: constant against the world.
     static let characterHeight: CGFloat = 24
+    /// How far beyond the screen villagers, travellers and characters are looked after (points).
+    static let lifeMargin: CGFloat = 140
 
     var body: some View {
         GeometryReader { geo in
@@ -175,14 +179,16 @@ struct PlatformScene: View {
                         let lean = walking ? sin(t * 9) * 3 : 0
                         // Level of detail: which villagers, travellers and characters show, each at
                         // its own (paused off screen) time and fade.
-                        let viewport = CGRect(origin: .zero, size: geo.size).insetBy(dx: -30, dy: -30)
+                        // A wide margin: figures are picked up and faded in well off screen, so none
+                        // appears late at an edge, however fast you pan.
+                        let viewport = CGRect(origin: .zero, size: geo.size).insetBy(dx: -Self.lifeMargin, dy: -Self.lifeMargin)
                         let lifeTime = reduceMotion ? 0 : t
                         let tier = director.begin(now: lifeTime, u: layout.u)
                         let shown: [LifeDirector.Shown] = editing == nil ? PerfProbe.measure("tick.plan") {
                             let figures: () -> [LifeDirector.Figure] = {
                                 life.figures(layout: layout, viewport: viewport) + characterFigures(layout: layout, charH: charH)
                             }
-                            return director.plan(figures(), now: lifeTime, viewport: viewport)
+                            return director.plan(figures(), now: lifeTime, viewport: viewport, screen: CGRect(origin: .zero, size: geo.size))
                         } : []
                         let shownCharacters: [String: LifeDirector.Shown] = Self.characterMap(shown)
 
@@ -331,7 +337,8 @@ struct PlatformScene: View {
             }
             .onChange(of: selected.wrappedValue) { _, index in
                 guard let index, island.items.indices.contains(index) else { return }
-                centre(on: island.items[index], layout: base, size: geo.size)
+                // A building you step into is centred by the visit (one glide, not two racing).
+                if visit != index { centre(on: island.items[index], size: geo.size) }
                 if !reduceMotion { startBounce([index]) }
             }
         }
@@ -372,6 +379,9 @@ struct PlatformScene: View {
                           editing: editing != nil, paused: paused)) {
             await warmNextTurns()
         }
+        // While panning: each time the pan crosses into the next step, render ahead the Places and
+        // ground the next steps that way will show, so nothing is drawn late at the leading edge.
+        .task(id: PanStep.rounded(pan)) { await warmAhead() }
         .task(id: reduceMotion) {
             guard !reduceMotion else { return }
             await wander()
@@ -454,11 +464,8 @@ struct PlatformScene: View {
     /// Recentres on your character, zooming in if far out.
     private func findMe(layout: IslandLayout, size: CGSize) {
         let newZoom = max(zoom, 2.6)
-        let target = IslandLayout(island: island, size: size, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
-        let feet = target.point(spot.x, spot.y)
-        let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
-                             y: insets.top + (size.height - insets.top - insets.bottom) / 2)
-        animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - feet.x, height: centre.y - feet.y), duration: 0.5)
+        animateCamera(zoom: newZoom, pan: IslandCamera.pan(toCentre: spot, island: island, size: size, insets: insets,
+                                                           zoom: newZoom, quarter: quarter), duration: 0.5)
     }
 
     struct WarmKey: Equatable {
@@ -490,6 +497,29 @@ struct PlatformScene: View {
                 if done { break }
                 await FrameTicker.shared.nextFrame()
             }
+        }
+    }
+
+    /// Renders, a picture per frame, what the static layer will need a few pan steps further in
+    /// the direction the camera is moving.
+    private func warmAhead() async {
+        let step = PanStep.rounded(pan)
+        let move = CGSize(width: step.width - lastPanStep.width, height: step.height - lastPanStep.height)
+        lastPanStep = step
+        guard viewSize != .zero, !paused, island.signature != 0, move != .zero, turnSnapshot == nil else { return }
+        let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(viewSize))
+        // Panning right brings in what's to the left, and so on.
+        let lead = PanStep.size * 3
+        let ahead = canvas.union(canvas.offsetBy(dx: move.width > 0 ? -lead : move.width < 0 ? lead : 0,
+                                                 dy: move.height > 0 ? -lead : move.height < 0 ? lead : 0))
+        for _ in 0..<8 {
+            guard !Task.isCancelled else { return }
+            let done = PerfProbe.measure("prewarm") {
+                IslandRenderCache.shared.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: quarter,
+                                                 pan: PanStep.drawPan(pan), bake: editing == nil, viewport: ahead)
+            }
+            if done { return }
+            await FrameTicker.shared.nextFrame()
         }
     }
 
@@ -665,8 +695,10 @@ struct PlatformScene: View {
             let bounds = IslandPainter.drawnBounds(of: item, layout: layout)
             guard bounds.intersects(reach) else { continue }
             let overlapping = figures.filter { $0.intersects(bounds) }
-            guard overlapping.contains(where: { $0.maxY < base.y }) else { continue }
-            if onlyIfNoneInFront, overlapping.contains(where: { $0.maxY >= base.y }) { continue }
+            // Behind = not past the footprint's front-most edge (feet at the bottom middle of each figure).
+            func behind(_ r: CGRect) -> Bool { IslandCamera.isBehind(feet: CGPoint(x: r.midX, y: r.maxY), item: item, layout: layout) }
+            guard overlapping.contains(where: behind) else { continue }
+            if onlyIfNoneInFront, overlapping.contains(where: { !behind($0) }) { continue }
             out.append(item)
         }
         return out
@@ -853,21 +885,20 @@ struct PlatformScene: View {
 
     private func clampPan(_ p: CGSize, zoom: CGFloat, size: CGSize, slack: CGFloat = 0) -> CGSize {
         let z = max(1, zoom)
-        let maxX = (z - 1) * size.width / 2 + size.width * 0.25 + slack
-        let maxY = (z - 1) * size.height / 2 + size.height * 0.25 + slack
+        // Always far enough to centre any Place (tapping one, Find me, a reveal), at any turn.
+        let reach = IslandCamera.reach(island: island, size: size, insets: insets, zoom: z)
+        let maxX = max((z - 1) * size.width / 2 + size.width * 0.25, reach.width) + slack
+        let maxY = max((z - 1) * size.height / 2 + size.height * 0.25, reach.height) + slack
         return CGSize(width: min(maxX, max(-maxX, p.width)), height: min(maxY, max(-maxY, p.height)))
     }
 
-    /// Eases the view so the selected item sits in the middle of the free area.
-    private func centre(on item: Island.Item, layout: IslandLayout, size: CGSize) {
-        let base = layout.point(item.gx, item.gy)
-        let target = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
-                             y: insets.top + (size.height - insets.top - insets.bottom) * 0.35)
-        let desired = clamp(CGSize(width: target.x - base.x, height: target.y - base.y), size: size)
-        // Ease only part of the way, so it feels like a nudge rather than a jump.
-        let eased = CGSize(width: pan.width + (desired.width - pan.width) * 0.6,
-                           height: pan.height + (desired.height - pan.height) * 0.6)
-        animateCamera(zoom: zoom, pan: eased, duration: 0.45)
+    /// Eases the view so the selected item sits in the middle of the free area, above the card
+    /// that opens for it (the card covers the lower half, so "middle" is a third of the way down).
+    private func centre(on item: Island.Item, size: CGSize) {
+        let target = IslandCamera.freeCentre(size: size, insets: insets, fraction: 0.35)
+        animateCamera(zoom: zoom, pan: IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: island), island: island,
+                                                        size: size, insets: insets, zoom: zoom, quarter: quarter, target: target),
+                      duration: 0.45)
     }
 
     private func startBounce(_ targets: Set<Int>, duration: Double = 0.55) {
@@ -1011,12 +1042,11 @@ struct PlatformScene: View {
         let out = max(0.62, item.footprint.width / 2 + 0.15)
         let door = CGPoint(x: item.gx + out, y: item.gy + out)
         let newZoom = max(zoom, 3)
-        let target = IslandLayout(island: island, size: size, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
-        let p = target.point(door.x, door.y)
-        let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
-                             y: insets.top + (size.height - insets.top - insets.bottom) * 0.55)
         let walkTime = min(2.2, max(0.6, hypot(door.x - spot.x, door.y - spot.y) / 2.2))
-        animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - p.x, height: centre.y - p.y), duration: walkTime)
+        // The building itself (its whole plot) in the middle of the screen, at this turn.
+        animateCamera(zoom: newZoom, pan: IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: island), island: island,
+                                                           size: size, insets: insets, zoom: newZoom, quarter: quarter),
+                      duration: walkTime)
         Task {
             if reduceMotion {
                 spot = door; walkFrom = door
@@ -1046,11 +1076,9 @@ struct PlatformScene: View {
                 let focus = island.items.indices.contains(step.focus) ? island.items[step.focus] : nil
                 if let focus, !reduceMotion, persistsCamera, viewSize != .zero {
                     let newZoom = max(zoom, step.kind == .combined ? 2 : 2.6)
-                    let target = IslandLayout(island: island, size: viewSize, insets: insets, zoom: newZoom, angle: CGFloat(quarter))
-                    let p = target.point(focus.gx, focus.gy)
-                    let centre = CGPoint(x: insets.leading + (viewSize.width - insets.leading - insets.trailing) / 2,
-                                         y: insets.top + (viewSize.height - insets.top - insets.bottom) * 0.55)
-                    animateCamera(zoom: newZoom, pan: CGSize(width: centre.x - p.x, height: centre.y - p.y), duration: 0.6)
+                    animateCamera(zoom: newZoom, pan: IslandCamera.pan(toCentre: IslandCamera.focus(of: focus, in: island), island: island,
+                                                                       size: viewSize, insets: insets, zoom: newZoom, quarter: quarter),
+                                  duration: 0.6)
                     try? await Task.sleep(for: .milliseconds(750))
                 }
                 guard revealToken == token else { return }

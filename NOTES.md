@@ -351,7 +351,7 @@ option was chosen and noted here.
 - [x] Section 1: Reader timer
 - [x] Section 2: Leftover text when flipping pages
 - [x] Section 3: Lag opening sheets, buildings and the Library
-- [ ] Section 4: Island camera and rendering
+- [x] Section 4: Island camera and rendering
 - [ ] Section 5: Friends and group islands
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
@@ -418,6 +418,32 @@ option was chosen and noted here.
 Scrolling is measured with a programmatic animated scroll (`-autoScroll`), which is harsher than a
 finger fling. App code is about 200 ms of the main thread's work across the whole scroll; the rest
 is SwiftUI's own list layout.
+
+78. **Tapping a building centres it.** Tapping a Place or the Library set both the selection and
+    the visit, and each started its own camera glide (`centre(on:)` nudged 60% of the way to a point
+    a third of the way down; the visit zoomed to the door at 55%), so whichever ran second cut the
+    other off mid-zoom. Now a building you step into is moved only by the visit, and the camera puts
+    the middle of its Place (`IslandCamera.focus`) at the middle of the free area, at the current turn.
+    Find me and the after-reading reveal use the same maths. Other things you tap (trees, lanterns)
+    open a card over the lower half, so they're centred a third of the way down, fully rather than
+    60%. The pan limit now always allows centring any Place at any turn.
+79. **People behind buildings.** "Behind" was "feet higher on screen than the building's anchor"
+    (its middle), so someone walking behind its front half was drawn on top. It's now the
+    footprint's front-most corner, on the turned grid: behind = not past its front edge on either
+    axis (`IslandCamera.isBehind`), the same at all four turns, for you, Bible characters, villagers
+    and travellers. Villagers sort against that corner too.
+80. **Birds fly in the island's space** (a line across its grid, high above the ground), so they
+    pan, zoom and turn with it. There are no cloud shadows in the app to move; none were added
+    (fixes only).
+81. **Edges and fast panning.** Villagers, travellers and characters were only looked at within
+    30 pt of the screen, then faded in over 0.3 s, so they appeared late at the edges and flickered
+    in and out on a shaky pan. They're now picked up 140 pt out (`PlatformScene.lifeMargin`), so the
+    fade happens off screen; everyone on screen ranks ahead of the margin for the 30-figure cap, and
+    figures already showing keep their place longer, so a wiggle doesn't swap them. Each time the pan
+    crosses a step, the Place pictures and ground three steps ahead in that direction are rendered
+    between frames. Positions were already worked out from the camera every frame. Auto-pan at zoom 4
+    on the simulator: 18–33 fps before, 26–44 fps after (simulator numbers; relative only).
+
 
 ## Remove before release
 

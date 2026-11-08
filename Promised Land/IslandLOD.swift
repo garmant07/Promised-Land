@@ -45,25 +45,36 @@ nonisolated enum IslandLOD {
         let point: CGPoint
     }
 
-    /// Which figures to show: none far out; near the centre in the middle tier; everyone on screen
-    /// close in, nearest the centre first, up to the tier's cap. Figures already showing are kept a
-    /// little longer (a 24pt head start), so two at the edge of the cap don't swap back and forth.
-    static func select(_ candidates: [Candidate], tier: LODTier, viewport: CGRect, showing: Set<String> = []) -> [String] {
+    /// Which figures to show: none far out; near the centre in the middle tier; everyone in the
+    /// viewport close in, up to the tier's cap. `screen` is what's actually visible (the viewport is
+    /// it plus a margin, where figures are picked up and faded in before they come into view).
+    /// Close in, everyone on screen ranks ahead of everyone in the margin, each by how far out they
+    /// are relative to the screen's shape. Figures already showing keep their place for a good while
+    /// (a head start of `keep`), so a shaky pan never swaps figures at the edge of the cap back and forth.
+    static func select(_ candidates: [Candidate], tier: LODTier, viewport: CGRect, screen: CGRect? = nil,
+                       showing: Set<String> = []) -> [String] {
         guard tier != .far else { return [] }
-        let centre = CGPoint(x: viewport.midX, y: viewport.midY)
-        let radius = min(viewport.width, viewport.height) * middleRadius
+        let screen = screen ?? viewport
+        let centre = CGPoint(x: screen.midX, y: screen.midY)
+        let radius = min(screen.width, screen.height) * middleRadius
         let cap = tier == .middle ? middleCap : closeCap
+        let half = CGSize(width: max(1, screen.width / 2), height: max(1, screen.height / 2))
+        func rank(_ p: CGPoint) -> CGFloat {
+            if tier == .middle { return hypot(p.x - centre.x, p.y - centre.y) / radius }
+            let out = max(abs(p.x - centre.x) / half.width, abs(p.y - centre.y) / half.height)
+            return screen.contains(p) ? out : 1 + out
+        }
         return candidates
             .filter { viewport.contains($0.point) }
-            .map { c in (c.id, hypot(c.point.x - centre.x, c.point.y - centre.y)) }
-            .filter { tier == .close || $0.1 <= radius }
-            .sorted { a, b in
-                let da = a.1 - (showing.contains(a.0) ? 24 : 0), db = b.1 - (showing.contains(b.0) ? 24 : 0)
-                return (da, a.0) < (db, b.0)
-            }
+            .filter { tier == .close || hypot($0.point.x - centre.x, $0.point.y - centre.y) <= radius }
+            .map { c in (c.id, rank(c.point) - (showing.contains(c.id) ? keep : 0)) }
+            .sorted { ($0.1, $0.0) < ($1.1, $1.0) }
             .prefix(cap)
             .map(\.0)
     }
+
+    /// The head start a figure already showing keeps in the ranking (a fraction of the way out).
+    static let keep: CGFloat = 0.25
 }
 
 /// Runs the island's life frame by frame: the tier, each figure's own clock (paused off screen) and
@@ -127,7 +138,7 @@ final class LifeDirector {
 
     /// Works out which figures show this frame, and how strongly (fading over `IslandLOD.fade`).
     /// Figures whose home is off screen aren't looked at at all: their clocks stay paused.
-    func plan(_ figures: @autoclosure () -> [Figure], now: Double, viewport: CGRect) -> [Shown] {
+    func plan(_ figures: @autoclosure () -> [Figure], now: Double, viewport: CGRect, screen: CGRect? = nil) -> [Shown] {
         let tier = tier ?? .far
         // Far out nobody shows: once the last has faded, nothing is worked out at all.
         if tier == .far && opacities.isEmpty {
@@ -143,7 +154,7 @@ final class LifeDirector {
             awake[f.id] = (t, p)
             candidates.append(.init(id: f.id, point: p))
         }
-        let selected = Set(IslandLOD.select(candidates, tier: tier, viewport: viewport, showing: showing))
+        let selected = Set(IslandLOD.select(candidates, tier: tier, viewport: viewport, screen: screen, showing: showing))
         showing = selected
         let step = lastWallStep / IslandLOD.fade
         var out: [Shown] = []
