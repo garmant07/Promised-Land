@@ -97,54 +97,42 @@ struct GroupRow: View {
     }
 }
 
-/// The group's shared island (read-only), and who read what.
-struct GroupIslandView: View {
+/// Who read what in a group (in "About this island", over the group's full-screen island).
+struct GroupIslandDetails: View {
     let group: GroupSummary
 
     var body: some View {
-        let island = Island.build(chapters: group.combinedReads, quizzes: [], verses: [])
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                if group.isPreview {
-                    Label("Preview: a sample group, not real people. Every member's reading builds one shared island; your own island stays yours.",
-                          systemImage: "sparkles")
-                        .font(.footnote)
-                        .foregroundStyle(Color.primaryBrown)
-                        .padding(12)
-                        .background(Color.sand, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                }
-                PlatformScene(avatar: group.members.first?.avatar ?? .default, island: island)
-                    .frame(height: 360)
-                    .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-                    .allowsHitTesting(false)
-                    .accessibilityLabel("The group's shared island")
-                Text("Who read what")
-                    .font(.serifTitle(.title3))
-                    .foregroundStyle(Color.bodyText)
-                ForEach(group.contributions, id: \.book) { entry in
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(BibleCatalog.book(id: entry.book)?.name ?? entry.book)
-                            .font(.headline)
-                            .foregroundStyle(Color.bodyText)
-                        Text(entry.members.map { "\($0.name) \($0.chapters) ch" }.joined(separator: " · "))
-                            .font(.footnote)
-                            .foregroundStyle(Color.secondaryText)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(12)
-                    .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                }
-                Text("Journal entries and reflections stay private unless someone chooses to share one.")
+        VStack(alignment: .leading, spacing: 16) {
+            if group.isPreview {
+                Label("Preview: a sample group, not real people. Every member's reading builds one shared island; your own island stays yours.",
+                      systemImage: "sparkles")
                     .font(.footnote)
-                    .foregroundStyle(Color.secondaryText)
+                    .foregroundStyle(Color.primaryBrown)
+                    .padding(12)
+                    .background(Color.sand, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
-            .padding(16)
-            .frame(maxWidth: 720)
-            .frame(maxWidth: .infinity)
+            Text("Who read what")
+                .font(.serifTitle(.title3))
+                .foregroundStyle(Color.bodyText)
+            ForEach(group.contributions, id: \.book) { entry in
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(BibleCatalog.book(id: entry.book)?.name ?? entry.book)
+                        .font(.headline)
+                        .foregroundStyle(Color.bodyText)
+                    Text(entry.members.map { "\($0.name) \($0.chapters) ch" }.joined(separator: " · "))
+                        .font(.footnote)
+                        .foregroundStyle(Color.secondaryText)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(12)
+                .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            }
+            Text("Journal entries and reflections stay private unless someone chooses to share one.")
+                .font(.footnote)
+                .foregroundStyle(Color.secondaryText)
         }
-        .themedScreen()
-        .navigationTitle(group.name)
-        .navigationBarTitleDisplayMode(.inline)
+        .frame(maxWidth: 720)
+        .frame(maxWidth: .infinity)
     }
 }
 

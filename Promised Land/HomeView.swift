@@ -141,7 +141,7 @@ struct HomeView: View {
         #if DEBUG
         if debugBiblePreview || debugGallery { return true }
         #endif
-        if interior != nil { return true }
+        if interior != nil || IslandCovers.shared.covered > 0 { return true }
         // A sheet at full height covers the island too.
         guard let activeSheet else { return false }
         return !activeSheet.detents.contains(.medium) || sheetDetent == .large

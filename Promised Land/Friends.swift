@@ -128,6 +128,7 @@ struct FriendsView: View {
     var groupsService: any GroupsService = MockGroupsService()
     @State private var friends: [FriendSummary] = []
     @State private var groups: [GroupSummary] = []
+    @State private var visiting: VisitedIsland?
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -147,8 +148,9 @@ struct FriendsView: View {
                             .foregroundStyle(Color.bodyText)
                             .padding(.top, 4)
                         ForEach(groups) { group in
-                            NavigationLink(value: group) { GroupRow(group: group) }
+                            Button { visiting = VisitedIsland(owner: .group(group)) } label: { GroupRow(group: group) }
                                 .buttonStyle(.plain)
+                                .accessibilityHint("Opens their island")
                         }
                         Text("Friends")
                             .font(.serifTitle(.title3))
@@ -156,7 +158,7 @@ struct FriendsView: View {
                             .padding(.top, 4)
                     }
                     ForEach(friends) { friend in
-                        NavigationLink(value: friend) {
+                        Button { visiting = VisitedIsland(owner: .friend(friend)) } label: {
                             HStack(spacing: 14) {
                                 AvatarFigure(avatar: friend.avatar)
                                     .frame(width: 34, height: 60)
@@ -184,8 +186,8 @@ struct FriendsView: View {
             .themedScreen()
             .navigationTitle("Friends (preview)")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: FriendSummary.self) { FriendWorldView(friend: $0) }
-            .navigationDestination(for: GroupSummary.self) { GroupIslandView(group: $0) }
+            // Their island opens full screen, like your own (see VisitedIslandView).
+            .fullScreenCover(item: $visiting) { VisitedIslandView(visiting: $0) { visiting = nil } }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }.tint(Color.primaryBrown)
@@ -194,66 +196,55 @@ struct FriendsView: View {
             .task {
                 friends = (try? await service.friends()) ?? []
                 groups = (try? await groupsService.groups()) ?? []
+                #if DEBUG
+                // "-visitIsland group" or "-visitIsland sample-hannah" opens that island (with -openFriends).
+                if let id = OpenTiming.argument("-visitIsland") {
+                    if id == "group", let g = groups.first { visiting = VisitedIsland(owner: .group(g)) }
+                    else if let f = friends.first(where: { $0.id == id }) { visiting = VisitedIsland(owner: .friend(f)) }
+                }
+                #endif
             }
         }
     }
 }
 
-/// A read-only look at a friend's island.
-struct FriendWorldView: View {
+/// A friend's stats and shared notes (in "About this island", over their full-screen island).
+struct FriendIslandDetails: View {
     let friend: FriendSummary
-    @State private var selected: Int?
-    @State private var card: FriendItemCard.Subject?
+    let island: Island
 
     var body: some View {
-        let island = Island.build(chapters: friend.reads, quizzes: [], verses: [])
-        ScrollView {
-            VStack(spacing: 16) {
-                if friend.isSample {
-                    Text("Preview: friends coming soon")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(Color.onPrimary)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
-                        .background(Color.terracotta, in: Capsule())
-                }
-                // Read-only, but you can pan, zoom, turn it and tap their buildings.
-                PlatformScene(avatar: friend.avatar, island: island, selected: $selected, showsControls: true, onTap: { index in
-                    selected = index
-                    if let index, island.items.indices.contains(index) {
-                        card = FriendItemCard.Subject(item: island.items[index], notes: friend.notes)
-                    }
-                })
-                .frame(height: 420)
-                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-                HStack(spacing: 12) {
-                    stat("\(friend.chaptersRead)", "chapters read")
-                    stat("\(friend.streak)", "day streak")
-                    stat("\(island.items.count)", "things built")
-                }
-                if !friend.notes.isEmpty {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Shared notes").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
-                        ForEach(friend.notes) { note in
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("\(BibleCatalog.book(id: note.bookID)?.name ?? note.bookID) \(note.chapter)")
-                                    .font(.caption.weight(.semibold)).foregroundStyle(Color.secondaryText)
-                                Text(note.text).foregroundStyle(Color.bodyText)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(12)
-                            .background(Color.cream, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                        }
-                    }
-                    .cardStyle()
-                }
+        VStack(spacing: 16) {
+            if friend.isSample {
+                Text("Preview: friends coming soon")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(Color.onPrimary)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(Color.terracotta, in: Capsule())
             }
-            .padding(16)
+            HStack(spacing: 12) {
+                stat("\(friend.chaptersRead)", "chapters read")
+                stat("\(friend.streak)", "day streak")
+                stat("\(island.items.count)", "things built")
+            }
+            if !friend.notes.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Shared notes").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
+                    ForEach(friend.notes) { note in
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("\(BibleCatalog.book(id: note.bookID)?.name ?? note.bookID) \(note.chapter)")
+                                .font(.caption.weight(.semibold)).foregroundStyle(Color.secondaryText)
+                            Text(note.text).foregroundStyle(Color.bodyText)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(12)
+                        .background(Color.cream, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
+                }
+                .cardStyle()
+            }
         }
-        .themedScreen()
-        .navigationTitle(friend.name)
-        .navigationBarTitleDisplayMode(.inline)
-        .sheet(item: $card) { FriendItemCard(subject: $0).presentationDetents([.medium]) }
     }
 
     private func stat(_ value: String, _ label: String) -> some View {

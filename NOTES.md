@@ -352,7 +352,7 @@ option was chosen and noted here.
 - [x] Section 2: Leftover text when flipping pages
 - [x] Section 3: Lag opening sheets, buildings and the Library
 - [x] Section 4: Island camera and rendering
-- [ ] Section 5: Friends and group islands
+- [x] Section 5: Friends and group islands
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -443,6 +443,19 @@ is SwiftUI's own list layout.
     crosses a step, the Place pictures and ground three steps ahead in that direction are rendered
     between frames. Positions were already worked out from the camera every frame. Auto-pan at zoom 4
     on the simulator: 18–33 fps before, 26–44 fps after (simulator numbers; relative only).
+
+
+82. **Friend and group islands open full screen** (`VisitedIslandView`), drawn by the same
+    `PlatformScene` as your own island with their data: pan, zoom, turn, Find me (their avatar),
+    villagers. They used to be a fixed-height box inside a page pushed in the Friends sheet (the
+    group's with touches turned off). A title bar shows whose it is ("Hannah's Island",
+    "Sample Youth Group Island", with "Preview" for sample data), a Back button, and an info button
+    for what the old pages showed (a friend's stats and shared notes; a group's "who read what").
+    Tapping a Place works like yours: the camera centres it while the avatar walks over, then a
+    read-only inside page opens (its art, which of the book's chapters they've read, and notes they
+    shared). Anything else shows the small card as before. Nothing can be edited. Your own island
+    holds still while theirs is open. Sample names drop "(sample)" in the title; the Preview tag
+    says it instead. DEBUG: `-openFriends -visitIsland group|sample-hannah [-visitInside ruth]`.
 
 
 ## Remove before release
