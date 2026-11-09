@@ -344,12 +344,15 @@ final class IslandRenderCache {
 
     private var pending: [Pending] = []
     private var draining = false
+    /// Off: pictures a frame still needs are only drawn from another zoom, never rendered later
+    /// (for tests that check the stand-ins, without leaving rendering running behind them).
+    var rendersInBackground = true
 
     /// The pictures the latest frame still needs replace any older list (the camera may have moved
     /// on), and are rendered one per screen refresh; each one bumps `IslandRenderProgress` so the
     /// ground is drawn again with it.
     private func finish(_ queued: [Pending], _ deferMissing: Bool) {
-        guard deferMissing else { return }
+        guard deferMissing, rendersInBackground else { return }
         pending = queued
         guard !pending.isEmpty, !draining else { return }
         draining = true

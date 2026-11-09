@@ -6,7 +6,8 @@ import SwiftUI
 
 /// Section 4b: buildings stay on their land however the camera moves, nothing on screen is dropped
 /// and re-added, and birds are always on top.
-@MainActor
+extension ImageRenderingTests {
+@MainActor @Suite
 struct IslandLayeringTests {
     /// A view size no other test uses: the picture cache is shared, and pictures rendered here
     /// mustn't be found already made by another test (they're keyed by the scale, which follows it).
@@ -93,4 +94,5 @@ struct IslandLayeringTests {
         // Only the tappable baskets and speech bubbles (UI) are above them.
         #expect(IslandLayer.allCases.filter { $0.z > IslandLayer.birds.z } == [.baskets, .bubbles])
     }
+}
 }

@@ -7,7 +7,8 @@ import SwiftUI
 /// Section 4e: zooming right in and then right out (a pinch, or tap-to-zoom and back) never leaves
 /// land on screen undrawn, at any turn: every frame along the way draws the ground under every tile
 /// in view and every building in view, worked out from the camera at that moment.
-@MainActor
+extension ImageRenderingTests {
+@MainActor @Suite
 struct ZoomOutCoverageTests {
     static let island = LODTests.island
     static let insets = EdgeInsets(top: 120, leading: 8, bottom: 118, trailing: 8)
@@ -52,7 +53,8 @@ struct ZoomOutCoverageTests {
 
     @Test("Pinch right in, then right out: every frame draws all the land and buildings in view", arguments: [0, 1, 2, 3])
     func pinchInThenOut(quarter: Int) {
-        defer { IslandRenderCache.shared.removeAll() }
+        IslandRenderCache.shared.rendersInBackground = false
+        defer { IslandRenderCache.shared.removeAll(); IslandRenderCache.shared.rendersInBackground = true }
         let size = Self.size(0)
         let centre = IslandCamera.freeCentre(size: size, insets: Self.insets)
         let limit = IslandLayout.maxZoom(island: Self.island, size: size, insets: Self.insets)
@@ -76,7 +78,8 @@ struct ZoomOutCoverageTests {
 
     @Test("Tap-to-zoom up to a building and back: every frame draws all the land and buildings in view", arguments: [0, 1, 2, 3])
     func tapToZoomAndBack(quarter: Int) throws {
-        defer { IslandRenderCache.shared.removeAll() }
+        IslandRenderCache.shared.rendersInBackground = false
+        defer { IslandRenderCache.shared.removeAll(); IslandRenderCache.shared.rendersInBackground = true }
         let size = Self.size(1)
         let item = try #require(Self.island.items.first { $0.plotKey != nil && $0.kind.isTall })
         let toZoom = IslandCamera.visitZoom(for: item, in: Self.island, size: size, insets: Self.insets, quarter: quarter)
@@ -94,4 +97,5 @@ struct ZoomOutCoverageTests {
             }
         }
     }
+}
 }

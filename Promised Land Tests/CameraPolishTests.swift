@@ -6,7 +6,8 @@ import SwiftUI
 
 /// Section 4d: the sea fills the screen at every zoom and turn, tap-to-zoom is one smooth move, the
 /// selection ring stays under its building, and every layer works from the same zoom.
-@MainActor
+extension ImageRenderingTests {
+@MainActor @Suite
 struct CameraPolishTests {
     static let size = CGSize(width: 390, height: 844)
     static let island = LODTests.island
@@ -138,4 +139,5 @@ struct CameraPolishTests {
             #expect(IslandLayout(island: Self.island, size: Self.size, zoom: z).zoom == z)
         }
     }
+}
 }

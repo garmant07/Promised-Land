@@ -357,6 +357,7 @@ option was chosen and noted here.
 - [x] Section 4c: Camera feel (zoom, pan shake, stepping up to a building)
 - [x] Section 4d: Zoom and camera polish (sea to every edge, smooth tap-to-zoom, ring under buildings, last shake)
 - [x] Section 4e: Island disappears when zooming out
+- [x] Section 4f: Characters shake against the island
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -603,6 +604,39 @@ out through the same code as a real pinch.
 95. **Cost:** iPhone 17 simulator, full Bible, quiet machine. Pinch zoom averages 51 fps (4d: 50),
     slowest second 18–29 fps (4d: 28), worst frame 433 ms (4d: 354): the price of drawing at the
     live camera. Panning is unchanged at 59–60 fps.
+
+
+96. **Section 4f: why people shook against the island.** In `IslandView.swift` (`PlatformScene.body`)
+    the ground and buildings (`IslandGroundLayer`) were drawn in one canvas, at the rounded pan, and
+    moved into view by `.offset(slide)`; the people (you, Bible characters, villagers), smoke,
+    effects, birds and baskets were drawn in separate canvases inside the `TimelineView`, in screen
+    space, with no offset. Their positions came from the same camera numbers, but by two routes: the
+    `TimelineView` content is updated on the display's schedule, the ground when the camera state
+    changes, so on a moving camera the people could be drawn from a camera a frame apart from the
+    land's (worse the faster the pan or zoom), and any rounding of the ground's offset wasn't applied
+    to them. Now everything on the island is one world: the ground layer, the dimming, people,
+    effects, birds and baskets sit in one container inside the `TimelineView`, are all drawn in the
+    ground's own coordinates from the same camera in the same update, and are moved into view by the
+    one `.offset(slide)`. Only the Collect All flight (it flies to a button) and speech bubbles stay in
+    screen space. People were already placed only from their grid position (plus walking progress)
+    and are never culled or re-added while on screen (`LifeDirector` keeps them with a margin;
+    Section 4). Tests check that through shaky pans, pinches and walking, at all four turns, each
+    person keeps exactly their place on their tile in the world's coordinates; those coordinate rules
+    held before too, so the change is in how the layers are put on screen, which a unit test can't
+    see: it needs checking on a device.
+97. **What else could move the camera, checked:** a drag, a pinch and a glide each cancel the others,
+    so the camera is written by one of them per frame; a pan is split exactly into the rounded part
+    the world is drawn at and the slide, and that slide is now applied once to the whole world (the
+    sea uses the same value). The pan follows the finger exactly (tested). Nothing else nudges it.
+98. **Tests that render many pictures run one at a time** (`ImageRenderingTests`, `.serialized`). In
+    parallel, the zoom-out coverage tests filled the shared picture cache with hundreds of megabytes
+    while pixel tests rendered their own, and `ImageRenderer` returned blank images, failing the
+    selection-ring and sea tests at random. (In the app the cache holds one view size and measured
+    about 150 MB with a full Bible; note 26 of the performance round.)
+99. **`-autoPan`** (DEBUG) now circles around where it starts, so `-islandPan` can start it elsewhere.
+
+Simulator, full Bible, quiet machine, after 4f: pinch zoom 50 fps average (slowest second 19, worst
+frame 433 ms); pan 59 fps (slowest second 57, worst frame 71 ms). Same as 4e.
 
 
 ## Remove before release

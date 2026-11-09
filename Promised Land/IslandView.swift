@@ -162,20 +162,6 @@ struct PlatformScene: View {
                         // Bigger than the screen: overflow down and right, never resizing the stack.
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
                         .offset(PanStep.offset(pan))
-                    IslandGroundLayer(key: .init(signature: island.signature, zoom: zoom, angle: angle, pan: drawPan, size: geo.size,
-                                                 insets: insets, selected: selected.wrappedValue, editing: editing != nil,
-                                                 editSelected: editing?.selected, overrides: overrides, hidden: moving,
-                                                 rendered: IslandRenderProgress.shared.generation),
-                                      island: island, ordered: ordered, editing: editing)
-                        .equatable()
-                        .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
-                        .offset(slide)
-
-                    if beat != nil || !overrides.isEmpty {
-                        // The rest of the island dims a little while something is built.
-                        Color.black.opacity(0.16).ignoresSafeArea().allowsHitTesting(false).transition(.opacity)
-                    }
-
                     TimelineView(.animation(minimumInterval: throttled ? 1.0 / 30 : nil, paused: paused || (!walking && beat == nil && !bouncing && characters.isEmpty && flight == nil
                                             && (life.isEmpty || editing != nil || reduceMotion)))) { context in
                         let now = context.date
@@ -219,8 +205,28 @@ struct PlatformScene: View {
                         let basketsOn = editing == nil && !life.baskets.isEmpty && layout.u >= IslandLife.minimumBasketU
                         let _ = { RenderStats.figures = people.count; RenderStats.life = over.reduce(0) { $0 + $1.count } }()
 
+                        let canvasSize = PanStep.canvasSize(geo.size)
                         ZStack(alignment: .topLeading) {
+                        // The world: ground, buildings, people, effects, birds and baskets, all drawn in
+                        // one place (the ground's own coordinates) from the same camera in the same
+                        // update, and moved into view together by one offset. Nothing on the island is
+                        // positioned in screen space on its own, so nothing can drift against the land.
+                        ZStack(alignment: .topLeading) {
+                            IslandGroundLayer(key: .init(signature: island.signature, zoom: zoom, angle: angle, pan: drawPan, size: geo.size,
+                                                         insets: insets, selected: selected.wrappedValue, editing: editing != nil,
+                                                         editSelected: editing?.selected, overrides: overrides, hidden: moving,
+                                                         rendered: IslandRenderProgress.shared.generation),
+                                              island: island, ordered: ordered, editing: editing)
+                                .equatable()
+                                .zIndex(-1)
+                            if beat != nil || !overrides.isEmpty {
+                                // The rest of the island dims a little while something is built.
+                                Color.black.opacity(0.16).frame(width: canvasSize.width, height: canvasSize.height)
+                                    .allowsHitTesting(false).transition(.opacity).zIndex(IslandLayer.dim.z)
+                            }
                             Canvas { c, _ in
+                                // Worked out in view points; drawn in the world's coordinates.
+                                c.translateBy(x: -slide.width, y: -slide.height)
                                 PerfProbe.measure("life") {
                                     if lifeOn && tier == .far {
                                         _ = IslandLife.drawFarBoats(&c, life: life, director: director, layout: layout, time: lifeTime, visible: viewport)
@@ -266,11 +272,13 @@ struct PlatformScene: View {
                                         .tag("c:" + c.id as String)
                                 }
                             }
+                            .frame(width: canvasSize.width, height: canvasSize.height)
                             .allowsHitTesting(false)
                             .zIndex(IslandLayer.people.z)
 
                             if beat != nil || bouncing {
                                 Canvas { c, _ in
+                                    c.translateBy(x: -slide.width, y: -slide.height)
                                     // The piece being built, and the selected item's bounce.
                                     if let beat {
                                         Self.drawBeat(&c, beat.step, elapsed: now.timeIntervalSince(beat.start), island: island, layout: layout)
@@ -283,25 +291,40 @@ struct PlatformScene: View {
                                         }
                                     }
                                 }
+                                .frame(width: canvasSize.width, height: canvasSize.height)
                                 .allowsHitTesting(false)
                                 .zIndex(IslandLayer.effects.z)
                             }
                             if lifeOn {
                                 // Birds: their own layer, above everything on the island (never depth-sorted).
                                 Canvas { c, _ in
+                                    c.translateBy(x: -slide.width, y: -slide.height)
                                     IslandLife.birds(&c, layout: layout, sky: life.sky, visible: viewport, time: lifeTime)
                                 }
+                                .frame(width: canvasSize.width, height: canvasSize.height)
                                 .allowsHitTesting(false)
                                 .zIndex(IslandLayer.birds.z)
                             }
-                            if basketsOn || flight != nil {
-                                Canvas { c, size in
+                            if basketsOn {
+                                Canvas { c, _ in
+                                    c.translateBy(x: -slide.width, y: -slide.height)
                                     PerfProbe.measure("front") {
                                         // Baskets go on top of everything, so they're always easy to see and tap.
-                                        if basketsOn {
-                                            IslandLife.drawBaskets(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
-                                                                   visible: CGRect(origin: .zero, size: size).insetBy(dx: -30, dy: -30))
-                                        }
+                                        IslandLife.drawBaskets(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
+                                                               visible: screen.insetBy(dx: -30, dy: -30))
+                                    }
+                                }
+                                .frame(width: canvasSize.width, height: canvasSize.height)
+                                .allowsHitTesting(false)
+                                .zIndex(IslandLayer.baskets.z)
+                            }
+                        }
+                        .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
+                        .offset(slide)
+                            if flight != nil {
+                                // Collect All: produce flies from the island to a button on screen.
+                                Canvas { c, _ in
+                                    PerfProbe.measure("front") {
                                         if let flight {
                                             let target = CGPoint(x: collectTarget.midX - globalOrigin.x, y: collectTarget.midY - globalOrigin.y)
                                             _ = CollectFlightPlan.draw(&c, sprites: flight.sprites, elapsed: now.timeIntervalSince(flight.start),
@@ -447,9 +470,11 @@ struct PlatformScene: View {
             if ProcessInfo.processInfo.arguments.contains("-autoPan") {
                 Task {
                     let start = Date.now
+                    // Circles around where it started (`-islandPan` to start somewhere else).
+                    let base = CGSize(width: pan.width - 160, height: pan.height)
                     while true {
                         let t = Date.now.timeIntervalSince(start)
-                        pan = CGSize(width: cos(t * 0.8) * 160, height: sin(t * 0.8) * 220)
+                        pan = CGSize(width: base.width + cos(t * 0.8) * 160, height: base.height + sin(t * 0.8) * 220)
                         try? await Task.sleep(for: .milliseconds(16))
                     }
                 }
