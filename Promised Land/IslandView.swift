@@ -82,6 +82,12 @@ struct PlatformScene: View {
     @State private var walkToken = 0
     /// Bumped to start (or cancel) a camera glide.
     @State private var cameraGlide = 0
+    /// The camera the still layers (ground, Places, waves) are drawn at while a zoom is in progress;
+    /// nil when they're drawn at the camera itself. See `stillAnchor`.
+    @State private var still: (zoom: CGFloat, pan: CGSize)?
+    /// Pictures for a new still drawing are being rendered (one per frame) before it's swapped in.
+    @State private var stillWarming = false
+    @State private var stillWarm = 0
     /// The view's size (for camera moves started outside the geometry reader).
     @State private var viewSize: CGSize = .zero
     /// The last tap on empty ground, for double-tap to zoom.
@@ -141,28 +147,39 @@ struct PlatformScene: View {
             let _ = depthOrder.update(island: island, layout: layout, overrides: overrides, hidden: moving)
             let ordered = depthOrder.all
             let _ = { RenderStats.nodes = island.items.count + life.villagers.count + life.travellers.count + characters.count }()
-            let drawPan = PanStep.drawPan(pan)
-            let slide = PanStep.offset(pan)
+            // While a zoom is in progress the still layers keep the drawing they had (at `still`)
+            // and are only scaled and moved as a picture; they're drawn again once it settles.
+            let stillZoom = still?.zoom ?? zoom
+            let stillPan = still?.pan ?? pan
+            let drawPan = PanStep.drawPan(stillPan)
+            let slide = PanStep.offset(stillPan)
+            let stillScale = zoom / stillZoom
+            let stillAnchor = Self.stillAnchor(centre: freeCentre(geo.size), pan: stillPan, size: geo.size)
+            let stillShift = CGSize(width: pan.width - stillPan.width, height: pan.height - stillPan.height)
 
             ZStack(alignment: .topLeading) {
                 Earthy.sea
                 ZStack(alignment: .topLeading) {
                     // The waves and the still island are drawn at a rounded pan and slid into place,
                     // so panning only moves them (see IslandLayers.swift).
-                    IslandWavesLayer(key: .init(signature: island.signature, zoom: zoom, angle: angle, pan: drawPan, size: geo.size,
-                                                insets: insets, reduceMotion: reduceMotion, paused: paused),
+                    IslandWavesLayer(key: .init(signature: island.signature, zoom: stillZoom, angle: angle, pan: drawPan, size: geo.size,
+                                                insets: insets, reduceMotion: reduceMotion, paused: paused || still != nil),
                                      island: island)
                         .equatable()
                         // Bigger than the screen: overflow down and right, never resizing the stack.
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
                         .offset(slide)
-                    IslandGroundLayer(key: .init(signature: island.signature, zoom: zoom, angle: angle, pan: drawPan, size: geo.size,
+                        .scaleEffect(stillScale, anchor: stillAnchor)
+                        .offset(stillShift)
+                    IslandGroundLayer(key: .init(signature: island.signature, zoom: stillZoom, angle: angle, pan: drawPan, size: geo.size,
                                                  insets: insets, selected: selected.wrappedValue, editing: editing != nil,
                                                  editSelected: editing?.selected, overrides: overrides, hidden: moving),
                                       island: island, ordered: ordered, editing: editing)
                         .equatable()
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
                         .offset(slide)
+                        .scaleEffect(stillScale, anchor: stillAnchor)
+                        .offset(stillShift)
 
                     if beat != nil || !overrides.isEmpty {
                         // The rest of the island dims a little while something is built.
@@ -183,7 +200,9 @@ struct PlatformScene: View {
                         // and only added or dropped as they cross it.
                         let viewport = screen.insetBy(dx: -Self.lifeMargin, dy: -Self.lifeMargin)
                         let lifeTime = reduceMotion ? 0 : t
-                        let tier = director.begin(now: lifeTime, u: layout.u)
+                        // Level of detail changes only once a zoom settles (at the zoom the still
+                        // layers are drawn at), never on every step of a pinch.
+                        let tier = director.begin(now: lifeTime, u: layout.u / stillScale)
                         let shown: [LifeDirector.Shown] = editing == nil ? PerfProbe.measure("tick.plan") {
                             let figures: () -> [LifeDirector.Figure] = {
                                 life.figures(layout: layout, viewport: viewport) + characterFigures(layout: layout, charH: charH)
@@ -208,6 +227,7 @@ struct PlatformScene: View {
                             people.map { IslandWorld.itemsOver($0, items: nearItems, layout: layout) }
                         }
                         let lifeByID = Dictionary(lifeShown.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
+                        let zooming = still != nil
                         let basketsOn = editing == nil && !life.baskets.isEmpty && layout.u >= IslandLife.minimumBasketU
                         let _ = { RenderStats.figures = people.count; RenderStats.life = over.reduce(0) { $0 + $1.count } }()
 
@@ -237,7 +257,11 @@ struct PlatformScene: View {
                                         if !over[k].isEmpty {
                                             var g = c
                                             g.clip(to: Path(person.rect.insetBy(dx: -1, dy: -1)))
-                                            for i in over[k] { IslandRenderCache.shared.drawItem(&g, nearItems[i].item, layout: layout) }
+                                            for i in over[k] {
+                                                // Mid-zoom, drawn directly rather than rendering a new picture each step.
+                                                if zooming { IslandPainter.drawItem(&g, nearItems[i].item, layout: layout) }
+                                                else { IslandRenderCache.shared.drawItem(&g, nearItems[i].item, layout: layout) }
+                                            }
                                         }
                                     }
                                 }
@@ -389,6 +413,28 @@ struct PlatformScene: View {
                     }
                 }
             }
+            // "-autoZoom" pinches in and out (1.6 s each way, about a point off centre) through the
+            // same code as a real pinch, once per screen refresh, for measuring zoom.
+            if ProcessInfo.processInfo.arguments.contains("-autoZoom") {
+                Task {
+                    try? await Task.sleep(for: .seconds(2))
+                    while true {
+                        let size = viewSize
+                        let at = CGPoint(x: size.width * 0.4, y: size.height * 0.45)
+                        for (from, to) in [(1.0, 3.0), (1.0, 1 / 3.0)] {
+                            let start = CACurrentMediaTime()
+                            while true {
+                                let t = min(1, (CACurrentMediaTime() - start) / 1.6)
+                                pinchChanged(magnification: from + (to - from) * t, at: at, size: size)
+                                if t >= 1 { break }
+                                await FrameTicker.shared.nextFrame()
+                            }
+                            pinchEnded(size: size)
+                            try? await Task.sleep(for: .seconds(0.6))
+                        }
+                    }
+                }
+            }
             if ProcessInfo.processInfo.arguments.contains("-autoPan") {
                 Task {
                     let start = Date.now
@@ -517,7 +563,7 @@ struct PlatformScene: View {
         for target in [(q + 1) % 4, (q + 3) % 4] {
             while !Task.isCancelled {
                 // Never while a finger is down, a glide runs or a turn animates.
-                guard !touchDown, turnSnapshot == nil, zoom == zoomStart, pan == panStart else { return }
+                guard !touchDown, turnSnapshot == nil, still == nil, zoom == zoomStart, pan == panStart else { return }
                 let done = PerfProbe.measure("prewarm") {
                     // Exactly what the ground layer will ask for (rounded pan, canvas a step bigger than the screen).
                     IslandRenderCache.shared.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: target,
@@ -536,7 +582,7 @@ struct PlatformScene: View {
         let step = PanStep.rounded(pan)
         let move = CGSize(width: step.width - lastPanStep.width, height: step.height - lastPanStep.height)
         lastPanStep = step
-        guard viewSize != .zero, !paused, island.signature != 0, move != .zero, turnSnapshot == nil else { return }
+        guard viewSize != .zero, !paused, island.signature != 0, move != .zero, turnSnapshot == nil, still == nil else { return }
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(viewSize))
         // Panning right brings in what's to the left, and so on.
         let lead = PanStep.size * 3
@@ -562,19 +608,27 @@ struct PlatformScene: View {
         let fromZoom = zoom, fromPan = pan
         zoomStart = toZoom
         panStart = toPan
-        guard !reduceMotion, duration > 0.05 else { zoom = toZoom; pan = toPan; return }
+        guard !reduceMotion, duration > 0.05 else { zoom = toZoom; pan = toPan; settleStill(); return }
+        // A glide that zooms only scales the still layers until it lands.
+        if toZoom != fromZoom {
+            stillWarm += 1
+            stillWarming = false
+            if still == nil { still = (fromZoom, fromPan) }
+        }
+        let glide = CameraGlide(fromZoom: fromZoom, toZoom: toZoom, fromPan: fromPan, toPan: toPan,
+                                start: CACurrentMediaTime(), duration: duration, easeOut: easeOut)
         Task {
-            let start = Date.now
+            // Once per screen refresh, from the clock: the camera is always exactly where the glide
+            // says at that moment, however the frames fall (a fixed sleep drifted against the
+            // display and juddered, worst on 120 Hz screens).
             while cameraGlide == token {
-                let t = min(1, Date.now.timeIntervalSince(start) / duration)
-                let e = easeOut ? 1 - pow(1 - t, 3) : t * t * (3 - 2 * t)
-                zoom = fromZoom + (toZoom - fromZoom) * e
-                pan = CGSize(width: fromPan.width + (toPan.width - fromPan.width) * e,
-                             height: fromPan.height + (toPan.height - fromPan.height) * e)
-                if t >= 1 { break }
-                // A short sleep, not the display link: changing state from a display-link callback
-                // added a second SwiftUI update every frame and measured slower (52 vs 58 fps).
-                try? await Task.sleep(for: .milliseconds(16))
+                let now = CACurrentMediaTime()
+                let c = glide.camera(at: now)
+                zoom = c.zoom
+                pan = c.pan
+                redrawStillIfStretched()
+                if glide.isDone(at: now) { settleStill(); break }
+                await FrameTicker.shared.nextFrame()
             }
         }
     }
@@ -645,8 +699,10 @@ struct PlatformScene: View {
                     editing.onDrag(drag.key, Int((g.x - drag.start.x).rounded()), Int((g.y - drag.start.y).rounded()), false)
                     return
                 }
-                // While pinching, the pinch moves the camera (about the fingers).
-                if pinchAnchor != nil { return }
+                // While pinching, the pinch moves the camera (about the fingers); after a pinch, the
+                // finger left on the screen doesn't pan until it lifts (its drag began before the
+                // pinch, so it would jump).
+                if pinchAnchor != nil || pinched { return }
                 if !isPanning, !TapClassifier.isTap(translation: value.translation) { isPanning = true }
                 if isPanning {
                     pan = clamp(CGSize(width: panStart.width + value.translation.width,
@@ -806,6 +862,8 @@ struct PlatformScene: View {
         touchDown = true
         if zoom != zoomStart || pan != panStart { zoomStart = zoom; panStart = pan }
         cameraGlide += 1
+        // A glide was cut short: draw the still layers at the camera as it is now (once ready).
+        if pinchAnchor == nil { settleStill() }
         touchID += 1
         let id = touchID
         let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
@@ -841,33 +899,93 @@ struct PlatformScene: View {
     /// (rubber-band), then eases back when you let go.
     private func zoomGesture(size: CGSize) -> some Gesture {
         MagnifyGesture()
-            .onChanged { value in
-                pinched = true
-                if pinchAnchor == nil {
-                    cameraGlide += 1
-                    isPanning = false
-                    pinchAnchor = value.startLocation
-                    pinchFrom = (zoom, pan)
+            .onChanged { value in pinchChanged(magnification: value.magnification, at: value.startLocation, size: size) }
+            .onEnded { _ in pinchEnded(size: size) }
+    }
+
+    /// A pinch moved: zoom about the point between the fingers.
+    private func pinchChanged(magnification: CGFloat, at location: CGPoint, size: CGSize) {
+        pinched = true
+        if pinchAnchor == nil {
+            cameraGlide += 1
+            isPanning = false
+            pinchAnchor = location
+            pinchFrom = (zoom, pan)
+            // A settle still waiting to swap in would land mid-pinch: cancel it.
+            stillWarm += 1
+            stillWarming = false
+            if still == nil { still = (zoom, pan) }
+        }
+        guard let anchor = pinchAnchor, let from = pinchFrom else { return }
+        // Smoothed (a wobbling finger doesn't twitch the island), then the pan that keeps the
+        // spot between the fingers exactly where it is. Nothing else moves the camera meanwhile;
+        // it's kept inside its limits once the fingers lift.
+        let target = Self.rubberBand(from.zoom * magnification, min: IslandLayout.minZoom, max: maxZoom(size))
+        let z = PinchSmoothing.next(current: zoom, target: target)
+        zoom = z
+        pan = Self.panKeeping(anchor, from: from, toZoom: z, centre: freeCentre(size))
+        redrawStillIfStretched()
+    }
+
+    /// While zooming, the still layers are only scaled; once they're stretched or squeezed past
+    /// 1.6× they're drawn again at the camera now (so they never look soft or leave gaps).
+    private func redrawStillIfStretched() {
+        guard let s = still, !stillWarming else { return }
+        let k = zoom / s.zoom
+        if k > 1.6 || k < 1 / 1.6 { warmStill(final: false) }
+    }
+
+    /// Renders the pictures a still drawing at the camera now will need, one per frame (the old one
+    /// stays on screen, scaled, meanwhile), then swaps it in: `final` = the zoom has settled, so the
+    /// still layers go back to following the camera. Never a frame spent rendering them all at once.
+    private func warmStill(final: Bool) {
+        stillWarm += 1
+        let token = stillWarm
+        let z = zoom, p = pan, q = quarter
+        stillWarming = true
+        Task {
+            defer { if stillWarm == token { stillWarming = false } }
+            while stillWarm == token, viewSize != .zero, island.signature != 0 {
+                let done = PerfProbe.measure("prewarm") {
+                    IslandRenderCache.shared.prewarm(island: island, size: viewSize, insets: insets, zoom: z, quarter: q,
+                                                     pan: PanStep.drawPan(p), bake: editing == nil,
+                                                     viewport: CGRect(origin: .zero, size: PanStep.canvasSize(viewSize)))
                 }
-                guard let anchor = pinchAnchor, let from = pinchFrom else { return }
-                let z = Self.rubberBand(from.zoom * value.magnification, min: IslandLayout.minZoom, max: maxZoom(size))
-                zoom = z
-                pan = clampPan(Self.panKeeping(anchor, from: from, toZoom: z, centre: freeCentre(size)), zoom: z, size: size, slack: 60)
+                if done { break }
+                await FrameTicker.shared.nextFrame()
             }
-            .onEnded { _ in
-                defer { pinchAnchor = nil; pinchFrom = nil }
-                let limit = maxZoom(size)
-                let settled = min(limit, max(IslandLayout.minZoom, zoom))
-                if settled != zoom, let anchor = pinchAnchor, let from = pinchFrom {
-                    // Ease back inside the limit, still about the fingers.
-                    let target = clampPan(Self.panKeeping(anchor, from: from, toZoom: settled, centre: freeCentre(size)), zoom: settled, size: size)
-                    animateCamera(zoom: settled, pan: settled == IslandLayout.minZoom ? clampPan(target, zoom: settled, size: size) : target,
-                                  duration: 0.35, easeOut: true)
-                } else {
-                    let clamped = clamp(pan, size: size)
-                    if clamped != pan { animateCamera(zoom: zoom, pan: clamped, duration: 0.3, easeOut: true) } else { zoomStart = zoom; panStart = pan }
-                }
-            }
+            guard stillWarm == token else { return }
+            if final { still = nil } else if still != nil { still = (z, p) }
+        }
+    }
+
+    /// The zoom has settled: draw the still layers at the camera again (once their pictures are ready).
+    private func settleStill() {
+        guard still != nil else { return }
+        warmStill(final: true)
+    }
+
+    /// The point the still layers scale about (the free area's centre, panned), as a unit point of
+    /// the view, for `scaleEffect`.
+    static func stillAnchor(centre: CGPoint, pan: CGSize, size: CGSize) -> UnitPoint {
+        guard size.width > 0, size.height > 0 else { return .center }
+        return UnitPoint(x: (centre.x + pan.width) / size.width, y: (centre.y + pan.height) / size.height)
+    }
+
+    /// The pinch ended: settle inside the limits.
+    private func pinchEnded(size: CGSize) {
+        defer { pinchAnchor = nil; pinchFrom = nil }
+        let limit = maxZoom(size)
+        let settled = min(limit, max(IslandLayout.minZoom, zoom))
+        if settled != zoom, let anchor = pinchAnchor, let from = pinchFrom {
+            // Ease back inside the limit, still about the fingers.
+            let target = clampPan(Self.panKeeping(anchor, from: from, toZoom: settled, centre: freeCentre(size)), zoom: settled, size: size)
+            animateCamera(zoom: settled, pan: settled == IslandLayout.minZoom ? clampPan(target, zoom: settled, size: size) : target,
+                          duration: 0.35, easeOut: true)
+        } else {
+            let clamped = clamp(pan, size: size)
+            if clamped != pan { animateCamera(zoom: zoom, pan: clamped, duration: 0.3, easeOut: true) } else { zoomStart = zoom; panStart = pan; settleStill() }
+        }
     }
 
     /// The middle of the free area (zoom scales about it).
@@ -1062,7 +1180,8 @@ struct PlatformScene: View {
         // Just in front of its door (bigger buildings, like the Library, have the door further out).
         let out = max(0.62, item.footprint.width / 2 + 0.15)
         let door = CGPoint(x: item.gx + out, y: item.gy + out)
-        let newZoom = max(zoom, 3)
+        // Right up to it: its Place fills most of the screen's width.
+        let newZoom = IslandCamera.visitZoom(for: item, in: island, size: size, insets: insets, quarter: quarter)
         let walkTime = min(2.2, max(0.6, hypot(door.x - spot.x, door.y - spot.y) / 2.2))
         // The building itself (its whole plot) in the middle of the screen, at this turn.
         animateCamera(zoom: newZoom, pan: IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: island), island: island,

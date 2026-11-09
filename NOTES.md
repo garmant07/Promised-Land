@@ -354,6 +354,7 @@ option was chosen and noted here.
 - [x] Section 4: Island camera and rendering
 - [x] Section 5: Friends and group islands
 - [x] Section 4b: Island follow-up (buildings on their land, no flicker, birds on top)
+- [x] Section 4c: Camera feel (zoom, pan shake, stepping up to a building)
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -492,6 +493,51 @@ is SwiftUI's own list layout.
       above was used instead: same result on screen, at the cost of only what's behind each person.
     Simulator, full Bible, auto-pan: zoom 1: 18–22 fps before, 48–58 after; zoom 3: 23–31 before,
     60 after; zoom 6: 20–26 before, 54–59 after (simulator numbers; relative only).
+
+
+85. **Section 4c: why zooming lagged.** Every step of a pinch changed the still layers' key, so the
+    ground and Place pictures were planned and redrawn each frame, and each time the zoom crossed
+    one of the ×1.25 picture buckets every chunk and Place picture on screen was rendered on the
+    spot. Detail level also switched mid-pinch. Now, while a pinch or zoom glide is in progress, the
+    still layers keep their drawing and are only scaled and moved as a picture about the free area's
+    centre (`still`, `stillAnchor`; a test checks the scaled drawing lines up exactly with the camera
+    at every turn). Once the zoom settles, or the picture is stretched past 1.6× either way, the
+    pictures for the new zoom are rendered one per frame while the old drawing stays up, then
+    swapped in. Detail level, the redraws over people and warming ahead all wait for the zoom to
+    settle.
+86. **Why pinching jittered, and zoom felt weak.** After a pinch, the finger left on the screen
+    carried on panning with a translation measured from before the pinch, so the island jumped; it
+    now pans only after it lifts. During a pinch the pan was clamped, which stopped the spot
+    between the fingers staying put; it's now kept exactly, and clamped only once the fingers lift
+    (as before). A finger's wobble is absorbed by a 2% dead band (`PinchSmoothing`), so the island
+    no longer twitches in and out. You can zoom further in: fully in, a tile is over a third of the
+    screen across (was a quarter).
+87. **Why the island shook when panning.** The glide after every flick (and every camera move) was
+    stepped by a fixed 16 ms sleep, which drifts against the display, so some frames didn't move
+    and others moved double, worst on 120 Hz screens. Glides are now a pure function of time
+    (`CameraGlide`) applied once per screen refresh; only one thing moves the camera at a time (a
+    touch cancels a glide; a pinch takes over from a drag).
+88. **Stepping up to a building** zooms until its Place fills three quarters of the screen's width
+    (`IslandCamera.visitZoom`, worked out for the current turn, as the island's fit depends on it),
+    centred, while your character walks to its door; then its page opens, and Back returns the
+    camera to where it was.
+
+### Section 4c measurements (iPhone 17 simulator, full Bible, `-autoZoom` pinching 1→3× and 1→⅓×)
+
+| | Before (4b) | After |
+|---|---|---|
+| Pinch zoom, average fps | 48 | 51 |
+| Pinch zoom, slowest second | 2 fps | 27 fps |
+| Pinch zoom, worst single frame | 500 ms | 378 ms |
+| Pan (`-autoPan`, zoom 3) | 60 fps, worst 44 ms | 60 fps, worst 50 ms |
+| Time Profiler: busiest quarter second of main-thread work while pinching | 187 ms | 82 ms |
+| Still layers planned (`scene.plan`) per second while pinching | 37–59 | 1–3 |
+
+The worst single frames left are first-time renders of a far-out chunk with the island's
+buildings baked in (one picture takes up to ~120 ms on the simulator); they now come one per
+frame rather than all in one. Instruments' SwiftUI and frame-rate instruments don't record on the
+simulator (note 77); frame rate comes from the app's own meter. `-autoZoom` (DEBUG) pinches in and
+out through the same code as a real pinch.
 
 
 ## Remove before release

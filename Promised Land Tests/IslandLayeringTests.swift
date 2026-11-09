@@ -8,7 +8,9 @@ import SwiftUI
 /// and re-added, and birds are always on top.
 @MainActor
 struct IslandLayeringTests {
-    static let size = CGSize(width: 390, height: 844)
+    /// A view size no other test uses: the picture cache is shared, and pictures rendered here
+    /// mustn't be found already made by another test (they're keyed by the scale, which follows it).
+    static let size = CGSize(width: 393, height: 852)
     static let island = LODTests.island
 
     @Test("Buildings stay on their tiles through fast pans, at every turn and zoom", arguments: [0, 1, 2, 3])

@@ -65,6 +65,28 @@ enum IslandCamera {
     /// `reach` per island, zoom and screen (it's asked on every drag event).
     private static var reachMemo: [Int: CGSize] = [:]
 
+    // MARK: Visiting
+
+    /// How much of the free area's width a building's Place fills when you step up to it.
+    static let visitFill: CGFloat = 0.75
+
+    /// The zoom at which an item's Place (or its own footprint) fills `visitFill` of the free area's
+    /// width. A square plot's diamond is the same width at every turn (2 × tiles × scale), so this
+    /// holds at all four rotations. Never past the island's closest zoom.
+    static func visitZoom(for item: Island.Item, in island: Island, size: CGSize, insets: EdgeInsets, quarter: Int = 0) -> CGFloat {
+        let tiles: CGFloat
+        if let key = item.plotKey, let plot = island.allPlots.first(where: { $0.bookID == key }) {
+            tiles = CGFloat(plot.size)
+        } else {
+            tiles = max(1, footprint(of: item).width)
+        }
+        // The island's fitting scale depends on the turn (it's fitted to the screen as it lies).
+        let layout = IslandLayout(island: island, size: size, insets: insets, angle: CGFloat(quarter))
+        let area = max(1, size.width - insets.leading - insets.trailing)
+        let zoom = visitFill * area / (2 * tiles * layout.fit)
+        return min(layout.maxZoom, max(IslandLayout.minZoom, zoom))
+    }
+
     // MARK: Depth
 
     /// A screen point in turned-grid units (larger = further forward).
@@ -106,5 +128,46 @@ enum IslandCamera {
     static func frontDepth(of item: Island.Item, layout: IslandLayout) -> CGFloat {
         let f = front(of: item, layout: layout)
         return layout.origin.y + (f.x + f.y) / 2 * layout.scale
+    }
+}
+
+/// A camera glide (after a flick, to a building, back again): a pure function of time, so however
+/// unevenly frames arrive the camera is always exactly where it should be at that moment.
+struct CameraGlide: Equatable {
+    let fromZoom: CGFloat, toZoom: CGFloat
+    let fromPan: CGSize, toPan: CGSize
+    let start: Double
+    let duration: Double
+    var easeOut = false
+
+    /// 0…1 of the way through at `time` (seconds, same clock as `start`).
+    func progress(at time: Double) -> Double { duration <= 0 ? 1 : min(1, max(0, (time - start) / duration)) }
+
+    func isDone(at time: Double) -> Bool { progress(at: time) >= 1 }
+
+    /// The camera at `time`.
+    func camera(at time: Double) -> (zoom: CGFloat, pan: CGSize) {
+        let t = progress(at: time)
+        let e = CGFloat(easeOut ? 1 - pow(1 - t, 3) : t * t * (3 - 2 * t))
+        return (fromZoom + (toZoom - fromZoom) * e,
+                CGSize(width: fromPan.width + (toPan.width - fromPan.width) * e,
+                       height: fromPan.height + (toPan.height - fromPan.height) * e))
+    }
+}
+
+/// Pinch zoom without the wobble: the island's zoom follows the fingers like something on a short
+/// string. It moves only once the fingers' zoom is more than `band` away (in log space, as zoom is
+/// multiplicative), and then stays exactly `band` behind. A finger's small back-and-forth is
+/// absorbed and never shows as the island twitching in and out; a real change of direction (more
+/// than twice the band) still turns it round at once.
+enum PinchSmoothing {
+    /// About 2%.
+    static let band: CGFloat = 0.02
+
+    static func next(current: CGFloat, target: CGFloat) -> CGFloat {
+        guard current > 0, target > 0 else { return target }
+        let d = log(target) - log(current)
+        if abs(d) <= band { return current }
+        return exp(log(target) - (d > 0 ? band : -band))
     }
 }

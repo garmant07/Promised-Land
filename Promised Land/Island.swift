@@ -21,11 +21,11 @@ struct IslandLayout {
     let maxZoom: CGFloat
 
     /// Zoom 1 shows the whole island with a margin. Zooming in goes at least to 4×, and further
-    /// on big islands: until a tile is about a quarter of the screen across, so a single Place
-    /// (3–6 tiles) fills most of the screen.
+    /// on big islands: until a tile is over a third of the screen across, so a single Place
+    /// (3–6 tiles) can fill the screen and a building be looked at up close.
     static let minZoom: CGFloat = 1, baseMaxZoom: CGFloat = 4
     /// Points per half tile when fully zoomed in, for a free area this wide.
-    static func closestScale(width: CGFloat) -> CGFloat { max(30, width / 9) }
+    static func closestScale(width: CGFloat) -> CGFloat { max(45, width / 5.5) }
 
     static func maxZoom(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets()) -> CGFloat {
         IslandLayout(island: island, size: size, insets: insets).maxZoom
