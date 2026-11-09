@@ -200,3 +200,15 @@ struct DragPan: Equatable {
         CGSize(width: pan.width + velocity.width * duration / 3, height: pan.height + velocity.height * duration / 3)
     }
 }
+
+/// Turning the island: from closer in, first ease out to the whole island (and stay there), then turn.
+enum RotatePlan {
+    static let zoomOutDuration = 0.5
+
+    enum Step: Equatable { case zoomOut, turn }
+
+    /// Zoomed in or panned away from the middle: zoom out first. Already at the whole island: turn now.
+    static func steps(zoom: CGFloat, pan: CGSize) -> [Step] {
+        zoom > IslandLayout.minZoom + 0.01 || hypot(pan.width, pan.height) > 1 ? [.zoomOut, .turn] : [.turn]
+    }
+}

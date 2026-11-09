@@ -361,6 +361,7 @@ option was chosen and noted here.
 - [x] Section 4g: Zoom-out performance and first-pan stutter
 - [x] Section 4h: Double image when zooming in; glitch while dragging
 - [ ] Section 4i: Remaining shake and cloud loading screen (mostly done; see note 109)
+- [x] Section 4j: Frame glitches while panning; zoom out before rotating
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -769,6 +770,37 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     picture of them as the launch image, so the clouds show from the first moment with no visible
     hand-off. Also not measured: the first pan right after the clouds clear (the 4g test covers that a
     first pan near the starting view needs no new pictures).
+
+
+110. **Section 4j: glitch frames while panning — what was looked at.** Recorded pans on the simulator
+    were checked frame by frame for a wrong picture or a jump (`glitch.swift`: best shift and match of a
+    patch between consecutive frames). With the tool's own bug fixed (it scored a cut-short search
+    against the wrong sample count), no frame shows a wrong picture or a jump beyond the recorder's own
+    dropped frames; the device glitches don't reproduce on the simulator. Three causes in the code that
+    can produce exactly them were fixed instead:
+    - **Pictures on screen evicted mid-pan** (`IslandRenderCache.plan`). The picture cache is an
+      `NSCache`, which iOS empties at any moment under memory pressure (likely on a phone, not on a Mac
+      simulator). The next pan frame then found the on-screen chunks and Places gone and drew stand-ins
+      from another zoom (blurrier, or with the buildings baked in) until the pan stopped: random wrong
+      images. Now the pictures drawn in the last frame are held outside the cache (`held`), so what's
+      on screen can never vanish. A test empties the cache mid-pan and checks no stand-in is drawn and
+      nothing is rendered (it fails with the hold removed).
+    - **People a frame behind** (`PeopleLayerKey`, 4i). The people layer was redrawn only when its key
+      changed, and the key had the animation clock but not where anyone stood: someone setting off
+      between ticks (a walk, a visit) kept their old spot for a frame. The key now includes everyone's
+      position in the world's own coordinates (unchanged by a pure pan, so pans still don't redraw it).
+    - **`.drawingGroup()` on the ground and sea** (4i) rendered them into offscreen GPU textures that
+      can update a frame after the world's offset moves: one frame of the old picture in the new place
+      (a jump of up to a pan step). Removed (its gain was small: 52 → 54 fps zoomed out).
+    The camera is set in one place per frame (a drag, pinch or glide; each cancels the others), and
+    entities are drawn from the same camera, in the same update, in the same world as the land (4f).
+111. **Turning zooms out first** (`RotatePlan`, `turn(by:)`): from closer in (or panned away), the
+    rotate buttons or a twist first ease the camera out to the whole island (0.5 s), then turn, and it
+    stays at the whole island; already there, it turns at once. Touches, and further turns, are held
+    until the turn has finished. Checked on the simulator from zoom 3: out, turned, stayed out.
+112. Simulator, full Bible, measured after the loading clouds have gone: pan (zoom 3) 58 fps, slowest
+    second 50; pinch zoom 40 fps average, slowest second 30, worst frame 82 ms. (Measuring from launch
+    now includes the cloud cover, when frames are deliberately long under the clouds.)
 
 
 ## Remove before release

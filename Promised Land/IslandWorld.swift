@@ -99,6 +99,9 @@ nonisolated struct PeopleLayerKey: Equatable, Sendable {
     let time: Double
     /// Who's drawn, in order, and what's drawn back over each of them.
     let people: [String]
+    /// Where each of them stands in the world's own coordinates (to an eighth of a point): these don't
+    /// change during a pan, but do the moment anyone moves, even between ticks of the clock.
+    let places: [Int]
     let over: [[Int]]
     let facingLeft: Bool
     /// The avatar's look (its hash).

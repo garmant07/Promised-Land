@@ -219,6 +219,8 @@ final class IslandRenderCache {
         var frame = Frame()
         frame.baked = b.baked
         var queued: [Pending] = []
+        /// Every picture this frame draws (held for the next frame, see `held`).
+        var used: [NSString: CGImage] = [:]
         /// Far out, where the ground is drawn from a closer zoom (without its buildings) for now.
         var plainRegions: [CGRect] = []
 
@@ -234,7 +236,7 @@ final class IslandRenderCache {
                 let dest = screen(rect, b.k)
                 guard dest.intersects(view) else { continue }
                 let key = "\(b.groundKey)|\(cx),\(cy)" as NSString
-                if let image = images.object(forKey: key)?.image {
+                if let image = picture(key, using: &used) {
                     frame.ground.append((image, dest, nil))
                     if b.baked { frame.bakedGround.append(dest) }
                 } else if deferMissing {
@@ -246,6 +248,7 @@ final class IslandRenderCache {
                     skipped += 1
                     enqueue(Pending(key: key, size: rect.size, scale: chunkScale(b), steps: chunkSteps(island: island, bucket: b, rect: rect)))
                 } else if let image = render(key: key, size: rect.size, scale: chunkScale(b), draw: chunkDrawing(island: island, bucket: b, rect: rect)) {
+                    used[key] = image
                     frame.ground.append((image, dest, nil))
                     if b.baked { frame.bakedGround.append(dest) }
                 }
@@ -279,7 +282,7 @@ final class IslandRenderCache {
                             let rect = CGRect(x: CGFloat(cx) * chunk, y: CGFloat(cy) * chunk, width: chunk, height: chunk)
                             // Outside the island's ground there's nothing to draw.
                             guard rect.intersects(b2.bounds) else { continue }
-                            guard let image = images.object(forKey: "\(b2.groundKey)|\(cx),\(cy)" as NSString)?.image else { return true }
+                            guard let image = picture("\(b2.groundKey)|\(cx),\(cy)" as NSString, using: &used) else { return true }
                             // Only inside the gap it fills: the chunks around it are this zoom's own.
                             found.append((image, screen(rect, b2.k), m.dest))
                         }
@@ -297,6 +300,7 @@ final class IslandRenderCache {
                 if open.contains(where: { $0.key == m.key }) {
                     // Nothing cached at any zoom: draw it now.
                     if let image = render(key: m.key, size: m.size, scale: m.scale, draw: m.draw) {
+                        used[m.key] = image
                         frame.ground.append((image, m.dest, nil))
                         if b.baked { frame.bakedGround.append(m.dest) }
                     }
@@ -305,7 +309,7 @@ final class IslandRenderCache {
                 }
             }
         }
-        if groundOnly || (b.baked && plainRegions.isEmpty) { finish(queued, deferMissing); return frame }
+        if groundOnly || (b.baked && plainRegions.isEmpty) { finish(queued, deferMissing); hold(used, deferMissing); return frame }
         // Far out with some ground standing in from a closer zoom: only the buildings there are
         // drawn separately, and only from pictures already made (the baked chunk will come), and
         // only inside those stand-ins (`layerClip`), never over the baked chunks next to them.
@@ -344,7 +348,7 @@ final class IslandRenderCache {
                     IslandPainter.drawItem(&c, island.items[i], layout: l)
                 }
             }
-            if let image = images.object(forKey: key)?.image {
+            if let image = picture(key, using: &used) {
                 layers.append((depth, .picture(image, dest)))
                 continue
             }
@@ -356,7 +360,7 @@ final class IslandRenderCache {
                     }
                 }
                 if let (image, b2) = others!.lazy.compactMap({ b2 -> (CGImage, Bucket)? in
-                    self.images.object(forKey: "p\(content)|\(Int(b2.lb.scale * 100))|\(quarter)" as NSString).map { ($0.image, b2) }
+                    self.picture("p\(content)|\(Int(b2.lb.scale * 100))|\(quarter)" as NSString, using: &used).map { ($0, b2) }
                 }).first {
                     layers.append((depth, .picture(image, screen(placeRect(plot, layout: b2.lb), b2.k))))
                     if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
@@ -370,7 +374,10 @@ final class IslandRenderCache {
                     continue
                 }
             }
-            if let image = render(key: key, size: rect.size, draw: draw) { layers.append((depth, .picture(image, dest))) }
+            if let image = render(key: key, size: rect.size, draw: draw) {
+                used[key] = image
+                layers.append((depth, .picture(image, dest)))
+            }
         }
         for i in loose {
             var item = island.items[i]
@@ -383,8 +390,33 @@ final class IslandRenderCache {
         }
         frame.layers = layers.sorted { $0.depth < $1.depth }.map(\.layer)
         finish(queued, deferMissing)
+        hold(used, deferMissing)
         return frame
     }
+
+    // MARK: What's on screen
+
+    /// The pictures the live island drew in its last frame, held outside the cache. The cache can be
+    /// emptied by the system at any moment under memory pressure; without this, the next frame of a
+    /// pan would find what was on screen gone and show stand-ins from another zoom (a wrong, blurrier
+    /// picture) until the pan stopped. What's on screen can never vanish now.
+    private var held: [NSString: CGImage] = [:]
+
+    /// A picture by key: held (on screen) first, then the cache. Noted in `used`.
+    private func picture(_ key: NSString, using used: inout [NSString: CGImage]) -> CGImage? {
+        guard let image = held[key] ?? images.object(forKey: key)?.image else { return nil }
+        used[key] = image
+        return image
+    }
+
+    private func hold(_ used: [NSString: CGImage], _ live: Bool) {
+        guard live else { return }
+        held = used
+    }
+
+    /// For tests: what the system does under memory pressure (the cache is emptied; what's on
+    /// screen is held).
+    func simulateMemoryWarning() { images.removeAllObjects() }
 
     // MARK: Rendering in the background
 
@@ -564,6 +596,7 @@ final class IslandRenderCache {
     /// Drops every picture (for tests that render a lot, so they don't starve the rest of memory).
     func removeAll() {
         images.removeAllObjects()
+        held = [:]
         pending = []
         partial = [:]
     }

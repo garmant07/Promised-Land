@@ -28,7 +28,7 @@ struct LoadingCloudTests {
     @Test("Panning within a step leaves the people layer as it is (only the shared offset moves)")
     func peopleLayerHoldsStill() {
         func key(_ pan: CGSize) -> PeopleLayerKey {
-            PeopleLayerKey(drawPan: PanStep.drawPan(pan), zoom: 1, angle: 0, time: 5, people: ["me"], over: [[]],
+            PeopleLayerKey(drawPan: PanStep.drawPan(pan), zoom: 1, angle: 0, time: 5, people: ["me"], places: [80, 80], over: [[]],
                            facingLeft: false, avatar: 1, zooming: false, size: CGSize(width: 390, height: 844))
         }
         #expect(key(CGSize(width: 10, height: 5)) == key(CGSize(width: 30, height: -20)))   // same step: not redrawn

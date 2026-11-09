@@ -173,7 +173,6 @@ struct PlatformScene: View {
                                                 paused: paused || director.isIdleFarOut),
                                      island: island)
                         .equatable()
-                        .drawingGroup()
                         // Bigger than the screen: overflow down and right, never resizing the stack.
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
                         .offset(PanStep.offset(pan))
@@ -236,7 +235,6 @@ struct PlatformScene: View {
                                                          rendered: IslandRenderProgress.shared.generation),
                                               island: island, ordered: ordered, editing: editing)
                                 .equatable()
-                                .drawingGroup()
                                 .zIndex(-1)
                             if beat != nil || !overrides.isEmpty {
                                 // The rest of the island dims a little while something is built.
@@ -245,6 +243,8 @@ struct PlatformScene: View {
                             }
                             // Drawn again only when what it shows changes: a pan within a step only moves it.
                             KeyedLayer(key: PeopleLayerKey(drawPan: drawPan, zoom: zoom, angle: angle, time: t, people: people.map(\.id),
+                                                           places: people.flatMap { [Int(((($0.feet.x - slide.width) * 8)).rounded()),
+                                                                                     Int(((($0.feet.y - slide.height) * 8)).rounded())] },
                                                            over: over, facingLeft: facingLeft, avatar: avatar.hashValue, zooming: zooming,
                                                            size: geo.size)) {
                             Canvas { c, _ in
@@ -576,7 +576,19 @@ struct PlatformScene: View {
 
     /// Turns the island a quarter turn. A tap while one is animating waits its turn (at most one).
     private func turn(by step: Int) {
+        // Mid-sequence (zooming out to turn, or a tap-to-zoom move): other turns and touches wait.
+        guard !cameraLocked else { return }
+        if RotatePlan.steps(zoom: zoom, pan: pan) == [.zoomOut, .turn] {
+            // From closer in: ease out to the whole island first (touches held), then turn, and stay there.
+            animateCamera(zoom: IslandLayout.minZoom, pan: .zero, duration: RotatePlan.zoomOutDuration, lock: true) {
+                cameraLocked = true
+                guard let step = turnQueue.request(step) else { cameraLocked = false; return }
+                startTurn(step)
+            }
+            return
+        }
         guard let step = turnQueue.request(step) else { return }
+        cameraLocked = true
         startTurn(step)
     }
 
@@ -604,7 +616,7 @@ struct PlatformScene: View {
     }
 
     private func finishTurn() {
-        if let next = turnQueue.finished() { startTurn(next) }
+        if let next = turnQueue.finished() { startTurn(next) } else { cameraLocked = false }
     }
 
     /// Recentres on your character, zooming in if far out.
@@ -711,14 +723,15 @@ struct PlatformScene: View {
     /// Glides the camera to a new zoom and pan. Done frame by frame, because the island's
     /// drawing has the camera built in (SwiftUI can't interpolate a Canvas on its own).
     /// A new touch or camera move cancels a glide in progress.
-    private func animateCamera(zoom toZoom: CGFloat, pan toPan: CGSize, duration: Double, easeOut: Bool = false, lock: Bool = false) {
+    private func animateCamera(zoom toZoom: CGFloat, pan toPan: CGSize, duration: Double, easeOut: Bool = false, lock: Bool = false,
+                               completion: (() -> Void)? = nil) {
         cameraGlide += 1
         cameraLocked = lock && !reduceMotion && duration > 0.05
         let token = cameraGlide
         let fromZoom = zoom, fromPan = pan
         zoomStart = toZoom
         panStart = toPan
-        guard !reduceMotion, duration > 0.05 else { zoom = toZoom; pan = toPan; gliding = false; return }
+        guard !reduceMotion, duration > 0.05 else { zoom = toZoom; pan = toPan; gliding = false; completion?(); return }
         let glide = CameraGlide(fromZoom: fromZoom, toZoom: toZoom, fromPan: fromPan, toPan: toPan,
                                 start: CACurrentMediaTime(), duration: duration, easeOut: easeOut)
         gliding = true
@@ -734,7 +747,11 @@ struct PlatformScene: View {
                 if glide.isDone(at: now) { break }
                 await FrameTicker.shared.nextFrame()
             }
-            if cameraGlide == token { cameraLocked = false; gliding = false }
+            if cameraGlide == token {
+                cameraLocked = false
+                gliding = false
+                completion?()
+            }
         }
     }
 
