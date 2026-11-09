@@ -355,6 +355,7 @@ option was chosen and noted here.
 - [x] Section 5: Friends and group islands
 - [x] Section 4b: Island follow-up (buildings on their land, no flicker, birds on top)
 - [x] Section 4c: Camera feel (zoom, pan shake, stepping up to a building)
+- [x] Section 4d: Zoom and camera polish (sea to every edge, smooth tap-to-zoom, ring under buildings, last shake)
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -538,6 +539,42 @@ buildings baked in (one picture takes up to ~120 ms on the simulator); they now 
 frame rather than all in one. Instruments' SwiftUI and frame-rate instruments don't record on the
 simulator (note 77); frame rate comes from the app's own meter. `-autoZoom` (DEBUG) pinches in and
 out through the same code as a real pinch.
+
+
+89. **Section 4d: what was left of the shake.** Measured, not guessed: the warm-ahead added in
+    Section 4 (rendering Place and ground pictures three pan steps ahead each time the pan crossed a
+    step) ran while the finger was still moving and never caught up. Panning a cold island at zoom
+    5 averaged 26 fps with a 1.8 s stall with it, 49–55 fps (worst 68–130 ms) without. It's gone;
+    the still layer draws what the screen needs as each step comes into view, so nothing pops in.
+    Also: the layout clamped zoom to 0.75×–1.3× its limits but the camera's own zoom (which scales
+    the still layers mid-pinch) didn't, so pinched past a limit the scaled ground and the people
+    drawn over it worked from different numbers. The camera now keeps its zoom in the same bounds
+    (`IslandLayout.clampedZoom`). The camera is written in one place per frame: a drag, a pinch or a
+    glide (each cancels the others); nothing nudges it after a gesture except settling back inside
+    the limits.
+90. **Blue edges when zooming out.** The sea's waves were only drawn along the coast, so further out
+    the screen showed the plain sea colour; and in 4c the waves were part of the still drawing that
+    only gets scaled while zooming, so zooming out left its edges bare. Now the open sea is a wave
+    pattern tiled over the whole screen in one fill, anchored to the island's grid (it pans, zooms
+    and turns with the island; the land covers it), drawn at the camera itself even mid-zoom. Drawn
+    as hundreds of separate marks it cost the frame rate (pinch 50 → 32 fps, pan 59 → 40); as one
+    tiled picture it costs nothing measurable.
+91. **Tap-to-zoom** is one 0.7 s ease-in-out move of position and zoom together (`visitGlide`): no
+    redrawing part-way (that showed as a step), no bounce of the building (it was drawn again over
+    its neighbours mid-zoom), touches ignored until it lands, and any glide in progress cancelled.
+    The ground and buildings are drawn sharp again once it lands.
+92. **The selection ring** was drawn after the ground, and far out the buildings are baked into the
+    ground, so it lay on top of them (and the move up to a building starts from that far-out
+    drawing). Far out, the building and its neighbours are now drawn again over the ring, inside the
+    ring only; close in they're already drawn after it. A pixel test checks the building hides it.
+
+### Section 4d measurements (iPhone 17 simulator, full Bible, quiet machine)
+
+| | 4c | 4d |
+|---|---|---|
+| Pinch zoom (`-autoZoom`), average / slowest second / worst frame | 50 / 26 fps / 399 ms | 50 / 28 fps / 354 ms |
+| Pan (`-autoPan`, zoom 3) | 59 fps, worst 58 ms | 60 fps, worst 64 ms |
+| Pan, cold island, zoom 5 (warm-ahead on / off) | 26 fps, worst 1.8 s | 49–55 fps, worst 68–130 ms |
 
 
 ## Remove before release

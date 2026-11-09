@@ -34,6 +34,10 @@ struct IslandLayout {
     /// Iso bounds of the island's tiles, per island and turn (worked out once, not every frame).
     private static var boundsMemo: [Int: (minX: CGFloat, maxX: CGFloat, minY: CGFloat, maxY: CGFloat, pivot: CGPoint)] = [:]
 
+    /// How far past the limits a pinch may go (it rubber-bands back on release). The camera keeps
+    /// its zoom inside this too, so every layer works from the very same number.
+    static func clampedZoom(_ zoom: CGFloat, maxZoom: CGFloat) -> CGFloat { min(maxZoom * 1.3, max(minZoom * 0.75, zoom)) }
+
     /// The nearest whole quarter turn, 0…3.
     var quarter: Int { ((Int((angle).rounded()) % 4) + 4) % 4 }
     /// Code-drawn art is mirrored on odd quarter turns, so buildings face the new way.
@@ -78,7 +82,7 @@ struct IslandLayout {
         self.fit = fit
         maxZoom = max(Self.baseMaxZoom, Self.closestScale(width: area.width) / fit)
         // A little past either limit is allowed while pinching (it rubber-bands back on release).
-        let z = min(maxZoom * 1.3, max(Self.minZoom * 0.75, zoom))
+        let z = Self.clampedZoom(zoom, maxZoom: maxZoom)
         let fitOrigin = CGPoint(x: insets.leading + (area.width - w * fit) / 2 - minX * fit,
                                 y: insets.top + (area.height - h * fit) / 2 + headroom * fit - minY * fit)
         let centre = CGPoint(x: insets.leading + area.width / 2, y: insets.top + area.height / 2)
@@ -285,6 +289,19 @@ enum IslandPainter {
         }
     }
 
+    /// The open sea: wave marks over the whole of `visible`, however far out you zoom, in one tiled
+    /// fill of a small cached picture. The tiling is anchored to the island's grid (it pans, zooms
+    /// and turns with the island) and lies under the land, which covers it. A gentle overall shimmer
+    /// keeps it alive; the surf along the coast is drawn separately (`drawWaves`).
+    static func drawOpenSea(_ c: inout GraphicsContext, island: Island, layout: IslandLayout, time: Double, visible: CGRect) {
+        guard let tile = OpenSea.tile() else { return }
+        let fill = OpenSea.fill(layout: layout)
+        var g = c
+        g.opacity = 0.75 + 0.25 * sin(time * 0.9)
+        g.fill(Path(visible), with: .tiledImage(Image(decorative: tile, scale: OpenSea.tileScale), origin: fill.origin,
+                                                 sourceRect: CGRect(x: 0, y: 0, width: 1, height: 1), scale: fill.scale))
+    }
+
     static func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout, scale: CGFloat = 1) {
         let p = layout.point(item.gx, item.gy)
         var g = c
@@ -400,6 +417,70 @@ private extension CGPoint {
 
 /// Where waves ripple around an island: open-sea tiles near it, picked once per island.
 @MainActor
+/// The open sea's pattern: a block of the island's diamond lattice (`cells` × `cells` lattice
+/// steps) with a wave mark at every lattice point, nudged so it doesn't look gridded. On screen a
+/// lattice step of `spacing` tiles is a `2·s·scale` × `s·scale` rectangle with points at its corner
+/// and centre, at every turn, so the block tiles seamlessly in the island's own space.
+enum OpenSea {
+    static let cells = 4
+    /// The tile picture's size in points (it's rendered at 2×).
+    static let tileSize = CGSize(width: 512, height: 256)
+    static let tileScale: CGFloat = 2
+
+    /// Lattice spacing in tiles for a tile this wide on screen: marks about 40+ points apart.
+    static func spacing(tileWidth: CGFloat) -> Int {
+        var step = 2
+        while CGFloat(step) * tileWidth < 40, step < 1024 { step *= 2 }
+        return step
+    }
+
+    /// Where the tiling starts (a lattice point, from the island's grid origin) and how much the
+    /// picture is scaled, for this camera.
+    static func fill(layout: IslandLayout) -> (origin: CGPoint, scale: CGFloat) {
+        let step = CGFloat(spacing(tileWidth: layout.scale * 2))
+        let blockWidth = 2 * step * layout.scale * CGFloat(cells)
+        return (layout.point(0, 0), blockWidth / tileSize.width)
+    }
+
+    /// The pattern, drawn once.
+    static func tile() -> CGImage? {
+        if let cached { return cached }
+        let size = tileSize
+        let n = cells
+        let renderer = ImageRenderer(content: Canvas { c, _ in
+            let cw = size.width / CGFloat(n), ch = size.height / CGFloat(n)
+            for j in 0..<n {
+                for i in 0..<n {
+                    for (k, centre) in [(0, CGPoint(x: 0, y: 0)), (1, CGPoint(x: cw / 2, y: ch / 2))] {
+                        // A fixed nudge per point (the same every time, so the tiling is seamless).
+                        let h = (i * 7 + j * 13 + k * 29) % 17
+                        let p = CGPoint(x: CGFloat(i) * cw + centre.x + CGFloat(h - 8) * cw * 0.03,
+                                        y: CGFloat(j) * ch + centre.y + CGFloat((h * 5) % 17 - 8) * ch * 0.04)
+                        let w: CGFloat = 15, hgt: CGFloat = 5
+                        let wave = Path { path in
+                            path.move(to: CGPoint(x: p.x - w, y: p.y))
+                            path.addQuadCurve(to: p, control: CGPoint(x: p.x - w / 2, y: p.y - hgt))
+                            path.addQuadCurve(to: CGPoint(x: p.x + w, y: p.y), control: CGPoint(x: p.x + w / 2, y: p.y - hgt))
+                        }
+                        // Drawn again shifted by a whole tile where it crosses an edge, so it wraps.
+                        for dx in [-size.width, 0, size.width] {
+                            for dy in [-size.height, 0, size.height] {
+                                c.stroke(wave.offsetBy(dx: dx, dy: dy), with: .color(Earthy.foam.opacity(0.35 + Double(h) / 17 * 0.3)),
+                                         style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                            }
+                        }
+                    }
+                }
+            }
+        }.frame(width: size.width, height: size.height))
+        renderer.scale = tileScale
+        cached = renderer.cgImage
+        return cached
+    }
+
+    private static var cached: CGImage?
+}
+
 enum WaveSpots {
     struct Spot { let x: CGFloat; let y: CGFloat; let phase: Double }
     private static var memo: (key: Int, spots: [Spot]) = (-1, [])

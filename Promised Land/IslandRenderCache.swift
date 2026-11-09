@@ -52,6 +52,8 @@ final class IslandRenderCache {
     /// What the static layer draws this frame: cached pictures, and items drawn directly.
     struct Frame {
         var ground: [(image: CGImage, rect: CGRect)] = []
+        /// Far out: the island's still things are baked into the ground chunks.
+        var baked = false
         /// In back-to-front order: a cached Place picture, or an item drawn as usual.
         var layers: [Layer] = []
 
@@ -120,6 +122,7 @@ final class IslandRenderCache {
         // Far out (and not mid-reveal), everything that stands still is baked into the ground
         // chunks too: a handful of images instead of a picture per Place and hundreds of items.
         let baked = bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty
+        frame.baked = baked
         // Plain ground depends only on the land: a building growing never re-bakes it. Far out,
         // the still things are baked in too, so those chunks follow the whole island.
         let landKey = baked ? "b\(island.signature)" : "l\(groundSignature(island))"

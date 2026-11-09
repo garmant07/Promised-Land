@@ -115,7 +115,18 @@ struct IslandGroundLayer: View, Equatable {
                     IslandPainter.drawTiles(&context, island: island, layout: layout)
                 }
                 if let selected = k.selected, island.items.indices.contains(selected) {
-                    PlatformScene.drawHighlight(&context, island.items[selected], layout: layout)
+                    // The ring is on the ground: under the buildings. Close in they're drawn after it
+                    // anyway; far out they're baked into the ground below it, so the ones over it are
+                    // drawn again on top, inside the ring only.
+                    let item = island.items[selected]
+                    PlatformScene.drawHighlight(&context, item, layout: layout)
+                    if cached?.baked == true {
+                        var g = context
+                        g.clip(to: Path(ellipseIn: PlatformScene.highlightRect(item, layout: layout)))
+                        for over in PlatformScene.itemsOverRing(item, ordered: ordered, layout: layout) {
+                            IslandRenderCache.shared.drawItem(&g, over, layout: layout)
+                        }
+                    }
                 }
                 if let editing {
                     PlatformScene.drawEditGrid(&context, island: island, layout: layout, editing: editing)
@@ -147,7 +158,9 @@ struct IslandGroundLayer: View, Equatable {
     }
 }
 
-/// The sea's waves (12 frames a second), drawn at a rounded pan like the ground.
+/// The sea (12 frames a second): wave marks over the whole visible sea, laid out on the island's
+/// grid, and the surf along its coast. Drawn at a rounded pan like the ground, but always at the
+/// camera itself (never the scaled still drawing), so it covers the whole screen while zooming too.
 struct IslandWavesLayer: View, Equatable {
     nonisolated struct Key: Equatable {
         let signature: Int
@@ -173,6 +186,10 @@ struct IslandWavesLayer: View, Equatable {
         TimelineView(.animation(minimumInterval: 1.0 / 12, paused: k.reduceMotion || k.paused)) { context in
             Canvas { c, _ in
                 PerfProbe.measure("waves") {
+                    // The whole sea, out to every edge of the screen at any zoom and turn.
+                    IslandPainter.drawOpenSea(&c, island: island, layout: layout,
+                                              time: k.reduceMotion ? 0 : context.date.timeIntervalSinceReferenceDate,
+                                              visible: CGRect(origin: .zero, size: canvas).insetBy(dx: -20, dy: -20))
                     IslandPainter.drawWaves(&c, island: island, layout: layout,
                                             time: k.reduceMotion ? 0 : context.date.timeIntervalSinceReferenceDate,
                                             visible: CGRect(origin: .zero, size: canvas).insetBy(dx: -20, dy: -20))
