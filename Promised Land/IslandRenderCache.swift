@@ -54,6 +54,8 @@ final class IslandRenderCache {
         var ground: [(image: CGImage, rect: CGRect)] = []
         /// Far out: the island's still things are baked into the ground chunks.
         var baked = false
+        /// Where the ground drawn includes the buildings (chunks from a far-out zoom).
+        var bakedGround: [CGRect] = []
         /// In back-to-front order: a cached Place picture, or an item drawn as usual.
         var layers: [Layer] = []
 
@@ -66,11 +68,15 @@ final class IslandRenderCache {
     /// Plans the static layer for the current camera. `base` is the camera at `zoom` without
     /// the pan; `overrides` are items held at another growth (during a reveal), drawn directly.
     /// `viewport` is the area drawn into (defaults to the view, with a small margin).
+    /// - Parameter deferMissing: pictures not yet rendered at this zoom are drawn from the nearest
+    ///   zoom that has them and rendered in the background (for the live island, so a zoom never
+    ///   waits on rendering and never leaves land out). Otherwise they're rendered now.
     func frame(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
-               overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool = true, viewport: CGRect? = nil) -> Frame? {
+               overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool = true, viewport: CGRect? = nil,
+               deferMissing: Bool = false) -> Frame? {
         renderBudget = nil
         return plan(island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, pan: pan,
-                    overrides: overrides, hidden: hidden, bake: bake, viewport: viewport)
+                    overrides: overrides, hidden: hidden, bake: bake, viewport: viewport, deferMissing: deferMissing)
     }
 
     /// The land alone (tiles, roads, plots), which is all the ground drawing depends on.
@@ -102,27 +108,22 @@ final class IslandRenderCache {
         return skipped == 0 && renderBudget == 1
     }
 
-    private func plan(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
-                      overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool, viewport: CGRect?) -> Frame? {
-        guard island.signature != 0, size.width > 0 else { return nil }
-        let zb = Self.bucket(for: zoom)
-        let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb, angle: CGFloat(quarter))
-        let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
-                             y: insets.top + (size.height - insets.top - insets.bottom) / 2)
-        // The bucket layout may be clamped to the island's zoom limit: scale from the zoom it really has.
-        let k = zoom / lb.zoom
-        func screen(_ r: CGRect) -> CGRect {
-            CGRect(x: centre.x + (r.minX - centre.x) * k + pan.width, y: centre.y + (r.minY - centre.y) * k + pan.height,
-                   width: r.width * k, height: r.height * k)
-        }
-        let view = (viewport ?? CGRect(origin: .zero, size: size)).insetBy(dx: -20, dy: -20)
-        var frame = Frame()
+    /// A zoom bucket's geometry: its layout, how it maps to the camera, and its ground chunks' key.
+    private struct Bucket {
+        let lb: IslandLayout
+        /// Camera zoom ÷ the bucket layout's zoom.
+        let k: CGFloat
+        let baked: Bool
+        let groundKey: String
+        let bounds: CGRect
+    }
 
-        // Ground chunks.
+    private func bucket(_ zb: CGFloat, island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int,
+                        bake: Bool, overrides: [Int: CGFloat], hidden: Set<Int>) -> Bucket {
+        let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb, angle: CGFloat(quarter))
         // Far out (and not mid-reveal), everything that stands still is baked into the ground
         // chunks too: a handful of images instead of a picture per Place and hundreds of items.
         let baked = bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty
-        frame.baked = baked
         // Plain ground depends only on the land: a building growing never re-bakes it. Far out,
         // the still things are baked in too, so those chunks follow the whole island.
         let landKey = baked ? "b\(island.signature)" : "l\(groundSignature(island))"
@@ -134,33 +135,131 @@ final class IslandRenderCache {
             if groundExtents.count > 64 { groundExtents.removeAll() }
             groundExtents[groundKey] = bounds
         }
-        let chunk: CGFloat = 512
-        let x0 = Int(floor(bounds.minX / chunk)), x1 = Int(floor(bounds.maxX / chunk))
-        let y0 = Int(floor(bounds.minY / chunk)), y1 = Int(floor(bounds.maxY / chunk))
+        // The bucket layout may be clamped to the island's zoom limit: scale from the zoom it really has.
+        return Bucket(lb: lb, k: zoom / lb.zoom, baked: baked, groundKey: groundKey, bounds: bounds)
+    }
+
+    private static let chunk: CGFloat = 512
+
+    /// Draws one ground chunk of a bucket.
+    private func chunkDrawing(island: Island, bucket b: Bucket, rect: CGRect) -> (inout GraphicsContext) -> Void {
+        let lb = b.lb, baked = b.baked
+        return { c in
+            let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
+            let local = CGRect(origin: .zero, size: rect.size)
+            IslandPainter.drawTiles(&c, island: island, layout: l, visible: local)
+            if baked {
+                // Every item whose drawing reaches into this chunk, back to front.
+                let margin = l.u * 240
+                for item in island.items.sorted(by: { l.depth($0.gx, $0.gy) < l.depth($1.gx, $1.gy) }) {
+                    let p = l.point(item.gx, item.gy)
+                    guard local.insetBy(dx: -margin, dy: -margin).contains(p) else { continue }
+                    IslandPainter.drawItem(&c, item, layout: l)
+                }
+            }
+        }
+    }
+
+    /// The other zoom buckets, nearest first (for drawing something that's already cached while a
+    /// picture for this zoom is still being rendered).
+    private static func neighbours(of zb: CGFloat) -> [CGFloat] {
+        buckets.filter { $0 != zb }.sorted { abs(log($0 / zb)) < abs(log($1 / zb)) }.prefix(6).map { $0 }
+    }
+
+    private func plan(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
+                      overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool, viewport: CGRect?, deferMissing: Bool = false) -> Frame? {
+        guard island.signature != 0, size.width > 0 else { return nil }
+        let zb = Self.bucket(for: zoom)
+        let b = bucket(zb, island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, bake: bake, overrides: overrides, hidden: hidden)
+        let lb = b.lb
+        let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
+                             y: insets.top + (size.height - insets.top - insets.bottom) / 2)
+        func screen(_ r: CGRect, _ k: CGFloat) -> CGRect {
+            CGRect(x: centre.x + (r.minX - centre.x) * k + pan.width, y: centre.y + (r.minY - centre.y) * k + pan.height,
+                   width: r.width * k, height: r.height * k)
+        }
+        /// A screen rect back in a bucket's own coordinates.
+        func local(_ r: CGRect, _ k: CGFloat) -> CGRect {
+            CGRect(x: centre.x + (r.minX - pan.width - centre.x) / k, y: centre.y + (r.minY - pan.height - centre.y) / k,
+                   width: r.width / k, height: r.height / k)
+        }
+        let view = (viewport ?? CGRect(origin: .zero, size: size)).insetBy(dx: -20, dy: -20)
+        var frame = Frame()
+        frame.baked = b.baked
+        var queued: [Pending] = []
+        /// Far out, where the ground is drawn from a closer zoom (without its buildings) for now.
+        var plainRegions: [CGRect] = []
+
+        // Ground chunks: every one in view, worked out from the camera now.
+        let chunk = Self.chunk
+        var missing: [(dest: CGRect, key: NSString, size: CGSize, draw: (inout GraphicsContext) -> Void)] = []
+        let x0 = Int(floor(b.bounds.minX / chunk)), x1 = Int(floor(b.bounds.maxX / chunk))
+        let y0 = Int(floor(b.bounds.minY / chunk)), y1 = Int(floor(b.bounds.maxY / chunk))
         for cy in y0...y1 {
             for cx in x0...x1 {
                 let rect = CGRect(x: CGFloat(cx) * chunk, y: CGFloat(cy) * chunk, width: chunk, height: chunk)
-                let dest = screen(rect)
+                let dest = screen(rect, b.k)
                 guard dest.intersects(view) else { continue }
-                let key = "\(groundKey)|\(cx),\(cy)" as NSString
-                let image = images.object(forKey: key)?.image ?? render(key: key, size: rect.size) { c in
-                    let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
-                    let local = CGRect(origin: .zero, size: rect.size)
-                    IslandPainter.drawTiles(&c, island: island, layout: l, visible: local)
-                    if baked {
-                        // Every item whose drawing reaches into this chunk, back to front.
-                        let margin = l.u * 240
-                        for item in island.items.sorted(by: { l.depth($0.gx, $0.gy) < l.depth($1.gx, $1.gy) }) {
-                            let p = l.point(item.gx, item.gy)
-                            guard local.insetBy(dx: -margin, dy: -margin).contains(p) else { continue }
-                            IslandPainter.drawItem(&c, item, layout: l)
-                        }
-                    }
+                let key = "\(b.groundKey)|\(cx),\(cy)" as NSString
+                if let image = images.object(forKey: key)?.image {
+                    frame.ground.append((image, dest))
+                    if b.baked { frame.bakedGround.append(dest) }
+                } else if deferMissing {
+                    missing.append((dest, key, rect.size, chunkDrawing(island: island, bucket: b, rect: rect)))
+                } else if let image = render(key: key, size: rect.size, draw: chunkDrawing(island: island, bucket: b, rect: rect)) {
+                    frame.ground.append((image, dest))
+                    if b.baked { frame.bakedGround.append(dest) }
                 }
-                if let image { frame.ground.append((image, dest)) }
             }
         }
-        if baked { return frame }
+        if !missing.isEmpty {
+            // Not rendered at this zoom yet: draw the same ground from the nearest zoom that has it
+            // (scaled into place) underneath, and render this zoom's in the background. Land on
+            // screen is never left out.
+            var under: [(image: CGImage, rect: CGRect)] = []
+            var open = missing
+            for zb2 in Self.neighbours(of: zb) where !open.isEmpty {
+                let b2 = bucket(zb2, island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, bake: bake,
+                                overrides: overrides, hidden: hidden)
+                open = open.filter { m in
+                    let r = local(m.dest, b2.k)
+                    let cx0 = Int(floor(r.minX / chunk)), cx1 = Int(floor((r.maxX - 0.001) / chunk))
+                    let cy0 = Int(floor(r.minY / chunk)), cy1 = Int(floor((r.maxY - 0.001) / chunk))
+                    var found: [(CGImage, CGRect)] = []
+                    for cy in cy0...cy1 {
+                        for cx in cx0...cx1 {
+                            let rect = CGRect(x: CGFloat(cx) * chunk, y: CGFloat(cy) * chunk, width: chunk, height: chunk)
+                            // Outside the island's ground there's nothing to draw.
+                            guard rect.intersects(b2.bounds) else { continue }
+                            guard let image = images.object(forKey: "\(b2.groundKey)|\(cx),\(cy)" as NSString)?.image else { return true }
+                            found.append((image, screen(rect, b2.k)))
+                            if b2.baked { frame.bakedGround.append(screen(rect, b2.k)) }
+                        }
+                    }
+                    under.append(contentsOf: found)
+                    // Far out the buildings are part of the ground; a closer zoom's ground has none,
+                    // so they're drawn on it separately (below) until this zoom's chunk is ready.
+                    if b.baked && !b2.baked { plainRegions.append(m.dest) }
+                    return false
+                }
+            }
+            frame.ground = under + frame.ground
+            for m in missing {
+                if open.contains(where: { $0.key == m.key }) {
+                    // Nothing cached at any zoom: draw it now.
+                    if let image = render(key: m.key, size: m.size, draw: m.draw) {
+                        frame.ground.append((image, m.dest))
+                        if b.baked { frame.bakedGround.append(m.dest) }
+                    }
+                } else {
+                    queued.append(Pending(key: m.key, size: m.size, draw: m.draw))
+                }
+            }
+        }
+        if b.baked && plainRegions.isEmpty { finish(queued, deferMissing); return frame }
+        // Far out with some ground standing in from a closer zoom: only the buildings there are
+        // drawn separately, and only from pictures already made (the baked chunk will come).
+        func wanted(_ r: CGRect) -> Bool { !b.baked || plainRegions.contains { $0.intersects(r) } }
 
         // Places as pictures; everything else (and anything mid-reveal) item by item.
         let keys = placeContentKeys(island)
@@ -170,10 +269,11 @@ final class IslandRenderCache {
             if let key = item.plotKey, keys[key] != nil { byPlot[key, default: []].append(i) } else { loose.append(i) }
         }
         var layers: [(depth: CGFloat, layer: Frame.Layer)] = []
+        var others: [Bucket]?
         for plot in island.allPlots {
             guard let indices = byPlot[plot.bookID], let content = keys[plot.bookID] else { continue }
             let rect = placeRect(plot, layout: lb)
-            let dest = screen(rect)
+            let dest = screen(rect, b.k)
             let depth = lb.point(plot.centre.x, plot.centre.y).y
             if indices.contains(where: { overrides[$0] != nil }) {
                 // Mid-reveal: drawn item by item, at the growth the reveal says.
@@ -184,24 +284,85 @@ final class IslandRenderCache {
                 }
                 continue
             }
-            guard dest.intersects(view) else { continue }
+            guard dest.intersects(view), wanted(dest) else { continue }
             // Keyed by what's in it, the layout's scale and the turn (not where it is).
             let key = "p\(content)|\(Int(lb.scale * 100))|\(quarter)" as NSString
-            let image = images.object(forKey: key)?.image ?? render(key: key, size: rect.size) { c in
+            let draw: (inout GraphicsContext) -> Void = { c in
                 let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
                 for i in indices.sorted(by: { lb.depth(island.items[$0].gx, island.items[$0].gy) < lb.depth(island.items[$1].gx, island.items[$1].gy) }) {
                     IslandPainter.drawItem(&c, island.items[i], layout: l)
                 }
             }
-            if let image { layers.append((depth, .picture(image, dest))) }
+            if let image = images.object(forKey: key)?.image {
+                layers.append((depth, .picture(image, dest)))
+                continue
+            }
+            if deferMissing {
+                // Not rendered at this zoom yet: the same Place's picture from the nearest zoom that has it.
+                if others == nil {
+                    others = Self.neighbours(of: zb).map {
+                        bucket($0, island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, bake: bake, overrides: overrides, hidden: hidden)
+                    }
+                }
+                if let (image, b2) = others!.lazy.compactMap({ b2 -> (CGImage, Bucket)? in
+                    self.images.object(forKey: "p\(content)|\(Int(b2.lb.scale * 100))|\(quarter)" as NSString).map { ($0.image, b2) }
+                }).first {
+                    layers.append((depth, .picture(image, screen(placeRect(plot, layout: b2.lb), b2.k))))
+                    if !b.baked { queued.append(Pending(key: key, size: rect.size, draw: draw)) }
+                    continue
+                }
+                if b.baked {
+                    // No picture of it at any zoom yet: its pieces are drawn directly meanwhile.
+                    for i in indices { layers.append((lb.point(island.items[i].gx, island.items[i].gy).y, .item(island.items[i]))) }
+                    continue
+                }
+            }
+            if let image = render(key: key, size: rect.size, draw: draw) { layers.append((depth, .picture(image, dest))) }
         }
         for i in loose {
             var item = island.items[i]
+            if b.baked {
+                let at = screen(CGRect(origin: lb.point(item.gx, item.gy), size: .zero), b.k)
+                guard wanted(at.insetBy(dx: -30, dy: -60)) else { continue }
+            }
             if let g = overrides[i] { guard g > 0 else { continue }; item.growth = g }
             layers.append((lb.point(item.gx, item.gy).y, .item(item)))
         }
         frame.layers = layers.sorted { $0.depth < $1.depth }.map(\.layer)
+        finish(queued, deferMissing)
         return frame
+    }
+
+    // MARK: Rendering in the background
+
+    /// A picture this zoom still needs (drawn meanwhile from another zoom).
+    private struct Pending {
+        let key: NSString
+        let size: CGSize
+        let draw: (inout GraphicsContext) -> Void
+    }
+
+    private var pending: [Pending] = []
+    private var draining = false
+
+    /// The pictures the latest frame still needs replace any older list (the camera may have moved
+    /// on), and are rendered one per screen refresh; each one bumps `IslandRenderProgress` so the
+    /// ground is drawn again with it.
+    private func finish(_ queued: [Pending], _ deferMissing: Bool) {
+        guard deferMissing else { return }
+        pending = queued
+        guard !pending.isEmpty, !draining else { return }
+        draining = true
+        Task { @MainActor in
+            while !self.pending.isEmpty {
+                let next = self.pending.removeFirst()
+                if self.images.object(forKey: next.key) == nil, self.render(key: next.key, size: next.size, draw: next.draw) != nil {
+                    IslandRenderProgress.shared.generation += 1
+                }
+                await FrameTicker.shared.nextFrame()
+            }
+            self.draining = false
+        }
     }
 
     // MARK: Single items
@@ -248,6 +409,12 @@ final class IslandRenderCache {
         h.combine(item.seed); h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
         h.combine(item.cap); h.combine(item.source.bookID)
         return "i\(h.finalize())|\(Int(ub * 1000))|\(layout.quarter)" as NSString
+    }
+
+    /// Drops every picture (for tests that render a lot, so they don't starve the rest of memory).
+    func removeAll() {
+        images.removeAllObjects()
+        pending = []
     }
 
     /// Any small code-drawn picture, rendered once per `key` and reused (e.g. produce baskets).
@@ -313,4 +480,12 @@ final class IslandRenderCache {
         images.setObject(ImageBox(image), forKey: key, cost: image.bytesPerRow * image.height)
         return image
     }
+}
+
+/// Bumped whenever a picture the island was waiting for has been rendered in the background, so the
+/// ground is drawn again with it.
+@MainActor @Observable
+final class IslandRenderProgress {
+    static let shared = IslandRenderProgress()
+    var generation = 0
 }

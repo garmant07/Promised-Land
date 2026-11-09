@@ -356,6 +356,7 @@ option was chosen and noted here.
 - [x] Section 4b: Island follow-up (buildings on their land, no flicker, birds on top)
 - [x] Section 4c: Camera feel (zoom, pan shake, stepping up to a building)
 - [x] Section 4d: Zoom and camera polish (sea to every edge, smooth tap-to-zoom, ring under buildings, last shake)
+- [x] Section 4e: Island disappears when zooming out
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -575,6 +576,33 @@ out through the same code as a real pinch.
 | Pinch zoom (`-autoZoom`), average / slowest second / worst frame | 50 / 26 fps / 399 ms | 50 / 28 fps / 354 ms |
 | Pan (`-autoPan`, zoom 3) | 59 fps, worst 58 ms | 60 fps, worst 64 ms |
 | Pan, cold island, zoom 5 (warm-ahead on / off) | 26 fps, worst 1.8 s | 49–55 fps, worst 68–130 ms |
+
+
+93. **Section 4e: why the island vanished when zooming out.** The cause was Section 4c's
+    scale-only zoom (`IslandView.swift`: `pinchChanged`, `redrawStillIfStretched`, `warmStill`).
+    While zooming, the ground and Places kept the drawing made at the camera where the zoom started
+    and were only scaled; that drawing covers just the screen as it was then. Zoomed out, that
+    rectangle shrank in the middle of the sea, and the redraw at the new camera waited until every
+    picture for the new zoom had been rendered in the background; `IslandRenderCache.prewarm` only
+    counts as done when a pass renders nothing new, so with pictures being evicted (more likely on a
+    phone) it could wait indefinitely. Reproduced on the simulator with `-autoZoomOut` (DEBUG: from
+    `-islandZoom` close in, pinch all the way out once): the frames show the shrinking patch, and the
+    rest only appeared about a second after the pinch ended.
+94. **Now:** the scale-only drawing is gone. The ground and Places are worked out from the camera's
+    position and zoom on every frame, pinches included. A picture this zoom hasn't rendered yet is
+    drawn from the nearest zoom that has it (scaled into place) and rendered in the background one
+    per screen refresh, redrawing as each lands (`IslandRenderProgress`); only if no zoom has it is
+    it rendered on the spot. Far out, where the buildings are part of the ground, any ground standing
+    in from a closer zoom gets its buildings drawn on it (from their pictures, or directly) until the
+    far-out chunk is ready. So land and buildings on screen are never left out, during or after a
+    zoom. Detail level still waits for the zoom to settle. Tests pinch right in and out, and
+    tap-to-zoom up to a building and back, at all four turns from a cold cache, with no background
+    rendering in between (the worst case), and check every frame draws ground under every tile in
+    view and every Place in view. (People are drawn every frame from the camera and were never
+    affected.)
+95. **Cost:** iPhone 17 simulator, full Bible, quiet machine. Pinch zoom averages 51 fps (4d: 50),
+    slowest second 18–29 fps (4d: 28), worst frame 433 ms (4d: 354): the price of drawing at the
+    live camera. Panning is unchanged at 59–60 fps.
 
 
 ## Remove before release

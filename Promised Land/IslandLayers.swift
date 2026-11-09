@@ -85,6 +85,8 @@ struct IslandGroundLayer: View, Equatable {
         let editSelected: String?
         let overrides: [Int: CGFloat]
         let hidden: Set<Int>
+        /// Bumped when a picture it was waiting for has been rendered (`IslandRenderProgress`).
+        var rendered = 0
     }
 
     let key: Key
@@ -104,7 +106,7 @@ struct IslandGroundLayer: View, Equatable {
         let cached = k.angle == CGFloat(Int(k.angle)) ? PerfProbe.measure("scene.plan") {
             IslandRenderCache.shared.frame(island: island, size: k.size, insets: k.insets, zoom: k.zoom, quarter: layout.quarter,
                                            pan: k.pan, overrides: k.overrides, hidden: k.hidden, bake: !k.editing,
-                                           viewport: CGRect(origin: .zero, size: canvas))
+                                           viewport: CGRect(origin: .zero, size: canvas), deferMissing: true)
         } : nil
         Canvas { context, _ in
             PerfProbe.measure("static") {

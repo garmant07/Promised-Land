@@ -4,8 +4,8 @@ import CoreGraphics
 import SwiftUI
 @testable import Promised_Land
 
-/// Section 4c: zoom and pan move smoothly, the scaled still drawing lines up with the camera, and
-/// stepping up to a building fills the screen with it, centred, at every turn.
+/// Section 4c: zoom and pan move smoothly, and stepping up to a building fills the screen with it,
+/// centred, at every turn.
 @MainActor
 struct CameraFeelTests {
     static let size = CGSize(width: 390, height: 844)
@@ -59,26 +59,6 @@ struct CameraFeelTests {
         }
         let end = glide.camera(at: t)
         #expect(end.zoom == 4 && end.pan == CGSize(width: -300, height: 180))
-    }
-
-    @Test("While zooming, the scaled still drawing lines up exactly with the camera", arguments: [0, 1, 2, 3])
-    func stillLinesUp(quarter: Int) {
-        let centre = IslandCamera.freeCentre(size: Self.size, insets: Self.insets)
-        let z0: CGFloat = 2, p0 = CGSize(width: 40, height: -25)
-        let drawn = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: z0, angle: CGFloat(quarter)).panned(p0)
-        let anchor = PlatformScene.stillAnchor(centre: centre, pan: p0, size: Self.size)
-        let a = CGPoint(x: anchor.x * Self.size.width, y: anchor.y * Self.size.height)
-        for (z, p) in [(CGFloat(2.9), CGSize(width: 10, height: 5)), (1.4, CGSize(width: -60, height: 70)), (3.2, CGSize(width: 90, height: -40))] {
-            let camera = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: z, angle: CGFloat(quarter)).panned(p)
-            let s = z / z0
-            for item in Self.island.items.prefix(60) {
-                let q0 = drawn.point(item.gx, item.gy)
-                // scaleEffect(s, anchor: a) then offset(p − p0), as the view applies them.
-                let q = CGPoint(x: a.x + (q0.x - a.x) * s + (p.width - p0.width), y: a.y + (q0.y - a.y) * s + (p.height - p0.height))
-                let want = camera.point(item.gx, item.gy)
-                #expect(abs(q.x - want.x) < 0.01 && abs(q.y - want.y) < 0.01)
-            }
-        }
     }
 
     @Test("Stepping up to a building: its Place fills the screen's width, centred, at every turn", arguments: [0, 1, 2, 3])
