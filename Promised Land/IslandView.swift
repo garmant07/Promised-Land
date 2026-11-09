@@ -177,86 +177,114 @@ struct PlatformScene: View {
                         let t = now.timeIntervalSinceReferenceDate
                         let bounce = walking ? -abs(sin(t * 9)) * charH * 0.05 : 0
                         let lean = walking ? sin(t * 9) * 3 : 0
-                        // Level of detail: which villagers, travellers and characters show, each at
-                        // its own (paused off screen) time and fade.
-                        // A wide margin: figures are picked up and faded in well off screen, so none
-                        // appears late at an edge, however fast you pan.
-                        let viewport = CGRect(origin: .zero, size: geo.size).insetBy(dx: -Self.lifeMargin, dy: -Self.lifeMargin)
+                        let screen = CGRect(origin: .zero, size: geo.size)
+                        // One visible rect with a generous margin, for people and buildings alike:
+                        // things are picked up (and people faded in) well before they come into view,
+                        // and only added or dropped as they cross it.
+                        let viewport = screen.insetBy(dx: -Self.lifeMargin, dy: -Self.lifeMargin)
                         let lifeTime = reduceMotion ? 0 : t
                         let tier = director.begin(now: lifeTime, u: layout.u)
                         let shown: [LifeDirector.Shown] = editing == nil ? PerfProbe.measure("tick.plan") {
                             let figures: () -> [LifeDirector.Figure] = {
                                 life.figures(layout: layout, viewport: viewport) + characterFigures(layout: layout, charH: charH)
                             }
-                            return director.plan(figures(), now: lifeTime, viewport: viewport, screen: CGRect(origin: .zero, size: geo.size))
+                            return director.plan(figures(), now: lifeTime, viewport: viewport, screen: screen)
                         } : []
                         let shownCharacters: [String: LifeDirector.Shown] = Self.characterMap(shown)
-
-                        // Two canvases redraw each frame: life (and anything being built) below the
-                        // figures, and what stands in front of them, baskets and Collect All above.
                         let lifeOn = editing == nil && !life.isEmpty
-                        let occluders: [Island.Item] = lifeOn ? PerfProbe.measure("tick.occluders") {
-                            // Buildings in front of villagers and travellers hide them.
-                            let lifeFigures = shown.filter { !$0.id.hasPrefix("c:") }.map { f in
-                                CGRect(x: f.point.x - 4 * layout.u, y: f.point.y - 15 * layout.u, width: 8 * layout.u, height: 15 * layout.u)
-                            }
-                            return Self.occluders(depthOrder.tall, figures: lifeFigures, layout: layout, viewport: viewport,
-                                                  onlyIfNoneInFront: false)
-                        } : []
-                        // Tall things in front of you or a Bible character are drawn over them,
-                        // unless another figure there stands in front of the thing.
-                        let figureRects: [CGRect] = [CGRect(x: feet.x - charW / 2, y: feet.y - charH, width: charW, height: charH)]
-                            + shownCharacters.values.map { f in
-                                CGRect(x: f.point.x - charH * 0.37, y: f.point.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05)
-                            }
-                        let inFront: [Island.Item] = PerfProbe.measure("tick.front") { Self.occluders(depthOrder.tall, figures: figureRects, layout: layout,
-                                                                                       viewport: viewport, onlyIfNoneInFront: true) }
+                        let lifeShown = lifeOn ? shown.filter { !$0.id.hasPrefix("c:") } : []
+                        let shownCast = characters.filter { shownCharacters[$0.id] != nil }
+
+                        // People over the still island. Anyone standing behind a building gets the
+                        // island in front of them drawn again, clipped to just their own rect, in the
+                        // island's own back-to-front order: buildings are never copied anywhere else.
+                        let people = Self.people(feet: feet, charW: charW, charH: charH, cast: shownCast.map(\.id),
+                                                 shownCharacters: shownCharacters, life: lifeShown, u: layout.u)
+                        let near = people.reduce(CGRect.null) { $0.union($1.rect) }.intersection(viewport)
+                        let nearItems = near.isNull ? [] : PerfProbe.measure("tick.items") {
+                            IslandWorld.visibleItems(ordered, layout: layout, visible: near)
+                        }
+                        let over: [[Int]] = PerfProbe.measure("tick.order") {
+                            people.map { IslandWorld.itemsOver($0, items: nearItems, layout: layout) }
+                        }
+                        let lifeByID = Dictionary(lifeShown.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
                         let basketsOn = editing == nil && !life.baskets.isEmpty && layout.u >= IslandLife.minimumBasketU
+                        let _ = { RenderStats.figures = people.count; RenderStats.life = over.reduce(0) { $0 + $1.count } }()
 
                         ZStack(alignment: .topLeading) {
-                            if lifeOn || beat != nil || bouncing {
-                                Canvas { c, _ in
-                                    PerfProbe.measure("life") {
-                                        // Villagers, travellers, smoke and birds: only what's on screen.
-                                        RenderStats.life = lifeOn
-                                            ? IslandLife.draw(&c, life: life, shown: shown, tier: tier, director: director, layout: layout,
-                                                              time: lifeTime, visible: viewport, occluders: occluders)
-                                            : 0
-                                        // The piece being built, and the selected item's bounce.
-                                        if let beat {
-                                            Self.drawBeat(&c, beat.step, elapsed: now.timeIntervalSince(beat.start), island: island, layout: layout)
-                                        }
-                                        if bouncing {
-                                            let e = now.timeIntervalSince(bounceStart)
-                                            let s = 1 + 0.16 * sin(min(1, e / 0.5) * .pi) * (1 - min(1, e / 0.5))
-                                            for index in bounceTargets.sorted() where island.items.indices.contains(index) {
-                                                IslandPainter.drawItem(&c, island.items[index], layout: layout, scale: s)
+                            Canvas { c, _ in
+                                PerfProbe.measure("life") {
+                                    if lifeOn && tier == .far {
+                                        _ = IslandLife.drawFarBoats(&c, life: life, director: director, layout: layout, time: lifeTime, visible: viewport)
+                                    }
+                                    // Smoke rises above the roofs (under the people, as before).
+                                    if lifeOn { _ = IslandLife.drawSmoke(&c, life: life, tier: tier, layout: layout, time: lifeTime, visible: viewport) }
+                                    for (k, person) in people.enumerated() {
+                                        if person.id == "me" {
+                                            if let me = c.resolveSymbol(id: "me") {
+                                                c.draw(me, at: CGPoint(x: feet.x, y: feet.y + charH * 0.07 + bounce), anchor: .bottom)
                                             }
+                                        } else if person.id.hasPrefix("c:") {
+                                            if let symbol = c.resolveSymbol(id: person.id), let shown = shownCharacters[String(person.id.dropFirst(2))] {
+                                                var g = c
+                                                g.opacity = shown.opacity
+                                                g.draw(symbol, at: CGPoint(x: shown.point.x, y: shown.point.y + charH * 0.055), anchor: .bottom)
+                                            }
+                                        } else if let shown = lifeByID[person.id] {
+                                            IslandLife.drawFigure(&c, shown, life: life, layout: layout)
+                                        }
+                                        // The island in front of them, over them, inside their rect only.
+                                        if !over[k].isEmpty {
+                                            var g = c
+                                            g.clip(to: Path(person.rect.insetBy(dx: -1, dy: -1)))
+                                            for i in over[k] { IslandRenderCache.shared.drawItem(&g, nearItems[i].item, layout: layout) }
+                                        }
+                                    }
+                                }
+                            } symbols: {
+                                AvatarFigure(avatar: avatar)
+                                    .frame(width: charW, height: charH)
+                                    .scaleEffect(x: facingLeft != layout.mirrored ? -1 : 1, y: 1)
+                                    .rotationEffect(.degrees(lean), anchor: .bottom)
+                                    .tag("me" as String)
+                                ForEach(shownCast) { c in
+                                    CharacterFigure(id: c.characterId, look: c.look)
+                                        .frame(width: charH * 0.75, height: charH * 1.05)
+                                        .scaleEffect(x: c.facingLeft(at: shownCharacters[c.id]?.time ?? 0) != layout.mirrored ? -1 : 1, y: 1)
+                                        .tag("c:" + c.id as String)
+                                }
+                            }
+                            .allowsHitTesting(false)
+                            .zIndex(IslandLayer.people.z)
+
+                            if beat != nil || bouncing {
+                                Canvas { c, _ in
+                                    // The piece being built, and the selected item's bounce.
+                                    if let beat {
+                                        Self.drawBeat(&c, beat.step, elapsed: now.timeIntervalSince(beat.start), island: island, layout: layout)
+                                    }
+                                    if bouncing {
+                                        let e = now.timeIntervalSince(bounceStart)
+                                        let s = 1 + 0.16 * sin(min(1, e / 0.5) * .pi) * (1 - min(1, e / 0.5))
+                                        for index in bounceTargets.sorted() where island.items.indices.contains(index) {
+                                            IslandPainter.drawItem(&c, island.items[index], layout: layout, scale: s)
                                         }
                                     }
                                 }
                                 .allowsHitTesting(false)
+                                .zIndex(IslandLayer.effects.z)
                             }
-                            ForEach(characters.filter { shownCharacters[$0.id] != nil }) { c in
-                                let f = shownCharacters[c.id]!
-                                CharacterFigure(id: c.characterId, look: c.look)
-                                    .frame(width: charH * 0.75, height: charH * 1.05)
-                                    .scaleEffect(x: c.facingLeft(at: f.time) != layout.mirrored ? -1 : 1, y: 1)
-                                    .position(x: f.point.x, y: f.point.y - charH * 0.47)
-                                    .opacity(f.opacity)
-                                    .allowsHitTesting(false)
+                            if lifeOn {
+                                // Birds: their own layer, above everything on the island (never depth-sorted).
+                                Canvas { c, _ in
+                                    IslandLife.birds(&c, layout: layout, sky: life.sky, visible: viewport, time: lifeTime)
+                                }
+                                .allowsHitTesting(false)
+                                .zIndex(IslandLayer.birds.z)
                             }
-                            AvatarFigure(avatar: avatar)
-                                .frame(width: charW, height: charH)
-                                .scaleEffect(x: facingLeft != layout.mirrored ? -1 : 1, y: 1)
-                                .rotationEffect(.degrees(lean), anchor: .bottom)
-                                .offset(y: bounce)
-                                .position(x: feet.x, y: feet.y - charH * 0.43)
-                            let _ = { RenderStats.figures = figureRects.count + inFront.count }()
-                            if !inFront.isEmpty || basketsOn || flight != nil {
+                            if basketsOn || flight != nil {
                                 Canvas { c, size in
                                     PerfProbe.measure("front") {
-                                        for item in inFront { IslandRenderCache.shared.drawItem(&c, item, layout: layout) }
                                         // Baskets go on top of everything, so they're always easy to see and tap.
                                         if basketsOn {
                                             IslandLife.drawBaskets(&c, life: life, layout: layout, time: reduceMotion ? 0 : t,
@@ -270,6 +298,7 @@ struct PlatformScene: View {
                                     }
                                 }
                                 .allowsHitTesting(false)
+                                .zIndex(IslandLayer.baskets.z)
                             }
                             if let speaking, let c = characters.first(where: { $0.id == speaking.id }),
                                now.timeIntervalSince(speaking.since) < 7, let time = director.peek("c:\(c.id)") {
@@ -281,6 +310,7 @@ struct PlatformScene: View {
                                 }
                                 .fixedSize()
                                 .position(x: head.x, y: head.y - charH * 1.05 - 62)
+                                .zIndex(IslandLayer.bubbles.z)
                             }
                         }
                     }
@@ -680,28 +710,19 @@ struct PlatformScene: View {
         animateCamera(zoom: newZoom, pan: target, duration: 0.35)
     }
 
-    /// Tall things (buildings, trees) standing in front of a figure and covering part of it, back to
-    /// front. A figure's rect is where it's drawn; its feet are at the rect's bottom.
-    /// - Parameter onlyIfNoneInFront: skip a thing if some figure it overlaps stands in front of it
-    ///   (for figures drawn above everything, so it doesn't cover one that's in front).
-    static func occluders(_ items: [Island.Item], figures: [CGRect], layout: IslandLayout, viewport: CGRect,
-                          onlyIfNoneInFront: Bool) -> [Island.Item] {
-        guard !figures.isEmpty else { return [] }
-        let reach = figures.reduce(CGRect.null) { $0.union($1) }
-        var out: [Island.Item] = []
-        for item in items where item.kind.isTall {
-            let base = layout.point(item.gx, item.gy)
-            guard viewport.insetBy(dx: -layout.scale * 3, dy: -layout.scale * 3).contains(base) else { continue }
-            let bounds = IslandPainter.drawnBounds(of: item, layout: layout)
-            guard bounds.intersects(reach) else { continue }
-            let overlapping = figures.filter { $0.intersects(bounds) }
-            // Behind = not past the footprint's front-most edge (feet at the bottom middle of each figure).
-            func behind(_ r: CGRect) -> Bool { IslandCamera.isBehind(feet: CGPoint(x: r.midX, y: r.maxY), item: item, layout: layout) }
-            guard overlapping.contains(where: behind) else { continue }
-            if onlyIfNoneInFront, overlapping.contains(where: { !behind($0) }) { continue }
-            out.append(item)
+    /// Everyone on screen this frame (you, Bible characters, villagers, travellers), back to front.
+    private static func people(feet: CGPoint, charW: CGFloat, charH: CGFloat, cast: [String],
+                               shownCharacters: [String: LifeDirector.Shown], life: [LifeDirector.Shown], u: CGFloat) -> [IslandWorld.Figure] {
+        var out: [IslandWorld.Figure] = []
+        out.reserveCapacity(1 + cast.count + life.count)
+        out.append(IslandWorld.Figure(id: "me", feet: feet, rect: CGRect(x: feet.x - charW / 2, y: feet.y - charH, width: charW, height: charH)))
+        for id in cast {
+            guard let f = shownCharacters[id] else { continue }
+            let rect = CGRect(x: f.point.x - charH * 0.37, y: f.point.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05)
+            out.append(IslandWorld.Figure(id: "c:" + id, feet: f.point, rect: rect))
         }
-        return out
+        for f in life { out.append(IslandWorld.Figure(id: f.id, feet: f.point, rect: IslandLife.figureRect(f, u: u))) }
+        return out.sorted { $0.feet.y < $1.feet.y }
     }
 
     /// The Bible characters showing this frame, by character id.

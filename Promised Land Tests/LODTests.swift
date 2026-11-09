@@ -183,19 +183,24 @@ struct LODTests {
         let base = l.point(lib.gx, lib.gy)
         let size = CGSize(width: 8 * l.u, height: 15 * l.u)
         let viewport = CGRect(x: base.x - 400, y: base.y - 600, width: 800, height: 1000)
+        // Hidden = the item is drawn again over them (clipped to them).
+        func hidden(_ item: Island.Item, by rect: CGRect, visible: CGRect? = nil) -> Bool {
+            let items = IslandWorld.visibleItems([item], layout: l, visible: visible ?? viewport)
+            let figure = IslandWorld.Figure(id: "f", feet: CGPoint(x: rect.midX, y: rect.maxY), rect: rect)
+            return !IslandWorld.itemsOver(figure, items: items, layout: l).isEmpty
+        }
         // Standing just behind the Library (higher up the screen than its base), inside its drawing.
         let behind = CGRect(x: base.x - size.width / 2, y: base.y - 20 * l.u - size.height, width: size.width, height: size.height)
-        #expect(PlatformScene.occluders([lib], figures: [behind], layout: l, viewport: viewport, onlyIfNoneInFront: false).count == 1)
+        #expect(hidden(lib, by: behind))
         // Standing in front of it (lower on screen than its base): nothing is drawn over them.
         let inFront = behind.offsetBy(dx: 0, dy: 40 * l.u)
-        #expect(PlatformScene.occluders([lib], figures: [inFront], layout: l, viewport: viewport, onlyIfNoneInFront: false).isEmpty)
+        #expect(!hidden(lib, by: inFront))
         // Flat things (fields, flowers) never hide anyone.
         let flat = Self.island.items.first { if case .piece(.field) = $0.kind { true } else { false } }
         if let flat {
             let p = l.point(flat.gx, flat.gy)
             let on = CGRect(x: p.x - 4, y: p.y - 30, width: 8, height: 15)
-            #expect(PlatformScene.occluders([flat], figures: [on], layout: l, viewport: on.insetBy(dx: -500, dy: -500),
-                                            onlyIfNoneInFront: false).isEmpty)
+            #expect(!hidden(flat, by: on, visible: on.insetBy(dx: -500, dy: -500)))
         }
     }
 }

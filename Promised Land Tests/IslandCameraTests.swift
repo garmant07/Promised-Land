@@ -89,10 +89,10 @@ struct IslandCameraTests {
             let feet = CGPoint(x: layout.point(g.x, g.y).x, y: anchor.y + 2)
             guard IslandCamera.turned(feet, layout: layout).x < front.x, IslandCamera.turned(feet, layout: layout).y < front.y else { continue }
             let figure = CGRect(x: feet.x - 4 * u, y: feet.y - 15 * u, width: 8 * u, height: 15 * u)
-            let drawnOver = PlatformScene.occluders([item], figures: [figure], layout: layout,
-                                                    viewport: CGRect(origin: .zero, size: Self.size), onlyIfNoneInFront: true)
-            if layout.point(item.gx, item.gy).x.isFinite, IslandPainter.drawnBounds(of: item, layout: layout).intersects(figure) {
-                #expect(drawnOver.count == 1, "\(item.kind) at turn \(quarter)")
+            let items = IslandWorld.visibleItems([item], layout: layout, visible: CGRect(origin: .zero, size: Self.size))
+            let over = IslandWorld.itemsOver(IslandWorld.Figure(id: "me", feet: feet, rect: figure), items: items, layout: layout)
+            if !items.isEmpty, IslandPainter.drawnBounds(of: item, layout: layout).intersects(figure) {
+                #expect(over == [0], "\(item.kind) at turn \(quarter)")
                 checked += 1
             }
         }

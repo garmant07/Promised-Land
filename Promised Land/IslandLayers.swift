@@ -121,18 +121,19 @@ struct IslandGroundLayer: View, Equatable {
                     PlatformScene.drawEditGrid(&context, island: island, layout: layout, editing: editing)
                     PlatformScene.drawExtraRings(&context, island: island, layout: layout, editing: editing)
                 }
-                // Only what's on screen (plus a margin for tall things) is drawn.
-                let visible = CGRect(origin: .zero, size: canvas).insetBy(dx: -layout.scale * 2, dy: -layout.scale * 2)
+                // Only what's on screen is drawn: anything whose picture reaches into the canvas
+                // (not just its anchor, which left tall things at the edges drawn late).
+                let visible = CGRect(origin: .zero, size: canvas)
                 if let cached {
                     for layer in cached.layers {
                         switch layer {
                         case .picture(let image, let rect): context.draw(Image(decorative: image, scale: 1), in: rect)
                         case .item(let item):
-                            if visible.contains(layout.point(item.gx, item.gy)) { IslandPainter.drawItem(&context, item, layout: layout) }
+                            if IslandWorld.pictureRect(item, layout: layout).intersects(visible) { IslandPainter.drawItem(&context, item, layout: layout) }
                         }
                     }
                 } else {
-                    for item in ordered where visible.contains(layout.point(item.gx, item.gy)) {
+                    for item in ordered where IslandWorld.pictureRect(item, layout: layout).intersects(visible) {
                         IslandPainter.drawItem(&context, item, layout: layout)
                     }
                 }

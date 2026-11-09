@@ -353,6 +353,7 @@ option was chosen and noted here.
 - [x] Section 3: Lag opening sheets, buildings and the Library
 - [x] Section 4: Island camera and rendering
 - [x] Section 5: Friends and group islands
+- [x] Section 4b: Island follow-up (buildings on their land, no flicker, birds on top)
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -456,6 +457,41 @@ is SwiftUI's own list layout.
     shared). Anything else shows the small card as before. Nothing can be edited. Your own island
     holds still while theirs is open. Sample names drop "(sample)" in the title; the Preview tag
     says it instead. DEBUG: `-openFriends -visitIsland group|sample-hannah [-visitInside ruth]`.
+
+
+83. **Section 4b: why buildings seemed to leave their land and blink while panning.** Someone
+    standing behind a building had that building drawn again over them, whole, from its own
+    picture. The still layer draws each Place as one picture with its pieces overlapping their
+    neighbours; the copy was pasted on top of those neighbours (a pixel test found 8–32% of a copy
+    differing from the island beneath it, mostly where pieces in front of it were covered), and it
+    appeared and vanished as villagers walked in and out behind buildings. Section 4 made this far
+    more frequent by looking after villagers 140 pt off screen. Now nothing is pasted: anyone
+    standing behind a building gets the island in front of them redrawn **clipped to their own
+    rect only**, in the island's own back-to-front order (`IslandWorld.itemsOver`), so the picture
+    elsewhere is untouched and the overlap is exactly what the island shows.
+84. **What 4b asked for, and how it maps onto this renderer.** The island is a SwiftUI `Canvas`
+    (note 13), not SpriteKit, so there are no nodes; the same rules apply to what's drawn:
+    - *Ground baked into chunks*: it already was (512-point chunks per zoom bucket and turn, 2× scale,
+      1024 px textures: sharp up close and within device limits). Plain ground chunks are now keyed
+      by the land alone (tiles, roads, plots), so a building growing no longer re-bakes them; adding
+      land or turning does. Far out, still things are baked into the chunks too (as before), so
+      those follow the whole island. Waves stay their own light layer on the sea.
+    - *Everything from its grid point, one camera*: ground, Places, items and people are all placed
+      from grid coordinates through the same layout and pan; nothing is moved by a gesture callback
+      or culling code. A test pans hard at every turn and zoom and checks every picture moves by
+      exactly the pan.
+    - *One visible rect with a margin*: things are drawn when their picture reaches into it, not
+      when their anchor does (loose trees, banners and lanterns at the edges used to be skipped
+      until their anchor came on screen, so they appeared late). Some items' tap shapes ignore
+      their position; their picture rects are now worked out the way their pictures are placed.
+    - *Birds*: their own layer (`IslandLayer.birds`), above everything on the island and never
+      depth-sorted; only baskets and speech bubbles are above them. There are no cloud shadows (note 80).
+    - *One depth-sorted layer for buildings and people* was tried first: every building drawn each
+      frame in one Canvas. With a full Bible that ran at 1–4 fps (about 440 pictures redrawn per
+      frame on the CPU, and around 30 s to render them all after a zoom), so the clipped redraw
+      above was used instead: same result on screen, at the cost of only what's behind each person.
+    Simulator, full Bible, auto-pan: zoom 1: 18–22 fps before, 48–58 after; zoom 3: 23–31 before,
+    60 after; zoom 6: 20–26 before, 54–59 after (simulator numbers; relative only).
 
 
 ## Remove before release

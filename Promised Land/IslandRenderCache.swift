@@ -71,6 +71,22 @@ final class IslandRenderCache {
                     overrides: overrides, hidden: hidden, bake: bake, viewport: viewport)
     }
 
+    /// The land alone (tiles, roads, plots), which is all the ground drawing depends on.
+    func groundSignature(_ island: Island) -> Int {
+        if let known = groundSignatures[island.signature], island.signature != 0 { return known }
+        var h = Hasher()
+        h.combine(island.tiles.count)
+        for t in island.tiles { h.combine(t.x); h.combine(t.y) }
+        for road in island.roads { h.combine(road.count); for t in road { h.combine(t.x); h.combine(t.y) } }
+        for p in island.allPlots { h.combine(p.bookID); h.combine(p.x); h.combine(p.y); h.combine(p.size); h.combine(p.rotation); h.combine(p.bay) }
+        let sig = h.finalize()
+        if groundSignatures.count > 32 { groundSignatures.removeAll() }
+        groundSignatures[island.signature] = sig
+        return sig
+    }
+
+    private var groundSignatures: [Int: Int] = [:]
+
     /// Renders ahead what `frame` would need for this camera (e.g. the next quarter turn), at most
     /// one picture per call so it never holds up a frame. Returns true when everything is ready.
     @discardableResult
@@ -104,7 +120,10 @@ final class IslandRenderCache {
         // Far out (and not mid-reveal), everything that stands still is baked into the ground
         // chunks too: a handful of images instead of a picture per Place and hundreds of items.
         let baked = bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty
-        let groundKey = "\(baked ? "b" : "g")\(island.signature)|\(Int(lb.scale * 100))|\(quarter)|\(Int(size.width))x\(Int(size.height))"
+        // Plain ground depends only on the land: a building growing never re-bakes it. Far out,
+        // the still things are baked in too, so those chunks follow the whole island.
+        let landKey = baked ? "b\(island.signature)" : "l\(groundSignature(island))"
+        let groundKey = "\(landKey)|\(Int(lb.scale * 100))|\(quarter)|\(Int(size.width))x\(Int(size.height))"
         // The ground's extent only changes with the island, zoom bucket, turn and size: worked out once.
         let bounds: CGRect
         if let known = groundExtents[groundKey] { bounds = known } else {
@@ -184,30 +203,48 @@ final class IslandRenderCache {
 
     // MARK: Single items
 
-    /// Draws one item from a cached picture (rendered once per look, zoom bucket and turn): used
-    /// for buildings drawn again in front of people, so they don't cost a full redraw every frame.
+    /// Draws one item from its cached picture (rendered once per look, zoom bucket and turn),
+    /// positioned only from its grid point: used to put buildings back in front of someone standing
+    /// behind them (clipped to that person), so they don't cost a full redraw every frame.
     func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout) {
-        // Render at a bucketed size unit, then scale to the current one.
-        let ub = CGFloat(pow(1.25, ceil(log(Double(max(0.05, layout.u))) / log(1.25))))
+        guard let p = itemPicture(item, layout: layout) else { IslandPainter.drawItem(&c, item, layout: layout); return }
+        let k = layout.u / p.ub
+        let base = layout.point(item.gx, item.gy)
+        c.draw(Image(decorative: p.image, scale: 1),
+               in: CGRect(x: base.x + p.frame.minX * k, y: base.y + p.frame.minY * k, width: p.frame.width * k, height: p.frame.height * k))
+    }
+
+    /// An item's picture at this camera's size bucket and turn (rendered if it isn't cached), with
+    /// its frame relative to the item's grid point, in bucket units.
+    private func itemPicture(_ item: Island.Item, layout: IslandLayout) -> (image: CGImage, frame: CGRect, ub: CGFloat)? {
+        let ub = Self.sizeBucket(layout.u)
         let shape = IslandHitTester.shape(of: item, base: .zero, u: ub)
         let frame = shape.insetBy(dx: -shape.width * 0.3 - 4 * ub, dy: -shape.height * 0.2 - 4 * ub).integral
-        guard frame.width > 0, frame.height > 0, frame.width * frame.height < 4_000_000 else {
-            IslandPainter.drawItem(&c, item, layout: layout); return
-        }
-        var h = Hasher()
-        h.combine(item.kind); h.combine(item.growth); h.combine(item.level); h.combine(item.turned); h.combine(item.facing)
-        h.combine(item.seed); h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
-        h.combine(item.cap); h.combine(item.source.bookID)
-        let key = "i\(h.finalize())|\(Int(ub * 1000))|\(layout.quarter)" as NSString
+        guard frame.width > 0, frame.height > 0, frame.width * frame.height < 4_000_000 else { return nil }
+        let key = itemKey(item, layout: layout)
         let quarter = layout.quarter, mirrored = layout.mirrored
         guard let image = images.object(forKey: key)?.image ?? render(key: key, size: frame.size, draw: { g in
             g.translateBy(x: -frame.minX, y: -frame.minY)
             IslandPainter.drawAtOrigin(&g, item, u: ub, quarter: quarter, layoutMirrored: mirrored)
-        }) else { IslandPainter.drawItem(&c, item, layout: layout); return }
-        let k = layout.u / ub
-        let base = layout.point(item.gx, item.gy)
-        c.draw(Image(decorative: image, scale: 1),
-               in: CGRect(x: base.x + frame.minX * k, y: base.y + frame.minY * k, width: frame.width * k, height: frame.height * k))
+        }) else { return nil }
+        return (image, frame, ub)
+    }
+
+    /// Size units are bucketed ×1.25 apart; pictures are scaled a little in between.
+    static func sizeBucket(_ u: CGFloat) -> CGFloat { CGFloat(pow(1.25, ceil(log(Double(max(0.05, u))) / log(1.25)))) }
+
+    /// Is this item's picture at this camera already rendered?
+    func hasPicture(_ item: Island.Item, layout: IslandLayout) -> Bool {
+        images.object(forKey: itemKey(item, layout: layout)) != nil
+    }
+
+    private func itemKey(_ item: Island.Item, layout: IslandLayout) -> NSString {
+        let ub = Self.sizeBucket(layout.u)
+        var h = Hasher()
+        h.combine(item.kind); h.combine(item.growth); h.combine(item.level); h.combine(item.turned); h.combine(item.facing)
+        h.combine(item.seed); h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
+        h.combine(item.cap); h.combine(item.source.bookID)
+        return "i\(h.finalize())|\(Int(ub * 1000))|\(layout.quarter)" as NSString
     }
 
     /// Any small code-drawn picture, rendered once per `key` and reused (e.g. produce baskets).
