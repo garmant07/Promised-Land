@@ -76,3 +76,33 @@ enum IslandLayer: Double, CaseIterable {
 
     var z: Double { rawValue }
 }
+
+/// A layer that's drawn again only when `key` changes. The world's layers are drawn in the world's own
+/// coordinates and moved into view by one offset, so a pan within a step changes nothing in them:
+/// with this, they aren't re-rendered then, only moved (the same as the ground).
+struct KeyedLayer<Key: Equatable & Sendable, Content: View>: View, Equatable {
+    nonisolated let key: Key
+    @ViewBuilder let content: () -> Content
+
+    nonisolated static func == (a: Self, b: Self) -> Bool { a.key == b.key }
+
+    var body: some View { content() }
+}
+
+/// What the people layer shows: if none of it changed, it isn't drawn again.
+nonisolated struct PeopleLayerKey: Equatable, Sendable {
+    /// The pan step the world is drawn at (not the remainder, which only moves it).
+    let drawPan: CGSize
+    let zoom: CGFloat
+    let angle: CGFloat
+    /// The animation clock (holds still when nothing on the island is moving).
+    let time: Double
+    /// Who's drawn, in order, and what's drawn back over each of them.
+    let people: [String]
+    let over: [[Int]]
+    let facingLeft: Bool
+    /// The avatar's look (its hash).
+    let avatar: Int
+    let zooming: Bool
+    let size: CGSize
+}

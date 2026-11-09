@@ -68,6 +68,13 @@ struct HomeView: View {
 
     @State private var activeSheet: ActiveSheet?
     @State private var selectedItem: Int?
+    /// The cloud cover over the island while it loads, and whether the island says it's ready.
+    @State private var cloudsUp = true
+    @State private var islandLoaded = false
+    @State private var islandMounted = false
+    #if DEBUG
+    static let launchTime = CACurrentMediaTime()
+    #endif
     /// How far the open sheet is pulled up (half or full height).
     @State private var sheetDetent: PresentationDetent = .medium
     #if DEBUG
@@ -205,6 +212,8 @@ struct HomeView: View {
         let waiting = baskets.values.reduce(0, +)
         ZStack {
             Earthy.sea.ignoresSafeArea()
+            // Added a moment after the clouds are up, so its first (heaviest) frame happens under them.
+            if islandMounted {
             PlatformScene(avatar: avatar, island: island, reveal: reveal, revealInitial: revealInitial, revealID: revealID,
                           onRevealStep: { step in
                               withAnimation(.easeInOut(duration: 0.35)) { revealing = step }
@@ -237,8 +246,25 @@ struct HomeView: View {
                           onCollectLanded: collectLanded,
                           showsFPS: showsFPS,
                           paused: islandCovered,
-                          throttled: activeSheet != nil) { index in open(index, in: island) }
+                          throttled: activeSheet != nil,
+                          onLoaded: {
+                              islandLoaded = true
+                              #if DEBUG
+                              print(String(format: "ISLAND loaded %.2f s after launch", CACurrentMediaTime() - Self.launchTime))
+                              #endif
+                          },
+                          holdsBackgroundWork: cloudsUp) { index in open(index, in: island) }
                 .ignoresSafeArea()
+            }
+        }
+        .task {
+            #if DEBUG
+            _ = Self.launchTime
+            #endif
+            // Two screen refreshes: the clouds are on screen before the island is built under them.
+            await FrameTicker.shared.nextFrame()
+            await FrameTicker.shared.nextFrame()
+            islandMounted = true
         }
         .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.top } action: { safeTop = $0 }
         // The status pill is read-only, so touches on it go through to the island.
@@ -311,6 +337,19 @@ struct HomeView: View {
                     .padding(.bottom, 6)
             }
         }
+        // Soft clouds while the island loads; they part once it's drawn and running smoothly.
+        .overlay {
+            if cloudsUp {
+                CloudCover(loaded: islandLoaded) {
+                    #if DEBUG
+                    print(String(format: "CLOUDS cleared %.2f s after launch", CACurrentMediaTime() - Self.launchTime))
+                    #endif
+                    cloudsUp = false
+                    showNewGrowth()
+                }
+                .transition(.identity)
+            }
+        }
         .sheet(item: $activeSheet) { sheet in
             content(for: sheet)
                 .presentationDetents(sheet.detents, selection: detentBinding(sheet))
@@ -335,7 +374,8 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            showNewGrowth()
+            // The new growth is shown once the clouds have parted.
+            if !cloudsUp { showNewGrowth() }
             #if DEBUG
             debugOpen(island)
             #endif

@@ -360,6 +360,7 @@ option was chosen and noted here.
 - [x] Section 4f: Characters shake against the island
 - [x] Section 4g: Zoom-out performance and first-pan stutter
 - [x] Section 4h: Double image when zooming in; glitch while dragging
+- [ ] Section 4i: Remaining shake and cloud loading screen (mostly done; see note 109)
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -738,6 +739,36 @@ runs (and the 4g build has the preload problem above), so both are measured agai
 | Pinch in and out (`-autoZoom`): average, slowest second, worst frame | 40 fps, 11 fps, 450 ms | 37 fps, 4 fps, 350 ms |
 | Pan (`-autoPan`, zoom 3) | 60 fps, worst 33 ms | 59 fps, worst 34 ms |
 | Idle CPU after launch | about 100% of a core for minutes | about 10% |
+
+
+107. **Section 4i: the shake fully zoomed out, measured.** Recorded pans and a still island were
+    compared frame by frame: two parts of the island and the sea moved by the same pixel shift in
+    every frame but one (off by a pixel), and a still island doesn't move. So nothing moves out of
+    step and nothing is rounded differently (the pan is split exactly; one offset moves the world).
+    What it was: dropped frames (judder). The people layer (`IslandView.swift`, the canvas in
+    `PlatformScene.body`) is a full-screen canvas that was redrawn every frame of a pan with almost
+    nothing in it far out, and the avatar's wandering (`wander`) kept the animation clock, and so that
+    redraw, running. Now the layer is redrawn only when what it shows changes (`KeyedLayer`,
+    `PeopleLayerKey`: a pan within a step only moves it, like the ground), the avatar doesn't stroll far
+    out, and the ground and sea are cached as GPU textures (`.drawingGroup()`). Simulator, zoom 1 pan:
+    50–52 fps (slowest second 34–44) before, 54–55 (slowest 44–50) after; close in 60. `-autoPan` now
+    steps once per screen refresh (a fixed sleep drifted against the display and looked like judder).
+108. **Cloud loading screen** (`CloudCover`, `LoadingGate`): soft pastel clouds cover the island when
+    the app opens and on friend and group islands. The island is built under them a moment after they
+    appear; its preload first makes, at up to 40 ms a frame (nothing visible to keep smooth), the
+    whole-island overview and every picture the first view needs, then reports ready (`onLoaded`).
+    The clouds part once it's ready and a dozen frames in a row have been quick, never sooner than
+    0.9 s, never later than 8 s, drifting off the sides over 1.2 s (fading with Reduce Motion). Work
+    after that (half a screen around the view, the far-out baked overview) waits until they've gone.
+    Simulator, full Bible: ready about 2.7–2.9 s after launch, clouds clear at 4.2–4.9 s. The new
+    growth reveal plays after they clear. Also fixed: an island not yet built (signature 0) reported
+    ready at once.
+109. **Not done in 4i (usage limit reached):** for the first ~1.5 s after launch the system launch
+    screen (plain cream, `LaunchBackground`) shows before the app's first frame, so the clouds appear
+    after it. Planned: lay the clouds out at fixed distances from the screen's centre and use a
+    picture of them as the launch image, so the clouds show from the first moment with no visible
+    hand-off. Also not measured: the first pan right after the clouds clear (the 4g test covers that a
+    first pan near the starting view needs no new pictures).
 
 
 ## Remove before release

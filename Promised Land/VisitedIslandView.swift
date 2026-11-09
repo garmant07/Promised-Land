@@ -91,6 +91,8 @@ struct VisitedIslandView: View {
     @State private var card: FriendItemCard.Subject?
     @State private var showingAbout = false
     @State private var safeTop: CGFloat = 0
+    @State private var cloudsUp = true
+    @State private var loaded = false
 
     struct InsideRef: Identifiable { let bookID: String; var id: String { bookID } }
 
@@ -108,8 +110,14 @@ struct VisitedIslandView: View {
                               inside = InsideRef(bookID: bookID)
                           },
                           life: life,
-                          paused: inside != nil) { index in tap(index) }
+                          paused: inside != nil,
+                          onLoaded: { loaded = true },
+                          holdsBackgroundWork: cloudsUp) { index in tap(index) }
                 .ignoresSafeArea()
+            // The same clouds as your own island while theirs loads (under the title bar, so Back works).
+            if cloudsUp {
+                CloudCover(loaded: loaded) { cloudsUp = false }
+            }
             titleBar
         }
         .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.top } action: { safeTop = $0 }

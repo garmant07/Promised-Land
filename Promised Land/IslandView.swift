@@ -52,6 +52,12 @@ struct PlatformScene: View {
     /// Partly covered (a half-height sheet): villagers and characters move at a lower frame rate,
     /// leaving the main thread to the sheet.
     var throttled = false
+    /// Called once the island is ready to show: the pictures around the first view are made and
+    /// everything is placed (for the cloud cover; see `CloudCover`).
+    var onLoaded: (() -> Void)? = nil
+    /// The loading clouds are still up: background work waits until they've gone, so it can't
+    /// disturb the first smooth frames or the reveal.
+    var holdsBackgroundWork = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
 
@@ -167,6 +173,7 @@ struct PlatformScene: View {
                                                 paused: paused || director.isIdleFarOut),
                                      island: island)
                         .equatable()
+                        .drawingGroup()
                         // Bigger than the screen: overflow down and right, never resizing the stack.
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
                         .offset(PanStep.offset(pan))
@@ -229,12 +236,17 @@ struct PlatformScene: View {
                                                          rendered: IslandRenderProgress.shared.generation),
                                               island: island, ordered: ordered, editing: editing)
                                 .equatable()
+                                .drawingGroup()
                                 .zIndex(-1)
                             if beat != nil || !overrides.isEmpty {
                                 // The rest of the island dims a little while something is built.
                                 Color.black.opacity(0.16).frame(width: canvasSize.width, height: canvasSize.height)
                                     .allowsHitTesting(false).transition(.opacity).zIndex(IslandLayer.dim.z)
                             }
+                            // Drawn again only when what it shows changes: a pan within a step only moves it.
+                            KeyedLayer(key: PeopleLayerKey(drawPan: drawPan, zoom: zoom, angle: angle, time: t, people: people.map(\.id),
+                                                           over: over, facingLeft: facingLeft, avatar: avatar.hashValue, zooming: zooming,
+                                                           size: geo.size)) {
                             Canvas { c, _ in
                                 // Worked out in view points; drawn in the world's coordinates.
                                 c.translateBy(x: -slide.width, y: -slide.height)
@@ -284,6 +296,8 @@ struct PlatformScene: View {
                                 }
                             }
                             .frame(width: canvasSize.width, height: canvasSize.height)
+                            }
+                            .equatable()
                             .allowsHitTesting(false)
                             .zIndex(IslandLayer.people.z)
 
@@ -491,7 +505,8 @@ struct PlatformScene: View {
                     while true {
                         let t = Date.now.timeIntervalSince(start)
                         pan = CGSize(width: base.width + cos(t * 0.8) * 160, height: base.height + sin(t * 0.8) * 220)
-                        try? await Task.sleep(for: .milliseconds(16))
+                        // Once per screen refresh, like a finger (a fixed sleep drifts against the display).
+                        await FrameTicker.shared.nextFrame()
                     }
                 }
             }
@@ -642,35 +657,51 @@ struct PlatformScene: View {
     /// ground and Places around the starting view (half a screen further each way), one picture per
     /// frame while the camera is still, never re-planning while pictures are still being made.
     private func preload() async {
-        guard !preloaded, island.signature != 0 else { return }
-        try? await Task.sleep(for: .seconds(0.3))
-        while viewSize == .zero { try? await Task.sleep(for: .seconds(0.1)) }
+        // Not built yet (signature 0): this runs again once it is (the task is keyed by the signature).
+        guard island.signature != 0 else { return }
+        guard !preloaded else { onLoaded?(); return }
+        while viewSize == .zero { try? await Task.sleep(for: .seconds(0.05)) }
         let cache = IslandRenderCache.shared
         let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(viewSize))
         let around = canvas.insetBy(dx: -viewSize.width / 2, dy: -viewSize.height / 2)
-        var overviewDone = false, bakedOverviewDone = false, aroundDone = false
-        while !Task.isCancelled, !(overviewDone && bakedOverviewDone && aroundDone) {
-            if !cameraMoving, cache.pendingCount == 0 {
-                let done = PerfProbe.measure("preload") { () -> Bool in
-                    if !overviewDone {
-                        // The ground alone (no buildings baked in): a stand-in at any zoom, close in under
-                        // the sharp buildings, and far out with the buildings drawn on it separately.
-                        overviewDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: IslandRenderCache.overviewZoom,
-                                                     quarter: quarter, pan: .zero, bake: false, viewport: everything, groundOnly: true)
-                        return false
-                    }
-                    if !bakedOverviewDone {
-                        // With the buildings baked in: far out it stands in whole, so they needn't be
-                        // drawn one by one meanwhile. Only ever used far out (never under sharp buildings).
+
+        // First, under the loading clouds (nothing on screen to keep smooth, so up to 40 ms of each
+        // frame): the whole-island overview (the ground alone), then every picture the first view needs.
+        var overviewDone = false, viewDone = false
+        while !Task.isCancelled, !(overviewDone && viewDone) {
+            let end = CACurrentMediaTime() + 0.04
+            while CACurrentMediaTime() < end, !(overviewDone && viewDone) {
+                if !overviewDone {
+                    overviewDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: IslandRenderCache.overviewZoom,
+                                                 quarter: quarter, pan: .zero, bake: false, viewport: everything, groundOnly: true)
+                } else if cache.pendingCount > 0 {
+                    cache.drainFor(seconds: end - CACurrentMediaTime())   // far-out chunks, made in slices
+                } else {
+                    viewDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: quarter,
+                                             pan: PanStep.drawPan(pan), bake: editing == nil, viewport: canvas)
+                }
+            }
+            await FrameTicker.shared.nextFrame()
+        }
+        guard !Task.isCancelled else { return }
+        onLoaded?()
+
+        // Then, once it's showing, between frames and only while nothing moves: half a screen further
+        // each way, and last the overview with the buildings baked in (far out it stands in whole, so
+        // they needn't be drawn one by one meanwhile; it's never used under sharp buildings).
+        var aroundDone = false, bakedOverviewDone = false
+        while !Task.isCancelled, !(aroundDone && bakedOverviewDone) {
+            if !cameraMoving, !holdsBackgroundWork, cache.pendingCount == 0 {
+                PerfProbe.measure("preload") {
+                    if !aroundDone {
+                        aroundDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: quarter,
+                                                   pan: PanStep.drawPan(pan), bake: editing == nil, viewport: around)
+                    } else {
                         bakedOverviewDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: IslandRenderCache.overviewZoom,
                                                           quarter: quarter, pan: .zero, bake: true, viewport: everything)
-                        return false
                     }
-                    return cache.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: quarter,
-                                         pan: PanStep.drawPan(pan), bake: editing == nil, viewport: around)
                 }
-                if overviewDone && bakedOverviewDone && done { aroundDone = true }
             }
             await FrameTicker.shared.nextFrame()
         }
@@ -1209,6 +1240,9 @@ struct PlatformScene: View {
             guard let tile = nearby.randomElement() else { continue }
             let target = CGPoint(x: Double(tile.x) + Double.random(in: 0.2...0.8), y: Double(tile.y) + Double.random(in: 0.2...0.8))
             guard visit == nil else { continue } // stay at the door while visiting
+            // Far out you're a few pixels tall: no strolling (it would keep the people layer redrawing
+            // every frame for nothing). Zoom in and you carry on.
+            guard !director.isIdleFarOut else { continue }
             await walk(to: target)
         }
     }

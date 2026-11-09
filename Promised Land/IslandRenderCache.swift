@@ -425,6 +425,21 @@ final class IslandRenderCache {
         drain()
     }
 
+    /// Makes pictures waiting in the background for up to `seconds` now (while the island is still
+    /// covered by the loading clouds, when a longer frame can't be seen). True if nothing is left.
+    @discardableResult
+    func drainFor(seconds: Double) -> Bool {
+        let end = CACurrentMediaTime() + seconds
+        while let next = pending.first, CACurrentMediaTime() < end {
+            if images.object(forKey: next.key) != nil { pending.removeFirst(); partial[next.key] = nil; continue }
+            if renderSlice(next) {
+                if !pending.isEmpty, pending[0].key == next.key { pending.removeFirst() }
+                IslandRenderProgress.shared.generation += 1
+            }
+        }
+        return pending.isEmpty
+    }
+
     /// For tests: makes everything waiting now, without waiting for frames.
     func drainNow() {
         while let next = pending.first {

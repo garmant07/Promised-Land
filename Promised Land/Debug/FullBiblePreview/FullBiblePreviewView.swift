@@ -58,7 +58,7 @@ struct FullBiblePreviewView: View {
                               editing: editing ? IslandEditing(selected: editSelected, onDrag: drag, onSelect: { editSelected = $0 }) : nil,
                               life: IslandLife.make(island: island, baskets: waiting(island)),
                               collectFlight: flight, collectTarget: target, onCollectLanded: landed,
-                              showsFPS: showsFPS) { selected = $0 }
+                              showsFPS: showsFPS, onTap: { selected = $0 })
                     .ignoresSafeArea()
             }
         }
