@@ -160,11 +160,37 @@ final class IslandRenderCache {
         }
     }
 
+    /// The same chunk as `chunkDrawing`, in slices to render one per frame: the ground, then the baked
+    /// buildings and trees a dozen at a time (back to front). Far out a chunk holds hundreds of them and
+    /// took 300–600 ms in one go; a slice is a few milliseconds.
+    private func chunkSteps(island: Island, bucket b: Bucket, rect: CGRect) -> [(inout GraphicsContext) -> Void] {
+        let lb = b.lb
+        let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
+        let local = CGRect(origin: .zero, size: rect.size)
+        var steps: [(inout GraphicsContext) -> Void] = [{ c in IslandPainter.drawTiles(&c, island: island, layout: l, visible: local) }]
+        guard b.baked else { return steps }
+        let margin = l.u * 240
+        let items = island.items.sorted(by: { l.depth($0.gx, $0.gy) < l.depth($1.gx, $1.gy) })
+            .filter { local.insetBy(dx: -margin, dy: -margin).contains(l.point($0.gx, $0.gy)) }
+        for start in stride(from: 0, to: items.count, by: Self.itemsPerSlice) {
+            let batch = Array(items[start..<min(items.count, start + Self.itemsPerSlice)])
+            steps.append { c in for item in batch { IslandPainter.drawItem(&c, item, layout: l) } }
+        }
+        return steps
+    }
+
+    static let itemsPerSlice = 12
+
     /// The other zoom buckets, nearest first (for drawing something that's already cached while a
     /// picture for this zoom is still being rendered).
     private static func neighbours(of zb: CGFloat) -> [CGFloat] {
-        buckets.filter { $0 != zb }.sorted { abs(log($0 / zb)) < abs(log($1 / zb)) }.prefix(6).map { $0 }
+        let near = buckets.filter { $0 != zb }.sorted { abs(log($0 / zb)) < abs(log($1 / zb)) }.prefix(6).map { $0 }
+        // The whole-island overview (zoom 1, made when the island first appears) is always the last resort.
+        return near.contains(overviewZoom) || zb == overviewZoom ? near : near + [overviewZoom]
     }
+
+    /// The zoom the whole-island overview is drawn at.
+    static let overviewZoom: CGFloat = 1
 
     private func plan(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
                       overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool, viewport: CGRect?, deferMissing: Bool = false) -> Frame? {
@@ -192,7 +218,8 @@ final class IslandRenderCache {
 
         // Ground chunks: every one in view, worked out from the camera now.
         let chunk = Self.chunk
-        var missing: [(dest: CGRect, key: NSString, size: CGSize, draw: (inout GraphicsContext) -> Void)] = []
+        var missing: [(dest: CGRect, key: NSString, size: CGSize, scale: CGFloat, draw: (inout GraphicsContext) -> Void,
+                       steps: () -> [(inout GraphicsContext) -> Void])] = []
         let x0 = Int(floor(b.bounds.minX / chunk)), x1 = Int(floor(b.bounds.maxX / chunk))
         let y0 = Int(floor(b.bounds.minY / chunk)), y1 = Int(floor(b.bounds.maxY / chunk))
         for cy in y0...y1 {
@@ -205,8 +232,14 @@ final class IslandRenderCache {
                     frame.ground.append((image, dest))
                     if b.baked { frame.bakedGround.append(dest) }
                 } else if deferMissing {
-                    missing.append((dest, key, rect.size, chunkDrawing(island: island, bucket: b, rect: rect)))
-                } else if let image = render(key: key, size: rect.size, draw: chunkDrawing(island: island, bucket: b, rect: rect)) {
+                    missing.append((dest, key, rect.size, chunkScale(b), chunkDrawing(island: island, bucket: b, rect: rect),
+                                    { self.chunkSteps(island: island, bucket: b, rect: rect) }))
+                } else if renderBudget != nil, b.baked {
+                    // Warming ahead: a far-out chunk is far too big to render in one frame; it's made
+                    // in slices in the background instead (and this warm-up isn't done until it is).
+                    skipped += 1
+                    enqueue(Pending(key: key, size: rect.size, scale: chunkScale(b), steps: chunkSteps(island: island, bucket: b, rect: rect)))
+                } else if let image = render(key: key, size: rect.size, scale: chunkScale(b), draw: chunkDrawing(island: island, bucket: b, rect: rect)) {
                     frame.ground.append((image, dest))
                     if b.baked { frame.bakedGround.append(dest) }
                 }
@@ -247,12 +280,12 @@ final class IslandRenderCache {
             for m in missing {
                 if open.contains(where: { $0.key == m.key }) {
                     // Nothing cached at any zoom: draw it now.
-                    if let image = render(key: m.key, size: m.size, draw: m.draw) {
+                    if let image = render(key: m.key, size: m.size, scale: m.scale, draw: m.draw) {
                         frame.ground.append((image, m.dest))
                         if b.baked { frame.bakedGround.append(m.dest) }
                     }
                 } else {
-                    queued.append(Pending(key: m.key, size: m.size, draw: m.draw))
+                    queued.append(Pending(key: m.key, size: m.size, scale: m.scale, steps: m.steps()))
                 }
             }
         }
@@ -308,11 +341,13 @@ final class IslandRenderCache {
                     self.images.object(forKey: "p\(content)|\(Int(b2.lb.scale * 100))|\(quarter)" as NSString).map { ($0.image, b2) }
                 }).first {
                     layers.append((depth, .picture(image, screen(placeRect(plot, layout: b2.lb), b2.k))))
-                    if !b.baked { queued.append(Pending(key: key, size: rect.size, draw: draw)) }
+                    if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
                     continue
                 }
-                if b.baked {
-                    // No picture of it at any zoom yet: its pieces are drawn directly meanwhile.
+                if b.baked || interacting {
+                    // No picture of it at any zoom yet: its pieces are drawn directly meanwhile (never a
+                    // picture rendered mid-gesture); it gets its picture once the camera stops.
+                    if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
                     for i in indices { layers.append((lb.point(island.items[i].gx, island.items[i].gy).y, .item(island.items[i]))) }
                     continue
                 }
@@ -339,27 +374,67 @@ final class IslandRenderCache {
     private struct Pending {
         let key: NSString
         let size: CGSize
-        let draw: (inout GraphicsContext) -> Void
+        let scale: CGFloat
+        /// Rendered one per frame, each over the last.
+        let steps: [(inout GraphicsContext) -> Void]
     }
+
+    /// A picture being made in slices: what's done so far, and how many slices that is.
+    private var partial: [NSString: (image: CGImage, done: Int)] = [:]
 
     private var pending: [Pending] = []
     private var draining = false
+    /// Pictures the latest frame is still waiting for (drawn meanwhile from another zoom).
+    var pendingCount: Int { pending.count }
     /// Off: pictures a frame still needs are only drawn from another zoom, never rendered later
     /// (for tests that check the stand-ins, without leaving rendering running behind them).
     var rendersInBackground = true
+    /// The camera is moving (a finger down, a pinch or a glide): nothing is rendered in the
+    /// background meanwhile, so no frame of a gesture is spent rendering; it picks up when it stops.
+    var interacting = false {
+        didSet { if !interacting, oldValue { drain() } }
+    }
 
     /// The pictures the latest frame still needs replace any older list (the camera may have moved
     /// on), and are rendered one per screen refresh; each one bumps `IslandRenderProgress` so the
     /// ground is drawn again with it.
     private func finish(_ queued: [Pending], _ deferMissing: Bool) {
         guard deferMissing, rendersInBackground else { return }
-        pending = queued
-        guard !pending.isEmpty, !draining else { return }
+        // What this frame needs comes first; anything still waiting from before (warming ahead, a
+        // chunk half made) stays behind it.
+        let wanted = Set(queued.map { $0.key })
+        pending = queued + pending.filter { !wanted.contains($0.key) }.prefix(48)
+        drain()
+    }
+
+    /// For tests: makes everything waiting now, without waiting for frames.
+    func drainNow() {
+        while let next = pending.first {
+            if images.object(forKey: next.key) != nil { pending.removeFirst(); partial[next.key] = nil; continue }
+            if renderSlice(next), !pending.isEmpty, pending[0].key == next.key { pending.removeFirst() }
+        }
+    }
+
+    /// Adds a picture to make in the background (if it isn't waiting already).
+    private func enqueue(_ job: Pending) {
+        guard rendersInBackground, !pending.contains(where: { $0.key == job.key }) else { return }
+        pending.append(job)
+        drain()
+    }
+
+    private func drain() {
+        guard !pending.isEmpty, !draining, !interacting else { return }
         draining = true
         Task { @MainActor in
-            while !self.pending.isEmpty {
-                let next = self.pending.removeFirst()
-                if self.images.object(forKey: next.key) == nil, self.render(key: next.key, size: next.size, draw: next.draw) != nil {
+            while let next = self.pending.first, !self.interacting {
+                if self.images.object(forKey: next.key) != nil {
+                    self.pending.removeFirst()
+                    self.partial[next.key] = nil
+                    continue
+                }
+                // One slice this frame.
+                if self.renderSlice(next) {
+                    if !self.pending.isEmpty, self.pending[0].key == next.key { self.pending.removeFirst() }
                     IslandRenderProgress.shared.generation += 1
                 }
                 await FrameTicker.shared.nextFrame()
@@ -367,6 +442,45 @@ final class IslandRenderCache {
             self.draining = false
         }
     }
+
+    /// Renders the next slice of a picture over what's done so far. True when it's finished (and cached).
+    private func renderSlice(_ job: Pending) -> Bool {
+        let done = partial[job.key]
+        let step = job.steps[done?.done ?? 0]
+        let renderer = ImageRenderer(content: Canvas { c, _ in step(&c) }.frame(width: job.size.width, height: job.size.height))
+        renderer.scale = job.scale
+        #if DEBUG
+        renders += 1
+        #endif
+        guard let layer = renderer.cgImage else { pending.removeFirst(); partial[job.key] = nil; return false }
+        // Combining should never fail (plain 8-bit sRGB); if it did, start the picture again rather
+        // than keep a part of it.
+        var image = layer
+        if let done {
+            guard let both = Self.composite(done.image, layer) else { partial[job.key] = nil; return false }
+            image = both
+        }
+        let count = (done?.done ?? 0) + 1
+        guard count >= job.steps.count else { partial[job.key] = (image, count); return false }
+        partial[job.key] = nil
+        images.setObject(ImageBox(image), forKey: job.key, cost: image.bytesPerRow * image.height)
+        return true
+    }
+
+    /// One picture drawn over another (same size), with plain Core Graphics.
+    private static func composite(_ below: CGImage, _ above: CGImage) -> CGImage? {
+        guard let space = CGColorSpace(name: CGColorSpace.sRGB),
+              let ctx = CGContext(data: nil, width: below.width, height: below.height, bitsPerComponent: 8, bytesPerRow: 0,
+                                  space: space, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
+        let r = CGRect(x: 0, y: 0, width: below.width, height: below.height)
+        ctx.draw(below, in: r)
+        ctx.draw(above, in: r)
+        return ctx.makeImage()
+    }
+
+    /// Far out, ground chunks (with the buildings baked in) are rendered at 1× instead of 2×: a
+    /// quarter of the pixels, so a quarter of the time and memory, and too small on screen to tell.
+    private func chunkScale(_ b: Bucket) -> CGFloat { b.baked ? 1 : renderScale }
 
     // MARK: Single items
 
@@ -418,6 +532,7 @@ final class IslandRenderCache {
     func removeAll() {
         images.removeAllObjects()
         pending = []
+        partial = [:]
     }
 
     /// Any small code-drawn picture, rendered once per `key` and reused (e.g. produce baskets).
@@ -469,7 +584,7 @@ final class IslandRenderCache {
         return keys
     }
 
-    private func render(key: NSString, size: CGSize, draw: @escaping (inout GraphicsContext) -> Void) -> CGImage? {
+    private func render(key: NSString, size: CGSize, scale: CGFloat? = nil, draw: @escaping (inout GraphicsContext) -> Void) -> CGImage? {
         if let budget = renderBudget {
             guard budget > 0 else { skipped += 1; return nil }
             renderBudget = budget - 1
@@ -478,7 +593,7 @@ final class IslandRenderCache {
         renders += 1
         #endif
         let renderer = ImageRenderer(content: Canvas { c, _ in draw(&c) }.frame(width: size.width, height: size.height))
-        renderer.scale = renderScale
+        renderer.scale = scale ?? renderScale
         guard let image = renderer.cgImage else { return nil }
         images.setObject(ImageBox(image), forKey: key, cost: image.bytesPerRow * image.height)
         return image

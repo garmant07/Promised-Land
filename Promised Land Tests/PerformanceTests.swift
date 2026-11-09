@@ -100,7 +100,7 @@ struct PerformanceTests {
         #expect(q.request(-1) == -1)
     }
 
-    @Test("Warming ahead renders what a quarter turn needs, one picture per call; the turn then draws nothing new")
+    @Test("Warming ahead makes what a quarter turn needs between frames (never all in one); the turn then draws nothing new")
     func prewarmNextQuarter() {
         let cache = IslandRenderCache.shared
         let island = Self.island
@@ -110,9 +110,13 @@ struct PerformanceTests {
         var calls = 0
         while !cache.prewarm(island: island, size: size, insets: EdgeInsets(), zoom: zoom, quarter: 1, pan: pan, bake: true) {
             calls += 1
+            // Far-out chunks are made in slices in the background, between frames: here, at once.
+            cache.drainNow()
             if calls > 500 { break }
         }
-        #expect(calls > 1)  // more than one picture, rendered one per call
+        // Not done in one go: at most one picture per call close in; far-out chunks are queued and
+        // made in slices between frames.
+        #expect(calls >= 1)
         let before = cache.renders
         let frame = cache.frame(island: island, size: size, insets: EdgeInsets(), zoom: zoom, quarter: 1, pan: pan,
                                 overrides: [:], hidden: [])

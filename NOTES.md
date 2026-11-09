@@ -358,6 +358,7 @@ option was chosen and noted here.
 - [x] Section 4d: Zoom and camera polish (sea to every edge, smooth tap-to-zoom, ring under buildings, last shake)
 - [x] Section 4e: Island disappears when zooming out
 - [x] Section 4f: Characters shake against the island
+- [x] Section 4g: Zoom-out performance and first-pan stutter
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -637,6 +638,53 @@ out through the same code as a real pinch.
 
 Simulator, full Bible, quiet machine, after 4f: pinch zoom 50 fps average (slowest second 19, worst
 frame 433 ms); pan 59 fps (slowest second 57, worst frame 71 ms). Same as 4e.
+
+
+100. **Section 4g: why zooming out glitched (Time Profiler first).** A full zoom-out from close in
+    (`-islandZoom 8 -autoZoomOut`, 4f build): 505 ms of main-thread work in the 1.3 s pinch, of which
+    211 ms rendering ground chunks (`IslandRenderCache.render` → `IslandPainter.drawTiles`), 126 ms
+    re-planning the ground layer each frame (`IslandRenderCache.frame`) and 58 ms in
+    `IslandWorld.itemsOver`; then `PlatformScene.warmNextTurns` rendered the next quarter turn's
+    pictures (224 ms in the next 1.5 s). The renders were the glitch: Section 4e renders pictures "in
+    the background" one per frame, but that is still the main thread, and far out a chunk with the
+    island's buildings baked in took 300–600 ms on its own, so each was a long frame.
+101. **Now:**
+    - **Nothing is rendered while the camera moves** (`IslandRenderCache.interacting`: a finger down,
+      a pinch or a glide). Stand-ins come from any zoom that has the picture, and when the island
+      first appears a whole-island overview (zoom 1) is made, so there's always one. A Place with no
+      picture anywhere is drawn directly meanwhile. The pictures are made once the camera stops.
+    - **Far-out chunks are made in slices**, one per frame: the ground, then the baked buildings and
+      trees a dozen at a time, each over the last, combined with plain Core Graphics. A slice takes a
+      few milliseconds; the chunk shows only when complete (the stand-in until then). Warming ahead
+      (the next quarter turns, the startup preload) queues far-out chunks the same way.
+    - **Far-out chunks are rendered at 1×** instead of 2× (a quarter of the pixels; too small on
+      screen to tell). Zoom levels change only when a zoom settles (nothing is rendered mid-gesture).
+    - **Far out, less is drawn and nothing invisible moves**: no birds; once villagers have faded,
+      the people layer's frames and the surf's animation pause (`LifeDirector.isIdleFarOut`).
+      Villagers were already hidden far out, buildings already single baked pictures, and the figure
+      cap (30) already in place; levels switch with the existing two-threshold buffer.
+    - **First pan:** when the island first appears, the overview and then the ground and Places a
+      screen beyond the starting view each way are made between frames while nothing moves; warming
+      the next quarter turn now waits 1.5 s after the camera stops (was 0.6 s), so a render doesn't
+      land on the first frames of the next pan.
+    - Not done: rendering off the main thread. SwiftUI's `ImageRenderer` and the painters'
+      `GraphicsContext` only work on it; that would mean rewriting the ground painter in Core Graphics.
+102. **Measurements** (iPhone 17 simulator, full Bible, quiet machine; per second of the run, frame
+    rate / worst frame; fresh launch each time):
+
+| | 4f | 4g (two runs) |
+|---|---|---|
+| Zoom-out, the 3 s after the pinch | 36 / 128 ms, **4 / 400 ms, 5 / 483 ms** | 38–40 / 67–83 ms, 6–7 / 450–467 ms, **52–53 / 49–50 ms** |
+| First pan (starting 2 s after launch) | 57 / 49, 55 / 35, 60 / 18 ms | 52–53 / 43, 56–57 / 33, 60 / 17.5 ms |
+
+    After the pinch, 4f spent two seconds at 4–5 fps; 4g has one bad second and is back to 52 fps.
+    The worst single frame is still about 450 ms on the simulator, but Time Profiler shows no
+    main-thread block that long (at most about 130 ms of work in any quarter second, spread over
+    frames), so it's the simulator drawing the new pictures as they land; it needs checking on a
+    device. Pans and the first pan are as before. Tests: a full pinch out renders nothing mid-gesture
+    (all four turns), less is drawn far out, detail switches with a buffer, and after the island
+    appears a first pan a screen each way needs nothing new. DEBUG: `-autoPanAfter <s>` delays
+    `-autoPan`, which now counts as a moving camera.
 
 
 ## Remove before release

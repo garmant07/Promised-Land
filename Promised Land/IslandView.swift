@@ -84,6 +84,10 @@ struct PlatformScene: View {
     @State private var cameraGlide = 0
     /// A tap-to-zoom move is playing: touches are ignored until it lands.
     @State private var cameraLocked = false
+    /// A camera glide is playing (for `cameraMoving`).
+    @State private var gliding = false
+    /// The whole-island overview and the pictures around the first view have been made.
+    @State private var preloaded = false
     /// The view's size (for camera moves started outside the geometry reader).
     @State private var viewSize: CGSize = .zero
     /// The last tap on empty ground, for double-tap to zoom.
@@ -156,14 +160,19 @@ struct PlatformScene: View {
                     // so panning only moves them (see IslandLayers.swift).
                     // The sea follows the camera itself, even mid-zoom, so it always fills the screen.
                     IslandWavesLayer(key: .init(signature: island.signature, zoom: zoom, angle: angle, pan: PanStep.drawPan(pan), size: geo.size,
-                                                insets: insets, reduceMotion: reduceMotion, paused: paused),
+                                                insets: insets, reduceMotion: reduceMotion,
+                                                // Far out the surf is too small to see move: it holds still.
+                                                paused: paused || director.isIdleFarOut),
                                      island: island)
                         .equatable()
                         // Bigger than the screen: overflow down and right, never resizing the stack.
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
                         .offset(PanStep.offset(pan))
-                    TimelineView(.animation(minimumInterval: throttled ? 1.0 / 30 : nil, paused: paused || (!walking && beat == nil && !bouncing && characters.isEmpty && flight == nil
-                                            && (life.isEmpty || editing != nil || reduceMotion)))) { context in
+                    // Far out (everyone faded away) nothing moving is big enough to see: no frames are
+                    // spent on the people layer until something happens or you zoom back in.
+                    TimelineView(.animation(minimumInterval: throttled ? 1.0 / 30 : nil, paused: paused || (!walking && beat == nil && !bouncing && flight == nil
+                                            && (characters.isEmpty || director.isIdleFarOut)
+                                            && (life.isEmpty || editing != nil || reduceMotion || director.isIdleFarOut)))) { context in
                         let now = context.date
                         let pos = position(at: now)
                         let feet = layout.point(pos.x, pos.y)
@@ -295,8 +304,9 @@ struct PlatformScene: View {
                                 .allowsHitTesting(false)
                                 .zIndex(IslandLayer.effects.z)
                             }
-                            if lifeOn {
-                                // Birds: their own layer, above everything on the island (never depth-sorted).
+                            if lifeOn && tier != .far {
+                                // Birds: their own layer, above everything on the island (never
+                                // depth-sorted); far out they're too small to see and aren't drawn.
                                 Canvas { c, _ in
                                     c.translateBy(x: -slide.width, y: -slide.height)
                                     IslandLife.birds(&c, layout: layout, sky: life.sky, visible: viewport, time: lifeTime)
@@ -469,9 +479,13 @@ struct PlatformScene: View {
             }
             if ProcessInfo.processInfo.arguments.contains("-autoPan") {
                 Task {
+                    // "-autoPanAfter 1.5" waits that long first (a first pan a moment after launch).
+                    if let wait = OpenTiming.argument("-autoPanAfter").flatMap(Double.init) { try? await Task.sleep(for: .seconds(wait)) }
                     let start = Date.now
                     // Circles around where it started (`-islandPan` to start somewhere else).
                     let base = CGSize(width: pan.width - 160, height: pan.height)
+                    // Counts as a moving camera, as a finger on the screen would.
+                    gliding = true
                     while true {
                         let t = Date.now.timeIntervalSince(start)
                         pan = CGSize(width: base.width + cos(t * 0.8) * 160, height: base.height + sin(t * 0.8) * 220)
@@ -484,6 +498,11 @@ struct PlatformScene: View {
         .onChange(of: island.tiles.count) { _, _ in if !walking { placeCharacter() } }
         .onChange(of: scenePhase) { _, phase in if phase != .active { saveCamera() } }
         .onDisappear { saveCamera() }
+        // Nothing is rendered in the background while the camera moves (see `IslandRenderCache.interacting`).
+        .onChange(of: cameraMoving, initial: true) { _, moving in IslandRenderCache.shared.interacting = moving }
+        // When the island first appears: the whole-island overview (the last stand-in at any zoom),
+        // then the pictures around the starting view, between frames, so the first pan is smooth.
+        .task(id: island.signature) { await preload() }
         // Once the camera is still, render ahead what the next quarter turn either way will show.
         .task(id: WarmKey(signature: island.signature, zoom: zoomStart, pan: panStart, quarter: quarter, size: viewSize,
                           editing: editing != nil, paused: paused)) {
@@ -592,7 +611,8 @@ struct PlatformScene: View {
     /// only while nothing moves. A turn then finds them cached instead of drawing them on the spot.
     private func warmNextTurns() async {
         guard viewSize != .zero, !paused, island.signature != 0 else { return }
-        try? await Task.sleep(for: .seconds(0.6))
+        // Well after the camera stops, so a render never lands on the first frames of the next pan.
+        try? await Task.sleep(for: .seconds(1.5))
         let q = ((quarter % 4) + 4) % 4
         for target in [(q + 1) % 4, (q + 3) % 4] {
             while !Task.isCancelled {
@@ -610,6 +630,38 @@ struct PlatformScene: View {
         }
     }
 
+    /// The camera is moving: a finger down, a pinch, or a glide.
+    private var cameraMoving: Bool { touchDown || pinchAnchor != nil || gliding }
+
+    /// Makes the whole-island overview, then the ground and Places around the starting view (a screen
+    /// further each way), one picture per frame while the camera is still.
+    private func preload() async {
+        guard !preloaded, island.signature != 0 else { return }
+        try? await Task.sleep(for: .seconds(0.3))
+        while viewSize == .zero { try? await Task.sleep(for: .seconds(0.1)) }
+        let cache = IslandRenderCache.shared
+        let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
+        let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(viewSize))
+        let around = canvas.insetBy(dx: -viewSize.width, dy: -viewSize.height)
+        var overviewDone = false, aroundDone = false
+        while !Task.isCancelled, !(overviewDone && aroundDone) {
+            if !cameraMoving {
+                let done = PerfProbe.measure("preload") { () -> Bool in
+                    if !overviewDone {
+                        overviewDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: IslandRenderCache.overviewZoom,
+                                                     quarter: quarter, pan: .zero, bake: true, viewport: everything)
+                        return false
+                    }
+                    return cache.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: quarter,
+                                         pan: PanStep.drawPan(pan), bake: editing == nil, viewport: around)
+                }
+                if overviewDone && done { aroundDone = true }
+            }
+            await FrameTicker.shared.nextFrame()
+        }
+        preloaded = true
+    }
+
     /// Glides the camera to a new zoom and pan. Done frame by frame, because the island's
     /// drawing has the camera built in (SwiftUI can't interpolate a Canvas on its own).
     /// A new touch or camera move cancels a glide in progress.
@@ -620,9 +672,10 @@ struct PlatformScene: View {
         let fromZoom = zoom, fromPan = pan
         zoomStart = toZoom
         panStart = toPan
-        guard !reduceMotion, duration > 0.05 else { zoom = toZoom; pan = toPan; return }
+        guard !reduceMotion, duration > 0.05 else { zoom = toZoom; pan = toPan; gliding = false; return }
         let glide = CameraGlide(fromZoom: fromZoom, toZoom: toZoom, fromPan: fromPan, toPan: toPan,
                                 start: CACurrentMediaTime(), duration: duration, easeOut: easeOut)
+        gliding = true
         Task {
             // Once per screen refresh, from the clock: the camera is always exactly where the glide
             // says at that moment, however the frames fall (a fixed sleep drifted against the
@@ -635,7 +688,7 @@ struct PlatformScene: View {
                 if glide.isDone(at: now) { break }
                 await FrameTicker.shared.nextFrame()
             }
-            if cameraGlide == token { cameraLocked = false }
+            if cameraGlide == token { cameraLocked = false; gliding = false }
         }
     }
 
@@ -871,6 +924,7 @@ struct PlatformScene: View {
         touchDown = true
         if zoom != zoomStart || pan != panStart { zoomStart = zoom; panStart = pan }
         cameraGlide += 1
+        gliding = false
         touchID += 1
         let id = touchID
         let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
@@ -916,6 +970,7 @@ struct PlatformScene: View {
         pinched = true
         if pinchAnchor == nil {
             cameraGlide += 1
+            gliding = false
             isPanning = false
             pinchAnchor = location
             pinchFrom = (zoom, pan)

@@ -171,6 +171,9 @@ final class LifeDirector {
         return out.sorted { $0.point.y < $1.point.y }
     }
 
+    /// Far out with everyone faded away: nothing on the island moves that's big enough to see.
+    var isIdleFarOut: Bool { tier == .far && opacities.isEmpty }
+
     /// For tests: how strongly a figure shows now.
     func opacity(_ id: String) -> Double { opacities[id] ?? 0 }
 }
