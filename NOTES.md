@@ -632,7 +632,7 @@ out through the same code as a real pinch.
     parallel, the zoom-out coverage tests filled the shared picture cache with hundreds of megabytes
     while pixel tests rendered their own, and `ImageRenderer` returned blank images, failing the
     selection-ring and sea tests at random. (In the app the cache holds one view size and measured
-    about 150 MB with a full Bible; note 26 of the performance round.)
+    about 150 MB with a full Bible, per the note in `IslandRenderCache`.)
 99. **`-autoPan`** (DEBUG) now circles around where it starts, so `-islandPan` can start it elsewhere.
 
 Simulator, full Bible, quiet machine, after 4f: pinch zoom 50 fps average (slowest second 19, worst
