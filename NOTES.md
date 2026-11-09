@@ -359,6 +359,7 @@ option was chosen and noted here.
 - [x] Section 4e: Island disappears when zooming out
 - [x] Section 4f: Characters shake against the island
 - [x] Section 4g: Zoom-out performance and first-pan stutter
+- [x] Section 4h: Double image when zooming in; glitch while dragging
 
 71. **Still no CLAUDE.md.** As note 12: this round follows NOTES.md, AUDIT.md and the existing code.
 72. **The reading timer is a per-chapter `ReadingSession`** (`ReadingGate.swift`), kept in
@@ -685,6 +686,58 @@ frame 433 ms); pan 59 fps (slowest second 57, worst frame 71 ms). Same as 4e.
     (all four turns), less is drawn far out, detail switches with a buffer, and after the island
     appears a first pan a screen each way needs nothing new. DEBUG: `-autoPanAfter <s>` delays
     `-autoPan`, which now counts as a moving camera.
+
+
+103. **Section 4h: why zooming back in showed a blurry copy behind the sharp island.** In
+    `IslandRenderCache.plan`, a ground chunk not yet rendered at the current zoom is drawn from
+    another zoom meanwhile (Section 4e). That stand-in was taken from any zoom, so close in it was often
+    a far-out chunk (or 4g's overview) with the buildings baked in, under the sharp Place pictures drawn
+    on their own: a blurry copy of every building behind the sharp one. Stand-ins were also drawn whole,
+    not just in the gap they fill, so they showed through the transparent parts (sea, sky above the
+    land) of the chunks around it; and far out, buildings drawn on a ground-only stand-in weren't kept
+    to it, so one on its edge could be drawn on top of its own baked copy next door.
+104. **Now each part of the island has exactly one picture at a time:** a stand-in is only ever one
+    drawn the same way (close in, ground alone; far out, ground with buildings, or failing that ground
+    alone with its buildings drawn on it); every stand-in is clipped to exactly the gap it fills
+    (`Frame.ground[].clip`), and buildings drawn on a far-out stand-in are clipped to it
+    (`Frame.layerClip`). There's no crossfade; a chunk's own picture replaces the stand-in in the
+    redraw where it's ready. When the island first appears it makes two overviews: the ground alone
+    (a handful of pictures; the stand-in close in) and then, in slices, the ground with the buildings
+    baked in (the stand-in far out). Tests zoom fully out and back in, by pinch and by tap-to-zoom, at
+    all four turns, mid-gesture (stand-ins everywhere), and check every frame: no baked stand-in close
+    in, no two ground pictures overlapping, and no building drawn over its baked copy. With the old
+    stand-in choice put back, the test fails at every turn.
+105. **Found on the way: 4g's startup preload never finished.** It made the overview with every
+    building baked in (hundreds of slices for a full Bible) and re-planned the whole island every
+    frame while waiting, so for a minute or more after launch the app ran long frames and one CPU core
+    near 100% (seen as an app left running at 70–100% CPU for 11 minutes). Now the ground-alone
+    overview comes first (a few pictures), nothing re-plans while pictures are still being made, and
+    the area prepared around the first view is half a screen each way. A plain launch left alone
+    settles at about 9–10% of a core (the island's own animation).
+106. **Why dragging glitched, and the hand-off on release** (`dragGesture` in `IslandView.swift`):
+    the first 10 points of a touch tell a tap from a pan, and when the finger passed them the camera
+    jumped to the start plus the whole translation: a 10-point leap in one frame at the start of every
+    pan. On release, the glide aimed at 0.6 × SwiftUI's predicted end point, not the finger's speed,
+    so it sped up or slowed down as you let go. Now `DragPan`: the camera follows the finger 1:1 from
+    the gesture's translation (not added-up steps), starting where it was the moment it became a pan
+    (the slop is taken off, as UIScrollView does), and the glide (eased out) starts at exactly the
+    finger's speed (`velocity × duration ÷ 3`). Checked: the camera is set once per frame by one owner
+    (a drag, pinch or glide; each cancels the others), nothing is rendered mid-gesture (4g), and no
+    leftover glide runs during a drag. Tests: slow, medium and fast drags move the island exactly as far
+    as the finger with no leap; the glide starts where the finger left it, at its speed, and lands on target.
+
+### Section 4h measurements (iPhone 17 simulator, full Bible, quiet machine, same day, same scripts)
+
+Per second of each run, frame rate / worst frame. The simulator was slower than in the 4g notes'
+runs (and the 4g build has the preload problem above), so both are measured again here.
+
+| | 4g | 4h |
+|---|---|---|
+| Zoom-out (`-autoZoomOut` from zoom 8) and after | 18/246, 37/50, 32/108, 17/183, 35/70, 37/100 ms | 35/141, 38/67, 28/83, 19/150, 37/50, 44/83 ms |
+| First pan, from 2 s after launch | 22/117, 35/53, 57/33, 44/72, 39/62 ms | 39/77, 41/67, 52/47, 51/35, 39/68 ms |
+| Pinch in and out (`-autoZoom`): average, slowest second, worst frame | 40 fps, 11 fps, 450 ms | 37 fps, 4 fps, 350 ms |
+| Pan (`-autoPan`, zoom 3) | 60 fps, worst 33 ms | 59 fps, worst 34 ms |
+| Idle CPU after launch | about 100% of a core for minutes | about 10% |
 
 
 ## Remove before release

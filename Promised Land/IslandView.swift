@@ -84,6 +84,8 @@ struct PlatformScene: View {
     @State private var cameraGlide = 0
     /// A tap-to-zoom move is playing: touches are ignored until it lands.
     @State private var cameraLocked = false
+    /// The drag in progress (see `DragPan`).
+    @State private var dragPan = DragPan()
     /// A camera glide is playing (for `cameraMoving`).
     @State private var gliding = false
     /// The whole-island overview and the pictures around the first view have been made.
@@ -618,6 +620,8 @@ struct PlatformScene: View {
             while !Task.isCancelled {
                 // Never while a finger is down, a glide runs or a turn animates.
                 guard !touchDown, turnSnapshot == nil, zoom == zoomStart, pan == panStart else { return }
+                // Pictures still being made in the background (slices of a far-out chunk): let them finish.
+                if IslandRenderCache.shared.pendingCount > 0 { await FrameTicker.shared.nextFrame(); continue }
                 let done = PerfProbe.measure("prewarm") {
                     // Exactly what the ground layer will ask for (rounded pan, canvas a step bigger than the screen).
                     IslandRenderCache.shared.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: target,
@@ -633,8 +637,10 @@ struct PlatformScene: View {
     /// The camera is moving: a finger down, a pinch, or a glide.
     private var cameraMoving: Bool { touchDown || pinchAnchor != nil || gliding }
 
-    /// Makes the whole-island overview, then the ground and Places around the starting view (a screen
-    /// further each way), one picture per frame while the camera is still.
+    /// Makes the whole-island overviews (the ground alone: a handful of pictures, the stand-in close in;
+    /// then the ground with the buildings baked in, made in slices, the stand-in far out), then the
+    /// ground and Places around the starting view (half a screen further each way), one picture per
+    /// frame while the camera is still, never re-planning while pictures are still being made.
     private func preload() async {
         guard !preloaded, island.signature != 0 else { return }
         try? await Task.sleep(for: .seconds(0.3))
@@ -642,20 +648,29 @@ struct PlatformScene: View {
         let cache = IslandRenderCache.shared
         let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(viewSize))
-        let around = canvas.insetBy(dx: -viewSize.width, dy: -viewSize.height)
-        var overviewDone = false, aroundDone = false
-        while !Task.isCancelled, !(overviewDone && aroundDone) {
-            if !cameraMoving {
+        let around = canvas.insetBy(dx: -viewSize.width / 2, dy: -viewSize.height / 2)
+        var overviewDone = false, bakedOverviewDone = false, aroundDone = false
+        while !Task.isCancelled, !(overviewDone && bakedOverviewDone && aroundDone) {
+            if !cameraMoving, cache.pendingCount == 0 {
                 let done = PerfProbe.measure("preload") { () -> Bool in
                     if !overviewDone {
+                        // The ground alone (no buildings baked in): a stand-in at any zoom, close in under
+                        // the sharp buildings, and far out with the buildings drawn on it separately.
                         overviewDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: IslandRenderCache.overviewZoom,
-                                                     quarter: quarter, pan: .zero, bake: true, viewport: everything)
+                                                     quarter: quarter, pan: .zero, bake: false, viewport: everything, groundOnly: true)
+                        return false
+                    }
+                    if !bakedOverviewDone {
+                        // With the buildings baked in: far out it stands in whole, so they needn't be
+                        // drawn one by one meanwhile. Only ever used far out (never under sharp buildings).
+                        bakedOverviewDone = cache.prewarm(island: island, size: viewSize, insets: insets, zoom: IslandRenderCache.overviewZoom,
+                                                          quarter: quarter, pan: .zero, bake: true, viewport: everything)
                         return false
                     }
                     return cache.prewarm(island: island, size: viewSize, insets: insets, zoom: zoom, quarter: quarter,
                                          pan: PanStep.drawPan(pan), bake: editing == nil, viewport: around)
                 }
-                if overviewDone && done { aroundDone = true }
+                if overviewDone && bakedOverviewDone && done { aroundDone = true }
             }
             await FrameTicker.shared.nextFrame()
         }
@@ -764,10 +779,10 @@ struct PlatformScene: View {
                 // finger left on the screen doesn't pan until it lifts (its drag began before the
                 // pinch, so it would jump).
                 if pinchAnchor != nil || pinched { return }
-                if !isPanning, !TapClassifier.isTap(translation: value.translation) { isPanning = true }
-                if isPanning {
-                    pan = clamp(CGSize(width: panStart.width + value.translation.width,
-                                       height: panStart.height + value.translation.height), size: size)
+                // 1:1 with the finger, from where it stopped being a tap.
+                if let next = dragPan.pan(start: panStart, translation: value.translation) {
+                    isPanning = true
+                    pan = clamp(next, size: size)
                 }
             }
             .onEnded { value in
@@ -782,12 +797,10 @@ struct PlatformScene: View {
                 }
                 if isPanning {
                     isPanning = false
-                    // Keep gliding a little in the direction of the flick.
-                    let carry = CGSize(width: (value.predictedEndTranslation.width - value.translation.width) * 0.6,
-                                       height: (value.predictedEndTranslation.height - value.translation.height) * 0.6)
-                    let target = clamp(CGSize(width: pan.width + carry.width, height: pan.height + carry.height), size: size)
-                    if hypot(carry.width, carry.height) > 8 {
-                        animateCamera(zoom: zoom, pan: target, duration: 0.55, easeOut: true)
+                    // Keep gliding in the direction of the flick, starting at the finger's own speed.
+                    let target = clamp(DragPan.glideTarget(from: pan, velocity: value.velocity), size: size)
+                    if hypot(target.width - pan.width, target.height - pan.height) > 8 {
+                        animateCamera(zoom: zoom, pan: target, duration: DragPan.glideDuration, easeOut: true)
                     } else {
                         panStart = pan
                     }
@@ -922,6 +935,7 @@ struct PlatformScene: View {
     /// A finger went down: in edit mode, grab the plot under it; otherwise watch for a long press.
     private func touchBegan(at location: CGPoint, layout: IslandLayout) {
         touchDown = true
+        dragPan = DragPan()
         if zoom != zoomStart || pan != panStart { zoomStart = zoom; panStart = pan }
         cameraGlide += 1
         gliding = false
@@ -1107,6 +1121,19 @@ struct PlatformScene: View {
                 c.fill(ring, with: .color(Color.green.opacity(0.16))); c.stroke(ring, with: .color(Color(hex: "#5E8C4A")), lineWidth: 2)
             } else {
                 c.stroke(ring, with: .color(Color.primaryBrown.opacity(0.35)), style: StrokeStyle(lineWidth: 1, dash: [3, 3]))
+            }
+        }
+    }
+
+    /// Ground pictures, each a stand-in only inside the gap it fills.
+    static func drawGround(_ c: inout GraphicsContext, _ ground: [(image: CGImage, rect: CGRect, clip: CGRect?)]) {
+        for g in ground {
+            if let clip = g.clip {
+                var inside = c
+                inside.clip(to: Path(clip))
+                inside.draw(Image(decorative: g.image, scale: 1), in: g.rect)
+            } else {
+                c.draw(Image(decorative: g.image, scale: 1), in: g.rect)
             }
         }
     }

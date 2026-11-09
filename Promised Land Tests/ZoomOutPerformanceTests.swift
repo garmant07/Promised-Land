@@ -20,7 +20,7 @@ struct ZoomOutPerformanceTests {
         let cache = IslandRenderCache.shared
         let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
         while !cache.prewarm(island: Self.island, size: Self.size, insets: Self.insets, zoom: IslandRenderCache.overviewZoom,
-                             quarter: quarter, pan: .zero, bake: true, viewport: everything) { cache.drainNow() }
+                             quarter: quarter, pan: .zero, bake: false, viewport: everything, groundOnly: true) { cache.drainNow() }
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(Self.size))
         let around = canvas.insetBy(dx: -Self.size.width, dy: -Self.size.height)
         while !cache.prewarm(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom, quarter: quarter,

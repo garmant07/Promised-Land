@@ -171,3 +171,32 @@ enum PinchSmoothing {
         return exp(log(target) - (d > 0 ? band : -band))
     }
 }
+
+/// One drag of the island. The camera follows the finger 1:1 from the gesture's translation (not
+/// added-up steps, which can skip or double up). The first few points tell a tap from a pan; the pan
+/// starts from there (that slop is taken off), so it doesn't leap the moment a tap becomes a pan, as
+/// it did. On release, the glide (eased out) starts at exactly the finger's speed.
+struct DragPan: Equatable {
+    /// The translation when the finger left the tap zone (nil while it could still be a tap).
+    private(set) var slop: CGSize?
+
+    var isPanning: Bool { slop != nil }
+
+    /// The camera's pan for this translation, or nil while it's still a tap.
+    mutating func pan(start: CGSize, translation: CGSize) -> CGSize? {
+        if slop == nil {
+            guard !TapClassifier.isTap(translation: translation) else { return nil }
+            slop = translation
+        }
+        let s = slop ?? .zero
+        return CGSize(width: start.width + translation.width - s.width, height: start.height + translation.height - s.height)
+    }
+
+    static let glideDuration = 0.55
+
+    /// Where the glide after release ends: an ease-out cubic starts at three times its average speed,
+    /// so going `velocity × duration ÷ 3` makes it start at exactly the finger's speed.
+    static func glideTarget(from pan: CGSize, velocity: CGSize, duration: Double = glideDuration) -> CGSize {
+        CGSize(width: pan.width + velocity.width * duration / 3, height: pan.height + velocity.height * duration / 3)
+    }
+}

@@ -31,7 +31,7 @@ struct ZoomOutCoverageTests {
             let p = layout.point(CGFloat(t.x) + 0.5, CGFloat(t.y) + 0.5)
             guard view.contains(p) else { continue }
             tilesInView += 1
-            if !frame.ground.contains(where: { $0.rect.contains(p) }) { missingTiles += 1 }
+            if !frame.ground.contains(where: { g in (g.clip.map { g.rect.intersection($0) } ?? g.rect).contains(p) }) { missingTiles += 1 }
         }
         #expect(missingTiles == 0, "\(note): \(missingTiles) of \(tilesInView) tiles in view with no ground (zoom \(zoom), turn \(quarter))")
         // Every building in view: in ground that includes buildings, in a Place picture, or drawn as an item.

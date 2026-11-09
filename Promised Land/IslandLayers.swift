@@ -112,7 +112,7 @@ struct IslandGroundLayer: View, Equatable {
             PerfProbe.measure("static") {
                 RenderStats.staticLayer = cached.map { $0.ground.count + $0.layers.count } ?? ordered.count
                 if let cached {
-                    for g in cached.ground { context.draw(Image(decorative: g.image, scale: 1), in: g.rect) }
+                    PlatformScene.drawGround(&context, cached.ground)
                 } else {
                     IslandPainter.drawTiles(&context, island: island, layout: layout)
                 }
@@ -138,11 +138,14 @@ struct IslandGroundLayer: View, Equatable {
                 // (not just its anchor, which left tall things at the edges drawn late).
                 let visible = CGRect(origin: .zero, size: canvas)
                 if let cached {
+                    // Far out over a stand-in, only inside it (see `Frame.layerClip`).
+                    var g = context
+                    if let clip = cached.layerClip { g.clip(to: Path { p in for r in clip { p.addRect(r) } }) }
                     for layer in cached.layers {
                         switch layer {
-                        case .picture(let image, let rect): context.draw(Image(decorative: image, scale: 1), in: rect)
+                        case .picture(let image, let rect): g.draw(Image(decorative: image, scale: 1), in: rect)
                         case .item(let item):
-                            if IslandWorld.pictureRect(item, layout: layout).intersects(visible) { IslandPainter.drawItem(&context, item, layout: layout) }
+                            if IslandWorld.pictureRect(item, layout: layout).intersects(visible) { IslandPainter.drawItem(&g, item, layout: layout) }
                         }
                     }
                 } else {
@@ -220,7 +223,7 @@ struct TurnSnapshotView: View, Equatable {
 
     var body: some View {
         Canvas { c, _ in
-            for g in snapshot.frame.ground { c.draw(Image(decorative: g.image, scale: 1), in: g.rect) }
+            PlatformScene.drawGround(&c, snapshot.frame.ground)
             for layer in snapshot.frame.layers {
                 // Places are pictures; a few loose things (trees, extras) aren't, and are left out
                 // of this 0.3 s picture rather than drawn.
