@@ -1004,7 +1004,7 @@ struct ReadingSuggestion {
             return verse.text
         }
         let place = WorldData.landmark(bookID: book.id)?.name ?? book.name
-        return bible.isLive ? "Builds \(place)." : "Builds \(place). Text coming soon — read along in your own Bible."
+        return bible.isLive ? "Builds \(place)." : "Builds \(place). Read it in your own Bible, then answer the chapter’s quick question or reflection."
     }
 
     static func make(from progress: GameProgress) -> ReadingSuggestion? {

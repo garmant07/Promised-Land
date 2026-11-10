@@ -803,6 +803,18 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     now includes the cloud cover, when frames are deliberately long under the clouds.)
 
 
+113. **Own-Bible reading without photos.** Supersedes note 29: every chapter offers
+    "I read this in my own Bible", secondary with loaded text and primary without it.
+    It opens the existing quick question/reflection for that chapter directly, preserving the
+    manual path's checked-read behavior without a picker or timer. Camera capture, photo selection,
+    Vision detection, optional photo saving and the automatic "Read in my own Bible." journal note
+    are removed, along with the camera permission description. Reader-written reflections still
+    save through the existing question flow. ReadingPhoto, SchemaV2, the migration plan, existing
+    photos, journal entries and reading history are unchanged. Strictness cases, defaults,
+    descriptions, grown-up sum, timing values and shared gate helpers are unchanged; redesigning
+    Strict mode is outside this decision. No-text screens point to the own-Bible option and
+    suggest connecting to the internet. Release behavior on an iPhone still needs owner checks.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

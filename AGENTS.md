@@ -26,7 +26,7 @@ Promised Land is an iOS app where reading the Bible grows an isometric island. E
 - **App source:** `Promised Land/` (flat, plus `Bible/`, `World/`, `Debug/FullBiblePreview/`). **Tests:** `Promised Land Tests/`.
 - **Platform:** iOS 26.0 minimum (lowered from 27.0 on purpose — do not raise it). iPhone and iPad (`TARGETED_DEVICE_FAMILY = 1,2`); iPhone supports portrait and landscape.
 - **Swift:** Swift 5 language mode with `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor`. Code is main-actor by default; types used off the main actor are marked `nonisolated` (see `AppSchema.swift`).
-- **Frameworks:** SwiftUI, SwiftData, Vision (`RecognizeTextRequest` for "Use my Bible"), AVAudioEngine (synthesised Collect All whoosh). **No SpriteKit** — the island is a SwiftUI `Canvas`. No third-party packages.
+- **Frameworks:** SwiftUI, SwiftData, AVAudioEngine (synthesised Collect All whoosh). **No SpriteKit** — the island is a SwiftUI `Canvas`. No third-party packages.
 - **Data:** everything is local and works offline. The single network feature is Bible text from API.Bible (§5). Friends and Groups are mocks (`MockFriendsService`, `MockGroupsService`); nothing is sent anywhere.
 - **Bundle ID / signing:** `com.tylergarmanpersonalteam.PromisedLand`. Do not change bundle IDs, team, signing or entitlements unless asked.
 

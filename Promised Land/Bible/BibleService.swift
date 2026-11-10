@@ -62,7 +62,7 @@ nonisolated struct ChapterText: Codable, Equatable, Sendable {
 
 /// What can go wrong getting a chapter, in words a reader understands.
 nonisolated enum BibleError: Error, Equatable, Sendable {
-    /// No text for this chapter: no API key, and nothing bundled (read it in your own Bible).
+    /// No text for this chapter: no API key, and nothing bundled (the own-Bible question remains available).
     case noText
     /// No connection, and the chapter isn't cached.
     case offline
@@ -81,7 +81,7 @@ nonisolated enum BibleError: Error, Equatable, Sendable {
 
     var title: String {
         switch self {
-        case .noText: "Read it in your own Bible"
+        case .noText: "This chapter’s text isn’t available"
         case .offline: "Connect to the internet to load this chapter"
         case .rateLimited: "Too many requests right now"
         case .badKey: "The Bible text service isn't set up"
@@ -108,7 +108,7 @@ nonisolated enum BibleError: Error, Equatable, Sendable {
         case .notOnPlan:
             "Pick another translation in the reader or in Settings."
         case .notFound:
-            "Try another translation, or read it in your own Bible."
+            "Try another translation, or choose “I read this in my own Bible” after reading the chapter in your Bible."
         case .server(let code):
             "The Bible text service had a problem (\(code)). Please try again."
         case .unreadable:

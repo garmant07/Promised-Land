@@ -24,7 +24,8 @@ How it gets into the app: `Config.xcconfig` (the app target's base configuration
 `APIBibleService.fromBundle()` reads it.
 
 **Without a key** the app still builds and runs: the reader shows the small bundled American
-Standard Version sample, and other chapters offer "Use my Bible".
+Standard Version sample. Every chapter offers "I read this in my own Bible":
+answer a quick question or reflection to count your reading, with no camera or photos.
 
 Note: a key built into an app can be extracted from the app bundle by a determined person.
 API.Bible's docs advise against putting keys in client-side code. For a public release, consider

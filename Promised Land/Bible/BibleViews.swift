@@ -37,7 +37,7 @@ struct TranslationMenu: View {
 }
 
 /// A chapter that couldn't load: why, Retry when it might help, and whatever else still works
-/// (`actions`: "Use my Bible", marking as read).
+/// (`actions`: "I read this in my own Bible", marking as read).
 struct ChapterUnavailableView<Actions: View>: View {
     let title: String
     let error: BibleError

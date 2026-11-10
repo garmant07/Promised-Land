@@ -244,7 +244,7 @@ struct BookView: View {
                     }
                 }
                 if !bible.isLive && !book.hasSampleText {
-                    Label("The text of \(book.name) is coming soon. You can still mark chapters as read from your own Bible.",
+                    Label("Connect to the internet to load chapters of \(book.name). You can also choose “I read this in my own Bible” in any chapter and answer a quick question.",
                           systemImage: "info.circle")
                         .font(.footnote)
                         .foregroundStyle(Color.secondaryText)
@@ -315,7 +315,7 @@ struct ChapterReaderView: View {
     private let session: ReadingSession
     @State private var onScreen = false
     @State private var asking = false
-    @State private var scanning = false
+    @State private var ownBible: ChapterRef?
     @State private var counted = false
 
     init(book: Book, chapter: Int) {
@@ -364,7 +364,7 @@ struct ChapterReaderView: View {
                             Label("Read it in your own Bible", systemImage: "book.closed")
                                 .font(.headline)
                                 .foregroundStyle(Color.primaryBrown)
-                            Text("This chapter's text isn't in the app yet. Read it in your own Bible: take a photo of the page and answer one quick question to build your island.")
+                            Text("This chapter's text isn't available on this device. Connect to the internet to load it, or read it in your own Bible. Then choose “I read this in my own Bible” and answer a quick question or reflection to build your island.")
                                 .foregroundStyle(Color.secondaryText)
                             #if DEBUG
                             if !bible.isLive {
@@ -417,8 +417,12 @@ struct ChapterReaderView: View {
         .sheet(isPresented: $asking) {
             ReadingQuestionView(book: book, chapter: chapter, onCounted: { countRead() }, onLookAgain: { asking = false })
         }
-        .sheet(isPresented: $scanning) {
-            BibleScanView(suggested: ChapterRef(bookID: book.id, chapter: chapter)) { scanning = false; finishedReading() }
+        .sheet(item: $ownBible) { ref in
+            ReadingQuestionView(book: book, chapter: ref.chapter, onCounted: {
+                context.recordRead(ref.bookID, ref.chapter, checked: true)
+                ownBible = nil
+                finishedReading()
+            }, onLookAgain: { ownBible = nil })
         }
         .sheet(isPresented: Binding(get: { deepDive != nil }, set: { if !$0 { deepDive = nil } })) {
             if let deepDive { DeepDiveSheet(dive: deepDive.dive, verseText: deepDive.text) }
@@ -453,10 +457,10 @@ struct ChapterReaderView: View {
     /// The chapter's text is actually being read: loaded and on screen, nothing covering it, and
     /// the app in the foreground.
     private var isReading: Bool {
-        onScreen && scenePhase == .active && loader.text != nil && !asking && !scanning && deepDive == nil && !counted
+        onScreen && scenePhase == .active && loader.text != nil && !asking && ownBible == nil && deepDive == nil && !counted
     }
 
-    /// Finish (after the gate), "Use my Bible", what's been read, and the next chapter.
+    /// Finish (after the gate), "I read this in my own Bible", what's been read, and the next chapter.
     @ViewBuilder
     private func actions(compact: Bool) -> some View {
         let hasText = loader.text != nil
@@ -470,7 +474,9 @@ struct ChapterReaderView: View {
                 SessionFinishButton(session: session, readBefore: isRead) { asking = true }
             }
             if !counted {
-                Button { scanning = true } label: { Label("Use my Bible", systemImage: "camera.viewfinder") }
+                Button { ownBible = ChapterRef(bookID: book.id, chapter: chapter) } label: {
+                    Label("I read this in my own Bible", systemImage: "book.closed")
+                }
                     .buttonStyle(hasText ? AnyButtonStyle(SoftButtonStyle()) : AnyButtonStyle(PrimaryButtonStyle()))
             }
             if isRead {
