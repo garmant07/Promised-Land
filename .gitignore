@@ -1,2 +1,4 @@
 # The API.Bible key (see README). Never commit it.
 Secrets.xcconfig
+
+.DS_Store
