@@ -88,15 +88,10 @@ struct LibraryShelfView: View {
     @Query(sort: \JournalEntry.created) private var entries: [JournalEntry]
     @Environment(\.dismiss) private var dismiss
     @State private var newFreeEntry = false
+    @State private var summary = LibrarySummaryCache<JournalEntry, LibraryJournalSummary>()
 
     private var volumes: [JournalVolume] {
-        var result: [JournalVolume] = BibleCatalog.books.compactMap { book in
-            let n = entries.filter { $0.bookID == book.id }.count
-            return n > 0 ? JournalVolume(id: book.id, title: book.name, count: n) : nil
-        }
-        let free = entries.filter { $0.bookID == nil }.count
-        if free > 0 { result.append(JournalVolume(id: "free", title: "My notes", count: free)) }
-        return result
+        summary.value(for: entries, build: { LibraryJournalSummary(entries: $0) }).volumes
     }
 
     var body: some View {
@@ -185,11 +180,14 @@ struct JournalBookView: View {
     @Query(sort: \JournalEntry.created) private var all: [JournalEntry]
     @Environment(\.modelContext) private var context
     @State private var page = 0
+    @State private var summary = LibrarySummaryCache<JournalEntry, LibraryJournalSummary>()
     @State private var editing: JournalEntry?
     @State private var adding = false
     @State private var confirmingDelete = false
 
-    private var entries: [JournalEntry] { all.filter { $0.bookID == volume.bookID } }
+    private var entries: [JournalEntry] {
+        summary.value(for: all, build: { LibraryJournalSummary(entries: $0) }).entries(for: volume.bookID)
+    }
 
     var body: some View {
         VStack(spacing: 12) {

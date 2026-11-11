@@ -65,7 +65,7 @@ final class IslandDepthOrder {
             tall = all.filter(\.kind.isTall)
         }
         #if DEBUG
-        sorts += 1
+        if PerfProbe.enabled { sorts += 1 }
         #endif
     }
 }
@@ -110,7 +110,9 @@ struct IslandGroundLayer: View, Equatable {
         } : nil
         Canvas { context, _ in
             PerfProbe.measure("static") {
-                RenderStats.staticLayer = cached.map { $0.ground.count + $0.layers.count } ?? ordered.count
+                #if DEBUG
+                if PerfProbe.enabled { RenderStats.staticLayer = cached.map { $0.ground.count + $0.layers.count } ?? ordered.count }
+                #endif
                 if let cached {
                     PlatformScene.drawGround(&context, cached.ground)
                 } else {

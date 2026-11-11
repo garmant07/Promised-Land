@@ -9,16 +9,23 @@ import SwiftData
         }
     }()
 
+    #if DEBUG
+    @AppStorage("debug.fpsOverlay") private var showsFPS = false
+    #endif
+
     init() {
         #if DEBUG
         // "-perfLog" prints frame rate and the island's main-thread time once a second.
-        if PerfProbe.logging { FrameCounter.logger.start() }
+        PerfProbe.setEnabled(UserDefaults.standard.bool(forKey: "debug.fpsOverlay"))
         #endif
     }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                #if DEBUG
+                .onChange(of: showsFPS) { _, enabled in PerfProbe.setEnabled(enabled) }
+                #endif
         }
         .modelContainer(container)
     }

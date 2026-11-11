@@ -63,7 +63,11 @@ struct HomeView: View {
     @Query private var placedItems: [PlacedItem]
     @Query private var produceCollected: [ProduceCollection]
     @Query private var placedExtras: [PlacedExtra]
+    #if DEBUG
     @AppStorage("debug.fpsOverlay") private var showsFPS = false
+    #else
+    private let showsFPS = false
+    #endif
     @Environment(\.modelContext) private var context
 
     @State private var activeSheet: ActiveSheet?

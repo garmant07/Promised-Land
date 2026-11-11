@@ -36,6 +36,9 @@ struct PerformanceTests {
 
     @Test("Depth order is worked out once, not per pan or zoom, and again when the island turns")
     func depthOrderOnlyWhenNeeded() {
+        let wasEnabled = PerfProbe.enabled
+        PerfProbe.enabled = true
+        defer { PerfProbe.enabled = wasEnabled }
         let order = IslandDepthOrder()
         for (zoom, pan) in [(1.0, CGSize.zero), (2.5, CGSize(width: 100, height: -40)), (6, CGSize(width: -300, height: 90))] {
             let layout = IslandLayout(island: Self.island, size: Self.size, zoom: zoom).panned(pan)
@@ -102,6 +105,9 @@ struct PerformanceTests {
 
     @Test("Warming ahead makes what a quarter turn needs between frames (never all in one); the turn then draws nothing new")
     func prewarmNextQuarter() {
+        let wasEnabled = PerfProbe.enabled
+        PerfProbe.enabled = true
+        defer { PerfProbe.enabled = wasEnabled }
         let cache = IslandRenderCache.shared
         let island = Self.island
         let size = Self.size
@@ -126,6 +132,9 @@ struct PerformanceTests {
 
     @Test("Produce baskets are cached pictures, not redrawn every frame")
     func basketsCached() {
+        let wasEnabled = PerfProbe.enabled
+        PerfProbe.enabled = true
+        defer { PerfProbe.enabled = wasEnabled }
         var life = IslandLife.make(island: Self.island)
         let place = Self.island.plots[0]
         life.baskets = [IslandLife.Basket(bookID: place.bookID, point: place.centre, count: 3, kind: .bread)]

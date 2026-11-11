@@ -92,6 +92,7 @@ struct DebugToolsSection: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Developer").font(.serifTitle(.title3)).foregroundStyle(Color.bodyText)
             Toggle("FPS overlay on the island", isOn: $showsFPS).tint(Color.olive).frame(minHeight: 44)
+                .onChange(of: showsFPS) { _, enabled in PerfProbe.setEnabled(enabled) }
             Toggle("API.Bible usage in the reader", isOn: $showsAPIUsage).tint(Color.olive).frame(minHeight: 44)
             APIUsageBadge()
             if let api = bible as? APIBibleService {

@@ -180,6 +180,7 @@ final class LifeDirector {
 
 /// DEBUG readout: how many things were drawn in the last frame (images, items and figures). The
 /// island is drawn with `Canvas`, so this is the closest thing to a node count.
+#if DEBUG
 @MainActor
 enum RenderStats {
     static var staticLayer = 0
@@ -188,4 +189,12 @@ enum RenderStats {
     /// Everything the island holds (items and figures): its "node count".
     static var nodes = 0
     static var total: Int { staticLayer + life + figures }
+
+    static func reset() {
+        staticLayer = 0
+        life = 0
+        figures = 0
+        nodes = 0
+    }
 }
+#endif

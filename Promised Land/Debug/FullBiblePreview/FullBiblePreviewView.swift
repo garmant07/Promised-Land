@@ -18,7 +18,7 @@ struct FullBiblePreviewView: View {
     @State private var shownBooks = 66
     @State private var replayToken = 0
     @State private var speed: Double = 4
-    @State private var showsFPS = true
+    @AppStorage("debug.fpsOverlay") private var showsFPS = false
     @State private var selected: Int?
     @State private var panelOpen = true
     // Edit mode (kept only while the preview is open).
@@ -146,6 +146,7 @@ struct FullBiblePreviewView: View {
                         } label: { Label("Jump to book", systemImage: "scope").frame(minHeight: 44) }
                         Spacer()
                         Toggle("FPS", isOn: $showsFPS).fixedSize()
+                            .onChange(of: showsFPS) { _, enabled in PerfProbe.setEnabled(enabled) }
                         Button("Edit") { draft = island.placements; editing = true }
                             .buttonStyle(SoftButtonStyle())
                             .fixedSize()

@@ -306,7 +306,7 @@ final class GameProgressCache {
         value = build()
         self.key = key
         #if DEBUG
-        builds += 1
+        if PerfProbe.enabled { builds += 1 }
         #endif
         return value
     }

@@ -10,6 +10,8 @@ struct LibraryHubView: View {
     @ProgressQuery private var progress: GameProgress
     @Query private var journal: [JournalEntry]
     @Query private var reads: [ChapterRead]
+    @State private var readSummary = LibrarySummaryCache<ChapterRead, LibraryReadSummary>()
+    @State private var journalSummary = LibrarySummaryCache<JournalEntry, LibraryJournalSummary>()
     @State private var path = NavigationPath()
     @State private var showingJournals = false
     @Environment(\.bibleService) private var bible
@@ -17,7 +19,7 @@ struct LibraryHubView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
-                VStack(alignment: .leading, spacing: 22) {
+                LazyVStack(alignment: .leading, spacing: 22) {
                     header
                     LibraryStageCard(growth: growth)
                     readingDesk
@@ -109,7 +111,7 @@ struct LibraryHubView: View {
         let books = section.books
         let read = books.reduce(0) { $0 + progress.chaptersRead($1.id) }
         let total = books.reduce(0) { $0 + $1.chapterCount }
-        let notesByBook = notesByBook // once, not per book
+        let notesByBook = journalSummary.value(for: journal, build: { LibraryJournalSummary(entries: $0) }).byBook
         return VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
                 shelfTitle(section.name, systemImage: nil)
@@ -124,7 +126,7 @@ struct LibraryHubView: View {
                         ForEach(books) { book in
                             NavigationLink(value: book) {
                                 BookSpine(book: book, read: progress.chaptersRead(book.id), color: section.color,
-                                          notes: notesByBook[book.id] ?? 0)
+                                          notes: notesByBook[book.id]?.count ?? 0)
                             }
                             .buttonStyle(.plain)
                         }
@@ -140,13 +142,8 @@ struct LibraryHubView: View {
     /// How grown the Library is: the same count the island uses (distinct checked chapters, and
     /// every journal entry).
     private var growth: LibraryGrowth {
-        let tally = ReadTally(chapters: reads.map { ($0.bookID, $0.chapterNumber, $0.date) },
-                              unchecked: reads.filter { !$0.checked }.map { ($0.bookID, $0.chapterNumber) })
-        return LibraryGrowth(volumes: tally.distinct.values.reduce(0, +), notes: journal.count)
-    }
-
-    private var notesByBook: [String: Int] {
-        Dictionary(grouping: journal.compactMap(\.bookID), by: { $0 }).mapValues(\.count)
+        let summary = readSummary.value(for: reads, build: { LibraryReadSummary(reads: $0) })
+        return LibraryGrowth(volumes: summary.volumes, notes: journal.count)
     }
 
     /// The Library's own shelves: a thin spine for every chapter read, in its part's colour.
@@ -183,6 +180,11 @@ struct LibraryHubView: View {
                 .foregroundStyle(Color.bodyText)
         }
     }
+}
+
+#Preview("Library hub") {
+    LibraryHubView(onClose: {})
+        .modelContainer(PreviewData.container)
 }
 
 /// The parts of the Bible, each with its own shelf and spine colour.

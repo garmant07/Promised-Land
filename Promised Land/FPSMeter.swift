@@ -9,11 +9,21 @@ enum PerfProbe {
     /// Seconds spent in each section, and how many times it ran, since the last report.
     static var totals: [String: (time: Double, calls: Int)] = [:]
     static let logging = ProcessInfo.processInfo.arguments.contains("-perfLog")
+    static var enabled = UserDefaults.standard.bool(forKey: "debug.fpsOverlay")
+
+    static func setEnabled(_ value: Bool) {
+        enabled = value
+        totals.removeAll()
+        RenderStats.reset()
+        if value && logging { FrameCounter.logger.start() }
+        else { FrameCounter.logger.stop() }
+    }
     #endif
 
     @inline(__always)
     static func measure<T>(_ label: StaticString, _ body: () throws -> T) rethrows -> T {
         #if DEBUG
+        guard enabled else { return try body() }
         let start = CACurrentMediaTime()
         defer {
             let key = "\(label)"
@@ -68,7 +78,13 @@ final class FrameCounter {
     static let logger = FrameCounter(logs: true)
 
     func start() {
+        // Not gated on `PerfProbe.enabled`: the overlay can appear before the setting's onChange
+        // has turned timing on; `tick` stops the counter if timing is still off by the next frame.
         guard link == nil else { return }
+        frames = 0
+        worst = 0
+        since = CACurrentMediaTime()
+        lastFrame = since
         let link = CADisplayLink(target: self, selector: #selector(tick))
         link.add(to: .main, forMode: .common)
         self.link = link
@@ -77,6 +93,7 @@ final class FrameCounter {
     func stop() { link?.invalidate(); link = nil }
 
     @objc private func tick() {
+        guard PerfProbe.enabled else { stop(); return }
         frames += 1
         let now = CACurrentMediaTime()
         worst = max(worst, now - lastFrame)
@@ -112,11 +129,14 @@ final class FrameCounter {
 enum OpenTiming {
     private static var started: [String: CFTimeInterval] = [:]
 
-    static func begin(_ name: String) { started[name] = CACurrentMediaTime() }
+    static func begin(_ name: String) {
+        guard PerfProbe.enabled else { return }
+        started[name] = CACurrentMediaTime()
+    }
 
     /// Called when the screen appears; reports once its first frame has gone out.
     static func end(_ name: String) {
-        guard let start = started.removeValue(forKey: name) else { return }
+        guard let start = started.removeValue(forKey: name), PerfProbe.enabled else { return }
         DispatchQueue.main.async {
             print(String(format: "OPEN %@: %.0f ms", name, (CACurrentMediaTime() - start) * 1000))
         }

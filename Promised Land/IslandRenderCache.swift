@@ -515,7 +515,7 @@ final class IslandRenderCache {
         let renderer = ImageRenderer(content: Canvas { c, _ in step(&c) }.frame(width: job.size.width, height: job.size.height))
         renderer.scale = job.scale
         #if DEBUG
-        renders += 1
+        if PerfProbe.enabled { renders += 1 }
         #endif
         guard let layer = renderer.cgImage else { pending.removeFirst(); partial[job.key] = nil; return false }
         // Combining should never fail (plain 8-bit sRGB); if it did, start the picture again rather
@@ -656,7 +656,7 @@ final class IslandRenderCache {
             renderBudget = budget - 1
         }
         #if DEBUG
-        renders += 1
+        if PerfProbe.enabled { renders += 1 }
         #endif
         let renderer = ImageRenderer(content: Canvas { c, _ in draw(&c) }.frame(width: size.width, height: size.height))
         renderer.scale = scale ?? renderScale

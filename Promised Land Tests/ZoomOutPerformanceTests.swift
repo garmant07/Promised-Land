@@ -35,6 +35,9 @@ struct ZoomOutPerformanceTests {
 
     @Test("A full pinch out renders no picture in any of its frames (the overview stands in)", arguments: [0, 1, 2, 3])
     func zoomOutRendersNothing(quarter: Int) {
+        let wasEnabled = PerfProbe.enabled
+        PerfProbe.enabled = true
+        defer { PerfProbe.enabled = wasEnabled }
         let cache = IslandRenderCache.shared
         defer { cache.removeAll(); cache.interacting = false }
         let start: CGFloat = 8
@@ -91,6 +94,9 @@ struct ZoomOutPerformanceTests {
 
     @Test("After the island appears, the first pan (a screen each way) needs no new pictures")
     func firstPanNeedsNothing() {
+        let wasEnabled = PerfProbe.enabled
+        PerfProbe.enabled = true
+        defer { PerfProbe.enabled = wasEnabled }
         let cache = IslandRenderCache.shared
         defer { cache.removeAll() }
         let zoom: CGFloat = 4

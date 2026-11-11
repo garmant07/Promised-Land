@@ -152,7 +152,9 @@ struct PlatformScene: View {
             // Back-to-front order, worked out only when something is added, moves or turns.
             let _ = depthOrder.update(island: island, layout: layout, overrides: overrides, hidden: moving)
             let ordered = depthOrder.all
-            let _ = { RenderStats.nodes = island.items.count + life.villagers.count + life.travellers.count + characters.count }()
+            #if DEBUG
+            let _ = { if PerfProbe.enabled { RenderStats.nodes = island.items.count + life.villagers.count + life.travellers.count + characters.count } }()
+            #endif
             // The still layers are always worked out from the camera now (position and zoom), so
             // whatever comes into view, zooming out too, is there at once.
             let drawPan = PanStep.drawPan(pan)
@@ -220,7 +222,9 @@ struct PlatformScene: View {
                         }
                         let lifeByID = Dictionary(lifeShown.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
                         let basketsOn = editing == nil && !life.baskets.isEmpty && layout.u >= IslandLife.minimumBasketU
-                        let _ = { RenderStats.figures = people.count; RenderStats.life = over.reduce(0) { $0 + $1.count } }()
+                        #if DEBUG
+                        let _ = { if PerfProbe.enabled { RenderStats.figures = people.count; RenderStats.life = over.reduce(0) { $0 + $1.count } } }()
+                        #endif
 
                         let canvasSize = PanStep.canvasSize(geo.size)
                         ZStack(alignment: .topLeading) {

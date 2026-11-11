@@ -42,6 +42,9 @@ struct HeldPictureTests {
 
     @Test("If the system empties the picture cache mid-pan, what's on screen keeps its own pictures (no stand-ins)")
     func survivesMemoryWarning() {
+        let wasEnabled = PerfProbe.enabled
+        PerfProbe.enabled = true
+        defer { PerfProbe.enabled = wasEnabled }
         let cache = IslandRenderCache.shared
         defer { cache.removeAll(); cache.interacting = false }
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(Self.size))
