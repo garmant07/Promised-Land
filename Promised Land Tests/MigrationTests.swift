@@ -172,4 +172,124 @@ extension SchemaMigrationTests {
             #expect(try context.fetchCount(FetchDescriptor<JournalNotebook>()) == (pass < 2 ? 0 : 3))
         }
     }
+
+    @Test("Frozen V3 journals migrate to V4 without losing shelves, entries, or links")
+    func v3JournalFieldsSurviveV4() throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let url = directory.appendingPathComponent("journal-v3.store")
+        let shelfID = UUID()
+        let journalIDs = [UUID(), UUID()]
+        let entryIDs = [UUID(), UUID()]
+        let created = Date(timeIntervalSince1970: 1_700_000_000)
+
+        do {
+            let schema = Schema(versionedSchema: SchemaV3.self)
+            let container = try ModelContainer(for: schema, configurations:
+                ModelConfiguration(schema: schema, url: url, cloudKitDatabase: .none))
+            let context = container.mainContext
+            let shelf = SchemaV3.JournalShelf(label: "Personal", created: created)
+            shelf.id = shelfID
+            let first = SchemaV3.JournalNotebook(name: "Notes", shelf: shelf, created: created)
+            first.id = journalIDs[0]
+            let second = SchemaV3.JournalNotebook(name: "Bible", shelf: shelf, created: created.addingTimeInterval(1))
+            second.id = journalIDs[1]
+            let verseEntry = SchemaV3.JournalEntry(bookID: "john", chapter: 3, prompt: "Reflect", text: "Keep this", date: created)
+            verseEntry.id = entryIDs[0]
+            verseEntry.verseStart = 16
+            verseEntry.verseEnd = 18
+            verseEntry.notebook = first
+            let freeEntry = SchemaV3.JournalEntry(text: "Free note", date: created.addingTimeInterval(2))
+            freeEntry.id = entryIDs[1]
+            freeEntry.notebook = second
+            context.insert(shelf)
+            context.insert(first)
+            context.insert(second)
+            context.insert(verseEntry)
+            context.insert(freeEntry)
+            try context.save()
+        }
+
+        for _ in 0..<2 {
+            let container = try AppSchema.container(url: url)
+            let context = container.mainContext
+            let shelves = try context.fetch(FetchDescriptor<JournalShelf>())
+            let journals = try context.fetch(FetchDescriptor<JournalNotebook>()).sorted { $0.name < $1.name }
+            let entries = try context.fetch(FetchDescriptor<JournalEntry>()).sorted { $0.text < $1.text }
+            #expect(shelves.count == 1)
+            #expect(shelves.first?.id == shelfID)
+            #expect(journals.map(\.name) == ["Bible", "Notes"])
+            #expect(journals.map(\.id) == [journalIDs[1], journalIDs[0]])
+            #expect(journals.allSatisfy { $0.colorIndex == nil })
+            #expect(entries.count == 2)
+            #expect(entries.contains { $0.id == entryIDs[0] && $0.notebook?.id == journalIDs[0] && $0.verseStart == 16 && $0.verseEnd == 18 })
+            #expect(entries.contains { $0.id == entryIDs[1] && $0.notebook?.id == journalIDs[1] && $0.bookID == nil })
+            try context.save()
+        }
+    }
+
+    @Test("Automatic notebook colour is stable from UUID bytes, not hashValue")
+    func automaticNotebookColourIndexIsStable() {
+        let id = UUID(uuid: (0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
+                              0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10))
+        let expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+            .reduce(0, +) % JournalNotebookColor.paletteCount
+        #expect(JournalNotebookColor.automaticIndex(for: id) == expected)
+        #expect(JournalNotebookColor.automaticIndex(for: id) == expected)
+    }
+
+    @Test("Creating a journal with a colour stores the selected colorIndex")
+    func creatingJournalStoresColour() throws {
+        let container = try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
+        let context = container.mainContext
+        let shelf = JournalShelf(label: "Personal")
+        let notebook = JournalNotebook(name: "Hope", shelf: shelf, colorIndex: 3)
+        context.insert(shelf)
+        context.insert(notebook)
+        try context.save()
+        let saved = try #require(context.fetch(FetchDescriptor<JournalNotebook>()).first)
+        #expect(saved.name == "Hope")
+        #expect(saved.colorIndex == 3)
+    }
+
+    @Test("Editing a journal colour changes only colorIndex")
+    func editingColourChangesOnlyColour() throws {
+        let container = try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
+        let context = container.mainContext
+        let shelf = JournalShelf(label: "Personal")
+        let notebook = JournalNotebook(name: "Hope", shelf: shelf, colorIndex: 1)
+        context.insert(shelf)
+        context.insert(notebook)
+        try context.save()
+        let id = notebook.id
+        let created = notebook.created
+        notebook.colorIndex = 6
+        try context.save()
+        let saved = try #require(context.fetch(FetchDescriptor<JournalNotebook>()).first { $0.id == id })
+        #expect(saved.colorIndex == 6)
+        #expect(saved.name == "Hope")
+        #expect(saved.created == created)
+        #expect(saved.shelf?.id == shelf.id)
+    }
+
+    @Test("Editing a journal name changes only name")
+    func editingNameChangesOnlyName() throws {
+        let container = try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
+        let context = container.mainContext
+        let shelf = JournalShelf(label: "Personal")
+        let notebook = JournalNotebook(name: "Hope", shelf: shelf, colorIndex: 1)
+        context.insert(shelf)
+        context.insert(notebook)
+        try context.save()
+        let id = notebook.id
+        let created = notebook.created
+        notebook.name = "Mercy"
+        try context.save()
+        let saved = try #require(context.fetch(FetchDescriptor<JournalNotebook>()).first { $0.id == id })
+        #expect(saved.name == "Mercy")
+        #expect(saved.colorIndex == 1)
+        #expect(saved.created == created)
+        #expect(saved.shelf?.id == shelf.id)
+    }
 }
