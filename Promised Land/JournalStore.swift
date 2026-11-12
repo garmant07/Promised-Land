@@ -6,6 +6,36 @@ import SwiftData
 enum JournalStore {
     private static let defaultShelfLabel = "My journals"
 
+
+    enum SaveError: Error, Equatable {
+        case emptyText
+        case invalidDestination
+    }
+
+    /// Saves only a note. Failure discards this insert so retrying cannot duplicate it;
+    /// unrelated pending changes in the caller's context are never rolled back.
+    @discardableResult
+    static func save(in context: ModelContext, notebook: JournalNotebook, text: String,
+                     bookID: String? = nil, chapter: Int? = nil, verseStart: Int? = nil,
+                     verseEnd: Int? = nil, prompt: String? = nil) throws -> JournalEntry {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { throw SaveError.emptyText }
+        guard notebook.modelContext === context else { throw SaveError.invalidDestination }
+        let entry = JournalEntry(bookID: bookID, chapter: chapter, prompt: prompt, text: trimmed)
+        entry.verseStart = verseStart
+        entry.verseEnd = verseEnd
+        context.insert(entry)
+        entry.notebook = notebook
+        do {
+            try context.save()
+            return entry
+        } catch {
+            entry.notebook = nil
+            context.delete(entry)
+            throw error
+        }
+    }
+
     /// Run before presenting the app. Only unfiled entries are changed.
     static func backfill(in context: ModelContext) throws {
         let unfiled = try context.fetch(FetchDescriptor<JournalEntry>(

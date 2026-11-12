@@ -82,6 +82,31 @@ final class ReadingPhoto {
 /// Version 1: everything stored before the growing-Places round (the store had no version
 /// until now; these are exactly its models, unchanged).
 nonisolated enum SchemaV1: VersionedSchema {
+    // Frozen stored shape. Never add fields to a historical schema.
+    @Model
+    final class JournalEntry {
+        var id: UUID
+        var created: Date
+        var updated: Date
+        /// The Bible book (and chapter) it's about, if any. Free entries have neither.
+        var bookID: String?
+        var chapter: Int?
+        /// The reflection prompt it answers, if any.
+        var prompt: String?
+        var text: String
+
+        init(bookID: String? = nil, chapter: Int? = nil, prompt: String? = nil, text: String, date: Date = .now) {
+            self.id = UUID()
+            self.created = date
+            self.updated = date
+            self.bookID = bookID
+            self.chapter = chapter
+            self.prompt = prompt
+            self.text = text
+        }
+
+    }
+
     static let versionIdentifier = Schema.Version(1, 0, 0)
     static var models: [any PersistentModel.Type] {
         [ChapterRead.self, QuizPass.self, VerseMemorised.self, JournalEntry.self, AvatarProfile.self, CrownCasting.self,
@@ -91,26 +116,55 @@ nonisolated enum SchemaV1: VersionedSchema {
 
 /// Version 2: adds produce, gifts, placed extras and Bible photos. Nothing existing changes.
 nonisolated enum SchemaV2: VersionedSchema {
+    // Frozen stored shape. Never add fields to a historical schema.
+    @Model
+    final class JournalEntry {
+        var id: UUID
+        var created: Date
+        var updated: Date
+        /// The Bible book (and chapter) it's about, if any. Free entries have neither.
+        var bookID: String?
+        var chapter: Int?
+        /// The reflection prompt it answers, if any.
+        var prompt: String?
+        var text: String
+
+        init(bookID: String? = nil, chapter: Int? = nil, prompt: String? = nil, text: String, date: Date = .now) {
+            self.id = UUID()
+            self.created = date
+            self.updated = date
+            self.bookID = bookID
+            self.chapter = chapter
+            self.prompt = prompt
+            self.text = text
+        }
+
+    }
+
     static let versionIdentifier = Schema.Version(2, 0, 0)
     static var models: [any PersistentModel.Type] {
-        SchemaV1.models + [ProduceCollection.self, ProduceGift.self, PlacedExtra.self, ReadingPhoto.self]
+        [ChapterRead.self, QuizPass.self, VerseMemorised.self, JournalEntry.self, AvatarProfile.self, CrownCasting.self,
+         BookStarted.self, PlacedItem.self, ProduceCollection.self, ProduceGift.self, PlacedExtra.self, ReadingPhoto.self]
     }
 }
 
 /// Every step is additive, so each is a lightweight migration: all saved progress is kept.
 nonisolated enum AppMigrationPlan: SchemaMigrationPlan {
-    static var schemas: [any VersionedSchema.Type] { [SchemaV1.self, SchemaV2.self] }
-    static var stages: [MigrationStage] { [.lightweight(fromVersion: SchemaV1.self, toVersion: SchemaV2.self)] }
+    static var schemas: [any VersionedSchema.Type] { [SchemaV1.self, SchemaV2.self, SchemaV3.self] }
+    static var stages: [MigrationStage] {
+        [.lightweight(fromVersion: SchemaV1.self, toVersion: SchemaV2.self),
+         .lightweight(fromVersion: SchemaV2.self, toVersion: SchemaV3.self)]
+    }
 }
 
 /// Every SwiftData model the app stores, registered once for the app and previews.
 enum AppSchema {
-    static var models: [any PersistentModel.Type] { SchemaV2.models }
+    static var models: [any PersistentModel.Type] { SchemaV3.models }
 
     /// The app's on-disk store, opened through the migration plan.
     static func container(url: URL? = nil) throws -> ModelContainer {
-        let schema = Schema(versionedSchema: SchemaV2.self)
-        let config = url.map { ModelConfiguration(schema: schema, url: $0) } ?? ModelConfiguration(schema: schema)
+        let schema = Schema(versionedSchema: SchemaV3.self)
+        let config = url.map { ModelConfiguration(schema: schema, url: $0, cloudKitDatabase: .none) } ?? ModelConfiguration(schema: schema)
         return try ModelContainer(for: schema, migrationPlan: AppMigrationPlan.self, configurations: config)
     }
 }

@@ -102,7 +102,7 @@ struct SchemaMigrationTests {
 }
 
 extension SchemaMigrationTests {
-    @Test("Frozen V2 entries and their photo link survive V3 migration and reopening")
+    @Test("Frozen V2 entries and their photo link survive V3 migration, filing, and reopening")
     func v2JournalFieldsSurvive() throws {
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
@@ -135,9 +135,10 @@ extension SchemaMigrationTests {
             try context.save()
         }
         // Each iteration releases its container before the next reopen.
-        for _ in 0..<2 {
+        for pass in 0..<4 {
             let container = try AppSchema.container(url: url)
             let context = container.mainContext
+            if pass >= 2 { try JournalStore.backfill(in: context) }
             let entries = try context.fetch(FetchDescriptor<JournalEntry>())
             #expect(entries.count == 3)
             for (index, id) in ids.enumerated() {
@@ -148,7 +149,12 @@ extension SchemaMigrationTests {
                 #expect(entry.chapter == (index == 0 ? 3 : nil))
                 #expect(entry.prompt == (index == 0 ? "Reflect" : nil))
                 #expect(entry.text == ["  Kept\nexactly  ", "Free", "Whole book"][index])
-                #expect(entry.notebook == nil)
+                if pass < 2 {
+                    #expect(entry.notebook == nil)
+                } else {
+                    #expect(entry.notebook?.name == ["John", "My notes", "Ruth"][index])
+                    #expect(entry.notebook?.shelf?.label == "My journals")
+                }
                 #expect(entry.verseStart == nil)
                 #expect(entry.verseEnd == nil)
             }
@@ -162,8 +168,8 @@ extension SchemaMigrationTests {
             #expect(photo.date == created)
             #expect(photo.imageData == bytes)
             #expect(try context.fetchCount(FetchDescriptor<ChapterRead>()) == 1)
-            #expect(try context.fetchCount(FetchDescriptor<JournalShelf>()) == 0)
-            #expect(try context.fetchCount(FetchDescriptor<JournalNotebook>()) == 0)
+            #expect(try context.fetchCount(FetchDescriptor<JournalShelf>()) == (pass < 2 ? 0 : 1))
+            #expect(try context.fetchCount(FetchDescriptor<JournalNotebook>()) == (pass < 2 ? 0 : 3))
         }
     }
 }

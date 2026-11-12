@@ -4,7 +4,15 @@ import SwiftData
 @main struct MyApp: App {
     /// The store opens through the migration plan (AppSchema.swift), so saved progress always carries over.
     private let container: ModelContainer = {
-        do { return try AppSchema.container() } catch {
+        do {
+            let container = try AppSchema.container()
+            #if DEBUG
+            DebugSeed.apply(to: container.mainContext)
+            #endif
+            // Synchronous: no scene or journal UI exists until every entry is filed.
+            try JournalStore.backfill(in: container.mainContext)
+            return container
+        } catch {
             fatalError("Could not open the saved progress: \(error)")
         }
     }()

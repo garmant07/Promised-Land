@@ -18,6 +18,7 @@ struct ReadingQuestionView: View {
     private var translation = TranslationChoice()
     @State private var picked: Int?
     @State private var reflection = ""
+    @State private var noteSaveFailed = false
 
     /// The hand-written question, or one made from the chapter's text on the device.
     private var question: ChapterQuestion? {
@@ -112,9 +113,15 @@ struct ReadingQuestionView: View {
                 .font(.footnote)
                 .foregroundStyle(Color.secondaryText)
             Button("Save and count it") {
-                context.insert(JournalEntry(bookID: book.id, chapter: chapter, prompt: prompt,
-                                            text: reflection.trimmingCharacters(in: .whitespacesAndNewlines)))
-                try? context.save()
+                do {
+                    let notebook = try JournalStore.defaultNotebook(in: context, bookID: book.id)
+                    try JournalStore.save(in: context, notebook: notebook, text: reflection,
+                                          bookID: book.id, chapter: chapter, prompt: prompt)
+                    noteSaveFailed = false
+                } catch {
+                    noteSaveFailed = true
+                }
+                // As before, a note-save failure does not prevent this chapter from counting.
                 count()
             }
             .buttonStyle(PrimaryButtonStyle())
@@ -127,6 +134,7 @@ struct ReadingQuestionView: View {
         Task {
             try? await Task.sleep(for: .milliseconds(650))
             onCounted()
+            if noteSaveFailed { JournalSaveNotice.shared.isPresented = true }
         }
     }
 }

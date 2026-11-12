@@ -13,6 +13,9 @@ struct ReflectionCard: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     @State private var answers: [String] = ["", ""]
+    @State private var saveFailed = false
+    // If a later answer fails, retry only the answers that have not already saved.
+    @State private var savedAnswers: Set<Int> = []
     @FocusState private var focused: Int?
 
     var body: some View {
@@ -38,6 +41,7 @@ struct ReflectionCard: View {
                                 .fixedSize(horizontal: false, vertical: true)
                             TextEditor(text: $answers[i])
                                 .focused($focused, equals: i)
+                                .disabled(savedAnswers.contains(i))
                                 .scrollContentBackground(.hidden)
                                 .frame(minHeight: 96)
                                 .padding(8)
@@ -47,6 +51,10 @@ struct ReflectionCard: View {
                         .cardStyle()
                     }
 
+                    if saveFailed {
+                        Text("Couldn't save your note. Please try again.")
+                            .foregroundStyle(Color.terracotta)
+                    }
                     Button("Save to journal") { save(prompts) }
                         .buttonStyle(PrimaryButtonStyle())
                         .disabled(answers.allSatisfy { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty })
@@ -63,14 +71,22 @@ struct ReflectionCard: View {
     }
 
     private func save(_ prompts: [String]) {
-        for (prompt, answer) in zip(prompts, answers) {
-            let text = answer.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !text.isEmpty else { continue }
-            context.insert(JournalEntry(bookID: book.id, chapter: chapter, prompt: prompt, text: text))
+        saveFailed = false
+        do {
+            let notebook = try JournalStore.defaultNotebook(in: context, bookID: book.id)
+            for (index, pair) in zip(prompts, answers).enumerated() {
+                guard !savedAnswers.contains(index) else { continue }
+                let text = pair.1.trimmingCharacters(in: .whitespacesAndNewlines)
+                guard !text.isEmpty else { continue }
+                try JournalStore.save(in: context, notebook: notebook, text: text,
+                                      bookID: book.id, chapter: chapter, prompt: pair.0)
+                savedAnswers.insert(index)
+            }
+            onSaved?()
+            dismiss()
+        } catch {
+            saveFailed = true
         }
-        try? context.save()
-        onSaved?()
-        dismiss()
     }
 }
 
@@ -282,6 +298,7 @@ struct JournalEditor: View {
     @Environment(\.dismiss) private var dismiss
     @State private var text = ""
     @State private var chapter = 0 // 0 = whole book
+    @State private var saveFailed = false
 
     var body: some View {
         NavigationStack {
@@ -298,6 +315,10 @@ struct JournalEditor: View {
                     Text(prompt)
                         .font(.system(.subheadline, design: .serif).italic())
                         .foregroundStyle(Color.secondaryText)
+                }
+                if saveFailed {
+                    Text("Couldn't save your note. Please try again.")
+                        .foregroundStyle(Color.terracotta)
                 }
                 TextEditor(text: $text)
                     .scrollContentBackground(.hidden)
@@ -326,15 +347,29 @@ struct JournalEditor: View {
 
     private func save() {
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        if let entry {
-            entry.text = trimmed
-            entry.chapter = chapter == 0 ? nil : chapter
-            entry.updated = .now
-        } else {
-            context.insert(JournalEntry(bookID: bookID, chapter: chapter == 0 ? nil : chapter, text: trimmed))
+        saveFailed = false
+        do {
+            if let entry {
+                let previous = (entry.text, entry.chapter, entry.updated)
+                entry.text = trimmed
+                entry.chapter = chapter == 0 ? nil : chapter
+                entry.updated = .now
+                do { try context.save() }
+                catch {
+                    entry.text = previous.0
+                    entry.chapter = previous.1
+                    entry.updated = previous.2
+                    throw error
+                }
+            } else {
+                let notebook = try JournalStore.defaultNotebook(in: context, bookID: bookID)
+                try JournalStore.save(in: context, notebook: notebook, text: trimmed,
+                                      bookID: bookID, chapter: chapter == 0 ? nil : chapter)
+            }
+            dismiss()
+        } catch {
+            saveFailed = true
         }
-        try? context.save()
-        dismiss()
     }
 }
 

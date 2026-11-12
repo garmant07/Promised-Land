@@ -69,7 +69,7 @@ nonisolated enum SchemaV3: VersionedSchema {
             self.text = text
         }
 
-        var reference: String? {
+        @MainActor var reference: String? {
             guard let bookID, let book = BibleCatalog.book(id: bookID) else { return nil }
             guard let chapter else { return book.name }
             let chapterReference = "\(book.name) \(chapter)"

@@ -56,18 +56,19 @@ struct JournalStoreTests {
             JournalEntry(bookID: "ruth", text: "Already filed", date: date)
         ]
         for entry in entries {
-            context.insert(entry)
             entry.updated = date.addingTimeInterval(25)
+            context.insert(entry)
         }
         entries[2].verseStart = 16
         entries[2].verseEnd = 18
         entries[4].notebook = personal
-        let before = entries.map(EntryFields.init)
         let photo = ReadingPhoto(bookID: "ruth", chapter: 1, imageData: Data([3, 4]),
                                  journalEntryID: entries[0].id, date: date)
         let photoID = photo.uid
         context.insert(photo)
         try context.save()
+        // Snapshot the persisted fixture; backfill must preserve exactly what the store contains.
+        let before = entries.map(EntryFields.init)
 
         try JournalStore.backfill(in: context)
         #expect(entries.map(EntryFields.init) == before)
@@ -165,5 +166,105 @@ struct JournalStoreTests {
         try context.save()
         #expect(replacementShelf.notebooks.isEmpty)
         #expect(try context.fetchCount(FetchDescriptor<JournalShelf>()) == 1)
+    }
+}
+
+extension JournalStoreTests {
+    @Test("Saving rejects whitespace without inserting an entry")
+    func saveRejectsEmpty() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let notebook = try JournalStore.defaultNotebook(in: context, bookID: nil)
+        try context.save()
+        #expect(throws: JournalStore.SaveError.emptyText) {
+            try JournalStore.save(in: context, notebook: notebook, text: " \n\t ")
+        }
+        #expect(try context.fetchCount(FetchDescriptor<JournalEntry>()) == 0)
+        #expect(notebook.entries.isEmpty)
+        #expect(!context.hasChanges)
+    }
+
+    @Test("Saving uses the chosen notebook, trims text, stores scripture and never records reading")
+    func saveStoresNoteOnly() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let shelf = JournalShelf(label: "Personal")
+        context.insert(shelf)
+        let notebook = JournalNotebook(name: "Hope", shelf: shelf)
+        context.insert(notebook)
+        let entry = try JournalStore.save(in: context, notebook: notebook, text: " \nA note\nwith lines  ",
+                                          bookID: "john", chapter: 3, verseStart: 16, verseEnd: 18, prompt: "Reflect")
+        #expect(entry.notebook?.id == notebook.id)
+        #expect(notebook.entries.map(\.id) == [entry.id])
+        #expect(entry.text == "A note\nwith lines")
+        #expect(entry.bookID == "john")
+        #expect(entry.chapter == 3)
+        #expect(entry.verseStart == 16)
+        #expect(entry.verseEnd == 18)
+        #expect(entry.prompt == "Reflect")
+        #expect(entry.reference == "John 3:16–18")
+        #expect(try context.fetchCount(FetchDescriptor<ChapterRead>()) == 0)
+        #expect(try context.fetchCount(FetchDescriptor<BookStarted>()) == 0)
+        #expect(try context.fetchCount(FetchDescriptor<QuizPass>()) == 0)
+        #expect(try context.fetchCount(FetchDescriptor<VerseMemorised>()) == 0)
+        #expect(!context.hasChanges)
+        // A separate context verifies persistence rather than just the live object graph.
+        let reader = ModelContext(container)
+        let saved = try #require(reader.fetch(FetchDescriptor<JournalEntry>()).first)
+        #expect(saved.notebook?.id == notebook.id)
+        #expect(saved.verseStart == 16)
+        #expect(saved.verseEnd == 18)
+        #expect(saved.text == entry.text)
+    }
+
+    @Test("References retain whole-book and chapter forms and support single verses and ranges")
+    func verseReferences() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let notebook = try JournalStore.defaultNotebook(in: context, bookID: "john")
+        let free = try JournalStore.save(in: context, notebook: notebook, text: "Free")
+        let book = try JournalStore.save(in: context, notebook: notebook, text: "Book", bookID: "john")
+        let chapter = try JournalStore.save(in: context, notebook: notebook, text: "Chapter", bookID: "john", chapter: 3)
+        let verse = try JournalStore.save(in: context, notebook: notebook, text: "Verse", bookID: "john", chapter: 3, verseStart: 16)
+        let same = try JournalStore.save(in: context, notebook: notebook, text: "Same", bookID: "john", chapter: 3, verseStart: 16, verseEnd: 16)
+        #expect(free.reference == nil)
+        #expect(free.bookID == nil && free.chapter == nil && free.prompt == nil)
+        #expect(free.verseStart == nil && free.verseEnd == nil)
+        #expect(book.reference == "John")
+        #expect(chapter.reference == "John 3")
+        #expect(verse.reference == "John 3:16")
+        #expect(same.reference == "John 3:16")
+    }
+
+    @Test("Default destinations reuse backfilled journals and file new book and free notes")
+    func defaultDestinations() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let old = JournalEntry(bookID: "ruth", text: "Old")
+        context.insert(old)
+        try JournalStore.backfill(in: context)
+        let ruth = try JournalStore.defaultNotebook(in: context, bookID: "ruth")
+        #expect(ruth.id == old.notebook?.id)
+        let free = try JournalStore.defaultNotebook(in: context, bookID: nil)
+        let repeatedFree = try JournalStore.defaultNotebook(in: context, bookID: nil)
+        #expect(free.id == repeatedFree.id)
+        let note = try JournalStore.save(in: context, notebook: free, text: "New")
+        #expect(note.notebook?.name == "My notes")
+        #expect(free.shelf?.id == ruth.shelf?.id)
+        #expect(try context.fetchCount(FetchDescriptor<JournalShelf>()) == 1)
+        #expect(try context.fetchCount(FetchDescriptor<JournalNotebook>()) == 2)
+    }
+
+    @Test("A destination from another context is rejected without changing either store")
+    func saveRejectsForeignNotebook() throws {
+        let first = try makeContainer()
+        let second = try makeContainer()
+        let notebook = try JournalStore.defaultNotebook(in: first.mainContext, bookID: nil)
+        try first.mainContext.save()
+        #expect(throws: JournalStore.SaveError.invalidDestination) {
+            try JournalStore.save(in: second.mainContext, notebook: notebook, text: "Keep stores separate")
+        }
+        #expect(try first.mainContext.fetchCount(FetchDescriptor<JournalEntry>()) == 0)
+        #expect(try second.mainContext.fetchCount(FetchDescriptor<JournalEntry>()) == 0)
     }
 }

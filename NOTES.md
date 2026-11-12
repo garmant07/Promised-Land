@@ -815,6 +815,31 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     Strict mode is outside this decision. No-text screens point to the own-Bible option and
     suggest connecting to the internet. Release behavior on an iPhone still needs owner checks.
 
+114. **Journal shelves, round A (data only).** V1 and V2 now own frozen JournalEntry
+    definitions. V3 adds JournalShelf, JournalNotebook, and optional notebook/verse links;
+    every relationship nullifies in both directions, never cascades. Existing properties keep
+    their names and types. The app opens V3 through the lightweight migration plan, then files
+    unassigned entries synchronously before creating ContentView. DEBUG seeding runs first.
+    The default shelf is "My journals", with Bible-book journals and "My notes" for free entries.
+    Filing is repeatable and preserves existing notebook assignments, entry fields and photo links.
+    Unknown legacy book IDs keep their ID as the journal name instead of dropping the entry.
+    Current shelves, interiors, badges and Library growth still group/count exactly as before.
+    JournalStore.save trims and rejects blank notes, saves to the chosen notebook and never
+    records reading. The three existing entry writers use the default destination until round B.
+    ReflectionCard and JournalEditor retain text on save failure; a partly saved reflection retries
+    only unsaved answers. ReadingQuestionView still counts after a note-save failure at the same
+    time as before; an island notice reports the unsaved note after the reading flow closes.
+    Tests cover V2 migration, exact old fields/photo data, filing and reopening on disk, repeatable
+    backfill, non-cascading deletion, default destinations, verse references and note-only saves.
+    Final Debug suite: 283 passed; the only failure is the owner-accepted pre-existing
+    HeldPictureTests.survivesMemoryWarning (PanGlitchTests.swift:64). The unchanged LibrarySummary,
+    ObjectInsight and Library tests pass. Frozen V2 also reproduces an in-memory-store quirk where
+    updated reads as the reference-date epoch after saving; backfill tests compare persisted
+    snapshots, while disk migration tests verify exact timestamps before and after filing.
+    The command-line Release attempt stopped before compilation: sandbox access to DerivedData
+    and CoreSimulator was denied. Physical iPhone Release upgrade checks and save-failure UI
+    checks remain for the owners.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

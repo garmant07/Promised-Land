@@ -326,6 +326,7 @@ struct HomeView: View {
                     }
             }
         }
+        .journalSaveNotice(isVisible: activeSheet == nil && interior == nil)
         .sensoryFeedback(.success, trigger: notices.first?.id)
         .overlay(alignment: .bottom) {
             if !editingIsland {

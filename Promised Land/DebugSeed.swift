@@ -17,6 +17,8 @@ enum PreviewData {
         context.insert(JournalEntry(bookID: "ruth", chapter: 1, prompt: ReflectionData.general[0],
                                     text: "Ruth's loyalty to Naomi, even when it cost her everything."))
         context.insert(JournalEntry(text: "A free entry: thankful for a quiet morning."))
+        do { try JournalStore.backfill(in: context) }
+        catch { fatalError("Could not prepare preview journals: \(error)") }
         return container
     }()
 }

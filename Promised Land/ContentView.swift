@@ -12,9 +12,6 @@ struct ContentView: View {
             OnboardingView { hasOnboarded = true }
         }
         .task {
-            #if DEBUG
-            DebugSeed.apply(to: context)
-            #endif
             AvatarProfile.ensure(in: context)
             IslandMigration.run(context)
             // First run with an API key: find the translations' Bible ids (one request, saved).
