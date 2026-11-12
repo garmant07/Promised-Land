@@ -63,7 +63,27 @@ enum JournalStore {
         try context.save()
     }
 
-    /// The temporary destination rule until the journal picker is available.
+    /// The destination order used by every note-save picker.
+    static func preferredNotebook(in context: ModelContext, bookID: String?) throws -> JournalNotebook {
+        let shelves = try context.fetch(FetchDescriptor<JournalShelf>(sortBy: [SortDescriptor(\.created)]))
+        let notebooks = shelves.flatMap(\.notebooks)
+        if let bookName = bookID.flatMap({ BibleCatalog.book(id: $0)?.name }),
+           let bookNotebook = notebooks.first(where: { $0.name == bookName }) {
+            return bookNotebook
+        }
+        if let recent = notebooks.max(by: { mostRecentDate($0) < mostRecentDate($1) }),
+           mostRecentDate(recent) > .distantPast {
+            return recent
+        }
+        let shelf = shelves.first ?? JournalShelf(label: defaultShelfLabel)
+        if shelf.modelContext == nil { context.insert(shelf) }
+        if let notes = shelf.notebooks.first(where: { $0.name == "My notes" }) { return notes }
+        let notes = JournalNotebook(name: "My notes", shelf: shelf)
+        context.insert(notes)
+        return notes
+    }
+
+    /// Kept for callers that intentionally want the book/free default destination.
     static func defaultNotebook(in context: ModelContext, bookID: String?) throws -> JournalNotebook {
         let shelf = try defaultShelf(in: context)
         let name = notebookName(bookID: bookID)
@@ -71,6 +91,30 @@ enum JournalStore {
         let notebook = JournalNotebook(name: name, shelf: shelf)
         context.insert(notebook)
         return notebook
+    }
+
+    static func mostRecentDate(_ notebook: JournalNotebook) -> Date {
+        notebook.entries.map { max($0.updated, $0.created) }.max() ?? .distantPast
+    }
+
+    @discardableResult
+    static func deleteEmptyShelf(in context: ModelContext, shelf: JournalShelf) throws -> Bool {
+        let shelves = try context.fetch(FetchDescriptor<JournalShelf>())
+        guard shelves.count > 1, shelf.notebooks.isEmpty else { return false }
+        context.delete(shelf)
+        try context.save()
+        return true
+    }
+
+    @discardableResult
+    static func moveJournalsAndDeleteShelf(in context: ModelContext, shelf: JournalShelf,
+                                           to target: JournalShelf) throws -> Bool {
+        let shelves = try context.fetch(FetchDescriptor<JournalShelf>())
+        guard shelves.count > 1, shelf.id != target.id else { return false }
+        shelf.notebooks.forEach { $0.shelf = target }
+        context.delete(shelf)
+        try context.save()
+        return true
     }
 
     private static func defaultShelf(in context: ModelContext) throws -> JournalShelf {

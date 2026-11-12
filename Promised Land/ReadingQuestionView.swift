@@ -19,6 +19,9 @@ struct ReadingQuestionView: View {
     @State private var picked: Int?
     @State private var reflection = ""
     @State private var noteSaveFailed = false
+    @State private var selectedNotebook: JournalNotebook?
+    @State private var picker: JournalPickerRoute?
+    @State private var newJournal: JournalSheetRoute?
 
     /// The hand-written question, or one made from the chapter's text on the device.
     private var question: ChapterQuestion? {
@@ -112,9 +115,12 @@ struct ReadingQuestionView: View {
             Text("Saved privately in your journal.")
                 .font(.footnote)
                 .foregroundStyle(Color.secondaryText)
+            JournalDestinationRow(name: selectedNotebook?.name ?? "Choose a journal") {
+                picker = JournalPickerRoute()
+            }
             Button("Save and count it") {
                 do {
-                    let notebook = try JournalStore.defaultNotebook(in: context, bookID: book.id)
+                    let notebook = try selectedNotebook ?? JournalStore.preferredNotebook(in: context, bookID: book.id)
                     try JournalStore.save(in: context, notebook: notebook, text: reflection,
                                           bookID: book.id, chapter: chapter, prompt: prompt)
                     noteSaveFailed = false
@@ -128,6 +134,23 @@ struct ReadingQuestionView: View {
             .disabled(reflection.trimmingCharacters(in: .whitespacesAndNewlines).count < 2)
         }
         .cardStyle()
+        .onAppear {
+            selectedNotebook = try? JournalStore.preferredNotebook(in: context, bookID: book.id)
+        }
+        .sheet(item: $picker) { _ in
+            JournalDestinationPicker(bookID: book.id, onSelected: { selectedNotebook = $0 },
+                                     onNewJournal: { shelf in newJournal = JournalSheetRoute(kind: .newJournal(shelf?.id)) })
+        }
+        .sheet(item: $newJournal) { route in
+            if case .newJournal(let shelfID) = route.kind {
+                NewJournalSheet(initialShelf: (try? context.fetch(FetchDescriptor<JournalShelf>())).flatMap { $0.first { $0.id == shelfID } }) { name, shelf in
+                    let notebook = JournalNotebook(name: name, shelf: shelf)
+                    context.insert(notebook)
+                    selectedNotebook = notebook
+                    try? context.save()
+                }
+            }
+        }
     }
 
     private func count() {

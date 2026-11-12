@@ -170,6 +170,218 @@ struct JournalStoreTests {
 }
 
 extension JournalStoreTests {
+    @Test("Preferred destination chooses the book journal, then most recent, then My notes")
+    func preferredDestinations() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        try JournalStore.backfill(in: context)
+        let shelves = try context.fetch(FetchDescriptor<JournalShelf>())
+        let first = try #require(shelves.first)
+        let other = JournalShelf(label: "Other")
+        context.insert(other)
+        let recent = JournalNotebook(name: "Recent", shelf: other)
+        context.insert(recent)
+        let oldEntry = JournalEntry(text: "Recent note", date: Date(timeIntervalSince1970: 10))
+        oldEntry.notebook = recent
+        context.insert(oldEntry)
+        let book = JournalNotebook(name: "John", shelf: other)
+        context.insert(book)
+        try context.save()
+        #expect(try JournalStore.preferredNotebook(in: context, bookID: "john").id == book.id)
+        context.delete(book)
+        let newer = JournalEntry(text: "Newer", date: Date(timeIntervalSince1970: 20))
+        newer.notebook = recent
+        context.insert(newer)
+        try context.save()
+        #expect(try JournalStore.preferredNotebook(in: context, bookID: "ruth").id == recent.id)
+        context.delete(oldEntry)
+        context.delete(newer)
+        try context.save()
+        #expect(try JournalStore.preferredNotebook(in: context, bookID: "ruth").name == "My notes")
+        #expect(first.notebooks.contains { $0.name == "My notes" })
+    }
+
+    @Test("Deleting the last shelf is refused; moving a shelf keeps every entry")
+    func shelfDeletionRules() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        try JournalStore.backfill(in: context)
+        let first = try #require(try context.fetch(FetchDescriptor<JournalShelf>()).first)
+        #expect(try JournalStore.deleteEmptyShelf(in: context, shelf: first) == false)
+        let second = JournalShelf(label: "Other")
+        context.insert(second)
+        let journal = JournalNotebook(name: "Keep", shelf: first)
+        context.insert(journal)
+        let entry = try JournalStore.save(in: context, notebook: journal, text: "Keep this")
+        #expect(try JournalStore.moveJournalsAndDeleteShelf(in: context, shelf: first, to: second))
+        #expect(entry.notebook?.id == journal.id)
+        #expect(journal.shelf?.id == second.id)
+        #expect(entry.text == "Keep this")
+    }
+
+    @Test("Deleting the only shelf is refused and changes nothing")
+    func deletingOnlyShelfIsRefusedWithoutChanges() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let shelf = JournalShelf(label: "Only shelf")
+        context.insert(shelf)
+        let journal = JournalNotebook(name: "Notes", shelf: shelf)
+        context.insert(journal)
+        let entry = JournalEntry(bookID: "john", chapter: 3, prompt: "Keep", text: "Unchanged",
+                                  date: Date(timeIntervalSince1970: 1_700_000_000))
+        entry.updated = Date(timeIntervalSince1970: 1_700_000_100)
+        entry.notebook = journal
+        context.insert(entry)
+        try context.save()
+        let before = EntryFields(entry)
+
+        #expect(try JournalStore.deleteEmptyShelf(in: context, shelf: shelf) == false)
+        #expect(!context.hasChanges)
+        #expect(try context.fetch(FetchDescriptor<JournalShelf>()).map(\.id) == [shelf.id])
+        #expect(try context.fetch(FetchDescriptor<JournalNotebook>()).map(\.id) == [journal.id])
+        #expect(journal.shelf?.id == shelf.id)
+        #expect(EntryFields(entry) == before)
+        #expect(try context.fetchCount(FetchDescriptor<JournalEntry>()) == 1)
+    }
+
+    @Test("Deleting a shelf moves every journal to the chosen shelf and preserves entries")
+    func deletingShelfMovesEveryJournalAndPreservesEntries() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let source = JournalShelf(label: "Source")
+        let target = JournalShelf(label: "Target")
+        context.insert(source)
+        context.insert(target)
+
+        let first = JournalNotebook(name: "First", shelf: source)
+        let second = JournalNotebook(name: "Second", shelf: source)
+        let existing = JournalNotebook(name: "Existing", shelf: target)
+        context.insert(first)
+        context.insert(second)
+        context.insert(existing)
+
+        let date = Date(timeIntervalSince1970: 1_700_000_000)
+        let entries = [
+            JournalEntry(bookID: "john", chapter: 3, prompt: "One", text: "First entry", date: date),
+            JournalEntry(bookID: "ruth", chapter: 1, prompt: "Two", text: "Second entry", date: date.addingTimeInterval(1))
+        ]
+        entries[0].notebook = first
+        entries[1].notebook = second
+        entries[0].verseStart = 16
+        entries[1].verseEnd = 7
+        entries.forEach {
+            $0.updated = $0.created.addingTimeInterval(50)
+            context.insert($0)
+        }
+        try context.save()
+        let before = entries.map(EntryFields.init)
+        let journalIDs = Set([first.id, second.id, existing.id])
+
+        #expect(try JournalStore.moveJournalsAndDeleteShelf(in: context, shelf: source, to: target))
+        #expect(try context.fetchCount(FetchDescriptor<JournalShelf>()) == 1)
+        #expect(try context.fetch(FetchDescriptor<JournalShelf>()).first?.id == target.id)
+        #expect(Set(target.notebooks.map(\.id)) == journalIDs)
+        #expect(entries.map(EntryFields.init) == before)
+        #expect(entries.map { $0.notebook?.id } == [first.id, second.id])
+        #expect(try context.fetchCount(FetchDescriptor<JournalEntry>()) == entries.count)
+    }
+
+    @Test("Moving a journal changes only its shelf and leaves entries unchanged")
+    func movingJournalChangesOnlyShelf() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let source = JournalShelf(label: "Source")
+        let target = JournalShelf(label: "Target")
+        context.insert(source)
+        context.insert(target)
+        let journal = JournalNotebook(name: "Journal", shelf: source)
+        context.insert(journal)
+        let entry = JournalEntry(bookID: "john", chapter: 3, prompt: "Prompt", text: "Entry",
+                                  date: Date(timeIntervalSince1970: 1_700_000_000))
+        entry.verseStart = 16
+        entry.verseEnd = 18
+        entry.updated = entry.created.addingTimeInterval(25)
+        entry.notebook = journal
+        context.insert(entry)
+        try context.save()
+        let before = EntryFields(entry)
+        let journalName = journal.name
+        let journalID = journal.id
+
+        journal.shelf = target
+        try context.save()
+
+        #expect(journal.id == journalID)
+        #expect(journal.name == journalName)
+        #expect(journal.shelf?.id == target.id)
+        #expect(EntryFields(entry) == before)
+        #expect(entry.notebook?.id == journalID)
+    }
+
+    @Test("Renaming a shelf or journal changes only its label or name")
+    func renamingChangesOnlyLabels() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let shelf = JournalShelf(label: "Old shelf")
+        context.insert(shelf)
+        let journal = JournalNotebook(name: "Old journal", shelf: shelf)
+        context.insert(journal)
+        let entry = JournalEntry(bookID: "ruth", chapter: 2, prompt: "Prompt", text: "Entry",
+                                  date: Date(timeIntervalSince1970: 1_700_000_000))
+        entry.verseStart = 3
+        entry.notebook = journal
+        context.insert(entry)
+        try context.save()
+        let before = EntryFields(entry)
+        let shelfID = shelf.id
+        let journalID = journal.id
+
+        shelf.label = "New shelf"
+        journal.name = "New journal"
+        try context.save()
+
+        #expect(shelf.id == shelfID)
+        #expect(journal.id == journalID)
+        #expect(shelf.label == "New shelf")
+        #expect(journal.name == "New journal")
+        #expect(journal.shelf?.id == shelfID)
+        #expect(EntryFields(entry) == before)
+        #expect(entry.notebook?.id == journalID)
+    }
+
+    @Test("Picker preselection chooses book journal, then most recently used, then My notes")
+    func pickerPreselectionRules() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let shelf = JournalShelf(label: "First shelf", created: Date(timeIntervalSince1970: 1))
+        context.insert(shelf)
+        let bookJournal = JournalNotebook(name: "John", shelf: shelf, created: Date(timeIntervalSince1970: 2))
+        let recentJournal = JournalNotebook(name: "Recent", shelf: shelf, created: Date(timeIntervalSince1970: 3))
+        context.insert(bookJournal)
+        context.insert(recentJournal)
+
+        let older = JournalEntry(text: "Older", date: Date(timeIntervalSince1970: 10))
+        older.notebook = recentJournal
+        context.insert(older)
+        try context.save()
+        #expect(try JournalStore.preferredNotebook(in: context, bookID: "john").id == bookJournal.id)
+
+        let newer = JournalEntry(text: "Newer", date: Date(timeIntervalSince1970: 20))
+        newer.notebook = recentJournal
+        context.insert(newer)
+        try context.save()
+        context.delete(bookJournal)
+        try context.save()
+        #expect(try JournalStore.preferredNotebook(in: context, bookID: "ruth").id == recentJournal.id)
+
+        context.delete(older)
+        context.delete(newer)
+        try context.save()
+        #expect(try JournalStore.preferredNotebook(in: context, bookID: "ruth").name == "My notes")
+        #expect(shelf.notebooks.contains { $0.name == "My notes" })
+        #expect(try context.fetchCount(FetchDescriptor<JournalShelf>()) == 1)
+    }
+
     @Test("Saving rejects whitespace without inserting an entry")
     func saveRejectsEmpty() throws {
         let container = try makeContainer()

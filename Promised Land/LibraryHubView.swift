@@ -78,7 +78,7 @@ struct LibraryHubView: View {
     private var readingDesk: some View {
         if let suggestion = ReadingSuggestion.make(from: progress) {
             VStack(alignment: .leading, spacing: 8) {
-                shelfTitle("On the reading desk", systemImage: "book.pages")
+                LibraryShelfLabel(title: "On the reading desk", systemImage: "book.pages")
                 NavigationLink(value: suggestion.ref) { ReadingSuggestionCard(suggestion: suggestion) }
                     .buttonStyle(.plain)
             }
@@ -87,7 +87,7 @@ struct LibraryHubView: View {
 
     private var readingRoom: some View {
         VStack(alignment: .leading, spacing: 8) {
-            shelfTitle("The reading room", systemImage: "lamp.table")
+            LibraryShelfLabel(title: "The reading room", systemImage: "lamp.table")
             VStack(spacing: 0) {
                 HStack(alignment: .bottom, spacing: 12) {
                     NavigationLink(value: CatalogLink()) {
@@ -102,7 +102,7 @@ struct LibraryHubView: View {
                     .buttonStyle(.plain)
                 }
                 .padding(.horizontal, 10)
-                Plank()
+                LibraryPlank()
             }
         }
     }
@@ -114,7 +114,7 @@ struct LibraryHubView: View {
         let notesByBook = journalSummary.value(for: journal, build: { LibraryJournalSummary(entries: $0) }).byBook
         return VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                shelfTitle(section.name, systemImage: nil)
+                LibraryShelfLabel(title: section.name, systemImage: nil)
                 Spacer()
                 Text("\(read) of \(total) chapters")
                     .font(.caption.monospacedDigit())
@@ -134,7 +134,7 @@ struct LibraryHubView: View {
                     .padding(.horizontal, 10)
                     .padding(.top, 4)
                 }
-                Plank()
+                LibraryPlank()
             }
         }
     }
@@ -154,7 +154,7 @@ struct LibraryHubView: View {
         let total = counts.reduce(0) { $0 + $1.1 }
         return VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                shelfTitle("Volumes", systemImage: "books.vertical")
+                LibraryShelfLabel(title: "Volumes", systemImage: "books.vertical")
                 Spacer()
                 Text("\(total) of \(BibleCatalog.totalChapters)")
                     .font(.caption.monospacedDigit())
@@ -165,21 +165,13 @@ struct LibraryHubView: View {
                     .frame(height: VolumeSpines.height(for: total))
                     .padding(.horizontal, 10)
                     .padding(.top, 4)
-                Plank()
+                LibraryPlank()
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("\(total) volumes on the Library's shelves, one for every chapter read")
         }
     }
 
-    private func shelfTitle(_ title: String, systemImage: String?) -> some View {
-        HStack(spacing: 6) {
-            if let systemImage { Image(systemName: systemImage).foregroundStyle(Color.terracotta) }
-            Text(title)
-                .font(.serifTitle(.title3))
-                .foregroundStyle(Color.bodyText)
-        }
-    }
 }
 
 #Preview("Library hub") {
@@ -281,23 +273,6 @@ private struct RoomObject: View {
         .padding(12)
         .frame(maxWidth: .infinity, minHeight: 130, alignment: .bottomLeading)
         .background(Color.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-    }
-}
-
-/// A wooden shelf board.
-private struct Plank: View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 4, style: .continuous)
-            .fill(LinearGradient(colors: [Color(hex: "#CFA474"), Color(hex: "#B98A5C")], startPoint: .top, endPoint: .bottom))
-            .frame(height: 12)
-            .shadow(color: Color.primaryBrown.opacity(0.22), radius: 3, y: 3)
-    }
-}
-
-/// Warm library walls behind the shelves.
-private struct LibraryBackdrop: View {
-    var body: some View {
-        LinearGradient(colors: [Color(hex: "#F6EAD4"), Color(hex: "#EFDDBE")], startPoint: .top, endPoint: .bottom)
     }
 }
 
