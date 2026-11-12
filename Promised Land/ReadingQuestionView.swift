@@ -35,7 +35,7 @@ struct ReadingQuestionView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("\(book.name) \(chapter)")
                         .font(.caption.weight(.bold))
-                        .foregroundStyle(Color.terracotta)
+                        .foregroundStyle(Color.secondaryText)
                         .textCase(.uppercase)
                     if let question { questionCard(question) } else { reflectionCard }
                 }
@@ -47,6 +47,7 @@ struct ReadingQuestionView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Back to reading") { onLookAgain() }.tint(Color.primaryBrown) }
             }
+            .tint(Color.primaryBrown)
         }
     }
 
@@ -73,12 +74,12 @@ struct ReadingQuestionView: View {
                         Spacer()
                         if isPicked {
                             Image(systemName: right ? "checkmark.circle.fill" : "xmark.circle")
-                                .foregroundStyle(right ? Color.olive : Color.terracotta)
+                                .foregroundStyle(Color.primaryBrown)
                         }
                     }
                     .padding(12)
                     .frame(minHeight: 52)
-                    .background(isPicked ? (right ? Color.olive.opacity(0.2) : Color.terracotta.opacity(0.15)) : Color.card,
+                    .background(isPicked ? Color.primaryBrown.opacity(0.1) : Color.card,
                                 in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 }
                 .buttonStyle(.plain)
@@ -95,7 +96,7 @@ struct ReadingQuestionView: View {
             if picked == q.answer {
                 Label("That's right. \(book.name) \(chapter) counts.", systemImage: "checkmark.seal.fill")
                     .font(.headline)
-                    .foregroundStyle(Color.olive)
+                    .foregroundStyle(Color.primaryBrown)
             }
         }
         .cardStyle()
@@ -110,7 +111,7 @@ struct ReadingQuestionView: View {
                 .scrollContentBackground(.hidden)
                 .frame(minHeight: 110)
                 .padding(8)
-                .background(Color.cream, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .accessibilityLabel("Your reflection")
             Text("Saved privately in your journal.")
                 .font(.footnote)
@@ -143,8 +144,8 @@ struct ReadingQuestionView: View {
         }
         .sheet(item: $newJournal) { route in
             if case .newJournal(let shelfID) = route.kind {
-                NewJournalSheet(initialShelf: (try? context.fetch(FetchDescriptor<JournalShelf>())).flatMap { $0.first { $0.id == shelfID } }) { name, shelf in
-                    let notebook = JournalNotebook(name: name, shelf: shelf)
+                NewJournalSheet(initialShelf: (try? context.fetch(FetchDescriptor<JournalShelf>())).flatMap { $0.first { $0.id == shelfID } }) { name, shelf, colorIndex in
+                    let notebook = JournalNotebook(name: name, shelf: shelf, colorIndex: colorIndex)
                     context.insert(notebook)
                     selectedNotebook = notebook
                     try? context.save()

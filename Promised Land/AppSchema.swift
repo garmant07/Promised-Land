@@ -150,20 +150,21 @@ nonisolated enum SchemaV2: VersionedSchema {
 
 /// Every step is additive, so each is a lightweight migration: all saved progress is kept.
 nonisolated enum AppMigrationPlan: SchemaMigrationPlan {
-    static var schemas: [any VersionedSchema.Type] { [SchemaV1.self, SchemaV2.self, SchemaV3.self] }
+    static var schemas: [any VersionedSchema.Type] { [SchemaV1.self, SchemaV2.self, SchemaV3.self, SchemaV4.self] }
     static var stages: [MigrationStage] {
         [.lightweight(fromVersion: SchemaV1.self, toVersion: SchemaV2.self),
-         .lightweight(fromVersion: SchemaV2.self, toVersion: SchemaV3.self)]
+         .lightweight(fromVersion: SchemaV2.self, toVersion: SchemaV3.self),
+         .lightweight(fromVersion: SchemaV3.self, toVersion: SchemaV4.self)]
     }
 }
 
 /// Every SwiftData model the app stores, registered once for the app and previews.
 enum AppSchema {
-    static var models: [any PersistentModel.Type] { SchemaV3.models }
+    static var models: [any PersistentModel.Type] { SchemaV4.models }
 
     /// The app's on-disk store, opened through the migration plan.
     static func container(url: URL? = nil) throws -> ModelContainer {
-        let schema = Schema(versionedSchema: SchemaV3.self)
+        let schema = Schema(versionedSchema: SchemaV4.self)
         let config = url.map { ModelConfiguration(schema: schema, url: $0, cloudKitDatabase: .none) } ?? ModelConfiguration(schema: schema)
         return try ModelContainer(for: schema, migrationPlan: AppMigrationPlan.self, configurations: config)
     }
