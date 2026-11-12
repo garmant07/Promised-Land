@@ -4,12 +4,13 @@ import SwiftData
 @testable import Promised_Land
 
 @MainActor
+@Suite(.serialized)
 struct IslandMigrationTests {
     let start = Date(timeIntervalSince1970: 1_780_000_000)
 
     @Test("Existing readers' islands rebuild as Places; only positions they chose themselves are kept")
     func layoutMigration() throws {
-        let container = try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let context = container.mainContext
         let defaults = UserDefaults(suiteName: "migration-\(UUID().uuidString)")!
         // An old island: Ruth and John read, Genesis begun; plots pinned by the old layout.
@@ -45,6 +46,7 @@ struct IslandMigrationTests {
 }
 
 @MainActor
+@Suite(.serialized)
 struct SchemaMigrationTests {
     func tempURL() -> URL {
         FileManager.default.temporaryDirectory.appendingPathComponent("pl-\(UUID().uuidString).store")
@@ -52,13 +54,13 @@ struct SchemaMigrationTests {
 
     /// Writes a store the way the app did before versioning (plain schema of the V1 models).
     func writeOldStore(at url: URL) throws {
-        let container = try ModelContainer(for: Schema(SchemaV1.models), configurations: ModelConfiguration(url: url))
+        let container = try ModelContainer(for: Schema(SchemaV1.models), configurations: ModelConfiguration(url: url, cloudKitDatabase: .none))
         let context = container.mainContext
         for ch in 1...4 { context.insert(ChapterRead(bookID: "ruth", chapterNumber: ch)) }
         context.insert(ChapterRead(bookID: "john", chapterNumber: 15, checked: false))
         context.insert(QuizPass(bookID: "ruth", score: 3))
         context.insert(VerseMemorised(bookID: "ruth", reference: "Ruth 1:16"))
-        context.insert(JournalEntry(bookID: "ruth", chapter: 1, text: "Kept safe"))
+        context.insert(SchemaV1.JournalEntry(bookID: "ruth", chapter: 1, text: "Kept safe"))
         context.insert(BookStarted(bookID: "genesis"))
         context.insert(PlacedItem(key: "ruth", x: 9, y: 9, moved: true))
         try context.save()
@@ -96,5 +98,72 @@ struct SchemaMigrationTests {
         let again = try AppSchema.container(url: url)
         #expect(try again.mainContext.fetch(FetchDescriptor<ChapterRead>()).count == 5)
         #expect(try again.mainContext.fetch(FetchDescriptor<ProduceGift>()).count == 1)
+    }
+}
+
+extension SchemaMigrationTests {
+    @Test("Frozen V2 entries and their photo link survive V3 migration and reopening")
+    func v2JournalFieldsSurvive() throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let url = directory.appendingPathComponent("journal.store")
+        let ids = [UUID(), UUID(), UUID()]
+        let photoID = UUID()
+        let created = Date(timeIntervalSince1970: 1_700_000_000)
+        let updated = created.addingTimeInterval(400)
+        let bytes = Data([1, 2, 3, 4])
+        do {
+            let schema = Schema(versionedSchema: SchemaV2.self)
+            let container = try ModelContainer(for: schema, configurations:
+                ModelConfiguration(schema: schema, url: url, cloudKitDatabase: .none))
+            let context = container.mainContext
+            let entries = [
+                SchemaV2.JournalEntry(bookID: "john", chapter: 3, prompt: "Reflect", text: "  Kept\nexactly  ", date: created),
+                SchemaV2.JournalEntry(text: "Free", date: created),
+                SchemaV2.JournalEntry(bookID: "ruth", text: "Whole book", date: created)
+            ]
+            for (index, entry) in entries.enumerated() {
+                entry.id = ids[index]
+                entry.updated = updated
+                context.insert(entry)
+            }
+            let photo = ReadingPhoto(bookID: "john", chapter: 3, imageData: bytes, journalEntryID: ids[0], date: created)
+            photo.uid = photoID
+            context.insert(photo)
+            context.insert(ChapterRead(bookID: "john", chapterNumber: 3, date: created))
+            try context.save()
+        }
+        // Each iteration releases its container before the next reopen.
+        for _ in 0..<2 {
+            let container = try AppSchema.container(url: url)
+            let context = container.mainContext
+            let entries = try context.fetch(FetchDescriptor<JournalEntry>())
+            #expect(entries.count == 3)
+            for (index, id) in ids.enumerated() {
+                let entry = try #require(entries.first { $0.id == id })
+                #expect(entry.created == created)
+                #expect(entry.updated == updated)
+                #expect(entry.bookID == [String?("john"), nil, "ruth"][index])
+                #expect(entry.chapter == (index == 0 ? 3 : nil))
+                #expect(entry.prompt == (index == 0 ? "Reflect" : nil))
+                #expect(entry.text == ["  Kept\nexactly  ", "Free", "Whole book"][index])
+                #expect(entry.notebook == nil)
+                #expect(entry.verseStart == nil)
+                #expect(entry.verseEnd == nil)
+            }
+            let photos = try context.fetch(FetchDescriptor<ReadingPhoto>())
+            #expect(photos.count == 1)
+            let photo = try #require(photos.first)
+            #expect(photo.uid == photoID)
+            #expect(photo.journalEntryID == ids[0])
+            #expect(photo.bookID == "john")
+            #expect(photo.chapter == 3)
+            #expect(photo.date == created)
+            #expect(photo.imageData == bytes)
+            #expect(try context.fetchCount(FetchDescriptor<ChapterRead>()) == 1)
+            #expect(try context.fetchCount(FetchDescriptor<JournalShelf>()) == 0)
+            #expect(try context.fetchCount(FetchDescriptor<JournalNotebook>()) == 0)
+        }
     }
 }

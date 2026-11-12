@@ -1,0 +1,62 @@
+import Foundation
+import SwiftData
+
+/// Journal filing only. Reading history and completion belong to the reading flow.
+@MainActor
+enum JournalStore {
+    private static let defaultShelfLabel = "My journals"
+
+    /// Run before presenting the app. Only unfiled entries are changed.
+    static func backfill(in context: ModelContext) throws {
+        let unfiled = try context.fetch(FetchDescriptor<JournalEntry>(
+            predicate: #Predicate { $0.notebook == nil }))
+        let shelves = try context.fetch(FetchDescriptor<JournalShelf>())
+        guard !unfiled.isEmpty || shelves.isEmpty else { return }
+
+        let shelf = try defaultShelf(in: context)
+        var notebooks: [String: JournalNotebook] = [:]
+        for notebook in shelf.notebooks where notebooks[notebook.name] == nil {
+            notebooks[notebook.name] = notebook
+        }
+        for entry in unfiled {
+            let name = notebookName(bookID: entry.bookID)
+            let notebook: JournalNotebook
+            if let existing = notebooks[name] {
+                notebook = existing
+            } else {
+                notebook = JournalNotebook(name: name, shelf: shelf)
+                context.insert(notebook)
+                notebooks[name] = notebook
+            }
+            entry.notebook = notebook
+        }
+        try context.save()
+    }
+
+    /// The temporary destination rule until the journal picker is available.
+    static func defaultNotebook(in context: ModelContext, bookID: String?) throws -> JournalNotebook {
+        let shelf = try defaultShelf(in: context)
+        let name = notebookName(bookID: bookID)
+        if let existing = shelf.notebooks.first(where: { $0.name == name }) { return existing }
+        let notebook = JournalNotebook(name: name, shelf: shelf)
+        context.insert(notebook)
+        return notebook
+    }
+
+    private static func defaultShelf(in context: ModelContext) throws -> JournalShelf {
+        let label = defaultShelfLabel
+        var request = FetchDescriptor<JournalShelf>(predicate: #Predicate { $0.label == label },
+                                                    sortBy: [SortDescriptor(\.created)])
+        request.fetchLimit = 1
+        if let existing = try context.fetch(request).first { return existing }
+        let shelf = JournalShelf(label: label)
+        context.insert(shelf)
+        return shelf
+    }
+
+    private static func notebookName(bookID: String?) -> String {
+        guard let bookID else { return "My notes" }
+        // Keep even an unrecognised legacy book ID filed without changing its reference.
+        return BibleCatalog.book(id: bookID)?.name ?? bookID
+    }
+}
