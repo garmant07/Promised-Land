@@ -17,6 +17,7 @@ struct BuildCatalogView: View {
                     Text("New Testament").tag(Testament.new)
                 }
                 .pickerStyle(.segmented)
+                .tint(Color.primaryBrown)
                 ForEach(BibleCatalog.books.filter { $0.testament == testament }) { book in
                     NavigationLink(value: book) {
                         BuildPreviewRow(book: book, read: progress.chaptersRead(book.id))

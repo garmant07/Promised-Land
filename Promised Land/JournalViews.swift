@@ -193,7 +193,6 @@ struct LibraryShelfView: View {
                 .padding(16)
             }
             .themedScreen()
-            .navigationTitle("Library")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: JournalVolume.self) { JournalBookView(volume: $0) }
             .toolbar {
