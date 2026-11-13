@@ -144,7 +144,7 @@ struct JournalActionMenuDivider: View {
     var body: some View {
         Rectangle()
             .fill(Color.secondaryText.opacity(0.2))
-            .frame(height: 1 / UIScreen.main.scale)
+            .frame(height: 0.5)
             .accessibilityHidden(true)
     }
 }
@@ -183,21 +183,80 @@ struct JournalActionMenuTarget: Identifiable {
     }
 }
 
+private struct JournalLongPressAnchorKey: PreferenceKey {
+    static var defaultValue: CGRect = .zero
+
+    static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
+        value = nextValue()
+    }
+}
+
 struct JournalLongPressCapture<Content: View>: View {
     let content: Content
+    let onTap: (() -> Void)?
     let onLongPress: (CGRect) -> Void
+    let simultaneousWithScrollView: Bool
+    @State private var anchor: CGRect = .zero
+
+    init(content: Content, onTap: (() -> Void)? = nil, simultaneousWithScrollView: Bool = false,
+         onLongPress: @escaping (CGRect) -> Void) {
+        self.content = content
+        self.onTap = onTap
+        self.simultaneousWithScrollView = simultaneousWithScrollView
+        self.onLongPress = onLongPress
+    }
 
     var body: some View {
         content
-            .overlay {
+            .background {
                 GeometryReader { proxy in
                     Color.clear
-                        .contentShape(Rectangle())
-                        .onLongPressGesture(minimumDuration: 0.4, maximumDistance: 20) {
-                            onLongPress(proxy.frame(in: .named("journalPage")))
-                        }
+                        .preference(key: JournalLongPressAnchorKey.self,
+                                    value: proxy.frame(in: .named("journalPage")))
                 }
             }
+            .onPreferenceChange(JournalLongPressAnchorKey.self) { anchor = $0 }
+            .contentShape(Rectangle())
+            .modifier(JournalInteractionGestureModifier(gesture: interactionGesture,
+                                                         simultaneous: simultaneousWithScrollView))
+    }
+
+    private var interactionGesture: AnyGesture<Void> {
+        if onTap != nil {
+            return AnyGesture(ExclusiveGesture(
+                LongPressGesture(minimumDuration: 0.4, maximumDistance: 20),
+                TapGesture()
+            )
+            .onEnded { result in
+                switch result {
+                case .first:
+                    guard anchor != .zero else { return }
+                    onLongPress(anchor)
+                case .second:
+                    onTap?()
+                }
+            }.map { _ in () })
+        }
+
+        return AnyGesture(LongPressGesture(minimumDuration: 0.4, maximumDistance: 20)
+            .onEnded { _ in
+                guard anchor != .zero else { return }
+                onLongPress(anchor)
+            }.map { _ in () })
+    }
+}
+
+private struct JournalInteractionGestureModifier<G: Gesture>: ViewModifier {
+    let gesture: G
+    let simultaneous: Bool
+
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        if simultaneous {
+            content.simultaneousGesture(gesture)
+        } else {
+            content.gesture(gesture)
+        }
     }
 }
 
@@ -224,6 +283,7 @@ struct JournalActionMenuOverlay: View {
                     .ignoresSafeArea()
                     .contentShape(Rectangle())
                     .onTapGesture(perform: onDismiss)
+                    .zIndex(0)
 
                 JournalActionMenu(
                     title: target.title,
@@ -232,6 +292,7 @@ struct JournalActionMenuOverlay: View {
                     onAction: onAction
                 )
                 .position(x: x, y: y)
+                .zIndex(1)
                 .transition(.opacity.combined(with: reduceMotion ? .identity : .scale(scale: 0.96)))
                 .accessibilityFocused($menuIsFocused)
                 .accessibilityAction(.escape, onDismiss)

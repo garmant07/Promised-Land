@@ -40,35 +40,32 @@ struct JournalPopupGraphic: View {
     let kind: JournalPopupGraphicKind
 
     var body: some View {
-        graphic
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .accessibilityHidden(true)
-    }
-
-    @ViewBuilder
-    private var graphic: some View {
-        switch kind {
-        case .shelf:
-            JournalPopupShelfGraphic()
-        case .journal(let color):
-            JournalPopupSpineGraphic(color: color)
-        case .move(let color):
-            HStack(spacing: 3) {
+        Group {
+            switch kind {
+            case .shelf:
+                JournalPopupShelfGraphic()
+            case .journal(let color):
                 JournalPopupSpineGraphic(color: color)
-                Image(systemName: "arrow.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(Color.primaryBrown)
-            }
-        case .page:
-            JournalPopupPageGraphic()
-        case .saveTo(let color):
-            HStack(spacing: 3) {
-                JournalPopupSpineGraphic(color: color)
-                Image(systemName: "bookmark.fill")
-                    .font(.caption2.weight(.bold))
-                    .foregroundStyle(Color.primaryBrown)
+            case .move(let color):
+                HStack(spacing: 3) {
+                    JournalPopupSpineGraphic(color: color)
+                    Image(systemName: "arrow.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(Color.primaryBrown)
+                }
+            case .page:
+                JournalPopupPageGraphic()
+            case .saveTo(let color):
+                HStack(spacing: 3) {
+                    JournalPopupSpineGraphic(color: color)
+                    Image(systemName: "bookmark.fill")
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(Color.primaryBrown)
+                }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .accessibilityHidden(true)
     }
 }
 
@@ -137,15 +134,17 @@ struct JournalPopupPageGraphic: View {
 struct JournalPopupBottomButton: View {
     let title: String
     let isDisabled: Bool
+    var color: Color = Color.primaryBrown
+    var role: ButtonRole? = nil
     let action: () -> Void
 
     var body: some View {
-        Button(action: action) {
+        Button(role: role, action: action) {
             Text(title)
                 .font(.body.weight(.semibold))
                 .foregroundStyle(Color.cream)
                 .frame(maxWidth: .infinity, minHeight: 50)
-                .background(Color.primaryBrown.opacity(isDisabled ? 0.45 : 1), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .background(color.opacity(isDisabled ? 0.45 : 1), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
