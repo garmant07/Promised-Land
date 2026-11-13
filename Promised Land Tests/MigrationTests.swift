@@ -229,6 +229,69 @@ extension SchemaMigrationTests {
         }
     }
 
+    @Test("Frozen V4 journals migrate to V5 and default continuation fields")
+    func v4JournalFieldsSurviveV5() throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let url = directory.appendingPathComponent("journal-v4.store")
+        let created = Date(timeIntervalSince1970: 1_700_000_000)
+        let shelfID = UUID()
+        let journalIDs = [UUID(), UUID()]
+        let entryIDs = [UUID(), UUID()]
+
+        do {
+            let schema = Schema(versionedSchema: SchemaV4.self)
+            let container = try ModelContainer(for: schema, configurations:
+                ModelConfiguration(schema: schema, url: url, cloudKitDatabase: .none))
+            let context = container.mainContext
+            let shelf = SchemaV4.JournalShelf(label: "Personal", created: created)
+            shelf.id = shelfID
+            let coloured = SchemaV4.JournalNotebook(name: "Coloured", shelf: shelf, created: created, colorIndex: 3)
+            coloured.id = journalIDs[0]
+            let automatic = SchemaV4.JournalNotebook(name: "Automatic", shelf: shelf, created: created.addingTimeInterval(1))
+            automatic.id = journalIDs[1]
+            let verses = SchemaV4.JournalEntry(bookID: "john", chapter: 3, text: "Verses", date: created)
+            verses.id = entryIDs[0]
+            verses.verseStart = 16
+            verses.verseEnd = 18
+            verses.notebook = coloured
+            let free = SchemaV4.JournalEntry(text: "Free", date: created.addingTimeInterval(1))
+            free.id = entryIDs[1]
+            free.notebook = automatic
+            context.insert(shelf)
+            context.insert(coloured)
+            context.insert(automatic)
+            context.insert(verses)
+            context.insert(free)
+            try context.save()
+        }
+
+        do {
+            let container = try AppSchema.container(url: url)
+            let context = container.mainContext
+            let shelves = try context.fetch(FetchDescriptor<JournalShelf>())
+            let journals = try context.fetch(FetchDescriptor<JournalNotebook>())
+            let entries = try context.fetch(FetchDescriptor<JournalEntry>())
+            #expect(shelves.count == 1)
+            #expect(shelves.first?.id == shelfID)
+            #expect(journals.count == 2)
+            #expect(journals.first { $0.id == journalIDs[0] }?.colorIndex == 3)
+            #expect(journals.first { $0.id == journalIDs[1] }?.colorIndex == nil)
+            #expect(entries.count == 2)
+            #expect(entries.first { $0.id == entryIDs[0] }?.verseStart == 16)
+            #expect(entries.first { $0.id == entryIDs[0] }?.verseEnd == 18)
+            #expect(entries.first { $0.id == entryIDs[1] }?.verseStart == nil)
+            #expect(entries.allSatisfy { $0.pageOrder == nil && !$0.isContinuation })
+            try context.save()
+        }
+
+        let reopened = try AppSchema.container(url: url)
+        let entries = try reopened.mainContext.fetch(FetchDescriptor<JournalEntry>())
+        #expect(entries.count == 2)
+        #expect(entries.allSatisfy { $0.pageOrder == nil && !$0.isContinuation })
+    }
+
     @Test("Automatic notebook colour is stable from UUID bytes, not hashValue")
     func automaticNotebookColourIndexIsStable() {
         let id = UUID(uuid: (0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,

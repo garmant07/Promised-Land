@@ -136,15 +136,17 @@ struct JournalVolume: Identifiable, Hashable {
     let notebookID: UUID?
     let shelfID: UUID?
     let colorIndex: Int?
+    let created: Date?
 
     init(id: String, title: String, count: Int, notebookID: UUID? = nil, shelfID: UUID? = nil,
-         colorIndex: Int? = nil) {
+         colorIndex: Int? = nil, created: Date? = nil) {
         self.id = id
         self.title = title
         self.count = count
         self.notebookID = notebookID
         self.shelfID = shelfID
         self.colorIndex = colorIndex
+        self.created = created
     }
 
     var bookID: String? { id == "free" ? nil : id }
@@ -162,7 +164,8 @@ struct LibraryShelfView: View {
                 .filter { $0.modelContext != nil }
                 .sorted { $0.created < $1.created }
                 .map { JournalVolume(id: $0.id.uuidString, title: $0.name, count: $0.entries.count,
-                                     notebookID: $0.id, shelfID: shelf.id, colorIndex: $0.colorIndex) }
+                                     notebookID: $0.id, shelfID: shelf.id, colorIndex: $0.colorIndex,
+                                     created: $0.created) }
             return (shelf, volumes)
         }
     }
@@ -301,26 +304,43 @@ struct JournalBookView: View {
 
     @Query(sort: \JournalEntry.created) private var all: [JournalEntry]
     @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var page = 0
     @State private var editing: JournalEntry?
     @State private var addingPage: JournalPageRoute?
+    @State private var continuing: JournalContinuationRoute?
     @State private var confirmingDelete = false
 
     private var entries: [JournalEntry] {
+        let filtered: [JournalEntry]
         if let notebookID = volume.notebookID {
-            return all.filter { $0.notebook?.id == notebookID }
+            filtered = all.filter { $0.notebook?.id == notebookID }
+        } else {
+            filtered = all.filter { $0.bookID == volume.bookID }
         }
-        return all.filter { $0.bookID == volume.bookID }
+        return JournalStore.sortedPages(filtered)
+    }
+
+    private var startDate: Date {
+        JournalPresentation.startDate(journalCreated: volume.created ?? .now,
+                                      oldestPageDate: entries.map(\.created).min())
     }
 
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 0) {
+            JournalBookHeader(title: volume.title, startDate: startDate, pageCount: entries.count)
+            Divider().overlay(Color.secondaryText.opacity(0.35))
+                .padding(.horizontal, 22)
             if entries.isEmpty {
                 Spacer()
                 VStack(spacing: 8) {
                     Text("No pages yet")
                         .font(.title3.weight(.semibold))
                         .foregroundStyle(Color.bodyText)
+                    Text("Started \(startDate.formatted(date: .abbreviated, time: .omitted))")
+                        .font(.footnote)
+                        .foregroundStyle(Color.secondaryText)
                     Text("Write your first page.")
                         .foregroundStyle(Color.secondaryText)
                     Button("Add a page") { addingPage = JournalPageRoute() }
@@ -330,7 +350,7 @@ struct JournalBookView: View {
             } else {
                 TabView(selection: $page) {
                     ForEach(Array(entries.enumerated()), id: \.element.id) { index, entry in
-                        JournalPageView(entry: entry).tag(index)
+                        JournalPageView(entry: entry) { continuing = JournalContinuationRoute(source: entry) }.tag(index)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
@@ -340,12 +360,20 @@ struct JournalBookView: View {
         .themedScreen()
         .navigationTitle(volume.title)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button { dismiss() } label: { Label("Journals", systemImage: "chevron.left") }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button { addingPage = JournalPageRoute() } label: { Image(systemName: "plus") }
+                    .accessibilityLabel("Add page")
+            }
             ToolbarItemGroup(placement: .bottomBar) {
                 Button { editing = current } label: { Label("Edit", systemImage: "pencil") }
                     .disabled(current == nil)
                 Spacer()
-                Text("\(entries.isEmpty ? 0 : min(page, entries.count - 1) + 1) of \(entries.count)")
+                Text("Page \(entries.isEmpty ? 0 : min(page, entries.count - 1) + 1) of \(entries.count)")
                     .font(.footnote)
                     .foregroundStyle(Color.secondaryText)
                 Spacer()
@@ -359,6 +387,17 @@ struct JournalBookView: View {
         }
         .sheet(item: $editing) { JournalEditor(entry: $0, bookID: volume.bookID) }
         .sheet(item: $addingPage) { _ in JournalEditor(entry: nil, bookID: volume.bookID, notebookID: volume.notebookID) }
+        .sheet(item: $continuing) { route in
+            ContinuedJournalEditor(source: route.source, journalName: volume.title,
+                                   pageNumber: min(page, max(0, entries.count - 1)) + 1) { saved in
+                let select = { page = entries.firstIndex(where: { $0.id == saved.id }) ?? page }
+                if reduceMotion {
+                    select()
+                } else {
+                    withAnimation { select() }
+                }
+            }
+        }
         .confirmationDialog("Delete this page?", isPresented: $confirmingDelete, titleVisibility: .visible) {
             Button("Delete", role: .destructive) {
                 guard let current, current.modelContext != nil else { return }
@@ -377,19 +416,14 @@ struct JournalBookView: View {
 /// A single page, like a sheet of paper.
 struct JournalPageView: View {
     let entry: JournalEntry
+    let continuePage: () -> Void
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Text(entry.reference ?? "Free entry")
-                        .font(.headline)
-                        .foregroundStyle(Color.secondaryText)
-                    Spacer()
-                    Text(entry.created.formatted(date: .abbreviated, time: .omitted))
-                        .font(.subheadline)
-                        .foregroundStyle(Color.secondaryText)
-                }
+            VStack(alignment: .leading, spacing: 14) {
+                Text(JournalPresentation.pageDetails(for: entry))
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
                 if let prompt = entry.prompt {
                     Text(prompt)
                         .font(.system(.subheadline, design: .serif).italic())
@@ -400,19 +434,67 @@ struct JournalPageView: View {
                     .foregroundStyle(Color.bodyText)
                     .lineSpacing(6)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                Button(action: continuePage) {
+                    Label("Continue on a new page", systemImage: "plus")
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(Color.primaryBrown)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .strokeBorder(Color.primaryBrown, style: StrokeStyle(lineWidth: 1, dash: [6, 4]))
+                        }
+                }
+                .buttonStyle(.plain)
             }
-            .padding(22)
-            .background(Color.card, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-            .shadow(color: Color.primaryBrown.opacity(0.10), radius: 8, y: 3)
-            .padding(16)
+            .padding(.horizontal, 22)
+            .padding(.vertical, 18)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.cream)
     }
 }
 
+enum JournalPresentation {
+    static func startDate(journalCreated: Date, oldestPageDate: Date?) -> Date {
+        min(journalCreated, oldestPageDate ?? journalCreated)
+    }
+
+    @MainActor static func pageDetails(for entry: JournalEntry) -> String {
+        let date = entry.created.formatted(date: .abbreviated, time: .omitted)
+        let reference = entry.reference
+        let base = reference.map { "\($0) · \(date)" } ?? date
+        return entry.isContinuation ? "\(base) · continued" : base
+    }
+}
+
+private struct JournalBookHeader: View {
+    let title: String
+    let startDate: Date
+    let pageCount: Int
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text(title)
+                .font(.serifTitle(.title2))
+                .foregroundStyle(Color.bodyText)
+            Text("Started \(startDate.formatted(date: .abbreviated, time: .omitted)) · \(pageCount) \(pageCount == 1 ? "page" : "pages")")
+                .font(.footnote)
+                .foregroundStyle(Color.secondaryText)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 22)
+        .padding(.top, 8)
+        .padding(.bottom, 10)
+    }
+}
+
 private struct JournalPageRoute: Identifiable {
     let id = UUID()
+}
+
+private struct JournalContinuationRoute: Identifiable {
+    let id = UUID()
+    let source: JournalEntry
 }
 
 /// Write or edit a page. For a book volume, the page can be tied to a chapter.
@@ -520,6 +602,75 @@ struct JournalEditor: View {
                 try JournalStore.save(in: context, notebook: notebook, text: trimmed,
                                       bookID: bookID, chapter: chapter == 0 ? nil : chapter)
             }
+            dismiss()
+        } catch {
+            saveFailed = true
+        }
+    }
+}
+
+/// The deliberately smaller editor used when a page continues an existing page.
+private struct ContinuedJournalEditor: View {
+    let source: JournalEntry
+    let journalName: String
+    let pageNumber: Int
+    let onSaved: (JournalEntry) -> Void
+
+    @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
+    @State private var text = ""
+    @State private var saveFailed = false
+
+    var body: some View {
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("\(journalName) · continues page \(pageNumber)")
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+                Divider().overlay(Color.secondaryText.opacity(0.35))
+                if let reference = source.reference {
+                    Text("\(reference) · today")
+                        .font(.footnote)
+                        .foregroundStyle(Color.secondaryText)
+                }
+                if saveFailed {
+                    Text("Couldn't save your note. Please try again.")
+                        .font(.footnote)
+                        .foregroundStyle(Color.secondaryText)
+                }
+                TextEditor(text: $text)
+                    .font(.system(.body, design: .serif))
+                    .foregroundStyle(Color.bodyText)
+                    .tint(Color.primaryBrown)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.cream)
+                    .accessibilityLabel("Journal text")
+            }
+            .padding(22)
+            .background(Color.cream)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .themedScreen()
+            .navigationTitle("New page")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") { save() }
+                        .tint(Color.primaryBrown)
+                        .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                }
+            }
+            .onAppear { text = "" }
+        }
+    }
+
+    private func save() {
+        saveFailed = false
+        do {
+            let saved = try JournalStore.continuePage(in: context, from: source, text: text)
+            onSaved(saved)
             dismiss()
         } catch {
             saveFailed = true

@@ -448,6 +448,78 @@ extension JournalStoreTests {
         #expect(same.reference == "John 3:16")
     }
 
+    @Test("Open journal pages keep legacy order and insert continuations between pages")
+    func pageOrderingAndContinuation() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let notebook = try JournalStore.defaultNotebook(in: context, bookID: "john")
+        let dates = [
+            Date(timeIntervalSince1970: 1_700_000_000),
+            Date(timeIntervalSince1970: 1_700_001_000),
+            Date(timeIntervalSince1970: 1_700_002_000)
+        ]
+        let pages = dates.enumerated().map { index, date in
+            JournalEntry(bookID: "john", chapter: 3, prompt: "Do not copy", text: "Page \(index)", date: date)
+        }
+        pages[0].verseStart = 16
+        pages[0].verseEnd = 18
+        for page in pages {
+            page.notebook = notebook
+            context.insert(page)
+        }
+        try context.save()
+        #expect(JournalStore.sortedPages(notebook.entries).map(\.text) == ["Page 0", "Page 1", "Page 2"])
+
+        let continued = try JournalStore.continuePage(in: context, from: pages[0], text: "Continued")
+        #expect(JournalStore.sortedPages(notebook.entries).map(\.text) == ["Page 0", "Continued", "Page 1", "Page 2"])
+        #expect(continued.bookID == pages[0].bookID)
+        #expect(continued.chapter == pages[0].chapter)
+        #expect(continued.verseStart == 16 && continued.verseEnd == 18)
+        #expect(continued.prompt == nil)
+        #expect(continued.isContinuation)
+        #expect(continued.created > pages[2].created)
+
+        let repeated = try JournalStore.continuePage(in: context, from: pages[0], text: "Continued again")
+        #expect(JournalStore.sortedPages(notebook.entries).map(\.text) == ["Page 0", "Continued again", "Continued", "Page 1", "Page 2"])
+        #expect(repeated.isContinuation)
+
+        let last = try JournalStore.continuePage(in: context, from: pages[2], text: "Last continuation")
+        #expect(last.pageOrder == nil)
+        #expect(JournalStore.sortedPages(notebook.entries).last?.id == last.id)
+
+        context.delete(repeated)
+        try context.save()
+        #expect(JournalStore.sortedPages(notebook.entries).map(\.text) == ["Page 0", "Continued", "Page 1", "Page 2", "Last continuation"])
+        #expect(try context.fetchCount(FetchDescriptor<ChapterRead>()) == 0)
+        #expect(try context.fetchCount(FetchDescriptor<QuizPass>()) == 0)
+        #expect(try context.fetchCount(FetchDescriptor<VerseMemorised>()) == 0)
+    }
+
+    @Test("Continuing a page rejects blank text")
+    func continuationRejectsBlankText() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let notebook = try JournalStore.defaultNotebook(in: context, bookID: "john")
+        let source = JournalEntry(bookID: "john", text: "Source")
+        source.notebook = notebook
+        context.insert(source)
+        try context.save()
+        #expect(throws: JournalStore.SaveError.emptyText) {
+            try JournalStore.continuePage(in: context, from: source, text: " \n ")
+        }
+        #expect(try context.fetchCount(FetchDescriptor<JournalEntry>()) == 1)
+    }
+
+    @Test("Journal start date uses the earlier journal or oldest-page date")
+    func journalStartDateUsesEarlierDate() {
+        let journalDate = Date(timeIntervalSince1970: 1_800_000_000)
+        let oldPageDate = Date(timeIntervalSince1970: 1_700_000_000)
+        #expect(JournalPresentation.startDate(journalCreated: journalDate, oldestPageDate: oldPageDate) == oldPageDate)
+        #expect(JournalPresentation.startDate(journalCreated: oldPageDate,
+                                              oldestPageDate: journalDate) == oldPageDate)
+        #expect(JournalPresentation.startDate(journalCreated: journalDate, oldestPageDate: nil) == journalDate)
+    }
+
     @Test("Default destinations reuse backfilled journals and file new book and free notes")
     func defaultDestinations() throws {
         let container = try makeContainer()

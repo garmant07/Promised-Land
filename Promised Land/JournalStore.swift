@@ -36,6 +36,50 @@ enum JournalStore {
         }
     }
 
+    /// The page order used only by an open journal. Legacy entries without an explicit
+    /// order retain their creation-date order.
+    static func sortedPages(_ entries: [JournalEntry]) -> [JournalEntry] {
+        entries.sorted {
+            let left = $0.pageOrder ?? $0.created.timeIntervalSinceReferenceDate
+            let right = $1.pageOrder ?? $1.created.timeIntervalSinceReferenceDate
+            if left != right { return left < right }
+            if $0.created != $1.created { return $0.created < $1.created }
+            return $0.id.uuidString < $1.id.uuidString
+        }
+    }
+
+    /// Continues a page immediately after it without changing reading history.
+    @discardableResult
+    static func continuePage(in context: ModelContext, from source: JournalEntry, text: String) throws -> JournalEntry {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { throw SaveError.emptyText }
+        guard let notebook = source.notebook, notebook.modelContext === context,
+              source.modelContext === context else { throw SaveError.invalidDestination }
+
+        let pages = sortedPages(notebook.entries)
+        guard let sourceIndex = pages.firstIndex(where: { $0.id == source.id }) else {
+            throw SaveError.invalidDestination
+        }
+        let next = pages.dropFirst(sourceIndex + 1).first
+        let sourceKey = source.pageOrder ?? source.created.timeIntervalSinceReferenceDate
+        let nextKey = next.map { $0.pageOrder ?? $0.created.timeIntervalSinceReferenceDate }
+        let entry = JournalEntry(bookID: source.bookID, chapter: source.chapter, text: trimmed)
+        entry.verseStart = source.verseStart
+        entry.verseEnd = source.verseEnd
+        entry.isContinuation = true
+        if let nextKey { entry.pageOrder = (sourceKey + nextKey) / 2 }
+        context.insert(entry)
+        entry.notebook = notebook
+        do {
+            try context.save()
+            return entry
+        } catch {
+            entry.notebook = nil
+            context.delete(entry)
+            throw error
+        }
+    }
+
     /// Run before presenting the app. Only unfiled entries are changed.
     static func backfill(in context: ModelContext) throws {
         let unfiled = try context.fetch(FetchDescriptor<JournalEntry>(
