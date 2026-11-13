@@ -3,6 +3,18 @@ import Foundation
 /// One easy multiple-choice question about a chapter, asked after reading it. A right answer
 /// counts the chapter; a wrong one just says "Have another look". Content: unreviewed (see
 /// REVIEW.md). Chapters without a question get a gentle reflection prompt instead.
+nonisolated enum QuestionDifficulty: String, Equatable {
+    case easy
+    case medium
+    case hard
+}
+
+nonisolated enum QuestionFormat: String, Equatable {
+    case multipleChoice
+    case fillInBlank
+    case trueFalse
+}
+
 struct ChapterQuestion: ReviewableContent, Equatable {
     let bookID: String
     let chapter: Int
@@ -15,6 +27,9 @@ struct ChapterQuestion: ReviewableContent, Equatable {
     var translation = "ASV"
     var source: String { "\(reference) (\(translation))" }
     var reviewed = false
+    var lesson: String? = nil
+    var difficulty: QuestionDifficulty? = nil
+    var format: QuestionFormat = .multipleChoice
 }
 
 enum QuestionData {
@@ -23,14 +38,96 @@ enum QuestionData {
         all.first { $0.bookID == bookID && $0.chapter == chapter }.flatMap { ContentGate.isVisible($0) ? $0 : nil }
     }
 
+    /// Questions for a chapter. A bundled set takes priority; otherwise this returns
+    /// the existing hand-written or generated question as a one-item array.
+    static func questions(bookID: String, chapter: Int) -> [ChapterQuestion] {
+        let set = bundledSets.first { $0.first?.bookID == bookID && $0.first?.chapter == chapter } ?? []
+        if !set.isEmpty {
+            return ContentGate.visible(set)
+        }
+        return question(bookID: bookID, chapter: chapter).map { [$0] } ?? []
+    }
+
+    /// The hand-written question set, or one made from the chapter's text on the device
+    /// (cached or bundled; never fetched just for this), or an empty array for reflections.
+    static func questions(bookID: String, chapter: Int, service: any BibleService, translation: BibleTranslation?) -> [ChapterQuestion] {
+        let set = questions(bookID: bookID, chapter: chapter)
+        if !set.isEmpty { return set }
+        guard let text = service.cachedChapter(bookID: bookID, chapter: chapter, translation: translation),
+              let book = BibleCatalog.book(id: bookID),
+              let generated = TextQuestion.make(from: text, bookName: book.name) else { return [] }
+        return [generated]
+    }
+
     /// The hand-written question, or one made from the chapter's text on the device (cached or
     /// bundled; never fetched just for this), or nil (then a reflection prompt is used).
     static func question(bookID: String, chapter: Int, service: any BibleService, translation: BibleTranslation?) -> ChapterQuestion? {
-        if let written = question(bookID: bookID, chapter: chapter) { return written }
-        guard let text = service.cachedChapter(bookID: bookID, chapter: chapter, translation: translation),
-              let book = BibleCatalog.book(id: bookID) else { return nil }
-        return TextQuestion.make(from: text, bookName: book.name)
+        questions(bookID: bookID, chapter: chapter, service: service, translation: translation).first
     }
+
+    private static let bundledSets: [[ChapterQuestion]] = [
+        [
+            ChapterQuestion(bookID: "genesis", chapter: 1,
+                            prompt: "How did God make light? (1:3)",
+                            options: ["He gathered it from the stars", "He took it from the sun", "Angels made it for Him", "He spoke, and it was"],
+                            answer: 3, reference: "Genesis 1:3", reviewed: true,
+                            lesson: "God's word has power. When He speaks, it happens, so His words to us can be trusted.",
+                            difficulty: .easy, format: .multipleChoice),
+            ChapterQuestion(bookID: "genesis", chapter: 1,
+                            prompt: "God made light on Day 1 but did not make the sun until Day 4. What can we learn from that?",
+                            options: ["Day 1 was really nighttime", "The sun is not important", "God is the source of light, and the sun is just something He made", "The writer made a mistake"],
+                            answer: 2, reference: "Genesis 1:3–16", reviewed: true,
+                            lesson: "The nations around Israel worshiped the sun. Genesis shows it is a created thing God uses, not a god.",
+                            difficulty: .medium, format: .multipleChoice),
+            ChapterQuestion(bookID: "genesis", chapter: 1,
+                            prompt: "After describing the completed creation, what verdict does Genesis 1 give? (1:31)",
+                            options: ["Creation was evil", "God regretted creating", "Everything God had made was very good", "Only people were good"],
+                            answer: 2, reference: "Genesis 1:31", reviewed: true,
+                            lesson: "The verdict concerns the whole creation, including humanity, and affirms the goodness of God's completed work.",
+                            difficulty: .hard, format: .multipleChoice)
+        ],
+        [
+            ChapterQuestion(bookID: "genesis", chapter: 2,
+                            prompt: "What did God form the man from? (2:7)",
+                            options: ["A tree", "Stone", "The dust of the ground", "Water"],
+                            answer: 2, reference: "Genesis 2:7", reviewed: true,
+                            lesson: "God formed the man from dust and breathed life into him.",
+                            difficulty: .easy, format: .multipleChoice),
+            ChapterQuestion(bookID: "genesis", chapter: 2,
+                            prompt: "God calls the woman a “helper” (ezer) for the man (2:18). Where else does the Old Testament use that same word?",
+                            options: ["For slaves", "For farm animals", "For servants", "For God helping Israel"],
+                            answer: 3, reference: "Genesis 2:18", reviewed: true,
+                            lesson: "Ezer is often used of God Himself, so “helper” does not mean lesser. Man and woman were made as partners.",
+                            difficulty: .medium, format: .multipleChoice),
+            ChapterQuestion(bookID: "genesis", chapter: 2,
+                            prompt: "God rested on the seventh day and made it holy (2:2–3). Why did He rest?",
+                            options: ["He ran out of ideas", "His work was finished, and He set a pattern of rest for His people", "He was tired", "He was waiting for Adam"],
+                            answer: 1, reference: "Genesis 2:2–3", reviewed: true,
+                            lesson: "God doesn’t get tired. The Sabbath is a sign of trust: we stop working and remember that God provides.",
+                            difficulty: .hard, format: .multipleChoice)
+        ],
+        [
+            ChapterQuestion(bookID: "genesis", chapter: 3,
+                            prompt: "God told Adam not to eat from the tree. What did Eve say God had commanded? (3:3)",
+                            options: ["Only Adam can’t eat it", "You may eat it on the seventh day", "Exactly what God said", "Don’t eat it, and don’t even touch it"],
+                            answer: 3, reference: "Genesis 3:3", reviewed: true,
+                            lesson: "Eve added “don’t touch it” to God’s words. It matters to know what God actually said.",
+                            difficulty: .medium, format: .multipleChoice),
+            ChapterQuestion(bookID: "genesis", chapter: 3,
+                            prompt: "What three things did Eve do with the fruit, in order? (3:6)",
+                            options: ["Heard, ran, hid", "Asked, waited, ate", "Saw, took, ate", "Smelled, touched, threw"],
+                            answer: 2, reference: "Genesis 3:6", reviewed: true,
+                            lesson: "The same pattern shows up again with Achan and with David. Sin often starts with what we let ourselves look at.",
+                            difficulty: .medium, format: .multipleChoice),
+            ChapterQuestion(bookID: "genesis", chapter: 3,
+                            prompt: "God told the serpent that the woman’s offspring would crush its head (3:15). How have Christians understood this promise?",
+                            options: ["The first promise of a rescuer who would defeat evil, pointing to Jesus", "A rule for farming", "A warning about snakes", "A curse on Eve"],
+                            answer: 0, reference: "Genesis 3:15", reviewed: true,
+                            lesson: "In the same moment He judges sin, God promises a way back. The hope of the whole Bible starts here.",
+                            difficulty: .hard, format: .multipleChoice)
+        ]
+    ]
+
 
     private static func q(_ book: String, _ chapter: Int, _ prompt: String, _ options: [String], _ answer: Int, _ ref: String) -> ChapterQuestion {
         ChapterQuestion(bookID: book, chapter: chapter, prompt: prompt, options: options, answer: answer, reference: ref)

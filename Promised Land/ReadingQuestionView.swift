@@ -16,28 +16,51 @@ struct ReadingQuestionView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.bibleService) private var bible
     private var translation = TranslationChoice()
-    @State private var picked: Int?
+    @State private var questionSet: [ChapterQuestion]?
+    @State private var questionIndex = 0
     @State private var reflection = ""
     @State private var noteSaveFailed = false
     @State private var selectedNotebook: JournalNotebook?
     @State private var picker: JournalPickerRoute?
     @State private var newJournal: JournalSheetRoute?
 
-    /// The hand-written question, or one made from the chapter's text on the device.
-    private var question: ChapterQuestion? {
-        QuestionData.question(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)
+    private var currentQuestion: ChapterQuestion? {
+        guard let questionSet, questionSet.indices.contains(questionIndex) else { return nil }
+        return questionSet[questionIndex]
     }
+
     private var prompt: String { ReflectionData.prompts(bookID: book.id, chapter: chapter).prompts.first ?? ReflectionData.general[0] }
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("\(book.name) \(chapter)")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(Color.secondaryText)
-                        .textCase(.uppercase)
-                    if let question { questionCard(question) } else { reflectionCard }
+                Group {
+                    if let questionSet, let question = currentQuestion,
+                       question.format == .multipleChoice {
+                        MultipleChoiceQuestionView(
+                            bookName: book.name,
+                            chapter: chapter,
+                            question: question,
+                            questionNumber: questionIndex + 1,
+                            questionCount: questionSet.count,
+                            onContinue: continueQuestion
+                        )
+                        .id(questionIndex)
+                    } else {
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("\(book.name) \(chapter)")
+                                .font(.caption.weight(.bold))
+                                .foregroundStyle(Color.secondaryText)
+                                .textCase(.uppercase)
+                            if questionSet == nil {
+                                ProgressView()
+                                    .tint(Color.primaryBrown)
+                                    .frame(maxWidth: .infinity)
+                            } else {
+                                reflectionCard
+                            }
+                        }
+                    }
                 }
                 .padding(16)
             }
@@ -49,57 +72,19 @@ struct ReadingQuestionView: View {
             }
             .tint(Color.primaryBrown)
         }
+        .task(id: "\(book.id)-\(chapter)-\(translation.current?.rawValue ?? "")") {
+            questionSet = QuestionData.questions(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)
+            questionIndex = 0
+        }
     }
 
-    private func questionCard(_ q: ChapterQuestion) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .top) {
-                Text(q.prompt)
-                    .font(.system(.title3, design: .serif))
-                    .foregroundStyle(Color.bodyText)
-                    .fixedSize(horizontal: false, vertical: true)
-                Spacer()
-                DraftBadge(item: q)
-            }
-            ForEach(q.options.indices, id: \.self) { i in
-                let isPicked = picked == i
-                let right = i == q.answer
-                Button {
-                    guard picked != q.answer else { return }
-                    withAnimation(.easeOut(duration: 0.2)) { picked = i }
-                    if right { count() }
-                } label: {
-                    HStack {
-                        Text(q.options[i]).foregroundStyle(Color.bodyText).multilineTextAlignment(.leading)
-                        Spacer()
-                        if isPicked {
-                            Image(systemName: right ? "checkmark.circle.fill" : "xmark.circle")
-                                .foregroundStyle(Color.primaryBrown)
-                        }
-                    }
-                    .padding(12)
-                    .frame(minHeight: 52)
-                    .background(isPicked ? Color.primaryBrown.opacity(0.1) : Color.card,
-                                in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                }
-                .buttonStyle(.plain)
-            }
-            if let picked, picked != q.answer {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Not quite. Have another look at the chapter, then try again.")
-                        .font(.subheadline)
-                        .foregroundStyle(Color.secondaryText)
-                    Button("Have another look") { onLookAgain() }
-                        .buttonStyle(SoftButtonStyle())
-                }
-            }
-            if picked == q.answer {
-                Label("That's right. \(book.name) \(chapter) counts.", systemImage: "checkmark.seal.fill")
-                    .font(.headline)
-                    .foregroundStyle(Color.primaryBrown)
-            }
+    private func continueQuestion() {
+        guard let questionSet else { return }
+        if questionIndex + 1 < questionSet.count {
+            questionIndex += 1
+        } else {
+            count()
         }
-        .cardStyle()
     }
 
     private var reflectionCard: some View {

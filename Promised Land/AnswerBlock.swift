@@ -47,6 +47,7 @@ struct AnswerBlock: View {
                     .font(.body)
                     .foregroundStyle(Color.bodyText)
                     .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 Spacer(minLength: 8)
 
@@ -58,6 +59,7 @@ struct AnswerBlock: View {
                 }
             }
             .padding(.horizontal, 16)
+            .padding(.vertical, 14)
             .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
             .background(backgroundColor, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .overlay {

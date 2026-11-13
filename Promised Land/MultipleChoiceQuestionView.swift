@@ -67,10 +67,10 @@ struct MultipleChoiceQuestionView: View {
 
     private func status(for index: Int) -> AnswerBlockStatus {
         guard answerState.revealed else { return .idle }
-        if index == question.answer {
+        if answerState.isRight && index == question.answer {
             return .right
         }
-        if answerState.selected == index && !answerState.isRight {
+        if answerState.selected == index {
             return .wrong
         }
         return .dimmed
@@ -131,7 +131,7 @@ struct MultipleChoiceHeader: View {
                         .foregroundStyle(Color.bodyText)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 6)
-                        .background(Color.sand, in: Capsule())
+                        .background(Color.card, in: Capsule())
                 }
             }
 
@@ -145,16 +145,20 @@ struct MultipleChoiceHeader: View {
                 }
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel("Question progress")
-                .accessibilityValue("(questionNumber) of (questionCount)")
+                .accessibilityValue("\(questionNumber) of \(questionCount)")
             }
         }
     }
 
     private var headerText: String {
+        Self.headerText(bookName: bookName, chapter: chapter, questionNumber: questionNumber, questionCount: questionCount)
+    }
+
+    static func headerText(bookName: String, chapter: Int, questionNumber: Int, questionCount: Int) -> String {
         if questionCount > 1 {
-            "(bookName) (chapter) · Question (questionNumber) of (questionCount)"
+            "\(bookName) \(chapter) · Question \(questionNumber) of \(questionCount)"
         } else {
-            "(bookName) (chapter) · Question (questionNumber)"
+            "\(bookName) \(chapter)"
         }
     }
 
@@ -188,6 +192,7 @@ struct MultipleChoiceFeedback: View {
                 Text(lesson)
                     .font(.body)
                     .foregroundStyle(Color.bodyText)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             if canContinue {
