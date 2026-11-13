@@ -1,3 +1,4 @@
+import Foundation
 import Testing
 @testable import Promised_Land
 
@@ -21,12 +22,14 @@ struct QuestionDataTests {
         #expect(QuestionData.questions(bookID: "obadiah", chapter: 1).isEmpty)
     }
 
-    @Test("The Genesis 1–3 test sets return three questions in order")
+    @Test("The Genesis 1–3 test sets return four questions with fill-in first")
     func genesisTestSetOrder() {
-        #expect(QuestionData.questions(bookID: "genesis", chapter: 1).count == 3)
-        #expect(QuestionData.questions(bookID: "genesis", chapter: 2).count == 3)
-        #expect(QuestionData.questions(bookID: "genesis", chapter: 3).count == 3)
-        #expect(QuestionData.questions(bookID: "genesis", chapter: 1).map(\.answer) == [3, 2, 2])
+        for chapter in 1...3 {
+            let questions = QuestionData.questions(bookID: "genesis", chapter: chapter)
+            #expect(questions.count == 4)
+            #expect(questions.first?.format == .fillInBlank)
+        }
+        #expect(QuestionData.questions(bookID: "genesis", chapter: 1).map(\.answer) == [1, 3, 2, 2])
     }
 
     @Test("Every Genesis 1–3 test question has four reviewed options, a lesson and a difficulty")
@@ -38,8 +41,26 @@ struct QuestionDataTests {
                 #expect(question.lesson?.isEmpty == false)
                 #expect(question.difficulty != nil)
                 #expect(question.reviewed)
-                #expect(question.format == .multipleChoice)
+                if question.format == .fillInBlank {
+                    #expect(question.prompt.components(separatedBy: "____").count == 2)
+                } else {
+                    #expect(question.format == .multipleChoice)
+                }
             }
+        }
+    }
+
+    @Test("Fill-in questions have four chips and valid reviewed metadata")
+    func fillInQuestionMetadata() {
+        for chapter in 1...3 {
+            let question = QuestionData.questions(bookID: "genesis", chapter: chapter).first
+            #expect(question?.format == .fillInBlank)
+            #expect(question?.prompt.components(separatedBy: "____").count == 2)
+            #expect(question?.options.count == 4)
+            #expect(question.map { $0.options.indices.contains($0.answer) } == true)
+            #expect(question?.lesson?.isEmpty == false)
+            #expect(question?.difficulty != nil)
+            #expect(question?.reviewed == true)
         }
     }
 
@@ -84,5 +105,31 @@ struct QuestionDataTests {
         #expect(state.revealed)
         #expect(state.isRight)
         #expect(state.canContinue)
+    }
+
+
+    @Test("Fill-in answer state supports right and wrong chip placement")
+    func fillInAnswerState() {
+        let question = QuestionData.questions(bookID: "genesis", chapter: 1)[0]
+        #expect(question.format == .fillInBlank)
+
+        var right = MultipleChoiceAnswerState()
+        right.select(index: question.answer, correctIndex: question.answer)
+        #expect(right.isRight)
+        #expect(right.canContinue)
+
+        var wrong = MultipleChoiceAnswerState()
+        let wrongIndex = question.answer == 0 ? 1 : 0
+        wrong.select(index: wrongIndex, correctIndex: question.answer)
+        #expect(!wrong.isRight)
+        #expect(!wrong.canContinue)
+
+        wrong.tryAgain()
+        #expect(wrong.selected == nil)
+        #expect(!wrong.revealed)
+
+        wrong.showAnswer(correctIndex: question.answer)
+        #expect(wrong.selected == question.answer)
+        #expect(wrong.canContinue)
     }
 }

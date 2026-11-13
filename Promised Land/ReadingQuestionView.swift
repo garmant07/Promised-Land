@@ -46,6 +46,17 @@ struct ReadingQuestionView: View {
                             onContinue: continueQuestion
                         )
                         .id(questionIndex)
+                    } else if let questionSet, let question = currentQuestion,
+                              question.format == .fillInBlank {
+                        FillInBlankQuestionView(
+                            bookName: book.name,
+                            chapter: chapter,
+                            question: question,
+                            questionNumber: questionIndex + 1,
+                            questionCount: questionSet.count,
+                            onContinue: continueQuestion
+                        )
+                        .id(questionIndex)
                     } else {
                         VStack(alignment: .leading, spacing: 16) {
                             Text("\(book.name) \(chapter)")

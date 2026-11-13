@@ -17,15 +17,31 @@ struct FillInBlankQuestionView: View {
     @State private var errorHaptic = 0
     @State private var selectionHaptic = 0
     @State private var returnTask: Task<Void, Never>?
-    @GestureState private var dragOffset = CGSize.zero
+    @State private var fadingBackIndex: Int?
+    @GestureState private var dragState = DragState()
 
     private let coordinateSpaceName = "fill-in-blank"
+    private static let dropZoneExpansion: CGFloat = 24
+    private static let dragThreshold: CGFloat = 10
+
+    static func isDropLocation(_ location: CGPoint, in frame: CGRect) -> Bool {
+        frame.insetBy(dx: -dropZoneExpansion, dy: -dropZoneExpansion).contains(location)
+    }
+
+    private struct DragState: Equatable {
+        var offset = CGSize.zero
+        var index: Int?
+    }
     private var longestWordWidth: CGFloat {
         max(90, question.options.map { CGFloat($0.count) * 11 + 34 }.max() ?? 90)
     }
 
     private var promptParts: [String] {
         question.prompt.components(separatedBy: "____")
+    }
+
+    private func words(in text: String) -> [String] {
+        text.split(whereSeparator: \.isWhitespace).map(String.init)
     }
 
     var body: some View {
@@ -64,19 +80,23 @@ struct FillInBlankQuestionView: View {
     }
 
     private var verseCard: some View {
-        FlowLayout(horizontalSpacing: 6, verticalSpacing: 8) {
-            Text(promptParts[0])
-                .font(.serifTitle(.title2))
-                .foregroundStyle(Color.bodyText)
-                .fixedSize(horizontal: false, vertical: true)
+        FlowLayout(spacing: 6) {
+            ForEach(Array(words(in: promptParts[0]).enumerated()), id: \.offset) { _, word in
+                Text(word)
+                    .font(.serifTitle(.title2))
+                    .foregroundStyle(Color.bodyText)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
 
             blankSlot
 
             if promptParts.count > 1 {
-                Text(promptParts[1])
-                    .font(.serifTitle(.title2))
-                    .foregroundStyle(Color.bodyText)
-                    .fixedSize(horizontal: false, vertical: true)
+                ForEach(Array(words(in: promptParts[1]).enumerated()), id: \.offset) { _, word in
+                    Text(word)
+                        .font(.serifTitle(.title2))
+                        .foregroundStyle(Color.bodyText)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
         }
         .padding(16)
@@ -120,13 +140,20 @@ struct FillInBlankQuestionView: View {
     }
 
     private var chips: some View {
-        FlowLayout(horizontalSpacing: 8, verticalSpacing: 8) {
+        FlowLayout(spacing: 8) {
             ForEach(Array(question.options.enumerated()), id: \.offset) { index, word in
                 WordChip(word: word, isVisible: chipIsVisible(index)) {
                     place(index)
                 }
                 .offset(dragOffsetFor(index))
-                .simultaneousGesture(dragGesture(for: index))
+                .animation(
+                    dragState.index == nil && !reduceMotion
+                        ? .spring(response: 0.32, dampingFraction: 0.78)
+                        : nil,
+                    value: dragState
+                )
+                .opacity(fadingBackIndex == index ? 0 : 1)
+                .highPriorityGesture(dragGesture(for: index))
                 .disabled(!answerState.canSelect || (answerState.selected == index && slotVisible))
             }
         }
@@ -137,23 +164,43 @@ struct FillInBlankQuestionView: View {
     }
 
     private func dragOffsetFor(_ index: Int) -> CGSize {
-        guard answerState.canSelect, dragOffset != .zero,
+        guard answerState.canSelect, dragState.index == index,
               answerState.selected == nil else { return .zero }
-        return dragOffset
+        return dragState.offset
     }
 
     private func dragGesture(for index: Int) -> some Gesture {
-        DragGesture(minimumDistance: 0, coordinateSpace: .named(coordinateSpaceName))
-            .updating($dragOffset) { value, state, _ in
-                guard answerState.canSelect else { return }
-                state = value.translation
+        DragGesture(
+            minimumDistance: Self.dragThreshold,
+            coordinateSpace: .named(coordinateSpaceName)
+        )
+            .updating($dragState) { value, state, _ in
+                guard answerState.canSelect,
+                      state.index == nil || state.index == index else { return }
+                state.offset = value.translation
+                state.index = index
             }
             .onEnded { value in
                 guard answerState.canSelect else { return }
-                if slotFrame.contains(value.location) {
-                    place(index)
+                guard Self.isDropLocation(value.location, in: slotFrame) else {
+                    rejectDrop(index)
+                    return
                 }
+                place(index)
             }
+    }
+
+    private func rejectDrop(_ index: Int) {
+        guard reduceMotion else { return }
+        returnTask?.cancel()
+        withAnimation(.easeOut(duration: 0.12)) {
+            fadingBackIndex = index
+        }
+        returnTask = Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(120))
+            guard !Task.isCancelled else { return }
+            fadingBackIndex = nil
+        }
     }
 
     private func place(_ index: Int) {

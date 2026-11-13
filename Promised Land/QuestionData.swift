@@ -68,6 +68,12 @@ enum QuestionData {
     private static let bundledSets: [[ChapterQuestion]] = [
         [
             ChapterQuestion(bookID: "genesis", chapter: 1,
+                            prompt: "“In the beginning God ____ the heavens and the earth.” (1:1)",
+                            options: ["named", "created", "blessed", "visited"],
+                            answer: 1, reference: "Genesis 1:1", reviewed: true,
+                            lesson: "God is the Creator and everything else is created. That line between Creator and creature runs through the whole Bible.",
+                            difficulty: .easy, format: .fillInBlank),
+            ChapterQuestion(bookID: "genesis", chapter: 1,
                             prompt: "How did God make light? (1:3)",
                             options: ["He gathered it from the stars", "He took it from the sun", "Angels made it for Him", "He spoke, and it was"],
                             answer: 3, reference: "Genesis 1:3", reviewed: true,
@@ -88,6 +94,12 @@ enum QuestionData {
         ],
         [
             ChapterQuestion(bookID: "genesis", chapter: 2,
+                            prompt: "“It is not good for the man to be ____.” (2:18)",
+                            options: ["hungry", "quiet", "alone", "tired"],
+                            answer: 2, reference: "Genesis 2:18", reviewed: true,
+                            lesson: "Loneliness is the first thing God calls “not good.” We were made for relationship with God and with each other.",
+                            difficulty: .easy, format: .fillInBlank),
+            ChapterQuestion(bookID: "genesis", chapter: 2,
                             prompt: "What did God form the man from? (2:7)",
                             options: ["A tree", "Stone", "The dust of the ground", "Water"],
                             answer: 2, reference: "Genesis 2:7", reviewed: true,
@@ -107,6 +119,12 @@ enum QuestionData {
                             difficulty: .hard, format: .multipleChoice)
         ],
         [
+            ChapterQuestion(bookID: "genesis", chapter: 3,
+                            prompt: "After Adam and Eve sinned, God called to the man, “Where are ____?” (3:9)",
+                            options: ["they", "we", "she", "you"],
+                            answer: 3, reference: "Genesis 3:9", reviewed: true,
+                            lesson: "God already knew the answer. He asked to draw Adam back into relationship. God pursues us even after we fail.",
+                            difficulty: .easy, format: .fillInBlank),
             ChapterQuestion(bookID: "genesis", chapter: 3,
                             prompt: "God told Adam not to eat from the tree. What did Eve say God had commanded? (3:3)",
                             options: ["Only Adam can’t eat it", "You may eat it on the seventh day", "Exactly what God said", "Don’t eat it, and don’t even touch it"],
