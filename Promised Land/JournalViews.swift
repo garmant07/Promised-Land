@@ -517,8 +517,14 @@ struct JournalEditor: View {
             VStack(alignment: .leading, spacing: 12) {
                 if let bookID, let book = BibleCatalog.book(id: bookID) {
                     Picker("Chapter", selection: $chapter) {
-                        Text("\(book.name) (whole book)").tag(0)
-                        ForEach(Array(book.chapterNumbers), id: \.self) { Text("\(book.name) \($0)").tag($0) }
+                        Text("\(book.name) (whole book)")
+                            .foregroundStyle(Color.secondaryText)
+                            .tag(0)
+                        ForEach(Array(book.chapterNumbers), id: \.self) {
+                            Text("\(book.name) \($0)")
+                                .foregroundStyle(Color.secondaryText)
+                                .tag($0)
+                        }
                     }
                     .tint(Color.primaryBrown)
                     .frame(minHeight: 44)
@@ -538,6 +544,8 @@ struct JournalEditor: View {
                         .foregroundStyle(Color.secondaryText)
                 }
                 TextEditor(text: $text)
+                    .foregroundStyle(Color.bodyText)
+                    .tint(Color.primaryBrown)
                     .scrollContentBackground(.hidden)
                     .padding(10)
                     .background(Color.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
@@ -548,6 +556,10 @@ struct JournalEditor: View {
             .navigationTitle(entry == nil ? "New page" : "Edit page")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text(entry == nil ? "New page" : "Edit page")
+                        .foregroundStyle(Color.bodyText)
+                }
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }
@@ -653,6 +665,10 @@ private struct ContinuedJournalEditor: View {
             .navigationTitle("New page")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("New page")
+                        .foregroundStyle(Color.bodyText)
+                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
@@ -745,7 +761,7 @@ struct JournalDestinationPicker: View {
         NavigationStack {
             List {
                 ForEach(shelves, id: \.id) { shelf in
-                    Section(shelf.label) {
+                    Section {
                         ForEach(shelf.notebooks.sorted { $0.created < $1.created }, id: \.id) { notebook in
                             Button {
                                 onSelected(notebook)
@@ -755,18 +771,26 @@ struct JournalDestinationPicker: View {
                                 .foregroundStyle(Color.bodyText)
                             }
                         }
+                    } header: {
+                        Text(shelf.label)
+                            .foregroundStyle(Color.secondaryText)
                     }
                 }
                 Button("New journal…") {
                     dismiss()
                     onNewJournal(shelves.first)
                 }
+                .foregroundStyle(Color.primaryBrown)
             }
             .scrollContentBackground(.hidden)
             .background(Color.cream)
             .navigationTitle("Save to")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Save to")
+                        .foregroundStyle(Color.bodyText)
+                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
@@ -869,7 +893,7 @@ struct NewShelfSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Shelf label", text: $label)
+                TextField("Shelf label", text: $label, prompt: Text("Shelf label").foregroundStyle(Color.secondaryText))
                     .textInputAutocapitalization(.words)
                     .foregroundStyle(Color.bodyText)
                     .listRowBackground(Color.card)
@@ -878,6 +902,10 @@ struct NewShelfSheet: View {
             .background(Color.cream)
             .navigationTitle("New shelf")
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("New shelf")
+                        .foregroundStyle(Color.bodyText)
+                }
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") {
@@ -920,7 +948,7 @@ struct NewJournalSheet: View {
                     Text("Name")
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(Color.secondaryText)
-                    TextField("Name", text: $name)
+                    TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
                         .textInputAutocapitalization(.words)
                         .foregroundStyle(Color.bodyText)
                         .padding(.horizontal, 14)
@@ -964,12 +992,14 @@ struct NewJournalSheet: View {
 
 struct RenameJournalSheet: View {
     let title: String
+    let navigationTitle: String
     var onRename: (String) -> Void
     @Environment(\.dismiss) private var dismiss
     @State private var name: String
 
-    init(title: String, onRename: @escaping (String) -> Void) {
+    init(title: String, onRename: @escaping (String) -> Void, navigationTitle: String = "Rename journal") {
         self.title = title
+        self.navigationTitle = navigationTitle
         self.onRename = onRename
         _name = State(initialValue: title)
     }
@@ -977,14 +1007,18 @@ struct RenameJournalSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text: $name)
+                TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
                     .foregroundStyle(Color.bodyText)
                     .listRowBackground(Color.card)
             }
                 .scrollContentBackground(.hidden)
                 .background(Color.cream)
-                .navigationTitle("Rename journal")
+                .navigationTitle(navigationTitle)
                 .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text(navigationTitle)
+                            .foregroundStyle(Color.bodyText)
+                    }
                     ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Save") {
@@ -1026,7 +1060,7 @@ struct JournalColorSheet: View {
                     Text("Name")
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(Color.secondaryText)
-                    TextField("Name", text: $name)
+                    TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
                         .textInputAutocapitalization(.words)
                         .foregroundStyle(Color.bodyText)
                         .padding(.horizontal, 14)
@@ -1043,6 +1077,10 @@ struct JournalColorSheet: View {
             .scrollContentBackground(.hidden)
             .background(Color.cream.ignoresSafeArea())
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Edit journal")
+                        .foregroundStyle(Color.bodyText)
+                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
@@ -1069,8 +1107,7 @@ struct RenameShelfSheet: View {
     let title: String
     var onRename: (String) -> Void
     var body: some View {
-        RenameJournalSheet(title: title, onRename: onRename)
-            .navigationTitle("Rename shelf")
+        RenameJournalSheet(title: title, onRename: onRename, navigationTitle: "Rename shelf")
     }
 }
 
@@ -1093,7 +1130,15 @@ struct MoveJournalSheet: View {
             .scrollContentBackground(.hidden)
             .background(Color.cream)
             .navigationTitle("Move journal to…")
-            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) } }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Move journal to…")
+                        .foregroundStyle(Color.bodyText)
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
+                }
+            }
             .themedScreen()
             .tint(Color.primaryBrown)
         }
@@ -1120,7 +1165,7 @@ struct DeleteShelfSheet: View {
                         dismiss()
                     }
                 } else {
-                    Section("Move \(shelf.notebooks.count) journals to:") {
+                    Section {
                         ForEach(otherShelves, id: \.id) { target in
                             Button {
                                 onMoveAndDelete(target)
@@ -1129,13 +1174,24 @@ struct DeleteShelfSheet: View {
                                 Text(target.label).foregroundStyle(Color.bodyText)
                             }
                         }
+                    } header: {
+                        Text("Move \(shelf.notebooks.count) journals to:")
+                            .foregroundStyle(Color.secondaryText)
                     }
                 }
             }
             .scrollContentBackground(.hidden)
             .background(Color.cream)
             .navigationTitle("Delete shelf")
-            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) } }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Delete shelf")
+                        .foregroundStyle(Color.bodyText)
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
+                }
+            }
             .themedScreen()
             .tint(Color.primaryBrown)
         }
