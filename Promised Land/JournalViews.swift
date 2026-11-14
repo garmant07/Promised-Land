@@ -156,7 +156,11 @@ struct LibraryShelfView: View {
     @Query(sort: \JournalShelf.created) private var shelves: [JournalShelf]
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var sheet: JournalSheetRoute?
+    @State private var actionMenu: JournalActionMenuTarget?
+    @State private var navigationPath = NavigationPath()
 
     private var volumesByShelf: [(JournalShelf, [JournalVolume])] {
         shelves.filter { $0.modelContext != nil }.map { shelf in
@@ -171,7 +175,7 @@ struct LibraryShelfView: View {
     }
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     Text("Your journals")
@@ -181,12 +185,35 @@ struct LibraryShelfView: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.secondaryText)
                     ForEach(volumesByShelf, id: \.0.id) { shelf, volumes in
-                        LibraryShelfLabel(title: shelf.label, systemImage: "books.vertical")
-                            .onLongPressGesture { sheet = JournalSheetRoute(kind: .renameShelf(shelf.id)) }
-                            .contextMenu {
-                                Button("Rename") { sheet = JournalSheetRoute(kind: .renameShelf(shelf.id)) }
-                                Button("Delete", role: .destructive) { sheet = JournalSheetRoute(kind: .deleteShelf(shelf.id)) }
+                        HStack(spacing: 8) {
+                            LibraryShelfLabel(title: shelf.label, systemImage: "books.vertical")
+                                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                                .accessibilityAction(named: "Rename") {
+                                    sheet = JournalSheetRoute(kind: .renameShelf(shelf.id))
+                                }
+                                .accessibilityAction(named: "Delete shelf") {
+                                    sheet = JournalSheetRoute(kind: .deleteShelf(shelf.id))
+                                }
+
+                            GeometryReader { proxy in
+                                Button {
+                                    openMenu(.shelf(id: shelf.id, title: shelf.label),
+                                             anchor: proxy.frame(in: .named("journalPage")))
+                                } label: {
+                                    Image(systemName: "ellipsis")
+                                        .font(.body.weight(.semibold))
+                                        .foregroundStyle(Color.primaryBrown)
+                                        .frame(width: 28, height: 28)
+                                        .background(Color.card, in: Circle())
+                                        .frame(width: 44, height: 44)
+                                        .contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel("More options for \(shelf.label)")
                             }
+                            .frame(width: 44, height: 44)
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 44)
                         shelfSpines(volumes, shelf: shelf)
                     }
                 }
@@ -241,6 +268,63 @@ struct LibraryShelfView: View {
                 }
             }
             .tint(Color.primaryBrown)
+            .coordinateSpace(name: "journalPage")
+            .overlay {
+                if let actionMenu {
+                    JournalActionMenuOverlay(
+                        target: actionMenu,
+                        reduceMotion: reduceMotion,
+                        onDismiss: closeMenu,
+                        onAction: chooseAction
+                    )
+                }
+            }
+            .sensoryFeedback(.impact(weight: .light), trigger: actionMenu?.id)
+            .onChange(of: scenePhase) { _, phase in
+                if phase != .active { closeMenu() }
+            }
+            .onChange(of: shelves.map { $0.id }) { _, ids in
+                if case .shelf(let id, _) = actionMenu?.kind, !ids.contains(id) {
+                    closeMenu()
+                }
+            }
+            .onChange(of: shelves.flatMap { $0.notebooks }.map { $0.id }) { _, ids in
+                if case .journal(let id, _, _) = actionMenu?.kind, !ids.contains(id) {
+                    closeMenu()
+                }
+            }
+        }
+    }
+
+    private func openMenu(_ kind: JournalActionMenuTarget.Kind, anchor: CGRect) {
+        withAnimation(reduceMotion ? nil : .easeOut(duration: 0.15)) {
+            actionMenu = JournalActionMenuTarget(kind: kind, anchor: anchor)
+        }
+    }
+
+    private func closeMenu() {
+        withAnimation(reduceMotion ? nil : .easeOut(duration: 0.15)) {
+            actionMenu = nil
+        }
+    }
+
+    private func chooseAction(_ action: JournalActionMenuAction) {
+        guard let actionMenu else { return }
+        withAnimation(reduceMotion ? nil : .easeOut(duration: 0.15), completionCriteria: .logicallyComplete) {
+            self.actionMenu = nil
+        } completion: {
+            route(action, for: actionMenu)
+        }
+    }
+
+    private func route(_ action: JournalActionMenuAction, for target: JournalActionMenuTarget) {
+        switch (target.kind, action) {
+        case (.journal(let id, _, _), .rename): sheet = JournalSheetRoute(kind: .renameJournal(id))
+        case (.journal(let id, _, _), .colour): sheet = JournalSheetRoute(kind: .colorJournal(id))
+        case (.journal(let id, _, _), .moveToShelf): sheet = JournalSheetRoute(kind: .moveJournal(id))
+        case (.shelf(let id, _), .rename): sheet = JournalSheetRoute(kind: .renameShelf(id))
+        case (.shelf(let id, _), .deleteShelf): sheet = JournalSheetRoute(kind: .deleteShelf(id))
+        default: break
         }
     }
 
@@ -249,13 +333,26 @@ struct LibraryShelfView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .bottom, spacing: 10) {
                     ForEach(items) { volume in
-                        NavigationLink(value: volume) { spine(volume) }
-                            .buttonStyle(.plain)
-                            .contextMenu {
-                                Button("Rename") { if let id = volume.notebookID { sheet = JournalSheetRoute(kind: .renameJournal(id)) } }
-                                Button("Colour") { if let id = volume.notebookID { sheet = JournalSheetRoute(kind: .colorJournal(id)) } }
-                                Button("Move to shelf…") { if let id = volume.notebookID { sheet = JournalSheetRoute(kind: .moveJournal(id)) } }
-                            }
+                        JournalLongPressCapture(content: spine(volume), onTap: {
+                            navigationPath.append(volume)
+                        }) { anchor in
+                            let id = volume.notebookID ?? UUID()
+                            let color = JournalNotebookColor.color(at: volume.colorIndex ?? JournalNotebookColor.automaticIndex(for: id))
+                            openMenu(.journal(id: id, title: volume.title, color: color), anchor: anchor)
+                        }
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityAction {
+                            navigationPath.append(volume)
+                        }
+                        .accessibilityAction(named: "Rename") {
+                            if let id = volume.notebookID { sheet = JournalSheetRoute(kind: .renameJournal(id)) }
+                        }
+                        .accessibilityAction(named: "Colour") {
+                            if let id = volume.notebookID { sheet = JournalSheetRoute(kind: .colorJournal(id)) }
+                        }
+                        .accessibilityAction(named: "Move to shelf…") {
+                            if let id = volume.notebookID { sheet = JournalSheetRoute(kind: .moveJournal(id)) }
+                        }
                     }
                     JournalShelfAddSpine { sheet = JournalSheetRoute(kind: .newJournal(shelf.id)) }
                     Spacer(minLength: 0)
@@ -502,6 +599,7 @@ struct JournalEditor: View {
     let bookID: String?
     var notebookID: UUID? = nil
 
+    @Query(sort: \JournalNotebook.created) private var notebooks: [JournalNotebook]
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     @State private var text = ""
@@ -511,60 +609,103 @@ struct JournalEditor: View {
     @State private var picker: JournalPickerRoute?
     @State private var newJournal: JournalSheetRoute?
 
+    private var journalName: String {
+        selectedNotebook?.name
+            ?? notebooks.first { $0.id == notebookID }?.name
+            ?? entry?.notebook?.name
+            ?? "Journal"
+    }
+
+    private var popupTitle: String {
+        entry == nil ? "New page" : "Edit page"
+    }
+
+    private var popupHint: String {
+        if let entry {
+            return "\(journalName) · \(entry.created.formatted(date: .abbreviated, time: .omitted))"
+        }
+        return "\(journalName) · today"
+    }
+
+    private var isBlank: Bool {
+        text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 12) {
-                if let bookID, let book = BibleCatalog.book(id: bookID) {
-                    Picker("Chapter", selection: $chapter) {
-                        Text("\(book.name) (whole book)")
-                            .foregroundStyle(Color.secondaryText)
-                            .tag(0)
-                        ForEach(Array(book.chapterNumbers), id: \.self) {
-                            Text("\(book.name) \($0)")
+            VStack(alignment: .leading, spacing: 0) {
+                JournalPopupHeader(title: popupTitle, hint: popupHint, graphic: .page)
+                    .padding(.bottom, 12)
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
+                        if let bookID, let book = BibleCatalog.book(id: bookID) {
+                            Text("Chapter")
+                                .font(.caption.weight(.semibold))
                                 .foregroundStyle(Color.secondaryText)
-                                .tag($0)
+                            Picker("Chapter", selection: $chapter) {
+                                Text("\(book.name) (whole book)")
+                                    .foregroundStyle(Color.secondaryText)
+                                    .tag(0)
+                                ForEach(Array(book.chapterNumbers), id: \.self) {
+                                    Text("\(book.name) \($0)")
+                                        .foregroundStyle(Color.secondaryText)
+                                        .tag($0)
+                                }
+                            }
+                            .tint(Color.primaryBrown)
+                            .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
+                            .padding(.horizontal, 14)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                         }
+
+                        if entry == nil && notebookID == nil {
+                            Text("Save to")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(Color.secondaryText)
+                            JournalDestinationRow(name: selectedNotebook?.name ?? "Choose a journal") {
+                                picker = JournalPickerRoute()
+                            }
+                        }
+
+                        if let prompt = entry?.prompt {
+                            Text(prompt)
+                                .font(.system(.subheadline, design: .serif).italic())
+                                .foregroundStyle(Color.secondaryText)
+                        }
+
+                        if saveFailed {
+                            Text("Couldn't save your note. Please try again.")
+                                .foregroundStyle(Color.secondaryText)
+                        }
+
+                        TextEditor(text: $text)
+                            .foregroundStyle(Color.bodyText)
+                            .tint(Color.primaryBrown)
+                            .scrollContentBackground(.hidden)
+                            .padding(10)
+                            .frame(minHeight: 260)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .accessibilityLabel("Journal text")
                     }
-                    .tint(Color.primaryBrown)
-                    .frame(minHeight: 44)
                 }
-                if let prompt = entry?.prompt {
-                    Text(prompt)
-                        .font(.system(.subheadline, design: .serif).italic())
-                        .foregroundStyle(Color.secondaryText)
-                }
-                if entry == nil && notebookID == nil {
-                    JournalDestinationRow(name: selectedNotebook?.name ?? "Choose a journal") {
-                        picker = JournalPickerRoute()
-                    }
-                }
-                if saveFailed {
-                    Text("Couldn't save your note. Please try again.")
-                        .foregroundStyle(Color.secondaryText)
-                }
-                TextEditor(text: $text)
-                    .foregroundStyle(Color.bodyText)
-                    .tint(Color.primaryBrown)
-                    .scrollContentBackground(.hidden)
-                    .padding(10)
-                    .background(Color.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .accessibilityLabel("Journal text")
             }
-            .padding(16)
-            .themedScreen()
-            .navigationTitle(entry == nil ? "New page" : "Edit page")
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .background(Color.cream.ignoresSafeArea())
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text(entry == nil ? "New page" : "Edit page")
-                        .foregroundStyle(Color.bodyText)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
-                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { save() }
-                        .tint(Color.primaryBrown)
-                        .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: entry == nil ? "Save page" : "Save changes", isDisabled: isBlank) {
+                    save()
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
             }
             .onAppear {
                 text = entry?.text ?? ""
@@ -587,6 +728,8 @@ struct JournalEditor: View {
                     }
                 }
             }
+            .themedScreen()
+            .tint(Color.primaryBrown)
         }
     }
 
@@ -632,52 +775,62 @@ private struct ContinuedJournalEditor: View {
     @State private var text = ""
     @State private var saveFailed = false
 
+    private var isBlank: Bool {
+        text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("\(journalName) · continues page \(pageNumber)")
-                    .font(.footnote)
-                    .foregroundStyle(Color.secondaryText)
-                Divider().overlay(Color.secondaryText.opacity(0.35))
-                if let reference = source.reference {
-                    Text("\(reference) · today")
-                        .font(.footnote)
-                        .foregroundStyle(Color.secondaryText)
+            VStack(alignment: .leading, spacing: 0) {
+                JournalPopupHeader(title: "New page",
+                                   hint: "\(journalName) · continues page \(pageNumber)",
+                                   graphic: .page)
+                    .padding(.bottom, 12)
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
+                        if let reference = source.reference {
+                            Text("\(reference) · today")
+                                .font(.footnote)
+                                .foregroundStyle(Color.secondaryText)
+                        }
+                        if saveFailed {
+                            Text("Couldn't save your note. Please try again.")
+                                .font(.footnote)
+                                .foregroundStyle(Color.secondaryText)
+                        }
+                        TextEditor(text: $text)
+                            .font(.system(.body, design: .serif))
+                            .foregroundStyle(Color.bodyText)
+                            .tint(Color.primaryBrown)
+                            .scrollContentBackground(.hidden)
+                            .padding(10)
+                            .frame(minHeight: 260)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .accessibilityLabel("Journal text")
+                    }
                 }
-                if saveFailed {
-                    Text("Couldn't save your note. Please try again.")
-                        .font(.footnote)
-                        .foregroundStyle(Color.secondaryText)
-                }
-                TextEditor(text: $text)
-                    .font(.system(.body, design: .serif))
-                    .foregroundStyle(Color.bodyText)
-                    .tint(Color.primaryBrown)
-                    .scrollContentBackground(.hidden)
-                    .background(Color.cream)
-                    .accessibilityLabel("Journal text")
             }
-            .padding(22)
-            .background(Color.cream)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .themedScreen()
-            .navigationTitle("New page")
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .background(Color.cream.ignoresSafeArea())
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("New page")
-                        .foregroundStyle(Color.bodyText)
-                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { save() }
-                        .tint(Color.primaryBrown)
-                        .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: "Save page", isDisabled: isBlank) {
+                    save()
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
             }
             .onAppear { text = "" }
+            .themedScreen()
+            .tint(Color.primaryBrown)
         }
     }
 
@@ -758,38 +911,40 @@ struct JournalDestinationPicker: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(shelves, id: \.id) { shelf in
-                    Section {
-                        ForEach(shelf.notebooks.sorted { $0.created < $1.created }, id: \.id) { notebook in
-                            Button {
-                                onSelected(notebook)
-                                dismiss()
-                            } label: {
-                            Label(notebook.name, systemImage: "book.closed")
-                                .foregroundStyle(Color.bodyText)
+            VStack(alignment: .leading, spacing: 0) {
+                JournalPopupHeader(title: "Save to", hint: "Choose a journal for this note.", graphic: .saveTo(.lavender))
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                    .padding(.bottom, 8)
+
+                List {
+                    ForEach(shelves, id: \.id) { shelf in
+                        Section {
+                            ForEach(shelf.notebooks.sorted { $0.created < $1.created }, id: \.id) { notebook in
+                                Button {
+                                    onSelected(notebook)
+                                    dismiss()
+                                } label: {
+                                    Label(notebook.name, systemImage: "book.closed")
+                                        .foregroundStyle(Color.bodyText)
+                                }
                             }
+                        } header: {
+                            Text(shelf.label)
+                                .foregroundStyle(Color.secondaryText)
                         }
-                    } header: {
-                        Text(shelf.label)
-                            .foregroundStyle(Color.secondaryText)
                     }
+                    Button("New journal…") {
+                        dismiss()
+                        onNewJournal(shelves.first)
+                    }
+                    .foregroundStyle(Color.primaryBrown)
                 }
-                Button("New journal…") {
-                    dismiss()
-                    onNewJournal(shelves.first)
-                }
-                .foregroundStyle(Color.primaryBrown)
+                .scrollContentBackground(.hidden)
+                .background(Color.cream)
             }
-            .scrollContentBackground(.hidden)
-            .background(Color.cream)
-            .navigationTitle("Save to")
-            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.cream.ignoresSafeArea())
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Save to")
-                        .foregroundStyle(Color.bodyText)
-                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
@@ -889,31 +1044,46 @@ struct NewShelfSheet: View {
     @Environment(\.dismiss) private var dismiss
     @State private var label = ""
 
+    private var trimmedLabel: String {
+        label.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     var body: some View {
         NavigationStack {
-            Form {
-                TextField("Shelf label", text: $label, prompt: Text("Shelf label").foregroundStyle(Color.secondaryText))
-                    .textInputAutocapitalization(.words)
-                    .foregroundStyle(Color.bodyText)
-                    .listRowBackground(Color.card)
-            }
-            .scrollContentBackground(.hidden)
-            .background(Color.cream)
-            .navigationTitle("New shelf")
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("New shelf")
-                        .foregroundStyle(Color.bodyText)
-                }
-                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Create") {
-                        onCreate(label.trimmingCharacters(in: .whitespacesAndNewlines))
-                        dismiss()
+            VStack(alignment: .leading, spacing: 16) {
+                JournalPopupHeader(title: "New shelf", hint: "A place to group journals.", graphic: .shelf)
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Shelf label")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                        TextField("Shelf label", text: $label, prompt: Text("Shelf label").foregroundStyle(Color.secondaryText))
+                            .textInputAutocapitalization(.words)
+                            .foregroundStyle(Color.bodyText)
+                            .padding(.horizontal, 14)
+                            .frame(minHeight: 48)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
-                    .tint(Color.primaryBrown)
-                    .disabled(label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .background(Color.cream.ignoresSafeArea())
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
+                }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: "Create shelf", isDisabled: trimmedLabel.isEmpty) {
+                    onCreate(trimmedLabel)
+                    dismiss()
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
             }
             .themedScreen()
             .tint(Color.primaryBrown)
@@ -935,53 +1105,63 @@ struct NewJournalSheet: View {
         shelves.first { $0.id == selectedShelfID } ?? initialShelf ?? shelves.first
     }
 
+    private var trimmedName: String {
+        name.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("New journal")
-                        .font(.serifTitle(.title2))
-                        .foregroundStyle(Color.bodyText)
-                    JournalPreviewSpine(color: JournalNotebookColor.color(at: selectedColorIndex ?? 0))
-                        .frame(maxWidth: .infinity)
-                    Text("Name")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.secondaryText)
-                    TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
-                        .textInputAutocapitalization(.words)
-                        .foregroundStyle(Color.bodyText)
-                        .padding(.horizontal, 14)
-                        .frame(minHeight: 48)
-                        .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    Text("Colour")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.secondaryText)
-                        .padding(.top, 4)
-                    JournalColorSwatches(selection: $selectedColorIndex)
-                    Text("Shelf")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.secondaryText)
-                        .padding(.top, 4)
-                    JournalShelfSelection(shelves: shelves, selectedShelf: selectedShelf) { selectedShelfID = $0 }
+            VStack(alignment: .leading, spacing: 0) {
+                JournalPopupHeader(title: "New journal", hint: "Name it and pick a colour.", graphic: .journal(JournalNotebookColor.color(at: selectedColorIndex ?? 0)))
+                    .padding(.bottom, 12)
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Name")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                        TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
+                            .textInputAutocapitalization(.words)
+                            .foregroundStyle(Color.bodyText)
+                            .padding(.horizontal, 14)
+                            .frame(minHeight: 48)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+
+                        Text("Colour")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                            .padding(.top, 4)
+                        JournalColorSwatches(selection: $selectedColorIndex)
+
+                        Text("Shelf")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                            .padding(.top, 4)
+                        JournalShelfSelection(shelves: shelves, selectedShelf: selectedShelf) {
+                            selectedShelfID = $0
+                        }
+                    }
                 }
-                .padding(16)
             }
-            .scrollContentBackground(.hidden)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
             .background(Color.cream.ignoresSafeArea())
             .onAppear { selectedShelfID = initialShelf?.id ?? shelves.first?.id }
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Create") {
-                        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
-                        if let shelf = selectedShelf, !trimmed.isEmpty {
-                            onCreate(trimmed, shelf, selectedColorIndex)
-                            dismiss()
-                        }
-                    }
-                    .tint(Color.primaryBrown)
-                    .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || selectedShelf == nil)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: "Create journal", isDisabled: trimmedName.isEmpty || selectedShelf == nil) {
+                    guard let shelf = selectedShelf else { return }
+                    onCreate(trimmedName, shelf, selectedColorIndex)
+                    dismiss()
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
             }
             .themedScreen()
             .tint(Color.primaryBrown)
@@ -991,45 +1171,59 @@ struct NewJournalSheet: View {
 
 struct RenameJournalSheet: View {
     let title: String
-    let navigationTitle: String
     var onRename: (String) -> Void
     @Environment(\.dismiss) private var dismiss
     @State private var name: String
 
-    init(title: String, onRename: @escaping (String) -> Void, navigationTitle: String = "Rename journal") {
+    init(title: String, onRename: @escaping (String) -> Void) {
         self.title = title
-        self.navigationTitle = navigationTitle
         self.onRename = onRename
         _name = State(initialValue: title)
     }
 
+    private var trimmedName: String {
+        name.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     var body: some View {
         NavigationStack {
-            Form {
-                TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
-                    .foregroundStyle(Color.bodyText)
-                    .listRowBackground(Color.card)
-            }
-                .scrollContentBackground(.hidden)
-                .background(Color.cream)
-                .navigationTitle(navigationTitle)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text(navigationTitle)
+            VStack(alignment: .leading, spacing: 16) {
+                JournalPopupHeader(title: "Rename journal", hint: "Give this journal a new label.", graphic: .journal(.lavender))
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Name")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                        TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
+                            .textInputAutocapitalization(.words)
                             .foregroundStyle(Color.bodyText)
-                    }
-                    ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() }.tint(Color.primaryBrown) }
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Save") {
-                            let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
-                            if !trimmed.isEmpty { onRename(trimmed); dismiss() }
-                        }
-                        .tint(Color.primaryBrown)
-                        .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                            .padding(.horizontal, 14)
+                            .frame(minHeight: 48)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                 }
-                .themedScreen()
-                .tint(Color.primaryBrown)
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .background(Color.cream.ignoresSafeArea())
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
+                }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: "Save", isDisabled: trimmedName.isEmpty) {
+                    onRename(trimmedName)
+                    dismiss()
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
+            }
+            .themedScreen()
+            .tint(Color.primaryBrown)
         }
     }
 }
@@ -1047,54 +1241,56 @@ struct JournalColorSheet: View {
         _selectedColorIndex = State(initialValue: notebook.colorIndex)
     }
 
+    private var trimmedName: String {
+        name.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Edit journal")
-                        .font(.serifTitle(.title2))
-                        .foregroundStyle(Color.bodyText)
-                    JournalPreviewSpine(color: JournalNotebookColor.color(at: selectedColorIndex ?? JournalNotebookColor.automaticIndex(for: notebook.id)))
-                        .frame(maxWidth: .infinity)
-                    Text("Name")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.secondaryText)
-                    TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
-                        .textInputAutocapitalization(.words)
-                        .foregroundStyle(Color.bodyText)
-                        .padding(.horizontal, 14)
-                        .frame(minHeight: 48)
-                        .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    Text("Colour")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.secondaryText)
-                        .padding(.top, 4)
-                    JournalColorSwatches(selection: $selectedColorIndex)
+            VStack(alignment: .leading, spacing: 0) {
+                JournalPopupHeader(title: "Edit journal", hint: "Change its name or colour.",
+                                   graphic: .journal(JournalNotebookColor.color(at: selectedColorIndex ?? JournalNotebookColor.automaticIndex(for: notebook.id))))
+                    .padding(.bottom, 12)
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Name")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                        TextField("Name", text: $name, prompt: Text("Name").foregroundStyle(Color.secondaryText))
+                            .textInputAutocapitalization(.words)
+                            .foregroundStyle(Color.bodyText)
+                            .padding(.horizontal, 14)
+                            .frame(minHeight: 48)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+
+                        Text("Colour")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                            .padding(.top, 4)
+                        JournalColorSwatches(selection: $selectedColorIndex)
+                    }
                 }
-                .padding(16)
             }
-            .scrollContentBackground(.hidden)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
             .background(Color.cream.ignoresSafeArea())
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Edit journal")
-                        .foregroundStyle(Color.bodyText)
-                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
-                        guard !trimmed.isEmpty else { return }
-                        notebook.name = trimmed
-                        notebook.colorIndex = selectedColorIndex
-                        try? context.save()
-                        dismiss()
-                    }
-                    .tint(Color.primaryBrown)
-                    .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: "Save changes", isDisabled: trimmedName.isEmpty) {
+                    notebook.name = trimmedName
+                    notebook.colorIndex = selectedColorIndex
+                    try? context.save()
+                    dismiss()
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
             }
             .themedScreen()
             .tint(Color.primaryBrown)
@@ -1105,8 +1301,59 @@ struct JournalColorSheet: View {
 struct RenameShelfSheet: View {
     let title: String
     var onRename: (String) -> Void
+    @Environment(\.dismiss) private var dismiss
+    @State private var name: String
+
+    init(title: String, onRename: @escaping (String) -> Void) {
+        self.title = title
+        self.onRename = onRename
+        _name = State(initialValue: title)
+    }
+
+    private var trimmedName: String {
+        name.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     var body: some View {
-        RenameJournalSheet(title: title, onRename: onRename, navigationTitle: "Rename shelf")
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 16) {
+                JournalPopupHeader(title: "Rename shelf", hint: "Give this shelf a new label.", graphic: .shelf)
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Shelf label")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.secondaryText)
+                        TextField("Shelf label", text: $name, prompt: Text("Shelf label").foregroundStyle(Color.secondaryText))
+                            .textInputAutocapitalization(.words)
+                            .foregroundStyle(Color.bodyText)
+                            .padding(.horizontal, 14)
+                            .frame(minHeight: 48)
+                            .background(Color.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .background(Color.cream.ignoresSafeArea())
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
+                }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: "Save", isDisabled: trimmedName.isEmpty) {
+                    onRename(trimmedName)
+                    dismiss()
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
+            }
+            .themedScreen()
+            .tint(Color.primaryBrown)
+        }
     }
 }
 
@@ -1115,28 +1362,46 @@ struct MoveJournalSheet: View {
     let shelves: [JournalShelf]
     var onMove: (JournalShelf) -> Void
     @Environment(\.dismiss) private var dismiss
+    @State private var selectedShelfID: UUID?
+
+    private var destinations: [JournalShelf] {
+        shelves.filter { $0.id != notebook.shelf?.id }
+    }
+
+    private var selectedShelf: JournalShelf? {
+        destinations.first { $0.id == selectedShelfID }
+    }
 
     var body: some View {
         NavigationStack {
-            List(shelves.filter { $0.id != notebook.shelf?.id }, id: \.id) { shelf in
-                Button {
-                    onMove(shelf)
-                    dismiss()
-                } label: {
-                    Text(shelf.label).foregroundStyle(Color.bodyText)
+            VStack(alignment: .leading, spacing: 16) {
+                JournalPopupHeader(title: "Move journal",
+                                   hint: "Choose a shelf for \"\(notebook.name)\".",
+                                   graphic: .move(JournalNotebookColor.color(at: notebook.colorIndex ?? JournalNotebookColor.automaticIndex(for: notebook.id))))
+                ScrollView {
+                    JournalShelfSelection(shelves: destinations, selectedShelf: selectedShelf) {
+                        selectedShelfID = $0
+                    }
                 }
             }
-            .scrollContentBackground(.hidden)
-            .background(Color.cream)
-            .navigationTitle("Move journal to…")
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .background(Color.cream.ignoresSafeArea())
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Move journal to…")
-                        .foregroundStyle(Color.bodyText)
-                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                JournalPopupBottomButton(title: "Move", isDisabled: selectedShelf == nil) {
+                    guard let selectedShelf else { return }
+                    onMove(selectedShelf)
+                    dismiss()
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
+                .background(Color.cream)
             }
             .themedScreen()
             .tint(Color.primaryBrown)
@@ -1150,43 +1415,61 @@ struct DeleteShelfSheet: View {
     var onDeleteEmpty: () -> Void
     var onMoveAndDelete: (JournalShelf) -> Void
     @Environment(\.dismiss) private var dismiss
+    @State private var selectedShelfID: UUID?
+
+    private var selectedShelf: JournalShelf? {
+        otherShelves.first { $0.id == selectedShelfID }
+    }
 
     var body: some View {
         NavigationStack {
-            List {
-                if otherShelves.isEmpty {
-                    Text("You need at least one shelf.")
-                        .foregroundStyle(Color.secondaryText)
-                } else if shelf.notebooks.isEmpty {
-                    Section { Text("Delete “\(shelf.label)”?”").foregroundStyle(Color.bodyText) }
-                    Button("Delete shelf", role: .destructive) {
-                        onDeleteEmpty()
+            VStack(spacing: 0) {
+                if shelf.notebooks.isEmpty || otherShelves.isEmpty {
+                List {
+                    if otherShelves.isEmpty {
+                        Text("You need at least one shelf.")
+                            .foregroundStyle(Color.secondaryText)
+                    } else {
+                        Section { Text("Delete “\(shelf.label)”?”").foregroundStyle(Color.bodyText) }
+                        Button("Delete shelf", role: .destructive) {
+                            onDeleteEmpty()
+                            dismiss()
+                        }
+                    }
+                }
+                .scrollContentBackground(.hidden)
+                .background(Color.cream)
+            } else {
+                VStack(alignment: .leading, spacing: 16) {
+                    JournalPopupHeader(title: "Delete shelf",
+                                       hint: "Move \(shelf.notebooks.count) journals to another shelf first.",
+                                       graphic: .shelf)
+                    ScrollView {
+                        JournalShelfSelection(shelves: otherShelves, selectedShelf: selectedShelf) {
+                            selectedShelfID = $0
+                        }
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .background(Color.cream.ignoresSafeArea())
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    JournalPopupBottomButton(title: "Move and delete shelf",
+                                             isDisabled: selectedShelf == nil,
+                                             color: Color.terracotta,
+                                             role: .destructive) {
+                        guard let selectedShelf else { return }
+                        onMoveAndDelete(selectedShelf)
                         dismiss()
                     }
-                } else {
-                    Section {
-                        ForEach(otherShelves, id: \.id) { target in
-                            Button {
-                                onMoveAndDelete(target)
-                                dismiss()
-                            } label: {
-                                Text(target.label).foregroundStyle(Color.bodyText)
-                            }
-                        }
-                    } header: {
-                        Text("Move \(shelf.notebooks.count) journals to:")
-                            .foregroundStyle(Color.secondaryText)
-                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                    .padding(.bottom, 8)
+                    .background(Color.cream)
                 }
             }
-            .scrollContentBackground(.hidden)
-            .background(Color.cream)
-            .navigationTitle("Delete shelf")
+            }
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Delete shelf")
-                        .foregroundStyle(Color.bodyText)
-                }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }.tint(Color.primaryBrown)
                 }
