@@ -847,6 +847,12 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     JSON file per book and loads it into an in-memory per-book cache only when that book's
     reading check opens. Each quiz chooses three questions and builds fill-in chips then.
 
+116. **Island rotation removed (one fixed angle) to prepare for sprite art.** The island now
+    always uses the former turn-0 projection. Rotation controls, twist gestures, turn animation,
+    edit-mode footprint rotation, rotation-only debug flags, quarter-turn cache keys, odd-turn
+    mirroring and rotated asset lookup were removed. Existing camera and footprint rotation values
+    remain stored but are ignored; no schema or reading history changes.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

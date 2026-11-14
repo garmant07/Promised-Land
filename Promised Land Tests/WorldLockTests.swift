@@ -29,16 +29,16 @@ struct WorldLockTests {
         return CGPoint(x: inWorld.x + slide.width, y: inWorld.y + slide.height)
     }
 
-    @Test("Through fast pans, zooms and walking, everyone keeps exactly their place on their tile", arguments: [0, 1, 2, 3])
-    func peopleStayOnTheirTiles(quarter: Int) throws {
+    @Test("Through fast pans, zooms and walking, everyone keeps exactly their place on their tile")
+    func peopleStayOnTheirTiles() throws {
         let character = try #require(IslandCharacter.make(CharacterJourneys.all, island: Self.island).first)
-        var rng = SeededRandom(seed: UInt64(40 + quarter))
+        var rng = SeededRandom(seed: UInt64(40))
         var pan = CGSize.zero, zoom: CGFloat = 2
         for frame in 0..<240 {
             // A shaky pan (up to 120 points a frame) with a pinch in and out on top.
             pan = CGSize(width: pan.width + rng.next(in: -120...120), height: pan.height + rng.next(in: -120...120))
             zoom = max(1, min(8, zoom * CGFloat(1 + rng.next(in: -0.08...0.08))))
-            let base = IslandLayout(island: Self.island, size: Self.size, zoom: zoom, angle: CGFloat(quarter))
+            let base = IslandLayout(island: Self.island, size: Self.size, zoom: zoom, )
             let layout = base.panned(pan)
             // Walking: a Bible character's own path, a sixtieth of a second further each frame.
             let g = character.position(at: 1000 + Double(frame) / 60)

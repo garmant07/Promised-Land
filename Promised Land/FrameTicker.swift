@@ -30,24 +30,3 @@ final class FrameTicker {
         for c in ready { c.resume() }
     }
 }
-
-/// Quarter turns asked for while one is animating: at most one waits its turn; more taps are ignored.
-struct TurnQueue {
-    private(set) var turning = false
-    private(set) var pending: Int?
-
-    /// A turn was asked for: the step to start now, or nil if one is animating (then it's queued, if
-    /// nothing is queued yet).
-    mutating func request(_ step: Int) -> Int? {
-        guard turning else { turning = true; return step }
-        if pending == nil { pending = step }
-        return nil
-    }
-
-    /// The animation finished: the queued step to start next (still turning), or nil (done).
-    mutating func finished() -> Int? {
-        if let next = pending { pending = nil; return next }
-        turning = false
-        return nil
-    }
-}

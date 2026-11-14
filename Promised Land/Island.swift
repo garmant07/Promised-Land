@@ -3,19 +3,13 @@ import SwiftUI
 // MARK: - Layout
 
 /// Maps island grid coordinates to points, scaled so the whole island fits inside the
-/// area left by `insets`, then zoomed about that area's centre. The island can be turned in
-/// quarter turns about its middle (`angle`, in quarter turns; fractional while turning).
+/// area left by `insets`, then zoomed about that area's centre.
 /// Panning is applied by the view as an offset (see `IslandHitTester`).
 struct IslandLayout {
     let scale: CGFloat      // points per grid half-unit (a tile is 2 × scale wide)
     private(set) var origin: CGPoint
     let depth: CGFloat      // height of the earth sides
     let zoom: CGFloat
-    /// Quarter turns (0…4, fractional while animating).
-    let angle: CGFloat
-    /// The grid point the island turns about.
-    let pivot: CGPoint
-    private let cosA: CGFloat, sinA: CGFloat
     /// The scale that fits the whole island (zoom 1), and the furthest you can zoom in.
     let fit: CGFloat
     let maxZoom: CGFloat
@@ -31,47 +25,34 @@ struct IslandLayout {
         IslandLayout(island: island, size: size, insets: insets).maxZoom
     }
 
-    /// Iso bounds of the island's tiles, per island and turn (worked out once, not every frame).
-    private static var boundsMemo: [Int: (minX: CGFloat, maxX: CGFloat, minY: CGFloat, maxY: CGFloat, pivot: CGPoint)] = [:]
+    /// Iso bounds of the island's tiles (worked out once, not every frame).
+    private static var boundsMemo: [Int: (minX: CGFloat, maxX: CGFloat, minY: CGFloat, maxY: CGFloat)] = [:]
 
     /// How far past the limits a pinch may go (it rubber-bands back on release). The camera keeps
     /// its zoom inside this too, so every layer works from the very same number.
     static func clampedZoom(_ zoom: CGFloat, maxZoom: CGFloat) -> CGFloat { min(maxZoom * 1.3, max(minZoom * 0.75, zoom)) }
 
-    /// The nearest whole quarter turn, 0…3.
-    var quarter: Int { ((Int((angle).rounded()) % 4) + 4) % 4 }
-    /// Code-drawn art is mirrored on odd quarter turns, so buildings face the new way.
-    var mirrored: Bool { quarter % 2 == 1 }
-
-    init(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets(), zoom: CGFloat = 1, angle: CGFloat = 0) {
-        self.angle = angle
-        cosA = cos(angle * .pi / 2)
-        sinA = sin(angle * .pi / 2)
-        // Iso units: X = gx - gy, Y = (gx + gy) / 2 (after turning).
+    init(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets(), zoom: CGFloat = 1) {
+        // Iso units: X = gx - gy, Y = (gx + gy) / 2.
         var minX = CGFloat.infinity, maxX = -CGFloat.infinity, minY = CGFloat.infinity, maxY = -CGFloat.infinity
         var memoKey: Int?
         if island.signature != 0 {
-            var h = Hasher(); h.combine(island.signature); h.combine(angle); memoKey = h.finalize()
+            var h = Hasher(); h.combine(island.signature); memoKey = h.finalize()
         }
         if let memoKey, let b = Self.boundsMemo[memoKey] {
             (minX, maxX, minY, maxY) = (b.minX, b.maxX, b.minY, b.maxY)
-            pivot = b.pivot
         } else {
-            let xs = island.tiles.map(\.x), ys = island.tiles.map(\.y)
-            let pivot = CGPoint(x: CGFloat((xs.min() ?? 0) + (xs.max() ?? 0) + 1) / 2,
-                                y: CGFloat((ys.min() ?? 0) + (ys.max() ?? 0) + 1) / 2)
-            self.pivot = pivot
             for t in island.tiles {
                 for (dx, dy) in [(0, 0), (1, 0), (0, 1), (1, 1)] {
-                    let r = Self.turn(CGFloat(t.x + dx), CGFloat(t.y + dy), pivot: pivot, cos: cosA, sin: sinA)
-                    minX = min(minX, r.x - r.y); maxX = max(maxX, r.x - r.y)
-                    minY = min(minY, (r.x + r.y) / 2); maxY = max(maxY, (r.x + r.y) / 2)
+                    let gx = CGFloat(t.x + dx), gy = CGFloat(t.y + dy)
+                    minX = min(minX, gx - gy); maxX = max(maxX, gx - gy)
+                    minY = min(minY, (gx + gy) / 2); maxY = max(maxY, (gx + gy) / 2)
                 }
             }
             if island.tiles.isEmpty { minX = -1; maxX = 1; minY = 0; maxY = 1 }
             if let memoKey {
                 if Self.boundsMemo.count > 64 { Self.boundsMemo.removeAll() }
-                Self.boundsMemo[memoKey] = (minX, maxX, minY, maxY, pivot)
+                Self.boundsMemo[memoKey] = (minX, maxX, minY, maxY)
             }
         }
         let area = CGSize(width: max(1, size.width - insets.leading - insets.trailing),
@@ -92,20 +73,14 @@ struct IslandLayout {
         origin = CGPoint(x: centre.x + (fitOrigin.x - centre.x) * z, y: centre.y + (fitOrigin.y - centre.y) * z)
     }
 
-    private static func turn(_ gx: CGFloat, _ gy: CGFloat, pivot: CGPoint, cos c: CGFloat, sin s: CGFloat) -> CGPoint {
-        let dx = gx - pivot.x, dy = gy - pivot.y
-        return CGPoint(x: pivot.x + dx * c - dy * s, y: pivot.y + dx * s + dy * c)
-    }
-
     func point(_ gx: CGFloat, _ gy: CGFloat) -> CGPoint {
-        let r = Self.turn(gx, gy, pivot: pivot, cos: cosA, sin: sinA)
-        return CGPoint(x: origin.x + (r.x - r.y) * scale, y: origin.y + (r.x + r.y) / 2 * scale)
+        return CGPoint(x: origin.x + (gx - gy) * scale, y: origin.y + (gx + gy) / 2 * scale)
     }
 
     /// The grid position under a point (the inverse of `point`).
     func grid(_ p: CGPoint) -> CGPoint {
         let X = (p.x - origin.x) / scale, Y = (p.y - origin.y) / scale
-        return Self.turn(Y + X / 2, Y - X / 2, pivot: pivot, cos: cosA, sin: -sinA)
+        return CGPoint(x: Y + X / 2, y: Y - X / 2)
     }
 
     /// The same layout, slid by a pan offset. The island is drawn with the pan built in, so the
@@ -306,20 +281,16 @@ enum IslandPainter {
         let p = layout.point(item.gx, item.gy)
         var g = c
         g.translateBy(x: p.x, y: p.y)
-        let mirrored = layout.mirrored != (item.turned % 2 != 0)
-        g.scaleBy(x: mirrored ? -scale : scale, y: scale)
-        draw(&g, item, u: layout.u, tileWidth: layout.scale * 2, rotation: layout.quarter, mirrored: mirrored)
+        g.scaleBy(x: scale, y: scale)
+        draw(&g, item, u: layout.u, tileWidth: layout.scale * 2)
     }
 
     /// Draws an item around the context's origin (its ground point), as `drawItem` does.
-    static func drawAtOrigin(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, quarter: Int, layoutMirrored: Bool) {
-        let mirrored = layoutMirrored != (item.turned % 2 != 0)
-        if mirrored { c.scaleBy(x: -1, y: 1) }
-        draw(&c, item, u: u, tileWidth: u * 44, rotation: quarter, mirrored: mirrored)
+    static func drawAtOrigin(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat) {
+        draw(&c, item, u: u, tileWidth: u * 44)
     }
 
-    private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat, rotation: Int,
-                             mirrored: Bool) {
+    private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat) {
         if let art = art(for: item) {
             c.draw(Image(decorative: art.image, scale: 2), in: imageRect(art, item: item, tileWidth: tileWidth))
             return
@@ -328,14 +299,11 @@ enum IslandPainter {
         switch item.kind {
         case .piece(let kind):
             if case .place(let bookID, _) = item.source,
-               let custom = ArtAssets.place(bookID, piece: kind.rawValue, level: max(1, item.level), rotation: rotation) {
+               let custom = ArtAssets.place(bookID, piece: kind.rawValue, level: max(1, item.level)) {
                 drawCustom(&c, custom, tileWidth: tileWidth)
                 return
             }
-            // Which way the bay lies on screen, after the island's turn and any mirroring.
-            var side = ((item.facing + 3 * rotation) % 4 + 4) % 4
-            if mirrored { side = [1, 0, 3, 2][side] }
-            PlaceArt.draw(pen, item: item, kind: kind, side: side)
+            PlaceArt.draw(pen, item: item, kind: kind, side: item.facing)
         case .flourish:
             PlaceArt.flourish(pen, count: Int(item.growth), span: item.span, seed: item.seed)
         case .reward(let kind):
@@ -346,7 +314,7 @@ enum IslandPainter {
             PlaceArt.extra(pen, kind, seed: item.seed)
         case .library:
             let stage = LibraryArt.stage(of: item)
-            if let custom = LibraryArt.custom(stage, rotation: rotation) {
+            if let custom = LibraryArt.custom(stage) {
                 drawCustom(&c, custom, tileWidth: tileWidth)
                 return
             }
@@ -420,7 +388,7 @@ private extension CGPoint {
 /// The open sea's pattern: a block of the island's diamond lattice (`cells` × `cells` lattice
 /// steps) with a wave mark at every lattice point, nudged so it doesn't look gridded. On screen a
 /// lattice step of `spacing` tiles is a `2·s·scale` × `s·scale` rectangle with points at its corner
-/// and centre, at every turn, so the block tiles seamlessly in the island's own space.
+/// and centre, so the block tiles seamlessly in the island's own space.
 enum OpenSea {
     static let cells = 4
     /// The tile picture's size in points (it's rendered at 2×).

@@ -5,7 +5,7 @@ import Foundation
 // short looping routine tied to the Place's story (a fisherman rows out and brings the catch
 // home; someone harvests wheat and carries it to the mill). Routines are waypoint loops with
 // idle pauses, written in Place-local coordinates (fractions of the footprint, with its bay
-// on the +x side; turned to match the real Place). Positions are a pure function of time, so
+// on the +x side). Positions are a pure function of time, so
 // nothing needs updating: what's off screen simply isn't drawn.
 
 nonisolated enum VillagerPose: Sendable { case walk, boat, work, idle }
@@ -37,10 +37,9 @@ nonisolated struct Routine: Sendable, Equatable {
 struct Villager: Identifiable, Equatable {
     let id: String
     let routine: Routine
-    /// The Place's footprint and how its local frame is turned.
+    /// The Place's footprint.
     let origin: CGPoint
     let size: CGFloat
-    let quarter: Int
     /// Seconds into the loop at time zero, so neighbours don't move in step.
     let phase: Double
     let robe: Int
@@ -50,8 +49,7 @@ struct Villager: Identifiable, Equatable {
 
     /// Place-local to grid.
     func grid(_ w: Waypoint) -> CGPoint {
-        var dx = CGFloat(w.x) - 0.5, dy = CGFloat(w.y) - 0.5
-        for _ in 0..<quarter { (dx, dy) = (-dy, dx) }
+        let dx = CGFloat(w.x) - 0.5, dy = CGFloat(w.y) - 0.5
         return CGPoint(x: origin.x + (0.5 + dx) * size, y: origin.y + (0.5 + dy) * size)
     }
 
@@ -178,11 +176,10 @@ enum VillagerData {
             let item = island.items[index]
             guard item.total > 0, item.progress >= item.total else { continue }
             let spec = PlaceData.spec(for: plot.bookID)
-            let quarter = plot.bay.map { [1, 0, 3, 2][$0] } ?? ((plot.rotation % 4) + 4) % 4
             let count = min(perPlace, 1 + max(1, item.level))
             for (i, routine) in routines(for: spec.style).prefix(count).enumerated() {
                 out.append(Villager(id: "\(plot.bookID)-\(i)", routine: routine, origin: CGPoint(x: plot.x, y: plot.y),
-                                    size: CGFloat(plot.size), quarter: quarter, phase: Double(Island.hash("\(plot.bookID)\(i)") % 97),
+                                    size: CGFloat(plot.size), phase: Double(Island.hash("\(plot.bookID)\(i)") % 97),
                                     robe: Island.hash(plot.bookID) + i, produce: spec.produce))
             }
         }
@@ -191,7 +188,7 @@ enum VillagerData {
             let crowdSize = min(6, 2 + out.count / 6)
             for i in 0..<crowdSize {
                 out.append(Villager(id: "crowd-\(i)", routine: crowd, origin: CGPoint(x: IslandPlacer.start.x, y: IslandPlacer.start.y),
-                                    size: CGFloat(IslandPlacer.start.size), quarter: i % 4, phase: Double(i) * 3.7, robe: i * 3,
+                                    size: CGFloat(IslandPlacer.start.size), phase: Double(i) * 3.7, robe: i * 3,
                                     produce: .bread))
             }
         }

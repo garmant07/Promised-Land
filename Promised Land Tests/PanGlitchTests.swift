@@ -8,21 +8,12 @@ import SwiftUI
 /// cache; people are never drawn a frame behind; turning from close in zooms out first.
 @MainActor
 struct PanGlitchTests {
-    @Test("Turning from close in (or panned away) zooms out to the whole island first; from there it turns at once")
-    func rotateZoomsOutFirst() {
-        #expect(RotatePlan.steps(zoom: 3, pan: CGSize(width: 40, height: -20)) == [.zoomOut, .turn])
-        #expect(RotatePlan.steps(zoom: 1.4, pan: .zero) == [.zoomOut, .turn])
-        #expect(RotatePlan.steps(zoom: IslandLayout.minZoom, pan: CGSize(width: 120, height: 0)) == [.zoomOut, .turn])
-        #expect(RotatePlan.steps(zoom: IslandLayout.minZoom, pan: .zero) == [.turn])
-        #expect((0.4...0.6).contains(RotatePlan.zoomOutDuration))
-    }
-
     @Test("Anyone moving redraws the people layer at once, even within one tick; a pure pan doesn't")
     func peopleNeverLag() {
         func key(pan: CGSize, feet: CGPoint) -> PeopleLayerKey {
             // As the island view builds it: positions in the world's own coordinates (view point − slide).
             let slide = PanStep.offset(pan)
-            return PeopleLayerKey(drawPan: PanStep.drawPan(pan), zoom: 2, angle: 0, time: 7, people: ["me"],
+            return PeopleLayerKey(drawPan: PanStep.drawPan(pan), zoom: 2, time: 7, people: ["me"],
                                   places: [Int(((feet.x + pan.width - slide.width) * 8).rounded()), Int(((feet.y + pan.height - slide.height) * 8).rounded())],
                                   over: [[]], facingLeft: false, avatar: 1, zooming: false, size: CGSize(width: 390, height: 844))
         }
@@ -49,7 +40,7 @@ struct HeldPictureTests {
         defer { cache.removeAll(); cache.interacting = false }
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(Self.size))
         func frame(_ pan: CGSize) -> IslandRenderCache.Frame? {
-            cache.frame(island: Self.island, size: Self.size, insets: EdgeInsets(), zoom: 3, quarter: 0, pan: PanStep.drawPan(pan),
+            cache.frame(island: Self.island, size: Self.size, insets: EdgeInsets(), zoom: 3, pan: PanStep.drawPan(pan),
                         overrides: [:], hidden: [], viewport: canvas, deferMissing: true)
         }
         let start = CGSize(width: 10, height: 10)

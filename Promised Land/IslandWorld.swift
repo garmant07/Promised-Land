@@ -94,7 +94,6 @@ nonisolated struct PeopleLayerKey: Equatable, Sendable {
     /// The pan step the world is drawn at (not the remainder, which only moves it).
     let drawPan: CGSize
     let zoom: CGFloat
-    let angle: CGFloat
     /// The animation clock (holds still when nothing on the island is moving).
     let time: Double
     /// Who's drawn, in order, and what's drawn back over each of them.

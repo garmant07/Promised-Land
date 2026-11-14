@@ -9,8 +9,7 @@ import UIKit
 /// - `art_<kind>_<level>`: a chapter artifact (kind = an `ArtifactKind` raw value, or a
 ///   story object id such as `art_genesis-ark_3`), level 1–5.
 /// - `char_<id>`: a Bible character (used from Phase 5).
-/// Each name may also come in rotations, `_r0`…`_r3` (used once the island can rotate);
-/// the plain name is used for any rotation without its own image.
+/// Each name is a plain image name.
 @MainActor
 enum ArtAssets {
     /// Authoring scale: one island tile is 64pt wide in the image (128px @2x, 192px @3x).
@@ -24,21 +23,18 @@ enum ArtAssets {
 
     private static var cache: [String: Art?] = [:]
 
-    static func image(_ name: String, rotation: Int = 0) -> Art? {
-        if let rotated = lookup("\(name)_r\(rotation)") { return rotated }
-        return lookup(name)
+    static func image(_ name: String) -> Art? { lookup(name) }
+
+    static func building(_ bookID: String, level: Int) -> Art? {
+        image("bld_\(bookID)_\(level)")
     }
 
-    static func building(_ bookID: String, level: Int, rotation: Int = 0) -> Art? {
-        image("bld_\(bookID)_\(level)", rotation: rotation)
+    static func artifact(_ id: String, level: Int) -> Art? {
+        image("art_\(id)_\(level)")
     }
 
-    static func artifact(_ id: String, level: Int, rotation: Int = 0) -> Art? {
-        image("art_\(id)_\(level)", rotation: rotation)
-    }
-
-    static func character(_ id: String, rotation: Int = 0) -> Art? {
-        image("char_\(id)", rotation: rotation)
+    static func character(_ id: String) -> Art? {
+        image("char_\(id)")
     }
 
     private static func lookup(_ name: String) -> Art? {
@@ -51,7 +47,7 @@ enum ArtAssets {
 
 extension ArtAssets {
     /// A Place piece: `place_<bookID>_<piece>_<level>` (level = richness 1–5).
-    static func place(_ bookID: String, piece: String, level: Int, rotation: Int = 0) -> Art? {
-        image("place_\(bookID)_\(piece)_\(level)", rotation: rotation)
+    static func place(_ bookID: String, piece: String, level: Int) -> Art? {
+        image("place_\(bookID)_\(piece)_\(level)")
     }
 }

@@ -19,11 +19,11 @@ struct ZoomOutCoverageTests {
 
     /// Checks one frame of the island as the ground layer draws it (live camera, missing pictures
     /// drawn from another zoom meanwhile): no tile or building in view is left out.
-    func checkFrame(size: CGSize, zoom: CGFloat, pan: CGSize, quarter: Int, note: String) {
+    func checkFrame(size: CGSize, zoom: CGFloat, pan: CGSize, note: String) {
         let cache = IslandRenderCache.shared
-        guard let frame = cache.frame(island: Self.island, size: size, insets: Self.insets, zoom: zoom, quarter: quarter, pan: pan,
+        guard let frame = cache.frame(island: Self.island, size: size, insets: Self.insets, zoom: zoom, pan: pan,
                                       overrides: [:], hidden: [], deferMissing: true) else { Issue.record("no frame"); return }
-        let layout = IslandLayout(island: Self.island, size: size, insets: Self.insets, zoom: zoom, angle: CGFloat(quarter)).panned(pan)
+        let layout = IslandLayout(island: Self.island, size: size, insets: Self.insets, zoom: zoom).panned(pan)
         let view = CGRect(origin: .zero, size: size).insetBy(dx: 4, dy: 4)
         // Ground under every tile in view.
         var missingTiles = 0, tilesInView = 0
@@ -33,7 +33,7 @@ struct ZoomOutCoverageTests {
             tilesInView += 1
             if !frame.ground.contains(where: { g in (g.clip.map { g.rect.intersection($0) } ?? g.rect).contains(p) }) { missingTiles += 1 }
         }
-        #expect(missingTiles == 0, "\(note): \(missingTiles) of \(tilesInView) tiles in view with no ground (zoom \(zoom), turn \(quarter))")
+        #expect(missingTiles == 0, "\(note): \(missingTiles) of \(tilesInView) tiles in view with no ground (zoom \(zoom), fixed angle)")
         // Every building in view: in ground that includes buildings, in a Place picture, or drawn as an item.
         var missingPlaces = 0
         for plot in Self.island.allPlots {
@@ -48,11 +48,11 @@ struct ZoomOutCoverageTests {
             }
             if !inBakedGround && !inPicture { missingPlaces += 1 }
         }
-        #expect(missingPlaces == 0, "\(note): \(missingPlaces) Places in view not drawn (zoom \(zoom), turn \(quarter))")
+        #expect(missingPlaces == 0, "\(note): \(missingPlaces) Places in view not drawn (zoom \(zoom), fixed angle)")
     }
 
-    @Test("Pinch right in, then right out: every frame draws all the land and buildings in view", arguments: [0, 1, 2, 3])
-    func pinchInThenOut(quarter: Int) {
+    @Test("Pinch right in, then right out: every frame draws all the land and buildings in view")
+    func pinchInThenOut() {
         IslandRenderCache.shared.rendersInBackground = false
         defer { IslandRenderCache.shared.removeAll(); IslandRenderCache.shared.rendersInBackground = true }
         let size = Self.size(0)
@@ -65,33 +65,33 @@ struct ZoomOutCoverageTests {
             let next = min(limit * 0.9, zoom * 1.12)
             pan = PlatformScene.panKeeping(anchor, from: (zoom, pan), toZoom: next, centre: centre)
             zoom = next
-            checkFrame(size: size, zoom: zoom, pan: pan, quarter: quarter, note: "pinching in")
+            checkFrame(size: size, zoom: zoom, pan: pan, note: "pinching in")
         }
         // And all the way back out (nothing rendered in the background meanwhile: the worst case).
         while zoom > IslandLayout.minZoom * 0.8 {
             let next = max(IslandLayout.minZoom * 0.8, zoom / 1.12)
             pan = PlatformScene.panKeeping(anchor, from: (zoom, pan), toZoom: next, centre: centre)
             zoom = next
-            checkFrame(size: size, zoom: zoom, pan: pan, quarter: quarter, note: "pinching out")
+            checkFrame(size: size, zoom: zoom, pan: pan, note: "pinching out")
         }
     }
 
-    @Test("Tap-to-zoom up to a building and back: every frame draws all the land and buildings in view", arguments: [0, 1, 2, 3])
-    func tapToZoomAndBack(quarter: Int) throws {
+    @Test("Tap-to-zoom up to a building and back: every frame draws all the land and buildings in view")
+    func tapToZoomAndBack() throws {
         IslandRenderCache.shared.rendersInBackground = false
         defer { IslandRenderCache.shared.removeAll(); IslandRenderCache.shared.rendersInBackground = true }
         let size = Self.size(1)
         let item = try #require(Self.island.items.first { $0.plotKey != nil && $0.kind.isTall })
-        let toZoom = IslandCamera.visitZoom(for: item, in: Self.island, size: size, insets: Self.insets, quarter: quarter)
+        let toZoom = IslandCamera.visitZoom(for: item, in: Self.island, size: size, insets: Self.insets, )
         let toPan = IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: Self.island), island: Self.island, size: size,
-                                     insets: Self.insets, zoom: toZoom, quarter: quarter)
+                                     insets: Self.insets, zoom: toZoom, )
         let there = CameraGlide(fromZoom: 1, toZoom: toZoom, fromPan: .zero, toPan: toPan, start: 0, duration: PlatformScene.visitGlide)
         let back = CameraGlide(fromZoom: toZoom, toZoom: 1, fromPan: toPan, toPan: .zero, start: 0, duration: 0.5)
         for (glide, note) in [(there, "stepping up"), (back, "coming back")] {
             var t = 0.0
             while true {
                 let c = glide.camera(at: t)
-                checkFrame(size: size, zoom: c.zoom, pan: c.pan, quarter: quarter, note: note)
+                checkFrame(size: size, zoom: c.zoom, pan: c.pan, note: note)
                 if glide.isDone(at: t) { break }
                 t += 1.0 / 30
             }

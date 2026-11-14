@@ -14,19 +14,19 @@ struct IslandLayeringTests {
     static let size = CGSize(width: 393, height: 852)
     static let island = LODTests.island
 
-    @Test("Buildings stay on their tiles through fast pans, at every turn and zoom", arguments: [0, 1, 2, 3])
-    func buildingsStayOnTiles(quarter: Int) throws {
-        var rng = SeededRandom(seed: UInt64(11 + quarter))
+    @Test("Buildings stay on their tiles through fast pans, through fast pans and zooms")
+    func buildingsStayOnTiles() throws {
+        var rng = SeededRandom(seed: UInt64(11))
         for zoom: CGFloat in [1, 2.3, 4.7] {
             var pan = CGSize.zero
             let base = try #require(IslandRenderCache.shared.frame(island: Self.island, size: Self.size, insets: EdgeInsets(), zoom: zoom,
-                                                                   quarter: quarter, pan: pan, overrides: [:], hidden: [],
+                                                                   pan: pan, overrides: [:], hidden: [],
                                                                    viewport: CGRect(x: -3000, y: -3000, width: 6000, height: 6000)))
             for _ in 0..<12 {
                 // A fast, shaky pan: up to 300 points in a frame.
                 pan = CGSize(width: pan.width + rng.next(in: -300...300), height: pan.height + rng.next(in: -300...300))
                 let moved = try #require(IslandRenderCache.shared.frame(island: Self.island, size: Self.size, insets: EdgeInsets(), zoom: zoom,
-                                                                        quarter: quarter, pan: pan, overrides: [:], hidden: [],
+                                                                        pan: pan, overrides: [:], hidden: [],
                                                                         viewport: CGRect(x: -3000, y: -3000, width: 6000, height: 6000)))
                 // The ground and every Place picture move by exactly the pan: nothing drifts off its land.
                 #expect(moved.ground.count == base.ground.count && moved.layers.count == base.layers.count)
@@ -45,10 +45,10 @@ struct IslandLayeringTests {
         }
     }
 
-    @Test("A building drawn over someone is placed only from its grid point, moving exactly with the camera", arguments: [0, 1, 2, 3])
-    func redrawIsOnTheSameSpot(quarter: Int) {
-        let base = IslandLayout(island: Self.island, size: Self.size, zoom: 3.3, angle: CGFloat(quarter))
-        var rng = SeededRandom(seed: UInt64(quarter + 3))
+    @Test("A building drawn over someone is placed only from its grid point, moving exactly with the camera")
+    func redrawIsOnTheSameSpot() {
+        let base = IslandLayout(island: Self.island, size: Self.size, zoom: 3.3, )
+        var rng = SeededRandom(seed: UInt64(3))
         for _ in 0..<8 {
             let d = CGSize(width: rng.next(in: -400...400), height: rng.next(in: -400...400))
             let moved = base.panned(d)

@@ -12,13 +12,13 @@ struct CameraPolishTests {
     static let size = CGSize(width: 390, height: 844)
     static let island = LODTests.island
 
-    @Test("The sea is textured to every edge of the screen when zoomed right out, at every turn", arguments: [0, 1, 2, 3])
-    func seaFillsTheScreen(quarter: Int) {
+    @Test("The sea is textured to every edge of the screen when zoomed right out, in the fixed view")
+    func seaFillsTheScreen() {
         let screen = CGRect(origin: .zero, size: Self.size)
         let W = Int(Self.size.width), H = Int(Self.size.height)
         for zoom: CGFloat in [IslandLayout.minZoom * 0.75, 1, 1.6, 4] {
             for pan in [CGSize.zero, CGSize(width: 140, height: -90)] {
-                let layout = IslandLayout(island: Self.island, size: Self.size, zoom: zoom, angle: CGFloat(quarter)).panned(pan)
+                let layout = IslandLayout(island: Self.island, size: Self.size, zoom: zoom, ).panned(pan)
                 // The open sea alone, on nothing.
                 let r = ImageRenderer(content: Canvas { c, _ in
                     IslandPainter.drawOpenSea(&c, island: Self.island, layout: layout, time: 0, visible: screen)
@@ -35,7 +35,7 @@ struct CameraPolishTests {
                     for x0 in stride(from: 0, to: W - cell / 2, by: cell) {
                         var foam = 0
                         for y in y0..<min(H, y0 + cell) { for x in x0..<min(W, x0 + cell) where buf[(y * W + x) * 4 + 3] > 20 { foam += 1 } }
-                        #expect(foam > 0, "flat sea at \(x0),\(y0) (zoom \(zoom), turn \(quarter))")
+                        #expect(foam > 0, "flat sea at \(x0),\(y0) (zoom \(zoom))")
                     }
                 }
                 // The tiling is anchored to the island: it moves exactly with the camera.
@@ -83,7 +83,7 @@ struct CameraPolishTests {
         let zoom: CGFloat = 1.2
         let layout = IslandLayout(island: Self.island, size: Self.size, zoom: zoom)
         let frame = try #require(IslandRenderCache.shared.frame(island: Self.island, size: Self.size, insets: EdgeInsets(), zoom: zoom,
-                                                                quarter: 0, pan: .zero, overrides: [:], hidden: []))
+                                                                pan: .zero, overrides: [:], hidden: []))
         #expect(frame.baked)   // far out: buildings are baked into the ground, the case that went wrong
         let ordered = Self.island.items.sorted { layout.depth($0.gx, $0.gy) < layout.depth($1.gx, $1.gy) }
         let screen = CGRect(origin: .zero, size: Self.size)

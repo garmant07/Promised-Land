@@ -16,32 +16,32 @@ struct ZoomOutPerformanceTests {
 
     /// What the island view does when it first appears: the whole-island overview, then the
     /// pictures around the starting view (a screen further each way).
-    func preload(zoom: CGFloat, pan: CGSize, quarter: Int) {
+    func preload(zoom: CGFloat, pan: CGSize) {
         let cache = IslandRenderCache.shared
         let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
         while !cache.prewarm(island: Self.island, size: Self.size, insets: Self.insets, zoom: IslandRenderCache.overviewZoom,
-                             quarter: quarter, pan: .zero, bake: false, viewport: everything, groundOnly: true) { cache.drainNow() }
+                             pan: .zero, bake: false, viewport: everything, groundOnly: true) { cache.drainNow() }
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(Self.size))
         let around = canvas.insetBy(dx: -Self.size.width, dy: -Self.size.height)
-        while !cache.prewarm(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom, quarter: quarter,
+        while !cache.prewarm(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom,
                              pan: PanStep.drawPan(pan), bake: true, viewport: around) { cache.drainNow() }
     }
 
-    func frame(zoom: CGFloat, pan: CGSize, quarter: Int) -> IslandRenderCache.Frame? {
-        IslandRenderCache.shared.frame(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom, quarter: quarter,
+    func frame(zoom: CGFloat, pan: CGSize) -> IslandRenderCache.Frame? {
+        IslandRenderCache.shared.frame(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom,
                                        pan: PanStep.drawPan(pan), overrides: [:], hidden: [],
                                        viewport: CGRect(origin: .zero, size: PanStep.canvasSize(Self.size)), deferMissing: true)
     }
 
-    @Test("A full pinch out renders no picture in any of its frames (the overview stands in)", arguments: [0, 1, 2, 3])
-    func zoomOutRendersNothing(quarter: Int) {
+    @Test("A full pinch out renders no picture in any of its frames (the overview stands in)")
+    func zoomOutRendersNothing() {
         let wasEnabled = PerfProbe.enabled
         PerfProbe.enabled = true
         defer { PerfProbe.enabled = wasEnabled }
         let cache = IslandRenderCache.shared
         defer { cache.removeAll(); cache.interacting = false }
         let start: CGFloat = 8
-        preload(zoom: start, pan: .zero, quarter: quarter)
+        preload(zoom: start, pan: .zero, )
         cache.interacting = true   // a finger is down
         let before = cache.renders
         var zoom = start
@@ -51,7 +51,7 @@ struct ZoomOutPerformanceTests {
             let next = max(IslandLayout.minZoom, zoom / 1.08)
             pan = PlatformScene.panKeeping(CGPoint(x: 150, y: 420), from: (zoom, pan), toZoom: next, centre: centre)
             zoom = next
-            #expect(frame(zoom: zoom, pan: pan, quarter: quarter) != nil)
+            #expect(frame(zoom: zoom, pan: pan, ) != nil)
         }
         #expect(cache.renders == before, "\(cache.renders - before) pictures rendered mid-gesture")
     }
@@ -60,7 +60,7 @@ struct ZoomOutPerformanceTests {
     func lessFarOut() {
         let cache = IslandRenderCache.shared
         defer { cache.removeAll() }
-        preload(zoom: 1, pan: .zero, quarter: 0)
+        preload(zoom: 1, pan: .zero, )
         let director = LifeDirector()
         let life = LODTests.life
         var counts: [(zoom: CGFloat, drawn: Int)] = []
@@ -74,14 +74,14 @@ struct ZoomOutPerformanceTests {
                 director.begin(now: t, u: layout.u)
                 shown = director.plan(life.figures(layout: layout, viewport: screen), now: t, viewport: screen)
             }
-            let f = frame(zoom: zoom, pan: .zero, quarter: 0)
+            let f = frame(zoom: zoom, pan: .zero, )
             counts.append((zoom, (f?.layers.count ?? 0) + (f?.ground.count ?? 0) + shown.count))
         }
         #expect(counts.last!.drawn < counts.first!.drawn, "\(counts)")
         // Far out: no villagers or travellers at all, and buildings come as part of the ground.
         let far = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: 1)
         #expect(IslandLOD.tier(u: far.u, previous: .middle) == .far)
-        #expect(frame(zoom: 1, pan: .zero, quarter: 0)?.layers.isEmpty == true)
+        #expect(frame(zoom: 1, pan: .zero, )?.layers.isEmpty == true)
     }
 
     @Test("Detail switches with a buffer: zooming back and forth at one level doesn't flip it")
@@ -100,12 +100,12 @@ struct ZoomOutPerformanceTests {
         let cache = IslandRenderCache.shared
         defer { cache.removeAll() }
         let zoom: CGFloat = 4
-        preload(zoom: zoom, pan: .zero, quarter: 0)
+        preload(zoom: zoom, pan: .zero, )
         let before = cache.renders
         // Side to side, a whole screen each way, a frame at a time.
         for i in 0...120 {
             let x = sin(Double(i) / 120 * 2 * .pi) * Double(Self.size.width)
-            _ = frame(zoom: zoom, pan: CGSize(width: x, height: x * 0.3), quarter: 0)
+            _ = frame(zoom: zoom, pan: CGSize(width: x, height: x * 0.3), )
             // Everything it showed was this zoom's own picture: nothing stood in, nothing waits.
             #expect(cache.pendingCount == 0, "frame \(i) is waiting for \(cache.pendingCount) pictures")
         }

@@ -271,26 +271,16 @@ struct PlacementTests {
         #expect(tidied.conflicts.isEmpty)
     }
 
-    @Test("Turning a Place turns its layout but keeps every piece inside it")
-    func turned() {
-        let flat = island(["genesis"], placements: ["genesis": IslandPlacement(x: 20, y: 20)])
-        let turned = island(["genesis"], placements: ["genesis": IslandPlacement(x: 20, y: 20, rotation: 1)])
-        let a = flat.items.first { $0.source == .place(book: "genesis", piece: 2) }
-        let b = turned.items.first { $0.source == .place(book: "genesis", piece: 2) }
-        #expect(a == nil && b == nil) // only chapter 1 read: later pieces not yet built
-        let tf = Island.build(chapters: (1...10).map { ("genesis", $0, start) }, quizzes: [], verses: [],
-                              placements: ["genesis": IslandPlacement(x: 20, y: 20, rotation: 1)])
-        let size = PlaceData.spec(for: "genesis").size
-        for item in tf.items { guard case .place("genesis", _) = item.source else { continue }
-            #expect(CGRect(x: 20, y: 20, width: size, height: size).contains(CGPoint(x: item.gx, y: item.gy)))
-            #expect(item.turned == 1)
-        }
-    }
-
-    @Test("Taps pick a Place's piece when the island is turned", arguments: [0, 1, 2, 3])
-    func tapsWhenTurned(quarter: Int) {
-        let i = Island.build(chapters: [("ruth", 1, start)], quizzes: [], verses: [])
-        let layout = IslandLayout(island: i, size: CGSize(width: 390, height: 844), zoom: 3, angle: CGFloat(quarter))
+    @Test("Saved Place rotation is ignored while its position and pieces remain stable")
+    func savedRotationIsIgnored() {
+        let plain = Island.build(chapters: [("ruth", 1, start)], quizzes: [], verses: [],
+                                 placements: ["ruth": IslandPlacement(x: 20, y: 20, rotation: 0, moved: true)])
+        let i = Island.build(chapters: [("ruth", 1, start)], quizzes: [], verses: [],
+                             placements: ["ruth": IslandPlacement(x: 20, y: 20, rotation: 3, moved: true)])
+        #expect(i.signature == plain.signature)
+        #expect(i.plots.map { "\($0.x),\($0.y)" } == plain.plots.map { "\($0.x),\($0.y)" })
+        #expect(i.items.map { "\($0.gx)|\($0.gy)|\($0.turned)" } == plain.items.map { "\($0.gx)|\($0.gy)|\($0.turned)" })
+        let layout = IslandLayout(island: i, size: CGSize(width: 390, height: 844), zoom: 3)
         let index = i.items.firstIndex { $0.kind == .piece(.farmhouse) }!
         let b = i.items[index]
         let hit = IslandHitTester.hit(point: layout.point(b.gx, b.gy), layout: layout, items: i.items)

@@ -1,11 +1,8 @@
 import SwiftUI
 
-/// Camera and depth maths for the island, kept pure so they can be tested at every turn.
+/// Camera and depth maths for the island, kept pure so they can be tested independently.
 ///
-/// Screen points and the *turned* grid are linked by the isometric projection
-/// (`X = rx − ry`, `Y = (rx + ry) / 2`), so anything on screen can be put back into turned-grid
-/// coordinates without knowing the turn: `rx = Y + X/2`, `ry = Y − X/2`. "In front" on the turned
-/// grid means a larger `rx` or `ry`, at any of the four turns.
+/// Screen points and the isometric grid are linked by `X = gx − gy`, `Y = (gx + gy) / 2`.
 enum IslandCamera {
     /// The centre of the area the island is drawn in (the screen less the status pill and the bar),
     /// `fraction` of the way down it (0.5 = the middle).
@@ -26,18 +23,17 @@ enum IslandCamera {
         return CGPoint(x: item.gx, y: item.gy)
     }
 
-    /// The pan that puts a grid point at `target` (default: the middle of the free area) at a zoom
-    /// and turn. The layout's turn is applied before projecting, so it works at every rotation.
+    /// The pan that puts a grid point at `target` (default: the middle of the free area) at a zoom.
     static func pan(toCentre grid: CGPoint, island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat,
-                    quarter: Int, target: CGPoint? = nil) -> CGSize {
-        let layout = IslandLayout(island: island, size: size, insets: insets, zoom: zoom, angle: CGFloat(quarter))
+                    target: CGPoint? = nil) -> CGSize {
+        let layout = IslandLayout(island: island, size: size, insets: insets, zoom: zoom)
         let p = layout.point(grid.x, grid.y)
         let t = target ?? freeCentre(size: size, insets: insets)
         return CGSize(width: t.x - p.x, height: t.y - p.y)
     }
 
     /// How far the camera may pan at a zoom so that any Place (and the Library) can still be
-    /// centred, at any turn: the largest pan centring a plot needs, plus a margin.
+    /// centred: the largest pan centring a plot needs, plus a margin.
     static func reach(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat) -> CGSize {
         var hasher = Hasher()
         hasher.combine(island.signature); hasher.combine(island.items.count); hasher.combine(zoom)
@@ -49,12 +45,10 @@ enum IslandCamera {
         let focuses = island.allPlots.map(\.centre) + island.items.filter { $0.plotKey == nil }.map { focus(of: $0, in: island) }
         var w: CGFloat = 0, h: CGFloat = 0
         let centre = freeCentre(size: size, insets: insets)
-        for quarter in 0..<4 {
-            let layout = IslandLayout(island: island, size: size, insets: insets, zoom: zoom, angle: CGFloat(quarter))
-            for f in focuses {
-                let p = layout.point(f.x, f.y)
-                w = max(w, abs(centre.x - p.x)); h = max(h, abs(centre.y - p.y))
-            }
+        let layout = IslandLayout(island: island, size: size, insets: insets, zoom: zoom)
+        for f in focuses {
+            let p = layout.point(f.x, f.y)
+            w = max(w, abs(centre.x - p.x)); h = max(h, abs(centre.y - p.y))
         }
         let reach = CGSize(width: w + 24, height: h + 24)
         if reachMemo.count > 64 { reachMemo.removeAll() }
@@ -71,17 +65,15 @@ enum IslandCamera {
     static let visitFill: CGFloat = 0.75
 
     /// The zoom at which an item's Place (or its own footprint) fills `visitFill` of the free area's
-    /// width. A square plot's diamond is the same width at every turn (2 × tiles × scale), so this
-    /// holds at all four rotations. Never past the island's closest zoom.
-    static func visitZoom(for item: Island.Item, in island: Island, size: CGSize, insets: EdgeInsets, quarter: Int = 0) -> CGFloat {
+    /// width. Never past the island's closest zoom.
+    static func visitZoom(for item: Island.Item, in island: Island, size: CGSize, insets: EdgeInsets) -> CGFloat {
         let tiles: CGFloat
         if let key = item.plotKey, let plot = island.allPlots.first(where: { $0.bookID == key }) {
             tiles = CGFloat(plot.size)
         } else {
             tiles = max(1, footprint(of: item).width)
         }
-        // The island's fitting scale depends on the turn (it's fitted to the screen as it lies).
-        let layout = IslandLayout(island: island, size: size, insets: insets, angle: CGFloat(quarter))
+        let layout = IslandLayout(island: island, size: size, insets: insets)
         let area = max(1, size.width - insets.leading - insets.trailing)
         let zoom = visitFill * area / (2 * tiles * layout.fit)
         return min(layout.maxZoom, max(IslandLayout.minZoom, zoom))
@@ -89,10 +81,9 @@ enum IslandCamera {
 
     // MARK: Depth
 
-    /// A screen point in turned-grid units (larger = further forward).
+    /// A screen point in grid units.
     static func turned(_ p: CGPoint, layout: IslandLayout) -> CGPoint {
-        let X = (p.x - layout.origin.x) / layout.scale, Y = (p.y - layout.origin.y) / layout.scale
-        return CGPoint(x: Y + X / 2, y: Y - X / 2)
+        layout.grid(p)
     }
 
     /// The patch of ground an item covers, in grid units (a small square if it has no footprint).
@@ -198,17 +189,5 @@ struct DragPan: Equatable {
     /// so going `velocity × duration ÷ 3` makes it start at exactly the finger's speed.
     static func glideTarget(from pan: CGSize, velocity: CGSize, duration: Double = glideDuration) -> CGSize {
         CGSize(width: pan.width + velocity.width * duration / 3, height: pan.height + velocity.height * duration / 3)
-    }
-}
-
-/// Turning the island: from closer in, first ease out to the whole island (and stay there), then turn.
-enum RotatePlan {
-    static let zoomOutDuration = 0.5
-
-    enum Step: Equatable { case zoomOut, turn }
-
-    /// Zoomed in or panned away from the middle: zoom out first. Already at the whole island: turn now.
-    static func steps(zoom: CGFloat, pan: CGSize) -> [Step] {
-        zoom > IslandLayout.minZoom + 0.01 || hypot(pan.width, pan.height) > 1 ? [.zoomOut, .turn] : [.turn]
     }
 }

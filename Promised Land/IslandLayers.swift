@@ -4,7 +4,7 @@ import SwiftUI
 // almost nothing: each layer is drawn at a pan rounded to `PanStep.size` onto a canvas a step
 // bigger than the screen, and simply slid by what's left over (`.offset`). While the pan stays
 // within a step, neither layer is planned or redrawn (they're `Equatable`, keyed by what they
-// show), so a pan frame only moves two layers. Zooming and turning still redraw every frame.
+// show), so a pan frame only moves two layers.
 
 /// Pans rounded to a step: the layers redraw only when the pan crosses into the next step.
 nonisolated enum PanStep {
@@ -47,7 +47,7 @@ final class IslandDepthOrder {
 
     func update(island: Island, layout: IslandLayout, overrides: [Int: CGFloat], hidden: Set<Int>) {
         var h = Hasher()
-        h.combine(island.signature); h.combine(layout.angle); h.combine(overrides.count); h.combine(hidden)
+        h.combine(island.signature); h.combine(overrides.count); h.combine(hidden)
         for (i, g) in overrides.sorted(by: { $0.key < $1.key }) { h.combine(i); h.combine(g) }
         let key = h.finalize()
         // An island without a signature (built by hand, e.g. in tests) is always sorted.
@@ -76,7 +76,6 @@ struct IslandGroundLayer: View, Equatable {
     nonisolated struct Key: Equatable {
         let signature: Int
         let zoom: CGFloat
-        let angle: CGFloat
         let pan: CGSize
         let size: CGSize
         let insets: EdgeInsets
@@ -100,14 +99,12 @@ struct IslandGroundLayer: View, Equatable {
     var body: some View {
         let k = key
         let canvas = PanStep.canvasSize(k.size)
-        let layout = IslandLayout(island: island, size: k.size, insets: k.insets, zoom: k.zoom, angle: k.angle).panned(k.pan)
-        // While turning, the angle is between quarters: draw directly. Otherwise use the cached
-        // ground chunks and Place pictures.
-        let cached = k.angle == CGFloat(Int(k.angle)) ? PerfProbe.measure("scene.plan") {
-            IslandRenderCache.shared.frame(island: island, size: k.size, insets: k.insets, zoom: k.zoom, quarter: layout.quarter,
+        let layout = IslandLayout(island: island, size: k.size, insets: k.insets, zoom: k.zoom).panned(k.pan)
+        let cached = PerfProbe.measure("scene.plan") {
+            IslandRenderCache.shared.frame(island: island, size: k.size, insets: k.insets, zoom: k.zoom,
                                            pan: k.pan, overrides: k.overrides, hidden: k.hidden, bake: !k.editing,
                                            viewport: CGRect(origin: .zero, size: canvas), deferMissing: true)
-        } : nil
+        }
         Canvas { context, _ in
             PerfProbe.measure("static") {
                 #if DEBUG
@@ -172,7 +169,6 @@ struct IslandWavesLayer: View, Equatable {
     nonisolated struct Key: Equatable {
         let signature: Int
         let zoom: CGFloat
-        let angle: CGFloat
         let pan: CGSize
         let size: CGSize
         let insets: EdgeInsets
@@ -189,7 +185,7 @@ struct IslandWavesLayer: View, Equatable {
     var body: some View {
         let k = key
         let canvas = PanStep.canvasSize(k.size)
-        let layout = IslandLayout(island: island, size: k.size, insets: k.insets, zoom: k.zoom, angle: k.angle).panned(k.pan)
+        let layout = IslandLayout(island: island, size: k.size, insets: k.insets, zoom: k.zoom).panned(k.pan)
         TimelineView(.animation(minimumInterval: 1.0 / 12, paused: k.reduceMotion || k.paused)) { context in
             Canvas { c, _ in
                 PerfProbe.measure("waves") {
@@ -205,32 +201,5 @@ struct IslandWavesLayer: View, Equatable {
         }
         .frame(width: canvas.width, height: canvas.height)
         .allowsHitTesting(false)
-    }
-}
-
-/// A picture of the island just before a quarter turn: the old quarter's cached ground and Place
-/// pictures, drawn where they were.
-struct TurnSnapshot {
-    let id: Int
-    let frame: IslandRenderCache.Frame
-    /// +1 turning right, -1 left.
-    let direction: Int
-}
-
-/// Draws a `TurnSnapshot` once; the turn animates only its opacity and rotation.
-struct TurnSnapshotView: View, Equatable {
-    let snapshot: TurnSnapshot
-
-    nonisolated static func == (a: Self, b: Self) -> Bool { a.snapshot.id == b.snapshot.id }
-
-    var body: some View {
-        Canvas { c, _ in
-            PlatformScene.drawGround(&c, snapshot.frame.ground)
-            for layer in snapshot.frame.layers {
-                // Places are pictures; a few loose things (trees, extras) aren't, and are left out
-                // of this 0.3 s picture rather than drawn.
-                if case .picture(let image, let rect) = layer { c.draw(Image(decorative: image, scale: 1), in: rect) }
-            }
-        }
     }
 }

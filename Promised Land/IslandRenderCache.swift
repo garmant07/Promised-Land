@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Keeps the island smooth with a fully built Bible. Drawing every tile and every code-drawn
 /// shape on every frame is far too slow, so:
-/// - the ground is rendered once into 512-point chunks (per zoom bucket and turn) and reused;
+/// - the ground is rendered once into 512-point chunks (per zoom bucket) and reused;
 /// - each Place (all its pieces, flowers, banner and lantern) is rendered once into one image,
 ///   keyed by what's in it (not where it is: the isometric projection is affine, so the same
 ///   picture works wherever the Place sits, even mid-drag in edit mode);
@@ -26,10 +26,7 @@ final class IslandRenderCache {
     private(set) var renders = 0
     #endif
 
-    /// 160 MB evicted pictures a close-in quarter turn needed (NSCache may evict well before its
-    /// limit), so turning there redrew them on the spot. At 512 MB nothing was evicted, and the whole
-    /// app measured about 150 MB with all four quarters warm. The cache also empties itself under
-    /// memory pressure.
+    /// The cache also empties itself under memory pressure.
     private init() { images.totalCostLimit = 512 * 1024 * 1024 }
 
     final class ImageBox {
@@ -76,11 +73,11 @@ final class IslandRenderCache {
     /// - Parameter deferMissing: pictures not yet rendered at this zoom are drawn from the nearest
     ///   zoom that has them and rendered in the background (for the live island, so a zoom never
     ///   waits on rendering and never leaves land out). Otherwise they're rendered now.
-    func frame(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
+    func frame(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, pan: CGSize,
                overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool = true, viewport: CGRect? = nil,
                deferMissing: Bool = false) -> Frame? {
         renderBudget = nil
-        return plan(island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, pan: pan,
+        return plan(island: island, size: size, insets: insets, zoom: zoom, pan: pan,
                     overrides: overrides, hidden: hidden, bake: bake, viewport: viewport, deferMissing: deferMissing)
     }
 
@@ -91,7 +88,7 @@ final class IslandRenderCache {
         h.combine(island.tiles.count)
         for t in island.tiles { h.combine(t.x); h.combine(t.y) }
         for road in island.roads { h.combine(road.count); for t in road { h.combine(t.x); h.combine(t.y) } }
-        for p in island.allPlots { h.combine(p.bookID); h.combine(p.x); h.combine(p.y); h.combine(p.size); h.combine(p.rotation); h.combine(p.bay) }
+        for p in island.allPlots { h.combine(p.bookID); h.combine(p.x); h.combine(p.y); h.combine(p.size); h.combine(p.bay) }
         let sig = h.finalize()
         if groundSignatures.count > 32 { groundSignatures.removeAll() }
         groundSignatures[island.signature] = sig
@@ -100,15 +97,15 @@ final class IslandRenderCache {
 
     private var groundSignatures: [Int: Int] = [:]
 
-    /// Renders ahead what `frame` would need for this camera (e.g. the next quarter turn), at most
-    /// one picture per call so it never holds up a frame. Returns true when everything is ready.
+    /// Renders ahead what `frame` would need for this camera, at most one picture per call so it
+    /// never holds up a frame. Returns true when everything is ready.
     @discardableResult
-    func prewarm(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize, bake: Bool,
+    func prewarm(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, pan: CGSize, bake: Bool,
                  viewport: CGRect? = nil, groundOnly: Bool = false) -> Bool {
         renderBudget = 1
         skipped = 0
         defer { renderBudget = nil }
-        _ = plan(island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, pan: pan,
+        _ = plan(island: island, size: size, insets: insets, zoom: zoom, pan: pan,
                  overrides: [:], hidden: [], bake: bake, viewport: viewport, groundOnly: groundOnly)
         return skipped == 0 && renderBudget == 1
     }
@@ -123,17 +120,17 @@ final class IslandRenderCache {
         let bounds: CGRect
     }
 
-    private func bucket(_ zb: CGFloat, island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int,
+    private func bucket(_ zb: CGFloat, island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat,
                         bake: Bool, overrides: [Int: CGFloat], hidden: Set<Int>) -> Bucket {
-        let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb, angle: CGFloat(quarter))
+        let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb)
         // Far out (and not mid-reveal), everything that stands still is baked into the ground
         // chunks too: a handful of images instead of a picture per Place and hundreds of items.
         let baked = bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty
         // Plain ground depends only on the land: a building growing never re-bakes it. Far out,
         // the still things are baked in too, so those chunks follow the whole island.
         let landKey = baked ? "b\(island.signature)" : "l\(groundSignature(island))"
-        let groundKey = "\(landKey)|\(Int(lb.scale * 100))|\(quarter)|\(Int(size.width))x\(Int(size.height))"
-        // The ground's extent only changes with the island, zoom bucket, turn and size: worked out once.
+        let groundKey = "\(landKey)|\(Int(lb.scale * 100))|\(Int(size.width))x\(Int(size.height))"
+        // The ground's extent only changes with the island, zoom bucket and size: worked out once.
         let bounds: CGRect
         if let known = groundExtents[groundKey] { bounds = known } else {
             bounds = groundBounds(island, layout: lb)
@@ -197,12 +194,12 @@ final class IslandRenderCache {
     /// The zoom the whole-island overview is drawn at.
     static let overviewZoom: CGFloat = 1
 
-    private func plan(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, quarter: Int, pan: CGSize,
+    private func plan(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, pan: CGSize,
                       overrides: [Int: CGFloat], hidden: Set<Int>, bake: Bool, viewport: CGRect?, deferMissing: Bool = false,
                       groundOnly: Bool = false) -> Frame? {
         guard island.signature != 0, size.width > 0 else { return nil }
         let zb = Self.bucket(for: zoom)
-        let b = bucket(zb, island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, bake: bake, overrides: overrides, hidden: hidden)
+        let b = bucket(zb, island: island, size: size, insets: insets, zoom: zoom, bake: bake, overrides: overrides, hidden: hidden)
         let lb = b.lb
         let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
                              y: insets.top + (size.height - insets.top - insets.bottom) / 2)
@@ -267,7 +264,7 @@ final class IslandRenderCache {
             let candidates: [Bucket] = (b.baked ? [true, false] : [false]).flatMap { baked in
                 // The ground-alone version of this very zoom counts too (far out, e.g. the overview's own zoom).
                 ((b.baked && !baked ? [zb] : []) + Self.neighbours(of: zb)).map { zb2 in
-                    bucket(zb2, island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, bake: baked ? bake : false,
+                    bucket(zb2, island: island, size: size, insets: insets, zoom: zoom, bake: baked ? bake : false,
                            overrides: overrides, hidden: hidden)
                 }.filter { $0.baked == baked }
             }
@@ -340,8 +337,8 @@ final class IslandRenderCache {
                 continue
             }
             guard dest.intersects(view), wanted(dest) else { continue }
-            // Keyed by what's in it, the layout's scale and the turn (not where it is).
-            let key = "p\(content)|\(Int(lb.scale * 100))|\(quarter)" as NSString
+            // Keyed by what's in it and the layout's scale (not where it is).
+            let key = "p\(content)|\(Int(lb.scale * 100))" as NSString
             let draw: (inout GraphicsContext) -> Void = { c in
                 let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
                 for i in indices.sorted(by: { lb.depth(island.items[$0].gx, island.items[$0].gy) < lb.depth(island.items[$1].gx, island.items[$1].gy) }) {
@@ -356,11 +353,11 @@ final class IslandRenderCache {
                 // Not rendered at this zoom yet: the same Place's picture from the nearest zoom that has it.
                 if others == nil {
                     others = Self.neighbours(of: zb).map {
-                        bucket($0, island: island, size: size, insets: insets, zoom: zoom, quarter: quarter, bake: bake, overrides: overrides, hidden: hidden)
+                        bucket($0, island: island, size: size, insets: insets, zoom: zoom, bake: bake, overrides: overrides, hidden: hidden)
                     }
                 }
                 if let (image, b2) = others!.lazy.compactMap({ b2 -> (CGImage, Bucket)? in
-                    self.picture("p\(content)|\(Int(b2.lb.scale * 100))|\(quarter)" as NSString, using: &used).map { ($0, b2) }
+                    self.picture("p\(content)|\(Int(b2.lb.scale * 100))" as NSString, using: &used).map { ($0, b2) }
                 }).first {
                     layers.append((depth, .picture(image, screen(placeRect(plot, layout: b2.lb), b2.k))))
                     if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
@@ -544,12 +541,13 @@ final class IslandRenderCache {
     }
 
     /// Far out, ground chunks (with the buildings baked in) are rendered at 1× instead of 2×: a
-    /// quarter of the pixels, so a quarter of the time and memory, and too small on screen to tell.
+    /// a fraction of the pixels, so it is faster and uses less memory while remaining too small on
+    /// screen to tell.
     private func chunkScale(_ b: Bucket) -> CGFloat { b.baked ? 1 : renderScale }
 
     // MARK: Single items
 
-    /// Draws one item from its cached picture (rendered once per look, zoom bucket and turn),
+    /// Draws one item from its cached picture (rendered once per look and zoom bucket),
     /// positioned only from its grid point: used to put buildings back in front of someone standing
     /// behind them (clipped to that person), so they don't cost a full redraw every frame.
     func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout) {
@@ -560,7 +558,7 @@ final class IslandRenderCache {
                in: CGRect(x: base.x + p.frame.minX * k, y: base.y + p.frame.minY * k, width: p.frame.width * k, height: p.frame.height * k))
     }
 
-    /// An item's picture at this camera's size bucket and turn (rendered if it isn't cached), with
+    /// An item's picture at this camera's size bucket (rendered if it isn't cached), with
     /// its frame relative to the item's grid point, in bucket units.
     private func itemPicture(_ item: Island.Item, layout: IslandLayout) -> (image: CGImage, frame: CGRect, ub: CGFloat)? {
         let ub = Self.sizeBucket(layout.u)
@@ -568,10 +566,9 @@ final class IslandRenderCache {
         let frame = shape.insetBy(dx: -shape.width * 0.3 - 4 * ub, dy: -shape.height * 0.2 - 4 * ub).integral
         guard frame.width > 0, frame.height > 0, frame.width * frame.height < 4_000_000 else { return nil }
         let key = itemKey(item, layout: layout)
-        let quarter = layout.quarter, mirrored = layout.mirrored
         guard let image = images.object(forKey: key)?.image ?? render(key: key, size: frame.size, draw: { g in
             g.translateBy(x: -frame.minX, y: -frame.minY)
-            IslandPainter.drawAtOrigin(&g, item, u: ub, quarter: quarter, layoutMirrored: mirrored)
+            IslandPainter.drawAtOrigin(&g, item, u: ub)
         }) else { return nil }
         return (image, frame, ub)
     }
@@ -587,10 +584,10 @@ final class IslandRenderCache {
     private func itemKey(_ item: Island.Item, layout: IslandLayout) -> NSString {
         let ub = Self.sizeBucket(layout.u)
         var h = Hasher()
-        h.combine(item.kind); h.combine(item.growth); h.combine(item.level); h.combine(item.turned); h.combine(item.facing)
+        h.combine(item.kind); h.combine(item.growth); h.combine(item.level); h.combine(item.facing)
         h.combine(item.seed); h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
         h.combine(item.cap); h.combine(item.source.bookID)
-        return "i\(h.finalize())|\(Int(ub * 1000))|\(layout.quarter)" as NSString
+        return "i\(h.finalize())|\(Int(ub * 1000))" as NSString
     }
 
     /// Drops every picture (for tests that render a lot, so they don't starve the rest of memory).
@@ -637,11 +634,11 @@ final class IslandRenderCache {
         let plots = Dictionary(island.allPlots.map { ($0.bookID, $0) }, uniquingKeysWith: { a, _ in a })
         for item in island.items {
             guard let key = item.plotKey, let plot = plots[key] else { continue }
-            var h = hashers[key] ?? { var h = Hasher(); h.combine(key); h.combine(plot.size); h.combine(plot.rotation); h.combine(plot.bay); return h }()
+            var h = hashers[key] ?? { var h = Hasher(); h.combine(key); h.combine(plot.size); h.combine(plot.bay); return h }()
             h.combine(item.kind)
             h.combine(Int(((item.gx - CGFloat(plot.x)) * 1000).rounded()))
             h.combine(Int(((item.gy - CGFloat(plot.y)) * 1000).rounded()))
-            h.combine(item.growth); h.combine(item.level); h.combine(item.turned); h.combine(item.facing); h.combine(item.seed)
+            h.combine(item.growth); h.combine(item.level); h.combine(item.facing); h.combine(item.seed)
             h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
             hashers[key] = h
         }

@@ -124,7 +124,7 @@ struct IslandLife: Equatable {
         } else if f.id.hasPrefix("t"), let i = Int(f.id.dropFirst()), life.travellers.indices.contains(i) {
             let t = life.travellers[i]
             let p = t.position(at: f.time)
-            if t.cart { cart(&g, at: f.point, u: u, flip: p.facingLeft != layout.mirrored) }
+            if t.cart { cart(&g, at: f.point, u: u, flip: p.facingLeft) }
             else {
                 villager(&g, at: f.point, pose: Villager.Pose(point: p.point, pose: .walk, carrying: true, facingLeft: p.facingLeft),
                          robe: t.robe, produce: t.carrying, u: u, time: f.time)

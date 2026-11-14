@@ -3,7 +3,7 @@ import SwiftUI
 /// The Library on the island, drawn in code for each stage (see LibraryData.swift): sandstone
 /// walls, lavender roofs and domes, book spines in the windows. It gets wider and taller with
 /// every stage; small touches (benches, lamps, notes…) appear around it in between. Hand-made art
-/// can replace any stage: `bld_library_<stage>` (with `_r0`…`_r3`), see ART_ASSETS.md.
+/// can replace any stage: `bld_library_<stage>`, see ART_ASSETS.md.
 enum LibraryArt {
     /// The stage an item shows (its growth is stage + 1).
     static func stage(of item: Island.Item) -> LibraryStage {
@@ -23,8 +23,8 @@ enum LibraryArt {
 
     /// The art-swap image for a stage, if there is one.
     @MainActor
-    static func custom(_ stage: LibraryStage, rotation: Int) -> ArtAssets.Art? {
-        ArtAssets.image("bld_library_\(stage.rawValue)", rotation: rotation)
+    static func custom(_ stage: LibraryStage) -> ArtAssets.Art? {
+        ArtAssets.image("bld_library_\(stage.rawValue)")
     }
 
     // MARK: Drawing

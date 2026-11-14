@@ -27,14 +27,14 @@ struct PerformanceTests {
     @Test("Small pans don't change what the still layers draw; crossing a step does")
     func smallPansDontRedraw() {
         func key(_ pan: CGSize) -> IslandGroundLayer.Key {
-            .init(signature: Self.island.signature, zoom: 2, angle: 0, pan: PanStep.drawPan(pan), size: Self.size, insets: EdgeInsets(),
+            .init(signature: Self.island.signature, zoom: 2, pan: PanStep.drawPan(pan), size: Self.size, insets: EdgeInsets(),
                   selected: nil, editing: false, editSelected: nil, overrides: [:], hidden: [])
         }
         #expect(key(.zero) == key(CGSize(width: 20, height: -30)))
         #expect(key(.zero) != key(CGSize(width: PanStep.size, height: 0)))
     }
 
-    @Test("Depth order is worked out once, not per pan or zoom, and again when the island turns")
+    @Test("Depth order is worked out once, not per pan or zoom")
     func depthOrderOnlyWhenNeeded() {
         let wasEnabled = PerfProbe.enabled
         PerfProbe.enabled = true
@@ -51,12 +51,12 @@ struct PerformanceTests {
         #expect(order.all.map(\.gx) == expected.map(\.gx) && order.all.map(\.gy) == expected.map(\.gy))
         #expect(order.tall.allSatisfy(\.kind.isTall) && order.tall.count == expected.filter(\.kind.isTall).count)
 
-        order.update(island: Self.island, layout: IslandLayout(island: Self.island, size: Self.size, angle: 1), overrides: [:], hidden: [])
-        #expect(order.sorts == 2)
+        order.update(island: Self.island, layout: IslandLayout(island: Self.island, size: Self.size), overrides: [:], hidden: [])
+        #expect(order.sorts == 1)
         // Something mid-reveal (grown differently or hidden) is sorted again too.
-        order.update(island: Self.island, layout: IslandLayout(island: Self.island, size: Self.size, angle: 1), overrides: [0: 0.5], hidden: [])
-        order.update(island: Self.island, layout: IslandLayout(island: Self.island, size: Self.size, angle: 1), overrides: [0: 0.5], hidden: [1])
-        #expect(order.sorts == 4)
+        order.update(island: Self.island, layout: IslandLayout(island: Self.island, size: Self.size), overrides: [0: 0.5], hidden: [])
+        order.update(island: Self.island, layout: IslandLayout(island: Self.island, size: Self.size), overrides: [0: 0.5], hidden: [1])
+        #expect(order.sorts == 3)
     }
 
     @Test("Far out, once everyone has faded, villagers aren't even listed")
@@ -88,46 +88,6 @@ struct PerformanceTests {
         // At its own period it's back where it started.
         let a = v.pose(at: 10).point, b = v.pose(at: 10 + v.period).point
         #expect(abs(a.x - b.x) < 0.0001 && abs(a.y - b.y) < 0.0001)
-    }
-
-    @Test("Turn taps while a turn animates: one waits its turn, the rest are ignored")
-    func turnQueue() {
-        var q = TurnQueue()
-        #expect(q.request(1) == 1)       // starts now
-        #expect(q.request(1) == nil)     // queued
-        #expect(q.request(-1) == nil)    // ignored: one is already waiting
-        #expect(q.finished() == 1)       // the queued one starts
-        #expect(q.turning)
-        #expect(q.finished() == nil)     // done
-        #expect(!q.turning)
-        #expect(q.request(-1) == -1)
-    }
-
-    @Test("Warming ahead makes what a quarter turn needs between frames (never all in one); the turn then draws nothing new")
-    func prewarmNextQuarter() {
-        let wasEnabled = PerfProbe.enabled
-        PerfProbe.enabled = true
-        defer { PerfProbe.enabled = wasEnabled }
-        let cache = IslandRenderCache.shared
-        let island = Self.island
-        let size = Self.size
-        // A camera close enough to use Place pictures, and a view nobody else in the tests uses.
-        let zoom: CGFloat = 2.2, pan = CGSize(width: 37, height: -61)
-        var calls = 0
-        while !cache.prewarm(island: island, size: size, insets: EdgeInsets(), zoom: zoom, quarter: 1, pan: pan, bake: true) {
-            calls += 1
-            // Far-out chunks are made in slices in the background, between frames: here, at once.
-            cache.drainNow()
-            if calls > 500 { break }
-        }
-        // Not done in one go: at most one picture per call close in; far-out chunks are queued and
-        // made in slices between frames.
-        #expect(calls >= 1)
-        let before = cache.renders
-        let frame = cache.frame(island: island, size: size, insets: EdgeInsets(), zoom: zoom, quarter: 1, pan: pan,
-                                overrides: [:], hidden: [])
-        #expect(frame != nil)
-        #expect(cache.renders == before)
     }
 
     @Test("Produce baskets are cached pictures, not redrawn every frame")

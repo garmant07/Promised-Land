@@ -15,11 +15,11 @@ struct OneImageTests {
     static let size = CGSize(width: 367, height: 803)
 
     /// What the island view makes when it first appears: the whole-island overview (the ground alone).
-    func overviews(quarter: Int) {
+    func overviews() {
         let cache = IslandRenderCache.shared
         let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
         while !cache.prewarm(island: Self.island, size: Self.size, insets: Self.insets, zoom: IslandRenderCache.overviewZoom,
-                             quarter: quarter, pan: .zero, bake: false, viewport: everything, groundOnly: true) { cache.drainNow() }
+                             pan: .zero, bake: false, viewport: everything, groundOnly: true) { cache.drainNow() }
     }
 
     /// Overlap area of two rects (0 if they only touch).
@@ -29,19 +29,19 @@ struct OneImageTests {
     }
 
     /// One frame of the ground layer: nothing drawn twice.
-    func checkOnce(zoom: CGFloat, pan: CGSize, quarter: Int, note: String) {
-        guard let f = IslandRenderCache.shared.frame(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom, quarter: quarter,
+    func checkOnce(zoom: CGFloat, pan: CGSize, note: String) {
+        guard let f = IslandRenderCache.shared.frame(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom,
                                                      pan: pan, overrides: [:], hidden: [], deferMissing: true) else { return }
         // Close in, the buildings are drawn sharp on their own: never ground with buildings baked in under them.
         if !f.baked {
-            #expect(f.bakedGround.isEmpty, "\(note): a baked stand-in under sharp buildings (zoom \(zoom), turn \(quarter))")
+            #expect(f.bakedGround.isEmpty, "\(note): a baked stand-in under sharp buildings (zoom \(zoom))")
             #expect(f.layerClip == nil)
         }
         // Each bit of ground once: where they're drawn, no two ground pictures overlap.
         let drawn = f.ground.map { g in g.clip.map { g.rect.intersection($0) } ?? g.rect }.filter { !$0.isNull }
         var worst: CGFloat = 0
         for i in drawn.indices { for j in drawn.indices where j > i { worst = max(worst, overlap(drawn[i], drawn[j])) } }
-        #expect(worst < 1, "\(note): two ground pictures overlap by \(worst) pt² (zoom \(zoom), turn \(quarter))")
+            #expect(worst < 1, "\(note): two ground pictures overlap by \(worst) pt² (zoom \(zoom))")
         // Far out, buildings drawn on their own only inside ground that has none, never over a baked copy.
         if f.baked, !f.layers.isEmpty {
             let clip = f.layerClip ?? []
@@ -50,11 +50,11 @@ struct OneImageTests {
         }
     }
 
-    @Test("Pinch right out and back in: every frame draws each part of the island once", arguments: [0, 1, 2, 3])
-    func pinchOutAndIn(quarter: Int) {
+    @Test("Pinch right out and back in: every frame draws each part of the island once")
+    func pinchOutAndIn() {
         let cache = IslandRenderCache.shared
         defer { cache.removeAll(); cache.interacting = false }
-        overviews(quarter: quarter)
+        overviews()
         cache.interacting = true   // mid-gesture: stand-ins wherever this zoom isn't ready
         let centre = IslandCamera.freeCentre(size: Self.size, insets: Self.insets)
         let limit = IslandLayout.maxZoom(island: Self.island, size: Self.size, insets: Self.insets)
@@ -67,26 +67,26 @@ struct OneImageTests {
         for next in path {
             pan = PlatformScene.panKeeping(anchor, from: (zoom, pan), toZoom: next, centre: centre)
             zoom = next
-            checkOnce(zoom: zoom, pan: pan, quarter: quarter, note: "pinch")
+            checkOnce(zoom: zoom, pan: pan, note: "pinch")
         }
     }
 
-    @Test("Tap-to-zoom in and back out: every frame draws each part of the island once", arguments: [0, 1, 2, 3])
-    func tapToZoom(quarter: Int) throws {
+    @Test("Tap-to-zoom in and back out: every frame draws each part of the island once")
+    func tapToZoom() throws {
         let cache = IslandRenderCache.shared
         defer { cache.removeAll(); cache.interacting = false }
-        overviews(quarter: quarter)
+        overviews()
         cache.interacting = true
         let item = try #require(Self.island.items.first { $0.plotKey != nil && $0.kind.isTall })
-        let toZoom = IslandCamera.visitZoom(for: item, in: Self.island, size: Self.size, insets: Self.insets, quarter: quarter)
+        let toZoom = IslandCamera.visitZoom(for: item, in: Self.island, size: Self.size, insets: Self.insets, )
         let toPan = IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: Self.island), island: Self.island, size: Self.size,
-                                     insets: Self.insets, zoom: toZoom, quarter: quarter)
+                                     insets: Self.insets, zoom: toZoom, )
         for glide in [CameraGlide(fromZoom: 1, toZoom: toZoom, fromPan: .zero, toPan: toPan, start: 0, duration: PlatformScene.visitGlide),
                       CameraGlide(fromZoom: toZoom, toZoom: 1, fromPan: toPan, toPan: .zero, start: 0, duration: 0.5)] {
             var t = 0.0
             while true {
                 let c = glide.camera(at: t)
-                checkOnce(zoom: c.zoom, pan: c.pan, quarter: quarter, note: "tap-to-zoom")
+                checkOnce(zoom: c.zoom, pan: c.pan, note: "tap-to-zoom")
                 if glide.isDone(at: t) { break }
                 t += 1.0 / 30
             }

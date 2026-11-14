@@ -121,7 +121,6 @@ struct FullBiblePreviewView: View {
             if panelOpen {
                 if editing {
                     HStack {
-                        Button("Turn") { turn() }.buttonStyle(SoftButtonStyle()).disabled(editSelected == nil)
                         Button("Done") { kept = draft; editing = false }.buttonStyle(PrimaryButtonStyle()).disabled(!island.conflicts.isEmpty)
                     }
                 } else {
@@ -249,11 +248,6 @@ struct FullBiblePreviewView: View {
         dragBase = nil
     }
 
-    private func turn() {
-        guard let key = editSelected, var p = draft[key] else { return }
-        p.rotation = (p.rotation + 1) % 4
-        draft[key] = p
-    }
 }
 
 #Preview {

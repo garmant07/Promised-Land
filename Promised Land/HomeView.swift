@@ -607,19 +607,6 @@ struct HomeView: View {
         extraDragBase = nil
     }
 
-    private func turnSelected() {
-        guard let key = editSelected else { return }
-        remember()
-        if key.hasPrefix("extra:"), let i = draftExtras.firstIndex(where: { "extra:\($0.id)" == key }) {
-            draftExtras[i].rotation = (draftExtras[i].rotation + 1) % 4
-            return
-        }
-        guard var p = draft[key] else { return }
-        p.rotation = (p.rotation + 1) % 4
-        p.moved = true
-        draft[key] = p
-    }
-
     /// Puts a new extra from the tray on the nearest open land to the plaza (then drag it).
     private func addExtra(_ kind: ExtraKind) {
         guard (extrasLeft[kind] ?? 0) > 0 else { return }
@@ -677,10 +664,6 @@ struct HomeView: View {
                     .buttonStyle(EditChipStyle())
                     .disabled(undoStack.isEmpty)
                 Spacer(minLength: 0)
-                Button { turnSelected() } label: { Label("Turn", systemImage: "rotate.right").labelStyle(.iconOnly) }
-                    .buttonStyle(EditChipStyle())
-                    .disabled(editSelected == nil)
-                    .accessibilityLabel("Turn")
                 if extraPicked {
                     Button { removeSelectedExtra() } label: { Label("Remove", systemImage: "trash").labelStyle(.iconOnly) }
                         .buttonStyle(EditChipStyle())
@@ -693,8 +676,8 @@ struct HomeView: View {
                     .buttonStyle(EditChipStyle())
                     .disabled(blocked)
             }
-            Text(editSelected == nil ? "Drag a Place or an extra to move it. Tap one to turn it."
-                 : blocked ? "That spot overlaps something, or isn't on land." : "Green means it fits. Drag, turn, or tap Done.")
+            Text(editSelected == nil ? "Drag a Place or an extra to move it."
+                 : blocked ? "That spot overlaps something, or isn't on land." : "Green means it fits. Tap Done when finished.")
                 .font(.footnote)
                 .foregroundStyle(Color.secondaryText)
         }

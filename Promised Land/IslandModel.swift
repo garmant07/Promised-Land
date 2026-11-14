@@ -197,13 +197,21 @@ struct Island: Equatable {
         hasher.combine(-3)
         for v in verses { hasher.combine(v.book); hasher.combine(v.date) }
         hasher.combine(features.map(\.rawValue).sorted())
-        for (k, p) in placements.sorted(by: { $0.key < $1.key }) { hasher.combine(k); hasher.combine(p) }
+        for (k, p) in placements.sorted(by: { $0.key < $1.key }) {
+            hasher.combine(k); hasher.combine(p.x); hasher.combine(p.y); hasher.combine(p.moved)
+        }
         hasher.combine(-4)
         for u in unchecked { hasher.combine(u.book); hasher.combine(u.chapter) }
-        hasher.combine(extras)
+        for e in extras {
+            hasher.combine(e.id); hasher.combine(e.kind); hasher.combine(e.x); hasher.combine(e.y)
+        }
         hasher.combine(richnessOverride)
         hasher.combine(journalNotes)
-        if let libraryAvoid { for (k, p) in libraryAvoid.sorted(by: { $0.key < $1.key }) { hasher.combine(k); hasher.combine(p) } }
+        if let libraryAvoid {
+            for (k, p) in libraryAvoid.sorted(by: { $0.key < $1.key }) {
+                hasher.combine(k); hasher.combine(p.x); hasher.combine(p.y); hasher.combine(p.moved)
+            }
+        }
         let key = hasher.finalize()
         if let memo, memo.key == key { return memo.island }
         var island = make(chapters: chapters, quizzes: quizzes, verses: verses, features: features,
@@ -315,7 +323,7 @@ struct Island: Equatable {
             let tile = Tile(x: Int(floor(extra.x)), y: Int(floor(extra.y)))
             if !land.contains(tile) || placer.blocked.contains(tile) { conflicts.insert("extra:\(extra.id)") }
             items.append(Item(kind: .extra(extra.kind), gx: extra.x, gy: extra.y, seed: hash(extra.id), source: .extra(extra.id),
-                              footprint: CGRect(x: extra.x - 0.3, y: extra.y - 0.3, width: 0.6, height: 0.6), turned: extra.rotation))
+                              footprint: CGRect(x: extra.x - 0.3, y: extra.y - 0.3, width: 0.6, height: 0.6), turned: 0))
         }
         var island = Island(tiles: tiles, items: items, plots: plots, water: placer.water, library: library, forest: forestPlot,
                             roads: roads, conflicts: conflicts, growth: growths, completed: reads.completed)
@@ -340,7 +348,7 @@ struct Island: Equatable {
         return Island(tiles: tiles, items: items, plots: [plot], water: water, growth: [bookID: growth])
     }
 
-    /// Where a piece stands, as a grid point: its spot in the footprint, turned with the Place.
+    /// Where a piece stands, as a grid point in the fixed footprint orientation.
     static func position(_ spot: Spot, in plot: Plot) -> CGPoint {
         let s = CGFloat(plot.size)
         var f = spot.fraction
@@ -351,15 +359,7 @@ struct Island: Equatable {
             return CGPoint(x: CGFloat(plot.x) + CGFloat(f.x) * s + CGFloat(out[bay].0),
                            y: CGFloat(plot.y) + CGFloat(f.y) * s + CGFloat(out[bay].1))
         }
-        return turn(CGPoint(x: CGFloat(plot.x) + CGFloat(f.x) * s, y: CGFloat(plot.y) + CGFloat(f.y) * s), in: plot)
-    }
-
-    /// Turns a grid point about its plot's centre by the plot's quarter turns.
-    static func turn(_ p: CGPoint, in plot: Plot) -> CGPoint {
-        let c = plot.centre
-        var d = CGPoint(x: p.x - c.x, y: p.y - c.y)
-        for _ in 0..<(((plot.rotation % 4) + 4) % 4) { d = CGPoint(x: -d.y, y: d.x) }
-        return CGPoint(x: c.x + d.x, y: c.y + d.y)
+        return CGPoint(x: CGFloat(plot.x) + CGFloat(f.x) * s, y: CGFloat(plot.y) + CGFloat(f.y) * s)
     }
 
     private static func placeItems(_ spec: PlaceSpec, plot: Plot, growth: PlaceGrowth, progress: Int, total: Int,
@@ -373,7 +373,7 @@ struct Island: Equatable {
             var item = Item(kind: .piece(piece.kind), gx: p.x, gy: p.y, seed: hash("\(spec.bookID)-\(i)"),
                             source: .place(book: spec.bookID, piece: i),
                             footprint: CGRect(x: p.x - half, y: p.y - half, width: 2 * half, height: 2 * half),
-                            progress: progress, total: total, level: max(1, richness), turned: plot.rotation)
+                            progress: progress, total: total, level: max(1, richness), turned: 0)
             item.growth = CGFloat(g)
             item.cap = piece.cap
             item.span = s
@@ -383,7 +383,7 @@ struct Island: Equatable {
         if growth.flourish > 0 {
             let c = plot.centre
             var item = Item(kind: .flourish, gx: c.x, gy: c.y, seed: hash("\(spec.bookID)-flourish"), source: .flourish(book: spec.bookID),
-                            footprint: .zero, progress: progress, total: total, level: max(1, richness), turned: plot.rotation)
+                            footprint: .zero, progress: progress, total: total, level: max(1, richness), turned: 0)
             item.growth = CGFloat(min(PlaceGrowth.flourishCap, growth.flourish))
             item.span = s
             out.append(item)
@@ -392,9 +392,9 @@ struct Island: Equatable {
     }
 
     private static func rewardItem(_ kind: Kind, at f: CGPoint, plot: Plot, span: CGFloat, source: Source) -> Item {
-        let p = turn(CGPoint(x: CGFloat(plot.x) + f.x * span, y: CGFloat(plot.y) + f.y * span), in: plot)
+        let p = CGPoint(x: CGFloat(plot.x) + f.x * span, y: CGFloat(plot.y) + f.y * span)
         return Item(kind: kind, gx: p.x, gy: p.y, seed: hash("\(source)"), source: source,
-                    footprint: CGRect(x: p.x - 0.2, y: p.y - 0.2, width: 0.4, height: 0.4), turned: plot.rotation)
+                    footprint: CGRect(x: p.x - 0.2, y: p.y - 0.2, width: 0.4, height: 0.4), turned: 0)
     }
 
     /// Forest trees, spiralling out from the forest's middle as tree chapters are read.
@@ -421,7 +421,7 @@ struct Island: Equatable {
         let centre = plot.centre
         let half = CGFloat(plot.size) / 2 - 0.05
         return Item(kind: .library, gx: centre.x, gy: centre.y, seed: 0, source: .feature(feature),
-                    footprint: CGRect(x: centre.x - half, y: centre.y - half, width: 2 * half, height: 2 * half), turned: plot.rotation)
+                    footprint: CGRect(x: centre.x - half, y: centre.y - half, width: 2 * half, height: 2 * half), turned: 0)
     }
 
     static func hash(_ s: String) -> Int {

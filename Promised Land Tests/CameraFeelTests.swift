@@ -5,7 +5,7 @@ import SwiftUI
 @testable import Promised_Land
 
 /// Section 4c: zoom and pan move smoothly, and stepping up to a building fills the screen with it,
-/// centred, at every turn.
+/// centred, in the fixed view.
 @MainActor
 struct CameraFeelTests {
     static let size = CGSize(width: 390, height: 844)
@@ -61,22 +61,22 @@ struct CameraFeelTests {
         #expect(end.zoom == 4 && end.pan == CGSize(width: -300, height: 180))
     }
 
-    @Test("Stepping up to a building: its Place fills the screen's width, centred, at every turn", arguments: [0, 1, 2, 3])
-    func visitFillsTheScreen(quarter: Int) {
+    @Test("Stepping up to a building: its Place fills the screen's width, centred, in the fixed view")
+    func visitFillsTheScreen() {
         let area = Self.size.width - Self.insets.leading - Self.insets.trailing
         let centre = IslandCamera.freeCentre(size: Self.size, insets: Self.insets)
         for plot in Self.island.allPlots.prefix(30) {
             guard let item = Self.island.items.first(where: { $0.plotKey == plot.bookID }) else { continue }
-            let zoom = IslandCamera.visitZoom(for: item, in: Self.island, size: Self.size, insets: Self.insets, quarter: quarter)
+            let zoom = IslandCamera.visitZoom(for: item, in: Self.island, size: Self.size, insets: Self.insets)
             let pan = IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: Self.island), island: Self.island, size: Self.size,
-                                       insets: Self.insets, zoom: zoom, quarter: quarter)
-            let l = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom, angle: CGFloat(quarter)).panned(pan)
+                                       insets: Self.insets, zoom: zoom)
+            let l = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom, ).panned(pan)
             let corners = [(plot.x, plot.y), (plot.x + plot.size, plot.y), (plot.x, plot.y + plot.size), (plot.x + plot.size, plot.y + plot.size)]
                 .map { l.point(CGFloat($0.0), CGFloat($0.1)) }
             let width = corners.map(\.x).max()! - corners.map(\.x).min()!
             let mid = CGPoint(x: (corners.map(\.x).max()! + corners.map(\.x).min()!) / 2, y: (corners.map(\.y).max()! + corners.map(\.y).min()!) / 2)
             // Fills about three quarters of the width (less only if that's past the closest zoom).
-            let capped = zoom >= IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, angle: CGFloat(quarter)).maxZoom - 0.001
+            let capped = zoom >= IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, ).maxZoom - 0.001
             #expect(capped || abs(width - IslandCamera.visitFill * area) < 1, "\(plot.bookID): \(width) of \(area)")
             #expect(width >= area * 0.5, "\(plot.bookID) only \(Int(width / area * 100))% wide")
             // Centred.

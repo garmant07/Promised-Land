@@ -17,16 +17,16 @@ struct IslandCameraTests {
         island.items.filter { $0.kind.isTall && $0.footprint.width >= 1 }
     }
 
-    @Test("Centring puts a building's middle at the middle of the screen, at every turn and zoom", arguments: [0, 1, 2, 3])
-    func centring(quarter: Int) throws {
+    @Test("Centring puts a building's middle at the middle of the screen, at every turn and zoom")
+    func centring() throws {
         let centre = IslandCamera.freeCentre(size: Self.size, insets: Self.insets)
         for item in Self.buildings.prefix(40) {
             let focus = IslandCamera.focus(of: item, in: Self.island)
             for zoom: CGFloat in [1, 3, 6] {
                 let pan = IslandCamera.pan(toCentre: focus, island: Self.island, size: Self.size, insets: Self.insets,
-                                           zoom: zoom, quarter: quarter)
+                                           zoom: zoom)
                 let layout = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: zoom,
-                                          angle: CGFloat(quarter)).panned(pan)
+                                          ).panned(pan)
                 let p = layout.point(focus.x, focus.y)
                 #expect(abs(p.x - centre.x) < 0.01 && abs(p.y - centre.y) < 0.01)
                 // The pan limit always allows it.
@@ -56,9 +56,9 @@ struct IslandCameraTests {
         return layout.point(g.x, g.y)
     }
 
-    @Test("Someone behind a building is drawn behind it; in front or beside, they aren't", arguments: [0, 1, 2, 3])
-    func depth(quarter: Int) throws {
-        let layout = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: 4, angle: CGFloat(quarter))
+    @Test("Someone behind a building is drawn behind it; in front or beside, they aren't")
+    func depth() throws {
+        let layout = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: 4, )
         for item in Self.buildings.prefix(40) {
             let back = outside(item, layout: layout) { $0.y < $1.y }    // highest on screen
             let front = outside(item, layout: layout) { $0.y > $1.y }   // lowest on screen
@@ -71,14 +71,14 @@ struct IslandCameraTests {
         }
     }
 
-    @Test("A character standing just behind a building is drawn under it, even past its middle", arguments: [0, 1, 2, 3])
-    func characterBehindIsHidden(quarter: Int) throws {
+    @Test("A character standing just behind a building is drawn under it, even past its middle")
+    func characterBehindIsHidden() throws {
         var checked = 0
         for item in Self.buildings.prefix(60) {
             // Looking straight at the building.
             let pan = IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: Self.island), island: Self.island, size: Self.size,
-                                       insets: Self.insets, zoom: 4, quarter: quarter)
-            let layout = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: 4, angle: CGFloat(quarter)).panned(pan)
+                                       insets: Self.insets, zoom: 4)
+            let layout = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets, zoom: 4, ).panned(pan)
             let u = layout.u
             let f = IslandCamera.footprint(of: item)
             // Feet inside the footprint's back half, but lower on screen than the building's anchor
@@ -92,7 +92,7 @@ struct IslandCameraTests {
             let items = IslandWorld.visibleItems([item], layout: layout, visible: CGRect(origin: .zero, size: Self.size))
             let over = IslandWorld.itemsOver(IslandWorld.Figure(id: "me", feet: feet, rect: figure), items: items, layout: layout)
             if !items.isEmpty, IslandPainter.drawnBounds(of: item, layout: layout).intersects(figure) {
-                #expect(over == [0], "\(item.kind) at turn \(quarter)")
+                #expect(over == [0], "\(item.kind) at fixed angle")
                 checked += 1
             }
         }
@@ -163,7 +163,7 @@ struct IslandCameraTests {
         #expect(checked > 0)
     }
 
-    @Test("Birds fly in the island's space: they move with the pan and turn with the island")
+    @Test("Birds fly in the island's space: they move with the pan")
     func birdsInWorldSpace() {
         let sky = Self.life.sky
         let mid = IslandLife.birdPoint(0.5, sky: sky)
@@ -171,9 +171,8 @@ struct IslandCameraTests {
         let layout = IslandLayout(island: Self.island, size: Self.size, zoom: 2)
         let a = layout.point(mid.x, mid.y), b = layout.panned(CGSize(width: 50, height: -30)).point(mid.x, mid.y)
         #expect(abs(b.x - a.x - 50) < 0.001 && abs(b.y - a.y + 30) < 0.001)
-        let turned = IslandLayout(island: Self.island, size: Self.size, zoom: 2, angle: 1)
         let start = IslandLife.birdPoint(0, sky: sky)
-        #expect(layout.point(start.x, start.y) != turned.point(start.x, start.y))
+        #expect(layout.point(start.x, start.y).x.isFinite && layout.point(start.x, start.y).y.isFinite)
     }
 }
 
