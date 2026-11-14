@@ -1,0 +1,527 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jonah: “… is on us.\" So they cast lots, and the lot fell on Jonah.”",
+    "options" : [
+      "Jonah",
+      "Boaz",
+      "Obadiah",
+      "Judah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… is on us.\" So they cast lots, and the lot fell on ______.”? (1:7, WEB)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… to him, \"What is this that you have done?\" For the men knew that he was fleeing from the presence of Yahweh, because he had told …”; verse 12 reads “… calm for you; for I know that because of me this great tempest is on you.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "knew; wind",
+      "Maybe; tempest",
+      "tempest; knew",
+      "knew; tempest"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… to him, \"What is this that you have done?\" For the men ______ that he was fleeing from the presence of Yahweh, because he had told …” (1:10); “… calm for you; for I know that because of me this great ______ is on you.\"” (1:12, WEB)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Jonah 1:3 records: “… flee to Tarshish from the presence of Yahweh. He went down to Joppa, and found a ship going to Tarshish; so he paid its fare, and went down into it, to go with them to Tarshish …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jonah fled from the LORD and boarded a ship to Tarshish. (1:3)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “\"Arise, go to Nineveh, that great city, and preach against it, for their wickedness has come up before me.\"”",
+    "options" : [
+      "Nineveh"
+    ],
+    "prompt" : "Complete the quotation: “\"Arise, go to ____, that great city, and preach against it, for their wickedness has come up before me.\"” (1:2, WEB)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He said to them, \"I am a Hebrew, and I fear Yahweh, the God of heaven, who has made the sea and the dry land.\"” It says fear, not knowledge.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He said to them, \"I am a Hebrew, and I knowledge Yahweh, the God of heaven, who has made the sea and the dry land.\"” (1:9, WEB)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… you, Yahweh, we beg you, let us not perish for this man's life, and don't lay on us innocent blood; for you, Yahweh, have done as …”; the second reads “… and Jonah was in the belly of the fish three days and three nights.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life three"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… you, Yahweh, we beg you, let us not perish for this man's ____, and don't lay on us innocent blood; for you, Yahweh, have done as …” (1:14); “… and Jonah was in the belly of the fish three days and nights.” (1:17, WEB)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Jonah 1:4 uses likely: “… was a mighty tempest on the sea, so that the ship was likely to break up.”",
+    "options" : [
+      "likely",
+      "rowed",
+      "flee",
+      "laying"
+    ],
+    "prompt" : "Which word completes “… was a mighty tempest on the sea, so that the ship was ______ to break up.”? (1:4, WEB)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “So the shipmaster came to him, and said to him, \"What do you mean, sleeper? Arise, call on your gods! Maybe the gods will notice us, …” The missing terms belong in that order.",
+    "options" : [
+      "shipmaster sleeper"
+    ],
+    "prompt" : "Supply the missing words in order: “So the ____ came to him, and said to him, \"What do you mean, ? Arise, call on your gods! Maybe the gods will notice us, …” (1:6, WEB)",
+    "reference" : "Jonah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Jonah 2:2 uses Sheol: “… my affliction to Yahweh. He answered me. Out of the belly of Sheol I cried. You heard my voice.”",
+    "options" : [
+      "sight",
+      "seas",
+      "Sheol",
+      "belongs"
+    ],
+    "prompt" : "Which word completes “… my affliction to Yahweh. He answered me. Out of the belly of ______ I cried. You heard my voice.”? (2:2, WEB)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Jonah 2:1 records: “Then Jonah prayed to Yahweh, his God, out of the fish's belly.”",
+    "options" : [
+      "fish"
+    ],
+    "prompt" : "In this paraphrase, jonah prayed from the belly of the ____. (2:1)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But I will sacrifice to you with the voice of thanksgiving. I will pay that which I have vowed. Salvation belongs to Yahweh.\"”; the second reads “Yahweh spoke to the fish, and it vomited out Jonah on the dry land.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sacrifice Jonah"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But I will ____ to you with the voice of thanksgiving. I will pay that which I have vowed. Salvation belongs to Yahweh.\"” (2:9); “Yahweh spoke to the fish, and it vomited out on the dry land.” (2:10, WEB)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “… me, I remembered Yahweh. My prayer came in to you, into your holy temple.”; verse 8 reads “Those who regard lying vanities forsake their own mercy.”. These establish the first and second answers respectively.",
+    "options" : [
+      "foolish; mercy",
+      "holy; mercy",
+      "mercy; holy",
+      "holy; kindness"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… me, I remembered Yahweh. My prayer came in to you, into your ______ temple.” (2:7); “Those who regard lying vanities forsake their own ______.” (2:8, WEB)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The waters surrounded me, Even to the soul. The deep was around me. The weeds were wrapped around my head.” The missing terms belong in that order.",
+    "options" : [
+      "waters around"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ surrounded me, Even to the soul. The deep was around me. The weeds were wrapped my head.” (2:5, WEB)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… The earth barred me in forever: Yet have you brought up my life from the pit, Yahweh my God.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… The earth barred me in forever: Yet have you brought up my life from the pit, Yahweh my God.” (2:6, WEB)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For you threw me into the depths, In the heart of the seas. The flood was all around me. All your waves and your billows passed …”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Complete the quotation: “For you threw me into the depths, In the ____ of the seas. The flood was all around me. All your waves and your billows passed …” (2:3, WEB)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "jonah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies temple: “… banished from your sight; Yet I will look again toward your holy temple.'”",
+    "options" : [
+      "tent",
+      "city",
+      "temple",
+      "lampstand"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… banished from your sight; Yet I will look again toward your holy ______.'”? (2:4, WEB)",
+    "reference" : "Jonah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “So Jonah arose, and went to Nineveh, according to the word of Yahweh. Now Nineveh was an exceedingly great city, three days' journey across.”",
+    "options" : [
+      "Jonah"
+    ],
+    "prompt" : "Complete the quotation: “So ____ arose, and went to Nineveh, according to the word of Yahweh. Now Nineveh was an exceedingly great city, three days' journey across.” (3:3, WEB)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies water: “… animal, herd nor flock, taste anything; let them not feed, nor drink water;”",
+    "options" : [
+      "fruit",
+      "wheat",
+      "olives",
+      "water"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… animal, herd nor flock, taste anything; let them not feed, nor drink ______;”? (3:7, WEB)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “\"Arise, go to Nineveh, that great city, and preach to it the message that I give you.\"”; the second reads “The word of Yahweh came to Jonah the second time, saying,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "message second"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “\"Arise, go to Nineveh, that great city, and preach to it the ____ that I give you.\"” (3:2); “The word of Yahweh came to Jonah the time, saying,” (3:1, WEB)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Jonah 3:5 records: “The people of Nineveh believed God; and they proclaimed a fast, and put on sackcloth, from the greatest of them even to the least of them.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The people of Nineveh believed God and fasted. (3:5)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… God will not turn and repent, and turn away from his fierce anger, so that we might not perish?\"”; verse 10 reads “God saw their works, that they turned from their evil way. God repented of the evil which he said he would do to them, and he …”. These establish the first and second answers respectively.",
+    "options" : [
+      "justice; turned",
+      "turned; anger",
+      "anger; published",
+      "anger; turned"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… God will not turn and repent, and turn away from his fierce ______, so that we might not perish?\"” (3:9); “God saw their works, that they ______ from their evil way. God repented of the evil which he said he would do to them, and he …” (3:10, WEB)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… and animal, and let them cry mightily to God. Yes, let them turn everyone from his evil way, and from the violence that is in his …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… and animal, and let them cry mightily to God. Yes, let them turn everyone from his evil way, and from the violence that is in his …” (3:8, WEB)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Jonah 3:4 uses Nineveh: “… day's journey, and he cried out, and said, \"Yet forty days, and Nineveh shall be overthrown!\"”",
+    "options" : [
+      "Babylon",
+      "Goshen",
+      "Nineveh",
+      "Persia"
+    ],
+    "prompt" : "Which word completes “… day's journey, and he cried out, and said, \"Yet forty days, and ______ shall be overthrown!\"”? (3:4, WEB)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and he arose from his throne, and took off his royal robe, covered himself with sackcloth, and sat in ashes.” The missing terms belong in that order.",
+    "options" : [
+      "throne ashes"
+    ],
+    "prompt" : "Supply the missing words in order: “… and he arose from his ____, and took off his royal robe, covered himself with sackcloth, and sat in .” (3:6, WEB)",
+    "reference" : "Jonah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then Jonah went out of the city, and sat on the east side of the city, and there made himself a booth, and sat under it …” The missing terms belong in that order.",
+    "options" : [
+      "Jonah sat"
+    ],
+    "prompt" : "Supply the missing words in order: “Then ____ went out of the city, and on the east side of the city, and there made himself a booth, and sat under it …” (4:5, WEB)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies deliver: “… over Jonah, that it might be a shade over his head, to deliver him from his discomfort. So Jonah was exceedingly glad because of the vine.”",
+    "options" : [
+      "deliver",
+      "Shouldn't",
+      "Jonah",
+      "booth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… over Jonah, that it might be a shade over his head, to ______ him from his discomfort. So Jonah was exceedingly glad because of the vine.”? (4:6, WEB)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The unanswered closing question challenges Jonah's narrow compassion. The course reads the story as exposing resistance to mercy for outsiders.",
+    "options" : [
+      "Jonah is praised for wishing destruction on everyone.",
+      "Nineveh is said to contain no living creatures.",
+      "God says people matter less than gardening success.",
+      "Jonah grieves a plant he did not grow, while God cares for a large city and its animals."
+    ],
+    "prompt" : "What contrast does God draw between Jonah's concern for the plant and God's concern for Nineveh? (4:6-11)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… was still in my own country? Therefore I hurried to flee to Tarshish, for I knew that you are a gracious God, and merciful, slow to …”",
+    "options" : [
+      "Tarshish"
+    ],
+    "prompt" : "Complete the quotation: “… was still in my own country? Therefore I hurried to flee to ____, for I knew that you are a gracious God, and merciful, slow to …” (4:2, WEB)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… that he might die, and said, \"It is better for me to die than to live.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… that he might die, and said, \"It is better for me to die than to live.\"” (4:8, WEB)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “… a worm at dawn the next day, and it chewed on the vine, so that it withered.”; verse 11 reads “Shouldn't I be concerned for Nineveh, that great city, in which are more than one hundred twenty thousand persons who can't discern between their right hand …”. These establish the first and second answers respectively.",
+    "options" : [
+      "vine; Nineveh",
+      "can't; Nineveh",
+      "Nineveh; vine",
+      "vine; Shiloh"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… a worm at dawn the next day, and it chewed on the ______, so that it withered.” (4:7); “Shouldn't I be concerned for ______, that great city, in which are more than one hundred twenty thousand persons who can't discern between their right hand …” (4:11, WEB)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Jonah 4:3 uses life: “Therefore now, Yahweh, take, I beg you, my life from me; for it is better for me to die than to live.\"”",
+    "options" : [
+      "sacrifice",
+      "inheritance",
+      "worship",
+      "life"
+    ],
+    "prompt" : "Which word completes “Therefore now, Yahweh, take, I beg you, my ______ from me; for it is better for me to die than to live.\"”? (4:3, WEB)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jonah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Jonah 4:9 records: “God said to Jonah, \"Is it right for you to be angry about the vine?\" He said, \"I am right to be angry, even to death.\"”",
+    "options" : [
+      "plant"
+    ],
+    "prompt" : "In this paraphrase, god asked Jonah, Do you do well to be angry for the ____? (4:9)",
+    "reference" : "Jonah 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  }
+]

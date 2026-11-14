@@ -1,0 +1,655 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “All her people sigh, they seek bread; They have given their pleasant things for food to refresh the soul: Look, Yahweh, and see; for I am …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “All her people sigh, they seek bread; They have given their pleasant things for food to refresh the soul: Look, Yahweh, and see; for I am …” (1:11, WEB)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies enemy: “… down wonderfully; she has no comforter: See, Yahweh, my affliction; for the enemy has magnified himself.”",
+    "options" : [
+      "commanded",
+      "entered",
+      "water",
+      "enemy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… down wonderfully; she has no comforter: See, Yahweh, my affliction; for the ______ has magnified himself.”? (1:9, WEB)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… her hands; there is none to comfort her; Yahweh has commanded concerning Jacob, that those who are round about him should be his adversaries: Jerusalem is …”; the second reads “… have grievously rebelled: Abroad the sword bereaves, at home there is as death.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Jacob death"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… her hands; there is none to comfort her; Yahweh has commanded concerning ____, that those who are round about him should be his adversaries: Jerusalem is …” (1:17); “… have grievously rebelled: Abroad the sword bereaves, at home there is as .” (1:20, WEB)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “From on high has he sent fire into my bones, and it prevails against them; He has spread a net for my feet, he has turned …”; verse 16 reads “For these things I weep; my eye, my eye runs down with water; Because the comforter who should refresh my soul is far from me: My …”. These establish the first and second answers respectively.",
+    "options" : [
+      "sword; water",
+      "fire; milk",
+      "fire; water",
+      "water; fire"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “From on high has he sent ______ into my bones, and it prevails against them; He has spread a net for my feet, he has turned …” (1:13); “For these things I weep; my eye, my eye runs down with ______; Because the comforter who should refresh my soul is far from me: My …” (1:16, WEB)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Lamentations 1:4 uses priests: “… none come to the solemn assembly; All her gates are desolate, her priests do sigh: Her virgins are afflicted, and she herself is in bitterness.”",
+    "options" : [
+      "princes",
+      "priests",
+      "sons",
+      "mother"
+    ],
+    "prompt" : "Which word completes “… none come to the solemn assembly; All her gates are desolate, her ______ do sigh: Her virgins are afflicted, and she herself is in bitterness.”? (1:4, WEB)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Lamentations 1:1 records: “How does the city sit solitary, that was full of people! She has become as a widow, who was great among the nations! She who was a princess among the provinces is become tributary!”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jerusalem sat alone, once full of people. (1:1)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… are on her cheeks; Among all her lovers she has none to comfort her: All her friends have dealt treacherously with her; they are become her …”",
+    "options" : [
+      "comfort"
+    ],
+    "prompt" : "Complete the quotation: “… are on her cheeks; Among all her lovers she has none to ____ her: All her friends have dealt treacherously with her; they are become her …” (1:2, WEB)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… daughter of Zion all her majesty is departed: Her princes are become like harts that find no pasture, They are gone without strength before the pursuer.” The missing terms belong in that order.",
+    "options" : [
+      "Zion strength"
+    ],
+    "prompt" : "Supply the missing words in order: “… daughter of ____ all her majesty is departed: Her princes are become like harts that find no pasture, They are gone without before the pursuer.” (1:6, WEB)",
+    "reference" : "Lamentations 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies law: “… bars: Her king and her princes are among the nations where the law is not; Yes, her prophets find no vision from Yahweh.”",
+    "options" : [
+      "judgments",
+      "law",
+      "promise",
+      "commandments"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… bars: Her king and her princes are among the nations where the ______ is not; Yes, her prophets find no vision from Yahweh.”? (2:9, WEB)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “How has the Lord covered the daughter of Zion with a cloud in his anger! He has cast down from heaven to the earth the beauty …”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "Complete the quotation: “How has the Lord covered the daughter of ____ with a cloud in his anger! He has cast down from heaven to the earth the beauty …” (2:1, WEB)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Zion, let tears run down like a river day and night; Give yourself no respite; don't let the apple of your eye cease.”; the second reads “… are dandled in the hands? Shall the priest and the prophet be killed in the sanctuary of the Lord?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "yourself killed"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Zion, let tears run down like a river day and night; Give ____ no respite; don't let the apple of your eye cease.” (2:18); “… are dandled in the hands? Shall the priest and the prophet be in the sanctuary of the Lord?” (2:20, WEB)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Lamentations 2:4 uses fire: “… of the daughter of Zion he has poured out his wrath like fire.”",
+    "options" : [
+      "fire",
+      "Certainly",
+      "abhorred",
+      "escaped"
+    ],
+    "prompt" : "Which word completes “… of the daughter of Zion he has poured out his wrath like ______.”? (2:4, WEB)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Lamentations 2:2 records: “… all the habitations of Jacob, and has not pitied: He has thrown down in his wrath the strongholds of the daughter of Judah; He has brought them down to the ground; he has profaned the kingdom …”",
+    "options" : [
+      "pity"
+    ],
+    "prompt" : "In this paraphrase, the LORD has swallowed up all the habitations of Jacob without ____. (2:2)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “My eyes do fail with tears, my heart is troubled; My liver is poured on the earth, because of the destruction of the daughter of my …” It says heart, not head.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “My eyes do fail with tears, my head is troubled; My liver is poured on the earth, because of the destruction of the daughter of my …” (2:11, WEB)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… solemn assembly and Sabbath to be forgotten in Zion, Has despised in the indignation of his anger the king and the priest.” The missing terms belong in that order.",
+    "options" : [
+      "Sabbath priest"
+    ],
+    "prompt" : "Supply the missing words in order: “… solemn assembly and ____ to be forgotten in Zion, Has despised in the indignation of his anger the king and the .” (2:6, WEB)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "lamentations",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… I testify to you? what shall I liken to you, daughter of Jerusalem? What shall I compare to you, that I may comfort you, virgin daughter …”; verse 15 reads “… Is this the city that men called The perfection of beauty, The joy of the whole earth?”. These establish the first and second answers respectively.",
+    "options" : [
+      "joy; Jerusalem",
+      "Jerusalem; understanding",
+      "Hebron; joy",
+      "Jerusalem; joy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… I testify to you? what shall I liken to you, daughter of ______? What shall I compare to you, that I may comfort you, virgin daughter …” (2:13); “… Is this the city that men called The perfection of beauty, The ______ of the whole earth?” (2:15, WEB)",
+    "reference" : "Lamentations 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The speaker recalls affliction before speaking of compassion and faithfulness. The passage gives room for grief and hope together; it does not say suffering is imaginary.",
+    "options" : [
+      "Hope requires pretending no one suffered.",
+      "Compassion is said to be permanently exhausted.",
+      "The speaker reports only effortless happiness.",
+      "Hope in God's mercy is expressed amid remembered suffering, not by denying it."
+    ],
+    "prompt" : "How does hope function within this lament? (3:19-33)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies portion: “Yahweh is my portion, says my soul; therefore will I hope in him.”",
+    "options" : [
+      "destruction",
+      "affliction",
+      "salvation",
+      "portion"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Yahweh is my ______, says my soul; therefore will I hope in him.”? (3:24, WEB)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… flesh and my skin has he made old; he has broken my bones.”",
+    "options" : [
+      "bones"
+    ],
+    "prompt" : "Complete the quotation: “… flesh and my skin has he made old; he has broken my ____.” (3:4, WEB)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… give his cheek to him who strikes him; let him be filled full with reproach.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… give his cheek to him who strikes him; let him be filled full with reproach.” (3:30, WEB)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Lamentations 3:11 uses ways: “He has turned aside my ways, and pulled me in pieces; he has made me desolate.”",
+    "options" : [
+      "ways",
+      "reins",
+      "prisoners",
+      "Waters"
+    ],
+    "prompt" : "Which word completes “He has turned aside my ______, and pulled me in pieces; he has made me desolate.”? (3:11, WEB)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “You have removed my soul far off from peace; I forgot prosperity.” The missing terms belong in that order.",
+    "options" : [
+      "removed peace"
+    ],
+    "prompt" : "Supply the missing words in order: “You have ____ my soul far off from ; I forgot prosperity.” (3:17, WEB)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “My eye affects my soul, because of all the daughters of my city.”; the second reads “… you have pleaded the causes of my soul; you have redeemed my life.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "eye life"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “My ____ affects my soul, because of all the daughters of my city.” (3:51); “… you have pleaded the causes of my soul; you have redeemed my .” (3:58, WEB)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Lamentations 3:22 records: “It is of Yahweh's loving kindnesses that we are not consumed, because his compassion doesn't fail.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The steadfast love of the LORD never ceases; His mercies are new every morning. (3:22-23)",
+    "reference" : "Lamentations 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… wrath, he has poured out his fierce anger; He has kindled a fire in Zion, which has devoured the foundations of it.” It says fire, not pitiful.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… wrath, he has poured out his fierce anger; He has kindled a pitiful in Zion, which has devoured the foundations of it.” (4:11, WEB)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The precious sons of Zion, comparable to fine gold, How are they esteemed as earthen pitchers, the work of the hands of the potter!”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "Complete the quotation: “The precious sons of ____, comparable to fine gold, How are they esteemed as earthen pitchers, the work of the hands of the potter!” (4:2, WEB)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… for our vain help: In our watching we have watched for a nation that could not save.”; the second reads “Our pursuers were swifter than the eagles of the sky: They chased us on the mountains, they laid wait for us in the wilderness.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "nation sky"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… for our vain help: In our watching we have watched for a ____ that could not save.” (4:17); “Our pursuers were swifter than the eagles of the : They chased us on the mountains, they laid wait for us in the wilderness.” (4:19, WEB)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Lamentations 4:4 uses bread: “… to the roof of his mouth for thirst: The young children ask bread, and no man breaks it to them.”",
+    "options" : [
+      "fruit",
+      "bread",
+      "olives",
+      "barley"
+    ],
+    "prompt" : "Which word completes “… to the roof of his mouth for thirst: The young children ask ______, and no man breaks it to them.”? (4:4, WEB)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Lamentations 4:1 records: “How is the gold become dim! how is the most pure gold changed! The stones of the sanctuary are poured out at the head of every street.”",
+    "options" : [
+      "street"
+    ],
+    "prompt" : "In this paraphrase, the gold has grown dim; the sacred stones are poured out at the head of every ____. (4:1)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies pine: “… sword are better than those who are killed with hunger; For these pine away, stricken through, for want of the fruits of the field.”",
+    "options" : [
+      "overthrown",
+      "wrath",
+      "midst",
+      "pine"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… sword are better than those who are killed with hunger; For these ______ away, stricken through, for want of the fruits of the field.”? (4:9, WEB)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “It is because of the sins of her prophets, and the iniquities of her priests, That have shed the blood of the just in the midst …”; verse 15 reads “… don't touch! When they fled away and wandered, men said among the nations, They shall no more sojourn here.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sins; nations",
+      "deceit; nations",
+      "sins; precious",
+      "nations; sins"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It is because of the ______ of her prophets, and the iniquities of her priests, That have shed the blood of the just in the midst …” (4:13); “… don't touch! When they fled away and wandered, men said among the ______, They shall no more sojourn here.” (4:15, WEB)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For the iniquity of the daughter of my people is greater than the sin of Sodom, That was overthrown as in a moment, and no hands …” The missing terms belong in that order.",
+    "options" : [
+      "iniquity sin"
+    ],
+    "prompt" : "Supply the missing words in order: “For the ____ of the daughter of my people is greater than the of Sodom, That was overthrown as in a moment, and no hands …” (4:6, WEB)",
+    "reference" : "Lamentations 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “We have given the hand to the Egyptians, To the Assyrians, to be satisfied with bread.” The missing terms belong in that order.",
+    "options" : [
+      "Egyptians bread"
+    ],
+    "prompt" : "Supply the missing words in order: “We have given the hand to the ____, To the Assyrians, to be satisfied with .” (5:6, WEB)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “The young men bare the mill; The children stumbled under the wood.”; verse 15 reads “The joy of our heart is ceased; Our dance is turned into mourning.”. These establish the first and second answers respectively.",
+    "options" : [
+      "hanged; joy",
+      "stumbled; joy",
+      "joy; stumbled",
+      "stumbled; love"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The young men bare the mill; The children ______ under the wood.” (5:13); “The ______ of our heart is ceased; Our dance is turned into mourning.” (5:15, WEB)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Lamentations 5:21 records: “Turn you us to you, Yahweh, and we shall be turned; Renew our days as of old.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Lamentations ends with a prayer for God to restore His people. (5:21)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Lamentations 5:4 uses water: “We have drunken our water for money; Our wood is sold to us.”",
+    "options" : [
+      "wheat",
+      "water",
+      "corn",
+      "oil"
+    ],
+    "prompt" : "Which word completes “We have drunken our ______ for money; Our wood is sold to us.”? (5:4, WEB)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies lives: “We get our bread at the peril of our lives, Because of the sword of the wilderness.”",
+    "options" : [
+      "faces",
+      "eyes",
+      "lives",
+      "foxes"
+    ],
+    "prompt" : "Which detail belongs in this passage: “We get our bread at the peril of our ______, Because of the sword of the wilderness.”? (5:9, WEB)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For the mountain of Zion, which is desolate: The foxes walk on it.”; the second reads “You, Yahweh, abide forever; Your throne is from generation to generation.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "mountain abide"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For the ____ of Zion, which is desolate: The foxes walk on it.” (5:18); “You, Yahweh, forever; Your throne is from generation to generation.” (5:19, WEB)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “They ravished the women in Zion, The virgins in the cities of Judah.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “They ravished the women in Zion, The virgins in the cities of Judah.” (5:11, WEB)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "lamentations",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Our inheritance is turned to strangers, Our houses to aliens.”",
+    "options" : [
+      "strangers"
+    ],
+    "prompt" : "Complete the quotation: “Our inheritance is turned to ____, Our houses to aliens.” (5:2, WEB)",
+    "reference" : "Lamentations 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

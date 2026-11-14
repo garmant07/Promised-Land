@@ -1,0 +1,5284 @@
+[
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Human plans cannot stop what God has promised.",
+    "options" : [
+      "The Hebrews escaped into the hills",
+      "God stopped Pharaoh's army",
+      "The Egyptians grew tired of the plan",
+      "The more they were oppressed, the more they multiplied"
+    ],
+    "prompt" : "Why did Pharaoh's oppression fail to slow Israel's growth? (1:12)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Fearing God can mean refusing a command that is clearly wrong.",
+    "options" : [
+      "They were paid by the Hebrews",
+      "They were afraid of the Egyptian army",
+      "They feared God more than the king",
+      "They wanted to leave Egypt"
+    ],
+    "prompt" : "Why did the midwives refuse to kill the Hebrew baby boys? (1:17)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Fear of losing control often becomes hostility toward God's people and His promises.",
+    "options" : [
+      "Fear of losing control turns people against God's promises",
+      "Fear makes people more peaceful",
+      "Fear of others is always wise",
+      "Fear helps people obey God"
+    ],
+    "prompt" : "The king feared losing control to a growing people. What does his fear teach? (1:9-10)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "When people forget what God has done, they fear God's people instead of trusting Him.",
+    "options" : [
+      "Joseph"
+    ],
+    "prompt" : "A new king arose over Egypt who did not know ____. (1:8)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The deliverer's story starts after the chapter shows the oppression in full.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses is named in the first chapter of Exodus. (1:22; 2:10)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Silence is not absence: God remembers His covenant even when His people's suffering seems to go unanswered.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God had stopped remembering His promise to Abraham while Israel suffered. (1:7; 2:24)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Evil often hides behind the language of policy and order, so God's people must call it what it is.",
+    "options" : [
+      "Hebrew"
+    ],
+    "prompt" : "Pharaoh commanded that every newborn ____ boy be thrown into the Nile. (1:22)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God sees faithful people who stand against evil, even when no one important notices.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God blessed the midwives because they feared Him and let the boys live. (1:20-21)",
+    "reference" : "Exodus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Exile was a stop in God's plan, not the end of it, because God heard the groaning from Egypt.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses' exile in Midian was the end of God's plan for Israel. (2:23-25)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's care often comes through ordinary, faithful acts like a sister's watchfulness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses' sister Miriam watched over him and arranged for his own mother to nurse him. (2:4-8)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God often prepares people in quiet seasons before He uses them.",
+    "options" : [
+      "God's calling depends on a person's age",
+      "Exile is always punishment",
+      "God humbles and shapes leaders in hidden seasons before sending them",
+      "God forgot Moses for a while"
+    ],
+    "prompt" : "What does Moses' time in exile before his calling teach about God's timing? (2:15-22)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God works through people outside Israel's family too, as Jethro's welcome of Moses shows.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jethro, Moses' father-in-law in Midian, was an Israelite from the tribe of Levi. (2:16-21)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God can use fragile places to carry out His rescue.",
+    "options" : [
+      "papyrus"
+    ],
+    "prompt" : "Moses' mother placed him in a basket of ____ on the Nile. (2:3)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Moses tried to rescue Israel in his own strength, and it sent him into exile.",
+    "options" : [
+      "He was banished from the land",
+      "He killed an Egyptian who was beating a Hebrew",
+      "He wanted to become a shepherd",
+      "God commanded him to go"
+    ],
+    "prompt" : "Why did Moses flee to Midian? (2:11-15)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's rescue begins with His faithfulness to His promises, not with Israel's worthiness.",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "God heard their groaning and remembered His ____ with Abraham, Isaac and Jacob. (2:24)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God works through people outside His covenant to protect His plan.",
+    "options" : [
+      "Miriam",
+      "Pharaoh",
+      "Aaron",
+      "Pharaoh's daughter"
+    ],
+    "prompt" : "Who found baby Moses in the basket? (2:5-6)",
+    "reference" : "Exodus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God is the source of His own faithfulness; He does not depend on Israel to fulfill His promises.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The name \"I AM\" tells Israel that God's promises depend on Israel's behavior. (3:14-15)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Holiness comes from God's presence, not from the place by itself.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God told Moses that the place where he stood was holy ground. (3:5)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's call comes from His compassion and promise, not from the qualifications of the one called.",
+    "options" : [
+      "Because Moses wanted to lead",
+      "Because God heard Israel's cries and remembered His covenant",
+      "Because Moses was the strongest man in Egypt",
+      "Because Pharaoh asked for him"
+    ],
+    "prompt" : "Why did God say He was sending Moses? (3:7-10)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God answers honest objections rather than shaming the person He calls.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses immediately said yes and went to Pharaoh with no objections. (3:11; 4:1)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The promise of God's presence is the foundation of every call He gives.",
+    "options" : [
+      "with"
+    ],
+    "prompt" : "God's promise to Moses was, \"I will be ____ you.\" (3:12)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Our answer to inadequacy is not our confidence but God's presence with us.",
+    "options" : [
+      "\"Go, and find your own strength.\"",
+      "\"Send someone else.\"",
+      "\"I will be with you.\"",
+      "\"Wait for a sign from Pharaoh.\""
+    ],
+    "prompt" : "When Moses asked \"Who am I?\", what was God's answer? (3:11-12)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God meets people in unexpected, ordinary places, and holiness begins where He is present.",
+    "options" : [
+      "On the bank of the Nile",
+      "On Mount Sinai in a storm",
+      "In a burning bush that was not consumed",
+      "In a dream in Midian"
+    ],
+    "prompt" : "Where did God first appear to Moses? (3:2)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God is self-existent and faithful, and His name is a promise that He is present.",
+    "options" : [
+      "name"
+    ],
+    "prompt" : "God said, \"I AM WHO I AM\" when Moses asked for His ____. (3:13-14)",
+    "reference" : "Exodus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Israel's identity comes from belonging to God, not from its strength or its rulers.",
+    "options" : [
+      "To show that Israel was the most powerful nation",
+      "To tell Pharaoh that Israel would rule Egypt",
+      "To show that Israel belongs to God and is His special people",
+      "To explain why Moses was born"
+    ],
+    "prompt" : "Why did God tell Moses that Israel was His firstborn son? (4:22-23)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's call often comes with help and partnership, not with a demand to do everything alone.",
+    "options" : [
+      "Aaron"
+    ],
+    "prompt" : "When Moses said he was slow of speech, God appointed ____ as his spokesman. (4:14-16)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God gives visible signs so that His people can trust His word.",
+    "options" : [
+      "A rain of bread",
+      "A river of wine",
+      "A cloud over the camp",
+      "A staff that became a snake"
+    ],
+    "prompt" : "What sign did God give Moses to show His power to Israel? (4:2-4)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God uses the people He calls, and He is the one who gives them the words and the strength.",
+    "options" : [
+      "He was afraid of Aaron",
+      "He had no staff",
+      "He doubted that God could speak through a weak person",
+      "He wanted to stay in Midian"
+    ],
+    "prompt" : "Why did Moses object that he was not a good speaker? (4:10-12)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God brings Aaron to meet Moses, so the call is shared rather than carried alone.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses went back to Egypt alone with no help from his brother. (4:27-28)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God takes His covenant sign seriously, and obedience in the home matters to Him.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses' wife Zipporah circumcised their son, which turned God's anger away from Moses. (4:24-26)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Israel belongs to God, and God's claim on His people is more important than Pharaoh's demands.",
+    "options" : [
+      "firstborn"
+    ],
+    "prompt" : "God called Israel His ____ son, and told Pharaoh to let him go. (4:22)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's hardening of Pharaoh shows that He is in control of the outcome, even when people resist Him.",
+    "options" : [
+      "He would soften it",
+      "He would take Pharaoh's throne",
+      "He would harden it",
+      "He would make Pharaoh leave on his own"
+    ],
+    "prompt" : "What did God say He would do to Pharaoh's heart? (4:21)",
+    "reference" : "Exodus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "When hope fails, people often turn on the messengers of God instead of trusting Him.",
+    "options" : [
+      "They wanted to return to Pharaoh's favor",
+      "The harsher orders made their work worse, and they blamed Moses and Aaron",
+      "They did not want to leave Egypt",
+      "They were angry about the new taxes"
+    ],
+    "prompt" : "Why did the Israelites first blame Moses and Aaron for their suffering? (5:20-21)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Obeying God does not guarantee an easy path, and worse conditions can follow faithful obedience.",
+    "options" : [
+      "Pharaoh agreed right away",
+      "Pharaoh sent Israel away with gifts",
+      "Pharaoh refused and made the work harder",
+      "Pharaoh asked God for help"
+    ],
+    "prompt" : "What happened when Moses and Aaron first asked Pharaoh to let Israel go? (5:1-9)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Faithful people bring their complaints to God rather than hiding them or walking away from Him.",
+    "options" : [
+      "God only hears prayers of praise",
+      "God wants His people to bring honest pain to Him",
+      "It is wrong to bring complaints to God",
+      "God ignores complaints"
+    ],
+    "prompt" : "What does Moses' complaint in chapter 5 show about faithful prayer? (5:22-23)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Moses brings his complaint to the LORD, which is the right response to discouragement.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses accepted the hard situation without speaking to God about it. (5:22-23)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's delays are not His failures, and His answer often comes in a way people do not expect.",
+    "options" : [
+      "God forgot His people",
+      "God works His purposes in ways people cannot see at first",
+      "Pharaoh's power was greater than God's promise",
+      "God was weaker than Pharaoh"
+    ],
+    "prompt" : "Israel's suffering grew after the first request to Pharaoh. What does God's delay teach? (5:22-6:1)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Honest questions to God are part of faithful prayer, and God's people can bring their pain to Him directly.",
+    "options" : [
+      "send me"
+    ],
+    "prompt" : "Moses asked God, \"Why did you ____ this people?\" (5:22)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Pharaoh's question sets up the contest of the whole book: who is God, and who is in control?",
+    "options" : [
+      "LORD"
+    ],
+    "prompt" : "Pharaoh answered, \"Who is the ____, that I should obey his voice?\" (5:2)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Leaders who stand between the oppressed and the oppressor often suffer for their people.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Israelite foremen were beaten because they had failed to deliver enough bricks. (5:14)",
+    "reference" : "Exodus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's self-revelation is the foundation for trusting every promise He makes.",
+    "options" : [
+      "LORD"
+    ],
+    "prompt" : "God said, \"I am the ____,\" and repeated it to tell Israel who was speaking. (6:2)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Hardship can make people deaf to hope, so God's people need patient encouragement.",
+    "options" : [
+      "Their spirit was broken and they were discouraged by harsh labor",
+      "They wanted to stay in Egypt",
+      "They did not trust Aaron",
+      "Their crops had failed"
+    ],
+    "prompt" : "Why did Israel not listen to Moses' message? (6:9)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God's covenant rests on His own promise to be the God of His people.",
+    "options" : [
+      "They would be given a new king",
+      "They would become a nation of traders",
+      "He would take them as His people and be their God",
+      "They would rule over Egypt"
+    ],
+    "prompt" : "What did God promise Israel in Exodus 6:7? (6:7)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Discouragement can keep people from hearing good news, and God's promise must reach them through His word.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel listened eagerly to Moses' message of hope because they were encouraged. (6:9)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Faith is anchored in God's character, which holds steady when circumstances change.",
+    "options" : [
+      "God wants repetition for its own sake",
+      "Faith rests on who God is, not on how circumstances feel",
+      "God is hard to know",
+      "The people needed to memorize a phrase"
+    ],
+    "prompt" : "What does God's command to repeat \"I am the LORD\" teach about faith? (6:2-8)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's covenant is secure because He is faithful and keeps the promises He made in His own name.",
+    "options" : [
+      "The covenant is only for Moses",
+      "God binds Himself by His own name and promise",
+      "The covenant was broken and needed to be rebuilt",
+      "The covenant depends on Israel's strength"
+    ],
+    "prompt" : "What does God's naming of Himself in chapter 6 teach about His covenant? (6:2-8)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "It names their Levitical family and identifies them as the men commissioned to speak to Pharaoh.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The family record traces both Moses and Aaron through the tribe of Levi. (6:16-27)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God frees His people from bondage and makes them His own, not just His servants.",
+    "options" : [
+      "burdens"
+    ],
+    "prompt" : "God told Moses to speak to Pharaoh, and said, \"I will bring you out from under the ____ of the Egyptians.\" (6:6)",
+    "reference" : "Exodus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's judgments reveal who He is, and they show His people that He is the Lord who protects them.",
+    "options" : [
+      "To show Pharaoh that he was weaker than Moses",
+      "To show that God distinguishes His people and that He is the true God",
+      "To show Israel that Egypt was evil and deserved destruction",
+      "To punish Israel for their unbelief"
+    ],
+    "prompt" : "Why did God send plagues on Egypt that His people did not suffer from? (7:14-25)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's judgments expose the emptiness of the idols that human power depends on.",
+    "options" : [
+      "They wanted Israel to leave",
+      "They sided with Moses",
+      "They were powerless against the LORD",
+      "They were stronger than the LORD"
+    ],
+    "prompt" : "What did the first plague against Egypt show about the gods of Egypt? (7:14-25)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The imitation does not resolve Egypt's water crisis or change Pharaoh's response. The passage does not explain why the magicians did not reverse the plague.",
+    "options" : [
+      "The Nile immediately becomes clean",
+      "Pharaoh refuses to listen, and Egyptians dig for drinking water",
+      "Moses is crowned king",
+      "Pharaoh releases Israel"
+    ],
+    "prompt" : "What follows the magicians' imitation of the blood sign? (7:22-24)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Hard hearts resist God's word, and God's judgments reveal what is in the human heart.",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Pharaoh's ____ was hardened, and he would not listen to Moses or Aaron. (7:14)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God gives His servants authority and makes them stand in His place, while the words belong to Him.",
+    "options" : [
+      "god"
+    ],
+    "prompt" : "God said Moses would be like a ____ to Pharaoh, and Aaron would speak for him. (7:1)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Human imitation can look impressive, but it cannot overturn what God is doing.",
+    "options" : [
+      "The staff disappeared",
+      "Pharaoh's magicians did the same",
+      "Pharaoh fled from the court",
+      "The snake died immediately"
+    ],
+    "prompt" : "What happened when Aaron's staff became a snake before Pharaoh? (7:10-12)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Pharaoh's heart was hardened, which shows that God's judgment does not always lead to repentance.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The first plague turned the Nile to blood, and Pharaoh's heart was softened by it. (7:20-22)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The text reports a similar sign by their secret arts, after which Pharaoh still refused to listen.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Egyptian magicians also turned water into blood. (7:22)",
+    "reference" : "Exodus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Those who oppose God eventually face the limits of their own power and wisdom.",
+    "options" : [
+      "gnats"
+    ],
+    "prompt" : "Pharaoh's magicians could not match the plague of ____, and they said, \"This is the finger of God.\" (8:19)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Half-hearted obedience is not obedience, and God calls His people to follow Him fully.",
+    "options" : [
+      "God accepts any compromise",
+      "A partial obedience to God is still disobedience",
+      "Negotiating with God is wise",
+      "God wants people to delay"
+    ],
+    "prompt" : "Pharaoh tried to make a deal with Moses. What does this teach about bargaining with God? (8:25-32)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God's plagues came in an order that showed His power, and each one exposed the limits of Egypt's gods.",
+    "options" : [
+      "Darkness",
+      "Gnats",
+      "Locusts",
+      "Hail"
+    ],
+    "prompt" : "What plague did Egypt suffer after the frogs? (8:16-17)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Pharaoh's promise came with limits, which shows that half-hearted freedom is not what God asks for.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "After the plague of flies, Pharaoh agreed to let Israel go fully, with no conditions. (8:25-32)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God makes a clear distinction between His people and those who oppose Him, and He protects His own.",
+    "options" : [
+      "He sent a hail storm there",
+      "He sent frogs to protect Goshen",
+      "He moved Israel out of Goshen",
+      "He sent flies only on Egypt and spared Goshen"
+    ],
+    "prompt" : "What did God do to set Goshen apart during the plague of flies? (8:22-23)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Worship of God is the purpose of Israel's freedom, and it cannot be replaced by compromise.",
+    "options" : [
+      "So Israel could leave Egypt forever without returning",
+      "So Israel could escape from the Egyptian army",
+      "So Israel could meet Pharaoh's demands",
+      "So Israel could sacrifice to the LORD as God commanded"
+    ],
+    "prompt" : "Why did Moses tell Pharaoh that Israel must go into the wilderness to worship? (8:26-27)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's judgments reach into the places people trust most, including the palace.",
+    "options" : [
+      "flies"
+    ],
+    "prompt" : "The plague of flies came on Pharaoh's house, and the land was ruined by the swarm of ____. (8:24)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Pharaoh hardened his heart again after the plague ended, which shows the danger of a half-hearted repentance.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Pharaoh repented and let Israel go immediately after the frogs were removed. (8:8-15)",
+    "reference" : "Exodus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "A confession about consequences is not the same as a turned heart.",
+    "options" : [
+      "wrong"
+    ],
+    "prompt" : "Pharaoh said, \"I have sinned this time; the LORD is in the right, and I and my people are in the ____.\" (9:27)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Repentance means turning to God, not only wanting relief from pain.",
+    "options" : [
+      "Confession alone is true repentance",
+      "God does not hear confessions",
+      "Pharaoh was sincere but weak",
+      "Sorrow that only wants relief can vanish once the pain ends"
+    ],
+    "prompt" : "What does Pharaoh's confession followed by renewed hardness teach? (9:27-35)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Those who take God's word seriously prepare for it, and some Egyptians responded in fear and obedience.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Some Egyptians who feared the word of the LORD brought their servants and livestock inside. (9:19-21)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God answers prayer, and His power over creation is complete.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses prayed, and the thunder and hail stopped. (9:33)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's judgments are public and measured, so people can see who He is.",
+    "options" : [
+      "nation"
+    ],
+    "prompt" : "The hail was the heaviest that had ever fallen on Egypt since it became a ____. (9:24)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Pharaoh's repentance was shallow; when the pressure eased, he sinned again.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Pharaoh changed his heart permanently after the hail and let Israel go. (9:34-35)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God marks the difference between His people and those who oppose Him, and He protects His own.",
+    "options" : [
+      "Livestock disease",
+      "Darkness",
+      "Boils",
+      "Hail"
+    ],
+    "prompt" : "Which plague struck the livestock of Egypt but spared Israel's livestock? (9:4-6)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's judgments have a larger purpose: to make His name known to everyone.",
+    "options" : [
+      "So Egypt would keep a king",
+      "So Pharaoh could build more cities",
+      "So God's power would be declared throughout all the earth",
+      "Because Moses asked for mercy"
+    ],
+    "prompt" : "Why did God say He had let Pharaoh live? (9:16)",
+    "reference" : "Exodus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God calls leaders to humble themselves before Him, and pride refuses that call.",
+    "options" : [
+      "me"
+    ],
+    "prompt" : "Moses said to Pharaoh, \"How long will you refuse to humble yourself before ____?\" (10:3)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's judgments follow one after another, and Pharaoh's hardness did not break until the final blow.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The locusts covered the land and ate what the hail had left behind. (10:12-15)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Partial obedience looks reasonable to proud people, but God requires His people as a whole.",
+    "options" : [
+      "Let only the men go to worship",
+      "Let Moses stay in Egypt",
+      "Let Israel go and keep their livestock",
+      "Let all Israel go"
+    ],
+    "prompt" : "What did Pharaoh offer after the locusts were announced? (10:8-11)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's light is with His people even when the world around them is dark.",
+    "options" : [
+      "Clouds that never rained",
+      "A night full of stars",
+      "Smoke from fires",
+      "Three days of thick darkness that could be felt, while Israel had light"
+    ],
+    "prompt" : "What was the plague of darkness? (10:21-23)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Pride pushes away the messenger God sends to help.",
+    "options" : [
+      "\"Let us talk tomorrow.\"",
+      "\"Your God is good.\"",
+      "\"Get away from me! Do not see my face again.\"",
+      "\"Take your people and go.\""
+    ],
+    "prompt" : "What did Pharaoh say to Moses after the darkness? (10:28-29)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Some judgments reach the body and the spirit, so people cannot pretend they do not see.",
+    "options" : [
+      "felt"
+    ],
+    "prompt" : "The plague of darkness was so thick that it could be ____. (10:21)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Pharaoh tried to keep leverage over God's people; Moses insisted that not a hoof would be left behind.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Pharaoh agreed that the livestock could go with Israel. (10:24-26)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God does not reject His servants when people reject them; His plan keeps moving forward.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God had rejected Moses and Aaron after Pharaoh banished them from his sight. (10:28-11:1)",
+    "reference" : "Exodus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Moses went out in hot anger, and the text shows his emotion honestly without letting it overrule God's word.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses was afraid of Pharaoh and hid from him after the tenth plague was announced. (11:8)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's final judgment ends in Israel's release, showing that His plan does not depend on the king.",
+    "options" : [
+      "drive"
+    ],
+    "prompt" : "God told Moses that after one more plague, Pharaoh would ____ the Israelites out of Egypt. (11:1)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God distinguishes His people. The line between judgment and mercy runs through the nation.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said there would be a great cry in Egypt, but not a dog would bark against Israel. (11:4-7)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God honors His servant when He works through him, and humility keeps the glory with the Lord.",
+    "options" : [
+      "Egypt"
+    ],
+    "prompt" : "The Egyptian people regarded Moses as very great in the land of ____. (11:3)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The plagues answer Egypt's oppression; they are about God's justice, not about rewarding kindness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God announced the plague on Egypt because Egypt had been kind to Israel. (11:1-9)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God gives His people honor and provision, even out of places of oppression.",
+    "options" : [
+      "Horses",
+      "Silver and gold items",
+      "Servants",
+      "Land"
+    ],
+    "prompt" : "What did God tell the Israelites to ask from their Egyptian neighbors? (11:2)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God uses even hardened hearts to display His power and make His name known.",
+    "options" : [
+      "So God's signs and wonders would be multiplied in the land of Egypt",
+      "Because Egypt needed a new king",
+      "So Moses would become famous",
+      "Because Pharaoh asked for them"
+    ],
+    "prompt" : "Why did God say He would multiply His wonders in Egypt? (11:9-10)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's justice is real, and those who oppress His people face judgment in time.",
+    "options" : [
+      "God takes oppression seriously and brings justice against it",
+      "God has no concern for Egypt",
+      "Egypt's fault was small",
+      "God is weak against Pharaoh"
+    ],
+    "prompt" : "What does the announcement of the firstborn's death reveal about God? (11:4-8)",
+    "reference" : "Exodus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Foreigners who join Israel and are circumcised may eat it; God's salvation is open to those who come under His covenant.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Passover applies only to native-born Israelites and cannot include foreigners who live among them. (12:43-49)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God gives visible signs of His mercy, and the blood marks a life spared by grace.",
+    "options" : [
+      "sign"
+    ],
+    "prompt" : "God told Israel that the blood on the doorposts would be a ____ for them. (12:13)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Remembering God's saving acts is part of worship, and God's people are called to remember.",
+    "options" : [
+      "Passover"
+    ],
+    "prompt" : "Eat it in haste, for it is the LORD's ____. (12:11)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Rescue comes through a substitute's blood and God's word, not by the merit of those who are saved.",
+    "options" : [
+      "The house was a Hebrew house",
+      "The family had a debt to pay",
+      "The family wanted to leave",
+      "The house was protected from the destroyer"
+    ],
+    "prompt" : "What did the blood on the doorposts signal to the LORD? (12:12-13)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The Passover shows that rescue comes from God, through a sacrifice He provides.",
+    "options" : [
+      "Israel earned freedom by their own strength",
+      "Moses planned the escape",
+      "Israel escaped through the Red Sea alone",
+      "Israel was rescued by God's grace through a provided sacrifice"
+    ],
+    "prompt" : "What does the Passover teach about Israel's deliverance? (12:11-13)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God designs worship that teaches the next generation what He has done.",
+    "options" : [
+      "To make the people proud",
+      "To keep Moses busy",
+      "So the people would remember God's saving act and teach it to the next generation",
+      "Because the Egyptians required it"
+    ],
+    "prompt" : "Why did God call the Passover \"a statute forever\"? (12:14)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The Passover points forward to Christ, the Lamb of God whose blood saves those who trust Him.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God passed over the houses marked with the blood of the lamb. (12:13)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Remembering God's deliverance shapes the ordinary days of His people.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel ate unleavened bread for seven days to remember the haste of their departure. (12:15-20)",
+    "reference" : "Exodus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "What God has spared belongs to Him, and that deliverance creates a debt of thanks.",
+    "options" : [
+      "Because Pharaoh demanded it",
+      "Because the firstborn were the strongest",
+      "To provide food for the priests only",
+      "To remind Israel that God spared their firstborn and that they belonged to Him"
+    ],
+    "prompt" : "Why did God set apart every firstborn male, human and animal? (13:2, 13-15)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Joseph's trust in God's promise was honored, which shows that God's promises outlast generations.",
+    "options" : [
+      "Gold from Egypt",
+      "Egyptian weapons",
+      "The bones of Joseph",
+      "Pharaoh's records"
+    ],
+    "prompt" : "What did Moses take with him when he left Egypt? (13:19)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's guidance was constant and visible, and it carried His people through every stage of the journey.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God led Israel by a pillar of cloud by day and a pillar of fire by night. (13:21-22)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Faith is passed on when parents explain what God has done, not only when they keep the custom.",
+    "options" : [
+      "It teaches Egyptian customs",
+      "Parents explain that it is because of what the LORD did when He brought them out",
+      "It is only for priests",
+      "It is only a historical festival"
+    ],
+    "prompt" : "How does the Feast of Unleavened Bread teach the next generation? (13:8)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Remembering God's deliverance should show in daily life, in what we do and what we think about.",
+    "options" : [
+      "sign"
+    ],
+    "prompt" : "The LORD said that the law of the feast would be a ____ on your hand. (13:9)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God requires a substitute for what belongs to Him, which shows that redemption costs something.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A firstborn donkey was redeemed with a lamb, or else its neck was broken. (13:13)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's leading is wise and protective, even when it is not the route people would choose.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God led Israel by the shortest route, through the land of the Philistines, to avoid war. (13:17-18)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God leads His people by the path that serves their good, even when it is not the shortest route.",
+    "options" : [
+      "Philistines"
+    ],
+    "prompt" : "God did not lead the people by the way of the land of the ____, though it was near. (13:17)",
+    "reference" : "Exodus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's justice is complete; no one who sets himself against the LORD escapes by his own strength.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Egyptians fled from the sea and reached home safely. (14:27-28)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Pride and fear drive the wicked toward judgment, and God lets them go as far as their hardened hearts take them.",
+    "options" : [
+      "They sent spies to Moses",
+      "They pursued Israel with chariots and horsemen to the sea",
+      "They sent the navy",
+      "They waited for them at Sinai"
+    ],
+    "prompt" : "How did the Egyptians pursue Israel? (14:5-9)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's power works through obedient servants, and the power is always His.",
+    "options" : [
+      "A magic charm",
+      "Moses' own power to split the sea",
+      "A weapon for Israel's army",
+      "A sign that God's power works through His servant's obedience"
+    ],
+    "prompt" : "What does Moses' staff represent in the crossing of the sea? (14:16, 21)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God opens a way through the impossible when His people obey His word.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "When Israel was trapped at the sea, God told Moses to stretch out his hand over the sea. (14:15-16)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Faith often follows God's visible deliverance, and God's people respond with trust.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel believed the LORD and His servant Moses after they saw the Egyptians dead on the shore. (14:31)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Seeing God's work should lead to fear of Him and to belief in His servant.",
+    "options" : [
+      "Egyptians"
+    ],
+    "prompt" : "Israel saw the great work that the LORD did against the ____. (14:31)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Peace in danger comes from trusting God's fight, not from our own striving.",
+    "options" : [
+      "silent"
+    ],
+    "prompt" : "Moses told Israel, \"The LORD will fight for you, and you have only to be ____.\" (14:14)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's deliverance of His people is also judgment on those who oppose Him.",
+    "options" : [
+      "They built a bridge",
+      "They drowned Moses",
+      "The waters returned and covered them",
+      "They turned back immediately"
+    ],
+    "prompt" : "What happened when the Egyptians followed Israel into the sea? (14:23-28)",
+    "reference" : "Exodus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The song praises what God has done, not what people must do to earn His favor.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God's people have to repeat the same song each day to earn God's favor. (15:1-18)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's power is greater than any human enemy, and He defends His people.",
+    "options" : [
+      "God only fights in the wilderness",
+      "God takes sides against His people",
+      "God fights for His people against evil and their enemies",
+      "God is unwilling to fight"
+    ],
+    "prompt" : "The song calls the LORD \"a man of war.\" What does this teach? (15:3)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Everyone who has been delivered has a part to play in praising the LORD.",
+    "options" : [
+      "Women were forbidden to sing",
+      "Miriam was asserting power over Moses",
+      "Women should lead worship only in the wilderness",
+      "Worship of God includes the whole people, and a prophetess shares in praise"
+    ],
+    "prompt" : "What does it mean that Miriam led the women in song? (15:20-21)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God leads His people through hard places and provides places of refreshment along the way.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God led Israel into the wilderness and then gave them rest at Elim, with water and palm trees. (15:27)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Worship grows out of God's deliverance; the song is the response to His saving act.",
+    "options" : [
+      "song"
+    ],
+    "prompt" : "Moses and Israel sang, \"The LORD is my strength and my ____.\" (15:2)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "No other god can rescue or hold together; God's holiness is unique.",
+    "options" : [
+      "gods"
+    ],
+    "prompt" : "\"Who is like you, O LORD, among the ____?\" (15:11)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God is both deliverer and healer, and His commands are part of how His people walk in health.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said, \"I am the LORD, your healer,\" after Israel was given sweet water. (15:26)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God provides a remedy for bitter circumstances, often through means His people would not expect.",
+    "options" : [
+      "Bread",
+      "A tree",
+      "A cloud",
+      "A stone"
+    ],
+    "prompt" : "What did God show Moses that made the bitter water at Marah sweet? (15:23-25)",
+    "reference" : "Exodus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God provided faithfully for forty years until His people could eat the produce of the land.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The manna continued for Israel until they reached the border of the land of Canaan. (16:35)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Rest is a gift from God, and He provides so that His people can rest without fear.",
+    "options" : [
+      "two"
+    ],
+    "prompt" : "\"The LORD has given you the Sabbath; therefore on the sixth day He gives you bread for ____ days.\" (16:29)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God honors the Sabbath rest and provides for His people's rest as well as their work.",
+    "options" : [
+      "To punish Israel",
+      "For the Egyptians",
+      "To feed the animals",
+      "So Israel could store food for the Sabbath, when no manna fell"
+    ],
+    "prompt" : "Why did God give a double portion of manna on the sixth day? (16:22-26)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Rest is God's gift, and refusing to rest shows a lack of trust in His provision.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Some people went out on the Sabbath to gather manna, and God was pleased. (16:27-28)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God provides daily for His people, and they learn to depend on Him day by day.",
+    "options" : [
+      "manna"
+    ],
+    "prompt" : "God gave Israel bread from heaven, which they called ____. (16:15)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God trains His people to trust Him for daily provision rather than hoard.",
+    "options" : [
+      "Gather only on the Sabbath",
+      "Gather as much as you can",
+      "Gather what you need for each day, and do not store it until morning",
+      "Gather only for the priests"
+    ],
+    "prompt" : "What was the rule about gathering manna? (16:16-20)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's faithful provision is to be remembered and taught.",
+    "options" : [
+      "To keep a memorial for future generations of God's provision",
+      "As Moses' personal reminder",
+      "As a treat for the priests",
+      "To show the Egyptians"
+    ],
+    "prompt" : "Why was a jar of manna placed before the LORD? (16:32-34)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Trying to store up what God gives for today shows a lack of trust in His daily care.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Some Israelites kept manna until the morning, and it bred worms and stank. (16:19-20)",
+    "reference" : "Exodus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The victory belongs to the LORD, and Israel's army fought under His power.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Amalek was defeated because Israel's army was stronger than Amalek's. (17:10-13)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Victory depends on God's power received through prayer and faith, not on human strength alone.",
+    "options" : [
+      "Whether Moses' hands were raised",
+      "The number of soldiers",
+      "The strength of Joshua's army",
+      "The weather"
+    ],
+    "prompt" : "What determined whether Israel prevailed against Amalek? (17:8-11)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's presence is the source of victory, and worship names Him as that source.",
+    "options" : [
+      "banner"
+    ],
+    "prompt" : "Moses named the altar \"The LORD Is My ____.\" (17:15)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's people trust Him as the one who fights for them, and they remember it.",
+    "options" : [
+      "A memorial to the war dead",
+      "God's presence is the source of Israel's victory",
+      "Moses' personal flag",
+      "A trade symbol"
+    ],
+    "prompt" : "What does the altar \"The LORD Is My Banner\" mean? (17:15-16)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's people need one another to hold up their hands in hard battles.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses sat on a stone while Joshua fought, and Aaron and Hur held up his hands. (17:12)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Testing God's presence after He has shown it is a form of unbelief.",
+    "options" : [
+      "not"
+    ],
+    "prompt" : "The people asked, \"Is the LORD among us or ____?\" (17:7)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God provides water in the wilderness when His people have no way to find it themselves.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses struck the rock at Horeb, and water came out for the people to drink. (17:6)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Asking whether the LORD is among us after He has shown Himself reveals unbelief.",
+    "options" : [
+      "They wanted gold",
+      "They wanted to go back to Egypt",
+      "They wanted to see whether God was present",
+      "Moses commanded it"
+    ],
+    "prompt" : "Why did the people test the LORD at Massah and Meribah? (17:7)",
+    "reference" : "Exodus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God is known beyond Israel's camp, and Jethro's worship shows that His reach is wide.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jethro offered burnt offerings and sacrifices to God in front of Moses and Aaron. (18:12)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Humble leaders receive counsel, and God uses wise counsel to shape His people.",
+    "options" : [
+      "It showed humility and let God work through others",
+      "Pharaoh required it",
+      "It showed weakness",
+      "It cost him nothing"
+    ],
+    "prompt" : "Why does it matter that Moses listened to Jethro's counsel? (18:13-24)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Humility receives wise counsel.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses rejected his father-in-law's advice because he thought he alone should judge. (18:24)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Leaders are tested by integrity as well as skill.",
+    "options" : [
+      "dishonest"
+    ],
+    "prompt" : "Leaders must be able men who fear God, men of truth, hating ____ gain. (18:21)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Godly character matters more than status in leadership.",
+    "options" : [
+      "Military rank",
+      "Wealth",
+      "Ability, fear of God, trustworthiness, and hatred of dishonest gain",
+      "Age only"
+    ],
+    "prompt" : "What qualities were the new leaders to have? (18:21)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Good leaders learn to share responsibility, and God's work is carried by many.",
+    "options" : [
+      "you"
+    ],
+    "prompt" : "Jethro said, \"You will surely wear yourself out, for the task is too heavy for ____.\" (18:18)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The appointed judges were to bring the great matters to Moses, and they handled the small ones.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The appointed judges handled the small cases, and Moses kept the great cases for himself. (18:22)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God often lifts the burden of leadership through shared, godly responsibility.",
+    "options" : [
+      "Israel should return to Midian",
+      "Moses should judge every case himself",
+      "Capable men of character should be appointed as leaders over thousands, hundreds, fifties and tens",
+      "Moses should stop judging"
+    ],
+    "prompt" : "What did Jethro recommend to Moses? (18:21)",
+    "reference" : "Exodus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Preparation shows that God's people approach Him with reverence.",
+    "options" : [
+      "Building a temple",
+      "Choosing a king",
+      "Consecration and washing their garments",
+      "Sacrifices every day"
+    ],
+    "prompt" : "What did God require of the people before He came down on Sinai? (19:10-11)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God calls His people to prepare their hearts and lives to meet Him.",
+    "options" : [
+      "garments"
+    ],
+    "prompt" : "God told the people to consecrate themselves and wash their ____. (19:10)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Israel is called to be set apart for God and to represent Him among the nations.",
+    "options" : [
+      "A kingdom of priests and a holy nation",
+      "A nation of merchants",
+      "A nation of kings for Pharaoh",
+      "A nation of soldiers"
+    ],
+    "prompt" : "What did God call Israel? (19:6)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's holiness requires a careful approach, and access comes by His grace and mediation.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The people were told not to touch the mountain, on pain of death. (19:12)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The law follows grace: God saves first and then calls His people to obedience.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God's offer at Sinai was conditional on Israel's obedience, after He had already shown grace in the Exodus. (19:4-5)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's saving work is tender and personal, carrying His people toward Himself.",
+    "options" : [
+      "Eagles guided Israel",
+      "To show God's personal, protective deliverance and that He brought them to Himself",
+      "It is a title for Moses",
+      "To show Israel's pride"
+    ],
+    "prompt" : "Why did God say \"I bore you on eagles' wings\"? (19:4)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's presence was real but guarded; the people were told not to break through to see Him.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses went up the mountain, and the people were allowed to break through to see God. (19:20-24)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's deliverance is personal and protective, and He brings His people near to Himself.",
+    "options" : [
+      "wings"
+    ],
+    "prompt" : "God said, \"I bore you on eagles' ____ and brought you to myself.\" (19:4)",
+    "reference" : "Exodus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's people worship Him as He has revealed Himself, not as they imagine Him.",
+    "options" : [
+      "Only Moses could make images",
+      "God wants no art at all",
+      "Images are useful for worship",
+      "God is not to be represented by created things, because He is jealous for His own honor"
+    ],
+    "prompt" : "What does the command against images teach? (20:4-6)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Rest is built into creation and into God's law, and God's people trust Him enough to stop.",
+    "options" : [
+      "Honor your father and mother",
+      "Do not steal",
+      "Do not murder",
+      "Remember the Sabbath day, to keep it holy"
+    ],
+    "prompt" : "Which command concerns the Sabbath? (20:8-11)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's name carries His character, and using it carelessly misrepresents Him.",
+    "options" : [
+      "vain"
+    ],
+    "prompt" : "\"You shall not take the name of the LORD your God in ____.\" (20:7)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Fear of God's holiness drives people to a mediator, which points forward to Christ.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The people were terrified when they heard God's voice and asked Moses to speak to them instead of God. (20:18-19)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The first command guards the heart, because nothing else can take God's place.",
+    "options" : [
+      "gods"
+    ],
+    "prompt" : "\"You shall have no other ____ before me.\" (20:3)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The law rests on grace: God first rescued His people, and then He shaped them.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Ten Commandments begin with a reminder of God's deliverance from Egypt. (20:2)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The command explicitly connects honoring parents with long life in the land; Ephesians 6:2 also draws attention to its promise.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Honoring father and mother is linked to living long in the land the LORD gives Israel. (20:12)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's law reaches inward; sin begins in desire before it becomes action.",
+    "options" : [
+      "It only forbids actions",
+      "It applies only to kings",
+      "It is only a civil law",
+      "It reaches the heart and the desire for what belongs to another"
+    ],
+    "prompt" : "What does \"You shall not covet\" reveal about the law? (20:17)",
+    "reference" : "Exodus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Even servants are protected by the law, because a servant is a person made in God's image, not property.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The law required a person who struck his servant to be killed immediately, whatever happened. (21:20-21)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "This law requires release for the injury. Describing this ancient slavery regulation does not endorse slavery or make every feature of it a model for today.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "If a master struck out a servant's tooth, that servant was to be released. (21:27)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Freedom and commitment both matter, and love can choose to stay under God's ordering.",
+    "options" : [
+      "He should be set free at once",
+      "He should be sold",
+      "He should be put to death",
+      "He would serve for life, marked by an ear pierced at the doorpost"
+    ],
+    "prompt" : "What did the law say about a servant who chose to stay with his master? (21:5-6)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Responsibility for harm to others is part of loving one's neighbor.",
+    "options" : [
+      "The pit must be filled with stone",
+      "The owner owes nothing",
+      "The pit must be sold",
+      "The owner of the pit must pay for the animal"
+    ],
+    "prompt" : "What does the law say about an open pit that an ox falls into? (21:33-34)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Justice is measured and proportionate; it restrains vengeance rather than inflaming it.",
+    "options" : [
+      "eye"
+    ],
+    "prompt" : "The law of retribution said, \"Eye for ____, tooth for tooth.\" (21:24)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's law protects the vulnerable, and the strong must answer for harm they do.",
+    "options" : [
+      "It was Pharaoh's law",
+      "So servants could work harder",
+      "God's law sees servants as persons and protects them, and the harmed servant goes free",
+      "Owners had no duty to servants"
+    ],
+    "prompt" : "Why does the law protect a servant who loses an eye or a tooth at his master's hand? (21:26-27)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's law sets limits on power and grants freedom when a servant is harmed.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "If a master knocked out a servant's eye or tooth, the servant had to be set free. (21:26-27)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's justice restores what was lost and treats harm to others as a real debt.",
+    "options" : [
+      "restitution"
+    ],
+    "prompt" : "If an open pit causes an ox to be lost, the owner of the pit shall make ____ to the owner of the ox. (21:34)",
+    "reference" : "Exodus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Generosity to the poor is part of covenant faithfulness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God forbids charging interest to a poor person among His people. (22:25)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Mercy looks at the need of the neighbor, not only at the value of the debt.",
+    "options" : [
+      "Return it by sunset, because the poor need it to sleep",
+      "Burn it",
+      "Sell it at market",
+      "Keep it forever"
+    ],
+    "prompt" : "What did the law say about a neighbor's cloak taken as a pledge? (22:26-27)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "What belongs to God is given back to Him, which shows devotion rather than possession.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The firstborn sons were to be given back to the LORD, as the firstborn of animals were. (22:29-30)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Israel was once a stranger in Egypt, so they must not wrong others who are strangers.",
+    "options" : [
+      "wrong"
+    ],
+    "prompt" : "\"You shall not ____ a sojourner or oppress him, for you were sojourners in Egypt.\" (22:21)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Remembering their own history of suffering shapes how God's people treat the vulnerable.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God told Israel to remember that they were once strangers in Egypt. (22:21)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God hears the cries of the oppressed and acts for justice.",
+    "options" : [
+      "Hear their cry, and His anger would burn against their oppressors",
+      "Send them to Pharaoh",
+      "Ignore them",
+      "Give them land"
+    ],
+    "prompt" : "What did God say He would do if a widow or orphan cried out to Him? (22:22-24)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Holiness shapes ordinary choices, not only worship.",
+    "options" : [
+      "Holiness is optional",
+      "Holiness is only for priests",
+      "God's people are set apart in every part of life, including what they eat and how they treat others",
+      "Holiness is only about diet"
+    ],
+    "prompt" : "What does \"you shall be holy men to me\" (22:31) teach? (22:31)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God takes special notice of the vulnerable and defends those who cannot defend themselves.",
+    "options" : [
+      "afflict"
+    ],
+    "prompt" : "\"You shall not ____ a widow or an orphan.\" (22:22)",
+    "reference" : "Exodus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God cares for the land and for the poor, and His people rest in His provision.",
+    "options" : [
+      "Israel must fight every year",
+      "The land rests, and the poor may eat what grows, which shows God's provision and care",
+      "Only the rich may eat",
+      "The land must be sold"
+    ],
+    "prompt" : "What does the Sabbath year (23:10-11) teach? (23:10-11)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Worship is regular and joyful, a rhythm of remembering what God has done.",
+    "options" : [
+      "feast"
+    ],
+    "prompt" : "\"Three times in the year you shall keep a ____ to me.\" (23:14)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's timing in judgment and in giving the land is patient and wise, not hasty.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said He would drive out the nations gradually, so that the land would not become desolate. (23:29-30)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Compromise with other gods is a danger to faith, so God's people must guard their worship.",
+    "options" : [
+      "Compromise with idols becomes a snare, so God's people must not serve their gods",
+      "Israel should be isolated for its own sake",
+      "God does not care about the nations",
+      "Israel should trade with all nations"
+    ],
+    "prompt" : "What does God's warning against making covenants with the nations (23:32-33) teach? (23:32-33)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God guards His people's journey and leads them into the place He has prepared.",
+    "options" : [
+      "angel"
+    ],
+    "prompt" : "The LORD said He would send an ____ before Israel to guard the way. (23:20)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Israel's annual feasts keep God's saving acts central to the calendar of His people.",
+    "options" : [
+      "Feast of Unleavened Bread, Feast of Harvest, and Feast of Ingathering",
+      "Feast of Trumpets, Feast of Lights, and Feast of Tabernacles",
+      "Passover, Pentecost, and Purim",
+      "Sabbath, New Moon, and Jubilee"
+    ],
+    "prompt" : "Which three feasts were Israel to keep each year? (23:14-17)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God promised to drive out the nations, though gradually, so Israel's future would be secure.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God promised that He would not drive out the enemies at all. (23:27-31)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Worship is exclusive, and God's people are not to imitate the worship of the nations around them.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God told Israel not to bow down to the gods of the nations or serve them. (23:24)",
+    "reference" : "Exodus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God invites His people into His presence, and covenant worship is shared.",
+    "options" : [
+      "The Egyptian magicians",
+      "Pharaoh's army",
+      "Aaron, Nadab, Abihu and seventy of the elders",
+      "Only Joshua"
+    ],
+    "prompt" : "Who went up the mountain with Moses? (24:1, 9)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Covenant commitment is a response to God's word, which the people accepted.",
+    "options" : [
+      "They did not understand the words",
+      "They were forced to say it",
+      "They wanted to leave Sinai",
+      "They committed themselves to obey the covenant terms"
+    ],
+    "prompt" : "Why did the people say, \"All that the LORD has spoken we will do\"? (24:3, 7)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God sealed the covenant with blood, which points to the cost of redemption.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel's covenant was made without blood, because God does not need blood. (24:5-8)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's covenant is sealed with blood, which points to a deeper covenant sealed by Christ's blood.",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "Moses sprinkled the blood and said, \"Behold the blood of the ____ that the LORD has made with you.\" (24:8)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's leaders wait on Him, and formation often takes time.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses was on the mountain for forty days and forty nights. (24:18)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's glory is present but veiled, and His people wait on Him.",
+    "options" : [
+      "mountain"
+    ],
+    "prompt" : "\"Moses went up into the mountain, and the cloud covered the ____.\" (24:15)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God is both holy and near to His people.",
+    "options" : [
+      "God hid from Moses",
+      "Sinai is a volcano",
+      "God is far away",
+      "God's holiness is real, and His presence, though glorious, is approached through covenant"
+    ],
+    "prompt" : "What does the glory of the LORD on Sinai teach? (24:15-17)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's grace let His people draw near in covenant friendship, though no one could see Him fully.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The leaders of Israel saw the God of Israel and ate and drank in His presence. (24:9-11)",
+    "reference" : "Exodus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's people stand before Him continually, and He provides for them.",
+    "options" : [
+      "Offerings for sin",
+      "Food for the priests only",
+      "Decoration",
+      "A continual reminder before the LORD of His people"
+    ],
+    "prompt" : "What was the bread of the Presence set on the table for? (25:30)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Holy things were approached in God's way, not casually.",
+    "options" : [
+      "The poles were only decoration",
+      "To keep the ark from falling",
+      "So it could be carried without anyone touching it",
+      "To keep the poles from rotting"
+    ],
+    "prompt" : "Why were the ark's poles to stay in its rings? (25:14-15)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Worship is shaped by God's design, not by human invention.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God showed Moses a pattern on the mountain, and the tabernacle was to be made exactly to that pattern. (25:40)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Every willing person was invited to give toward the house of God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD asked that the offering be given only by the priests, not by the people. (25:2)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Light in God's house points to Him as the source of light, as in Genesis 1.",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "The lampstand was to be made of pure ____. (25:31)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God invites willing giving that comes from the heart.",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "The LORD told Moses to take an offering from every person whose ____ moved him to give. (25:2)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The place of atonement and God's presence is made of pure gold, showing His holiness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The mercy seat was to be made of solid gold, with cherubim at each end. (25:17-19)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God's presence is kept in a holy place made with care and worship.",
+    "options" : [
+      "Bronze only",
+      "Solid silver",
+      "Stone from the river",
+      "Acacia wood overlaid with pure gold"
+    ],
+    "prompt" : "What was the ark of the covenant to be made of? (25:10-11)",
+    "reference" : "Exodus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "God is building one dwelling place for His people.",
+    "options" : [
+      "single whole"
+    ],
+    "prompt" : "The tent was to be fastened with clasps so that it would be a ____. (26:11)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The barrier before God's presence was costly, sturdy and set in place by God's command.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The veil was to be hung on four pillars of acacia wood overlaid with gold. (26:32)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The veil separated God's holy presence from the people, and it was made with beauty.",
+    "options" : [
+      "Goat hair",
+      "Leather",
+      "Plain linen only",
+      "Blue, purple and scarlet yarn with cherubim worked into it"
+    ],
+    "prompt" : "What was the veil between the Holy Place and the Most Holy Place made of? (26:31)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The number and the fine linen show care and beauty in worship.",
+    "options" : [
+      "ten"
+    ],
+    "prompt" : "The tabernacle was to have ____ curtains of fine twined linen. (26:1)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Access to God's presence is governed by His word and handled with care.",
+    "options" : [
+      "A curtain of blue, purple and scarlet yarn",
+      "Wooden doors with bronze locks",
+      "A stone gate",
+      "Nothing at all"
+    ],
+    "prompt" : "What did God require at the entrance of the tent? (26:36)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The sanctuary was built from common materials made holy by God's purpose.",
+    "options" : [
+      "acacia"
+    ],
+    "prompt" : "The boards of the tabernacle were made of ____ wood. (26:15)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God provides protection for the place where He meets His people.",
+    "options" : [
+      "Woven reeds",
+      "Stone slabs",
+      "Rams' skins dyed red and goatskins",
+      "Gold sheets"
+    ],
+    "prompt" : "What covering was placed over the tent to protect it? (26:14)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Each part of the holy place was made to stand firm.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The boards of the tabernacle were to be set in silver bases. (26:19)",
+    "reference" : "Exodus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The horns marked the altar as a holy place set apart for God's work.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The bronze altar had horns at its four corners. (27:2)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's light is kept burning through the continual offering of His people.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel was to bring pure oil of beaten olives for the lamp to burn continually. (27:20)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The space around God's presence was measured and set apart by His exact plan.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The courtyard of the tabernacle was to be 100 cubits long and 50 cubits wide. (27:18)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Sacrifice is central to approaching God.",
+    "options" : [
+      "Storing gold",
+      "Burnt offerings",
+      "Holding court",
+      "Washing clothes"
+    ],
+    "prompt" : "What was the altar of burnt offering for? (27:1)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God appoints priests to keep worship faithful.",
+    "options" : [
+      "The elders",
+      "Aaron and his sons",
+      "Joshua",
+      "Moses alone"
+    ],
+    "prompt" : "Who was to keep the lamp burning from evening to morning before the LORD? (27:21)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The altar was built to bear the weight of many sacrifices.",
+    "options" : [
+      "bronze"
+    ],
+    "prompt" : "The altar of burnt offering was to be made of acacia wood overlaid with ____. (27:1-2)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Worship items were made with care, as God designed.",
+    "options" : [
+      "Bronze",
+      "Acacia wood",
+      "Silver",
+      "Gold"
+    ],
+    "prompt" : "What were the bowls, shovels and basins of the altar to be made of? (27:3)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's holiness is marked at every boundary of His presence.",
+    "options" : [
+      "twined"
+    ],
+    "prompt" : "The courtyard was to have curtains of fine ____ linen. (27:9)",
+    "reference" : "Exodus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The priest carries the people's offerings before God so that worship is accepted.",
+    "options" : [
+      "accepted"
+    ],
+    "prompt" : "Aaron was to bear the iniquity of the holy things, so that the people's gifts would be ____ before the LORD. (28:38)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Worship must be holy, and the priest carries that holiness for the people.",
+    "options" : [
+      "Glory to Pharaoh",
+      "Israel is king",
+      "Holiness to the LORD",
+      "Blessed be Abraham"
+    ],
+    "prompt" : "What was written on the gold plate on Aaron's turban? (28:36)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Priests approached God's altar with modesty and reverence.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Aaron's sons were to wear linen undergarments to cover their nakedness. (28:42)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Holy garments were crafted with skill and beauty.",
+    "options" : [
+      "twined"
+    ],
+    "prompt" : "The ephod was to be made of gold, blue, purple, scarlet and fine ____ linen. (28:6)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Israel's twelve tribes are carried into God's presence.",
+    "options" : [
+      "Seven",
+      "Forty",
+      "Twelve",
+      "Six"
+    ],
+    "prompt" : "How many stones were in the breastpiece? (28:17-21)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Approaching God's presence requires holiness and reverence.",
+    "options" : [
+      "For warmth",
+      "So they would not incur guilt and die when they approached the altar",
+      "As a sign of rank",
+      "To hide their faces"
+    ],
+    "prompt" : "Why were the priests to wear linen undergarments? (28:42-43)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God cares about beauty in worship that honors Him.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priestly garments were made for glory and for beauty. (28:2)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The priest carries God's people on his heart before the LORD.",
+    "options" : [
+      "breastpiece"
+    ],
+    "prompt" : "Aaron was to wear the names of the sons of Israel on the stones of the ____ over his heart. (28:21)",
+    "reference" : "Exodus 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The verse specifically commands Aaron's anointing. Verse 21 separately describes sprinkling Aaron and his sons with blood and anointing oil.",
+    "options" : [
+      "Honey",
+      "Anointing oil",
+      "Water from the Nile",
+      "Wine"
+    ],
+    "prompt" : "What was Moses instructed to pour on Aaron's head? (29:7)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Every part of the priest's life is dedicated to God.",
+    "options" : [
+      "ear"
+    ],
+    "prompt" : "Blood from the ram of ordination was to be put on the right ____ of Aaron and his sons. (29:20)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Holiness covers hearing, acting and walking.",
+    "options" : [
+      "As decoration",
+      "To mark a tribe",
+      "To cure disease",
+      "To show that the priest's whole life is given to God"
+    ],
+    "prompt" : "Why was blood put on the ear, thumb and toe of the priests? (29:20)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God calls and sets apart leaders for His service.",
+    "options" : [
+      "priests"
+    ],
+    "prompt" : "The LORD told Moses to consecrate Aaron and his sons to serve as ____ to Him. (29:1)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Those who serve God come clean before they serve.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Aaron and his sons were to wash with water before they put on their garments. (29:4)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "Holy things belong to holy service.",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "The priests were to eat the bread and the meat of the ordination offering, because it was ____. (29:33)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's promise of His presence is at the heart of the covenant.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God promised to dwell among the Israelites and to be their God. (29:45)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Daily sacrifice reminds God's people of their constant need.",
+    "options" : [
+      "Grain only",
+      "Two lambs one year old",
+      "A bull",
+      "A goat"
+    ],
+    "prompt" : "What was offered every morning and every evening as a continual burnt offering? (29:38-39)",
+    "reference" : "Exodus 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Priests approached God clean.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The bronze basin was for the priests to wash their hands and feet before entering the tent. (30:18-19)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Prayer and worship before God are holy and costly.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The altar of incense was to be made of acacia wood overlaid with pure gold. (30:1-3)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Everyone is counted equal before God and redeemed by the same price.",
+    "options" : [
+      "Ten shekels",
+      "A goat",
+      "A half shekel",
+      "Nothing"
+    ],
+    "prompt" : "What was the atonement money each person was to give when the people were counted? (30:12-13)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's holy service requires cleansing and reverence.",
+    "options" : [
+      "die"
+    ],
+    "prompt" : "Aaron and his sons were to wash so that they would not ____. (30:20-21)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The oil is holy and not to be used for common purposes.",
+    "options" : [
+      "Water and salt",
+      "Olive oil with fragrant spices",
+      "Animal fat",
+      "Wine"
+    ],
+    "prompt" : "What was the holy anointing oil made of? (30:23-25)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Before God, rich and poor stand as equals and need the same atonement.",
+    "options" : [
+      "So rich and poor stand as equals before God and need the same atonement",
+      "It was only for the poor",
+      "Pharaoh's rule",
+      "Rich people had to pay more"
+    ],
+    "prompt" : "Why did each person give the same half shekel, rich or poor? (30:15)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Holy things are set apart for worship alone.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The incense recipe was to be made for the LORD alone, not for personal use. (30:37-38)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Prayer rises before God like fragrant incense.",
+    "options" : [
+      "incense"
+    ],
+    "prompt" : "Aaron was to burn fragrant ____ on the altar of incense every morning. (30:7)",
+    "reference" : "Exodus 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Rest is a holy commandment, not an option.",
+    "options" : [
+      "As a market day",
+      "As a day of rest, holy to the LORD",
+      "As a feast for kings",
+      "As a day of war"
+    ],
+    "prompt" : "How was the Sabbath to be kept? (31:14-15)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God gives skill for His work through His Spirit.",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "God filled Bezalel with the ____ of God, with skill and ability for every craft. (31:3)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's law is written by God Himself and it is lasting.",
+    "options" : [
+      "stone"
+    ],
+    "prompt" : "God wrote the covenant on two tablets of ____ with His own finger. (31:18)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Israel's rest echoes God's own rest after creation.",
+    "options" : [
+      "The Exodus from Egypt",
+      "God's rest after creation",
+      "The giving of manna",
+      "The flood"
+    ],
+    "prompt" : "The Sabbath is tied to which event in this passage? (31:17)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God takes His covenant and the holiness of rest seriously.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Anyone who did work on the Sabbath was to be put to death. (31:14-15)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "Skilled craft and worship belong together, and God gives the ability.",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "God's Spirit gave Bezalel skill in ____, in silver, in bronze and in other crafts. (31:4-5)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The Sabbath is a sign of God's covenant and of rest.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Sabbath was to be a sign between God and Israel forever. (31:17)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God gives gifts and partners for the work of His house.",
+    "options" : [
+      "Aaron",
+      "Joshua",
+      "Oholiab",
+      "Caleb"
+    ],
+    "prompt" : "Who was Bezalel's helper in the work of the tabernacle? (31:6)",
+    "reference" : "Exodus 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's mercy answers intercession, and He is patient.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD relented from the disaster He had said He would bring on His people. (32:14)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's holiness demands a response to sin.",
+    "options" : [
+      "He worshiped it",
+      "He ran away",
+      "He threw down the tablets, breaking them",
+      "He wrote a new law"
+    ],
+    "prompt" : "What did Moses do when he came down and saw the calf? (32:19)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Good-sounding words cannot make worship of an idol right.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Aaron declared, \"Tomorrow shall be a feast to the LORD,\" and the people worshiped the calf. (32:5)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Moses stands between God and the people and pleads for them.",
+    "options" : [
+      "people"
+    ],
+    "prompt" : "Moses prayed to the LORD and asked Him not to let His wrath burn against His ____. (32:11)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Those who stand with the LORD are called to act for His holiness.",
+    "options" : [
+      "Judah",
+      "Dan",
+      "The sons of Levi",
+      "Benjamin"
+    ],
+    "prompt" : "Which group gathered to Moses after the calf was made? (32:26)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Moses offers himself for the people, pointing toward a greater mediator.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses asked God to blot him out of His book if He would not forgive Israel's sin. (32:32)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Impatience turned into idolatry when the people stopped trusting God's timing.",
+    "options" : [
+      "gods"
+    ],
+    "prompt" : "The people said to Aaron, \"Up, make us ____ who shall go before us.\" (32:1)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 32,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Idolatry puts a made thing in the place of the living God.",
+    "options" : [
+      "A golden lampstand",
+      "A golden crown",
+      "A golden altar",
+      "A golden calf"
+    ],
+    "prompt" : "What did Aaron make from the gold the people gave him? (32:4)",
+    "reference" : "Exodus 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Grace protects sinners in the presence of a holy God.",
+    "options" : [
+      "So he could see God's glory and live",
+      "For rest",
+      "To hide from Pharaoh",
+      "To keep him out of the sun"
+    ],
+    "prompt" : "Why did God hide Moses in the cleft of the rock? (33:22)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God keeps His promise of the land even after Israel sinned.",
+    "options" : [
+      "honey"
+    ],
+    "prompt" : "The LORD told Moses to lead the people to a land flowing with milk and ____. (33:3)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Moses asks for God Himself, not only for His gifts.",
+    "options" : [
+      "An army",
+      "Gold",
+      "To know God's ways and find favor in His sight",
+      "Land taken by force"
+    ],
+    "prompt" : "What did Moses ask God for, so that he could know His ways? (33:13)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's holiness is too great for sinful people to see and live.",
+    "options" : [
+      "live"
+    ],
+    "prompt" : "The LORD said, \"You cannot see my face, for man shall not see me and ____.\" (33:20)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God meets with those who seek Him.",
+    "options" : [
+      "In Pharaoh's palace",
+      "At the top of Sinai",
+      "Outside the camp",
+      "Far from the people"
+    ],
+    "prompt" : "Where did Moses pitch the tent of meeting, outside the camp? (33:7)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God protects His people in His presence.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God put Moses in a cleft of the rock as His glory passed by. (33:22)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Sin had put Israel in danger, and God's holy presence was the question that mattered most.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said He would send an angel ahead, but He would not go up among the people Himself. (33:3)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 33,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The people honored God's presence and the role Moses carried.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "When Moses entered the tent of meeting, the people rose and worshiped at their tent doors. (33:10)",
+    "reference" : "Exodus 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God is exclusive in love and worship and will not share His people.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said He is a jealous God. (34:14)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's people must not join themselves to the worship of other gods.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God told Israel not to make a covenant with the people who lived in the land. (34:12)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God restores His covenant with His people after their failure.",
+    "options" : [
+      "words"
+    ],
+    "prompt" : "The LORD told Moses to cut two tablets of stone like the first, and He would write the ____ on them. (34:1)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The glory of God's presence is holy and must be handled with care.",
+    "options" : [
+      "veil"
+    ],
+    "prompt" : "Moses covered his face with a ____ because the skin of his face shone. (34:33)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Remembering the Exodus shapes Israel's worship.",
+    "options" : [
+      "Feast of Unleavened Bread",
+      "Feast of Booths",
+      "Pentecost",
+      "Feast of Trumpets"
+    ],
+    "prompt" : "Which feast did God tell Israel to keep with unleavened bread for seven days? (34:18)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God's character is mercy and truth.",
+    "options" : [
+      "Angry and distant",
+      "Hidden in fire only",
+      "Merciful and gracious, slow to anger",
+      "Silent"
+    ],
+    "prompt" : "How did God describe Himself as He passed before Moses? (34:6)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God keeps steadfast love for thousands, but He does not leave the guilty unpunished.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said He would never forgive the guilty at all. (34:7)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 34,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Time with God changes people, and they reflect Him.",
+    "options" : [
+      "He hid in a cave",
+      "It shone with the glory of God",
+      "He slept for days",
+      "He threw the tablets down"
+    ],
+    "prompt" : "What happened to Moses' face when he came down with the new tablets? (34:29-35)",
+    "reference" : "Exodus 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Worship moves people to give generously.",
+    "options" : [
+      "They refused",
+      "They came, every willing person, and brought offerings",
+      "They stayed home",
+      "They sent gold to Pharaoh"
+    ],
+    "prompt" : "What did the people do after Moses called for offerings? (35:21)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Gifts serve the worship and the work of the house of God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The offerings brought by the people were to be used for the work of the tabernacle. (35:21)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Each gift serves God's house.",
+    "options" : [
+      "embroidery"
+    ],
+    "prompt" : "Oholiab was a craftsman who worked with ____ and weaving. (35:35)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Gifts come from willing hearts, as God taught in chapter 25.",
+    "options" : [
+      "willing"
+    ],
+    "prompt" : "Moses said, \"Let everyone whose heart is ____ bring the LORD's offering.\" (35:5)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "Skilled work for God's house is holy service.",
+    "options" : [
+      "building"
+    ],
+    "prompt" : "Those who were wise-hearted were to do all the work the LORD commanded in the ____ of the tabernacle. (35:10)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The Sabbath was guarded even in the work of building worship.",
+    "options" : [
+      "Do no work on the Sabbath",
+      "Travel on the Sabbath",
+      "Plant grain on the Sabbath",
+      "Fight wars on the Sabbath"
+    ],
+    "prompt" : "What command about the Sabbath was repeated in chapter 35? (35:2)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God gives skill for His work.",
+    "options" : [
+      "Joshua",
+      "Bezalel",
+      "Korah",
+      "Pharaoh"
+    ],
+    "prompt" : "Which craftsman did God fill with wisdom and skill? (35:30-35)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 35,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God calls particular people by name for particular tasks.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Bezalel and Oholiab were chosen by name for the work of the tabernacle. (35:30-34)",
+    "reference" : "Exodus 35",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Goat hair curtains protect the sanctuary.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The curtain of the tent was made of goat hair. (36:14)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The tent was made to be a single whole.",
+    "options" : [
+      "With gold pins",
+      "With bronze clasps",
+      "They were not joined",
+      "With ropes of goat hair"
+    ],
+    "prompt" : "How were the curtains of the tabernacle joined together? (36:18)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Obedience in the details honors God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The craftsmen made the tabernacle exactly as God had commanded Moses. (36:1)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Costly materials show the worth of the house of God.",
+    "options" : [
+      "silver"
+    ],
+    "prompt" : "There were forty bases of ____ for the frames of the tabernacle. (36:24)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Generosity is a joyful response, not a burden.",
+    "options" : [
+      "restrain"
+    ],
+    "prompt" : "The people brought so many offerings that Moses had to ____ them from bringing more. (36:6)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The barrier shows that God's holiness is set apart.",
+    "options" : [
+      "To hang lamps",
+      "Decoration only",
+      "To cover the people",
+      "To separate the Holy Place from the Most Holy Place"
+    ],
+    "prompt" : "What was the purpose of the veil with cherubim worked into it? (36:35)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The tabernacle is built as God commanded.",
+    "options" : [
+      "Seven",
+      "Twelve",
+      "Ten",
+      "Four"
+    ],
+    "prompt" : "How many curtains were made for the tabernacle? (36:8)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 36,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The structure is sturdy and set upright.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The boards of the tabernacle were made of acacia wood and set upright. (36:20)",
+    "reference" : "Exodus 36",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The ark, the place of God's covenant, was covered in pure gold.",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "Bezalel made the ark of acacia wood and overlaid it inside and outside with pure ____. (37:2)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The light in God's house points to Him as its source.",
+    "options" : [
+      "Four",
+      "Seven",
+      "Six",
+      "Twelve"
+    ],
+    "prompt" : "How many branches came out of the lampstand? (37:18)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The ark is carried by poles, so no one touches the holy thing.",
+    "options" : [
+      "Acacia wood overlaid with gold",
+      "Stone",
+      "Bronze",
+      "Cedar"
+    ],
+    "prompt" : "What were the poles used to carry the ark made from? (37:4-5)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Cherubim guard the holy place, and mercy rests on the ark.",
+    "options" : [
+      "Two stone tablets",
+      "A golden lion",
+      "A cup of oil",
+      "Two cherubim of hammered gold"
+    ],
+    "prompt" : "What was on the ends of the mercy seat that covered the ark? (37:7-9)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Light and holiness are shaped by careful craftsmanship in gold.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The lampstand was made of pure hammered gold. (37:17)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "What is set apart for God is prepared with care.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The incense was prepared by a perfumer as holy incense set apart for God. (37:29)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Holy furnishings are made with honor and care.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The table of the bread was made of acacia wood and overlaid with gold. (37:10-11)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 37,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Prayer is holy and set apart before the LORD.",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "Bezalel made the altar of incense of acacia wood and overlaid it with pure ____. (37:25)",
+    "reference" : "Exodus 37",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The materials of God's house are durable and set firmly in place.",
+    "options" : [
+      "bronze"
+    ],
+    "prompt" : "The pegs of the tabernacle and of the courtyard were made of ____. (38:20)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The courtyard reflects holiness at the edges of God's presence.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The hangings of the courtyard were made of fine twined linen. (38:9)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The work of God's house is recorded faithfully and openly.",
+    "options" : [
+      "Caleb",
+      "Pharaoh",
+      "Ithamar, son of Aaron",
+      "Joshua"
+    ],
+    "prompt" : "Who kept the accounts of the work of the tabernacle? (38:21)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's work is accounted for carefully, and every gift is honored.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The people's gifts of gold, silver and bronze were counted by weight. (38:24-31)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The courtyard is sturdy and secure around God's presence.",
+    "options" : [
+      "Clay",
+      "Bronze bases",
+      "Stone",
+      "Wood"
+    ],
+    "prompt" : "What were the posts of the courtyard set in? (38:10-11)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The bronze was given freely to build God's house.",
+    "options" : [
+      "shekels"
+    ],
+    "prompt" : "The bronze offering was 70 talents and 2,400 ____. (38:29)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Even personal gifts are given for God's work.",
+    "options" : [
+      "served"
+    ],
+    "prompt" : "The bronze basin was made from the mirrors of the women who ____ at the entrance of the tent of meeting. (38:8)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "exodus",
+    "chapter" : 38,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Atonement money given by every person built the sanctuary.",
+    "options" : [
+      "Traders from Egypt",
+      "The spoils of war",
+      "Pharaoh's tribute",
+      "The half shekel census money"
+    ],
+    "prompt" : "What was the source of the silver for the bases of the sanctuary? (38:25-27)",
+    "reference" : "Exodus 38",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The garments were fixed firmly so the priest's service would not be disordered.",
+    "options" : [
+      "For ornament only",
+      "So it would not slip and would stay in its place",
+      "To hold gold",
+      "To keep the priest warm"
+    ],
+    "prompt" : "Why was the breastpiece tied to the ephod? (39:21)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The twelve tribes stand before the LORD.",
+    "options" : [
+      "Six in two rows",
+      "Twelve in four rows",
+      "Forty in one row",
+      "Seven in one row"
+    ],
+    "prompt" : "How were the twelve stones arranged in the breastpiece? (39:10-13)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Sound and beauty were part of the priest's service, as God commanded.",
+    "options" : [
+      "Lions",
+      "Stars",
+      "Pomegranates and bells of gold",
+      "Nothing"
+    ],
+    "prompt" : "What was on the hem of the robe of the ephod? (39:24-26)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The priest's garments form one consistent whole, matched to God's pattern.",
+    "options" : [
+      "ephod"
+    ],
+    "prompt" : "The breastpiece was made in the same way as the ____. (39:8)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The priest's breastpiece is careful and exact.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The breastpiece was made square, doubled, a span in length and a span in width. (39:9)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Faithful work done as God commanded is blessed.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses inspected the work and blessed the people because it was done as the LORD commanded. (39:43)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Holiness belongs to God alone.",
+    "options" : [
+      "LORD"
+    ],
+    "prompt" : "They made the plate of pure gold and wrote on it, \"Holiness to the ____.\" (39:30)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 39,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "Holy garments reflect the holiness of God in color and in design.",
+    "options" : [
+      "blue"
+    ],
+    "prompt" : "The robe of the ephod was made entirely of ____ yarn. (39:22)",
+    "reference" : "Exodus 39",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's presence was so full that even Moses could not enter.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses could not enter the tent of meeting when the cloud settled on it. (40:35)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The work was finished as God directed.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses set up the courtyard and its gate, and he completed the work. (40:33)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Each part of the tabernacle was placed in its right position before God.",
+    "options" : [
+      "He melted it",
+      "He placed it before the tent of meeting",
+      "He gave it to Pharaoh",
+      "He buried it"
+    ],
+    "prompt" : "What did Moses do with the altar of burnt offering? (40:6)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "God's people stand before Him continually.",
+    "options" : [
+      "Presence"
+    ],
+    "prompt" : "Moses set the table in the tent of meeting and placed the bread of the ____ before the LORD. (40:23)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Israel follows God's guidance in every journey.",
+    "options" : [
+      "After seven years",
+      "At night",
+      "When the cloud was lifted from over the tabernacle",
+      "At Moses' command alone"
+    ],
+    "prompt" : "When did the Israelites set out on their journey? (40:36-37)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Things set apart for God's use are made holy by His command.",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "Moses anointed the tabernacle and everything in it, and so made it ____. (40:9)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's house is set up at God's appointed time.",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "The LORD told Moses to set up the tabernacle on the first day of the ____ month. (40:2)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "exodus",
+    "chapter" : 40,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The LORD's glory filled the house He commanded to be built.",
+    "options" : [
+      "The glory of the LORD",
+      "Gold dust",
+      "Water",
+      "Smoke from Egypt"
+    ],
+    "prompt" : "What filled the tabernacle when Moses finished the work? (40:34)",
+    "reference" : "Exodus 40",
+    "reviewed" : true,
+    "translation" : "Course"
+  }
+]

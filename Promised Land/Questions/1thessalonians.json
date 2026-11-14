@@ -1,0 +1,655 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “We know, brothers loved by God, that you are chosen,”; the second reads “We always give thanks to God for all of you, mentioning you in our prayers,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "chosen always"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “We know, brothers loved by God, that you are ____,” (1:4); “We give thanks to God for all of you, mentioning you in our prayers,” (1:2, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Thessalonians 1:5 uses Gospel: “and that our Gospel came to you not in word only, but also in power, and in the Holy Spirit, and with much assurance. You know …”",
+    "options" : [
+      "believe",
+      "mentioning",
+      "wrath",
+      "Gospel"
+    ],
+    "prompt" : "Which word completes “and that our ______ came to you not in word only, but also in power, and in the Holy Spirit, and with much assurance. You know …”? (1:5, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of the Lord, having received the word in much affliction, with joy of the Holy Spirit,” The missing terms belong in that order.",
+    "options" : [
+      "joy Holy"
+    ],
+    "prompt" : "Supply the missing words in order: “… of the Lord, having received the word in much affliction, with ____ of the Spirit,” (1:6, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Achaia: “… sounded forth the word of the Lord, not only in Macedonia and Achaia, but also in every place your faith toward God has gone forth; so …”",
+    "options" : [
+      "Achaia",
+      "Damascus",
+      "Israel",
+      "Thessalonica"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… sounded forth the word of the Lord, not only in Macedonia and ______, but also in every place your faith toward God has gone forth; so …”? (1:8, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… had from you; and how you turned to God from idols, to serve a living and true God,”; verse 10 reads “… wait for his Son from heaven, whom he raised from the dead-- Jesus, who delivers us from the wrath to come.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jesus; serve",
+      "serve; Jesus",
+      "always; Jesus",
+      "serve; Nehemiah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… had from you; and how you turned to God from idols, to ______ a living and true God,” (1:9); “… wait for his Son from heaven, whom he raised from the dead-- ______, who delivers us from the wrath to come.” (1:10, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “remembering without ceasing your work of faith and labor of love and patience of hope in our Lord Jesus Christ, before our God and Father.”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “remembering without ceasing your work of ____ and labor of love and patience of hope in our Lord Jesus Christ, before our God and Father.” (1:3, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of the Thessalonians in God the Father and the Lord Jesus Christ: Grace to you and peace from God our Father and the Lord Jesus Christ.”",
+    "options" : [
+      "Grace"
+    ],
+    "prompt" : "Complete the quotation: “… of the Thessalonians in God the Father and the Lord Jesus Christ: ____ to you and peace from God our Father and the Lord Jesus Christ.” (1:1, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “so that you became an example to all who believe in Macedonia and in Achaia.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “so that you became an example to all who believe in Macedonia and in Achaia.” (1:7, WEB)",
+    "reference" : "1 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… it not as the word of men, but, as it is in truth, the word of God, which also works in you who believe.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… it not as the word of men, but, as it is in truth, the word of God, which also works in you who believe.” (2:13, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Thessalonians 2:6 uses apostles: “… from you nor from others), when we might have claimed authority as apostles of Christ.”",
+    "options" : [
+      "calls",
+      "works",
+      "sins",
+      "apostles"
+    ],
+    "prompt" : "Which word completes “… from you nor from others), when we might have claimed authority as ______ of Christ.”? (2:6, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies holy: “You are witnesses with God, how holy, righteously, and blamelessly we behaved ourselves toward you who believe.”",
+    "options" : [
+      "holy",
+      "righteous",
+      "pure",
+      "guilty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “You are witnesses with God, how ______, righteously, and blamelessly we behaved ourselves toward you who believe.”? (2:10, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “but having suffered before and been shamefully treated, as you know, at Philippi, we grew bold in our God to tell you the Gospel of God …”",
+    "options" : [
+      "Philippi"
+    ],
+    "prompt" : "Complete the quotation: “but having suffered before and been shamefully treated, as you know, at ____, we grew bold in our God to tell you the Gospel of God …” (2:2, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Even so, affectionately longing for you, we were well pleased to impart to you, not the Gospel of God only, but also our own souls, because …” The missing terms belong in that order.",
+    "options" : [
+      "longing pleased"
+    ],
+    "prompt" : "Supply the missing words in order: “Even so, affectionately ____ for you, we were well to impart to you, not the Gospel of God only, but also our own souls, because …” (2:8, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… being bereaved of you for a short season, in presence, not in heart, tried even harder to see your face with great desire,”; the second reads “For what is our hope, or joy, or crown of rejoicing? Isn't it even you, before our Lord Jesus at his coming?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "heart hope"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… being bereaved of you for a short season, in presence, not in ____, tried even harder to see your face with great desire,” (2:17); “For what is our , or joy, or crown of rejoicing? Isn't it even you, before our Lord Jesus at his coming?” (2:19, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… became imitators of the assemblies of God which are in Judea in Christ Jesus; for you also suffered the same things from your own countrymen, even …”; verse 16 reads “… to the Gentiles that they may be saved; to fill up their sins always. But wrath has come on them to the uttermost.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sins; Christ",
+      "Christ; sins",
+      "Christ; rebellion",
+      "Priscilla; sins"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… became imitators of the assemblies of God which are in Judea in ______ Jesus; for you also suffered the same things from your own countrymen, even …” (2:14); “… to the Gentiles that they may be saved; to fill up their ______ always. But wrath has come on them to the uttermost.” (2:16, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… as we have been approved by God to be entrusted with the Gospel, so we speak; not as pleasing men, but God, who tests our hearts.”",
+    "options" : [
+      "Gospel"
+    ],
+    "prompt" : "Complete the quotation: “… as we have been approved by God to be entrusted with the ____, so we speak; not as pleasing men, but God, who tests our hearts.” (2:4, WEB)",
+    "reference" : "1 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “and sent Timothy, our brother and God's servant in the Gospel of Christ, to establish you, and to comfort you concerning your faith;”",
+    "options" : [
+      "Timothy"
+    ],
+    "prompt" : "Complete the quotation: “and sent ____, our brother and God's servant in the Gospel of Christ, to establish you, and to comfort you concerning your faith;” (3:2, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “to the end he may establish your hearts blameless in holiness before our God and Father, at the coming of our Lord Jesus with all his …”; the second reads “Now may our God and Father himself, and our Lord Jesus Christ, direct our way to you;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "holiness Christ"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “to the end he may establish your hearts blameless in ____ before our God and Father, at the coming of our Lord Jesus with all his …” (3:13); “Now may our God and Father himself, and our Lord Jesus , direct our way to you;” (3:11, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… just now to us from you, and brought us glad news of your faith and love, and that you have good memories of us always, longing …” The missing terms belong in that order.",
+    "options" : [
+      "glad love"
+    ],
+    "prompt" : "Supply the missing words in order: “… just now to us from you, and brought us ____ news of your faith and , and that you have good memories of us always, longing …” (3:6, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Thessalonians 3:5 uses faith: “… I couldn't stand it any longer, sent that I might know your faith, for fear that by any means the tempter had tempted you, and our …”",
+    "options" : [
+      "perfect",
+      "thought",
+      "night",
+      "faith"
+    ],
+    "prompt" : "Which word completes “… I couldn't stand it any longer, sent that I might know your ______, for fear that by any means the tempter had tempted you, and our …”? (3:5, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies distress: “for this cause, brothers, we were comforted over you in all our distress and affliction through your faith.”",
+    "options" : [
+      "sakes",
+      "distress",
+      "blameless",
+      "brothers"
+    ],
+    "prompt" : "Which detail belongs in this passage: “for this cause, brothers, we were comforted over you in all our ______ and affliction through your faith.”? (3:7, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… and day praying exceedingly that we may see your face, and may perfect that which is lacking in your faith?”; verse 12 reads “and the Lord make you to increase and abound in love one toward another, and toward all men, even as we also do toward you,”. These establish the first and second answers respectively.",
+    "options" : [
+      "abound; perfect",
+      "live; abound",
+      "perfect; abound",
+      "perfect; beforehand"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and day praying exceedingly that we may see your face, and may ______ that which is lacking in your faith?” (3:10); “and the Lord make you to increase and ______ in love one toward another, and toward all men, even as we also do toward you,” (3:12, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… one be moved by these afflictions. For you know that we are appointed to this task.”",
+    "options" : [
+      "appointed"
+    ],
+    "prompt" : "Complete the quotation: “… one be moved by these afflictions. For you know that we are ____ to this task.” (3:3, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1thessalonians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… thanksgiving can we render again to God for you, for all the joy with which we rejoice for your sakes before our God;” It says joy, not grief.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… thanksgiving can we render again to God for you, for all the grief with which we rejoice for your sakes before our God;” (3:9, WEB)",
+    "reference" : "1 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… who rejects doesn't reject man, but God, who has also given his Holy Spirit to you.” The missing terms belong in that order.",
+    "options" : [
+      "Holy Spirit"
+    ],
+    "prompt" : "Supply the missing words in order: “… who rejects doesn't reject man, but God, who has also given his ____ to you.” (4:8, WEB)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "To give hope and mutual encouragement rather than grief without hope. Christians differ about some details of the gathering and its relation to other end-time passages. Paul's explicit conclusion is that the believers should encourage one another.",
+    "options" : [
+      "Its stated purpose is to calculate a date.",
+      "The teaching forbids all grief.",
+      "To give hope and mutual encouragement rather than grief without hope.",
+      "Paul says dead believers have no hope in Christ."
+    ],
+    "prompt" : "What pastoral aim frames the teaching about believers who have died? (4:13-18)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Thessalonians 4:6 uses forewarned: “… the Lord is an avenger in all these things, as also we forewarned you and testified.”",
+    "options" : [
+      "indeed",
+      "charged",
+      "testified",
+      "forewarned"
+    ],
+    "prompt" : "Which word completes “… the Lord is an avenger in all these things, as also we ______ you and testified.”? (4:6, WEB)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… know how to possess himself of his own vessel in sanctification and honor,”",
+    "options" : [
+      "honor"
+    ],
+    "prompt" : "Complete the quotation: “… know how to possess himself of his own vessel in sanctification and ____,” (4:4, WEB)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “But concerning brotherly love, you have no need that one write to you. For you yourselves are taught by God to love one another,”",
+    "options" : [
+      "joy",
+      "wrath",
+      "love",
+      "glory"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But concerning brotherly ______, you have no need that one write to you. For you yourselves are taught by God to love one another,”? (4:9, WEB)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Finally then, brothers, we beg and exhort you in the Lord Jesus, that as you received from us how you ought to walk and to please …”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “Finally then, brothers, we beg and exhort you in the Lord ____, that as you received from us how you ought to walk and to please …” (4:1, WEB)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “and that you make it your ambition to lead a quiet life, and to do your own business, and to work with your own hands, even …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “and that you make it your ambition to lead a quiet life, and to do your own business, and to work with your own hands, even …” (4:11, WEB)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1thessalonians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… those who have fallen asleep, so that you don't grieve like the rest, who have no hope.”; verse 14 reads “… believe that Jesus died and rose again, even so those who have fallen asleep in Jesus will God bring with him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "rest; reject",
+      "praise; fallen",
+      "fallen; rest",
+      "rest; fallen"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… those who have fallen asleep, so that you don't grieve like the ______, who have no hope.” (4:13); “… believe that Jesus died and rose again, even so those who have ______ asleep in Jesus will God bring with him.” (4:14, WEB)",
+    "reference" : "1 Thessalonians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… you by the Lord that this letter be read to all the holy brothers.”; the second reads “The grace of our Lord Jesus Christ be with you. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "holy grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… you by the Lord that this letter be read to all the ____ brothers.” (5:27); “The of our Lord Jesus Christ be with you. Amen.” (5:28, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For when they are saying, \"Peace and safety,\" then sudden destruction will come on them, like birth pains on a pregnant woman; and they will in …”",
+    "options" : [
+      "Peace"
+    ],
+    "prompt" : "Complete the quotation: “For when they are saying, \"____ and safety,\" then sudden destruction will come on them, like birth pains on a pregnant woman; and they will in …” (5:3, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies disorderly: “We exhort you, brothers, admonish the disorderly, encourage the fainthearted, support the weak, be patient toward all.”",
+    "options" : [
+      "calls",
+      "died",
+      "disorderly",
+      "escape"
+    ],
+    "prompt" : "Which detail belongs in this passage: “We exhort you, brothers, admonish the ______, encourage the fainthearted, support the weak, be patient toward all.”? (5:14, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “You are all children of light, and children of the day. We don't belong to the night, nor to darkness,”",
+    "options" : [
+      "light"
+    ],
+    "prompt" : "Complete the quotation: “You are all children of ____, and children of the day. We don't belong to the night, nor to darkness,” (5:5, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… didn't appoint us to wrath, but to the obtaining of salvation through our Lord Jesus Christ,” The missing terms belong in that order.",
+    "options" : [
+      "salvation Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “… didn't appoint us to wrath, but to the obtaining of ____ through our Lord Jesus ,” (5:9, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Thessalonians 5:8 uses love: “… to the day, be sober, putting on the breastplate of faith and love, and, for a helmet, the hope of salvation.”",
+    "options" : [
+      "wisdom",
+      "shame",
+      "fear",
+      "love"
+    ],
+    "prompt" : "Which word completes “… to the day, be sober, putting on the breastplate of faith and ______, and, for a helmet, the hope of salvation.”? (5:8, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… everything give thanks, for this is the will of God in Christ Jesus toward you.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… everything give thanks, for this is the will of God in Christ Jesus toward you.” (5:18, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1thessalonians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “Don't quench the Spirit.”; verse 23 reads “… of peace himself sanctify you completely. May your whole spirit, soul, and body be preserved blameless at the coming of our Lord Jesus Christ.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Spirit; holy",
+      "body; Spirit",
+      "holy; body",
+      "Spirit; body"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Don't quench the ______.” (5:19); “… of peace himself sanctify you completely. May your whole spirit, soul, and ______ be preserved blameless at the coming of our Lord Jesus Christ.” (5:23, WEB)",
+    "reference" : "1 Thessalonians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

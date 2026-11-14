@@ -1,0 +1,3792 @@
+[
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Joktan: “… in his days the earth was divided; and his brother's name was Joktan.”",
+    "options" : [
+      "Eber",
+      "Ithran",
+      "Noah",
+      "Joktan"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… in his days the earth was divided; and his brother's name was ______.”? (1:19, WEB)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now these are the kings who reigned in the land of Edom, before there resigned any king over the children of Israel: Bela the son of …”; the second reads “… Hadad the son of Bedad, who struck Midian in the field of Moab, reigned in his place; and the name of his city was Avith.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Edom Moab"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now these are the kings who reigned in the land of ____, before there resigned any king over the children of Israel: Bela the son of …” (1:43); “… Hadad the son of Bedad, who struck Midian in the field of , reigned in his place; and the name of his city was Avith.” (1:46, WEB)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 1:9 uses Seba: “The sons of Cush: Seba, and Havilah, and Sabta, and Raama, and Sabteca. The sons of Raamah: Sheba, and Dedan.”",
+    "options" : [
+      "Seba",
+      "Ephah",
+      "struck",
+      "Medan"
+    ],
+    "prompt" : "Which word completes “The sons of Cush: ______, and Havilah, and Sabta, and Raama, and Sabteca. The sons of Raamah: Sheba, and Dedan.”? (1:9, WEB)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The sons of Shem: Elam, and Asshur, and Arpachshad, and Lud, and Aram, and Uz, and Hul, and Gether, and Meshech.” The missing terms belong in that order.",
+    "options" : [
+      "Shem Gether"
+    ],
+    "prompt" : "Supply the missing words in order: “The sons of ____: Elam, and Asshur, and Arpachshad, and Lud, and Aram, and Uz, and Hul, and , and Meshech.” (1:17, WEB)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 32 reads “The sons of Keturah, Abraham's concubine: she bore Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah. The sons of Jokshan: Sheba, and Dedan.”; verse 36 reads “The sons of Eliphaz: Teman, and Omar, Zephi, and Gatam, Kenaz, and Timna, and Amalek.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Zimran; Eliphaz",
+      "Zimran; Judah",
+      "Anamim; Eliphaz",
+      "Eliphaz; Zimran"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sons of Keturah, Abraham's concubine: she bore ______, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah. The sons of Jokshan: Sheba, and Dedan.” (1:32); “The sons of ______: Teman, and Omar, Zephi, and Gatam, Kenaz, and Timna, and Amalek.” (1:36, WEB)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The sons of Japheth: Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras.”",
+    "options" : [
+      "Japheth"
+    ],
+    "prompt" : "Complete the quotation: “The sons of ____: Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras.” (1:5, WEB)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 1:1 records: “Adam, Seth, Enosh,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The genealogy begins with Adam. (1:1)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Serug, Nahor, Terah,” It says Nahor, not reigned.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Serug, reigned, Terah,” (1:26, WEB)",
+    "reference" : "1 Chronicles 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Ozem the sixth, David the seventh;” The missing terms belong in that order.",
+    "options" : [
+      "sixth seventh"
+    ],
+    "prompt" : "Supply the missing words in order: “Ozem the ____, David the ;” (2:15, WEB)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 2:10 uses Judah: “… and Amminadab became the father of Nahshon, prince of the children of Judah;”",
+    "options" : [
+      "Samuel",
+      "Moses",
+      "Judah",
+      "Josiah"
+    ],
+    "prompt" : "Which word completes “… and Amminadab became the father of Nahshon, prince of the children of ______;”? (2:10, WEB)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the father of Ziph; and the sons of Mareshah the father of Hebron.”; the second reads “… of Jahdai: Regem, and Jothan, and Geshan, and Pelet, and Ephah, and Shaaph.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Hebron Shaaph"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the father of Ziph; and the sons of Mareshah the father of ____.” (2:42); “… of Jahdai: Regem, and Jothan, and Geshan, and Pelet, and Ephah, and .” (2:47, WEB)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gilead: “Afterward Hezron went in to the daughter of Machir the father of Gilead, whom he took as wife when he was sixty years old; and she …”",
+    "options" : [
+      "Sinai",
+      "Edom",
+      "Gilead",
+      "Babylon"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Afterward Hezron went in to the daughter of Machir the father of ______, whom he took as wife when he was sixty years old; and she …”? (2:21, WEB)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The verse lists the sons beginning with Reuben, Simeon, Levi and Judah. Genesis 29:35 supplies Judah's birth account.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The opening list names Judah among the sons of Israel, also called Jacob. (2:1)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of Hezron were Ram the firstborn, and Bunah, and Oren, and Ozem, Ahijah.” It says Ahijah, not Haroeh.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of Hezron were Ram the firstborn, and Bunah, and Oren, and Ozem, Haroeh.” (2:25, WEB)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… daughter-in-law bore him Perez and Zerah. All the sons of Judah were five.”",
+    "options" : [
+      "five"
+    ],
+    "prompt" : "Complete the quotation: “… daughter-in-law bore him Perez and Zerah. All the sons of Judah were ____.” (2:4, WEB)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 31 reads “The sons of Appaim: Ishi. The sons of Ishi: Sheshan. The sons of Sheshan: Ahlai.”; verse 36 reads “Attai became the father of Nathan, and Nathan became the father of Zabad,”. These establish the first and second answers respectively.",
+    "options" : [
+      "Nathan; Sheshan",
+      "Sheshan; Nathan",
+      "Sheshan; Caleb",
+      "Jether; Nathan"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sons of Appaim: Ishi. The sons of Ishi: ______. The sons of Sheshan: Ahlai.” (2:31); “Attai became the father of Nathan, and ______ became the father of Zabad,” (2:36, WEB)",
+    "reference" : "1 Chronicles 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 3:1 records: “Now these were the sons of David, who were born to him in Hebron: the firstborn, Amnon, of Ahinoam the Jezreelitess; the second, Daniel, of Abigail the Carmelitess;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David's sons were born in Hebron and Jerusalem. (3:1-4)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… were born to him in Jerusalem: Shimea, and Shobab, and Nathan, and Solomon, four, of Bathshua the daughter of Ammiel;”",
+    "options" : [
+      "Solomon"
+    ],
+    "prompt" : "Complete the quotation: “… were born to him in Jerusalem: Shimea, and Shobab, and Nathan, and ____, four, of Bathshua the daughter of Ammiel;” (3:5, WEB)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Abijah: “Solomon's son was Rehoboam, Abijah his son, Asa his son, Jehoshaphat his son,”",
+    "options" : [
+      "Ahinoam",
+      "Abijah",
+      "Jerusalem",
+      "Shemaiah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Solomon's son was Rehoboam, ______ his son, Asa his son, Jehoshaphat his son,”? (3:10, WEB)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Amaziah his son, Azariah his son, Jotham his son,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Amaziah his son, Azariah his son, Jotham his son,” (3:12, WEB)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and Hashubah, and Ohel, and Berechiah, and Hasadiah, Jushab-hesed, five.”; the second reads “… Jeshaiah; the sons of Rephaiah, the sons of Arnan, the sons of Obadiah, the sons of Shecaniah.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "five Obadiah"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and Hashubah, and Ohel, and Berechiah, and Hasadiah, Jushab-hesed, ____.” (3:20); “… Jeshaiah; the sons of Rephaiah, the sons of Arnan, the sons of , the sons of Shecaniah.” (3:21, WEB)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 3:6 uses Eliphelet: “and Ibhar, and Elishama, and Eliphelet,”",
+    "options" : [
+      "Ohel",
+      "Eliphelet",
+      "daughter",
+      "Shallum"
+    ],
+    "prompt" : "Which word completes “and Ibhar, and Elishama, and ______,”? (3:6, WEB)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “and Elishama, and Eliada, and Eliphelet, nine.” The missing terms belong in that order.",
+    "options" : [
+      "Elishama nine"
+    ],
+    "prompt" : "Supply the missing words in order: “and ____, and Eliada, and Eliphelet, .” (3:8, WEB)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “The sons of Josiah: the firstborn Johanan, the second Jehoiakim, the third Zedekiah, the fourth Shallum.”; verse 19 reads “The sons of Pedaiah: Zerubbabel, and Shimei. The sons of Zerubbabel: Meshullam, and Hananiah; and Shelomith was their sister;”. These establish the first and second answers respectively.",
+    "options" : [
+      "Esau; Zerubbabel",
+      "Josiah; Zerubbabel",
+      "Zerubbabel; Josiah",
+      "Josiah; Jesse"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sons of ______: the firstborn Johanan, the second Jehoiakim, the third Zedekiah, the fourth Shallum.” (3:15); “The sons of Pedaiah: ______, and Shimei. The sons of Zerubbabel: Meshullam, and Hananiah; and Shelomith was their sister;” (3:19, WEB)",
+    "reference" : "1 Chronicles 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… father of Beth Rapha, and Paseah, and Tehinnah the father of Ir Nahash. These are the men of Recah.” The missing terms belong in that order.",
+    "options" : [
+      "Tehinnah Recah"
+    ],
+    "prompt" : "Supply the missing words in order: “… father of Beth Rapha, and Paseah, and ____ the father of Ir Nahash. These are the men of .” (4:12, WEB)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The sons of Shimon: Amnon, and Rinnah, Ben Hanan, and Tilon. The sons of Ishi: Zoheth, and Ben Zoheth.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The sons of Shimon: Amnon, and Rinnah, Ben Hanan, and Tilon. The sons of Ishi: Zoheth, and Ben Zoheth.” (4:20, WEB)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Miriam: “… of Ezrah: Jether, and Mered, and Epher, and Jalon; and she bore Miriam, and Shammai, and Ishbah the father of Eshtemoa.”",
+    "options" : [
+      "Miriam",
+      "Manasseh",
+      "Rachel",
+      "Abraham"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of Ezrah: Jether, and Mered, and Epher, and Jalon; and she bore ______, and Shammai, and Ishbah the father of Eshtemoa.”? (4:17, WEB)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “The sons of Simeon: Nemuel, and Jamin, Jarib, Zerah, Shaul;”; verse 27 reads “Shimei had sixteen sons and six daughters; but his brothers didn't have many children, neither did all their family multiply like the children of Judah.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Reuben; sixteen",
+      "Simeon; sixteen",
+      "sixteen; Simeon",
+      "Simeon; fifteen"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sons of ______: Nemuel, and Jamin, Jarib, Zerah, Shaul;” (4:24); “Shimei had ______ sons and six daughters; but his brothers didn't have many children, neither did all their family multiply like the children of Judah.” (4:27, WEB)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 4:8 uses Anub: “Hakkoz became the father of Anub, and Zobebah, and the families of Aharhel the son of Harum.”",
+    "options" : [
+      "name",
+      "flocks",
+      "Anub",
+      "Shelah"
+    ],
+    "prompt" : "Which word completes “Hakkoz became the father of ______, and Zobebah, and the families of Aharhel the son of Harum.”? (4:8, WEB)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and all their villages that were round about the same cities, to Baal. These were their habitations, and they have their genealogy.”; the second reads “these mentioned by name were princes in their families: and their fathers' houses increased greatly.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Baal princes"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and all their villages that were round about the same cities, to ____. These were their habitations, and they have their genealogy.” (4:33); “these mentioned by name were in their families: and their fathers' houses increased greatly.” (4:38, WEB)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “These were the sons of the father of Etam: Jezreel, and Ishma, and Idbash; and the name of their sister was Hazzelelponi;”",
+    "options" : [
+      "Jezreel"
+    ],
+    "prompt" : "Complete the quotation: “These were the sons of the father of Etam: ____, and Ishma, and Idbash; and the name of their sister was Hazzelelponi;” (4:3, WEB)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 4:10 records: “… Israel, saying, Oh that you would bless me indeed, and enlarge my border, and that your hand might be with me, and that you would keep me from evil, that it not be to my sorrow! …”",
+    "options" : [
+      "territory"
+    ],
+    "prompt" : "In this paraphrase, jabez prayed that God would enlarge his ____. (4:10)",
+    "reference" : "1 Chronicles 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “the sons of Reuben the firstborn of Israel: Hanoch, and Pallu, Hezron, and Carmi.”",
+    "options" : [
+      "Reuben"
+    ],
+    "prompt" : "Complete the quotation: “the sons of ____ the firstborn of Israel: Hanoch, and Pallu, Hezron, and Carmi.” (5:3, WEB)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “Ahi the son of Abdiel, the son of Guni, chief of their fathers' houses.”; verse 18 reads “… and sword, and to shoot with bow, and skillful in war, were forty-four thousand seven hundred and sixty, that were able to go forth to war.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Ahi; four",
+      "firstborn; four",
+      "four; Ahi",
+      "Ahi; twelve"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “______ the son of Abdiel, the son of Guni, chief of their fathers' houses.” (5:15); “… and sword, and to shoot with bow, and skillful in war, were forty-______ thousand seven hundred and sixty, that were able to go forth to war.” (5:18, WEB)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… and Meshullam, and Sheba, and Jorai, and Jacan, and Zia, and Eber, seven.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… and Meshullam, and Sheba, and Jorai, and Jacan, and Zia, and Eber, seven.” (5:13, WEB)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gilead: “… and they lived in their tents throughout all the land east of Gilead.”",
+    "options" : [
+      "Gilead",
+      "Nineveh",
+      "Jordan",
+      "Jerusalem"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and they lived in their tents throughout all the land east of ______.”? (5:10, WEB)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 5:5 uses Micah: “Micah his son, Reaiah his son, Baal his son,”",
+    "options" : [
+      "Micah",
+      "Sarah",
+      "Ham",
+      "Obadiah"
+    ],
+    "prompt" : "Which word completes “______ his son, Reaiah his son, Baal his son,”? (5:5, WEB)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the son of Shema, the son of Joel, who lived in Aroer, even to Nebo and Baal Meon:” The missing terms belong in that order.",
+    "options" : [
+      "Joel Meon"
+    ],
+    "prompt" : "Supply the missing words in order: “… the son of Shema, the son of ____, who lived in Aroer, even to Nebo and Baal :” (5:8, WEB)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 5:20 records: “… helped against them, and the Hagrites were delivered into their hand, and all who were with them; for they cried to God in the battle, and he was entreated of them, because they put their trust …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Reubenites fought and were helped by God because they trusted Him. (5:20)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… their cattle; of their camels fifty thousand, and of sheep two hundred fifty thousand, and of donkeys two thousand, and of men one hundred thousand.”; the second reads “The children of the half-tribe of Manasseh lived in the land: they increased from Bashan to Baal Hermon and Senir and Mount Hermon.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fifty Manasseh"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… their cattle; of their camels fifty thousand, and of sheep two hundred ____ thousand, and of donkeys two thousand, and of men one hundred thousand.” (5:21); “The children of the half-tribe of lived in the land: they increased from Bashan to Baal Hermon and Senir and Mount Hermon.” (5:23, WEB)",
+    "reference" : "1 Chronicles 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The sons of Kohath: Amminadab his son, Korah his son, Assir his son,” The missing terms belong in that order.",
+    "options" : [
+      "Kohath Korah"
+    ],
+    "prompt" : "Supply the missing words in order: “The sons of ____: Amminadab his son, his son, Assir his son,” (6:22, WEB)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… out of the tribe of Issachar, and out of the tribe of Asher, and out of the tribe of Naphtali, and out of the tribe of …”; the second reads “and out of the half-tribe of Manasseh, Aner with its suburbs, and Bileam with its suburbs, for the rest of the family of the sons of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Asher Manasseh"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… out of the tribe of Issachar, and out of the tribe of ____, and out of the tribe of Naphtali, and out of the tribe of …” (6:62); “and out of the half-tribe of , Aner with its suburbs, and Bileam with its suburbs, for the rest of the family of the sons of …” (6:70, WEB)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The children of Amram: Aaron, and Moses, and Miriam. The sons of Aaron: Nadab, and Abihu, Eleazar, and Ithamar.”",
+    "options" : [
+      "Aaron"
+    ],
+    "prompt" : "Complete the quotation: “The children of Amram: ____, and Moses, and Miriam. The sons of Aaron: Nadab, and Abihu, Eleazar, and Ithamar.” (6:3, WEB)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 44 reads “… Ethan the son of Kishi, the son of Abdi, the son of Malluch,”; verse 54 reads “… of Aaron, of the families of the Kohathites (for theirs was the first lot),”. These establish the first and second answers respectively.",
+    "options" : [
+      "Malluch; sixty",
+      "Malluch; first",
+      "first; Malluch",
+      "Zebulun; first"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Ethan the son of Kishi, the son of Abdi, the son of ______,” (6:44); “… of Aaron, of the families of the Kohathites (for theirs was the ______ lot),” (6:54, WEB)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 6:31 records: “These are they whom David set over the service of song in the house of Yahweh, after that the ark had rest.”",
+    "options" : [
+      "LORD"
+    ],
+    "prompt" : "In this paraphrase, heman was a singer in the house of the ____. (6:31-33)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “His brother Asaph, who stood on his right hand, even Asaph the son of Berechiah, the son of Shimea,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “His brother Asaph, who stood on his right hand, even Asaph the son of Berechiah, the son of Shimea,” (6:39, WEB)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 6:13 uses Hilkiah: “and Shallum became the father of Hilkiah, and Hilkiah became the father of Azariah,”",
+    "options" : [
+      "Ithamar",
+      "Hilkiah",
+      "Hashabiah",
+      "Ethan"
+    ],
+    "prompt" : "Which word completes “and Shallum became the father of ______, and Hilkiah became the father of Azariah,”? (6:13, WEB)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Uzzah: “The sons of Merari: Mahli, Libni his son, Shimei his son, Uzzah his son,”",
+    "options" : [
+      "Jokmeam",
+      "Ephraim",
+      "Galilee",
+      "Uzzah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The sons of Merari: Mahli, Libni his son, Shimei his son, ______ his son,”? (6:29, WEB)",
+    "reference" : "1 Chronicles 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 7:7 uses thirty: “… mighty men of valor; and they were reckoned by genealogy twenty-two thousand thirty-four.”",
+    "options" : [
+      "fifteen",
+      "thirty",
+      "ten",
+      "seventh"
+    ],
+    "prompt" : "Which word completes “… mighty men of valor; and they were reckoned by genealogy twenty-two thousand ______-four.”? (7:7, WEB)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 7:6 records: “The sons of Benjamin: Bela, and Becher, and Jediael, three.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The tribe of Benjamin's families are listed by name. (7:6)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… according to the heads of their fathers' houses, mighty men of valor, seventeen thousand and two hundred, who were able to go forth in the host …” The missing terms belong in that order.",
+    "options" : [
+      "seventeen thousand"
+    ],
+    "prompt" : "Supply the missing words in order: “… according to the heads of their fathers' houses, mighty men of valor, ____ and two hundred, who were able to go forth in the host …” (7:11, WEB)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies second: “… and Shuppim, whose sister's name was Maacah; and the name of the second was Zelophehad: and Zelophehad had daughters.”",
+    "options" : [
+      "seventh",
+      "seventeen",
+      "second",
+      "seventy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and Shuppim, whose sister's name was Maacah; and the name of the ______ was Zelophehad: and Zelophehad had daughters.”? (7:15, WEB)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Uzzi: Izrahiah. The sons of Izrahiah: Michael, and Obadiah, and Joel, Isshiah, five; all of them chief men.”",
+    "options" : [
+      "five"
+    ],
+    "prompt" : "Complete the quotation: “… Uzzi: Izrahiah. The sons of Izrahiah: Michael, and Obadiah, and Joel, Isshiah, ____; all of them chief men.” (7:3, WEB)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The sons of Ephraim: Shuthelah, and Bered his son, and Tahath his son, and Eleadah his son, and Tahath his son,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The sons of Ephraim: Shuthelah, and Bered his son, and Tahath his son, and Eleadah his son, and Tahath his son,” (7:20, WEB)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The sons of Asher: Imnah, and Ishvah, and Ishvi, and Beriah, and Serah their sister.”; the second reads “The sons of Helem his brother: Zophah, and Imna, and Shelesh, and Amal.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Asher Imna"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The sons of ____: Imnah, and Ishvah, and Ishvi, and Beriah, and Serah their sister.” (7:30); “The sons of Helem his brother: Zophah, and , and Shelesh, and Amal.” (7:35, WEB)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “He went in to his wife, and she conceived, and bore a son, and he named him Beriah, because it went evil with his house.”; verse 28 reads “Their possessions and habitations were Bethel and the towns of it, and eastward Naaran, and westward Gezer, with the towns of it; Shechem also and the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "bore; Bethel",
+      "lower; Bethel",
+      "Bethel; bore",
+      "bore; Samaria"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “He went in to his wife, and she conceived, and ______ a son, and he named him Beriah, because it went evil with his house.” (7:23); “Their possessions and habitations were ______ and the towns of it, and eastward Naaran, and westward Gezer, with the towns of it; Shechem also and the …” (7:28, WEB)",
+    "reference" : "1 Chronicles 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “and Ishmerai, and Izliah, and Jobab, the sons of Elpaal,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “and Ishmerai, and Izliah, and Jobab, the sons of Elpaal,” (8:18, WEB)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “and Abdon, and Zichri, and Hanan,”; verse 27 reads “and Jaareshiah, and Elijah, and Zichri, the sons of Jeroham.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Zichri; Elijah",
+      "Elijah; Zichri",
+      "Eleasah; Elijah",
+      "Zichri; Habakkuk"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and Abdon, and ______, and Hanan,” (8:23); “and Jaareshiah, and ______, and Zichri, the sons of Jeroham.” (8:27, WEB)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Bela had sons: Addar, and Gera, and Abihud,”",
+    "options" : [
+      "Bela"
+    ],
+    "prompt" : "Complete the quotation: “____ had sons: Addar, and Gera, and Abihud,” (8:3, WEB)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 8:7 uses Gera: “and Naaman, and Ahijah, and Gera, he carried them captive: and he became the father of Uzza and Ahihud.”",
+    "options" : [
+      "Ahihud",
+      "Elpaal",
+      "Saul",
+      "Gera"
+    ],
+    "prompt" : "Which word completes “and Naaman, and Ahijah, and ______, he carried them captive: and he became the father of Uzza and Ahihud.”? (8:7, WEB)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 8:33 records: “Ner became the father of Kish; and Kish became the father of Saul; and Saul became the father of Jonathan, and Malchishua, and Abinadab, and Eshbaal.”",
+    "options" : [
+      "Saul"
+    ],
+    "prompt" : "In this paraphrase, jonathan's son Merib-baal was the grandson of ____. (8:33-34)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The sons of Elpaal: Eber, and Misham, and Shemed, who built Ono and Lod, with the towns of it;” The missing terms belong in that order.",
+    "options" : [
+      "Elpaal towns"
+    ],
+    "prompt" : "Supply the missing words in order: “The sons of ____: Eber, and Misham, and Shemed, who built Ono and Lod, with the of it;” (8:12, WEB)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and his firstborn son Abdon, and Zur, and Kish, and Baal, and Nadab,”; the second reads “The sons of Micah: Pithon, and Melech, and Tarea, and Ahaz.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Abdon Micah"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and his firstborn son ____, and Zur, and Kish, and Baal, and Nadab,” (8:30); “The sons of : Pithon, and Melech, and Tarea, and Ahaz.” (8:35, WEB)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gath: “… of the inhabitants of Aijalon, who put to flight the inhabitants of Gath;”",
+    "options" : [
+      "Shemed",
+      "Gath",
+      "Ishmael",
+      "fifth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of the inhabitants of Aijalon, who put to flight the inhabitants of ______;”? (8:13, WEB)",
+    "reference" : "1 Chronicles 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Zechariah the son of Meshelemiah was porter of the door of the tent of meeting.” It says Zechariah, not Nebuchadnezzar.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Nebuchadnezzar the son of Meshelemiah was porter of the door of the tent of meeting.” (9:21, WEB)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Jerusalem lived of the children of Judah, and of the children of Benjamin, and of the children of Ephraim and Manasseh:”",
+    "options" : [
+      "Benjamin"
+    ],
+    "prompt" : "Complete the quotation: “… Jerusalem lived of the children of Judah, and of the children of ____, and of the children of Ephraim and Manasseh:” (9:3, WEB)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 26 reads “for the four chief porters, who were Levites, were in an office of trust, and were over the chambers and over the treasuries in the house …”; verse 29 reads “… the sanctuary, and over the fine flour, and the wine, and the oil, and the frankincense, and the spices.”. These establish the first and second answers respectively.",
+    "options" : [
+      "four; fruit",
+      "oil; four",
+      "four; oil",
+      "five; oil"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “for the ______ chief porters, who were Levites, were in an office of trust, and were over the chambers and over the treasuries in the house …” (9:26); “… the sanctuary, and over the fine flour, and the wine, and the ______, and the frankincense, and the spices.” (9:29, WEB)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 9:8 uses Ibneiah: “and Ibneiah the son of Jeroham, and Elah the son of Uzzi, the son of Michri, and Meshullam the son of Shephatiah, the son of Reuel, …”",
+    "options" : [
+      "Ammihud",
+      "Gedor",
+      "Ibneiah",
+      "name"
+    ],
+    "prompt" : "Which word completes “and ______ the son of Jeroham, and Elah the son of Uzzi, the son of Michri, and Meshullam the son of Shephatiah, the son of Reuel, …”? (9:8, WEB)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 9:22 records: “All these who were chosen to be porters in the thresholds were two hundred and twelve. These were reckoned by genealogy in their villages, whom David and Samuel the seer did ordain in their office of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Gatekeepers were chosen to guard the house of the LORD. (9:22)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “and Adaiah the son of Jeroham, the son of Pashhur, the son of Malchijah, and Maasai the son of Adiel, the son of Jahzerah, the son …” The missing terms belong in that order.",
+    "options" : [
+      "Pashhur Maasai"
+    ],
+    "prompt" : "Supply the missing words in order: “and Adaiah the son of Jeroham, the son of ____, the son of Malchijah, and the son of Adiel, the son of Jahzerah, the son …” (9:12, WEB)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Obadiah: “and Obadiah the son of Shemaiah, the son of Galal, the son of Jeduthun, and Berechiah the son of Asa, the son of Elkanah, who lived …”",
+    "options" : [
+      "Obadiah",
+      "Elijah",
+      "Caleb",
+      "Elihu"
+    ],
+    "prompt" : "Which detail belongs in this passage: “and ______ the son of Shemaiah, the son of Galal, the son of Jeduthun, and Berechiah the son of Asa, the son of Elkanah, who lived …”? (9:16, WEB)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… houses of the Levites, throughout their generations, chief men: these lived at Jerusalem.”; the second reads “Ner became the father of Kish; and Kish became the father of Saul; and Saul became the father of Jonathan, and Malchishua, and Abinadab, and Eshbaal.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Jerusalem Saul"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… houses of the Levites, throughout their generations, chief men: these lived at ____.” (9:34); “Ner became the father of Kish; and Kish became the father of ; and Saul became the father of Jonathan, and Malchishua, and Abinadab, and Eshbaal.” (9:39, WEB)",
+    "reference" : "1 Chronicles 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… him, and took his head, and his armor, and sent into the land of the Philistines round about, to carry the news to their idols, and …”; verse 10 reads “They put his armor in the house of their gods, and fastened his head in the house of Dagon.”. These establish the first and second answers respectively.",
+    "options" : [
+      "land; armor",
+      "heaven; armor",
+      "land; reason",
+      "armor; land"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… him, and took his head, and his armor, and sent into the ______ of the Philistines round about, to carry the news to their idols, and …” (10:9); “They put his ______ in the house of their gods, and fastened his head in the house of Dagon.” (10:10, WEB)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “It happened on the next day, when the Philistines came to strip the slain, that they found Saul and his sons fallen on Mount Gilboa.” It says strip, not news.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “It happened on the next day, when the Philistines came to news the slain, that they found Saul and his sons fallen on Mount Gilboa.” (10:8, WEB)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… followed hard after Saul and after his sons; and the Philistines killed Jonathan, and Abinadab, and Malchishua, the sons of Saul.”",
+    "options" : [
+      "Jonathan"
+    ],
+    "prompt" : "Complete the quotation: “… followed hard after Saul and after his sons; and the Philistines killed ____, and Abinadab, and Malchishua, the sons of Saul.” (10:2, WEB)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “When all the men of Israel who were in the valley saw that they fled, and that Saul and his sons were dead, they forsook their …”",
+    "options" : [
+      "Esther",
+      "Habakkuk",
+      "Israel",
+      "Moses"
+    ],
+    "prompt" : "Which detail belongs in this passage: “When all the men of ______ who were in the valley saw that they fled, and that Saul and his sons were dead, they forsook their …”? (10:7, WEB)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 10:3 uses Saul: “The battle went sore against Saul, and the archers overtook him; and he was distressed by reason of the archers.”",
+    "options" : [
+      "Issachar",
+      "Esau",
+      "Saul",
+      "Nehemiah"
+    ],
+    "prompt" : "Which word completes “The battle went sore against ______, and the archers overtook him; and he was distressed by reason of the archers.”? (10:3, WEB)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Jabesh, and buried their bones under the oak in Jabesh, and fasted seven days.”; the second reads “… he killed him, and turned the kingdom to David the son of Jesse.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "seven Jesse"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Jabesh, and buried their bones under the oak in Jabesh, and fasted ____ days.” (10:12); “… he killed him, and turned the kingdom to David the son of .” (10:14, WEB)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The closing explanation lists these failures together. Consulting the medium is not the only reason the narrator names.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The narrator links Saul's death with unfaithfulness, disobedience and consulting a medium instead of seeking the LORD. (10:13-14)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then said Saul to his armor-bearer, Draw your sword, and thrust me through therewith, lest these uncircumcised come and abuse me. But his armor-bearer would not; …” The missing terms belong in that order.",
+    "options" : [
+      "Draw abuse"
+    ],
+    "prompt" : "Supply the missing words in order: “Then said Saul to his armor-bearer, ____ your sword, and thrust me through therewith, lest these uncircumcised come and me. But his armor-bearer would not; …” (10:4, WEB)",
+    "reference" : "1 Chronicles 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… two, and was made their captain: however he didn't attain to the first three.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… two, and was made their captain: however he didn't attain to the first three.” (11:21, WEB)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 26 reads “… armies: Asahel the brother of Joab, Elhanan the son of Dodo of Bethlehem,”; verse 31 reads “Ithai the son of Ribai of Gibeah of the children of Benjamin, Benaiah the Pirathonite,”. These establish the first and second answers respectively.",
+    "options" : [
+      "Bethlehem; Benjamin",
+      "Ahohite; Benjamin",
+      "Benjamin; Bethlehem",
+      "Bethlehem; Jacob"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… armies: Asahel the brother of Joab, Elhanan the son of Dodo of ______,” (11:26); “Ithai the son of Ribai of Gibeah of the children of ______, Benaiah the Pirathonite,” (11:31, WEB)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 11:1 records: “Then all Israel gathered themselves to David to Hebron, saying, Behold, we are your bone and your flesh.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David became king over all Israel, and the mighty men joined him. (11:1-3)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Hezro the Carmelite, Naarai the son of Ezbai,”; the second reads “Uriah the Hittite, Zabad the son of Ahlai,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Naarai Ahlai"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Hezro the Carmelite, ____ the son of Ezbai,” (11:37); “Uriah the Hittite, Zabad the son of ,” (11:41, WEB)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “David and all Israel went to Jerusalem (the same is Jebus); and the Jebusites, the inhabitants of the land, were there.”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "Complete the quotation: “David and all Israel went to ____ (the same is Jebus); and the Jebusites, the inhabitants of the land, were there.” (11:4, WEB)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… was with David at Pasdammim, and there the Philistines were gathered together to battle, where was a plot of ground full of barley; and the people …” The missing terms belong in that order.",
+    "options" : [
+      "David barley"
+    ],
+    "prompt" : "Supply the missing words in order: “… was with ____ at Pasdammim, and there the Philistines were gathered together to battle, where was a plot of ground full of ; and the people …” (11:13, WEB)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies three: “The three broke through the host of the Philistines, and drew water out of the well of Bethlehem, that was by the gate, and took it, …”",
+    "options" : [
+      "thousand",
+      "three",
+      "ten",
+      "four"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ broke through the host of the Philistines, and drew water out of the well of Bethlehem, that was by the gate, and took it, …”? (11:18, WEB)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 11:8 uses rest: “… city round about, from Millo even round about; and Joab repaired the rest of the city.”",
+    "options" : [
+      "rest",
+      "prayer",
+      "salvation",
+      "praise"
+    ],
+    "prompt" : "Which word completes “… city round about, from Millo even round about; and Joab repaired the ______ of the city.”? (11:8, WEB)",
+    "reference" : "1 Chronicles 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jordan: “These are those who went over the Jordan in the first month, when it had overflowed all its banks; and they put to flight all them …”",
+    "options" : [
+      "Nineveh",
+      "Edom",
+      "Jordan",
+      "Egypt"
+    ],
+    "prompt" : "Which detail belongs in this passage: “These are those who went over the ______ in the first month, when it had overflowed all its banks; and they put to flight all them …”? (12:15, WEB)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “… of those who were armed for war, who came to David to Hebron, to turn the kingdom of Saul to him, according to the word of …”; verse 27 reads “Jehoiada was the leader of the house of Aaron; and with him were three thousand and seven hundred,”. These establish the first and second answers respectively.",
+    "options" : [
+      "Hebron; Adam",
+      "Jordan; Aaron",
+      "Aaron; Hebron",
+      "Hebron; Aaron"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of those who were armed for war, who came to David to ______, to turn the kingdom of Saul to him, according to the word of …” (12:23); “Jehoiada was the leader of the house of ______; and with him were three thousand and seven hundred,” (12:27, WEB)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Attai the sixth, Eliel the seventh,” The missing terms belong in that order.",
+    "options" : [
+      "sixth seventh"
+    ],
+    "prompt" : "Supply the missing words in order: “Attai the ____, Eliel the ,” (12:11, WEB)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Of the half-tribe of Manasseh eighteen thousand, who were mentioned by name, to come and make David king.”; the second reads “Of the Danites who could set the battle in array, twenty-eight thousand six hundred.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "eighteen thousand"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Of the half-tribe of Manasseh ____ thousand, who were mentioned by name, to come and make David king.” (12:31); “Of the Danites who could set the battle in array, twenty-eight six hundred.” (12:35, WEB)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Ahiezer; then Joash, the sons of Shemaah the Gibeathite, and Jeziel, and Pelet, the sons of Azmaveth, and Beracah, and Jehu the Anathothite,”",
+    "options" : [
+      "Pelet"
+    ],
+    "prompt" : "Complete the quotation: “… Ahiezer; then Joash, the sons of Shemaah the Gibeathite, and Jeziel, and ____, the sons of Azmaveth, and Beracah, and Jehu the Anathothite,” (12:3, WEB)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… fell away some to David, when he came with the Philistines against Saul to battle: but they didn't help them; for the lords of the Philistines …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… fell away some to David, when he came with the Philistines against Saul to battle: but they didn't help them; for the lords of the Philistines …” (12:19, WEB)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 12:8 uses trained: “… David to the stronghold in the wilderness, mighty men of valor, men trained for war, that could handle shield and spear; whose faces were like the …”",
+    "options" : [
+      "armed",
+      "trained",
+      "separated",
+      "mentioned"
+    ],
+    "prompt" : "Which word completes “… David to the stronghold in the wilderness, mighty men of valor, men ______ for war, that could handle shield and spear; whose faces were like the …”? (12:8, WEB)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 12:2 records: “They were armed with bows, and could use both the right hand and the left in slinging stones and in shooting arrows from the bow: they were of Saul's brothers of Benjamin.”",
+    "options" : [
+      "Benjamin"
+    ],
+    "prompt" : "In this paraphrase, men from the tribe of ____ came to David at Ziklag. (12:1-2)",
+    "reference" : "1 Chronicles 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies new: “They carried the ark of God on a new cart, and brought it out of the house of Abinadab: and Uzza and Ahio drove the cart.”",
+    "options" : [
+      "thousands",
+      "floor",
+      "belonged",
+      "new"
+    ],
+    "prompt" : "Which detail belongs in this passage: “They carried the ark of God on a ______ cart, and brought it out of the house of Abinadab: and Uzza and Ahio drove the cart.”? (13:7, WEB)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “David and all Israel played before God with all their might, even with songs, and with harps, and with psalteries, and with tambourines, and with cymbals, …” It says David, not Joseph.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Joseph and all Israel played before God with all their might, even with songs, and with harps, and with psalteries, and with tambourines, and with cymbals, …” (13:8, WEB)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 13:3 records: “and let us bring again the ark of our God to us: for we didn't seek it in the days of Saul.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David wanted to bring the ark to Jerusalem. (13:3)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 13:5 uses Egypt: “So David assembled all Israel together, from the Shihor the brook of Egypt even to the entrance of Hamath, to bring the ark of God from …”",
+    "options" : [
+      "Egypt",
+      "Samaria",
+      "Goshen",
+      "Assyria"
+    ],
+    "prompt" : "Which word completes “So David assembled all Israel together, from the Shihor the brook of ______ even to the entrance of Hamath, to bring the ark of God from …”? (13:5, WEB)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… Uzza put forth his hand to hold the ark; for the oxen stumbled.”; verse 11 reads “David was displeased, because Yahweh had broken forth on Uzza; and he called that place Perez Uzza, to this day.”. These establish the first and second answers respectively.",
+    "options" : [
+      "displeased; stumbled",
+      "stumbled; kindled",
+      "stumbled; displeased",
+      "consulted; displeased"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Uzza put forth his hand to hold the ark; for the oxen ______.” (13:9); “David was ______, because Yahweh had broken forth on Uzza; and he called that place Perez Uzza, to this day.” (13:11, WEB)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the city of David, but carried it aside into the house of Obed-edom the Gittite.”; the second reads “… ark of God remained with the family of Obed-edom in his house three months: and Yahweh blessed the house of Obed-edom, and all that he had.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Obed three"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the city of David, but carried it aside into the house of ____-edom the Gittite.” (13:13); “… ark of God remained with the family of Obed-edom in his house months: and Yahweh blessed the house of Obed-edom, and all that he had.” (13:14, WEB)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Baalah, that is, to Kiriath Jearim, which belonged to Judah, to bring up from there the ark of God Yahweh that sits above the cherubim, that …” The missing terms belong in that order.",
+    "options" : [
+      "Judah ark"
+    ],
+    "prompt" : "Supply the missing words in order: “… Baalah, that is, to Kiriath Jearim, which belonged to ____, to bring up from there the of God Yahweh that sits above the cherubim, that …” (13:6, WEB)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… who are left in all the land of Israel, with whom the priests and Levites are in their cities that have suburbs, that they may gather …”",
+    "options" : [
+      "priests"
+    ],
+    "prompt" : "Complete the quotation: “… who are left in all the land of Israel, with whom the ____ and Levites are in their cities that have suburbs, that they may gather …” (13:2, WEB)",
+    "reference" : "1 Chronicles 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 14:3 uses Jerusalem: “David took more wives at Jerusalem; and David became the father of more sons and daughters.”",
+    "options" : [
+      "Jericho",
+      "Canaan",
+      "Goshen",
+      "Jerusalem"
+    ],
+    "prompt" : "Which word completes “David took more wives at ______; and David became the father of more sons and daughters.”? (14:3, WEB)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “It shall be, when you hear the sound of marching in the tops of the mulberry trees, that then you shall go out to battle; for …”; the second reads “David did as God commanded him: and they struck the host of the Philistines from Gibeon even to Gezer.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sound host"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “It shall be, when you hear the ____ of marching in the tops of the mulberry trees, that then you shall go out to battle; for …” (14:15); “David did as God commanded him: and they struck the of the Philistines from Gibeon even to Gezer.” (14:16, WEB)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 14:1 records: “Hiram king of Tyre sent messengers to David, and cedar trees, and masons, and carpenters, to build him a house.”",
+    "options" : [
+      "David"
+    ],
+    "prompt" : "In this paraphrase, hiram king of Tyre sent cedar and builders to ____. (14:1)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “When the Philistines heard that David was anointed king over all Israel, all the Philistines went up to seek David: and David heard of it, and …”",
+    "options" : [
+      "Elijah",
+      "Israel",
+      "Haggai",
+      "Adam"
+    ],
+    "prompt" : "Which detail belongs in this passage: “When the Philistines heard that David was anointed king over all ______, all the Philistines went up to seek David: and David heard of it, and …”? (14:8, WEB)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of the children whom he had in Jerusalem: Shammua, and Shobab, Nathan, and Solomon,” The missing terms belong in that order.",
+    "options" : [
+      "Nathan Solomon"
+    ],
+    "prompt" : "Supply the missing words in order: “… of the children whom he had in Jerusalem: Shammua, and Shobab, ____, and ,” (14:4, WEB)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “So they came up to Baal Perazim, and David struck them there; and David said, God has broken my enemies by my hand, like the breach …”; verse 12 reads “… their gods there; and David gave commandment, and they were burned with fire.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Baal; turn",
+      "Baal; fire",
+      "tops; fire",
+      "fire; Baal"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “So they came up to ______ Perazim, and David struck them there; and David said, God has broken my enemies by my hand, like the breach …” (14:11); “… their gods there; and David gave commandment, and they were burned with ______.” (14:12, WEB)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… into my hand? Yahweh said to him, Go up; for I will deliver them into your hand.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… into my hand? Yahweh said to him, Go up; for I will deliver them into your hand.” (14:10, WEB)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “David perceived that Yahweh had established him king over Israel; for his kingdom was exalted on high, for his people Israel's sake.”",
+    "options" : [
+      "David"
+    ],
+    "prompt" : "Complete the quotation: “____ perceived that Yahweh had established him king over Israel; for his kingdom was exalted on high, for his people Israel's sake.” (14:2, WEB)",
+    "reference" : "1 Chronicles 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “So the Levites appointed Heman the son of Joel; and of his brothers, Asaph the son of Berechiah; and of the sons of Merari their brothers, …”; verse 20 reads “and Zechariah, and Aziel, and Shemiramoth, and Jehiel, and Unni, and Eliab, and Maaseiah, and Benaiah, with psalteries set to Alamoth;”. These establish the first and second answers respectively.",
+    "options" : [
+      "houses; Zechariah",
+      "Zechariah; Levites",
+      "Levites; Zechariah",
+      "Levites; Japheth"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “So the ______ appointed Heman the son of Joel; and of his brothers, Asaph the son of Berechiah; and of the sons of Merari their brothers, …” (15:17); “and ______, and Aziel, and Shemiramoth, and Jehiel, and Unni, and Eliab, and Maaseiah, and Benaiah, with psalteries set to Alamoth;” (15:20, WEB)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 15:15 records: “The children of the Levites bore the ark of God on their shoulders with the poles thereon, as Moses commanded according to the word of Yahweh.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The ark was carried by the Levites with poles on their shoulders. (15:15)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “of the sons of Elizaphan, Shemaiah the chief, and his brothers two hundred;” The missing terms belong in that order.",
+    "options" : [
+      "Shemaiah hundred"
+    ],
+    "prompt" : "Supply the missing words in order: “of the sons of Elizaphan, ____ the chief, and his brothers two ;” (15:8, WEB)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Then David said, None ought to carry the ark of God but the Levites: for them has Yahweh chosen to carry the ark of God, and …”",
+    "options" : [
+      "ark"
+    ],
+    "prompt" : "Complete the quotation: “Then David said, None ought to carry the ____ of God but the Levites: for them has Yahweh chosen to carry the ark of God, and …” (15:2, WEB)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 15:5 uses twenty: “… the sons of Kohath, Uriel the chief, and his brothers one hundred twenty;”",
+    "options" : [
+      "two",
+      "seventy",
+      "twenty",
+      "eighth"
+    ],
+    "prompt" : "Which word completes “… the sons of Kohath, Uriel the chief, and his brothers one hundred ______;”? (15:5, WEB)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “So the priests and the Levites sanctified themselves to bring up the ark of Yahweh, the God of Israel.” It says priests, not soldiers.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “So the soldiers and the Levites sanctified themselves to bring up the ark of Yahweh, the God of Israel.” (15:14, WEB)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Joel: “… and Abiathar the priests, and for the Levites, for Uriel, Asaiah, and Joel, Shemaiah, and Eliel, and Amminadab,”",
+    "options" : [
+      "Eliphaz",
+      "Obadiah",
+      "Josiah",
+      "Joel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and Abiathar the priests, and for the Levites, for Uriel, Asaiah, and ______, Shemaiah, and Eliel, and Amminadab,”? (15:11, WEB)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the priests, did blow the trumpets before the ark of God: and Obed-edom and Jehiah were doorkeepers for the ark.”; the second reads “… happened, when God helped the Levites who bore the ark of the covenant of Yahweh, that they sacrificed seven bulls and seven rams.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Obed covenant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the priests, did blow the trumpets before the ark of God: and ____-edom and Jehiah were doorkeepers for the ark.” (15:24); “… happened, when God helped the Levites who bore the ark of the of Yahweh, that they sacrificed seven bulls and seven rams.” (15:26, WEB)",
+    "reference" : "1 Chronicles 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 16:5 records: “Asaph the chief, and second to him Zechariah, Jeiel, and Shemiramoth, and Jehiel, and Mattithiah, and Eliab, and Benaiah, and Obed-edom, and Jeiel, with psalteries and with harps; and Asaph with cymbals, sounding aloud;”",
+    "options" : [
+      "harps"
+    ],
+    "prompt" : "In this paraphrase, david appointed Levites to praise the LORD with lyres and ____. (16:5)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He allowed no man to do them wrong; Yes, he reproved kings for their sakes,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He allowed no man to do them wrong; Yes, he reproved kings for their sakes,” (16:21, WEB)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies covenant: “The covenant which he made with Abraham, His oath to Isaac,”",
+    "options" : [
+      "commandment",
+      "statutes",
+      "counsel",
+      "covenant"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ which he made with Abraham, His oath to Isaac,”? (16:16, WEB)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Remember his marvelous works that he has done, His wonders, and the judgments of his mouth,” The missing terms belong in that order.",
+    "options" : [
+      "Remember marvelous"
+    ],
+    "prompt" : "Supply the missing words in order: “____ his works that he has done, His wonders, and the judgments of his mouth,” (16:12, WEB)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “Declare his glory among the nations, His marvelous works among all the peoples.”; verse 29 reads “Ascribe to Yahweh the glory due to his name: Bring an offering, and come before him: Worship Yahweh in holy array.”. These establish the first and second answers respectively.",
+    "options" : [
+      "ones; glory",
+      "glory; nations",
+      "nations; glory",
+      "nations; love"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Declare his glory among the ______, His marvelous works among all the peoples.” (16:24); “Ascribe to Yahweh the ______ due to his name: Bring an offering, and come before him: Worship Yahweh in holy array.” (16:29, WEB)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 16:7 uses first: “Then on that day David first ordained to give thanks to Yahweh, by the hand of Asaph and his brothers.”",
+    "options" : [
+      "first",
+      "ten",
+      "fifty",
+      "two"
+    ],
+    "prompt" : "Which word completes “Then on that day David ______ ordained to give thanks to Yahweh, by the hand of Asaph and his brothers.”? (16:7, WEB)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… David had made an end of offering the burnt offering and the peace-offerings, he blessed the people in the name of Yahweh.”",
+    "options" : [
+      "offerings"
+    ],
+    "prompt" : "Complete the quotation: “… David had made an end of offering the burnt offering and the peace-____, he blessed the people in the name of Yahweh.” (16:2, WEB)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Then shall the trees of the wood sing for joy before Yahweh; For he comes to judge the earth.”; the second reads “and Obed-edom with their brothers, sixty-eight; Obed-edom also the son of Jeduthun and Hosah to be doorkeepers;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "joy Obed"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Then shall the trees of the wood sing for ____ before Yahweh; For he comes to judge the earth.” (16:33); “and -edom with their brothers, sixty-eight; Obed-edom also the son of Jeduthun and Hosah to be doorkeepers;” (16:38, WEB)",
+    "reference" : "1 Chronicles 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 17:6 uses shepherd: “… with any of the judges of Israel, whom I commanded to be shepherd of my people, saying, Why have you not built me a house of …”",
+    "options" : [
+      "shepherds",
+      "prophets",
+      "shepherd",
+      "princes"
+    ],
+    "prompt" : "Which word completes “… with any of the judges of Israel, whom I commanded to be ______ of my people, saying, Why have you not built me a house of …”? (17:6, WEB)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “but I will settle him in my house and in my kingdom forever; and his throne shall be established forever.” It says forever, not wherever.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “but I will settle him in my house and in my kingdom wherever; and his throne shall be established forever.” (17:14, WEB)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “… from the day that I commanded judges to be over my people Israel; and I will subdue all your enemies. Moreover I tell you that Yahweh …”",
+    "options" : [
+      "Elisha",
+      "Israel",
+      "Adam",
+      "Ezra"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… from the day that I commanded judges to be over my people ______; and I will subdue all your enemies. Moreover I tell you that Yahweh …”? (17:10, WEB)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and have cut off all your enemies from before you; and I will make you a name, like the name of the great ones who are …” The missing terms belong in that order.",
+    "options" : [
+      "cut ones"
+    ],
+    "prompt" : "Supply the missing words in order: “… and have ____ off all your enemies from before you; and I will make you a name, like the name of the great who are …” (17:8, WEB)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the prophet, Behold, I dwell in a house of cedar, but the ark of the covenant of Yahweh dwells under curtains.”",
+    "options" : [
+      "ark"
+    ],
+    "prompt" : "Complete the quotation: “… the prophet, Behold, I dwell in a house of cedar, but the ____ of the covenant of Yahweh dwells under curtains.” (17:1, WEB)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… of your servant's house for a great while to come, and have regarded me according to the estate of a man of high degree, Yahweh God.”; verse 18 reads “… the honor which is done to your servant? for you know your servant.”. These establish the first and second answers respectively.",
+    "options" : [
+      "regarded; servant",
+      "regarded; wives",
+      "servant; regarded",
+      "seed; servant"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of your servant's house for a great while to come, and have ______ me according to the estate of a man of high degree, Yahweh God.” (17:17); “… the honor which is done to your servant? for you know your ______.” (17:18, WEB)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… make you a name by great and awesome things, in driving out nations from before your people, whom you redeem out of Egypt?”; the second reads “… God of Israel, even a God to Israel: and the house of David your servant is established before you.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "nations David"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… make you a name by great and awesome things, in driving out ____ from before your people, whom you redeem out of Egypt?” (17:21); “… God of Israel, even a God to Israel: and the house of your servant is established before you.” (17:24, WEB)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 17:12 records: “He shall build me a house, and I will establish his throne forever.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God told David that his son would build the temple. (17:12)",
+    "reference" : "1 Chronicles 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies gold: “David took the shields of gold that were on the servants of Hadarezer, and brought them to Jerusalem.”",
+    "options" : [
+      "gold",
+      "clay",
+      "sand",
+      "stone"
+    ],
+    "prompt" : "Which detail belongs in this passage: “David took the shields of ______ that were on the servants of Hadarezer, and brought them to Jerusalem.”? (18:7, WEB)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 18:4 uses twenty: “David took from him one thousand chariots, and seven thousand horsemen, and twenty thousand footmen; and David hamstrung all the chariot horses, but reserved of them …”",
+    "options" : [
+      "twenty",
+      "thirteen",
+      "seven",
+      "thousand"
+    ],
+    "prompt" : "Which word completes “David took from him one thousand chariots, and seven thousand horsemen, and ______ thousand footmen; and David hamstrung all the chariot horses, but reserved of them …”? (18:4, WEB)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “When the Syrians of Damascus came to help Hadarezer king of Zobah, David struck of the Syrians twenty-two thousand men.” The missing terms belong in that order.",
+    "options" : [
+      "Damascus David"
+    ],
+    "prompt" : "Supply the missing words in order: “When the Syrians of ____ came to help Hadarezer king of Zobah, struck of the Syrians twenty-two thousand men.” (18:5, WEB)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “David reigned over all Israel; and he executed justice and righteousness to all his people.”; the second reads “Joab the son of Zeruiah was over the host; and Jehoshaphat the son of Ahilud was recorder;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "righteousness Zeruiah"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “David reigned over all Israel; and he executed justice and ____ to all his people.” (18:14); “Joab the son of was over the host; and Jehoshaphat the son of Ahilud was recorder;” (18:15, WEB)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… heard that David had struck all the host of Hadarezer king of Zobah,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… heard that David had struck all the host of Hadarezer king of Zobah,” (18:9, WEB)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… that he carried away from all the nations; from Edom, and from Moab, and from the children of Ammon, and from the Philistines, and from Amalek.”; verse 12 reads “… son of Zeruiah struck of the Edomites in the Valley of Salt eighteen thousand.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Moab; tenth",
+      "Moab; eighteen",
+      "eighteen; Moab",
+      "Tarshish; eighteen"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… that he carried away from all the nations; from Edom, and from ______, and from the children of Ammon, and from the Philistines, and from Amalek.” (18:11); “… son of Zeruiah struck of the Edomites in the Valley of Salt ______ thousand.” (18:12, WEB)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “David struck Hadarezer king of Zobah to Hamath, as he went to establish his dominion by the river Euphrates.”",
+    "options" : [
+      "king"
+    ],
+    "prompt" : "Complete the quotation: “David struck Hadarezer ____ of Zobah to Hamath, as he went to establish his dominion by the river Euphrates.” (18:3, WEB)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 18:1 records: “After this it happened, that David struck the Philistines, and subdued them, and took Gath and its towns out of the hand of the Philistines.”",
+    "options" : [
+      "Gath"
+    ],
+    "prompt" : "In this paraphrase, david defeated the Philistines and took the city of ____. (18:1)",
+    "reference" : "1 Chronicles 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… odious to David, Hanun and the children of Ammon sent one thousand talents of silver to hire them chariots and horsemen out of Mesopotamia, and out …” The missing terms belong in that order.",
+    "options" : [
+      "thousand silver"
+    ],
+    "prompt" : "Supply the missing words in order: “… odious to David, Hanun and the children of Ammon sent one ____ talents of to hire them chariots and horsemen out of Mesopotamia, and out …” (19:6, WEB)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 19:3 uses servants: “… your father, in that he has sent comforters to you? Aren't his servants come to you to search, and to overthrow, and to spy out the …”",
+    "options" : [
+      "servants",
+      "prince",
+      "soldiers",
+      "elders"
+    ],
+    "prompt" : "Which word completes “… your father, in that he has sent comforters to you? Aren't his ______ come to you to search, and to overthrow, and to spy out the …”? (19:3, WEB)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 19:4 records: “So Hanun took David's servants, and shaved them, and cut off their garments in the middle, even to their buttocks, and sent them away.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Ammonites insulted David's messengers. (19:4)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the son of Nahash, because his father shown kindness to me. So David sent messengers to comfort him concerning his father. David's servants came into the …”",
+    "options" : [
+      "David"
+    ],
+    "prompt" : "Complete the quotation: “… the son of Nahash, because his father shown kindness to me. So ____ sent messengers to comfort him concerning his father. David's servants came into the …” (19:2, WEB)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When the Syrians saw that they were put to the worse before Israel, they sent messengers, and drew forth the Syrians who were beyond the River, …”; the second reads “… told David; and he gathered all Israel together, and passed over the Jordan, and came on them, and set the battle in array against them. So …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Syrians Jordan"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When the ____ saw that they were put to the worse before Israel, they sent messengers, and drew forth the Syrians who were beyond the River, …” (19:16); “… told David; and he gathered all Israel together, and passed over the , and came on them, and set the battle in array against them. So …” (19:17, WEB)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “The rest of the people he committed into the hand of Abishai his brother; and they put themselves in array against the children of Ammon.”; verse 15 reads “… Abishai his brother, and entered into the city. Then Joab came to Jerusalem.”. These establish the first and second answers respectively.",
+    "options" : [
+      "redemption; Jerusalem",
+      "Jerusalem; rest",
+      "rest; Edom",
+      "rest; Jerusalem"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The ______ of the people he committed into the hand of Abishai his brother; and they put themselves in array against the children of Ammon.” (19:11); “… Abishai his brother, and entered into the city. Then Joab came to ______.” (19:15, WEB)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… him before and behind, he chose of all the choice men of Israel, and put them in array against the Syrians.” It says Israel, not Gomer.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… him before and behind, he chose of all the choice men of Gomer, and put them in array against the Syrians.” (19:10, WEB)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies thirty: “So they hired them thirty-two thousand chariots, and the king of Maacah and his people, who came and encamped before Medeba. The children of Ammon gathered …”",
+    "options" : [
+      "twelve",
+      "thirty",
+      "thirteen",
+      "sixty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “So they hired them ______-two thousand chariots, and the king of Maacah and his people, who came and encamped before Medeba. The children of Ammon gathered …”? (19:7, WEB)",
+    "reference" : "1 Chronicles 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “When he defied Israel, Jonathan the son of Shimea David's brother killed him.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “When he defied Israel, Jonathan the son of Shimea David's brother killed him.” (20:7, WEB)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 20:5 records: “There was again war with the Philistines; and Elhanan the son of Jair killed Lahmi the brother of Goliath the Gittite, the staff of whose spear was like a weaver's beam.”",
+    "options" : [
+      "Goliath"
+    ],
+    "prompt" : "In this paraphrase, elhanan killed Lahmi, the brother of ____. (20:5)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… to the giant in Gath; and they fell by the hand of David, and by the hand of his servants.”; verse 1 reads “… the time of the return of the year, at the time when kings go out to battle, that Joab led forth the army, and wasted the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "David; kings",
+      "Solomon; kings",
+      "David; daughter",
+      "kings; David"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… to the giant in Gath; and they fell by the hand of ______, and by the hand of his servants.” (20:8); “… the time of the return of the year, at the time when ______ go out to battle, that Joab led forth the army, and wasted the …” (20:1, WEB)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When he defied Israel, Jonathan the son of Shimea David's brother killed him.”; the second reads “… fell by the hand of David, and by the hand of his servants.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Israel servants"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When he defied ____, Jonathan the son of Shimea David's brother killed him.” (20:7); “… fell by the hand of David, and by the hand of his .” (20:8, WEB)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “It happened after this, that there arose war at Gezer with the Philistines: then Sibbecai the Hushathite killed Sippai, of the sons of the giant; and …” The missing terms belong in that order.",
+    "options" : [
+      "Gezer Philistines"
+    ],
+    "prompt" : "Supply the missing words in order: “It happened after this, that there arose war at ____ with the : then Sibbecai the Hushathite killed Sippai, of the sons of the giant; and …” (20:4, WEB)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… from off his head, and found it to weigh a talent of gold, and there were precious stones in it; and it was set on David's …”",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "Complete the quotation: “… from off his head, and found it to weigh a talent of ____, and there were precious stones in it; and it was set on David's …” (20:2, WEB)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies four: “… where was a man of great stature, whose fingers and toes were twenty-four, six on each hand, and six on each foot; and he also was …”",
+    "options" : [
+      "thirteen",
+      "twelfth",
+      "four",
+      "eighteen"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… where was a man of great stature, whose fingers and toes were twenty-______, six on each hand, and six on each foot; and he also was …”? (20:6, WEB)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 20:3 uses Jerusalem: “… of the children of Ammon. David and all the people returned to Jerusalem.”",
+    "options" : [
+      "Gilead",
+      "Edom",
+      "Jerusalem",
+      "Bethel"
+    ],
+    "prompt" : "Which word completes “… of the children of Ammon. David and all the people returned to ______.”? (20:3, WEB)",
+    "reference" : "1 Chronicles 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “God sent an angel to Jerusalem to destroy it: and as he was about to destroy, Yahweh saw, and he repented him of the evil, and …” It says Jerusalem, not Israel.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “God sent an angel to Israel to destroy it: and as he was about to destroy, Yahweh saw, and he repented him of the evil, and …” (21:15, WEB)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Yahweh spoke to Gad, David's seer, saying,”",
+    "options" : [
+      "Gad"
+    ],
+    "prompt" : "Complete the quotation: “Yahweh spoke to ____, David's seer, saying,” (21:9, WEB)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 21:1 records: “Satan stood up against Israel, and moved David to number Israel.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David sinned by counting the people of Israel. (21:1-8)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The accounts use different perspectives on agency. Readers should acknowledge the difference rather than pretend the wording is identical; both narratives hold David responsible for his action.",
+    "options" : [
+      "Chronicles denies David made any decision.",
+      "Samuel says no census occurred.",
+      "Both accounts use exactly the same wording about the inciter.",
+      "Chronicles names Satan as the inciter, while Samuel describes the event in relation to God's anger."
+    ],
+    "prompt" : "How should this account be compared with 2 Samuel 24:1? (21:1-8)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… Gad to tell David, that David should go up, and raise an altar to Yahweh in the threshing floor of Ornan the Jebusite.”; verse 21 reads “As David came to Ornan, Ornan looked and saw David, and went out of the threshing floor, and bowed himself to David with his face to …”. These establish the first and second answers respectively.",
+    "options" : [
+      "altar; burnt",
+      "throne; Ornan",
+      "Ornan; altar",
+      "altar; Ornan"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Gad to tell David, that David should go up, and raise an ______ to Yahweh in the threshing floor of Ornan the Jebusite.” (21:18); “As David came to Ornan, ______ looked and saw David, and went out of the threshing floor, and bowed himself to David with his face to …” (21:21, WEB)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Go and speak to David, saying, Thus says Yahweh, I offer you three things: choose you one of them, that I may do it to you.” The missing terms belong in that order.",
+    "options" : [
+      "David choose"
+    ],
+    "prompt" : "Supply the missing words in order: “Go and speak to ____, saying, Thus says Yahweh, I offer you three things: you one of them, that I may do it to you.” (21:10, WEB)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies mercies: “… I pray, into the hand of Yahweh; for very great are his mercies: and let me not fall into the hand of man.”",
+    "options" : [
+      "shekels",
+      "princes",
+      "instruments",
+      "mercies"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… I pray, into the hand of Yahweh; for very great are his ______: and let me not fall into the hand of man.”? (21:13, WEB)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 21:12 uses three: “… your foes, while the sword of your enemies overtakes you; or else three days the sword of Yahweh, even pestilence in the land, and the angel …”",
+    "options" : [
+      "three",
+      "ten",
+      "ninth",
+      "nine"
+    ],
+    "prompt" : "Which word completes “… your foes, while the sword of your enemies overtakes you; or else ______ days the sword of Yahweh, even pestilence in the land, and the angel …”? (21:12, WEB)",
+    "reference" : "1 Chronicles 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… rest from all his enemies round about; for his name shall be Solomon, and I will give peace and quietness to Israel in his days:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… rest from all his enemies round about; for his name shall be Solomon, and I will give peace and quietness to Israel in his days:” (22:9, WEB)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “May Yahweh give you discretion and understanding, and put you in charge of Israel; that so you may keep the law of Yahweh your God.”; verse 14 reads “… have prepared for the house of Yahweh one hundred thousand talents of gold, and one thousand thousand talents of silver, and of brass and iron without …”. These establish the first and second answers respectively.",
+    "options" : [
+      "gold; understanding",
+      "understanding; gold",
+      "hope; gold",
+      "understanding; ashes"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “May Yahweh give you discretion and ______, and put you in charge of Israel; that so you may keep the law of Yahweh your God.” (22:12); “… have prepared for the house of Yahweh one hundred thousand talents of ______, and one thousand thousand talents of silver, and of brass and iron without …” (22:14, WEB)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 22:13 records: “Then shall you prosper, if you observe to do the statutes and the ordinances which Yahweh gave Moses concerning Israel. Be strong, and of good courage. Don't be afraid, neither be dismayed.”",
+    "options" : [
+      "dismayed"
+    ],
+    "prompt" : "In this paraphrase, david said, Be strong and of good courage, and do not be afraid or ____. (22:13)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 22:4 uses David: “… the Sidonians and they of Tyre brought cedar trees in abundance to David.”",
+    "options" : [
+      "Laban",
+      "Boaz",
+      "David",
+      "Manasseh"
+    ],
+    "prompt" : "Which word completes “… the Sidonians and they of Tyre brought cedar trees in abundance to ______.”? (22:4, WEB)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “There are also workmen with you in abundance, cutters and workers of stone and timber, and all kinds of men who are skillful in every kind …”; the second reads “David also commanded all the princes of Israel to help Solomon his son, saying,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "workers Israel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “There are also workmen with you in abundance, cutters and ____ of stone and timber, and all kinds of men who are skillful in every kind …” (22:15); “David also commanded all the princes of to help Solomon his son, saying,” (22:17, WEB)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “But the word of Yahweh came to me, saying, You have shed blood abundantly, and have made great wars: you shall not build a house to …”",
+    "options" : [
+      "blood",
+      "tongue",
+      "feet",
+      "bones"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But the word of Yahweh came to me, saying, You have shed ______ abundantly, and have made great wars: you shall not build a house to …”? (22:8, WEB)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of fame and of glory throughout all countries: I will therefore make preparation for it. So David prepared abundantly before his death.” The missing terms belong in that order.",
+    "options" : [
+      "glory death"
+    ],
+    "prompt" : "Supply the missing words in order: “… of fame and of ____ throughout all countries: I will therefore make preparation for it. So David prepared abundantly before his .” (22:5, WEB)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “David commanded to gather together the foreigners who were in the land of Israel; and he set masons to hew worked stones to build the house …”",
+    "options" : [
+      "land"
+    ],
+    "prompt" : "Complete the quotation: “David commanded to gather together the foreigners who were in the ____ of Israel; and he set masons to hew worked stones to build the house …” (22:2, WEB)",
+    "reference" : "1 Chronicles 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Aaron: “The sons of Amram: Aaron and Moses; and Aaron was separated, that he should sanctify the most holy things, he and his sons, forever, to burn …”",
+    "options" : [
+      "Boaz",
+      "Shem",
+      "Manasseh",
+      "Aaron"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The sons of Amram: Aaron and Moses; and ______ was separated, that he should sanctify the most holy things, he and his sons, forever, to burn …”? (23:13, WEB)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For David said, Yahweh, the God of Israel, has given rest to his people; and he dwells in Jerusalem forever:”; the second reads “… the courts, and in the chambers, and in the purifying of all holy things, even the work of the service of the house of God;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rest holy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For David said, Yahweh, the God of Israel, has given ____ to his people; and he dwells in Jerusalem forever:” (23:25); “… the courts, and in the chambers, and in the purifying of all things, even the work of the service of the house of God;” (23:28, WEB)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 23:2 records: “He gathered together all the princes of Israel, with the priests and the Levites.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David organized the Levites for service at the house of God. (23:2-6)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “The sons of Hebron: Jeriah the chief, Amariah the second, Jahaziel the third, and Jekameam the fourth.”; verse 22 reads “Eleazar died, and had no sons, but daughters only: and their brothers the sons of Kish took them to wife.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Hebron; Dan",
+      "Tarshish; Eleazar",
+      "Hebron; Eleazar",
+      "Eleazar; Hebron"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sons of ______: Jeriah the chief, Amariah the second, Jahaziel the third, and Jekameam the fourth.” (23:19); “______ died, and had no sons, but daughters only: and their brothers the sons of Kish took them to wife.” (23:22, WEB)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now David was old and full of days; and he made Solomon his son king over Israel.”",
+    "options" : [
+      "Solomon"
+    ],
+    "prompt" : "Complete the quotation: “Now David was old and full of days; and he made ____ his son king over Israel.” (23:1, WEB)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The sons of Shimei: Jahath, Zina, and Jeush, and Beriah. These four were the sons of Shimei.” The missing terms belong in that order.",
+    "options" : [
+      "Zina four"
+    ],
+    "prompt" : "Supply the missing words in order: “The sons of Shimei: Jahath, ____, and Jeush, and Beriah. These were the sons of Shimei.” (23:10, WEB)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The sons of Eliezer were: Rehabiah the chief; and Eliezer had no other sons; but the sons of Rehabiah were very many.” It says Eliezer, not bless.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The sons of Eliezer were: Rehabiah the chief; and bless had no other sons; but the sons of Rehabiah were very many.” (23:17, WEB)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 23:9 uses three: “The sons of Shimei: Shelomoth, and Haziel, and Haran, three. These were the heads of the fathers' houses of Ladan.”",
+    "options" : [
+      "fifteen",
+      "twenty",
+      "six",
+      "three"
+    ],
+    "prompt" : "Which word completes “The sons of Shimei: Shelomoth, and Haziel, and Haran, ______. These were the heads of the fathers' houses of Ladan.”? (23:9, WEB)",
+    "reference" : "1 Chronicles 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 24:17 records: “the twenty-first to Jachin, the twenty-second to Gamul,”",
+    "options" : [
+      "twenty-four"
+    ],
+    "prompt" : "In this paraphrase, the priests were divided into ____ divisions by lot. (24:5-18)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “Of Rehabiah: of the sons of Rehabiah, Isshiah the chief.”; verse 23 reads “The sons of Hebron: Jeriah the chief, Amariah the second, Jahaziel the third, Jekameam the fourth.”. These establish the first and second answers respectively.",
+    "options" : [
+      "younger; Hebron",
+      "Rehabiah; Hebron",
+      "Rehabiah; Sinai",
+      "Hebron; Rehabiah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Of Rehabiah: of the sons of ______, Isshiah the chief.” (24:21); “The sons of ______: Jeriah the chief, Amariah the second, Jahaziel the third, Jekameam the fourth.” (24:23, WEB)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 24:4 uses Eleazar: “There were more chief men found of the sons of Eleazar than of the sons of Ithamar; and thus were they divided: of the sons of …”",
+    "options" : [
+      "Eleazar",
+      "Naomi",
+      "Noah",
+      "Jezebel"
+    ],
+    "prompt" : "Which word completes “There were more chief men found of the sons of ______ than of the sons of Ithamar; and thus were they divided: of the sons of …”? (24:4, WEB)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Aaron: “… the house of Yahweh according to the ordinance given to them by Aaron their father, as Yahweh, the God of Israel, had commanded him.”",
+    "options" : [
+      "Hezekiah",
+      "Gad",
+      "Aaron",
+      "Eleazar"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the house of Yahweh according to the ordinance given to them by ______ their father, as Yahweh, the God of Israel, had commanded him.”? (24:19, WEB)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Of the rest of the sons of Levi: of the sons of Amram, Shubael; of the sons of Shubael, Jehdeiah.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Of the rest of the sons of Levi: of the sons of Amram, Shubael; of the sons of Shubael, Jehdeiah.” (24:20, WEB)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Zadok of the sons of Eleazar, and Ahimelech of the sons of Ithamar, divided them according to their ordering in their service.”",
+    "options" : [
+      "Ithamar"
+    ],
+    "prompt" : "Complete the quotation: “… Zadok of the sons of Eleazar, and Ahimelech of the sons of ____, divided them according to their ordering in their service.” (24:3, WEB)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But Nadab and Abihu died before their father, and had no children: therefore Eleazar and Ithamar executed the priest's office.” The missing terms belong in that order.",
+    "options" : [
+      "Abihu executed"
+    ],
+    "prompt" : "Supply the missing words in order: “But Nadab and ____ died before their father, and had no children: therefore Eleazar and Ithamar the priest's office.” (24:2, WEB)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The sons of Uzziel, Micah; of the sons of Micah, Shamir.”; the second reads “The sons of Merari: of Jaaziah, Beno, and Shoham, and Zaccur, and Ibri.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Micah Merari"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The sons of Uzziel, ____; of the sons of Micah, Shamir.” (24:24); “The sons of : of Jaaziah, Beno, and Shoham, and Zaccur, and Ibri.” (24:27, WEB)",
+    "reference" : "1 Chronicles 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “the eleventh to Azarel, his sons and his brothers, twelve:”; verse 21 reads “for the fourteenth, Mattithiah, his sons and his brothers, twelve:”. These establish the first and second answers respectively.",
+    "options" : [
+      "six; brothers",
+      "twelve; brothers",
+      "twelve; wife",
+      "brothers; twelve"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “the eleventh to Azarel, his sons and his brothers, ______:” (25:18); “for the fourteenth, Mattithiah, his sons and his ______, twelve:” (25:21, WEB)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now the first lot came forth for Asaph to Joseph: the second to Gedaliah; he and his brothers and sons were twelve:” The missing terms belong in that order.",
+    "options" : [
+      "first second"
+    ],
+    "prompt" : "Supply the missing words in order: “Now the ____ lot came forth for Asaph to Joseph: the to Gedaliah; he and his brothers and sons were twelve:” (25:9, WEB)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 25:5 uses fourteen: “… words of God, to lift up the horn. God gave to Heman fourteen sons and three daughters.”",
+    "options" : [
+      "seven",
+      "fourteen",
+      "four",
+      "forty"
+    ],
+    "prompt" : "Which word completes “… words of God, to lift up the horn. God gave to Heman ______ sons and three daughters.”? (25:5, WEB)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “for the seventeenth to Joshbekashah, his sons and his brothers, twelve:”; the second reads “for the twentieth to Eliathah, his sons and his brothers, twelve:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Joshbekashah twentieth"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “for the seventeenth to ____, his sons and his brothers, twelve:” (25:24); “for the to Eliathah, his sons and his brothers, twelve:” (25:27, WEB)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “of the sons of Asaph: Zaccur, and Joseph, and Nethaniah, and Asharelah, the sons of Asaph, under the hand of Asaph, who prophesied after the order …”",
+    "options" : [
+      "Joseph"
+    ],
+    "prompt" : "Complete the quotation: “of the sons of Asaph: Zaccur, and ____, and Nethaniah, and Asharelah, the sons of Asaph, under the hand of Asaph, who prophesied after the order …” (25:2, WEB)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fifth: “the fifth to Nethaniah, his sons and his brothers, twelve:”",
+    "options" : [
+      "tenth",
+      "fifth",
+      "sixty",
+      "twelve"
+    ],
+    "prompt" : "Which detail belongs in this passage: “the ______ to Nethaniah, his sons and his brothers, twelve:”? (25:12, WEB)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 25:1 records: “… the host set apart for the service certain of the sons of Asaph, and of Heman, and of Jeduthun, who should prophesy with harps, with psalteries, and with cymbals: and the number of those who did …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The musicians were trained to prophesy with instruments. (25:1)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “the eighth to Jeshaiah, his sons and his brothers, twelve:” It says eighth, not five.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “the five to Jeshaiah, his sons and his brothers, twelve:” (25:15, WEB)",
+    "reference" : "1 Chronicles 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies offices: “… were the divisions of the doorkeepers, even of the chief men, having offices like their brothers, to minister in the house of Yahweh.”",
+    "options" : [
+      "Hebronites",
+      "thousands",
+      "goes",
+      "offices"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… were the divisions of the doorkeepers, even of the chief men, having ______ like their brothers, to minister in the house of Yahweh.”? (26:12, WEB)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… were of the sons of Obed-edom: they and their sons and their brothers, able men in strength for the service; sixty-two of Obed-edom.” The missing terms belong in that order.",
+    "options" : [
+      "Obed sixty"
+    ],
+    "prompt" : "Supply the missing words in order: “… were of the sons of ____-edom: they and their sons and their brothers, able men in strength for the service; -two of Obed-edom.” (26:8, WEB)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “His brothers: of Eliezer came Rehabiah his son, and Jeshaiah his son, and Joram his son, and Zichri his son, and Shelomoth his son.”; the second reads “All that Samuel the seer, and Saul the son of Kish, and Abner the son of Ner, and Joab the son of Zeruiah, had dedicated, whoever …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Eliezer Saul"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “His brothers: of ____ came Rehabiah his son, and Jeshaiah his son, and Joram his son, and Zichri his son, and Shelomoth his son.” (26:25); “All that Samuel the seer, and the son of Kish, and Abner the son of Ner, and Joab the son of Zeruiah, had dedicated, whoever …” (26:28, WEB)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 26:6 uses born: “Also to Shemaiah his son were sons born, who ruled over the house of their father; for they were mighty men of valor.”",
+    "options" : [
+      "Samuel",
+      "dedicate",
+      "born",
+      "Zetham"
+    ],
+    "prompt" : "Which word completes “Also to Shemaiah his son were sons ______, who ruled over the house of their father; for they were mighty men of valor.”? (26:6, WEB)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 26:13 records: “They cast lots, the small as well as the great, according to their fathers' houses, for every gate.”",
+    "options" : [
+      "lot"
+    ],
+    "prompt" : "In this paraphrase, the gatekeepers were assigned by ____ to watch the house of God. (26:13)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “For Parbar westward, four at the causeway, and two at Parbar.”; verse 22 reads “The sons of Jehieli: Zetham, and Joel his brother, over the treasures of the house of Yahweh.”. These establish the first and second answers respectively.",
+    "options" : [
+      "four; Judah",
+      "four; Joel",
+      "fifty; Joel",
+      "Joel; four"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For Parbar westward, ______ at the causeway, and two at Parbar.” (26:18); “The sons of Jehieli: Zetham, and ______ his brother, over the treasures of the house of Yahweh.” (26:22, WEB)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… sons: Zechariah the firstborn, Jediael the second, Zebadiah the third, Jathniel the fourth,”",
+    "options" : [
+      "fourth"
+    ],
+    "prompt" : "Complete the quotation: “… sons: Zechariah the firstborn, Jediael the second, Zebadiah the third, Jathniel the ____,” (26:2, WEB)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “To Shuppim and Hosah westward, by the gate of Shallecheth, at the causeway that goes up, watch against watch.” It says Hosah, not Zebadiah.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “To Shuppim and Zebadiah westward, by the gate of Shallecheth, at the causeway that goes up, watch against watch.” (26:16, WEB)",
+    "reference" : "1 Chronicles 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Furthermore over the tribes of Israel: of the Reubenites was Eliezer the son of Zichri the ruler: of the Simeonites, Shephatiah the son of Maacah:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Furthermore over the tribes of Israel: of the Reubenites was Eliezer the son of Zichri the ruler: of the Simeonites, Shephatiah the son of Maacah:” (27:16, WEB)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… of Ephraim, Hoshea the son of Azaziah: of the half-tribe of Manasseh, Joel the son of Pedaiah:”; verse 23 reads “But David didn't take the number of them from twenty years old and under, because Yahweh had said he would increase Israel like the stars of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "David; Joel",
+      "Joshua; David",
+      "Joel; David",
+      "Joel; Cyrus"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of Ephraim, Hoshea the son of Azaziah: of the half-tribe of Manasseh, ______ the son of Pedaiah:” (27:20); “But ______ didn't take the number of them from twenty years old and under, because Yahweh had said he would increase Israel like the stars of …” (27:23, WEB)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… month was Jashobeam the son of Zabdiel: and in his division were twenty-four thousand.”",
+    "options" : [
+      "four"
+    ],
+    "prompt" : "Complete the quotation: “… month was Jashobeam the son of Zabdiel: and in his division were twenty-____ thousand.” (27:2, WEB)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 27:1 records: “… heads of fathers' houses and the captains of thousands and of hundreds, and their officers who served the king, in any matter of the divisions which came in and went out month by month throughout all …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David appointed officers over the twelve divisions of the army. (27:1)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… sixth captain for the sixth month was Ira the son of Ikkesh the Tekoite: and in his division were twenty-four thousand.” The missing terms belong in that order.",
+    "options" : [
+      "sixth thousand"
+    ],
+    "prompt" : "Supply the missing words in order: “… sixth captain for the ____ month was Ira the son of Ikkesh the Tekoite: and in his division were twenty-four .” (27:9, WEB)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Shimei the Ramathite: and over the increase of the vineyards for the wine-cellars was Zabdi the Shiphmite:”; the second reads “and over the camels was Obil the Ishmaelite: and over the donkeys was Jehdeiah the Meronothite: and over the flocks was Jaziz the Hagrite.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wine donkeys"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Shimei the Ramathite: and over the increase of the vineyards for the ____-cellars was Zabdi the Shiphmite:” (27:27); “and over the camels was Obil the Ishmaelite: and over the was Jehdeiah the Meronothite: and over the flocks was Jaziz the Hagrite.” (27:30, WEB)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies tenth: “The tenth captain for the tenth month was Maharai the Netophathite, of the Zerahites: and in his division were Twenty-four thousand.”",
+    "options" : [
+      "fourth",
+      "tenth",
+      "seventy",
+      "fifth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The tenth captain for the ______ month was Maharai the Netophathite, of the Zerahites: and in his division were Twenty-four thousand.”? (27:13, WEB)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 27:7 uses twenty: “… Joab, and Zebadiah his son after him: and in his division were twenty-four thousand.”",
+    "options" : [
+      "twenty",
+      "seventeen",
+      "third",
+      "nine"
+    ],
+    "prompt" : "Which word completes “… Joab, and Zebadiah his son after him: and in his division were ______-four thousand.”? (27:7, WEB)",
+    "reference" : "1 Chronicles 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "1 Chronicles 28:19 records: “All this, said David, have I been made to understand in writing from the hand of Yahweh, even all the works of this pattern.”",
+    "options" : [
+      "hand"
+    ],
+    "prompt" : "In this paraphrase, david gave Solomon the plan for the temple by the ____ of the LORD. (28:19)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and the gold by weight for the tables of show bread, for every table; and silver for the tables of silver;”; the second reads “and for the altar of incense refined gold by weight; and gold for the pattern of the chariot, even the cherubim, that spread out their wings, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "bread altar"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and the gold by weight for the tables of show ____, for every table; and silver for the tables of silver;” (28:16); “and for the of incense refined gold by weight; and gold for the pattern of the chariot, even the cherubim, that spread out their wings, …” (28:18, WEB)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies inheritance: “… that you may possess this good land, and leave it for an inheritance to your children after you forever.”",
+    "options" : [
+      "life",
+      "offerings",
+      "refuge",
+      "inheritance"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… that you may possess this good land, and leave it for an ______ to your children after you forever.”? (28:8, WEB)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He said to me, Solomon your son, he shall build my house and my courts; for I have chosen him to be my son, and I …” The missing terms belong in that order.",
+    "options" : [
+      "Solomon courts"
+    ],
+    "prompt" : "Supply the missing words in order: “He said to me, ____ your son, he shall build my house and my ; for I have chosen him to be my son, and I …” (28:6, WEB)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 28:4 uses Judah: “… he has chosen Judah to be prince; and in the house of Judah, the house of my father; and among the sons of my father he …”",
+    "options" : [
+      "David",
+      "Ruth",
+      "Judah",
+      "Elihu"
+    ],
+    "prompt" : "Which word completes “… he has chosen Judah to be prince; and in the house of ______, the house of my father; and among the sons of my father he …”? (28:4, WEB)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “also for the divisions of the priests and the Levites, and for all the work of the service of the house of Yahweh, and for all …”; verse 15 reads “… lampstand and for the lamps of it; and for the lampstands of silver, silver by weight for every lampstand and for the lamps of it, according …”. These establish the first and second answers respectively.",
+    "options" : [
+      "silver; priests",
+      "priests; brass",
+      "fathers; silver",
+      "priests; silver"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “also for the divisions of the ______ and the Levites, and for all the work of the service of the house of Yahweh, and for all …” (28:13); “… lampstand and for the lamps of it; and for the lampstands of ______, silver by weight for every lampstand and for the lamps of it, according …” (28:15, WEB)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… gave to Solomon his son the pattern of the porch of the temple, and of the houses of it, and of the treasuries of it, and …” It says temple, not cities.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… gave to Solomon his son the pattern of the porch of the cities, and of the houses of it, and of the treasuries of it, and …” (28:11, WEB)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… heart to build a house of rest for the ark of the covenant of Yahweh, and for the footstool of our God; and I had made …”",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "Complete the quotation: “… heart to build a house of rest for the ark of the ____ of Yahweh, and for the footstool of our God; and I had made …” (28:2, WEB)",
+    "reference" : "1 Chronicles 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… David blessed Yahweh before all the assembly; and David said, You are blessed, Yahweh, the God of Israel our father, forever and ever.” The missing terms belong in that order.",
+    "options" : [
+      "David Israel"
+    ],
+    "prompt" : "Supply the missing words in order: “… David blessed Yahweh before all the assembly; and ____ said, You are blessed, Yahweh, the God of our father, forever and ever.” (29:10, WEB)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For we are strangers before you, and foreigners, as all our fathers were: our days on the earth are as a shadow, and there is no …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For we are strangers before you, and foreigners, as all our fathers were: our days on the earth are as a shadow, and there is no …” (29:15, WEB)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies glory: “Yours, Yahweh, is the greatness, the power, the glory, the victory, and the majesty: for all that is in the heavens and in the earth is …”",
+    "options" : [
+      "glory",
+      "truth",
+      "righteousness",
+      "hope"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Yours, Yahweh, is the greatness, the power, the ______, the victory, and the majesty: for all that is in the heavens and in the earth is …”? (29:11, WEB)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Then Solomon sat on the throne of Yahweh as king instead of David his father, and prospered; and all Israel obeyed him.”; the second reads “… he reigned over Israel was forty years; he reigned seven years in Hebron, and thirty-three years reigned he in Jerusalem.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Solomon Hebron"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Then ____ sat on the throne of Yahweh as king instead of David his father, and prospered; and all Israel obeyed him.” (29:23); “… he reigned over Israel was forty years; he reigned seven years in , and thirty-three years reigned he in Jerusalem.” (29:27, WEB)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… for the house of my God the gold for the things of gold, and the silver for the things of silver, and the brass for the …”",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "Complete the quotation: “… for the house of my God the gold for the things of ____, and the silver for the things of silver, and the brass for the …” (29:2, WEB)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Chronicles 29:5 uses silver: “of gold for the things of gold, and of silver for the things of silver, and for all manner of work to be made by the …”",
+    "options" : [
+      "dust",
+      "iron",
+      "silver",
+      "brass"
+    ],
+    "prompt" : "Which word completes “of gold for the things of gold, and of ______ for the things of silver, and for all manner of work to be made by the …”? (29:5, WEB)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “Yahweh, the God of Abraham, of Isaac, and of Israel, our fathers, keep this forever in the imagination of the thoughts of the heart of your …”; verse 20 reads “… assembly blessed Yahweh, the God of their fathers, and bowed down their heads, and worshiped Yahweh, and the king.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Abraham; riches",
+      "Esau; heads",
+      "Abraham; heads",
+      "heads; Abraham"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Yahweh, the God of ______, of Isaac, and of Israel, our fathers, keep this forever in the imagination of the thoughts of the heart of your …” (29:18); “… assembly blessed Yahweh, the God of their fathers, and bowed down their ______, and worshiped Yahweh, and the king.” (29:20, WEB)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1chronicles",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "1 Chronicles 29:6 records: “Then the princes of the fathers' houses, and the princes of the tribes of Israel, and the captains of thousands and of hundreds, with the rulers over the king's work, offered willingly;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The people gave freely toward building the temple. (29:6-9)",
+    "reference" : "1 Chronicles 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  }
+]

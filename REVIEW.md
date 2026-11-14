@@ -4,6 +4,8 @@ Everything below is marked `reviewed: false`. DEBUG builds show it with a **Draf
 Release builds hide the unreviewed text (the game still works with plain wording such as "Read
 these chapters to light this stop"). Set `reviewed: true` on each entry once it's checked.
 
+Imported question set: owner-approved, all volumes.
+
 ## 0. Places (new this round) — `PlaceData.swift`
 66 Places (one per book), each with a name, a style and its growth pieces' captions. Most
 captions describe the illustration ("the barn is built") rather than make a claim, but check
@@ -28,12 +30,10 @@ those that point at the text, e.g.:
 - **Villager routines** (`VillagerData.swift`) are illustrations (a fisherman, a harvester),
   not claims, but check they feel right for each style.
 
-- **Chapter questions** — `QuestionData.swift`: 34 questions (every bundled chapter, plus
+- **Legacy chapter questions** — `QuestionData.swift`: 34 questions (every bundled chapter, plus
   Gen 6, 12; Exod 14; 1 Sam 17; Dan 3; Jonah 1, 3; Matt 2; Mark 4; Luke 2, 15; John 2, 11;
   Acts 2, 9; 1 Cor 13; Rev 21). Check each answer against the ASV and its reference, and that
   the wrong options are clearly wrong.
-- **Genesis 1–3 owner-reviewed test set** — `QuestionData.swift`: 9 multiple-choice questions,
-  3 fill-in-the-blank questions and 3 true-or-false questions, added as an owner-reviewed test set.
 
 ## 1. Character journeys — `CharacterJourneys.swift`
 13 journeys (the 12, plus Jonah as a bonus), 84 stops.

@@ -1,0 +1,1180 @@
+[
+  {
+    "answer" : 3,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies deliver: “… away its punishment; Because they carried away captive the whole community, To deliver them up to Edom;”",
+    "options" : [
+      "Jerusalem",
+      "wall",
+      "Rabbah",
+      "deliver"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… away its punishment; Because they carried away captive the whole community, To ______ them up to Edom;”? (1:6, WEB)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… says Yahweh: \"For three transgressions of the children of Ammon, yes, for four, I will not turn away its punishment; Because they have ripped open the …”; the second reads “But I will kindle a fire in the wall of Rabbah, And it will devour its palaces, With shouting in the day of battle, With a …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "four fire"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… says Yahweh: \"For three transgressions of the children of Ammon, yes, for ____, I will not turn away its punishment; Because they have ripped open the …” (1:13); “But I will kindle a in the wall of Rabbah, And it will devour its palaces, With shouting in the day of battle, With a …” (1:14, WEB)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “Thus says Yahweh: \"For three transgressions of Tyre, yes, for four, I will not turn away its punishment; Because they delivered up the whole community to …”; verse 11 reads “Thus says Yahweh: \"For three transgressions of Edom, yes, for four, I will not turn away its punishment; Because he pursued his brother with the sword, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "iniquities; Edom",
+      "transgressions; Jericho",
+      "Edom; transgressions",
+      "transgressions; Edom"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Thus says Yahweh: \"For three ______ of Tyre, yes, for four, I will not turn away its punishment; Because they delivered up the whole community to …” (1:9); “Thus says Yahweh: \"For three transgressions of ______, yes, for four, I will not turn away its punishment; Because he pursued his brother with the sword, …” (1:11, WEB)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He said: \"Yahweh will roar from Zion, And utter his voice from Jerusalem; And the pastures of the shepherds will mourn, And the top of Carmel …”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "Complete the quotation: “He said: \"Yahweh will roar from ____, And utter his voice from Jerusalem; And the pastures of the shepherds will mourn, And the top of Carmel …” (1:2, WEB)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 1:3 uses Gilead: “… four, I will not turn away its punishment; Because they have threshed Gilead with threshing instruments of iron;”",
+    "options" : [
+      "Zion",
+      "Persia",
+      "Edom",
+      "Gilead"
+    ],
+    "prompt" : "Which word completes “… four, I will not turn away its punishment; Because they have threshed ______ with threshing instruments of iron;”? (1:3, WEB)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I will break the bar of Damascus, And cut off the inhabitant from the valley of Aven, And him who holds the scepter from the house …” The missing terms belong in that order.",
+    "options" : [
+      "Damascus Aven"
+    ],
+    "prompt" : "Supply the missing words in order: “I will break the bar of ____, And cut off the inhabitant from the valley of , And him who holds the scepter from the house …” (1:5, WEB)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Amos 1:1 records: “… Amos, who was among the herdsmen of Tekoa, which he saw concerning Israel in the days of Uzziah king of Judah, and in the days of Jeroboam the son of Joash king of Israel, two years …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Amos was among the shepherds of Tekoa. (1:1)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… off the inhabitant from Ashdod, And him who holds the scepter from Ashkelon; And I will turn my hand against Ekron; And the remnant of the …” It says Ashkelon, not Edom.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… off the inhabitant from Ashdod, And him who holds the scepter from Edom; And I will turn my hand against Ekron; And the remnant of the …” (1:8, WEB)",
+    "reference" : "Amos 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “And they lay themselves down beside every altar on clothes taken in pledge; And in the house of their God they drink the wine of those …” It says altar, not lamp.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “And they lay themselves down beside every lamp on clothes taken in pledge; And in the house of their God they drink the wine of those …” (2:8, WEB)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But I will send a fire on Moab, And it will devour the palaces of Kerioth; And Moab will die with tumult, with shouting, and with …”",
+    "options" : [
+      "Moab"
+    ],
+    "prompt" : "Complete the quotation: “But I will send a fire on ____, And it will devour the palaces of Kerioth; And Moab will die with tumult, with shouting, and with …” (2:2, WEB)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Amos 2:1 records: “Thus says Yahweh: \"For three transgressions of Moab, yes, for four, I will not turn away its punishment; Because he burned the bones of the king of Edom into lime;”",
+    "options" : [
+      "Edom"
+    ],
+    "prompt" : "In this paraphrase, the LORD said He would not revoke the punishment for Moab for burning the bones of the king of ____. (2:1)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 2:4 uses law: “… I will not turn away its punishment; Because they have rejected Yahweh's law, And have not kept his statutes, And their lies have led them astray, …”",
+    "options" : [
+      "teaching",
+      "judgment",
+      "law",
+      "statutes"
+    ],
+    "prompt" : "Which word completes “… I will not turn away its punishment; Because they have rejected Yahweh's ______, And have not kept his statutes, And their lies have led them astray, …”? (2:4, WEB)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Yahweh: \"For three transgressions of Israel, yes, for four, I will not turn away its punishment; Because they have sold the righteous for silver, And the …” The missing terms belong in that order.",
+    "options" : [
+      "transgressions righteous"
+    ],
+    "prompt" : "Supply the missing words in order: “… Yahweh: \"For three ____ of Israel, yes, for four, I will not turn away its punishment; Because they have sold the for silver, And the …” (2:6, WEB)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies justice: “… dust of the earth on the head of the poor, And deny justice to the oppressed; And a man and his father use the same maiden, …”",
+    "options" : [
+      "wrath",
+      "truth",
+      "fear",
+      "justice"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… dust of the earth on the head of the poor, And deny ______ to the oppressed; And a man and his father use the same maiden, …”? (2:7, WEB)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… brought you up out of the land of Egypt, And led you forty years in the wilderness, To possess the land of the Amorite.”; verse 11 reads “I raised up some of your sons for prophets, And some of your young men for Nazirites. Isn't this true, You children of Israel?\" says Yahweh.”. These establish the first and second answers respectively.",
+    "options" : [
+      "two; raised",
+      "forty; raised",
+      "raised; forty",
+      "forty; destroyed"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… brought you up out of the land of Egypt, And led you ______ years in the wilderness, To possess the land of the Amorite.” (2:10); “I ______ up some of your sons for prophets, And some of your young men for Nazirites. Isn't this true, You children of Israel?\" says Yahweh.” (2:11, WEB)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… you in your place, As a cart crushes that is full of grain.”; the second reads “… swift of foot won't escape; Neither shall he who rides the horse deliver himself;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "grain deliver"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… you in your place, As a cart crushes that is full of ____.” (2:13); “… swift of foot won't escape; Neither shall he who rides the horse himself;” (2:15, WEB)",
+    "reference" : "Amos 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “\"Indeed they don't know to do right,\" says Yahweh, \"Who hoard plunder and loot in their palaces.\"”; verse 11 reads “… overrun the land; And he will pull down your strongholds, And your fortresses will be plundered.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "Indeed; fortresses",
+      "fortresses; Indeed",
+      "Indeed; sins",
+      "roared; fortresses"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “\"______ they don't know to do right,\" says Yahweh, \"Who hoard plunder and loot in their palaces.\"” (3:10); “… overrun the land; And he will pull down your strongholds, And your ______ will be plundered.\"” (3:11, WEB)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Thus says Yahweh: \"As the shepherd rescues out of the mouth of the lion two legs, Or a piece of an ear, So shall the children …”; the second reads “\"For in the day that I visit the transgressions of Israel on him, I will also visit the altars of Bethel; And the horns of the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "shepherd transgressions"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Thus says Yahweh: \"As the ____ rescues out of the mouth of the lion two legs, Or a piece of an ear, So shall the children …” (3:12); “\"For in the day that I visit the of Israel on him, I will also visit the altars of Bethel; And the horns of the …” (3:14, WEB)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of the earth. Therefore I will punish you for all of your sins.\"”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “… of the earth. Therefore I will punish you for all of your ____.\"” (3:2, WEB)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the land of Egypt, And say, \"Assemble yourselves on the mountains of Samaria, And see what unrest is in her, And what oppression is among them.\"” It says Samaria, not Gilgal.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the land of Egypt, And say, \"Assemble yourselves on the mountains of Gilgal, And see what unrest is in her, And what oppression is among them.\"” (3:9, WEB)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 3:4 uses den: “… he has no prey? Does a young lion cry out of his den, If he has caught nothing?”",
+    "options" : [
+      "den",
+      "palaces",
+      "rescued",
+      "agreed"
+    ],
+    "prompt" : "Which word completes “… he has no prey? Does a young lion cry out of his ______, If he has caught nothing?”? (3:4, WEB)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies happen: “… alarm sound in a city, Without the people being afraid? Does evil happen to a city, And Yahweh hasn't done it?”",
+    "options" : [
+      "walk",
+      "altars",
+      "happen",
+      "loot"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… alarm sound in a city, Without the people being afraid? Does evil ______ to a city, And Yahweh hasn't done it?”? (3:6, WEB)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… a bird fall in a trap on the earth, Where no snare is set for him? Does a snare spring up from the ground, When there …” The missing terms belong in that order.",
+    "options" : [
+      "bird ground"
+    ],
+    "prompt" : "Supply the missing words in order: “… a ____ fall in a trap on the earth, Where no snare is set for him? Does a snare spring up from the , When there …” (3:5, WEB)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Amos 3:7 records: “Surely the Lord Yahweh will do nothing, Unless he reveals his secret to his servants the prophets.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Amos said the LORD does nothing without revealing His secret to His servants the prophets. (3:7)",
+    "reference" : "Amos 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bread: “… given you cleanness of teeth in all your cities, And lack of bread in every town; Yet you haven't returned to me,\" says Yahweh.”",
+    "options" : [
+      "grain",
+      "milk",
+      "bread",
+      "wheat"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… given you cleanness of teeth in all your cities, And lack of ______ in every town; Yet you haven't returned to me,\" says Yahweh.”? (4:6, WEB)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “So two or three cities staggered to one city to drink water, And were not satisfied: Yet you haven't returned to me,\" says Yahweh.”; verse 9 reads “… vineyards; And your fig trees and your olive trees have the swarming locust devoured: Yet you haven't returned to me,\" says Yahweh.”. These establish the first and second answers respectively.",
+    "options" : [
+      "grapes; locust",
+      "water; proclaim",
+      "water; locust",
+      "locust; water"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “So two or three cities staggered to one city to drink ______, And were not satisfied: Yet you haven't returned to me,\" says Yahweh.” (4:8); “… vineyards; And your fig trees and your olive trees have the swarming ______ devoured: Yet you haven't returned to me,\" says Yahweh.” (4:9, WEB)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Offer a sacrifice of thanksgiving of that which is leavened, And proclaim free will offerings and brag about them: For this pleases you, you children of …” The missing terms belong in that order.",
+    "options" : [
+      "sacrifice thanksgiving"
+    ],
+    "prompt" : "Supply the missing words in order: “Offer a ____ of of that which is leavened, And proclaim free will offerings and brag about them: For this pleases you, you children of …” (4:5, WEB)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 4:4 uses Gilgal: “\"Go to Bethel, and sin; To Gilgal, and sin more. Bring your sacrifices every morning, Your tithes every three days,”",
+    "options" : [
+      "Babylon",
+      "Tarshish",
+      "Gilgal",
+      "Jordan"
+    ],
+    "prompt" : "Which word completes “\"Go to Bethel, and sin; To ______, and sin more. Bring your sacrifices every morning, Your tithes every three days,”? (4:4, WEB)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Amos 4:12 records: “\"Therefore thus will I do to you, Israel; Because I will do this to you, Prepare to meet your God, Israel.”",
+    "options" : [
+      "God"
+    ],
+    "prompt" : "In this paraphrase, amos said, Prepare to meet your ____, O Israel. (4:12)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “\"I also have withheld the rain from you, When there were yet three months to the harvest; And I caused it to rain on one city, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “\"I also have withheld the rain from you, When there were yet three months to the harvest; And I caused it to rain on one city, …” (4:7, WEB)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Gomorrah, And you were like a burning stick plucked out of the fire; Yet you haven't returned to me,\" says Yahweh.”; the second reads “… And declares to man what is his thought; Who makes the morning darkness, And treads on the high places of the Earth: Yahweh, the God of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fire darkness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Gomorrah, And you were like a burning stick plucked out of the ____; Yet you haven't returned to me,\" says Yahweh.” (4:11); “… And declares to man what is his thought; Who makes the morning , And treads on the high places of the Earth: Yahweh, the God of …” (4:13, WEB)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… on the mountain of Samaria, who oppress the poor, who crush the needy, who tell their lords, \"Bring, and let us drink.\"”",
+    "options" : [
+      "needy"
+    ],
+    "prompt" : "Complete the quotation: “… on the mountain of Samaria, who oppress the poor, who crush the ____, who tell their lords, \"Bring, and let us drink.\"” (4:1, WEB)",
+    "reference" : "Amos 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… fallen; She shall rise no more. She is cast down on her land; There is no one to raise her up.\"”",
+    "options" : [
+      "land"
+    ],
+    "prompt" : "Complete the quotation: “… fallen; She shall rise no more. She is cast down on her ____; There is no one to raise her up.\"” (5:2, WEB)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For I know how many your offenses, And how great are your sins-- You who afflict the just, Who take a bribe, And who turn aside …” It says sins, not rebellion.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For I know how many your offenses, And how great are your rebellion-- You who afflict the just, Who take a bribe, And who turn aside …” (5:12, WEB)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The call for justice to roll like waters exposes a contradiction between ritual and conduct. The criticism is not an argument that music itself is evil.",
+    "options" : [
+      "Their worship is separated from justice and righteousness.",
+      "The people have been too just toward the poor.",
+      "The passage calls for more ritual while preserving injustice.",
+      "God condemns all sound as inherently sinful."
+    ],
+    "prompt" : "Why does God reject the people's festivals and songs in this passage? (5:21-24)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Amos 5:14 records: “Seek good, and not evil, That you may live; And so Yahweh, the God of hosts, will be with you, As you say.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Amos said, \"Seek good, and not evil, that you may live.\" (5:14)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 5:5 uses Beersheba: “But don't seek Bethel, Nor enter into Gilgal, And don't pass to Beersheba: For Gilgal shall surely go into captivity, And Bethel shall come to nothing.”",
+    "options" : [
+      "Damascus",
+      "Zion",
+      "Jericho",
+      "Beersheba"
+    ],
+    "prompt" : "Which word completes “But don't seek Bethel, Nor enter into Gilgal, And don't pass to ______: For Gilgal shall surely go into captivity, And Bethel shall come to nothing.”? (5:5, WEB)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wheat: “… as you trample on the poor, And take taxes from him of wheat: You have built houses of hewn stone, But you will not dwell in …”",
+    "options" : [
+      "corn",
+      "wheat",
+      "olives",
+      "grapes"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… as you trample on the poor, And take taxes from him of ______: You have built houses of hewn stone, But you will not dwell in …”? (5:11, WEB)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… say in all the streets, 'Alas! Alas!' And they will call the farmer to mourning, And those who are skillful in lamentation to wailing.”; verse 19 reads “… into the house and leaned his hand on the wall, And a snake bit him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "farmer; wall",
+      "morning; snake",
+      "farmer; snake",
+      "snake; farmer"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… say in all the streets, 'Alas! Alas!' And they will call the ______ to mourning, And those who are skillful in lamentation to wailing.” (5:16); “… into the house and leaned his hand on the wall, And a ______ bit him.” (5:19, WEB)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Seek him who made the Pleiades and Orion, And turns the shadow of death into the morning, And makes the day dark with night; Who calls …” The missing terms belong in that order.",
+    "options" : [
+      "Pleiades death"
+    ],
+    "prompt" : "Supply the missing words in order: “Seek him who made the ____ and Orion, And turns the shadow of into the morning, And makes the day dark with night; Who calls …” (5:8, WEB)",
+    "reference" : "Amos 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Amos 6:1 records: “Woe to those who are at ease in Zion, And to those who are secure on the mountain of Samaria, The notable men of the chief of the nations, To whom the house of Israel come!”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "In this paraphrase, woe to those who are at ease in ____. (6:1)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… a man's relative carries him, even he who burns him, to bring bodies out of the house, and asks him who is in the innermost parts …”; verse 9 reads “It will happen, if there remain ten men in one house, That they shall die.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fortresses; ten",
+      "bodies; first",
+      "bodies; ten",
+      "ten; bodies"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… a man's relative carries him, even he who burns him, to bring ______ out of the house, and asks him who is in the innermost parts …” (6:10); “It will happen, if there remain ______ men in one house, That they shall die.” (6:9, WEB)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… on the strings of a harp; Who invent for themselves instruments of music, like David;” The missing terms belong in that order.",
+    "options" : [
+      "instruments David"
+    ],
+    "prompt" : "Supply the missing words in order: “… on the strings of a harp; Who invent for themselves ____ of music, like ;” (6:5, WEB)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… abhor the pride of Jacob, And detest his fortresses. Therefore I will deliver up the city with all that is in it.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… abhor the pride of Jacob, And detest his fortresses. Therefore I will deliver up the city with all that is in it.” (6:8, WEB)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… oxen? But you have turned justice into poison, And the fruit of righteousness into bitterness;”; the second reads “For, behold, I will raise up against you a nation, house of Israel,\" Says Yahweh, the God of hosts; \"And they will afflict you from the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "righteousness nation"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… oxen? But you have turned justice into poison, And the fruit of ____ into bitterness;” (6:12); “For, behold, I will raise up against you a , house of Israel,\" Says Yahweh, the God of hosts; \"And they will afflict you from the …” (6:14, WEB)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Joseph: “… the best oils; But they are not grieved for the affliction of Joseph.”",
+    "options" : [
+      "Lot",
+      "Naomi",
+      "Joseph",
+      "Caleb"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the best oils; But they are not grieved for the affliction of ______.”? (6:6, WEB)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 6:4 uses stretch: “Who lie on beds of ivory, And stretch themselves on their couches, And eat the lambs out of the flock, And the calves out of the …”",
+    "options" : [
+      "stretch",
+      "turned",
+      "fruit",
+      "anoint"
+    ],
+    "prompt" : "Which word completes “Who lie on beds of ivory, And ______ themselves on their couches, And eat the lambs out of the flock, And the calves out of the …”? (6:4, WEB)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… they better than these kingdoms? Or is their border greater than your border?”",
+    "options" : [
+      "border"
+    ],
+    "prompt" : "Complete the quotation: “… they better than these kingdoms? Or is their border greater than your ____?” (6:2, WEB)",
+    "reference" : "Amos 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 7:4 uses judgment: “… the Lord Yahweh showed me and, behold, the Lord Yahweh called for judgment by fire; and it dried up the great deep, and would have devoured …”",
+    "options" : [
+      "promises",
+      "covenant",
+      "judgment",
+      "promise"
+    ],
+    "prompt" : "Which word completes “… the Lord Yahweh showed me and, behold, the Lord Yahweh called for ______ by fire; and it dried up the great deep, and would have devoured …”? (7:4, WEB)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Amos 7:14 records: “Then Amos answered Amaziah, \"I was no prophet, neither was I a prophet's son; but I was a herdsman, and a farmer of sycamore trees;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Amos said he was a herdsman and a dresser of sycamore figs. (7:14)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The high places of Isaac will be desolate, the sanctuaries of Israel will be laid waste; and I will rise against the house of Jeroboam with …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The high places of Isaac will be desolate, the sanctuaries of Israel will be laid waste; and I will rise against the house of Jeroboam with …” (7:9, WEB)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “Then Amaziah the priest of Beth El sent to Jeroboam king of Israel, saying, \"Amos has conspired against you in the midst of the house of …”; verse 12 reads “… seer, go, flee away into the land of Judah, and there eat bread, and prophesy there:”. These establish the first and second answers respectively.",
+    "options" : [
+      "servants; bread",
+      "priest; grapes",
+      "bread; priest",
+      "priest; bread"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Then Amaziah the ______ of Beth El sent to Jeroboam king of Israel, saying, \"Amos has conspired against you in the midst of the house of …” (7:10); “… seer, go, flee away into the land of Judah, and there eat ______, and prophesy there:” (7:12, WEB)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “but don't prophesy again any more at Bethel; for it is the king's sanctuary, and it is a royal house!\"”; the second reads “… therefore listen to the word of Yahweh: 'You say, Don't prophesy against Israel, and don't preach against the house of Isaac.'”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Bethel Israel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “but don't prophesy again any more at ____; for it is the king's sanctuary, and it is a royal house!\"” (7:13); “… therefore listen to the word of Yahweh: 'You say, Don't prophesy against , and don't preach against the house of Isaac.'” (7:16, WEB)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… he showed me and, behold, the Lord stood beside a wall made by a plumb line, with a plumb line in his hand.” The missing terms belong in that order.",
+    "options" : [
+      "stood plumb"
+    ],
+    "prompt" : "Supply the missing words in order: “… he showed me and, behold, the Lord ____ beside a wall made by a plumb line, with a line in his hand.” (7:7, WEB)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Amos: “Yahweh said to me, \"Amos, what do you see?\" I said, \"A plumb line.\" Then the Lord said, \"Behold, I will set a plumb line in …”",
+    "options" : [
+      "Sarai",
+      "Amos",
+      "Haggai",
+      "Elisha"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Yahweh said to me, \"______, what do you see?\" I said, \"A plumb line.\" Then the Lord said, \"Behold, I will set a plumb line in …”? (7:8, WEB)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… land, then I said, \"Lord Yahweh, forgive, I beg you! How could Jacob stand? For he is small.\"”",
+    "options" : [
+      "Jacob"
+    ],
+    "prompt" : "Complete the quotation: “… land, then I said, \"Lord Yahweh, forgive, I beg you! How could ____ stand? For he is small.\"” (7:2, WEB)",
+    "reference" : "Amos 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… go down at noon, And I will darken the earth in the clear day.”; verse 10 reads “I will turn your feasts into mourning, And all your songs into lamentation; And I will make you wear sackcloth on all your bodies, And baldness …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Sabbath; songs",
+      "clear; sweepings",
+      "clear; songs",
+      "songs; clear"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… go down at noon, And I will darken the earth in the ______ day.” (8:9); “I will turn your feasts into mourning, And all your ______ into lamentation; And I will make you wear sackcloth on all your bodies, And baldness …” (8:10, WEB)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… it will be stirred up and sink again, like the River of Egypt.” It says Egypt, not Samaria.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… it will be stirred up and sink again, like the River of Samaria.” (8:8, WEB)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 8:4 uses poor: “… this, you who desire to swallow up the needy, And cause the poor of the land to fail,”",
+    "options" : [
+      "merciful",
+      "poor",
+      "innocent",
+      "righteous"
+    ],
+    "prompt" : "Which word completes “… this, you who desire to swallow up the needy, And cause the ______ of the land to fail,”? (8:4, WEB)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Amos 8:1 records: “Thus the Lord Yahweh showed me: behold, a basket of summer fruit.”",
+    "options" : [
+      "summer"
+    ],
+    "prompt" : "In this paraphrase, amos saw a basket of ____ fruit, a sign that the end had come. (8:1-2)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies needy: “That we may buy the poor for silver, And the needy for a pair of shoes, And sell the sweepings with the wheat?'\"”",
+    "options" : [
+      "bitter",
+      "needy",
+      "wander",
+      "place"
+    ],
+    "prompt" : "Which detail belongs in this passage: “That we may buy the poor for silver, And the ______ for a pair of shoes, And sell the sweepings with the wheat?'\"”? (8:6, WEB)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The songs of the temple will be wailings in that day,\" says the Lord Yahweh. \"The dead bodies will be many. In every place they will …”",
+    "options" : [
+      "temple"
+    ],
+    "prompt" : "Complete the quotation: “The songs of the ____ will be wailings in that day,\" says the Lord Yahweh. \"The dead bodies will be many. In every place they will …” (8:3, WEB)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… I will send a famine in the land, Not a famine of bread, Nor a thirst for water, But of hearing the words of Yahweh.”; the second reads “… who swear by the sin of Samaria, And say, 'As your god, Dan, lives;' And, 'As the way of Beersheba lives;' They will fall, and never …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "bread Dan"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… I will send a famine in the land, Not a famine of ____, Nor a thirst for water, But of hearing the words of Yahweh.” (8:11); “… who swear by the sin of Samaria, And say, 'As your god, , lives;' And, 'As the way of Beersheba lives;' They will fall, and never …” (8:14, WEB)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… 'When will the new moon be gone, that we may sell grain? And the Sabbath, that we may market wheat, Making the ephah small, and the …” The missing terms belong in that order.",
+    "options" : [
+      "grain Sabbath"
+    ],
+    "prompt" : "Supply the missing words in order: “… 'When will the new moon be gone, that we may sell ____? And the , that we may market wheat, Making the ephah small, and the …” (8:5, WEB)",
+    "reference" : "Amos 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Amos 9:11 records: “In that day I will raise up the tent of David who is fallen, and close up its breaches, and I will raise up its ruins, and I will build it as in the days of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said He would raise up the fallen booth of David. (9:11)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “I saw the Lord standing beside the altar, and he said, \"Strike the tops of the pillars, that the thresholds may shake; and break them in …”",
+    "options" : [
+      "altar"
+    ],
+    "prompt" : "Complete the quotation: “I saw the Lord standing beside the ____, and he said, \"Strike the tops of the pillars, that the thresholds may shake; and break them in …” (9:1, WEB)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… reaper, And the one treading grapes him who sows seed; And sweet wine will drip from the mountains, And flow from the hills.”; the second reads “I will bring back the captivity of my people Israel, And they will rebuild the ruined cities, and inhabit them; and they will plant vineyards, and …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wine Israel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… reaper, And the one treading grapes him who sows seed; And sweet ____ will drip from the mountains, And flow from the hills.” (9:13); “I will bring back the captivity of my people , And they will rebuild the ruined cities, and inhabit them; and they will plant vineyards, and …” (9:14, WEB)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For the Lord, Yahweh of Hosts, is he who touches the land and it melts, and all who dwell in it will mourn; and it will …” The missing terms belong in that order.",
+    "options" : [
+      "touches land"
+    ],
+    "prompt" : "Supply the missing words in order: “For the Lord, Yahweh of Hosts, is he who ____ the and it melts, and all who dwell in it will mourn; and it will …” (9:5, WEB)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the earth; except that I will not utterly destroy the house of Jacob,\" says Yahweh.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the earth; except that I will not utterly destroy the house of Jacob,\" says Yahweh.” (9:8, WEB)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Amos 9:3 uses sight: “… and take them out there; and though they be hid from my sight in the bottom of the sea, there I will command the serpent, and …”",
+    "options" : [
+      "sifted",
+      "dwell",
+      "land",
+      "sight"
+    ],
+    "prompt" : "Which word completes “… and take them out there; and though they be hid from my ______ in the bottom of the sea, there I will command the serpent, and …”? (9:3, WEB)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies surface: “… for the waters of the sea, and pours them out on the surface of the earth; Yahweh is his name.”",
+    "options" : [
+      "surface",
+      "ruined",
+      "Hosts",
+      "wine"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… for the waters of the sea, and pours them out on the ______ of the earth; Yahweh is his name.”? (9:6, WEB)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "amos",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… command, and I will sift the house of Israel among all the nations, as grain is sifted in a sieve, yet not the least kernel will …”; verse 10 reads “All the sinners of my people will die by the sword, who say, 'Evil won't overtake nor meet us.'”. These establish the first and second answers respectively.",
+    "options" : [
+      "nations; seek",
+      "nations; die",
+      "die; nations",
+      "pours; die"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… command, and I will sift the house of Israel among all the ______, as grain is sifted in a sieve, yet not the least kernel will …” (9:9); “All the sinners of my people will ______ by the sword, who say, 'Evil won't overtake nor meet us.'” (9:10, WEB)",
+    "reference" : "Amos 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

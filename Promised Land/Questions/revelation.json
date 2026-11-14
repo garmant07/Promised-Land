@@ -1,0 +1,2868 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… in oppression, Kingdom, and perseverance in Christ Jesus, was on the isle that is called Patmos because of God's Word and the testimony of Jesus Christ.” The missing terms belong in that order.",
+    "options" : [
+      "Kingdom testimony"
+    ],
+    "prompt" : "Supply the missing words in order: “… in oppression, ____, and perseverance in Christ Jesus, was on the isle that is called Patmos because of God's Word and the of Jesus Christ.” (1:9, WEB)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It is a revelation associated with Jesus Christ, addressed to servants and to actual churches in Asia. Its visions must be read as apocalyptic and prophetic communication to real hearers. Christian schools differ about the fulfillment of many images; a modern timetable should not replace the stated setting.",
+    "options" : [
+      "Its sole stated purpose is to provide a date for the end.",
+      "It explicitly addresses only a single modern nation.",
+      "Its original churches are said to be imaginary.",
+      "It is a revelation associated with Jesus Christ, addressed to servants and to actual churches in Asia."
+    ],
+    "prompt" : "How does the opening identify the book's purpose and original setting? (1:1-11)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and behold, I am alive forevermore. Amen. I have the keys of Death and of Hades.”; the second reads “… stars which you saw in my right hand, and the seven golden lampstands. The seven stars are the angels of the seven assemblies. The seven lampstands …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Death lampstands"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and behold, I am alive forevermore. Amen. I have the keys of ____ and of Hades.” (1:18); “… stars which you saw in my right hand, and the seven golden . The seven stars are the angels of the seven assemblies. The seven lampstands …” (1:20, WEB)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… see, write in a book and send to the seven assemblies: to Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and to Laodicea.\"” It says Ephesus, not Bethany.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… see, write in a book and send to the seven assemblies: to Bethany, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and to Laodicea.\"” (1:11, WEB)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “John, to the seven assemblies that are in Asia: Grace to you and peace, from God, who is and who was and who is to come; …”",
+    "options" : [
+      "Grace"
+    ],
+    "prompt" : "Complete the quotation: “John, to the seven assemblies that are in Asia: ____ to you and peace, from God, who is and who was and who is to come; …” (1:4, WEB)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… soon, which he sent and made known by his angel to his servant, John,”",
+    "options" : [
+      "servant"
+    ],
+    "prompt" : "Complete the quotation: “… soon, which he sent and made known by his angel to his ____, John,” (1:1, WEB)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Spirit: “I was in the Spirit on the Lord's day, and I heard behind me a loud voice, like a trumpet”",
+    "options" : [
+      "Patmos",
+      "alive",
+      "tribes",
+      "Spirit"
+    ],
+    "prompt" : "Which detail belongs in this passage: “I was in the ______ on the Lord's day, and I heard behind me a loud voice, like a trumpet”? (1:10, WEB)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 1:5 uses faithful: “and from Jesus Christ, the faithful witness, the firstborn of the dead, and the ruler of the kings of the earth. To him who loves us, …”",
+    "options" : [
+      "foolish",
+      "holy",
+      "righteous",
+      "faithful"
+    ],
+    "prompt" : "Which word completes “and from Jesus Christ, the ______ witness, the firstborn of the dead, and the ruler of the kings of the earth. To him who loves us, …”? (1:5, WEB)",
+    "reference" : "Revelation 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Balak: “… you have there some who hold the teaching of Balaam, who taught Balak to throw a stumbling block before the children of Israel, to eat things …”",
+    "options" : [
+      "Paul",
+      "Philemon",
+      "Elymas",
+      "Balak"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you have there some who hold the teaching of Balaam, who taught ______ to throw a stumbling block before the children of Israel, to eat things …”? (2:14, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 2:8 uses life: “… \"The first and the last, who was dead, and has come to life says these things:”",
+    "options" : [
+      "life",
+      "power",
+      "deliverance",
+      "sacrifice"
+    ],
+    "prompt" : "Which word completes “… \"The first and the last, who was dead, and has come to ______ says these things:”? (2:8, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He who has an ear, let him hear what the Spirit says to the assemblies. To him who overcomes, to him I will give of the …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He who has an ear, let him hear what the Spirit says to the assemblies. To him who overcomes, to him I will give of the …” (2:17, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He will rule them with a rod of iron, shattering them like clay pots; as I also have received of my Father:”; the second reads “He who has an ear, let him hear what the Spirit says to the assemblies.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rule ear"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He will ____ them with a rod of iron, shattering them like clay pots; as I also have received of my Father:” (2:27); “He who has an , let him hear what the Spirit says to the assemblies.” (2:29, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… woman, Jezebel, who calls herself a prophetess. She teaches and seduces my servants to commit sexual immorality, and to eat things sacrificed to idols.”; verse 23 reads “… all the assemblies will know that I am he who searches the minds and hearts. I will give to each one of you according to your …”. These establish the first and second answers respectively.",
+    "options" : [
+      "servants; minds",
+      "minds; servants",
+      "sister; minds",
+      "servants; Jews"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… woman, Jezebel, who calls herself a prophetess. She teaches and seduces my ______ to commit sexual immorality, and to eat things sacrificed to idols.” (2:20); “… all the assemblies will know that I am he who searches the ______ and hearts. I will give to each one of you according to your …” (2:23, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Remember therefore from where you have fallen, and repent and do the first works; or else I am coming to you swiftly, and will move your …”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “Remember therefore from where you have fallen, and repent and do the ____ works; or else I am coming to you swiftly, and will move your …” (2:5, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… you can't tolerate evil men, and have tested those who call themselves apostles, and they are not, and found them false.”",
+    "options" : [
+      "apostles"
+    ],
+    "prompt" : "Complete the quotation: “… you can't tolerate evil men, and have tested those who call themselves ____, and they are not, and found them false.” (2:2, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… says to the assemblies. He who overcomes won't be harmed by the second death.” The missing terms belong in that order.",
+    "options" : [
+      "second death"
+    ],
+    "prompt" : "Supply the missing words in order: “… says to the assemblies. He who overcomes won't be harmed by the ____.” (2:11, WEB)",
+    "reference" : "Revelation 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “\"To the angel of the assembly in Laodicea write: \"The Amen, the Faithful and True Witness, the Head of God's creation, says these things:” It says Laodicea, not Bethel.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “\"To the angel of the assembly in Bethel write: \"The Amen, the Faithful and True Witness, the Head of God's creation, says these things:” (3:14, WEB)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Its confident claim to need nothing conflicts with the Lord's diagnosis of its spiritual poverty. The call is to receive what Christ supplies, repent and respond to His invitation. The course's critique of material identity fits the contrast between visible prosperity and actual need.",
+    "options" : [
+      "Christ is portrayed as having nothing to offer the church.",
+      "The message praises self-sufficiency as its ideal.",
+      "Wealth automatically proves that no repentance is needed.",
+      "Its confident claim to need nothing conflicts with the Lord's diagnosis of its spiritual poverty."
+    ],
+    "prompt" : "What exposes Laodicea's problem in the message to that church? (3:14-22)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… no one can shut), that you have a little power, and kept my word, and didn't deny my name.” The missing terms belong in that order.",
+    "options" : [
+      "power deny"
+    ],
+    "prompt" : "Supply the missing words in order: “… no one can shut), that you have a little ____, and kept my word, and didn't my name.” (3:8, WEB)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 3:7 uses Philadelphia: “\"To the angel of the assembly in Philadelphia write: \"He who is holy, he who is true, he who has the key of David, he who …”",
+    "options" : [
+      "Philadelphia",
+      "Joppa",
+      "Babylon",
+      "Crete"
+    ],
+    "prompt" : "Which word completes “\"To the angel of the assembly in ______ write: \"He who is holy, he who is true, he who has the key of David, he who …”? (3:7, WEB)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Nevertheless you have a few names in Sardis that did not defile their garments. They will walk with me in white, for they are worthy.”",
+    "options" : [
+      "Sardis"
+    ],
+    "prompt" : "Complete the quotation: “Nevertheless you have a few names in ____ that did not defile their garments. They will walk with me in white, for they are worthy.” (3:4, WEB)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Remember therefore how you have received and heard. Keep it, and repent. If therefore you won't watch, I will come as a thief, and you won't …”",
+    "options" : [
+      "received"
+    ],
+    "prompt" : "Complete the quotation: “Remember therefore how you have ____ and heard. Keep it, and repent. If therefore you won't watch, I will come as a thief, and you won't …” (3:3, WEB)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jerusalem: “… God, and the name of the city of my God, the new Jerusalem, which comes down out of heaven from my God, and my own new …”",
+    "options" : [
+      "Corinth",
+      "Nazareth",
+      "Jerusalem",
+      "Bethel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… God, and the name of the city of my God, the new ______, which comes down out of heaven from my God, and my own new …”? (3:12, WEB)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… opens the door, then I will come in to him, and will dine with him, and he with me.”; the second reads “… I will give to him to sit down with me on my throne, as I also overcame, and sat down with my Father on his throne.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "dine throne"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… opens the door, then I will come in to him, and will ____ with him, and he with me.” (3:20); “… I will give to him to sit down with me on my , as I also overcame, and sat down with my Father on his throne.” (3:21, WEB)",
+    "reference" : "Revelation 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… things I looked and saw a door opened in heaven, and the first voice that I heard, like a trumpet speaking with me, was one saying, …”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “… things I looked and saw a door opened in heaven, and the ____ voice that I heard, like a trumpet speaking with me, was one saying, …” (4:1, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies four: “… crystal. In the midst of the throne, and around the throne were four living creatures full of eyes before and behind.”",
+    "options" : [
+      "twelfth",
+      "hundred",
+      "tenth",
+      "four"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… crystal. In the midst of the throne, and around the throne were ______ living creatures full of eyes before and behind.”? (4:6, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… wings, are full of eyes around about and within. They have no rest day and night, saying, \"Holy, holy, holy, holy, holy, holy, holy, holy, holy …”; verse 9 reads “When the living creatures give glory, honor, and thanks to him who sits on the throne, to him who lives forever and ever,”. These establish the first and second answers respectively.",
+    "options" : [
+      "glory; rest",
+      "praise; glory",
+      "rest; glory",
+      "rest; anger"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… wings, are full of eyes around about and within. They have no ______ day and night, saying, \"Holy, holy, holy, holy, holy, holy, holy, holy, holy …” (4:8); “When the living creatures give ______, honor, and thanks to him who sits on the throne, to him who lives forever and ever,” (4:9, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 4:4 uses twenty: “Around the throne were twenty-four thrones. On the thrones were twenty-four elders sitting, dressed in white garments, with crowns of gold on their heads.”",
+    "options" : [
+      "sixty",
+      "eight",
+      "twenty",
+      "sixteen"
+    ],
+    "prompt" : "Which word completes “Around the throne were twenty-four thrones. On the thrones were ______-four elders sitting, dressed in white garments, with crowns of gold on their heads.”? (4:4, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… sounds, and thunders. There were seven lamps of fire burning before his throne, which are the seven Spirits of God.” The missing terms belong in that order.",
+    "options" : [
+      "fire seven"
+    ],
+    "prompt" : "Supply the missing words in order: “… sounds, and thunders. There were seven lamps of ____ burning before his throne, which are the Spirits of God.” (4:5, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… like a lion, and the second creature like a calf, and the third creature had a face like a man, and the fourth was like a …” It says third, not twelve.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… like a lion, and the second creature like a calf, and the twelve creature had a face like a man, and the fourth was like a …” (4:7, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… and a sardius. There was a rainbow around the throne, like an emerald to look at.”",
+    "options" : [
+      "emerald"
+    ],
+    "prompt" : "Complete the quotation: “… and a sardius. There was a rainbow around the throne, like an ____ to look at.” (4:3, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… him who lives forever and ever, and throw their crowns before the throne, saying,”; the second reads “\"Worthy are you, our Lord and God, the Holy One, to receive the glory, the honor, and the power, for you created all things, and because …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "throne Holy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… him who lives forever and ever, and throw their crowns before the ____, saying,” (4:10); “\"Worthy are you, our Lord and God, the One, to receive the glory, the honor, and the power, for you created all things, and because …” (4:11, WEB)",
+    "reference" : "Revelation 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… voice, \"Who is worthy to open the book, and to break its seals?\"”",
+    "options" : [
+      "seals"
+    ],
+    "prompt" : "Complete the quotation: “… voice, \"Who is worthy to open the book, and to break its ____?\"” (5:2, WEB)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… above, or on the earth, or under the earth, was able to open the book, or to look in it.”",
+    "options" : [
+      "open"
+    ],
+    "prompt" : "Complete the quotation: “… above, or on the earth, or under the earth, was able to ____ the book, or to look in it.” (5:3, WEB)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The victorious figure appears as a Lamb who has been slain. The vision joins royal victory with sacrificial self-giving. Its imagery should not be flattened into a claim that Jesus is literally an ordinary animal.",
+    "options" : [
+      "The Lamb is said to have no connection to victory.",
+      "The victorious figure appears as a Lamb who has been slain.",
+      "The vision replaces every reference to sacrifice with wealth.",
+      "John is instructed to worship an unrelated animal instead of Christ."
+    ],
+    "prompt" : "What is striking about the relationship between the announced Lion and the figure John sees? (5:5-10)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… seals: For you were killed, And bought us for God with your blood, Out of every tribe, language, people, and nation,” It says blood, not ears.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… seals: For you were killed, And bought us for God with your ears, Out of every tribe, language, people, and nation,” (5:9, WEB)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 5:5 uses David: “… the Lion who is of the tribe of Judah, the Root of David, has overcome; he who opens the book and its seven seals.\"”",
+    "options" : [
+      "David",
+      "Martha",
+      "Enoch",
+      "Naphtali"
+    ],
+    "prompt" : "Which word completes “… the Lion who is of the tribe of Judah, the Root of ______, has overcome; he who opens the book and its seven seals.\"”? (5:5, WEB)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies twenty: “… when he had taken the book, the four living creatures and the twenty-four elders fell down before the Lamb, each one having a harp, and golden …”",
+    "options" : [
+      "twenty",
+      "thousand",
+      "eighteen",
+      "fifty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… when he had taken the book, the four living creatures and the ______-four elders fell down before the Lamb, each one having a harp, and golden …”? (5:8, WEB)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of the four living creatures, and in the midst of the elders, a Lamb standing, as though it had been slain, having seven horns, and seven …” The missing terms belong in that order.",
+    "options" : [
+      "four seven"
+    ],
+    "prompt" : "Supply the missing words in order: “… of the ____ living creatures, and in the midst of the elders, a Lamb standing, as though it had been slain, having horns, and seven …” (5:6, WEB)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the throne, and to the Lamb be the blessing, the honor, the glory, and the dominion, forever and ever! Amen!\"”; the second reads “The four living creatures said, \"Amen!\" The elders fell down and worshiped.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "glory creatures"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the throne, and to the Lamb be the blessing, the honor, the ____, and the dominion, forever and ever! Amen!\"” (5:13); “The four living said, \"Amen!\" The elders fell down and worshiped.” (5:14, WEB)",
+    "reference" : "Revelation 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 6:5 uses third: “When he opened the third seal, I heard the third living creature saying, \"Come and see!\" And behold, a black horse, and he who sat on …”",
+    "options" : [
+      "seventy",
+      "twenty",
+      "sixty",
+      "third"
+    ],
+    "prompt" : "Which word completes “When he opened the third seal, I heard the ______ living creature saying, \"Come and see!\" And behold, a black horse, and he who sat on …”? (6:5, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “I saw when he opened the sixth seal, and there was a great earthquake. The sun became black as sackcloth made of hair, and the whole …”; verse 14 reads “The sky was removed like a scroll when it is rolled up. Every mountain and island were moved out of their places.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sixth; sky",
+      "fifteen; sky",
+      "sky; sixth",
+      "sixth; crown"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “I saw when he opened the ______ seal, and there was a great earthquake. The sun became black as sackcloth made of hair, and the whole …” (6:12); “The ______ was removed like a scroll when it is rolled up. Every mountain and island were moved out of their places.” (6:14, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fifth: “When he opened the fifth seal, I saw underneath the altar the souls of those who had been killed for the Word of God, and for …”",
+    "options" : [
+      "twelfth",
+      "nine",
+      "fifth",
+      "third"
+    ],
+    "prompt" : "Which detail belongs in this passage: “When he opened the ______ seal, I saw underneath the altar the souls of those who had been killed for the Word of God, and for …”? (6:9, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… horse. To him who sat on it was given power to take peace from the earth, and that they should kill one another. There was given …”",
+    "options" : [
+      "peace"
+    ],
+    "prompt" : "Complete the quotation: “… horse. To him who sat on it was given power to take ____ from the earth, and that they should kill one another. There was given …” (6:4, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “And behold, a white horse, and he who sat on it had a bow. A crown was given to him, and he came forth conquering, and …”",
+    "options" : [
+      "white"
+    ],
+    "prompt" : "Complete the quotation: “And behold, a ____ horse, and he who sat on it had a bow. A crown was given to him, and he came forth conquering, and …” (6:2, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The kings of the earth, the princes, the commanding officers, the rich, the strong, and every slave and free person, hid themselves in the caves and …”; the second reads “They told the mountains and the rocks, \"Fall on us, and hide us from the face of him who sits on the throne, and from the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "kings Fall"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The ____ of the earth, the princes, the commanding officers, the rich, the strong, and every slave and free person, hid themselves in the caves and …” (6:15); “They told the mountains and the rocks, \" on us, and hide us from the face of him who sits on the throne, and from the …” (6:16, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… long, Master, the holy and true, until you judge and avenge our blood on those who dwell on the earth?\"” It says blood, not eye.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… long, Master, the holy and true, until you judge and avenge our eye on those who dwell on the earth?\"” (6:10, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “When he opened the fourth seal, I heard the fourth living creature saying, \"Come and see!\"” The missing terms belong in that order.",
+    "options" : [
+      "fourth creature"
+    ],
+    "prompt" : "Supply the missing words in order: “When he opened the fourth seal, I heard the ____ living saying, \"Come and see!\"” (6:7, WEB)",
+    "reference" : "Revelation 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “All the angels were standing around the throne, the elders, and the four living creatures; and they fell on their faces before his throne, and worshiped …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “All the angels were standing around the throne, the elders, and the four living creatures; and they fell on their faces before his throne, and worshiped …” (7:11, WEB)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "People from every nation and language worship God and the Lamb and receive His care. Christians differ over some identifications of the 144,000 and the multitude. The explicit multiethnic worship and comfort should not be lost in disputes over numerical symbolism.",
+    "options" : [
+      "People from every nation and language worship God and the Lamb and receive His care.",
+      "The passage contains no comfort for sufferers.",
+      "The multitude worships the beast as its savior.",
+      "Only one earthly language is represented."
+    ],
+    "prompt" : "What is clear in the scene of the great multitude despite debate about its relation to the numbered group? (7:9-17)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… hundred forty-four thousand, sealed out of every tribe of the children of Israel:”",
+    "options" : [
+      "Israel"
+    ],
+    "prompt" : "Complete the quotation: “… hundred forty-four thousand, sealed out of every tribe of the children of ____:” (7:4, WEB)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of the living God. He cried with a loud voice to the four angels to whom it was given to harm the earth and the sea,”",
+    "options" : [
+      "four"
+    ],
+    "prompt" : "Complete the quotation: “… of the living God. He cried with a loud voice to the ____ angels to whom it was given to harm the earth and the sea,” (7:2, WEB)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… tribe of Simeon twelve thousand, Of the tribe of Levi twelve thousand, Of the tribe of Issachar twelve thousand,” The missing terms belong in that order.",
+    "options" : [
+      "Levi Issachar"
+    ],
+    "prompt" : "Supply the missing words in order: “… tribe of Simeon twelve thousand, Of the tribe of ____ twelve thousand, Of the tribe of twelve thousand,” (7:7, WEB)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Benjamin: “… thousand, Of the tribe of Joseph twelve thousand, Of the tribe of Benjamin were sealed twelve thousand.”",
+    "options" : [
+      "Esther",
+      "Aaron",
+      "Benjamin",
+      "Caiaphas"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… thousand, Of the tribe of Joseph twelve thousand, Of the tribe of ______ were sealed twelve thousand.”? (7:8, WEB)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the throne of God, they serve him day and night in his temple. He who sits on the throne will spread his tent over them.”; the second reads “… the throne shepherds them, and leads them to springs of waters of life. And God will wipe away every tear from their eyes.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "temple life"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the throne of God, they serve him day and night in his ____. He who sits on the throne will spread his tent over them.” (7:15); “… the throne shepherds them, and leads them to springs of waters of . And God will wipe away every tear from their eyes.\"” (7:17, WEB)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 7:5 uses Reuben: “… the tribe of Judah were sealed twelve thousand, Of the tribe of Reuben twelve thousand, Of the tribe of Gad twelve thousand,”",
+    "options" : [
+      "Jonathan",
+      "Cornelius",
+      "Cain",
+      "Reuben"
+    ],
+    "prompt" : "Which word completes “… the tribe of Judah were sealed twelve thousand, Of the tribe of ______ twelve thousand, Of the tribe of Gad twelve thousand,”? (7:5, WEB)",
+    "reference" : "Revelation 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The fourth angel sounded, and one third of the sun was struck, and one third of the moon, and one third of the stars; so that …”; the second reads “… the earth, because of the other voices of the trumpets of the three angels, who are yet to sound!\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fourth three"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The ____ angel sounded, and one third of the sun was struck, and one third of the moon, and one third of the stars; so that …” (8:12); “… the earth, because of the other voices of the trumpets of the angels, who are yet to sound!\"” (8:13, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies second: “The second angel sounded, and something like a great burning mountain was thrown into the sea. One third of the sea became blood,”",
+    "options" : [
+      "second",
+      "thousand",
+      "sixth",
+      "fourteen"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ angel sounded, and something like a great burning mountain was thrown into the sea. One third of the sea became blood,”? (8:8, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “The third angel sounded, and a great star fell from the sky, burning like a torch, and it fell on one third of the rivers, and …”; verse 11 reads “… One third of the waters became wormwood. Many people died from the waters, because they were made bitter.”. These establish the first and second answers respectively.",
+    "options" : [
+      "star; creatures",
+      "waters; star",
+      "star; waters",
+      "earthquake; waters"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The third angel sounded, and a great ______ fell from the sky, burning like a torch, and it fell on one third of the rivers, and …” (8:10); “… One third of the waters became wormwood. Many people died from the ______, because they were made bitter.” (8:11, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The first sounded, and there followed hail and fire, mixed with blood, and they were thrown to the earth. One third of the earth was burnt …” The missing terms belong in that order.",
+    "options" : [
+      "first blood"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ sounded, and there followed hail and fire, mixed with , and they were thrown to the earth. One third of the earth was burnt …” (8:7, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “and one third of the living creatures which were in the sea died. One third of the ships were destroyed.” It says third, not fourteen.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “and one fourteen of the living creatures which were in the sea died. One third of the ships were destroyed.” (8:9, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The angel took the censer, and he filled it with the fire of the altar, and threw it on the earth. There followed thunders, sounds, lightnings, …”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “The angel took the censer, and he filled it with the ____ of the altar, and threw it on the earth. There followed thunders, sounds, lightnings, …” (8:5, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Another angel came and stood over the altar, having a golden censer. Much incense was given to him, that he should add it to the prayers …”",
+    "options" : [
+      "altar"
+    ],
+    "prompt" : "Complete the quotation: “Another angel came and stood over the ____, having a golden censer. Much incense was given to him, that he should add it to the prayers …” (8:3, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 8:4 uses prayers: “The smoke of the incense, with the prayers of the saints, went up before God out of the angel's hand.”",
+    "options" : [
+      "saints",
+      "trees",
+      "prayers",
+      "voices"
+    ],
+    "prompt" : "Which word completes “The smoke of the incense, with the ______ of the saints, went up before God out of the angel's hand.”? (8:4, WEB)",
+    "reference" : "Revelation 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 9:6 uses death: “In those days people will seek death, and will in no way find it. They will desire to die, and death will flee from them.”",
+    "options" : [
+      "rest",
+      "deliverance",
+      "sacrifice",
+      "death"
+    ],
+    "prompt" : "Which word completes “In those days people will seek ______, and will in no way find it. They will desire to die, and death will flee from them.”? (9:6, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… and day and month and year, so that they might kill one third of mankind.”; verse 17 reads “… sulfur yellow; and the heads of lions. Out of their mouths proceed fire, smoke, and sulfur.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fourteen; fire",
+      "third; fire",
+      "fire; third",
+      "third; wouldn't"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and day and month and year, so that they might kill one ______ of mankind.” (9:15); “… sulfur yellow; and the heads of lions. Out of their mouths proceed ______, smoke, and sulfur.” (9:17, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies king: “They have over them as king the angel of the abyss. His name in Hebrew is \"Abaddon,\" but in Greek, he has the name \"Apollyon.\"”",
+    "options" : [
+      "prophet",
+      "daughter",
+      "king",
+      "father"
+    ],
+    "prompt" : "Which detail belongs in this passage: “They have over them as ______ the angel of the abyss. His name in Hebrew is \"Abaddon,\" but in Greek, he has the name \"Apollyon.\"”? (9:11, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the horses is in their mouths, and in their tails. For their tails are like serpents, and have heads, and with them they harm.”; the second reads “… that they wouldn't worship demons, and the idols of gold, and of silver, and of brass, and of stone, and of wood; which can neither see, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "tails silver"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the horses is in their mouths, and in their tails. For their ____ are like serpents, and have heads, and with them they harm.” (9:19); “… that they wouldn't worship demons, and the idols of gold, and of , and of brass, and of stone, and of wood; which can neither see, …” (9:20, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “He opened the pit of the abyss, and smoke went up out of the pit, like the smoke from a burning furnace. The sun and the …”",
+    "options" : [
+      "opened"
+    ],
+    "prompt" : "Complete the quotation: “He ____ the pit of the abyss, and smoke went up out of the pit, like the smoke from a burning furnace. The sun and the …” (9:2, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “They had breastplates, like breastplates of iron. The sound of their wings was like the sound of chariots, or of many horses rushing to war.” The missing terms belong in that order.",
+    "options" : [
+      "breastplates sound"
+    ],
+    "prompt" : "Supply the missing words in order: “They had breastplates, like ____ of iron. The sound of their wings was like the of chariots, or of many horses rushing to war.” (9:9, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “saying to the sixth angel who had one trumpet, \"Free the four angels who are bound at the great river Euphrates!\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “saying to the sixth angel who had one trumpet, \"Free the four angels who are bound at the great river Euphrates!\"” (9:14, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… thing, neither any tree, but only those people who don't have God's seal on their foreheads.”",
+    "options" : [
+      "seal"
+    ],
+    "prompt" : "Complete the quotation: “… thing, neither any tree, but only those people who don't have God's ____ on their foreheads.” (9:4, WEB)",
+    "reference" : "Revelation 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies forever: “and swore by him who lives forever and ever, who created heaven and the things that are in it, the earth and the things that are …”",
+    "options" : [
+      "angel",
+      "forever",
+      "stands",
+      "sweet"
+    ],
+    "prompt" : "Which detail belongs in this passage: “and swore by him who lives ______ and ever, who created heaven and the things that are in it, the earth and the things that are …”? (10:6, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… then the mystery of God is finished, as he declared to his servants, the prophets.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… then the mystery of God is finished, as he declared to his servants, the prophets.” (10:7, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 10:4 uses write: “When the seven thunders sounded, I was about to write; but I heard a voice from the sky saying, \"Seal up the things which the seven …”",
+    "options" : [
+      "Seal",
+      "declared",
+      "loud",
+      "write"
+    ],
+    "prompt" : "Which word completes “When the seven thunders sounded, I was about to ______; but I heard a voice from the sky saying, \"Seal up the things which the seven …”? (10:4, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “I took the little book out of the angel's hand, and ate it up. It was as sweet as honey in my mouth. When I had …”; the second reads “… told me, \"You must prophesy again over many peoples, nations, languages, and kings.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "ate kings"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “I took the little book out of the angel's hand, and ____ it up. It was as sweet as honey in my mouth. When I had …” (10:10); “… told me, \"You must prophesy again over many peoples, nations, languages, and .\"” (10:11, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… His face was like the sun, and his feet like pillars of fire.”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “… His face was like the sun, and his feet like pillars of ____.” (10:1, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The angel who I saw standing on the sea and on the land lifted up his right hand to the sky,” The missing terms belong in that order.",
+    "options" : [
+      "land lifted"
+    ],
+    "prompt" : "Supply the missing words in order: “The angel who I saw standing on the sea and on the ____ up his right hand to the sky,” (10:5, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “The voice which I heard from heaven, again speaking with me, said, \"Go, take the book which is open in the hand of the angel who …”; verse 9 reads “I went to the angel, telling him to give me the little book. He said to me, \"Take it, and eat it up. It will make …”. These establish the first and second answers respectively.",
+    "options" : [
+      "valley; telling",
+      "telling; heaven",
+      "heaven; widow",
+      "heaven; telling"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The voice which I heard from ______, again speaking with me, said, \"Go, take the book which is open in the hand of the angel who …” (10:8); “I went to the angel, ______ him to give me the little book. He said to me, \"Take it, and eat it up. It will make …” (10:9, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… with a loud voice, as a lion roars. When he cried, the seven thunders uttered their voices.”",
+    "options" : [
+      "seven"
+    ],
+    "prompt" : "Complete the quotation: “… with a loud voice, as a lion roars. When he cried, the ____ thunders uttered their voices.” (10:3, WEB)",
+    "reference" : "Revelation 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nations: “From among the peoples, tribes, languages, and nations people will look at their dead bodies for three and a half days, and will not allow their …”",
+    "options" : [
+      "gentiles",
+      "prophets",
+      "nations",
+      "devours"
+    ],
+    "prompt" : "Which detail belongs in this passage: “From among the peoples, tribes, languages, and ______ people will look at their dead bodies for three and a half days, and will not allow their …”? (11:9, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… there was a great earthquake, and a tenth of the city fell. Seven thousand people were killed in the earthquake, and the rest were terrified, and …”; verse 16 reads “The twenty-four elders, who sit on their thrones before God's throne, fell on their faces and worshiped God,”. These establish the first and second answers respectively.",
+    "options" : [
+      "tenth; four",
+      "Seven; eleven",
+      "four; Seven",
+      "Seven; four"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… there was a great earthquake, and a tenth of the city fell. ______ thousand people were killed in the earthquake, and the rest were terrified, and …” (11:13); “The twenty-______ elders, who sit on their thrones before God's throne, fell on their faces and worshiped God,” (11:16, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… for it has been given to the gentiles. They will tread the holy city under foot for forty-two months.”",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "Complete the quotation: “… for it has been given to the gentiles. They will tread the ____ city under foot for forty-two months.” (11:2, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… in the street of the great city, which spiritually is called Sodom and Egypt, where also their Lord was crucified.” The missing terms belong in that order.",
+    "options" : [
+      "Sodom Egypt"
+    ],
+    "prompt" : "Supply the missing words in order: “… in the street of the great city, which spiritually is called ____ and , where also their Lord was crucified.” (11:8, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “After the three and a half days, the breath of life from God entered into them, and they stood on their feet. Great fear fell on …” It says life, not redemption.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “After the three and a half days, the breath of redemption from God entered into them, and they stood on their feet. Great fear fell on …” (11:11, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 11:6 uses blood: “… their prophecy. They have power over the waters, to turn them into blood, and to strike the earth with every plague, as often as they desire.”",
+    "options" : [
+      "ear",
+      "lips",
+      "blood",
+      "eyes"
+    ],
+    "prompt" : "Which word completes “… their prophecy. They have power over the waters, to turn them into ______, and to strike the earth with every plague, as often as they desire.”? (11:6, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… prophets, their reward, as well as to the saints, and those who fear your name, to the small and the great; and to destroy those who …”; the second reads “… that is in heaven was opened, and the ark of the Lord's covenant was seen in his temple. Lightnings, sounds, thunders, an earthquake, and great hail …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fear covenant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… prophets, their reward, as well as to the saints, and those who ____ your name, to the small and the great; and to destroy those who …” (11:18); “… that is in heaven was opened, and the ark of the Lord's was seen in his temple. Lightnings, sounds, thunders, an earthquake, and great hail …” (11:19, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “These are the two olive trees and the two lampstands, standing before the Lord of the earth.”",
+    "options" : [
+      "two"
+    ],
+    "prompt" : "Complete the quotation: “These are the ____ olive trees and the two lampstands, standing before the Lord of the earth.” (11:4, WEB)",
+    "reference" : "Revelation 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "As the ancient serpent, called the devil and Satan. Here the text supplies the identification explicitly. That is different from pretending Genesis 3 itself directly names the serpent Satan; Christian readers connect the passages through the wider story.",
+    "options" : [
+      "As the ancient serpent, called the devil and Satan.",
+      "As the Lamb whose blood brings victory.",
+      "As a faithful messenger receiving the church's worship.",
+      "As an unnamed human king with no symbolic description."
+    ],
+    "prompt" : "How does the chapter itself identify the great dragon? (12:7-12)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… the moon under her feet, and on her head a crown of twelve stars.”",
+    "options" : [
+      "twelve"
+    ],
+    "prompt" : "Complete the quotation: “… the moon under her feet, and on her head a crown of ____ stars.” (12:1, WEB)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 12:5 uses nations: “… to a son, a male child, who is to rule all the nations with a rod of iron. Her child was caught up to God, and …”",
+    "options" : [
+      "nations",
+      "wilderness",
+      "stars",
+      "Jesus"
+    ],
+    "prompt" : "Which word completes “… to a son, a male child, who is to rule all the ______ with a rod of iron. Her child was caught up to God, and …”? (12:5, WEB)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… red dragon, having seven heads and ten horns, and on his heads seven crowns.”",
+    "options" : [
+      "seven"
+    ],
+    "prompt" : "Complete the quotation: “… red dragon, having seven heads and ten horns, and on his heads ____ crowns.” (12:3, WEB)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “They overcame him because of the Lamb's blood, and because of the word of their testimony. They didn't love their life, even to death.” It says blood, not ears.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “They overcame him because of the Lamb's ears, and because of the word of their testimony. They didn't love their life, even to death.” (12:11, WEB)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies thrown: “The great dragon was thrown down, the old serpent, he who is called the devil and Satan, the deceiver of the whole world. He was thrown …”",
+    "options" : [
+      "angels",
+      "prevail",
+      "thrown",
+      "tail"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The great dragon was ______ down, the old serpent, he who is called the devil and Satan, the deceiver of the whole world. He was thrown …”? (12:9, WEB)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The serpent spewed water out of his mouth after the woman like a river, that he might cause her to be carried away by the stream.”; the second reads “… to make war with the rest of her seed, who keep God's commandments and hold Jesus' testimony.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "water commandments"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The serpent spewed ____ out of his mouth after the woman like a river, that he might cause her to be carried away by the stream.” (12:15); “… to make war with the rest of her seed, who keep God's and hold Jesus' testimony.” (12:17, WEB)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “There was war in the sky. Michael and his angels made war on the dragon. The dragon and his angels made war.” The missing terms belong in that order.",
+    "options" : [
+      "Michael angels"
+    ],
+    "prompt" : "Supply the missing words in order: “There was war in the sky. ____ and his angels made war on the dragon. The dragon and his made war.” (12:7, WEB)",
+    "reference" : "Revelation 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… beast, saying, \"Who is like the beast? Who is able to make war with him?\"”",
+    "options" : [
+      "war"
+    ],
+    "prompt" : "Complete the quotation: “… beast, saying, \"Who is like the beast? Who is able to make ____ with him?\"” (13:4, WEB)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… mouth like the mouth of a lion. The dragon gave him his power, his throne, and great authority.”",
+    "options" : [
+      "power"
+    ],
+    "prompt" : "Complete the quotation: “… mouth like the mouth of a lion. The dragon gave him his ____, his throne, and great authority.” (13:2, WEB)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the foundation of the world in the book of life of the Lamb who has been killed.” The missing terms belong in that order.",
+    "options" : [
+      "life killed"
+    ],
+    "prompt" : "Supply the missing words in order: “… the foundation of the world in the book of ____ of the Lamb who has been .” (13:8, WEB)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies faith: “… the sword, he must be killed. Here is the endurance and the faith of the saints.”",
+    "options" : [
+      "front",
+      "faith",
+      "saints",
+      "foundation"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the sword, he must be killed. Here is the endurance and the ______ of the saints.”? (13:10, WEB)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The chapter's portrayal of idolatrous allegiance, coercive power and resistance to God's people. Christians disagree over many historical and future identifications. The text does not explicitly name modern barcodes, vaccines or a contemporary politician; a quiz should not present a speculative identification as a stated fact.",
+    "options" : [
+      "The chapter's portrayal of idolatrous allegiance, coercive power and resistance to God's people.",
+      "All Christian interpreters identify the beast in exactly the same way.",
+      "The chapter praises coerced worship as faithfulness.",
+      "Every recent technology is explicitly named in the chapter."
+    ],
+    "prompt" : "What should guide interpretation of the beast and its mark before a modern identification is proposed? (13:1-18)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He causes all, the small and the great, the rich and the poor, and the free and the slave, to be given marks on their right …”; the second reads “… it is the number of a man. His number is six hundred sixty-six.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "poor six"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He causes all, the small and the great, the rich and the ____, and the free and the slave, to be given marks on their right …” (13:16); “… it is the number of a man. His number is six hundred sixty-.” (13:18, WEB)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I saw another beast coming up out of the earth. He had two horns like a lamb, and he spoke like a dragon.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I saw another beast coming up out of the earth. He had two horns like a lamb, and he spoke like a dragon.” (13:11, WEB)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 13:6 uses blaspheme: “He opened his mouth for blasphemy against God, to blaspheme his name, and his dwelling, those who dwell in heaven.”",
+    "options" : [
+      "anyone",
+      "blaspheme",
+      "marks",
+      "life"
+    ],
+    "prompt" : "Which word completes “He opened his mouth for blasphemy against God, to ______ his name, and his dwelling, those who dwell in heaven.”? (13:6, WEB)",
+    "reference" : "Revelation 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Another angel came out from the altar, he who has power over fire, and he called with a great voice to him who had the sharp …”; the second reads “The winepress was trodden outside of the city, and blood came out from the winepress, even to the bridles of the horses, as far as one …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "altar blood"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Another angel came out from the ____, he who has power over fire, and he called with a great voice to him who had the sharp …” (14:18); “The winepress was trodden outside of the city, and came out from the winepress, even to the bridles of the horses, as far as one …” (14:20, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… unmixed in the cup of his anger. He will be tormented with fire and sulfur in the presence of the holy angels, and in the presence …”",
+    "options" : [
+      "mark",
+      "angel",
+      "thousand",
+      "fire"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… unmixed in the cup of his anger. He will be tormented with ______ and sulfur in the presence of the holy angels, and in the presence …”? (14:10, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… \"Babylon the great has fallen, which has made all the nations to drink of the wine of the wrath of her sexual immorality.\"” The missing terms belong in that order.",
+    "options" : [
+      "nations wine"
+    ],
+    "prompt" : "Supply the missing words in order: “… \"Babylon the great has fallen, which has made all the ____ to drink of the of the wrath of her sexual immorality.\"” (14:8, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… those who follow the Lamb wherever he goes. These were redeemed by Jesus from among men, the first fruits to God and to the Lamb.”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “… those who follow the Lamb wherever he goes. These were redeemed by ____ from among men, the first fruits to God and to the Lamb.” (14:4, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… a great thunder. The sound which I heard was like that of harpists playing on their harps.”",
+    "options" : [
+      "harpists"
+    ],
+    "prompt" : "Complete the quotation: “… a great thunder. The sound which I heard was like that of ____ playing on their harps.” (14:2, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 14:6 uses nation: “… to proclaim to those who dwell on the earth, and to every nation, tribe, language, and people.”",
+    "options" : [
+      "knowledge",
+      "disciples",
+      "nation",
+      "darkness"
+    ],
+    "prompt" : "Which word completes “… to proclaim to those who dwell on the earth, and to every ______, tribe, language, and people.”? (14:6, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… one sitting like a son of man, having on his head a golden crown, and in his hand a sharp sickle.”; verse 15 reads “Another angel came out from the temple, crying with a loud voice to him who sat on the cloud, \"Send forth your sickle, and reap; for …”. These establish the first and second answers respectively.",
+    "options" : [
+      "glory; temple",
+      "golden; lampstand",
+      "golden; temple",
+      "temple; golden"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… one sitting like a son of man, having on his head a ______ crown, and in his hand a sharp sickle.” (14:14); “Another angel came out from the ______, crying with a loud voice to him who sat on the cloud, \"Send forth your sickle, and reap; for …” (14:15, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of the saints, those who keep the commandments of God, and the faith of Jesus.\"” It says faith, not throne.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of the saints, those who keep the commandments of God, and the throne of Jesus.\"” (14:12, WEB)",
+    "reference" : "Revelation 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “They sang the song of Moses, the servant of God, and the song of the Lamb, saying, \"Great and marvelous are your works, Lord God, the …”",
+    "options" : [
+      "servant"
+    ],
+    "prompt" : "Complete the quotation: “They sang the song of Moses, the ____ of God, and the song of the Lamb, saying, \"Great and marvelous are your works, Lord God, the …” (15:3, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The temple was filled with smoke from the glory of God, and from his power. No one was able to enter into the temple, until the …”; the second reads “I saw another great and marvelous sign in the sky: seven angels having the seven last plagues, for in them God's wrath is finished.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "glory angels"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The temple was filled with smoke from the ____ of God, and from his power. No one was able to enter into the temple, until the …” (15:8); “I saw another great and marvelous sign in the sky: seven having the seven last plagues, for in them God's wrath is finished.” (15:1, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies tabernacle: “After these things I looked, and the temple of the tabernacle of the testimony in heaven was opened.”",
+    "options" : [
+      "houses",
+      "table",
+      "altar",
+      "tabernacle"
+    ],
+    "prompt" : "Which detail belongs in this passage: “After these things I looked, and the temple of the ______ of the testimony in heaven was opened.”? (15:5, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “I saw another great and marvelous sign in the sky: seven angels having the seven last plagues, for in them God's wrath is finished.”",
+    "options" : [
+      "seven"
+    ],
+    "prompt" : "Complete the quotation: “I saw another great and marvelous sign in the sky: ____ angels having the seven last plagues, for in them God's wrath is finished.” (15:1, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “One of the four living creatures gave to the seven angels seven golden bowls full of the wrath of God, who lives forever and ever.”; verse 8 reads “The temple was filled with smoke from the glory of God, and from his power. No one was able to enter into the temple, until the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "four; wall",
+      "four; temple",
+      "temple; four",
+      "eleven; temple"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “One of the ______ living creatures gave to the seven angels seven golden bowls full of the wrath of God, who lives forever and ever.” (15:7); “The ______ was filled with smoke from the glory of God, and from his power. No one was able to enter into the temple, until the …” (15:8, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 15:4 uses fear: “Who wouldn't fear you, Lord, And glorify your name? For you only are holy. For all the nations will come and worship before you. For your …”",
+    "options" : [
+      "grief",
+      "understanding",
+      "wisdom",
+      "fear"
+    ],
+    "prompt" : "Which word completes “Who wouldn't ______ you, Lord, And glorify your name? For you only are holy. For all the nations will come and worship before you. For your …”? (15:4, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The seven angels who had the seven plagues came out, clothed with pure, bright linen, and wearing golden sashes around their breasts.” It says plagues, not God's.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The seven angels who had the seven God's came out, clothed with pure, bright linen, and wearing golden sashes around their breasts.” (15:6, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I saw something like a sea of glass mixed with fire, and those who overcame the beast, his image, and the number of his name, standing …” The missing terms belong in that order.",
+    "options" : [
+      "sea fire"
+    ],
+    "prompt" : "Supply the missing words in order: “I saw something like a ____ of glass mixed with , and those who overcame the beast, his image, and the number of his name, standing …” (15:2, WEB)",
+    "reference" : "Revelation 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… sixth poured out his bowl on the great river, the Euphrates. Its water was dried up, that the way might be made ready for the kings …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… sixth poured out his bowl on the great river, the Euphrates. Its water was dried up, that the way might be made ready for the kings …” (16:12, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… they are spirits of demons, performing signs; which go forth to the kings of the whole inhabited earth, to gather them together for the war of …”; verse 17 reads “… bowl into the air. A loud voice came forth out of the temple of heaven, from the throne, saying, \"It is done!\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "kings; lampstand",
+      "kings; temple",
+      "temple; kings",
+      "mothers; temple"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… they are spirits of demons, performing signs; which go forth to the ______ of the whole inhabited earth, to gather them together for the war of …” (16:14); “… bowl into the air. A loud voice came forth out of the ______ of heaven, from the throne, saying, \"It is done!\"” (16:17, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 16:6 uses poured: “For they poured out the blood of the saints and the prophets, and you have given them blood to drink. They deserve this.\"”",
+    "options" : [
+      "died",
+      "remembered",
+      "poured",
+      "inhabited"
+    ],
+    "prompt" : "Which word completes “For they ______ out the blood of the saints and the prophets, and you have given them blood to drink. They deserve this.\"”? (16:6, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… was divided into three parts, and the cities of the nations fell. Babylon the great was remembered in the sight of God, to give to her …”; the second reads “… the weight of a talent, came down out of the sky on people. People blasphemed God because of the plague of the hail, for this plague …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Babylon people"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… was divided into three parts, and the cities of the nations fell. ____ the great was remembered in the sight of God, to give to her …” (16:19); “… the weight of a talent, came down out of the sky on . People blasphemed God because of the plague of the hail, for this plague …” (16:21, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… second angel poured out his bowl into the sea, and it became blood as of a dead man. Every living thing in the sea died.”",
+    "options" : [
+      "blood"
+    ],
+    "prompt" : "Complete the quotation: “… second angel poured out his bowl into the sea, and it became ____ as of a dead man. Every living thing in the sea died.” (16:3, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “The first went, and poured out his bowl into the earth, and it became a harmful and evil sore on the people who had the mark …”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “The ____ went, and poured out his bowl into the earth, and it became a harmful and evil sore on the people who had the mark …” (16:2, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The fourth poured out his bowl on the sun, and it was given to him to scorch men with fire.” The missing terms belong in that order.",
+    "options" : [
+      "fourth fire"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ poured out his bowl on the sun, and it was given to him to scorch men with .” (16:8, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies kingdom: “… poured out his bowl on the throne of the beast, and his kingdom was darkened. They gnawed their tongues because of the pain,”",
+    "options" : [
+      "kingdom",
+      "frogs",
+      "scorched",
+      "island"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… poured out his bowl on the throne of the beast, and his ______ was darkened. They gnawed their tongues because of the pain,”? (16:10, WEB)",
+    "reference" : "Revelation 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wisdom: “Here is the mind that has wisdom. The seven heads are seven mountains, on which the woman sits.”",
+    "options" : [
+      "wrath",
+      "wisdom",
+      "shame",
+      "honor"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Here is the mind that has ______. The seven heads are seven mountains, on which the woman sits.”? (17:9, WEB)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… ten horns that you saw are ten kings who have received no kingdom as yet, but they receive authority as kings, with the beast, for one …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… ten horns that you saw are ten kings who have received no kingdom as yet, but they receive authority as kings, with the beast, for one …” (17:12, WEB)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It connects her imagery with peoples, rulers and a great city exercising corrupt power. The chapter supplies some interpretation of its own symbols. Christians discuss specific historical and future referents, but the critique of exploitative, idolatrous power is not a license to condemn people merely for ethnicity.",
+    "options" : [
+      "The explanation says the vision has no relation to power.",
+      "The passage instructs readers to hate an ethnic group.",
+      "It connects her imagery with peoples, rulers and a great city exercising corrupt power.",
+      "The woman is identified as an ordinary private wedding guest."
+    ],
+    "prompt" : "How does the explanation of the woman guide interpretation of the vision? (17:1-6, 15-18)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to be of one mind, and to give their kingdom to the beast, until the words of God should be accomplished.”; the second reads “… woman whom you saw is the great city, which reigns over the kings of the earth.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "beast kings"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to be of one mind, and to give their kingdom to the ____, until the words of God should be accomplished.” (17:17); “… woman whom you saw is the great city, which reigns over the of the earth.\"” (17:18, WEB)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The woman was dressed in purple and scarlet, and decked with gold and precious stones and pearls, having in her hand a golden cup full of …”",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "Complete the quotation: “The woman was dressed in purple and scarlet, and decked with ____ and precious stones and pearls, having in her hand a golden cup full of …” (17:4, WEB)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 17:6 uses blood: “… the woman drunken with the blood of the saints, and with the blood of the martyrs of Jesus. When I saw her, I wondered with great …”",
+    "options" : [
+      "bone",
+      "heart",
+      "blood",
+      "knees"
+    ],
+    "prompt" : "Which word completes “… the woman drunken with the blood of the saints, and with the ______ of the martyrs of Jesus. When I saw her, I wondered with great …”? (17:6, WEB)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and of the beast that carries her, which has the seven heads and the ten horns.” The missing terms belong in that order.",
+    "options" : [
+      "seven ten"
+    ],
+    "prompt" : "Supply the missing words in order: “… and of the beast that carries her, which has the ____ heads and the horns.” (17:7, WEB)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… and those who dwell in the earth were made drunken with the wine of her sexual immorality.\"”",
+    "options" : [
+      "wine"
+    ],
+    "prompt" : "Complete the quotation: “… and those who dwell in the earth were made drunken with the ____ of her sexual immorality.\"” (17:2, WEB)",
+    "reference" : "Revelation 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “He cried with a mighty voice, saying, \"Fallen, fallen is Babylon the great, and she has become a habitation of demons, a prison of every unclean …”",
+    "options" : [
+      "Babylon"
+    ],
+    "prompt" : "Complete the quotation: “He cried with a mighty voice, saying, \"Fallen, fallen is ____ the great, and she has become a habitation of demons, a prison of every unclean …” (18:2, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… anywhere, and mariners, and as many as gain their living by sea, stood far away,”; verse 19 reads “… all who had their ships in the sea were made rich by reason of her great wealth!' For in one hour is she made desolate.”. These establish the first and second answers respectively.",
+    "options" : [
+      "reason; stood",
+      "stood; reason",
+      "heaven; reason",
+      "stood; glorified"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… anywhere, and mariners, and as many as gain their living by sea, ______ far away,” (18:17); “… all who had their ships in the sea were made rich by ______ of her great wealth!' For in one hour is she made desolate.” (18:19, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The kings of the earth, who committed sexual immorality and lived wantonly with her, will weep and wail over her, when they look at the smoke …” The missing terms belong in that order.",
+    "options" : [
+      "kings earth"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ of the , who committed sexual immorality and lived wantonly with her, will weep and wail over her, when they look at the smoke …” (18:9, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies silver: “merchandise of gold, silver, precious stones, pearls, fine linen, purple, silk, scarlet, all expensive wood, every vessel of ivory, every vessel made of most precious wood, …”",
+    "options" : [
+      "silver",
+      "ashes",
+      "dust",
+      "gold"
+    ],
+    "prompt" : "Which detail belongs in this passage: “merchandise of gold, ______, precious stones, pearls, fine linen, purple, silk, scarlet, all expensive wood, every vessel of ivory, every vessel made of most precious wood, …”? (18:12, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… it into the sea, saying, \"Thus with violence will Babylon, the great city, be thrown down, and will be found no more at all.”; the second reads “… were the princes of the earth; for with your sorcery all the nations were deceived.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "city nations"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… it into the sea, saying, \"Thus with violence will Babylon, the great ____, be thrown down, and will be found no more at all.” (18:21); “… were the princes of the earth; for with your sorcery all the were deceived.” (18:23, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For all the nations have drunk of the wine of the wrath of her sexual immorality, the kings of the earth committed sexual immorality with her, …”",
+    "options" : [
+      "wine"
+    ],
+    "prompt" : "Complete the quotation: “For all the nations have drunk of the ____ of the wrath of her sexual immorality, the kings of the earth committed sexual immorality with her, …” (18:3, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 18:7 uses widow: “… she says in her heart, 'I sit a queen, and am no widow, and will in no way see mourning.'”",
+    "options" : [
+      "craftsman",
+      "remembered",
+      "deceived",
+      "widow"
+    ],
+    "prompt" : "Which word completes “… she says in her heart, 'I sit a queen, and am no ______, and will in no way see mourning.'”? (18:7, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The fruits which your soul lusted after have been lost to you, and all things that were dainty and sumptuous have perished from you, and you …” It says soul, not silk.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The fruits which your silk lusted after have been lost to you, and all things that were dainty and sumptuous have perished from you, and you …” (18:14, WEB)",
+    "reference" : "Revelation 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Faithful: “… behold, a white horse, and he who sat on it is called Faithful and True. In righteousness he judges and makes war.”",
+    "options" : [
+      "merciful",
+      "Faithful",
+      "rich",
+      "gracious"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… behold, a white horse, and he who sat on it is called ______ and True. In righteousness he judges and makes war.”? (19:11, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “His eyes are a flame of fire, and on his head are many crowns. He has names written and a name written which no one knows …” It says fire, not deceived.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “His eyes are a flame of deceived, and on his head are many crowns. He has names written and a name written which no one knows …” (19:12, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… array herself in bright, pure, fine linen: for the fine linen is the righteous acts of the saints.” The missing terms belong in that order.",
+    "options" : [
+      "linen acts"
+    ],
+    "prompt" : "Supply the missing words in order: “… array herself in bright, pure, fine linen: for the fine ____ is the righteous of the saints.” (19:8, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “I saw the beast, and the kings of the earth, and their armies, gathered together to make war against him who sat on the horse, and …”; the second reads “The rest were killed with the sword of him who sat on the horse, the sword which came forth out of his mouth. All the birds …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "kings rest"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “I saw the beast, and the ____ of the earth, and their armies, gathered together to make war against him who sat on the horse, and …” (19:19); “The were killed with the sword of him who sat on the horse, the sword which came forth out of his mouth. All the birds …” (19:21, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… proceeds a sharp, double-edged sword, that with it he should strike the nations. He will rule them with a rod of iron. He treads the winepress …”; verse 17 reads “I saw an angel standing in the sun. He cried with a loud voice, saying to all the birds that fly in the sky, \"Come! Be …”. These establish the first and second answers respectively.",
+    "options" : [
+      "nations; sprinkled",
+      "proceeds; cried",
+      "cried; nations",
+      "nations; cried"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… proceeds a sharp, double-edged sword, that with it he should strike the ______. He will rule them with a rod of iron. He treads the winepress …” (19:15); “I saw an angel standing in the sun. He ______ with a loud voice, saying to all the birds that fly in the sky, \"Come! Be …” (19:17, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The twenty-four elders and the four living creatures fell down and worshiped God who sits on the throne, saying, \"Amen! Hallelujah!\"”",
+    "options" : [
+      "four"
+    ],
+    "prompt" : "Complete the quotation: “The twenty-____ elders and the four living creatures fell down and worshiped God who sits on the throne, saying, \"Amen! Hallelujah!\"” (19:4, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 19:6 uses Hallelujah: “… voice of many waters, and like the voice of mighty thunders, saying, \"Hallelujah! For the Lord our God, the Almighty, reigns!”",
+    "options" : [
+      "Hallelujah",
+      "free",
+      "righteousness",
+      "mouth"
+    ],
+    "prompt" : "Which word completes “… voice of many waters, and like the voice of mighty thunders, saying, \"______! For the Lord our God, the Almighty, reigns!”? (19:6, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “for true and righteous are his judgments. For he has judged the great prostitute, who corrupted the earth with her sexual immorality, and he has avenged …”",
+    "options" : [
+      "righteous"
+    ],
+    "prompt" : "Complete the quotation: “for true and ____ are his judgments. For he has judged the great prostitute, who corrupted the earth with her sexual immorality, and he has avenged …” (19:2, WEB)",
+    "reference" : "Revelation 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nations: “and he will come out to deceive the nations which are in the four corners of the earth, Gog and Magog, to gather them together to …”",
+    "options" : [
+      "nations",
+      "Hades",
+      "years",
+      "souls"
+    ],
+    "prompt" : "Which detail belongs in this passage: “and he will come out to deceive the ______ which are in the four corners of the earth, Gog and Magog, to gather them together to …”? (20:8, WEB)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and holy is he who has part in the first resurrection. Over these, the second death has no power, but they will be priests of God …” The missing terms belong in that order.",
+    "options" : [
+      "holy priests"
+    ],
+    "prompt" : "Supply the missing words in order: “… and ____ is he who has part in the first resurrection. Over these, the second death has no power, but they will be of God …” (20:6, WEB)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… earth, and surrounded the camp of the saints, and the beloved city. Fire came down out of heaven from God, and devoured them.” It says Fire, not gather.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… earth, and surrounded the camp of the saints, and the beloved city. gather came down out of heaven from God, and devoured them.” (20:9, WEB)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It speaks of a thousand years, Satan's restraint and release, and the vindication of those associated with Christ. Premillennial, amillennial and postmillennial Christians explain the sequence and symbolism differently. The Gospel Worldview summary does not settle those debates, so the quiz should not make one system an unlabeled answer key.",
+    "options" : [
+      "It speaks of a thousand years, Satan's restraint and release, and the vindication of those associated with Christ.",
+      "The chapter names one modern millennial school as its interpreter.",
+      "No reference to a thousand years appears.",
+      "Every Christian tradition agrees on a single chronology."
+    ],
+    "prompt" : "What is explicit in the chapter, distinct from later millennial systems? (20:1-10)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Death and Hades were thrown into the lake of fire. This is the second death, the lake of fire.”; the second reads “… found written in the book of life, he was cast into the lake of fire.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Death lake"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “____ and Hades were thrown into the lake of fire. This is the second death, the lake of fire.” (20:14); “… found written in the book of life, he was cast into the of fire.” (20:15, WEB)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 20:5 uses resurrection: “… didn't live until the thousand years were finished. This is the first resurrection.”",
+    "options" : [
+      "darkness",
+      "resurrection",
+      "joy",
+      "nations"
+    ],
+    "prompt" : "Which word completes “… didn't live until the thousand years were finished. This is the first ______.”? (20:5, WEB)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… I saw the souls of those who had been beheaded for the testimony of Jesus, and for the word of God, and such as didn't worship …”",
+    "options" : [
+      "testimony"
+    ],
+    "prompt" : "Complete the quotation: “… I saw the souls of those who had been beheaded for the ____ of Jesus, and for the word of God, and such as didn't worship …” (20:4, WEB)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… Satan, who deceives the whole inhabited earth, and bound him for a thousand years,”",
+    "options" : [
+      "thousand"
+    ],
+    "prompt" : "Complete the quotation: “… Satan, who deceives the whole inhabited earth, and bound him for a ____ years,” (20:2, WEB)",
+    "reference" : "Revelation 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God dwells with His people in a renewed creation where death and mourning are removed. The vision joins God's presence with the healing of creation and human life. It extends the course's theme of reconciliation, while the course notes themselves leave the final act undeveloped.",
+    "options" : [
+      "God permanently abandons His people.",
+      "Death is presented as creation's eternal ruler.",
+      "God dwells with His people in a renewed creation where death and mourning are removed.",
+      "The vision says renewed creation has no place in Christian hope."
+    ],
+    "prompt" : "How is final hope pictured as restored relationship rather than only escape? (21:1-5)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… as its breadth. He measured the city with the reed, Twelve thousand twelve stadia. Its length, breadth, and height are equal.” It says twelve, not sixth.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… as its breadth. He measured the city with the reed, Twelve thousand sixth stadia. Its length, breadth, and height are equal.” (21:16, WEB)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… all things new.\" He said, \"Write, for these words of God are faithful and true.\"”",
+    "options" : [
+      "faithful"
+    ],
+    "prompt" : "Complete the quotation: “… all things new.\" He said, \"Write, for these words of God are ____ and true.\"” (21:5, WEB)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… with all kinds of precious stones. The first foundation was jasper; the second, sapphire; the third, chalcedony; the fourth, emerald;”; verse 21 reads “… was made of one pearl. The street of the city was pure gold, like transparent glass.”. These establish the first and second answers respectively.",
+    "options" : [
+      "gold; second",
+      "sixth; gold",
+      "second; bronze",
+      "second; gold"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… with all kinds of precious stones. The first foundation was jasper; the ______, sapphire; the third, chalcedony; the fourth, emerald;” (21:19); “… was made of one pearl. The street of the city was pure ______, like transparent glass.” (21:21, WEB)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies three: “On the east were three gates; and on the north three gates; and on the south three gates; and on the west three gates.”",
+    "options" : [
+      "hundred",
+      "three",
+      "ten",
+      "seventh"
+    ],
+    "prompt" : "Which detail belongs in this passage: “On the east were three gates; and on the north ______ gates; and on the south three gates; and on the west three gates.”? (21:13, WEB)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “having the glory of God. Her light was like a most precious stone, as if it was a jasper stone, clear as crystal;” The missing terms belong in that order.",
+    "options" : [
+      "glory light"
+    ],
+    "prompt" : "Supply the missing words in order: “having the ____ of God. Her was like a most precious stone, as if it was a jasper stone, clear as crystal;” (21:11, WEB)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 21:8 uses fire: “… and all liars, their part is in the lake that burns with fire and sulfur, which is the second death.\"”",
+    "options" : [
+      "life",
+      "dwell",
+      "fire",
+      "dwelling"
+    ],
+    "prompt" : "Which word completes “… and all liars, their part is in the lake that burns with ______ and sulfur, which is the second death.\"”? (21:8, WEB)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “I saw the holy city, New Jerusalem, coming down out of heaven from God, made ready like a bride adorned for her husband.”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "Complete the quotation: “I saw the holy city, New ____, coming down out of heaven from God, made ready like a bride adorned for her husband.” (21:2, WEB)",
+    "reference" : "Revelation 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Life and unhindered fellowship with God are restored, with healing and the removal of the curse. The vision echoes Eden without merely repeating its earlier situation. Christian hope is pictured through God's presence, service and shared life rather than through self-sufficiency.",
+    "options" : [
+      "God's servants are said never to see His face.",
+      "Life and unhindered fellowship with God are restored, with healing and the removal of the curse.",
+      "The tree of life has no relation to the imagery of Genesis.",
+      "The curse is declared permanently stronger than God."
+    ],
+    "prompt" : "What connection does the tree-of-life imagery invite with the Bible's beginning? (22:1-5; Genesis 2-3)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… brothers, the prophets, and with those who keep the words of this book. Worship God.\"” The missing terms belong in that order.",
+    "options" : [
+      "book Worship"
+    ],
+    "prompt" : "Supply the missing words in order: “… brothers, the prophets, and with those who keep the words of this ____. God.\"” (22:9, WEB)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Blessed are those who do his commandments, that they may have the right to the tree of life, and may enter in by the gates into …” It says commandments, not counsel.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Blessed are those who do his counsel, that they may have the right to the tree of life, and may enter in by the gates into …” (22:14, WEB)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… the sexually immoral, the murderers, the idolaters, and everyone who loves and practices falsehood.”; verse 17 reads “… is thirsty, let him come. He who desires, let him take the water of life freely.”. These establish the first and second answers respectively.",
+    "options" : [
+      "practices; figs",
+      "hears; water",
+      "practices; water",
+      "water; practices"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the sexually immoral, the murderers, the idolaters, and everyone who loves and ______ falsehood.” (22:15); “… is thirsty, let him come. He who desires, let him take the ______ of life freely.” (22:17, WEB)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “There will be no night, and they need no lamp light; for the Lord God will illuminate them. They will reign forever and ever.”",
+    "options" : [
+      "light"
+    ],
+    "prompt" : "Complete the quotation: “There will be no night, and they need no lamp ____; for the Lord God will illuminate them. They will reign forever and ever.” (22:5, WEB)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies righteousness: “… let him be filthy still. He who is righteous, let him do righteousness still. He who is holy, let him be holy still.\"”",
+    "options" : [
+      "love",
+      "righteousness",
+      "peace",
+      "wrath"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… let him be filthy still. He who is righteous, let him do ______ still. He who is holy, let him be holy still.\"”? (22:11, WEB)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Revelation 22:6 uses faithful: “He said to me, \"These words are faithful and true. The Lord God of the spirits of the prophets sent his angel to show to his …”",
+    "options" : [
+      "obedient",
+      "clean",
+      "proud",
+      "faithful"
+    ],
+    "prompt" : "Which word completes “He said to me, \"These words are ______ and true. The Lord God of the spirits of the prophets sent his angel to show to his …”? (22:6, WEB)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "revelation",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… this side of the river and on that was the tree of life, bearing twelve kinds of fruits, yielding its fruit every month. The leaves of …”",
+    "options" : [
+      "life"
+    ],
+    "prompt" : "Complete the quotation: “… this side of the river and on that was the tree of ____, bearing twelve kinds of fruits, yielding its fruit every month. The leaves of …” (22:2, WEB)",
+    "reference" : "Revelation 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

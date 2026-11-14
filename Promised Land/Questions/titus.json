@@ -1,0 +1,395 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to Jewish fables and commandments of men who turn away from the truth.”; the second reads “They profess that they know God, but by their works they deny him, being abominable, disobedient, and unfit for any good work.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "truth profess"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to Jewish fables and commandments of men who turn away from the ____.” (1:14); “They that they know God, but by their works they deny him, being abominable, disobedient, and unfit for any good work.” (1:16, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… men who overthrow whole houses, teaching things which they ought not, for dishonest gain's sake.”; verse 13 reads “This testimony is true. For this cause, reprove them sharply, that they may be sound in the faith,”. These establish the first and second answers respectively.",
+    "options" : [
+      "dishonest; counsel",
+      "dishonest; testimony",
+      "testimony; dishonest",
+      "faith; testimony"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… men who overthrow whole houses, teaching things which they ought not, for ______ gain's sake.” (1:11); “This ______ is true. For this cause, reprove them sharply, that they may be sound in the faith,” (1:13, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… servant of God, and an apostle of Jesus Christ, according to the faith of God's chosen ones, and the knowledge of the truth which is according …”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “… servant of God, and an apostle of Jesus Christ, according to the ____ of God's chosen ones, and the knowledge of the truth which is according …” (1:1, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… as God's steward; not self-pleasing, not easily angered, not given to wine, not violent, not greedy for dishonest gain;” The missing terms belong in that order.",
+    "options" : [
+      "wine violent"
+    ],
+    "prompt" : "Supply the missing words in order: “… as God's steward; not self-pleasing, not easily angered, not given to ____, not , not greedy for dishonest gain;” (1:7, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Titus 1:5 uses Crete: “I left you in Crete for this reason, that you would set in order the things that were lacking, and appoint elders in every city, as …”",
+    "options" : [
+      "Joppa",
+      "Nazareth",
+      "Crete",
+      "Sychar"
+    ],
+    "prompt" : "Which word completes “I left you in ______ for this reason, that you would set in order the things that were lacking, and appoint elders in every city, as …”? (1:5, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “holding to the faithful word which is according to the teaching, that he may be able to exhort in the sound doctrine, and to convict those …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “holding to the faithful word which is according to the teaching, that he may be able to exhort in the sound doctrine, and to convict those …” (1:9, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “to Titus, my true child according to a common faith: Grace, mercy, and peace from God the Father and the Lord Jesus Christ our Savior.”",
+    "options" : [
+      "Grace"
+    ],
+    "prompt" : "Complete the quotation: “to Titus, my true child according to a common faith: ____, mercy, and peace from God the Father and the Lord Jesus Christ our Savior.” (1:4, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "titus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies holy: “but given to hospitality, as a lover of good, sober-minded, fair, holy, self-controlled;”",
+    "options" : [
+      "innocent",
+      "holy",
+      "poor",
+      "unclean"
+    ],
+    "prompt" : "Which detail belongs in this passage: “but given to hospitality, as a lover of good, sober-minded, fair, ______, self-controlled;”? (1:8, WEB)",
+    "reference" : "Titus 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… women likewise be reverent in behavior, not slanderers nor enslaved to much wine, teachers of that which is good;”",
+    "options" : [
+      "wine"
+    ],
+    "prompt" : "Complete the quotation: “… women likewise be reverent in behavior, not slanderers nor enslaved to much ____, teachers of that which is good;” (2:3, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “who gave himself for us, that he might redeem us from all iniquity, and purify for himself a people for his own possession, zealous for good …”; the second reads “Say these things and exhort and reprove with all authority. Let no man despise you.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "iniquity exhort"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “who gave himself for us, that he might redeem us from all ____, and purify for himself a people for his own possession, zealous for good …” (2:14); “Say these things and and reprove with all authority. Let no man despise you.” (2:15, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies can't: “and soundness of speech that can't be condemned; that he who opposes you may be ashamed, having no evil thing to say about us.”",
+    "options" : [
+      "appearing",
+      "sound",
+      "intent",
+      "can't"
+    ],
+    "prompt" : "Which detail belongs in this passage: “and soundness of speech that ______ be condemned; that he who opposes you may be ashamed, having no evil thing to say about us.”? (2:8, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “instructing us to the intent that, denying ungodliness and worldly lusts, we would live soberly, righteously, and godly in this present world;”; verse 13 reads “looking for the blessed hope and appearing of the glory of our great God and Savior, Jesus Christ;”. These establish the first and second answers respectively.",
+    "options" : [
+      "faith; glory",
+      "intent; glory",
+      "glory; intent",
+      "intent; kindness"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “instructing us to the ______ that, denying ungodliness and worldly lusts, we would live soberly, righteously, and godly in this present world;” (2:12); “looking for the blessed hope and appearing of the ______ of our great God and Savior, Jesus Christ;” (2:13, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Exhort servants to be in subjection to their own masters, and to be well-pleasing in all things; not contradicting;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Exhort servants to be in subjection to their own masters, and to be well-pleasing in all things; not contradicting;” (2:9, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “in all things showing yourself an example of good works; in your teaching showing integrity, seriousness, incorruptibility,” The missing terms belong in that order.",
+    "options" : [
+      "works seriousness"
+    ],
+    "prompt" : "Supply the missing words in order: “in all things showing yourself an example of good ____; in your teaching showing integrity, , incorruptibility,” (2:7, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “that older men should be temperate, sensible, sober-minded, sound in faith, in love, and in patience:”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “that older men should be temperate, sensible, sober-minded, sound in faith, in ____, and in patience:” (2:2, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "titus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Titus 2:5 uses blasphemed: “… in subjection to their own husbands, that God's word may not be blasphemed.”",
+    "options" : [
+      "appeared",
+      "condemned",
+      "blessed",
+      "blasphemed"
+    ],
+    "prompt" : "Which word completes “… in subjection to their own husbands, that God's word may not be ______.”? (2:5, WEB)",
+    "reference" : "Titus 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God saves by His mercy rather than our prior righteous deeds, and believers are urged to devote themselves to good works. The sequence resists both earning salvation and treating grace as indifference to conduct. Christian traditions discuss the washing language, but the passage explicitly names mercy and renewal by the Spirit.",
+    "options" : [
+      "Mercy means good works can have no place afterward.",
+      "God saves by His mercy rather than our prior righteous deeds, and believers are urged to devote themselves to good works.",
+      "Renewal by the Spirit is absent from the passage.",
+      "Prior good deeds force God to show mercy."
+    ],
+    "prompt" : "How are mercy and good works held together? (3:3-8)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of no one, not to be contentious, to be gentle, showing all humility toward all men.”",
+    "options" : [
+      "humility"
+    ],
+    "prompt" : "Complete the quotation: “… of no one, not to be contentious, to be gentle, showing all ____ toward all men.” (3:2, WEB)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies faithful: “This saying is faithful, and concerning these things I desire that you affirm confidently, so that those who have believed God may be careful to maintain …”",
+    "options" : [
+      "rich",
+      "faithful",
+      "obedient",
+      "proud"
+    ],
+    "prompt" : "Which detail belongs in this passage: “This saying is ______, and concerning these things I desire that you affirm confidently, so that those who have believed God may be careful to maintain …”? (3:8, WEB)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “knowing that such a one is perverted, and sins, being self-condemned.”; verse 12 reads “When I send Artemas to you, or Tychicus, be diligent to come to me to Nicopolis, for I have determined to winter there.”. These establish the first and second answers respectively.",
+    "options" : [
+      "deceit; Tychicus",
+      "Tychicus; sins",
+      "sins; Tychicus",
+      "sins; Andrew"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “knowing that such a one is perverted, and ______, being self-condemned.” (3:11); “When I send Artemas to you, or ______, be diligent to come to me to Nicopolis, for I have determined to winter there.” (3:12, WEB)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “but shun foolish questionings, genealogies, strife, and disputes about the law; for they are unprofitable and vain.” It says law, not testimonies.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “but shun foolish questionings, genealogies, strife, and disputes about the testimonies; for they are unprofitable and vain.” (3:9, WEB)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “that, being justified by his grace, we might be made heirs according to the hope of eternal life.” The missing terms belong in that order.",
+    "options" : [
+      "grace life"
+    ],
+    "prompt" : "Supply the missing words in order: “that, being justified by his ____, we might be made heirs according to the hope of eternal .” (3:7, WEB)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Titus 3:5 uses mercy: “… by works of righteousness, which we did ourselves, but according to his mercy, he saved us, through the washing of regeneration and renewing by the Holy …”",
+    "options" : [
+      "mercy",
+      "glory",
+      "peace",
+      "grief"
+    ],
+    "prompt" : "Which word completes “… by works of righteousness, which we did ourselves, but according to his ______, he saved us, through the washing of regeneration and renewing by the Holy …”? (3:5, WEB)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "titus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For we were also once foolish, disobedient, deceived, serving various lusts and pleasures, living in malice and envy, hateful, and hating one another.”",
+    "options" : [
+      "serving"
+    ],
+    "prompt" : "Complete the quotation: “For we were also once foolish, disobedient, deceived, ____ various lusts and pleasures, living in malice and envy, hateful, and hating one another.” (3:3, WEB)",
+    "reference" : "Titus 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -1,0 +1,4051 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When calamity overtakes you like a storm, When your disaster comes on like a whirlwind; When distress and anguish come on you.”; the second reads “Because they hated knowledge, And didn't choose the fear of Yahweh.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "storm knowledge"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When calamity overtakes you like a ____, When your disaster comes on like a whirlwind; When distress and anguish come on you.” (1:27); “Because they hated , And didn't choose the fear of Yahweh.” (1:29, WEB)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 1:7 records: “The fear of Yahweh is the beginning of knowledge; But the foolish despise wisdom and instruction.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says the fear of the LORD is the beginning of knowledge. (1:7)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “If they say, \"Come with us, Let's lay in wait for blood; Let's lurk secretly for the innocent without cause;” The missing terms belong in that order.",
+    "options" : [
+      "blood lurk"
+    ],
+    "prompt" : "Supply the missing words in order: “If they say, \"Come with us, Let's lay in wait for ____; Let's secretly for the innocent without cause;” (1:11, WEB)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For their feet run to evil. They hurry to shed blood.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For their feet run to evil. They hurry to shed blood.” (1:16, WEB)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 1:5 uses understanding: “… wise man may hear, and increase in learning; That the man of understanding may attain to sound counsel:”",
+    "options" : [
+      "mercy",
+      "honor",
+      "faithfulness",
+      "understanding"
+    ],
+    "prompt" : "Which word completes “… wise man may hear, and increase in learning; That the man of ______ may attain to sound counsel:”? (1:5, WEB)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “To receive instruction in wise dealing, In righteousness, justice, and equity;”",
+    "options" : [
+      "justice"
+    ],
+    "prompt" : "Complete the quotation: “To receive instruction in wise dealing, In righteousness, ____, and equity;” (1:3, WEB)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies pit: “… alive like Sheol, And whole, like those who go down into the pit.”",
+    "options" : [
+      "justice",
+      "pit",
+      "righteousness",
+      "Sheol"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… alive like Sheol, And whole, like those who go down into the ______.”? (1:12, WEB)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “Wisdom calls aloud in the street. She utters her voice in the public squares.”; verse 22 reads “\"How long, you simple ones, will you love simplicity? How long will mockers delight themselves in mockery, And fools hate knowledge?”. These establish the first and second answers respectively.",
+    "options" : [
+      "love; Wisdom",
+      "Wisdom; love",
+      "Wisdom; knowledge",
+      "shame; love"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “______ calls aloud in the street. She utters her voice in the public squares.” (1:20); “\"How long, you simple ones, will you ______ simplicity? How long will mockers delight themselves in mockery, And fools hate knowledge?” (1:22, WEB)",
+    "reference" : "Proverbs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “Who forsake the paths of uprightness, To walk in the ways of darkness;”; verse 16 reads “To deliver you from the strange woman, Even from the foreigner who flatters with her words;”. These establish the first and second answers respectively.",
+    "options" : [
+      "deliver; darkness",
+      "darkness; deliver",
+      "darkness; wisdom",
+      "perverseness; deliver"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Who forsake the paths of uprightness, To walk in the ways of ______;” (2:13); “To ______ you from the strange woman, Even from the foreigner who flatters with her words;” (2:16, WEB)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He lays up sound wisdom for the upright. He is a shield to those who walk in integrity;” The missing terms belong in that order.",
+    "options" : [
+      "sound integrity"
+    ],
+    "prompt" : "Supply the missing words in order: “He lays up ____ wisdom for the upright. He is a shield to those who walk in ;” (2:7, WEB)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies righteousness: “Then you will understand righteousness and justice, Equity and every good path.”",
+    "options" : [
+      "righteousness",
+      "grief",
+      "glory",
+      "fear"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Then you will understand ______ and justice, Equity and every good path.”? (2:9, WEB)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “So as to turn your ear to wisdom, And apply your heart to understanding;”",
+    "options" : [
+      "wisdom"
+    ],
+    "prompt" : "Complete the quotation: “So as to turn your ear to ____, And apply your heart to understanding;” (2:2, WEB)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 2:4 uses silver: “If you seek her as silver, And search for her as for hidden treasures:”",
+    "options" : [
+      "sand",
+      "ashes",
+      "clay",
+      "silver"
+    ],
+    "prompt" : "Which word completes “If you seek her as ______, And search for her as for hidden treasures:”? (2:4, WEB)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 2:6 records: “For Yahweh gives wisdom. Out of his mouth comes knowledge and understanding.”",
+    "options" : [
+      "wisdom"
+    ],
+    "prompt" : "In this paraphrase, for the LORD gives ____; from His mouth come knowledge and understanding. (2:6)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For wisdom will enter into your heart. Knowledge will be pleasant to your soul.” It says Knowledge, not wrath.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For wisdom will enter into your heart. wrath will be pleasant to your soul.” (2:10, WEB)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Who forsakes the friend of her youth, And forgets the covenant of her God:”; the second reads “… in the way of good men, And keep the paths of the righteous.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "covenant righteous"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Who forsakes the friend of her youth, And forgets the ____ of her God:” (2:17); “… in the way of good men, And keep the paths of the .” (2:20, WEB)",
+    "reference" : "Proverbs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Don't let kindness and truth forsake you. Bind them around your neck. Write them on the tablet of your heart.”",
+    "options" : [
+      "truth"
+    ],
+    "prompt" : "Complete the quotation: “Don't let kindness and ____ forsake you. Bind them around your neck. Write them on the tablet of your heart.” (3:3, WEB)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “By his knowledge, the depths were broken up, And the skies drop down the dew.”; verse 24 reads “… you will not be afraid. Yes, you will lie down, and your sleep will be sweet.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sleep; knowledge",
+      "knowledge; heart",
+      "righteousness; sleep",
+      "knowledge; sleep"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “By his ______, the depths were broken up, And the skies drop down the dew.” (3:20); “… you will not be afraid. Yes, you will lie down, and your ______ will be sweet.” (3:24, WEB)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “So your barns will be filled with plenty, And your vats will overflow with new wine.” The missing terms belong in that order.",
+    "options" : [
+      "plenty wine"
+    ],
+    "prompt" : "Supply the missing words in order: “So your barns will be filled with ____, And your vats will overflow with new .” (3:10, WEB)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wisdom: “Happy is the man who finds wisdom, The man who gets understanding.”",
+    "options" : [
+      "knowledge",
+      "understanding",
+      "joy",
+      "wisdom"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Happy is the man who finds ______, The man who gets understanding.”? (3:13, WEB)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 3:5 records: “Trust in Yahweh with all your heart, And don't lean on your own understanding.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says to trust in the LORD with all your heart. (3:5)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “She is a tree of life to those who lay hold of her. Happy is everyone who retains her.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “She is a tree of life to those who lay hold of her. Happy is everyone who retains her.” (3:18, WEB)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 3:7 uses Fear: “Don't be wise in your own eyes. Fear Yahweh, and depart from evil.”",
+    "options" : [
+      "Fear",
+      "wrath",
+      "shame",
+      "honor"
+    ],
+    "prompt" : "Which word completes “Don't be wise in your own eyes. ______ Yahweh, and depart from evil.”? (3:7, WEB)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Don't withhold good from those to whom it is due, When it is in the power of your hand to do it.”; the second reads “Don't envy the man of violence. Choose none of his ways.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "due Choose"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Don't withhold good from those to whom it is ____, When it is in the power of your hand to do it.” (3:27); “Don't envy the man of violence. none of his ways.” (3:31, WEB)",
+    "reference" : "Proverbs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 4:5 uses wisdom: “Get wisdom. Get understanding. Don't forget, neither swerve from the words of my mouth.”",
+    "options" : [
+      "peace",
+      "righteousness",
+      "wisdom",
+      "fear"
+    ],
+    "prompt" : "Which word completes “Get ______. Get understanding. Don't forget, neither swerve from the words of my mouth.”? (4:5, WEB)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For I give you sound learning. Don't forsake my law.”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “For I give you sound learning. Don't forsake my ____.” (4:2, WEB)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Let them not depart from your eyes. Keep them in the midst of your heart.”; the second reads “Put away from yourself a perverse mouth. Put corrupt lips far from you.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "depart lips"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Let them not ____ from your eyes. Keep them in the midst of your heart.” (4:21); “Put away from yourself a perverse mouth. Put corrupt far from you.” (4:24, WEB)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 4:23 records: “Keep your heart with all diligence, For out of it is the wellspring of life.”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "In this paraphrase, above all else, guard your ____. (4:23)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies paths: “… you in the way of wisdom. I have led you in straight paths.”",
+    "options" : [
+      "paths",
+      "possessions",
+      "darkness",
+      "unless"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you in the way of wisdom. I have led you in straight ______.”? (4:11, WEB)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “For they don't sleep, unless they do evil. Their sleep is taken away, unless they make someone fall.”; verse 18 reads “But the path of the righteous is like the dawning light, That shines more and more until the perfect day.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sleep; righteous",
+      "righteous; sleep",
+      "sleep; faithful",
+      "turn; righteous"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For they don't sleep, unless they do evil. Their ______ is taken away, unless they make someone fall.” (4:16); “But the path of the ______ is like the dawning light, That shines more and more until the perfect day.” (4:18, WEB)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Don't enter into the path of the wicked. Don't walk in the way of evil men.” It says path, not sayings.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Don't enter into the sayings of the wicked. Don't walk in the way of evil men.” (4:14, WEB)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Wisdom is supreme. Get wisdom. Yes, though it costs all your possessions, get understanding.” The missing terms belong in that order.",
+    "options" : [
+      "possessions understanding"
+    ],
+    "prompt" : "Supply the missing words in order: “Wisdom is supreme. Get wisdom. Yes, though it costs all your ____, get .” (4:7, WEB)",
+    "reference" : "Proverbs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “She gives no thought to the way of life. Her ways are crooked, and she doesn't know it.” The missing terms belong in that order.",
+    "options" : [
+      "life crooked"
+    ],
+    "prompt" : "Supply the missing words in order: “She gives no thought to the way of ____. Her ways are , and she doesn't know it.” (5:6, WEB)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 5:21 records: “For the ways of man are before the eyes of Yahweh. He examines all his paths.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says a man's ways are before the eyes of the LORD. (5:21)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 5:4 uses sharp: “But in the end she is as bitter as wormwood, And as sharp as a two-edged sword.”",
+    "options" : [
+      "strangers",
+      "sharp",
+      "hold",
+      "Turn"
+    ],
+    "prompt" : "Which word completes “But in the end she is as bitter as wormwood, And as ______ as a two-edged sword.”? (5:4, WEB)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies strangers: “Lest strangers feast on your wealth, And your labors enrich another man's house.”",
+    "options" : [
+      "always",
+      "strangers",
+      "examines",
+      "teachers"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Lest ______ feast on your wealth, And your labors enrich another man's house.”? (5:10, WEB)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… groan at your latter end, When your flesh and your body are consumed,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… groan at your latter end, When your flesh and your body are consumed,” (5:11, WEB)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “That you may maintain discretion, That your lips may preserve knowledge.”",
+    "options" : [
+      "knowledge"
+    ],
+    "prompt" : "Complete the quotation: “That you may maintain discretion, That your lips may preserve ____.” (5:2, WEB)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… her breasts satisfy you at all times. Be captivated always with her love.”; the second reads “The evil deeds of the wicked ensnare him. The cords of his sin hold him firmly.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "love sin"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… her breasts satisfy you at all times. Be captivated always with her ____.” (5:19); “The evil deeds of the wicked ensnare him. The cords of his hold him firmly.” (5:22, WEB)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “Neither have I obeyed the voice of my teachers, Nor turned my ear to those who instructed me!”; verse 16 reads “Should your springs overflow in the streets, Streams of water in the public squares?”. These establish the first and second answers respectively.",
+    "options" : [
+      "gathered; water",
+      "water; turned",
+      "turned; wine",
+      "turned; water"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Neither have I obeyed the voice of my teachers, Nor ______ my ear to those who instructed me!” (5:13); “Should your springs overflow in the streets, Streams of ______ in the public squares?” (5:16, WEB)",
+    "reference" : "Proverbs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Do this now, my son, and deliver yourself, Seeing you have come into the hand of your neighbor. Go, humble yourself. Press your plea with your …”",
+    "options" : [
+      "deliver"
+    ],
+    "prompt" : "Complete the quotation: “Do this now, my son, and ____ yourself, Seeing you have come into the hand of your neighbor. Go, humble yourself. Press your plea with your …” (6:3, WEB)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies heart: “In whose heart is perverseness, Who devises evil continually, Who always sows discord.”",
+    "options" : [
+      "heart",
+      "head",
+      "teeth",
+      "face"
+    ],
+    "prompt" : "Which detail belongs in this passage: “In whose ______ is perverseness, Who devises evil continually, Who always sows discord.”? (6:14, WEB)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Can a man scoop fire into his lap, And his clothes not be burned?”; the second reads “But if he is found, he shall restore seven times. He shall give all the wealth of his house.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fire seven"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Can a man scoop ____ into his lap, And his clothes not be burned?” (6:27); “But if he is found, he shall restore times. He shall give all the wealth of his house.” (6:31, WEB)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 6:8 records: “Provides her bread in the summer, And gathers her food in the harvest.”",
+    "options" : [
+      "summer"
+    ],
+    "prompt" : "In this paraphrase, the ant gathers its food in the ____. (6:8)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “My son, keep your father's commandment, And don't forsake your mother's teaching.”; verse 23 reads “For the commandment is a lamp, And the law is light. Reproofs of instruction are the way of life,”. These establish the first and second answers respectively.",
+    "options" : [
+      "promises; light",
+      "commandment; light",
+      "light; commandment",
+      "commandment; bread"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “My son, keep your father's ______, And don't forsake your mother's teaching.” (6:20); “For the commandment is a lamp, And the law is ______. Reproofs of instruction are the way of life,” (6:23, WEB)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Haughty eyes, a lying tongue, Hands that shed innocent blood;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Haughty eyes, a lying tongue, Hands that shed innocent blood;” (6:17, WEB)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 6:5 uses yourself: “Free yourself, like a gazelle from the hand of the hunter, Like a bird from the snare of the fowler.”",
+    "options" : [
+      "void",
+      "yourself",
+      "Don't",
+      "fowler"
+    ],
+    "prompt" : "Which word completes “Free ______, like a gazelle from the hand of the hunter, Like a bird from the snare of the fowler.”? (6:5, WEB)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “A little sleep, a little slumber, A little folding of the hands to sleep:” The missing terms belong in that order.",
+    "options" : [
+      "slumber folding"
+    ],
+    "prompt" : "Supply the missing words in order: “A little sleep, a little ____, A little of the hands to sleep:” (6:10, WEB)",
+    "reference" : "Proverbs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “\"Sacrifices of peace-offerings are with me. This day I have paid my vows.” It says Sacrifices, not strikes.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “\"strikes of peace-offerings are with me. This day I have paid my vows.” (7:14, WEB)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… couch with carpets of tapestry, With striped cloths of the yarn of Egypt.”; verse 18 reads “Come, let's take our fill of loving until the morning. Let's solace ourselves with loving.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jordan; fill",
+      "fill; Egypt",
+      "Egypt; liver",
+      "Egypt; fill"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… couch with carpets of tapestry, With striped cloths of the yarn of ______.” (7:16); “Come, let's take our ______ of loving until the morning. Let's solace ourselves with loving.” (7:18, WEB)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I saw among the simple ones. I discerned among the youths a young man void of understanding,” The missing terms belong in that order.",
+    "options" : [
+      "ones understanding"
+    ],
+    "prompt" : "Supply the missing words in order: “I saw among the simple ____. I discerned among the youths a young man void of ,” (7:7, WEB)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Keep my commandments and live; Guard my teaching as the apple of your eye.”",
+    "options" : [
+      "commandments"
+    ],
+    "prompt" : "Complete the quotation: “Keep my ____ and live; Guard my teaching as the apple of your eye.” (7:2, WEB)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies defiant: “She is loud and defiant. Her feet don't stay in her house.”",
+    "options" : [
+      "liver",
+      "Passing",
+      "defiant",
+      "sister"
+    ],
+    "prompt" : "Which detail belongs in this passage: “She is loud and ______. Her feet don't stay in her house.”? (7:11, WEB)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 7:27 records: “Her house is the way to Sheol, Going down to the chambers of death.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs warns that the house of the adulteress is the way to death. (7:27)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He followed her immediately, As an ox goes to the slaughter, As a fool stepping into a noose.”; the second reads “… hurries to the snare, And doesn't know that it will cost his life.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "goes life"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He followed her immediately, As an ox ____ to the slaughter, As a fool stepping into a noose.” (7:22); “… hurries to the snare, And doesn't know that it will cost his .” (7:23, WEB)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 7:5 uses flatters: “… they may keep you from the strange woman, From the foreigner who flatters with her words.”",
+    "options" : [
+      "vows",
+      "flatters",
+      "sons",
+      "cloths"
+    ],
+    "prompt" : "Which word completes “… they may keep you from the strange woman, From the foreigner who ______ with her words.”? (7:5, WEB)",
+    "reference" : "Proverbs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… gates, at the entry of the city, At the entry doors, she cries aloud:”",
+    "options" : [
+      "cries"
+    ],
+    "prompt" : "Complete the quotation: “… gates, at the entry of the city, At the entry doors, she ____ aloud:” (8:3, WEB)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 8:25 records: “Before the mountains were settled in place, Before the hills, I was brought forth;”",
+    "options" : [
+      "mountains"
+    ],
+    "prompt" : "In this paraphrase, wisdom was present with God before the ____ were made. (8:25)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… in the way of righteousness, In the midst of the paths of justice;”; verse 24 reads “… depths, I was brought forth, When there were no springs abounding with water.”. These establish the first and second answers respectively.",
+    "options" : [
+      "water; justice",
+      "hope; water",
+      "justice; water",
+      "justice; oil"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… in the way of righteousness, In the midst of the paths of ______;” (8:20); “… depths, I was brought forth, When there were no springs abounding with ______.” (8:24, WEB)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Receive my instruction rather than silver; Knowledge rather than choice gold.” The missing terms belong in that order.",
+    "options" : [
+      "silver Knowledge"
+    ],
+    "prompt" : "Supply the missing words in order: “Receive my instruction rather than ____; rather than choice gold.” (8:10, WEB)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “My fruit is better than gold, yes, than fine gold; My yield than choice silver.” It says gold, not ashes.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “My fruit is better than ashes, yes, than fine gold; My yield than choice silver.” (8:19, WEB)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fear: “The fear of Yahweh is to hate evil. I hate pride, arrogance, the evil way, and the perverse mouth.”",
+    "options" : [
+      "fear",
+      "glory",
+      "truth",
+      "righteousness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ of Yahweh is to hate evil. I hate pride, arrogance, the evil way, and the perverse mouth.”? (8:13, WEB)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 8:7 uses truth: “For my mouth speaks truth. Wickedness is an abomination to my lips.”",
+    "options" : [
+      "truth",
+      "shame",
+      "joy",
+      "grief"
+    ],
+    "prompt" : "Which word completes “For my mouth speaks ______. Wickedness is an abomination to my lips.”? (8:7, WEB)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the waters should not violate his commandment, When he marked out the foundations of the earth;”; the second reads “Rejoicing in his whole world. My delight was with the sons of men.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "foundations delight"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the waters should not violate his commandment, When he marked out the ____ of the earth;” (8:29); “Rejoicing in his whole world. My was with the sons of men.” (8:31, WEB)",
+    "reference" : "Proverbs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He who corrects a mocker invites insult. He who reproves a wicked man invites abuse.” The missing terms belong in that order.",
+    "options" : [
+      "invites abuse"
+    ],
+    "prompt" : "Supply the missing words in order: “He who corrects a mocker ____ insult. He who reproves a wicked man invites .” (9:7, WEB)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “… scoffer, lest he hate you. Reprove a wise man, and he will love you.”",
+    "options" : [
+      "hope",
+      "faithfulness",
+      "love",
+      "mercy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… scoffer, lest he hate you. Reprove a wise man, and he will ______ you.”? (9:8, WEB)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 9:1 records: “Wisdom has built her house. She has carved out her seven pillars.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Wisdom has built her house and invites the simple. (9:1-4)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “\"Come, eat some of my bread, Drink some of the wine which I have mixed!”",
+    "options" : [
+      "bread"
+    ],
+    "prompt" : "Complete the quotation: “\"Come, eat some of my ____, Drink some of the wine which I have mixed!” (9:5, WEB)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “The fear of Yahweh is the beginning of wisdom. The knowledge of the Holy One is understanding.”; verse 12 reads “If you are wise, you are wise for yourself. If you mock, you alone will bear it.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fear; yourself",
+      "love; yourself",
+      "yourself; fear",
+      "fear; pass"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The ______ of Yahweh is the beginning of wisdom. The knowledge of the Holy One is understanding.” (9:10); “If you are wise, you are wise for ______. If you mock, you alone will bear it.” (9:12, WEB)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… sits at the door of her house, On a seat in the high places of the city,”; the second reads “\"Stolen water is sweet. Food eaten in secret is pleasant.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "high water"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… sits at the door of her house, On a seat in the ____ places of the city,” (9:14); “\"Stolen is sweet. Food eaten in secret is pleasant.\"” (9:17, WEB)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 9:6 uses understanding: “Leave your simple ways, and live. Walk in the way of understanding.\"”",
+    "options" : [
+      "truth",
+      "fear",
+      "wisdom",
+      "understanding"
+    ],
+    "prompt" : "Which word completes “Leave your simple ways, and live. Walk in the way of ______.\"”? (9:6, WEB)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Instruct a wise man, and he will be still wiser. Teach a righteous man, and he will increase in learning.” It says righteous, not holy.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Instruct a wise man, and he will be still wiser. Teach a holy man, and he will increase in learning.” (9:9, WEB)",
+    "reference" : "Proverbs 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “Hatred stirs up strife, But love covers all wrongs.”",
+    "options" : [
+      "understanding",
+      "kindness",
+      "hope",
+      "love"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Hatred stirs up strife, But ______ covers all wrongs.”? (10:12, WEB)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the righteous leads to life. The increase of the wicked leads to sin.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the righteous leads to life. The increase of the wicked leads to sin.” (10:16, WEB)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “He who hides hatred has lying lips. He who utters a slander is a fool.”; verse 21 reads “… of the righteous feed many, But the foolish die for lack of understanding.”. These establish the first and second answers respectively.",
+    "options" : [
+      "lips; understanding",
+      "understanding; lips",
+      "lips; justice",
+      "hands; understanding"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “He who hides hatred has lying ______. He who utters a slander is a fool.” (10:18); “… of the righteous feed many, But the foolish die for lack of ______.” (10:21, WEB)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When the whirlwind passes, the wicked is no more; But the righteous stand firm forever.”; the second reads “The prospect of the righteous is joy, But the hope of the wicked will perish.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wicked joy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When the whirlwind passes, the ____ is no more; But the righteous stand firm forever.” (10:25); “The prospect of the righteous is , But the hope of the wicked will perish.” (10:28, WEB)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Yahweh will not allow the soul of the righteous to go hungry, But he thrusts away the desire of the wicked.”",
+    "options" : [
+      "righteous"
+    ],
+    "prompt" : "Complete the quotation: “Yahweh will not allow the soul of the ____ to go hungry, But he thrusts away the desire of the wicked.” (10:3, WEB)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He who walks blamelessly walks surely, But he who perverts his ways will be found out.” The missing terms belong in that order.",
+    "options" : [
+      "walks ways"
+    ],
+    "prompt" : "Supply the missing words in order: “He who walks blamelessly ____ surely, But he who perverts his will be found out.” (10:9, WEB)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 10:6 uses violence: “Blessings are on the head of the righteous, But violence covers the mouth of the wicked.”",
+    "options" : [
+      "idolatry",
+      "violence",
+      "transgressions",
+      "sin"
+    ],
+    "prompt" : "Which word completes “Blessings are on the head of the righteous, But ______ covers the mouth of the wicked.”? (10:6, WEB)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 10:1 records: “The proverbs of Solomon. A wise son makes a glad father; But a foolish son brings grief to his mother.”",
+    "options" : [
+      "father"
+    ],
+    "prompt" : "In this paraphrase, a wise son makes a glad ____. (10:1)",
+    "reference" : "Proverbs 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “When pride comes, then comes shame, But with humility comes wisdom.”",
+    "options" : [
+      "wisdom"
+    ],
+    "prompt" : "Complete the quotation: “When pride comes, then comes shame, But with humility comes ____.” (11:2, WEB)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He who is collateral for a stranger will suffer for it, But he who refuses pledges of collateral is secure.” It says stranger, not abomination.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He who is collateral for a abomination will suffer for it, But he who refuses pledges of collateral is secure.” (11:15, WEB)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 11:6 uses deliver: “The righteousness of the upright shall deliver them, But the unfaithful will be trapped by evil desires.”",
+    "options" : [
+      "riches",
+      "wickedness",
+      "deliver",
+      "brings"
+    ],
+    "prompt" : "Which word completes “The righteousness of the upright shall ______ them, But the unfaithful will be trapped by evil desires.”? (11:6, WEB)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “There is one who scatters, and increases yet more. There is one who withholds more than is appropriate, but gains poverty.”; the second reads “He who trusts in his riches will fall, But the righteous shall flourish as the green leaf.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "scatters trusts"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “There is one who ____, and increases yet more. There is one who withholds more than is appropriate, but gains poverty.” (11:24); “He who in his riches will fall, But the righteous shall flourish as the green leaf.” (11:28, WEB)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “Wicked people earn deceitful wages, But one who sows righteousness reaps a sure reward.”; verse 22 reads “Like a gold ring in a pig's snout, Is a beautiful woman who lacks discretion.”. These establish the first and second answers respectively.",
+    "options" : [
+      "truth; gold",
+      "gold; righteousness",
+      "righteousness; iron",
+      "righteousness; gold"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Wicked people earn deceitful wages, But one who sows ______ reaps a sure reward.” (11:18); “Like a ______ ring in a pig's snout, Is a beautiful woman who lacks discretion.” (11:22, WEB)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 11:25 records: “The liberal soul shall be made fat. He who waters shall be watered also himself.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says the generous will be enriched. (11:25)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… his mouth the godless man destroys his neighbor, But the righteous will be delivered through knowledge.” The missing terms belong in that order.",
+    "options" : [
+      "righteous knowledge"
+    ],
+    "prompt" : "Supply the missing words in order: “… his mouth the godless man destroys his neighbor, But the ____ will be delivered through .” (11:9, WEB)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies understanding: “… who despises his neighbor is void of wisdom, But a man of understanding holds his peace.”",
+    "options" : [
+      "love",
+      "peace",
+      "shame",
+      "understanding"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… who despises his neighbor is void of wisdom, But a man of ______ holds his peace.”? (11:12, WEB)",
+    "reference" : "Proverbs 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 12:6 uses blood: “The words of the wicked are about lying in wait for blood, But the speech of the upright rescues them.”",
+    "options" : [
+      "tongue",
+      "blood",
+      "foot",
+      "arm"
+    ],
+    "prompt" : "Which word completes “The words of the wicked are about lying in wait for ______, But the speech of the upright rescues them.”? (12:6, WEB)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Whoever loves correction loves knowledge, But he who hates reproof is stupid.”",
+    "options" : [
+      "knowledge"
+    ],
+    "prompt" : "Complete the quotation: “Whoever loves correction loves ____, But he who hates reproof is stupid.” (12:1, WEB)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “A man shall be commended according to his wisdom, But he who has a warped mind shall be despised.” The missing terms belong in that order.",
+    "options" : [
+      "wisdom mind"
+    ],
+    "prompt" : "Supply the missing words in order: “A man shall be commended according to his ____, But he who has a warped shall be despised.” (12:8, WEB)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “A prudent man keeps his knowledge, But the hearts of fools proclaim foolishness.”; the second reads “Anxiety in a man's heart weighs it down, But a kind word makes it glad.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fools heart"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “A prudent man keeps his knowledge, But the hearts of ____ proclaim foolishness.” (12:23); “Anxiety in a man's weighs it down, But a kind word makes it glad.” (12:25, WEB)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “He who is truthful testifies honestly, But a false witness lies.”; verse 19 reads “Truth's lips will be established forever, But a lying tongue is only momentary.”. These establish the first and second answers respectively.",
+    "options" : [
+      "truthful; piercing",
+      "truthful; lying",
+      "annoyance; lying",
+      "lying; truthful"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “He who is ______ testifies honestly, But a false witness lies.” (12:17); “Truth's lips will be established forever, But a ______ tongue is only momentary.” (12:19, WEB)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bread: “He who tills his land shall have plenty of bread, But he who chases fantasies is void of understanding.”",
+    "options" : [
+      "figs",
+      "milk",
+      "fruit",
+      "bread"
+    ],
+    "prompt" : "Which detail belongs in this passage: “He who tills his land shall have plenty of ______, But he who chases fantasies is void of understanding.”? (12:11, WEB)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 12:22 records: “Lying lips are an abomination to Yahweh, But those who do the truth are his delight.”",
+    "options" : [
+      "LORD"
+    ],
+    "prompt" : "In this paraphrase, lying lips are an abomination to the ____. (12:22)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… with good by the fruit of his mouth. The work of a man's hands shall be rewarded to him.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… with good by the fruit of his mouth. The work of a man's hands shall be rewarded to him.” (12:14, WEB)",
+    "reference" : "Proverbs 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He who guards his mouth guards his soul. One who opens wide his lips comes to ruin.”",
+    "options" : [
+      "wide"
+    ],
+    "prompt" : "Complete the quotation: “He who guards his mouth guards his soul. One who opens ____ his lips comes to ruin.” (13:3, WEB)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… heart sick, But when longing is fulfilled, it is a tree of life.” It says life, not death.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… heart sick, But when longing is fulfilled, it is a tree of death.” (13:12, WEB)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… pretend to be rich, yet have nothing. There are some who pretend to be poor, yet have great wealth.” The missing terms belong in that order.",
+    "options" : [
+      "pretend poor"
+    ],
+    "prompt" : "Supply the missing words in order: “… pretend to be rich, yet have nothing. There are some who ____ to be , yet have great wealth.” (13:7, WEB)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies light: “The light of the righteous shines brightly, But the lamp of the wicked is snuffed out.”",
+    "options" : [
+      "brings",
+      "turning",
+      "riches",
+      "light"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ of the righteous shines brightly, But the lamp of the wicked is snuffed out.”? (13:9, WEB)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Longing fulfilled is sweet to the soul, But fools detest turning from evil.”; the second reads “A good man leaves an inheritance to his children's children, But the wealth of the sinner is stored for the righteous.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "detest inheritance"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Longing fulfilled is sweet to the soul, But fools ____ turning from evil.” (13:19); “A good man leaves an to his children's children, But the wealth of the sinner is stored for the righteous.” (13:22, WEB)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 13:20 records: “One who walks with wise men grows wise, But a companion of fools suffers harm.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says whoever walks with the wise becomes wise. (13:20)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “Good understanding wins favor; But the way of the unfaithful is hard.”; verse 17 reads “A wicked messenger falls into trouble, But a trustworthy envoy gains healing.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fear; gains",
+      "understanding; gains",
+      "gains; understanding",
+      "understanding; lips"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Good ______ wins favor; But the way of the unfaithful is hard.” (13:15); “A wicked messenger falls into trouble, But a trustworthy envoy ______ healing.” (13:17, WEB)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 13:5 uses righteous: “A righteous man hates lies, But a wicked man brings shame and disgrace.”",
+    "options" : [
+      "poor",
+      "righteous",
+      "wise",
+      "rich"
+    ],
+    "prompt" : "Which word completes “A ______ man hates lies, But a wicked man brings shame and disgrace.”? (13:5, WEB)",
+    "reference" : "Proverbs 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He who is quick to become angry will commit folly, And a crafty man is hated.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He who is quick to become angry will commit folly, And a crafty man is hated.” (14:17, WEB)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies ways: “… his own ways; Likewise a good man will be rewarded for his ways.”",
+    "options" : [
+      "pours",
+      "rots",
+      "ways",
+      "fortress"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… his own ways; Likewise a good man will be rewarded for his ______.”? (14:14, WEB)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “The poor person is shunned even by his own neighbor, But the rich person has many friends.”; verse 24 reads “The crown of the wise is their riches, But the folly of fools crowns them with folly.”. These establish the first and second answers respectively.",
+    "options" : [
+      "folly; poor",
+      "poor; folly",
+      "wise; folly",
+      "poor; atonement"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The ______ person is shunned even by his own neighbor, But the rich person has many friends.” (14:20); “The crown of the wise is their riches, But the ______ of fools crowns them with folly.” (14:24, WEB)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The fool's talk brings a rod to his back, But the lips of the wise protect them.”",
+    "options" : [
+      "brings"
+    ],
+    "prompt" : "Complete the quotation: “The fool's talk ____ a rod to his back, But the lips of the wise protect them.” (14:3, WEB)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 14:6 uses knowledge: “A scoffer seeks wisdom, and doesn't find it, But knowledge comes easily to a discerning person.”",
+    "options" : [
+      "knowledge",
+      "righteousness",
+      "truth",
+      "grief"
+    ],
+    "prompt" : "Which word completes “A scoffer seeks wisdom, and doesn't find it, But ______ comes easily to a discerning person.”? (14:6, WEB)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “In the multitude of people is the king's glory, But in the lack of people is the destruction of the prince.”; the second reads “… shows contempt for his Maker, But he who is kind to the needy honors him.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "glory needy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “In the multitude of people is the king's ____, But in the lack of people is the destruction of the prince.” (14:28); “… shows contempt for his Maker, But he who is kind to the honors him.” (14:31, WEB)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The heart knows its own bitterness and joy; He will not share these with a stranger.” The missing terms belong in that order.",
+    "options" : [
+      "joy stranger"
+    ],
+    "prompt" : "Supply the missing words in order: “The heart knows its own bitterness and ____; He will not share these with a .” (14:10, WEB)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 14:15 records: “A simple man believes everything, But the prudent man carefully considers his ways.”",
+    "options" : [
+      "steps"
+    ],
+    "prompt" : "In this paraphrase, the prudent gives thought to his ____. (14:15)",
+    "reference" : "Proverbs 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 15:6 uses righteous: “In the house of the righteous is much treasure, But the income of the wicked brings trouble.”",
+    "options" : [
+      "gracious",
+      "righteous",
+      "guilty",
+      "proud"
+    ],
+    "prompt" : "Which word completes “In the house of the ______ is much treasure, But the income of the wicked brings trouble.”? (15:6, WEB)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “There is stern discipline for one who forsakes the way: Whoever hates reproof shall die.” The missing terms belong in that order.",
+    "options" : [
+      "forsakes die"
+    ],
+    "prompt" : "Supply the missing words in order: “There is stern discipline for one who ____ the way: Whoever hates reproof shall .” (15:10, WEB)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The tongue of the wise commends knowledge, But the mouth of fools gush out folly.”",
+    "options" : [
+      "knowledge"
+    ],
+    "prompt" : "Complete the quotation: “The tongue of the wise commends ____, But the mouth of fools gush out folly.” (15:2, WEB)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… days of the afflicted are wretched, But one who has a cheerful heart enjoys a continual feast.” It says heart, not feet.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… days of the afflicted are wretched, But one who has a cheerful feet enjoys a continual feast.” (15:15, WEB)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 15:1 records: “A gentle answer turns away wrath, But a harsh word stirs up anger.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says a soft answer turns away wrath. (15:1)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The path of life leads upward for the wise, To keep him from going downward to Sheol.”; the second reads “The light of the eyes rejoices the heart. Good news gives health to the bones.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life light"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The path of ____ leads upward for the wise, To keep him from going downward to Sheol.” (15:24); “The of the eyes rejoices the heart. Good news gives health to the bones.” (15:30, WEB)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies spirit: “… glad heart makes a cheerful face; But an aching heart breaks the spirit.”",
+    "options" : [
+      "commends",
+      "teaches",
+      "aching",
+      "spirit"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… glad heart makes a cheerful face; But an aching heart breaks the ______.”? (15:13, WEB)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… the sluggard is like a thorn patch, But the path of the upright is a highway.”; verse 21 reads “… joy to one who is void of wisdom, But a man of understanding keeps his way straight.”. These establish the first and second answers respectively.",
+    "options" : [
+      "upright; understanding",
+      "wisdom; understanding",
+      "upright; grief",
+      "understanding; upright"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the sluggard is like a thorn patch, But the path of the ______ is a highway.” (15:19); “… joy to one who is void of wisdom, But a man of ______ keeps his way straight.” (15:21, WEB)",
+    "reference" : "Proverbs 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies truth: “… lips are the delight of kings. They value one who speaks the truth.”",
+    "options" : [
+      "kindness",
+      "truth",
+      "love",
+      "hope"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… lips are the delight of kings. They value one who speaks the ______.”? (16:13, WEB)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The appetite of the laboring man labors for him; For his mouth urges him on.”; the second reads “A man of violence entices his neighbor, And leads him in a way that is not good.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "labors leads"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The appetite of the laboring man ____ for him; For his mouth urges him on.” (16:26); “A man of violence entices his neighbor, And him in a way that is not good.” (16:29, WEB)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 16:1 records: “The plans of the heart belong to man, But the answer of the tongue is from Yahweh.”",
+    "options" : [
+      "man"
+    ],
+    "prompt" : "In this paraphrase, the plans of the heart belong to ____, but the answer of the tongue is from the LORD. (16:1)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… a man are clean in his own eyes; But Yahweh weighs the motives.”",
+    "options" : [
+      "motives"
+    ],
+    "prompt" : "Complete the quotation: “… a man are clean in his own eyes; But Yahweh weighs the ____.” (16:2, WEB)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “A man's heart plans his course, But Yahweh directs his steps.” The missing terms belong in that order.",
+    "options" : [
+      "heart course"
+    ],
+    "prompt" : "Supply the missing words in order: “A man's ____ plans his , But Yahweh directs his steps.” (16:9, WEB)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… than gold! Yes, to get understanding is to be chosen rather than silver.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… than gold! Yes, to get understanding is to be chosen rather than silver.” (16:16, WEB)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “It is better to be of a lowly spirit with the poor, Than to divide the plunder with the proud.”; verse 22 reads “Understanding is a fountain of life to one who has it, But the punishment of fools is their folly.”. These establish the first and second answers respectively.",
+    "options" : [
+      "spirit; power",
+      "life; spirit",
+      "spirit; life",
+      "enemies; life"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It is better to be of a lowly ______ with the poor, Than to divide the plunder with the proud.” (16:19); “Understanding is a fountain of ______ to one who has it, But the punishment of fools is their folly.” (16:22, WEB)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 16:6 uses fear: “By mercy and truth iniquity is atoned for. By the fear of Yahweh men depart from evil.”",
+    "options" : [
+      "grief",
+      "honor",
+      "fear",
+      "wrath"
+    ],
+    "prompt" : "Which word completes “By mercy and truth iniquity is atoned for. By the ______ of Yahweh men depart from evil.”? (16:6, WEB)",
+    "reference" : "Proverbs 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “A servant who deals wisely will rule over a son who causes shame, And shall have a part in the inheritance among the brothers.”",
+    "options" : [
+      "servant"
+    ],
+    "prompt" : "Complete the quotation: “A ____ who deals wisely will rule over a son who causes shame, And shall have a part in the inheritance among the brothers.” (17:2, WEB)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “Why is there money in the hand of a fool to buy wisdom, Seeing he has no understanding?”; verse 19 reads “He who loves disobedience loves strife. One who builds a high gate seeks destruction.”. These establish the first and second answers respectively.",
+    "options" : [
+      "wisdom; seat",
+      "gate; wisdom",
+      "peace; gate",
+      "wisdom; gate"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Why is there money in the hand of a fool to buy ______, Seeing he has no understanding?” (17:16); “He who loves disobedience loves strife. One who builds a high ______ seeks destruction.” (17:19, WEB)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “A cheerful heart makes good medicine, But a crushed spirit dries up the bones.”; the second reads “Wisdom is before the face of one who has understanding, But the eyes of a fool wander to the ends of the earth.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "spirit face"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “A cheerful heart makes good medicine, But a crushed ____ dries up the bones.” (17:22); “Wisdom is before the of one who has understanding, But the eyes of a fool wander to the ends of the earth.” (17:24, WEB)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The beginning of strife is like breaching a dam, Therefore stop contention before quarreling breaks out.” It says strife, not bones.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The beginning of bones is like breaching a dam, Therefore stop contention before quarreling breaks out.” (17:14, WEB)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 17:17 records: “A friend loves at all times; And a brother is born for adversity.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says a friend loves at all times. (17:17)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Arrogant speech isn't fitting for a fool, Much less do lying lips fit a prince.” The missing terms belong in that order.",
+    "options" : [
+      "fool lying"
+    ],
+    "prompt" : "Supply the missing words in order: “Arrogant speech isn't fitting for a ____, Much less do lips fit a prince.” (17:7, WEB)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies understanding: “A rebuke enters deeper into one who has understanding Than a hundred lashes into a fool.”",
+    "options" : [
+      "kindness",
+      "understanding",
+      "grief",
+      "glory"
+    ],
+    "prompt" : "Which detail belongs in this passage: “A rebuke enters deeper into one who has ______ Than a hundred lashes into a fool.”? (17:10, WEB)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 17:5 uses poor: “Whoever mocks the poor reproaches his Maker. He who is glad at calamity shall not be unpunished.”",
+    "options" : [
+      "poor",
+      "clean",
+      "humble",
+      "innocent"
+    ],
+    "prompt" : "Which word completes “Whoever mocks the ______ reproaches his Maker. He who is glad at calamity shall not be unpunished.”? (17:5, WEB)",
+    "reference" : "Proverbs 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “A man's spirit will sustain him in sickness, But a crushed spirit, who can bear?”; verse 17 reads “He who pleads his cause first seems right; Until another comes and questions him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "spirit; third",
+      "first; spirit",
+      "spirit; first",
+      "finds; first"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “A man's spirit will sustain him in sickness, But a crushed ______, who can bear?” (18:14); “He who pleads his cause ______ seems right; Until another comes and questions him.” (18:17, WEB)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The rich man's wealth is his strong city, Like an unscalable wall in his own imagination.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The rich man's wealth is his strong city, Like an unscalable wall in his own imagination.” (18:11, WEB)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 18:12 records: “Before destruction the heart of man is proud, But before honor is humility.”",
+    "options" : [
+      "humility"
+    ],
+    "prompt" : "In this paraphrase, before honor comes ____. (18:12)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “A fool's mouth is his destruction, And his lips are a snare to his soul.” The missing terms belong in that order.",
+    "options" : [
+      "mouth snare"
+    ],
+    "prompt" : "Supply the missing words in order: “A fool's ____ is his destruction, And his lips are a to his soul.” (18:7, WEB)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “A fool has no delight in understanding, But only in revealing his own opinion.”",
+    "options" : [
+      "understanding"
+    ],
+    "prompt" : "Complete the quotation: “A fool has no delight in ____, But only in revealing his own opinion.” (18:2, WEB)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies dainty: “The words of a gossip are like dainty morsels: They go down into a person's innermost parts.”",
+    "options" : [
+      "spirit",
+      "destruction",
+      "dainty",
+      "seeks"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The words of a gossip are like ______ morsels: They go down into a person's innermost parts.”? (18:8, WEB)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 18:4 uses wisdom: “… words of a man's mouth are like deep waters. The fountain of wisdom is like a flowing brook.”",
+    "options" : [
+      "peace",
+      "righteousness",
+      "love",
+      "wisdom"
+    ],
+    "prompt" : "Which word completes “… words of a man's mouth are like deep waters. The fountain of ______ is like a flowing brook.”? (18:4, WEB)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “A brother offended is more difficult than a fortified city; And disputes are like the bars of a castle.”; the second reads “Death and life are in the power of the tongue; Those who love it will eat its fruit.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "difficult Death"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “A brother offended is more ____ than a fortified city; And disputes are like the bars of a castle.” (18:19); “ and life are in the power of the tongue; Those who love it will eat its fruit.” (18:21, WEB)",
+    "reference" : "Proverbs 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “It isn't good to have zeal without knowledge; Nor being hasty with one's feet and missing the way.”",
+    "options" : [
+      "knowledge"
+    ],
+    "prompt" : "Complete the quotation: “It isn't good to have zeal without ____; Nor being hasty with one's feet and missing the way.” (19:2, WEB)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies roaring: “The king's wrath is like the roaring of a lion, But his favor is like dew on the grass.”",
+    "options" : [
+      "missing",
+      "listening",
+      "roaring",
+      "living"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The king's wrath is like the ______ of a lion, But his favor is like dew on the grass.”? (19:12, WEB)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 19:6 uses friend: “Many will entreat the favor of a ruler, And everyone is a friend to a man who gives gifts.”",
+    "options" : [
+      "sleep",
+      "perish",
+      "friend",
+      "Flog"
+    ],
+    "prompt" : "Which word completes “Many will entreat the favor of a ruler, And everyone is a ______ to a man who gives gifts.”? (19:6, WEB)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He who gets wisdom loves his own soul. He who keeps understanding shall find good.” The missing terms belong in that order.",
+    "options" : [
+      "wisdom understanding"
+    ],
+    "prompt" : "Supply the missing words in order: “He who gets ____ loves his own soul. He who keeps shall find good.” (19:8, WEB)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “He who keeps the commandment keeps his soul, But he who is contemptuous in his ways shall die.”; verse 20 reads “Listen to counsel and receive instruction, That you may be wise in your latter end.”. These establish the first and second answers respectively.",
+    "options" : [
+      "keeps; judgment",
+      "keeps; counsel",
+      "counsel; keeps",
+      "fools; counsel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “He who ______ the commandment keeps his soul, But he who is contemptuous in his ways shall die.” (19:16); “Listen to ______ and receive instruction, That you may be wise in your latter end.” (19:20, WEB)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “A foolish son is the calamity of his father. A wife's quarrels are a continual dripping.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “A foolish son is the calamity of his father. A wife's quarrels are a continual dripping.” (19:13, WEB)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 19:17 records: “He who has pity on the poor lends to Yahweh; He will reward him.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says whoever is generous to the poor lends to the LORD. (19:17)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The fear of Yahweh leads to life, then contentment; He rests and will not be touched by trouble.”; the second reads “… robs his father and drives away his mother, Is a son who causes shame and brings reproach.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life causes"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The fear of Yahweh leads to ____, then contentment; He rests and will not be touched by trouble.” (19:23); “… robs his father and drives away his mother, Is a son who shame and brings reproach.” (19:26, WEB)",
+    "reference" : "Proverbs 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of a lion: He who provokes him to anger forfeits his own life.”",
+    "options" : [
+      "life"
+    ],
+    "prompt" : "Complete the quotation: “… of a lion: He who provokes him to anger forfeits his own ____.” (20:2, WEB)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 20:6 uses faithful: “… claim to be men of unfailing love, But who can find a faithful man?”",
+    "options" : [
+      "righteous",
+      "rich",
+      "poor",
+      "faithful"
+    ],
+    "prompt" : "Which word completes “… claim to be men of unfailing love, But who can find a ______ man?”? (20:6, WEB)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Yahweh detests differing weights, And dishonest scales are not pleasing.”; the second reads “A wise king winnows out the wicked, And drives the threshing wheel over them.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "detests wicked"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Yahweh ____ differing weights, And dishonest scales are not pleasing.” (20:23); “A wise king winnows out the , And drives the threshing wheel over them.” (20:26, WEB)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “Plans are established by advice; By wise guidance you wage war!”; verse 20 reads “… or his mother, His lamp shall be put out in blackness of darkness.”. These establish the first and second answers respectively.",
+    "options" : [
+      "darkness; wise",
+      "wise; darkness",
+      "faithful; darkness",
+      "wise; transgressions"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Plans are established by advice; By ______ guidance you wage war!” (20:18); “… or his mother, His lamp shall be put out in blackness of ______.” (20:20, WEB)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “There is gold and abundance of rubies; But the lips of knowledge are a rare jewel.” It says knowledge, not grief.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “There is gold and abundance of rubies; But the lips of grief are a rare jewel.” (20:15, WEB)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “Don't love sleep, lest you come to poverty; Open your eyes, and you shall be satisfied with bread.”",
+    "options" : [
+      "mercy",
+      "grief",
+      "understanding",
+      "love"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Don't ______ sleep, lest you come to poverty; Open your eyes, and you shall be satisfied with bread.”? (20:13, WEB)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 20:5 records: “Counsel in the heart of man is like deep water; But a man of understanding will draw it out.”",
+    "options" : [
+      "water"
+    ],
+    "prompt" : "In this paraphrase, the purpose in a man's heart is like deep ____, but a man of understanding will draw it out. (20:5)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “A king who sits on the throne of judgment Scatters away all evil with his eyes.” The missing terms belong in that order.",
+    "options" : [
+      "king judgment"
+    ],
+    "prompt" : "Supply the missing words in order: “A ____ who sits on the throne of Scatters away all evil with his eyes.” (20:8, WEB)",
+    "reference" : "Proverbs 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “It is joy to the righteous to do justice; But it is a destruction to the workers of iniquity.” It says righteous, not humble.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “It is joy to the humble to do justice; But it is a destruction to the workers of iniquity.” (21:15, WEB)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “To do righteousness and justice Is more acceptable to Yahweh than sacrifice.”",
+    "options" : [
+      "sacrifice"
+    ],
+    "prompt" : "Complete the quotation: “To do righteousness and justice Is more acceptable to Yahweh than ____.” (21:3, WEB)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “It is better to dwell in the corner of the housetop, Than to share a house with a contentious woman.” The missing terms belong in that order.",
+    "options" : [
+      "dwell corner"
+    ],
+    "prompt" : "Supply the missing words in order: “It is better to ____ in the of the housetop, Than to share a house with a contentious woman.” (21:9, WEB)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 21:1 records: “The king's heart is in Yahweh's hand like the watercourses. He turns it wherever he desires.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says the king's heart is a stream of water in the hand of the LORD. (21:1)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies knowledge: “… punished, the simple gains wisdom; When the wise is instructed, he receives knowledge.”",
+    "options" : [
+      "anger",
+      "knowledge",
+      "understanding",
+      "mercy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… punished, the simple gains wisdom; When the wise is instructed, he receives ______.”? (21:11, WEB)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “The wicked is a ransom for the righteous; The treacherous for the upright.”; verse 21 reads “He who follows after righteousness and kindness Finds life, righteousness, and honor.”. These establish the first and second answers respectively.",
+    "options" : [
+      "righteousness; wicked",
+      "wise; righteousness",
+      "wicked; righteousness",
+      "wicked; knowledge"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The ______ is a ransom for the righteous; The treacherous for the upright.” (21:18); “He who follows after righteousness and kindness Finds life, ______, and honor.” (21:21, WEB)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 21:5 uses plans: “The plans of the diligent surely lead to profit; And everyone who is hasty surely rushes to poverty.”",
+    "options" : [
+      "turns",
+      "plans",
+      "guards",
+      "righteous"
+    ],
+    "prompt" : "Which word completes “The ______ of the diligent surely lead to profit; And everyone who is hasty surely rushes to poverty.”? (21:5, WEB)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The proud and haughty man, \"scoffer\" is his name; He works in the arrogance of pride.”; the second reads “The sacrifice of the wicked is an abomination: How much more, when he brings it with a wicked mind!”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "haughty abomination"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The proud and ____ man, \"scoffer\" is his name; He works in the arrogance of pride.” (21:24); “The sacrifice of the wicked is an : How much more, when he brings it with a wicked mind!” (21:27, WEB)",
+    "reference" : "Proverbs 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… man sees danger, and hides himself; But the simple pass on, and suffer for it.”",
+    "options" : [
+      "suffer"
+    ],
+    "prompt" : "Complete the quotation: “… man sees danger, and hides himself; But the simple pass on, and ____ for it.” (22:3, WEB)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 22:5 uses guards: “Thorns and snares are in the path of the wicked: Whoever guards his soul stays from them.”",
+    "options" : [
+      "riches",
+      "snares",
+      "insults",
+      "guards"
+    ],
+    "prompt" : "Which word completes “Thorns and snares are in the path of the wicked: Whoever ______ his soul stays from them.”? (22:5, WEB)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He who sows wickedness reaps trouble, And the rod of his fury will be destroyed.” The missing terms belong in that order.",
+    "options" : [
+      "rod fury"
+    ],
+    "prompt" : "Supply the missing words in order: “He who sows wickedness reaps trouble, And the ____ of his will be destroyed.” (22:8, WEB)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The genre offers practical moral guidance. The saying calls for faithful formation; it should not be used as proof that every struggling child means a parent failed.",
+    "options" : [
+      "Wisdom sayings have no guidance to offer.",
+      "The verse commands neglect of children.",
+      "Proverbs teaches wise patterns of life without eliminating human choices or every exception.",
+      "Parents control every future choice of an adult child."
+    ],
+    "prompt" : "Why should the teaching about training a child be read as wisdom rather than a mechanical formula? (22:6)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “Turn your ear, and listen to the words of the wise. Apply your heart to my teaching.”; verse 20 reads “Haven't I written to you thirty excellent things Of counsel and knowledge,”. These establish the first and second answers respectively.",
+    "options" : [
+      "wise; knowledge",
+      "pure; knowledge",
+      "wise; wisdom",
+      "knowledge; wise"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Turn your ear, and listen to the words of the ______. Apply your heart to my teaching.” (22:17); “Haven't I written to you thirty excellent things Of counsel and ______,” (22:20, WEB)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 22:6 records: “Train up a child in the way he should go, And when he is old he will not depart from it.”",
+    "options" : [
+      "it"
+    ],
+    "prompt" : "In this paraphrase, train up a child in the way he should go, and when he is old he will not depart from ____. (22:6)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… adulteress is a deep pit: He who is under Yahweh's wrath will fall into it.” It says fall, not Apply.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… adulteress is a deep pit: He who is under Yahweh's wrath will Apply into it.” (22:14, WEB)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies heart: “He who loves purity of heart and speaks gracefully Is the king's friend.”",
+    "options" : [
+      "bones",
+      "ears",
+      "bone",
+      "heart"
+    ],
+    "prompt" : "Which detail belongs in this passage: “He who loves purity of ______ and speaks gracefully Is the king's friend.”? (22:11, WEB)",
+    "reference" : "Proverbs 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… a prostitute is a deep pit; And a wayward wife is a narrow well.”; the second reads “Don't look at the wine when it is red, When it sparkles in the cup, When it goes down smoothly:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "narrow red"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… a prostitute is a deep pit; And a wayward wife is a ____ well.” (23:27); “Don't look at the wine when it is , When it sparkles in the cup, When it goes down smoothly:” (23:31, WEB)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 23:4 records: “Don't weary yourself to be rich. In your wisdom, show restraint.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says not to wear yourself out to get rich. (23:4)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Don't be desirous of his dainties, Seeing they are deceitful food.”",
+    "options" : [
+      "desirous"
+    ],
+    "prompt" : "Complete the quotation: “Don't be ____ of his dainties, Seeing they are deceitful food.” (23:3, WEB)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies die: “… a child. If you punish him with the rod, he will not die.”",
+    "options" : [
+      "destroy",
+      "die",
+      "break",
+      "hate"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a child. If you punish him with the rod, he will not ______.”? (23:13, WEB)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 23:6 uses stingy: “Don't eat the food of him who has a stingy eye, And don't crave his delicacies:”",
+    "options" : [
+      "crave",
+      "meat",
+      "stingy",
+      "boundary"
+    ],
+    "prompt" : "Which word completes “Don't eat the food of him who has a ______ eye, And don't crave his delicacies:”? (23:6, WEB)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Don't move the ancient boundary stone. Don't encroach on the fields of the fatherless:” The missing terms belong in that order.",
+    "options" : [
+      "encroach fatherless"
+    ],
+    "prompt" : "Supply the missing words in order: “Don't move the ancient boundary stone. Don't ____ on the fields of the :” (23:10, WEB)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “Don't be among ones drinking too much wine, Or those who gorge themselves on meat:”; verse 24 reads “The father of the righteous has great joy. Whoever fathers a wise child delights in him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "wine; joy",
+      "wheat; joy",
+      "wine; justice",
+      "joy; wine"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Don't be among ones drinking too much ______, Or those who gorge themselves on meat:” (23:20); “The father of the righteous has great ______. Whoever fathers a wise child delights in him.” (23:24, WEB)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Don't let your heart envy sinners; But rather fear Yahweh all the day long.” It says fear, not wisdom.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Don't let your heart envy sinners; But rather wisdom Yahweh all the day long.” (23:17, WEB)",
+    "reference" : "Proverbs 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 24:7 uses mouth: “Wisdom is too high for a fool: He doesn't open his mouth in the gate.”",
+    "options" : [
+      "mouth",
+      "back",
+      "bones",
+      "heart"
+    ],
+    "prompt" : "Which word completes “Wisdom is too high for a fool: He doesn't open his ______ in the gate.”? (24:7, WEB)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Don't rejoice when your enemy falls. Don't let your heart be glad when he is overthrown;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Don't rejoice when your enemy falls. Don't let your heart be glad when he is overthrown;” (24:17, WEB)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… to the evil man; And the lamp of the wicked shall be snuffed out.”; verse 24 reads “He who says to the wicked, \"You are righteous;\" Peoples shall curse him, and nations shall abhor him--”. These establish the first and second answers respectively.",
+    "options" : [
+      "snuffed; innocent",
+      "wicked; righteous",
+      "righteous; snuffed",
+      "snuffed; righteous"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… to the evil man; And the lamp of the wicked shall be ______ out.” (24:20); “He who says to the wicked, \"You are ______;\" Peoples shall curse him, and nations shall abhor him--” (24:24, WEB)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Prepare your work outside, And get your fields ready. Afterwards, build your house.”; the second reads “… field of the sluggard, By the vineyard of the man void of understanding;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "ready understanding"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Prepare your work outside, And get your fields ____. Afterwards, build your house.” (24:27); “… field of the sluggard, By the vineyard of the man void of ;” (24:30, WEB)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 24:16 records: “For a righteous man falls seven times, and rises up again; But the wicked are overthrown by calamity.”",
+    "options" : [
+      "again"
+    ],
+    "prompt" : "In this paraphrase, a righteous man falls seven times and rises ____. (24:16)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Through wisdom a house is built; By understanding it is established;”",
+    "options" : [
+      "wisdom"
+    ],
+    "prompt" : "Complete the quotation: “Through ____ a house is built; By understanding it is established;” (24:3, WEB)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies keeps: “… know this;\" Doesn't he who weighs the hearts consider it? He who keeps your soul, doesn't he know it? Shall he not render to every man …”",
+    "options" : [
+      "Peoples",
+      "thorns",
+      "times",
+      "keeps"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… know this;\" Doesn't he who weighs the hearts consider it? He who ______ your soul, doesn't he know it? Shall he not render to every man …”? (24:12, WEB)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The schemes of folly are sin. The mocker is detested by men.” The missing terms belong in that order.",
+    "options" : [
+      "folly sin"
+    ],
+    "prompt" : "Supply the missing words in order: “The schemes of ____ are . The mocker is detested by men.” (24:9, WEB)",
+    "reference" : "Proverbs 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the glory of God to conceal a thing, But the glory of kings is to search out a matter.”",
+    "options" : [
+      "kings"
+    ],
+    "prompt" : "Complete the quotation: “… the glory of God to conceal a thing, But the glory of ____ is to search out a matter.” (25:2, WEB)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the cold of snow in the time of harvest, So is a faithful messenger to those who send him; For he refreshes the soul of his …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the cold of snow in the time of harvest, So is a faithful messenger to those who send him; For he refreshes the soul of his …” (25:13, WEB)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “Let your foot be seldom in your neighbor's house, Lest he be weary of you, and hate you.”; verse 19 reads “Confidence in someone unfaithful in time of trouble Is like a bad tooth, or a lame foot.”. These establish the first and second answers respectively.",
+    "options" : [
+      "hearts; someone",
+      "neighbor's; established",
+      "neighbor's; someone",
+      "someone; neighbor's"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Let your foot be seldom in your ______ house, Lest he be weary of you, and hate you.” (25:17); “Confidence in ______ unfaithful in time of trouble Is like a bad tooth, or a lame foot.” (25:19, WEB)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Don't be hasty in bringing charges to court. What will you do in the end when your neighbor shames you?” The missing terms belong in that order.",
+    "options" : [
+      "hasty shames"
+    ],
+    "prompt" : "Supply the missing words in order: “Don't be ____ in bringing charges to court. What will you do in the end when your neighbor you?” (25:8, WEB)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 25:25 records: “Like cold water to a thirsty soul, So is good news from a far country.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says good news from a far country is like cold water to a thirsty soul. (25:25)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies gold: “As an ear-ring of gold, and an ornament of fine gold, So is a wise reprover to an obedient ear.”",
+    "options" : [
+      "copper",
+      "ashes",
+      "gold",
+      "stone"
+    ],
+    "prompt" : "Which detail belongs in this passage: “As an ear-ring of gold, and an ornament of fine ______, So is a wise reprover to an obedient ear.”? (25:12, WEB)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 25:5 uses righteousness: “… wicked from the king's presence, And his throne will be established in righteousness.”",
+    "options" : [
+      "justice",
+      "righteousness",
+      "honor",
+      "love"
+    ],
+    "prompt" : "Which word completes “… wicked from the king's presence, And his throne will be established in ______.”? (25:5, WEB)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The north wind brings forth rain: So a backbiting tongue brings an angry face.”; the second reads “Like a muddied spring, and a polluted well, So is a righteous man who gives way before the wicked.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wind righteous"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The north ____ brings forth rain: So a backbiting tongue brings an angry face.” (25:23); “Like a muddied spring, and a polluted well, So is a man who gives way before the wicked.” (25:26, WEB)",
+    "reference" : "Proverbs 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wounds: “As an archer who wounds all, So is he who hires a fool Or he who hires those who pass by.”",
+    "options" : [
+      "morsels",
+      "turns",
+      "wounds",
+      "passes"
+    ],
+    "prompt" : "Which detail belongs in this passage: “As an archer who ______ all, So is he who hires a fool Or he who hires those who pass by.”? (26:10, WEB)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… embers, And wood to fire, So is a contentious man to kindling strife.”; the second reads “… is charming, don't believe him; For there are seven abominations in his heart:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "strife heart"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… embers, And wood to fire, So is a contentious man to kindling ____.” (26:21); “… is charming, don't believe him; For there are seven abominations in his :” (26:25, WEB)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Like a thornbush that goes into the hand of a drunkard, So is a parable in the mouth of fools.” The missing terms belong in that order.",
+    "options" : [
+      "goes fools"
+    ],
+    "prompt" : "Supply the missing words in order: “Like a thornbush that ____ into the hand of a drunkard, So is a parable in the mouth of .” (26:9, WEB)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The sluggard says, \"There is a lion in the road! A fierce lion roams the streets!\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The sluggard says, \"There is a lion in the road! A fierce lion roams the streets!\"” (26:13, WEB)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “The sluggard is wiser in his own eyes Than seven men who answer with discretion.”; verse 20 reads “For lack of wood a fire goes out; Without gossip, a quarrel dies down.”. These establish the first and second answers respectively.",
+    "options" : [
+      "ninth; fire",
+      "seven; folly",
+      "seven; fire",
+      "fire; seven"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sluggard is wiser in his own eyes Than ______ men who answer with discretion.” (26:16); “For lack of wood a ______ goes out; Without gossip, a quarrel dies down.” (26:20, WEB)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 26:6 uses message: “One who sends a message by the hand of a fool Is cutting off feet and drinking violence.”",
+    "options" : [
+      "message",
+      "rolls",
+      "firebrands",
+      "morsels"
+    ],
+    "prompt" : "Which word completes “One who sends a ______ by the hand of a fool Is cutting off feet and drinking violence.”? (26:6, WEB)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 26:11 records: “As a dog that returns to his vomit, So is a fool who repeats his folly.”",
+    "options" : [
+      "folly"
+    ],
+    "prompt" : "In this paraphrase, as a dog returns to his vomit, so a fool repeats his ____. (26:11)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… sparrow, Like a darting swallow, So the undeserved curse doesn't come to rest.”",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "Complete the quotation: “… sparrow, Like a darting swallow, So the undeserved curse doesn't come to ____.” (26:2, WEB)",
+    "reference" : "Proverbs 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “Restraining her is like restraining the wind, Or like grasping oil in his right hand.”; verse 18 reads “Whoever tends the fig tree shall eat its fruit. He who looks after his master shall be honored.”. These establish the first and second answers respectively.",
+    "options" : [
+      "grapes; looks",
+      "looks; oil",
+      "oil; loathes",
+      "oil; looks"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Restraining her is like restraining the wind, Or like grasping ______ in his right hand.” (27:16); “Whoever tends the fig tree shall eat its fruit. He who ______ after his master shall be honored.” (27:18, WEB)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Perfume and incense bring joy to the heart; So does earnest counsel from a man's friend.” The missing terms belong in that order.",
+    "options" : [
+      "joy heart"
+    ],
+    "prompt" : "Supply the missing words in order: “Perfume and incense bring ____ to the ; So does earnest counsel from a man's friend.” (27:9, WEB)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 27:17 records: “Iron sharpens iron; So a man sharpens his friend's countenance.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says iron sharpens iron, and one man sharpens another. (27:17)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 27:6 uses Faithful: “Faithful are the wounds of a friend; Although the kisses of an enemy are profuse.”",
+    "options" : [
+      "Faithful",
+      "righteous",
+      "innocent",
+      "poor"
+    ],
+    "prompt" : "Which word completes “______ are the wounds of a friend; Although the kisses of an enemy are profuse.”? (27:6, WEB)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Let another man praise you, And not your own mouth; A stranger, and not your own lips.”",
+    "options" : [
+      "praise"
+    ],
+    "prompt" : "Complete the quotation: “Let another man ____ you, And not your own mouth; A stranger, and not your own lips.” (27:2, WEB)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The crucible is for silver, And the furnace for gold; But man is refined by his praise.”; the second reads “For riches are not forever, Nor does even the crown endure to all generations.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "silver endure"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The crucible is for ____, And the furnace for gold; But man is refined by his praise.” (27:21); “For riches are not forever, Nor does even the crown to all generations.” (27:24, WEB)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Take his garment when he puts up collateral for a stranger; Hold it for a wayward woman!” It says stranger, not plenty.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Take his garment when he puts up collateral for a plenty; Hold it for a wayward woman!” (27:13, WEB)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies brother: “… your disaster: Better is a neighbor who is near than a distant brother.”",
+    "options" : [
+      "husbands",
+      "shepherds",
+      "brother",
+      "brothers"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… your disaster: Better is a neighbor who is near than a distant ______.”? (27:10, WEB)",
+    "reference" : "Proverbs 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “A needy man who oppresses the poor Is like a driving rain which leaves no crops.”",
+    "options" : [
+      "needy"
+    ],
+    "prompt" : "Complete the quotation: “A ____ man who oppresses the poor Is like a driving rain which leaves no crops.” (28:3, WEB)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 28:5 uses justice: “Evil men don't understand justice; But those who seek Yahweh understand it fully.”",
+    "options" : [
+      "knowledge",
+      "anger",
+      "justice",
+      "grief"
+    ],
+    "prompt" : "Which word completes “Evil men don't understand ______; But those who seek Yahweh understand it fully.”? (28:5, WEB)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “A stingy man hurries after riches, And doesn't know that poverty waits for him.”; the second reads “Whoever robs his father or his mother, and says, \"It's not wrong.\" He is a partner with a destroyer.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "riches It's"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “A stingy man hurries after ____, And doesn't know that poverty waits for him.” (28:22); “Whoever robs his father or his mother, and says, \" not wrong.\" He is a partner with a destroyer.” (28:24, WEB)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Blessed is the man who always fears; But one who hardens his heart falls into trouble.” It says heart, not lips.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Blessed is the man who always fears; But one who hardens his lips falls into trouble.” (28:14, WEB)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “A tyrannical ruler lacks judgment. One who hates ill-gotten gain will have long days.”; verse 19 reads “… his land will have an abundance of food; But one who chases fantasies will have his fill of poverty.”. These establish the first and second answers respectively.",
+    "options" : [
+      "word; fantasies",
+      "judgment; finds",
+      "fantasies; judgment",
+      "judgment; fantasies"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “A tyrannical ruler lacks ______. One who hates ill-gotten gain will have long days.” (28:16); “… his land will have an abundance of food; But one who chases ______ will have his fill of poverty.” (28:19, WEB)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 28:13 records: “He who conceals his sins doesn't prosper, But whoever confesses and renounces them finds mercy.”",
+    "options" : [
+      "prosper"
+    ],
+    "prompt" : "In this paraphrase, whoever conceals his transgressions will not ____. (28:13)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies understanding: “… man is wise in his own eyes; But the poor who has understanding sees through him.”",
+    "options" : [
+      "wisdom",
+      "fear",
+      "truth",
+      "understanding"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… man is wise in his own eyes; But the poor who has ______ sees through him.”? (28:11, WEB)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He who increases his wealth by excessive interest Gathers it for one who has pity on the poor.” The missing terms belong in that order.",
+    "options" : [
+      "increases poor"
+    ],
+    "prompt" : "Supply the missing words in order: “He who ____ his wealth by excessive interest Gathers it for one who has pity on the .” (28:8, WEB)",
+    "reference" : "Proverbs 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 29:4 uses justice: “The king by justice makes the land stable, But he who takes bribes tears it down.”",
+    "options" : [
+      "anger",
+      "joy",
+      "justice",
+      "righteousness"
+    ],
+    "prompt" : "Which word completes “The king by ______ makes the land stable, But he who takes bribes tears it down.”? (29:4, WEB)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The king who fairly judges the poor, His throne shall be established forever.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The king who fairly judges the poor, His throne shall be established forever.” (29:14, WEB)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “When the wicked increase, sin increases; But the righteous will see their downfall.”; verse 19 reads “A servant can't be corrected by words. Though he understands, yet he will not respond.”. These establish the first and second answers respectively.",
+    "options" : [
+      "idolatry; servant",
+      "sin; rulers",
+      "sin; servant",
+      "servant; sin"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “When the wicked increase, ______ increases; But the righteous will see their downfall.” (29:16); “A ______ can't be corrected by words. Though he understands, yet he will not respond.” (29:19, WEB)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies peace: “… a foolish man, The fool rages or scoffs, and there is no peace.”",
+    "options" : [
+      "justice",
+      "peace",
+      "wisdom",
+      "grief"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a foolish man, The fool rages or scoffs, and there is no ______.”? (29:9, WEB)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Whoever loves wisdom brings joy to his father; But a companion of prostitutes squanders his wealth.”",
+    "options" : [
+      "joy"
+    ],
+    "prompt" : "Complete the quotation: “Whoever loves wisdom brings ____ to his father; But a companion of prostitutes squanders his wealth.” (29:3, WEB)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 29:18 records: “Where there is no revelation, the people cast off restraint; But one who keeps the law is blessed.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says where there is no vision, the people perish. (29:18)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The righteous care about justice for the poor. The wicked aren't concerned about knowledge.” The missing terms belong in that order.",
+    "options" : [
+      "righteous knowledge"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ care about justice for the poor. The wicked aren't concerned about .” (29:7, WEB)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “An angry man stirs up strife, And a wrathful man abounds in sin.”; the second reads “Whoever is an accomplice of a thief is an enemy of his own soul. He takes an oath, but dares not testify.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "strife accomplice"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “An angry man stirs up ____, And a wrathful man abounds in sin.” (29:22); “Whoever is an of a thief is an enemy of his own soul. He takes an oath, but dares not testify.” (29:24, WEB)",
+    "reference" : "Proverbs 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies needy: “… jaws like knives, To devour the poor from the earth, and the needy from among men.”",
+    "options" : [
+      "filthiness",
+      "mocks",
+      "needy",
+      "barren"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… jaws like knives, To devour the poor from the earth, and the ______ from among men.”? (30:14, WEB)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Lest I be full, deny you, and say, 'Who is Yahweh?' Or lest I be poor, and steal, And so dishonor the name of my God.” The missing terms belong in that order.",
+    "options" : [
+      "deny poor"
+    ],
+    "prompt" : "Supply the missing words in order: “Lest I be full, ____ you, and say, 'Who is Yahweh?' Or lest I be , and steal, And so dishonor the name of my God.” (30:9, WEB)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Sheol, The barren womb; The earth that is not satisfied with water; And the fire that doesn't say, 'Enough.'” It says water, not barley.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Sheol, The barren womb; The earth that is not satisfied with barley; And the fire that doesn't say, 'Enough.'” (30:16, WEB)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Proverbs 30:8 records: “Remove far from me falsehood and lies. Give me neither poverty nor riches. Feed me with the food that is needful for me;”",
+    "options" : [
+      "needful"
+    ],
+    "prompt" : "In this paraphrase, feed me with the food that is ____ for me. (30:8)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 30:6 uses reprove: “Don't you add to his words, Lest he reprove you, and you be found a liar.”",
+    "options" : [
+      "serpent",
+      "eyes",
+      "reprove",
+      "Don't"
+    ],
+    "prompt" : "Which word completes “Don't you add to his words, Lest he ______ you, and you be found a liar.”? (30:6, WEB)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… are but a feeble folk, Yet make they their houses in the rocks;”; the second reads “\"There are three things which are stately in their march, Four which are stately in going:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rocks Four"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… are but a feeble folk, Yet make they their houses in the ____;” (30:26); “\"There are three things which are stately in their march, which are stately in going:” (30:29, WEB)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the son of Jakeh, the oracle: The man says to Ithiel, To Ithiel and Ucal:”",
+    "options" : [
+      "Ithiel"
+    ],
+    "prompt" : "Complete the quotation: “… the son of Jakeh, the oracle: The man says to Ithiel, To ____ and Ucal:” (30:1, WEB)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 30,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… midst of the sea; And the way of a man with a maiden.”; verse 23 reads “For an unloved woman when she is married; And a handmaid who is heir to her mistress.”. These establish the first and second answers respectively.",
+    "options" : [
+      "serpent; handmaid",
+      "handmaid; maiden",
+      "maiden; heir",
+      "maiden; handmaid"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… midst of the sea; And the way of a man with a ______.” (30:19); “For an unloved woman when she is married; And a ______ who is heir to her mistress.” (30:23, WEB)",
+    "reference" : "Proverbs 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… is yet night, Gives food to her household, And portions for her servant girls.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… is yet night, Gives food to her household, And portions for her servant girls.” (31:15, WEB)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “She makes linen garments and sells them, And delivers sashes to the merchant.”; the second reads “… looks well to the ways of her household, And doesn't eat the bread of idleness.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "merchant bread"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “She makes linen garments and sells them, And delivers sashes to the ____.” (31:24); “… looks well to the ways of her household, And doesn't eat the of idleness.” (31:27, WEB)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies heart: “The heart of her husband trusts in her. He shall have no lack of gain.”",
+    "options" : [
+      "ear",
+      "lips",
+      "heart",
+      "arm"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ of her husband trusts in her. He shall have no lack of gain.”? (31:11, WEB)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Proverbs 31:10 records: “Who can find a worthy woman? For her price is far above rubies.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Proverbs says an excellent wife is worth far more than jewels. (31:10)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Proverbs 31:5 uses law: “Lest they drink, and forget the law, And pervert the justice due to anyone who is afflicted.”",
+    "options" : [
+      "teaching",
+      "statutes",
+      "commandment",
+      "law"
+    ],
+    "prompt" : "Which word completes “Lest they drink, and forget the ______, And pervert the justice due to anyone who is afflicted.”? (31:5, WEB)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “It is not for kings, Lemuel; It is not for kings to drink wine; Nor for princes to say, 'Where is strong drink?'”",
+    "options" : [
+      "kings"
+    ],
+    "prompt" : "Complete the quotation: “It is not for kings, Lemuel; It is not for ____ to drink wine; Nor for princes to say, 'Where is strong drink?'” (31:4, WEB)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “She perceives that her merchandise is profitable. Her lamp doesn't go out by night.”; verse 20 reads “She opens her arms to the poor; Yes, she extends her hands to the needy.”. These establish the first and second answers respectively.",
+    "options" : [
+      "looks; poor",
+      "perceives; humble",
+      "perceives; poor",
+      "poor; perceives"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “She ______ that her merchandise is profitable. Her lamp doesn't go out by night.” (31:18); “She opens her arms to the ______; Yes, she extends her hands to the needy.” (31:20, WEB)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "proverbs",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Open your mouth, judge righteously, And serve justice to the poor and needy.\"” The missing terms belong in that order.",
+    "options" : [
+      "justice needy"
+    ],
+    "prompt" : "Supply the missing words in order: “Open your mouth, judge righteously, And serve ____ to the poor and .\"” (31:9, WEB)",
+    "reference" : "Proverbs 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

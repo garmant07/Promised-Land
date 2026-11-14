@@ -1,0 +1,2106 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “through whom we received grace and apostleship, for obedience of faith among all the nations, for his name's sake;”",
+    "options" : [
+      "grace"
+    ],
+    "prompt" : "Complete the quotation: “through whom we received ____ and apostleship, for obedience of faith among all the nations, for his name's sake;” (1:5, WEB)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 1:9 uses witness: “For God is my witness, whom I serve in my spirit in the Gospel of his Son, how unceasingly I make mention of you always in …”",
+    "options" : [
+      "covetousness",
+      "wickedness",
+      "witness",
+      "ungodliness"
+    ],
+    "prompt" : "Which word completes “For God is my ______, whom I serve in my spirit in the Gospel of his Son, how unceasingly I make mention of you always in …”? (1:9, WEB)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The gospel is God's saving power, revealing His righteousness in relation to faith. These verses announce themes developed throughout the letter. The course connects salvation with God's action in Christ rather than with a claim to human self-sufficiency.",
+    "options" : [
+      "Faith is excluded from Paul's account of righteousness.",
+      "The gospel is limited to one ethnic people.",
+      "The gospel is God's saving power, revealing His righteousness in relation to faith.",
+      "Saving power is attributed to social prestige."
+    ],
+    "prompt" : "How does Paul connect the gospel with righteousness and faith? (1:16-17)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… neither gave thanks, but became vain in their reasoning, and their senseless heart was darkened.”; verse 25 reads “… truth of God for a lie, and worshiped and served the creature rather than the Creator, who is blessed forever. Amen.”. These establish the first and second answers respectively.",
+    "options" : [
+      "heart; brothers",
+      "heart; rather",
+      "eyes; rather",
+      "rather; heart"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… neither gave thanks, but became vain in their reasoning, and their senseless ______ was darkened.” (1:21); “… truth of God for a lie, and worshiped and served the creature ______ than the Creator, who is blessed forever. Amen.” (1:25, WEB)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… from heaven against all ungodliness and unrighteousness of men, who suppress the truth in unrighteousness,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… from heaven against all ungodliness and unrighteousness of men, who suppress the truth in unrighteousness,” (1:18, WEB)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… often planned to come to you, and was hindered so far, that I might have some fruit among you also, even as among the rest of …” The missing terms belong in that order.",
+    "options" : [
+      "planned rest"
+    ],
+    "prompt" : "Supply the missing words in order: “… often ____ to come to you, and was hindered so far, that I might have some fruit among you also, even as among the of …” (1:13, WEB)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies salvation: “… the Gospel of Christ, for it is the power of God for salvation for everyone who believes; for the Jew first, and also for the Greek.”",
+    "options" : [
+      "salvation",
+      "inheritance",
+      "rest",
+      "offering"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the Gospel of Christ, for it is the power of God for ______ for everyone who believes; for the Jew first, and also for the Greek.”? (1:16, WEB)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of God with power, according to the Spirit of holiness, by the resurrection from the dead, Jesus Christ our Lord,”",
+    "options" : [
+      "resurrection"
+    ],
+    "prompt" : "Complete the quotation: “… of God with power, according to the Spirit of holiness, by the ____ from the dead, Jesus Christ our Lord,” (1:4, WEB)",
+    "reference" : "Romans 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But according to your hardness and unrepentant heart you are treasuring up for yourself wrath in the day of wrath, revelation, and of the righteous judgment …”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Complete the quotation: “But according to your hardness and unrepentant ____ you are treasuring up for yourself wrath in the day of wrath, revelation, and of the righteous judgment …” (2:5, WEB)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies law: “… who don't have the law do by nature the things of the law, these, not having the law, are a law to themselves,”",
+    "options" : [
+      "words",
+      "law",
+      "instruction",
+      "judgments"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… who don't have the law do by nature the things of the ______, these, not having the law, are a law to themselves,”? (2:14, WEB)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "People who judge others remain accountable, and mere possession of the law does not remove that accountability. Paul confronts moral superiority and discusses the witness of conscience. The course links conscience with moral responsibility, not a guarantee that every judgment of conscience is correct.",
+    "options" : [
+      "People who judge others remain accountable, and mere possession of the law does not remove that accountability.",
+      "Judging another automatically proves innocence.",
+      "Having heard the law excuses every violation.",
+      "Conscience is said to make all human choices morally identical."
+    ],
+    "prompt" : "What does the discussion of conscience add to Paul's argument about judgment? (2:1-16)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… in that which you judge another, you condemn yourself. For you who judge practice the same things.”",
+    "options" : [
+      "judge"
+    ],
+    "prompt" : "Complete the quotation: “… in that which you judge another, you condemn yourself. For you who ____ practice the same things.” (2:1, WEB)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Indeed you bear the name of a Jew, and rest on the law, and glory in God,” It says rest, not prayer.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Indeed you bear the name of a Jew, and prayer on the law, and glory in God,” (2:17, WEB)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But glory and honor and peace to every man who works good, to the Jew first, and also to the Greek.” The missing terms belong in that order.",
+    "options" : [
+      "glory peace"
+    ],
+    "prompt" : "Supply the missing words in order: “But ____ and honor and to every man who works good, to the Jew first, and also to the Greek.” (2:10, WEB)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… if you are a transgressor of the law, your circumcision has become uncircumcision.”; the second reads “… that of the heart, in the spirit not in the letter; whose praise is not from men, but from God.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "uncircumcision praise"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… if you are a transgressor of the law, your circumcision has become ____.” (2:25); “… that of the heart, in the spirit not in the letter; whose is not from men, but from God.” (2:29, WEB)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 2:8 uses truth: “but to those who are self-seeking, and don't obey the truth, but obey unrighteousness, will be wrath and indignation,”",
+    "options" : [
+      "truth",
+      "wrath",
+      "justice",
+      "peace"
+    ],
+    "prompt" : "Which word completes “but to those who are self-seeking, and don't obey the ______, but obey unrighteousness, will be wrath and indignation,”? (2:8, WEB)",
+    "reference" : "Romans 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “\"Their feet are swift to shed blood.”",
+    "options" : [
+      "lips",
+      "blood",
+      "teeth",
+      "bone"
+    ],
+    "prompt" : "Which detail belongs in this passage: “\"Their feet are swift to shed ______.”? (3:15, WEB)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 3:9 uses sin: “… we previously charged both Jews and Greeks, that they are all under sin.”",
+    "options" : [
+      "sin",
+      "idolatry",
+      "transgression",
+      "disobedience"
+    ],
+    "prompt" : "Which word completes “… we previously charged both Jews and Greeks, that they are all under ______.”? (3:9, WEB)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "All stand in need, and justification is given through God's grace in Christ rather than boasting in works of law. Paul joins the diagnosis of sin with the announcement of redemption. The course uses this to explain why salvation is good news rather than a reward for an already perfect life.",
+    "options" : [
+      "All stand in need, and justification is given through God's grace in Christ rather than boasting in works of law.",
+      "Only one ethnic group needs forgiveness.",
+      "Boasting is the intended result of justification.",
+      "Grace is defined as a wage earned through moral perfection."
+    ],
+    "prompt" : "How are universal sin and justification by grace presented together? (3:21-28)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But if our unrighteousness commends the righteousness of God, what will we say? Is God unrighteous who inflicts wrath? I speak like men do.”",
+    "options" : [
+      "righteousness"
+    ],
+    "prompt" : "Complete the quotation: “But if our unrighteousness commends the ____ of God, what will we say? Is God unrighteous who inflicts wrath? I speak like men do.” (3:5, WEB)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For what if some were without faith? Will their lack of faith nullify the faithfulness of God?”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “For what if some were without faith? Will their lack of ____ nullify the faithfulness of God?” (3:3, WEB)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “\"Their throat is an open tomb. With their tongues they have used deceit.\" \"The poison of vipers is under their lips;\"” The missing terms belong in that order.",
+    "options" : [
+      "open vipers"
+    ],
+    "prompt" : "Supply the missing words in order: “\"Their throat is an ____ tomb. With their tongues they have used deceit.\" \"The poison of is under their lips;\"” (3:13, WEB)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… is the boasting? It is excluded. By what manner of law? Of works? No, but by a law of faith.”; the second reads “since indeed there is one God who will justify the circumcised by faith, and the uncircumcised through faith.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "works circumcised"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… is the boasting? It is excluded. By what manner of law? Of ____? No, but by a law of faith.” (3:27); “since indeed there is one God who will justify the by faith, and the uncircumcised through faith.” (3:30, WEB)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… things the law says, it speaks to those who are under the law, that every mouth may be closed, and all the world may be brought …” It says law, not commandments.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… things the law says, it speaks to those who are under the commandments, that every mouth may be closed, and all the world may be brought …” (3:19, WEB)",
+    "reference" : "Romans 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Is this blessing then pronounced on the circumcised, or on the uncircumcised also? For we say that faith was accounted to Abraham for righteousness.” The missing terms belong in that order.",
+    "options" : [
+      "blessing faith"
+    ],
+    "prompt" : "Supply the missing words in order: “Is this ____ then pronounced on the circumcised, or on the uncircumcised also? For we say that was accounted to Abraham for righteousness.” (4:9, WEB)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Abraham's faith was counted as righteousness before he received circumcision. Paul uses the sequence to explain Abraham's relation to both uncircumcised and circumcised believers. The sign does not become the prior cause of God's promise in his argument.",
+    "options" : [
+      "Abraham was first declared righteous after becoming a Mosaic priest.",
+      "Circumcision occurred before every divine promise to Abraham.",
+      "Abraham's faith was counted as righteousness before he received circumcision.",
+      "Paul says Abraham never had any faith."
+    ],
+    "prompt" : "Why is the timing of Abraham's circumcision important to Paul's argument? (4:9-12)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… believes in him who justifies the ungodly, his faith is accounted for righteousness.”",
+    "options" : [
+      "righteousness"
+    ],
+    "prompt" : "Complete the quotation: “… believes in him who justifies the ungodly, his faith is accounted for ____.” (4:5, WEB)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… this cause it is of faith, that it may be according to grace, to the end that the promise may be sure to all the seed, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… this cause it is of faith, that it may be according to grace, to the end that the promise may be sure to all the seed, …” (4:16, WEB)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For if Abraham was justified by works, he has something to boast about, but not toward God.”",
+    "options" : [
+      "Abraham"
+    ],
+    "prompt" : "Complete the quotation: “For if ____ was justified by works, he has something to boast about, but not toward God.” (4:2, WEB)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 4:7 uses iniquities: “\"Blessed are they whose iniquities are forgiven, Whose sins are covered.”",
+    "options" : [
+      "wickedness",
+      "rebellion",
+      "deceit",
+      "iniquities"
+    ],
+    "prompt" : "Which word completes “\"Blessed are they whose ______ are forgiven, Whose sins are covered.”? (4:7, WEB)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies promise: “For the promise to Abraham and to his seed that he should be heir of the world wasn't through the law, but through the righteousness of …”",
+    "options" : [
+      "testimony",
+      "promise",
+      "word",
+      "judgment"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For the ______ to Abraham and to his seed that he should be heir of the world wasn't through the law, but through the righteousness of …”? (4:13, WEB)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… God, he didn't waver through unbelief, but grew strong through faith, giving glory to God,”; the second reads “… to whom it will be accounted, who believe in him who raised Jesus, our Lord, from the dead,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "glory Jesus"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… God, he didn't waver through unbelief, but grew strong through faith, giving ____ to God,” (4:20); “… to whom it will be accounted, who believe in him who raised , our Lord, from the dead,” (4:24, WEB)",
+    "reference" : "Romans 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies death: “… if, while we were enemies, we were reconciled to God through the death of his Son, much more, being reconciled, we will be saved by his …”",
+    "options" : [
+      "offerings",
+      "life",
+      "death",
+      "salvation"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… if, while we were enemies, we were reconciled to God through the ______ of his Son, much more, being reconciled, we will be saved by his …”? (5:10, WEB)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and hope doesn't disappoint us, because God's love has been poured out into our hearts through the Holy Spirit who was given to us.”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “and hope doesn't disappoint us, because God's ____ has been poured out into our hearts through the Holy Spirit who was given to us.” (5:5, WEB)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… by faith into this grace in which we stand. We rejoice in hope of the glory of God.”",
+    "options" : [
+      "hope"
+    ],
+    "prompt" : "Complete the quotation: “… by faith into this grace in which we stand. We rejoice in ____ of the glory of God.” (5:2, WEB)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But God commends his own love toward us, in that while we were yet sinners, Christ died for us.” The missing terms belong in that order.",
+    "options" : [
+      "while Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “But God commends his own love toward us, in that ____ we were yet sinners, died for us.” (5:8, WEB)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's love reaches people before they have made themselves worthy of reconciliation. Paul describes God's action toward the weak and His enemies. The course connects our responsive love with the love God first shows in Christ.",
+    "options" : [
+      "Christ's death concerns only people who have never sinned.",
+      "God's love reaches people before they have made themselves worthy of reconciliation.",
+      "Reconciliation is described as unnecessary.",
+      "God waits until enemies have earned His affection."
+    ],
+    "prompt" : "What does Christ's death while people were still sinners reveal? (5:6-11)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 5:7 uses righteous: “For one will hardly die for a righteous man. Yet perhaps for a righteous person someone would even dare to die.”",
+    "options" : [
+      "holy",
+      "obedient",
+      "righteous",
+      "wise"
+    ],
+    "prompt" : "Which word completes “For one will hardly die for a ______ man. Yet perhaps for a righteous person someone would even dare to die.”? (5:7, WEB)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… as sin entered into the world through one man, and death through sin; and so death passed to all men, because all sinned.” It says sin, not rebellion.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… as sin entered into the world through one man, and death through rebellion; and so death passed to all men, because all sinned.” (5:12, WEB)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “Nevertheless death reigned from Adam until Moses, even over those whose sins weren't like Adam's disobedience, who is a foreshadowing of him who was to come.”; verse 17 reads “… the abundance of grace and of the gift of righteousness reign in life through the one, Jesus Christ.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Luke; life",
+      "Moses; life",
+      "Moses; worship",
+      "life; Moses"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Nevertheless death reigned from Adam until ______, even over those whose sins weren't like Adam's disobedience, who is a foreshadowing of him who was to come.” (5:14); “… the abundance of grace and of the gift of righteousness reign in ______ through the one, Jesus Christ.” (5:17, WEB)",
+    "reference" : "Romans 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jesus: “… also to be dead to sin, but alive to God in Christ Jesus our Lord.”",
+    "options" : [
+      "Timothy",
+      "Jesus",
+      "Herod",
+      "Crispus"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… also to be dead to sin, but alive to God in Christ ______ our Lord.”? (6:11, WEB)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… God, as alive from the dead, and your members as instruments of righteousness to God.” It says righteousness, not faithfulness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… God, as alive from the dead, and your members as instruments of faithfulness to God.” (6:13, WEB)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Union with Christ's death and resurrection calls believers into a new life. Grace is not permission to preserve sin's rule. The course distinguishes receiving forgiveness from using forgiveness as an excuse to avoid transformation.",
+    "options" : [
+      "Resurrection has no relation to daily conduct.",
+      "Paul denies that sin can still be resisted.",
+      "Union with Christ's death and resurrection calls believers into a new life.",
+      "Grace requires believers to cultivate more sin."
+    ],
+    "prompt" : "Why does Paul reject continuing in sin as a way to increase grace? (6:1-14)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… glory of the Father, so we also might walk in newness of life.”",
+    "options" : [
+      "life"
+    ],
+    "prompt" : "Complete the quotation: “… glory of the Father, so we also might walk in newness of ____.” (6:4, WEB)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “knowing that Christ, being raised from the dead, dies no more. Death no more has dominion over him!” The missing terms belong in that order.",
+    "options" : [
+      "Christ Death"
+    ],
+    "prompt" : "Supply the missing words in order: “knowing that ____, being raised from the dead, dies no more. no more has dominion over him!” (6:9, WEB)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… know that to whom you present yourselves as servants to obedience, his servants you are whom you obey; whether of sin to death, or of obedience …”; verse 17 reads “… that, whereas you were bondservants of sin, you became obedient from the heart to that form of teaching whereunto you were delivered.”. These establish the first and second answers respectively.",
+    "options" : [
+      "servants; bone",
+      "servants; heart",
+      "heart; servants",
+      "wife; heart"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… know that to whom you present yourselves as servants to obedience, his ______ you are whom you obey; whether of sin to death, or of obedience …” (6:16); “… that, whereas you were bondservants of sin, you became obedient from the ______ to that form of teaching whereunto you were delivered.” (6:17, WEB)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 6:7 uses sin: “For he who has died has been freed from sin.”",
+    "options" : [
+      "iniquities",
+      "sin",
+      "transgressions",
+      "idolatry"
+    ],
+    "prompt" : "Which word completes “For he who has died has been freed from ______.”? (6:7, WEB)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “knowing this, that our old man was crucified with him, that the body of sin might be done away with, so that we would no longer …”",
+    "options" : [
+      "body"
+    ],
+    "prompt" : "Complete the quotation: “knowing this, that our old man was crucified with him, that the ____ of sin might be done away with, so that we would no longer …” (6:6, WEB)",
+    "reference" : "Romans 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 7:7 uses sin: “… the law sin? May it never be! However, I wouldn't have known sin, except through the law. For I wouldn't have known coveting, unless the law …”",
+    "options" : [
+      "transgression",
+      "sin",
+      "iniquity",
+      "sins"
+    ],
+    "prompt" : "Which word completes “… the law sin? May it never be! However, I wouldn't have known ______, except through the law. For I wouldn't have known coveting, unless the law …”? (7:7, WEB)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Christians interpret the speaker's situation differently, while the passage exposes the inability of the self to find deliverance in itself. Readers debate whether the account primarily describes a believer, life under law or a representative voice. The course also warns against turning flesh and spirit into a claim that the physical body itself is evil.",
+    "options" : [
+      "The conclusion says no deliverance is needed.",
+      "Christians interpret the speaker's situation differently, while the passage exposes the inability of the self to find deliverance in itself.",
+      "All interpreters identify the speaker identically.",
+      "The passage clearly teaches that God created the body as evil."
+    ],
+    "prompt" : "What should be acknowledged when identifying the I in Paul's description of inner conflict? (7:14-25)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… my brothers, you also were made dead to the law through the body of Christ, that you would be joined to another, to him who was …”",
+    "options" : [
+      "body"
+    ],
+    "prompt" : "Complete the quotation: “… my brothers, you also were made dead to the law through the ____ of Christ, that you would be joined to another, to him who was …” (7:4, WEB)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… he lives, but if the husband dies, she is discharged from the law of the husband.”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “… he lives, but if the husband dies, she is discharged from the ____ of the husband.” (7:2, WEB)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… members, warring against the law of my mind, and bringing me into captivity under the law of sin which is in my members.”; the second reads “I thank God through Jesus Christ, our Lord! So then with the mind, I myself serve God's law, but with the flesh, the sin's law.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "captivity Christ"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… members, warring against the law of my mind, and bringing me into ____ under the law of sin which is in my members.” (7:23); “I thank God through Jesus , our Lord! So then with the mind, I myself serve God's law, but with the flesh, the sin's law.” (7:25, WEB)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I was alive apart from the law once, but when the commandment came, sin revived, and I died.” The missing terms belong in that order.",
+    "options" : [
+      "commandment revived"
+    ],
+    "prompt" : "Supply the missing words in order: “I was alive apart from the law once, but when the ____ came, sin , and I died.” (7:9, WEB)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… don't know what I am doing. For I don't practice what I desire to do; but what I hate, that I do.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… don't know what I am doing. For I don't practice what I desire to do; but what I hate, that I do.” (7:15, WEB)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies death: “Did then that which is good become death to me? May it never be! But sin, that it might be shown to be sin, by working …”",
+    "options" : [
+      "offering",
+      "blessing",
+      "death",
+      "offerings"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Did then that which is good become ______ to me? May it never be! But sin, that it might be shown to be sin, by working …”? (7:13, WEB)",
+    "reference" : "Romans 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the Spirit, even we ourselves groan within ourselves, waiting for adoption, the redemption of our body.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the Spirit, even we ourselves groan within ourselves, waiting for adoption, the redemption of our body.” (8:23, WEB)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies glory: “… of this present time are not worthy to be compared with the glory which will be revealed toward us.”",
+    "options" : [
+      "glory",
+      "shame",
+      "joy",
+      "hope"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of this present time are not worthy to be compared with the ______ which will be revealed toward us.”? (8:18, WEB)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It gives hope amid groaning and points toward conformity to the Son. Paul includes suffering and creation's longing rather than denying them. The course does not read this as a promise that every event is pleasant or that believers avoid pain.",
+    "options" : [
+      "The promised good is defined only as material wealth.",
+      "Every event is said to feel immediately pleasant.",
+      "It gives hope amid groaning and points toward conformity to the Son.",
+      "Believers and creation are said never to groan."
+    ],
+    "prompt" : "How does the promise of God's work for good fit the chapter's treatment of suffering? (8:18-30)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 26 reads “… as we ought. But the Spirit himself makes intercession for us with groanings which can't be uttered.”; verse 29 reads “… image of his Son, that he might be the firstborn among many brothers.”. These establish the first and second answers respectively.",
+    "options" : [
+      "brothers; groanings",
+      "groanings; brothers",
+      "Spirit's; brothers",
+      "groanings; rulers"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… as we ought. But the Spirit himself makes intercession for us with ______ which can't be uttered.” (8:26); “… image of his Son, that he might be the firstborn among many ______.” (8:29, WEB)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “because the mind of the flesh is hostile towards God; for it is not subject to God's law, neither indeed can it be.”",
+    "options" : [
+      "hostile"
+    ],
+    "prompt" : "Complete the quotation: “because the mind of the flesh is ____ towards God; for it is not subject to God's law, neither indeed can it be.” (8:7, WEB)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 8:11 uses life: “… he who raised up Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you.”",
+    "options" : [
+      "deliverance",
+      "life",
+      "redemption",
+      "prayer"
+    ],
+    "prompt" : "Which word completes “… he who raised up Christ Jesus from the dead will also give ______ to your mortal bodies through his Spirit who dwells in you.”? (8:11, WEB)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For you didn't receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, \"Abba! Father!\"” The missing terms belong in that order.",
+    "options" : [
+      "fear Spirit"
+    ],
+    "prompt" : "Supply the missing words in order: “For you didn't receive the spirit of bondage again to ____, but you received the of adoption, by whom we cry, \"Abba! Father!\"” (8:15, WEB)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… the Spirit of life in Christ Jesus made me free from the law of sin and of death.”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “… the Spirit of life in Christ Jesus made me free from the ____ of sin and of death.” (8:2, WEB)",
+    "reference" : "Romans 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… you to reply against God? Will the thing formed ask him who formed it, \"Why did you make me like this?\"” It says formed, not published.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… you to reply against God? Will the thing formed ask him who published it, \"Why did you make me like this?\"” (9:20, WEB)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 9:9 uses promise: “For this is a word of promise, \"At the appointed time I will come, and Sarah will have a son.\"”",
+    "options" : [
+      "promise",
+      "teaching",
+      "covenant",
+      "words"
+    ],
+    "prompt" : "Which word completes “For this is a word of ______, \"At the appointed time I will come, and Sarah will have a son.\"”? (9:9, WEB)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's freedom and mercy are explicit themes, while Christian accounts of their relation to human response differ. The course discusses sovereignty and responsibility but rejects some Calvinist conclusions. A quiz should identify Paul's argument without treating one later system as the only possible reading of every detail.",
+    "options" : [
+      "God's freedom and mercy are explicit themes, while Christian accounts of their relation to human response differ.",
+      "Every later theological school interprets this chapter identically.",
+      "Paul says ancestry alone guarantees the fulfillment of every promise.",
+      "The chapter avoids any discussion of mercy."
+    ],
+    "prompt" : "What is an appropriate distinction in reading Paul's discussion of election? (9:6-24)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies power: “… you to be raised up, that I might show in you my power, and that my name might be published abroad in all the earth.\"”",
+    "options" : [
+      "deliverance",
+      "salvation",
+      "power",
+      "worship"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you to be raised up, that I might show in you my ______, and that my name might be published abroad in all the earth.\"”? (9:17, WEB)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For I could wish that I myself were accursed from Christ for my brothers' sake, my relatives according to the flesh,”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “For I could wish that I myself were accursed from ____ for my brothers' sake, my relatives according to the flesh,” (9:3, WEB)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Even as it is written, \"Jacob I loved, but Esau I hated.\"” The missing terms belong in that order.",
+    "options" : [
+      "Jacob Esau"
+    ],
+    "prompt" : "Supply the missing words in order: “Even as it is written, \"____ I loved, but I hated.\"” (9:13, WEB)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… come to nothing. For they are not all Israel, that are of Israel.”",
+    "options" : [
+      "Israel"
+    ],
+    "prompt" : "Complete the quotation: “… come to nothing. For they are not all Israel, that are of ____.” (9:6, WEB)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “… his wrath, and to make his power known, endured with much patience vessels of wrath made for destruction,”; verse 27 reads “Isaiah cries concerning Israel, \"If the number of the children of Israel are as the sand of the sea, It is the remnant who will be …”. These establish the first and second answers respectively.",
+    "options" : [
+      "vessels; Luke",
+      "Isaiah; vessels",
+      "vessels; Isaiah",
+      "runs; Isaiah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… his wrath, and to make his power known, endured with much patience ______ of wrath made for destruction,” (9:22); “______ cries concerning Israel, \"If the number of the children of Israel are as the sand of the sea, It is the remnant who will be …” (9:27, WEB)",
+    "reference" : "Romans 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… your mouth the Lord Jesus, and believe in your heart that God raised him from the dead, you will be saved.” The missing terms belong in that order.",
+    "options" : [
+      "Jesus saved"
+    ],
+    "prompt" : "Supply the missing words in order: “… your mouth the Lord ____, and believe in your heart that God raised him from the dead, you will be .” (10:9, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For Christ is the fulfillment of the law for righteousness to everyone who believes.”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “For Christ is the fulfillment of the ____ for righteousness to everyone who believes.” (10:4, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… \"How beautiful are the feet of those who preach the Gospel of peace, Who bring glad tidings of good things!\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… \"How beautiful are the feet of those who preach the Gospel of peace, Who bring glad tidings of good things!\"” (10:15, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 10:6 uses heart: “… the righteousness which is of faith says this, \"Don't say in your heart, 'Who will ascend into heaven?' (that is, to bring Christ down);”",
+    "options" : [
+      "heart",
+      "neck",
+      "bones",
+      "hands"
+    ],
+    "prompt" : "Which word completes “… the righteousness which is of faith says this, \"Don't say in your ______, 'Who will ascend into heaven?' (that is, to bring Christ down);”? (10:6, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But I ask, didn't Israel know? First Moses says, \"I will provoke you to jealousy with that which is no nation, With a nation void of …”; the second reads “… day long I stretched out my hands to a disobedient and contrary people.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Israel people"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But I ask, didn't ____ know? First Moses says, \"I will provoke you to jealousy with that which is no nation, With a nation void of …” (10:19); “… day long I stretched out my hands to a disobedient and contrary .\"” (10:21, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For being ignorant of God's righteousness, and seeking to establish their own righteousness, they didn't subject themselves to the righteousness of God.”",
+    "options" : [
+      "righteousness"
+    ],
+    "prompt" : "Complete the quotation: “For being ignorant of God's righteousness, and seeking to establish their own ____, they didn't subject themselves to the righteousness of God.” (10:3, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies salvation: “… one believes unto righteousness; and with the mouth confession is made unto salvation.”",
+    "options" : [
+      "prayer",
+      "salvation",
+      "life",
+      "rest"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… one believes unto righteousness; and with the mouth confession is made unto ______.”? (10:10, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “But they didn't all listen to the glad news. For Isaiah says, \"Lord, who has believed our report?\"”; verse 18 reads “… they hear? Yes, most assuredly, \"Their sound went out into all the earth, Their words to the ends of the world.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "Isaiah; earth",
+      "Isaiah; mountain",
+      "earth; Isaiah",
+      "Jonathan; earth"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But they didn't all listen to the glad news. For ______ says, \"Lord, who has believed our report?\"” (10:16); “… they hear? Yes, most assuredly, \"Their sound went out into all the ______, Their words to the ends of the world.\"” (10:18, WEB)",
+    "reference" : "Romans 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "They are supported by the root and must not boast over the branches. Paul frames inclusion as a reason for humility, not contempt for Jewish people. Christian disagreements about Israel's future do not cancel this explicit warning against arrogance.",
+    "options" : [
+      "The branches are said to create their own root.",
+      "Gentiles are told to despise Jewish people.",
+      "They are supported by the root and must not boast over the branches.",
+      "Paul makes boasting the proper response to mercy."
+    ],
+    "prompt" : "How does the olive-tree image warn Gentile believers against pride? (11:17-24)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… broken off, and you stand by your faith. Don't be conceited, but fear;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… broken off, and you stand by your faith. Don't be conceited, but fear;” (11:20, WEB)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies off: “But if some of the branches were broken off, and you, being a wild olive, were grafted in among them, and became partaker with them of …”",
+    "options" : [
+      "off",
+      "Baal",
+      "fathers",
+      "glory"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But if some of the branches were broken ______, and you, being a wild olive, were grafted in among them, and became partaker with them of …”? (11:17, WEB)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 11:11 uses salvation: “… that they might fall? May it never be! But by their fall salvation has come to the Gentiles, to provoke them to jealousy.”",
+    "options" : [
+      "offering",
+      "rest",
+      "thanksgiving",
+      "salvation"
+    ],
+    "prompt" : "Which word completes “… that they might fall? May it never be! But by their fall ______ has come to the Gentiles, to provoke them to jealousy.”? (11:11, WEB)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… you who are Gentiles. Since then as I am an apostle to Gentiles, I glorify my ministry;” The missing terms belong in that order.",
+    "options" : [
+      "apostle glorify"
+    ],
+    "prompt" : "Supply the missing words in order: “… you who are Gentiles. Since then as I am an ____ to Gentiles, I my ministry;” (11:13, WEB)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… what the Scripture says about Elijah? How he pleads with God against Israel:”",
+    "options" : [
+      "Israel"
+    ],
+    "prompt" : "Complete the quotation: “… what the Scripture says about Elijah? How he pleads with God against ____:” (11:2, WEB)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Oh the depth of the riches both of the wisdom and the knowledge of God! How unsearchable are his judgments, and his ways past tracing out!”; the second reads “\"Or who has first given to him, And it will be repaid to him again?\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wisdom first"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Oh the depth of the riches both of the ____ and the knowledge of God! How unsearchable are his judgments, and his ways past tracing out!” (11:33); “\"Or who has given to him, And it will be repaid to him again?\"” (11:35, WEB)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… then it is no longer of works; otherwise grace is no longer grace. But if it is of works, it is no longer grace; otherwise work …”",
+    "options" : [
+      "grace"
+    ],
+    "prompt" : "Complete the quotation: “… then it is no longer of works; otherwise grace is no longer ____. But if it is of works, it is no longer grace; otherwise work …” (11:6, WEB)",
+    "reference" : "Romans 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… let him do it with liberality; he who rules, with diligence; he who shows mercy, with cheerfulness.” The missing terms belong in that order.",
+    "options" : [
+      "diligence mercy"
+    ],
+    "prompt" : "Supply the missing words in order: “… let him do it with liberality; he who rules, with ____; he who shows , with cheerfulness.” (12:8, WEB)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For I say, through the grace that was given me, to every man who is among you, not to think of himself more highly than he …”",
+    "options" : [
+      "grace"
+    ],
+    "prompt" : "Complete the quotation: “For I say, through the ____ that was given me, to every man who is among you, not to think of himself more highly than he …” (12:3, WEB)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “In love of the brothers be tenderly affectionate one to another; in honor preferring one another;”",
+    "options" : [
+      "glory",
+      "righteousness",
+      "anger",
+      "love"
+    ],
+    "prompt" : "Which detail belongs in this passage: “In ______ of the brothers be tenderly affectionate one to another; in honor preferring one another;”? (12:10, WEB)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “rejoicing in hope; enduring in troubles; continuing steadfastly in prayer;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “rejoicing in hope; enduring in troubles; continuing steadfastly in prayer;” (12:12, WEB)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Believers offer themselves to God, undergo renewed thinking and serve as members of one body. The course joins right belief with right practice. Paul's account includes embodied service and humility rather than treating worship as detached from daily conduct.",
+    "options" : [
+      "Every member is required to have an identical function.",
+      "Believers offer themselves to God, undergo renewed thinking and serve as members of one body.",
+      "Worship concerns only words spoken at meetings.",
+      "The physical life is excluded from service to God."
+    ],
+    "prompt" : "How does the appeal to God's mercies connect worship with ordinary life? (12:1-8)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.”",
+    "options" : [
+      "prove"
+    ],
+    "prompt" : "Complete the quotation: “… be transformed by the renewing of your mind, so that you may ____ what is the good, well-pleasing, and perfect will of God.” (12:2, WEB)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… of the same mind one toward another. Don't set your mind on high things, but associate with the humble. Don't be wise in your own conceits.”; verse 17 reads “Repay no one evil for evil. Respect what is honorable in the sight of all men.”. These establish the first and second answers respectively.",
+    "options" : [
+      "honorable; high",
+      "high; peace",
+      "feed; honorable",
+      "high; honorable"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of the same mind one toward another. Don't set your mind on ______ things, but associate with the humble. Don't be wise in your own conceits.” (12:16); “Repay no one evil for evil. Respect what is ______ in the sight of all men.” (12:17, WEB)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 12:6 uses faith: “… us, if prophecy, let us prophesy according to the proportion of our faith;”",
+    "options" : [
+      "heap",
+      "thirsty",
+      "faith",
+      "needs"
+    ],
+    "prompt" : "Which word completes “… us, if prophecy, let us prophesy according to the proportion of our ______;”? (12:6, WEB)",
+    "reference" : "Romans 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For the commandments, \"You shall not commit adultery,\" \"You shall not murder,\" \"You shall not steal,\" \"You shall not give false testimony,\" \"You shall not covet,\" …” It says commandments, not law.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For the law, \"You shall not commit adultery,\" \"You shall not murder,\" \"You shall not steal,\" \"You shall not give false testimony,\" \"You shall not covet,\" …” (13:9, WEB)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Authorities are described as servants for good, and the discussion continues with the obligation to love. Christians debate applications under unjust rule. This passage should not be used to make every governmental action morally right or to erase other biblical examples of obeying God rather than people.",
+    "options" : [
+      "Authorities are praised specifically for rewarding evil.",
+      "Every official action becomes morally right by definition.",
+      "Authorities are described as servants for good, and the discussion continues with the obligation to love.",
+      "The chapter excludes love of neighbor from public conduct."
+    ],
+    "prompt" : "Why should submission to governing authorities be read within the chapter's account of their purpose? (13:1-10)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For this reason you also pay taxes, for they are ministers of God's service, attending continually on this very thing.” The missing terms belong in that order.",
+    "options" : [
+      "reason attending"
+    ],
+    "prompt" : "Supply the missing words in order: “For this ____ you also pay taxes, for they are ministers of God's service, continually on this very thing.” (13:6, WEB)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies customs: “… therefore to everyone what you owe: taxes to whom taxes are due; customs to whom customs; respect to whom respect; honor to whom honor.”",
+    "options" : [
+      "customs",
+      "lusts",
+      "Let's",
+      "authorities"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… therefore to everyone what you owe: taxes to whom taxes are due; ______ to whom customs; respect to whom respect; honor to whom honor.”? (13:7, WEB)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… authorities, for there is no authority except from God, and those who exist are ordained by God.”",
+    "options" : [
+      "exist"
+    ],
+    "prompt" : "Complete the quotation: “… authorities, for there is no authority except from God, and those who ____ are ordained by God.” (13:1, WEB)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 13:4 uses servant: “for he is a servant of God to you for good. But if you do that which is evil, be afraid, for he doesn't bear the …”",
+    "options" : [
+      "wife",
+      "servant",
+      "son",
+      "priests"
+    ],
+    "prompt" : "Which word completes “for he is a ______ of God to you for good. But if you do that which is evil, be afraid, for he doesn't bear the …”? (13:4, WEB)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “Love doesn't harm a neighbor. Love therefore is the fulfillment of the law.”; verse 11 reads “… it is already time for you to awaken out of sleep, for salvation is now nearer to us than when we first believed.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Love; salvation",
+      "salvation; Love",
+      "honor; salvation",
+      "Love; life"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “______ doesn't harm a neighbor. Love therefore is the fulfillment of the law.” (13:10); “… it is already time for you to awaken out of sleep, for ______ is now nearer to us than when we first believed.” (13:11, WEB)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… good work, but to the evil. Do you desire to have no fear of the authority? Do that which is good, and you will have praise …”",
+    "options" : [
+      "fear"
+    ],
+    "prompt" : "Complete the quotation: “… good work, but to the evil. Do you desire to have no ____ of the authority? Do that which is good, and you will have praise …” (13:3, WEB)",
+    "reference" : "Romans 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Believers must avoid contempt and stumbling others while remaining accountable to the Lord. The examples concern food and days among believers. Paul does not make every ethical issue a matter of indifference; he addresses how convictions and love shape fellowship here.",
+    "options" : [
+      "Believers must avoid contempt and stumbling others while remaining accountable to the Lord.",
+      "Every disagreement proves the other person is outside the faith.",
+      "Freedom makes another believer's conscience irrelevant.",
+      "The strong are commanded to display contempt."
+    ],
+    "prompt" : "What limits does love place on the exercise of freedom over disputed practices? (14:1-23)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Who are you who judge another's servant? To his own lord he stands or falls. Yes, he will be made to stand, for God has power …”",
+    "options" : [
+      "servant"
+    ],
+    "prompt" : "Complete the quotation: “Who are you who judge another's ____? To his own lord he stands or falls. Yes, he will be made to stand, for God has power …” (14:4, WEB)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies written: “For it is written, \"'As I live,' says the Lord, 'to me every knee will bow. Every tongue will confess to God.'\"”",
+    "options" : [
+      "written",
+      "glory",
+      "Christ",
+      "eternal"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For it is ______, \"'As I live,' says the Lord, 'to me every knee will bow. Every tongue will confess to God.'\"”? (14:11, WEB)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 14:6 uses observes: “He who observes the day, observes it to the Lord; and he who does not observe the day, to the Lord he does not observe it. …”",
+    "options" : [
+      "observes",
+      "vegetables",
+      "food's",
+      "esteems"
+    ],
+    "prompt" : "Which word completes “He who observes the day, ______ it to the Lord; and he who does not observe the day, to the Lord he does not observe it. …”? (14:6, WEB)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I know, and am persuaded in the Lord Jesus, that nothing is unclean of itself; except that to him who considers anything to be unclean, to …” It says Jesus, not Esther.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I know, and am persuaded in the Lord Esther, that nothing is unclean of itself; except that to him who considers anything to be unclean, to …” (14:14, WEB)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… eats despise him who doesn't eat. Don't let him who doesn't eat judge him who eats, for God has received him.”",
+    "options" : [
+      "judge"
+    ],
+    "prompt" : "Complete the quotation: “… eats despise him who doesn't eat. Don't let him who doesn't eat ____ him who eats, for God has received him.” (14:3, WEB)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… is not eating and drinking, but righteousness, peace, and joy in the Holy Spirit.”; verse 20 reads “Don't overthrow God's work for food's sake. All things indeed are clean, however it is evil for that man who creates a stumbling block by eating.”. These establish the first and second answers respectively.",
+    "options" : [
+      "merciful; work",
+      "Holy; work",
+      "work; Holy",
+      "Holy; slandered"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… is not eating and drinking, but righteousness, peace, and joy in the ______ Spirit.” (14:17); “Don't overthrow God's ______ for food's sake. All things indeed are clean, however it is evil for that man who creates a stumbling block by eating.” (14:20, WEB)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For to this end Christ died, rose, and lived again, that he might be Lord of both the dead and the living.” The missing terms belong in that order.",
+    "options" : [
+      "Christ living"
+    ],
+    "prompt" : "Supply the missing words in order: “For to this end ____ died, rose, and lived again, that he might be Lord of both the dead and the .” (14:9, WEB)",
+    "reference" : "Romans 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies offering: “… the Gentiles, ministering as a priest the Gospel of God, that the offering up of the Gentiles might be made acceptable, sanctified by the Holy Spirit.”",
+    "options" : [
+      "praise",
+      "salvation",
+      "offering",
+      "strength"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the Gentiles, ministering as a priest the Gospel of God, that the ______ up of the Gentiles might be made acceptable, sanctified by the Holy Spirit.”? (15:16, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… may with one mouth glorify the God and Father of our Lord Jesus Christ.”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “… may with one mouth glorify the God and Father of our Lord ____ Christ.” (15:6, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… you, I will come in the fullness of the blessing of the Gospel of Christ.”; the second reads “that I may be delivered from those who are disobedient in Judea, and that my service which I have for Jerusalem may be acceptable to the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Gospel Judea"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… you, I will come in the fullness of the blessing of the ____ of Christ.” (15:29); “that I may be delivered from those who are disobedient in , and that my service which I have for Jerusalem may be acceptable to the …” (15:31, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… signs and wonders, in the power of God's Spirit; so that from Jerusalem, and around as far as to Illyricum, I have fully preached the Gospel …” It says Jerusalem, not Thessalonica.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… signs and wonders, in the power of God's Spirit; so that from Thessalonica, and around as far as to Illyricum, I have fully preached the Gospel …” (15:19, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “… journey, and to be helped on my way there by you, if first I may enjoy your company for a while.”; verse 26 reads “… pleasure of Macedonia and Achaia to make a certain contribution for the poor among the saints who are at Jerusalem.”. These establish the first and second answers respectively.",
+    "options" : [
+      "first; holy",
+      "poor; first",
+      "forty; poor",
+      "first; poor"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… journey, and to be helped on my way there by you, if ______ I may enjoy your company for a while.” (15:24); “… pleasure of Macedonia and Achaia to make a certain contribution for the ______ among the saints who are at Jerusalem.” (15:26, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… God of hope fill you with all joy and peace in believing, that you may abound in hope, in the power of the Holy Spirit.” The missing terms belong in that order.",
+    "options" : [
+      "hope Holy"
+    ],
+    "prompt" : "Supply the missing words in order: “… God of ____ fill you with all joy and peace in believing, that you may abound in hope, in the power of the Spirit.” (15:13, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 15:9 uses praise: “… God for his mercy. As it is written, \"Therefore will I give praise to you among the Gentiles, And sing to your name.\"”",
+    "options" : [
+      "deliverance",
+      "death",
+      "praise",
+      "worship"
+    ],
+    "prompt" : "Which word completes “… God for his mercy. As it is written, \"Therefore will I give ______ to you among the Gentiles, And sing to your name.\"”? (15:9, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For even Christ didn't please himself. But, as it is written, \"The reproaches of those who reproached you fell on me.\"”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “For even ____ didn't please himself. But, as it is written, \"The reproaches of those who reproached you fell on me.\"” (15:3, WEB)",
+    "reference" : "Romans 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Romans 16:7 uses apostles: “… Junias, my relatives and my fellow prisoners, who are notable among the apostles, who also were in Christ before me.”",
+    "options" : [
+      "Hermes",
+      "apostles",
+      "Nereus",
+      "Patrobas"
+    ],
+    "prompt" : "Which word completes “… Junias, my relatives and my fellow prisoners, who are notable among the ______, who also were in Christ before me.”? (16:7, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Now I beg you, brothers, look out for those who are causing the divisions and occasions of stumbling, contrary to the doctrine which you learned, and …” It says causing, not conscience.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Now I beg you, brothers, look out for those who are conscience the divisions and occasions of stumbling, contrary to the doctrine which you learned, and …” (16:17, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… a way worthy of the saints, and that you assist her in whatever matter she may need from you, for she herself also has been a …”",
+    "options" : [
+      "whatever"
+    ],
+    "prompt" : "Complete the quotation: “… a way worthy of the saints, and that you assist her in ____ matter she may need from you, for she herself also has been a …” (16:2, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Tryphosa: “Greet Tryphaena and Tryphosa, who labor in the Lord. Greet Persis, the beloved, who labored much in the Lord.”",
+    "options" : [
+      "Tryphosa",
+      "Asyncritus",
+      "kinsman",
+      "Amplias"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Greet Tryphaena and ______, who labor in the Lord. Greet Persis, the beloved, who labored much in the Lord.”? (16:12, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Greet Apelles, the approved in Christ. Greet those who are of the household of Aristobulus.” The missing terms belong in that order.",
+    "options" : [
+      "approved household"
+    ],
+    "prompt" : "Supply the missing words in order: “Greet Apelles, the ____ in Christ. Greet those who are of the of Aristobulus.” (16:10, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Gaius, my host and host of the whole assembly, greets you. Erastus, the treasurer of the city, greets you, as does Quartus, the brother.”; the second reads “I, Tertius, who write the letter, greet you in the Lord.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Gaius Tertius"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “____, my host and host of the whole assembly, greets you. Erastus, the treasurer of the city, greets you, as does Quartus, the brother.” (16:23); “I, , who write the letter, greet you in the Lord.” (16:22, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “For those who are such don't serve our Lord, Jesus Christ, but their own belly; and by their smooth and flattering speech, they deceive the hearts …”; verse 21 reads “Timothy, my fellow worker, greets you, as do Lucius, Jason, and Sosipater, my relatives.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Barnabas; Timothy",
+      "Jesus; Matthew",
+      "Jesus; Timothy",
+      "Timothy; Jesus"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For those who are such don't serve our Lord, ______ Christ, but their own belly; and by their smooth and flattering speech, they deceive the hearts …” (16:18); “______, my fellow worker, greets you, as do Lucius, Jason, and Sosipater, my relatives.” (16:21, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "romans",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Greet Epaenetus, my beloved, who is the first fruits of Achaia to Christ.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… Greet Epaenetus, my beloved, who is the first fruits of Achaia to ____.” (16:5, WEB)",
+    "reference" : "Romans 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -1,0 +1,1832 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 1:4 uses ways: “… proclaimed, saying: Thus says Yahweh of hosts, 'Return now from your evil ways, and from your evil doings;' but they did not hear, nor listen to …”",
+    "options" : [
+      "ways",
+      "doings",
+      "fathers",
+      "eyes"
+    ],
+    "prompt" : "Which word completes “… proclaimed, saying: Thus says Yahweh of hosts, 'Return now from your evil ______, and from your evil doings;' but they did not hear, nor listen to …”? (1:4, WEB)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies myrtle: “… a man riding on a red horse, and he stood among the myrtle trees that were in a ravine; and behind him there were red, brown, …”",
+    "options" : [
+      "myrtle",
+      "repented",
+      "Darius",
+      "Return"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a man riding on a red horse, and he stood among the ______ trees that were in a ravine; and behind him there were red, brown, …”? (1:8, WEB)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zechariah 1:3 records: “Therefore tell them: Thus says Yahweh of Hosts: 'Return to me,' says Yahweh of Hosts, 'and I will return to you,' says Yahweh of Hosts.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said, \"Return to Me, and I will return to you.\" (1:3)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… with prosperity, and Yahweh will again comfort Zion, and will again choose Jerusalem.\"'\"”; the second reads “… these?\" He answered me, \"These are the horns which have scattered Judah, Israel, and Jerusalem.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Jerusalem Israel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… with prosperity, and Yahweh will again comfort Zion, and will again choose ____.\"'\"” (1:17); “… these?\" He answered me, \"These are the horns which have scattered Judah, , and Jerusalem.\"” (1:19, WEB)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But my words and my decrees, which I commanded my servants the prophets, didn't they overtake your fathers? \"Then they repented and said, 'Just as Yahweh …” The missing terms belong in that order.",
+    "options" : [
+      "servants prophets"
+    ],
+    "prompt" : "Supply the missing words in order: “But my words and my decrees, which I commanded my ____ the , didn't they overtake your fathers? \"Then they repented and said, 'Just as Yahweh …” (1:6, WEB)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the earth, and, behold, all the earth is at rest and in peace.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the earth, and, behold, all the earth is at rest and in peace.\"” (1:11, WEB)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… in the second year of Darius, the word of Yahweh came to Zechariah the son of Berechiah, the son of Iddo, the prophet, saying,”",
+    "options" : [
+      "Zechariah"
+    ],
+    "prompt" : "Complete the quotation: “… in the second year of Darius, the word of Yahweh came to ____ the son of Berechiah, the son of Iddo, the prophet, saying,” (1:1, WEB)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… Yahweh replied, \"O Yahweh of Hosts, how long will you not have mercy on Jerusalem and on the cities of Judah, against which you have had …”; verse 14 reads “… 'Thus says Yahweh of Hosts: \"I am jealous for Jerusalem and for Zion with a great jealousy.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fear; Zion",
+      "mercy; Zion",
+      "mercy; Jerusalem",
+      "Zion; mercy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Yahweh replied, \"O Yahweh of Hosts, how long will you not have ______ on Jerusalem and on the cities of Judah, against which you have had …” (1:12); “… 'Thus says Yahweh of Hosts: \"I am jealous for Jerusalem and for ______ with a great jealousy.” (1:14, WEB)",
+    "reference" : "Zechariah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “'Come, Zion! Escape, you who dwell with the daughter of Babylon.'” It says Zion, not Sinai.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “'Come, Sinai! Escape, you who dwell with the daughter of Babylon.'” (2:7, WEB)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… I asked, \"Where are you going?\" He said to me, \"To measure Jerusalem, to see what is its breadth and what is its length.\"”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "Complete the quotation: “… I asked, \"Where are you going?\" He said to me, \"To measure ____, to see what is its breadth and what is its length.\"” (2:2, WEB)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Yahweh, 'will be to her a wall of fire around it, and I will be the glory in the midst of her.” The missing terms belong in that order.",
+    "options" : [
+      "fire glory"
+    ],
+    "prompt" : "Supply the missing words in order: “… Yahweh, 'will be to her a wall of ____ around it, and I will be the in the midst of her.” (2:5, WEB)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 2:4 uses cattle: “… inhabited as villages without walls, because of the multitude of men and cattle in it.”",
+    "options" : [
+      "fire",
+      "join",
+      "cattle",
+      "length"
+    ],
+    "prompt" : "Which word completes “… inhabited as villages without walls, because of the multitude of men and ______ in it.”? (2:4, WEB)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Zechariah 2:1 records: “I lifted up my eyes, and saw, and, behold, a man with a measuring line in his hand.”",
+    "options" : [
+      "hand"
+    ],
+    "prompt" : "In this paraphrase, zechariah saw a man with a measuring line in his ____. (2:1)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies four: “… the north,' says Yahweh; 'for I have spread you abroad as the four winds of the sky,' says Yahweh.”",
+    "options" : [
+      "seven",
+      "four",
+      "twelve",
+      "tenth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the north,' says Yahweh; 'for I have spread you abroad as the ______ winds of the sky,' says Yahweh.”? (2:6, WEB)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Yahweh in that day, and shall be my people; and I will dwell in the midst of you, and you shall know that Yahweh of Hosts …”; the second reads “Yahweh will inherit Judah as his portion in the holy land, and will again choose Jerusalem.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "dwell holy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Yahweh in that day, and shall be my people; and I will ____ in the midst of you, and you shall know that Yahweh of Hosts …” (2:11); “Yahweh will inherit Judah as his portion in the land, and will again choose Jerusalem.” (2:12, WEB)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… says Yahweh of hosts: 'For honor he has sent me to the nations which plundered you; for he who touches you touches the apple of his …”; verse 10 reads “Sing and rejoice, daughter of Zion; for, behold, I come, and I will dwell in the midst of you,' says Yahweh.”. These establish the first and second answers respectively.",
+    "options" : [
+      "rejoice; nations",
+      "nations; forsake",
+      "hosts; rejoice",
+      "nations; rejoice"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… says Yahweh of hosts: 'For honor he has sent me to the ______ which plundered you; for he who touches you touches the apple of his …” (2:8); “Sing and ______, daughter of Zion; for, behold, I come, and I will dwell in the midst of you,' says Yahweh.” (2:10, WEB)",
+    "reference" : "Zechariah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 3:2 uses Jerusalem: “… said to Satan, \"Yahweh rebuke you, Satan! Yes, Yahweh who has chosen Jerusalem rebuke you! Isn't this a burning stick plucked out of the fire?\"”",
+    "options" : [
+      "Gilead",
+      "Bethel",
+      "Beersheba",
+      "Jerusalem"
+    ],
+    "prompt" : "Which word completes “… said to Satan, \"Yahweh rebuke you, Satan! Yes, Yahweh who has chosen ______ rebuke you! Isn't this a burning stick plucked out of the fire?\"”? (3:2, WEB)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… will invite every man his neighbor under the vine and under the fig tree.'\"”; the second reads “The angel of Yahweh protested to Joshua, saying,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fig protested"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… will invite every man his neighbor under the vine and under the ____ tree.'\"” (3:10); “The angel of Yahweh to Joshua, saying,” (3:6, WEB)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… then you also shall judge my house, and shall also keep my courts, and I will give you a place of access among these who stand …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… then you also shall judge my house, and shall also keep my courts, and I will give you a place of access among these who stand …” (3:7, WEB)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zechariah 3:3 records: “Now Joshua was clothed with filthy garments, and was standing before the angel.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joshua the high priest stood before the angel in filthy garments. (3:3)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “Hear now, Joshua the high priest, you and your fellows who sit before you; for they are men who are a sign: for, behold, I will …”; verse 9 reads “… the stone that I have set before Joshua; on one stone are seven eyes: behold, I will engrave the engraving of it,' says Yahweh of Hosts, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "priest; seven",
+      "kings; seven",
+      "seven; priest",
+      "priest; fifteen"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Hear now, Joshua the high ______, you and your fellows who sit before you; for they are men who are a sign: for, behold, I will …” (3:8); “… the stone that I have set before Joshua; on one stone are ______ eyes: behold, I will engrave the engraving of it,' says Yahweh of Hosts, …” (3:9, WEB)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He showed me Joshua the high priest standing before the angel of Yahweh, and Satan standing at his right hand to be his adversary.”",
+    "options" : [
+      "Joshua"
+    ],
+    "prompt" : "Complete the quotation: “He showed me ____ the high priest standing before the angel of Yahweh, and Satan standing at his right hand to be his adversary.” (3:1, WEB)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies standing: “… on his head, and clothed him; and the angel of Yahweh was standing by.”",
+    "options" : [
+      "standing",
+      "clothing",
+      "burning",
+      "engraving"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… on his head, and clothed him; and the angel of Yahweh was ______ by.”? (3:5, WEB)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… before him, saying, \"Take the filthy garments off of him.\" To him he said, \"Behold, I have caused your iniquity to pass from you, and I …” The missing terms belong in that order.",
+    "options" : [
+      "garments iniquity"
+    ],
+    "prompt" : "Supply the missing words in order: “… before him, saying, \"Take the filthy ____ off of him.\" To him he said, \"Behold, I have caused your to pass from you, and I …” (3:4, WEB)",
+    "reference" : "Zechariah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The oracle addresses a real task and a small beginning. It encourages dependence on God without saying that obedient human work is unnecessary.",
+    "options" : [
+      "Completion ultimately depends on God's empowering presence rather than might alone.",
+      "Military force is declared the source of God's Spirit.",
+      "Small beginnings prove that God is absent.",
+      "Zerubbabel is told to do nothing at all."
+    ],
+    "prompt" : "How does the word about God's Spirit relate to Zerubbabel's building task? (4:6-10)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then the angel who talked with me answered me, \"Don't you know what these are?\" I said, \"No, my lord.\"” The missing terms belong in that order.",
+    "options" : [
+      "angel talked"
+    ],
+    "prompt" : "Supply the missing words in order: “Then the ____ who with me answered me, \"Don't you know what these are?\" I said, \"No, my lord.\"” (4:5, WEB)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Zerubbabel: “Who are you, great mountain? Before Zerubbabel you are a plain; and he will bring out the capstone with shouts of 'Grace, grace, to it!'\"”",
+    "options" : [
+      "Enoch",
+      "Samuel",
+      "Micah",
+      "Zerubbabel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Who are you, great mountain? Before ______ you are a plain; and he will bring out the capstone with shouts of 'Grace, grace, to it!'\"”? (4:7, WEB)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “Indeed, who despises the day of small things? For these seven shall rejoice, and shall see the plumb line in the hand of Zerubbabel. These are …”; verse 12 reads “… olive-branches, which are beside the two golden spouts, that pour the golden oil out of themselves?\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "seven; oil",
+      "seven; figs",
+      "oil; seven",
+      "eight; oil"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Indeed, who despises the day of small things? For these ______ shall rejoice, and shall see the plumb line in the hand of Zerubbabel. These are …” (4:10); “… olive-branches, which are beside the two golden spouts, that pour the golden ______ out of themselves?\"” (4:12, WEB)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 4:3 uses two: “and two olive trees by it, one on the right side of the bowl, and the other on the left side of it.\"”",
+    "options" : [
+      "nineteen",
+      "six",
+      "second",
+      "two"
+    ],
+    "prompt" : "Which word completes “and ______ olive trees by it, one on the right side of the bowl, and the other on the left side of it.\"”? (4:3, WEB)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… see?\" I said, \"I have seen, and, behold, a lampstand all of gold, with its bowl on the top of it, and its seven lamps thereon; …”",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "Complete the quotation: “… see?\" I said, \"I have seen, and, behold, a lampstand all of ____, with its bowl on the top of it, and its seven lamps thereon; …” (4:2, WEB)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Zechariah 4:6 records: “Then he answered and spoke to me, saying, \"This is the word of Yahweh to Zerubbabel, saying, 'Not by might, nor by power, but by my Spirit,' says Yahweh of Hosts.”",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "In this paraphrase, the LORD said, Not by might, nor by power, but by My ____. (4:6)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “\"The hands of Zerubbabel have laid the foundation of this house. His hands shall also finish it; and you will know that Yahweh of Hosts has …” It says foundation, not heart.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “\"The hands of Zerubbabel have laid the heart of this house. His hands shall also finish it; and you will know that Yahweh of Hosts has …” (4:9, WEB)",
+    "reference" : "Zechariah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… thief, and into the house of him who swears falsely by my name; and it will remain in the midst of his house, and will destroy …” The missing terms belong in that order.",
+    "options" : [
+      "falsely remain"
+    ],
+    "prompt" : "Supply the missing words in order: “… thief, and into the house of him who swears ____ by my name; and it will in the midst of his house, and will destroy …” (5:4, WEB)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zechariah 5:1 records: “Then again I lifted up my eyes, and saw, and, behold, a flying scroll.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Zechariah saw a flying scroll. (5:1)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Then lifted I up my eyes, and saw, and, behold, there were two women, and the wind was in their wings. Now they had wings like …”; the second reads “… the angel who talked with me, \"Where are these carrying the ephah basket?\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "two basket"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Then lifted I up my eyes, and saw, and, behold, there were ____ women, and the wind was in their wings. Now they had wings like …” (5:9); “… the angel who talked with me, \"Where are these carrying the ephah ?\"” (5:10, WEB)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 5:3 uses everyone: “… curse that goes out over the surface of the whole land; for everyone who steals shall be cut off according to it on the one side; …”",
+    "options" : [
+      "like",
+      "everyone",
+      "prepared",
+      "cause"
+    ],
+    "prompt" : "Which word completes “… curse that goes out over the surface of the whole land; for ______ who steals shall be cut off according to it on the one side; …”? (5:3, WEB)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… \"What is it?\" He said, \"This is the ephah basket that is appearing.\" He said moreover, \"This is their appearance in all the land” It says appearing, not sitting.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… \"What is it?\" He said, \"This is the ephah basket that is sitting.\" He said moreover, \"This is their appearance in all the land” (5:6, WEB)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Lift: “… the angel who talked with me came forward, and said to me, \"Lift up now your eyes, and see what is this that is appearing.\"”",
+    "options" : [
+      "goes",
+      "house",
+      "Lift",
+      "midst"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the angel who talked with me came forward, and said to me, \"______ up now your eyes, and see what is this that is appearing.\"”? (5:5, WEB)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “(and, behold, a talent of lead was lifted up); and this is a woman sitting in the midst of the ephah basket.\"”; verse 8 reads “He said, \"This is Wickedness;\" and he threw her down into the midst of the ephah basket; and he threw the weight of lead on its …”. These establish the first and second answers respectively.",
+    "options" : [
+      "threw; Wickedness",
+      "talent; Wickedness",
+      "Wickedness; talent",
+      "talent; disobedience"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “(and, behold, a ______ of lead was lifted up); and this is a woman sitting in the midst of the ephah basket.\"” (5:7); “He said, \"This is ______;\" and he threw her down into the midst of the ephah basket; and he threw the weight of lead on its …” (5:8, WEB)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… see a flying scroll; its length is twenty cubits, and its breadth ten cubits.\"”",
+    "options" : [
+      "ten"
+    ],
+    "prompt" : "Complete the quotation: “… see a flying scroll; its length is twenty cubits, and its breadth ____ cubits.\"” (5:2, WEB)",
+    "reference" : "Zechariah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Zechariah 6:1 records: “Again I lifted up my eyes, and saw, and, behold, four chariots came out from between two mountains; and the mountains were mountains of brass.”",
+    "options" : [
+      "mountains"
+    ],
+    "prompt" : "In this paraphrase, zechariah saw four chariots coming out from between two ____. (6:1)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… he shall build the temple of Yahweh; and he shall bear the glory, and shall sit and rule on his throne; and he shall be a …”; the second reads “… and to Hen the son of Zephaniah, for a memorial in the temple of Yahweh.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "glory temple"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… he shall build the temple of Yahweh; and he shall bear the ____, and shall sit and rule on his throne; and he shall be a …” (6:13); “… and to Hen the son of Zephaniah, for a memorial in the of Yahweh.” (6:14, WEB)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The angel answered me, \"These are the four winds of the sky, which go forth from standing before the Lord of all the earth.” The missing terms belong in that order.",
+    "options" : [
+      "four winds"
+    ],
+    "prompt" : "Supply the missing words in order: “The angel answered me, \"These are the ____ of the sky, which go forth from standing before the Lord of all the earth.” (6:5, WEB)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies horses: “The one with the black horses goes out toward the north country; and the white went out after them; and the dappled went forth toward the …”",
+    "options" : [
+      "horses",
+      "lions",
+      "lion",
+      "ox"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The one with the black ______ goes out toward the north country; and the white went out after them; and the dappled went forth toward the …”? (6:6, WEB)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 6:3 uses fourth: “in the third chariot white horses; and in the fourth chariot dappled horses, all of them powerful.”",
+    "options" : [
+      "thirteen",
+      "seventh",
+      "fifteen",
+      "fourth"
+    ],
+    "prompt" : "Which word completes “in the third chariot white horses; and in the ______ chariot dappled horses, all of them powerful.”? (6:3, WEB)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… house of Josiah the son of Zephaniah, where they have come from Babylon.”; verse 11 reads “… and gold, and make crowns, and set them on the head of Joshua the son of Jehozadak, the high priest;”. These establish the first and second answers respectively.",
+    "options" : [
+      "Babylon; Gomer",
+      "Babylon; Joshua",
+      "Joshua; Babylon",
+      "Nineveh; Joshua"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… house of Josiah the son of Zephaniah, where they have come from ______.” (6:10); “… and gold, and make crowns, and set them on the head of ______ the son of Jehozadak, the high priest;” (6:11, WEB)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “In the first chariot were red horses; in the second chariot black horses;”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “In the ____ chariot were red horses; in the second chariot black horses;” (6:2, WEB)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… saying, \"Behold, those who go toward the north country have quieted my spirit in the north country.\"” It says spirit, not happen.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… saying, \"Behold, those who go toward the north country have quieted my happen in the north country.\"” (6:8, WEB)",
+    "reference" : "Zechariah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “\"but I will scatter them with a whirlwind among all the nations which they have not known. Thus the land was desolate after them, so that …”; the second reads “… so they will call, and I will not listen,\" said Yahweh of Hosts;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "nations Hosts"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “\"but I will scatter them with a whirlwind among all the ____ which they have not known. Thus the land was desolate after them, so that …” (7:14); “… so they will call, and I will not listen,\" said Yahweh of ;” (7:13, WEB)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Don't oppress the widow, nor the fatherless, the foreigner, nor the poor; and let none of you devise evil against his brother in your heart.'”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Don't oppress the widow, nor the fatherless, the foreigner, nor the poor; and let none of you devise evil against his brother in your heart.'” (7:10, WEB)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The people of Bethel sent Sharezer and Regem Melech, and their men, to entreat Yahweh's favor,”",
+    "options" : [
+      "Bethel"
+    ],
+    "prompt" : "Complete the quotation: “The people of ____ sent Sharezer and Regem Melech, and their men, to entreat Yahweh's favor,” (7:2, WEB)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jerusalem: “Aren't these the words which Yahweh proclaimed by the former prophets, when Jerusalem was inhabited and in prosperity, and its cities around her, and the South …”",
+    "options" : [
+      "Jerusalem",
+      "Persia",
+      "Bethel",
+      "Judah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Aren't these the words which Yahweh proclaimed by the former prophets, when ______ was inhabited and in prosperity, and its cities around her, and the South …”? (7:7, WEB)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 7:3 uses priests: “and to speak to the priests of the house of Yahweh of Hosts, and to the prophets, saying, \"Should I weep in the fifth month, separating …”",
+    "options" : [
+      "sister",
+      "priests",
+      "mother",
+      "daughter"
+    ],
+    "prompt" : "Which word completes “and to speak to the ______ of the house of Yahweh of Hosts, and to the prophets, saying, \"Should I weep in the fifth month, separating …”? (7:3, WEB)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… you fasted and mourned in the fifth and in the seventh month for these seventy years, did you at all fast to me, really to me?” The missing terms belong in that order.",
+    "options" : [
+      "seventh seventy"
+    ],
+    "prompt" : "Supply the missing words in order: “… you fasted and mourned in the fifth and in the ____ month for these years, did you at all fast to me, really to me?” (7:5, WEB)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… law, and the words which Yahweh of Hosts had sent by his Spirit by the former prophets. Therefore great wrath came from Yahweh of Hosts.”; verse 11 reads “But they refused to listen, and turned their backs, and stopped their ears, that they might not hear.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Spirit; backs",
+      "people; backs",
+      "backs; Spirit",
+      "Spirit; Yahweh's"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… law, and the words which Yahweh of Hosts had sent by his ______ by the former prophets. Therefore great wrath came from Yahweh of Hosts.” (7:12); “But they refused to listen, and turned their ______, and stopped their ears, that they might not hear.” (7:11, WEB)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zechariah 7:9 records: “\"Thus has Yahweh of Hosts spoken, saying, 'Execute true judgment, and show kindness and compassion every man to his brother.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said they should administer true justice and show mercy. (7:9)",
+    "reference" : "Zechariah 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies temple: “… foundation of the house of Yahweh of Hosts was laid, even the temple, that it might be built.”",
+    "options" : [
+      "gates",
+      "walls",
+      "sanctuary",
+      "temple"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… foundation of the house of Yahweh of Hosts was laid, even the ______, that it might be built.”? (8:9, WEB)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 8:4 uses Jerusalem: “… \"Old men and old women will again dwell in the streets of Jerusalem, every man with his staff in his hand for very age.”",
+    "options" : [
+      "Gilgal",
+      "Babylon",
+      "Jerusalem",
+      "Bethel"
+    ],
+    "prompt" : "Which word completes “… \"Old men and old women will again dwell in the streets of ______, every man with his staff in his hand for very age.”? (8:4, WEB)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The promise joins return to Jerusalem with renewed covenant relationship: they will be His people and He will be their God.",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "God promises to bring His people back to live in ____. (8:7-8)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “\"For the seed of peace and the vine will yield its fruit, and the ground will give its increase, and the heavens will give their dew; …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “\"For the seed of peace and the vine will yield its fruit, and the ground will give its increase, and the heavens will give their dew; …” (8:12, WEB)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Thus says Yahweh of Hosts: \"The fasts of the fourth fifth, seventh, and tenth months shall be for the house of Judah joy and gladness, and …”; the second reads “Yes, many peoples and strong nations will come to seek Yahweh of Hosts in Jerusalem, and to entreat the favor of Yahweh.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fifth nations"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Thus says Yahweh of Hosts: \"The fasts of the fourth ____, seventh, and tenth months shall be for the house of Judah joy and gladness, and …” (8:19); “Yes, many peoples and strong will come to seek Yahweh of Hosts in Jerusalem, and to entreat the favor of Yahweh.\"” (8:22, WEB)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Thus says Yahweh: \"I have returned to Zion, and will dwell in the midst of Jerusalem. Jerusalem shall be called 'The City of Truth;' and the …”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "Complete the quotation: “Thus says Yahweh: \"I have returned to ____, and will dwell in the midst of Jerusalem. Jerusalem shall be called 'The City of Truth;' and the …” (8:3, WEB)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Thus says Yahweh of Hosts: \"Behold, I will save my people from the east country, and from the west country;” The missing terms belong in that order.",
+    "options" : [
+      "Hosts country"
+    ],
+    "prompt" : "Supply the missing words in order: “Thus says Yahweh of ____: \"Behold, I will save my people from the east country, and from the west ;” (8:7, WEB)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… pass that, as you were a curse among the nations, house of Judah and house of Israel, so will I save you, and you shall be …”; verse 16 reads “… speak every man the truth with his neighbor. Execute the judgment of truth and peace in your gates,”. These establish the first and second answers respectively.",
+    "options" : [
+      "Esther; truth",
+      "truth; Judah",
+      "Judah; mercy",
+      "Judah; truth"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… pass that, as you were a curse among the nations, house of ______ and house of Israel, so will I save you, and you shall be …” (8:13); “… speak every man the truth with his neighbor. Execute the judgment of ______ and peace in your gates,” (8:16, WEB)",
+    "reference" : "Zechariah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zechariah 9:9 records: “Rejoice greatly, daughter of Zion! Shout, daughter of Jerusalem! Behold, your king comes to you! He is righteous, and having salvation; Lowly, and riding on a donkey, Even on a colt, the foal of a donkey.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Zechariah said the king would come humble, riding on a donkey. (9:9)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The contrast includes the removal of instruments of war. The Gospels use this text to interpret Jesus' entry into Jerusalem.",
+    "options" : [
+      "The nations are excluded from his rule.",
+      "He is praised for conquering by war chariots.",
+      "He refuses every connection with peace.",
+      "He comes humbly on a donkey, and his rule is associated with peace to the nations."
+    ],
+    "prompt" : "What makes the promised king's arrival distinctive? (9:9-10)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “I will take away his blood out of his mouth, And his abominations from between his teeth; And he also will be a remnant for our …”",
+    "options" : [
+      "blood",
+      "head",
+      "tooth",
+      "lips"
+    ],
+    "prompt" : "Which detail belongs in this passage: “I will take away his ______ out of his mouth, And his abominations from between his teeth; And he also will be a remnant for our …”? (9:7, WEB)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… his arrow will go flash like lightning; And the Lord Yahweh will blow the trumpet, And will go with whirlwinds of the south.”; the second reads “… day as the flock of his people; For they are like the jewels of a crown, Lifted on high over his land.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "blow jewels"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… his arrow will go flash like lightning; And the Lord Yahweh will ____ the trumpet, And will go with whirlwinds of the south.” (9:14); “… day as the flock of his people; For they are like the of a crown, Lifted on high over his land.” (9:16, WEB)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Ashkelon will see it, and fear; Gaza also, and will writhe in agony; As will Ekron, for her expectation will be disappointed; And the king will …” The missing terms belong in that order.",
+    "options" : [
+      "fear writhe"
+    ],
+    "prompt" : "Supply the missing words in order: “Ashkelon will see it, and ____; Gaza also, and will in agony; As will Ekron, for her expectation will be disappointed; And the king will …” (9:5, WEB)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I will encamp around my house against the army, That none pass through or return; And no oppressor will pass through them any more: For now …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I will encamp around my house against the army, That none pass through or return; And no oppressor will pass through them any more: For now …” (9:8, WEB)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 9:3 uses gold: “… herself a stronghold, And heaped up silver like the dust, And fine gold like the mire of the streets.”",
+    "options" : [
+      "wood",
+      "gold",
+      "ashes",
+      "bronze"
+    ],
+    "prompt" : "Which word completes “… herself a stronghold, And heaped up silver like the dust, And fine ______ like the mire of the streets.”? (9:3, WEB)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of Yahweh is against the land of Hadrach, And will rest upon Damascus; For the eye of man And of all the tribes of Israel is …”",
+    "options" : [
+      "Damascus"
+    ],
+    "prompt" : "Complete the quotation: “… of Yahweh is against the land of Hadrach, And will rest upon ____; For the eye of man And of all the tribes of Israel is …” (9:1, WEB)",
+    "reference" : "Zechariah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 10:3 uses Judah: “… goats; For Yahweh of Hosts has visited his flock, the house of Judah, And will make them as his horse in the battle that he is …”",
+    "options" : [
+      "Isaac",
+      "Jonathan",
+      "Judah",
+      "Korah"
+    ],
+    "prompt" : "Which word completes “… goats; For Yahweh of Hosts has visited his flock, the house of ______, And will make them as his horse in the battle that he is …”? (10:3, WEB)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… go their way like sheep. They are oppressed, because there is no shepherd.”",
+    "options" : [
+      "shepherd"
+    ],
+    "prompt" : "Complete the quotation: “… go their way like sheep. They are oppressed, because there is no ____.” (10:2, WEB)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Zechariah 10:6 records: “… And I will save the house of Joseph, And I will bring them back; For I have mercy on them; And they will be as though I had not cast them off: For I am Yahweh …”",
+    "options" : [
+      "Joseph"
+    ],
+    "prompt" : "In this paraphrase, the LORD said He would strengthen the house of Judah and save the house of ____. (10:6)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “They shall be as mighty men, Treading down muddy streets in the battle; And they shall fight, because Yahweh is with them; And the riders on …” The missing terms belong in that order.",
+    "options" : [
+      "Treading battle"
+    ],
+    "prompt" : "Supply the missing words in order: “They shall be as mighty men, ____ down muddy streets in the ; And they shall fight, because Yahweh is with them; And the riders on …” (10:5, WEB)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… out of Assyria; And I will bring them into the land of Gilead and Lebanon; And there won't be room enough for them.” It says Gilead, not Zion.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… out of Assyria; And I will bring them into the land of Zion and Lebanon; And there won't be room enough for them.” (10:10, WEB)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “I will signal for them, and gather them; For I have redeemed them; And they will increase as they have increased.”; the second reads “I will strengthen them in Yahweh; And they will walk up and down in his name,\" says Yahweh.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "signal walk"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “I will ____ for them, and gather them; For I have redeemed them; And they will increase as they have increased.” (10:8); “I will strengthen them in Yahweh; And they will up and down in his name,\" says Yahweh.” (10:12, WEB)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “I will sow them among the peoples; And they will remember me in far countries; And they will live with their children, and will return.”; verse 11 reads “… the depths of the Nile will dry up; And the pride of Assyria will be brought down, And the scepter of Egypt will depart.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Judah; Assyria",
+      "Assyria; sow",
+      "sow; Sinai",
+      "sow; Assyria"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “I will ______ them among the peoples; And they will remember me in far countries; And they will live with their children, and will return.” (10:9); “… the depths of the Nile will dry up; And the pride of ______ will be brought down, And the scepter of Egypt will depart.” (10:11, WEB)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wine: “… be like a mighty man, And their heart will rejoice as through wine; Yes, their children will see it, and rejoice. Their heart will be glad …”",
+    "options" : [
+      "wine",
+      "grapes",
+      "figs",
+      "honey"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… be like a mighty man, And their heart will rejoice as through ______; Yes, their children will see it, and rejoice. Their heart will be glad …”? (10:7, WEB)",
+    "reference" : "Zechariah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 11:3 uses glory: “A voice of the wailing of the shepherds! For their glory is destroyed: a voice of the roaring of young lions! For the pride of the …”",
+    "options" : [
+      "love",
+      "mercy",
+      "anger",
+      "glory"
+    ],
+    "prompt" : "Which word completes “A voice of the wailing of the shepherds! For their ______ is destroyed: a voice of the roaring of young lions! For the pride of the …”? (11:3, WEB)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… into the hand of his king. They will strike the land, and out of their hand I will not deliver them.\"” The missing terms belong in that order.",
+    "options" : [
+      "king deliver"
+    ],
+    "prompt" : "Supply the missing words in order: “… into the hand of his ____. They will strike the land, and out of their hand I will not them.\"” (11:6, WEB)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… my staff Favor, and cut it apart, that I might break my covenant that I had made with all the peoples.”; verse 13 reads “… handsome price that I was valued at by them!\" I took the thirty pieces of silver, and threw them to the potter, in the house of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "covenant; thirty",
+      "law; thirty",
+      "thirty; covenant",
+      "covenant; twenty"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… my staff Favor, and cut it apart, that I might break my ______ that I had made with all the peoples.” (11:10); “… handsome price that I was valued at by them!\" I took the ______ pieces of silver, and threw them to the potter, in the house of …” (11:13, WEB)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… has fallen, Because the stately ones are destroyed. Wail, you oaks of Bashan, For the strong forest has come down.”",
+    "options" : [
+      "Bashan"
+    ],
+    "prompt" : "Complete the quotation: “… has fallen, Because the stately ones are destroyed. Wail, you oaks of ____, For the strong forest has come down.” (11:2, WEB)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… my other staff, even Union, that I might break the brotherhood between Judah and Israel.”; the second reads “For, behold, I will raise up a shepherd in the land, who will not visit those who are cut off, neither will seek those who are …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Judah shepherd"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… my other staff, even Union, that I might break the brotherhood between ____ and Israel.” (11:14); “For, behold, I will raise up a in the land, who will not visit those who are cut off, neither will seek those who are …” (11:16, WEB)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… die; and that which is to be cut off, let it be cut off; and let those who are left eat each other's flesh.\"” It says cut, not heal.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… die; and that which is to be cut off, let it be heal off; and let those who are left eat each other's flesh.\"” (11:9, WEB)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies two: “… of slaughter, especially the oppressed of the flock. I took for myself two staffs. The one I called \"Favor,\" and the other I called \"Union,\" and …”",
+    "options" : [
+      "twenty",
+      "two",
+      "sixth",
+      "hundred"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of slaughter, especially the oppressed of the flock. I took for myself ______ staffs. The one I called \"Favor,\" and the other I called \"Union,\" and …”? (11:7, WEB)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zechariah 11:12 records: “I said to them, \"If you think it best, give me my wages; and if not, keep them.\" So they weighed for my wages thirty pieces of silver.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Zechariah was given thirty pieces of silver as wages. (11:12)",
+    "reference" : "Zechariah 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… peoples, and on Judah also will it be in the siege against Jerusalem.”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "Complete the quotation: “… peoples, and on Judah also will it be in the siege against ____.” (12:2, WEB)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 12:3 uses nations: “… who burden themselves with it will be severely wounded, and all the nations of the earth will be gathered together against it.”",
+    "options" : [
+      "nations",
+      "madness",
+      "Hosts",
+      "Shimeites"
+    ],
+    "prompt" : "Which word completes “… who burden themselves with it will be severely wounded, and all the ______ of the earth will be gathered together against it.”? (12:3, WEB)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… David apart, and their wives apart; the family of the house of Nathan apart, and their wives apart;”; the second reads “the family of the house of Levi apart, and their wives apart; the family of the Shimeites apart, and their wives apart;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Nathan Levi"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… David apart, and their wives apart; the family of the house of ____ apart, and their wives apart;” (12:12); “the family of the house of apart, and their wives apart; the family of the Shimeites apart, and their wives apart;” (12:13, WEB)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Yahweh also will save the tents of Judah first, that the glory of the house of David and the glory of the inhabitants of Jerusalem not …” It says first, not eleven.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Yahweh also will save the tents of Judah eleven, that the glory of the house of David and the glory of the inhabitants of Jerusalem not …” (12:7, WEB)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Zechariah 12:10 records: “… the inhabitants of Jerusalem, the spirit of grace and of supplication; and they will look to me whom they have pierced; and they shall mourn for him, as one mourns for his only son, and will …”",
+    "options" : [
+      "son"
+    ],
+    "prompt" : "In this paraphrase, the LORD said they would look on Him whom they had pierced and mourn for Him as one mourns for an only ____. (12:10)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… horse with terror, and his rider with madness; and I will open my eyes on the house of Judah, and will strike every horse of the …” The missing terms belong in that order.",
+    "options" : [
+      "madness Judah"
+    ],
+    "prompt" : "Supply the missing words in order: “… horse with terror, and his rider with ____; and I will open my eyes on the house of , and will strike every horse of the …” (12:4, WEB)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… day I will make the chieftains of Judah like a pan of fire among wood, and like a flaming torch among sheaves; and they will devour …”",
+    "options" : [
+      "spirit",
+      "lays",
+      "firstborn",
+      "fire"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… day I will make the chieftains of Judah like a pan of ______ among wood, and like a flaming torch among sheaves; and they will devour …”? (12:6, WEB)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zechariah",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… He who is feeble among them at that day will be like David, and the house of David will be like God, like the angel of …”; verse 11 reads “… a great mourning in Jerusalem, like the mourning of Hadadrimmon in the valley of Megiddon.”. These establish the first and second answers respectively.",
+    "options" : [
+      "David; earth",
+      "valley; David",
+      "David; valley",
+      "Esther; valley"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… He who is feeble among them at that day will be like ______, and the house of David will be like God, like the angel of …” (12:8); “… a great mourning in Jerusalem, like the mourning of Hadadrimmon in the ______ of Megiddon.” (12:11, WEB)",
+    "reference" : "Zechariah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zechariah 13:7 records: “\"Awake, sword, against my shepherd, And against the man who is close to me,\" says Yahweh of Hosts. Strike the shepherd, and the sheep will be scattered; And I will turn my hand against the little …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said, \"Strike the shepherd, and the sheep will be scattered.\" (13:7)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies answer: “… to him, 'What are these wounds between your arms?' Then he will answer, 'Those with which I was wounded in the house of my friends.'”",
+    "options" : [
+      "wounds",
+      "answer",
+      "bore",
+      "sword"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to him, 'What are these wounds between your arms?' Then he will ______, 'Those with which I was wounded in the house of my friends.'”? (13:6, WEB)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… bring the third part into the fire, And will refine them as silver is refined, And will test them like gold is tested. They will call …”; verse 8 reads “… Two parts in it will be cut off and die; But the third will be left in it.”. These establish the first and second answers respectively.",
+    "options" : [
+      "third; silver",
+      "dust; third",
+      "silver; third",
+      "silver; seventh"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… bring the third part into the fire, And will refine them as ______ is refined, And will test them like gold is tested. They will call …” (13:9); “… Two parts in it will be cut off and die; But the ______ will be left in it.” (13:8, WEB)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… more be remembered; and also I will cause the prophets and the spirit of impurity to pass out of the land.”",
+    "options" : [
+      "spirit"
+    ],
+    "prompt" : "Complete the quotation: “… more be remembered; and also I will cause the prophets and the ____ of impurity to pass out of the land.” (13:2, WEB)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… am a tiller of the ground; for I have been made a bondservant from my youth.'” It says bondservant, not prophesies.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… am a tiller of the ground; for I have been made a prophesies from my youth.'” (13:5, WEB)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to the house of David and to the inhabitants of Jerusalem, for sin and for uncleanness.”; the second reads “I will bring the third part into the fire, And will refine them as silver is refined, And will test them like gold is tested. They …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sin fire"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to the house of David and to the inhabitants of Jerusalem, for ____ and for uncleanness.” (13:1); “I will bring the third part into the , And will refine them as silver is refined, And will test them like gold is tested. They …” (13:9, WEB)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… will each be ashamed of his vision, when he prophesies; neither will they wear a hairy mantle to deceive:” The missing terms belong in that order.",
+    "options" : [
+      "vision deceive"
+    ],
+    "prompt" : "Supply the missing words in order: “… will each be ashamed of his ____, when he prophesies; neither will they wear a hairy mantle to :” (13:4, WEB)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 13:3 uses bore: “… in the name of Yahweh;' and his father and his mother who bore him will stab him when he prophesies.”",
+    "options" : [
+      "prophesies",
+      "bore",
+      "spirit",
+      "father"
+    ],
+    "prompt" : "Which word completes “… in the name of Yahweh;' and his father and his mother who ______ him will stab him when he prophesies.”? (13:3, WEB)",
+    "reference" : "Zechariah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zechariah 14:4 uses Jerusalem: “… stand in that day on the Mount of Olives, which is before Jerusalem on the east; and the Mount of Olives will be split in two, …”",
+    "options" : [
+      "Jerusalem",
+      "Tarshish",
+      "Jordan",
+      "Hebron"
+    ],
+    "prompt" : "Which word completes “… stand in that day on the Mount of Olives, which is before ______ on the east; and the Mount of Olives will be split in two, …”? (14:4, WEB)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies eastern: “… living waters will go out from Jerusalem; half of them toward the eastern sea, and half of them toward the western sea; in summer and in …”",
+    "options" : [
+      "eastern",
+      "animals",
+      "strike",
+      "summer"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… living waters will go out from Jerusalem; half of them toward the ______ sea, and half of them toward the western sea; in summer and in …”? (14:8, WEB)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Zechariah 14:20 records: “In that day there will be on the bells of the horses, \"HOLY TO YAHWEH;\" and the pots in Yahweh's house will be like the bowls before the altar.”",
+    "options" : [
+      "bells"
+    ],
+    "prompt" : "In this paraphrase, in that day there would be holiness to the LORD inscribed on the ____ of the horses. (14:20)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… who have warred against Jerusalem: their flesh will consume away while they stand on their feet, and their eyes will consume away in their sockets, and …”; verse 14 reads “… wealth of all the surrounding nations will be gathered together: gold, and silver, and clothing, in great abundance.”. These establish the first and second answers respectively.",
+    "options" : [
+      "silver; stand",
+      "stand; silver",
+      "stand; copper",
+      "doesn't; silver"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… who have warred against Jerusalem: their flesh will consume away while they ______ on their feet, and their eyes will consume away in their sockets, and …” (14:12); “… wealth of all the surrounding nations will be gathered together: gold, and ______, and clothing, in great abundance.” (14:14, WEB)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… ravished. half of the city will go out into captivity, and the rest of the people will not be cut off from the city.”",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "Complete the quotation: “… ravished. half of the city will go out into captivity, and the ____ of the people will not be cut off from the city.” (14:2, WEB)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “It will be, that whoever of all the families of the earth doesn't go up to Jerusalem to worship the King, Yahweh of Hosts, on them …”; the second reads “… will be the punishment of Egypt, and the punishment of all the nations that don't go up to keep the feast of tents.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "families nations"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “It will be, that whoever of all the ____ of the earth doesn't go up to Jerusalem to worship the King, Yahweh of Hosts, on them …” (14:17); “… will be the punishment of Egypt, and the punishment of all the that don't go up to keep the feast of tents.” (14:19, WEB)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… dwell in her place, from Benjamin's gate to the place of the first gate, to the corner gate, and from the tower of Hananel to the …” It says first, not eleven.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… dwell in her place, from Benjamin's gate to the place of the eleven gate, to the corner gate, and from the tower of Hananel to the …” (14:10, WEB)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zechariah",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… earthquake in the days of Uzziah king of Judah. Yahweh my God will come, and all the holy ones with you.” The missing terms belong in that order.",
+    "options" : [
+      "Judah holy"
+    ],
+    "prompt" : "Supply the missing words in order: “… earthquake in the days of Uzziah king of ____. Yahweh my God will come, and all the ones with you.” (14:5, WEB)",
+    "reference" : "Zechariah 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

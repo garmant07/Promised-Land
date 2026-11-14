@@ -1,0 +1,788 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… him who enabled me, Christ Jesus our Lord, because he counted me faithful, appointing me to service;” It says faithful, not pure.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… him who enabled me, Christ Jesus our Lord, because he counted me pure, appointing me to service;” (1:12, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “The grace of our Lord abounded exceedingly with faith and love which is in Christ Jesus.”; verse 16 reads “However, for this cause I obtained mercy, that in me first, Jesus Christ might display all his patience, for an example of those who were going …”. These establish the first and second answers respectively.",
+    "options" : [
+      "first; love",
+      "love; first",
+      "love; four",
+      "peace; first"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The grace of our Lord abounded exceedingly with faith and ______ which is in Christ Jesus.” (1:14); “However, for this cause I obtained mercy, that in me ______, Jesus Christ might display all his patience, for an example of those who were going …” (1:16, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… endless genealogies, which cause disputes, rather than God's stewardship, which is in faith--”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “… endless genealogies, which cause disputes, rather than God's stewardship, which is in ____--” (1:4, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “to Timothy, my true child in faith: Grace, mercy, and peace, from God our Father and Christ Jesus our Lord.”",
+    "options" : [
+      "peace"
+    ],
+    "prompt" : "Complete the quotation: “to Timothy, my true child in faith: Grace, mercy, and ____, from God our Father and Christ Jesus our Lord.” (1:2, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “This charge I commit to you, my child Timothy, according to the prophecies which led the way to you, that by them you may wage the …”; the second reads “of whom is Hymenaeus and Alexander; whom I delivered to Satan, that they might be taught not to blaspheme.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Timothy delivered"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “This charge I commit to you, my child ____, according to the prophecies which led the way to you, that by them you may wage the …” (1:18); “of whom is Hymenaeus and Alexander; whom I to Satan, that they might be taught not to blaspheme.” (1:20, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “as knowing this, that law is not made for a righteous man, but for the lawless and insubordinate, for the ungodly and sinners, for the unholy …” The missing terms belong in that order.",
+    "options" : [
+      "law righteous"
+    ],
+    "prompt" : "Supply the missing words in order: “as knowing this, that ____ is not made for a man, but for the lawless and insubordinate, for the ungodly and sinners, for the unholy …” (1:9, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Timothy 1:5 uses conscience: “… the charge is love, out of a pure heart and a good conscience and unfeigned faith;”",
+    "options" : [
+      "peace",
+      "conscience",
+      "murderers",
+      "unbelief"
+    ],
+    "prompt" : "Which word completes “… the charge is love, out of a pure heart and a good ______ and unfeigned faith;”? (1:5, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1timothy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sound: “… for liars, for perjurers, and for any other thing contrary to the sound doctrine;”",
+    "options" : [
+      "sexually",
+      "display",
+      "sound",
+      "worthy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… for liars, for perjurers, and for any other thing contrary to the ______ doctrine;”? (1:10, WEB)",
+    "reference" : "1 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Christians differ over the restriction's scope, its setting and the meaning of several terms. The question should distinguish what Paul says from applications about every ministry role. The difficult reference to salvation through childbearing should not be turned into a claim that women earn salvation by having children.",
+    "options" : [
+      "The surrounding chapter has no concern for prayer or conduct.",
+      "The text plainly teaches that bearing children purchases salvation.",
+      "Christians differ over the restriction's scope, its setting and the meaning of several terms.",
+      "Every tradition applies every detail identically."
+    ],
+    "prompt" : "Why should the instructions about teaching and authority be explained with interpretive care? (2:8-15)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies holy: “I desire therefore that the men in every place pray, lifting up holy hands without wrath and doubting.”",
+    "options" : [
+      "proud",
+      "wicked",
+      "rich",
+      "holy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “I desire therefore that the men in every place pray, lifting up ______ hands without wrath and doubting.”? (2:8, WEB)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… all people to be saved and come to full knowledge of the truth.”",
+    "options" : [
+      "truth"
+    ],
+    "prompt" : "Complete the quotation: “… all people to be saved and come to full knowledge of the ____.” (2:4, WEB)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… a preacher and an apostle (I am telling the truth in Christ, not lying), a teacher of the Gentiles in faith and truth.” The missing terms belong in that order.",
+    "options" : [
+      "apostle faith"
+    ],
+    "prompt" : "Supply the missing words in order: “… a preacher and an ____ (I am telling the truth in Christ, not lying), a teacher of the Gentiles in and truth.” (2:7, WEB)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “for kings and all who are in high places; that we may lead a tranquil and quiet life in all godliness and reverence.”",
+    "options" : [
+      "kings"
+    ],
+    "prompt" : "Complete the quotation: “for ____ and all who are in high places; that we may lead a tranquil and quiet life in all godliness and reverence.” (2:2, WEB)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… in decent clothing, with modesty and propriety; not just with braided hair, gold, pearls, or expensive clothing;” It says gold, not clay.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… in decent clothing, with modesty and propriety; not just with braided hair, clay, pearls, or expensive clothing;” (2:9, WEB)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Timothy 2:5 uses Christ: “… is one God, and one mediator between God and men, the man Christ Jesus,”",
+    "options" : [
+      "Stephen",
+      "Christ",
+      "Zophar",
+      "Nebuchadnezzar"
+    ],
+    "prompt" : "Which word completes “… is one God, and one mediator between God and men, the man ______ Jesus,”? (2:5, WEB)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1timothy",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “But I don't permit a woman to teach, nor to exercise authority over a man, but to be in quietness.”; verse 14 reads “Adam wasn't deceived, but the woman, being deceived, has fallen into disobedience;”. These establish the first and second answers respectively.",
+    "options" : [
+      "doubting; Adam",
+      "Adam; woman",
+      "woman; Adam",
+      "woman; Luke"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But I don't permit a ______ to teach, nor to exercise authority over a man, but to be in quietness.” (2:12); “______ wasn't deceived, but the woman, being deceived, has fallen into disobedience;” (2:14, WEB)",
+    "reference" : "1 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Timothy 3:5 uses care: “… doesn't know how to rule his own house, how will he take care of the assembly of God?)”",
+    "options" : [
+      "care",
+      "testimony",
+      "spirit",
+      "pillar"
+    ],
+    "prompt" : "Which word completes “… doesn't know how to rule his own house, how will he take ______ of the assembly of God?)”? (3:5, WEB)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Moreover he must have good testimony from those who are outside, to avoid falling into reproach and the snare of the devil.” The missing terms belong in that order.",
+    "options" : [
+      "testimony snare"
+    ],
+    "prompt" : "Supply the missing words in order: “Moreover he must have good ____ from those who are outside, to avoid falling into reproach and the of the devil.” (3:7, WEB)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Demonstrated character, responsible conduct and faithfulness rather than wealth or celebrity. The course stresses character and service in church leadership. Traditions differ about some role and gender applications, but impressive status is not the primary qualification listed.",
+    "options" : [
+      "Money is the central test for every leader.",
+      "Personal fame automatically proves qualification.",
+      "Conduct toward family and others is declared irrelevant.",
+      "Demonstrated character, responsible conduct and faithfulness rather than wealth or celebrity."
+    ],
+    "prompt" : "What pattern dominates the stated qualifications for overseers and deacons? (3:1-13)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the assembly of the living God, the pillar and ground of the truth.”; the second reads “… the flesh, Justified in the spirit, Seen by angels, Preached among the nations, Believed on in the world, And received up in glory.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "truth nations"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the assembly of the living God, the pillar and ground of the ____.” (3:15); “… the flesh, Justified in the spirit, Seen by angels, Preached among the , Believed on in the world, And received up in glory.” (3:16, WEB)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Let them also first be tested; then let them serve as deacons, if they are blameless.” It says first, not second.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Let them also second be tested; then let them serve as deacons, if they are blameless.” (3:10, WEB)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “The overseer therefore must be without reproach, the husband of one wife, temperate, sensible, modest, hospitable, good at teaching;”",
+    "options" : [
+      "wife"
+    ],
+    "prompt" : "Complete the quotation: “The overseer therefore must be without reproach, the husband of one ____, temperate, sensible, modest, hospitable, good at teaching;” (3:2, WEB)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wine: “… the same way, must be reverent, not double-tongued, not addicted to much wine, not greedy for money;”",
+    "options" : [
+      "figs",
+      "wine",
+      "barley",
+      "grain"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the same way, must be reverent, not double-tongued, not addicted to much ______, not greedy for money;”? (3:8, WEB)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “not a drinker, not violent, not greedy for money, but gentle, not quarrelsome, not covetous;”",
+    "options" : [
+      "drinker"
+    ],
+    "prompt" : "Complete the quotation: “not a ____, not violent, not greedy for money, but gentle, not quarrelsome, not covetous;” (3:3, WEB)",
+    "reference" : "1 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Timothy 4:6 uses faith: “… a good servant of Christ Jesus, nourished in the words of the faith, and of the good doctrine which you have followed.”",
+    "options" : [
+      "godliness",
+      "Don't",
+      "fables",
+      "faith"
+    ],
+    "prompt" : "Which word completes “… a good servant of Christ Jesus, nourished in the words of the ______, and of the good doctrine which you have followed.”? (4:6, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But refuse profane and old wives' fables. Exercise yourself toward godliness.” The missing terms belong in that order.",
+    "options" : [
+      "wives Exercise"
+    ],
+    "prompt" : "Supply the missing words in order: “But refuse profane and old ____' fables. yourself toward godliness.” (4:7, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… an example to those who believe, in word, in your way of life, in love, in spirit, in faith, and in purity.”; verse 13 reads “Until I come, pay attention to reading, to exhortation, and to teaching.”. These establish the first and second answers respectively.",
+    "options" : [
+      "life; teaching",
+      "life; counsel",
+      "sacrifice; teaching",
+      "teaching; life"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… an example to those who believe, in word, in your way of ______, in love, in spirit, in faith, and in purity.” (4:12); “Until I come, pay attention to reading, to exhortation, and to ______.” (4:13, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “through the hypocrisy of men who speak lies, branded in their own conscience as with a hot iron;”",
+    "options" : [
+      "conscience"
+    ],
+    "prompt" : "Complete the quotation: “through the hypocrisy of men who speak lies, branded in their own ____ as with a hot iron;” (4:2, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… was given to you by prophecy, with the laying on of the hands of the elders.”; the second reads “… your teaching. Continue in these things, for in doing this you will save both yourself and those who hear you.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "hands save"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… was given to you by prophecy, with the laying on of the ____ of the elders.” (4:14); “… your teaching. Continue in these things, for in doing this you will both yourself and those who hear you.” (4:16, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… commanding to abstain from foods which God created to be received with thanksgiving by those who believe and know the truth.”",
+    "options" : [
+      "thanksgiving"
+    ],
+    "prompt" : "Complete the quotation: “… commanding to abstain from foods which God created to be received with ____ by those who believe and know the truth.” (4:3, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For to this end we both labor and suffer reproach, because we have set our trust in the living God, who is the Savior of all …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For to this end we both labor and suffer reproach, because we have set our trust in the living God, who is the Savior of all …” (4:10, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies promise: “… has some value, but godliness has value for all things, having the promise of the life which is now, and of that which is to come.”",
+    "options" : [
+      "promise",
+      "judgments",
+      "testimony",
+      "testimonies"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… has some value, but godliness has value for all things, having the ______ of the life which is now, and of that which is to come.”? (4:8, WEB)",
+    "reference" : "1 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “But if any widow has children or grandchildren, let them learn first to show piety towards their own family, and to repay their parents, for this …”",
+    "options" : [
+      "widow"
+    ],
+    "prompt" : "Complete the quotation: “But if any ____ has children or grandchildren, let them learn first to show piety towards their own family, and to repay their parents, for this …” (5:4, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “Let the elders who rule well be counted worthy of double honor, especially those who labor in the word and in teaching.”; verse 21 reads “I charge you in the sight of God, and Christ Jesus, and the chosen angels, that you observe these things without prejudice, doing nothing by partiality.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jesus; worthy",
+      "worthy; Jesus",
+      "charge; Jesus",
+      "worthy; Balak"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Let the elders who rule well be counted ______ of double honor, especially those who labor in the word and in teaching.” (5:17); “I charge you in the sight of God, and Christ ______, and the chosen angels, that you observe these things without prejudice, doing nothing by partiality.” (5:21, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I desire therefore that the younger widows marry, bear children, rule the household, and give no occasion to the adversary for reviling.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I desire therefore that the younger widows marry, bear children, rule the household, and give no occasion to the adversary for reviling.” (5:14, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Timothy 5:8 uses faith: “… for his own, and especially his own household, he has denied the faith, and is worse than an unbeliever.”",
+    "options" : [
+      "men's",
+      "sake",
+      "faith",
+      "purity"
+    ],
+    "prompt" : "Which word completes “… for his own, and especially his own household, he has denied the ______, and is worse than an unbeliever.”? (5:8, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… hands hastily on no one, neither be a participant in other men's sins. Keep yourself pure.”; the second reads “Be no longer a drinker of water only, but use a little wine for your stomach's sake and your frequent infirmities.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sins water"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… hands hastily on no one, neither be a participant in other men's ____. Keep yourself pure.” (5:22); “Be no longer a drinker of only, but use a little wine for your stomach's sake and your frequent infirmities.” (5:23, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies learn: “Besides, they also learn to be idle, going about from house to house. Not only idle, but also gossips and busybodies, saying things which they ought …”",
+    "options" : [
+      "stomach's",
+      "children",
+      "learn",
+      "relieve"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Besides, they also ______ to be idle, going about from house to house. Not only idle, but also gossips and busybodies, saying things which they ought …”? (5:13, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… has brought up children, if she has been hospitable to strangers, if she has washed the saints' feet, if she has relieved the afflicted, and if …” The missing terms belong in that order.",
+    "options" : [
+      "strangers washed"
+    ],
+    "prompt" : "Supply the missing words in order: “… has brought up children, if she has been hospitable to ____, if she has the saints' feet, if she has relieved the afflicted, and if …” (5:10, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now she who is a widow indeed, and desolate, has her hope set on God, and continues in petitions and prayers night and day.”",
+    "options" : [
+      "hope"
+    ],
+    "prompt" : "Complete the quotation: “Now she who is a widow indeed, and desolate, has her ____ set on God, and continues in petitions and prayers night and day.” (5:5, WEB)",
+    "reference" : "1 Timothy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Timothy 6:5 uses truth: “constant friction of people of corrupt minds and destitute of the truth, who suppose that godliness is a means of gain. Withdraw yourself from such.”",
+    "options" : [
+      "fear",
+      "truth",
+      "wisdom",
+      "grief"
+    ],
+    "prompt" : "Which word completes “constant friction of people of corrupt minds and destitute of the ______, who suppose that godliness is a means of gain. Withdraw yourself from such.”? (6:5, WEB)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… determined to be rich fall into a temptation and a snare and many foolish and harmful lusts, such as drown men in ruin and destruction.” The missing terms belong in that order.",
+    "options" : [
+      "rich ruin"
+    ],
+    "prompt" : "Supply the missing words in order: “… determined to be ____ fall into a temptation and a snare and many foolish and harmful lusts, such as drown men in and destruction.” (6:9, WEB)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “For the love of money is a root of all kinds of evil. Some have been led astray from the faith in their greed, and have …”",
+    "options" : [
+      "anger",
+      "understanding",
+      "love",
+      "joy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For the ______ of money is a root of all kinds of evil. Some have been led astray from the faith in their greed, and have …”? (6:10, WEB)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Fight the good fight of faith. Lay hold of the eternal life to which you were called, and you confessed the good confession in the sight …” It says faith, not fall.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Fight the good fight of fall. Lay hold of the eternal life to which you were called, and you confessed the good confession in the sight …” (6:12, WEB)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It warns against misplaced desire and reliance on wealth while commanding generosity. Paul addresses contentment, desire and the responsibilities of the rich. The text does not say every possession is intrinsically evil or that wealth proves God's favor.",
+    "options" : [
+      "It warns against misplaced desire and reliance on wealth while commanding generosity.",
+      "Money itself is identified as the cause of every possible sin.",
+      "The rich are told to refuse all generosity.",
+      "Wealth automatically proves spiritual maturity."
+    ],
+    "prompt" : "How does the warning about the love of money differ from a claim that money itself is the root of every evil? (6:6-10, 17-19)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “he is conceited, knowing nothing, but obsessed with arguments, disputes, and word battles, from which come envy, strife, reviling, evil suspicions,”",
+    "options" : [
+      "disputes"
+    ],
+    "prompt" : "Complete the quotation: “he is conceited, knowing nothing, but obsessed with arguments, ____, and word battles, from which come envy, strife, reviling, evil suspicions,” (6:4, WEB)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Those who have believing masters, let them not despise them, because they are brothers, but rather let them serve them, because those who partake of the …”",
+    "options" : [
+      "despise"
+    ],
+    "prompt" : "Complete the quotation: “Those who have believing masters, let them not ____ them, because they are brothers, but rather let them serve them, because those who partake of the …” (6:2, WEB)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1timothy",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… times he will show, who is the blessed and only Ruler, the King of kings, and Lord of lords;”; verse 17 reads “… in this present world that they not be haughty, nor have their hope set on the uncertainty of riches, but on the living God, who richly …”. These establish the first and second answers respectively.",
+    "options" : [
+      "hope; King",
+      "King; hope",
+      "King; righteousness",
+      "husband; hope"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… times he will show, who is the blessed and only Ruler, the ______ of kings, and Lord of lords;” (6:15); “… in this present world that they not be haughty, nor have their ______ set on the uncertainty of riches, but on the living God, who richly …” (6:17, WEB)",
+    "reference" : "1 Timothy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

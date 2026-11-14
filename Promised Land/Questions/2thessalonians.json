@@ -1,0 +1,395 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Paul, Silvanus, and Timothy, to the assembly of the Thessalonians in God our Father, and the Lord Jesus Christ:”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “____, Silvanus, and Timothy, to the assembly of the Thessalonians in God our Father, and the Lord Jesus Christ:” (1:1, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… may be glorified in you, and you in him, according to the grace of our God and the Lord Jesus Christ.”; the second reads “… penalty: eternal destruction from the face of the Lord and from the glory of his might,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "grace glory"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… may be glorified in you, and you in him, according to the ____ of our God and the Lord Jesus Christ.” (1:12); “… penalty: eternal destruction from the face of the Lord and from the of his might,” (1:9, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… and to be admired among all those who have believed (because our testimony to you was believed) in that day.”; verse 11 reads “… you, that our God may count you worthy of your calling, and fulfill every desire of goodness and work of faith, with power;”. These establish the first and second answers respectively.",
+    "options" : [
+      "testimony; fulfill",
+      "testimony; affliction",
+      "fulfill; testimony",
+      "commandment; fulfill"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and to be admired among all those who have believed (because our ______ to you was believed) in that day.” (1:10); “… you, that our God may count you worthy of your calling, and ______ every desire of goodness and work of faith, with power;” (1:11, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… Lord Jesus is revealed from heaven with his mighty angels in flaming fire,”",
+    "options" : [
+      "admired",
+      "boast",
+      "appropriate",
+      "fire"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Lord Jesus is revealed from heaven with his mighty angels in flaming ______,”? (1:7, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Thessalonians 1:4 uses endure: “… and faith in all your persecutions and in the afflictions which you endure.”",
+    "options" : [
+      "endure",
+      "persecutions",
+      "love",
+      "believed"
+    ],
+    "prompt" : "Which word completes “… and faith in all your persecutions and in the afflictions which you ______.”? (1:4, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… those who don't know God, and to those who don't obey the Gospel of our Lord Jesus,” It says Gospel, not patience.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… those who don't know God, and to those who don't obey the patience of our Lord Jesus,” (1:8, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to God for you, brothers, even as it is appropriate, because your faith grows exceedingly, and the love of each and every one of you towards …”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “… to God for you, brothers, even as it is appropriate, because your ____ grows exceedingly, and the love of each and every one of you towards …” (1:3, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… an obvious sign of the righteous judgment of God, to the end that you may be counted worthy of the Kingdom of God, for which you …” The missing terms belong in that order.",
+    "options" : [
+      "righteous Kingdom"
+    ],
+    "prompt" : "Supply the missing words in order: “… an obvious sign of the ____ judgment of God, to the end that you may be counted worthy of the of God, for which you …” (1:5, WEB)",
+    "reference" : "2 Thessalonians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies breath: “… lawless one will be revealed, whom the Lord will kill with the breath of his mouth, and bring to nothing by the brightness of his coming;”",
+    "options" : [
+      "Spirit",
+      "breath",
+      "revealed",
+      "shaken"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… lawless one will be revealed, whom the Lord will kill with the ______ of his mouth, and bring to nothing by the brightness of his coming;”? (2:8, WEB)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The claim that the day of the Lord has already arrived. The passage aims to steady a disturbed community. Detailed identifications of the figures and chronology differ among Christians; a quiz should not silently make a modern identification the text's only possible meaning.",
+    "options" : [
+      "The confession that Jesus will return.",
+      "The claim that the community has received any letter at all.",
+      "The claim that the day of the Lord has already arrived.",
+      "The view that believers should stand firm."
+    ],
+    "prompt" : "What immediate error does Paul oppose before describing the man of lawlessness? (2:1-3)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… loved by the Lord, because God chose you from the beginning for salvation through sanctification of the Spirit and belief in the truth;”; verse 14 reads “to which he called you through our Gospel, for the obtaining of the glory of our Lord Jesus Christ.”. These establish the first and second answers respectively.",
+    "options" : [
+      "salvation; comes",
+      "Gospel; salvation",
+      "salvation; Gospel",
+      "praise; Gospel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… loved by the Lord, because God chose you from the beginning for ______ through sanctification of the Spirit and belief in the truth;” (2:13); “to which he called you through our ______, for the obtaining of the glory of our Lord Jesus Christ.” (2:14, WEB)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… wickedness for those who are being lost, because they didn't receive the love of the truth, that they might be saved.” It says love, not righteousness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… wickedness for those who are being lost, because they didn't receive the righteousness of the truth, that they might be saved.” (2:10, WEB)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For the mystery of lawlessness already works. Only there is one who restrains now, until he is taken out of the way.” The missing terms belong in that order.",
+    "options" : [
+      "lawlessness way"
+    ],
+    "prompt" : "Supply the missing words in order: “For the mystery of ____ already works. Only there is one who restrains now, until he is taken out of the .” (2:7, WEB)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… word, or by letter as from us, saying that the day of Christ had come.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… word, or by letter as from us, saying that the day of ____ had come.” (2:2, WEB)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Thessalonians 2:4 uses temple: “… or that is worshiped; so that he sits as God in the temple of God, setting himself up as God.”",
+    "options" : [
+      "basin",
+      "house",
+      "temple",
+      "throne"
+    ],
+    "prompt" : "Which word completes “… or that is worshiped; so that he sits as God in the ______ of God, setting himself up as God.”? (2:4, WEB)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… will not be, unless the departure comes first, and the man of sin is revealed, the son of destruction,”",
+    "options" : [
+      "sin"
+    ],
+    "prompt" : "Complete the quotation: “… will not be, unless the departure comes first, and the man of ____ is revealed, the son of destruction,” (2:3, WEB)",
+    "reference" : "2 Thessalonians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For we hear of some who walk among you in rebellion, who don't work at all, but are busybodies.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For we hear of some who walk among you in rebellion, who don't work at all, but are busybodies.” (3:11, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “neither did we eat bread from anyone's hand without paying for it, but in labor and travail worked night and day, that we might not burden …” The missing terms belong in that order.",
+    "options" : [
+      "eat bread"
+    ],
+    "prompt" : "Supply the missing words in order: “neither did we ____ from anyone's hand without paying for it, but in labor and travail worked night and day, that we might not burden …” (3:8, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The greeting of me, Paul, with my own hand, which is the sign in every letter: this is how I write.”; the second reads “The grace of our Lord Jesus Christ be with you all. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Paul grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The greeting of me, ____, with my own hand, which is the sign in every letter: this is how I write.” (3:17); “The of our Lord Jesus Christ be with you all. Amen.” (3:18, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Thessalonians 3:5 uses love: “May the Lord direct your hearts into the love of God, and into the patience of Christ.”",
+    "options" : [
+      "fear",
+      "love",
+      "hope",
+      "shame"
+    ],
+    "prompt" : "Which word completes “May the Lord direct your hearts into the ______ of God, and into the patience of Christ.”? (3:5, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Finally, brothers, pray for us, that the word of the Lord may spread rapidly and be glorified, even as also with you;”",
+    "options" : [
+      "pray"
+    ],
+    "prompt" : "Complete the quotation: “Finally, brothers, ____ for us, that the word of the Lord may spread rapidly and be glorified, even as also with you;” (3:1, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “If any man doesn't obey our word in this letter, note that man, that you have no company with him, to the end that he may …”; verse 15 reads “Don't count him as an enemy, but admonish him as a brother.”. These establish the first and second answers respectively.",
+    "options" : [
+      "brother; enemy",
+      "enemy; letter",
+      "letter; busybodies",
+      "letter; enemy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “If any man doesn't obey our word in this ______, note that man, that you have no company with him, to the end that he may …” (3:14); “Don't count him as an ______, but admonish him as a brother.” (3:15, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jesus: “… those who are that way, we command and exhort in the Lord Jesus Christ, that with quietness they work, and eat their own bread.”",
+    "options" : [
+      "Gallio",
+      "Demetrius",
+      "Jesus",
+      "Mary"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… those who are that way, we command and exhort in the Lord ______ Christ, that with quietness they work, and eat their own bread.”? (3:12, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2thessalonians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now we command you, brothers, in the name of our Lord Jesus Christ, that you withdraw yourselves from every brother who walks in rebellion, and not …”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “Now we command you, brothers, in the name of our Lord Jesus ____, that you withdraw yourselves from every brother who walks in rebellion, and not …” (3:6, WEB)",
+    "reference" : "2 Thessalonians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -1,0 +1,3135 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 1:4 uses Hittites: “… to the great river, the river Euphrates, all the land of the Hittites, and to the great sea toward the going down of the sun, shall …”",
+    "options" : [
+      "officers",
+      "Hittites",
+      "courageous",
+      "prosperous"
+    ],
+    "prompt" : "Which word completes “… to the great river, the river Euphrates, all the land of the ______, and to the great sea toward the going down of the sun, shall …”? (1:4, WEB)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Your wives, your little ones, and your cattle, shall abide in the land which Moses gave you beyond the Jordan; but you shall pass over before …”; the second reads “until Yahweh have given your brothers rest, as he has given you, and they also have possessed the land which Yahweh your God gives them: then …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "abide rest"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Your wives, your little ones, and your cattle, shall ____ in the land which Moses gave you beyond the Jordan; but you shall pass over before …” (1:14); “until Yahweh have given your brothers , as he has given you, and they also have possessed the land which Yahweh your God gives them: then …” (1:15, WEB)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 1:6 records: “Be strong and of good courage; for you shall cause this people to inherit the land which I swore to their fathers to give them.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD told Joshua to be strong and courageous. (1:6-9)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies three: “… of the camp, and command the people, saying, Prepare food; for within three days you are to pass over this Jordan, to go in to possess …”",
+    "options" : [
+      "three",
+      "seventeen",
+      "thousand",
+      "fourth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of the camp, and command the people, saying, Prepare food; for within ______ days you are to pass over this Jordan, to go in to possess …”? (1:11, WEB)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “To the Reubenites, and to the Gadites, and to the half-tribe of Manasseh, spoke Joshua, saying,”; verse 13 reads “Remember the word which Moses the servant of Yahweh commanded you, saying, Yahweh your God gives you rest, and will give you this land.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Manasseh; judge",
+      "Eliphaz; servant",
+      "Manasseh; servant",
+      "servant; Manasseh"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “To the Reubenites, and to the Gadites, and to the half-tribe of ______, spoke Joshua, saying,” (1:12); “Remember the word which Moses the ______ of Yahweh commanded you, saying, Yahweh your God gives you rest, and will give you this land.” (1:13, WEB)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… able to stand before you all the days of your life. As I was with Moses, so I will be with you; I will not fail …” The missing terms belong in that order.",
+    "options" : [
+      "life Moses"
+    ],
+    "prompt" : "Supply the missing words in order: “… able to stand before you all the days of your ____. As I was with , so I will be with you; I will not fail …” (1:5, WEB)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Then Joshua commanded the officers of the people, saying,” It says Joshua, not Daniel.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Then Daniel commanded the officers of the people, saying,” (1:10, WEB)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Moses my servant is dead; now therefore arise, go over this Jordan, you, and all this people, to the land which I do give to them, …”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “Moses my servant is dead; now therefore arise, go over this ____, you, and all this people, to the land which I do give to them, …” (1:2, WEB)",
+    "reference" : "Joshua 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “It was told the king of Jericho, saying, Behold, there came men in here tonight of the children of Israel to search out the land.”",
+    "options" : [
+      "Jericho"
+    ],
+    "prompt" : "Complete the quotation: “It was told the king of ____, saying, Behold, there came men in here tonight of the children of Israel to search out the land.” (2:2, WEB)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies kings: “… you came out of Egypt; and what you did to the two kings of the Amorites, who were beyond the Jordan, to Sihon and to Og, …”",
+    "options" : [
+      "rulers",
+      "soldiers",
+      "kings",
+      "elder"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you came out of Egypt; and what you did to the two ______ of the Amorites, who were beyond the Jordan, to Sihon and to Og, …”? (2:10, WEB)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… pursued after them the way to the Jordan to the fords: and as soon as those who pursued after them were gone out, they shut the …” The missing terms belong in that order.",
+    "options" : [
+      "Jordan pursued"
+    ],
+    "prompt" : "Supply the missing words in order: “… pursued after them the way to the ____ to the fords: and as soon as those who after them were gone out, they shut the …” (2:7, WEB)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Now therefore, please swear to me by Yahweh, since I have dealt kindly with you, that you also will deal kindly with my father's house, and …” It says please, not spies.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Now therefore, spies swear to me by Yahweh, since I have dealt kindly with you, that you also will deal kindly with my father's house, and …” (2:12, WEB)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 2:6 records: “But she had brought them up to the roof, and hid them with the stalks of flax, which she had laid in order on the roof.”",
+    "options" : [
+      "roof"
+    ],
+    "prompt" : "In this paraphrase, rahab hid the two spies on the ____ of her house. (2:6)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Rahab is an outsider who responds to what she has heard of God. The course uses her story to show that ethnicity alone does not exclude someone who turns toward God.",
+    "options" : [
+      "She asks Israel to worship her.",
+      "She recognizes the LORD's authority and seeks refuge for her household.",
+      "She claims that Jericho's gods defeated the LORD.",
+      "She says no rescue is needed."
+    ],
+    "prompt" : "Why does Rahab's confession matter alongside her protection of the spies? (2:8-14)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “The men said to her, Our life for yours, if you don't utter this our business; and it shall be, when Yahweh gives us the land, …”; verse 16 reads “She said to them, Get you to the mountain, lest the pursuers light on you; and hide yourselves there three days, until the pursuers be returned: …”. These establish the first and second answers respectively.",
+    "options" : [
+      "life; light",
+      "life; fear",
+      "refuge; light",
+      "light; life"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The men said to her, Our ______ for yours, if you don't utter this our business; and it shall be, when Yahweh gives us the land, …” (2:14); “She said to them, Get you to the mountain, lest the pursuers ______ on you; and hide yourselves there three days, until the pursuers be returned: …” (2:16, WEB)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 2:5 uses overtake: “… men went I don't know: pursue after them quickly; for you will overtake them.”",
+    "options" : [
+      "overtake",
+      "above",
+      "beneath",
+      "Truly"
+    ],
+    "prompt" : "Which word completes “… men went I don't know: pursue after them quickly; for you will ______ them.”? (2:5, WEB)",
+    "reference" : "Joshua 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… in the morning; and they removed from Shittim, and came to the Jordan, he and all the children of Israel; and they lodged there before they …”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “… in the morning; and they removed from Shittim, and came to the ____, he and all the children of Israel; and they lodged there before they …” (3:1, WEB)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… the ark of the covenant of the Lord of all the earth passes over before you into the Jordan.”; verse 13 reads “… bear the ark of Yahweh, the Lord of all the earth, shall rest in the waters of the Jordan, that the waters of the Jordan shall …”. These establish the first and second answers respectively.",
+    "options" : [
+      "cubits; rest",
+      "passes; rest",
+      "rest; passes",
+      "passes; refuge"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the ark of the covenant of the Lord of all the earth ______ over before you into the Jordan.” (3:11); “… bear the ark of Yahweh, the Lord of all the earth, shall ______ in the waters of the Jordan, that the waters of the Jordan shall …” (3:13, WEB)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bear: “You shall command the priests who bear the ark of the covenant, saying, When you are come to the brink of the waters of the Jordan, …”",
+    "options" : [
+      "goats",
+      "bull",
+      "bear",
+      "camels"
+    ],
+    "prompt" : "Which detail belongs in this passage: “You shall command the priests who ______ the ark of the covenant, saying, When you are come to the brink of the waters of the Jordan, …”? (3:8, WEB)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… spoke to the priests, saying, Take up the ark of the covenant, and pass over before the people. They took up the ark of the covenant, …” The missing terms belong in that order.",
+    "options" : [
+      "priests ark"
+    ],
+    "prompt" : "Supply the missing words in order: “… spoke to the ____, saying, Take up the ark of the covenant, and pass over before the people. They took up the of the covenant, …” (3:6, WEB)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 3:14 records: “It happened, when the people removed from their tents, to pass over the Jordan, the priests who bore the ark of the covenant being before the people;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priests carried the ark into the Jordan River. (3:14-15)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Joshua said, Hereby you shall know that the living God is among you, and that he will without fail drive out from before you the Canaanite, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Joshua said, Hereby you shall know that the living God is among you, and that he will without fail drive out from before you the Canaanite, …” (3:10, WEB)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Jordan; and all Israel passed over on dry ground, until all the nation were passed clean over the Jordan.”; the second reads “… Sea, were wholly cut off: and the people passed over right against Jericho.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "nation Jericho"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Jordan; and all Israel passed over on dry ground, until all the ____ were passed clean over the Jordan.” (3:17); “… Sea, were wholly cut off: and the people passed over right against .” (3:16, WEB)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 3:3 uses covenant: “… they commanded the people, saying, When you see the ark of the covenant of Yahweh your God, and the priests the Levites bearing it, then you …”",
+    "options" : [
+      "covenant",
+      "testimonies",
+      "statutes",
+      "commandments"
+    ],
+    "prompt" : "Which word completes “… they commanded the people, saying, When you see the ark of the ______ of Yahweh your God, and the priests the Levites bearing it, then you …”? (3:3, WEB)",
+    "reference" : "Joshua 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the first month, and encamped in Gilgal, on the east border of Jericho.”; the second reads “He spoke to the children of Israel, saying, When your children shall ask their fathers in time to come, saying, What mean these stones?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Jericho Israel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the first month, and encamped in Gilgal, on the east border of ____.” (4:19); “He spoke to the children of , saying, When your children shall ask their fathers in time to come, saying, What mean these stones?” (4:21, WEB)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Because the waters of the Jordan were cut off before the ark of the covenant of Yahweh; when it passed over the Jordan, the waters of …” The missing terms belong in that order.",
+    "options" : [
+      "ark covenant"
+    ],
+    "prompt" : "Supply the missing words in order: “… Because the waters of the Jordan were cut off before the ____ of the of Yahweh; when it passed over the Jordan, the waters of …” (4:7, WEB)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 4:5 uses Joshua: “and Joshua said to them, Pass over before the ark of Yahweh your God into the midst of the Jordan, and take up every man of …”",
+    "options" : [
+      "Belshazzar",
+      "Joshua",
+      "Josiah",
+      "Levi"
+    ],
+    "prompt" : "Which word completes “and ______ said to them, Pass over before the ark of Yahweh your God into the midst of the Jordan, and take up every man of …”? (4:5, WEB)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The children of Reuben, and the children of Gad, and the half-tribe of Manasseh, passed over armed before the children of Israel, as Moses spoke to …” It says Gad, not Aaron.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The children of Reuben, and the children of Aaron, and the half-tribe of Manasseh, passed over armed before the children of Israel, as Moses spoke to …” (4:12, WEB)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… they feared him, as they feared Moses, all the days of his life.”; verse 18 reads “… of the Jordan returned to their place, and went over all its banks, as before.”. These establish the first and second answers respectively.",
+    "options" : [
+      "life; banks",
+      "life; days",
+      "salvation; banks",
+      "banks; life"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… they feared him, as they feared Moses, all the days of his ______.” (4:14); “… of the Jordan returned to their place, and went over all its ______, as before.” (4:18, WEB)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 4:9 records: “Joshua set up twelve stones in the midst of the Jordan, in the place where the feet of the priests who bore the ark of the covenant stood: and they are there to this day.”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "In this paraphrase, twelve stones were taken from the middle of the ____ as a memorial. (4:9)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies priests: “For the priests who bore the ark stood in the midst of the Jordan, until everything was finished that Yahweh commanded Joshua to speak to the …”",
+    "options" : [
+      "shepherds",
+      "ruler",
+      "priests",
+      "judge"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For the ______ who bore the ark stood in the midst of the Jordan, until everything was finished that Yahweh commanded Joshua to speak to the …”? (4:10, WEB)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… command you them, saying, Take hence out of the midst of the Jordan, out of the place where the priests' feet stood firm, twelve stones, and …”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “… command you them, saying, Take hence out of the midst of the ____, out of the place where the priests' feet stood firm, twelve stones, and …” (4:3, WEB)",
+    "reference" : "Joshua 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 5:4 uses Joshua: “This is the cause why Joshua did circumcise: all the people who came forth out of Egypt, who were males, even all the men of war, …”",
+    "options" : [
+      "Isaiah",
+      "Joshua",
+      "Asher",
+      "Cyrus"
+    ],
+    "prompt" : "Which word completes “This is the cause why ______ did circumcise: all the people who came forth out of Egypt, who were males, even all the men of war, …”? (5:4, WEB)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… any more; but they ate of the fruit of the land of Canaan that year.”; the second reads “… shoe from off your foot; for the place whereon you stand is holy. Joshua did so.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Canaan holy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… any more; but they ate of the fruit of the land of ____ that year.” (5:12); “… shoe from off your foot; for the place whereon you stand is . Joshua did so.” (5:15, WEB)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… Egypt from off you. Therefore the name of that place was called Gilgal, to this day.”; verse 11 reads “… land on the next day after the Passover, unleavened cakes and parched grain, in the same day.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Gilgal; meat",
+      "grain; Gilgal",
+      "Damascus; grain",
+      "Gilgal; grain"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Egypt from off you. Therefore the name of that place was called ______, to this day.” (5:9); “… land on the next day after the Passover, unleavened cakes and parched ______, in the same day.” (5:11, WEB)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Their children, whom he raised up in their place, them did Joshua circumcise: for they were uncircumcised, because they had not circumcised them by the way.” It says circumcise, not prince.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Their children, whom he raised up in their place, them did Joshua prince: for they were uncircumcised, because they had not circumcised them by the way.” (5:7, WEB)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… out were circumcised; but all the people who were born in the wilderness by the way as they came forth out of Egypt, they had not …” The missing terms belong in that order.",
+    "options" : [
+      "circumcised Egypt"
+    ],
+    "prompt" : "Supply the missing words in order: “… out were ____; but all the people who were born in the wilderness by the way as they came forth out of , they had not …” (5:5, WEB)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nation: “… children of Israel walked forty years in the wilderness, until all the nation, even the men of war who came forth out of Egypt, were consumed, …”",
+    "options" : [
+      "praise",
+      "nation",
+      "truth",
+      "redemption"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… children of Israel walked forty years in the wilderness, until all the ______, even the men of war who came forth out of Egypt, were consumed, …”? (5:6, WEB)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 5:13 records: “… Jericho, that he lifted up his eyes and looked, and, behold, there stood a man over against him with his sword drawn in his hand: and Joshua went to him, and said to him, Are you …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joshua met a man with a drawn sword who said he was commander of the LORD's army. (5:13-14)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of the Amorites, who were beyond the Jordan westward, and all the kings of the Canaanites, who were by the sea, heard how that Yahweh had …”",
+    "options" : [
+      "kings"
+    ],
+    "prompt" : "Complete the quotation: “… of the Amorites, who were beyond the Jordan westward, and all the ____ of the Canaanites, who were by the sea, heard how that Yahweh had …” (5:1, WEB)",
+    "reference" : "Joshua 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… horns before Yahweh passed on, and blew the trumpets: and the ark of the covenant of Yahweh followed them.” The missing terms belong in that order.",
+    "options" : [
+      "ark covenant"
+    ],
+    "prompt" : "Supply the missing words in order: “… horns before Yahweh passed on, and blew the trumpets: and the ____ of the of Yahweh followed them.” (6:8, WEB)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The account belongs to a particular ancient conquest narrative. The course discusses ancient battle rhetoric and the difficulty of the violence; it does not make this a general command for modern warfare.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joshua's account of Jericho gives later readers an unrestricted command to destroy cities they dislike. (6:1-21)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 6:20 records: “… trumpets; and it happened, when the people heard the sound of the trumpet, that the people shouted with a great shout, and the wall fell down flat, so that the people went up into the city, …”",
+    "options" : [
+      "Jericho"
+    ],
+    "prompt" : "In this paraphrase, the walls of ____ fell after the people marched around them. (6:20)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the seventh day you shall compass the city seven times, and the priests shall blow the trumpets.”",
+    "options" : [
+      "priests"
+    ],
+    "prompt" : "Complete the quotation: “… the seventh day you shall compass the city seven times, and the ____ shall blow the trumpets.” (6:4, WEB)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 6:5 uses trumpet: “… with the ram's horn, and when you hear the sound of the trumpet, all the people shall shout with a great shout; and the wall of …”",
+    "options" : [
+      "morning",
+      "father's",
+      "edge",
+      "trumpet"
+    ],
+    "prompt" : "Which word completes “… with the ram's horn, and when you hear the sound of the ______, all the people shall shout with a great shout; and the wall of …”? (6:5, WEB)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The seven priests bearing the seven trumpets of rams' horns before the ark of Yahweh went on continually, and blew the trumpets: and the armed men …” It says seven, not seventeen.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The seventeen priests bearing the seven trumpets of rams' horns before the ark of Yahweh went on continually, and blew the trumpets: and the armed men …” (6:13, WEB)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Joshua: “Joshua commanded the people, saying, You shall not shout, nor let your voice be heard, neither shall any word proceed out of your mouth, until the …”",
+    "options" : [
+      "Eve",
+      "Nathan",
+      "Joshua",
+      "Hezekiah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “______ commanded the people, saying, You shall not shout, nor let your voice be heard, neither shall any word proceed out of your mouth, until the …”? (6:10, WEB)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Joshua said to the two men who had spied out the land, Go into the prostitute's house, and bring out there the woman, and all that …”; the second reads “… burnt the city with fire, and all that was therein; only the silver, and the gold, and the vessels of brass and of iron, they put …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "two silver"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Joshua said to the ____ men who had spied out the land, Go into the prostitute's house, and bring out there the woman, and all that …” (6:22); “… burnt the city with fire, and all that was therein; only the , and the gold, and the vessels of brass and of iron, they put …” (6:24, WEB)",
+    "reference" : "Joshua 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 7:5 uses six: “The men of Ai struck of them about thirty-six men; and they chased them from before the gate even to Shebarim, and struck them at the …”",
+    "options" : [
+      "eighty",
+      "seventeen",
+      "six",
+      "fifty"
+    ],
+    "prompt" : "Which word completes “The men of Ai struck of them about thirty-______ men; and they chased them from before the gate even to Shebarim, and struck them at the …”? (7:5, WEB)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Joshua said to Achan, My son, please give glory to Yahweh, the God of Israel, and make confession to him; and tell me now what you …”; the second reads “… all Israel with him, took Achan the son of Zerah, and the silver, and the mantle, and the wedge of gold, and his sons, and his …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "glory silver"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Joshua said to Achan, My son, please give ____ to Yahweh, the God of Israel, and make confession to him; and tell me now what you …” (7:19); “… all Israel with him, took Achan the son of Zerah, and the , and the mantle, and the wedge of gold, and his sons, and his …” (7:24, WEB)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to Ai, which is beside Beth Aven, on the east side of Bethel, and spoke to them, saying, Go up and spy out the land. The …”",
+    "options" : [
+      "Bethel"
+    ],
+    "prompt" : "Complete the quotation: “… to Ai, which is beside Beth Aven, on the east side of ____, and spoke to them, saying, Go up and spy out the land. The …” (7:2, WEB)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… say, Sanctify yourselves against tomorrow: for thus says Yahweh, the God of Israel, There is a devoted thing in the midst of you, Israel; you can …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… say, Sanctify yourselves against tomorrow: for thus says Yahweh, the God of Israel, There is a devoted thing in the midst of you, Israel; you can …” (7:13, WEB)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies covenant: “Israel has sinned; yes, they have even transgressed my covenant which I commanded them: yes, they have even taken of the devoted thing, and have also …”",
+    "options" : [
+      "judgment",
+      "commandments",
+      "testimonies",
+      "covenant"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Israel has sinned; yes, they have even transgressed my ______ which I commanded them: yes, they have even taken of the devoted thing, and have also …”? (7:11, WEB)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… he who is taken with the devoted thing shall be burnt with fire, he and all that he has; because he has transgressed the covenant of …”; verse 18 reads “… the son of Zabdi, the son of Zerah, of the tribe of Judah, was taken.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fire; Judah",
+      "fire; Job",
+      "Judah; fire",
+      "clothes; Judah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… he who is taken with the devoted thing shall be burnt with ______, he and all that he has; because he has transgressed the covenant of …” (7:15); “… the son of Zabdi, the son of Zerah, of the tribe of ______, was taken.” (7:18, WEB)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 7:20 records: “Achan answered Joshua, and said, Of a truth I have sinned against Yahweh, the God of Israel, and thus and thus have I done:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Achan took devoted things from Jericho and hid them in his tent. (7:20-21)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Joshua said, Alas, Lord Yahweh, why have you at all brought this people over the Jordan, to deliver us into the hand of the Amorites, to …” The missing terms belong in that order.",
+    "options" : [
+      "Joshua Jordan"
+    ],
+    "prompt" : "Supply the missing words in order: “____ said, Alas, Lord Yahweh, why have you at all brought this people over the , to deliver us into the hand of the Amorites, to …” (7:7, WEB)",
+    "reference" : "Joshua 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Only the cattle and the spoil of that city Israel took for prey to themselves, according to the word of Yahweh which he commanded Joshua.”; the second reads “… any iron: and they offered thereon burnt offerings to Yahweh, and sacrificed peace-offerings.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "cattle offerings"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Only the ____ and the spoil of that city Israel took for prey to themselves, according to the word of Yahweh which he commanded Joshua.” (8:27); “… any iron: and they offered thereon burnt offerings to Yahweh, and sacrificed peace-.” (8:31, WEB)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies appointed: “… against Israel to battle, he and all his people, at the time appointed, before the Arabah; but he didn't know that there was an ambush against …”",
+    "options" : [
+      "appointed",
+      "hurried",
+      "fled",
+      "turned"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… against Israel to battle, he and all his people, at the time ______, before the Arabah; but he didn't know that there was an ambush against …”? (8:14, WEB)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 8:2 records: “… to Ai and her king as you did to Jericho and her king: only the spoil of it, and the cattle of it, shall you take for a prey to yourselves: set you an ambush for …”",
+    "options" : [
+      "Ai"
+    ],
+    "prompt" : "In this paraphrase, joshua set an ambush for the city of ____. (8:2)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 8:6 uses first: “… city; for they will say, They flee before us, as at the first: so we will flee before them;”",
+    "options" : [
+      "sixteen",
+      "first",
+      "third",
+      "ninety"
+    ],
+    "prompt" : "Which word completes “… city; for they will say, They flee before us, as at the ______: so we will flee before them;”? (8:6, WEB)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “So Joshua arose, and all the people of war, to go up to Ai: and Joshua chose out thirty thousand men, the mighty men of valor, …”",
+    "options" : [
+      "Joshua"
+    ],
+    "prompt" : "Complete the quotation: “So ____ arose, and all the people of war, to go up to Ai: and Joshua chose out thirty thousand men, the mighty men of valor, …” (8:3, WEB)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “There was not a man left in Ai or Beth El, who didn't go out after Israel: and they left the city open, and pursued after …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “There was not a man left in Ai or Beth El, who didn't go out after Israel: and they left the city open, and pursued after …” (8:17, WEB)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… that the smoke of the city ascended, then they turned again, and killed the men of Ai.”; verse 24 reads “… made an end of killing all the inhabitants of Ai in the field, in the wilderness in which they pursued them, and they were all fallen …”. These establish the first and second answers respectively.",
+    "options" : [
+      "mustered; field",
+      "killed; land",
+      "field; killed",
+      "killed; field"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… that the smoke of the city ascended, then they turned again, and ______ the men of Ai.” (8:21); “… made an end of killing all the inhabitants of Ai in the ______, in the wilderness in which they pursued them, and they were all fallen …” (8:24, WEB)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… arose up early in the morning, and mustered the people, and went up, he and the elders of Israel, before the people to Ai.” The missing terms belong in that order.",
+    "options" : [
+      "mustered Israel"
+    ],
+    "prompt" : "Supply the missing words in order: “… arose up early in the morning, and ____ the people, and went up, he and the elders of , before the people to Ai.” (8:10, WEB)",
+    "reference" : "Joshua 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now therefore you are cursed, and there shall never fail to be of you bondservants, both wood cutters and drawers of water for the house of …”; the second reads “They answered Joshua, and said, Because it was certainly told your servants, how that Yahweh your God commanded his servant Moses to give you all the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "cursed servants"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now therefore you are ____, and there shall never fail to be of you bondservants, both wood cutters and drawers of water for the house of …” (9:23); “They answered Joshua, and said, Because it was certainly told your , how that Yahweh your God commanded his servant Moses to give you all the …” (9:24, WEB)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “It happened, when all the kings who were beyond the Jordan, in the hill-country, and in the lowland, and on all the shore of the great …”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “It happened, when all the kings who were beyond the ____, in the hill-country, and in the lowland, and on all the shore of the great …” (9:1, WEB)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 9:3 records: “But when the inhabitants of Gibeon heard what Joshua had done to Jericho and to Ai,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Gibeonites deceived Israel into making a treaty with them. (9:3-15)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of the congregation had sworn to them by Yahweh, the God of Israel. All the congregation murmured against the princes.” It says Israel, not Phinehas.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of the congregation had sworn to them by Yahweh, the God of Phinehas. All the congregation murmured against the princes.” (9:18, WEB)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 9:2 uses Joshua: “that they gathered themselves together, to fight with Joshua and with Israel, with one accord.”",
+    "options" : [
+      "Simeon",
+      "Eli",
+      "Isaac",
+      "Joshua"
+    ],
+    "prompt" : "Which word completes “that they gathered themselves together, to fight with ______ and with Israel, with one accord.”? (9:2, WEB)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “It happened at the end of three days after they had made a covenant with them, that they heard that they were their neighbors, and that …” The missing terms belong in that order.",
+    "options" : [
+      "three covenant"
+    ],
+    "prompt" : "Supply the missing words in order: “It happened at the end of ____ days after they had made a with them, that they heard that they were their neighbors, and that …” (9:16, WEB)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies third: “The children of Israel traveled, and came to their cities on the third day. Now their cities were Gibeon, and Chephirah, and Beeroth, and Kiriath Jearim.”",
+    "options" : [
+      "third",
+      "ninth",
+      "twelve",
+      "sixteen"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The children of Israel traveled, and came to their cities on the ______ day. Now their cities were Gibeon, and Chephirah, and Beeroth, and Kiriath Jearim.”? (9:17, WEB)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “But all the princes said to all the congregation, We have sworn to them by Yahweh, the God of Israel: now therefore we may not touch …”; verse 21 reads “… them, Let them live: so they became wood cutters and drawers of water to all the congregation, as the princes had spoken to them.”. These establish the first and second answers respectively.",
+    "options" : [
+      "kill; water",
+      "sworn; oil",
+      "water; sworn",
+      "sworn; water"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But all the princes said to all the congregation, We have ______ to them by Yahweh, the God of Israel: now therefore we may not touch …” (9:19); “… them, Let them live: so they became wood cutters and drawers of ______ to all the congregation, as the princes had spoken to them.” (9:21, WEB)",
+    "reference" : "Joshua 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Then Horam king of Gezer came up to help Lachish; and Joshua struck him and his people, until he had left him none remaining.”; the second reads “… remaining, according to all that he had done to Eglon; but he utterly destroyed it, and all the souls who were therein.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "king utterly"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Then Horam ____ of Gezer came up to help Lachish; and Joshua struck him and his people, until he had left him none remaining.” (10:33); “… remaining, according to all that he had done to Eglon; but he destroyed it, and all the souls who were therein.” (10:37, WEB)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Therefore Adoni-zedek king of Jerusalem sent to Hoham king of Hebron, and to Piram king of Jarmuth, and to Japhia king of Lachish, and to Debir …”",
+    "options" : [
+      "Hebron"
+    ],
+    "prompt" : "Complete the quotation: “Therefore Adoni-zedek king of Jerusalem sent to Hoham king of ____, and to Piram king of Jarmuth, and to Japhia king of Lachish, and to Debir …” (10:3, WEB)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 10:12 records: “… Joshua to Yahweh in the day when Yahweh delivered up the Amorites before the children of Israel; and he said in the sight of Israel, Sun, stand you still on Gibeon; You, Moon, in the valley …”",
+    "options" : [
+      "Gibeon"
+    ],
+    "prompt" : "In this paraphrase, joshua commanded the sun to stand still over ____. (10:12)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 10:8 uses fear: “Yahweh said to Joshua, Don't fear them: for I have delivered them into your hands; there shall not a man of them stand before you.”",
+    "options" : [
+      "fear",
+      "knowledge",
+      "righteousness",
+      "shame"
+    ],
+    "prompt" : "Which word completes “Yahweh said to Joshua, Don't ______ them: for I have delivered them into your hands; there shall not a man of them stand before you.”? (10:8, WEB)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… all the people returned to the camp to Joshua at Makkedah in peace: none moved his tongue against any of the children of Israel.” It says peace, not understanding.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… all the people returned to the camp to Joshua at Makkedah in understanding: none moved his tongue against any of the children of Israel.” (10:21, WEB)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “It happened, as they fled from before Israel, while they were at the descent of Beth Horon, that Yahweh cast down great stones from the sky …” The missing terms belong in that order.",
+    "options" : [
+      "fled Israel"
+    ],
+    "prompt" : "Supply the missing words in order: “It happened, as they ____ from before , while they were at the descent of Beth Horon, that Yahweh cast down great stones from the sky …” (10:11, WEB)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “It happened, when they brought forth those kings to Joshua, that Joshua called for all the men of Israel, and said to the chiefs of the …”; verse 29 reads “Joshua passed from Makkedah, and all Israel with him, to Libnah, and fought against Libnah:”. These establish the first and second answers respectively.",
+    "options" : [
+      "Joshua; fought",
+      "Nahum; fought",
+      "Joshua; trees",
+      "fought; Joshua"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It happened, when they brought forth those kings to ______, that Joshua called for all the men of Israel, and said to the chiefs of the …” (10:24); “Joshua passed from Makkedah, and all Israel with him, to Libnah, and ______ against Libnah:” (10:29, WEB)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies kings: “These five kings fled, and hid themselves in the cave at Makkedah.”",
+    "options" : [
+      "daughters",
+      "kings",
+      "ruler",
+      "father"
+    ],
+    "prompt" : "Which detail belongs in this passage: “These five ______ fled, and hid themselves in the cave at Makkedah.”? (10:16, WEB)",
+    "reference" : "Joshua 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Yahweh delivered them into the hand of Israel, and they struck them, and chased them to great Sidon, and to Misrephoth Maim, and to the valley …” The missing terms belong in that order.",
+    "options" : [
+      "Israel chased"
+    ],
+    "prompt" : "Supply the missing words in order: “Yahweh delivered them into the hand of ____, and they struck them, and them to great Sidon, and to Misrephoth Maim, and to the valley …” (11:8, WEB)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… them with the edge of the sword, and utterly destroyed them; as Moses the servant of Yahweh commanded.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… them with the edge of the sword, and utterly destroyed them; as Moses the servant of Yahweh commanded.” (11:12, WEB)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 11:4 uses shore: “… with them, much people, even as the sand that is on the sea-shore in multitude, with horses and chariots very many.”",
+    "options" : [
+      "tomorrow",
+      "shore",
+      "Hermon",
+      "Lebanon"
+    ],
+    "prompt" : "Which word completes “… with them, much people, even as the sand that is on the sea-______ in multitude, with horses and chariots very many.”? (11:4, WEB)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Joshua: “Joshua did to them as Yahweh bade him: he hamstrung their horses, and burnt their chariots with fire.”",
+    "options" : [
+      "Ruth",
+      "Joshua",
+      "Esther",
+      "Japheth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “______ did to them as Yahweh bade him: he hamstrung their horses, and burnt their chariots with fire.”? (11:9, WEB)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and to the kings who were on the north, in the hill-country, and in the Arabah south of Chinneroth, and in the lowland, and in the …”",
+    "options" : [
+      "kings"
+    ],
+    "prompt" : "Complete the quotation: “and to the ____ who were on the north, in the hill-country, and in the Arabah south of Chinneroth, and in the lowland, and in the …” (11:2, WEB)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “There was not a city that made peace with the children of Israel, save the Hivites the inhabitants of Gibeon: they took all in battle.”; the second reads “… destroy them, that they might have no favor, but that he might destroy them, as Yahweh commanded Moses.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "peace destroy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “There was not a city that made ____ with the children of Israel, save the Hivites the inhabitants of Gibeon: they took all in battle.” (11:19); “… destroy them, that they might have no favor, but that he might them, as Yahweh commanded Moses.” (11:20, WEB)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… these cities, and the cattle, the children of Israel took for a prey to themselves; but every man they struck with the edge of the sword, …”; verse 16 reads “… land, the hill-country, and all the South, and all the land of Goshen, and the lowland, and the Arabah, and the hill-country of Israel, and the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "prey; Goshen",
+      "Goshen; prey",
+      "Israel; Goshen",
+      "prey; Judah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… these cities, and the cattle, the children of Israel took for a ______ to themselves; but every man they struck with the edge of the sword, …” (11:14); “… land, the hill-country, and all the South, and all the land of ______, and the lowland, and the Arabah, and the hill-country of Israel, and the …” (11:16, WEB)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 11:5 records: “All these kings met together; and they came and encamped together at the waters of Merom, to fight with Israel.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joshua defeated a coalition of kings at the waters of Merom. (11:5-7)",
+    "reference" : "Joshua 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… whom Joshua and the children of Israel struck beyond the Jordan westward, from Baal Gad in the valley of Lebanon even to Mount Halak, that goes …” The missing terms belong in that order.",
+    "options" : [
+      "Jordan Gad"
+    ],
+    "prompt" : "Supply the missing words in order: “… whom Joshua and the children of Israel struck beyond the ____ westward, from Baal in the valley of Lebanon even to Mount Halak, that goes …” (12:7, WEB)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 12:5 uses king: “… the Geshurites and the Maacathites, and half Gilead, the border of Sihon king of Heshbon.”",
+    "options" : [
+      "king",
+      "prophets",
+      "wives",
+      "fathers"
+    ],
+    "prompt" : "Which word completes “… the Geshurites and the Maacathites, and half Gilead, the border of Sihon ______ of Heshbon.”? (12:5, WEB)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “the king of Eglon, one; the king of Gezer, one;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “the king of Eglon, one; the king of Gezer, one;” (12:12, WEB)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wilderness: “… lowland, and in the Arabah, and in the slopes, and in the wilderness, and in the South; the Hittite, the Amorite, and the Canaanite, the Perizzite, …”",
+    "options" : [
+      "fields",
+      "field",
+      "wilderness",
+      "heaven"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… lowland, and in the Arabah, and in the slopes, and in the ______, and in the South; the Hittite, the Amorite, and the Canaanite, the Perizzite, …”? (12:8, WEB)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the city that is in the middle of the valley, and half Gilead, even to the river Jabbok, the border of the children of Ammon;”",
+    "options" : [
+      "Gilead"
+    ],
+    "prompt" : "Complete the quotation: “… the city that is in the middle of the valley, and half ____, even to the river Jabbok, the border of the children of Ammon;” (12:2, WEB)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “the king of Madon, one; the king of Hazor, one;”; the second reads “the king of Kedesh, one; the king of Jokneam in Carmel, one;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Madon Carmel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “the king of ____, one; the king of Hazor, one;” (12:19); “the king of Kedesh, one; the king of Jokneam in , one;” (12:22, WEB)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “the king of Hormah, one; the king of Arad, one;”; verse 17 reads “the king of Tappuah, one; the king of Hepher, one;”. These establish the first and second answers respectively.",
+    "options" : [
+      "Tappuah; Arad",
+      "Achshaph; Tappuah",
+      "Arad; Jokneam",
+      "Arad; Tappuah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “the king of Hormah, one; the king of ______, one;” (12:14); “the king of ______, one; the king of Hepher, one;” (12:17, WEB)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 12:9 records: “the king of Jericho, one; the king of Ai, which is beside Bethel, one;”",
+    "options" : [
+      "Jericho"
+    ],
+    "prompt" : "In this paraphrase, joshua's list of defeated kings includes the king of ____. (12:9)",
+    "reference" : "Joshua 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 13:1 records: “Now Joshua was old and well stricken in years; and Yahweh said to him, You are old and well stricken in years, and there remains yet very much land to be possessed.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Some land still remained to be possessed when Joshua was old. (13:1)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the valley of the Arnon, and the city that is in the middle of the valley, and all the plain by Medeba;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the valley of the Arnon, and the city that is in the middle of the valley, and all the plain by Medeba;” (13:16, WEB)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “and Kiriathaim, and Sibmah, and Zereth-shahar in the mount of the valley,”; verse 23 reads “The border of the children of Reuben was the Jordan, and the border of it. This was the inheritance of the children of Reuben according to …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jordan; Zereth",
+      "Zereth; Jordan",
+      "allot; Jordan",
+      "Zereth; Jerusalem"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and Kiriathaim, and Sibmah, and ______-shahar in the mount of the valley,” (13:19); “The border of the children of Reuben was the ______, and the border of it. This was the inheritance of the children of Reuben according to …” (13:23, WEB)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… is in the middle of the valley, and all the plain of Medeba to Dibon;” The missing terms belong in that order.",
+    "options" : [
+      "plain Dibon"
+    ],
+    "prompt" : "Supply the missing words in order: “… is in the middle of the valley, and all the ____ of Medeba to ;” (13:9, WEB)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 13:6 uses inheritance: “… the children of Israel: only allot you it to Israel for an inheritance, as I have commanded you.”",
+    "options" : [
+      "inheritance",
+      "worship",
+      "life",
+      "offerings"
+    ],
+    "prompt" : "Which word completes “… the children of Israel: only allot you it to Israel for an ______, as I have commanded you.”? (13:6, WEB)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the border of Ekron northward, which is reckoned to the Canaanites; the five lords of the Philistines; the Gazites, and the Ashdodites, the Ashkelonites, the Gittites, …”",
+    "options" : [
+      "five"
+    ],
+    "prompt" : "Complete the quotation: “… the border of Ekron northward, which is reckoned to the Canaanites; the ____ lords of the Philistines; the Gazites, and the Ashdodites, the Ashkelonites, the Gittites, …” (13:3, WEB)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Their border was Jazer, and all the cities of Gilead, and half the land of the children of Ammon, to Aroer that is before Rabbah;”; the second reads “Moses gave inheritance to the half-tribe of Manasseh: and it was for the half-tribe of the children of Manasseh according to their families.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Gilead Manasseh"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Their border was Jazer, and all the cities of ____, and half the land of the children of Ammon, to Aroer that is before Rabbah;” (13:25); “Moses gave inheritance to the half-tribe of : and it was for the half-tribe of the children of Manasseh according to their families.” (13:29, WEB)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Moses: “… same was left of the remnant of the Rephaim); for these did Moses strike, and drove them out.”",
+    "options" : [
+      "Eli",
+      "Moses",
+      "Gad",
+      "Darius"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… same was left of the remnant of the Rephaim); for these did ______ strike, and drove them out.”? (13:12, WEB)",
+    "reference" : "Joshua 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Therefore Hebron became the inheritance of Caleb the son of Jephunneh the Kenizzite to this day; because that he wholly followed Yahweh, the God of Israel.”; the second reads “Joshua blessed him; and he gave Hebron to Caleb the son of Jephunneh for an inheritance.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Hebron Jephunneh"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Therefore ____ became the inheritance of Caleb the son of Jephunneh the Kenizzite to this day; because that he wholly followed Yahweh, the God of Israel.” (14:14); “Joshua blessed him; and he gave Hebron to Caleb the son of for an inheritance.” (14:13, WEB)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Forty: “Forty years old was I when Moses the servant of Yahweh sent me from Kadesh-barnea to spy out the land; and I brought him word again …”",
+    "options" : [
+      "six",
+      "Forty",
+      "two",
+      "seventy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “______ years old was I when Moses the servant of Yahweh sent me from Kadesh-barnea to spy out the land; and I brought him word again …”? (14:7, WEB)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then the children of Judah drew near to Joshua in Gilgal: and Caleb the son of Jephunneh the Kenizzite said to him, You know the thing …” The missing terms belong in that order.",
+    "options" : [
+      "Joshua Caleb"
+    ],
+    "prompt" : "Supply the missing words in order: “Then the children of Judah drew near to ____ in Gilgal: and the son of Jephunneh the Kenizzite said to him, You know the thing …” (14:6, WEB)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 14:3 uses Jordan: “… given the inheritance of the two tribes and the half-tribe beyond the Jordan: but to the Levites he gave no inheritance among them.”",
+    "options" : [
+      "Jordan",
+      "Egypt",
+      "Canaan",
+      "Israel"
+    ],
+    "prompt" : "Which word completes “… given the inheritance of the two tribes and the half-tribe beyond the ______: but to the Levites he gave no inheritance among them.”? (14:3, WEB)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 14:12 records: “… hill-country, of which Yahweh spoke in that day; for you heard in that day how the Anakim were there, and cities great and fortified: it may be that Yahweh will be with me, and I shall …”",
+    "options" : [
+      "Hebron"
+    ],
+    "prompt" : "In this paraphrase, caleb asked for the hill country of ____. (14:12)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “Moses swore on that day, saying, Surely the land whereon your foot has trodden shall be an inheritance to you and to your children forever, because …”; verse 10 reads “… Israel walked in the wilderness: and now, behold, I am this day eighty-five years old.”. These establish the first and second answers respectively.",
+    "options" : [
+      "eighty; Moses",
+      "Moses; eighty",
+      "Issachar; eighty",
+      "Moses; ten"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “______ swore on that day, saying, Surely the land whereon your foot has trodden shall be an inheritance to you and to your children forever, because …” (14:9); “… Israel walked in the wilderness: and now, behold, I am this day ______-five years old.” (14:10, WEB)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “by the lot of their inheritance, as Yahweh commanded by Moses, for the nine tribes, and for the half-tribe.”",
+    "options" : [
+      "inheritance"
+    ],
+    "prompt" : "Complete the quotation: “by the lot of their ____, as Yahweh commanded by Moses, for the nine tribes, and for the half-tribe.” (14:2, WEB)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Nevertheless my brothers who went up with me made the heart of the people melt; but I wholly followed Yahweh my God.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Nevertheless my brothers who went up with me made the heart of the people melt; but I wholly followed Yahweh my God.” (14:8, WEB)",
+    "reference" : "Joshua 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 15:11 uses Ekron: “and the border went out to the side of Ekron northward; and the border extended to Shikkeron, and passed along to Mount Baalah, and went out …”",
+    "options" : [
+      "Nephtoah",
+      "Zanoah",
+      "Secacah",
+      "Ekron"
+    ],
+    "prompt" : "Which word completes “and the border went out to the side of ______ northward; and the border extended to Shikkeron, and passed along to Mount Baalah, and went out …”? (15:11, WEB)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 15:18 records: “It happened, when she came to him, that she moved him to ask of her father a field: and she alighted from off her donkey; and Caleb said, What would you?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Caleb's daughter Achsah asked for springs of water. (15:18-19)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Ashdod, its towns and its villages; Gaza, its towns and its villages; to the brook of Egypt, and the great sea, and the border of it.”; the second reads “and Humtah, and Kiriath Arba (the same is Hebron), and Zior; nine cities with their villages.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "towns Hebron"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Ashdod, its towns and its villages; Gaza, its ____ and its villages; to the brook of Egypt, and the great sea, and the border of it.” (15:47); “and Humtah, and Kiriath Arba (the same is ), and Zior; nine cities with their villages.” (15:54, WEB)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… it passed along to Azmon, and went out at the brook of Egypt; and the goings out of the border were at the sea: this shall …”",
+    "options" : [
+      "Egypt"
+    ],
+    "prompt" : "Complete the quotation: “… it passed along to Azmon, and went out at the brook of ____; and the goings out of the border were at the sea: this shall …” (15:4, WEB)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Othniel the son of Kenaz, the brother of Caleb, took it: and he gave him Achsah his daughter as wife.” The missing terms belong in that order.",
+    "options" : [
+      "Caleb Achsah"
+    ],
+    "prompt" : "Supply the missing words in order: “Othniel the son of Kenaz, the brother of ____, took it: and he gave him his daughter as wife.” (15:17, WEB)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Edom: “… of the tribe of the children of Judah toward the border of Edom in the South were Kabzeel, and Eder, and Jagur,”",
+    "options" : [
+      "Canaan",
+      "Edom",
+      "Samaria",
+      "Gilgal"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of the tribe of the children of Judah toward the border of ______ in the South were Kabzeel, and Eder, and Jagur,”? (15:21, WEB)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 36 reads “and Shaaraim, and Adithaim, and Gederah, and Gederothaim; fourteen cities with their villages.”; verse 41 reads “and Gederoth, Beth Dagon, and Naamah, and Makkedah; sixteen cities with their villages.”. These establish the first and second answers respectively.",
+    "options" : [
+      "three; sixteen",
+      "fourteen; sixteen",
+      "sixteen; fourteen",
+      "fourteen; nineteen"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and Shaaraim, and Adithaim, and Gederah, and Gederothaim; ______ cities with their villages.” (15:36); “and Gederoth, Beth Dagon, and Naamah, and Makkedah; ______ cities with their villages.” (15:41, WEB)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “and Lebaoth, and Shilhim, and Ain, and Rimmon: all the cities are twenty-nine, with their villages.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “and Lebaoth, and Shilhim, and Ain, and Rimmon: all the cities are twenty-nine, with their villages.” (15:32, WEB)",
+    "reference" : "Joshua 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 16:1 records: “The lot came out for the children of Joseph from the Jordan at Jericho, at the waters of Jericho on the east, even the wilderness, going up from Jericho through the hill-country to Bethel;”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "In this paraphrase, the allotment for the sons of Joseph began at the ____. (16:1)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 16:2 uses Bethel: “and it went out from Bethel to Luz, and passed along to the border of the Archites to Ataroth;”",
+    "options" : [
+      "Israel",
+      "Zion",
+      "Bethel",
+      "Gilead"
+    ],
+    "prompt" : "Which word completes “and it went out from ______ to Luz, and passed along to the border of the Archites to Ataroth;”? (16:2, WEB)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Michmethath on the north; and the border turned about eastward to Taanath Shiloh, and passed along it on the east of Janoah;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Michmethath on the north; and the border turned about eastward to Taanath Shiloh, and passed along it on the east of Janoah;” (16:6, WEB)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The border of the children of Ephraim according to their families was thus: the border of their inheritance eastward was Ataroth Addar, to Beth Horon the …” The missing terms belong in that order.",
+    "options" : [
+      "border inheritance"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ of the children of Ephraim according to their families was thus: the border of their eastward was Ataroth Addar, to Beth Horon the …” (16:5, WEB)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… even to Gezer; and the goings out of it were at the sea.”",
+    "options" : [
+      "sea"
+    ],
+    "prompt" : "Complete the quotation: “… even to Gezer; and the goings out of it were at the ____.” (16:3, WEB)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “together with the cities which were set apart for the children of Ephraim in the midst of the inheritance of the children of Manasseh, all the …”; the second reads “… dwell in the midst of Ephraim to this day, and are become servants to do forced labor.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "apart servants"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “together with the cities which were set ____ for the children of Ephraim in the midst of the inheritance of the children of Manasseh, all the …” (16:9); “… dwell in the midst of Ephraim to this day, and are become to do forced labor.” (16:10, WEB)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Manasseh: “The children of Joseph, Manasseh and Ephraim, took their inheritance.”",
+    "options" : [
+      "Malachi",
+      "Cain",
+      "Manasseh",
+      "Ithamar"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The children of Joseph, ______ and Ephraim, took their inheritance.”? (16:4, WEB)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “… went down from Janoah to Ataroth, and to Naarah, and reached to Jericho, and went out at the Jordan.”; verse 8 reads “… of it were at the sea. This is the inheritance of the tribe of the children of Ephraim according to their families;”. These establish the first and second answers respectively.",
+    "options" : [
+      "tribe; Jericho",
+      "Jericho; Ataroth",
+      "Jericho; tribe",
+      "Beersheba; tribe"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… went down from Janoah to Ataroth, and to Naarah, and reached to ______, and went out at the Jordan.” (16:7); “… of it were at the sea. This is the inheritance of the ______ of the children of Ephraim according to their families;” (16:8, WEB)",
+    "reference" : "Joshua 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… fell ten parts to Manasseh, besides the land of Gilead and Bashan, which is beyond the Jordan;” The missing terms belong in that order.",
+    "options" : [
+      "Gilead Jordan"
+    ],
+    "prompt" : "Supply the missing words in order: “… fell ten parts to Manasseh, besides the land of ____ and Bashan, which is beyond the ;” (17:5, WEB)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 17:4 uses Joshua: “They came near before Eleazar the priest, and before Joshua the son of Nun, and before the princes, saying, Yahweh commanded Moses to give us an …”",
+    "options" : [
+      "Seth",
+      "Hannah",
+      "Joshua",
+      "Zerubbabel"
+    ],
+    "prompt" : "Which word completes “They came near before Eleazar the priest, and before ______ the son of Nun, and before the princes, saying, Yahweh commanded Moses to give us an …”? (17:4, WEB)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “Manasseh had in Issachar and in Asher Beth-shean and its towns, and Ibleam and its towns, and the inhabitants of Dor and its towns, and the …”; verse 13 reads “It happened, when the children of Israel had grown strong, that they put the Canaanites to forced labor, and didn't utterly drive them out.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Issachar; Israel",
+      "Israel; Israel",
+      "Issachar; Elisha",
+      "Israel; Issachar"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Manasseh had in ______ and in Asher Beth-shean and its towns, and Ibleam and its towns, and the inhabitants of Dor and its towns, and the …” (17:11); “It happened, when the children of ______ had grown strong, that they put the Canaanites to forced labor, and didn't utterly drive them out.” (17:13, WEB)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The border went down to the brook of Kanah, southward of the brook: these cities belonged to Ephraim among the cities of Manasseh: and the border …” It says Kanah, not country.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The border went down to the brook of country, southward of the brook: these cities belonged to Ephraim among the cities of Manasseh: and the border …” (17:9, WEB)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 17:14 records: “The children of Joseph spoke to Joshua, saying, Why have you given me but one lot and one part for an inheritance, seeing I am a great people, because hitherto Yahweh has blessed me?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The tribe of Manasseh asked for more land because they were a great people. (17:14-15)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… and for the children of Shemida: these were the male children of Manasseh the son of Joseph according to their families.”",
+    "options" : [
+      "Manasseh"
+    ],
+    "prompt" : "Complete the quotation: “… and for the children of Shemida: these were the male children of ____ the son of Joseph according to their families.” (17:2, WEB)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Asher: “The border of Manasseh was from Asher to Michmethath, which is before Shechem; and the border went along to the right hand, to the inhabitants of …”",
+    "options" : [
+      "Asher",
+      "Belshazzar",
+      "Nebuchadnezzar",
+      "Malachi"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The border of Manasseh was from ______ to Michmethath, which is before Shechem; and the border went along to the right hand, to the inhabitants of …”? (17:7, WEB)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The children of Joseph said, The hill-country is not enough for us: and all the Canaanites who dwell in the land of the valley have chariots …”; the second reads “Joshua spoke to the house of Joseph, even to Ephraim and to Manasseh, saying, You are a great people, and have great power; you shall not …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Joseph Ephraim"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The children of ____ said, The hill-country is not enough for us: and all the Canaanites who dwell in the land of the valley have chariots …” (17:16); “Joshua spoke to the house of Joseph, even to and to Manasseh, saying, You are a great people, and have great power; you shall not …” (17:17, WEB)",
+    "reference" : "Joshua 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The men arose, and went: and Joshua charged those who went to describe the land, saying, Go and walk through the land, and describe it, and …” The missing terms belong in that order.",
+    "options" : [
+      "Joshua land"
+    ],
+    "prompt" : "Supply the missing words in order: “The men arose, and went: and ____ charged those who went to describe the , saying, Go and walk through the land, and describe it, and …” (18:8, WEB)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Shiloh: “Joshua cast lots for them in Shiloh before Yahweh: and there Joshua divided the land to the children of Israel according to their divisions.”",
+    "options" : [
+      "Israel",
+      "Shiloh",
+      "Assyria",
+      "Edom"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Joshua cast lots for them in ______ before Yahweh: and there Joshua divided the land to the children of Israel according to their divisions.”? (18:10, WEB)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… valley of the son of Hinnom, which is in the valley of Rephaim northward; and it went down to the valley of Hinnom, to the side …”; verse 20 reads “The Jordan was the border of it on the east quarter. This was the inheritance of the children of Benjamin, by the borders of it round …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Rephaim; Jordan",
+      "Rephaim; Judah",
+      "slack; Jordan",
+      "Jordan; Rephaim"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… valley of the son of Hinnom, which is in the valley of ______ northward; and it went down to the valley of Hinnom, to the side …” (18:16); “The ______ was the border of it on the east quarter. This was the inheritance of the children of Benjamin, by the borders of it round …” (18:20, WEB)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 18:1 records: “The whole congregation of the children of Israel assembled themselves together at Shiloh, and set up the tent of meeting there: and the land was subdued before them.”",
+    "options" : [
+      "Shiloh"
+    ],
+    "prompt" : "In this paraphrase, the tabernacle was set up at ____. (18:1)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the tribe of the children of Benjamin according to their families were Jericho, and Beth Hoglah, and Emek Keziz,”; the second reads “and Chephar Ammoni, and Ophni, and Geba; twelve cities with their villages:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Jericho twelve"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the tribe of the children of Benjamin according to their families were ____, and Beth Hoglah, and Emek Keziz,” (18:21); “and Chephar Ammoni, and Ophni, and Geba; cities with their villages:” (18:24, WEB)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… from there to Luz, to the side of Luz (the same is Bethel), southward; and the border went down to Ataroth Addar, by the mountain that …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… from there to Luz, to the side of Luz (the same is Bethel), southward; and the border went down to Ataroth Addar, by the mountain that …” (18:13, WEB)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Joshua said to the children of Israel, How long are you slack to go in to possess the land, which Yahweh, the God of your fathers, …”",
+    "options" : [
+      "Joshua"
+    ],
+    "prompt" : "Complete the quotation: “____ said to the children of Israel, How long are you slack to go in to possess the land, which Yahweh, the God of your fathers, …” (18:3, WEB)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 18:5 uses Joseph: “… shall abide in his border on the south, and the house of Joseph shall abide in their border on the north.”",
+    "options" : [
+      "Cain",
+      "Abram",
+      "Joseph",
+      "Amos"
+    ],
+    "prompt" : "Which word completes “… shall abide in his border on the south, and the house of ______ shall abide in their border on the north.”? (18:5, WEB)",
+    "reference" : "Joshua 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “This is the inheritance of the tribe of the children of Naphtali according to their families, the cities with their villages.”; the second reads “… the children of Dan went out beyond them; for the children of Dan went up and fought against Leshem, and took it, and struck it with …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Naphtali Dan"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “This is the inheritance of the tribe of the children of ____ according to their families, the cities with their villages.” (19:39); “… the children of Dan went out beyond them; for the children of went up and fought against Leshem, and took it, and struck it with …” (19:47, WEB)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 19:8 uses inheritance: “… these cities to Baalath Beer, Ramah of the South. This is the inheritance of the tribe of the children of Simeon according to their families.”",
+    "options" : [
+      "inheritance",
+      "blessing",
+      "redemption",
+      "offerings"
+    ],
+    "prompt" : "Which word completes “… these cities to Baalath Beer, Ramah of the South. This is the ______ of the tribe of the children of Simeon according to their families.”? (19:8, WEB)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… came out for Simeon, even for the tribe of the children of Simeon according to their families: and their inheritance was in the midst of the …”",
+    "options" : [
+      "Simeon"
+    ],
+    "prompt" : "Complete the quotation: “… came out for Simeon, even for the tribe of the children of ____ according to their families: and their inheritance was in the midst of the …” (19:1, WEB)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 19:51 records: “… Joshua the son of Nun, and the heads of the fathers' houses of the tribes of the children of Israel, distributed for inheritance by lot in Shiloh before Yahweh, at the door of the tent of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Each tribe received its inheritance by lot. (19:51)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Issachar: “The fourth lot came out for Issachar, even for the children of Issachar according to their families.”",
+    "options" : [
+      "Levi",
+      "Issachar",
+      "Balak",
+      "Israel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The fourth lot came out for Issachar, even for the children of ______ according to their families.”? (19:17, WEB)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The fifth lot came out for the tribe of the children of Asher according to their families.” It says Asher, not Gad.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The fifth lot came out for the tribe of the children of Gad according to their families.” (19:24, WEB)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 29 reads “… and to the fortified city of Tyre; and the border turned to Hosah; and the goings out of it were at the sea by the region …”; verse 34 reads “… Tabor, and went out from there to Hukkok; and it reached to Zebulun on the south, and reached to Asher on the west, and to Judah …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Zebulun; Hosah",
+      "Hosah; Zebulun",
+      "Simeon; Zebulun",
+      "Hosah; Jonah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and to the fortified city of Tyre; and the border turned to ______; and the goings out of it were at the sea by the region …” (19:29); “… Tabor, and went out from there to Hukkok; and it reached to ______ on the south, and reached to Asher on the west, and to Judah …” (19:34, WEB)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “and from there it passed along eastward to Gath Hepher, to Eth-kazin; and it went out at Rimmon which stretches to Neah;” The missing terms belong in that order.",
+    "options" : [
+      "passed Hepher"
+    ],
+    "prompt" : "Supply the missing words in order: “and from there it ____ along eastward to Gath , to Eth-kazin; and it went out at Rimmon which stretches to Neah;” (19:13, WEB)",
+    "reference" : "Joshua 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… that city, until he stand before the congregation for judgment, until the death of the high priest that shall be in those days: then shall the …” It says death, not thanksgiving.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… that city, until he stand before the congregation for judgment, until the thanksgiving of the high priest that shall be in those days: then shall the …” (20:6, WEB)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… unawares may flee there: and they shall be to you for a refuge from the avenger of blood.”",
+    "options" : [
+      "refuge"
+    ],
+    "prompt" : "Complete the quotation: “… unawares may flee there: and they shall be to you for a ____ from the avenger of blood.” (20:3, WEB)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… Bezer in the wilderness in the plain out of the tribe of Reuben, and Ramoth in Gilead out of the tribe of Gad, and Golan in …”; verse 9 reads “… the appointed cities for all the children of Israel, and for the stranger who sojourns among them, that whoever kills any person unwittingly might flee there, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Reuben; stranger",
+      "Reuben; unawares",
+      "stranger; Reuben",
+      "Benjamin; stranger"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Bezer in the wilderness in the plain out of the tribe of ______, and Ramoth in Gilead out of the tribe of Gad, and Golan in …” (20:8); “… the appointed cities for all the children of Israel, and for the ______ who sojourns among them, that whoever kills any person unwittingly might flee there, …” (20:9, WEB)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… entrance of the gate of the city, and declare his cause in the ears of the elders of that city; and they shall take him into …” The missing terms belong in that order.",
+    "options" : [
+      "declare elders"
+    ],
+    "prompt" : "Supply the missing words in order: “… entrance of the gate of the city, and ____ his cause in the ears of the of that city; and they shall take him into …” (20:4, WEB)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 20:7 records: “They set apart Kedesh in Galilee in the hill-country of Naphtali, and Shechem in the hill-country of Ephraim, and Kiriath Arba (the same is Hebron) in the hill-country of Judah.”",
+    "options" : [
+      "Hebron"
+    ],
+    "prompt" : "In this paraphrase, the cities of refuge included Kedesh in Galilee, Shechem and ____. (20:7)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 20:2 uses Israel: “Speak to the children of Israel, saying, Assign you the cities of refuge, of which I spoke to you by Moses,”",
+    "options" : [
+      "Jonah",
+      "Israel",
+      "Nahum",
+      "David"
+    ],
+    "prompt" : "Which word completes “Speak to the children of ______, saying, Assign you the cities of refuge, of which I spoke to you by Moses,”? (20:2, WEB)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Yahweh spoke to Joshua, saying,”; the second reads “… flee there, and not die by the hand of the avenger of blood, until he stood before the congregation.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Joshua blood"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Yahweh spoke to ____, saying,” (20:1); “… flee there, and not die by the hand of the avenger of , until he stood before the congregation.” (20:9, WEB)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies deliver: “If the avenger of blood pursue after him, then they shall not deliver up the manslayer into his hand; because he struck his neighbor unawares, and …”",
+    "options" : [
+      "deliver",
+      "gate",
+      "sojourns",
+      "Jericho"
+    ],
+    "prompt" : "Which detail belongs in this passage: “If the avenger of blood pursue after him, then they shall not ______ up the manslayer into his hand; because he struck his neighbor unawares, and …”? (20:5, WEB)",
+    "reference" : "Joshua 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “They gave them Shechem with its suburbs in the hill-country of Ephraim, the city of refuge for the manslayer, and Gezer with its suburbs,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “They gave them Shechem with its suburbs in the hill-country of Ephraim, the city of refuge for the manslayer, and Gezer with its suburbs,” (21:21, WEB)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “To the children of Aaron the priest they gave Hebron with its suburbs, the city of refuge for the manslayer, and Libnah with its suburbs,” The missing terms belong in that order.",
+    "options" : [
+      "priest refuge"
+    ],
+    "prompt" : "Supply the missing words in order: “To the children of Aaron the ____ they gave Hebron with its suburbs, the city of for the manslayer, and Libnah with its suburbs,” (21:13, WEB)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 21:41 records: “All the cities of the Levites in the midst of the possession of the children of Israel were forty-eight cities with their suburbs.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Levites were given forty-eight cities. (21:41)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and they spoke to them at Shiloh in the land of Canaan, saying, Yahweh commanded Moses to give us cities to dwell in, with the suburbs …”",
+    "options" : [
+      "Shiloh"
+    ],
+    "prompt" : "Complete the quotation: “and they spoke to them at ____ in the land of Canaan, saying, Yahweh commanded Moses to give us cities to dwell in, with the suburbs …” (21:2, WEB)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 21:8 uses Moses: “… to the Levites these cities with their suburbs, as Yahweh commanded by Moses.”",
+    "options" : [
+      "Shem",
+      "Eli",
+      "Gomer",
+      "Moses"
+    ],
+    "prompt" : "Which word completes “… to the Levites these cities with their suburbs, as Yahweh commanded by ______.”? (21:8, WEB)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nine: “… its suburbs, and Juttah with its suburbs, and Beth-shemesh with its suburbs; nine cities out of those two tribes.”",
+    "options" : [
+      "eighty",
+      "fourteen",
+      "thousand",
+      "nine"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… its suburbs, and Juttah with its suburbs, and Beth-shemesh with its suburbs; ______ cities out of those two tribes.”? (21:16, WEB)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “To the families of the children of Merari, the rest of the Levites, out of the tribe of Zebulun, Jokneam with its suburbs, and Kartah with …”; the second reads “Out of the tribe of Gad, Ramoth in Gilead with its suburbs, the city of refuge for the manslayer, and Mahanaim with its suburbs,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rest Gilead"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “To the families of the children of Merari, the ____ of the Levites, out of the tribe of Zebulun, Jokneam with its suburbs, and Kartah with …” (21:34); “Out of the tribe of Gad, Ramoth in with its suburbs, the city of refuge for the manslayer, and Mahanaim with its suburbs,” (21:38, WEB)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 25 reads “Out of the half-tribe of Manasseh, Taanach with its suburbs, and Gath-rimmon with its suburbs; two cities.”; verse 30 reads “Out of the tribe of Asher, Mishal with its suburbs, Abdon with its suburbs,”. These establish the first and second answers respectively.",
+    "options" : [
+      "Manasseh; Asher",
+      "Zerubbabel; Asher",
+      "Asher; Manasseh",
+      "Manasseh; Phinehas"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Out of the half-tribe of ______, Taanach with its suburbs, and Gath-rimmon with its suburbs; two cities.” (21:25); “Out of the tribe of ______, Mishal with its suburbs, Abdon with its suburbs,” (21:30, WEB)",
+    "reference" : "Joshua 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… him with our burnt offerings, and with our sacrifices, and with our peace-offerings; that your children may not tell our children in time to come, You …”; the second reads “… heard the words that the children of Reuben and the children of Gad and the children of Manasseh spoke, it pleased them well.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "offerings Gad"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… him with our burnt offerings, and with our sacrifices, and with our peace-____; that your children may not tell our children in time to come, You …” (22:27); “… heard the words that the children of Reuben and the children of and the children of Manasseh spoke, it pleased them well.” (22:30, WEB)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 22:7 uses Joshua: “… Moses had given inheritance in Bashan; but to the other half gave Joshua among their brothers beyond the Jordan westward; moreover when Joshua sent them away …”",
+    "options" : [
+      "Joshua",
+      "Ithamar",
+      "Gomer",
+      "Levi"
+    ],
+    "prompt" : "Which word completes “… Moses had given inheritance in Bashan; but to the other half gave ______ among their brothers beyond the Jordan westward; moreover when Joshua sent them away …”? (22:7, WEB)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “However, if the land of your possession be unclean, then pass over to the land of the possession of Yahweh, in which Yahweh's tent dwells, and …”; verse 23 reads “… if to offer thereon burnt offering or meal-offering, or if to offer sacrifices of peace-offerings thereon, let Yahweh himself require it;”. These establish the first and second answers respectively.",
+    "options" : [
+      "valley; sacrifices",
+      "sacrifices; land",
+      "land; sacrifices",
+      "land; Phinehas"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “However, if the ______ of your possession be unclean, then pass over to the land of the possession of Yahweh, in which Yahweh's tent dwells, and …” (22:19); “… if to offer thereon burnt offering or meal-offering, or if to offer ______ of peace-offerings thereon, let Yahweh himself require it;” (22:23, WEB)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… children of Gad and the half-tribe of Manasseh returned, and departed from the children of Israel out of Shiloh, which is in the land of Canaan, …” The missing terms belong in that order.",
+    "options" : [
+      "Manasseh Shiloh"
+    ],
+    "prompt" : "Supply the missing words in order: “… children of Gad and the half-tribe of ____ returned, and departed from the children of Israel out of , which is in the land of Canaan, …” (22:9, WEB)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gilead: “… of Gad, and to the half-tribe of Manasseh, into the land of Gilead, Phinehas the son of Eleazar the priest,”",
+    "options" : [
+      "Gilead",
+      "Jericho",
+      "Egypt",
+      "Jerusalem"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of Gad, and to the half-tribe of Manasseh, into the land of ______, Phinehas the son of Eleazar the priest,”? (22:13, WEB)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… your possession, which Moses the servant of Yahweh gave you beyond the Jordan.”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “… your possession, which Moses the servant of Yahweh gave you beyond the ____.” (22:4, WEB)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… this day from following Yahweh, in that you have built you an altar, to rebel this day against Yahweh?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… this day from following Yahweh, in that you have built you an altar, to rebel this day against Yahweh?” (22:16, WEB)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 22:10 records: “… to the region about the Jordan, that is in the land of Canaan, the children of Reuben and the children of Gad and the half-tribe of Manasseh built there an altar by the Jordan, a great …”",
+    "options" : [
+      "altar"
+    ],
+    "prompt" : "In this paraphrase, the eastern tribes built a great ____ by the Jordan. (22:10)",
+    "reference" : "Joshua 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… you great nations and strong: but as for you, no man has stood before you to this day.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… you great nations and strong: but as for you, no man has stood before you to this day.” (23:9, WEB)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the way of all the earth: and you know in all your hearts and in all your souls, that not one thing has failed of all …”; the second reads “When you disobey the covenant of Yahweh your God, which he commanded you, and go and serve other gods, and bow down yourselves to them; then …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "hearts covenant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the way of all the earth: and you know in all your ____ and in all your souls, that not one thing has failed of all …” (23:14); “When you disobey the of Yahweh your God, which he commanded you, and go and serve other gods, and bow down yourselves to them; then …” (23:16, WEB)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “that Joshua called for all Israel, for their elders and for their heads, and for their judges and for their officers, and said to them, I …”",
+    "options" : [
+      "Joshua"
+    ],
+    "prompt" : "Complete the quotation: “that ____ called for all Israel, for their elders and for their heads, and for their judges and for their officers, and said to them, I …” (23:2, WEB)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “One man of you shall chase a thousand; for Yahweh your God, he it is who fights for you, as he spoke to you.”; verse 13 reads “… and thorns in your eyes, until you perish from off this good land which Yahweh your God has given you.”. These establish the first and second answers respectively.",
+    "options" : [
+      "thousand; land",
+      "thousand; vineyards",
+      "land; thousand",
+      "fifteen; land"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “One man of you shall chase a ______; for Yahweh your God, he it is who fights for you, as he spoke to you.” (23:10); “… and thorns in your eyes, until you perish from off this good ______ which Yahweh your God has given you.” (23:13, WEB)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to do all that is written in the book of the law of Moses, that you not turn aside from it to the right hand or …” The missing terms belong in that order.",
+    "options" : [
+      "law Moses"
+    ],
+    "prompt" : "Supply the missing words in order: “… to do all that is written in the book of the ____ of , that you not turn aside from it to the right hand or …” (23:6, WEB)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 23:4 uses inheritance: “… I have allotted to you these nations that remain, to be an inheritance for your tribes, from the Jordan, with all the nations that I have …”",
+    "options" : [
+      "strength",
+      "death",
+      "inheritance",
+      "power"
+    ],
+    "prompt" : "Which word completes “… I have allotted to you these nations that remain, to be an ______ for your tribes, from the Jordan, with all the nations that I have …”? (23:4, WEB)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joshua 23:12 records: “Else if you do at all go back, and cleave to the remnant of these nations, even these who remain among you, and make marriages with them, and go in to them, and they to you;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joshua warned Israel not to intermarry with the nations around them. (23:12)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nations: “that you not come among these nations, these that remain among you; neither make mention of the name of their gods, nor cause to swear by …”",
+    "options" : [
+      "nations",
+      "days",
+      "fights",
+      "marriages"
+    ],
+    "prompt" : "Which detail belongs in this passage: “that you not come among these ______, these that remain among you; neither make mention of the name of their gods, nor cause to swear by …”? (23:7, WEB)",
+    "reference" : "Joshua 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joshua 24:15 records: “… serve Yahweh, choose you this day whom you will serve; whether the gods which your fathers served that were beyond the River, or the gods of the Amorites, in whose land you dwell: but as for …”",
+    "options" : [
+      "house"
+    ],
+    "prompt" : "In this paraphrase, joshua said, As for me and my ____, we will serve the LORD. (24:15)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joshua 24:6 uses Egypt: “I brought your fathers out of Egypt: and you came to the sea; and the Egyptians pursued after your fathers with chariots and with horsemen to …”",
+    "options" : [
+      "Persia",
+      "Egypt",
+      "Edom",
+      "Moab"
+    ],
+    "prompt" : "Which word completes “I brought your fathers out of ______: and you came to the sea; and the Egyptians pursued after your fathers with chariots and with horsemen to …”? (24:6, WEB)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Now therefore fear Yahweh, and serve him in sincerity and in truth; and put away the gods which your fathers served beyond the River, and in …” It says truth, not kindness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Now therefore fear Yahweh, and serve him in sincerity and in kindness; and put away the gods which your fathers served beyond the River, and in …” (24:14, WEB)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “Joshua said to the people, You can't serve Yahweh; for he is a holy God; he is a jealous God; he will not forgive your disobedience …”; verse 23 reads “… said he, the foreign gods which are among you, and incline your heart to Yahweh, the God of Israel.”. These establish the first and second answers respectively.",
+    "options" : [
+      "heart; Joshua",
+      "Saul; heart",
+      "Joshua; heart",
+      "Joshua; mouth"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “______ said to the people, You can't serve Yahweh; for he is a holy God; he is a jealous God; he will not forgive your disobedience …” (24:19); “… said he, the foreign gods which are among you, and incline your ______ to Yahweh, the God of Israel.” (24:23, WEB)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then Balak the son of Zippor, king of Moab, arose and fought against Israel: and he sent and called Balaam the son of Beor to curse …” The missing terms belong in that order.",
+    "options" : [
+      "Balak Moab"
+    ],
+    "prompt" : "Supply the missing words in order: “Then ____ the son of Zippor, king of , arose and fought against Israel: and he sent and called Balaam the son of Beor to curse …” (24:9, WEB)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies land: “I gave you a land whereon you had not labored, and cities which you didn't build, and you dwell therein; of vineyards and olive groves which …”",
+    "options" : [
+      "land",
+      "earth",
+      "mountain",
+      "field"
+    ],
+    "prompt" : "Which detail belongs in this passage: “I gave you a ______ whereon you had not labored, and cities which you didn't build, and you dwell therein; of vineyards and olive groves which …”? (24:13, WEB)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “I gave to Isaac Jacob and Esau: and I gave to Esau Mount Seir, to possess it: and Jacob and his children went down into Egypt.”",
+    "options" : [
+      "Esau"
+    ],
+    "prompt" : "Complete the quotation: “I gave to Isaac Jacob and ____: and I gave to Esau Mount Seir, to possess it: and Jacob and his children went down into Egypt.” (24:4, WEB)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joshua",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Joshua wrote these words in the book of the law of God; and he took a great stone, and set it up there under the oak …”; the second reads “It happened after these things, that Joshua the son of Nun, the servant of Yahweh, died, being one hundred ten years old.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "law servant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Joshua wrote these words in the book of the ____ of God; and he took a great stone, and set it up there under the oak …” (24:26); “It happened after these things, that Joshua the son of Nun, the of Yahweh, died, being one hundred ten years old.” (24:29, WEB)",
+    "reference" : "Joshua 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

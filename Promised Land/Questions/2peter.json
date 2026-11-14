@@ -1,0 +1,395 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The letter links a transformed life with trustworthy testimony rather than treating belief as detached speculation. The chapter appeals to God's provision, practiced qualities and the apostolic-prophetic witness. The course likewise joins doctrine with lived formation.",
+    "options" : [
+      "Prophecy is defined as private invention with no relation to God.",
+      "The letter links a transformed life with trustworthy testimony rather than treating belief as detached speculation.",
+      "Moral growth is explicitly excluded from faith.",
+      "The writer commends fabricated stories as the basis of hope."
+    ],
+    "prompt" : "How do the call to grow in virtue and the claim about prophetic witness relate? (1:3-11, 16-21)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Kingdom: “… thus will be richly supplied to you the entrance into the eternal Kingdom of our Lord and Savior, Jesus Christ.”",
+    "options" : [
+      "knowing",
+      "election",
+      "Kingdom",
+      "adding"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… thus will be richly supplied to you the entrance into the eternal ______ of our Lord and Savior, Jesus Christ.”? (1:11, WEB)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Peter 1:6 uses knowledge: “and in knowledge, self-control; and in self-control patience; and in patience godliness;”",
+    "options" : [
+      "hope",
+      "knowledge",
+      "peace",
+      "glory"
+    ],
+    "prompt" : "Which word completes “and in ______, self-control; and in self-control patience; and in patience godliness;”? (1:6, WEB)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to be not idle nor unfruitful to the knowledge of our Lord Jesus Christ.” The missing terms belong in that order.",
+    "options" : [
+      "Jesus Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “… to be not idle nor unfruitful to the knowledge of our Lord ____.” (1:8, WEB)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… not follow cunningly devised fables, when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of his …”; verse 17 reads “For he received from God the Father honor and glory, when the voice came to him from the Majestic Glory, \"This is my beloved Son, in …”. These establish the first and second answers respectively.",
+    "options" : [
+      "power; honor",
+      "power; glory",
+      "glory; power",
+      "sacrifice; glory"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… not follow cunningly devised fables, when we made known to you the ______ and coming of our Lord Jesus Christ, but we were eyewitnesses of his …” (1:16); “For he received from God the Father honor and ______, when the voice came to him from the Majestic Glory, \"This is my beloved Son, in …” (1:17, WEB)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Simon Peter, a servant and apostle of Jesus Christ, to those who have obtained a like precious faith with us in the righteousness of our God …”",
+    "options" : [
+      "Simon"
+    ],
+    "prompt" : "Complete the quotation: “____ Peter, a servant and apostle of Jesus Christ, to those who have obtained a like precious faith with us in the righteousness of our God …” (1:1, WEB)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the divine nature, having escaped from the corruption that is in the world by lust.”",
+    "options" : [
+      "world"
+    ],
+    "prompt" : "Complete the quotation: “… the divine nature, having escaped from the corruption that is in the ____ by lust.” (1:4, WEB)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “knowing that the putting off of my tent comes swiftly, even as our Lord Jesus Christ made clear to me.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “knowing that the putting off of my tent comes swiftly, even as our Lord Jesus Christ made clear to me.” (1:14, WEB)",
+    "reference" : "2 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “forsaking the right way, they went astray, having followed the way of Balaam the son of Beor, who loved the wages of wrong-doing;”; verse 18 reads “For, uttering great swelling words of emptiness, they entice in the lusts of the flesh, by licentiousness, those who are indeed escaping from those who live …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Balaam; covetousness",
+      "Esau; emptiness",
+      "emptiness; Balaam",
+      "Balaam; emptiness"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “forsaking the right way, they went astray, having followed the way of ______ the son of Beor, who loved the wages of wrong-doing;” (2:15); “For, uttering great swelling words of ______, they entice in the lusts of the flesh, by licentiousness, those who are indeed escaping from those who live …” (2:18, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… follow their immoral ways, and as a result, the way of the truth will be maligned.”",
+    "options" : [
+      "truth"
+    ],
+    "prompt" : "Complete the quotation: “… follow their immoral ways, and as a result, the way of the ____ will be maligned.” (2:2, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies dignitaries: “… despise authority. Daring, self-willed, they are not afraid to speak evil of dignitaries;”",
+    "options" : [
+      "pits",
+      "souls",
+      "animals",
+      "dignitaries"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… despise authority. Daring, self-willed, they are not afraid to speak evil of ______;”? (2:10, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the ancient world, but preserved Noah with seven others, a preacher of righteousness, when he brought a flood on the world of the ungodly;”",
+    "options" : [
+      "righteousness"
+    ],
+    "prompt" : "Complete the quotation: “… the ancient world, but preserved Noah with seven others, a preacher of ____, when he brought a flood on the world of the ungodly;” (2:5, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “receiving the wages of unrighteousness; people who count it pleasure to revel in the day-time, spots and blemishes, reveling in their deceit while they feast with …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “receiving the wages of unrighteousness; people who count it pleasure to revel in the day-time, spots and blemishes, reveling in their deceit while they feast with …” (2:13, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… if, after they have escaped the defilement of the world through the knowledge of the Lord and Savior Jesus Christ, they are again entangled therein and …”; the second reads “… to his own vomit again,\" and \"the sow that had washed to wallowing in the mire.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "knowledge wallowing"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… if, after they have escaped the defilement of the world through the ____ of the Lord and Savior Jesus Christ, they are again entangled therein and …” (2:20); “… to his own vomit again,\" and \"the sow that had washed to in the mire.\"” (2:22, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Lord knows how to deliver the godly out of temptation and to keep the unrighteous under punishment for the day of judgment;” The missing terms belong in that order.",
+    "options" : [
+      "deliver judgment"
+    ],
+    "prompt" : "Supply the missing words in order: “… Lord knows how to ____ the godly out of temptation and to keep the unrighteous under punishment for the day of ;” (2:9, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2peter",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Peter 2:7 uses life: “and delivered righteous Lot, who was very distressed by the lustful life of the wicked”",
+    "options" : [
+      "refuge",
+      "offerings",
+      "life",
+      "salvation"
+    ],
+    "prompt" : "Which word completes “and delivered righteous Lot, who was very distressed by the lustful ______ of the wicked”? (2:7, WEB)",
+    "reference" : "2 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and saying, \"Where is the promise of his coming? For, from the day that the fathers fell asleep, all things continue as they were from the …”",
+    "options" : [
+      "promise"
+    ],
+    "prompt" : "Complete the quotation: “and saying, \"Where is the ____ of his coming? For, from the day that the fathers fell asleep, all things continue as they were from the …” (3:4, WEB)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… by the same word have been stored up for fire, being reserved against the day of judgment and destruction of ungodly men.” The missing terms belong in that order.",
+    "options" : [
+      "fire judgment"
+    ],
+    "prompt" : "Supply the missing words in order: “… by the same word have been stored up for ____, being reserved against the day of and destruction of ungodly men.” (3:7, WEB)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's patience is related to repentance, and believers are called to holy living. The comparison of a day and a thousand years is not supplied as an end-times calculator. The chapter turns attention from mockery or date-setting toward patient hope and faithful conduct.",
+    "options" : [
+      "Patience means that repentance no longer matters.",
+      "God's patience is related to repentance, and believers are called to holy living.",
+      "Readers are given an exact conversion formula for calculating a date.",
+      "The author commands indifference toward holy living."
+    ],
+    "prompt" : "What does the apparent delay of the promised coming reveal in the argument? (3:8-15)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… the words which were spoken before by the holy prophets, and the commandments of us, the apostles of the Lord and Savior:”",
+    "options" : [
+      "commandments"
+    ],
+    "prompt" : "Complete the quotation: “… the words which were spoken before by the holy prophets, and the ____ of us, the apostles of the Lord and Savior:” (3:2, WEB)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… things. In those are some things hard to be understood, which the ignorant and unsettled twist, as they also do to the other Scriptures, to their …”; the second reads “But grow in the grace and knowledge of our Lord and Savior Jesus Christ. To him be the glory both now and forever. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "ignorant knowledge"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… things. In those are some things hard to be understood, which the ____ and unsettled twist, as they also do to the other Scriptures, to their …” (3:16); “But grow in the grace and of our Lord and Savior Jesus Christ. To him be the glory both now and forever. Amen.” (3:18, WEB)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Peter 3:5 uses water: “… from of old, and an earth formed out of water and amid water, by the word of God;”",
+    "options" : [
+      "grain",
+      "milk",
+      "water",
+      "flour"
+    ],
+    "prompt" : "Which word completes “… from of old, and an earth formed out of water and amid ______, by the word of God;”? (3:5, WEB)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… to be destroyed, what manner of persons ought you to be in holy living and godliness,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… to be destroyed, what manner of persons ought you to be in holy living and godliness,” (3:11, WEB)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2peter",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies repentance: “… not wishing that any should perish, but that all should come to repentance.”",
+    "options" : [
+      "repentance",
+      "beloved",
+      "word",
+      "godliness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… not wishing that any should perish, but that all should come to ______.”? (3:9, WEB)",
+    "reference" : "2 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

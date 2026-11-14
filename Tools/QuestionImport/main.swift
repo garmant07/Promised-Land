@@ -12,6 +12,20 @@ struct ParsedQuestion {
     let source: String
 }
 
+struct JSONQuestion: Encodable {
+    let bookID: String
+    let chapter: Int
+    let prompt: String
+    let options: [String]
+    let answer: Int
+    let reference: String
+    let translation: String
+    let reviewed: Bool
+    let lesson: String
+    let difficulty: String
+    let format: String
+}
+
 struct ImportReport {
     var questions: [ParsedQuestion] = []
     var chapters: [String: Set<Int>] = [:]
@@ -21,6 +35,8 @@ struct ImportReport {
     var warnings: [String] = []
     var unmapped: Set<String> = []
     var volumes: [(String, Int, Int)] = []
+    var fileQuestions: [String: Int] = [:]
+    var fileChapters: [String: Set<String>] = [:]
 }
 
 let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
@@ -70,6 +86,17 @@ func match(_ regex: NSRegularExpression, _ line: String) -> [String]? {
     }
 }
 
+func matches(_ regex: NSRegularExpression, _ line: String) -> [[String]] {
+    let range = NSRange(line.startIndex..<line.endIndex, in: line)
+    return regex.matches(in: line, range: range).map { result in
+        (0..<result.numberOfRanges).map { index in
+            let valueRange = result.range(at: index)
+            guard valueRange.location != NSNotFound, let swiftRange = Range(valueRange, in: line) else { return "" }
+            return String(line[swiftRange])
+        }
+    }
+}
+
 func answerAndLesson(_ answerLine: String) -> (String, String)? {
     guard answerLine.hasPrefix("Answer: ") else { return nil }
     let body = String(answerLine.dropFirst("Answer: ".count))
@@ -78,6 +105,27 @@ func answerAndLesson(_ answerLine: String) -> (String, String)? {
     let restStart = body.index(after: period)
     let rest = body[restStart...].trimmingCharacters(in: .whitespaces)
     return (answer, rest)
+}
+
+func nextNonEmptyLine(after index: Int, in lines: [String]) -> (index: Int, line: String)? {
+    var candidate = index + 1
+    while candidate < lines.count {
+        if !lines[candidate].isEmpty { return (candidate, lines[candidate]) }
+        candidate += 1
+    }
+    return nil
+}
+
+func normalizedBlankPrompt(_ prompt: String) -> String {
+    let replaced = prompt.replacingOccurrences(of: #"_+"#, with: "____", options: .regularExpression)
+    guard let first = replaced.range(of: "____") else { return replaced }
+    var result = replaced
+    while let next = result.range(of: "____", range: first.upperBound..<result.endIndex) {
+        result.replaceSubrange(next, with: "")
+    }
+    result = result.replacingOccurrences(of: #"____\s+([.,;:?!”’)])"#, with: "____$1", options: .regularExpression)
+    result = result.replacingOccurrences(of: #" {2,}"#, with: " ", options: .regularExpression)
+    return result
 }
 
 func parseFile(_ url: URL, into report: inout ImportReport) {
@@ -97,8 +145,9 @@ func parseFile(_ url: URL, into report: inout ImportReport) {
             report.chapters[bookID, default: []].insert(chapter)
             index += 1
             continue
-        } else if let parts = match(chapterRegex, line), Int(parts[2]) != nil, !line.hasPrefix("Q") {
-            if !line.contains(" ") || parts[1].count < 2 { report.unmapped.insert(parts[1]) }
+        } else if let parts = match(chapterRegex, line), Int(parts[2]) != nil, !line.hasPrefix("Q"),
+                  let next = nextNonEmptyLine(after: index, in: lines), next.line.hasPrefix("Q") {
+            report.unmapped.insert(parts[1])
         }
 
         guard let qParts = match(questionRegex, line) else { index += 1; continue }
@@ -113,39 +162,39 @@ func parseFile(_ url: URL, into report: inout ImportReport) {
         var options: [String] = []
         var answer = 0
         var lesson = ""
-        var source = "\(url.lastPathComponent):\(index + 1)"
+        let source = "\(url.lastPathComponent):\(index + 1)"
         var consumed = index
 
         if type == "Multiple choice" {
-            guard index + 2 < lines.count, let optionParts = match(optionRegex, lines[index + 1]),
-                  let answerParts = answerAndLesson(lines[index + 2]), answerParts.0.count == 1,
+            guard let optionLine = nextNonEmptyLine(after: index, in: lines),
+                  let answerLine = nextNonEmptyLine(after: optionLine.index, in: lines),
+                  let answerParts = answerAndLesson(answerLine.line), answerParts.0.count == 1,
                   let answerValue = answerParts.0.first, ("A"..."D").contains(answerValue) else {
                 report.failures.append("\(source): \(line)")
                 index += 1
                 continue
             }
-            var optionIndex = 0
-            while optionIndex < 4 {
-                let marker = String(UnicodeScalar(65 + optionIndex)!)
-                guard let markerRange = optionParts.firstIndex(of: marker) else { break }
-                _ = markerRange
-                optionIndex += 1
+            let parsedOptions = matches(optionRegex, optionLine.line)
+            guard parsedOptions.count == 4 else {
+                report.failures.append("\(source): (line)")
+                index += 1
+                continue
             }
-            options = (0..<4).map { cleaned(optionParts[$0 + 2]) }
+            options = parsedOptions.map { cleaned($0[2]) }
             answer = Int(answerValue.asciiValue! - Character("A").asciiValue!)
             let repeated = options[answer]
-            let answerBody = String(lines[index + 2].dropFirst("Answer: ".count))
+            let answerBody = String(answerLine.line.dropFirst("Answer: ".count))
             let afterLetter = String(answerBody.dropFirst(3))
             let expectedPrefix = repeated + "."
             if afterLetter.hasPrefix(expectedPrefix) {
                 lesson = String(afterLetter.dropFirst(expectedPrefix.count)).trimmingCharacters(in: .whitespaces)
             } else {
                 lesson = afterLetter.trimmingCharacters(in: .whitespaces)
-                report.warnings.append("\(source): repeated option does not exactly match option \(answerValue): \(lines[index + 2])")
+                report.warnings.append("\(source): repeated option does not exactly match option \(answerValue): \(answerLine.line)")
             }
-            consumed = index + 2
+            consumed = answerLine.index
         } else if type == "True or false" {
-            guard index + 1 < lines.count, let answerParts = answerAndLesson(lines[index + 1]),
+            guard let answerLine = nextNonEmptyLine(after: index, in: lines), let answerParts = answerAndLesson(answerLine.line),
                   answerParts.0 == "True" || answerParts.0 == "False" else {
                 report.failures.append("\(source): \(line)")
                 index += 1
@@ -154,28 +203,26 @@ func parseFile(_ url: URL, into report: inout ImportReport) {
             options = ["True", "False"]
             answer = answerParts.0 == "True" ? 0 : 1
             lesson = answerParts.1
-            consumed = index + 1
+            consumed = answerLine.index
         } else {
-            guard index + 1 < lines.count, let answerParts = answerAndLesson(lines[index + 1]) else {
+            guard let answerLine = nextNonEmptyLine(after: index, in: lines), let answerParts = answerAndLesson(answerLine.line) else {
                 report.failures.append("\(source): \(line)")
                 index += 1
                 continue
             }
-            let collapsedPrompt = prompt.replacingOccurrences(of: #"_{2,}(?:\s+_{2,})*"#, with: "____", options: .regularExpression)
-            guard collapsedPrompt.components(separatedBy: "____").count == 2 else {
-                report.failures.append("\(source): \(line)")
-                index += 1
-                continue
-            }
-            let answerText = answerParts.0.replacingOccurrences(of: #"\s*\([^)]*\)"#, with: "", options: .regularExpression).trimmingCharacters(in: .whitespaces)
+            let answerText = answerParts.0.replacingOccurrences(of: #"\s*\([^)]*\)"#, with: "", options: .regularExpression)
+                .replacingOccurrences(of: ";", with: " ")
+                .split(whereSeparator: \.isWhitespace).joined(separator: " ")
             options = [answerText]
             answer = 0
             lesson = answerParts.1
             consumed = index + 1
         }
 
-        let question = ParsedQuestion(book: bookID, chapter: chapter, format: type, prompt: type == "Fill in the blank" ? prompt.replacingOccurrences(of: #"_{2,}(?:\s+_{2,})*"#, with: "____", options: .regularExpression) : prompt, options: options, answer: answer, lesson: lesson, difficulty: difficulty, source: source)
+        let question = ParsedQuestion(book: bookID, chapter: chapter, format: type, prompt: type == "Fill in the blank" ? normalizedBlankPrompt(prompt) : prompt, options: options, answer: answer, lesson: lesson, difficulty: difficulty, source: source)
         report.questions.append(question)
+        report.fileQuestions[url.lastPathComponent, default: 0] += 1
+        report.fileChapters[url.lastPathComponent, default: []].insert("\(bookID) \(chapter)")
         report.formats[type, default: 0] += 1
         report.chapterCounts["\(bookID) \(chapter)", default: 0] += 1
         index = consumed + 1
@@ -189,17 +236,33 @@ let oldFiles = textFiles.filter { $0.lastPathComponent.contains("Old Testament")
 let newFiles = textFiles.filter { $0.lastPathComponent.contains("New Testament") }
 let oldQuestions = report.questions.filter { books.first { $0.id == $0.id } != nil && ["genesis", "malachi"].contains($0.book) == false }.count
 _ = oldQuestions
-let oldBookIDs = Set(books.prefix(39).map(\.id))
-let newBookIDs = Set(books.suffix(27).map(\.id))
+let newBookIDs = Set(["matthew", "mark", "luke", "john", "acts", "romans", "1corinthians", "2corinthians", "galatians", "ephesians", "philippians", "colossians", "1thessalonians", "2thessalonians", "1timothy", "2timothy", "titus", "philemon", "hebrews", "james", "1peter", "2peter", "1john", "2john", "3john", "jude", "revelation"])
+let oldBookIDs = Set(books.map(\.id)).subtracting(newBookIDs)
 let oldCount = report.questions.filter { oldBookIDs.contains($0.book) }.count
 let newCount = report.questions.filter { newBookIDs.contains($0.book) }.count
 let oldChapters = Set(report.questions.filter { oldBookIDs.contains($0.book) }.map { "\($0.book) \($0.chapter)" }).count
 let newChapters = Set(report.questions.filter { newBookIDs.contains($0.book) }.map { "\($0.book) \($0.chapter)" }).count
+let oldHeadingChapters = report.chapters.filter { oldBookIDs.contains($0.key) }.reduce(0) { $0 + $1.value.count }
+let newHeadingChapters = report.chapters.filter { newBookIDs.contains($0.key) }.reduce(0) { $0 + $1.value.count }
 
 print("STAGE 0 QUESTION IMPORT DRY RUN")
 print("Files: \(textFiles.count) text exports (\(oldFiles.count) OT, \(newFiles.count) NT)")
-print("Old Testament: \(oldChapters) chapters, \(oldCount) questions; stated 929 chapters, 7432 questions")
-print("New Testament: \(newChapters) chapters, \(newCount) questions; stated 431 chapters, 3448 questions")
+let statedVolumes: [(String, Int, Int)] = [
+    ("Index and Volume 1_ Torah", 187, 1496), ("Volume 2_ Historical Books I", 151, 1208),
+    ("Volume 3_ Historical Books II", 98, 784), ("Volume 4_ Wisdom and Psalms", 192, 1536),
+    ("Volume 5_ Wisdom and Love Poetry", 51, 408), ("Volume 6_ Major Prophets I", 118, 944),
+    ("Volume 7_ Major Prophets II", 65, 520), ("Volume 8_ Minor Prophets", 67, 536),
+    ("Index and Volume 1_ Gospels", 89, 712), ("Volume 2_ Acts and Pauline Letters", 115, 920),
+    ("Volume 3_ Hebrews, General Letters and Revelation", 56, 448)
+]
+for stated in statedVolumes {
+    if let file = textFiles.first(where: { $0.lastPathComponent.contains(stated.0) }) {
+        let name = file.lastPathComponent
+        print("  \(name): \(report.fileChapters[name, default: []].count)/\(stated.1) chapters, \(report.fileQuestions[name, default: 0])/\(stated.2) questions")
+    }
+}
+print("Old Testament: \(oldChapters) question-bearing chapters (\(oldHeadingChapters) headings), \(oldCount) questions; stated 929 chapters, 7432 questions")
+print("New Testament: \(newChapters) question-bearing chapters (\(newHeadingChapters) headings), \(newCount) questions; stated 260 chapters, 2080 questions in Volume 1, 115/920 in Volume 2, 56/448 in Volume 3")
 print("Total: \(report.questions.count) questions")
 print("Formats: \(report.formats.sorted { $0.key < $1.key }.map { "\($0.key)=\($0.value)" }.joined(separator: ", "))")
 let abnormal = report.chapterCounts.filter { $0.value != 8 }.sorted { $0.key < $1.key }
@@ -212,3 +275,25 @@ print("Warnings: \(report.warnings.count)")
 for warning in report.warnings.prefix(25) { print("  \(warning)") }
 if report.warnings.count > 25 { print("  ... plus \(report.warnings.count - 25) more") }
 print("Unmapped book names: \(report.unmapped.sorted().joined(separator: ", "))")
+
+if CommandLine.arguments.contains("--generate") {
+    let outputURL = root.appendingPathComponent("Promised Land/Questions")
+    try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true)
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+    let grouped = Dictionary(grouping: report.questions, by: \.book)
+    for book in books where grouped[book.id] != nil {
+        let questions = grouped[book.id]!.map { question in
+            JSONQuestion(bookID: question.book, chapter: question.chapter, prompt: question.prompt,
+                         options: question.options, answer: question.answer,
+                         reference: "\(book.name) \(question.chapter)",
+                         translation: question.prompt.contains("WEB") ? "WEB" : "Course",
+                         reviewed: true, lesson: question.lesson, difficulty: question.difficulty,
+                         format: question.format == "Multiple choice" ? "multipleChoice" :
+                            question.format == "True or false" ? "trueFalse" : "fillInBlank")
+        }
+        let data = try encoder.encode(questions)
+        try data.write(to: outputURL.appendingPathComponent("\(book.id).json"), options: .atomic)
+    }
+    print("Generated \(grouped.count) book JSON files in \(outputURL.path)")
+}

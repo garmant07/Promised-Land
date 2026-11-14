@@ -1,0 +1,1311 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… he sojourns, let the men of his place help him with silver, and with gold, and with goods, and with animals, besides the freewill-offering for the …” The missing terms belong in that order.",
+    "options" : [
+      "silver gold"
+    ],
+    "prompt" : "Supply the missing words in order: “… he sojourns, let the men of his place help him with ____, and with , and with goods, and with animals, besides the freewill-offering for the …” (1:4, WEB)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… silver, with gold, with goods, and with animals, and with precious things, besides all that was willingly offered.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… silver, with gold, with goods, and with animals, and with precious things, besides all that was willingly offered.” (1:6, WEB)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 1:3 uses Jerusalem: “… of Yahweh, the God of Israel (he is God), which is in Jerusalem.”",
+    "options" : [
+      "Jordan",
+      "Jerusalem",
+      "Bethel",
+      "Damascus"
+    ],
+    "prompt" : "Which word completes “… of Yahweh, the God of Israel (he is God), which is in ______.”? (1:3, WEB)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ezra 1:1 records: “… king of Persia, that the word of Yahweh by the mouth of Jeremiah might be accomplished, Yahweh stirred up the spirit of Cyrus king of Persia, so that he made a proclamation throughout all his kingdom, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD stirred up the spirit of Cyrus king of Persia. (1:1)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Benjamin: “Then rose up the heads of fathers' houses of Judah and Benjamin, and the priests, and the Levites, even all whose spirit God had stirred to …”",
+    "options" : [
+      "Rachel",
+      "Benjamin",
+      "Zophar",
+      "Dan"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Then rose up the heads of fathers' houses of Judah and ______, and the priests, and the Levites, even all whose spirit God had stirred to …”? (1:5, WEB)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “This is the number of them: thirty platters of gold, one thousand platters of silver, twenty-nine knives,”; the second reads “thirty bowls of gold, silver bowls of a second sort four hundred and ten, and other vessels one thousand.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "thirty four"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “This is the number of them: ____ platters of gold, one thousand platters of silver, twenty-nine knives,” (1:9); “thirty bowls of gold, silver bowls of a second sort hundred and ten, and other vessels one thousand.” (1:10, WEB)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “Also Cyrus the king brought forth the vessels of the house of Yahweh, which Nebuchadnezzar had brought forth out of Jerusalem, and had put in the …”; verse 8 reads “… of Mithredath the treasurer, and numbered them to Sheshbazzar, the prince of Judah.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Cyrus; Judah",
+      "Cyrus; Esau",
+      "Judah; Cyrus",
+      "Hannah; Judah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Also ______ the king brought forth the vessels of the house of Yahweh, which Nebuchadnezzar had brought forth out of Jerusalem, and had put in the …” (1:7); “… of Mithredath the treasurer, and numbered them to Sheshbazzar, the prince of ______.” (1:8, WEB)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Thus says Cyrus king of Persia, All the kingdoms of the earth has Yahweh, the God of heaven, given me; and he has charged me to …”",
+    "options" : [
+      "Persia"
+    ],
+    "prompt" : "Complete the quotation: “Thus says Cyrus king of ____, All the kingdoms of the earth has Yahweh, the God of heaven, given me; and he has charged me to …” (1:2, WEB)",
+    "reference" : "Ezra 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies forty: “The children of Kiriath Arim, Chephirah, and Beeroth, seven hundred forty-three.”",
+    "options" : [
+      "fourth",
+      "forty",
+      "fifteen",
+      "two"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The children of Kiriath Arim, Chephirah, and Beeroth, seven hundred ______-three.”? (2:25, WEB)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The children of Lod, Hadid, and Ono, seven hundred twenty-five.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The children of Lod, Hadid, and Ono, seven hundred twenty-five.” (2:33, WEB)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The children of Hashum, two hundred Twenty-three.” The missing terms belong in that order.",
+    "options" : [
+      "Twenty three"
+    ],
+    "prompt" : "Supply the missing words in order: “The children of Hashum, two hundred ____-.” (2:19, WEB)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The children of Solomon's servants: the children of Sotai, the children of Hassophereth, the children of Peruda,”; the second reads “Of the children of the priests: the children of Habaiah, the children of Hakkoz, the children of Barzillai, who took a wife of the daughters of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servants priests"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The children of Solomon's ____: the children of Sotai, the children of Hassophereth, the children of Peruda,” (2:55); “Of the children of the : the children of Habaiah, the children of Hakkoz, the children of Barzillai, who took a wife of the daughters of …” (2:61, WEB)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ezra 2:1 records: “… children of the province, who went up out of the captivity of those who had been carried away, whom Nebuchadnezzar the king of Babylon had carried away to Babylon, and who returned to Jerusalem and Judah, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ezra 2 lists the families of exiles who returned to Jerusalem and Judah. (2:1)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 40 reads “… Levites: the children of Jeshua and Kadmiel, of the children of Hodaviah, seventy-four.”; verse 47 reads “the children of Giddel, the children of Gahar, the children of Reaiah,”. These establish the first and second answers respectively.",
+    "options" : [
+      "four; Azmaveth",
+      "four; Giddel",
+      "Giddel; four",
+      "ninth; Giddel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Levites: the children of Jeshua and Kadmiel, of the children of Hodaviah, seventy-______.” (2:40); “the children of ______, the children of Gahar, the children of Reaiah,” (2:47, WEB)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The children of Shephatiah, three hundred seventy-two.”",
+    "options" : [
+      "seventy"
+    ],
+    "prompt" : "Complete the quotation: “The children of Shephatiah, three hundred ____-two.” (2:4, WEB)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 2:12 uses thousand: “The children of Azgad, one thousand two hundred twenty-two.”",
+    "options" : [
+      "sixty",
+      "eleven",
+      "fifth",
+      "thousand"
+    ],
+    "prompt" : "Which word completes “The children of Azgad, one ______ two hundred twenty-two.”? (2:12, WEB)",
+    "reference" : "Ezra 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “Now in the second year of their coming to the house of God at Jerusalem, in the second month, began Zerubbabel the son of Shealtiel, and …”; verse 10 reads “… builders laid the foundation of the temple of Yahweh, they set the priests in their clothing with trumpets, and the Levites the sons of Asaph with …”. These establish the first and second answers respectively.",
+    "options" : [
+      "seven; priests",
+      "second; priests",
+      "second; shepherds",
+      "priests; second"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Now in the ______ year of their coming to the house of God at Jerusalem, in the second month, began Zerubbabel the son of Shealtiel, and …” (3:8); “… builders laid the foundation of the temple of Yahweh, they set the ______ in their clothing with trumpets, and the Levites the sons of Asaph with …” (3:10, WEB)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “When the seventh month was come, and the children of Israel were in the cities, the people gathered themselves together as one man to Jerusalem.”",
+    "options" : [
+      "seventh"
+    ],
+    "prompt" : "Complete the quotation: “When the ____ month was come, and the children of Israel were in the cities, the people gathered themselves together as one man to Jerusalem.” (3:1, WEB)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies temple: “… they to offer burnt offerings to Yahweh: but the foundation of the temple of Yahweh was not yet laid.”",
+    "options" : [
+      "throne",
+      "temple",
+      "tent",
+      "house"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… they to offer burnt offerings to Yahweh: but the foundation of the ______ of Yahweh was not yet laid.”? (3:6, WEB)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Joppa, according to the grant that they had of Cyrus king of Persia.” It says Persia, not Jordan.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Joppa, according to the grant that they had of Cyrus king of Jordan.” (3:7, WEB)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “and afterward the continual burnt-offering, and the offerings of the new moons, and of all the set feasts of Yahweh that were consecrated, and of everyone …” The missing terms belong in that order.",
+    "options" : [
+      "burnt offering"
+    ],
+    "prompt" : "Supply the missing words in order: “and afterward the continual ____-, and the offerings of the new moons, and of all the set feasts of Yahweh that were consecrated, and of everyone …” (3:5, WEB)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… saying, For he is good, for his loving kindness endures forever toward Israel. All the people shouted with a great shout, when they praised Yahweh, because …”; the second reads “… their eyes, wept with a loud voice; and many shouted aloud for joy:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Israel joy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… saying, For he is good, for his loving kindness endures forever toward ____. All the people shouted with a great shout, when they praised Yahweh, because …” (3:11); “… their eyes, wept with a loud voice; and many shouted aloud for :” (3:12, WEB)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 3:4 uses offerings: “… feast of tents, as it is written, and offered the daily burnt offerings by number, according to the ordinance, as the duty of every day required;”",
+    "options" : [
+      "deliverance",
+      "offerings",
+      "death",
+      "curse"
+    ],
+    "prompt" : "Which word completes “… feast of tents, as it is written, and offered the daily burnt ______ by number, according to the ordinance, as the duty of every day required;”? (3:4, WEB)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ezra 3:2 records: “… of Jozadak, and his brothers the priests, and Zerubbabel the son of Shealtiel, and his brothers, and built the altar of the God of Israel, to offer burnt offerings thereon, as it is written in the …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The altar was rebuilt before the temple foundation was laid. (3:2-3)",
+    "reference" : "Ezra 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “There have been mighty kings also over Jerusalem, who have ruled over all the country beyond the River; and tribute, custom, and toll, was paid to …”; the second reads “… to cause these men to cease, and that this city not be built, until a decree shall be made by me.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "kings built"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “There have been mighty ____ also over Jerusalem, who have ruled over all the country beyond the River; and tribute, custom, and toll, was paid to …” (4:20); “… to cause these men to cease, and that this city not be , until a decree shall be made by me.” (4:21, WEB)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Samaria: “… great and noble Osnappar brought over, and set in the city of Samaria, and in the rest of the country beyond the River, and so forth.”",
+    "options" : [
+      "Samaria",
+      "Tarshish",
+      "Goshen",
+      "Hebron"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… great and noble Osnappar brought over, and set in the city of ______, and in the rest of the country beyond the River, and so forth.”? (4:10, WEB)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 4:5 uses Darius: “… the days of Cyrus king of Persia, even until the reign of Darius king of Persia.”",
+    "options" : [
+      "Simeon",
+      "Ithamar",
+      "Malachi",
+      "Darius"
+    ],
+    "prompt" : "Which word completes “… the days of Cyrus king of Persia, even until the reign of ______ king of Persia.”? (4:5, WEB)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ezra 4:4 records: “Then the people of the land weakened the hands of the people of Judah, and troubled them in building,”",
+    "options" : [
+      "discourage"
+    ],
+    "prompt" : "In this paraphrase, the people of the land tried to ____ the people of Judah from building. (4:4)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of Artaxerxes wrote Bishlam, Mithredath, Tabeel, and the rest of his companions, to Artaxerxes king of Persia; and the writing of the letter was written in …” The missing terms belong in that order.",
+    "options" : [
+      "rest Persia"
+    ],
+    "prompt" : "Supply the missing words in order: “… of Artaxerxes wrote Bishlam, Mithredath, Tabeel, and the ____ of his companions, to Artaxerxes king of ; and the writing of the letter was written in …” (4:7, WEB)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… to see the king's dishonor, therefore have we sent and informed the king;”; verse 17 reads “… in Samaria, and in the rest of the country beyond the River: Peace, and so forth.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Peace; king",
+      "king; wrath",
+      "daughters; Peace",
+      "king; Peace"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… to see the king's dishonor, therefore have we sent and informed the ______;” (4:14); “… in Samaria, and in the rest of the country beyond the River: ______, and so forth.” (4:17, WEB)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to Yahweh, the God of Israel, as king Cyrus the king of Persia has commanded us.”",
+    "options" : [
+      "Persia"
+    ],
+    "prompt" : "Complete the quotation: “… to Yahweh, the God of Israel, as king Cyrus the king of ____ has commanded us.” (4:3, WEB)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the Jews who came up from you are come to us to Jerusalem; they are building the rebellious and the bad city, and have finished the …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the Jews who came up from you are come to us to Jerusalem; they are building the rebellious and the bad city, and have finished the …” (4:12, WEB)",
+    "reference" : "Ezra 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 5:3 uses companions: “… to them Tattenai, the governor beyond the River, and Shetharbozenai, and their companions, and said thus to them, Who gave you a decree to build this …”",
+    "options" : [
+      "Darius",
+      "companions",
+      "goes",
+      "king's"
+    ],
+    "prompt" : "Which word completes “… to them Tattenai, the governor beyond the River, and Shetharbozenai, and their ______, and said thus to them, Who gave you a decree to build this …”? (5:3, WEB)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The gold and silver vessels also of the house of God, which Nebuchadnezzar took out of the temple that was in Jerusalem, and brought into the …”; the second reads “… and laid the foundations of the house of God which is in Jerusalem: and since that time even until now has it been in building, and …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Nebuchadnezzar Jerusalem"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The gold and silver vessels also of the house of God, which ____ took out of the temple that was in Jerusalem, and brought into the …” (5:14); “… and laid the foundations of the house of God which is in : and since that time even until now has it been in building, and …” (5:16, WEB)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies king: “… companions the Apharsachites, who were beyond the River, sent to Darius the king;”",
+    "options" : [
+      "shepherds",
+      "sister",
+      "rulers",
+      "king"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… companions the Apharsachites, who were beyond the River, sent to Darius the ______;”? (5:6, WEB)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… eye of their God was on the elders of the Jews, and they did not make them cease, until the matter should come to Darius, and …” The missing terms belong in that order.",
+    "options" : [
+      "eye Darius"
+    ],
+    "prompt" : "Supply the missing words in order: “… ____ of their God was on the elders of the Jews, and they did not make them cease, until the matter should come to , and …” (5:5, WEB)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… it known to the king, that we went into the province of Judah, to the house of the great God, which is built with great stones, …” It says Judah, not Eli.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… it known to the king, that we went into the province of Eli, to the house of the great God, which is built with great stones, …” (5:8, WEB)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ezra 5:2 records: “Then rose up Zerubbabel the son of Shealtiel, and Jeshua the son of Jozadak, and began to build the house of God which is at Jerusalem; and with them were the prophets of God, helping them.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Zerubbabel and Jeshua resumed building the house of God in Jerusalem. (5:2)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now the prophets, Haggai the prophet, and Zechariah the son of Iddo, prophesied to the Jews who were in Judah and Jerusalem; in the name of …”",
+    "options" : [
+      "Haggai"
+    ],
+    "prompt" : "Complete the quotation: “Now the prophets, ____ the prophet, and Zechariah the son of Iddo, prophesied to the Jews who were in Judah and Jerusalem; in the name of …” (5:1, WEB)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “Thus they returned us answer, saying, We are the servants of the God of heaven and earth, and are building the house that was built these …”; verse 13 reads “But in the first year of Cyrus king of Babylon, Cyrus the king made a decree to build this house of God.”. These establish the first and second answers respectively.",
+    "options" : [
+      "servants; first",
+      "first; servants",
+      "father; first",
+      "servants; forty"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Thus they returned us answer, saying, We are the ______ of the God of heaven and earth, and are building the house that was built these …” (5:11); “But in the ______ year of Cyrus king of Babylon, Cyrus the king made a decree to build this house of God.” (5:13, WEB)",
+    "reference" : "Ezra 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ezra 6:3 records: “… the king made a decree: Concerning the house of God at Jerusalem, let the house be built, the place where they offer sacrifices, and let the foundations of it be strongly laid; the height of it …”",
+    "options" : [
+      "Cyrus"
+    ],
+    "prompt" : "In this paraphrase, king Darius found the decree of ____ and confirmed the building. (6:3)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 6:4 uses three: “with three courses of great stones, and a course of new timber: and let the expenses be given out of the king's house.”",
+    "options" : [
+      "three",
+      "thirteen",
+      "twenty",
+      "fourth"
+    ],
+    "prompt" : "Which word completes “with ______ courses of great stones, and a course of new timber: and let the expenses be given out of the king's house.”? (6:4, WEB)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… pulled out from his house, and let him be lifted up and fastened thereon; and let his house be made a dunghill for this:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… pulled out from his house, and let him be lifted up and fastened thereon; and let his house be made a dunghill for this:” (6:11, WEB)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now therefore, Tattenai, governor beyond the River, Shetharbozenai, and your companions the Apharsachites, who are beyond the River, be you far from there:” The missing terms belong in that order.",
+    "options" : [
+      "governor beyond"
+    ],
+    "prompt" : "Supply the missing words in order: “Now therefore, Tattenai, ____ the River, Shetharbozenai, and your companions the Apharsachites, who are beyond the River, be you far from there:” (6:6, WEB)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “They set the priests in their divisions, and the Levites in their courses, for the service of God, which is at Jerusalem; as it is written …”; the second reads “… pure: and they killed the Passover for all the children of the captivity, and for their brothers the priests, and for themselves.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "priests captivity"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “They set the ____ in their divisions, and the Levites in their courses, for the service of God, which is at Jerusalem; as it is written …” (6:18); “… pure: and they killed the Passover for all the children of the , and for their brothers the priests, and for themselves.” (6:20, WEB)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… found at Achmetha, in the palace that is in the province of Media, a scroll, and therein was thus written for a record:”",
+    "options" : [
+      "Media"
+    ],
+    "prompt" : "Complete the quotation: “… found at Achmetha, in the palace that is in the province of ____, a scroll, and therein was thus written for a record:” (6:2, WEB)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wine: “… lambs, for burnt offerings to the God of heaven; also wheat, salt, wine, and oil, according to the word of the priests who are at Jerusalem, …”",
+    "options" : [
+      "barley",
+      "wheat",
+      "salt",
+      "wine"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… lambs, for burnt offerings to the God of heaven; also wheat, salt, ______, and oil, according to the word of the priests who are at Jerusalem, …”? (6:9, WEB)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… Tattenai, the governor beyond the River, Shetharbozenai, and their companions, because that Darius the king had sent, did accordingly with all diligence.”; verse 16 reads “… of the captivity, kept the dedication of this house of God with joy.”. These establish the first and second answers respectively.",
+    "options" : [
+      "joy; Darius",
+      "Darius; joy",
+      "Daniel; joy",
+      "Darius; understanding"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Tattenai, the governor beyond the River, Shetharbozenai, and their companions, because that ______ the king had sent, did accordingly with all diligence.” (6:13); “… of the captivity, kept the dedication of this house of God with ______.” (6:16, WEB)",
+    "reference" : "Ezra 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now after these things, in the reign of Artaxerxes king of Persia, Ezra the son of Seraiah, the son of Azariah, the son of Hilkiah,”",
+    "options" : [
+      "Ezra"
+    ],
+    "prompt" : "Complete the quotation: “Now after these things, in the reign of Artaxerxes king of Persia, ____ the son of Seraiah, the son of Azariah, the son of Hilkiah,” (7:1, WEB)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… a decree, that all those of the people of Israel, and their priests and the Levites, in my realm, who are minded of their own free …” It says priests, not fathers.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… a decree, that all those of the people of Israel, and their fathers and the Levites, in my realm, who are minded of their own free …” (7:13, WEB)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 7:5 uses Phinehas: “the son of Abishua, the son of Phinehas, the son of Eleazar, the son of Aaron the chief priest;”",
+    "options" : [
+      "Nahum",
+      "Naphtali",
+      "Enoch",
+      "Phinehas"
+    ],
+    "prompt" : "Which word completes “the son of Abishua, the son of ______, the son of Eleazar, the son of Aaron the chief priest;”? (7:5, WEB)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ezra 7:6 records: “… up from Babylon: and he was a ready scribe in the law of Moses, which Yahweh, the God of Israel, had given; and the king granted him all his request, according to the hand of Yahweh …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ezra was a scribe skilled in the Law of Moses. (7:6)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “and all the silver and gold that you shall find in all the province of Babylon, with the freewill-offering of the people, and of the priests, …”; verse 20 reads “… which you shall have occasion to bestow, bestow it out of the king's treasure-house.”. These establish the first and second answers respectively.",
+    "options" : [
+      "copper; king's",
+      "silver; king's",
+      "king's; silver",
+      "silver; servants"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and all the ______ and gold that you shall find in all the province of Babylon, with the freewill-offering of the people, and of the priests, …” (7:16); “… which you shall have occasion to bestow, bestow it out of the ______ treasure-house.” (7:20, WEB)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies statutes: “… scribe of the words of the commandments of Yahweh, and of his statutes to Israel:”",
+    "options" : [
+      "commandments",
+      "statutes",
+      "law",
+      "promise"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… scribe of the words of the commandments of Yahweh, and of his ______ to Israel:”? (7:11, WEB)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… first month began he to go up from Babylon; and on the first day of the fifth month came he to Jerusalem, according to the good …” The missing terms belong in that order.",
+    "options" : [
+      "Babylon fifth"
+    ],
+    "prompt" : "Supply the missing words in order: “… first month began he to go up from ____; and on the first day of the month came he to Jerusalem, according to the good …” (7:9, WEB)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to one hundred measures of wheat, and to one hundred baths of wine, and to one hundred baths of oil, and salt without prescribing how much.”; the second reads “You, Ezra, after the wisdom of your God who is in your hand, appoint magistrates and judges, who may judge all the people who are beyond …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wine wisdom"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to one hundred measures of wheat, and to one hundred baths of ____, and to one hundred baths of oil, and salt without prescribing how much.” (7:22); “You, Ezra, after the of your God who is in your hand, appoint magistrates and judges, who may judge all the people who are beyond …” (7:25, WEB)",
+    "reference" : "Ezra 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… David and the princes had given for the service of the Levites, two hundred and twenty Nethinim: all of them were mentioned by name.”; verse 25 reads “and weighed to them the silver, and the gold, and the vessels, even the offering for the house of our God, which the king, and his …”. These establish the first and second answers respectively.",
+    "options" : [
+      "silver; two",
+      "two; dust",
+      "six; silver",
+      "two; silver"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… David and the princes had given for the service of the Levites, ______ hundred and twenty Nethinim: all of them were mentioned by name.” (8:20); “and weighed to them the ______, and the gold, and the vessels, even the offering for the house of our God, which the king, and his …” (8:25, WEB)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Of the sons of Shecaniah, of the sons of Parosh, Zechariah; and with him were reckoned by genealogy of the males one hundred fifty.”",
+    "options" : [
+      "Zechariah"
+    ],
+    "prompt" : "Complete the quotation: “Of the sons of Shecaniah, of the sons of Parosh, ____; and with him were reckoned by genealogy of the males one hundred fifty.” (8:3, WEB)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ezra 8:21 records: “Then I proclaimed a fast there, at the river Ahava, that we might humble ourselves before our God, to seek of him a straight way for us, and for our little ones, and for all our …”",
+    "options" : [
+      "Ahava"
+    ],
+    "prompt" : "In this paraphrase, ezra proclaimed a fast at the river of ____. (8:21)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… said to them, You are holy to Yahweh, and the vessels are holy; and the silver and the gold are a freewill-offering to Yahweh, the God …”; the second reads “Then we departed from the river Ahava on the twelfth day of the first month, to go to Jerusalem: and the hand of our God was …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "holy twelfth"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… said to them, You are holy to Yahweh, and the vessels are ____; and the silver and the gold are a freewill-offering to Yahweh, the God …” (8:28); “Then we departed from the river Ahava on the day of the first month, to go to Jerusalem: and the hand of our God was …” (8:31, WEB)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the sons of Shelomith, the son of Josiphiah; and with him one hundred sixty males.” The missing terms belong in that order.",
+    "options" : [
+      "hundred sixty"
+    ],
+    "prompt" : "Supply the missing words in order: “… the sons of Shelomith, the son of Josiphiah; and with him one ____ males.” (8:10, WEB)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I sent them forth to Iddo the chief at the place Casiphia; and I told them what they should tell Iddo, and his brothers the Nethinim, …” It says Casiphia, not straight.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I sent them forth to Iddo the chief at the place straight; and I told them what they should tell Iddo, and his brothers the Nethinim, …” (8:17, WEB)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 8:6 uses Jonathan: “Of the sons of Adin, Ebed the son of Jonathan; and with him fifty males.”",
+    "options" : [
+      "Adam",
+      "Abram",
+      "Nehemiah",
+      "Jonathan"
+    ],
+    "prompt" : "Which word completes “Of the sons of Adin, Ebed the son of ______; and with him fifty males.”? (8:6, WEB)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ezra",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Eliphelet: “… sons of Adonikam, who were the last; and these are their names: Eliphelet, Jeuel, and Shemaiah; and with them sixty males.”",
+    "options" : [
+      "straight",
+      "Levite",
+      "Eliphelet",
+      "exile"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… sons of Adonikam, who were the last; and these are their names: ______, Jeuel, and Shemaiah; and with them sixty males.”? (8:13, WEB)",
+    "reference" : "Ezra 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and eat the good of the land, and leave it for an inheritance to your children forever.”; the second reads “shall we again break your commandments, and join in affinity with the peoples that do these abominations? would not you be angry with us until you …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "inheritance commandments"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and eat the good of the land, and leave it for an ____ to your children forever.” (9:12); “shall we again break your , and join in affinity with the peoples that do these abominations? would not you be angry with us until you …” (9:14, WEB)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies priests: “… this day; and for our iniquities have we, our kings, and our priests, been delivered into the hand of the kings of the lands, to the …”",
+    "options" : [
+      "sisters",
+      "prophet",
+      "sister",
+      "priests"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… this day; and for our iniquities have we, our kings, and our ______, been delivered into the hand of the kings of the lands, to the …”? (9:7, WEB)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ezra 9:1 records: “… to me, saying, The people of Israel, and the priests and the Levites, have not separated themselves from the peoples of the lands, doing according to their abominations, even of the Canaanites, the Hittites, the Perizzites, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ezra was grieved when he learned that some Israelites had married foreign wives. (9:1-3)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to me everyone who trembled at the words of the God of Israel, because of the trespass of them of the captivity; and I sat confounded …”",
+    "options" : [
+      "Israel"
+    ],
+    "prompt" : "Complete the quotation: “… to me everyone who trembled at the words of the God of ____, because of the trespass of them of the captivity; and I sat confounded …” (9:4, WEB)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… a remnant to escape, and to give us a nail in his holy place, that our God may lighten our eyes, and give us a little …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… a remnant to escape, and to give us a nail in his holy place, that our God may lighten our eyes, and give us a little …” (9:8, WEB)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… I am ashamed and blush to lift up my face to you, my God; for our iniquities are increased over our head, and our guiltiness is …” The missing terms belong in that order.",
+    "options" : [
+      "face iniquities"
+    ],
+    "prompt" : "Supply the missing words in order: “… I am ashamed and blush to lift up my ____ to you, my God; for our are increased over our head, and our guiltiness is …” (9:6, WEB)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 9:5 uses offering: “At the evening offering I arose up from my humiliation, even with my garment and my robe torn; and I fell on my knees, and spread …”",
+    "options" : [
+      "rest",
+      "praise",
+      "life",
+      "offering"
+    ],
+    "prompt" : "Which word completes “At the evening ______ I arose up from my humiliation, even with my garment and my robe torn; and I fell on my knees, and spread …”? (9:5, WEB)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… but has extended loving kindness to us in the sight of the kings of Persia, to give us a reviving, to set up the house of …”; verse 11 reads “which you have commanded by your servants the prophets, saying, The land, to which you go to possess it, is an unclean land through the uncleanness …”. These establish the first and second answers respectively.",
+    "options" : [
+      "kings; servants",
+      "kings; soldiers",
+      "fathers; servants",
+      "servants; kings"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… but has extended loving kindness to us in the sight of the ______ of Persia, to give us a reviving, to set up the house of …” (9:9); “which you have commanded by your ______ the prophets, saying, The land, to which you go to possess it, is an unclean land through the uncleanness …” (9:11, WEB)",
+    "reference" : "Ezra 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Of the sons of Harim: Maaseiah, and Elijah, and Shemaiah, and Jehiel, and Uzziah.” It says Elijah, not Darius.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Of the sons of Harim: Maaseiah, and Darius, and Shemaiah, and Jehiel, and Uzziah.” (10:21, WEB)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ezra 10:11 records: “Now therefore make confession to Yahweh, the God of your fathers, and do his pleasure; and separate yourselves from the peoples of the land, and from the foreign women.”",
+    "options" : [
+      "wives"
+    ],
+    "prompt" : "In this paraphrase, the people agreed to separate from their foreign ____. (10:11-12)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… commandment of our God; and let it be done according to the law.”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “… commandment of our God; and let it be done according to the ____.” (10:3, WEB)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It must be read beside the larger biblical witness, including Ruth and God's welcome of foreigners. It is not a general claim that mixed ethnicity makes a marriage sinful.",
+    "options" : [
+      "Every interethnic marriage is forbidden in every setting.",
+      "The book denies that foreigners can worship God.",
+      "The narrative concerns covenant unfaithfulness in the returned community and presents a difficult historical response.",
+      "No covenant concerns appear in Ezra."
+    ],
+    "prompt" : "What context is necessary when reading the community's separation from foreign wives? (10:1-17; 9:1-2)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 25 reads “… the sons of Parosh: Ramiah, and Izziah, and Malchijah, and Mijamin, and Eleazar, and Malchijah, and Benaiah.”; verse 30 reads “… of Pahath-moab: Adna, and Chelal, Benaiah, Maaseiah, Mattaniah, Bezalel, and Binnui, and Manasseh.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Eleazar; Nahum",
+      "Leah; Manasseh",
+      "Eleazar; Manasseh",
+      "Manasseh; Eleazar"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the sons of Parosh: Ramiah, and Izziah, and Malchijah, and Mijamin, and ______, and Malchijah, and Benaiah.” (10:25); “… of Pahath-moab: Adna, and Chelal, Benaiah, Maaseiah, Mattaniah, Bezalel, and Binnui, and ______.” (10:30, WEB)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ezra 10:8 uses three: “and that whoever didn't come within three days, according to the counsel of the princes and the elders, all his substance should be forfeited, and himself …”",
+    "options" : [
+      "seven",
+      "forty",
+      "thousand",
+      "three"
+    ],
+    "prompt" : "Which word completes “and that whoever didn't come within ______ days, according to the counsel of the princes and the elders, all his substance should be forfeited, and himself …”? (10:8, WEB)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Ezra: “The children of the captivity did so. Ezra the priest, with certain heads of fathers' houses, after their fathers' houses, and all of them by their …”",
+    "options" : [
+      "Ezra",
+      "Hezekiah",
+      "Enoch",
+      "Obed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The children of the captivity did so. ______ the priest, with certain heads of fathers' houses, after their fathers' houses, and all of them by their …”? (10:16, WEB)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ezra",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… is this a work of one day or two; for we have greatly transgressed in this matter.” The missing terms belong in that order.",
+    "options" : [
+      "two matter"
+    ],
+    "prompt" : "Supply the missing words in order: “… is this a work of one day or ____; for we have greatly transgressed in this .” (10:13, WEB)",
+    "reference" : "Ezra 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -1,0 +1,3140 @@
+[
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “David said to him, Your blood be on your head; for your mouth has testified against you, saying, I have slain Yahweh's anointed.”; verse 18 reads “… Judah the song of the bow: behold, it is written in the book of Jashar):”. These establish the first and second answers respectively.",
+    "options" : [
+      "blood; walls",
+      "hair; book",
+      "book; blood",
+      "blood; book"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “David said to him, Your ______ be on your head; for your mouth has testified against you, saying, I have slain Yahweh's anointed.” (1:16); “… Judah the song of the bow: behold, it is written in the ______ of Jashar):” (1:18, WEB)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… me, Stand, I pray you, beside me, and kill me; for anguish has taken hold of me, because my life is yet whole in me.” The missing terms belong in that order.",
+    "options" : [
+      "beside life"
+    ],
+    "prompt" : "Supply the missing words in order: “… me, Stand, I pray you, ____ me, and kill me; for anguish has taken hold of me, because my is yet whole in me.” (1:9, WEB)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies live: “… him, and killed him, because I was sure that he could not live after that he was fallen: and I took the crown that was on …”",
+    "options" : [
+      "hate",
+      "rejoice",
+      "live",
+      "save"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… him, and killed him, because I was sure that he could not ______ after that he was fallen: and I took the crown that was on …”? (1:10, WEB)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 1:5 uses Jonathan: “… the young man who told him, How know you that Saul and Jonathan his son are dead?”",
+    "options" : [
+      "Ahab",
+      "Jonathan",
+      "Abram",
+      "Amos"
+    ],
+    "prompt" : "Which word completes “… the young man who told him, How know you that Saul and ______ his son are dead?”? (1:5, WEB)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “David said to him, How were you not afraid to put forth your hand to destroy Yahweh's anointed?” It says David, not Eli.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Eli said to him, How were you not afraid to put forth your hand to destroy Yahweh's anointed?” (1:14, WEB)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… third day, that behold, a man came out of the camp from Saul, with his clothes torn, and earth on his head: and so it was, …”",
+    "options" : [
+      "Saul"
+    ],
+    "prompt" : "Complete the quotation: “… third day, that behold, a man came out of the camp from ____, with his clothes torn, and earth on his head: and so it was, …” (1:2, WEB)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 1:11 records: “Then David took hold on his clothes, and tore them; and likewise all the men who were with him:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David mourned the deaths of Saul and Jonathan. (1:11-12)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “From the blood of the slain, from the fat of the mighty, The bow of Jonathan didn't turn back, The sword of Saul didn't return empty.”; the second reads “… over Saul, Who clothed you in scarlet delicately, Who put ornaments of gold on your clothing.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fat gold"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “From the blood of the slain, from the ____ of the mighty, The bow of Jonathan didn't turn back, The sword of Saul didn't return empty.” (1:22); “… over Saul, Who clothed you in scarlet delicately, Who put ornaments of on your clothing.” (1:24, WEB)",
+    "reference" : "2 Samuel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… Zeruiah were there, Joab, and Abishai, and Asahel: and Asahel was as light of foot as a wild gazelle.”; verse 22 reads “Abner said again to Asahel, Turn you aside from following me: why should I strike you to the ground? how then should I hold up my …”. These establish the first and second answers respectively.",
+    "options" : [
+      "light; everyone",
+      "Turn; aside",
+      "aside; light",
+      "light; aside"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Zeruiah were there, Joab, and Abishai, and Asahel: and Asahel was as ______ of foot as a wild gazelle.” (2:18); “Abner said again to Asahel, Turn you ______ from following me: why should I strike you to the ground? how then should I hold up my …” (2:22, WEB)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 2:4 records: “The men of Judah came, and there they anointed David king over the house of Judah. They told David, saying, The men of Jabesh Gilead were those who buried Saul.”",
+    "options" : [
+      "Judah"
+    ],
+    "prompt" : "In this paraphrase, david was anointed king over the house of ____. (2:4)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… of Benjamin gathered themselves together after Abner, and became one band, and stood on the top of a hill.”; the second reads “So Joab blew the trumpet; and all the people stood still, and pursued after Israel no more, neither fought they any more.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "stood pursued"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… of Benjamin gathered themselves together after Abner, and became one band, and ____ on the top of a hill.” (2:25); “So Joab blew the trumpet; and all the people stood still, and after Israel no more, neither fought they any more.” (2:28, WEB)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “So David went up there, and his two wives also, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.”",
+    "options" : [
+      "two"
+    ],
+    "prompt" : "Complete the quotation: “So David went up there, and his ____ wives also, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.” (2:2, WEB)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… number: twelve for Benjamin, and for Ish-bosheth the son of Saul, and twelve of the servants of David.” It says twelve, not fifth.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… number: twelve for Benjamin, and for Ish-bosheth the son of Saul, and fifth of the servants of David.” (2:15, WEB)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 2:5 uses Gilead: “David sent messengers to the men of Jabesh Gilead, and said to them, Blessed be you of Yahweh, that you have shown this kindness to your …”",
+    "options" : [
+      "Hebron",
+      "Jordan",
+      "Assyria",
+      "Gilead"
+    ],
+    "prompt" : "Which word completes “David sent messengers to the men of Jabesh ______, and said to them, Blessed be you of Yahweh, that you have shown this kindness to your …”? (2:5, WEB)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Saul: “… the son of Ner, and the servants of Ish-bosheth the son of Saul, went out from Mahanaim to Gibeon.”",
+    "options" : [
+      "Gad",
+      "Zerubbabel",
+      "Saul",
+      "Benjamin"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the son of Ner, and the servants of Ish-bosheth the son of ______, went out from Mahanaim to Gibeon.”? (2:12, WEB)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the Ashurites, and over Jezreel, and over Ephraim, and over Benjamin, and over all Israel.” The missing terms belong in that order.",
+    "options" : [
+      "Benjamin Israel"
+    ],
+    "prompt" : "Supply the missing words in order: “… the Ashurites, and over Jezreel, and over Ephraim, and over ____, and over all .” (2:9, WEB)",
+    "reference" : "2 Samuel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “… Hebron; for he had sent him away, and he was gone in peace.”; verse 26 reads “… Abner, and they brought him back from the well of Sirah: but David didn't know it.”. These establish the first and second answers respectively.",
+    "options" : [
+      "peace; David",
+      "David; peace",
+      "wrath; David",
+      "peace; Hannah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Hebron; for he had sent him away, and he was gone in ______.” (3:22); “… Abner, and they brought him back from the well of Sirah: but ______ didn't know it.” (3:26, WEB)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… all that seemed good to Israel, and to the whole house of Benjamin.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… all that seemed good to Israel, and to the whole house of Benjamin.” (3:19, WEB)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… up the throne of David over Israel and over Judah, from Dan even to Beersheba.” The missing terms belong in that order.",
+    "options" : [
+      "Dan Beersheba"
+    ],
+    "prompt" : "Supply the missing words in order: “… up the throne of David over Israel and over Judah, from ____ even to .” (3:10, WEB)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Deliver: “David sent messengers to Ish-bosheth, Saul's son, saying, Deliver me my wife Michal, whom I pledged to be married to me for one hundred foreskins of …”",
+    "options" : [
+      "servants",
+      "Deliver",
+      "sword",
+      "bread"
+    ],
+    "prompt" : "Which detail belongs in this passage: “David sent messengers to Ish-bosheth, Saul's son, saying, ______ me my wife Michal, whom I pledged to be married to me for one hundred foreskins of …”? (3:14, WEB)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… second, Chileab, of Abigail the wife of Nabal the Carmelite; and the third, Absalom the son of Maacah the daughter of Talmai king of Geshur;”",
+    "options" : [
+      "third"
+    ],
+    "prompt" : "Complete the quotation: “… second, Chileab, of Abigail the wife of Nabal the Carmelite; and the ____, Absalom the son of Maacah the daughter of Talmai king of Geshur;” (3:3, WEB)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 3:12 records: “Abner sent messengers to David on his behalf, saying, Whose is the land? saying also, Make your league with me, and, behold, my hand shall be with you, to bring about all Israel to you.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David made a covenant with Abner. (3:12)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 3:7 uses Saul: “Now Saul had a concubine, whose name was Rizpah, the daughter of Aiah: and Ish-bosheth said to Abner, Why have you gone in to my father's …”",
+    "options" : [
+      "Belshazzar",
+      "Simeon",
+      "Saul",
+      "Ezra"
+    ],
+    "prompt" : "Which word completes “Now ______ had a concubine, whose name was Rizpah, the daughter of Aiah: and Ish-bosheth said to Abner, Why have you gone in to my father's …”? (3:7, WEB)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “So Joab and Abishai his brother killed Abner, because he had killed their brother Asahel at Gibeon in the battle.”; the second reads “… saying, God do so to me, and more also, if I taste bread, or anything else, until the sun be down.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "killed bread"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “So Joab and Abishai his brother ____ Abner, because he had killed their brother Asahel at Gibeon in the battle.” (3:30); “… saying, God do so to me, and more also, if I taste , or anything else, until the sun be down.” (3:35, WEB)",
+    "reference" : "2 Samuel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “when one told me, saying, Behold, Saul is dead, thinking to have brought good news, I took hold of him, and killed him in Ziklag, which …”; the second reads “How much more, when wicked men have slain a righteous person in his own house on his bed, shall I not now require his blood of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "thinking righteous"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “when one told me, saying, Behold, Saul is dead, ____ to have brought good news, I took hold of him, and killed him in Ziklag, which …” (4:10); “How much more, when wicked men have slain a person in his own house on his bed, shall I not now require his blood of …” (4:11, WEB)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “When Ish-bosheth, Saul's son, heard that Abner was dead in Hebron, his hands became feeble, and all the Israelites were troubled.”",
+    "options" : [
+      "Hebron"
+    ],
+    "prompt" : "Complete the quotation: “When Ish-bosheth, Saul's son, heard that Abner was dead in ____, his hands became feeble, and all the Israelites were troubled.” (4:1, WEB)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… was lame of his feet. He was five years old when the news came of Saul and Jonathan out of Jezreel; and his nurse took him …” The missing terms belong in that order.",
+    "options" : [
+      "five Jonathan"
+    ],
+    "prompt" : "Supply the missing words in order: “… was lame of his feet. He was ____ years old when the news came of Saul and out of Jezreel; and his nurse took him …” (4:4, WEB)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies rest: “… of the day to the house of Ish-bosheth, as he took his rest at noon.”",
+    "options" : [
+      "worship",
+      "curse",
+      "rest",
+      "sacrifice"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of the day to the house of Ish-bosheth, as he took his ______ at noon.”? (4:5, WEB)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 4:7 records: “… when they came into the house, as he lay on his bed in his bedchamber, they struck him, and killed him, and beheaded him, and took his head, and went by the way of the Arabah …”",
+    "options" : [
+      "bed"
+    ],
+    "prompt" : "In this paraphrase, ish-bosheth was murdered in his ____. (4:7)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… life; and Yahweh has avenged my lord the king this day of Saul, and of his seed.”; verse 9 reads “David answered Rechab and Baanah his brother, the sons of Rimmon the Beerothite, and said to them, As Yahweh lives, who has redeemed my soul out …”. These establish the first and second answers respectively.",
+    "options" : [
+      "David; Saul",
+      "Saul; David",
+      "Saul; Haggai",
+      "Judah; David"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… life; and Yahweh has avenged my lord the king this day of ______, and of his seed.” (4:8); “______ answered Rechab and Baanah his brother, the sons of Rimmon the Beerothite, and said to them, As Yahweh lives, who has redeemed my soul out …” (4:9, WEB)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… into the midst of the house, as though they would have fetched wheat; and they struck him in the body: and Rechab and Baanah his brother …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… into the midst of the house, as though they would have fetched wheat; and they struck him in the body: and Rechab and Baanah his brother …” (4:6, WEB)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 4:2 uses Benjamin: “… Beerothite, of the children of Benjamin (for Beeroth also is reckoned to Benjamin:”",
+    "options" : [
+      "Naomi",
+      "Benjamin",
+      "Noah",
+      "Gomer"
+    ],
+    "prompt" : "Which word completes “… Beerothite, of the children of Benjamin (for Beeroth also is reckoned to ______:”? (4:2, WEB)",
+    "reference" : "2 Samuel 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… those who were born to him in Jerusalem: Shammua, and Shobab, and Nathan, and Solomon,”; verse 17 reads “When the Philistines heard that they had anointed David king over Israel, all the Philistines went up to seek David; and David heard of it, and …”. These establish the first and second answers respectively.",
+    "options" : [
+      "king; Nathan",
+      "Nathan; fathers",
+      "Amos; king",
+      "Nathan; king"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… those who were born to him in Jerusalem: Shammua, and Shobab, and ______, and Solomon,” (5:14); “When the Philistines heard that they had anointed David ______ over Israel, all the Philistines went up to seek David; and David heard of it, and …” (5:17, WEB)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies David: “David lived in the stronghold, and called it the city of David. David built round about from Millo and inward.”",
+    "options" : [
+      "Eleazar",
+      "David",
+      "Sarah",
+      "Habakkuk"
+    ],
+    "prompt" : "Which detail belongs in this passage: “David lived in the stronghold, and called it the city of David. ______ built round about from Millo and inward.”? (5:9, WEB)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 5:3 records: “So all the elders of Israel came to the king to Hebron; and king David made a covenant with them in Hebron before Yahweh: and they anointed David king over Israel.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David became king over all Israel at Hebron. (5:3)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “In times past, when Saul was king over us, it was you who led out and brought in Israel: and Yahweh said to you, You shall …”",
+    "options" : [
+      "Saul"
+    ],
+    "prompt" : "Complete the quotation: “In times past, when ____ was king over us, it was you who led out and brought in Israel: and Yahweh said to you, You shall …” (5:2, WEB)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “David perceived that Yahweh had established him king over Israel, and that he had exalted his kingdom for his people Israel's sake.” It says Israel, not Jesse.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “David perceived that Yahweh had established him king over Jesse, and that he had exalted his kingdom for his people Israel's sake.” (5:12, WEB)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 5:5 uses Hebron: “In Hebron he reigned over Judah seven years and six months; and in Jerusalem he reigned thirty-three years over all Israel and Judah.”",
+    "options" : [
+      "Goshen",
+      "Persia",
+      "Hebron",
+      "Edom"
+    ],
+    "prompt" : "Which word completes “In ______ he reigned over Judah seven years and six months; and in Jerusalem he reigned thirty-three years over all Israel and Judah.”? (5:5, WEB)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… breach of waters. Therefore he called the name of that place Baal Perazim.”; the second reads “… a circuit behind them, and come on them over against the mulberry trees.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Perazim trees"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… breach of waters. Therefore he called the name of that place Baal ____.” (5:20); “… a circuit behind them, and come on them over against the mulberry .” (5:23, WEB)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the watercourse, and strike the lame and the blind, who are hated of David's soul. Therefore they say, There are the blind and the lame; he …” The missing terms belong in that order.",
+    "options" : [
+      "strike blind"
+    ],
+    "prompt" : "Supply the missing words in order: “… the watercourse, and ____ the lame and the blind, who are hated of David's soul. Therefore they say, There are the and the lame; he …” (5:8, WEB)",
+    "reference" : "2 Samuel 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Obed: “… city of David; but David carried it aside into the house of Obed-edom the Gittite.”",
+    "options" : [
+      "Obed",
+      "Seth",
+      "Samuel",
+      "Enoch"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… city of David; but David carried it aside into the house of ______-edom the Gittite.”? (6:10, WEB)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 6:5 uses David: “David and all the house of Israel played before Yahweh with all manner of instruments made of fir-wood, and with harps, and with psalteries, and with …”",
+    "options" : [
+      "Aaron",
+      "Balak",
+      "David",
+      "Samuel"
+    ],
+    "prompt" : "Which word completes “______ and all the house of Israel played before Yahweh with all manner of instruments made of fir-wood, and with harps, and with psalteries, and with …”? (6:5, WEB)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 6:14 records: “David danced before Yahweh with all his might; and David was girded with a linen ephod.”",
+    "options" : [
+      "might"
+    ],
+    "prompt" : "In this paraphrase, david danced before the LORD with all his ____. (6:14)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… were with him, from Baale Judah, to bring up from there the ark of God, which is called by the Name, even the name of Yahweh …”",
+    "options" : [
+      "ark"
+    ],
+    "prompt" : "Complete the quotation: “… were with him, from Baale Judah, to bring up from there the ____ of God, which is called by the Name, even the name of Yahweh …” (6:2, WEB)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The ark of Yahweh remained in the house of Obed-edom the Gittite three months: and Yahweh blessed Obed-edom, and all his house.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The ark of Yahweh remained in the house of Obed-edom the Gittite three months: and Yahweh blessed Obed-edom, and all his house.” (6:11, WEB)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… David had made an end of offering the burnt offering and the peace-offerings, he blessed the people in the name of Yahweh of Hosts.”; the second reads “Then David returned to bless his household. Michal the daughter of Saul came out to meet David, and said, How glorious was the king of Israel …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "offerings Saul"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… David had made an end of offering the burnt offering and the peace-____, he blessed the people in the name of Yahweh of Hosts.” (6:18); “Then David returned to bless his household. Michal the daughter of came out to meet David, and said, How glorious was the king of Israel …” (6:20, WEB)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to the ark of God, and took hold of it; for the oxen stumbled.” The missing terms belong in that order.",
+    "options" : [
+      "oxen stumbled"
+    ],
+    "prompt" : "Supply the missing words in order: “… to the ark of God, and took hold of it; for the ____.” (6:6, WEB)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… so, that, when those who bore the ark of Yahweh had gone six paces, he sacrificed an ox and a fattened calf.”; verse 16 reads “… David leaping and dancing before Yahweh; and she despised him in her heart.”. These establish the first and second answers respectively.",
+    "options" : [
+      "heart; six",
+      "six; lips",
+      "fifth; heart",
+      "six; heart"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… so, that, when those who bore the ark of Yahweh had gone ______ paces, he sacrificed an ox and a fattened calf.” (6:13); “… David leaping and dancing before Yahweh; and she despised him in her ______.” (6:16, WEB)",
+    "reference" : "2 Samuel 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now therefore thus shall you tell my servant David, Thus says Yahweh of Hosts, I took you from the sheep pen, from following the sheep, that …” The missing terms belong in that order.",
+    "options" : [
+      "servant David"
+    ],
+    "prompt" : "Supply the missing words in order: “Now therefore thus shall you tell my ____, Thus says Yahweh of Hosts, I took you from the sheep pen, from following the sheep, that …” (7:8, WEB)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 7:12 records: “When your days are fulfilled, and you shall sleep with your fathers, I will set up your seed after you, who shall proceed out of your bowels, and I will establish his kingdom.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God made a covenant with David about a house that would last forever. (7:12-16)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The wordplay shifts attention from what David will build to what God promises to establish. Christians connect the enduring royal promise with Jesus; the initial setting concerns David's family and kingdom.",
+    "options" : [
+      "David proposes a temple, while God promises David a dynasty.",
+      "Both uses mean only a private bedroom.",
+      "The word always means an army.",
+      "God promises that David will build every temple."
+    ],
+    "prompt" : "What does the repeated word house mean in David's plan and God's promise? (7:1-16)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 7:6 uses Egypt: “… the day that I brought up the children of Israel out of Egypt, even to this day, but have walked in a tent and in a …”",
+    "options" : [
+      "Tarshish",
+      "Nineveh",
+      "Egypt",
+      "Judah"
+    ],
+    "prompt" : "Which word completes “… the day that I brought up the children of Israel out of ______, even to this day, but have walked in a tent and in a …”? (7:6, WEB)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “that the king said to Nathan the prophet, See now, I dwell in a house of cedar, but the ark of God dwells within curtains.”",
+    "options" : [
+      "Nathan"
+    ],
+    "prompt" : "Complete the quotation: “that the king said to ____ the prophet, See now, I dwell in a house of cedar, but the ark of God dwells within curtains.” (7:2, WEB)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies rest: “… to be over my people Israel; and I will cause you to rest from all your enemies. Moreover Yahweh tells you that Yahweh will make you …”",
+    "options" : [
+      "prayer",
+      "death",
+      "offering",
+      "rest"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to be over my people Israel; and I will cause you to ______ from all your enemies. Moreover Yahweh tells you that Yahweh will make you …”? (7:11, WEB)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “According to all these words, and according to all this vision, so did Nathan speak to David.”; verse 21 reads “For your word's sake, and according to your own heart, have you worked all this greatness, to make your servant know it.”. These establish the first and second answers respectively.",
+    "options" : [
+      "dwell; heart",
+      "vision; heart",
+      "heart; vision",
+      "vision; mouth"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “According to all these words, and according to all this ______, so did Nathan speak to David.” (7:17); “For your word's sake, and according to your own ______, have you worked all this greatness, to make your servant know it.” (7:21, WEB)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… shall the children of wickedness afflict them any more, as at the first,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… shall the children of wickedness afflict them any more, as at the first,” (7:10, WEB)",
+    "reference" : "2 Samuel 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He put garrisons in Edom; throughout all Edom put he garrisons, and all the Edomites became servants to David. Yahweh gave victory to David wherever he …”; the second reads “Joab the son of Zeruiah was over the host; and Jehoshaphat the son of Ahilud was recorder;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Edom Zeruiah"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He put garrisons in Edom; throughout all ____ put he garrisons, and all the Edomites became servants to David. Yahweh gave victory to David wherever he …” (8:14); “Joab the son of was over the host; and Jehoshaphat the son of Ahilud was recorder;” (8:16, WEB)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to death, and one full line to keep alive. The Moabites became servants to David, and brought tribute.”",
+    "options" : [
+      "servants"
+    ],
+    "prompt" : "Complete the quotation: “… to death, and one full line to keep alive. The Moabites became ____ to David, and brought tribute.” (8:2, WEB)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 8:4 uses twenty: “David took from him one thousand seven hundred horsemen, and twenty thousand footmen: and David hamstrung all the chariot horses, but reserved of them for one …”",
+    "options" : [
+      "three",
+      "twenty",
+      "sixth",
+      "fourteen"
+    ],
+    "prompt" : "Which word completes “David took from him one thousand seven hundred horsemen, and ______ thousand footmen: and David hamstrung all the chariot horses, but reserved of them for one …”? (8:4, WEB)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “When Toi king of Hamath heard that David had struck all the host of Hadadezer,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “When Toi king of Hamath heard that David had struck all the host of Hadadezer,” (8:9, WEB)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “These also did king David dedicate to Yahweh, with the silver and gold that he dedicated of all the nations which he subdued;”; verse 13 reads “… he returned from smiting the Syrians in the Valley of Salt, even eighteen thousand men.”. These establish the first and second answers respectively.",
+    "options" : [
+      "silver; ninety",
+      "brass; eighteen",
+      "silver; eighteen",
+      "eighteen; silver"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “These also did king David dedicate to Yahweh, with the ______ and gold that he dedicated of all the nations which he subdued;” (8:11); “… he returned from smiting the Syrians in the Valley of Salt, even ______ thousand men.” (8:13, WEB)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then David put garrisons in Syria of Damascus; and the Syrians became servants to David, and brought tribute. Yahweh gave victory to David wherever he went.” The missing terms belong in that order.",
+    "options" : [
+      "Damascus David"
+    ],
+    "prompt" : "Supply the missing words in order: “Then David put garrisons in Syria of ____; and the Syrians became servants to , and brought tribute. Yahweh gave victory to David wherever he went.” (8:6, WEB)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies gold: “David took the shields of gold that were on the servants of Hadadezer, and brought them to Jerusalem.”",
+    "options" : [
+      "stones",
+      "bronze",
+      "gold",
+      "stone"
+    ],
+    "prompt" : "Which detail belongs in this passage: “David took the shields of ______ that were on the servants of Hadadezer, and brought them to Jerusalem.”? (8:7, WEB)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 8:3 records: “David struck also Hadadezer the son of Rehob, king of Zobah, as he went to recover his dominion at the River.”",
+    "options" : [
+      "Hadadezer"
+    ],
+    "prompt" : "In this paraphrase, david defeated King ____ of Zobah. (8:3)",
+    "reference" : "2 Samuel 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Then the king called to Ziba, Saul's servant, and said to him, \"All that pertained to Saul and to all his house have I given to …” It says servant, not daughters.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Then the king called to Ziba, Saul's daughters, and said to him, \"All that pertained to Saul and to all his house have I given to …” (9:9, WEB)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… he? Ziba said to the king, Behold, he is in the house of Machir the son of Ammiel, in Lo Debar.” The missing terms belong in that order.",
+    "options" : [
+      "king Debar"
+    ],
+    "prompt" : "Supply the missing words in order: “… he? Ziba said to the ____, Behold, he is in the house of Machir the son of Ammiel, in Lo .” (9:4, WEB)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “There was of the house of Saul a servant whose name was Ziba, and they called him to David; and the king said to him, Are …”",
+    "options" : [
+      "Saul"
+    ],
+    "prompt" : "Complete the quotation: “There was of the house of ____ a servant whose name was Ziba, and they called him to David; and the king said to him, Are …” (9:2, WEB)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… name was Mica. All that lived in the house of Ziba were servants to Mephibosheth.”; the second reads “So Mephibosheth lived in Jerusalem; for he ate continually at the king's table. He was lame in both his feet.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servants Jerusalem"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… name was Mica. All that lived in the house of Ziba were ____ to Mephibosheth.” (9:12); “So Mephibosheth lived in ; for he ate continually at the king's table. He was lame in both his feet.” (9:13, WEB)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies David: “… Saul, came to David, and fell on his face, and did obeisance. David said, Mephibosheth. He answered, Behold, your servant!”",
+    "options" : [
+      "Naphtali",
+      "Israel",
+      "Habakkuk",
+      "David"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Saul, came to David, and fell on his face, and did obeisance. ______ said, Mephibosheth. He answered, Behold, your servant!”? (9:6, WEB)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 9:7 records: “… to him, \"Don't be afraid of him; for I will surely show you kindness for Jonathan your father's sake, and will restore you all the land of Saul your father; and you shall eat bread at …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David showed kindness to Mephibosheth for Jonathan's sake. (9:7)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 9:3 uses Jonathan: “… show the kindness of God to him? Ziba said to the king, Jonathan has yet a son, who is lame of his feet.”",
+    "options" : [
+      "Jonathan",
+      "Leah",
+      "Eli",
+      "Israel"
+    ],
+    "prompt" : "Which word completes “… show the kindness of God to him? Ziba said to the king, ______ has yet a son, who is lame of his feet.”? (9:3, WEB)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… you shall bring in the fruits, that your master's son may have bread to eat: but Mephibosheth your master's son shall eat bread always at my …”; verse 11 reads “… the king, he shall eat at my table, as one of the king's sons.”. These establish the first and second answers respectively.",
+    "options" : [
+      "king's; bread",
+      "bread; fruits",
+      "bread; king's",
+      "grain; king's"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… you shall bring in the fruits, that your master's son may have ______ to eat: but Mephibosheth your master's son shall eat bread always at my …” (9:10); “… the king, he shall eat at my table, as one of the ______ sons.” (9:11, WEB)",
+    "reference" : "2 Samuel 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… River: and they came to Helam, with Shobach the captain of the host of Hadarezer at their head.”; the second reads “… told David; and he gathered all Israel together, and passed over the Jordan, and came to Helam. The Syrians set themselves in array against David, and …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "host Jordan"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… River: and they came to Helam, with Shobach the captain of the ____ of Hadarezer at their head.” (10:16); “… told David; and he gathered all Israel together, and passed over the , and came to Helam. The Syrians set themselves in array against David, and …” (10:17, WEB)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… king of Maacah with one thousand men, and the men of Tob twelve thousand men.” The missing terms belong in that order.",
+    "options" : [
+      "twelve thousand"
+    ],
+    "prompt" : "Supply the missing words in order: “… king of Maacah with one thousand men, and the men of Tob ____ men.” (10:6, WEB)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… then you shall help me; but if the children of Ammon be too strong for you, then I will come and help you.”; verse 14 reads “… city. Then Joab returned from the children of Ammon, and came to Jerusalem.”. These establish the first and second answers respectively.",
+    "options" : [
+      "too; Goshen",
+      "thousand; Jerusalem",
+      "Jerusalem; too",
+      "too; Jerusalem"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… then you shall help me; but if the children of Ammon be ______ strong for you, then I will come and help you.” (10:11); “… city. Then Joab returned from the children of Ammon, and came to ______.” (10:14, WEB)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Syrians: “… the battle in array at the entrance of the gate: and the Syrians of Zobah and of Rehob, and the men of Tob and Maacah, were …”",
+    "options" : [
+      "Syrians",
+      "servants",
+      "garments",
+      "kings"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the battle in array at the entrance of the gate: and the ______ of Zobah and of Rehob, and the men of Tob and Maacah, were …”? (10:8, WEB)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… him before and behind, he chose of all the choice men of Israel, and put them in array against the Syrians:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… him before and behind, he chose of all the choice men of Israel, and put them in array against the Syrians:” (10:9, WEB)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… David sent by his servants to comfort him concerning his father. David's servants came into the land of the children of Ammon.”",
+    "options" : [
+      "servants"
+    ],
+    "prompt" : "Complete the quotation: “… David sent by his servants to comfort him concerning his father. David's ____ came into the land of the children of Ammon.” (10:2, WEB)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 10:3 uses David: “… children of Ammon said to Hanun their lord, Do you think that David honors your father, in that he has sent comforters to you? Hasn't David …”",
+    "options" : [
+      "David",
+      "Obed",
+      "Zechariah",
+      "Rachel"
+    ],
+    "prompt" : "Which word completes “… children of Ammon said to Hanun their lord, Do you think that ______ honors your father, in that he has sent comforters to you? Hasn't David …”? (10:3, WEB)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 10:4 records: “So Hanun took David's servants, and shaved off the one half of their beards, and cut off their garments in the middle, even to their buttocks, and sent them away.”",
+    "options" : [
+      "beards"
+    ],
+    "prompt" : "In this paraphrase, hanun shamed David's men by shaving off half of their ____. (10:4)",
+    "reference" : "2 Samuel 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “David send and inquired after the woman. One said, Is not this Bathsheba, the daughter of Eliam, the wife of Uriah the Hittite?”",
+    "options" : [
+      "David"
+    ],
+    "prompt" : "Complete the quotation: “____ send and inquired after the woman. One said, Is not this Bathsheba, the daughter of Eliam, the wife of Uriah the Hittite?” (11:3, WEB)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies ark: “Uriah said to David, The ark, and Israel, and Judah, abide in booths; and my lord Joab, and the servants of my lord, are encamped in …”",
+    "options" : [
+      "ark",
+      "book",
+      "lampstand",
+      "sanctuary"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Uriah said to David, The ______, and Israel, and Judah, abide in booths; and my lord Joab, and the servants of my lord, are encamped in …”? (11:11, WEB)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… at even he went out to lie on his bed with the servants of his lord, but didn't go down to his house.” It says servants, not wives.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… at even he went out to lie on his bed with the wives of his lord, but didn't go down to his house.” (11:13, WEB)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “It happened, when Joab kept watch on the city, that he assigned Uriah to the place where he knew that valiant men were.”; verse 20 reads “it shall be that, if the king's wrath arise, and he tells you, 'Why did you go so near to the city to fight? Didn't you …”. These establish the first and second answers respectively.",
+    "options" : [
+      "messengers; king's",
+      "Joab; king's",
+      "Joab; booths",
+      "king's; Joab"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It happened, when ______ kept watch on the city, that he assigned Uriah to the place where he knew that valiant men were.” (11:16); “it shall be that, if the ______ wrath arise, and he tells you, 'Why did you go so near to the city to fight? Didn't you …” (11:20, WEB)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… did you go so near the wall?' then shall you say, 'Your servant Uriah the Hittite is dead also.'\"”; the second reads “… servants from off the wall; and some of the king's servants are dead, and your servant Uriah the Hittite is dead also.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servant dead"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… did you go so near the wall?' then shall you say, 'Your ____ Uriah the Hittite is dead also.'\"” (11:21); “… servants from off the wall; and some of the king's servants are , and your servant Uriah the Hittite is dead also.” (11:24, WEB)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 11:4 uses messengers: “David sent messengers, and took her; and she came in to him, and he lay with her (for she was purified from her uncleanness); and she …”",
+    "options" : [
+      "servants",
+      "mess",
+      "king's",
+      "messengers"
+    ],
+    "prompt" : "Which word completes “David sent ______, and took her; and she came in to him, and he lay with her (for she was purified from her uncleanness); and she …”? (11:4, WEB)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “David said to Uriah, Go down to your house, and wash your feet. Uriah departed out of the king's house, and there followed him a mess …” The missing terms belong in that order.",
+    "options" : [
+      "Uriah followed"
+    ],
+    "prompt" : "Supply the missing words in order: “David said to ____, Go down to your house, and wash your feet. Uriah departed out of the king's house, and there him a mess …” (11:8, WEB)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 11:14 records: “It happened in the morning, that David wrote a letter to Joab, and sent it by the hand of Uriah.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David sent Uriah the Hittite to the front lines. (11:14-15)",
+    "reference" : "2 Samuel 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The passage states both forgiveness and consequences. The course uses it to show why repentance does not make the effects of wrongdoing unreal.",
+    "options" : [
+      "Forgiveness means Nathan's warnings are withdrawn.",
+      "David is forgiven, yet the damage and announced judgment are not erased.",
+      "David is told he has committed no wrong.",
+      "Consequences prove that no forgiveness is offered."
+    ],
+    "prompt" : "How do Nathan's announcement of forgiveness and his warning about consequences fit together? (12:7-14)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 12:7 records: “Nathan said to David, \"You are the man. This is what Yahweh, the God of Israel, says: 'I anointed you king over Israel, and I delivered you out of the hand of Saul.”",
+    "options" : [
+      "man"
+    ],
+    "prompt" : "In this paraphrase, nathan said to David, You are the ____. (12:7)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 12:5 uses Nathan: “David's anger was greatly kindled against the man, and he said to Nathan, \"As Yahweh lives, the man who has done this is worthy to die!”",
+    "options" : [
+      "Nathan",
+      "Jeremiah",
+      "Simeon",
+      "Adam"
+    ],
+    "prompt" : "Which word completes “David's anger was greatly kindled against the man, and he said to ______, \"As Yahweh lives, the man who has done this is worthy to die!”? (12:5, WEB)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “It happened on the seventh day, that the child died. The servants of David feared to tell him that the child was dead; for they said, …”; verse 21 reads “… alive; but when the child was dead, you did rise and eat bread.”. These establish the first and second answers respectively.",
+    "options" : [
+      "seventh; honey",
+      "ninety; bread",
+      "bread; seventh",
+      "seventh; bread"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It happened on the ______ day, that the child died. The servants of David feared to tell him that the child was dead; for they said, …” (12:18); “… alive; but when the child was dead, you did rise and eat ______.” (12:21, WEB)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sin: “… against Yahweh.\" Nathan said to David, \"Yahweh also has put away your sin. You will not die.”",
+    "options" : [
+      "deceit",
+      "violence",
+      "sin",
+      "wickedness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… against Yahweh.\" Nathan said to David, \"Yahweh also has put away your ______. You will not die.”? (12:13, WEB)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Why have you despised the word of Yahweh, to do that which is evil in his sight? You have struck Uriah the Hittite with the sword, …” The missing terms belong in that order.",
+    "options" : [
+      "despised sight"
+    ],
+    "prompt" : "Supply the missing words in order: “Why have you ____ the word of Yahweh, to do that which is evil in his ? You have struck Uriah the Hittite with the sword, …” (12:9, WEB)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “but the poor man had nothing, except one little ewe lamb, which he had bought and raised. It grew up together with him, and with his …”",
+    "options" : [
+      "poor"
+    ],
+    "prompt" : "Complete the quotation: “but the ____ man had nothing, except one little ewe lamb, which he had bought and raised. It grew up together with him, and with his …” (12:3, WEB)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… to his house. Yahweh struck the child that Uriah's wife bore to David, and it was very sick.” It says David, not Gad.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… to his house. Yahweh struck the child that Uriah's wife bore to Gad, and it was very sick.” (12:15, WEB)",
+    "reference" : "2 Samuel 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 13:14 records: “However he would not listen to her voice; but being stronger than she, he forced her, and lay with her.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Amnon raped his half-sister Tamar. (13:14)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “It happened, while they were in the way, that the news came to David, saying, Absalom has slain all the king's sons, and there is not …”; the second reads “But Absalom fled. The young man who kept the watch lifted up his eyes, and looked, and, behold, there came much people by the way of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "while watch"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “It happened, ____ they were in the way, that the news came to David, saying, Absalom has slain all the king's sons, and there is not …” (13:30); “But Absalom fled. The young man who kept the lifted up his eyes, and looked, and, behold, there came much people by the way of …” (13:34, WEB)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… such robes were the king's daughters who were virgins dressed. Then his servant brought her out, and bolted the door after her.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… such robes were the king's daughters who were virgins dressed. Then his servant brought her out, and bolted the door after her.” (13:18, WEB)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “… for the hatred with which he hated her was greater than the love with which he had loved her. Amnon said to her, Arise, be gone.”",
+    "options" : [
+      "joy",
+      "wisdom",
+      "fear",
+      "love"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… for the hatred with which he hated her was greater than the ______ with which he had loved her. Amnon said to her, Arise, be gone.”? (13:15, WEB)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “It happened after two full years, that Absalom had sheep-shearers in Baal Hazor, which is beside Ephraim: and Absalom invited all the king's sons.”; verse 28 reads “… his servants, saying, Mark you now, when Amnon's heart is merry with wine; and when I tell you, Smite Amnon, then kill him; don't be afraid; …”. These establish the first and second answers respectively.",
+    "options" : [
+      "two; water",
+      "two; wine",
+      "wine; two",
+      "seventh; wine"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It happened after ______ full years, that Absalom had sheep-shearers in Baal Hazor, which is beside Ephraim: and Absalom invited all the king's sons.” (13:23); “… his servants, saying, Mark you now, when Amnon's heart is merry with ______; and when I tell you, Smite Amnon, then kill him; don't be afraid; …” (13:28, WEB)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Amnon had a friend, whose name was Jonadab, the son of Shimeah, David's brother; and Jonadab was a very subtle man.”",
+    "options" : [
+      "David's"
+    ],
+    "prompt" : "Complete the quotation: “… Amnon had a friend, whose name was Jonadab, the son of Shimeah, ____ brother; and Jonadab was a very subtle man.” (13:3, WEB)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Amnon said to Tamar, Bring the food into the chamber, that I may eat from your hand. Tamar took the cakes which she had made, and …” The missing terms belong in that order.",
+    "options" : [
+      "Amnon Tamar"
+    ],
+    "prompt" : "Supply the missing words in order: “____ said to Tamar, Bring the food into the chamber, that I may eat from your hand. took the cakes which she had made, and …” (13:10, WEB)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 13:7 uses David: “Then David sent home to Tamar, saying, Go now to your brother Amnon's house, and dress him food.”",
+    "options" : [
+      "Zechariah",
+      "Elisha",
+      "David",
+      "Jacob"
+    ],
+    "prompt" : "Which word completes “Then ______ sent home to Tamar, saying, Go now to your brother Amnon's house, and dress him food.”? (13:7, WEB)",
+    "reference" : "2 Samuel 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 14:6 uses two: “Your handmaid had two sons, and they two strove together in the field, and there was none to part them, but the one struck the other, …”",
+    "options" : [
+      "two",
+      "three",
+      "eighteen",
+      "ten"
+    ],
+    "prompt" : "Which word completes “Your handmaid had ______ sons, and they two strove together in the field, and there was none to part them, but the one struck the other, …”? (14:6, WEB)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies home: “… as one who is guilty, in that the king does not bring home again his banished one.”",
+    "options" : [
+      "hair",
+      "field",
+      "remainder",
+      "home"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… as one who is guilty, in that the king does not bring ______ again his banished one.”? (14:13, WEB)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… left from anything that my lord the king has spoken; for your servant Joab, he bade me, and he put all these words in the mouth …”; verse 22 reads “Joab fell to the ground on his face, and did obeisance, and blessed the king: and Joab said, Today your servant knows that I have found …”. These establish the first and second answers respectively.",
+    "options" : [
+      "servant; perceived",
+      "fell; servant",
+      "servant; fell",
+      "judges; fell"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… left from anything that my lord the king has spoken; for your ______ Joab, he bade me, and he put all these words in the mouth …” (14:19); “Joab ______ to the ground on his face, and did obeisance, and blessed the king: and Joab said, Today your servant knows that I have found …” (14:22, WEB)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “When the woman of Tekoa spoke to the king, she fell on her face to the ground, and did obeisance, and said, Help, O king.”",
+    "options" : [
+      "king"
+    ],
+    "prompt" : "Complete the quotation: “When the woman of Tekoa spoke to the ____, she fell on her face to the ground, and did obeisance, and said, Help, O king.” (14:4, WEB)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The woman of Tekoa said to the king, My lord, O king, the iniquity be on me, and on my father's house; and the king and …” The missing terms belong in that order.",
+    "options" : [
+      "Tekoa iniquity"
+    ],
+    "prompt" : "Supply the missing words in order: “The woman of ____ said to the king, My lord, O king, the be on me, and on my father's house; and the king and …” (14:9, WEB)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For the king will hear, to deliver his servant out of the hand of the man who would destroy me and my son together out of …” It says deliver, not home.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For the king will hear, to home his servant out of the hand of the man who would destroy me and my son together out of …” (14:16, WEB)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 14:2 records: “… and fetched there a wise woman, and said to her, please act like a mourner, and put on mourning clothing, Please, and don't anoint yourself with oil, but be as a woman who has a long …”",
+    "options" : [
+      "Tekoa"
+    ],
+    "prompt" : "In this paraphrase, joab sent a wise woman from ____ to speak to David. (14:2)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… cut it); he weighed the hair of his head at two hundred shekels, after the king's weight.”; the second reads “… to his servants, Behold, Joab's field is near mine, and he has barley there; go and set it on fire. Absalom's servants set the field on …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "shekels barley"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… cut it); he weighed the hair of his head at two hundred ____, after the king's weight.” (14:26); “… to his servants, Behold, Joab's field is near mine, and he has there; go and set it on fire. Absalom's servants set the field on …” (14:30, WEB)",
+    "reference" : "2 Samuel 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… any man had a suit which should come to the king for judgment, then Absalom called to him, and said, Of what city are you? He …”",
+    "options" : [
+      "judgment"
+    ],
+    "prompt" : "Complete the quotation: “… any man had a suit which should come to the king for ____, then Absalom called to him, and said, Of what city are you? He …” (15:2, WEB)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For your servant vowed a vow while I abode at Geshur in Syria, saying, If Yahweh shall indeed bring me again to Jerusalem, then I will …” The missing terms belong in that order.",
+    "options" : [
+      "servant Jerusalem"
+    ],
+    "prompt" : "Supply the missing words in order: “For your ____ vowed a vow while I abode at Geshur in Syria, saying, If Yahweh shall indeed bring me again to , then I will …” (15:8, WEB)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies servants: “David said to all his servants who were with him at Jerusalem, Arise, and let us flee; for else none of us shall escape from Absalom: …”",
+    "options" : [
+      "king",
+      "fathers",
+      "servants",
+      "soldiers"
+    ],
+    "prompt" : "Which detail belongs in this passage: “David said to all his ______ who were with him at Jerusalem, Arise, and let us flee; for else none of us shall escape from Absalom: …”? (15:14, WEB)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 15:7 uses Hebron: “… go and pay my vow, which I have vowed to Yahweh, in Hebron.”",
+    "options" : [
+      "Beersheba",
+      "Tarshish",
+      "Jericho",
+      "Hebron"
+    ],
+    "prompt" : "Which word completes “… go and pay my vow, which I have vowed to Yahweh, in ______.”? (15:7, WEB)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… surely in what place my lord the king shall be, whether for death or for life, even there also will your servant be.”; verse 25 reads “The king said to Zadok, Carry back the ark of God into the city: if I shall find favor in the eyes of Yahweh, he will …”. These establish the first and second answers respectively.",
+    "options" : [
+      "death; sanctuary",
+      "ark; death",
+      "inheritance; ark",
+      "death; ark"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… surely in what place my lord the king shall be, whether for ______ or for life, even there also will your servant be.” (15:21); “The king said to Zadok, Carry back the ______ of God into the city: if I shall find favor in the eyes of Yahweh, he will …” (15:25, WEB)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… and all the Cherethites, and all the Pelethites, and all the Gittites, six hundred men who came after him from Gath, passed on before the king.” It says six, not ninth.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… and all the Cherethites, and all the Pelethites, and all the Gittites, ninth hundred men who came after him from Gath, passed on before the king.” (15:18, WEB)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 15:10 records: “But Absalom sent spies throughout all the tribes of Israel, saying, As soon as you hear the sound of the trumpet, then you shall say, Absalom is king in Hebron.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Absalom conspired to take the kingdom from David. (15:10-12)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “David went up by the ascent of the Mount of Olives, and wept as he went up; and he had his head covered, and went barefoot: …”; the second reads “… was worshiped, behold, Hushai the Archite came to meet him with his coat torn, and earth on his head.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "David coat"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “____ went up by the ascent of the Mount of Olives, and wept as he went up; and he had his head covered, and went barefoot: …” (15:30); “… was worshiped, behold, Hushai the Archite came to meet him with his torn, and earth on his head.” (15:32, WEB)",
+    "reference" : "2 Samuel 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… servants, Behold, my son, who came forth from my bowels, seeks my life: how much more may this Benjamite now do it? let him alone, and …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… servants, Behold, my son, who came forth from my bowels, seeks my life: how much more may this Benjamite now do it? let him alone, and …” (16:11, WEB)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 16:4 uses king: “… do obeisance; let me find favor in your sight, my lord, O king.”",
+    "options" : [
+      "soldier",
+      "sons",
+      "fathers",
+      "king"
+    ],
+    "prompt" : "Which word completes “… do obeisance; let me find favor in your sight, my lord, O ______.”? (16:4, WEB)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… bread and summer fruit for the young men to eat; and the wine, that such as are faint in the wilderness may drink.”",
+    "options" : [
+      "wine"
+    ],
+    "prompt" : "Complete the quotation: “… bread and summer fruit for the young men to eat; and the ____, that such as are faint in the wilderness may drink.” (16:2, WEB)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Please: “… the king, \"Why should this dead dog curse my lord the king? Please let me go over and take off his head.\"”",
+    "options" : [
+      "kingdom",
+      "Please",
+      "hundred",
+      "refreshed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the king, \"Why should this dead dog curse my lord the king? ______ let me go over and take off his head.\"”? (16:9, WEB)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “So David and his men went by the way; and Shimei went along on the hill-side over against him, and cursed as he went, and threw …”; verse 16 reads “… the Archite, David's friend, was come to Absalom, that Hushai said to Absalom, Long live the king, Long live the king.”. These establish the first and second answers respectively.",
+    "options" : [
+      "returned; Absalom",
+      "Shimei; Absalom",
+      "Absalom; Shimei",
+      "Shimei; abhorred"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “So David and his men went by the way; and ______ went along on the hill-side over against him, and cursed as he went, and threw …” (16:13); “… the Archite, David's friend, was come to Absalom, that Hushai said to ______, Long live the king, Long live the king.” (16:16, WEB)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Again, whom should I serve? Shouldn't I serve in the presence of his son? as I have served in your father's presence, so will I be …”; the second reads “… to keep the house; and all Israel will hear that you are abhorred of your father: then will the hands of all who are with you …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "serve abhorred"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Again, whom should I ____? Shouldn't I serve in the presence of his son? as I have served in your father's presence, so will I be …” (16:19); “… to keep the house; and all Israel will hear that you are of your father: then will the hands of all who are with you …” (16:21, WEB)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 16:5 records: “When king David came to Bahurim, behold, a man of the family of the house of Saul came out, whose name was Shimei, the son of Gera. He came out, and cursed still as he came.”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "In this paraphrase, shimei cursed David as David fled from ____. (16:5)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He cast stones at David, and at all the servants of king David: and all the people and all the mighty men were on his right …” The missing terms belong in that order.",
+    "options" : [
+      "servants David"
+    ],
+    "prompt" : "Supply the missing words in order: “He cast stones at David, and at all the ____ of king : and all the people and all the mighty men were on his right …” (16:6, WEB)",
+    "reference" : "2 Samuel 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… people who are with him shall flee; and I will strike the king only;”",
+    "options" : [
+      "king"
+    ],
+    "prompt" : "Complete the quotation: “… people who are with him shall flee; and I will strike the ____ only;” (17:2, WEB)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… them are fallen at the first, that whoever hears it will say, There is a slaughter among the people who follow Absalom.” The missing terms belong in that order.",
+    "options" : [
+      "first follow"
+    ],
+    "prompt" : "Supply the missing words in order: “… them are fallen at the ____, that whoever hears it will say, There is a slaughter among the people who Absalom.” (17:9, WEB)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 17:14 records: “… the men of Israel said, The counsel of Hushai the Archite is better than the counsel of Ahithophel. For Yahweh had ordained to defeat the good counsel of Ahithophel, to the intent that Yahweh might bring …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Hushai's counsel was preferred over Ahithophel's. (17:14)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “Now Jonathan and Ahimaaz were staying by En Rogel; and a maid-servant used to go and tell them; and they went and told king David: for …”; verse 20 reads “… The woman said to them, They have gone over the brook of water. When they had sought and could not find them, they returned to Jerusalem.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jonathan; figs",
+      "Abram; water",
+      "water; Jonathan",
+      "Jonathan; water"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Now ______ and Ahimaaz were staying by En Rogel; and a maid-servant used to go and tell them; and they went and told king David: for …” (17:17); “… The woman said to them, They have gone over the brook of ______. When they had sought and could not find them, they returned to Jerusalem.” (17:20, WEB)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 17:6 uses Absalom: “When Hushai was come to Absalom, Absalom spoke to him, saying, Ahithophel has spoken after this manner: shall we do after his saying? if not, speak …”",
+    "options" : [
+      "ordained",
+      "staying",
+      "Absalom",
+      "king"
+    ],
+    "prompt" : "Which word completes “When Hushai was come to ______, Absalom spoke to him, saying, Ahithophel has spoken after this manner: shall we do after his saying? if not, speak …”? (17:6, WEB)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… were with him, and they passed over the Jordan: by the morning light there lacked not one of them who had not gone over the Jordan.”; the second reads “Absalom set Amasa over the host instead of Joab. Now Amasa was the son of a man, whose name was Ithra the Israelite, who went in …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "light instead"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… were with him, and they passed over the Jordan: by the morning ____ there lacked not one of them who had not gone over the Jordan.” (17:22); “Absalom set Amasa over the host of Joab. Now Amasa was the son of a man, whose name was Ithra the Israelite, who went in …” (17:25, WEB)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Then said Hushai to Zadok and to Abiathar the priests, Thus and thus did Ahithophel counsel Absalom and the elders of Israel; and thus and thus …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Then said Hushai to Zadok and to Abiathar the priests, Thus and thus did Ahithophel counsel Absalom and the elders of Israel; and thus and thus …” (17:15, WEB)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Dan: “But I counsel that all Israel be gathered together to you, from Dan even to Beersheba, as the sand that is by the sea for multitude; …”",
+    "options" : [
+      "Abraham",
+      "Dan",
+      "Elihu",
+      "Joseph"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But I counsel that all Israel be gathered together to you, from ______ even to Beersheba, as the sand that is by the sea for multitude; …”? (17:11, WEB)",
+    "reference" : "2 Samuel 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of us die, will they care for us: but you are worth ten thousand of us; therefore now it is better that you are ready to …”",
+    "options" : [
+      "ten"
+    ],
+    "prompt" : "Complete the quotation: “… of us die, will they care for us: but you are worth ____ thousand of us; therefore now it is better that you are ready to …” (18:3, WEB)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… Ahimaaz the son of Zadok, Let me now run, and bear the king news, how that Yahweh has avenged him of his enemies.”; verse 22 reads “… yet again to Joab, But come what may, Please let me also run after the Cushite. Joab said, Why will you run, my son, seeing that …”. These establish the first and second answers respectively.",
+    "options" : [
+      "king; boughs",
+      "sister; run",
+      "king; run",
+      "run; king"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Ahimaaz the son of Zadok, Let me now run, and bear the ______ news, how that Yahweh has avenged him of his enemies.” (18:19); “… yet again to Joab, But come what may, Please let me also ______ after the Cushite. Joab said, Why will you run, my son, seeing that …” (18:22, WEB)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and the watchman called to the porter, and said, Behold, another man running alone. The king said, He also brings news.”; the second reads “… Absalom? Ahimaaz answered, When Joab sent the king's servant, even me your servant, I saw a great tumult, but I don't know what it was.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "running servant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and the watchman called to the porter, and said, Behold, another man ____ alone. The king said, He also brings news.” (18:26); “… Absalom? Ahimaaz answered, When Joab sent the king's servant, even me your , I saw a great tumult, but I don't know what it was.” (18:29, WEB)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 18:5 uses Ittai: “The king commanded Joab and Abishai and Ittai, saying, Deal gently for my sake with the young man, even with Absalom. All the people heard when …”",
+    "options" : [
+      "Ittai",
+      "receive",
+      "city",
+      "none"
+    ],
+    "prompt" : "Which word completes “The king commanded Joab and Abishai and ______, saying, Deal gently for my sake with the young man, even with Absalom. All the people heard when …”? (18:5, WEB)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies life: “Otherwise if I had dealt falsely against his life (and there is no matter hid from the king), then you yourself would have set yourself against …”",
+    "options" : [
+      "praise",
+      "worship",
+      "blessing",
+      "life"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Otherwise if I had dealt falsely against his ______ (and there is no matter hid from the king), then you yourself would have set yourself against …”? (18:13, WEB)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For the battle was there spread over the surface of all the country; and the forest devoured more people that day than the sword devoured.” The missing terms belong in that order.",
+    "options" : [
+      "battle spread"
+    ],
+    "prompt" : "Supply the missing words in order: “For the ____ was there over the surface of all the country; and the forest devoured more people that day than the sword devoured.” (18:8, WEB)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 18:9 records: “… Absalom was riding on his mule, and the mule went under the thick boughs of a great oak, and his head caught hold of the oak, and he was taken up between the sky and earth; …”",
+    "options" : [
+      "head"
+    ],
+    "prompt" : "In this paraphrase, absalom's ____ was caught in an oak tree. (18:9)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Joab blew the trumpet, and the people returned from pursuing after Israel; for Joab held back the people.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Joab blew the trumpet, and the people returned from pursuing after Israel; for Joab held back the people.” (18:16, WEB)",
+    "reference" : "2 Samuel 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… I am come this day the first of all the house of Joseph to go down to meet my lord the king.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… I am come this day the first of all the house of Joseph to go down to meet my lord the king.” (19:20, WEB)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The people got them by stealth that day into the city, as people who are ashamed steal away when they flee in battle.”",
+    "options" : [
+      "got"
+    ],
+    "prompt" : "Complete the quotation: “The people ____ them by stealth that day into the city, as people who are ashamed steal away when they flee in battle.” (19:3, WEB)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “King David sent to Zadok and to Abiathar the priests, saying, Speak to the elders of Judah, saying, Why are you the last to bring the …” The missing terms belong in that order.",
+    "options" : [
+      "David priests"
+    ],
+    "prompt" : "Supply the missing words in order: “King ____ sent to Zadok and to Abiathar the , saying, Speak to the elders of Judah, saying, Why are you the last to bring the …” (19:11, WEB)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “Mephibosheth the son of Saul came down to meet the king; and he had neither dressed his feet, nor trimmed his beard, nor washed his clothes, …”; verse 28 reads “… but dead men before my lord the king; yet you set your servant among those who ate at your own table. What right therefore have I …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Saul; servant",
+      "servant; Saul",
+      "Elihu; servant",
+      "Saul; priests"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Mephibosheth the son of ______ came down to meet the king; and he had neither dressed his feet, nor trimmed his beard, nor washed his clothes, …” (19:24); “… but dead men before my lord the king; yet you set your ______ among those who ate at your own table. What right therefore have I …” (19:28, WEB)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 19:1 records: “It was told Joab, Behold, the king weeps and mourns for Absalom.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David wept over Absalom's death. (19:1)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gilgal: “So the king returned, and came to the Jordan. Judah came to Gilgal, to go to meet the king, to bring the king over the Jordan.”",
+    "options" : [
+      "Zion",
+      "Bethel",
+      "Gilgal",
+      "Jordan"
+    ],
+    "prompt" : "Which detail belongs in this passage: “So the king returned, and came to the Jordan. Judah came to ______, to go to meet the king, to bring the king over the Jordan.”? (19:15, WEB)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the king, How many are the days of the years of my life, that I should go up with the king to Jerusalem?”; the second reads “… in my own city, by the grave of my father and my mother. But behold, your servant Chimham; let him go over with my lord the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life mother"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the king, How many are the days of the years of my ____, that I should go up with the king to Jerusalem?” (19:34); “… in my own city, by the grave of my father and my . But behold, your servant Chimham; let him go over with my lord the …” (19:37, WEB)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 19:8 uses king: “… is sitting in the gate: and all the people came before the king. Now Israel had fled every man to his tent.”",
+    "options" : [
+      "prophet",
+      "daughter",
+      "wife",
+      "king"
+    ],
+    "prompt" : "Which word completes “… is sitting in the gate: and all the people came before the ______. Now Israel had fled every man to his tent.”? (19:8, WEB)",
+    "reference" : "2 Samuel 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Amasa lay wallowing in his blood in the midst of the highway. When the man saw that all the people stood still, he carried Amasa out …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Amasa lay wallowing in his blood in the midst of the highway. When the man saw that all the people stood still, he carried Amasa out …” (20:12, WEB)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 20:1 records: “… a base fellow, whose name was Sheba, the son of Bichri, a Benjamite: and he blew the trumpet, and said, We have no portion in David, neither have we inheritance in the son of Jesse: every …”",
+    "options" : [
+      "trumpet"
+    ],
+    "prompt" : "In this paraphrase, sheba son of Bichri blew a ____ to rebel against David. (20:1)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… was girded with his apparel of war that he had put on, and thereon was a sash with a sword fastened on his loins in the …” The missing terms belong in that order.",
+    "options" : [
+      "girded loins"
+    ],
+    "prompt" : "Supply the missing words in order: “… was ____ with his apparel of war that he had put on, and thereon was a sash with a sword fastened on his in the …” (20:8, WEB)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “They came and besieged him in Abel of Beth Maacah, and they cast up a mound against the city, and it stood against the rampart; and …”; verse 19 reads “… city and a mother in Israel: why will you swallow up the inheritance of Yahweh?”. These establish the first and second answers respectively.",
+    "options" : [
+      "Abel; rest",
+      "Nathan; inheritance",
+      "inheritance; Abel",
+      "Abel; inheritance"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “They came and besieged him in ______ of Beth Maacah, and they cast up a mound against the city, and it stood against the rampart; and …” (20:15); “… city and a mother in Israel: why will you swallow up the ______ of Yahweh?” (20:19, WEB)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… name, has lifted up his hand against the king, even against David; deliver him only, and I will depart from the city. The woman said to …”; the second reads “Now Joab was over all the host of Israel; and Benaiah the son of Jehoiada was over the Cherethites and over the Pelethites;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "deliver Israel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… name, has lifted up his hand against the king, even against David; ____ him only, and I will depart from the city. The woman said to …” (20:21); “Now Joab was over all the host of ; and Benaiah the son of Jehoiada was over the Cherethites and over the Pelethites;” (20:23, WEB)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to them. So they were shut up to the day of their death, living in widowhood.”",
+    "options" : [
+      "death"
+    ],
+    "prompt" : "Complete the quotation: “… to them. So they were shut up to the day of their ____, living in widowhood.” (20:3, WEB)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies brother: “… and didn't strike him again; and he died. Joab and Abishai his brother pursued after Sheba the son of Bichri.”",
+    "options" : [
+      "brother",
+      "husbands",
+      "rulers",
+      "soldier"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and didn't strike him again; and he died. Joab and Abishai his ______ pursued after Sheba the son of Bichri.”? (20:10, WEB)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 20:5 uses Judah: “So Amasa went to call the men of Judah together; but he stayed longer than the set time which he had appointed him.”",
+    "options" : [
+      "Judah",
+      "Cain",
+      "Elisha",
+      "Zephaniah"
+    ],
+    "prompt" : "Which word completes “So Amasa went to call the men of ______ together; but he stayed longer than the set time which he had appointed him.”? (20:5, WEB)",
+    "reference" : "2 Samuel 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “and he brought up from there the bones of Saul and the bones of Jonathan his son: and they gathered the bones of those who were …”; verse 15 reads “… Philistines had war again with Israel; and David went down, and his servants with him, and fought against the Philistines. David grew faint;”. These establish the first and second answers respectively.",
+    "options" : [
+      "bones; servants",
+      "blood; servants",
+      "servants; bones",
+      "bones; rulers"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and he brought up from there the bones of Saul and the ______ of Jonathan his son: and they gathered the bones of those who were …” (21:13); “… Philistines had war again with Israel; and David went down, and his ______ with him, and fought against the Philistines. David grew faint;” (21:15, WEB)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 21:1 records: “… was a famine in the days of David three years, year after year; and David sought the face of Yahweh. Yahweh said, It is for Saul, and for his bloody house, because he put to death …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A famine came because of Saul's sin against the Gibeonites. (21:1)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of Saul, because of Yahweh's oath that was between them, between David and Jonathan the son of Saul.” The missing terms belong in that order.",
+    "options" : [
+      "David Jonathan"
+    ],
+    "prompt" : "Supply the missing words in order: “… of Saul, because of Yahweh's oath that was between them, between ____ and the son of Saul.” (21:7, WEB)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to him, saying, You shall go no more out with us to battle, that you don't quench the lamp of Israel.”; the second reads “… stature, who had on every hand six fingers, and on every foot six toes, four and twenty in number; and he also was born to the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "battle six"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to him, saying, You shall go no more out with us to ____, that you don't quench the lamp of Israel.” (21:17); “… stature, who had on every hand six fingers, and on every foot toes, four and twenty in number; and he also was born to the …” (21:20, WEB)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth-shan, where the Philistines had …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… and the bones of Jonathan his son from the men of Jabesh Gilead, who had stolen them from the street of Beth-shan, where the Philistines had …” (21:12, WEB)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies death: “… before Yahweh, and they fell all seven together. They were put to death in the days of harvest, in the first days, at the beginning of …”",
+    "options" : [
+      "salvation",
+      "thanksgiving",
+      "death",
+      "power"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… before Yahweh, and they fell all seven together. They were put to ______ in the days of harvest, in the first days, at the beginning of …”? (21:9, WEB)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 21:4 uses silver: “The Gibeonites said to him, It is no matter of silver or gold between us and Saul, or his house; neither is it for us to …”",
+    "options" : [
+      "silver",
+      "sand",
+      "gold",
+      "ashes"
+    ],
+    "prompt" : "Which word completes “The Gibeonites said to him, It is no matter of ______ or gold between us and Saul, or his house; neither is it for us to …”? (21:4, WEB)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the Amorites; and the children of Israel had sworn to them: and Saul sought to kill them in his zeal for the children of Israel and …”",
+    "options" : [
+      "Saul"
+    ],
+    "prompt" : "Complete the quotation: “… the Amorites; and the children of Israel had sworn to them: and ____ sought to kill them in his zeal for the children of Israel and …” (21:2, WEB)",
+    "reference" : "2 Samuel 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “With the pure you will show yourself pure; With the crooked you will show yourself shrewd.”; verse 34 reads “He makes his feet like hinds' feet, Sets me on my high places.”. These establish the first and second answers respectively.",
+    "options" : [
+      "show; eyes",
+      "feet; show",
+      "hands; feet",
+      "show; feet"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “With the pure you will ______ yourself pure; With the crooked you will show yourself shrewd.” (22:27); “He makes his feet like hinds' ______, Sets me on my high places.” (22:34, WEB)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 22:2 records: “and he said, Yahweh is my rock, and my fortress, and my deliverer, even mine;”",
+    "options" : [
+      "fortress"
+    ],
+    "prompt" : "In this paraphrase, david sang, The LORD is my rock and my ____. (22:2)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and struck them through, so that they can't arise: Yes, they are fallen under my feet.”; the second reads “… my people; You have kept me to be the head of the nations: A people whom I have not known shall serve me.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fallen nations"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and struck them through, so that they can't arise: Yes, they are ____ under my feet.” (22:39); “… my people; You have kept me to be the head of the : A people whom I have not known shall serve me.” (22:44, WEB)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Yahweh thundered from heaven, The Most High uttered his voice.” The missing terms belong in that order.",
+    "options" : [
+      "thundered High"
+    ],
+    "prompt" : "Supply the missing words in order: “Yahweh ____ from heaven, The Most uttered his voice.” (22:14, WEB)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 22:9 uses Fire: “There went up a smoke out of his nostrils, Fire out of his mouth devoured: Coals were kindled by it.”",
+    "options" : [
+      "distress",
+      "wall",
+      "Fire",
+      "rock"
+    ],
+    "prompt" : "Which word completes “There went up a smoke out of his nostrils, ______ out of his mouth devoured: Coals were kindled by it.”? (22:9, WEB)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… him will I take refuge; My shield, and the horn of my salvation, my high tower, and my refuge; My savior, you save me from violence.”",
+    "options" : [
+      "salvation"
+    ],
+    "prompt" : "Complete the quotation: “… him will I take refuge; My shield, and the horn of my ____, my high tower, and my refuge; My savior, you save me from violence.” (22:3, WEB)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “With the merciful you will show yourself merciful; With the perfect man you will show yourself perfect;” It says merciful, not rich.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “With the rich you will show yourself merciful; With the perfect man you will show yourself perfect;” (22:26, WEB)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies stay: “… on me in the day of my calamity; But Yahweh was my stay.”",
+    "options" : [
+      "struck",
+      "stay",
+      "enemy",
+      "turn"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… on me in the day of my calamity; But Yahweh was my ______.”? (22:19, WEB)",
+    "reference" : "2 Samuel 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 23:7 uses fire: “… and the staff of a spear: They shall be utterly burned with fire in their place”",
+    "options" : [
+      "broke",
+      "fear",
+      "fire",
+      "Wasn't"
+    ],
+    "prompt" : "Which word completes “… and the staff of a spear: They shall be utterly burned with ______ in their place”? (23:7, WEB)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Samuel 23:2 records: “The Spirit of Yahweh spoke by me, His word was on my tongue.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "David said the Spirit of the LORD spoke through him. (23:2)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… therefore he was made their captain: however he didn't attain to the first three.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… therefore he was made their captain: however he didn't attain to the first three.” (23:19, WEB)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “… honorable than the thirty, but he didn't attain to the first three. David set him over his guard.”; verse 26 reads “Helez the Paltite, Ira the son of Ikkesh the Tekoite,”. These establish the first and second answers respectively.",
+    "options" : [
+      "David; Tekoite",
+      "David; shining",
+      "Tekoite; David",
+      "Jonathan; Tekoite"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… honorable than the thirty, but he didn't attain to the first three. ______ set him over his guard.” (23:23); “Helez the Paltite, Ira the son of Ikkesh the ______,” (23:26, WEB)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to me: One who rules over men righteously, Who rules in the fear of God,”",
+    "options" : [
+      "fear"
+    ],
+    "prompt" : "Complete the quotation: “… to me: One who rules over men righteously, Who rules in the ____ of God,” (23:3, WEB)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… a Hararite. The Philistines were gathered together into a troop, where was a plot of ground full of lentils; and the people fled from the Philistines.” The missing terms belong in that order.",
+    "options" : [
+      "Philistines fled"
+    ],
+    "prompt" : "Supply the missing words in order: “… a Hararite. The ____ were gathered together into a troop, where was a plot of ground full of lentils; and the people from the Philistines.” (23:11, WEB)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Netophathite, Ittai the son of Ribai of Gibeah of the children of Benjamin,”; the second reads “Eliphelet the son of Ahasbai, the son of the Maacathite, Eliam the son of Ahithophel the Gilonite,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Benjamin Eliphelet"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Netophathite, Ittai the son of Ribai of Gibeah of the children of ____,” (23:29); “ the son of Ahasbai, the son of the Maacathite, Eliam the son of Ahithophel the Gilonite,” (23:34, WEB)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2samuel",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies water: “David longed, and said, Oh that one would give me water to drink of the well of Bethlehem, which is by the gate!”",
+    "options" : [
+      "honey",
+      "water",
+      "salt",
+      "barley"
+    ],
+    "prompt" : "Which detail belongs in this passage: “David longed, and said, Oh that one would give me ______ to drink of the well of Bethlehem, which is by the gate!”? (23:15, WEB)",
+    "reference" : "2 Samuel 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… even to the time appointed; and there died of the people from Dan even to Beersheba seventy thousand men.”; verse 17 reads “David spoke to Yahweh when he saw the angel who struck the people, and said, Behold, I have sinned, and I have done perversely; but these …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Dan; Hannah",
+      "David; Dan",
+      "Zerubbabel; David",
+      "Dan; David"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… even to the time appointed; and there died of the people from ______ even to Beersheba seventy thousand men.” (24:15); “______ spoke to Yahweh when he saw the angel who struck the people, and said, Behold, I have sinned, and I have done perversely; but these …” (24:17, WEB)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Samuel 24:5 uses Jordan: “They passed over the Jordan, and encamped in Aroer, on the right side of the city that is in the middle of the valley of Gad, …”",
+    "options" : [
+      "Beersheba",
+      "Israel",
+      "Jordan",
+      "Tarshish"
+    ],
+    "prompt" : "Which word completes “They passed over the ______, and encamped in Aroer, on the right side of the city that is in the middle of the valley of Gad, …”? (24:5, WEB)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies iniquity: “… I have done: but now, Yahweh, put away, I beg you, the iniquity of your servant; for I have done very foolishly.”",
+    "options" : [
+      "transgression",
+      "guilt",
+      "iniquity",
+      "wickedness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… I have done: but now, Yahweh, put away, I beg you, the ______ of your servant; for I have done very foolishly.”? (24:10, WEB)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Araunah looked forth, and saw the king and his servants coming on toward him: and Araunah went out, and bowed himself before the king with his …”; the second reads “… up what seems good to him: behold, the oxen for the burnt offering, and the threshing instruments and the yokes of the oxen for the wood:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servants offering"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Araunah looked forth, and saw the king and his ____ coming on toward him: and Araunah went out, and bowed himself before the king with his …” (24:20); “… up what seems good to him: behold, the oxen for the burnt , and the threshing instruments and the yokes of the oxen for the wood:” (24:22, WEB)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “So Gad came to David, and told him, and said to him, Shall seven years of famine come to you in your land? or will you …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “So Gad came to David, and told him, and said to him, Shall seven years of famine come to you in your land? or will you …” (24:13, WEB)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Samuel 24:18 records: “Gad came that day to David, and said to him, Go up, rear an altar to Yahweh in the threshing floor of Araunah the Jebusite.”",
+    "options" : [
+      "Araunah"
+    ],
+    "prompt" : "In this paraphrase, david bought the threshing floor of ____ to build an altar. (24:18)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… and forth through all the tribes of Israel, from Dan even to Beersheba, and number you the people, that I may know the sum of the …”",
+    "options" : [
+      "Beersheba"
+    ],
+    "prompt" : "Complete the quotation: “… and forth through all the tribes of Israel, from Dan even to ____, and number you the people, that I may know the sum of the …” (24:2, WEB)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2samuel",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to all the cities of the Hivites, and of the Canaanites; and they went out to the south of Judah, at Beersheba.” The missing terms belong in that order.",
+    "options" : [
+      "Hivites Judah"
+    ],
+    "prompt" : "Supply the missing words in order: “… to all the cities of the ____, and of the Canaanites; and they went out to the south of , at Beersheba.” (24:7, WEB)",
+    "reference" : "2 Samuel 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

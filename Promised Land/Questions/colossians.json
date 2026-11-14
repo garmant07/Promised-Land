@@ -1,0 +1,525 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Colossians 1:7 uses servant: “even as you learned of Epaphras our beloved fellow servant, who is a faithful minister of Christ on our behalf,”",
+    "options" : [
+      "king",
+      "servant",
+      "mothers",
+      "brothers"
+    ],
+    "prompt" : "Which word completes “even as you learned of Epaphras our beloved fellow ______, who is a faithful minister of Christ on our behalf,”? (1:7, WEB)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He is presented as supreme over creation, with all things created through Him and for Him. The surrounding statements govern the title's meaning. In the course's Christology, the phrase does not identify Jesus as merely the first created being.",
+    "options" : [
+      "The passage gives every created power authority over Christ.",
+      "He is presented as supreme over creation, with all things created through Him and for Him.",
+      "The following lines say Christ is unrelated to creation.",
+      "Firstborn must here mean that God created Jesus before making everything else."
+    ],
+    "prompt" : "How does the description of Christ as firstborn of creation relate to the following lines? (1:15-20)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “to the saints and faithful brothers in Christ at Colossae: Grace to you and peace from God our Father, and the Lord Jesus Christ.”",
+    "options" : [
+      "faithful"
+    ],
+    "prompt" : "Complete the quotation: “to the saints and ____ brothers in Christ at Colossae: Grace to you and peace from God our Father, and the Lord Jesus Christ.” (1:2, WEB)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “… darkness, and translated us into the Kingdom of the Son of his love;”",
+    "options" : [
+      "love",
+      "peace",
+      "shame",
+      "righteousness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… darkness, and translated us into the Kingdom of the Son of his ______;”? (1:13, WEB)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… the earth, or things in the heavens, having made peace through the blood of his cross.”; verse 23 reads “… which is being proclaimed in all creation under heaven; of which I, Paul, was made a servant.”. These establish the first and second answers respectively.",
+    "options" : [
+      "blood; Lydia",
+      "blood; Paul",
+      "Paul; blood",
+      "eye; Paul"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the earth, or things in the heavens, having made peace through the ______ of his cross.” (1:20); “… which is being proclaimed in all creation under heaven; of which I, ______, was made a servant.” (1:23, WEB)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… created, in the heavens and on the earth, things visible and things invisible, whether thrones or dominions or principalities or powers; all things have been created …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… created, in the heavens and on the earth, things visible and things invisible, whether thrones or dominions or principalities or powers; all things have been created …” (1:16, WEB)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… does in you also, since the day you heard and knew the grace of God in truth;”",
+    "options" : [
+      "grace"
+    ],
+    "prompt" : "Complete the quotation: “… does in you also, since the day you heard and knew the ____ of God in truth;” (1:6, WEB)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Lord, to please him in all respects, bearing fruit in every good work, and increasing in the knowledge of God;” The missing terms belong in that order.",
+    "options" : [
+      "fruit knowledge"
+    ],
+    "prompt" : "Supply the missing words in order: “… Lord, to please him in all respects, bearing ____ in every good work, and increasing in the of God;” (1:10, WEB)",
+    "reference" : "Colossians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… vain deceit, after the tradition of men, after the elements of the world, and not after Christ.” The missing terms belong in that order.",
+    "options" : [
+      "elements Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “… vain deceit, after the tradition of men, after the ____ of the world, and not after .” (2:8, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Colossians 2:7 uses thanksgiving: “… in the faith, even as you were taught, abounding in it in thanksgiving.”",
+    "options" : [
+      "thanksgiving",
+      "deliverance",
+      "refuge",
+      "rest"
+    ],
+    "prompt" : "Which word completes “… in the faith, even as you were taught, abounding in it in ______.”? (2:7, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… am absent in the flesh, yet am I with you in the spirit, rejoicing and seeing your order, and the steadfastness of your faith in Christ.”",
+    "options" : [
+      "spirit"
+    ],
+    "prompt" : "Complete the quotation: “… am absent in the flesh, yet am I with you in the ____, rejoicing and seeing your order, and the steadfastness of your faith in Christ.” (2:5, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies body: “… a circumcision not made with hands, in the putting off of the body of the sins of the flesh, in the circumcision of Christ;”",
+    "options" : [
+      "walk",
+      "perish",
+      "alive",
+      "body"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a circumcision not made with hands, in the putting off of the ______ of the sins of the flesh, in the circumcision of Christ;”? (2:11, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… with respect to a feast day or a new moon or a Sabbath day,”; verse 18 reads “Let no one rob you of your prize by a voluntary humility and worshipping of the angels, dwelling in the things which he has not seen, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Sabbath; humility",
+      "humility; Sabbath",
+      "Sabbath; Sabbath",
+      "evening; humility"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… with respect to a feast day or a new moon or a ______ day,” (2:16); “Let no one rob you of your prize by a voluntary ______ and worshipping of the angels, dwelling in the things which he has not seen, …” (2:18, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “that their hearts may be comforted, they being knit together in love, and gaining all riches of the full assurance of understanding, that they may know …”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “that their hearts may be comforted, they being knit together in ____, and gaining all riches of the full assurance of understanding, that they may know …” (2:2, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “If you died with Christ from the elements of the world, why, as though living in the world, do you subject yourselves to ordinances,”; the second reads “Which things indeed appear like wisdom in self-imposed worship, and humility, and severity to the body; but aren't of any value against the indulgence of the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "world wisdom"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “If you died with Christ from the elements of the ____, why, as though living in the world, do you subject yourselves to ordinances,” (2:20); “Which things indeed appear like in self-imposed worship, and humility, and severity to the body; but aren't of any value against the indulgence of the …” (2:23, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… he has taken it out of the way, nailing it to the cross;” It says cross, not steadfastness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… he has taken it out of the way, nailing it to the steadfastness;” (2:14, WEB)",
+    "reference" : "Colossians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies heart: “Put on therefore, as God's chosen ones, holy and beloved, a heart of compassion, kindness, lowliness, humility, and perseverance;”",
+    "options" : [
+      "hair",
+      "ears",
+      "back",
+      "heart"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Put on therefore, as God's chosen ones, holy and beloved, a ______ of compassion, kindness, lowliness, humility, and perseverance;”? (3:12, WEB)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “If then you were raised together with Christ, seek the things that are above, where Christ is, seated on the right hand of God.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “If then you were raised together with ____, seek the things that are above, where Christ is, seated on the right hand of God.” (3:1, WEB)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Let the word of Christ dwell in you richly; in all wisdom teaching and admonishing one another with psalms, hymns, and spiritual songs, singing with grace …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Let the word of Christ dwell in you richly; in all wisdom teaching and admonishing one another with psalms, hymns, and spiritual songs, singing with grace …” (3:16, WEB)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Believers put away destructive practices and put on compassion, humility, forgiveness and love. The course contrasts identity grounded in Christ with identity grounded only in possessions or approval. New identity is meant to shape concrete habits and relationships.",
+    "options" : [
+      "New identity leaves all former conduct untouched.",
+      "Believers put away destructive practices and put on compassion, humility, forgiveness and love.",
+      "Material success becomes the sole ground of worth.",
+      "Forgiveness is excluded from the renewed community."
+    ],
+    "prompt" : "How does new identity in Christ affect the old self and communal conduct? (3:1-17)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Put to death therefore your members which are on the earth: sexual immorality, uncleanness, depraved passion, evil desire, and covetousness, which is idolatry;”",
+    "options" : [
+      "death"
+    ],
+    "prompt" : "Complete the quotation: “Put to ____ therefore your members which are on the earth: sexual immorality, uncleanness, depraved passion, evil desire, and covetousness, which is idolatry;” (3:5, WEB)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Fathers, don't provoke your children, so that they won't be discouraged.”; the second reads “knowing that from the Lord you will receive the reward of the inheritance; for you serve the Lord Christ.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "won't inheritance"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Fathers, don't provoke your children, so that they ____ be discouraged.” (3:21); “knowing that from the Lord you will receive the reward of the ; for you serve the Lord Christ.” (3:24, WEB)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Colossians 3:8 uses mouth: “… all away: anger, wrath, malice, slander, and shameful speaking out of your mouth.”",
+    "options" : [
+      "ears",
+      "feet",
+      "mouth",
+      "arm"
+    ],
+    "prompt" : "Which word completes “… all away: anger, wrath, malice, slander, and shameful speaking out of your ______.”? (3:8, WEB)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… have put on the new man, that is being renewed in knowledge after the image of his Creator,” The missing terms belong in that order.",
+    "options" : [
+      "knowledge image"
+    ],
+    "prompt" : "Supply the missing words in order: “… have put on the new man, that is being renewed in ____ after the of his Creator,” (3:10, WEB)",
+    "reference" : "Colossians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Colossians 4:6 uses grace: “Let your speech always be with grace, seasoned with salt, that you may know how you ought to answer each one.”",
+    "options" : [
+      "grace",
+      "bonds",
+      "beloved",
+      "Tychicus"
+    ],
+    "prompt" : "Which word completes “Let your speech always be with ______, seasoned with salt, that you may know how you ought to answer each one.”? (4:6, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Aristarchus: “Aristarchus, my fellow prisoner greets you, and Mark, the cousin of Barnabas (concerning whom you received commandments, \"if he comes to you, receive him\"),”",
+    "options" : [
+      "Esther",
+      "Aristarchus",
+      "Rachel",
+      "Lot"
+    ],
+    "prompt" : "Which detail belongs in this passage: “______, my fellow prisoner greets you, and Mark, the cousin of Barnabas (concerning whom you received commandments, \"if he comes to you, receive him\"),”? (4:10, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… you, cause it to be read also in the assembly of the Laodiceans; and that you also read the letter from Laodicea.”; the second reads “The salutation of me, Paul, with my own hand: remember my bonds. Grace be with you. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Laodiceans Paul"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… you, cause it to be read also in the assembly of the ____; and that you also read the letter from Laodicea.” (4:16); “The salutation of me, , with my own hand: remember my bonds. Grace be with you. Amen.” (4:18, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… are of the circumcision. These are my only fellow workers for the Kingdom of God, men who have been a comfort to me.”; verse 15 reads “Greet the brothers who are in Laodicea, and Nymphas, and the assembly that is in his house.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Kingdom; Jerusalem",
+      "Kingdom; Laodicea",
+      "Laodicea; Kingdom",
+      "word; Laodicea"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… are of the circumcision. These are my only fellow workers for the ______ of God, men who have been a comfort to me.” (4:11); “Greet the brothers who are in ______, and Nymphas, and the assembly that is in his house.” (4:15, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “All my affairs will be made known to you by Tychicus, the beloved brother, faithful servant, and fellow bondservant in the Lord.” The missing terms belong in that order.",
+    "options" : [
+      "Tychicus faithful"
+    ],
+    "prompt" : "Supply the missing words in order: “All my affairs will be made known to you by ____, the beloved brother, servant, and fellow bondservant in the Lord.” (4:7, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Continue steadfastly in prayer, watching therein with thanksgiving;”",
+    "options" : [
+      "thanksgiving"
+    ],
+    "prompt" : "Complete the quotation: “Continue steadfastly in prayer, watching therein with ____;” (4:2, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to us a door for the word, to speak the mystery of Christ, for which I am also in bonds;”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… to us a door for the word, to speak the mystery of ____, for which I am also in bonds;” (4:3, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "colossians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Epaphras, who is one of you, a servant of Christ, salutes you, always striving for you in his prayers, that you may stand perfect and complete …” It says servant, not mothers.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Epaphras, who is one of you, a mothers of Christ, salutes you, always striving for you in his prayers, that you may stand perfect and complete …” (4:12, WEB)",
+    "reference" : "Colossians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

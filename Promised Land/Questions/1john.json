@@ -1,0 +1,658 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… and our fellowship is with the Father, and with his Son, Jesus Christ.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… and our fellowship is with the Father, and with his Son, Jesus ____.” (1:3, WEB)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Walking in the light includes truthful acknowledgment of sin and reliance on God's cleansing. The letter does not define fellowship as pretending to have no need of forgiveness. This chapter should remain in view when interpreting the later statements about those born of God and sin.",
+    "options" : [
+      "Confession is said to exclude every possibility of forgiveness.",
+      "Walking in the light includes truthful acknowledgment of sin and reliance on God's cleansing.",
+      "Claiming never to have sinned is the required confession.",
+      "Truthful acknowledgment of wrongdoing makes fellowship impossible."
+    ],
+    "prompt" : "How does the call to confess sin challenge a claim to sinlessness? (1:5-10)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies truth: “… him and walk in the darkness, we lie, and don't tell the truth.”",
+    "options" : [
+      "truth",
+      "righteousness",
+      "honor",
+      "wrath"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… him and walk in the darkness, we lie, and don't tell the ______.”? (1:6, WEB)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 John 1:7 uses blood: “… is in the light, we have fellowship with one another, and the blood of Jesus Christ, his Son, cleanses us from all sin.”",
+    "options" : [
+      "hands",
+      "back",
+      "blood",
+      "neck"
+    ],
+    "prompt" : "Which word completes “… is in the light, we have fellowship with one another, and the ______ of Jesus Christ, his Son, cleanses us from all sin.”? (1:7, WEB)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “If we say that we have no sin, we deceive ourselves, and the truth is not in us.”; verse 10 reads “If we say that we haven't sinned, we make him a liar, and his word is not in us.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sin; righteous",
+      "sin; liar",
+      "disobedience; liar",
+      "liar; sin"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “If we say that we have no ______, we deceive ourselves, and the truth is not in us.” (1:8); “If we say that we haven't sinned, we make him a ______, and his word is not in us.” (1:10, WEB)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… from him and announce to you, that God is light, and in him is no darkness at all.” The missing terms belong in that order.",
+    "options" : [
+      "light darkness"
+    ],
+    "prompt" : "Supply the missing words in order: “… from him and announce to you, that God is ____, and in him is no at all.” (1:5, WEB)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… confess our sins, he is faithful and righteous to forgive us the sins, and to cleanse us from all unrighteousness.” It says sins, not idolatry.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… confess our sins, he is faithful and righteous to forgive us the idolatry, and to cleanse us from all unrighteousness.” (1:9, WEB)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… revealed, and we have seen, and testify, and declare to you the life, the eternal life, which was with the Father, and was revealed to us);”",
+    "options" : [
+      "life"
+    ],
+    "prompt" : "Complete the quotation: “… revealed, and we have seen, and testify, and declare to you the ____, the eternal life, which was with the Father, and was revealed to us);” (1:2, WEB)",
+    "reference" : "1 John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… from him remains in you, and you don't need for anyone to teach you. But as his anointing teaches you concerning all things, and is true, …”; the second reads “… you know that he is righteous, you know that everyone who practices righteousness is born of him.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "teach righteousness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… from him remains in you, and you don't need for anyone to ____ you. But as his anointing teaches you concerning all things, and is true, …” (2:27); “… you know that he is righteous, you know that everyone who practices is born of him.” (2:29, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… is in the darkness, and walks in the darkness, and doesn't know where he is going, because the darkness has blinded his eyes.” The missing terms belong in that order.",
+    "options" : [
+      "darkness eyes"
+    ],
+    "prompt" : "Supply the missing words in order: “… is in the ____, and walks in the darkness, and doesn't know where he is going, because the darkness has blinded his .” (2:11, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of the flesh, the lust of the eyes, and the pride of life, isn't the Father's, but is the world's.” It says life, not redemption.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of the flesh, the lust of the eyes, and the pride of redemption, isn't the Father's, but is the world's.” (2:16, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… anyone sins, we have a Counselor with the Father, Jesus Christ, the righteous.”",
+    "options" : [
+      "righteous"
+    ],
+    "prompt" : "Complete the quotation: “… anyone sins, we have a Counselor with the Father, Jesus Christ, the ____.” (2:1, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But whoever keeps his word, God's love has most assuredly been perfected in him. This is how we know that we are in him:”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “But whoever keeps his word, God's ____ has most assuredly been perfected in him. This is how we know that we are in him:” (2:5, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies men: “… him who is from the beginning. I have written to you, young men, because you are strong, and the word of God remains in you, and …”",
+    "options" : [
+      "astray",
+      "men",
+      "blinded",
+      "boldness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… him who is from the beginning. I have written to you, young ______, because you are strong, and the word of God remains in you, and …”? (2:14, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “You have an anointing from the Holy One, and you know the truth.”; verse 23 reads “Whoever denies the Son, the same doesn't have the Father. He who confesses the Son has the Father also.”. These establish the first and second answers respectively.",
+    "options" : [
+      "honor; Whoever",
+      "truth; antichrists",
+      "Whoever; truth",
+      "truth; Whoever"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “You have an anointing from the Holy One, and you know the ______.” (2:20); “______ denies the Son, the same doesn't have the Father. He who confesses the Son has the Father also.” (2:23, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 John 2:8 uses light: “… and in you; because the darkness is passing away, and the true light already shines.”",
+    "options" : [
+      "light",
+      "world",
+      "Father's",
+      "forgiven"
+    ],
+    "prompt" : "Which word completes “… and in you; because the darkness is passing away, and the true ______ already shines.”? (2:8, WEB)",
+    "reference" : "1 John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies righteous: “… did he kill him? Because his works were evil, and his brother's righteous.”",
+    "options" : [
+      "obedient",
+      "holy",
+      "righteous",
+      "humble"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… did he kill him? Because his works were evil, and his brother's ______.”? (3:12, WEB)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “We know that we have passed out of death into life, because we love the brothers. He who doesn't love his brother remains in death.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “We know that we have passed out of death into life, because we love the brothers. He who doesn't love his brother remains in death.” (3:14, WEB)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The letter opposes a life governed by sin without asking readers to deny their need for confession and cleansing. Christians differ over the precise force of the verb forms and their application to sanctification. Reading both passages prevents an unqualified claim that believers can never commit any wrong.",
+    "options" : [
+      "The passage praises a settled commitment to wrongdoing.",
+      "The letter opposes a life governed by sin without asking readers to deny their need for confession and cleansing.",
+      "The earlier confession teaching must be ignored entirely.",
+      "The letter requires believers to claim they have never sinned."
+    ],
+    "prompt" : "How should the statements about God's children and sin be read alongside 1 John 1:8-10? (3:4-10)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Behold, how great a love the Father has bestowed on us, that we should be called children of God! For this cause the world doesn't know …”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “Behold, how great a ____ the Father has bestowed on us, that we should be called children of God! For this cause the world doesn't know …” (3:1, WEB)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Everyone who sins also commits lawlessness. Sin is lawlessness.”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “Everyone who ____ also commits lawlessness. Sin is lawlessness.” (3:4, WEB)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and whatever we ask, we receive from him, because we keep his commandments and do the things that are pleasing in his sight.”; the second reads “… him. By this we know that he remains in us, by the Spirit which he gave us.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "commandments Spirit"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and whatever we ask, we receive from him, because we keep his ____ and do the things that are pleasing in his sight.” (3:22); “… him. By this we know that he remains in us, by the which he gave us.” (3:24, WEB)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… born of God doesn't commit sin, because his seed remains in him; and he can't sin, because he is born of God.” The missing terms belong in that order.",
+    "options" : [
+      "remains sin"
+    ],
+    "prompt" : "Supply the missing words in order: “… born of God doesn't commit sin, because his seed ____ in him; and he can't , because he is born of God.” (3:9, WEB)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1john",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 John 3:7 uses righteousness: “Little children, let no one lead you astray. He who does righteousness is righteous, even as he is righteous.”",
+    "options" : [
+      "glory",
+      "wisdom",
+      "righteousness",
+      "joy"
+    ],
+    "prompt" : "Which word completes “Little children, let no one lead you astray. He who does ______ is righteous, even as he is righteous.”? (3:7, WEB)",
+    "reference" : "1 John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… has seen God at any time. If we love one another, God remains in us, and his love has been perfected in us.” It says remains, not Jesus.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… has seen God at any time. If we love one another, God Jesus in us, and his love has been perfected in us.” (4:12, WEB)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “By this was God's love revealed in us, that God has sent his one and only Son into the world that we might live through him.” The missing terms belong in that order.",
+    "options" : [
+      "love has"
+    ],
+    "prompt" : "Supply the missing words in order: “By this was God's ____ revealed in us, that God sent his one and only Son into the world that we might live through him.” (4:9, WEB)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and every spirit who doesn't confess that Jesus Christ has come in the flesh is not of God, and this is the spirit of the antichrist, …”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “and every spirit who doesn't confess that Jesus ____ has come in the flesh is not of God, and this is the spirit of the antichrist, …” (4:3, WEB)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “By this you know the Spirit of God: every spirit who confesses that Jesus Christ has come in the flesh is of God,”",
+    "options" : [
+      "spirit"
+    ],
+    "prompt" : "Complete the quotation: “By this you know the Spirit of God: every ____ who confesses that Jesus Christ has come in the flesh is of God,” (4:2, WEB)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sacrifice: “… but that he loved us, and sent his Son as the atoning sacrifice for our sins.”",
+    "options" : [
+      "praise",
+      "sacrifice",
+      "curse",
+      "offering"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… but that he loved us, and sent his Son as the atoning ______ for our sins.”? (4:10, WEB)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 John 4:6 uses truth: “… God doesn't listen to us. By this we know the spirit of truth, and the spirit of error.”",
+    "options" : [
+      "understanding",
+      "grief",
+      "truth",
+      "honor"
+    ],
+    "prompt" : "Which word completes “… God doesn't listen to us. By this we know the spirit of ______, and the spirit of error.”? (4:6, WEB)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Believers love in response to God's love revealed in sending His Son. The course treats received love as the source of outward love. The passage exposes a contradiction between claiming love for God and hating a brother or sister.",
+    "options" : [
+      "God's sending of the Son is unrelated to the argument.",
+      "Believers love in response to God's love revealed in sending His Son.",
+      "Human love first forces God to become loving.",
+      "Hatred of a brother is proof of perfect love for God."
+    ],
+    "prompt" : "How does God's prior love shape the command to love others? (4:7-21)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “We know and have believed the love which God has for us. God is love, and he who remains in love remains in God, and God …”; verse 18 reads “There is no fear in love; but perfect love casts out fear, because fear has punishment. He who fears is not made perfect in love.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fear; believed",
+      "believed; fear",
+      "Beloved; fear",
+      "believed; anger"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “We know and have ______ the love which God has for us. God is love, and he who remains in love remains in God, and God …” (4:16); “There is no fear in love; but perfect love casts out ______, because fear has punishment. He who fears is not made perfect in love.” (4:18, WEB)",
+    "reference" : "1 John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the world. This is the victory that has overcome the world: your faith.”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “… the world. This is the victory that has overcome the world: your ____.” (5:4, WEB)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 John 5:6 uses water: “… he who came by water and blood, Jesus Christ; not with the water only, but with the water and the blood. It is the Spirit who …”",
+    "options" : [
+      "milk",
+      "water",
+      "grain",
+      "figs"
+    ],
+    "prompt" : "Which word completes “… he who came by water and blood, Jesus Christ; not with the ______ only, but with the water and the blood. It is the Spirit who …”? (5:6, WEB)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Some older editions include longer wording about heavenly witnesses that many modern editions omit or footnote. The difference concerns manuscript evidence, not the sudden invention of the Trinity by a modern translation. The course's Trinitarian teaching also draws on passages such as Matthew 3 and John 14.",
+    "options" : [
+      "All manuscript traditions have identical wording here.",
+      "Some older editions include longer wording about heavenly witnesses that many modern editions omit or footnote.",
+      "Every translation difference proves that all witnesses in the chapter disappear.",
+      "The Trinity is discussed nowhere else in the New Testament."
+    ],
+    "prompt" : "What needs distinguishing when comparing older and newer translations of the witnesses in verses 7-8? (5:6-13)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “If we receive the witness of men, the witness of God is greater; for this is God's testimony which he has testified concerning his Son.” The missing terms belong in that order.",
+    "options" : [
+      "witness testimony"
+    ],
+    "prompt" : "Supply the missing words in order: “If we receive the ____ of men, the witness of God is greater; for this is God's which he has testified concerning his Son.” (5:9, WEB)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Whoever believes that Jesus is the Christ is born of God. Whoever loves the father also loves the child who is born of him.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “Whoever believes that Jesus is the ____ is born of God. Whoever loves the father also loves the child who is born of him.” (5:1, WEB)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the Son of God, that you may know that you have eternal life, and that you may continue to believe in the name of the Son …” It says life, not refuge.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the Son of God, that you may know that you have eternal refuge, and that you may continue to believe in the name of the Son …” (5:13, WEB)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… that the Son of God has come, and has given us an understanding, that we know him who is true, and we are in him who …”; the second reads “Little children, keep yourselves from idols.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "understanding children"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… that the Son of God has come, and has given us an ____, that we know him who is true, and we are in him who …” (5:20); “Little , keep yourselves from idols.” (5:21, WEB)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1john",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies liar: “… testimony in himself. He who doesn't believe God has made him a liar, because he has not believed in the testimony that God has given concerning …”",
+    "options" : [
+      "touch",
+      "grievous",
+      "liar",
+      "blood"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… testimony in himself. He who doesn't believe God has made him a ______, because he has not believed in the testimony that God has given concerning …”? (5:10, WEB)",
+    "reference" : "1 John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

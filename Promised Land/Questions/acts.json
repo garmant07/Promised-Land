@@ -1,0 +1,3663 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “While they were looking steadfastly into the sky as he went, behold, two men stood by them in white clothing,” The missing terms belong in that order.",
+    "options" : [
+      "steadfastly two"
+    ],
+    "prompt" : "Supply the missing words in order: “While they were looking ____ into the sky as he went, behold, men stood by them in white clothing,” (1:10, WEB)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… midst of the disciples (and the number of names was about one hundred twenty), and said,” It says hundred, not first.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… midst of the disciples (and the number of names was about one first twenty), and said,” (1:15, WEB)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies James: “… into the upper room, where they were staying; that is Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, …”",
+    "options" : [
+      "James",
+      "Hannah",
+      "Zerubbabel",
+      "Martha"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… into the upper room, where they were staying; that is Peter, John, ______, Andrew, Philip, Thomas, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, …”? (1:13, WEB)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… which he was received up, after he had given commandment through the Holy Spirit to the apostles whom he had chosen.”",
+    "options" : [
+      "Holy"
+    ],
+    "prompt" : "Complete the quotation: “… which he was received up, after he had given commandment through the ____ Spirit to the apostles whom he had chosen.” (1:2, WEB)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 1:8 uses Jerusalem: “… Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.\"”",
+    "options" : [
+      "Cana",
+      "Lystra",
+      "Jerusalem",
+      "Colossae"
+    ],
+    "prompt" : "Which word completes “… Spirit has come upon you. You will be witnesses to me in ______, in all Judea and Samaria, and to the uttermost parts of the earth.\"”? (1:8, WEB)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Receive the Spirit's power and become witnesses from Jerusalem to the ends of the earth. Jesus redirects attention from control of the timetable to Spirit-empowered witness. The mission expands geographically and across peoples.",
+    "options" : [
+      "Establish witness without any need of the Spirit.",
+      "Receive the Spirit's power and become witnesses from Jerusalem to the ends of the earth.",
+      "Calculate the unknown time before bearing witness.",
+      "Remain permanently within one ethnic group."
+    ],
+    "prompt" : "What task does Jesus give when the disciples ask about restoring the kingdom's timing? (1:6-8)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “They put forward two, Joseph called Barsabbas, who was surnamed Justus, and Matthias.”; the second reads “… the lot fell on Matthias, and he was numbered with the eleven apostles.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Matthias apostles"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “They put forward two, Joseph called Barsabbas, who was surnamed Justus, and ____.” (1:23); “… the lot fell on Matthias, and he was numbered with the eleven .” (1:26, WEB)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For John indeed baptized in water, but you will be baptized in the Holy Spirit not many days from now.\"”",
+    "options" : [
+      "water"
+    ],
+    "prompt" : "Complete the quotation: “For John indeed baptized in ____, but you will be baptized in the Holy Spirit not many days from now.\"” (1:5, WEB)",
+    "reference" : "Acts 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The outpouring of the Spirit is explained through the promise and the exaltation of Jesus. Peter joins Scripture, Jesus' resurrection and the Spirit's gift. Christians differ on some baptismal and charismatic questions; the sermon's call to repentance and the gift of the Spirit are explicit.",
+    "options" : [
+      "The crowd is told that Jesus remained dead.",
+      "The Spirit is presented as the apostles' private possession.",
+      "The outpouring of the Spirit is explained through the promise and the exaltation of Jesus.",
+      "Peter says Joel is unrelated to the event."
+    ],
+    "prompt" : "How does Peter connect Pentecost with Joel's promise? (2:14-21, 32-39)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “\"Men of Israel, hear these words! Jesus of Nazareth, a man approved by God to you by mighty works and wonders and signs which God did …”",
+    "options" : [
+      "Eutychus",
+      "Martha",
+      "Israel",
+      "Levi"
+    ],
+    "prompt" : "Which detail belongs in this passage: “\"Men of ______, hear these words! Jesus of Nazareth, a man approved by God to you by mighty works and wonders and signs which God did …”? (2:22, WEB)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… will not leave my soul in Hades, Neither will you allow your Holy One to see decay.” It says Holy, not gracious.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… will not leave my soul in Hades, Neither will you allow your gracious One to see decay.” (2:27, WEB)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the last days, says God, That I will pour out my Spirit on all flesh. Your sons and your daughters will prophesy. Your young men will …” The missing terms belong in that order.",
+    "options" : [
+      "Spirit flesh"
+    ],
+    "prompt" : "Supply the missing words in order: “… the last days, says God, That I will pour out my ____ on all . Your sons and your daughters will prophesy. Your young men will …” (2:17, WEB)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Parthians, Medes, Elamites, and people from Mesopotamia, Judea, Cappadocia, Pontus, Asia,”",
+    "options" : [
+      "Asia"
+    ],
+    "prompt" : "Complete the quotation: “Parthians, Medes, Elamites, and people from Mesopotamia, Judea, Cappadocia, Pontus, ____,” (2:9, WEB)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Tongues like fire appeared and were distributed to them, and one sat on each of them.”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “Tongues like ____ appeared and were distributed to them, and one sat on each of them.” (2:3, WEB)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 31 reads “he foreseeing this spoke about the resurrection of the Christ, that neither was his soul left in Hades, nor did his flesh see decay.”; verse 36 reads “… know assuredly that God has made him both Lord and Christ, this Jesus whom you crucified.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "resurrection; Judas",
+      "resurrection; Jesus",
+      "judgment; Jesus",
+      "Jesus; resurrection"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “he foreseeing this spoke about the ______ of the Christ, that neither was his soul left in Hades, nor did his flesh see decay.” (2:31); “… know assuredly that God has made him both Lord and Christ, this ______ whom you crucified.\"” (2:36, WEB)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 2:14 uses Jerusalem: “… to them, \"You men of Judea, and all you who dwell at Jerusalem, let this be known to you, and listen to my words.”",
+    "options" : [
+      "Caesarea",
+      "Sinai",
+      "Tarshish",
+      "Jerusalem"
+    ],
+    "prompt" : "Which word completes “… to them, \"You men of Judea, and all you who dwell at ______, let this be known to you, and listen to my words.”? (2:14, WEB)",
+    "reference" : "Acts 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 3:8 uses stood: “Leaping up, he stood, and began to walk. He entered with them into the temple, walking, leaping, and praising God.”",
+    "options" : [
+      "Jesus",
+      "Righteous",
+      "denied",
+      "stood"
+    ],
+    "prompt" : "Which word completes “Leaping up, he ______, and began to walk. He entered with them into the temple, walking, leaping, and praising God.”? (3:8, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… to ask gifts for the needy of those who entered into the temple.”",
+    "options" : [
+      "temple"
+    ],
+    "prompt" : "Complete the quotation: “… to ask gifts for the needy of those who entered into the ____.” (3:2, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… gifts for the needy at the Beautiful Gate of the temple. They were filled with wonder and amazement at what had happened to him.” The missing terms belong in that order.",
+    "options" : [
+      "needy happened"
+    ],
+    "prompt" : "Supply the missing words in order: “… gifts for the ____ at the Beautiful Gate of the temple. They were filled with wonder and amazement at what had to him.” (3:10, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “By faith in his name has his name made this man strong, whom you see and know. Yes, the faith which is through him has given …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “By faith in his name has his name made this man strong, whom you see and know. Yes, the faith which is through him has given …” (3:16, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For Moses indeed said to the fathers, 'The Lord God will raise up a prophet for you from among your brothers, like me. You shall listen …”; the second reads “God, having raised up his servant, Jesus, sent him to you first, to bless you, in turning away everyone of you from your wickedness.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Moses servant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For ____ indeed said to the fathers, 'The Lord God will raise up a prophet for you from among your brothers, like me. You shall listen …” (3:22); “God, having raised up his , Jesus, sent him to you first, to bless you, in turning away everyone of you from your wickedness.\"” (3:26, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Pilate: “… Servant Jesus, whom you delivered up, and denied in the presence of Pilate, when he had determined to release him.”",
+    "options" : [
+      "Ithamar",
+      "Lazarus",
+      "Pilate",
+      "Malachi"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Servant Jesus, whom you delivered up, and denied in the presence of ______, when he had determined to release him.”? (3:13, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But Peter said, \"Silver and gold have I none, but what I have, that I give you. In the name of Jesus Christ of Nazareth, get …”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “But ____ said, \"Silver and gold have I none, but what I have, that I give you. In the name of Jesus Christ of Nazareth, get …” (3:6, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… things which God announced by the mouth of all his prophets, that Christ should suffer, he thus fulfilled.”; verse 21 reads “… all things, which God spoke long ago by the mouth of his holy prophets.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Christ; holy",
+      "Christ; faithful",
+      "Barnabas; holy",
+      "holy; Christ"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… things which God announced by the mouth of all his prophets, that ______ should suffer, he thus fulfilled.” (3:18); “… all things, which God spoke long ago by the mouth of his ______ prophets.” (3:21, WEB)",
+    "reference" : "Acts 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 25 reads “who by the mouth of your servant, David, said, 'Why do the nations rage, And the peoples plot a vain thing?”; verse 27 reads “For truly, in this city against your holy servant, Jesus, whom you anointed, both Herod and Pontius Pilate, with the Gentiles and the people of Israel, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "servant; humble",
+      "holy; servant",
+      "daughters; holy",
+      "servant; holy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “who by the mouth of your ______, David, said, 'Why do the nations rage, And the peoples plot a vain thing?” (4:25); “For truly, in this city against your ______ servant, Jesus, whom you anointed, both Herod and Pontius Pilate, with the Gentiles and the people of Israel, …” (4:27, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… let them go, finding no way to punish them, because of the people; for everyone glorified God for that which was done.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… let them go, finding no way to punish them, because of the people; for everyone glorified God for that which was done.” (4:21, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now when they saw the boldness of Peter and John, and had perceived that they were unlearned and ignorant men, they marveled. They recognized that they …” The missing terms belong in that order.",
+    "options" : [
+      "Peter John"
+    ],
+    "prompt" : "Supply the missing words in order: “Now when they saw the boldness of ____ and , and had perceived that they were unlearned and ignorant men, they marveled. They recognized that they …” (4:13, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “They laid hands on them, and put them in custody until the next day, for it was now evening.”",
+    "options" : [
+      "custody"
+    ],
+    "prompt" : "Complete the quotation: “They laid hands on them, and put them in ____ until the next day, for it was now evening.” (4:3, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies name: “… them, that from now on they don't speak to anyone in this name.\"”",
+    "options" : [
+      "name",
+      "judge",
+      "filled",
+      "today"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… them, that from now on they don't speak to anyone in this ______.\"”? (4:17, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The multitude of those who believed were of one heart and soul. Not one of them claimed that anything of the things which he possessed was …”; the second reads “Joses, who by the apostles was surnamed Barnabas (which is, being interpreted, Son of Encouragement), a Levite, a man of Cyprus by race,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "heart apostles"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The multitude of those who believed were of one ____ and soul. Not one of them claimed that anything of the things which he possessed was …” (4:32); “Joses, who by the was surnamed Barnabas (which is, being interpreted, Son of Encouragement), a Levite, a man of Cyprus by race,” (4:36, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 4:10 uses Nazareth: “… the people of Israel, that in the name of Jesus Christ of Nazareth, whom you crucified, whom God raised from the dead, in him does this …”",
+    "options" : [
+      "Iconium",
+      "Cana",
+      "Joppa",
+      "Nazareth"
+    ],
+    "prompt" : "Which word completes “… the people of Israel, that in the name of Jesus Christ of ______, whom you crucified, whom God raised from the dead, in him does this …”? (4:10, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Annas the high priest was there, with Caiaphas, John, Alexander, and as many as were relatives of the high priest.”",
+    "options" : [
+      "priest"
+    ],
+    "prompt" : "Complete the quotation: “Annas the high ____ was there, with Caiaphas, John, Alexander, and as many as were relatives of the high priest.” (4:6, WEB)",
+    "reference" : "Acts 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Multitudes also came together from the cities around Jerusalem, bringing sick people, and those who were tormented by unclean spirits: and they were all healed.” The missing terms belong in that order.",
+    "options" : [
+      "Jerusalem sick"
+    ],
+    "prompt" : "Supply the missing words in order: “Multitudes also came together from the cities around ____, bringing people, and those who were tormented by unclean spirits: and they were all healed.” (5:16, WEB)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "They deceive the community in a way Peter identifies as lying to the Holy Spirit. Peter says the property and proceeds had been under their control; the issue is deceit, not failure to surrender every possession. The episode does not authorize church leaders to punish people violently.",
+    "options" : [
+      "Peter tells leaders to execute dishonest donors.",
+      "The narrator treats deceit as harmless.",
+      "Every believer was required to surrender every last possession.",
+      "They deceive the community in a way Peter identifies as lying to the Holy Spirit."
+    ],
+    "prompt" : "What makes the deaths of Ananias and Sapphira a warning about the community's holiness? (5:1-11)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “But Peter said, \"Ananias, why has Satan filled your heart to lie to the Holy Spirit, and to keep back part of the price of the …”",
+    "options" : [
+      "Ananias"
+    ],
+    "prompt" : "Complete the quotation: “But Peter said, \"____, why has Satan filled your heart to lie to the Holy Spirit, and to keep back part of the price of the …” (5:3, WEB)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 5:12 uses apostles: “By the hands of the apostles many signs and wonders were done among the people. They were all with one accord in Solomon's porch.”",
+    "options" : [
+      "apostles",
+      "Solomon's",
+      "words",
+      "witnesses"
+    ],
+    "prompt" : "Which word completes “By the hands of the ______ many signs and wonders were done among the people. They were all with one accord in Solomon's porch.”? (5:12, WEB)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “… called the council together, and all the senate of the children of Israel, and sent to the prison to have them brought.”",
+    "options" : [
+      "Zephaniah",
+      "Adam",
+      "Israel",
+      "Agrippa"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… called the council together, and all the senate of the children of ______, and sent to the prison to have them brought.”? (5:21, WEB)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “About three hours later, his wife, not knowing what had happened, came in.”",
+    "options" : [
+      "three"
+    ],
+    "prompt" : "Complete the quotation: “About ____ hours later, his wife, not knowing what had happened, came in.” (5:7, WEB)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 28 reads “… have filled Jerusalem with your teaching, and intend to bring this man's blood on us.\"”; verse 31 reads “… his right hand to be a Prince and a Savior, to give repentance to Israel, and remission of sins.”. These establish the first and second answers respectively.",
+    "options" : [
+      "blood; perished",
+      "blood; repentance",
+      "repentance; blood",
+      "hair; repentance"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… have filled Jerusalem with your teaching, and intend to bring this man's ______ on us.\"” (5:28); “… his right hand to be a Prince and a Savior, to give ______ to Israel, and remission of sins.” (5:31, WEB)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… when the high priest, the captain of the temple, and the chief priests heard these words, they were very perplexed about them and what might become …” It says priests, not judge.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… when the high priest, the captain of the temple, and the chief judge heard these words, they were very perplexed about them and what might become …” (5:24, WEB)",
+    "reference" : "Acts 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The community appoints trusted people to address the need while the apostles attend to prayer and the word. The complaint is taken seriously instead of being dismissed as unspiritual. The course understands communal care as part of the church's life, not a distraction from all spiritual concerns.",
+    "options" : [
+      "The widows are blamed for needing food.",
+      "The apostles permanently abandon the teaching of the word.",
+      "Practical care is declared unrelated to faithfulness.",
+      "The community appoints trusted people to address the need while the apostles attend to prayer and the word."
+    ],
+    "prompt" : "How does the response to neglected widows join practical justice with the church's mission? (6:1-7)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “The twelve summoned the multitude of the disciples and said, \"It is not appropriate for us to forsake the word of God and serve tables.”",
+    "options" : [
+      "disciples"
+    ],
+    "prompt" : "Complete the quotation: “The twelve summoned the multitude of the ____ and said, \"It is not appropriate for us to forsake the word of God and serve tables.” (6:2, WEB)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Stephen: “Stephen, full of faith and power, performed great wonders and signs among the people.”",
+    "options" : [
+      "Nicodemus",
+      "Aquila",
+      "Stephen",
+      "Abel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “______, full of faith and power, performed great wonders and signs among the people.”? (6:8, WEB)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… induced men to say, \"We have heard him speak blasphemous words against Moses and God.\"”; verse 13 reads “… man never stops speaking blasphemous words against this holy place and the law.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Moses; instruction",
+      "Elijah; law",
+      "law; Moses",
+      "Moses; law"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… induced men to say, \"We have heard him speak blasphemous words against ______ and God.\"” (6:11); “… man never stops speaking blasphemous words against this holy place and the ______.” (6:13, WEB)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 6:5 uses Antioch: “… Holy Spirit, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolaus, a proselyte of Antioch;”",
+    "options" : [
+      "Nineveh",
+      "Smyrna",
+      "Asia",
+      "Antioch"
+    ],
+    "prompt" : "Which word completes “… Holy Spirit, Philip, Prochorus, Nicanor, Timon, Parmenas, and Nicolaus, a proselyte of ______;”? (6:5, WEB)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… disciples multiplied in Jerusalem exceedingly. A great company of the priests were obedient to the faith.” The missing terms belong in that order.",
+    "options" : [
+      "priests faith"
+    ],
+    "prompt" : "Supply the missing words in order: “… disciples multiplied in Jerusalem exceedingly. A great company of the ____ were obedient to the .” (6:7, WEB)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of the Cyrenians, of the Alexandrians, and of those of Cilicia and Asia arose, disputing with Stephen.” It says Asia, not Berea.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of the Cyrenians, of the Alexandrians, and of those of Cilicia and Berea arose, disputing with Stephen.” (6:9, WEB)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… from among you, brothers, seven men of good report, full of the Holy Spirit and of wisdom, whom we may appoint over this business.”",
+    "options" : [
+      "Holy"
+    ],
+    "prompt" : "Complete the quotation: “… from among you, brothers, seven men of good report, full of the ____ Spirit and of wisdom, whom we may appoint over this business.” (6:3, WEB)",
+    "reference" : "Acts 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Moses was instructed in all the wisdom of the Egyptians. He was mighty in his words and works.” The missing terms belong in that order.",
+    "options" : [
+      "Moses wisdom"
+    ],
+    "prompt" : "Supply the missing words in order: “____ was instructed in all the of the Egyptians. He was mighty in his words and works.” (7:22, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of all his afflictions, and gave him favor and wisdom before Pharaoh, king of Egypt. He made him governor over Egypt and all his house.”",
+    "options" : [
+      "king"
+    ],
+    "prompt" : "Complete the quotation: “… of all his afflictions, and gave him favor and wisdom before Pharaoh, ____ of Egypt. He made him governor over Egypt and all his house.” (7:10, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies stranger: “Moses fled at this saying, and became a stranger in the land of Midian, where he became the father of two sons.”",
+    "options" : [
+      "oracles",
+      "stranger",
+      "three",
+      "idol"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Moses fled at this saying, and became a ______ in the land of Midian, where he became the father of two sons.”? (7:29, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 40 reads “… as for this Moses, who led us out of the land of Egypt, we don't know what has become of him.'”; verse 45 reads “… brought in with Joshua when they entered into the possession of the nations, whom God drove out before the face of our fathers, to the days …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Egypt; Jesus",
+      "Egypt; nations",
+      "nations; Egypt",
+      "Philippi; nations"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… as for this Moses, who led us out of the land of ______, we don't know what has become of him.'” (7:40); “… brought in with Joshua when they entered into the possession of the ______, whom God drove out before the face of our fathers, to the days …” (7:45, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “\"This Moses, whom they refused, saying, 'Who made you a ruler and a judge?'--God has sent him as both a ruler and a deliverer by the …” It says refused, not died.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “\"This Moses, whom they died, saying, 'Who made you a ruler and a judge?'--God has sent him as both a ruler and a deliverer by the …” (7:35, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… From there, when his father was dead, God moved him into this land, where you are now living.”",
+    "options" : [
+      "land"
+    ],
+    "prompt" : "Complete the quotation: “… From there, when his father was dead, God moved him into this ____, where you are now living.” (7:4, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 7:16 uses silver: “… and laid in the tomb that Abraham bought for a price in silver from the children of Hamor of Shechem.”",
+    "options" : [
+      "copper",
+      "silver",
+      "iron",
+      "stones"
+    ],
+    "prompt" : "Which word completes “… and laid in the tomb that Abraham bought for a price in ______ from the children of Hamor of Shechem.”? (7:16, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… your fathers persecute? They killed those who foretold the coming of the Righteous One, of whom you have now become betrayers and murderers.”; the second reads “… witnesses placed their garments at the feet of a young man named Saul.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Righteous Saul"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… your fathers persecute? They killed those who foretold the coming of the ____ One, of whom you have now become betrayers and murderers.” (7:52); “… witnesses placed their garments at the feet of a young man named .” (7:58, WEB)",
+    "reference" : "Acts 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For unclean spirits came out of many of those who had them. They came out, crying with a loud voice. Many who had been paralyzed and …”",
+    "options" : [
+      "spirits"
+    ],
+    "prompt" : "Complete the quotation: “For unclean ____ came out of many of those who had them. They came out, crying with a loud voice. Many who had been paralyzed and …” (8:7, WEB)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The narrative records this event's sequence without explicitly making every detail a universal timetable. Acts depicts important boundary-crossing moments with differing sequences. Christian traditions debate their implications; a description should not silently become a rule that overrides every other passage.",
+    "options" : [
+      "Every reception of the Spirit in Acts follows identical details.",
+      "The Samaritans are said never to receive the Spirit.",
+      "The narrative records this event's sequence without explicitly making every detail a universal timetable.",
+      "The story means Samaritans cannot belong to the church."
+    ],
+    "prompt" : "What distinction is needed when comparing the Samaritans' reception of the Spirit with other Acts accounts? (8:14-17)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Holy: “… this power, that whoever I lay my hands on may receive the Holy Spirit.\"”",
+    "options" : [
+      "innocent",
+      "guilty",
+      "Holy",
+      "pure"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… this power, that whoever I lay my hands on may receive the ______ Spirit.\"”? (8:19, WEB)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… heard that Samaria had received the word of God, they sent Peter and John to them,” The missing terms belong in that order.",
+    "options" : [
+      "Peter John"
+    ],
+    "prompt" : "Supply the missing words in order: “… heard that Samaria had received the word of God, they sent ____ and to them,” (8:14, WEB)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… this, your wickedness, and ask God if perhaps the thought of your heart may be forgiven you.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… this, your wickedness, and ask God if perhaps the thought of your heart may be forgiven you.” (8:22, WEB)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 8:12 uses Philip: “But when they believed Philip preaching good news concerning the Kingdom of God and the name of Jesus Christ, they were baptized, both men and women.”",
+    "options" : [
+      "Philip",
+      "Syntyche",
+      "Manasseh",
+      "Sergius"
+    ],
+    "prompt" : "Which word completes “But when they believed ______ preaching good news concerning the Kingdom of God and the name of Jesus Christ, they were baptized, both men and women.”? (8:12, WEB)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “… the Ethiopians, who was over all her treasure, who had come to Jerusalem to worship.”; verse 31 reads “He said, \"How can I, unless someone explains it to me?\" He begged Philip to come up and sit with him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "explains; Jerusalem",
+      "Troas; explains",
+      "Jerusalem; explains",
+      "Jerusalem; spirits"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the Ethiopians, who was over all her treasure, who had come to ______ to worship.” (8:27); “He said, \"How can I, unless someone ______ it to me?\" He begged Philip to come up and sit with him.” (8:31, WEB)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “But Saul ravaged the assembly, entering into every house, and dragged both men and women off to prison.”",
+    "options" : [
+      "Saul"
+    ],
+    "prompt" : "Complete the quotation: “But ____ ravaged the assembly, entering into every house, and dragged both men and women off to prison.” (8:3, WEB)",
+    "reference" : "Acts 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jerusalem: “… who heard him were amazed, and said, \"Isn't this he who in Jerusalem made havoc of those who called on this name? And he had come …”",
+    "options" : [
+      "Cana",
+      "Joppa",
+      "Jerusalem",
+      "Hebron"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… who heard him were amazed, and said, \"Isn't this he who in ______ made havoc of those who called on this name? And he had come …”? (9:21, WEB)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 9:12 uses Ananias: “and in a vision he has seen a man named Ananias coming in, and laying his hands on him, that he might receive his sight.\"”",
+    "options" : [
+      "James",
+      "Zebulun",
+      "Reuben",
+      "Ananias"
+    ],
+    "prompt" : "Which word completes “and in a vision he has seen a man named ______ coming in, and laying his hands on him, that he might receive his sight.\"”? (9:12, WEB)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Jesus identifies persecution of His followers as persecution directed against Himself. The encounter interrupts Saul and sends him into dependence on the community he had threatened. The course's picture of the church as Christ's body gives this identification particular weight.",
+    "options" : [
+      "Jesus identifies persecution of His followers as persecution directed against Himself.",
+      "The encounter leaves Saul's mission unchanged.",
+      "Jesus praises Saul's violence as the goal of discipleship.",
+      "Saul is told that treatment of believers never concerns Jesus."
+    ],
+    "prompt" : "How does Saul's encounter reshape the meaning of his persecution? (9:1-19)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “but their plot became known to Saul. They watched the gates both day and night that they might kill him,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “but their plot became known to Saul. They watched the gates both day and night that they might kill him,” (9:24, WEB)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Saul arose from the ground, and when his eyes were opened, he saw no one. They led him by the hand, and brought him into Damascus.”",
+    "options" : [
+      "Saul"
+    ],
+    "prompt" : "Complete the quotation: “____ arose from the ground, and when his eyes were opened, he saw no one. They led him by the hand, and brought him into Damascus.” (9:8, WEB)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 29 reads “preaching boldly in the name of the Lord. He spoke and disputed against the Grecian Jews, but they were seeking to kill him.”; verse 34 reads “Peter said to him, \"Aeneas, Jesus Christ heals you. Get up and make your bed!\" Immediately he arose.”. These establish the first and second answers respectively.",
+    "options" : [
+      "disputed; Phinehas",
+      "disputed; Peter",
+      "received; Peter",
+      "Peter; disputed"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “preaching boldly in the name of the Lord. He spoke and ______ against the Grecian Jews, but they were seeking to kill him.” (9:29); “______ said to him, \"Aeneas, Jesus Christ heals you. Get up and make your bed!\" Immediately he arose.” (9:34, WEB)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… me, that you may receive your sight, and be filled with the Holy Spirit.\"” The missing terms belong in that order.",
+    "options" : [
+      "Holy Spirit"
+    ],
+    "prompt" : "Supply the missing words in order: “… me, that you may receive your sight, and be filled with the ____.\"” (9:17, WEB)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “As he traveled, it happened that he got close to Damascus, and suddenly a light from the sky shone around him.”",
+    "options" : [
+      "Damascus"
+    ],
+    "prompt" : "Complete the quotation: “As he traveled, it happened that he got close to ____, and suddenly a light from the sky shone around him.” (9:3, WEB)",
+    "reference" : "Acts 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… while Peter was very perplexed in himself what the vision which he had seen might mean, behold, the men who were sent by Cornelius, having made …” The missing terms belong in that order.",
+    "options" : [
+      "Peter Cornelius"
+    ],
+    "prompt" : "Supply the missing words in order: “… while ____ was very perplexed in himself what the vision which he had seen might mean, behold, the men who were sent by , having made …” (10:17, WEB)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… is a Jew to join himself or come to one of another nation, but God has shown me that I shouldn't call any man unholy or …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… is a Jew to join himself or come to one of another nation, but God has shown me that I shouldn't call any man unholy or …” (10:28, WEB)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… vision an angel of God coming to him, and saying to him, \"Cornelius!\"”",
+    "options" : [
+      "Cornelius"
+    ],
+    "prompt" : "Complete the quotation: “… vision an angel of God coming to him, and saying to him, \"____!\"” (10:3, WEB)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies holy: “… of by all the nation of the Jews, was directed by a holy angel to invite you to his house, and to listen to what you …”",
+    "options" : [
+      "obedient",
+      "rich",
+      "holy",
+      "guilty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of by all the nation of the Jews, was directed by a ______ angel to invite you to his house, and to listen to what you …”? (10:22, WEB)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… as they were on their journey, and got close to the city, Peter went up on the housetop to pray at about noon.”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “… as they were on their journey, and got close to the city, ____ went up on the housetop to pray at about noon.” (10:9, WEB)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God gives the Holy Spirit to these Gentiles as the listeners witness. Peter recognizes God's impartial welcome and the Spirit's gift. The scene is important evidence for Gentile inclusion; it does not explicitly resolve every later question about household membership or baptismal mode.",
+    "options" : [
+      "Peter sees no evidence of God's action.",
+      "The Spirit's gift is said to belong only to ethnic Jews.",
+      "Cornelius first becomes a Jewish temple priest.",
+      "God gives the Holy Spirit to these Gentiles as the listeners witness."
+    ],
+    "prompt" : "What convinces Peter that Cornelius's household should not be excluded from baptism? (10:34-48)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 10:12 uses four: “in which were all kinds of four-footed animals of the earth, wild animals, reptiles, and birds of the sky.”",
+    "options" : [
+      "ninety",
+      "twenty",
+      "first",
+      "four"
+    ],
+    "prompt" : "Which word completes “in which were all kinds of ______-footed animals of the earth, wild animals, reptiles, and birds of the sky.”? (10:12, WEB)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He charged us to preach to the people and to testify that this is he who is appointed by God as the Judge of the living …”; the second reads “… any man forbid the water, that these who have received the Holy Spirit as well as we should not be baptized?\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "testify Spirit"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He charged us to preach to the people and to ____ that this is he who is appointed by God as the Judge of the living …” (10:42); “… any man forbid the water, that these who have received the Holy as well as we should not be baptized?\"” (10:47, WEB)",
+    "reference" : "Acts 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… and glorified God, saying, \"Then God has also granted to the Gentiles repentance to life!\"” It says repentance, not turned.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… and glorified God, saying, \"Then God has also granted to the Gentiles turned to life!\"” (11:18, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies John: “I remembered the word of the Lord, how he said, 'John indeed baptized in water, but you will be baptized in the Holy Spirit.'”",
+    "options" : [
+      "Issachar",
+      "John",
+      "Reuben",
+      "Jesse"
+    ],
+    "prompt" : "Which detail belongs in this passage: “I remembered the word of the Lord, how he said, '______ indeed baptized in water, but you will be baptized in the Holy Spirit.'”? (11:16, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “When Peter had come up to Jerusalem, those who were of the circumcision contended with him,”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "Complete the quotation: “When Peter had come up to ____, those who were of the circumcision contended with him,” (11:2, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… they were gathered together with the assembly, and taught many people. The disciples were first called Christians in Antioch.”; the second reads “One of them named Agabus stood up, and indicated by the Spirit that there should be a great famine all over the world, which also happened …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "disciples Agabus"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… they were gathered together with the assembly, and taught many people. The ____ were first called Christians in Antioch.” (11:26); “One of them named stood up, and indicated by the Spirit that there should be a great famine all over the world, which also happened …” (11:28, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 11:9 uses second: “But a voice answered me the second time out of heaven, 'What God has cleansed, don't you call unclean.'”",
+    "options" : [
+      "eighteen",
+      "six",
+      "third",
+      "second"
+    ],
+    "prompt" : "Which word completes “But a voice answered me the ______ time out of heaven, 'What God has cleansed, don't you call unclean.'”? (11:9, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… them, men of Cyprus and Cyrene, who, when they had come to Antioch, spoke to the Greeks, preaching the Lord Jesus.”; verse 24 reads “For he was a good man, and full of the Holy Spirit and of faith, and many people were added to the Lord.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Holy; Antioch",
+      "Damascus; Holy",
+      "Antioch; righteous",
+      "Antioch; Holy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… them, men of Cyprus and Cyrene, who, when they had come to ______, spoke to the Greeks, preaching the Lord Jesus.” (11:20); “For he was a good man, and full of the ______ Spirit and of faith, and many people were added to the Lord.” (11:24, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The Spirit told me to go with them, without discriminating. These six brothers also accompanied me, and we entered into the man's house.” The missing terms belong in that order.",
+    "options" : [
+      "Spirit six"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ told me to go with them, without discriminating. These brothers also accompanied me, and we entered into the man's house.” (11:12, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “\"I was in the city of Joppa praying, and in a trance I saw a vision: a certain container descending, like it was a great sheet …”",
+    "options" : [
+      "Joppa"
+    ],
+    "prompt" : "Complete the quotation: “\"I was in the city of ____ praying, and in a trance I saw a vision: a certain container descending, like it was a great sheet …” (11:5, WEB)",
+    "reference" : "Acts 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Mark: “… to the house of Mary, the mother of John whose surname was Mark, where many were gathered together and were praying.”",
+    "options" : [
+      "Mark",
+      "Zephaniah",
+      "Eli",
+      "Esther"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to the house of Mary, the mother of John whose surname was ______, where many were gathered together and were praying.”? (12:12, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… dressed himself in royal clothing, sat on the throne, and gave a speech to them.”; the second reads “Barnabas and Saul returned to Jerusalem, when they had fulfilled their service, also taking with them John whose surname was Mark.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "speech Barnabas"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… dressed himself in royal clothing, sat on the throne, and gave a ____ to them.” (12:21); “ and Saul returned to Jerusalem, when they had fulfilled their service, also taking with them John whose surname was Mark.” (12:25, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “When she recognized Peter's voice, she didn't open the gate for joy, but ran in, and reported that Peter was standing in front of the gate.” It says joy, not understanding.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “When she recognized Peter's voice, she didn't open the gate for understanding, but ran in, and reported that Peter was standing in front of the gate.” (12:14, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “When they were past the first and the second guard, they came to the iron gate that leads into the city, which opened to them by …” The missing terms belong in that order.",
+    "options" : [
+      "first second"
+    ],
+    "prompt" : "Supply the missing words in order: “When they were past the ____ and the guard, they came to the iron gate that leads into the city, which opened to them by …” (12:10, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… had arrested him, he put him in prison, and delivered him to four squads of four soldiers each to guard him, intending to bring him out …”",
+    "options" : [
+      "four"
+    ],
+    "prompt" : "Complete the quotation: “… had arrested him, he put him in prison, and delivered him to ____ squads of four soldiers each to guard him, intending to bring him out …” (12:4, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… brought him out of the prison. He said, \"Tell these things to James, and to the brothers.\" Then he departed, and went to another place.”; verse 20 reads “Now Herod was very angry with the people of Tyre and Sidon. They came with one accord to him, and, having made Blastus, the king's chamberlain, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Hosea; Herod",
+      "James; Barnabas",
+      "Herod; James",
+      "James; Herod"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… brought him out of the prison. He said, \"Tell these things to ______, and to the brothers.\" Then he departed, and went to another place.” (12:17); “Now ______ was very angry with the people of Tyre and Sidon. They came with one accord to him, and, having made Blastus, the king's chamberlain, …” (12:20, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “When he saw that it pleased the Jews, he proceeded to seize Peter also. This was during the days of unleavened bread.”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “When he saw that it pleased the Jews, he proceeded to seize ____ also. This was during the days of unleavened bread.” (12:3, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 12:7 uses light: “And behold, an angel of the Lord stood by him, and a light shone in the cell. He struck Peter on the side, and woke him …”",
+    "options" : [
+      "constant",
+      "light",
+      "Jews",
+      "proceeded"
+    ],
+    "prompt" : "Which word completes “And behold, an angel of the Lord stood by him, and a ______ shone in the cell. He struck Peter on the side, and woke him …”? (12:7, WEB)",
+    "reference" : "Acts 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But Saul, who is also called Paul, filled with the Holy Spirit, fastened his eyes on him,”",
+    "options" : [
+      "Holy"
+    ],
+    "prompt" : "Complete the quotation: “But Saul, who is also called Paul, filled with the ____ Spirit, fastened his eyes on him,” (13:9, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… indeed you thrust it from you, and judge yourselves unworthy of eternal life, behold, we turn to the Gentiles.”; the second reads “… the chief men of the city, and stirred up a persecution against Paul and Barnabas, and threw them out of their borders.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life Paul"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… indeed you thrust it from you, and judge yourselves unworthy of eternal ____, behold, we turn to the Gentiles.” (13:46); “… the chief men of the city, and stirred up a persecution against and Barnabas, and threw them out of their borders.” (13:50, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… they took him down from the tree, and laid him in a tomb.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… they took him down from the tree, and laid him in a tomb.” (13:29, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies John: “As John was fulfilling his course, he said, 'What do you suppose that I am? I am not he. But behold, one comes after me the …”",
+    "options" : [
+      "Caiaphas",
+      "Barnabas",
+      "Isaiah",
+      "John"
+    ],
+    "prompt" : "Which detail belongs in this passage: “As ______ was fulfilling his course, he said, 'What do you suppose that I am? I am not he. But behold, one comes after me the …”? (13:25, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 13:14 uses Antioch: “But they, passing on from Perga, came to Antioch of Pisidia. They went into the synagogue on the Sabbath day, and sat down.”",
+    "options" : [
+      "Antioch",
+      "Capernaum",
+      "Lystra",
+      "Tarsus"
+    ],
+    "prompt" : "Which word completes “But they, passing on from Perga, came to ______ of Pisidia. They went into the synagogue on the Sabbath day, and sat down.”? (13:14, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “When he had destroyed seven nations in the land of Canaan, he gave them their land for an inheritance, for about four hundred fifty years.” The missing terms belong in that order.",
+    "options" : [
+      "seven land"
+    ],
+    "prompt" : "Supply the missing words in order: “When he had destroyed ____ nations in the land of Canaan, he gave them their for an inheritance, for about four hundred fifty years.” (13:19, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 36 reads “For David, after he had in his own generation served the counsel of God, fell asleep, and was laid with his fathers, and saw decay.”; verse 41 reads “'Behold, you scoffers, and wonder, and perish; For I work a work in your days, A work which you will in no way believe, if one …”. These establish the first and second answers respectively.",
+    "options" : [
+      "work; David",
+      "David; company",
+      "David; work",
+      "Trophimus; work"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For ______, after he had in his own generation served the counsel of God, fell asleep, and was laid with his fathers, and saw decay.” (13:36); “'Behold, you scoffers, and wonder, and perish; For I work a ______ in your days, A work which you will in no way believe, if one …” (13:41, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “As they served the Lord and fasted, the Holy Spirit said, \"Separate Barnabas and Saul for me, for the work to which I have called them.\"”",
+    "options" : [
+      "Barnabas"
+    ],
+    "prompt" : "Complete the quotation: “As they served the Lord and fasted, the Holy Spirit said, \"Separate ____ and Saul for me, for the work to which I have called them.\"” (13:2, WEB)",
+    "reference" : "Acts 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 14:8 uses Lystra: “At Lystra a certain man sat, impotent in his feet, a cripple from his mother's womb, who never had walked.”",
+    "options" : [
+      "Patmos",
+      "Lystra",
+      "Sardis",
+      "Asia"
+    ],
+    "prompt" : "Which word completes “At ______ a certain man sat, impotent in his feet, a cripple from his mother's womb, who never had walked.”? (14:8, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Yet he didn't leave himself without witness, in that he did good and gave you rains from the sky and fruitful seasons, filling our hearts with …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Yet he didn't leave himself without witness, in that he did good and gave you rains from the sky and fruitful seasons, filling our hearts with …” (14:17, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “When the multitude saw what Paul had done, they lifted up their voice, saying in the language of Lycaonia, \"The gods have come down to us …” The missing terms belong in that order.",
+    "options" : [
+      "Paul language"
+    ],
+    "prompt" : "Supply the missing words in order: “When the multitude saw what ____ had done, they lifted up their voice, saying in the of Lycaonia, \"The gods have come down to us …” (14:11, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… became aware of it, and fled to the cities of Lycaonia, Lystra, Derbe, and the surrounding region.”",
+    "options" : [
+      "Derbe"
+    ],
+    "prompt" : "Complete the quotation: “… became aware of it, and fled to the cities of Lycaonia, Lystra, ____, and the surrounding region.” (14:6, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “From there they sailed to Antioch, from where they had been committed to the grace of God for the work which they had fulfilled.”; the second reads “… had done with them, and that he had opened a door of faith to the Gentiles.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sailed faith"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “From there they ____ to Antioch, from where they had been committed to the grace of God for the work which they had fulfilled.” (14:26); “… had done with them, and that he had opened a door of to the Gentiles.” (14:27, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… speaking boldly in the Lord, who testified to the word of his grace, granting signs and wonders to be done by their hands.”",
+    "options" : [
+      "grace"
+    ],
+    "prompt" : "Complete the quotation: “… speaking boldly in the Lord, who testified to the word of his ____, granting signs and wonders to be done by their hands.” (14:3, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “But some Jews from Antioch and Iconium came there, and having persuaded the multitudes, they stoned Paul, and dragged him out of the city, supposing that …”; verse 22 reads “… the faith, and that through many afflictions we must enter into the Kingdom of God.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Persia; Kingdom",
+      "Antioch; Greeks",
+      "Kingdom; Antioch",
+      "Antioch; Kingdom"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But some Jews from ______ and Iconium came there, and having persuaded the multitudes, they stoned Paul, and dragged him out of the city, supposing that …” (14:19); “… the faith, and that through many afflictions we must enter into the ______ of God.” (14:22, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies apostles: “But when the apostles, Barnabas and Paul, heard of it, they tore their clothes, and sprang into the multitude, crying out,”",
+    "options" : [
+      "cities",
+      "gladness",
+      "disciples",
+      "apostles"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But when the ______, Barnabas and Paul, heard of it, they tore their clothes, and sprang into the multitude, crying out,”? (14:14, WEB)",
+    "reference" : "Acts 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “… pollution of idols, from sexual immorality, from what is strangled, and from blood.”",
+    "options" : [
+      "teeth",
+      "blood",
+      "face",
+      "tongue"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… pollution of idols, from sexual immorality, from what is strangled, and from ______.”? (15:20, WEB)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 15:12 uses Paul: “All the multitude kept silence, and they listened to Barnabas and Paul reporting what signs and wonders God had done among the Gentiles through them.”",
+    "options" : [
+      "Eli",
+      "Simon",
+      "Paul",
+      "Stephen"
+    ],
+    "prompt" : "Which word completes “All the multitude kept silence, and they listened to Barnabas and ______ reporting what signs and wonders God had done among the Gentiles through them.”? (15:12, WEB)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Circumcision and full observance of the Mosaic law as a requirement for salvation. Peter speaks of the Lord Jesus' grace, and James discusses Gentile inclusion. The letter also addresses practices important to the new communities; it should be read in that historical setting.",
+    "options" : [
+      "Every Gentile must become a Jewish proselyte before receiving grace.",
+      "Faith in Jesus is forbidden to Gentiles.",
+      "Circumcision and full observance of the Mosaic law as a requirement for salvation.",
+      "Gentile believers are excluded from fellowship by definition."
+    ],
+    "prompt" : "What central burden does the council refuse to impose on Gentile believers? (15:1-21)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “After some days Paul said to Barnabas, \"Let's return now and visit our brothers in every city in which we proclaimed the word of the Lord, …”; the second reads “but Paul chose Silas, and went out, being commended by the brothers to the grace of God.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Barnabas Silas"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “After some days Paul said to ____, \"Let's return now and visit our brothers in every city in which we proclaimed the word of the Lord, …” (15:36); “but Paul chose , and went out, being commended by the brothers to the grace of God.” (15:40, WEB)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “'After these things I will return. I will again build the tent of David, which has fallen. I will again build its ruins. I will set …” The missing terms belong in that order.",
+    "options" : [
+      "tent David"
+    ],
+    "prompt" : "Supply the missing words in order: “'After these things I will return. I will again build the ____ of , which has fallen. I will again build its ruins. I will set …” (15:16, WEB)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “When there had been much discussion, Peter rose up and said to them, \"Brothers, you know that a good while ago God made choice among you, …”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “When there had been much discussion, ____ rose up and said to them, \"Brothers, you know that a good while ago God made choice among you, …” (15:7, WEB)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “They wrote these things by their hand: \"The apostles, the elders, and the brothers, to the brothers who are of the Gentiles in Antioch, Syria, and …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “They wrote these things by their hand: \"The apostles, the elders, and the brothers, to the brothers who are of the Gentiles in Antioch, Syria, and …” (15:23, WEB)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… sent on their way by the assembly, passed through both Phoenicia and Samaria, declaring the conversion of the Gentiles. They caused great joy to all the …”",
+    "options" : [
+      "Samaria"
+    ],
+    "prompt" : "Complete the quotation: “… sent on their way by the assembly, passed through both Phoenicia and ____, declaring the conversion of the Gentiles. They caused great joy to all the …” (15:3, WEB)",
+    "reference" : "Acts 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… them, \"They have beaten us publicly, without a trial, men who are Romans, and have cast us into prison! Do they now release us secretly? No, …”; the second reads “… the prison, and entered into Lydia's house. When they had seen the brothers, they encouraged them, and departed.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Romans brothers"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… them, \"They have beaten us publicly, without a trial, men who are ____, and have cast us into prison! Do they now release us secretly? No, …” (16:37); “… the prison, and entered into Lydia's house. When they had seen the , they encouraged them, and departed.” (16:40, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Paul wanted to have him go out with him, and he took and circumcised him because of the Jews who were in those parts; for they …”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “____ wanted to have him go out with him, and he took and circumcised him because of the Jews who were in those parts; for they …” (16:3, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Silas: “… that the hope of their gain was gone, they seized Paul and Silas, and dragged them into the marketplace before the rulers.”",
+    "options" : [
+      "Silas",
+      "Apollos",
+      "Obed",
+      "Jesus"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… that the hope of their gain was gone, they seized Paul and ______, and dragged them into the marketplace before the rulers.”? (16:19, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… us, saying, \"If you have judged me to be faithful to the Lord, come into my house, and stay.\" So she persuaded us.” The missing terms belong in that order.",
+    "options" : [
+      "faithful house"
+    ],
+    "prompt" : "Supply the missing words in order: “… us, saying, \"If you have judged me to be ____ to the Lord, come into my , and stay.\" So she persuaded us.” (16:15, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… them, they threw them into prison, charging the jailer to keep them safely,” It says safely, not kill.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… them, they threw them into prison, charging the jailer to keep them kill,” (16:23, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “… roused out of sleep and seeing the prison doors open, drew his sword and was about to kill himself, supposing that the prisoners had escaped.”; verse 31 reads “They said, \"Believe in the Lord Jesus Christ, and you will be saved, you and your household.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "Christ; Jesus",
+      "sword; Elizabeth",
+      "sword; Jesus",
+      "Jesus; sword"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… roused out of sleep and seeing the prison doors open, drew his ______ and was about to kill himself, supposing that the prisoners had escaped.” (16:27); “They said, \"Believe in the Lord ______ Christ, and you will be saved, you and your household.\"” (16:31, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 16:11 uses Troas: “Setting sail therefore from Troas, we made a straight course to Samothrace, and the day following to Neapolis;”",
+    "options" : [
+      "Sychar",
+      "Jordan",
+      "Jericho",
+      "Troas"
+    ],
+    "prompt" : "Which word completes “Setting sail therefore from ______, we made a straight course to Samothrace, and the day following to Neapolis;”? (16:11, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… had come opposite Mysia, they tried to go into Bithynia, but the Spirit didn't allow them.”",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "Complete the quotation: “… had come opposite Mysia, they tried to go into Bithynia, but the ____ didn't allow them.” (16:7, WEB)",
+    "reference" : "Acts 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But when the Jews of Thessalonica had knowledge that the word of God was proclaimed by Paul at Beroea also, they came there likewise, agitating the …” The missing terms belong in that order.",
+    "options" : [
+      "Thessalonica Paul"
+    ],
+    "prompt" : "Supply the missing words in order: “But when the Jews of ____ had knowledge that the word of God was proclaimed by at Beroea also, they came there likewise, agitating the …” (17:13, WEB)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He begins from their setting but calls them to the Creator, repentance and judgment through the risen man God appointed. Paul finds a point of contact without affirming every local belief. The course's concern for culture does not mean treating all claims about God as interchangeable.",
+    "options" : [
+      "Every Athenian belief is affirmed without challenge.",
+      "He begins from their setting but calls them to the Creator, repentance and judgment through the risen man God appointed.",
+      "Paul says the Creator needs human temples in order to exist.",
+      "The resurrection is omitted as irrelevant."
+    ],
+    "prompt" : "How does Paul's address at Athens use and challenge the audience's religious ideas? (17:22-31)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Athens: “Now while Paul waited for them at Athens, his spirit was provoked within him as he saw the city full of idols.”",
+    "options" : [
+      "Sinai",
+      "Philippi",
+      "Nazareth",
+      "Athens"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Now while Paul waited for them at ______, his spirit was provoked within him as he saw the city full of idols.”? (17:16, WEB)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Now all the Athenians and the strangers living there spent their time in nothing else, but either to tell or to hear some new thing.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Now all the Athenians and the strangers living there spent their time in nothing else, but either to tell or to hear some new thing.” (17:21, WEB)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… of ignorance therefore God overlooked. But now he commands that all people everywhere should repent,”; the second reads “… men joined with him, and believed, among whom also was Dionysius the Areopagite, and a woman named Damaris, and others with them.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "everywhere Areopagite"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… of ignorance therefore God overlooked. But now he commands that all people ____ should repent,” (17:30); “… men joined with him, and believed, among whom also was Dionysius the , and a woman named Damaris, and others with them.” (17:34, WEB)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… they didn't find them, they dragged Jason and certain brothers before the rulers of the city, crying, \"These who have turned the world upside down have …”",
+    "options" : [
+      "rulers"
+    ],
+    "prompt" : "Complete the quotation: “… they didn't find them, they dragged Jason and certain brothers before the ____ of the city, crying, \"These who have turned the world upside down have …” (17:6, WEB)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “explaining and demonstrating that the Christ had to suffer and rise again from the dead, and saying, \"This Jesus, whom I proclaim to you, is the …”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “explaining and demonstrating that the ____ had to suffer and rise again from the dead, and saying, \"This Jesus, whom I proclaim to you, is the …” (17:3, WEB)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 17:10 uses Silas: “The brothers immediately sent Paul and Silas away by night to Beroea. When they arrived, they went into the Jewish synagogue.”",
+    "options" : [
+      "Lazarus",
+      "Christ",
+      "Silas",
+      "Gaius"
+    ],
+    "prompt" : "Which word completes “The brothers immediately sent Paul and ______ away by night to Beroea. When they arrived, they went into the Jewish synagogue.”? (17:10, WEB)",
+    "reference" : "Acts 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 18:8 uses Crispus: “Crispus, the ruler of the synagogue, believed in the Lord with all his house. Many of the Corinthians, when they heard, believed and were baptized.”",
+    "options" : [
+      "Judas",
+      "Priscilla",
+      "Crispus",
+      "Jezebel"
+    ],
+    "prompt" : "Which word completes “______, the ruler of the synagogue, believed in the Lord with all his house. Many of the Corinthians, when they heard, believed and were baptized.”? (18:8, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “He found a certain Jew named Aquila, a man of Pontus by race, who had recently come from Italy, with his wife Priscilla, because Claudius had …”",
+    "options" : [
+      "Aquila"
+    ],
+    "prompt" : "Complete the quotation: “He found a certain Jew named ____, a man of Pontus by race, who had recently come from Italy, with his wife Priscilla, because Claudius had …” (18:2, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… accurately the things concerning Jesus, although he knew only the baptism of John.”; the second reads “… refuted the Jews, publicly showing by the Scriptures that Jesus was the Christ.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "John Christ"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… accurately the things concerning Jesus, although he knew only the baptism of ____.” (18:25); “… refuted the Jews, publicly showing by the Scriptures that Jesus was the .” (18:28, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jews: “… indeed it were a matter of wrong or of wicked crime, you Jews, it would be reasonable that I should bear with you;”",
+    "options" : [
+      "Greeks",
+      "matters",
+      "Jews",
+      "questions"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… indeed it were a matter of wrong or of wicked crime, you ______, it would be reasonable that I should bear with you;”? (18:14, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… leave of the brothers, and sailed from there for Syria, together with Priscilla and Aquila. He shaved his head in Cenchreae, for he had a vow.”; verse 21 reads “… and saying, \"I must by all means keep this coming feast in Jerusalem, but I will return again to you if God wills,\" he set sail …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jerusalem; Priscilla",
+      "Priscilla; Jerusalem",
+      "Peter; Jerusalem",
+      "Priscilla; Sinai"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… leave of the brothers, and sailed from there for Syria, together with ______ and Aquila. He shaved his head in Cenchreae, for he had a vow.” (18:18); “… and saying, \"I must by all means keep this coming feast in ______, but I will return again to you if God wills,\" he set sail …” (18:21, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… on Sosthenes, the ruler of the synagogue, and beat him before the judgment seat. Gallio didn't care about any of these things.” It says judgment, not word.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… on Sosthenes, the ruler of the synagogue, and beat him before the word seat. Gallio didn't care about any of these things.” (18:17, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But when Gallio was proconsul of Achaia, the Jews with one accord rose up against Paul and brought him before the judgment seat,” The missing terms belong in that order.",
+    "options" : [
+      "Gallio Paul"
+    ],
+    "prompt" : "Supply the missing words in order: “But when ____ was proconsul of Achaia, the Jews with one accord rose up against and brought him before the judgment seat,” (18:12, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But when Silas and Timothy came down from Macedonia, Paul was compelled by the Spirit, testifying to the Jews that Jesus was the Christ.”",
+    "options" : [
+      "Macedonia"
+    ],
+    "prompt" : "Complete the quotation: “But when Silas and Timothy came down from ____, Paul was compelled by the Spirit, testifying to the Jews that Jesus was the Christ.” (18:5, WEB)",
+    "reference" : "Acts 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He distinguishes John's baptism of repentance from faith directed toward Jesus. The encounter concerns their incomplete understanding of the message. Its sequence is described, while Christians debate how it relates to later experiences of the Spirit and spiritual gifts.",
+    "options" : [
+      "John's message is described as denying any coming Messiah.",
+      "He distinguishes John's baptism of repentance from faith directed toward Jesus.",
+      "The account states that every Christian experience must have every same detail.",
+      "Jesus is said to be irrelevant to their faith."
+    ],
+    "prompt" : "What distinction does Paul make in speaking with the disciples at Ephesus? (19:1-7)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For a certain man named Demetrius, a silversmith, who made silver shrines of Artemis, brought no little business to the craftsmen,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For a certain man named Demetrius, a silversmith, who made silver shrines of Artemis, brought no little business to the craftsmen,” (19:24, WEB)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Paul said, \"John indeed baptized with the baptism of repentance, saying to the people that they should believe in the one who would come after him, …”",
+    "options" : [
+      "John"
+    ],
+    "prompt" : "Complete the quotation: “Paul said, \"____ indeed baptized with the baptism of repentance, saying to the people that they should believe in the one who would come after him, …” (19:4, WEB)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “… danger that this our trade come into disrepute, but also that the temple of the great goddess Artemis will be counted as nothing, and her majesty …”; verse 33 reads “… him forward. Alexander beckoned with his hand, and would have made a defense to the people.”. These establish the first and second answers respectively.",
+    "options" : [
+      "temple; forward",
+      "temple; defense",
+      "defense; temple",
+      "table; defense"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… danger that this our trade come into disrepute, but also that the ______ of the great goddess Artemis will be counted as nothing, and her majesty …” (19:27); “… him forward. Alexander beckoned with his hand, and would have made a ______ to the people.” (19:33, WEB)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He entered into the synagogue, and spoke boldly for a period of three months, reasoning and persuading about the things concerning the Kingdom of God.”",
+    "options" : [
+      "three"
+    ],
+    "prompt" : "Complete the quotation: “He entered into the synagogue, and spoke boldly for a period of ____ months, reasoning and persuading about the things concerning the Kingdom of God.” (19:8, WEB)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fifty: “… all. They counted the price of them, and found it to be fifty thousand pieces of silver.”",
+    "options" : [
+      "thirty",
+      "fifty",
+      "four",
+      "sixth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… all. They counted the price of them, and found it to be ______ thousand pieces of silver.”? (19:19, WEB)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The man in whom the evil spirit was leaped on them, and overpowered them, and prevailed against them, so that they fled out of that house …” The missing terms belong in that order.",
+    "options" : [
+      "spirit leaped"
+    ],
+    "prompt" : "Supply the missing words in order: “The man in whom the evil ____ was on them, and overpowered them, and prevailed against them, so that they fled out of that house …” (19:16, WEB)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 19:10 uses Asia: “This continued for two years, so that all those who lived in Asia heard the word of the Lord Jesus, both Jews and Greeks.”",
+    "options" : [
+      "Berea",
+      "Macedonia",
+      "Nazareth",
+      "Asia"
+    ],
+    "prompt" : "Which word completes “This continued for two years, so that all those who lived in ______ heard the word of the Lord Jesus, both Jews and Greeks.”? (19:10, WEB)",
+    "reference" : "Acts 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Shepherds can exploit the flock instead of caring for people entrusted to them. Paul joins vigilance over teaching with personal example and care for the weak. The course warns against churches becoming extensions of a leader's ego.",
+    "options" : [
+      "Concern for the weak is excluded from Paul's example.",
+      "Every confident leader is beyond scrutiny.",
+      "Shepherds can exploit the flock instead of caring for people entrusted to them.",
+      "The flock exists only to enlarge a leader's status."
+    ],
+    "prompt" : "How does Paul's warning about leaders who draw disciples after themselves define a danger to the church? (20:28-35)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 20:11 uses bread: “When he had gone up, and had broken bread, and eaten, and had talked with them a long while, even until break of day, he departed.”",
+    "options" : [
+      "bread",
+      "salt",
+      "olives",
+      "corn"
+    ],
+    "prompt" : "Which word completes “When he had gone up, and had broken ______, and eaten, and had talked with them a long while, even until break of day, he departed.”? (20:11, WEB)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “I coveted no one's silver, or gold, or clothing.”; the second reads “They all wept a lot, and fell on Paul's neck and kissed him,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "silver fell"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “I coveted no one's ____, or gold, or clothing.” (20:33); “They all wept a lot, and on Paul's neck and kissed him,” (20:37, WEB)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Sailing from there, we came the following day opposite Chios. The next day we touched at Samos and stayed at Trogyllium, and the day after we …” The missing terms belong in that order.",
+    "options" : [
+      "next touched"
+    ],
+    "prompt" : "Supply the missing words in order: “Sailing from there, we came the following day opposite Chios. The ____ day we at Samos and stayed at Trogyllium, and the day after we …” (20:15, WEB)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… was about to set sail for Syria, he determined to return through Macedonia.”",
+    "options" : [
+      "Macedonia"
+    ],
+    "prompt" : "Complete the quotation: “… was about to set sail for Syria, he determined to return through ____.” (20:3, WEB)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “except that the Holy Spirit testifies in every city, saying that bonds and afflictions wait for me.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “except that the Holy Spirit testifies in every city, saying that bonds and afflictions wait for me.” (20:23, WEB)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “On the first day of the week, when the disciples were gathered together to break bread, Paul talked with them, intending to depart on the next …”",
+    "options" : [
+      "disciples"
+    ],
+    "prompt" : "Complete the quotation: “On the first day of the week, when the ____ were gathered together to break bread, Paul talked with them, intending to depart on the next …” (20:7, WEB)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Asia: “… \"You yourselves know, from the first day that I set foot in Asia, how I was with you all the time,”",
+    "options" : [
+      "Galilee",
+      "Egypt",
+      "Asia",
+      "Thessalonica"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… \"You yourselves know, from the first day that I set foot in ______, how I was with you all the time,”? (20:18, WEB)",
+    "reference" : "Acts 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Some of the disciples from Caesarea also went with us, bringing one Mnason of Cyprus, an early disciple, with whom we would stay.” The missing terms belong in that order.",
+    "options" : [
+      "disciples Caesarea"
+    ],
+    "prompt" : "Supply the missing words in order: “Some of the ____ from also went with us, bringing one Mnason of Cyprus, an early disciple, with whom we would stay.” (21:16, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 21:11 uses Spirit: “… bound his own feet and hands, and said, \"Thus says the Holy Spirit: 'So will the Jews at Jerusalem bind the man who owns this belt, …”",
+    "options" : [
+      "Cyprus",
+      "citizen",
+      "certainly",
+      "Spirit"
+    ],
+    "prompt" : "Which word completes “… bound his own feet and hands, and said, \"Thus says the Holy ______: 'So will the Jews at Jerusalem bind the man who owns this belt, …”? (21:11, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… finished the voyage from Tyre, we arrived at Ptolemais. We greeted the brothers, and stayed with them one day.”",
+    "options" : [
+      "brothers"
+    ],
+    "prompt" : "Complete the quotation: “… finished the voyage from Tyre, we arrived at Ptolemais. We greeted the ____, and stayed with them one day.” (21:7, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Paul: “The day following, Paul went in with us to James; and all the elders were present.”",
+    "options" : [
+      "Lot",
+      "Nathan",
+      "Demas",
+      "Paul"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The day following, ______ went in with us to James; and all the elders were present.”? (21:18, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “When we had come in sight of Cyprus, leaving it on the left hand, we sailed to Syria, and landed at Tyre, for there the ship …”",
+    "options" : [
+      "Cyprus"
+    ],
+    "prompt" : "Complete the quotation: “When we had come in sight of ____, leaving it on the left hand, we sailed to Syria, and landed at Tyre, for there the ship …” (21:3, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… may shave their heads. Then all will know that there is no truth in the things that they have been informed about you, but that you …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… may shave their heads. Then all will know that there is no truth in the things that they have been informed about you, but that you …” (21:24, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “When the seven days were almost completed, the Jews from Asia, when they saw him in the temple, stirred up all the multitude and laid hands …”; verse 31 reads “… news came up to the commanding officer of the regiment that all Jerusalem was in an uproar.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Asia; Troas",
+      "Jerusalem; Asia",
+      "Asia; Jerusalem",
+      "Berea; Jerusalem"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “When the seven days were almost completed, the Jews from ______, when they saw him in the temple, stirred up all the multitude and laid hands …” (21:27); “… news came up to the commanding officer of the regiment that all ______ was in an uproar.” (21:31, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… it happened that he was carried by the soldiers because of the violence of the crowd;”; the second reads “But Paul said, \"I am a Jew, from Tarsus in Cilicia, a citizen of no insignificant city. I beg you, allow me to speak to the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "violence Tarsus"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… it happened that he was carried by the soldiers because of the ____ of the crowd;” (21:35); “But Paul said, \"I am a Jew, from in Cilicia, a citizen of no insignificant city. I beg you, allow me to speak to the …” (21:39, WEB)",
+    "reference" : "Acts 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “One Ananias, a devout man according to the law, well reported of by all the Jews who lived in Damascus,” The missing terms belong in that order.",
+    "options" : [
+      "Ananias law"
+    ],
+    "prompt" : "Supply the missing words in order: “One ____, a devout man according to the , well reported of by all the Jews who lived in Damascus,” (22:12, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… when I had returned to Jerusalem, and while I prayed in the temple, I fell into a trance,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… when I had returned to Jerusalem, and while I prayed in the temple, I fell into a trance,” (22:17, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 22:9 uses light: “\"Those who were with me indeed saw the light and were afraid, but they didn't understand the voice of him who spoke to me.”",
+    "options" : [
+      "live",
+      "priests",
+      "fathers",
+      "light"
+    ],
+    "prompt" : "Which word completes “\"Those who were with me indeed saw the ______ and were afraid, but they didn't understand the voice of him who spoke to me.”? (22:9, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… witness, was shed, I also was standing by, and consenting to his death, and guarding the cloaks of those who killed him.'”; verse 24 reads “… scourging, that he might know for what crime they shouted against him like that.”. These establish the first and second answers respectively.",
+    "options" : [
+      "death; truth",
+      "like; death",
+      "death; like",
+      "sacrifice; like"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… witness, was shed, I also was standing by, and consenting to his ______, and guarding the cloaks of those who killed him.'” (22:20); “… scourging, that he might know for what crime they shouted against him ______ that.” (22:24, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… from whom also I received letters to the brothers, and traveled to Damascus to bring them also who were there to Jerusalem in bonds to be …”",
+    "options" : [
+      "Damascus"
+    ],
+    "prompt" : "Complete the quotation: “… from whom also I received letters to the brothers, and traveled to ____ to bring them also who were there to Jerusalem in bonds to be …” (22:5, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Righteous: “… fathers has appointed you to know his will, and to see the Righteous One, and to hear a voice from his mouth.”",
+    "options" : [
+      "proud",
+      "wicked",
+      "faithful",
+      "Righteous"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… fathers has appointed you to know his will, and to see the ______ One, and to hear a voice from his mouth.”? (22:14, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When they had tied him up with thongs, Paul asked the centurion who stood by, \"Is it lawful for you to scourge a man who is …”; the second reads “… the Jews, he freed him from the bonds, and commanded the chief priests and all the council to come together, and brought Paul down and set …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Paul priests"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When they had tied him up with thongs, ____ asked the centurion who stood by, \"Is it lawful for you to scourge a man who is …” (22:25); “… the Jews, he freed him from the bonds, and commanded the chief and all the council to come together, and brought Paul down and set …” (22:30, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of Cilicia, but brought up in this city at the feet of Gamaliel, instructed according to the strict manner of the law of our fathers, being …”",
+    "options" : [
+      "Gamaliel"
+    ],
+    "prompt" : "Complete the quotation: “… of Cilicia, but brought up in this city at the feet of ____, instructed according to the strict manner of the law of our fathers, being …” (22:3, WEB)",
+    "reference" : "Acts 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Then Paul said to him, \"God will strike you, you whitewashed wall! Do you sit to judge me according to the law, and command me to …”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “Then ____ said to him, \"God will strike you, you whitewashed wall! Do you sit to judge me according to the law, and command me to …” (23:3, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies entered: “… sister's son heard of their lying in wait, and he came and entered into the barracks and told Paul.”",
+    "options" : [
+      "whitewashed",
+      "delivered",
+      "banded",
+      "entered"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… sister's son heard of their lying in wait, and he came and ______ into the barracks and told Paul.”? (23:16, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “… hundred soldiers to go as far as Caesarea, with seventy horsemen, and two hundred men armed with spears, at the third hour of the night.\"”; verse 27 reads “… to be killed by them, when I came with the soldiers and rescued him, having learned that he was a Roman.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sixty; rescued",
+      "two; rescued",
+      "rescued; two",
+      "two; returned"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… hundred soldiers to go as far as Caesarea, with seventy horsemen, and ______ hundred men armed with spears, at the third hour of the night.\"” (23:23); “… to be killed by them, when I came with the soldiers and ______ him, having learned that he was a Roman.” (23:27, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… charging his accusers also to bring their accusations against him before you. Farewell.\"”; the second reads “… your accusers also arrive.\" He commanded that he be kept in Herod's palace.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Farewell palace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… charging his accusers also to bring their accusations against him before you. ____.\"” (23:30); “… your accusers also arrive.\" He commanded that he be kept in Herod's .” (23:35, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the chief priests and the elders, and said, \"We have bound ourselves under a great curse, to taste nothing until we have killed Paul.” The missing terms belong in that order.",
+    "options" : [
+      "priests killed"
+    ],
+    "prompt" : "Supply the missing words in order: “… the chief ____ and the elders, and said, \"We have bound ourselves under a great curse, to taste nothing until we have Paul.” (23:14, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 23:9 uses spirit: “… contended, saying, \"We find no evil in this man. But if a spirit or angel has spoken to him, let's not fight against God!\"”",
+    "options" : [
+      "laid",
+      "yield",
+      "spirit",
+      "armed"
+    ],
+    "prompt" : "Which word completes “… contended, saying, \"We find no evil in this man. But if a ______ or angel has spoken to him, let's not fight against God!\"”? (23:9, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… I am a Pharisee, a son of Pharisees. Concerning the hope and resurrection of the dead I am being judged!\"”",
+    "options" : [
+      "resurrection"
+    ],
+    "prompt" : "Complete the quotation: “… I am a Pharisee, a son of Pharisees. Concerning the hope and ____ of the dead I am being judged!\"” (23:6, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… down to the council tomorrow, as though intending to inquire somewhat more accurately concerning him.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… down to the council tomorrow, as though intending to inquire somewhat more accurately concerning him.” (23:20, WEB)",
+    "reference" : "Acts 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies law: “… God of our fathers, believing all things which are according to the law, and which are written in the prophets;”",
+    "options" : [
+      "words",
+      "law",
+      "judgments",
+      "commandments"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… God of our fathers, believing all things which are according to the ______, and which are written in the prophets;”? (24:14, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… was a Jewess, and sent for Paul, and heard him concerning the faith in Christ Jesus.”; the second reads “But when two years were fulfilled, Felix was succeeded by Porcius Festus, and desiring to gain favor with the Jews, Felix left Paul in bonds.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "faith Festus"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… was a Jewess, and sent for Paul, and heard him concerning the ____ in Christ Jesus.” (24:24); “But when two years were fulfilled, Felix was succeeded by Porcius , and desiring to gain favor with the Jews, Felix left Paul in bonds.” (24:27, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “In the temple they didn't find me disputing with anyone or stirring up a crowd, either in the synagogues, or in the city.” The missing terms belong in that order.",
+    "options" : [
+      "temple synagogues"
+    ],
+    "prompt" : "Supply the missing words in order: “In the ____ they didn't find me disputing with anyone or stirring up a crowd, either in the , or in the city.” (24:12, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 24:10 uses Paul: “When the governor had beckoned to him to speak, Paul answered, \"Because I know that you have been a judge of this nation for many years, …”",
+    "options" : [
+      "Paul",
+      "Erastus",
+      "Joshua",
+      "Zophar"
+    ],
+    "prompt" : "Which word completes “When the governor had beckoned to him to speak, ______ answered, \"Because I know that you have been a judge of this nation for many years, …”? (24:10, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… began to accuse him, saying, \"Seeing that by you we enjoy much peace, and that excellent measures are coming to this nation,”",
+    "options" : [
+      "peace"
+    ],
+    "prompt" : "Complete the quotation: “… began to accuse him, saying, \"Seeing that by you we enjoy much ____, and that excellent measures are coming to this nation,” (24:2, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For we have found this man to be a plague, an instigator of insurrections among all the Jews throughout the world, and a ringleader of the …”",
+    "options" : [
+      "plague"
+    ],
+    "prompt" : "Complete the quotation: “For we have found this man to be a ____, an instigator of insurrections among all the Jews throughout the world, and a ringleader of the …” (24:5, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Herein I also practice always having a conscience void of offense toward God and men.” It says conscience, not Lysias.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Herein I also practice always having a Lysias void of offense toward God and men.” (24:16, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “amid which certain Jews from Asia found me purified in the temple, not with a mob, nor with turmoil.”; verse 22 reads “But Felix, having more exact knowledge concerning the Way, deferred them, saying, \"When Lysias, the commanding officer, comes down, I will decide your case.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "Gilead; Felix",
+      "Asia; Felix",
+      "Felix; Asia",
+      "Asia; Andrew"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “amid which certain Jews from ______ found me purified in the temple, not with a mob, nor with turmoil.” (24:18); “But ______, having more exact knowledge concerning the Way, deferred them, saying, \"When Lysias, the commanding officer, comes down, I will decide your case.\"” (24:22, WEB)",
+    "reference" : "Acts 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of the Romans to give up any man to destruction, before the accused has met the accusers face to face, and has had opportunity to make …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of the Romans to give up any man to destruction, before the accused has met the accusers face to face, and has had opportunity to make …” (25:16, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… had certain questions against him about their own religion, and about one Jesus, who was dead, whom Paul affirmed to be alive.”; verse 21 reads “… kept for the decision of the emperor, I commanded him to be kept until I could send him to Caesar.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "kept; Jesus",
+      "Jesus; matters",
+      "Jesus; kept",
+      "Ham; kept"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… had certain questions against him about their own religion, and about one ______, who was dead, whom Paul affirmed to be alive.” (25:19); “… kept for the decision of the emperor, I commanded him to be ______ until I could send him to Caesar.\"” (25:21, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Festus: “… had passed, Agrippa the King and Bernice arrived at Caesarea, and greeted Festus.”",
+    "options" : [
+      "Festus",
+      "Benjamin",
+      "Trophimus",
+      "Mark"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… had passed, Agrippa the King and Bernice arrived at Caesarea, and greeted ______.”? (25:13, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Festus said, \"King Agrippa, and all men who are here present with us, you see this man, about whom all the multitude of the Jews petitioned …”; the second reads “… I have brought him forth before you, and especially before you, King Agrippa, that, after examination, I may have something to write.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "King Agrippa"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Festus said, \"____ Agrippa, and all men who are here present with us, you see this man, about whom all the multitude of the Jews petitioned …” (25:24); “… I have brought him forth before you, and especially before you, King , that, after examination, I may have something to write.” (25:26, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… down to Caesarea, and on the next day he sat on the judgment seat, and commanded Paul to be brought.”",
+    "options" : [
+      "judgment"
+    ],
+    "prompt" : "Complete the quotation: “… down to Caesarea, and on the next day he sat on the ____ seat, and commanded Paul to be brought.” (25:6, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… high priest and the principal men of the Jews informed him against Paul, and they begged him,”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “… high priest and the principal men of the Jews informed him against ____, and they begged him,” (25:2, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Paul said, \"I am standing before Caesar's judgment seat, where I ought to be tried. I have done no wrong to the Jews, as you also …” The missing terms belong in that order.",
+    "options" : [
+      "ought tried"
+    ],
+    "prompt" : "Supply the missing words in order: “… Paul said, \"I am standing before Caesar's judgment seat, where I ____ to be . I have done no wrong to the Jews, as you also …” (25:10, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 25:8 uses law: “while he said in his defense, \"Neither against the law of the Jews, nor against the temple, nor against Caesar, have I sinned at all.\"”",
+    "options" : [
+      "statutes",
+      "law",
+      "commandments",
+      "teaching"
+    ],
+    "prompt" : "Which word completes “while he said in his defense, \"Neither against the ______ of the Jews, nor against the temple, nor against Caesar, have I sinned at all.\"”? (25:8, WEB)",
+    "reference" : "Acts 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Agrippa said to Paul, \"With a little persuasion are you trying to make me a Christian?\"”; the second reads “Agrippa said to Festus, \"This man might have been set free if he had not appealed to Caesar.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Paul free"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Agrippa said to ____, \"With a little persuasion are you trying to make me a Christian?\"” (26:28); “Agrippa said to Festus, \"This man might have been set if he had not appealed to Caesar.\"” (26:32, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “how the Christ must suffer, and how, by the resurrection of the dead, he would be first to proclaim light both to these people and to …”; verse 25 reads “But he said, \"I am not crazy, most excellent Festus, but boldly declare words of truth and reasonableness.”. These establish the first and second answers respectively.",
+    "options" : [
+      "needy; Festus",
+      "resurrection; Festus",
+      "Festus; resurrection",
+      "resurrection; Issachar"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “how the Christ must suffer, and how, by the ______ of the dead, he would be first to proclaim light both to these people and to …” (26:23); “But he said, \"I am not crazy, most excellent ______, but boldly declare words of truth and reasonableness.” (26:25, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “having known me from the first, if they are willing to testify, that after the strictest sect of our religion I lived a Pharisee.”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “having known me from the ____, if they are willing to testify, that after the strictest sect of our religion I lived a Pharisee.” (26:5, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “at noon, O King, I saw on the way a light from the sky, brighter than the sun, shining around me and those who traveled with …” The missing terms belong in that order.",
+    "options" : [
+      "King light"
+    ],
+    "prompt" : "Supply the missing words in order: “at noon, O ____, I saw on the way a from the sky, brighter than the sun, shining around me and those who traveled with …” (26:13, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 26:10 uses death: “… received authority from the chief priests, and when they were put to death I gave my vote against them.”",
+    "options" : [
+      "redemption",
+      "rest",
+      "offering",
+      "death"
+    ],
+    "prompt" : "Which word completes “… received authority from the chief priests, and when they were put to ______ I gave my vote against them.”? (26:10, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the power of Satan to God, that they may receive remission of sins and an inheritance among those who are sanctified by faith in me.'” It says sins, not disobedience.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the power of Satan to God, that they may receive remission of disobedience and an inheritance among those who are sanctified by faith in me.'” (26:18, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “\"I think myself happy, King Agrippa, that I am to make my defense before you this day concerning all the things that I am accused by …”",
+    "options" : [
+      "Agrippa"
+    ],
+    "prompt" : "Complete the quotation: “\"I think myself happy, King ____, that I am to make my defense before you this day concerning all the things that I am accused by …” (26:2, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies witness: “… to you for this purpose: to appoint you a servant and a witness both of the things which you have seen, and of the things which …”",
+    "options" : [
+      "deliver",
+      "witness",
+      "ark",
+      "apostle"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to you for this purpose: to appoint you a servant and a ______ both of the things which you have seen, and of the things which …”? (26:16, WEB)",
+    "reference" : "Acts 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… it was day, they didn't recognize the land, but they noticed a certain bay with a beach, and they decided to try to drive the ship …”; the second reads “… purpose, and commanded that those who could swim should throw themselves overboard first to go toward the land;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "certain first"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… it was day, they didn't recognize the land, but they noticed a ____ bay with a beach, and they decided to try to drive the ship …” (27:39); “… purpose, and commanded that those who could swim should throw themselves overboard to go toward the land;” (27:43, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the wind not allowing us further, we sailed under the lee of Crete, opposite Salmone.”",
+    "options" : [
+      "Crete"
+    ],
+    "prompt" : "Complete the quotation: “… the wind not allowing us further, we sailed under the lee of ____, opposite Salmone.” (27:7, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “The next day, we touched at Sidon. Julius treated Paul kindly, and gave him permission to go to his friends and refresh himself.”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “The next day, we touched at Sidon. Julius treated ____ kindly, and gave him permission to go to his friends and refresh himself.” (27:3, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies injury: “… me, and not have set sail from Crete, and have gotten this injury and loss.”",
+    "options" : [
+      "continue",
+      "sand",
+      "injury",
+      "struck"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… me, and not have set sail from Crete, and have gotten this ______ and loss.”? (27:21, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 27:12 uses advised: “Because the haven was not suitable to winter in, the majority advised going to sea from there, if by any means they could reach Phoenix, and …”",
+    "options" : [
+      "determined",
+      "advised",
+      "surmised",
+      "admonished"
+    ],
+    "prompt" : "Which word completes “Because the haven was not suitable to winter in, the majority ______ going to sea from there, if by any means they could reach Phoenix, and …”? (27:12, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… about midnight the sailors surmised that they were drawing near to some land.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… about midnight the sailors surmised that they were drawing near to some land.” (27:27, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… ship. Fearing that they would run aground on the Syrtis sand bars, they lowered the sea anchor, and so were driven along.” The missing terms belong in that order.",
+    "options" : [
+      "sand sea"
+    ],
+    "prompt" : "Supply the missing words in order: “… ship. Fearing that they would run aground on the Syrtis ____ bars, they lowered the anchor, and so were driven along.” (27:17, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 30 reads “… were trying to flee out of the ship, and had lowered the boat into the sea, pretending that they would lay out anchors from the bow,”; verse 33 reads “While the day was coming on, Paul begged them all to take some food, saying, \"This day is the fourteenth day that you wait and continue …”. These establish the first and second answers respectively.",
+    "options" : [
+      "While; boat",
+      "boat; While",
+      "boat; places",
+      "begged; While"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… were trying to flee out of the ship, and had lowered the ______ into the sea, pretending that they would lay out anchors from the bow,” (27:30); “______ the day was coming on, Paul begged them all to take some food, saying, \"This day is the fourteenth day that you wait and continue …” (27:33, WEB)",
+    "reference" : "Acts 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Despite confinement, he continues proclaiming God's kingdom and teaching about Jesus. Acts ends with witness continuing in Rome rather than with an account of every later event in Paul's life. Constraint has not silenced the message.",
+    "options" : [
+      "The book ends by saying the word can no longer be taught.",
+      "Despite confinement, he continues proclaiming God's kingdom and teaching about Jesus.",
+      "The closing scene claims to narrate every detail of Paul's death.",
+      "Paul is shown abandoning Jesus' message."
+    ],
+    "prompt" : "How does the book's closing picture of Paul relate to its mission? (28:23-31)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… Paul had gathered a bundle of sticks and laid them on the fire, a viper came out because of the heat, and fastened on his hand.”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “… Paul had gathered a bundle of sticks and laid them on the ____, a viper came out because of the heat, and fastened on his hand.” (28:3, WEB)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies thanked: “… Market of Appius and The Three Taverns. When Paul saw them, he thanked God, and took courage.”",
+    "options" : [
+      "expected",
+      "thanked",
+      "entertained",
+      "delivered"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Market of Appius and The Three Taverns. When Paul saw them, he ______ God, and took courage.”? (28:15, WEB)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… for a long time and saw nothing bad happen to him, they changed their minds, and said that he was a god.”",
+    "options" : [
+      "changed"
+    ],
+    "prompt" : "Complete the quotation: “… for a long time and saw nothing bad happen to him, they ____ their minds, and said that he was a god.” (28:6, WEB)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “… the Kingdom of God, and persuading them concerning Jesus, both from the law of Moses and from the prophets, from morning until evening.”; verse 25 reads “… after Paul had spoken one word, \"The Holy Spirit spoke rightly through Isaiah, the prophet, to our fathers,”. These establish the first and second answers respectively.",
+    "options" : [
+      "law; Demetrius",
+      "law; Isaiah",
+      "Isaiah; law",
+      "judgment; Isaiah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the Kingdom of God, and persuading them concerning Jesus, both from the ______ of Moses and from the prophets, from morning until evening.” (28:23); “… after Paul had spoken one word, \"The Holy Spirit spoke rightly through ______, the prophet, to our fathers,” (28:25, WEB)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Acts 28:8 uses Paul: “… happened that the father of Publius lay sick of fever and dysentery. Paul entered in to him, prayed, and laying his hands on him, healed him.”",
+    "options" : [
+      "Paul",
+      "Judah",
+      "Saul",
+      "Aaron"
+    ],
+    "prompt" : "Which word completes “… happened that the father of Publius lay sick of fever and dysentery. ______ entered in to him, prayed, and laying his hands on him, healed him.”? (28:8, WEB)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “After three months, we set sail in a ship of Alexandria which had wintered in the island, whose sign was \"The Twin Brothers.\"” The missing terms belong in that order.",
+    "options" : [
+      "three Brothers"
+    ],
+    "prompt" : "Supply the missing words in order: “After ____ months, we set sail in a ship of Alexandria which had wintered in the island, whose sign was \"The Twin .\"” (28:11, WEB)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "acts",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… people, or the customs of our fathers, still was delivered prisoner from Jerusalem into the hands of the Romans,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… people, or the customs of our fathers, still was delivered prisoner from Jerusalem into the hands of the Romans,” (28:17, WEB)",
+    "reference" : "Acts 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

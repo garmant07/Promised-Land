@@ -1,0 +1,1707 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 1:5 uses angels: “For to which of the angels did he say at any time, \"You are my Son, Today have I become your father?\" and again, \"I will …”",
+    "options" : [
+      "angels",
+      "winds",
+      "worlds",
+      "makes"
+    ],
+    "prompt" : "Which word completes “For to which of the ______ did he say at any time, \"You are my Son, Today have I become your father?\" and again, \"I will …”? (1:5, WEB)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “You have loved righteousness, and hated iniquity; Therefore God, your God, has anointed you with the oil of gladness above your fellows.\"” It says iniquity, not guilt.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “You have loved righteousness, and hated guilt; Therefore God, your God, has anointed you with the oil of gladness above your fellows.\"” (1:9, WEB)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Again, when he brings in the firstborn into the world he says, \"Let all the angels of God worship him.\"” The missing terms belong in that order.",
+    "options" : [
+      "firstborn worship"
+    ],
+    "prompt" : "Supply the missing words in order: “Again, when he brings in the ____ into the world he says, \"Let all the angels of God him.\"” (1:6, WEB)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “His Son is the radiance of his glory, the very image of his substance, and upholding all things by the word of his power, when he …”",
+    "options" : [
+      "glory"
+    ],
+    "prompt" : "Complete the quotation: “His Son is the radiance of his ____, the very image of his substance, and upholding all things by the word of his power, when he …” (1:3, WEB)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God speaks through the Son, who reveals His glory and sustains all things. The Son is distinguished from the prophets and later from angels. The course's Christology takes these claims seriously without treating Jesus as merely another created messenger.",
+    "options" : [
+      "God speaks through the Son, who reveals His glory and sustains all things.",
+      "The Son is described only as one ordinary angel among others.",
+      "The Son is presented as unable to reveal anything about God.",
+      "God is said never to have spoken through prophets."
+    ],
+    "prompt" : "How does the opening describe the Son's relation to God's revelation and creation? (1:1-4)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… says, \"Who makes his angels winds, And his servants a flame of fire.\"”",
+    "options" : [
+      "world",
+      "fire",
+      "uprightness",
+      "appointed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… says, \"Who makes his angels winds, And his servants a flame of ______.\"”? (1:7, WEB)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “has at the end of these days spoken to us by his Son, whom he appointed heir of all things, through whom also he made the …”",
+    "options" : [
+      "days"
+    ],
+    "prompt" : "Complete the quotation: “has at the end of these ____ spoken to us by his Son, whom he appointed heir of all things, through whom also he made the …” (1:2, WEB)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “And, \"You, Lord, in the beginning, laid the foundation of the earth. The heavens are the works of your hands.”; verse 13 reads “But of which of the angels has he said at any time, \"Sit at my right hand, Until I make your enemies the footstool of your …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Sit; earth",
+      "countries; Sit",
+      "earth; Sit",
+      "earth; worlds"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “And, \"You, Lord, in the beginning, laid the foundation of the ______. The heavens are the works of your hands.” (1:10); “But of which of the angels has he said at any time, \"______ at my right hand, Until I make your enemies the footstool of your …” (1:13, WEB)",
+    "reference" : "Hebrews 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… things to be made like his brothers, that he might become a merciful and faithful high priest in things pertaining to God, to make atonement for …”; the second reads “… has suffered being tempted, he is able to help those who are tempted.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "merciful tempted"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… things to be made like his brothers, that he might become a ____ and faithful high priest in things pertaining to God, to make atonement for …” (2:17); “… has suffered being tempted, he is able to help those who are .” (2:18, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… in bringing many children to glory, to make the author of their salvation perfect through sufferings.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… in bringing many children to glory, to make the author of their salvation perfect through sufferings.” (2:10, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “God also bearing witness with them, both by signs and wonders, and by various works of power, and by gifts of the Holy Spirit, according to …”",
+    "options" : [
+      "witness"
+    ],
+    "prompt" : "Complete the quotation: “God also bearing ____ with them, both by signs and wonders, and by various works of power, and by gifts of the Holy Spirit, according to …” (2:4, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 2:6 uses think: “But one has somewhere testified, saying, \"What is man, that you think of him? Or the son of man, that you care for him?”",
+    "options" : [
+      "think",
+      "bearing",
+      "gifts",
+      "shared"
+    ],
+    "prompt" : "Which word completes “But one has somewhere testified, saying, \"What is man, that you ______ of him? Or the son of man, that you care for him?”? (2:6, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… death he might bring to nothing him who had the power of death, that is, the devil,”; verse 15 reads “and might deliver all of them who through fear of death were all their lifetime subject to bondage.”. These establish the first and second answers respectively.",
+    "options" : [
+      "death; fear",
+      "thanksgiving; fear",
+      "death; grief",
+      "fear; death"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… death he might bring to nothing him who had the power of ______, that is, the devil,” (2:14); “and might deliver all of them who through ______ of death were all their lifetime subject to bondage.” (2:15, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For if the word spoken through angels proved steadfast, and every transgression and disobedience received a just recompense;”",
+    "options" : [
+      "transgression"
+    ],
+    "prompt" : "Complete the quotation: “For if the word spoken through angels proved steadfast, and every ____ and disobedience received a just recompense;” (2:2, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies grace: “… the suffering of death crowned with glory and honor, that by the grace of God he should taste of death for everyone.”",
+    "options" : [
+      "think",
+      "didn't",
+      "high",
+      "grace"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the suffering of death crowned with glory and honor, that by the ______ of God he should taste of death for everyone.”? (2:9, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “You made him a little lower than the angels; You crowned him with glory and honor.” The missing terms belong in that order.",
+    "options" : [
+      "angels glory"
+    ],
+    "prompt" : "Supply the missing words in order: “You made him a little lower than the ____; You crowned him with and honor.” (2:7, WEB)",
+    "reference" : "Hebrews 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Therefore, holy brothers, partakers of a heavenly calling, consider the Apostle and High Priest of our confession, Jesus;”",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "Complete the quotation: “Therefore, ____ brothers, partakers of a heavenly calling, consider the Apostle and High Priest of our confession, Jesus;” (3:1, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Don't harden your hearts, as in the provocation, Like as in the day of the trial in the wilderness,” The missing terms belong in that order.",
+    "options" : [
+      "harden day"
+    ],
+    "prompt" : "Supply the missing words in order: “Don't ____ your hearts, as in the provocation, Like as in the of the trial in the wilderness,” (3:8, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… \"today;\" lest any one of you be hardened by the deceitfulness of sin.”; verse 15 reads “… you will hear his voice, Don't harden your hearts, as in the rebellion.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "sin; rebellion",
+      "sin; wickedness",
+      "violence; rebellion",
+      "rebellion; sin"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… \"today;\" lest any one of you be hardened by the deceitfulness of ______.” (3:13); “… you will hear his voice, Don't harden your hearts, as in the ______.\"” (3:15, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 3:6 uses faithful: “but Christ is faithful as a Son over his house; whose house we are, if we hold fast our confidence and the glorying of our hope …”",
+    "options" : [
+      "obedient",
+      "faithful",
+      "innocent",
+      "guilty"
+    ],
+    "prompt" : "Which word completes “but Christ is ______ as a Son over his house; whose house we are, if we hold fast our confidence and the glorying of our hope …”? (3:6, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies heart: “… was displeased with that generation, And said, 'They always err in their heart, But they didn't know my ways;'”",
+    "options" : [
+      "foot",
+      "tooth",
+      "knees",
+      "heart"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… was displeased with that generation, And said, 'They always err in their ______, But they didn't know my ways;'”? (3:10, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “With whom was he displeased forty years? Wasn't it with those who sinned, whose bodies fell in the wilderness?”; the second reads “To whom did he swear that they wouldn't enter into his rest, but to those who were disobedient?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "forty rest"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “With whom was he displeased ____ years? Wasn't it with those who sinned, whose bodies fell in the wilderness?” (3:17); “To whom did he swear that they wouldn't enter into his , but to those who were disobedient?” (3:18, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… perhaps there be in any one of you an evil heart of unbelief, in falling away from the living God;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… perhaps there be in any one of you an evil heart of unbelief, in falling away from the living God;” (3:12, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For he has been counted worthy of more glory than Moses, inasmuch as he who built the house has more honor than the house.”",
+    "options" : [
+      "glory"
+    ],
+    "prompt" : "Complete the quotation: “For he has been counted worthy of more ____ than Moses, inasmuch as he who built the house has more honor than the house.” (3:3, WEB)",
+    "reference" : "Hebrews 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “he again defines a certain day, today, saying through David so long a time afterward (just as has been said), \"Today if you will hear his …” The missing terms belong in that order.",
+    "options" : [
+      "David time"
+    ],
+    "prompt" : "Supply the missing words in order: “he again defines a certain day, today, saying through ____ so long a afterward (just as has been said), \"Today if you will hear his …” (4:7, WEB)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 4:6 uses enter: “… and they to whom the good news was before preached failed to enter in because of disobedience,”",
+    "options" : [
+      "profit",
+      "heavens",
+      "enter",
+      "rest"
+    ],
+    "prompt" : "Which word completes “… and they to whom the good news was before preached failed to ______ in because of disobedience,”? (4:6, WEB)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… enter into that rest, lest anyone fall after the same example of disobedience.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… enter into that rest, lest anyone fall after the same example of disobedience.” (4:11, WEB)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… the word they heard didn't profit them, because it wasn't mixed with faith by those who heard.”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “… the word they heard didn't profit them, because it wasn't mixed with ____ by those who heard.” (4:2, WEB)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Joshua: “For if Joshua had given them rest, he would not have spoken afterward of another day.”",
+    "options" : [
+      "Gallio",
+      "Japheth",
+      "Joshua",
+      "Hannah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For if ______ had given them rest, he would not have spoken afterward of another day.”? (4:8, WEB)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Hearers are called to faithful response and to confidence in a sympathetic high priest. The chapter does not choose between serious exhortation and mercy. Jesus' real testing grounds His sympathy, while the invitation directs the needy toward grace.",
+    "options" : [
+      "The high priest is unable to sympathize with weakness.",
+      "Warnings eliminate every invitation to grace.",
+      "Hearers are called to faithful response and to confidence in a sympathetic high priest.",
+      "Confidence means hearers need never respond faithfully."
+    ],
+    "prompt" : "How do the warnings about rest and the invitation to the throne of grace belong together? (4:1-16)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… \"As I swore in my wrath, they will not enter into my rest;\" although the works were finished from the foundation of the world.”",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "Complete the quotation: “… \"As I swore in my wrath, they will not enter into my ____;\" although the works were finished from the foundation of the world.” (4:3, WEB)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… who has been in all points tempted like we are, yet without sin.”; the second reads “Let us therefore draw near with boldness to the throne of grace, that we may receive mercy, and may find grace for help in time of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sin grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… who has been in all points tempted like we are, yet without ____.” (4:15); “Let us therefore draw near with boldness to the throne of , that we may receive mercy, and may find grace for help in time of …” (4:16, WEB)",
+    "reference" : "Hebrews 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… became to all of those who obey him the author of eternal salvation,” It says salvation, not blessing.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… became to all of those who obey him the author of eternal blessing,” (5:9, WEB)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "His genuinely human obedience is lived out through suffering. The course uses the passage to emphasize His real humanity. Learning obedience here need not mean that He first lived in sinful disobedience or ceased to be divine.",
+    "options" : [
+      "His humanity is merely an appearance.",
+      "He is said to have begun as a sinful rebel.",
+      "His genuinely human obedience is lived out through suffering.",
+      "Suffering is described as having no part in His mission."
+    ],
+    "prompt" : "What does Jesus' learning obedience through suffering imply in this passage? (5:7-10)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The high priest can deal gently with those who are ignorant and going astray, because he himself is also surrounded with weakness.”",
+    "options" : [
+      "priest"
+    ],
+    "prompt" : "Complete the quotation: “The high ____ can deal gently with those who are ignorant and going astray, because he himself is also surrounded with weakness.” (5:2, WEB)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies death: “… crying and tears to him who was able to save him from death, and having been heard for his godly fear,”",
+    "options" : [
+      "offering",
+      "life",
+      "sacrifice",
+      "death"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… crying and tears to him who was able to save him from ______, and having been heard for his godly fear,”? (5:7, WEB)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… pertaining to God, that he may offer both gifts and sacrifices for sins.”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “… pertaining to God, that he may offer both gifts and sacrifices for ____.” (5:1, WEB)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… who are full grown, who by reason of use have their senses exercised to discern good and evil.”; the second reads “… everyone who lives on milk is not experienced in the word of righteousness, for he is a baby.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "exercised righteousness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… who are full grown, who by reason of use have their senses ____ to discern good and evil.” (5:14); “… everyone who lives on milk is not experienced in the word of , for he is a baby.” (5:13, WEB)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 5:5 uses Christ: “So also Christ didn't glorify himself to be made a high priest, but it was he who said to him, \"You are my Son. Today I …”",
+    "options" : [
+      "Nicodemus",
+      "Joel",
+      "Zebulun",
+      "Christ"
+    ],
+    "prompt" : "Which word completes “So also ______ didn't glorify himself to be made a high priest, but it was he who said to him, \"You are my Son. Today I …”? (5:5, WEB)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “As he says also in another place, \"You are a priest forever, After the order of Melchizedek.\"” The missing terms belong in that order.",
+    "options" : [
+      "place Melchizedek"
+    ],
+    "prompt" : "Supply the missing words in order: “As he says also in another ____, \"You are a priest forever, After the order of .\"” (5:6, WEB)",
+    "reference" : "Hebrews 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “… not unrighteous, so as to forget your work and the labor of love which you showed toward his name, in that you served the saints, and …”",
+    "options" : [
+      "shame",
+      "love",
+      "joy",
+      "honor"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… not unrighteous, so as to forget your work and the labor of ______ which you showed toward his name, in that you served the saints, and …”? (6:10, WEB)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 6:6 uses repentance: “and then fell away, it is impossible to renew them again to repentance; seeing they crucify the Son of God for themselves again, and put him …”",
+    "options" : [
+      "repentance",
+      "multiply",
+      "showed",
+      "show"
+    ],
+    "prompt" : "Which word completes “and then fell away, it is impossible to renew them again to ______; seeing they crucify the Son of God for themselves again, and put him …”? (6:6, WEB)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “that you won't be sluggish, but imitators of those who through faith and patience inherited the promises.” It says faith, not brings.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “that you won't be sluggish, but imitators of those who through brings and patience inherited the promises.” (6:12, WEB)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… and tasted of the heavenly gift, and were made partakers of the Holy Spirit,”",
+    "options" : [
+      "Holy"
+    ],
+    "prompt" : "Complete the quotation: “… and tasted of the heavenly gift, and were made partakers of the ____ Spirit,” (6:4, WEB)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Its serious call to perseverance, even though Christians differ over the spiritual status of the people described. Views differ on genuine apostasy, false profession and other explanations. The course discusses assurance, but the warning should not be dismissed or made to settle every later system without argument.",
+    "options" : [
+      "Every Christian tradition interprets the people identically.",
+      "Its serious call to perseverance, even though Christians differ over the spiritual status of the people described.",
+      "The passage contains no warning at all.",
+      "The writer asks readers to ignore perseverance."
+    ],
+    "prompt" : "What must be preserved when interpreting the warning about falling away? (6:4-12)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For the land which has drunk the rain that comes often on it, and brings forth a crop suitable for them for whose sake it is …” The missing terms belong in that order.",
+    "options" : [
+      "land sake"
+    ],
+    "prompt" : "Supply the missing words in order: “For the ____ which has drunk the rain that comes often on it, and brings forth a crop suitable for them for whose it is …” (6:7, WEB)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “For when God made a promise to Abraham, since he could swear by none greater, he swore by himself,”; verse 17 reads “In this way God, being determined to show more abundantly to the heirs of the promise the immutability of his counsel, interposed with an oath;”. These establish the first and second answers respectively.",
+    "options" : [
+      "counsel; abundantly",
+      "promise; abundantly",
+      "promise; thorns",
+      "abundantly; promise"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For when God made a ______ to Abraham, since he could swear by none greater, he swore by himself,” (6:13); “In this way God, being determined to show more ______ to the heirs of the promise the immutability of his counsel, interposed with an oath;” (6:17, WEB)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… laying on of hands, of resurrection of the dead, and of eternal judgment.”",
+    "options" : [
+      "judgment"
+    ],
+    "prompt" : "Complete the quotation: “… laying on of hands, of resurrection of the dead, and of eternal ____.” (6:2, WEB)",
+    "reference" : "Hebrews 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 7:8 uses tithes: “Here people who die receive tithes, but there one receives tithes of whom it is testified that he lives.”",
+    "options" : [
+      "tithes",
+      "arises",
+      "remains",
+      "sinners"
+    ],
+    "prompt" : "Which word completes “Here people who die receive ______, but there one receives tithes of whom it is testified that he lives.”? (7:8, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… law made nothing perfect), and a bringing in thereupon of a better hope, through which we draw near to God.”; verse 21 reads “(for they indeed have been made priests without an oath), but he with an oath by him that says of him, \"The Lord swore and will …”. These establish the first and second answers respectively.",
+    "options" : [
+      "hope; priest",
+      "priests; hope",
+      "anger; priests",
+      "hope; priests"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… law made nothing perfect), and a bringing in thereupon of a better ______, through which we draw near to God.” (7:19); “(for they indeed have been made ______ without an oath), but he with an oath by him that says of him, \"The Lord swore and will …” (7:21, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Moses: “… evident that our Lord has sprung out of Judah, about which tribe Moses spoke nothing concerning priesthood.”",
+    "options" : [
+      "Ezra",
+      "Moses",
+      "Lydia",
+      "Euodia"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… evident that our Lord has sprung out of Judah, about which tribe ______ spoke nothing concerning priesthood.”? (7:14, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… (for under it the people have received the law), what further need was there for another priest to arise after the order of Melchizedek, and not …” The missing terms belong in that order.",
+    "options" : [
+      "law priest"
+    ],
+    "prompt" : "Supply the missing words in order: “… (for under it the people have received the ____), what further need was there for another to arise after the order of Melchizedek, and not …” (7:11, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… law of a fleshly commandment, but after the power of an endless life:” It says life, not worship.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… law of a fleshly commandment, but after the power of an endless worship:” (7:16, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of all (being first, by interpretation, king of righteousness, and then also king of Salem, which is king of peace;”",
+    "options" : [
+      "king"
+    ],
+    "prompt" : "Complete the quotation: “… of all (being first, by interpretation, king of righteousness, and then also ____ of Salem, which is king of peace;” (7:2, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “They indeed of the sons of Levi who receive the priest's office have a commandment to take tithes of the people according to the law, that …”",
+    "options" : [
+      "Levi"
+    ],
+    "prompt" : "Complete the quotation: “They indeed of the sons of ____ who receive the priest's office have a commandment to take tithes of the people according to the law, that …” (7:5, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For such a high priest was fitting for us: holy, guiltless, undefiled, separated from sinners, and made higher than the heavens;”; the second reads “… men as high priests who have weakness, but the word of the oath which came after the law appoints a Son forever who has been perfected.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "holy oath"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For such a high priest was fitting for us: ____, guiltless, undefiled, separated from sinners, and made higher than the heavens;” (7:26); “… men as high priests who have weakness, but the word of the which came after the law appoints a Son forever who has been perfected.” (7:28, WEB)",
+    "reference" : "Hebrews 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “… Lord, \"That I will make a new covenant with the house of Israel and with the house of Judah;”",
+    "options" : [
+      "Mark",
+      "Mordecai",
+      "Israel",
+      "Elymas"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Lord, \"That I will make a new covenant with the house of ______ and with the house of Judah;”? (8:8, WEB)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It names a covenant involving God's law in hearts, knowledge of Him and forgiveness. The argument draws on Israel's prophetic promise rather than inventing a story unrelated to the Old Testament. The course connects Christ with covenant fulfillment.",
+    "options" : [
+      "The new covenant is defined only as a larger building.",
+      "It names a covenant involving God's law in hearts, knowledge of Him and forgiveness.",
+      "Jeremiah promises that forgiveness will become unnecessary.",
+      "The writer denies that the prophets spoke about covenant renewal."
+    ],
+    "prompt" : "How does the quotation from Jeremiah support the argument about a new covenant? (8:6-13)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For every high priest is appointed to offer both gifts and sacrifices. Therefore it is necessary that this high priest also have something to offer.”",
+    "options" : [
+      "sacrifices"
+    ],
+    "prompt" : "Complete the quotation: “For every high priest is appointed to offer both gifts and ____. Therefore it is necessary that this high priest also have something to offer.” (8:3, WEB)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… my laws into their mind, I will also write them on their heart. I will be to them a God, And they will be to me …”; verse 11 reads “… brother, saying, 'Know the Lord,' For all will know me, From the least of them to the greatest of them.”. These establish the first and second answers respectively.",
+    "options" : [
+      "hair; least",
+      "least; heart",
+      "heart; least",
+      "heart; mountain"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… my laws into their mind, I will also write them on their ______. I will be to them a God, And they will be to me …” (8:10); “… brother, saying, 'Know the Lord,' For all will know me, From the ______ of them to the greatest of them.” (8:11, WEB)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 8:4 uses priests: “… earth, he would not be a priest at all, seeing there are priests who offer the gifts according to the law;”",
+    "options" : [
+      "wife",
+      "priests",
+      "husbands",
+      "prince"
+    ],
+    "prompt" : "Which word completes “… earth, he would not be a priest at all, seeing there are ______ who offer the gifts according to the law;”? (8:4, WEB)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… are saying, the main point is this. We have such a high priest, who sat down on the right hand of the throne of the Majesty …”",
+    "options" : [
+      "priest"
+    ],
+    "prompt" : "Complete the quotation: “… are saying, the main point is this. We have such a high ____, who sat down on the right hand of the throne of the Majesty …” (8:1, WEB)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… out of the land of Egypt; For they didn't continue in my covenant, And I disregarded them,\" says the Lord.” It says covenant, not teaching.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… out of the land of Egypt; For they didn't continue in my teaching, And I disregarded them,\" says the Lord.” (8:9, WEB)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of the heavenly things, even as Moses was warned by God when he was about to make the tabernacle, for he said, \"See, you shall make …” The missing terms belong in that order.",
+    "options" : [
+      "Moses tabernacle"
+    ],
+    "prompt" : "Supply the missing words in order: “… of the heavenly things, even as ____ was warned by God when he was about to make the , for he said, \"See, you shall make …” (8:5, WEB)",
+    "reference" : "Hebrews 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “nor yet that he should offer himself often, as the high priest enters into the holy place year by year with blood not his own,”; the second reads “… time, without sin, to those who are eagerly waiting for him for salvation.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "enters salvation"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “nor yet that he should offer himself often, as the high priest ____ into the holy place year by year with blood not his own,” (9:25); “… time, without sin, to those who are eagerly waiting for him for .” (9:28, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For this reason he is the mediator of a new covenant, since a death has occurred for the redemption of the transgressions that were under the …” It says covenant, not statutes.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For this reason he is the mediator of a new statutes, since a death has occurred for the redemption of the transgressions that were under the …” (9:15, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Christ having come as a high priest of the coming good things, through the greater and more perfect tabernacle, not made with hands, that is to …” The missing terms belong in that order.",
+    "options" : [
+      "priest tabernacle"
+    ],
+    "prompt" : "Supply the missing words in order: “… Christ having come as a high ____ of the coming good things, through the greater and more perfect , not made with hands, that is to …” (9:11, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 9:8 uses Holy: “The Holy Spirit is indicating this, that the way into the Holy Place wasn't yet revealed while the first tabernacle was still standing;”",
+    "options" : [
+      "gracious",
+      "Holy",
+      "proud",
+      "pure"
+    ],
+    "prompt" : "Which word completes “The ______ Spirit is indicating this, that the way into the Holy Place wasn't yet revealed while the first tabernacle was still standing;”? (9:8, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “For when every commandment had been spoken by Moses to all the people according to the law, he took the blood of the calves and the …”; verse 22 reads “According to the law, nearly everything is cleansed with blood, and apart from shedding of blood there is no remission.”. These establish the first and second answers respectively.",
+    "options" : [
+      "law; Moses",
+      "James; law",
+      "Moses; instruction",
+      "Moses; law"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For when every commandment had been spoken by ______ to all the people according to the law, he took the blood of the calves and the …” (9:19); “According to the ______, nearly everything is cleansed with blood, and apart from shedding of blood there is no remission.” (9:22, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… In the first part were the lampstand, the table, and the show bread; which is called the Holy Place.”",
+    "options" : [
+      "bread"
+    ],
+    "prompt" : "Complete the quotation: “… In the first part were the lampstand, the table, and the show ____; which is called the Holy Place.” (9:2, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and above it cherubim of glory overshadowing the mercy seat, of which things we can't now speak in detail.”",
+    "options" : [
+      "glory"
+    ],
+    "prompt" : "Complete the quotation: “and above it cherubim of ____ overshadowing the mercy seat, of which things we can't now speak in detail.” (9:5, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “how much more will the blood of Christ, who through the eternal Spirit offered himself without blemish to God, cleanse your conscience from dead works to …”",
+    "options" : [
+      "arms",
+      "hands",
+      "eye",
+      "blood"
+    ],
+    "prompt" : "Which detail belongs in this passage: “how much more will the ______ of Christ, who through the eternal Spirit offered himself without blemish to God, cleanse your conscience from dead works to …”? (9:14, WEB)",
+    "reference" : "Hebrews 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… worshippers, having been once cleansed, would have had no more consciousness of sins?”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “… worshippers, having been once cleansed, would have had no more consciousness of ____?” (10:2, WEB)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Access to God through Christ shapes a shared life of faith, hope, love and good works. The passage moves from what Christ provides to how the community should respond. The course's orthodoxy-and-orthopraxy framework helps explain that connection.",
+    "options" : [
+      "The passage commands indifference toward one another.",
+      "Good works are the price that first creates Christ's offering.",
+      "Access to God makes other believers entirely unnecessary.",
+      "Access to God through Christ shapes a shared life of faith, hope, love and good works."
+    ],
+    "prompt" : "Why does the account of Christ's offering lead to calls for gathering and mutual encouragement? (10:19-25)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… is the covenant that I will make with them: 'After those days,' says the Lord, 'I will put my laws on their heart, I will also …” The missing terms belong in that order.",
+    "options" : [
+      "covenant heart"
+    ],
+    "prompt" : "Supply the missing words in order: “… is the ____ that I will make with them: 'After those days,' says the Lord, 'I will put my laws on their , I will also …” (10:16, WEB)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 26 reads “… have received the knowledge of the truth, there remains no more a sacrifice for sins,”; verse 30 reads “… to me,\" says the Lord, \"I will repay.\" Again, \"The Lord will judge his people.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "sacrifice; prophets",
+      "sacrifice; judge",
+      "death; judge",
+      "judge; sacrifice"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… have received the knowledge of the truth, there remains no more a ______ for sins,” (10:26); “… to me,\" says the Lord, \"I will repay.\" Again, \"The Lord will ______ his people.\"” (10:30, WEB)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies holy: “Having therefore, brothers, boldness to enter into the holy place by the blood of Jesus,”",
+    "options" : [
+      "righteous",
+      "holy",
+      "obedient",
+      "humble"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Having therefore, brothers, boldness to enter into the ______ place by the blood of Jesus,”? (10:19, WEB)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… sprinkled from an evil conscience, and having our body washed with pure water,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… sprinkled from an evil conscience, and having our body washed with pure water,” (10:22, WEB)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Previously saying, \"Sacrifices and offerings and whole burnt offerings and sacrifices for sin you didn't desire, neither had pleasure in them\" (those which are offered according …”",
+    "options" : [
+      "offerings"
+    ],
+    "prompt" : "Complete the quotation: “Previously saying, \"Sacrifices and offerings and whole burnt ____ and sacrifices for sin you didn't desire, neither had pleasure in them\" (those which are offered according …” (10:8, WEB)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 10:11 uses priest: “Every priest indeed stands day by day ministering and often offering the same sacrifices, which can never take away sins,”",
+    "options" : [
+      "princes",
+      "wives",
+      "priest",
+      "prophets"
+    ],
+    "prompt" : "Which word completes “Every ______ indeed stands day by day ministering and often offering the same sacrifices, which can never take away sins,”? (10:11, WEB)",
+    "reference" : "Hebrews 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It includes both remarkable deliverances and faithful people who endure suffering without receiving the final promise in their lifetime. Faith is not measured solely by prosperity or escape from suffering. The chapter's closing perspective joins different experiences within a shared hope.",
+    "options" : [
+      "It includes both remarkable deliverances and faithful people who endure suffering without receiving the final promise in their lifetime.",
+      "The chapter promises that every hope is completed immediately.",
+      "Those who suffer are all identified as unbelievers.",
+      "Every faithful person avoids hardship."
+    ],
+    "prompt" : "How does the chapter complicate the claim that faith always produces immediate visible success? (11:32-40)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “By faith, Moses, when he was born, was hidden for three months by his parents, because they saw that he was a beautiful child, and they …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “By faith, Moses, when he was born, was hidden for three months by his parents, because they saw that he was a beautiful child, and they …” (11:23, WEB)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Joseph: “… faith, Jacob, when he was dying, blessed each of the sons of Joseph, and worshiped, leaning on the top of his staff.”",
+    "options" : [
+      "Judah",
+      "Joseph",
+      "Jeremiah",
+      "Silas"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… faith, Jacob, when he was dying, blessed each of the sons of ______, and worshiped, leaning on the top of his staff.”? (11:21, WEB)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “By faith, Abraham, being tested, offered up Isaac. Yes, he who had gladly received the promises was offering up his one and only son;” The missing terms belong in that order.",
+    "options" : [
+      "Abraham Isaac"
+    ],
+    "prompt" : "Supply the missing words in order: “By faith, ____, being tested, offered up . Yes, he who had gladly received the promises was offering up his one and only son;” (11:17, WEB)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “By faith, we understand that the universe has been framed by the word of God, so that what is seen has not been made out of …”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “By ____, we understand that the universe has been framed by the word of God, so that what is seen has not been made out of …” (11:3, WEB)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 11:11 uses faithful: “… bore a child when she was past age, since she counted him faithful who had promised.”",
+    "options" : [
+      "humble",
+      "obedient",
+      "faithful",
+      "foolish"
+    ],
+    "prompt" : "Which word completes “… bore a child when she was past age, since she counted him ______ who had promised.”? (11:11, WEB)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… warned about things not yet seen, moved with godly fear, prepared an ark for the saving of his house, through which he condemned the world, and …”",
+    "options" : [
+      "ark"
+    ],
+    "prompt" : "Complete the quotation: “… warned about things not yet seen, moved with godly fear, prepared an ____ for the saving of his house, through which he condemned the world, and …” (11:7, WEB)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “By faith, he left Egypt, not fearing the wrath of the king; for he endured, as seeing him who is invisible.”; verse 31 reads “… didn't perish with those who were disobedient, having received the spies in peace.”. These establish the first and second answers respectively.",
+    "options" : [
+      "peace; king",
+      "king; peace",
+      "king; faithfulness",
+      "servants; peace"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “By faith, he left Egypt, not fearing the wrath of the ______; for he endured, as seeing him who is invisible.” (11:27); “… didn't perish with those who were disobedient, having received the spies in ______.” (11:31, WEB)",
+    "reference" : "Hebrews 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… faith, who for the joy that was set before him endured the cross, despising shame, and has sat down at the right hand of the throne …”",
+    "options" : [
+      "cross"
+    ],
+    "prompt" : "Complete the quotation: “… faith, who for the joy that was set before him endured the ____, despising shame, and has sat down at the right hand of the throne …” (12:2, WEB)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… reasons with you as with children, \"My son, don't take lightly the chastening of the Lord, Nor faint when you are reproved by him;”",
+    "options" : [
+      "chastening"
+    ],
+    "prompt" : "Complete the quotation: “… reasons with you as with children, \"My son, don't take lightly the ____ of the Lord, Nor faint when you are reproved by him;” (12:5, WEB)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Believers are to set aside hindrances and look to Jesus, who endured the cross. The image calls for sustained faithfulness rather than a brief burst of enthusiasm. The course distinguishes hearing good teaching from practicing a transformed life.",
+    "options" : [
+      "Endurance depends on never considering Jesus.",
+      "The image removes the need for any personal response.",
+      "Believers are to set aside hindrances and look to Jesus, who endured the cross.",
+      "Every obstacle is a sign that the race must be abandoned."
+    ],
+    "prompt" : "How does the athletic image frame the call to endurance? (12:1-3)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… don't refuse him who speaks. For if they didn't escape when they refused him who warned on the Earth, how much more will we not escape …”; the second reads “Therefore, receiving a Kingdom that can't be shaken, let us have grace, through which we serve God acceptably, with reverence and awe,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "refused Kingdom"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… don't refuse him who speaks. For if they didn't escape when they ____ him who warned on the Earth, how much more will we not escape …” (12:25); “Therefore, receiving a that can't be shaken, let us have grace, through which we serve God acceptably, with reverence and awe,” (12:28, WEB)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… grievous; yet afterward it yields the peaceful fruit of righteousness to those who have been exercised thereby.” The missing terms belong in that order.",
+    "options" : [
+      "righteousness exercised"
+    ],
+    "prompt" : "Supply the missing words in order: “… grievous; yet afterward it yields the peaceful fruit of ____ to those who have been thereby.” (12:11, WEB)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 12:9 uses fathers: “Furthermore, we had the fathers of our flesh to chasten us, and we paid them respect. Shall we not much rather be in subjection to the …”",
+    "options" : [
+      "soldier",
+      "king",
+      "fathers",
+      "sisters"
+    ],
+    "prompt" : "Which word completes “Furthermore, we had the ______ of our flesh to chasten us, and we paid them respect. Shall we not much rather be in subjection to the …”? (12:9, WEB)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies grace: “looking carefully lest there be any man who falls short of the grace of God; lest any root of bitterness springing up trouble you, and thereby …”",
+    "options" : [
+      "tempest",
+      "grace",
+      "Furthermore",
+      "weary"
+    ],
+    "prompt" : "Which detail belongs in this passage: “looking carefully lest there be any man who falls short of the ______ of God; lest any root of bitterness springing up trouble you, and thereby …”? (12:15, WEB)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… was rejected, for he found no place for a change of mind though he sought it diligently with tears.” It says though, not Judge.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… was rejected, for he found no place for a change of mind Judge he sought it diligently with tears.” (12:17, WEB)",
+    "reference" : "Hebrews 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Be free from the love of money, content with such things as you have, for he has said, \"I will in no way leave you, neither …”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “Be free from the ____ of money, content with such things as you have, for he has said, \"I will in no way leave you, neither …” (13:5, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hebrews 13:7 uses faith: “… word of God, and considering the results of their conduct, imitate their faith.”",
+    "options" : [
+      "sharing",
+      "Pray",
+      "desiring",
+      "faith"
+    ],
+    "prompt" : "Which word completes “… word of God, and considering the results of their conduct, imitate their ______.”? (13:7, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Through him, then, let us offer up a sacrifice of praise to God continually, that is, the fruit of lips which make confession to his name.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Through him, then, let us offer up a sacrifice of praise to God continually, that is, the fruit of lips which make confession to his name.” (13:15, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But I exhort you, brothers, endure the word of exhortation, for I have written to you in few words.”; the second reads “Greet all of your leaders and all the saints. The Italians greet you.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "exhort Italians"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But I ____ you, brothers, endure the word of exhortation, for I have written to you in few words.” (13:22); “Greet all of your leaders and all the saints. The greet you.” (13:24, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Don't forget to show hospitality to strangers, for in doing so, some have entertained angels without knowing it.”",
+    "options" : [
+      "strangers"
+    ],
+    "prompt" : "Complete the quotation: “Don't forget to show hospitality to ____, for in doing so, some have entertained angels without knowing it.” (13:2, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… blood is brought into the holy place by the high priest as an offering for sin, are burned outside of the camp.” The missing terms belong in that order.",
+    "options" : [
+      "priest sin"
+    ],
+    "prompt" : "Supply the missing words in order: “… blood is brought into the holy place by the high ____ as an offering for , are burned outside of the camp.” (13:11, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… as those who will give account, that they may do this with joy, and not with groaning, for that would be unprofitable for you.”; verse 20 reads “Now may the God of peace, who brought again from the dead the great shepherd of the sheep with the blood of an eternal covenant, our …”. These establish the first and second answers respectively.",
+    "options" : [
+      "wrath; peace",
+      "joy; peace",
+      "joy; understanding",
+      "peace; joy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… as those who will give account, that they may do this with ______, and not with groaning, for that would be unprofitable for you.” (13:17); “Now may the God of ______, who brought again from the dead the great shepherd of the sheep with the blood of an eternal covenant, our …” (13:20, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hebrews",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “Therefore Jesus also, that he might sanctify the people through his own blood, suffered outside of the gate.”",
+    "options" : [
+      "blood",
+      "feet",
+      "hair",
+      "lips"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Therefore Jesus also, that he might sanctify the people through his own ______, suffered outside of the gate.”? (13:12, WEB)",
+    "reference" : "Hebrews 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

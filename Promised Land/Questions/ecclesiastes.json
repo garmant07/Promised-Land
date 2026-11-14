@@ -1,0 +1,1571 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The wind goes toward the south, and turns around to the north. It turns around continually as it goes, and the wind returns again to its …” The missing terms belong in that order.",
+    "options" : [
+      "goes south"
+    ],
+    "prompt" : "Supply the missing words in order: “The wind ____ toward the , and turns around to the north. It turns around continually as it goes, and the wind returns again to its …” (1:6, WEB)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… in Jerusalem. Yes, my heart has had great experience of wisdom and knowledge.\"”; the second reads “I applied my heart to know wisdom, and to know madness and folly. I perceived that this also was a chasing after wind.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "knowledge heart"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… in Jerusalem. Yes, my heart has had great experience of wisdom and ____.\"” (1:16); “I applied my to know wisdom, and to know madness and folly. I perceived that this also was a chasing after wind.” (1:17, WEB)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ecclesiastes 1:14 records: “I have seen all the works that are done under the sun; and, behold, all is vanity and a chasing after wind.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Preacher said all is vanity and striving after wind. (1:14)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 1:4 uses generation: “One generation goes, and another generation comes; but the earth remains forever.”",
+    "options" : [
+      "faithfulness",
+      "holiness",
+      "promise",
+      "generation"
+    ],
+    "prompt" : "Which word completes “One generation goes, and another ______ comes; but the earth remains forever.”? (1:4, WEB)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies full: “All the rivers run into the sea, yet the sea is not full. To the place where the rivers flow, there they flow again.”",
+    "options" : [
+      "counted",
+      "king",
+      "gain",
+      "full"
+    ],
+    "prompt" : "Which detail belongs in this passage: “All the rivers run into the sea, yet the sea is not ______. To the place where the rivers flow, there they flow again.”? (1:7, WEB)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “\"Vanity of vanities,\" says the Preacher; \"Vanity of vanities, all is vanity.\"”",
+    "options" : [
+      "Vanity"
+    ],
+    "prompt" : "Complete the quotation: “\"____ of vanities,\" says the Preacher; \"Vanity of vanities, all is vanity.\"” (1:2, WEB)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “All things are full of weariness beyond uttering. The eye is not satisfied with seeing, nor the ear filled with hearing.” It says beyond, not grief.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “All things are full of weariness grief uttering. The eye is not satisfied with seeing, nor the ear filled with hearing.” (1:8, WEB)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “I applied my heart to seek and to search out by wisdom concerning all that is done under the sky. It is a heavy burden that …”; verse 12 reads “I, the Preacher, was king over Israel in Jerusalem.”. These establish the first and second answers respectively.",
+    "options" : [
+      "wisdom; Israel",
+      "wisdom; Haman",
+      "joy; Israel",
+      "Israel; wisdom"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “I applied my heart to seek and to search out by ______ concerning all that is done under the sky. It is a heavy burden that …” (1:13); “I, the Preacher, was king over ______ in Jerusalem.” (1:12, WEB)",
+    "reference" : "Ecclesiastes 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… and why was I then more wise?\" Then said I in my heart that this also is vanity.”; verse 18 reads “I hated all my labor in which I labored under the sun, seeing that I must leave it to the man who comes after me.”. These establish the first and second answers respectively.",
+    "options" : [
+      "hands; labor",
+      "labor; heart",
+      "heart; happens",
+      "heart; labor"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and why was I then more wise?\" Then said I in my ______ that this also is vanity.” (2:15); “I hated all my ______ in which I labored under the sun, seeing that I must leave it to the man who comes after me.” (2:18, WEB)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I turned myself to consider wisdom, madness, and folly: for what can the king's successor do? Just that which has been done long ago.” It says wisdom, not peace.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I turned myself to consider peace, madness, and folly: for what can the king's successor do? Just that which has been done long ago.” (2:12, WEB)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies joy: “… I didn't keep from them. I didn't withhold my heart from any joy, for my heart rejoiced because of all my labor, and this was my …”",
+    "options" : [
+      "joy",
+      "understanding",
+      "wisdom",
+      "peace"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… I didn't keep from them. I didn't withhold my heart from any ______, for my heart rejoiced because of all my labor, and this was my …”? (2:10, WEB)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “I made myself great works. I built myself houses. I planted myself vineyards.”",
+    "options" : [
+      "houses"
+    ],
+    "prompt" : "Complete the quotation: “I made myself great works. I built myself ____. I planted myself vineyards.” (2:4, WEB)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I also gathered silver and gold for myself, and the treasure of kings and of the provinces. I got myself men-singers and women-singers, and the delights …” The missing terms belong in that order.",
+    "options" : [
+      "silver kings"
+    ],
+    "prompt" : "Supply the missing words in order: “I also gathered ____ and gold for myself, and the treasure of and of the provinces. I got myself men-singers and women-singers, and the delights …” (2:8, WEB)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 2:5 uses gardens: “I made myself gardens and parks, and I planted trees in them of all kinds of fruit.”",
+    "options" : [
+      "takes",
+      "eyes",
+      "grievous",
+      "gardens"
+    ],
+    "prompt" : "Which word completes “I made myself ______ and parks, and I planted trees in them of all kinds of fruit.”? (2:5, WEB)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ecclesiastes 2:3 records: “… cheer my flesh with wine, my heart yet guiding me with wisdom, and how to lay hold of folly, until I might see what it was good for the sons of men that they should do …”",
+    "options" : [
+      "folly"
+    ],
+    "prompt" : "In this paraphrase, the Preacher tested pleasure, wine and ____. (2:1-3)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For there is a man whose labor is with wisdom, with knowledge, and with skillfulness; yet he shall leave it for his portion to a man …”; the second reads “… travail is grief; yes, even in the night his heart takes no rest. This also is vanity.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "knowledge rest"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For there is a man whose labor is with wisdom, with ____, and with skillfulness; yet he shall leave it for his portion to a man …” (2:21); “… travail is grief; yes, even in the night his heart takes no . This also is vanity.” (2:23, WEB)",
+    "reference" : "Ecclesiastes 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “A time to tear, And a time to sew; A time to keep silence, And a time to speak;” The missing terms belong in that order.",
+    "options" : [
+      "tear silence"
+    ],
+    "prompt" : "Supply the missing words in order: “A time to ____, And a time to sew; A time to keep , And a time to speak;” (3:7, WEB)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ecclesiastes 3:1 records: “For everything there is a season, and a time for every purpose under heaven:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ecclesiastes says there is a time for every matter under heaven. (3:1)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “A time to love, And a time to hate; A time for war, And a time for peace.”",
+    "options" : [
+      "truth",
+      "faithfulness",
+      "wisdom",
+      "love"
+    ],
+    "prompt" : "Which detail belongs in this passage: “A time to ______, And a time to hate; A time for war, And a time for peace.”? (3:8, WEB)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The chapter combines ordered times, human limitation and the reception of daily good as God's gift. It does not call every human action morally right merely because it occurs.",
+    "options" : [
+      "Humans understand every purpose completely.",
+      "Life has times beyond our control, and humans cannot fully grasp God's work.",
+      "Every act is morally right because it has a time.",
+      "God gives no good gifts in ordinary life."
+    ],
+    "prompt" : "How do the appointed times and the statement about human limits belong together? (3:1-15)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… time to be born, And a time to die; A time to plant, And a time to pluck up that which is planted;”",
+    "options" : [
+      "plant"
+    ],
+    "prompt" : "Complete the quotation: “… time to be born, And a time to die; A time to ____, And a time to pluck up that which is planted;” (3:2, WEB)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “Also that every man should eat and drink, and enjoy good in all his labor, is the gift of God.”; verse 16 reads “Moreover I saw under the sun, in the place of justice, that wickedness was there; and in the place of righteousness, that wickedness was there.”. These establish the first and second answers respectively.",
+    "options" : [
+      "stones; justice",
+      "enjoy; fear",
+      "justice; enjoy",
+      "enjoy; justice"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Also that every man should eat and drink, and ______ good in all his labor, is the gift of God.” (3:13); “Moreover I saw under the sun, in the place of ______, that wickedness was there; and in the place of righteousness, that wickedness was there.” (3:16, WEB)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 3:4 uses laugh: “A time to weep, And a time to laugh; A time to mourn, And a time to dance;”",
+    "options" : [
+      "love",
+      "labors",
+      "advantage",
+      "laugh"
+    ],
+    "prompt" : "Which word completes “A time to weep, And a time to ______; A time to mourn, And a time to dance;”? (3:4, WEB)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He has made everything beautiful in its time. He has also set eternity in their hearts, yet so that man can't find out the work that …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He has made everything beautiful in its time. He has also set eternity in their hearts, yet so that man can't find out the work that …” (3:11, WEB)",
+    "reference" : "Ecclesiastes 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For out of prison he came forth to be king; yes, even in his kingdom he was born poor.”; the second reads “I saw all the living who walk under the sun, that they were with the youth, the other, who succeeded him.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "king living"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For out of prison he came forth to be ____; yes, even in his kingdom he was born poor.” (4:14); “I saw all the who walk under the sun, that they were with the youth, the other, who succeeded him.” (4:15, WEB)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies business: “… soul of enjoyment? This also is vanity, yes, it is a miserable business.”",
+    "options" : [
+      "barley",
+      "land",
+      "knowledge",
+      "business"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… soul of enjoyment? This also is vanity, yes, it is a miserable ______.”? (4:8, WEB)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… all the oppressions that are done under the sun: and, behold, the tears of those who were oppressed, and they had no comforter; and on the …”",
+    "options" : [
+      "tears"
+    ],
+    "prompt" : "Complete the quotation: “… all the oppressions that are done under the sun: and, behold, the ____ of those who were oppressed, and they had no comforter; and on the …” (4:1, WEB)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 4:4 uses achievement: “Then I saw all the labor and achievement that is the envy of a man's neighbor. This also is vanity and a striving after wind.”",
+    "options" : [
+      "achievement",
+      "ruins",
+      "chasing",
+      "withstand"
+    ],
+    "prompt" : "Which word completes “Then I saw all the labor and ______ that is the envy of a man's neighbor. This also is vanity and a striving after wind.”? (4:4, WEB)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… alone, two shall withstand him; and a threefold cord is not quickly broken.”; verse 13 reads “Better is a poor and wise youth than an old and foolish king who doesn't know how to receive admonition any more.”. These establish the first and second answers respectively.",
+    "options" : [
+      "alive; poor",
+      "poor; broken",
+      "broken; poor",
+      "broken; obedient"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… alone, two shall withstand him; and a threefold cord is not quickly ______.” (4:12); “Better is a ______ and wise youth than an old and foolish king who doesn't know how to receive admonition any more.” (4:13, WEB)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Again, if two lie together, then they have warmth; but how can one keep warm alone?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Again, if two lie together, then they have warmth; but how can one keep warm alone?” (4:11, WEB)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ecclesiastes 4:10 records: “For if they fall, the one will lift up his fellow; but woe to him who is alone when he falls, and doesn't have another to lift him up.”",
+    "options" : [
+      "lift"
+    ],
+    "prompt" : "In this paraphrase, two are better than one, for if one falls the other can ____ his companion. (4:9-10)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Better is a handful, with quietness, than two handfuls with labor and chasing after wind.” The missing terms belong in that order.",
+    "options" : [
+      "handful two"
+    ],
+    "prompt" : "Supply the missing words in order: “Better is a ____, with quietness, than handfuls with labor and chasing after wind.” (4:6, WEB)",
+    "reference" : "Ecclesiastes 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 5:4 uses fools: “… God, don't defer to pay it; for he has no pleasure in fools. Pay that which you vow.”",
+    "options" : [
+      "fools",
+      "riches",
+      "steps",
+      "goods"
+    ],
+    "prompt" : "Which word completes “… God, don't defer to pay it; for he has no pleasure in ______. Pay that which you vow.”? (5:4, WEB)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ecclesiastes 5:2 records: “Don't be rash with your mouth, and don't let your heart be hasty to utter anything before God; for God is in heaven, and you on earth. Therefore let your words be few.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ecclesiastes says not to be rash with your mouth before God. (5:2)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies poor: “If you see the oppression of the poor, and the violent taking away of justice and righteousness in a district, don't marvel at the matter: for …”",
+    "options" : [
+      "righteous",
+      "unclean",
+      "poor",
+      "rich"
+    ],
+    "prompt" : "Which detail belongs in this passage: “If you see the oppression of the ______, and the violent taking away of justice and righteousness in a district, don't marvel at the matter: for …”? (5:8, WEB)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… in all points as he came, so shall he go. And what profit does he have who labors for the wind?”; the second reads “… in which he labors under the sun, all the days of his life which God has given him; for this is his portion.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "profit life"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… in all points as he came, so shall he go. And what ____ does he have who labors for the wind?” (5:16); “… in which he labors under the sun, all the days of his which God has given him; for this is his portion.” (5:18, WEB)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… as a dream comes with a multitude of cares, so a fool's speech with a multitude of words.”",
+    "options" : [
+      "speech"
+    ],
+    "prompt" : "Complete the quotation: “… as a dream comes with a multitude of cares, so a fool's ____ with a multitude of words.” (5:3, WEB)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He who loves silver shall not be satisfied with silver; nor he who loves abundance, with increase: this also is vanity.” It says silver, not iron.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He who loves iron shall not be satisfied with silver; nor he who loves abundance, with increase: this also is vanity.” (5:10, WEB)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “The sleep of a laboring man is sweet, whether he eats little or much; but the abundance of the rich will not allow him to sleep.”; verse 14 reads “Those riches perish by misfortune, and if he has fathered a son, there is nothing in his hand.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sweet; riches",
+      "riches; sweet",
+      "sweet; eats",
+      "enjoy; riches"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sleep of a laboring man is ______, whether he eats little or much; but the abundance of the rich will not allow him to sleep.” (5:12); “Those ______ perish by misfortune, and if he has fathered a son, there is nothing in his hand.” (5:14, WEB)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… allow your mouth to lead you into sin. Don't protest before the messenger that this was a mistake. Why should God be angry at your voice, …” The missing terms belong in that order.",
+    "options" : [
+      "sin mistake"
+    ],
+    "prompt" : "Supply the missing words in order: “… allow your mouth to lead you into ____. Don't protest before the messenger that this was a . Why should God be angry at your voice, …” (5:6, WEB)",
+    "reference" : "Ecclesiastes 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “All the labor of man is for his mouth, and yet the appetite is not filled.”; verse 10 reads “… long ago; and it is known what man is; neither can he contend with him who is mightier than he.”. These establish the first and second answers respectively.",
+    "options" : [
+      "labor; contend",
+      "don't; contend",
+      "labor; vain",
+      "contend; labor"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “All the ______ of man is for his mouth, and yet the appetite is not filled.” (6:7); “… long ago; and it is known what man is; neither can he ______ with him who is mightier than he.” (6:10, WEB)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For who knows what is good for man in life, all the days of his vain life which he spends like a shadow? For who can …”; the second reads “For there are many words that create vanity. What does that profit man?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life profit"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For who knows what is good for man in ____, all the days of his vain life which he spends like a shadow? For who can …” (6:12); “For there are many words that create vanity. What does that man?” (6:11, WEB)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 6:3 uses hundred: “If a man fathers a hundred children, and lives many years, so that the days of his years are many, but his soul is not filled …”",
+    "options" : [
+      "eight",
+      "hundred",
+      "thousand",
+      "three"
+    ],
+    "prompt" : "Which word completes “If a man fathers a ______ children, and lives many years, so that the days of his years are many, but his soul is not filled …”? (6:3, WEB)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… what advantage has the wise more than the fool? What has the poor man, that knows how to walk before the living?” It says poor, not proud.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… what advantage has the wise more than the fool? What has the proud man, that knows how to walk before the living?” (6:8, WEB)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “for it comes in vanity, and departs in darkness, and its name is covered with darkness.” The missing terms belong in that order.",
+    "options" : [
+      "vanity darkness"
+    ],
+    "prompt" : "Supply the missing words in order: “for it comes in ____, and departs in darkness, and its name is covered with .” (6:4, WEB)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… his soul of all that he desires, yet God gives him no power to eat of it, but an alien eats it. This is vanity, and …”",
+    "options" : [
+      "power"
+    ],
+    "prompt" : "Complete the quotation: “… his soul of all that he desires, yet God gives him no ____ to eat of it, but an alien eats it. This is vanity, and …” (6:2, WEB)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies thousand: “Yes, though he live a thousand years twice told, and yet fails to enjoy good, don't all go to one place?”",
+    "options" : [
+      "eighty",
+      "first",
+      "eighteen",
+      "thousand"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Yes, though he live a ______ years twice told, and yet fails to enjoy good, don't all go to one place?”? (6:6, WEB)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ecclesiastes 6:9 records: “Better is the sight of the eyes than the wandering of the desire. This also is vanity and a chasing after wind.”",
+    "options" : [
+      "desire"
+    ],
+    "prompt" : "In this paraphrase, better is the sight of the eyes than the wandering of the ____. (6:9)",
+    "reference" : "Ecclesiastes 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 7:7 uses understanding: “Surely extortion makes the wise man foolish; and a bribe destroys the understanding.”",
+    "options" : [
+      "hope",
+      "understanding",
+      "anger",
+      "joy"
+    ],
+    "prompt" : "Which word completes “Surely extortion makes the wise man foolish; and a bribe destroys the ______.”? (7:7, WEB)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “In the day of prosperity be joyful, and in the day of adversity consider; yes, God has made the one side by side with the other, …” It says joyful, not perfume.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “In the day of prosperity be perfume, and in the day of adversity consider; yes, God has made the one side by side with the other, …” (7:14, WEB)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… end of a thing than its beginning. The patient in spirit is better than the proud in spirit.” The missing terms belong in that order.",
+    "options" : [
+      "patient spirit"
+    ],
+    "prompt" : "Supply the missing words in order: “… end of a thing than its beginning. The ____ in spirit is better than the proud in .” (7:8, WEB)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… my heart sought to know and to search out, and to seek wisdom and the scheme of things, and to know that wickedness is stupidity, and …”; the second reads “I find more bitter than death the woman whose heart is snares and traps, whose hands are chains. Whoever pleases God shall escape from her; but …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wisdom death"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… my heart sought to know and to search out, and to seek ____ and the scheme of things, and to know that wickedness is stupidity, and …” (7:25); “I find more bitter than the woman whose heart is snares and traps, whose hands are chains. Whoever pleases God shall escape from her; but …” (7:26, WEB)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies life: “… a defense; but the excellency of knowledge is that wisdom preserves the life of him who has it.”",
+    "options" : [
+      "sacrifice",
+      "blessing",
+      "offerings",
+      "life"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a defense; but the excellency of knowledge is that wisdom preserves the ______ of him who has it.”? (7:12, WEB)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “Don't be too wicked, neither be foolish. Why should you die before your time?”; verse 19 reads “Wisdom is a strength to the wise man more than ten rulers who are in a city.”. These establish the first and second answers respectively.",
+    "options" : [
+      "ten; too",
+      "too; tenth",
+      "too; ten",
+      "preserves; ten"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Don't be ______ wicked, neither be foolish. Why should you die before your time?” (7:17); “Wisdom is a strength to the wise man more than ______ rulers who are in a city.” (7:19, WEB)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ecclesiastes 7:1 records: “A good name is better than fine perfume; and the day of death better than the day of one's birth.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ecclesiastes says a good name is better than precious ointment. (7:1)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… heart of the wise is in the house of mourning; but the heart of fools is in the house of mirth.”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Complete the quotation: “… heart of the wise is in the house of mourning; but the ____ of fools is in the house of mirth.” (7:4, WEB)",
+    "reference" : "Ecclesiastes 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… wicked men to whom it happens according to the work of the righteous. I said that this also is vanity.”; the second reads “… done on the earth (for also there is that neither day nor night sees sleep with his eyes),”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "righteous night"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… wicked men to whom it happens according to the work of the ____. I said that this also is vanity.” (8:14); “… done on the earth (for also there is that neither day nor sees sleep with his eyes),” (8:16, WEB)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 8:5 uses heart: “Whoever keeps the commandment shall not come to harm, and his wise heart will know the time and procedure.”",
+    "options" : [
+      "ear",
+      "heart",
+      "neck",
+      "back"
+    ],
+    "prompt" : "Which word completes “Whoever keeps the commandment shall not come to harm, and his wise ______ will know the time and procedure.”? (8:5, WEB)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies spirit: “There is no man who has power over the spirit to contain the spirit; neither does he have power over the day of death. There is …”",
+    "options" : [
+      "spirit",
+      "buried",
+      "heart",
+      "comprehend"
+    ],
+    "prompt" : "Which detail belongs in this passage: “There is no man who has power over the ______ to contain the spirit; neither does he have power over the day of death. There is …”? (8:8, WEB)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ecclesiastes 8:15 records: “… a man has no better thing under the sun, than to eat, and to drink, and to be joyful: for that will accompany him in his labor all the days of his life which God has …”",
+    "options" : [
+      "enjoyment"
+    ],
+    "prompt" : "In this paraphrase, there is nothing better for a person than to eat, drink and find ____ in his labor. (8:15)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For there is a time and procedure for every purpose, although the misery of man is heavy on him.” The missing terms belong in that order.",
+    "options" : [
+      "procedure purpose"
+    ],
+    "prompt" : "Supply the missing words in order: “For there is a time and ____ for every , although the misery of man is heavy on him.” (8:6, WEB)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “All this have I seen, and applied my mind to every work that is done under the sun. There is a time in which one man …” It says mind, not executed.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “All this have I seen, and applied my executed to every work that is done under the sun. There is a time in which one man …” (8:9, WEB)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “Because sentence against an evil work is not executed speedily, therefore the heart of the sons of men is fully set in them to do evil.”; verse 12 reads “… yet surely I know that it will be better with those who fear God, who are reverent before him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "joyful; fear",
+      "fear; speedily",
+      "speedily; shame",
+      "speedily; fear"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Because sentence against an evil work is not executed ______, therefore the heart of the sons of men is fully set in them to do evil.” (8:11); “… yet surely I know that it will be better with those who ______ God, who are reverent before him.” (8:12, WEB)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… wise man? And who knows the interpretation of a thing? A man's wisdom makes his face shine, and the hardness of his face is changed.”",
+    "options" : [
+      "wisdom"
+    ],
+    "prompt" : "Complete the quotation: “… wise man? And who knows the interpretation of a thing? A man's ____ makes his face shine, and the hardness of his face is changed.” (8:1, WEB)",
+    "reference" : "Ecclesiastes 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “All things come alike to all. There is one event to the righteous and to the wicked; to the good, to the clean, to the unclean, …”",
+    "options" : [
+      "righteous"
+    ],
+    "prompt" : "Complete the quotation: “All things come alike to all. There is one event to the ____ and to the wicked; to the good, to the clean, to the unclean, …” (9:2, WEB)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bread: “Go your way--eat your bread with joy, and drink your wine with a merry heart; for God has already accepted your works.”",
+    "options" : [
+      "meat",
+      "bread",
+      "wine",
+      "milk"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Go your way--eat your ______ with joy, and drink your wine with a merry heart; for God has already accepted your works.”? (9:7, WEB)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Also their love, their hatred, and their envy has perished long ago; neither have they any more a portion forever in anything that is done under …” The missing terms belong in that order.",
+    "options" : [
+      "love hatred"
+    ],
+    "prompt" : "Supply the missing words in order: “Also their ____, their , and their envy has perished long ago; neither have they any more a portion forever in anything that is done under …” (9:6, WEB)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now a poor wise man was found in it, and he by his wisdom delivered the city; yet no man remembered that same poor man.”; the second reads “Then said I, Wisdom is better than strength. Nevertheless the poor man's wisdom is despised, and his words are not heard.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "poor Wisdom"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now a ____ wise man was found in it, and he by his wisdom delivered the city; yet no man remembered that same poor man.” (9:15); “Then said I, is better than strength. Nevertheless the poor man's wisdom is despised, and his words are not heard.” (9:16, WEB)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… it with your might; for there is no work, nor device, nor knowledge, nor wisdom, in Sheol, where you are going.”; verse 12 reads “… the sons of men snared in an evil time, when it falls suddenly on them.”. These establish the first and second answers respectively.",
+    "options" : [
+      "peace; suddenly",
+      "knowledge; suddenly",
+      "knowledge; weapons",
+      "suddenly; knowledge"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… it with your might; for there is no work, nor device, nor ______, nor wisdom, in Sheol, where you are going.” (9:10); “… the sons of men snared in an evil time, when it falls ______ on them.” (9:12, WEB)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 9:3 uses heart: “… the sun, that there is one event to all: yes also, the heart of the sons of men is full of evil, and madness is in …”",
+    "options" : [
+      "head",
+      "heart",
+      "tooth",
+      "knees"
+    ],
+    "prompt" : "Which word completes “… the sun, that there is one event to all: yes also, the ______ of the sons of men is full of evil, and madness is in …”? (9:3, WEB)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ecclesiastes 9:11 records: “… sun, that the race is not to the swift, nor the battle to the strong, neither yet bread to the wise, nor yet riches to men of understanding, nor yet favor to men of skill; but …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ecclesiastes says the race is not always to the swift. (9:11)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… joyfully with the wife whom you love all the days of your life of vanity, which he has given you under the sun, all your days …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… joyfully with the wife whom you love all the days of your life of vanity, which he has given you under the sun, all your days …” (9:9, WEB)",
+    "reference" : "Ecclesiastes 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… axe is blunt, and one doesn't sharpen the edge, then he must use more strength; but skill brings success.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… axe is blunt, and one doesn't sharpen the edge, then he must use more strength; but skill brings success.” (10:10, WEB)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Folly is set in great dignity, and the rich sit in a low place.” The missing terms belong in that order.",
+    "options" : [
+      "rich low"
+    ],
+    "prompt" : "Supply the missing words in order: “Folly is set in great dignity, and the ____ sit in a place.” (10:6, WEB)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ecclesiastes 10:2 records: “A wise man's heart is at his right hand, but a fool's heart at his left.”",
+    "options" : [
+      "right"
+    ],
+    "prompt" : "In this paraphrase, the heart of the wise inclines to the ____. (10:2)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “The words of a wise man's mouth are gracious; but a fool is swallowed by his own lips.”; verse 14 reads “A fool also multiplies words. Man doesn't know what will be; and that which will be after him, who can tell him?”. These establish the first and second answers respectively.",
+    "options" : [
+      "merciful; fool",
+      "wise; fool",
+      "fool; wise",
+      "wise; Dead"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The words of a ______ man's mouth are gracious; but a fool is swallowed by his own lips.” (10:12); “A ______ also multiplies words. Man doesn't know what will be; and that which will be after him, who can tell him?” (10:14, WEB)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fall: “He who digs a pit may fall into it; and whoever breaks through a wall may be bitten by a snake.”",
+    "options" : [
+      "Happy",
+      "fall",
+      "cause",
+      "tongue"
+    ],
+    "prompt" : "Which detail belongs in this passage: “He who digs a pit may ______ into it; and whoever breaks through a wall may be bitten by a snake.”? (10:8, WEB)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 10:4 uses rest: “… against you, don't leave your place; for gentleness lays great offenses to rest.”",
+    "options" : [
+      "thanksgiving",
+      "rest",
+      "offering",
+      "prayer"
+    ],
+    "prompt" : "Which word completes “… against you, don't leave your place; for gentleness lays great offenses to ______.”? (10:4, WEB)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Woe to you, land, when your king is a child, And your princes eat in the morning!”; the second reads “Happy are you, land, when your king is the son of nobles, And your princes eat in due season, For strength, and not for drunkenness!”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "king nobles"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Woe to you, land, when your ____ is a child, And your princes eat in the morning!” (10:16); “Happy are you, land, when your king is the son of , And your princes eat in due season, For strength, and not for drunkenness!” (10:17, WEB)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Dead flies cause the oil of the perfumer to send forth an evil odor; so does a little folly outweigh wisdom and honor.”",
+    "options" : [
+      "oil"
+    ],
+    "prompt" : "Complete the quotation: “Dead flies cause the ____ of the perfumer to send forth an evil odor; so does a little folly outweigh wisdom and honor.” (10:1, WEB)",
+    "reference" : "Ecclesiastes 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ecclesiastes 11:1 records: “Cast your bread on the waters; For you shall find it after many days.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ecclesiastes says to cast your bread upon the waters. (11:1)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “In the morning sow your seed, And in the evening don't withhold your hand; For you don't know which will prosper, whether this or that, Or …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “In the morning sow your seed, And in the evening don't withhold your hand; For you don't know which will prosper, whether this or that, Or …” (11:6, WEB)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 11:3 uses south: “… empty themselves on the earth; And if a tree falls toward the south, or toward the north, In the place where the tree falls, there shall …”",
+    "options" : [
+      "south",
+      "night",
+      "Sabbath",
+      "north"
+    ],
+    "prompt" : "Which word completes “… empty themselves on the earth; And if a tree falls toward the ______, or toward the north, In the place where the tree falls, there shall …”? (11:3, WEB)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He who observes the wind won't sow; And he who regards the clouds won't reap.” The missing terms belong in that order.",
+    "options" : [
+      "sow reap"
+    ],
+    "prompt" : "Supply the missing words in order: “He who observes the wind won't ____; And he who regards the clouds won't .” (11:4, WEB)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… But know that for all these things God will bring you into judgment.”; the second reads “… put away evil from your flesh; For youth and the dawn of life are vanity.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "judgment life"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… But know that for all these things God will bring you into ____.” (11:9); “… put away evil from your flesh; For youth and the dawn of are vanity.” (11:10, WEB)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Give a portion to seven, yes, even to eight; For you don't know what evil will be on the earth.”",
+    "options" : [
+      "eight"
+    ],
+    "prompt" : "Complete the quotation: “Give a portion to seven, yes, even to ____; For you don't know what evil will be on the earth.” (11:2, WEB)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bones: “… don't know what is the way of the wind, Nor how the bones grow in the womb of her who is with child; Even so you …”",
+    "options" : [
+      "tooth",
+      "lips",
+      "heart",
+      "bones"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… don't know what is the way of the wind, Nor how the ______ grow in the womb of her who is with child; Even so you …”? (11:5, WEB)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 7 reads “Truly the light is sweet, And a pleasant thing it is for the eyes to see the sun.”; verse 8 reads “… him rejoice in them all; But let him remember the days of darkness, for they shall be many. All that comes is vanity.”. These establish the first and second answers respectively.",
+    "options" : [
+      "light; darkness",
+      "heart; darkness",
+      "darkness; light",
+      "light; transgression"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Truly the ______ is sweet, And a pleasant thing it is for the eyes to see the sun.” (11:7); “… him rejoice in them all; But let him remember the days of ______, for they shall be many. All that comes is vanity.” (11:8, WEB)",
+    "reference" : "Ecclesiastes 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… are words from the masters of assemblies, which are given from one shepherd.”; the second reads “… of the matter. All has been heard. Fear God, and keep his commandments; for this is the whole duty of man.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "shepherd commandments"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… are words from the masters of assemblies, which are given from one ____.” (12:11); “… of the matter. All has been heard. Fear God, and keep his ; for this is the whole duty of man.” (12:13, WEB)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Before the sun, the light, the moon, and the stars are darkened, And the clouds return after the rain;”",
+    "options" : [
+      "light"
+    ],
+    "prompt" : "Complete the quotation: “Before the sun, the ____, the moon, and the stars are darkened, And the clouds return after the rain;” (12:2, WEB)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “Further, because the Preacher was wise, he still taught the people knowledge. Yes, he pondered, sought out, and set in order many proverbs.”; verse 10 reads “… find out acceptable words, and that which was written blamelessly, words of truth.”. These establish the first and second answers respectively.",
+    "options" : [
+      "knowledge; truth",
+      "truth; knowledge",
+      "mercy; truth",
+      "knowledge; knowledge"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Further, because the Preacher was wise, he still taught the people ______. Yes, he pondered, sought out, and set in order many proverbs.” (12:9); “… find out acceptable words, and that which was written blamelessly, words of ______.” (12:10, WEB)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “And the dust returns to the earth as it was, And the spirit returns to God who gave it.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “And the dust returns to the earth as it was, And the spirit returns to God who gave it.” (12:7, WEB)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ecclesiastes 12:3 uses bow: “… the keepers of the house shall tremble, And the strong men shall bow themselves, And the grinders cease because they are few, And those who look …”",
+    "options" : [
+      "wise",
+      "shut",
+      "grinders",
+      "bow"
+    ],
+    "prompt" : "Which word completes “… the keepers of the house shall tremble, And the strong men shall ______ themselves, And the grinders cease because they are few, And those who look …”? (12:3, WEB)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… in the street; When the sound of the grinding is low, And one shall rise up at the voice of a bird, And all the daughters …” The missing terms belong in that order.",
+    "options" : [
+      "low rise"
+    ],
+    "prompt" : "Supply the missing words in order: “… in the street; When the sound of the grinding is ____, And one shall up at the voice of a bird, And all the daughters …” (12:4, WEB)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Ecclesiastes 12:1 records: “Remember also your Creator in the days of your youth, Before the evil days come, and the years draw near, When you will say, \"I have no pleasure in them;\"”",
+    "options" : [
+      "youth"
+    ],
+    "prompt" : "In this paraphrase, remember your Creator in the days of your ____. (12:1)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ecclesiastes",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies silver: “Before the silver cord is severed, Or the golden bowl is broken, Or the pitcher is broken at the spring, Or the wheel broken at the …”",
+    "options" : [
+      "ashes",
+      "iron",
+      "copper",
+      "silver"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Before the ______ cord is severed, Or the golden bowl is broken, Or the pitcher is broken at the spring, Or the wheel broken at the …”? (12:6, WEB)",
+    "reference" : "Ecclesiastes 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

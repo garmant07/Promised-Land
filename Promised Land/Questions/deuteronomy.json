@@ -1,0 +1,4446 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… said, Let us send men before us, that they may search the land for us, and bring us word again of the way by which we …” It says land, not wilderness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… said, Let us send men before us, that they may search the wilderness for us, and bring us word again of the way by which we …” (1:22, WEB)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 1:1 records: “These are the words which Moses spoke to all Israel beyond the Jordan in the wilderness, in the Arabah over against Suph, between Paran, and Tophel, and Laban, and Hazeroth, and Dizahab.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses recounted Israel's history at the border of the promised land. (1:1-5)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies judgment: “… you shall not be afraid of the face of man; for the judgment is God's: and the cause that is too hard for you, you shall …”",
+    "options" : [
+      "commandments",
+      "judgment",
+      "teaching",
+      "testimonies"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you shall not be afraid of the face of man; for the ______ is God's: and the cause that is too hard for you, you shall …”? (1:17, WEB)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “… he has brought us forth out of the land of Egypt, to deliver us into the hand of the Amorites, to destroy us.”; verse 31 reads “… seen how that Yahweh your God bore you, as a man does bear his son, in all the way that you went, until you came to …”. These establish the first and second answers respectively.",
+    "options" : [
+      "bear; deliver",
+      "deliver; bear",
+      "days; bear",
+      "deliver; bulls"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… he has brought us forth out of the land of Egypt, to ______ us into the hand of the Amorites, to destroy us.” (1:27); “… seen how that Yahweh your God bore you, as a man does ______ his son, in all the way that you went, until you came to …” (1:31, WEB)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 1:8 uses Abraham: “… in and possess the land which Yahweh swore to your fathers, to Abraham, to Isaac, and to Jacob, to give to them and to their seed …”",
+    "options" : [
+      "Ithamar",
+      "Zebulun",
+      "Hezekiah",
+      "Abraham"
+    ],
+    "prompt" : "Which word completes “… in and possess the land which Yahweh swore to your fathers, to ______, to Isaac, and to Jacob, to give to them and to their seed …”? (1:8, WEB)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “save Caleb the son of Jephunneh: he shall see it; and to him will I give the land that he has trodden on, and to his …”; the second reads “But as for you, turn you, and take your journey into the wilderness by the way to the Red Sea.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Caleb wilderness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “save ____ the son of Jephunneh: he shall see it; and to him will I give the land that he has trodden on, and to his …” (1:36); “But as for you, turn you, and take your journey into the by the way to the Red Sea.” (1:40, WEB)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “turn you, and take your journey, and go to the hill-country of the Amorites, and to all the places near thereunto, in the Arabah, in the …”",
+    "options" : [
+      "hill"
+    ],
+    "prompt" : "Complete the quotation: “turn you, and take your journey, and go to the ____-country of the Amorites, and to all the places near thereunto, in the Arabah, in the …” (1:7, WEB)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Take wise men of understanding and well known according to your tribes, and I will make them heads over you.” The missing terms belong in that order.",
+    "options" : [
+      "understanding known"
+    ],
+    "prompt" : "Supply the missing words in order: “Take wise men of ____ and well according to your tribes, and I will make them heads over you.” (1:13, WEB)",
+    "reference" : "Deuteronomy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 2:5 records: “… contend with them; for I will not give you of their land, no, not so much as for the sole of the foot to tread on; because I have given Mount Seir to Esau for a …”",
+    "options" : [
+      "war"
+    ],
+    "prompt" : "In this paraphrase, israel was told not to provoke the people of Edom to ____. (2:5)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… are to pass through the border of your brothers the children of Esau, who dwell in Seir; and they will be afraid of you: take good …”",
+    "options" : [
+      "Esau"
+    ],
+    "prompt" : "Complete the quotation: “… are to pass through the border of your brothers the children of ____, who dwell in Seir; and they will be afraid of you: take good …” (2:4, WEB)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… food for money, that I may eat; and give me water for money, that I may drink: only let me pass through on my feet,”; the second reads “… inhabited city, with the women and the little ones; we left none remaining:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "money remaining"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… food for money, that I may eat; and give me water for ____, that I may drink: only let me pass through on my feet,” (2:28); “… inhabited city, with the women and the little ones; we left none :” (2:34, WEB)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies eight: “… came from Kadesh-barnea, until we were come over the brook Zered, were thirty-eight years; until all the generation of the men of war were consumed from …”",
+    "options" : [
+      "eight",
+      "hundred",
+      "thirteen",
+      "second"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… came from Kadesh-barnea, until we were come over the brook Zered, were thirty-______ years; until all the generation of the men of war were consumed from …”? (2:14, WEB)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “as he did for the children of Esau, who dwell in Seir, when he destroyed the Horites from before them; and they succeeded them, and lived …”; verse 25 reads “… day will I begin to put the dread of you and the fear of you on the peoples who are under the whole sky, who shall …”. These establish the first and second answers respectively.",
+    "options" : [
+      "dwell; kindness",
+      "dwell; fear",
+      "fear; dwell",
+      "northward; fear"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “as he did for the children of Esau, who ______ in Seir, when he destroyed the Horites from before them; and they succeeded them, and lived …” (2:22); “… day will I begin to put the dread of you and the ______ of you on the peoples who are under the whole sky, who shall …” (2:25, WEB)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 2:6 uses water: “… them for money, that you may eat; and you shall also buy water of them for money, that you may drink.”",
+    "options" : [
+      "honey",
+      "barley",
+      "water",
+      "bread"
+    ],
+    "prompt" : "Which word completes “… them for money, that you may eat; and you shall also buy ______ of them for money, that you may drink.”? (2:6, WEB)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… said to me, Don't bother Moab, neither contend with them in battle; for I will not give you of his land for a possession; because I …” The missing terms belong in that order.",
+    "options" : [
+      "Moab land"
+    ],
+    "prompt" : "Supply the missing words in order: “… said to me, Don't bother ____, neither contend with them in battle; for I will not give you of his for a possession; because I …” (2:9, WEB)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… for a possession; because I have given it to the children of Lot for a possession.” It says Lot, not Saul.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… for a possession; because I have given it to the children of Saul for a possession.” (2:19, WEB)",
+    "reference" : "Deuteronomy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… sea of the Arabah, the Salt Sea, under the slopes of Pisgah eastward.”; verse 20 reads “until Yahweh give rest to your brothers, as to you, and they also possess the land which Yahweh your God gives them beyond the Jordan: then …”. These establish the first and second answers respectively.",
+    "options" : [
+      "eastward; worship",
+      "eastward; rest",
+      "rest; eastward",
+      "kingdoms; rest"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… sea of the Arabah, the Salt Sea, under the slopes of Pisgah ______.” (3:17); “until Yahweh give ______ to your brothers, as to you, and they also possess the land which Yahweh your God gives them beyond the Jordan: then …” (3:20, WEB)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Jair the son of Manasseh took all the region of Argob, to the border of the Geshurites and the Maacathites, and called them, even Bashan, after …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Jair the son of Manasseh took all the region of Argob, to the border of the Geshurites and the Maacathites, and called them, even Bashan, after …” (3:14, WEB)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Lord Yahweh, you have begun to show your servant your greatness, and your strong hand: for what god is there in heaven or in earth, that …”; the second reads “Please let me go over and see the good land that is beyond the Jordan, that goodly mountain, and Lebanon.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servant land"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Lord Yahweh, you have begun to show your ____ your greatness, and your strong hand: for what god is there in heaven or in earth, that …” (3:24); “Please let me go over and see the good that is beyond the Jordan, that goodly mountain, and Lebanon.” (3:25, WEB)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 3:1 records: “Then we turned, and went up the way to Bashan: and Og the king of Bashan came out against us, he and all his people, to battle at Edrei.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Og king of Bashan was defeated by Israel. (3:1-4)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 3:6 uses king: “We utterly destroyed them, as we did to Sihon king of Heshbon, utterly destroying every inhabited city, with the women and the little ones.”",
+    "options" : [
+      "prince",
+      "king",
+      "princes",
+      "wives"
+    ],
+    "prompt" : "Which word completes “We utterly destroyed them, as we did to Sihon ______ of Heshbon, utterly destroying every inhabited city, with the women and the little ones.”? (3:6, WEB)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies four: “… the children of Ammon? nine cubits was the length of it, and four cubits the breadth of it, after the cubit of a man.)”",
+    "options" : [
+      "seven",
+      "twelve",
+      "four",
+      "eleven"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the children of Ammon? nine cubits was the length of it, and ______ cubits the breadth of it, after the cubit of a man.)”? (3:11, WEB)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “All these were cities fortified with high walls, gates, and bars; besides the unwalled towns a great many.”",
+    "options" : [
+      "high"
+    ],
+    "prompt" : "Complete the quotation: “All these were cities fortified with ____ walls, gates, and bars; besides the unwalled towns a great many.” (3:5, WEB)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… time out of the hand of the two kings of the Amorites who were beyond the Jordan, from the valley of the Arnon to Mount Hermon;” The missing terms belong in that order.",
+    "options" : [
+      "kings Jordan"
+    ],
+    "prompt" : "Supply the missing words in order: “… time out of the hand of the two ____ of the Amorites who were beyond the , from the valley of the Arnon to Mount Hermon;” (3:8, WEB)",
+    "reference" : "Deuteronomy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Your eyes have seen what Yahweh did because of Baal Peor; for all the men who followed Baal Peor, Yahweh your God has destroyed them from …”",
+    "options" : [
+      "Peor"
+    ],
+    "prompt" : "Complete the quotation: “Your eyes have seen what Yahweh did because of Baal ____; for all the men who followed Baal Peor, Yahweh your God has destroyed them from …” (4:3, WEB)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The argument uses the form of God's self-revelation as a reason against making an idol. It does not prohibit every kind of visual art.",
+    "options" : [
+      "The stars created Israel.",
+      "Israel received a statue to copy.",
+      "They heard God's voice but saw no form to reproduce.",
+      "God told Israel never to make any beautiful object."
+    ],
+    "prompt" : "Why does Moses connect the prohibition of images with Israel's experience at Horeb? (4:12, 15-19)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 4:24 records: “For Yahweh your God is a devouring fire, a jealous God.”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "In this paraphrase, moses said, The LORD your God is a consuming ____. (4:24)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 28 reads “There you shall serve gods, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell.”; verse 34 reads “… to go and take him a nation from the midst of another nation, by trials, by signs, and by wonders, and by war, and by a …”. These establish the first and second answers respectively.",
+    "options" : [
+      "gods; fatherless",
+      "gods; nation",
+      "nation; gods",
+      "signs; nation"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “There you shall serve ______, the work of men's hands, wood and stone, which neither see, nor hear, nor eat, nor smell.” (4:28); “… to go and take him a nation from the midst of another ______, by trials, by signs, and by wonders, and by war, and by a …” (4:34, WEB)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies water: “… on the ground, the likeness of any fish that is in the water under the earth;”",
+    "options" : [
+      "grain",
+      "oil",
+      "fruit",
+      "water"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… on the ground, the likeness of any fish that is in the ______ under the earth;”? (4:18, WEB)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 4:8 uses law: “… is there, that has statutes and ordinances so righteous as all this law, which I set before you this day?”",
+    "options" : [
+      "law",
+      "testimony",
+      "commandment",
+      "judgment"
+    ],
+    "prompt" : "Which word completes “… is there, that has statutes and ordinances so righteous as all this ______, which I set before you this day?”? (4:8, WEB)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Take heed to yourselves, lest you forget the covenant of Yahweh your God, which he made with you, and make you an engraved image in the …” It says covenant, not judgment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Take heed to yourselves, lest you forget the judgment of Yahweh your God, which he made with you, and make you an engraved image in the …” (4:23, WEB)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to you his covenant, which he commanded you to perform, even the ten commandments; and he wrote them on two tables of stone.” The missing terms belong in that order.",
+    "options" : [
+      "ten commandments"
+    ],
+    "prompt" : "Supply the missing words in order: “… to you his covenant, which he commanded you to perform, even the ____; and he wrote them on two tables of stone.” (4:13, WEB)",
+    "reference" : "Deuteronomy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 5:6 records: “\"I am Yahweh your God, who brought you out of the land of Egypt, out of the house of bondage.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Ten Commandments are repeated in Deuteronomy 5. (5:6-21)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies darkness: “… the midst of the fire, of the cloud, and of the thick darkness, with a great voice: and he added no more. He wrote them on …”",
+    "options" : [
+      "greatness",
+      "kindness",
+      "likeness",
+      "darkness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the midst of the fire, of the cloud, and of the thick ______, with a great voice: and he added no more. He wrote them on …”? (5:22, WEB)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “and you said, Behold, Yahweh our God has shown us his glory and his greatness, and we have heard his voice out of the midst of …”; verse 25 reads “Now therefore why should we die? for this great fire will consume us: if we hear the voice of Yahweh our God any more, then we …”. These establish the first and second answers respectively.",
+    "options" : [
+      "peace; die",
+      "glory; break",
+      "glory; die",
+      "die; glory"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and you said, Behold, Yahweh our God has shown us his ______ and his greatness, and we have heard his voice out of the midst of …” (5:24); “Now therefore why should we ______? for this great fire will consume us: if we hear the voice of Yahweh our God any more, then we …” (5:25, WEB)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… burning with fire, that you came near to me, even all the heads of your tribes, and your elders;” It says heads, not fathers.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… burning with fire, that you came near to me, even all the fathers of your tribes, and your elders;” (5:23, WEB)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 5:5 uses fire: “… you the word of Yahweh: for you were afraid because of the fire, and didn't go up onto the mountain;) saying,”",
+    "options" : [
+      "showing",
+      "prolong",
+      "Return",
+      "fire"
+    ],
+    "prompt" : "Which word completes “… you the word of Yahweh: for you were afraid because of the ______, and didn't go up onto the mountain;) saying,”? (5:5, WEB)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Moses called to all Israel, and said to them, Hear, Israel, the statutes and the ordinances which I speak in your ears this day, that you …”",
+    "options" : [
+      "statutes"
+    ],
+    "prompt" : "Complete the quotation: “Moses called to all Israel, and said to them, Hear, Israel, the ____ and the ordinances which I speak in your ears this day, that you …” (5:1, WEB)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Yahweh spoke with you face to face on the mountain out of the midst of the fire,” The missing terms belong in that order.",
+    "options" : [
+      "face mountain"
+    ],
+    "prompt" : "Supply the missing words in order: “Yahweh spoke with you face to ____ on the out of the midst of the fire,” (5:4, WEB)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… is there of all flesh, that has heard the voice of the living God speaking out of the midst of the fire, as we have, and …”; the second reads “… heart in them, that they would fear me, and keep all my commandments always, that it might be well with them, and with their children forever!”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "living commandments"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… is there of all flesh, that has heard the voice of the ____ God speaking out of the midst of the fire, as we have, and …” (5:26); “… heart in them, that they would fear me, and keep all my always, that it might be well with them, and with their children forever!” (5:29, WEB)",
+    "reference" : "Deuteronomy 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… you forget Yahweh, who brought you forth out of the land of Egypt, out of the house of bondage.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… you forget Yahweh, who brought you forth out of the land of Egypt, out of the house of bondage.” (6:12, WEB)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… talk of them when you sit in your house, and when you walk by the way, and when you lie down, and when you rise up.” The missing terms belong in that order.",
+    "options" : [
+      "sit lie"
+    ],
+    "prompt" : "Supply the missing words in order: “… talk of them when you ____ in your house, and when you walk by the way, and when you down, and when you rise up.” (6:7, WEB)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Abraham: “… bring you into the land which he swore to your fathers, to Abraham, to Isaac, and to Jacob, to give you, great and goodly cities, which …”",
+    "options" : [
+      "Nathan",
+      "Abraham",
+      "Elijah",
+      "Miriam"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… bring you into the land which he swore to your fathers, to ______, to Isaac, and to Jacob, to give you, great and goodly cities, which …”? (6:10, WEB)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The commands move from love and the heart to conversation at home and on the road. Covenant faithfulness is learned in daily life, not confined to a ceremony.",
+    "options" : [
+      "God's words are to shape the heart and the ordinary life of the household.",
+      "Children should learn only from foreign kings.",
+      "Remembering God matters only in the temple.",
+      "Outward symbols make attention to the heart unnecessary."
+    ],
+    "prompt" : "How are love for God and teaching children connected? (6:4-9)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… the anger of Yahweh your God be kindled against you, and he destroy you from off the face of the earth.”; verse 17 reads “You shall diligently keep the commandments of Yahweh your God, and his testimonies, and his statutes, which he has commanded you.”. These establish the first and second answers respectively.",
+    "options" : [
+      "commandments; destroy",
+      "obey; commandments",
+      "destroy; commandments",
+      "destroy; promises"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the anger of Yahweh your God be kindled against you, and he ______ you from off the face of the earth.” (6:15); “You shall diligently keep the ______ of Yahweh your God, and his testimonies, and his statutes, which he has commanded you.” (6:17, WEB)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 6:4 records: “Hear, Israel: Yahweh is our God; Yahweh is one:”",
+    "options" : [
+      "one"
+    ],
+    "prompt" : "In this paraphrase, moses said, Hear, O Israel: the LORD our God, the LORD is ____. (6:4)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “that you might fear Yahweh your God, to keep all his statutes and his commandments, which I command you, you, and your son, and your son's …”",
+    "options" : [
+      "statutes"
+    ],
+    "prompt" : "Complete the quotation: “that you might fear Yahweh your God, to keep all his ____ and his commandments, which I command you, you, and your son, and your son's …” (6:2, WEB)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 6:3 uses land: “… Yahweh, the God of your fathers, has promised to you, in a land flowing with milk and honey.”",
+    "options" : [
+      "valley",
+      "garden",
+      "sea",
+      "land"
+    ],
+    "prompt" : "Which word completes “… Yahweh, the God of your fathers, has promised to you, in a ______ flowing with milk and honey.”? (6:3, WEB)",
+    "reference" : "Deuteronomy 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… out of the house of bondage, from the hand of Pharaoh king of Egypt.” The missing terms belong in that order.",
+    "options" : [
+      "king Egypt"
+    ],
+    "prompt" : "Supply the missing words in order: “… out of the house of bondage, from the hand of Pharaoh ____ of .” (7:8, WEB)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… utterly destroy them: you shall make no covenant with them, nor show mercy to them;”",
+    "options" : [
+      "mercy"
+    ],
+    "prompt" : "Complete the quotation: “… utterly destroy them: you shall make no covenant with them, nor show ____ to them;” (7:2, WEB)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies repays: “and repays those who hate him to their face, to destroy them: he will not be slack to him who hates him, he will repay him …”",
+    "options" : [
+      "sickness",
+      "commandments",
+      "pillars",
+      "repays"
+    ],
+    "prompt" : "Which detail belongs in this passage: “and ______ those who hate him to their face, to destroy them: he will not be slack to him who hates him, he will repay him …”? (7:10, WEB)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 7:7 records: “Yahweh didn't set his love on you, nor choose you, because you were more in number than any people; for you were the fewest of all peoples:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God chose Israel because He loved them, not because they were numerous. (7:7)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 7:5 uses fire: “… pillars, and hew down their Asherim, and burn their engraved images with fire.”",
+    "options" : [
+      "hates",
+      "fire",
+      "Girgashite",
+      "Know"
+    ],
+    "prompt" : "Which word completes “… pillars, and hew down their Asherim, and burn their engraved images with ______.”? (7:5, WEB)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the fruit of your body and the fruit of your ground, your grain and your new wine and your oil, the increase of your cattle and …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the fruit of your body and the fruit of your ground, your grain and your new wine and your oil, the increase of your cattle and …” (7:13, WEB)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The passage explicitly rejects Israel's numerical greatness as the explanation. The course emphasizes that grace precedes the response of obedience.",
+    "options" : [
+      "Israel had already earned rescue by perfection.",
+      "Israel was the largest nation.",
+      "Egypt had asked God to choose Israel.",
+      "God's love and the oath sworn to their ancestors."
+    ],
+    "prompt" : "What reason does the text give for God's choosing and rescuing Israel? (7:6-9)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “the great trials which your eyes saw, and the signs, and the wonders, and the mighty hand, and the outstretched arm, by which Yahweh your God …”; the second reads “He will deliver their kings into your hand, and you shall make their name to perish from under the sky: there shall no man be able …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "signs kings"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “the great trials which your eyes saw, and the ____, and the wonders, and the mighty hand, and the outstretched arm, by which Yahweh your God …” (7:19); “He will deliver their into your hand, and you shall make their name to perish from under the sky: there shall no man be able …” (7:24, WEB)",
+    "reference" : "Deuteronomy 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wheat: “a land of wheat and barley, and vines and fig trees and pomegranates; a land of olive trees and honey;”",
+    "options" : [
+      "meat",
+      "fruit",
+      "wheat",
+      "corn"
+    ],
+    "prompt" : "Which detail belongs in this passage: “a land of ______ and barley, and vines and fig trees and pomegranates; a land of olive trees and honey;”? (8:8, WEB)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “who fed you in the wilderness with manna, which your fathers didn't know; that he might humble you, and that he might prove you, to do …”; the second reads “… who gives you power to get wealth; that he may establish his covenant which he swore to your fathers, as at this day.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wilderness covenant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “who fed you in the ____ with manna, which your fathers didn't know; that he might humble you, and that he might prove you, to do …” (8:16); “… who gives you power to get wealth; that he may establish his which he swore to your fathers, as at this day.” (8:18, WEB)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to know what was in your heart, whether you would keep his commandments, or not.”",
+    "options" : [
+      "commandments"
+    ],
+    "prompt" : "Complete the quotation: “… to know what was in your heart, whether you would keep his ____, or not.” (8:2, WEB)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 8:4 uses forty: “… clothing didn't grow old on you, neither did your foot swell, these forty years.”",
+    "options" : [
+      "seventeen",
+      "forty",
+      "seventh",
+      "ninth"
+    ],
+    "prompt" : "Which word completes “… clothing didn't grow old on you, neither did your foot swell, these ______ years.”? (8:4, WEB)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For Yahweh your God brings you into a good land, a land of brooks of water, of springs and springs, flowing forth in valleys and hills;” The missing terms belong in that order.",
+    "options" : [
+      "land water"
+    ],
+    "prompt" : "Supply the missing words in order: “For Yahweh your God brings you into a good ____, a land of brooks of , of springs and springs, flowing forth in valleys and hills;” (8:7, WEB)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 8:3 records: “… hunger, and fed you with manna, which you didn't know, neither did your fathers know; that he might make you know that man does not live by bread only, but by everything that proceeds out of …”",
+    "options" : [
+      "mouth"
+    ],
+    "prompt" : "In this paraphrase, man does not live by bread alone but by every word from the ____ of the LORD. (8:3)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… your God, in not keeping his commandments, and his ordinances, and his statutes, which I command you this day:”; verse 14 reads “… Yahweh your God, who brought you forth out of the land of Egypt, out of the house of bondage;”. These establish the first and second answers respectively.",
+    "options" : [
+      "statutes; Egypt",
+      "statutes; Jerusalem",
+      "words; Egypt",
+      "Egypt; statutes"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… your God, in not keeping his commandments, and his ordinances, and his ______, which I command you this day:” (8:11); “… Yahweh your God, who brought you forth out of the land of ______, out of the house of bondage;” (8:14, WEB)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “a land in which you shall eat bread without scarceness, you shall not lack anything in it; a land whose stones are iron, and out of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “a land in which you shall eat bread without scarceness, you shall not lack anything in it; a land whose stones are iron, and out of …” (8:9, WEB)",
+    "reference" : "Deuteronomy 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… your God is he who goes over before you as a devouring fire; he will destroy them, and he will bring them down before you: so …”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “… your God is he who goes over before you as a devouring ____; he will destroy them, and he will bring them down before you: so …” (9:3, WEB)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 9:7 uses Egypt: “… from the day that you went forth out of the land of Egypt, until you came to this place, you have been rebellious against Yahweh.”",
+    "options" : [
+      "Israel",
+      "Jordan",
+      "Egypt",
+      "Tarshish"
+    ],
+    "prompt" : "Which word completes “… from the day that you went forth out of the land of ______, until you came to this place, you have been rebellious against Yahweh.”? (9:7, WEB)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… name from under the sky; and I will make of you a nation mightier and greater than they.” It says nation, not breath.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… name from under the sky; and I will make of you a breath mightier and greater than they.” (9:14, WEB)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When Yahweh sent you from Kadesh-barnea, saying, Go up and possess the land which I have given you; then you rebelled against the commandment of Yahweh …”; the second reads “Remember your servants, Abraham, Isaac, and Jacob; don't look to the stubbornness of this people, nor to their wickedness, nor to their sin,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "land Isaac"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When Yahweh sent you from Kadesh-barnea, saying, Go up and possess the ____ which I have given you; then you rebelled against the commandment of Yahweh …” (9:23); “Remember your servants, Abraham, , and Jacob; don't look to the stubbornness of this people, nor to their wickedness, nor to their sin,” (9:27, WEB)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of the covenant which Yahweh made with you, then I stayed on the mountain forty days and forty nights; I did neither eat bread nor drink …” The missing terms belong in that order.",
+    "options" : [
+      "covenant bread"
+    ],
+    "prompt" : "Supply the missing words in order: “… of the ____ which Yahweh made with you, then I stayed on the mountain forty days and forty nights; I did neither eat nor drink …” (9:9, WEB)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 9:4 records: “… heart, after that Yahweh your God has thrust them out from before you, saying, For my righteousness Yahweh has brought me in to possess this land; whereas for the wickedness of these nations Yahweh does drive …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses reminded Israel that they did not receive the land because of their own righteousness. (9:4-6)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “I took hold of the two tables, and cast them out of my two hands, and broke them before your eyes.”; verse 21 reads “I took your sin, the calf which you had made, and burnt it with fire, and stamped it, grinding it very small, until it was as …”. These establish the first and second answers respectively.",
+    "options" : [
+      "thirteen; sin",
+      "two; sin",
+      "sin; two",
+      "two; idolatry"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “I took hold of the ______ tables, and cast them out of my two hands, and broke them before your eyes.” (9:17); “I took your ______, the calf which you had made, and burnt it with fire, and stamped it, grinding it very small, until it was as …” (9:21, WEB)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies forty: “It came to pass at the end of forty days and forty nights, that Yahweh gave me the two tables of stone, even the tables of …”",
+    "options" : [
+      "thousand",
+      "forty",
+      "second",
+      "seventh"
+    ],
+    "prompt" : "Which detail belongs in this passage: “It came to pass at the end of forty days and ______ nights, that Yahweh gave me the two tables of stone, even the tables of …”? (9:11, WEB)",
+    "reference" : "Deuteronomy 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Israel is to reflect God's impartial justice and remember its own experience as foreigners in Egypt. This connects worship with treatment of vulnerable people.",
+    "options" : [
+      "God loves the foreigner and provides food and clothing.",
+      "God cares only for native-born Israelites.",
+      "Foreigners have no need of justice.",
+      "Israel must forget its experience in Egypt."
+    ],
+    "prompt" : "How does the command to love the resident foreigner reflect God's character? (10:17-19)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He does execute justice for the fatherless and widow, and loves the foreigner, in giving him food and clothing.”; the second reads “You shall fear Yahweh your God; him shall you serve; and to him shall you cleave, and by his name shall you swear.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "widow fear"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He does execute justice for the fatherless and ____, and loves the foreigner, in giving him food and clothing.” (10:18); “You shall Yahweh your God; him shall you serve; and to him shall you cleave, and by his name shall you swear.” (10:20, WEB)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… traveled from Beeroth Bene Jaakan to Moserah. There Aaron died, and there he was buried; and Eleazar his son ministered in the priest's office in his …” The missing terms belong in that order.",
+    "options" : [
+      "Aaron Eleazar"
+    ],
+    "prompt" : "Supply the missing words in order: “… traveled from Beeroth Bene Jaakan to Moserah. There ____ died, and there he was buried; and his son ministered in the priest's office in his …” (10:6, WEB)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Levi: “At that time Yahweh set apart the tribe of Levi, to bear the ark of the covenant of Yahweh, to stand before Yahweh to minister to …”",
+    "options" : [
+      "Levi",
+      "Esther",
+      "Reuben",
+      "Obed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “At that time Yahweh set apart the tribe of ______, to bear the ark of the covenant of Yahweh, to stand before Yahweh to minister to …”? (10:8, WEB)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “So I made an ark of acacia wood, and hewed two tables of stone like the first, and went up onto the mountain, having the two …”",
+    "options" : [
+      "ark"
+    ],
+    "prompt" : "Complete the quotation: “So I made an ____ of acacia wood, and hewed two tables of stone like the first, and went up onto the mountain, having the two …” (10:3, WEB)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 10:12 records: “… what does Yahweh your God require of you, but to fear Yahweh your God, to walk in all his ways, and to love him, and to serve Yahweh your God with all your heart and with …”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "In this paraphrase, the LORD required Israel to fear Him, walk in His ways and ____ Him. (10:12)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I stayed on the mountain, as at the first time, forty days and forty nights: and Yahweh listened to me that time also; Yahweh would not …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I stayed on the mountain, as at the first time, forty days and forty nights: and Yahweh listened to me that time also; Yahweh would not …” (10:10, WEB)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 10:4 uses ten: “He wrote on the tables, according to the first writing, the ten commandments, which Yahweh spoke to you on the mountain out of the midst of …”",
+    "options" : [
+      "sixteen",
+      "ten",
+      "eight",
+      "fifth"
+    ],
+    "prompt" : "Which word completes “He wrote on the tables, according to the first writing, the ______ commandments, which Yahweh spoke to you on the mountain out of the midst of …”? (10:4, WEB)",
+    "reference" : "Deuteronomy 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies water: “… to possess it, is a land of hills and valleys, and drinks water of the rain of the sky,”",
+    "options" : [
+      "figs",
+      "water",
+      "salt",
+      "barley"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to possess it, is a land of hills and valleys, and drinks ______ of the rain of the sky,”? (11:11, WEB)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 11:6 uses Reuben: “… did to Dathan and Abiram, the sons of Eliab, the son of Reuben; how the earth opened its mouth, and swallowed them up, and their households, …”",
+    "options" : [
+      "Jonah",
+      "Reuben",
+      "Balaam",
+      "Aaron"
+    ],
+    "prompt" : "Which word completes “… did to Dathan and Abiram, the sons of Eliab, the son of ______; how the earth opened its mouth, and swallowed them up, and their households, …”? (11:6, WEB)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 11:13 records: “It shall happen, if you shall listen diligently to my commandments which I command you this day, to love Yahweh your God, and to serve him with all your heart and with all your soul,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God promised rain in its season if the people obeyed. (11:13-14)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… his signs, and his works, which he did in the midst of Egypt to Pharaoh the king of Egypt, and to all his land;”",
+    "options" : [
+      "Egypt"
+    ],
+    "prompt" : "Complete the quotation: “… his signs, and his works, which he did in the midst of ____ to Pharaoh the king of Egypt, and to all his land;” (11:3, WEB)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… be able to stand before you: Yahweh your God shall lay the fear of you and the dread of you on all the land that you …”; the second reads “and the curse, if you shall not listen to the commandments of Yahweh your God, but turn aside out of the way which I command you …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fear commandments"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… be able to stand before you: Yahweh your God shall lay the ____ of you and the dread of you on all the land that you …” (11:25); “and the curse, if you shall not listen to the of Yahweh your God, but turn aside out of the way which I command you …” (11:28, WEB)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Take heed to yourselves, lest your heart be deceived, and you turn aside, and serve other gods, and worship them;” It says heart, not tongue.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Take heed to yourselves, lest your tongue be deceived, and you turn aside, and serve other gods, and worship them;” (11:16, WEB)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… my words in your heart and in your soul; and you shall bind them for a sign on your hand, and they shall be for symbols …”; verse 22 reads “… keep all this commandment which I command you, to do it, to love Yahweh your God, to walk in all his ways, and to cleave to …”. These establish the first and second answers respectively.",
+    "options" : [
+      "beside; love",
+      "love; bind",
+      "bind; love",
+      "bind; grief"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… my words in your heart and in your soul; and you shall ______ them for a sign on your hand, and they shall be for symbols …” (11:18); “… keep all this commandment which I command you, to do it, to ______ Yahweh your God, to walk in all his ways, and to cleave to …” (11:22, WEB)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… swore to your fathers to give to them and to their seed, a land flowing with milk and honey.” The missing terms belong in that order.",
+    "options" : [
+      "seed land"
+    ],
+    "prompt" : "Supply the missing words in order: “… swore to your fathers to give to them and to their ____, a flowing with milk and honey.” (11:9, WEB)",
+    "reference" : "Deuteronomy 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and the blood of your sacrifices shall be poured out on the altar of Yahweh your God; and you shall eat the flesh.”; the second reads “Observe and hear all these words which I command you, that it may go well with you, and with your children after you forever, when you …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "altar command"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and the blood of your sacrifices shall be poured out on the ____ of Yahweh your God; and you shall eat the flesh.” (12:27); “Observe and hear all these words which I you, that it may go well with you, and with your children after you forever, when you …” (12:28, WEB)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 12:2 records: “You shall surely destroy all the places in which the nations that you shall dispossess served their gods, on the high mountains, and on the hills, and under every green tree:”",
+    "options" : [
+      "hills"
+    ],
+    "prompt" : "In this paraphrase, god told Israel to destroy the places of worship on the high ____. (12:2)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies inheritance: “… Levite who is within your gates, because he has no portion nor inheritance with you.”",
+    "options" : [
+      "strength",
+      "inheritance",
+      "blessing",
+      "thanksgiving"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Levite who is within your gates, because he has no portion nor ______ with you.”? (12:12, WEB)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… altars, and dash in pieces their pillars, and burn their Asherim with fire; and you shall cut down the engraved images of their gods; and you …”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “… altars, and dash in pieces their pillars, and burn their Asherim with ____; and you shall cut down the engraved images of their gods; and you …” (12:3, WEB)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… go over the Jordan, and dwell in the land which Yahweh your God causes you to inherit, and he gives you rest from all your enemies …” The missing terms belong in that order.",
+    "options" : [
+      "Jordan rest"
+    ],
+    "prompt" : "Supply the missing words in order: “… go over the ____, and dwell in the land which Yahweh your God causes you to inherit, and he gives you from all your enemies …” (12:10, WEB)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 12:6 uses offerings: “… tithes, and the heave-offering of your hand, and your vows, and your freewill-offerings, and the firstborn of your herd and of your flock:”",
+    "options" : [
+      "offerings",
+      "prayer",
+      "curse",
+      "offering"
+    ],
+    "prompt" : "Which word completes “… tithes, and the heave-offering of your hand, and your vows, and your freewill-______, and the firstborn of your herd and of your flock:”? (12:6, WEB)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the unclean and the clean may eat of it, as of the gazelle, and as of the hart.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the unclean and the clean may eat of it, as of the gazelle, and as of the hart.” (12:15, WEB)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… God shall choose, you, and your son, and your daughter, and your man-servant, and your maid-servant, and the Levite who is within your gates: and you …”; verse 22 reads “Even as the gazelle and as the hart is eaten, so you shall eat of it: the unclean and the clean may eat of it alike.”. These establish the first and second answers respectively.",
+    "options" : [
+      "servant; mountains",
+      "servant; eaten",
+      "mother; eaten",
+      "eaten; servant"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… God shall choose, you, and your son, and your daughter, and your man-______, and your maid-servant, and the Levite who is within your gates: and you …” (12:18); “Even as the gazelle and as the hart is ______, so you shall eat of it: the unclean and the clean may eat of it alike.” (12:22, WEB)",
+    "reference" : "Deuteronomy 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… base fellows are gone out from the midst of you, and have drawn away the inhabitants of their city, saying, Let us go and serve other …”; verse 14 reads “… inquire, and make search, and ask diligently; and, behold, if it be truth, and the thing certain, that such abomination is done in the midst of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "drawn; righteousness",
+      "diligently; truth",
+      "drawn; truth",
+      "truth; drawn"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… base fellows are gone out from the midst of you, and have ______ away the inhabitants of their city, saying, Let us go and serve other …” (13:13); “… inquire, and make search, and ask diligently; and, behold, if it be ______, and the thing certain, that such abomination is done in the midst of …” (13:14, WEB)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 13:5 records: “… rebellion against Yahweh your God, who brought you out of the land of Egypt, and redeemed you out of the house of bondage, to draw you aside out of the way which Yahweh your God commanded …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A prophet who led people to other gods was to be put to death. (13:5)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of dreams: for Yahweh your God proves you, to know whether you love Yahweh your God with all your heart and with all your soul.”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “… of dreams: for Yahweh your God proves you, to know whether you ____ Yahweh your God with all your heart and with all your soul.” (13:3, WEB)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “You shall stone him to death with stones, because he has sought to draw you away from Yahweh your God, who brought you out of the …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “You shall stone him to death with stones, because he has sought to draw you away from Yahweh your God, who brought you out of the …” (13:10, WEB)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 13:4 uses commandments: “… shall walk after Yahweh your God, and fear him, and keep his commandments, and obey his voice, and you shall serve him, and cleave to him.”",
+    "options" : [
+      "judgment",
+      "statutes",
+      "word",
+      "commandments"
+    ],
+    "prompt" : "Which word completes “… shall walk after Yahweh your God, and fear him, and keep his ______, and obey his voice, and you shall serve him, and cleave to him.”? (13:4, WEB)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… inhabitants of that city with the edge of the sword, destroying it utterly, and all that is therein and the cattle of it, with the edge …”; the second reads “… into the midst of the street of it, and shall burn with fire the city, and all the spoil of it every whit, to Yahweh your …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "utterly fire"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… inhabitants of that city with the edge of the sword, destroying it ____, and all that is therein and the cattle of it, with the edge …” (13:15); “… into the midst of the street of it, and shall burn with the city, and all the spoil of it every whit, to Yahweh your …” (13:16, WEB)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… your friend, who is as your own soul, entice you secretly, saying, Let us go and serve other gods, which you have not known, you, nor …” The missing terms belong in that order.",
+    "options" : [
+      "entice serve"
+    ],
+    "prompt" : "Supply the missing words in order: “… your friend, who is as your own soul, ____ you secretly, saying, Let us go and other gods, which you have not known, you, nor …” (13:6, WEB)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies consent: “you shall not consent to him, nor listen to him; neither shall your eye pity him, neither shall you spare, neither shall you conceal him:”",
+    "options" : [
+      "devoted",
+      "know",
+      "consent",
+      "listen"
+    ],
+    "prompt" : "Which detail belongs in this passage: “you shall not ______ to him, nor listen to him; neither shall your eye pity him, neither shall you spare, neither shall you conceal him:”? (13:8, WEB)",
+    "reference" : "Deuteronomy 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies eagle: “But these are they of which you shall not eat: the eagle, and the gier-eagle, and the ospray,”",
+    "options" : [
+      "eagle",
+      "serpents",
+      "sheep",
+      "cows"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But these are they of which you shall not eat: the ______, and the gier-eagle, and the ospray,”? (14:12, WEB)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… but doesn't chew the cud, is unclean to you: of their flesh you shall not eat, and their carcasses you shall not touch.” The missing terms belong in that order.",
+    "options" : [
+      "unclean carcasses"
+    ],
+    "prompt" : "Supply the missing words in order: “… but doesn't chew the cud, is ____ to you: of their flesh you shall not eat, and their you shall not touch.” (14:8, WEB)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of Yahweh your God: you shall not cut yourselves, nor make any baldness between your eyes for the dead.”",
+    "options" : [
+      "baldness"
+    ],
+    "prompt" : "Complete the quotation: “… of Yahweh your God: you shall not cut yourselves, nor make any ____ between your eyes for the dead.” (14:1, WEB)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 14:5 uses hart: “the hart, and the gazelle, and the roebuck, and the wild goat, and the ibex, and the antelope, and the chamois.”",
+    "options" : [
+      "dies",
+      "flock",
+      "hart",
+      "carry"
+    ],
+    "prompt" : "Which word completes “the ______, and the gazelle, and the roebuck, and the wild goat, and the ibex, and the antelope, and the chamois.”? (14:5, WEB)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “and the stork, and the heron after its kind, and the hoopoe, and the bat.”; verse 21 reads “… or you may sell it to a foreigner: for you are a holy people to Yahweh your God. You shall not boil a kid in its …”. These establish the first and second answers respectively.",
+    "options" : [
+      "stork; holy",
+      "bestow; holy",
+      "stork; humble",
+      "holy; stork"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and the ______, and the heron after its kind, and the hoopoe, and the bat.” (14:18); “… or you may sell it to a foreigner: for you are a ______ people to Yahweh your God. You shall not boil a kid in its …” (14:21, WEB)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 14:2 records: “For you are a holy people to Yahweh your God, and Yahweh has chosen you to be a people for his own possession, above all peoples who are on the face of the earth.”",
+    "options" : [
+      "special"
+    ],
+    "prompt" : "In this paraphrase, israel was a people set apart as the LORD's ____ treasure. (14:2)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the tithe of your grain, of your new wine, and of your oil, and the firstborn of your herd and of your flock; that you may …”; the second reads “… for whatever your soul desires, for oxen, or for sheep, or for wine, or for strong drink, or for whatever your soul asks of you; and …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "oil wine"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the tithe of your grain, of your new wine, and of your ____, and the firstborn of your herd and of your flock; that you may …” (14:23); “… for whatever your soul desires, for oxen, or for sheep, or for , or for strong drink, or for whatever your soul asks of you; and …” (14:26, WEB)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “and the ostrich, and the night-hawk, and the sea-mew, and the hawk after its kind,” It says sea, not heaven.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “and the ostrich, and the night-hawk, and the heaven-mew, and the hawk after its kind,” (14:15, WEB)",
+    "reference" : "Deuteronomy 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 15:1 records: “At the end of every seven years you shall make a release.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The sabbatical year was to release debts every seventh year. (15:1-2)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies seventh: “… that there not be a base thought in your heart, saying, The seventh year, the year of release, is at hand; and your eye be evil …”",
+    "options" : [
+      "forty",
+      "fifth",
+      "seventh",
+      "twelfth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… that there not be a base thought in your heart, saying, The ______ year, the year of release, is at hand; and your eye be evil …”? (15:9, WEB)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “you shall furnish him liberally out of your flock, and out of your threshing floor, and out of your winepress; as Yahweh your God has blessed …”; verse 17 reads “… it through his ear to the door, and he shall be your servant forever. Also to your maid-servant you shall do likewise.”. These establish the first and second answers respectively.",
+    "options" : [
+      "pour; servant",
+      "liberally; servants",
+      "servant; liberally",
+      "liberally; servant"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “you shall furnish him ______ out of your flock, and out of your threshing floor, and out of your winepress; as Yahweh your God has blessed …” (15:14); “… it through his ear to the door, and he shall be your ______ forever. Also to your maid-servant you shall do likewise.” (15:17, WEB)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Of a foreigner you may exact it: but whatever of your is with your brother your hand shall release.”",
+    "options" : [
+      "whatever"
+    ],
+    "prompt" : "Complete the quotation: “Of a foreigner you may exact it: but ____ of your is with your brother your hand shall release.” (15:3, WEB)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the double of the hire of a hireling has he served you six years: and Yahweh your God will bless you in all that you do.”; the second reads “… it be lame or blind, any ill blemish whatever, you shall not sacrifice it to Yahweh your God.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "six sacrifice"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the double of the hire of a hireling has he served you ____ years: and Yahweh your God will bless you in all that you do.” (15:18); “… it be lame or blind, any ill blemish whatever, you shall not it to Yahweh your God.” (15:21, WEB)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 15:4 uses poor: “However there shall be no poor with you; (for Yahweh will surely bless you in the land which Yahweh your God gives you for an inheritance …”",
+    "options" : [
+      "guilty",
+      "poor",
+      "unclean",
+      "faithful"
+    ],
+    "prompt" : "Which word completes “However there shall be no ______ with you; (for Yahweh will surely bless you in the land which Yahweh your God gives you for an inheritance …”? (15:4, WEB)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… any of your gates in your land which Yahweh your God gives you, you shall not harden your heart, nor shut your hand from your poor …” The missing terms belong in that order.",
+    "options" : [
+      "land heart"
+    ],
+    "prompt" : "Supply the missing words in order: “… any of your gates in your ____ which Yahweh your God gives you, you shall not harden your , nor shut your hand from your poor …” (15:7, WEB)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… saying, You shall surely open your hand to your brother, to your needy, and to your poor, in your land.” It says needy, not hard.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… saying, You shall surely open your hand to your brother, to your hard, and to your poor, in your land.” (15:11, WEB)",
+    "reference" : "Deuteronomy 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… according to your tribes; and they shall judge the people with righteous judgment.”; the second reads “You shall not wrest justice: you shall not respect persons; neither shall you take a bribe; for a bribe does blind the eyes of the wise, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "judgment justice"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… according to your tribes; and they shall judge the people with righteous ____.” (16:18); “You shall not wrest : you shall not respect persons; neither shall you take a bribe; for a bribe does blind the eyes of the wise, …” (16:19, WEB)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the place which Yahweh your God shall choose, to cause his name to dwell in, there you shall sacrifice the Passover at even, at the going …” The missing terms belong in that order.",
+    "options" : [
+      "choose sacrifice"
+    ],
+    "prompt" : "Supply the missing words in order: “… the place which Yahweh your God shall ____, to cause his name to dwell in, there you shall the Passover at even, at the going …” (16:6, WEB)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bread: “Six days you shall eat unleavened bread; and on the seventh day shall be a solemn assembly to Yahweh your God; you shall do no work …”",
+    "options" : [
+      "bread",
+      "olives",
+      "corn",
+      "figs"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Six days you shall eat unleavened ______; and on the seventh day shall be a solemn assembly to Yahweh your God; you shall do no work …”? (16:8, WEB)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “You shall sacrifice the Passover to Yahweh your God, of the flock and the herd, in the place which Yahweh shall choose, to cause his name …”",
+    "options" : [
+      "sacrifice"
+    ],
+    "prompt" : "Complete the quotation: “You shall ____ the Passover to Yahweh your God, of the flock and the herd, in the place which Yahweh shall choose, to cause his name …” (16:2, WEB)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… is within your gates, and the foreigner, and the fatherless, and the widow, who are in the midst of you, in the place which Yahweh your …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… is within your gates, and the foreigner, and the fatherless, and the widow, who are in the midst of you, in the place which Yahweh your …” (16:11, WEB)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “You shall keep the feast of tents seven days, after that you have gathered in from your threshing floor and from your winepress:”; verse 15 reads “… and in all the work of your hands, and you shall be altogether joyful.”. These establish the first and second answers respectively.",
+    "options" : [
+      "altogether; seven",
+      "seven; remember",
+      "fifth; altogether",
+      "seven; altogether"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “You shall keep the feast of tents ______ days, after that you have gathered in from your threshing floor and from your winepress:” (16:13); “… and in all the work of your hands, and you shall be ______ joyful.” (16:15, WEB)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 16:9 records: “Seven weeks shall you number to you: from the time you begin to put the sickle to the standing grain shall you begin to number seven weeks.”",
+    "options" : [
+      "Weeks"
+    ],
+    "prompt" : "In this paraphrase, israel was to celebrate the Feast of ____ seven weeks after the harvest began. (16:9)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 16:4 uses first: “… seven days; neither shall any of the flesh, which you sacrifice the first day at even, remain all night until the morning.”",
+    "options" : [
+      "ten",
+      "hundred",
+      "first",
+      "ninety"
+    ],
+    "prompt" : "Which word completes “… seven days; neither shall any of the flesh, which you sacrifice the ______ day at even, remain all night until the morning.”? (16:4, WEB)",
+    "reference" : "Deuteronomy 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “according to the tenor of the law which they shall teach you, and according to the judgment which they shall tell you, you shall do; you …” It says law, not testimony.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “according to the tenor of the testimony which they shall teach you, and according to the judgment which they shall tell you, you shall do; you …” (17:11, WEB)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Restrictions on horses, wives and wealth accompany daily attention to the law. The course uses this passage as a standard for assessing Israel's kings.",
+    "options" : [
+      "He may replace God's law with his preferences.",
+      "The law applies to everyone except the king.",
+      "He must read the law and avoid exalting himself above his fellow Israelites.",
+      "Royal wealth proves that every decision is right."
+    ],
+    "prompt" : "How is Israel's king placed under the same covenant standards as the people? (17:14-20)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and has gone and served other gods, and worshiped them, or the sun, or the moon, or any of the host of the sky, which I …”",
+    "options" : [
+      "worshiped"
+    ],
+    "prompt" : "Complete the quotation: “and has gone and served other gods, and ____ them, or the sun, or the moon, or any of the host of the sky, which I …” (17:3, WEB)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “… arise a matter too hard for you in judgment, between blood and blood, between plea and plea, and between stroke and stroke, being matters of controversy …”",
+    "options" : [
+      "tooth",
+      "blood",
+      "arm",
+      "mouth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… arise a matter too hard for you in judgment, between blood and ______, between plea and plea, and between stroke and stroke, being matters of controversy …”? (17:8, WEB)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… his heart not turn away: neither shall he greatly multiply to himself silver and gold.”; the second reads “… this law in a book, out of that which is before the priests the Levites:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "silver priests"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… his heart not turn away: neither shall he greatly multiply to himself ____ and gold.” (17:17); “… this law in a book, out of that which is before the the Levites:” (17:18, WEB)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 17:4 uses abomination: “… and, behold, if it be true, and the thing certain, that such abomination is done in Israel,”",
+    "options" : [
+      "mercy",
+      "promise",
+      "abomination",
+      "silver"
+    ],
+    "prompt" : "Which word completes “… and, behold, if it be true, and the thing certain, that such ______ is done in Israel,”? (17:4, WEB)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 17:16 records: “… he shall not multiply horses to himself, nor cause the people to return to Egypt, to the end that he may multiply horses; because Yahweh has said to you, You shall henceforth return no more that …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A king of Israel was not to multiply horses for himself. (17:16)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… three witnesses, shall he who is to die be put to death; at the mouth of one witness he shall not be put to death.” The missing terms belong in that order.",
+    "options" : [
+      "three death"
+    ],
+    "prompt" : "Supply the missing words in order: “… ____ witnesses, shall he who is to die be put to death; at the mouth of one witness he shall not be put to .” (17:6, WEB)",
+    "reference" : "Deuteronomy 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “For these nations, that you shall dispossess, listen to those who practice sorcery, and to diviners; but as for you, Yahweh your God has not allowed …”; verse 16 reads “… desired of Yahweh your God in Horeb in the day of the assembly, saying, Let me not hear again the voice of Yahweh my God, neither …”. These establish the first and second answers respectively.",
+    "options" : [
+      "nations; minister",
+      "assembly; nations",
+      "makes; assembly",
+      "nations; assembly"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For these ______, that you shall dispossess, listen to those who practice sorcery, and to diviners; but as for you, Yahweh your God has not allowed …” (18:14); “… desired of Yahweh your God in Horeb in the day of the ______, saying, Let me not hear again the voice of Yahweh my God, neither …” (18:16, WEB)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 18:15 records: “Yahweh your God will raise up to you a prophet from the midst of you, of your brothers, like me; to him you shall listen;”",
+    "options" : [
+      "brothers"
+    ],
+    "prompt" : "In this paraphrase, god would raise up a prophet like Moses from among their ____. (18:15)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 18:4 uses grain: “The first fruits of your grain, of your new wine, and of your oil, and the first of the fleece of your sheep, shall you give …”",
+    "options" : [
+      "grain",
+      "flour",
+      "water",
+      "meat"
+    ],
+    "prompt" : "Which word completes “The first fruits of your ______, of your new wine, and of your oil, and the first of the fleece of your sheep, shall you give …”? (18:4, WEB)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “or a charmer, or a consulter with a familiar spirit, or a wizard, or a necromancer.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “or a charmer, or a consulter with a familiar spirit, or a wizard, or a necromancer.” (18:11, WEB)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… shall have no portion nor inheritance with Israel: they shall eat the offerings of Yahweh made by fire, and his inheritance.”",
+    "options" : [
+      "offerings"
+    ],
+    "prompt" : "Complete the quotation: “… shall have no portion nor inheritance with Israel: they shall eat the ____ of Yahweh made by fire, and his inheritance.” (18:1, WEB)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… anyone who makes his son or his daughter to pass through the fire, one who uses divination, one who practices sorcery, or an enchanter, or a …”",
+    "options" : [
+      "fire",
+      "pass",
+      "know",
+      "prophet"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… anyone who makes his son or his daughter to pass through the ______, one who uses divination, one who practices sorcery, or an enchanter, or a …”? (18:10, WEB)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “I will raise them up a prophet from among their brothers, like you; and I will put my words in his mouth, and he shall speak …”; the second reads “But the prophet, who shall speak a word presumptuously in my name, which I have not commanded him to speak, or who shall speak in the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "brothers presumptuously"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “I will raise them up a prophet from among their ____, like you; and I will put my words in his mouth, and he shall speak …” (18:18); “But the prophet, who shall speak a word in my name, which I have not commanded him to speak, or who shall speak in the …” (18:20, WEB)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “If a Levite comes from any of your gates out of all Israel, where he lives as a foreigner, and comes with all the desire of …” The missing terms belong in that order.",
+    "options" : [
+      "gates Israel"
+    ],
+    "prompt" : "Supply the missing words in order: “If a Levite comes from any of your ____ out of all , where he lives as a foreigner, and comes with all the desire of …” (18:6, WEB)",
+    "reference" : "Deuteronomy 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… is the case of the manslayer, that shall flee there and live: whoever kills his neighbor unawares, and didn't hate him in time past;”",
+    "options" : [
+      "whoever"
+    ],
+    "prompt" : "Complete the quotation: “… is the case of the manslayer, that shall flee there and live: ____ kills his neighbor unawares, and didn't hate him in time past;” (19:4, WEB)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 19:1 records: “When Yahweh your God shall cut off the nations, whose land Yahweh your God gives you, and you succeed them, and dwell in their cities, and in their houses;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Cities of refuge were set up in the land. (19:1-3)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… the elders of his city shall send and bring him there, and deliver him into the hand of the avenger of blood, that he may die.”; verse 15 reads “One witness shall not rise up against a man for any iniquity, or for any sin, in any sin that he sins: at the mouth of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "deliver; iniquity",
+      "iniquity; deliver",
+      "deliver; idolatry",
+      "love; iniquity"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the elders of his city shall send and bring him there, and ______ him into the hand of the avenger of blood, that he may die.” (19:12); “One witness shall not rise up against a man for any ______, or for any sin, in any sin that he sins: at the mouth of …” (19:15, WEB)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 19:5 uses handle: “… axe to cut down the tree, and the head slips from the handle, and lights on his neighbor, so that he dies; he shall flee to …”",
+    "options" : [
+      "head",
+      "land",
+      "handle",
+      "strike"
+    ],
+    "prompt" : "Which word completes “… axe to cut down the tree, and the head slips from the ______, and lights on his neighbor, so that he dies; he shall flee to …”? (19:5, WEB)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “lest the avenger of blood pursue the manslayer, while his heart is hot, and overtake him, because the way is long, and strike him mortally; whereas …” The missing terms belong in that order.",
+    "options" : [
+      "blood heart"
+    ],
+    "prompt" : "Supply the missing words in order: “lest the avenger of ____ pursue the manslayer, while his is hot, and overtake him, because the way is long, and strike him mortally; whereas …” (19:6, WEB)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “… this commandment to do it, which I command you this day, to love Yahweh your God, and to walk ever in his ways; then shall you …”",
+    "options" : [
+      "justice",
+      "truth",
+      "grief",
+      "love"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… this commandment to do it, which I command you this day, to ______ Yahweh your God, and to walk ever in his ways; then shall you …”? (19:9, WEB)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… any man hate his neighbor, and lie in wait for him, and rise up against him, and strike him mortally so that he dies, and he …” It says rise, not testified.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… any man hate his neighbor, and lie in wait for him, and testified up against him, and strike him mortally so that he dies, and he …” (19:11, WEB)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… men, between whom the controversy is, shall stand before Yahweh, before the priests and the judges who shall be in those days;”; the second reads “and the judges shall make diligent inquisition: and, behold, if the witness is a false witness, and has testified falsely against his brother;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "priests inquisition"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… men, between whom the controversy is, shall stand before Yahweh, before the ____ and the judges who shall be in those days;” (19:17); “and the judges shall make diligent : and, behold, if the witness is a false witness, and has testified falsely against his brother;” (19:18, WEB)",
+    "reference" : "Deuteronomy 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… you draw near to a city to fight against it, then proclaim peace to it.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… you draw near to a city to fight against it, then proclaim peace to it.” (20:10, WEB)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “It shall be, if it make you answer of peace, and open to you, then it shall be, that all the people who are found therein …”; verse 14 reads “… the cattle, and all that is in the city, even all the spoil of it, shall you take for a prey to yourself; and you shall …”. These establish the first and second answers respectively.",
+    "options" : [
+      "answer; spoil",
+      "faint; spoil",
+      "spoil; answer",
+      "answer; captains"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It shall be, if it make you ______ of peace, and open to you, then it shall be, that all the people who are found therein …” (20:11); “… the cattle, and all that is in the city, even all the ______ of it, shall you take for a prey to yourself; and you shall …” (20:14, WEB)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 20:5 uses die: “… dedicated it? let him go and return to his house, lest he die in the battle, and another man dedicate it.”",
+    "options" : [
+      "fear",
+      "forgive",
+      "die",
+      "hate"
+    ],
+    "prompt" : "Which word completes “… dedicated it? let him go and return to his house, lest he ______ in the battle, and another man dedicate it.”? (20:5, WEB)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 20:3 records: “and shall tell them, Hear, Israel, you draw near this day to battle against your enemies: don't let your heart faint; don't be afraid, nor tremble, neither be scared of them;”",
+    "options" : [
+      "afraid"
+    ],
+    "prompt" : "In this paraphrase, when going to war, the priest was to tell them not to be ____. (20:3)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies heart: “… and return to his house, lest his brother's heart melt as his heart.”",
+    "options" : [
+      "neck",
+      "heart",
+      "hair",
+      "eye"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and return to his house, lest his brother's heart melt as his ______.”? (20:8, WEB)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “What man is there who has planted a vineyard, and has not used the fruit of it? let him go and return to his house, lest …” The missing terms belong in that order.",
+    "options" : [
+      "planted vineyard"
+    ],
+    "prompt" : "Supply the missing words in order: “What man is there who has ____ a , and has not used the fruit of it? let him go and return to his house, lest …” (20:6, WEB)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “It shall be, when you draw near to the battle, that the priest shall approach and speak to the people,”",
+    "options" : [
+      "priest"
+    ],
+    "prompt" : "Complete the quotation: “It shall be, when you draw near to the battle, that the ____ shall approach and speak to the people,” (20:2, WEB)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… cities of these peoples, that Yahweh your God gives you for an inheritance, you shall save alive nothing that breathes;”; the second reads “… to take it, you shall not destroy the trees of it by wielding an axe against them; for you may eat of them, and you shall …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "inheritance wielding"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… cities of these peoples, that Yahweh your God gives you for an ____, you shall save alive nothing that breathes;” (20:16); “… to take it, you shall not destroy the trees of it by an axe against them; for you may eat of them, and you shall …” (20:19, WEB)",
+    "reference" : "Deuteronomy 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 21:6 uses slain: “All the elders of that city, who are nearest to the slain man, shall wash their hands over the heifer whose neck was broken in the …”",
+    "options" : [
+      "Levi",
+      "slain",
+      "Forgive",
+      "firstborn"
+    ],
+    "prompt" : "Which word completes “All the elders of that city, who are nearest to the ______ man, shall wash their hands over the heifer whose neck was broken in the …”? (21:6, WEB)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “If a man have two wives, the one beloved, and the other hated, and they have borne him children, both the beloved and the hated; and …”; verse 16 reads “… it shall be, in the day that he causes his sons to inherit that which he has, that he may not make the son of the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "two; inherit",
+      "six; inherit",
+      "inherit; two",
+      "two; heifer's"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “If a man have ______ wives, the one beloved, and the other hated, and they have borne him children, both the beloved and the hated; and …” (21:15); “… it shall be, in the day that he causes his sons to ______ that which he has, that he may not make the son of the …” (21:16, WEB)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The priests the sons of Levi shall come near; for them Yahweh your God has chosen to minister to him, and to bless in the name …”",
+    "options" : [
+      "Levi"
+    ],
+    "prompt" : "Complete the quotation: “The priests the sons of ____ shall come near; for them Yahweh your God has chosen to minister to him, and to bless in the name …” (21:5, WEB)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 21:1 records: “If one be found slain in the land which Yahweh your God gives you to possess it, lying in the field, and it isn't known who has struck him;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A heifer was to be killed to atone for an unsolved murder. (21:1-4)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “… don't allow innocent blood to remain in the midst of your people Israel. The blood shall be forgiven them.”",
+    "options" : [
+      "Enoch",
+      "Zebulun",
+      "Rachel",
+      "Israel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… don't allow innocent blood to remain in the midst of your people ______. The blood shall be forgiven them.”? (21:8, WEB)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “If a man have a stubborn and rebellious son, who will not obey the voice of his father, or the voice of his mother, and, though …”; the second reads “All the men of his city shall stone him to death with stones: so shall you put away the evil from the midst of you; and …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rebellious death"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “If a man have a stubborn and ____ son, who will not obey the voice of his father, or the voice of his mother, and, though …” (21:18); “All the men of his city shall stone him to with stones: so shall you put away the evil from the midst of you; and …” (21:21, WEB)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… in to her, and be her husband, and she shall be your wife.” It says wife, not priest.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… in to her, and be her husband, and she shall be your priest.” (21:13, WEB)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “and they shall answer and say, Our hands have not shed this blood, neither have our eyes seen it.” The missing terms belong in that order.",
+    "options" : [
+      "shed blood"
+    ],
+    "prompt" : "Supply the missing words in order: “and they shall answer and say, Our hands have not ____ this , neither have our eyes seen it.” (21:7, WEB)",
+    "reference" : "Deuteronomy 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “If your brother isn't near to you, or if you don't know him, then you shall bring it home to your house, and it shall be …”",
+    "options" : [
+      "brother"
+    ],
+    "prompt" : "Complete the quotation: “If your ____ isn't near to you, or if you don't know him, then you shall bring it home to your house, and it shall be …” (22:2, WEB)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 22:1 records: “You shall not see your brother's ox or his sheep go astray, and hide yourself from them: you shall surely bring them again to your brother.”",
+    "options" : [
+      "animal"
+    ],
+    "prompt" : "In this paraphrase, a person was to return a lost ____ to its owner. (22:1)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 22:5 uses men's: “A woman shall not wear men's clothing, neither shall a man put on women's clothing; for whoever does these things is an abomination to Yahweh your …”",
+    "options" : [
+      "eggs",
+      "men's",
+      "lady's",
+      "kills"
+    ],
+    "prompt" : "Which word completes “A woman shall not wear ______ clothing, neither shall a man put on women's clothing; for whoever does these things is an abomination to Yahweh your …”? (22:5, WEB)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… things to her charge, saying, I didn't find in your daughter the tokens of virginity; and yet these are the tokens of my daughter's virginity. They …”; verse 21 reads “… father's house, and the men of her city shall stone her to death with stones, because she has done folly in Israel, to play the prostitute …”. These establish the first and second answers respectively.",
+    "options" : [
+      "death; tokens",
+      "tokens; death",
+      "brother's; death",
+      "tokens; worship"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… things to her charge, saying, I didn't find in your daughter the ______ of virginity; and yet these are the tokens of my daughter's virginity. They …” (22:17); “… father's house, and the men of her city shall stone her to ______ with stones, because she has done folly in Israel, to play the prostitute …” (22:21, WEB)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “then shall the father of the young lady, and her mother, take and bring forth the tokens of the young lady's virginity to the elders of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “then shall the father of the young lady, and her mother, take and bring forth the tokens of the young lady's virginity to the elders of …” (22:15, WEB)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies four: “You shall make you fringes on the four borders of your cloak, with which you cover yourself.”",
+    "options" : [
+      "fourth",
+      "fourteen",
+      "fifth",
+      "four"
+    ],
+    "prompt" : "Which detail belongs in this passage: “You shall make you fringes on the ______ borders of your cloak, with which you cover yourself.”? (22:12, WEB)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… your vineyard with two kinds of seed, lest the whole fruit be forfeited, the seed which you have sown, and the increase of the vineyard.” The missing terms belong in that order.",
+    "options" : [
+      "two increase"
+    ],
+    "prompt" : "Supply the missing words in order: “… your vineyard with ____ kinds of seed, lest the whole fruit be forfeited, the seed which you have sown, and the of the vineyard.” (22:9, WEB)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… being in the city; and the man, because he has humbled his neighbor's wife: so you shall put away the evil from the midst of you.”; the second reads “… the lady you shall do nothing; there is in the lady no sin worthy of death: for as when a man rises against his neighbor, and …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "neighbor's sin"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… being in the city; and the man, because he has humbled his ____ wife: so you shall put away the evil from the midst of you.” (22:24); “… the lady you shall do nothing; there is in the lady no worthy of death: for as when a man rises against his neighbor, and …” (22:26, WEB)",
+    "reference" : "Deuteronomy 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies camp: “… go abroad out of the camp, he shall not come within the camp:”",
+    "options" : [
+      "choose",
+      "camp",
+      "place",
+      "peace"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… go abroad out of the camp, he shall not come within the ______:”? (23:10, WEB)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “You shall not abhor an Edomite; for he is your brother: you shall not abhor an Egyptian, because you lived as a foreigner in his land.” The missing terms belong in that order.",
+    "options" : [
+      "Edomite abhor"
+    ],
+    "prompt" : "Supply the missing words in order: “You shall not abhor an ____; for he is your brother: you shall not an Egyptian, because you lived as a foreigner in his land.” (23:7, WEB)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 23:3 records: “An Ammonite or a Moabite shall not enter into the assembly of Yahweh; even to the tenth generation shall none belonging to them enter into the assembly of Yahweh forever:”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "No Ammonite or Moabite could enter the assembly of the LORD. (23:3)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 23:4 uses bread: “because they didn't meet you with bread and with water in the way, when you came forth out of Egypt, and because they hired against you …”",
+    "options" : [
+      "bread",
+      "grapes",
+      "pomegranates",
+      "wheat"
+    ],
+    "prompt" : "Which word completes “because they didn't meet you with ______ and with water in the way, when you came forth out of Egypt, and because they hired against you …”? (23:4, WEB)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… you may lend on interest; but to your brother you shall not lend on interest, that Yahweh your God may bless you in all that you …”; the second reads “… and do; according as you have vowed to Yahweh your God, a freewill-offering, which you have promised with your mouth.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "lend offering"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… you may lend on interest; but to your brother you shall not ____ on interest, that Yahweh your God may bless you in all that you …” (23:20); “… and do; according as you have vowed to Yahweh your God, a freewill-, which you have promised with your mouth.” (23:23, WEB)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… weapons; and it shall be, when you sit down abroad, you shall dig therewith, and shall turn back and cover that which comes from you:” It says dig, not enemies.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… weapons; and it shall be, when you sit down abroad, you shall enemies therewith, and shall turn back and cover that which comes from you:” (23:13, WEB)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… to give up your enemies before you; therefore shall your camp be holy, that he may not see an unclean thing in you, and turn away …”; verse 17 reads “… of Israel, neither shall there be a sodomite of the sons of Israel.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Israel; holy",
+      "holy; Israel",
+      "holy; Balak",
+      "rich; Israel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… to give up your enemies before you; therefore shall your camp be ______, that he may not see an unclean thing in you, and turn away …” (23:14); “… of Israel, neither shall there be a sodomite of the sons of ______.” (23:17, WEB)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… bastard shall not enter into the assembly of Yahweh; even to the tenth generation shall none of his enter into the assembly of Yahweh.”",
+    "options" : [
+      "tenth"
+    ],
+    "prompt" : "Complete the quotation: “… bastard shall not enter into the assembly of Yahweh; even to the ____ generation shall none of his enter into the assembly of Yahweh.” (23:2, WEB)",
+    "reference" : "Deuteronomy 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies priests: “… leprosy, that you observe diligently, and do according to all that the priests the Levites shall teach you: as I commanded them, so you shall observe …”",
+    "options" : [
+      "shepherd",
+      "fathers",
+      "rulers",
+      "priests"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… leprosy, that you observe diligently, and do according to all that the ______ the Levites shall teach you: as I commanded them, so you shall observe …”? (24:8, WEB)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of his brothers of the children of Israel, and he deal with him as a slave, or sell him; then that thief shall die: so shall …” The missing terms belong in that order.",
+    "options" : [
+      "deal slave"
+    ],
+    "prompt" : "Supply the missing words in order: “… of his brothers of the children of Israel, and he ____ with him as a , or sell him; then that thief shall die: so shall …” (24:7, WEB)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 24:4 uses sin: “… is abomination before Yahweh: and you shall not cause the land to sin, which Yahweh your God gives you for an inheritance.”",
+    "options" : [
+      "disobedience",
+      "sin",
+      "rebellion",
+      "violence"
+    ],
+    "prompt" : "Which word completes “… is abomination before Yahweh: and you shall not cause the land to ______, which Yahweh your God gives you for an inheritance.”? (24:4, WEB)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The law regulates a case involving divorce and remarriage; it does not command divorce. Jesus later discusses Moses' provision in relation to human hardness of heart in Matthew 19:3-9.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The divorce certificate discussed here is a command that husbands must divorce their wives. (24:1-4)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “You shall not oppress a hired servant who is poor and needy, whether he be of your brothers, or of your foreigners who are in your …”; verse 16 reads “… put to death for the fathers: every man shall be put to death for his own sin.”. These establish the first and second answers respectively.",
+    "options" : [
+      "poor; power",
+      "poor; death",
+      "gracious; death",
+      "death; poor"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “You shall not oppress a hired servant who is ______ and needy, whether he be of your brothers, or of your foreigners who are in your …” (24:14); “… put to death for the fathers: every man shall be put to ______ for his own sin.” (24:16, WEB)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… or if the latter husband die, who took her to be his wife;”",
+    "options" : [
+      "wife"
+    ],
+    "prompt" : "Complete the quotation: “… or if the latter husband die, who took her to be his ____;” (24:3, WEB)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “You shall stand outside, and the man to whom you do lend shall bring forth the pledge outside to you.” It says stand, not inheritance.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “You shall inheritance outside, and the man to whom you do lend shall bring forth the pledge outside to you.” (24:11, WEB)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 24:5 records: “… man takes a new wife, he shall not go out in the host, neither shall he be charged with any business: he shall be free at home one year, and shall cheer his wife whom he …”",
+    "options" : [
+      "war"
+    ],
+    "prompt" : "In this paraphrase, a man who had recently married was exempt from ____ for one year. (24:5)",
+    "reference" : "Deuteronomy 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 25:3 uses Forty: “Forty stripes he may give him, he shall not exceed; lest, if he should exceed, and beat him above these with many stripes, then your brother …”",
+    "options" : [
+      "Forty",
+      "sixth",
+      "fifty",
+      "nineteen"
+    ],
+    "prompt" : "Which word completes “______ stripes he may give him, he shall not exceed; lest, if he should exceed, and beat him above these with many stripes, then your brother …”? (25:3, WEB)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 25:4 records: “You shall not muzzle the ox when he treads out the grain.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The ox treading grain was not to be muzzled. (25:4)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “… husband's brother refuses to raise up to his brother a name in Israel; he will not perform the duty of a husband's brother to me.”",
+    "options" : [
+      "Elisha",
+      "Nebuchadnezzar",
+      "Isaac",
+      "Israel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… husband's brother refuses to raise up to his brother a name in ______; he will not perform the duty of a husband's brother to me.”? (25:7, WEB)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “It shall be, that the firstborn whom she bears shall succeed in the name of his brother who is dead, that his name not be blotted …” The missing terms belong in that order.",
+    "options" : [
+      "bears succeed"
+    ],
+    "prompt" : "Supply the missing words in order: “It shall be, that the firstborn whom she ____ shall in the name of his brother who is dead, that his name not be blotted …” (25:6, WEB)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… wife shall come to him in the presence of the elders, and loose his shoe from off his foot, and spit in his face; and she …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… wife shall come to him in the presence of the elders, and loose his shoe from off his foot, and spit in his face; and she …” (25:9, WEB)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… feeble behind you, when you were faint and weary; and he didn't fear God.”; the second reads “… about, in the land which Yahweh your God gives you for an inheritance to possess it, that you shall blot out the memory of Amalek from …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fear inheritance"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… feeble behind you, when you were faint and weary; and he didn't ____ God.” (25:18); “… about, in the land which Yahweh your God gives you for an to possess it, that you shall blot out the memory of Amalek from …” (25:19, WEB)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… one with another, and the wife of the one draws near to deliver her husband out of the hand of him who strikes him, and puts …”; verse 15 reads “… measure shall you have: that your days may be long in the land which Yahweh your God gives you.”. These establish the first and second answers respectively.",
+    "options" : [
+      "stand; land",
+      "deliver; garden",
+      "land; deliver",
+      "deliver; land"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… one with another, and the wife of the one draws near to ______ her husband out of the hand of him who strikes him, and puts …” (25:11); “… measure shall you have: that your days may be long in the ______ which Yahweh your God gives you.” (25:15, WEB)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… be worthy to be beaten, that the judge shall cause him to lie down, and to be beaten before his face, according to his wickedness, by …”",
+    "options" : [
+      "lie"
+    ],
+    "prompt" : "Complete the quotation: “… be worthy to be beaten, that the judge shall cause him to ____ down, and to be beaten before his face, according to his wickedness, by …” (25:2, WEB)",
+    "reference" : "Deuteronomy 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 26:3 uses priest: “You shall come to the priest who shall be in those days, and tell him, I profess this day to Yahweh your God, that I am …”",
+    "options" : [
+      "princes",
+      "brother",
+      "prophets",
+      "priest"
+    ],
+    "prompt" : "Which word completes “You shall come to the ______ who shall be in those days, and tell him, I profess this day to Yahweh your God, that I am …”? (26:3, WEB)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Look down from your holy habitation, from heaven, and bless your people Israel, and the ground which you have given us, as you swore to our …”; the second reads “… you would walk in his ways, and keep his statutes, and his commandments, and his ordinances, and listen to his voice:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "holy commandments"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Look down from your ____ habitation, from heaven, and bless your people Israel, and the ground which you have given us, as you swore to our …” (26:15); “… you would walk in his ways, and keep his statutes, and his , and his ordinances, and listen to his voice:” (26:17, WEB)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… you shall give it to the Levite, to the foreigner, to the fatherless, and to the widow, that they may eat within your gates, and be …”; verse 13 reads “… the Levite, and to the foreigner, to the fatherless, and to the widow, according to all your commandment which you have commanded me: I have not …”. These establish the first and second answers respectively.",
+    "options" : [
+      "wonders; widow",
+      "fatherless; widow",
+      "widow; fatherless",
+      "fatherless; mourning"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… you shall give it to the Levite, to the foreigner, to the ______, and to the widow, that they may eat within your gates, and be …” (26:12); “… the Levite, and to the foreigner, to the fatherless, and to the ______, according to all your commandment which you have commanded me: I have not …” (26:13, WEB)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The Egyptians dealt ill with us, and afflicted us, and laid on us hard bondage:” The missing terms belong in that order.",
+    "options" : [
+      "dealt afflicted"
+    ],
+    "prompt" : "Supply the missing words in order: “The Egyptians ____ ill with us, and us, and laid on us hard bondage:” (26:6, WEB)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 26:5 records: “… shall answer and say before Yahweh your God, A Syrian ready to perish was my father; and he went down into Egypt, and sojourned there, few in number; and he became there a nation, great, mighty, …”",
+    "options" : [
+      "Aramean"
+    ],
+    "prompt" : "In this paraphrase, at the offering of firstfruits, Israel was to recite that a wandering ____ was their father. (26:5)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… brought us into this place, and has given us this land, a land flowing with milk and honey.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… brought us into this place, and has given us this land, a land flowing with milk and honey.” (26:9, WEB)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “that you shall take of the first of all the fruit of the ground, which you shall bring in from your land that Yahweh your God …”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “that you shall take of the ____ of all the fruit of the ground, which you shall bring in from your land that Yahweh your God …” (26:2, WEB)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Egypt: “and Yahweh brought us forth out of Egypt with a mighty hand, and with an outstretched arm, and with great terror, and with signs, and with …”",
+    "options" : [
+      "Assyria",
+      "Samaria",
+      "Egypt",
+      "Persia"
+    ],
+    "prompt" : "Which detail belongs in this passage: “and Yahweh brought us forth out of ______ with a mighty hand, and with an outstretched arm, and with great terror, and with signs, and with …”? (26:8, WEB)",
+    "reference" : "Deuteronomy 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Mount Gerizim to bless the people, when you are passed over the Jordan: Simeon, and Levi, and Judah, and Issachar, and Joseph, and Benjamin.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Mount Gerizim to bless the people, when you are passed over the Jordan: Simeon, and Levi, and Judah, and Issachar, and Joseph, and Benjamin.” (27:12, WEB)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies commandments: “… shall therefore obey the voice of Yahweh your God, and do his commandments and his statutes, which I command you this day.”",
+    "options" : [
+      "judgment",
+      "law",
+      "counsel",
+      "commandments"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… shall therefore obey the voice of Yahweh your God, and do his ______ and his statutes, which I command you this day.”? (27:10, WEB)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Cursed be he who lies with his father's wife, because he has uncovered his father's skirt. All the people shall say, Amen.”; the second reads “Cursed be he who lies with his sister, the daughter of his father, or the daughter of his mother. All the people shall say, Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wife sister"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Cursed be he who lies with his father's ____, because he has uncovered his father's skirt. All the people shall say, Amen.” (27:20); “Cursed be he who lies with his , the daughter of his father, or the daughter of his mother. All the people shall say, Amen.” (27:22, WEB)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and you shall write on them all the words of this law, when you are passed over; that you may go in to the land which …”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “and you shall write on them all the words of this ____, when you are passed over; that you may go in to the land which …” (27:3, WEB)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 27:13 records: “These shall stand on Mount Ebal for the curse: Reuben, Gad, and Asher, and Zebulun, Dan, and Naphtali.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The curses were to be pronounced from Mount Ebal. (27:13)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 27:5 uses altar: “There shall you build an altar to Yahweh your God, an altar of stones: you shall lift up no iron tool on them.”",
+    "options" : [
+      "altar",
+      "city",
+      "temple",
+      "gate"
+    ],
+    "prompt" : "Which word completes “There shall you build an altar to Yahweh your God, an ______ of stones: you shall lift up no iron tool on them.”? (27:5, WEB)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… sets it up in secret. All the people shall answer and say, Amen.”; verse 19 reads “Cursed be he who wrests the justice due to the foreigner, fatherless, and widow. All the people shall say, Amen.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Amen; fatherless",
+      "fatherless; Amen",
+      "skirt; fatherless",
+      "Amen; father's"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… sets it up in secret. All the people shall answer and say, ______.” (27:15); “Cursed be he who wrests the justice due to the foreigner, ______, and widow. All the people shall say, Amen.” (27:19, WEB)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Moses and the priests the Levites spoke to all Israel, saying, Keep silence, and listen, Israel: this day you are become the people of Yahweh your …” The missing terms belong in that order.",
+    "options" : [
+      "priests Israel"
+    ],
+    "prompt" : "Supply the missing words in order: “Moses and the ____ the Levites spoke to all , saying, Keep silence, and listen, Israel: this day you are become the people of Yahweh your …” (27:9, WEB)",
+    "reference" : "Deuteronomy 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Their setting is a covenant with Israel. The book of Job and many psalms also resist the simplistic conclusion that every sufferer must be unusually wicked.",
+    "options" : [
+      "Every poor person is being individually cursed.",
+      "The chapter contains no warnings.",
+      "The passage guarantees riches to every reader.",
+      "They address Israel's covenant life in the land, including national exile."
+    ],
+    "prompt" : "Why should these blessings and curses not be treated as an automatic prediction of every individual's health or wealth? (28:1-2, 15, 36, 64)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… down, in which you trusted, throughout all your land; and they shall besiege you in all your gates throughout all your land, which Yahweh your God …”; the second reads “then Yahweh will make your plagues wonderful, and the plagues of your seed, even great plagues, and of long continuance, and sore sicknesses, and of long …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "besiege plagues"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… down, in which you trusted, throughout all your land; and they shall ____ you in all your gates throughout all your land, which Yahweh your God …” (28:52); “then Yahweh will make your wonderful, and the plagues of your seed, even great plagues, and of long continuance, and sore sicknesses, and of long …” (28:59, WEB)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 28:11 uses land: “… of your cattle, and in the fruit of your ground, in the land which Yahweh swore to your fathers to give you.”",
+    "options" : [
+      "valley",
+      "vineyards",
+      "land",
+      "countries"
+    ],
+    "prompt" : "Which word completes “… of your cattle, and in the fruit of your ground, in the ______ which Yahweh swore to your fathers to give you.”? (28:11, WEB)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… shall be given to your enemies, and you shall have none to save you.” It says save, not keep.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… shall be given to your enemies, and you shall have none to keep you.” (28:31, WEB)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 28:13 records: “… the head, and not the tail; and you shall be above only, and you shall not be beneath; if you shall listen to the commandments of Yahweh your God, which I command you this day, to …”",
+    "options" : [
+      "tail"
+    ],
+    "prompt" : "In this paraphrase, the blessings for obedience included being the head and not the ____. (28:13)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Cursed shall be the fruit of your body, and the fruit of your ground, the increase of your cattle, and the young of your flock.” The missing terms belong in that order.",
+    "options" : [
+      "body cattle"
+    ],
+    "prompt" : "Supply the missing words in order: “Cursed shall be the fruit of your ____, and the fruit of your ground, the increase of your , and the young of your flock.” (28:18, WEB)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies seven: “… enemies; you shall go out one way against them, and shall flee seven ways before them: and you shall be tossed back and forth among all …”",
+    "options" : [
+      "nineteen",
+      "ninety",
+      "third",
+      "seven"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… enemies; you shall go out one way against them, and shall flee ______ ways before them: and you shall be tossed back and forth among all …”? (28:25, WEB)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… shall be the fruit of your body, and the fruit of your ground, and the fruit of your animals, the increase of your cattle, and the …”",
+    "options" : [
+      "ground"
+    ],
+    "prompt" : "Complete the quotation: “… shall be the fruit of your body, and the fruit of your ____, and the fruit of your animals, the increase of your cattle, and the …” (28:4, WEB)",
+    "reference" : "Deuteronomy 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and that the whole land of it is sulfur, and salt, and a burning, that it is not sown, nor bears, nor any grass grows therein, …”; the second reads “and went and served other gods, and worshiped them, gods that they didn't know, and that he had not given to them:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "land served"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and that the whole ____ of it is sulfur, and salt, and a burning, that it is not sown, nor bears, nor any grass grows therein, …” (29:23); “and went and other gods, and worshiped them, gods that they didn't know, and that he had not given to them:” (29:26, WEB)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “and you have seen their abominations, and their idols, wood and stone, silver and gold, which were among them);”; verse 20 reads “… against that man, and all the curse that is written in this book shall lie on him, and Yahweh will blot out his name from under …”. These establish the first and second answers respectively.",
+    "options" : [
+      "silver; book",
+      "silver; tower",
+      "book; silver",
+      "iron; book"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and you have seen their abominations, and their idols, wood and stone, ______ and gold, which were among them);” (29:17); “… against that man, and all the curse that is written in this ______ shall lie on him, and Yahweh will blot out his name from under …” (29:20, WEB)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 29:5 uses forty: “I have led you forty years in the wilderness: your clothes have not grown old on you, and your shoe has not grown old on your …”",
+    "options" : [
+      "seven",
+      "eighteen",
+      "forty",
+      "twenty"
+    ],
+    "prompt" : "Which word completes “I have led you ______ years in the wilderness: your clothes have not grown old on you, and your shoe has not grown old on your …”? (29:5, WEB)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 29:2 records: “Moses called to all Israel, and said to them, You have seen all that Yahweh did before your eyes in the land of Egypt to Pharaoh, and to all his servants, and to all his land;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel was reminded of the signs they had seen in Egypt. (29:2-3)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “These are the words of the covenant which Yahweh commanded Moses to make with the children of Israel in the land of Moab, besides the covenant …”",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "Complete the quotation: “These are the words of the ____ which Yahweh commanded Moses to make with the children of Israel in the land of Moab, besides the covenant …” (29:1, WEB)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies water: “… the one who cuts your wood to the one who draws your water;”",
+    "options" : [
+      "barley",
+      "grain",
+      "milk",
+      "water"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the one who cuts your wood to the one who draws your ______;”? (29:11, WEB)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… to you, and as he swore to your fathers, to Abraham, to Isaac, and to Jacob.” It says Isaac, not Sarah.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… to you, and as he swore to your fathers, to Abraham, to Sarah, and to Jacob.” (29:13, WEB)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 29,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… their land, and gave it for an inheritance to the Reubenites, and to the Gadites, and to the half-tribe of the Manassites.” The missing terms belong in that order.",
+    "options" : [
+      "inheritance half"
+    ],
+    "prompt" : "Supply the missing words in order: “… their land, and gave it for an ____ to the Reubenites, and to the Gadites, and to the -tribe of the Manassites.” (29:8, WEB)",
+    "reference" : "Deuteronomy 29",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The chapter includes both divine action and meaningful human response. It should not be used to pretend that every later debate about grace and free will is settled by one isolated verse.",
+    "options" : [
+      "God's help is never mentioned.",
+      "Human response is never mentioned.",
+      "Choosing life means rejecting God's voice.",
+      "God promises to work in their hearts while calling them to love and obey Him."
+    ],
+    "prompt" : "What holds together God's promised renewal and Israel's call to choose life? (30:6, 11-20)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… your God will circumcise your heart, and the heart of your seed, to love Yahweh your God with all your heart, and with all your soul, …” The missing terms belong in that order.",
+    "options" : [
+      "seed love"
+    ],
+    "prompt" : "Supply the missing words in order: “… your God will circumcise your heart, and the heart of your ____, to Yahweh your God with all your heart, and with all your soul, …” (30:6, WEB)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies body: “… in all the work of your hand, in the fruit of your body, and in the fruit of your cattle, and in the fruit of your …”",
+    "options" : [
+      "hate",
+      "commandments",
+      "body",
+      "ordinances"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… in all the work of your hand, in the fruit of your ______, and in the fruit of your cattle, and in the fruit of your …”? (30:9, WEB)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the voice of Yahweh your God, to keep his commandments and his statutes which are written in this book of the law; if you turn to …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the voice of Yahweh your God, to keep his commandments and his statutes which are written in this book of the law; if you turn to …” (30:10, WEB)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… I command you this day, you and your children, with all your heart, and with all your soul;”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Complete the quotation: “… I command you this day, you and your children, with all your ____, and with all your soul;” (30:2, WEB)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… you will not hear, but shall be drawn away, and worship other gods, and serve them;”; the second reads “… not prolong your days in the land, where you pass over the Jordan to go in to possess it.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "gods Jordan"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… you will not hear, but shall be drawn away, and worship other ____, and serve them;” (30:17); “… not prolong your days in the land, where you pass over the to go in to possess it.” (30:18, WEB)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 30:11 records: “For this commandment which I command you this day, it is not too hard for you, neither is it far off.”",
+    "options" : [
+      "far"
+    ],
+    "prompt" : "In this paraphrase, moses said the commandment is not too hard, nor is it too ____. (30:11)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 30,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 30:3 uses peoples: “… compassion on you, and will return and gather you from all the peoples, where Yahweh your God has scattered you.”",
+    "options" : [
+      "fathers",
+      "statutes",
+      "parts",
+      "peoples"
+    ],
+    "prompt" : "Which word completes “… compassion on you, and will return and gather you from all the ______, where Yahweh your God has scattered you.”? (30:3, WEB)",
+    "reference" : "Deuteronomy 30",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 31:7 records: “… to him in the sight of all Israel, Be strong and of good courage: for you shall go with this people into the land which Yahweh has sworn to their fathers to give them; and you …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joshua was commissioned to lead Israel into the land. (31:7)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Moses wrote this law, and delivered it to the priests the sons of Levi, who bore the ark of the covenant of Yahweh, and to all …” The missing terms belong in that order.",
+    "options" : [
+      "law ark"
+    ],
+    "prompt" : "Supply the missing words in order: “Moses wrote this ____, and delivered it to the priests the sons of Levi, who bore the of the covenant of Yahweh, and to all …” (31:9, WEB)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… said to Moses, Behold, your days approach that you must die: call Joshua, and present yourselves in the tent of meeting, that I may give him …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… said to Moses, Behold, your days approach that you must die: call Joshua, and present yourselves in the tent of meeting, that I may give him …” (31:14, WEB)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 31:6 uses forsake: “… is who does go with you; he will not fail you, nor forsake you.”",
+    "options" : [
+      "save",
+      "forsake",
+      "forget",
+      "punish"
+    ],
+    "prompt" : "Which word completes “… is who does go with you; he will not fail you, nor ______ you.”? (31:6, WEB)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… good courage; for you shall bring the children of Israel into the land which I swore to them: and I will be with you.”; the second reads “… law, and put it by the side of the ark of the covenant of Yahweh your God, that it may be there for a witness against …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "land covenant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… good courage; for you shall bring the children of Israel into the ____ which I swore to them: and I will be with you.” (31:23); “… law, and put it by the side of the ark of the of Yahweh your God, that it may be there for a witness against …” (31:26, WEB)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “Then my anger shall be kindled against them in that day, and I will forsake them, and I will hide my face from them, and they …”; verse 21 reads “… this day, before I have brought them into the land which I swore.”. These establish the first and second answers respectively.",
+    "options" : [
+      "swore; kindled",
+      "happened; swore",
+      "kindled; swore",
+      "kindled; assembly"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Then my anger shall be ______ against them in that day, and I will forsake them, and I will hide my face from them, and they …” (31:17); “… this day, before I have brought them into the land which I ______.” (31:21, WEB)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… and Yahweh has said to me, You shall not go over this Jordan.”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “… and Yahweh has said to me, You shall not go over this ____.” (31:2, WEB)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 31,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies read: “… Yahweh your God in the place which he shall choose, you shall read this law before all Israel in their hearing.”",
+    "options" : [
+      "prostitute",
+      "read",
+      "ones",
+      "sons"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Yahweh your God in the place which he shall choose, you shall ______ this law before all Israel in their hearing.”? (31:11, WEB)",
+    "reference" : "Deuteronomy 31",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… doctrine shall drop as the rain; My speech shall condense as the dew, As the small rain on the tender grass, As the showers on the …”",
+    "options" : [
+      "dew"
+    ],
+    "prompt" : "Complete the quotation: “… doctrine shall drop as the rain; My speech shall condense as the ____, As the small rain on the tender grass, As the showers on the …” (32:2, WEB)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 32:8 uses inheritance: “When the Most High gave to the nations their inheritance, When he separated the children of men, He set the bounds of the peoples According to …”",
+    "options" : [
+      "redemption",
+      "praise",
+      "strength",
+      "inheritance"
+    ],
+    "prompt" : "Which word completes “When the Most High gave to the nations their ______, When he separated the children of men, He set the bounds of the peoples According to …”? (32:8, WEB)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “If I whet my glittering sword, My hand take hold on judgment; I will render vengeance to my adversaries, Will recompense those who hate me.”; the second reads “… your children to observe to do, even all the words of this law.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "judgment law"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “If I whet my glittering sword, My hand take hold on ____; I will render vengeance to my adversaries, Will recompense those who hate me.” (32:41); “… your children to observe to do, even all the words of this .” (32:46, WEB)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 30 reads “How should one chase a thousand, Two put ten thousand to flight, Except their Rock had sold them, Yahweh had delivered them up?”; verse 35 reads “… at hand, The things that are to come on them shall make haste.”. These establish the first and second answers respectively.",
+    "options" : [
+      "ten; haste",
+      "haste; ten",
+      "five; haste",
+      "ten; separated"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “How should one chase a thousand, Two put ______ thousand to flight, Except their Rock had sold them, Yahweh had delivered them up?” (32:30); “… at hand, The things that are to come on them shall make ______.” (32:35, WEB)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 32:4 records: “The Rock, his work is perfect; For all his ways are justice: A God of faithfulness and without iniquity, Just and right is he.”",
+    "options" : [
+      "perfect"
+    ],
+    "prompt" : "In this paraphrase, the Song of Moses calls God a Rock whose work is ____. (32:4)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nation: “… not a people; I will provoke them to anger with a foolish nation.”",
+    "options" : [
+      "provocation",
+      "destruction",
+      "protection",
+      "nation"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… not a people; I will provoke them to anger with a foolish ______.”? (32:21, WEB)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Bashan, and goats, With the finest of the wheat; Of the blood of the grape you drank wine.” The missing terms belong in that order.",
+    "options" : [
+      "wheat wine"
+    ],
+    "prompt" : "Supply the missing words in order: “… Bashan, and goats, With the finest of the ____; Of the blood of the grape you drank .” (32:14, WEB)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 32,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… teeth of animals will I send on them, With the poison of crawling things of the dust.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… teeth of animals will I send on them, With the poison of crawling things of the dust.” (32:24, WEB)",
+    "reference" : "Deuteronomy 32",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He said, Yahweh came from Sinai, Rose from Seir to them; He shined forth from Mount Paran, He came from the ten thousands of holy ones: …”",
+    "options" : [
+      "Sinai"
+    ],
+    "prompt" : "Complete the quotation: “He said, Yahweh came from ____, Rose from Seir to them; He shined forth from Mount Paran, He came from the ten thousands of holy ones: …” (33:2, WEB)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… They are the ten thousands of Ephraim, They are the thousands of Manasseh.”; verse 20 reads “Of Gad he said, Blessed be he who enlarges Gad: He dwells as a lioness, Tears the arm, yes, the crown of the head.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Gad; Manasseh",
+      "Manasseh; Gad",
+      "Manasseh; Enoch",
+      "Saul; Gad"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… They are the ten thousands of Ephraim, They are the thousands of ______.” (33:17); “Of ______ he said, Blessed be he who enlarges Gad: He dwells as a lioness, Tears the arm, yes, the crown of the head.” (33:20, WEB)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 33:5 uses king: “He was king in Jeshurun, When the heads of the people were gathered, All the tribes of Israel together.”",
+    "options" : [
+      "king",
+      "judge",
+      "fathers",
+      "soldier"
+    ],
+    "prompt" : "Which word completes “He was ______ in Jeshurun, When the heads of the people were gathered, All the tribes of Israel together.”? (33:5, WEB)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies rise: “… rise up against him, Of those who hate him, that they not rise again.”",
+    "options" : [
+      "push",
+      "rise",
+      "covenant",
+      "bush"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… rise up against him, Of those who hate him, that they not ______ again.”? (33:11, WEB)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Deuteronomy 33:1 records: “This is the blessing, with which Moses the man of God blessed the children of Israel before his death.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses blessed the tribes of Israel before his death. (33:1)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Of Levi he said, Your Thummim and your Urim are with your godly one, Whom you did prove at Massah, With whom you did strive at …” The missing terms belong in that order.",
+    "options" : [
+      "Levi prove"
+    ],
+    "prompt" : "Supply the missing words in order: “Of ____ he said, Your Thummim and your Urim are with your godly one, Whom you did at Massah, With whom you did strive at …” (33:8, WEB)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Of Joseph he said, Blessed of Yahweh be his land, For the precious things of the heavens, for the dew, For the deep that couches beneath,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Of Joseph he said, Blessed of Yahweh be his land, For the precious things of the heavens, for the dew, For the deep that couches beneath,” (33:13, WEB)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 33,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Of Naphtali he said, Naphtali, satisfied with favor, Full with the blessing of Yahweh, Possess you the west and the south.”; the second reads “… is none like God, Jeshurun, Who rides on the heavens for your help, In his excellency on the skies.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Naphtali help"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Of Naphtali he said, ____, satisfied with favor, Full with the blessing of Yahweh, Possess you the west and the south.” (33:23); “… is none like God, Jeshurun, Who rides on the heavens for your , In his excellency on the skies.” (33:26, WEB)",
+    "reference" : "Deuteronomy 33",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “There has not arisen a prophet since in Israel like Moses, whom Yahweh knew face to face,”; the second reads “… the wonders, which Yahweh sent him to do in the land of Egypt, to Pharaoh, and to all his servants, and to all his land,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Moses Egypt"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “There has not arisen a prophet since in Israel like ____, whom Yahweh knew face to face,” (34:10); “… the wonders, which Yahweh sent him to do in the land of , to Pharaoh, and to all his servants, and to all his land,” (34:11, WEB)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and all Naphtali, and the land of Ephraim and Manasseh, and all the land of Judah, to the hinder sea,”",
+    "options" : [
+      "Naphtali"
+    ],
+    "prompt" : "Complete the quotation: “and all ____, and the land of Ephraim and Manasseh, and all the land of Judah, to the hinder sea,” (34:2, WEB)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Moses was one hundred twenty years old when he died: his eye was not dim, nor his natural force abated.” It says twenty, not ten.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Moses was one hundred ten years old when he died: his eye was not dim, nor his natural force abated.” (34:7, WEB)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Deuteronomy 34:3 uses Jericho: “and the South, and the Plain of the valley of Jericho the city of palm trees, to Zoar.”",
+    "options" : [
+      "Babylon",
+      "Jericho",
+      "Moab",
+      "Canaan"
+    ],
+    "prompt" : "Which word completes “and the South, and the Plain of the valley of ______ the city of palm trees, to Zoar.”? (34:3, WEB)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… him, This is the land which I swore to Abraham, to Isaac, and to Jacob, saying, I will give it to your seed: I have caused …” The missing terms belong in that order.",
+    "options" : [
+      "Isaac Jacob"
+    ],
+    "prompt" : "Supply the missing words in order: “… him, This is the land which I swore to Abraham, to ____, and to , saying, I will give it to your seed: I have caused …” (34:4, WEB)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Deuteronomy 34:6 records: “He buried him in the valley in the land of Moab over against Beth Peor: but no man knows of his tomb to this day.”",
+    "options" : [
+      "grave"
+    ],
+    "prompt" : "In this paraphrase, moses died on Mount Nebo, and no one knows his ____ to this day. (34:6)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies servant: “So Moses the servant of Yahweh died there in the land of Moab, according to the word of Yahweh.”",
+    "options" : [
+      "king",
+      "judge",
+      "ruler",
+      "servant"
+    ],
+    "prompt" : "Which detail belongs in this passage: “So Moses the ______ of Yahweh died there in the land of Moab, according to the word of Yahweh.”? (34:5, WEB)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "deuteronomy",
+    "chapter" : 34,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “The children of Israel wept for Moses in the plains of Moab thirty days: so the days of weeping in the mourning for Moses were ended.”; verse 9 reads “Joshua the son of Nun was full of the spirit of wisdom; for Moses had laid his hands on him: and the children of Israel listened …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Moab; grief",
+      "Zion; wisdom",
+      "wisdom; Moab",
+      "Moab; wisdom"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The children of Israel wept for Moses in the plains of ______ thirty days: so the days of weeping in the mourning for Moses were ended.” (34:8); “Joshua the son of Nun was full of the spirit of ______; for Moses had laid his hands on him: and the children of Israel listened …” (34:9, WEB)",
+    "reference" : "Deuteronomy 34",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

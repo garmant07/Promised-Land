@@ -1,0 +1,3266 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… him, He was a hairy man, and girt with a belt of leather about his loins. He said, It is Elijah the Tishbite.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… him, He was a hairy man, and girt with a belt of leather about his loins. He said, It is Elijah the Tishbite.” (1:8, WEB)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 1:10 records: “… answered to the captain of fifty, If I be a man of God, let fire come down from the sky, and consume you and your fifty. Fire came down from the sky, and consumed him and …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Elijah called fire down on the captains sent by King Ahaziah. (1:10)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… fell down through the lattice in his upper chamber that was in Samaria, and was sick: and he sent messengers, and said to them, Go, inquire …”",
+    "options" : [
+      "Samaria"
+    ],
+    "prompt" : "Complete the quotation: “… fell down through the lattice in his upper chamber that was in ____, and was sick: and he sent messengers, and said to them, Go, inquire …” (1:2, WEB)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… and his fifty. He answered him, man of God, thus has the king said, Come down quickly.”; verse 13 reads “… begged him, and said to him, man of God, please let my life, and the life of these fifty your servants, be precious in your sight.”. These establish the first and second answers respectively.",
+    "options" : [
+      "life; king",
+      "judge; life",
+      "king; worship",
+      "king; life"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and his fifty. He answered him, man of God, thus has the ______ said, Come down quickly.” (1:11); “… begged him, and said to him, man of God, please let my ______, and the life of these fifty your servants, be precious in your sight.” (1:13, WEB)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 1:3 uses Elijah: “But the angel of Yahweh said to Elijah the Tishbite, Arise, go up to meet the messengers of the king of Samaria, and tell them, Is …”",
+    "options" : [
+      "Haggai",
+      "Zephaniah",
+      "Elijah",
+      "Esther"
+    ],
+    "prompt" : "Which word completes “But the angel of Yahweh said to ______ the Tishbite, Arise, go up to meet the messengers of the king of Samaria, and tell them, Is …”? (1:3, WEB)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Behold, fire came down from the sky, and consumed the two former captains of fifty with their fifties; but now let my life be precious in …”; the second reads “He said to him, Thus says Yahweh, Because you have sent messengers to inquire of Baal Zebub, the god of Ekron, is it because there is …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fire messengers"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Behold, ____ came down from the sky, and consumed the two former captains of fifty with their fifties; but now let my life be precious in …” (1:14); “He said to him, Thus says Yahweh, Because you have sent to inquire of Baal Zebub, the god of Ekron, is it because there is …” (1:16, WEB)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… you send to inquire of Baal Zebub, the god of Ekron? therefore you shall not come down from the bed where you are gone up, but …” The missing terms belong in that order.",
+    "options" : [
+      "Zebub bed"
+    ],
+    "prompt" : "Supply the missing words in order: “… you send to inquire of Baal ____, the god of Ekron? therefore you shall not come down from the where you are gone up, but …” (1:6, WEB)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fifty: “Then the king sent to him a captain of fifty with his fifty. He went up to him: and, behold, he was sitting on the top …”",
+    "options" : [
+      "seventy",
+      "four",
+      "fifty",
+      "twelfth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Then the king sent to him a captain of fifty with his ______. He went up to him: and, behold, he was sitting on the top …”? (1:9, WEB)",
+    "reference" : "2 Kings 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Elijah took his mantle, and wrapped it together, and struck the waters, and they were divided here and there, so that they two went over on …” The missing terms belong in that order.",
+    "options" : [
+      "Elijah mantle"
+    ],
+    "prompt" : "Supply the missing words in order: “____ took his , and wrapped it together, and struck the waters, and they were divided here and there, so that they two went over on …” (2:8, WEB)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 2:11 records: “It happened, as they still went on, and talked, that behold, there appeared a chariot of fire, and horses of fire, which parted them both apart; and Elijah went up by a whirlwind into heaven.”",
+    "options" : [
+      "whirlwind"
+    ],
+    "prompt" : "In this paraphrase, elijah went up by a ____ into heaven. (2:11)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… soul lives, I will not leave you. So they went down to Bethel.”",
+    "options" : [
+      "Bethel"
+    ],
+    "prompt" : "Complete the quotation: “… soul lives, I will not leave you. So they went down to ____.” (2:2, WEB)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 2:5 uses Jericho: “The sons of the prophets who were at Jericho came near to Elisha, and said to him, \"Do you know that Yahweh will take away your …”",
+    "options" : [
+      "Jericho",
+      "Jerusalem",
+      "Samaria",
+      "Israel"
+    ],
+    "prompt" : "Which word completes “The sons of the prophets who were at ______ came near to Elisha, and said to him, \"Do you know that Yahweh will take away your …”? (2:5, WEB)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Elisha: “It happened, when they had gone over, that Elijah said to Elisha, Ask what I shall do for you, before I am taken from you. Elisha …”",
+    "options" : [
+      "Laban",
+      "Ham",
+      "Benjamin",
+      "Elisha"
+    ],
+    "prompt" : "Which detail belongs in this passage: “It happened, when they had gone over, that Elijah said to ______, Ask what I shall do for you, before I am taken from you. Elisha …”? (2:9, WEB)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… situation of this city is pleasant, as my lord sees: but the water is bad, and the land miscarries.”; the second reads “… have healed these waters; there shall not be from there any more death or miscarrying.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "water death"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… situation of this city is pleasant, as my lord sees: but the ____ is bad, and the land miscarries.” (2:19); “… have healed these waters; there shall not be from there any more or miscarrying.” (2:21, WEB)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… him no more: and he took hold of his own clothes, and tore them in two pieces.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… him no more: and he took hold of his own clothes, and tore them in two pieces.” (2:12, WEB)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… who were at Jericho over against him saw him, they said, The spirit of Elijah does rest on Elisha. They came to meet him, and bowed …”; verse 17 reads “… ashamed, he said, Send. They sent therefore fifty men; and they sought three days, but didn't find him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "bowed; three",
+      "spirit; ninth",
+      "spirit; three",
+      "three; spirit"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… who were at Jericho over against him saw him, they said, The ______ of Elijah does rest on Elisha. They came to meet him, and bowed …” (2:15); “… ashamed, he said, Send. They sent therefore fifty men; and they sought ______ days, but didn't find him.” (2:17, WEB)",
+    "reference" : "2 Kings 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Nevertheless he cleaved to the sins of Jeroboam the son of Nebat, with which he made Israel to sin; he didn't depart from it.”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “Nevertheless he cleaved to the ____ of Jeroboam the son of Nebat, with which he made Israel to sin; he didn't depart from it.” (3:3, WEB)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now when all the Moabites heard that the kings had come up to fight against them, they gathered themselves together, all who were able to put …”; the second reads “When they came to the camp of Israel, the Israelites rose up and struck the Moabites, so that they fled before them; and they went forward …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "kings Israelites"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now when all the Moabites heard that the ____ had come up to fight against them, they gathered themselves together, all who were able to put …” (3:21); “When they came to the camp of Israel, the rose up and struck the Moabites, so that they fled before them; and they went forward …” (3:24, WEB)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 3:5 uses Moab: “But it happened, when Ahab was dead, that the king of Moab rebelled against the king of Israel.”",
+    "options" : [
+      "Israel",
+      "Damascus",
+      "Gilead",
+      "Moab"
+    ],
+    "prompt" : "Which word completes “But it happened, when Ahab was dead, that the king of ______ rebelled against the king of Israel.”? (3:5, WEB)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 3:15 records: “But now bring me a minstrel. It happened, when the minstrel played, that the hand of Yahweh came on him.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Elisha asked for a minstrel before he prophesied. (3:15)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Elisha said to the king of Israel, What have I to do with you? get you to the prophets of your father, and to the prophets …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Elisha said to the king of Israel, What have I to do with you? get you to the prophets of your father, and to the prophets …” (3:13, WEB)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… neither shall you see rain; yet that valley shall be filled with water, and you shall drink, both you and your cattle and your animals.”; verse 19 reads “You shall strike every fortified city, and every choice city, and shall fell every good tree, and stop all springs of water, and mar every good …”. These establish the first and second answers respectively.",
+    "options" : [
+      "water; father",
+      "olives; fell",
+      "water; fell",
+      "fell; water"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… neither shall you see rain; yet that valley shall be filled with ______, and you shall drink, both you and your cattle and your animals.” (3:17); “You shall strike every fortified city, and every choice city, and shall ______ every good tree, and stop all springs of water, and mar every good …” (3:19, WEB)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies deliver: “… Israel said, Alas! for Yahweh has called these three kings together to deliver them into the hand of Moab.”",
+    "options" : [
+      "battle",
+      "deliver",
+      "depart",
+      "Hareseth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Israel said, Alas! for Yahweh has called these three kings together to ______ them into the hand of Moab.”? (3:10, WEB)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He went and sent to Jehoshaphat the king of Judah, saying, The king of Moab has rebelled against me: will you go with me against Moab …” The missing terms belong in that order.",
+    "options" : [
+      "Judah king"
+    ],
+    "prompt" : "Supply the missing words in order: “He went and sent to Jehoshaphat the king of ____, saying, The of Moab has rebelled against me: will you go with me against Moab …” (3:7, WEB)",
+    "reference" : "2 Kings 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… he stretched himself on him; and the flesh of the child grew warm.”; the second reads “Elisha came again to Gilgal. There was a dearth in the land; and the sons of the prophets were sitting before him; and he said to …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "warm Gilgal"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… he stretched himself on him; and the flesh of the child grew ____.” (4:34); “Elisha came again to . There was a dearth in the land; and the sons of the prophets were sitting before him; and he said to …” (4:38, WEB)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 4:8 uses bread: “… as often as he passed by, he turned in there to eat bread.”",
+    "options" : [
+      "pomegranates",
+      "figs",
+      "olives",
+      "bread"
+    ],
+    "prompt" : "Which word completes “… as often as he passed by, he turned in there to eat ______.”? (4:8, WEB)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Then he said, Go, borrow you vessels abroad of all your neighbors, even empty vessels; borrow not a few.”",
+    "options" : [
+      "neighbors"
+    ],
+    "prompt" : "Complete the quotation: “Then he said, Go, borrow you vessels abroad of all your ____, even empty vessels; borrow not a few.” (4:3, WEB)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… called to her husband, and said, Please send me one of the servants, and one of the donkeys, that I may run to the man of …” It says servants, not husbands.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… called to her husband, and said, Please send me one of the husbands, and one of the donkeys, that I may run to the man of …” (4:22, WEB)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… for you? would you be spoken for to the king, or to the captain of the host? She answered, I dwell among my own people.” The missing terms belong in that order.",
+    "options" : [
+      "king host"
+    ],
+    "prompt" : "Supply the missing words in order: “… for you? would you be spoken for to the ____, or to the captain of the ? She answered, I dwell among my own people.” (4:13, WEB)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 25 reads “… of God saw her afar off, that he said to Gehazi his servant, Behold, yonder is the Shunammite:”; verse 30 reads “… said, As Yahweh lives, and as your soul lives, I will not leave you. He arose, and followed her.”. These establish the first and second answers respectively.",
+    "options" : [
+      "servant; happened",
+      "servant; leave",
+      "prophet; leave",
+      "leave; servant"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of God saw her afar off, that he said to Gehazi his ______, Behold, yonder is the Shunammite:” (4:25); “… said, As Yahweh lives, and as your soul lives, I will not ______ you. He arose, and followed her.” (4:30, WEB)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies handmaid: “… No, my lord, you man of God, do not lie to your handmaid.”",
+    "options" : [
+      "handmaid",
+      "bore",
+      "mother",
+      "vessel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… No, my lord, you man of God, do not lie to your ______.”? (4:16, WEB)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 4:7 records: “Then she came and told the man of God. He said, Go, sell the oil, and pay your debt, and live you and your sons of the rest.”",
+    "options" : [
+      "oil"
+    ],
+    "prompt" : "In this paraphrase, elisha multiplied a widow's ____ to pay her debts. (4:7)",
+    "reference" : "2 Kings 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… so, when Elisha the man of God heard that the king of Israel had torn his clothes, that he sent to the king, saying, Why have …” The missing terms belong in that order.",
+    "options" : [
+      "Elisha king"
+    ],
+    "prompt" : "Supply the missing words in order: “… so, when ____ the man of God heard that the king of Israel had torn his clothes, that he sent to the , saying, Why have …” (5:8, WEB)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 5:14 records: “Then went he down, and dipped himself seven times in the Jordan, according to the saying of the man of God; and his flesh came again like the flesh of a little child, and he was …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Naaman was healed of leprosy after washing in the Jordan seven times. (5:14)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jordan: “Elisha sent a messenger to him, saying, Go and wash in the Jordan seven times, and your flesh shall come again to you, and you shall …”",
+    "options" : [
+      "Jordan",
+      "Hebron",
+      "Zion",
+      "Bethel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Elisha sent a messenger to him, saying, Go and wash in the ______ seven times, and your flesh shall come again to you, and you shall …”? (5:10, WEB)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… of earth; for your servant will henceforth offer neither burnt offering nor sacrifice to other gods, but to Yahweh.”; verse 18 reads “In this thing Yahweh pardon your servant: when my master goes into the house of Rimmon to worship there, and he leans on my hand, and …”. These establish the first and second answers respectively.",
+    "options" : [
+      "sacrifice; servants",
+      "sacrifice; servant",
+      "death; servant",
+      "servant; sacrifice"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of earth; for your servant will henceforth offer neither burnt offering nor ______ to other gods, but to Yahweh.” (5:17); “In this thing Yahweh pardon your ______: when my master goes into the house of Rimmon to worship there, and he leans on my hand, and …” (5:18, WEB)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… in bands, and had brought away captive out of the land of Israel a little maiden; and she waited on Naaman's wife.”",
+    "options" : [
+      "Israel"
+    ],
+    "prompt" : "Complete the quotation: “… in bands, and had brought away captive out of the land of ____ a little maiden; and she waited on Naaman's wife.” (5:2, WEB)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 5:5 uses six: “… Israel. He departed, and took with him ten talents of silver, and six thousand pieces of gold, and ten changes of clothing.”",
+    "options" : [
+      "eighth",
+      "thousand",
+      "six",
+      "ten"
+    ],
+    "prompt" : "Which word completes “… Israel. He departed, and took with him ten talents of silver, and ______ thousand pieces of gold, and ten changes of clothing.”? (5:5, WEB)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “So Gehazi followed after Naaman. When Naaman saw one running after him, he alighted from the chariot to meet him, and said, Is all well?”; the second reads “… to take two talents. He urged him, and bound two talents of silver in two bags, with two changes of clothing, and laid them on two …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "followed silver"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “So Gehazi ____ after Naaman. When Naaman saw one running after him, he alighted from the chariot to meet him, and said, Is all well?” (5:21); “… to take two talents. He urged him, and bound two talents of in two bags, with two changes of clothing, and laid them on two …” (5:23, WEB)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “His servants came near, and spoke to him, and said, My father, if the prophet had bid you do some great thing, wouldn't you have done …” It says servants, not husbands.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “His husbands came near, and spoke to him, and said, My father, if the prophet had bid you do some great thing, wouldn't you have done …” (5:13, WEB)",
+    "reference" : "2 Kings 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 6:6 records: “The man of God said, Where fell it? He shown him the place. He cut down a stick, and cast it in there, and made the iron to swim.”",
+    "options" : [
+      "axe head"
+    ],
+    "prompt" : "In this paraphrase, elisha made an iron ____ float. (6:6)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 6:5 uses water: “… as one was felling a beam, the axe head fell into the water; and he cried, and said, Alas, my master! for it was borrowed.”",
+    "options" : [
+      "water",
+      "salt",
+      "wine",
+      "bread"
+    ],
+    "prompt" : "Which word completes “… as one was felling a beam, the axe head fell into the ______; and he cried, and said, Alas, my master! for it was borrowed.”? (6:5, WEB)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… saw: and, behold, the mountain was full of horses and chariots of fire round about Elisha.” It says fire, not blindness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… saw: and, behold, the mountain was full of horses and chariots of blindness round about Elisha.” (6:17, WEB)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… bring you to the man whom you seek. He led them to Samaria.”; verse 23 reads “… to their master. The bands of Syria came no more into the land of Israel.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Goshen; land",
+      "Samaria; valley",
+      "Samaria; land",
+      "land; Samaria"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… bring you to the man whom you seek. He led them to ______.” (6:19); “… to their master. The bands of Syria came no more into the ______ of Israel.” (6:23, WEB)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “As the king of Israel was passing by on the wall, there cried a woman to him, saying, Help, my lord, O king.”; the second reads “So we boiled my son, and ate him: and I said to her on the next day, Give your son, that we may eat him; and …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "passing boiled"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “As the king of Israel was ____ by on the wall, there cried a woman to him, saying, Help, my lord, O king.” (6:26); “So we my son, and ate him: and I said to her on the next day, Give your son, that we may eat him; and …” (6:29, WEB)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Let us go, we pray you, to the Jordan, and take there every man a beam, and let us make us a place there, where we …”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “Let us go, we pray you, to the ____, and take there every man a beam, and let us make us a place there, where we …” (6:2, WEB)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Elisha: “One of his servants said, No, my lord, O king; but Elisha, the prophet who is in Israel, tells the king of Israel the words that …”",
+    "options" : [
+      "Lot",
+      "Balak",
+      "Elisha",
+      "Nahum"
+    ],
+    "prompt" : "Which detail belongs in this passage: “One of his servants said, No, my lord, O king; but ______, the prophet who is in Israel, tells the king of Israel the words that …”? (6:12, WEB)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The man of God sent to the king of Israel, saying, Beware that you not pass such a place; for there the Syrians are coming down.” The missing terms belong in that order.",
+    "options" : [
+      "king Israel"
+    ],
+    "prompt" : "Supply the missing words in order: “The man of God sent to the ____ of , saying, Beware that you not pass such a place; for there the Syrians are coming down.” (6:9, WEB)",
+    "reference" : "2 Kings 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… a day of good news, and we hold our peace: if we wait until the morning light, punishment will overtake us; now therefore come, let us …” The missing terms belong in that order.",
+    "options" : [
+      "peace light"
+    ],
+    "prompt" : "Supply the missing words in order: “… a day of good news, and we hold our ____: if we wait until the morning , punishment will overtake us; now therefore come, let us …” (7:9, WEB)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies horses: “… behold, there was no man there, neither voice of man, but the horses tied, and the donkeys tied, and the tents as they were.”",
+    "options" : [
+      "eagle",
+      "serpent",
+      "horses",
+      "bulls"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… behold, there was no man there, neither voice of man, but the ______ tied, and the donkeys tied, and the tents as they were.”? (7:10, WEB)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 7:1 uses Elisha: “Elisha said, Hear you the word of Yahweh: thus says Yahweh, Tomorrow about this time shall a measure of fine flour be sold for a shekel, …”",
+    "options" : [
+      "Daniel",
+      "Zerubbabel",
+      "Leah",
+      "Elisha"
+    ],
+    "prompt" : "Which word completes “______ said, Hear you the word of Yahweh: thus says Yahweh, Tomorrow about this time shall a measure of fine flour be sold for a shekel, …”? (7:1, WEB)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The king arose in the night, and said to his servants, I will now show you what the Syrians have done to us. They know that …” It says servants, not soldier.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The king arose in the night, and said to his soldier, I will now show you what the Syrians have done to us. They know that …” (7:12, WEB)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “One of his servants answered, Please let some take five of the horses that remain, which are left in the city (behold, they are as all …”; verse 14 reads “They took therefore two chariots with horses; and the king sent after the host of the Syrians, saying, Go and see.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fifteen; king",
+      "five; servant",
+      "king; five",
+      "five; king"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “One of his servants answered, Please let some take ______ of the horses that remain, which are left in the city (behold, they are as all …” (7:13); “They took therefore two chariots with horses; and the ______ sent after the host of the Syrians, saying, Go and see.” (7:14, WEB)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… man of God, and said, Behold, if Yahweh should make windows in heaven, might this thing be? He said, Behold, you shall see it with your …”",
+    "options" : [
+      "heaven"
+    ],
+    "prompt" : "Complete the quotation: “… man of God, and said, Behold, if Yahweh should make windows in ____, might this thing be? He said, Behold, you shall see it with your …” (7:2, WEB)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 7:3 records: “Now there were four leprous men at the entrance of the gate: and they said one to another, Why sit we here until we die?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Four lepers discovered the Arameans had left their camp. (7:3-8)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… of fine flour was sold for a shekel, and two measures of barley for a shekel, according to the word of Yahweh.”; the second reads “… a shekel, shall be tomorrow about this time in the gate of Samaria;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "barley Samaria"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… of fine flour was sold for a shekel, and two measures of ____ for a shekel, according to the word of Yahweh.” (7:16); “… a shekel, shall be tomorrow about this time in the gate of ;” (7:18, WEB)",
+    "reference" : "2 Kings 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 8:2 records: “The woman arose, and did according to the word of the man of God; and she went with her household, and sojourned in the land of the Philistines seven years.”",
+    "options" : [
+      "Philistia"
+    ],
+    "prompt" : "In this paraphrase, the woman from Shunem returned from ____ to recover her land. (8:2)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… do to the children of Israel: their strongholds will you set on fire, and their young men will you kill with the sword, and will dash …”",
+    "options" : [
+      "fire",
+      "reign",
+      "servant",
+      "happened"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… do to the children of Israel: their strongholds will you set on ______, and their young men will you kill with the sword, and will dash …”? (8:12, WEB)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The rest of the acts of Joram, and all that he did, aren't they written in the book of the chronicles of the kings of Judah?”; the second reads “Twenty-two years old was Ahaziah when he began to reign; and he reigned one year in Jerusalem. His mother's name was Athaliah the daughter of Omri …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rest Twenty"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The ____ of the acts of Joram, and all that he did, aren't they written in the book of the chronicles of the kings of Judah?” (8:23); “-two years old was Ahaziah when he began to reign; and he reigned one year in Jerusalem. His mother's name was Athaliah the daughter of Omri …” (8:26, WEB)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… he when he began to reign; and he reigned eight years in Jerusalem.”; verse 19 reads “However Yahweh would not destroy Judah, for David his servant's sake, as he promised him to give to him a lamp for his children always.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jerusalem; Judah",
+      "Gilgal; Judah",
+      "Jerusalem; Japheth",
+      "Judah; Jerusalem"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… he when he began to reign; and he reigned eight years in ______.” (8:17); “However Yahweh would not destroy ______, for David his servant's sake, as he promised him to give to him a lamp for his children always.” (8:19, WEB)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 8:5 uses life: “… happened, as he was telling the king how he had restored to life him who was dead, that behold, the woman, whose son he had restored …”",
+    "options" : [
+      "inheritance",
+      "rest",
+      "life",
+      "salvation"
+    ],
+    "prompt" : "Which word completes “… happened, as he was telling the king how he had restored to ______ him who was dead, that behold, the woman, whose son he had restored …”? (8:5, WEB)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and took a present with him, even of every good thing of Damascus, forty camels' burden, and came and stood before him, and said, Your son …” The missing terms belong in that order.",
+    "options" : [
+      "Damascus forty"
+    ],
+    "prompt" : "Supply the missing words in order: “… and took a present with him, even of every good thing of ____, camels' burden, and came and stood before him, and said, Your son …” (8:9, WEB)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the next day, that he took the coverlet, and dipped it in water, and spread it on his face, so that he died: and Hazael reigned …” It says water, not salt.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the next day, that he took the coverlet, and dipped it in salt, and spread it on his face, so that he died: and Hazael reigned …” (8:15, WEB)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… at the seven years' end, that the woman returned out of the land of the Philistines: and she went forth to cry to the king for …”",
+    "options" : [
+      "land"
+    ],
+    "prompt" : "Complete the quotation: “… at the seven years' end, that the woman returned out of the ____ of the Philistines: and she went forth to cry to the king for …” (8:3, WEB)",
+    "reference" : "2 Kings 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “… peace, so long as the prostitution of your mother Jezebel and her witchcraft abound?”; verse 25 reads “… Jezreelite; for remember how that, when I and you rode together after Ahab his father, Yahweh laid this burden on him:”. These establish the first and second answers respectively.",
+    "options" : [
+      "witchcraft; Nehemiah",
+      "Ahab; witchcraft",
+      "witchcraft; Ahab",
+      "drew; Ahab"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… peace, so long as the prostitution of your mother Jezebel and her ______ abound?” (9:22); “… Jezreelite; for remember how that, when I and you rode together after ______ his father, Yahweh laid this burden on him:” (9:25, WEB)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “… Nimshi conspired against Joram. (Now Joram was keeping Ramoth-gilead, he and all Israel, because of Hazael king of Syria;”",
+    "options" : [
+      "Rachel",
+      "Israel",
+      "Dan",
+      "Ezra"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Nimshi conspired against Joram. (Now Joram was keeping Ramoth-gilead, he and all ______, because of Hazael king of Syria;”? (9:14, WEB)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… king, Is it peace? Jehu said, What have you to do with peace? turn you behind me. The watchman told, saying, The messenger came to them, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… king, Is it peace? Jehu said, What have you to do with peace? turn you behind me. The watchman told, saying, The messenger came to them, …” (9:18, WEB)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… year of Joram the son of Ahab began Ahaziah to reign over Judah.”; the second reads “… is on my side? who? There looked out to him two or three eunuchs.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Judah three"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… year of Joram the son of Ahab began Ahaziah to reign over ____.” (9:29); “… is on my side? who? There looked out to him two or eunuchs.” (9:32, WEB)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Jezebel in the portion of Jezreel, and there shall be none to bury her. He opened the door, and fled.” The missing terms belong in that order.",
+    "options" : [
+      "none opened"
+    ],
+    "prompt" : "Supply the missing words in order: “… Jezebel in the portion of Jezreel, and there shall be ____ to bury her. He the door, and fled.” (9:10, WEB)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 9:6 records: “… arose, and went into the house; and he poured the oil on his head, and said to him, Thus says Yahweh, the God of Israel, I have anointed you king over the people of Yahweh, even …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jehu was anointed king of Israel. (9:6)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 9:7 uses Jezebel: “… the blood of all the servants of Yahweh, at the hand of Jezebel.”",
+    "options" : [
+      "Jezebel",
+      "Zophar",
+      "Haman",
+      "Moses"
+    ],
+    "prompt" : "Which word completes “… the blood of all the servants of Yahweh, at the hand of ______.”? (9:7, WEB)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Then take the vial of oil, and pour it on his head, and say, Thus says Yahweh, I have anointed you king over Israel. Then open …”",
+    "options" : [
+      "oil"
+    ],
+    "prompt" : "Complete the quotation: “Then take the vial of ____, and pour it on his head, and say, Thus says Yahweh, I have anointed you king over Israel. Then open …” (9:3, WEB)",
+    "reference" : "2 Kings 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Yahweh spoke concerning the house of Ahab: for Yahweh has done that which he spoke by his servant Elijah.” The missing terms belong in that order.",
+    "options" : [
+      "Ahab Elijah"
+    ],
+    "prompt" : "Supply the missing words in order: “… Yahweh spoke concerning the house of ____: for Yahweh has done that which he spoke by his servant .” (10:10, WEB)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies forty: “… and killed them at the pit of the shearing-house, even two and forty men; neither left he any of them.”",
+    "options" : [
+      "seventeen",
+      "three",
+      "fifth",
+      "forty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and killed them at the pit of the shearing-house, even two and ______ men; neither left he any of them.”? (10:14, WEB)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “Jehu sent through all Israel: and all the worshippers of Baal came, so that there was not a man left that didn't come. They came into …”; verse 24 reads “… I bring into your hands escape, he who lets him go, his life shall be for the life of him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Israel; sacrifice",
+      "Israel; life",
+      "life; Israel",
+      "Ruth; life"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Jehu sent through all ______: and all the worshippers of Baal came, so that there was not a man left that didn't come. They came into …” (10:21); “… I bring into your hands escape, he who lets him go, his ______ shall be for the life of him.” (10:24, WEB)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… depart from after them, to wit, the golden calves that were in Bethel, and that were in Dan.”; the second reads “But Jehu took no heed to walk in the law of Yahweh, the God of Israel, with all his heart: he didn't depart from the sins …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Bethel law"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… depart from after them, to wit, the golden calves that were in ____, and that were in Dan.” (10:29); “But Jehu took no heed to walk in the of Yahweh, the God of Israel, with all his heart: he didn't depart from the sins …” (10:31, WEB)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… and meet of your master's sons, and set him on his father's throne, and fight for your master's house.”",
+    "options" : [
+      "throne"
+    ],
+    "prompt" : "Complete the quotation: “… and meet of your master's sons, and set him on his father's ____, and fight for your master's house.” (10:3, WEB)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 10:7 uses seventy: “… to them, that they took the king's sons, and killed them, even seventy persons, and put their heads in baskets, and sent them to him to …”",
+    "options" : [
+      "sixth",
+      "thirty",
+      "seventy",
+      "six"
+    ],
+    "prompt" : "Which word completes “… to them, that they took the king's sons, and killed them, even ______ persons, and put their heads in baskets, and sent them to him to …”? (10:7, WEB)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… he came to Samaria, he struck all who remained to Ahab in Samaria, until he had destroyed him, according to the word of Yahweh, which he …” It says Samaria, not Babylon.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… he came to Samaria, he struck all who remained to Ahab in Babylon, until he had destroyed him, according to the word of Yahweh, which he …” (10:17, WEB)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 10:19 records: “… all his worshippers, and all his priests; let none be wanting: for I have a great sacrifice to do to Baal; whoever shall be wanting, he shall not live. But Jehu did it in subtlety, to …”",
+    "options" : [
+      "Baal"
+    ],
+    "prompt" : "In this paraphrase, jehu destroyed the worshipers of ____. (10:19)",
+    "reference" : "2 Kings 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and a third part at the gate behind the guard: so shall you keep the watch of the house, and be a barrier.” The missing terms belong in that order.",
+    "options" : [
+      "third barrier"
+    ],
+    "prompt" : "Supply the missing words in order: “… and a ____ part at the gate behind the guard: so shall you keep the watch of the house, and be a .” (11:6, WEB)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The priest delivered to the captains over hundreds the spears and shields that had been king David's, which were in the house of Yahweh.” It says priest, not wives.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The wives delivered to the captains over hundreds the spears and shields that had been king David's, which were in the house of Yahweh.” (11:10, WEB)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Sabbath: “… every man his men, those who were to come in on the Sabbath, with those who were to go out on the Sabbath, and came to …”",
+    "options" : [
+      "winter",
+      "summer",
+      "Sabbath",
+      "harvest"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… every man his men, those who were to come in on the ______, with those who were to go out on the Sabbath, and came to …”? (11:9, WEB)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 11:4 uses covenant: “… them to him into the house of Yahweh; and he made a covenant with them, and took an oath of them in the house of Yahweh, …”",
+    "options" : [
+      "instruction",
+      "promises",
+      "promise",
+      "covenant"
+    ],
+    "prompt" : "Which word completes “… them to him into the house of Yahweh; and he made a ______ with them, and took an oath of them in the house of Yahweh, …”? (11:4, WEB)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 11:1 records: “Now when Athaliah the mother of Ahaziah saw that her son was dead, she arose and destroyed all the seed royal.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Athaliah tried to destroy the royal family of Judah. (11:1)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… anointed him; and they clapped their hands, and said, Long live the king.”; verse 15 reads “Jehoiada the priest commanded the captains of hundreds who were set over the host, and said to them, Have her forth between the ranks; and him …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jehoiada; king",
+      "king; Jehoiada",
+      "king; reigned",
+      "soldiers; Jehoiada"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… anointed him; and they clapped their hands, and said, Long live the ______.” (11:12); “______ the priest commanded the captains of hundreds who were set over the host, and said to them, Have her forth between the ranks; and him …” (11:15, WEB)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… him and his nurse, and put them in the bedchamber; and they hid him from Athaliah, so that he was not slain;”",
+    "options" : [
+      "hid"
+    ],
+    "prompt" : "Complete the quotation: “… him and his nurse, and put them in the bedchamber; and they ____ him from Athaliah, so that he was not slain;” (11:2, WEB)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and the king and the people, that they should be Yahweh's people; between the king also and the people.”; the second reads “… guard to the king's house. He sat on the throne of the kings.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "between kings"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and the king and the people, that they should be Yahweh's people; ____ the king also and the people.” (11:17); “… guard to the king's house. He sat on the throne of the .” (11:19, WEB)",
+    "reference" : "2 Kings 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 12:6 uses priests: “… so, that in the three and twentieth year of king Jehoash the priests had not repaired the breaches of the house.”",
+    "options" : [
+      "soldier",
+      "daughter",
+      "priests",
+      "prophet"
+    ],
+    "prompt" : "Which word completes “… so, that in the three and twentieth year of king Jehoash the ______ had not repaired the breaches of the house.”? (12:6, WEB)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then king Jehoash called for Jehoiada the priest, and for the other priests, and said to them, Why don't you repair the breaches of the house? …” The missing terms belong in that order.",
+    "options" : [
+      "priest priests"
+    ],
+    "prompt" : "Supply the missing words in order: “Then king Jehoash called for Jehoiada the ____, and for the other , and said to them, Why don't you repair the breaches of the house? …” (12:7, WEB)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The money for the trespass-offerings, and the money for the sin-offerings, was not brought into the house of Yahweh: it was the priests'.”; the second reads “… did, aren't they written in the book of the chronicles of the kings of Judah?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "offerings kings"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The money for the trespass-____, and the money for the sin-offerings, was not brought into the house of Yahweh: it was the priests'.” (12:16); “… did, aren't they written in the book of the chronicles of the of Judah?” (12:19, WEB)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “But there were not made for the house of Yahweh cups of silver, snuffers, basins, trumpets, any vessels of gold, or vessels of silver, of the …”; verse 15 reads “… hand they delivered the money to give to those who did the work; for they dealt faithfully.”. These establish the first and second answers respectively.",
+    "options" : [
+      "bronze; work",
+      "silver; high",
+      "work; silver",
+      "silver; work"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But there were not made for the house of Yahweh cups of ______, snuffers, basins, trumpets, any vessels of gold, or vessels of silver, of the …” (12:13); “… hand they delivered the money to give to those who did the ______; for they dealt faithfully.” (12:15, WEB)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… saw that there was much money in the chest, that the king's scribe and the high priest came up, and they put up in bags and …” It says scribe, not conspiracy.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… saw that there was much money in the chest, that the king's conspiracy and the high priest came up, and they put up in bags and …” (12:10, WEB)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 12:4 records: “… of the holy things that is brought into the house of Yahweh, in current money, the money of the persons for whom each man is rated, and all the money that it comes into any man's …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joash had the priests repair the damaged parts of the house of the LORD. (12:4-5)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies altar: “… a hole in the lid of it, and set it beside the altar, on the right side as one comes into the house of Yahweh: and …”",
+    "options" : [
+      "gates",
+      "scroll",
+      "altar",
+      "lamp"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a hole in the lid of it, and set it beside the ______, on the right side as one comes into the house of Yahweh: and …”? (12:9, WEB)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “However the high places were not taken away; the people still sacrificed and burnt incense in the high places.”",
+    "options" : [
+      "places"
+    ],
+    "prompt" : "Complete the quotation: “However the high ____ were not taken away; the people still sacrificed and burnt incense in the high places.” (12:3, WEB)",
+    "reference" : "2 Kings 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… that which was evil in the sight of Yahweh, and followed the sins of Jeroboam the son of Nebat, with which he made Israel to sin; …”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “… that which was evil in the sight of Yahweh, and followed the ____ of Jeroboam the son of Nebat, with which he made Israel to sin; …” (13:2, WEB)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 13:20 records: “Elisha died, and they buried him. Now the bands of the Moabites invaded the land at the coming in of the year.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A dead man came to life when he touched the bones of Elisha. (13:20-21)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Judah, aren't they written in the book of the chronicles of the kings of Israel?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Judah, aren't they written in the book of the chronicles of the kings of Israel?” (13:12, WEB)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 13:5 uses Israel: “… out from under the hand of the Syrians; and the children of Israel lived in their tents as before.”",
+    "options" : [
+      "Israel",
+      "Esau",
+      "Mordecai",
+      "Solomon"
+    ],
+    "prompt" : "Which word completes “… out from under the hand of the Syrians; and the children of ______ lived in their tents as before.”? (13:5, WEB)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… of God was angry with him, and said, You should have struck five or six times: then had you struck Syria until you had consumed it, …”; the second reads “… had compassion on them, and had respect to them, because of his covenant with Abraham, Isaac, and Jacob, and would not destroy them, neither cast he …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "five covenant"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… of God was angry with him, and said, You should have struck ____ or six times: then had you struck Syria until you had consumed it, …” (13:19); “… had compassion on them, and had respect to them, because of his with Abraham, Isaac, and Jacob, and would not destroy them, neither cast he …” (13:23, WEB)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to Jehoahaz of the people save fifty horsemen, and ten chariots, and ten thousand footmen; for the king of Syria destroyed them, and made them like …” The missing terms belong in that order.",
+    "options" : [
+      "ten thousand"
+    ],
+    "prompt" : "Supply the missing words in order: “… to Jehoahaz of the people save fifty horsemen, and ten chariots, and ____ footmen; for the king of Syria destroyed them, and made them like …” (13:7, WEB)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “Now Elisha was fallen sick of his sickness of which he died: and Joash the king of Israel came down to him, and wept over him, …”; verse 17 reads “He said, Open the window eastward; and he opened it. Then Elisha said, Shoot; and he shot. He said, Yahweh's arrow of victory, even the arrow …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Elisha; window",
+      "Ezekiel; window",
+      "window; Elisha",
+      "Elisha; tents"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Now ______ was fallen sick of his sickness of which he died: and Joash the king of Israel came down to him, and wept over him, …” (13:14); “He said, Open the ______ eastward; and he opened it. Then Elisha said, Shoot; and he shot. He said, Yahweh's arrow of victory, even the arrow …” (13:17, WEB)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sixteen: “… the son of Jehoahaz to reign over Israel in Samaria, and reigned sixteen years.”",
+    "options" : [
+      "six",
+      "twelve",
+      "three",
+      "sixteen"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the son of Jehoahaz to reign over Israel in Samaria, and reigned ______ years.”? (13:10, WEB)",
+    "reference" : "2 Kings 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then Amaziah sent messengers to Jehoash, the son of Jehoahaz son of Jehu, king of Israel, saying, Come, let us look one another in the face.” The missing terms belong in that order.",
+    "options" : [
+      "messengers king"
+    ],
+    "prompt" : "Supply the missing words in order: “Then Amaziah sent ____ to Jehoash, the son of Jehoahaz son of Jehu, of Israel, saying, Come, let us look one another in the face.” (14:8, WEB)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Jeroboam the son of Joash king of Israel began to reign in Samaria, and reigned forty-one years.”; the second reads “… shut up nor left at large, neither was there any helper for Israel.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Samaria Israel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Jeroboam the son of Joash king of Israel began to reign in ____, and reigned forty-one years.” (14:23); “… shut up nor left at large, neither was there any helper for .” (14:26, WEB)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… lived after the death of Jehoash son of Jehoahaz king of Israel fifteen years.”; verse 21 reads “All the people of Judah took Azariah, who was sixteen years old, and made him king in the room of his father Amaziah.”. These establish the first and second answers respectively.",
+    "options" : [
+      "eighteen; sixteen",
+      "sixteen; fifteen",
+      "fifteen; sixteen",
+      "fifteen; third"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… lived after the death of Jehoash son of Jehoahaz king of Israel ______ years.” (14:17); “All the people of Judah took Azariah, who was ______ years old, and made him king in the room of his father Amaziah.” (14:21, WEB)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 14:5 uses servants: “… as the kingdom was established in his hand, that he killed his servants who had slain the king his father:”",
+    "options" : [
+      "servants",
+      "elder",
+      "husband",
+      "judges"
+    ],
+    "prompt" : "Which word completes “… as the kingdom was established in his hand, that he killed his ______ who had slain the king his father:”? (14:5, WEB)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He took all the gold and silver, and all the vessels that were found in the house of Yahweh, and in the treasures of the king's …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He took all the gold and silver, and all the vessels that were found in the house of Yahweh, and in the treasures of the king's …” (14:14, WEB)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He was twenty-five years old when he began to reign; and he reigned twenty-nine years in Jerusalem: and his mother's name was Jehoaddin of Jerusalem.”",
+    "options" : [
+      "five"
+    ],
+    "prompt" : "Complete the quotation: “He was twenty-____ years old when he began to reign; and he reigned twenty-nine years in Jerusalem: and his mother's name was Jehoaddin of Jerusalem.” (14:2, WEB)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 14:11 records: “But Amaziah would not hear. So Jehoash king of Israel went up; and he and Amaziah king of Judah looked one another in the face at Beth-shemesh, which belongs to Judah.”",
+    "options" : [
+      "Beth-shemesh"
+    ],
+    "prompt" : "In this paraphrase, amaziah was defeated by Israel at ____. (14:11-12)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Edom: “You have indeed struck Edom, and your heart has lifted you up: glory of it, and abide at home; for why should you meddle to your …”",
+    "options" : [
+      "Goshen",
+      "Judah",
+      "Edom",
+      "Tarshish"
+    ],
+    "prompt" : "Which detail belongs in this passage: “You have indeed struck ______, and your heart has lifted you up: glory of it, and abide at home; for why should you meddle to your …”? (14:10, WEB)",
+    "reference" : "2 Kings 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 15:7 uses David: “… fathers; and they buried him with his fathers in the city of David: and Jotham his son reigned in his place.”",
+    "options" : [
+      "Daniel",
+      "Hezekiah",
+      "David",
+      "Hannah"
+    ],
+    "prompt" : "Which word completes “… fathers; and they buried him with his fathers in the city of ______: and Jotham his son reigned in his place.”? (15:7, WEB)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “However the high places were not taken away: the people still sacrificed and burnt incense in the high places.”",
+    "options" : [
+      "high"
+    ],
+    "prompt" : "Complete the quotation: “However the ____ places were not taken away: the people still sacrificed and burnt incense in the high places.” (15:4, WEB)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… they written in the book of the chronicles of the kings of Israel?”; verse 26 reads “Now the rest of the acts of Pekahiah, and all that he did, behold, they are written in the book of the chronicles of the kings …”. These establish the first and second answers respectively.",
+    "options" : [
+      "acts; Israel",
+      "Eliphaz; acts",
+      "Israel; acts",
+      "Israel; places"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… they written in the book of the chronicles of the kings of ______?” (15:21); “Now the rest of the ______ of Pekahiah, and all that he did, behold, they are written in the book of the chronicles of the kings …” (15:26, WEB)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of Jeroboam the son of Nebat, with which he made Israel to sin.” It says sin, not transgression.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of Jeroboam the son of Nebat, with which he made Israel to transgression.” (15:18, WEB)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Galilee, all the land of Naphtali; and he carried them captive to Assyria.”; the second reads “He was twenty-five years old when he began to reign; and he reigned sixteen years in Jerusalem: and his mother's name was Jerusha the daughter of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Assyria twenty"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Galilee, all the land of Naphtali; and he carried them captive to ____.” (15:29); “He was -five years old when he began to reign; and he reigned sixteen years in Jerusalem: and his mother's name was Jerusha the daughter of …” (15:33, WEB)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 15:1 records: “In the twenty-seventh year of Jeroboam king of Israel began Azariah son of Amaziah king of Judah to reign.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Azariah became king of Judah and did right in God's sight. (15:1-3)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Samaria: “… and came to Samaria, and struck Shallum the son of Jabesh in Samaria, and killed him, and reigned in his place.”",
+    "options" : [
+      "Damascus",
+      "Hebron",
+      "Babylon",
+      "Samaria"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and came to Samaria, and struck Shallum the son of Jabesh in ______, and killed him, and reigned in his place.”? (15:14, WEB)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now the rest of the acts of Zechariah, behold, they are written in the book of the chronicles of the kings of Israel.” The missing terms belong in that order.",
+    "options" : [
+      "rest kings"
+    ],
+    "prompt" : "Supply the missing words in order: “Now the ____ of the acts of Zechariah, behold, they are written in the book of the chronicles of the of Israel.” (15:11, WEB)",
+    "reference" : "2 Kings 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Syria recovered Elath to Syria, and drove the Jews from Elath; and the Syrians came to Elath, and lived there, to this day.” The missing terms belong in that order.",
+    "options" : [
+      "drove lived"
+    ],
+    "prompt" : "Supply the missing words in order: “… Syria recovered Elath to Syria, and ____ the Jews from Elath; and the Syrians came to Elath, and there, to this day.” (16:6, WEB)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “When the king was come from Damascus, the king saw the altar: and the king drew near to the altar, and offered thereon.”; verse 14 reads “The brazen altar, which was before Yahweh, he brought from the forefront of the house, from between his altar and the house of Yahweh, and put …”. These establish the first and second answers respectively.",
+    "options" : [
+      "scroll; forefront",
+      "forefront; altar",
+      "altar; forefront",
+      "altar; time"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “When the king was come from Damascus, the king saw the ______: and the king drew near to the altar, and offered thereon.” (16:12); “The brazen altar, which was before Yahweh, he brought from the ______ of the house, from between his altar and the house of Yahweh, and put …” (16:14, WEB)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Tiglath Pileser king of Assyria, and saw the altar that was at Damascus; and king Ahaz sent to Urijah the priest the fashion of the altar, …” It says Damascus, not Judah.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Tiglath Pileser king of Assyria, and saw the altar that was at Judah; and king Ahaz sent to Urijah the priest the fashion of the altar, …” (16:10, WEB)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Ahaz when he began to reign; and he reigned sixteen years in Jerusalem: and he didn't do that which was right in the eyes of Yahweh …”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "Complete the quotation: “… Ahaz when he began to reign; and he reigned sixteen years in ____: and he didn't do that which was right in the eyes of Yahweh …” (16:2, WEB)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 16:3 records: “… he walked in the way of the kings of Israel, yes, and made his son to pass through the fire, according to the abominations of the nations, whom Yahweh cast out from before the children of …”",
+    "options" : [
+      "nations"
+    ],
+    "prompt" : "In this paraphrase, ahaz followed the abominations of the ____ whom the LORD drove out. (16:3)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 16:4 uses sacrificed: “He sacrificed and burnt incense in the high places, and on the hills, and under every green tree.”",
+    "options" : [
+      "poured",
+      "sacrificed",
+      "listened",
+      "sprinkled"
+    ],
+    "prompt" : "Which word completes “He ______ and burnt incense in the high places, and on the hills, and under every green tree.”? (16:4, WEB)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… of all the people of the land, and their meal-offering, and their drink-offerings; and sprinkle on it all the blood of the burnt offering, and all …”; the second reads “… turned he to the house of Yahweh, because of the king of Assyria.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "offerings Assyria"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… of all the people of the land, and their meal-offering, and their drink-____; and sprinkle on it all the blood of the burnt offering, and all …” (16:15); “… turned he to the house of Yahweh, because of the king of .” (16:18, WEB)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies silver: “Ahaz took the silver and gold that was found in the house of Yahweh, and in the treasures of the king's house, and sent it for …”",
+    "options" : [
+      "silver",
+      "dust",
+      "iron",
+      "copper"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Ahaz took the ______ and gold that was found in the house of Yahweh, and in the treasures of the king's house, and sent it for …”? (16:8, WEB)",
+    "reference" : "2 Kings 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies statutes: “They rejected his statutes, and his covenant that he made with their fathers, and his testimonies which he testified to them; and they followed vanity, and …”",
+    "options" : [
+      "judgment",
+      "statutes",
+      "promises",
+      "promise"
+    ],
+    "prompt" : "Which detail belongs in this passage: “They rejected his ______, and his covenant that he made with their fathers, and his testimonies which he testified to them; and they followed vanity, and …”? (17:15, WEB)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Verse 6 reports exile, while verses 7-23 give the theological explanation. The cause should not be attributed to verse 6 alone.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "After reporting Assyria's capture of Samaria, the narrator describes Israel's idolatry and covenant unfaithfulness. (17:6-23)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 17:7 uses Egypt: “… Yahweh their God, who brought them up out of the land of Egypt from under the hand of Pharaoh king of Egypt, and had feared other …”",
+    "options" : [
+      "Israel",
+      "Beersheba",
+      "Egypt",
+      "Jericho"
+    ],
+    "prompt" : "Which word completes “… Yahweh their God, who brought them up out of the land of ______ from under the hand of Pharaoh king of Egypt, and had feared other …”? (17:7, WEB)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Against him came up Shalmaneser king of Assyria; and Hoshea became his servant, and brought him tribute.”",
+    "options" : [
+      "Assyria"
+    ],
+    "prompt" : "Complete the quotation: “Against him came up Shalmaneser king of ____; and Hoshea became his servant, and brought him tribute.” (17:3, WEB)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Also Judah didn't keep the commandments of Yahweh their God, but walked in the statutes of Israel which they made.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Also Judah didn't keep the commandments of Yahweh their God, but walked in the statutes of Israel which they made.” (17:19, WEB)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 6 reports the deportation; the following verses interpret it in terms of idolatry and refused warnings. Political defeat and the book's theological explanation should be distinguished.",
+    "options" : [
+      "Israel had kept every command perfectly.",
+      "Persistent covenant unfaithfulness despite God's warnings through prophets.",
+      "The prophets had told Israel to worship idols.",
+      "The narrator says there is no reason."
+    ],
+    "prompt" : "What explanation does the narrator give for the northern kingdom's exile? (17:6-23)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the high places, who sacrificed for them in the houses of the high places.”; the second reads “… Egypt with great power and with an outstretched arm, him shall you fear, and to him shall you bow yourselves, and to him shall you sacrifice:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "high fear"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the high places, who sacrificed for them in the houses of the ____ places.” (17:32); “… Egypt with great power and with an outstretched arm, him shall you , and to him shall you bow yourselves, and to him shall you sacrifice:” (17:36, WEB)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… in all the high places, as did the nations whom Yahweh carried away before them; and they worked wicked things to provoke Yahweh to anger;” The missing terms belong in that order.",
+    "options" : [
+      "nations worked"
+    ],
+    "prompt" : "Supply the missing words in order: “… in all the high places, as did the ____ whom Yahweh carried away before them; and they wicked things to provoke Yahweh to anger;” (17:11, WEB)",
+    "reference" : "2 Kings 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… years in Jerusalem: and his mother's name was Abi the daughter of Zechariah.”",
+    "options" : [
+      "Zechariah"
+    ],
+    "prompt" : "Complete the quotation: “… years in Jerusalem: and his mother's name was Abi the daughter of ____.” (18:2, WEB)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… took it: in the sixth year of Hezekiah, which was the ninth year of Hoshea king of Israel, Samaria was taken.” The missing terms belong in that order.",
+    "options" : [
+      "Hezekiah Samaria"
+    ],
+    "prompt" : "Supply the missing words in order: “… took it: in the sixth year of ____, which was the ninth year of Hoshea king of Israel, was taken.” (18:10, WEB)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 18:6 uses commandments: “… joined with Yahweh; he didn't depart from following him, but kept his commandments, which Yahweh commanded Moses.”",
+    "options" : [
+      "testimony",
+      "commandments",
+      "judgment",
+      "teaching"
+    ],
+    "prompt" : "Which word completes “… joined with Yahweh; he didn't depart from following him, but kept his ______, which Yahweh commanded Moses.”? (18:6, WEB)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… go into his hand, and pierce it: so is Pharaoh king of Egypt to all who trust on him.”; verse 24 reads “… away the face of one captain of the least of my master's servants, and put your trust on Egypt for chariots and for horsemen?”. These establish the first and second answers respectively.",
+    "options" : [
+      "Egypt; servants",
+      "Egypt; wife",
+      "servants; Egypt",
+      "Moab; servants"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… go into his hand, and pierce it: so is Pharaoh king of ______ to all who trust on him.” (18:21); “… away the face of one captain of the least of my master's ______, and put your trust on Egypt for chariots and for horsemen?” (18:24, WEB)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies silver: “… of Assyria appointed to Hezekiah king of Judah three hundred talents of silver and thirty talents of gold.”",
+    "options" : [
+      "stone",
+      "wood",
+      "sand",
+      "silver"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of Assyria appointed to Hezekiah king of Judah three hundred talents of ______ and thirty talents of gold.”? (18:14, WEB)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 18:4 records: “… places, and broke the pillars, and cut down the Asherah: and he broke in pieces the brazen serpent that Moses had made; for to those days the children of Israel did burn incense to it; and …”",
+    "options" : [
+      "serpent"
+    ],
+    "prompt" : "In this paraphrase, hezekiah broke the bronze ____ that Moses had made. (18:4)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The king of Assyria sent Tartan and Rabsaris and Rabshakeh from Lachish to king Hezekiah with a great army to Jerusalem. They went up and came …” It says Assyria, not Zion.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The king of Zion sent Tartan and Rabsaris and Rabshakeh from Lachish to king Hezekiah with a great army to Jerusalem. They went up and came …” (18:17, WEB)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Jews' language, and spoke, saying, Hear you the word of the great king, the king of Assyria.”; the second reads “… you away to a land like your own land, a land of grain and new wine, a land of bread and vineyards, a land of olive …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "king grain"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Jews' language, and spoke, saying, Hear you the word of the great ____, the king of Assyria.” (18:28); “… you away to a land like your own land, a land of and new wine, a land of bread and vineyards, a land of olive …” (18:32, WEB)",
+    "reference" : "2 Kings 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies messengers: “Hezekiah received the letter from the hand of the messengers, and read it; and Hezekiah went up to the house of Yahweh, and spread it before …”",
+    "options" : [
+      "messengers",
+      "pass",
+      "kingdoms",
+      "times"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Hezekiah received the letter from the hand of the ______, and read it; and Hezekiah went up to the house of Yahweh, and spread it before …”? (19:14, WEB)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “and have cast their gods into the fire; for they were no gods, but the work of men's hands, wood and stone; therefore they have destroyed …” It says fire, not Eliakim.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “and have cast their gods into the Eliakim; for they were no gods, but the work of men's hands, wood and stone; therefore they have destroyed …” (19:18, WEB)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… shall eat this year that which grows of itself, and in the second year that which springs of the same; and in the third year sow …”; the second reads “… of Assyria, He shall not come to this city, nor shoot an arrow there, neither shall he come before it with shield, nor cast up a …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "second arrow"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… shall eat this year that which grows of itself, and in the ____ year that which springs of the same; and in the third year sow …” (19:29); “… of Assyria, He shall not come to this city, nor shoot an there, neither shall he come before it with shield, nor cast up a …” (19:32, WEB)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “They said to him, Thus says Hezekiah, This day is a day of trouble, and of rebuke, and of rejection; for the children are come to …”",
+    "options" : [
+      "Hezekiah"
+    ],
+    "prompt" : "Complete the quotation: “They said to him, Thus says ____, This day is a day of trouble, and of rebuke, and of rejection; for the children are come to …” (19:3, WEB)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 19:35 records: “It happened that night, that the angel of Yahweh went forth, and struck in the camp of the Assyrians one hundred eighty-five thousand: and when men arose early in the morning, behold, these were all dead …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD sent an angel to kill Assyrian soldiers. (19:35)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… whom you trust deceive you, saying, Jerusalem shall not be given into the hand of the king of Assyria.” The missing terms belong in that order.",
+    "options" : [
+      "Jerusalem Assyria"
+    ],
+    "prompt" : "Supply the missing words in order: “… whom you trust deceive you, saying, ____ shall not be given into the hand of the king of .” (19:10, WEB)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… the word that Yahweh has spoken concerning him: The virgin daughter of Zion has despised you and ridiculed you; the daughter of Jerusalem has shaken her …”; verse 25 reads “… and formed it of ancient times? now have I brought it to pass, that it should be yours to lay waste fortified cities into ruinous heaps.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Hebron; pass",
+      "Zion; pass",
+      "Zion; mountains",
+      "pass; Zion"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the word that Yahweh has spoken concerning him: The virgin daughter of ______ has despised you and ridiculed you; the daughter of Jerusalem has shaken her …” (19:21); “… and formed it of ancient times? now have I brought it to ______, that it should be yours to lay waste fortified cities into ruinous heaps.” (19:25, WEB)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 19:7 uses spirit: “Behold, I will put a spirit in him, and he shall hear news, and shall return to his own land; and I will cause him to …”",
+    "options" : [
+      "housetops",
+      "spirit",
+      "reap",
+      "early"
+    ],
+    "prompt" : "Which word completes “Behold, I will put a ______ in him, and he shall hear news, and shall return to his own land; and I will cause him to …”? (19:7, WEB)",
+    "reference" : "2 Kings 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 20:6 records: “… add to your days fifteen years; and I will deliver you and this city out of the hand of the king of Assyria; and I will defend this city for my own sake, and for my …”",
+    "options" : [
+      "years"
+    ],
+    "prompt" : "In this paraphrase, hezekiah was given fifteen more ____. (20:6)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Hezekiah answered, It is a light thing for the shadow to decline ten steps: nay, but let the shadow return backward ten steps.” It says light, not David's.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Hezekiah answered, It is a David's thing for the shadow to decline ten steps: nay, but let the shadow return backward ten steps.” (20:10, WEB)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… them, and shown them all the house of his precious things, the silver, and the gold, and the spices, and the precious oil, and the house …”; verse 14 reads “… you? Hezekiah said, They are come from a far country, even from Babylon.”. These establish the first and second answers respectively.",
+    "options" : [
+      "silver; Babylon",
+      "clay; Babylon",
+      "Babylon; silver",
+      "silver; Israel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… them, and shown them all the house of his precious things, the ______, and the gold, and the spices, and the precious oil, and the house …” (20:13); “… you? Hezekiah said, They are come from a far country, even from ______.” (20:14, WEB)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Isaiah said, Take a cake of figs. They took and laid it on the boil, and he recovered.” The missing terms belong in that order.",
+    "options" : [
+      "Isaiah boil"
+    ],
+    "prompt" : "Supply the missing words in order: “____ said, Take a cake of figs. They took and laid it on the , and he recovered.” (20:7, WEB)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 20:5 uses third: “… I have seen your tears: behold, I will heal you; on the third day you shall go up to the house of Yahweh.”",
+    "options" : [
+      "third",
+      "sixty",
+      "first",
+      "thirteen"
+    ],
+    "prompt" : "Which word completes “… I have seen your tears: behold, I will heal you; on the ______ day you shall go up to the house of Yahweh.”? (20:5, WEB)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies ten: “… do the thing that he has spoken: shall the shadow go forward ten steps, or go back ten steps?”",
+    "options" : [
+      "sixth",
+      "ten",
+      "two",
+      "twenty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… do the thing that he has spoken: shall the shadow go forward ______ steps, or go back ten steps?”? (20:9, WEB)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… all that is in your house, and that which your fathers have laid up in store to this day, shall be carried to Babylon: nothing shall …”; the second reads “… you have spoken. He said moreover, Isn't it so, if peace and truth shall be in my days?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "laid truth"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… all that is in your house, and that which your fathers have ____ up in store to this day, shall be carried to Babylon: nothing shall …” (20:17); “… you have spoken. He said moreover, Isn't it so, if peace and shall be in my days?” (20:19, WEB)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… perfect heart, and have done that which is good in your sight. Hezekiah wept sore.”",
+    "options" : [
+      "Hezekiah"
+    ],
+    "prompt" : "Complete the quotation: “… perfect heart, and have done that which is good in your sight. ____ wept sore.” (20:3, WEB)",
+    "reference" : "2 Kings 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “Moreover Manasseh shed innocent blood very much, until he had filled Jerusalem from one end to another; besides his sin with which he made Judah to …”; verse 18 reads “Manasseh slept with his fathers, and was buried in the garden of his own house, in the garden of Uzza: and Amon his son reigned in …”. These establish the first and second answers respectively.",
+    "options" : [
+      "blood; sinned",
+      "buried; blood",
+      "blood; buried",
+      "bones; buried"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Moreover Manasseh shed innocent ______ very much, until he had filled Jerusalem from one end to another; besides his sin with which he made Judah to …” (21:16); “Manasseh slept with his fathers, and was ______ in the garden of his own house, in the garden of Uzza: and Amon his son reigned in …” (21:18, WEB)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… all that I have commanded them, and according to all the law that my servant Moses commanded them.” The missing terms belong in that order.",
+    "options" : [
+      "law servant"
+    ],
+    "prompt" : "Supply the missing words in order: “… all that I have commanded them, and according to all the ____ that my Moses commanded them.” (21:8, WEB)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 21:6 uses fire: “He made his son to pass through the fire, and practiced sorcery, and used enchantments, and dealt with those who had familiar spirits, and with wizards: …”",
+    "options" : [
+      "seduced",
+      "wipes",
+      "used",
+      "fire"
+    ],
+    "prompt" : "Which word completes “He made his son to pass through the ______, and practiced sorcery, and used enchantments, and dealt with those who had familiar spirits, and with wizards: …”? (21:6, WEB)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He walked in all the way that his father walked in, and served the idols that his father served, and worshiped them:”; the second reads “… had conspired against king Amon; and the people of the land made Josiah his son king in his place.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "served Josiah"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He walked in all the way that his father walked in, and ____ the idols that his father served, and worshiped them:” (21:21); “… had conspired against king Amon; and the people of the land made his son king in his place.” (21:24, WEB)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Manasseh was twelve years old when he began to reign; and he reigned fifty-five years in Jerusalem: and his mother's name was Hephzibah.”",
+    "options" : [
+      "Manasseh"
+    ],
+    "prompt" : "Complete the quotation: “____ was twelve years old when he began to reign; and he reigned fifty-five years in Jerusalem: and his mother's name was Hephzibah.” (21:1, WEB)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sin: “… Amorites did, who were before him, and has made Judah also to sin with his idols;”",
+    "options" : [
+      "transgressions",
+      "rebellion",
+      "sin",
+      "wickedness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Amorites did, who were before him, and has made Judah also to ______ with his idols;”? (21:11, WEB)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I will stretch over Jerusalem the line of Samaria, and the plummet of the house of Ahab; and I will wipe Jerusalem as a man wipes …” It says Samaria, not Tarshish.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I will stretch over Jerusalem the line of Tarshish, and the plummet of the house of Ahab; and I will wipe Jerusalem as a man wipes …” (21:13, WEB)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 21:4 records: “He built altars in the house of Yahweh, of which Yahweh said, In Jerusalem will I put my name.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Manasseh built altars to false gods in the house of the LORD. (21:4-5)",
+    "reference" : "2 Kings 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… carpenters, and to the builders, and to the masons, and for buying timber and hewn stone to repair the house.” The missing terms belong in that order.",
+    "options" : [
+      "masons repair"
+    ],
+    "prompt" : "Supply the missing words in order: “… carpenters, and to the builders, and to the ____, and for buying timber and hewn stone to the house.” (22:6, WEB)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 22:8 records: “Hilkiah the high priest said to Shaphan the scribe, I have found the book of the law in the house of Yahweh. Hilkiah delivered the book to Shaphan, and he read it.”",
+    "options" : [
+      "LORD"
+    ],
+    "prompt" : "In this paraphrase, the Book of the Law was found in the house of the ____. (22:8)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… the son of Micaiah, and Shaphan the scribe, and Asaiah the king's servant, saying,”; verse 14 reads “… Harhas, keeper of the wardrobe (now she lived in Jerusalem in the second quarter); and they talked with her.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fathers; second",
+      "second; servant",
+      "servant; second",
+      "servant; seventh"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the son of Micaiah, and Shaphan the scribe, and Asaiah the king's ______, saying,” (22:12); “… Harhas, keeper of the wardrobe (now she lived in Jerusalem in the ______ quarter); and they talked with her.” (22:14, WEB)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… in the eyes of Yahweh, and walked in all the way of David his father, and didn't turn aside to the right hand or to the …”",
+    "options" : [
+      "David"
+    ],
+    "prompt" : "Complete the quotation: “… in the eyes of Yahweh, and walked in all the way of ____ his father, and didn't turn aside to the right hand or to the …” (22:2, WEB)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… it, even all the words of the book which the king of Judah has read.”; the second reads “because your heart was tender, and you did humble yourself before Yahweh, when you heard what I spoke against this place, and against the inhabitants of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Judah heart"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… it, even all the words of the book which the king of ____ has read.” (22:16); “because your was tender, and you did humble yourself before Yahweh, when you heard what I spoke against this place, and against the inhabitants of …” (22:19, WEB)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 22:4 uses priest: “Go up to Hilkiah the high priest, that he may sum the money which is brought into the house of Yahweh, which the keepers of the …”",
+    "options" : [
+      "priest",
+      "prince",
+      "sisters",
+      "shepherds"
+    ],
+    "prompt" : "Which word completes “Go up to Hilkiah the high ______, that he may sum the money which is brought into the house of Yahweh, which the keepers of the …”? (22:4, WEB)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Shaphan the scribe told the king, saying, Hilkiah the priest has delivered me a book. Shaphan read it before the king.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Shaphan the scribe told the king, saying, Hilkiah the priest has delivered me a book. Shaphan read it before the king.” (22:10, WEB)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies servants: “… to the king, and brought the king word again, and said, Your servants have emptied out the money that was found in the house, and have …”",
+    "options" : [
+      "servants",
+      "elders",
+      "sisters",
+      "king"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to the king, and brought the king word again, and said, Your ______ have emptied out the money that was found in the house, and have …”? (22:9, WEB)",
+    "reference" : "2 Kings 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… up against the king of Assyria to the river Euphrates: and king Josiah went against him; and Pharaoh Necoh killed him at Megiddo, when he had …”; the second reads “… and put the land to a tribute of one hundred talents of silver, and a talent of gold.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Josiah silver"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… up against the king of Assyria to the river Euphrates: and king ____ went against him; and Pharaoh Necoh killed him at Megiddo, when he had …” (23:29); “… and put the land to a tribute of one hundred talents of , and a talent of gold.” (23:33, WEB)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 23:6 uses Jerusalem: “He brought out the Asherah from the house of Yahweh, outside of Jerusalem, to the brook Kidron, and burned it at the brook Kidron, and beat …”",
+    "options" : [
+      "Damascus",
+      "Jerusalem",
+      "Moab",
+      "Bethel"
+    ],
+    "prompt" : "Which word completes “He brought out the Asherah from the house of Yahweh, outside of ______, to the brook Kidron, and burned it at the brook Kidron, and beat …”? (23:6, WEB)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies pieces: “He broke in pieces the pillars, and cut down the Asherim, and filled their places with the bones of men.”",
+    "options" : [
+      "graves",
+      "pieces",
+      "idolatrous",
+      "inhabitants"
+    ],
+    "prompt" : "Which detail belongs in this passage: “He broke in ______ the pillars, and cut down the Asherim, and filled their places with the bones of men.”? (23:14, WEB)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… bones alone, with the bones of the prophet who came out of Samaria.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… bones alone, with the bones of the prophet who came out of Samaria.” (23:18, WEB)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “… the days of the kings of Israel, nor of the kings of Judah;”; verse 25 reads “… all his soul, and with all his might, according to all the law of Moses; neither after him arose there any like him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Abraham; law",
+      "Judah; law",
+      "law; Judah",
+      "Judah; commandment"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the days of the kings of Israel, nor of the kings of ______;” (23:22); “… all his soul, and with all his might, according to all the ______ of Moses; neither after him arose there any like him.” (23:25, WEB)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… that the kings of Judah had given to the sun, at the entrance of the house of Yahweh, by the chamber of Nathan-melech the chamberlain, which …” The missing terms belong in that order.",
+    "options" : [
+      "kings Nathan"
+    ],
+    "prompt" : "Supply the missing words in order: “… that the ____ of Judah had given to the sun, at the entrance of the house of Yahweh, by the chamber of -melech the chamberlain, which …” (23:11, WEB)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 23:2 records: “… men of Judah and all the inhabitants of Jerusalem with him, and the priests, and the prophets, and all the people, both small and great: and he read in their ears all the words of the …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Josiah read the Book of the Law to all the people. (23:2)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… were written in this book: and all the people stood to the covenant.”",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "Complete the quotation: “… were written in this book: and all the people stood to the ____.” (23:3, WEB)",
+    "reference" : "2 Kings 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… it, according to the word of Yahweh, which he spoke by his servants the prophets.”",
+    "options" : [
+      "servants"
+    ],
+    "prompt" : "Complete the quotation: “… it, according to the word of Yahweh, which he spoke by his ____ the prophets.” (24:2, WEB)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies eighteen: “Jehoiachin was eighteen years old when he began to reign; and he reigned in Jerusalem three months: and his mother's name was Nehushta the daughter of …”",
+    "options" : [
+      "eighteen",
+      "ninety",
+      "twelfth",
+      "ten"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Jehoiachin was ______ years old when he began to reign; and he reigned in Jerusalem three months: and his mother's name was Nehushta the daughter of …”? (24:8, WEB)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "2 Kings 24:15 records: “He carried away Jehoiachin to Babylon; and the king's mother, and the king's wives, and his officers, and the chief men of the land, carried he into captivity from Jerusalem to Babylon.”",
+    "options" : [
+      "Babylon"
+    ],
+    "prompt" : "In this paraphrase, jehoiachin was taken captive to ____. (24:15)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 24:4 uses blood: “… the innocent blood that he shed; for he filled Jerusalem with innocent blood: and Yahweh would not pardon.”",
+    "options" : [
+      "neck",
+      "head",
+      "hands",
+      "blood"
+    ],
+    "prompt" : "Which word completes “… the innocent blood that he shed; for he filled Jerusalem with innocent ______: and Yahweh would not pardon.”? (24:4, WEB)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The king of Egypt didn't come again out of his land any more; for the king of Babylon had taken, from the brook of Egypt to …” The missing terms belong in that order.",
+    "options" : [
+      "Egypt Babylon"
+    ],
+    "prompt" : "Supply the missing words in order: “The king of ____ didn't come again out of his land any more; for the king of had taken, from the brook of Egypt to …” (24:7, WEB)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “At that time the servants of Nebuchadnezzar king of Babylon came up to Jerusalem, and the city was besieged.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “At that time the servants of Nebuchadnezzar king of Babylon came up to Jerusalem, and the city was besieged.” (24:10, WEB)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… and his officers: and the king of Babylon took him in the eighth year of his reign.”; verse 14 reads “… and all the princes, and all the mighty men of valor, even ten thousand captives, and all the craftsmen and the smiths; none remained, save the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "eighth; ten",
+      "ten; eighth",
+      "four; ten",
+      "eighth; three"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and his officers: and the king of Babylon took him in the ______ year of his reign.” (24:12); “… and all the princes, and all the mighty men of valor, even ______ thousand captives, and all the craftsmen and the smiths; none remained, save the …” (24:14, WEB)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “All the men of might, even seven thousand, and the craftsmen and the smiths one thousand, all of them strong and apt for war, even them …”; the second reads “… was twenty-one years old when he began to reign; and he reigned eleven years in Jerusalem: and his mother's name was Hamutal the daughter of Jeremiah …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "seven eleven"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “All the men of might, even ____ thousand, and the craftsmen and the smiths one thousand, all of them strong and apt for war, even them …” (24:16); “… was twenty-one years old when he began to reign; and he reigned years in Jerusalem: and his mother's name was Hamutal the daughter of Jeremiah …” (24:18, WEB)",
+    "reference" : "2 Kings 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "2 Kings 25:10 records: “All the army of the Chaldeans, who were with the captain of the guard, broke down the walls of Jerusalem round about.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jerusalem's walls were broken down by the Babylonians. (25:10)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Kings 25:5 uses Jericho: “… Chaldeans pursued after the king, and overtook him in the plains of Jericho; and all his army was scattered from him.”",
+    "options" : [
+      "Damascus",
+      "Jericho",
+      "Assyria",
+      "Hebron"
+    ],
+    "prompt" : "Which word completes “… Chaldeans pursued after the king, and overtook him in the plains of ______; and all his army was scattered from him.”? (25:5, WEB)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… that which was of gold, in gold, and that which was of silver, in silver, the captain of the guard took away.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… that which was of gold, in gold, and that which was of silver, in silver, the captain of the guard took away.” (25:15, WEB)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies king: “… in the city, and those who fell away, who fell to the king of Babylon, and the residue of the multitude, did Nebuzaradan the captain of …”",
+    "options" : [
+      "king",
+      "daughters",
+      "prophet",
+      "brother"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… in the city, and those who fell away, who fell to the ______ of Babylon, and the residue of the multitude, did Nebuzaradan the captain of …”? (25:11, WEB)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… day of the month, which was the nineteenth year of king Nebuchadnezzar, king of Babylon, came Nebuzaradan the captain of the guard, a servant of the …” The missing terms belong in that order.",
+    "options" : [
+      "Nebuchadnezzar Babylon"
+    ],
+    "prompt" : "Supply the missing words in order: “… day of the month, which was the nineteenth year of king ____, king of , came Nebuzaradan the captain of the guard, a servant of the …” (25:8, WEB)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Johanan the son of Kareah, and Seraiah the son of Tanhumeth the Netophathite, and Jaazaniah the son of the Maacathite, they and their men.”; the second reads “… captivity of Jehoiachin king of Judah, in the twelfth month, on the seven and twentieth day of the month, that Evilmerodach king of Babylon, in the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Netophathite seven"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Johanan the son of Kareah, and Seraiah the son of Tanhumeth the ____, and Jaazaniah the son of the Maacathite, they and their men.” (25:23); “… captivity of Jehoiachin king of Judah, in the twelfth month, on the and twentieth day of the month, that Evilmerodach king of Babylon, in the …” (25:27, WEB)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “The captain of the guard took Seraiah the chief priest, and Zephaniah the second priest, and the three keepers of the threshold:”; verse 21 reads “The king of Babylon struck them, and put them to death at Riblah in the land of Hamath. So Judah was carried away captive out of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Zephaniah; death",
+      "Seth; death",
+      "death; Zephaniah",
+      "Zephaniah; sacrifice"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The captain of the guard took Seraiah the chief priest, and ______ the second priest, and the three keepers of the threshold:” (25:18); “The king of Babylon struck them, and put them to ______ at Riblah in the land of Hamath. So Judah was carried away captive out of …” (25:21, WEB)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2kings",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the famine was sore in the city, so that there was no bread for the people of the land.”",
+    "options" : [
+      "bread"
+    ],
+    "prompt" : "Complete the quotation: “… the famine was sore in the city, so that there was no ____ for the people of the land.” (25:3, WEB)",
+    "reference" : "2 Kings 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -1,0 +1,135 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… these speak evil of whatever things they don't know. What they understand naturally, like the creatures without reason, in these things are they destroyed.” The missing terms belong in that order.",
+    "options" : [
+      "naturally like"
+    ],
+    "prompt" : "Supply the missing words in order: “… these speak evil of whatever things they don't know. What they understand ____, the creatures without reason, in these things are they destroyed.” (1:10, WEB)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Believers are to build themselves up in faith while showing discerning mercy toward those in danger or doubt. Jude's severe warnings do not remove the call to mercy. Its use of traditional material elsewhere in the letter also requires attention to the specific argument rather than automatic endorsement of every external source.",
+    "options" : [
+      "Believers are to build themselves up in faith while showing discerning mercy toward those in danger or doubt.",
+      "Every doubter is to be treated with contempt.",
+      "The community is told never to attend to its own faith.",
+      "Mercy means abandoning every concern for truth."
+    ],
+    "prompt" : "How are firmness and mercy joined near the end of the letter? (1:17-23)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies water: “… they feast with you, shepherds who without fear feed themselves; clouds without water, carried along by winds; autumn leaves without fruit, twice dead, plucked up by …”",
+    "options" : [
+      "bread",
+      "flour",
+      "barley",
+      "water"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… they feast with you, shepherds who without fear feed themselves; clouds without ______, carried along by winds; autumn leaves without fruit, twice dead, plucked up by …”? (1:12, WEB)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Jude 1:7 uses fire: “… flesh, are set forth as an example, suffering the punishment of eternal fire.”",
+    "options" : [
+      "like",
+      "fire",
+      "rebellion",
+      "remember"
+    ],
+    "prompt" : "Which word completes “… flesh, are set forth as an example, suffering the punishment of eternal ______.”? (1:7, WEB)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “to execute judgment on all, and to convict all the ungodly of all their works of ungodliness which they have done in an ungodly way, and …” It says judgment, not commandment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “to execute commandment on all, and to convict all the ungodly of all their works of ungodliness which they have done in an ungodly way, and …” (1:15, WEB)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… you, beloved, remember the words which have been spoken before by the apostles of our Lord Jesus Christ.”; verse 20 reads “But you, beloved, keep building up yourselves on your most holy faith, praying in the Holy Spirit.”. These establish the first and second answers respectively.",
+    "options" : [
+      "mockers; holy",
+      "holy; apostles",
+      "apostles; holy",
+      "apostles; obedient"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… you, beloved, remember the words which have been spoken before by the ______ of our Lord Jesus Christ.” (1:17); “But you, beloved, keep building up yourselves on your most ______ faith, praying in the Holy Spirit.” (1:20, WEB)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… constrained to write to you exhorting you to contend earnestly for the faith which was once for all delivered to the saints.”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “… constrained to write to you exhorting you to contend earnestly for the ____ which was once for all delivered to the saints.” (1:3, WEB)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "jude",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… that the Lord, having saved a people out of the land of Egypt, afterward destroyed those who didn't believe.”",
+    "options" : [
+      "Egypt"
+    ],
+    "prompt" : "Complete the quotation: “… that the Lord, having saved a people out of the land of ____, afterward destroyed those who didn't believe.” (1:5, WEB)",
+    "reference" : "Jude 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -1,0 +1,397 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… horsemen come from afar. They fly as an eagle that hurries to devour.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… horsemen come from afar. They fly as an eagle that hurries to devour.” (1:8, WEB)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Why do you show me iniquity, and look at perversity? For destruction and violence are before me. There is strife, and contention rises up.”",
+    "options" : [
+      "iniquity"
+    ],
+    "prompt" : "Complete the quotation: “Why do you show me ____, and look at perversity? For destruction and violence are before me. There is strife, and contention rises up.” (1:3, WEB)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Habakkuk 1:2 records: “Yahweh, how long will I cry, and you will not hear? I cry out to you \"Violence!\" and will you not save?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Habakkuk asked the LORD why He does not hear. (1:2)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… keep silent when the wicked swallows up the man who is more righteous than he,”; the second reads “… his net, and burns incense to his dragnet, because by them his life is luxurious, and his food is good.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "righteous life"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… keep silent when the wicked swallows up the man who is more ____ than he,” (1:13); “… his net, and burns incense to his dragnet, because by them his is luxurious, and his food is good.” (1:16, WEB)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Habakkuk 1:4 uses law: “Therefore the law is paralyzed, and justice never goes forth; for the wicked surround the righteous; therefore justice goes forth perverted.”",
+    "options" : [
+      "commandment",
+      "testimony",
+      "law",
+      "judgments"
+    ],
+    "prompt" : "Which word completes “Therefore the ______ is paralyzed, and justice never goes forth; for the wicked surround the righteous; therefore justice goes forth perverted.”? (1:4, WEB)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nation: “For, behold, I raise up the Chaldeans, that bitter and hasty nation, that march through the breadth of the earth, to possess dwelling places that are …”",
+    "options" : [
+      "gold",
+      "nation",
+      "glory",
+      "rest"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For, behold, I raise up the Chaldeans, that bitter and hasty ______, that march through the breadth of the earth, to possess dwelling places that are …”? (1:6, WEB)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “Yes, he scoffs at kings, and princes are a derision to him. He laughs at every stronghold, for he builds up an earthen ramp, and takes …”; verse 12 reads “… Holy One? We will not die. Yahweh, you have appointed him for judgment. You, Rock, have established him to punish.”. These establish the first and second answers respectively.",
+    "options" : [
+      "judgment; kings",
+      "shepherd; judgment",
+      "kings; judgment",
+      "kings; words"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Yes, he scoffs at ______, and princes are a derision to him. He laughs at every stronghold, for he builds up an earthen ramp, and takes …” (1:10); “… Holy One? We will not die. Yahweh, you have appointed him for ______. You, Rock, have established him to punish.” (1:12, WEB)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “\"Look among the nations, watch, and wonder marvelously; for I am working a work in your days, which you will not believe though it is told …” The missing terms belong in that order.",
+    "options" : [
+      "nations marvelously"
+    ],
+    "prompt" : "Supply the missing words in order: “\"Look among the ____, watch, and wonder ; for I am working a work in your days, which you will not believe though it is told …” (1:5, WEB)",
+    "reference" : "Habakkuk 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Habakkuk 2:5 uses death: “… at home, who enlarges his desire as Sheol, and he is like death, and can't be satisfied, but gathers to himself all nations, and heaps to …”",
+    "options" : [
+      "offering",
+      "death",
+      "worship",
+      "blessing"
+    ],
+    "prompt" : "Which word completes “… at home, who enlarges his desire as Sheol, and he is like ______, and can't be satisfied, but gathers to himself all nations, and heaps to …”? (2:5, WEB)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… hurries toward the end, and won't prove false. Though it takes time, wait for it; because it will surely come. It won't delay.”",
+    "options" : [
+      "wait"
+    ],
+    "prompt" : "Complete the quotation: “… hurries toward the end, and won't prove false. Though it takes time, ____ for it; because it will surely come. It won't delay.” (2:3, WEB)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The oracle calls for patient attention to God's answer. Romans and Galatians later use 2:4 in teaching about faith; that connection should not erase Habakkuk's setting.",
+    "options" : [
+      "It says exploitation is the definition of righteousness.",
+      "It contrasts trustful, faithful life with pride and restless exploitation.",
+      "It tells the prophet that waiting is never needed.",
+      "It praises the arrogance of the conqueror."
+    ],
+    "prompt" : "How does the call to live by faithfulness answer the setting of arrogant power? (2:1-5)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Won't all these take up a parable against him, and a taunting proverb against him, and say, 'Woe to him who increases that which is not …” The missing terms belong in that order.",
+    "options" : [
+      "parable Woe"
+    ],
+    "prompt" : "Supply the missing words in order: “Won't all these take up a ____ against him, and a taunting proverb against him, and say, ' to him who increases that which is not …” (2:6, WEB)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “You have devised shame to your house, by cutting off many peoples, and have sinned against your soul.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “You have devised shame to your house, by cutting off many peoples, and have sinned against your soul.” (2:10, WEB)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies blood: “… all the remnant of the peoples will plunder you, because of men's blood, and for the violence done to the land, to the city and to …”",
+    "options" : [
+      "hand",
+      "blood",
+      "head",
+      "tongue"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… all the remnant of the peoples will plunder you, because of men's ______, and for the violence done to the land, to the city and to …”? (2:8, WEB)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Habakkuk 2:4 records: “Behold, his soul is puffed up. It is not upright in him, but the righteous will live by his faith.”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "In this paraphrase, habakkuk was told, The righteous shall live by his ____. (2:4)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "habakkuk",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… him who builds a town with blood, and establishes a city by iniquity!”; verse 14 reads “For the earth will be filled with the knowledge of the glory of Yahweh, as the waters cover the sea.”. These establish the first and second answers respectively.",
+    "options" : [
+      "knowledge; iniquity",
+      "iniquity; wrath",
+      "transgressions; knowledge",
+      "iniquity; knowledge"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… him who builds a town with blood, and establishes a city by ______!” (2:12); “For the earth will be filled with the ______ of the glory of Yahweh, as the waters cover the sea.” (2:14, WEB)",
+    "reference" : "Habakkuk 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Habakkuk 3:18 records: “Yet I will rejoice in Yahweh. I will be joyful in the God of my salvation!”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Habakkuk prayed and said he would rejoice in the LORD. (3:18)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… were afraid. The tempest of waters passed by. The deep roared and lifted up its hands on high.” It says lifted, not trembled.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… were afraid. The tempest of waters passed by. The deep roared and trembled up its hands on high.” (3:10, WEB)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies salvation: “… the sea, That you rode on your horses, On your chariots of salvation?”",
+    "options" : [
+      "inheritance",
+      "praise",
+      "salvation",
+      "worship"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the sea, That you rode on your horses, On your chariots of ______?”? (3:8, WEB)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “The sun and moon stood still in the sky, At the light of your arrows as they went, At the shining of your glittering spear.”; verse 13 reads “… For the salvation of your anointed. You crushed the head of the land of wickedness. You stripped them head to foot. Selah.”. These establish the first and second answers respectively.",
+    "options" : [
+      "land; light",
+      "light; land",
+      "Selah; land",
+      "light; mountains"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The sun and moon stood still in the sky, At the ______ of your arrows as they went, At the shining of your glittering spear.” (3:11); “… For the salvation of your anointed. You crushed the head of the ______ of wickedness. You stripped them head to foot. Selah.” (3:13, WEB)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… my bones, and I tremble in my place, Because I must wait quietly for the day of trouble, For the coming up of the people who …”; the second reads “For though the fig tree doesn't flourish, Nor fruit be in the vines; The labor of the olive fails, The fields yield no food; The flocks …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "quietly tree"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… my bones, and I tremble in my place, Because I must wait ____ for the day of trouble, For the coming up of the people who …” (3:16); “For though the fig doesn't flourish, Nor fruit be in the vines; The labor of the olive fails, The fields yield no food; The flocks …” (3:17, WEB)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… He looked, and made the nations tremble. The ancient mountains were crumbled. The age-old hills collapsed. His ways are eternal.” The missing terms belong in that order.",
+    "options" : [
+      "nations eternal"
+    ],
+    "prompt" : "Supply the missing words in order: “… He looked, and made the ____ tremble. The ancient mountains were crumbled. The age-old hills collapsed. His ways are .” (3:6, WEB)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Habakkuk 3:4 uses power: “… splendor is like the sunrise. Rays shine from his hand, where his power is hidden.”",
+    "options" : [
+      "thanksgiving",
+      "power",
+      "deliverance",
+      "sacrifice"
+    ],
+    "prompt" : "Which word completes “… splendor is like the sunrise. Rays shine from his hand, where his ______ is hidden.”? (3:4, WEB)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "habakkuk",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the midst of the years make it known. In wrath, you remember mercy.”",
+    "options" : [
+      "mercy"
+    ],
+    "prompt" : "Complete the quotation: “… the midst of the years make it known. In wrath, you remember ____.” (3:2, WEB)",
+    "reference" : "Habakkuk 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

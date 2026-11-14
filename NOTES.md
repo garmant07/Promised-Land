@@ -840,6 +840,13 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     and CoreSimulator was denied. Physical iPhone Release upgrade checks and save-failure UI
     checks remain for the owners.
 
+115. **Owner-approved chapter question import.** The 11 approved exports in `QuestionSource/`
+    are converted by `swift Tools/QuestionImport/main.swift --generate`. Stage 0 validates
+    929 Old Testament chapters / 7,432 questions and 260 New Testament chapters / 2,080
+    questions, eight per chapter, with no parse failures or unmapped books. The app bundles one
+    JSON file per book and loads it into an in-memory per-book cache only when that book's
+    reading check opens. Each quiz chooses three questions and builds fill-in chips then.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

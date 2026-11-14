@@ -1,0 +1,396 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Yahweh takes vengeance on his adversaries, and he maintains wrath against his enemies.”",
+    "options" : [
+      "enemies"
+    ],
+    "prompt" : "Complete the quotation: “… Yahweh takes vengeance on his adversaries, and he maintains wrath against his ____.” (1:2, WEB)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The mountains quake before him, and the hills melt away. The earth trembles at his presence, yes, the world, and all who dwell in it.” The missing terms belong in that order.",
+    "options" : [
+      "mountains world"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ quake before him, and the hills melt away. The earth trembles at his presence, yes, the , and all who dwell in it.” (1:5, WEB)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… a full end of her place, and will pursue his enemies into darkness.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… a full end of her place, and will pursue his enemies into darkness.” (1:8, WEB)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nahum 1:4 uses dries: “He rebukes the sea, and makes it dry, and dries up all the rivers. Bashan languishes, and Carmel; and the flower of Lebanon languishes.”",
+    "options" : [
+      "rebukes",
+      "dries",
+      "makes",
+      "mountains"
+    ],
+    "prompt" : "Which word completes “He rebukes the sea, and makes it dry, and ______ up all the rivers. Bashan languishes, and Carmel; and the flower of Lebanon languishes.”? (1:4, WEB)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “For entangled like thorns, and drunken as with their drink, they are consumed utterly like dry stubble.”; verse 12 reads “Thus says Yahweh: \"Though they be in full strength, and likewise many, even so they will be cut down, and he shall pass away. Though I …”. These establish the first and second answers respectively.",
+    "options" : [
+      "publishes; Though",
+      "Though; drink",
+      "drink; time",
+      "drink; Though"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For entangled like thorns, and drunken as with their ______, they are consumed utterly like dry stubble.” (1:10); “Thus says Yahweh: \"______ they be in full strength, and likewise many, even so they will be cut down, and he shall pass away. Though I …” (1:12, WEB)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now will I break his yoke from off you, and will burst your bonds apart.\"”; the second reads “… your gods, will I cut off the engraved image and the molten image. I will make your grave, for you are vile.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "yoke image"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now will I break his ____ from off you, and will burst your bonds apart.\"” (1:13); “… your gods, will I cut off the engraved image and the molten . I will make your grave, for you are vile.\"” (1:14, WEB)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nahum 1:3 records: “… is slow to anger, and great in power, and will by no means leave the guilty unpunished. Yahweh has his way in the whirlwind and in the storm, and the clouds are the dust of his …”",
+    "options" : [
+      "power"
+    ],
+    "prompt" : "In this paraphrase, nahum said the LORD is slow to anger and great in ____. (1:3)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nahum",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… endure the fierceness of his anger? His wrath is poured out like fire, and the rocks are broken apart by him.”",
+    "options" : [
+      "consumed",
+      "Lebanon",
+      "fire",
+      "Nineveh"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… endure the fierceness of his anger? His wrath is poured out like ______, and the rocks are broken apart by him.”? (1:6, WEB)",
+    "reference" : "Nahum 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For Yahweh restores the excellency of Jacob, as the excellency of Israel; for the destroyers have destroyed them, and ruined their vine branches.”",
+    "options" : [
+      "Jacob"
+    ],
+    "prompt" : "Complete the quotation: “For Yahweh restores the excellency of ____, as the excellency of Israel; for the destroyers have destroyed them, and ruined their vine branches.” (2:2, WEB)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “But Nineveh has been from of old like a pool of water, yet they flee away. \"Stop! Stop!\" they cry, but no one looks back.”; verse 9 reads “… spoil of gold, for there is no end of the store, the glory of all goodly furniture.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jericho; glory",
+      "glory; Nineveh",
+      "Nineveh; knowledge",
+      "Nineveh; glory"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But ______ has been from of old like a pool of water, yet they flee away. \"Stop! Stop!\" they cry, but no one looks back.” (2:8); “… spoil of gold, for there is no end of the store, the ______ of all goodly furniture.” (2:9, WEB)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… back and forth in the broad ways. Their appearance is like torches. They run like the lightnings.” The missing terms belong in that order.",
+    "options" : [
+      "appearance lightnings"
+    ],
+    "prompt" : "Supply the missing words in order: “… back and forth in the broad ways. Their ____ is like torches. They run like the .” (2:4, WEB)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies summons: “He summons his picked troops. They stumble on their way. They dash to its wall, and the protective shield is put in place.”",
+    "options" : [
+      "faces",
+      "fortress",
+      "summons",
+      "lioness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “He ______ his picked troops. They stumble on their way. They dash to its wall, and the protective shield is put in place.”? (2:5, WEB)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nahum 2:3 uses scarlet: “… of his mighty men is made red. The valiant men are in scarlet. The chariots flash with steel in the day of his preparation, and the …”",
+    "options" : [
+      "earth",
+      "spears",
+      "gates",
+      "scarlet"
+    ],
+    "prompt" : "Which word completes “… of his mighty men is made red. The valiant men are in ______. The chariots flash with steel in the day of his preparation, and the …”? (2:3, WEB)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “It is decreed: she is uncovered, she is carried away; and her handmaids moan as with the voice of doves, beating on their breasts.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “It is decreed: she is uncovered, she is carried away; and her handmaids moan as with the voice of doves, beating on their breasts.” (2:7, WEB)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and the lioness walked, the lion's cubs, and no one made them afraid?”; the second reads “… cubs, and strangled for his lionesses, and filled his caves with the kill, and his dens with prey.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "afraid kill"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and the lioness walked, the lion's cubs, and no one made them ____?” (2:11); “… cubs, and strangled for his lionesses, and filled his caves with the , and his dens with prey.” (2:12, WEB)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nahum 2:10 records: “She is empty, void, and waste. The heart melts, the knees knock together, their bodies and faces have grown pale.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Nahum announced that Nineveh would be emptied and laid waste. (2:10)",
+    "reference" : "Nahum 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nahum 3:19 records: “There is no healing your wound, for your injury is fatal. All who hear the report of you clap their hands over you; for who hasn't felt your endless cruelty?”",
+    "options" : [
+      "grievous"
+    ],
+    "prompt" : "In this paraphrase, nahum said Nineveh's destruction was incurable and her wound was ____. (3:19)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies situated: “Are you better than No-Amon, who was situated among the rivers, who had the waters around her; whose rampart was the sea, and her wall was …”",
+    "options" : [
+      "situated",
+      "scattered",
+      "dashed",
+      "devoured"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Are you better than No-Amon, who was ______ among the rivers, who had the waters around her; whose rampart was the sea, and her wall was …”? (3:8, WEB)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The noise of the whip, the noise of the rattling of wheels, prancing horses, and bounding chariots,”",
+    "options" : [
+      "prancing"
+    ],
+    "prompt" : "Complete the quotation: “The noise of the whip, the noise of the rattling of wheels, ____ horses, and bounding chariots,” (3:2, WEB)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… she carried away. She went into captivity. Her young children also were dashed in pieces at the head of all the streets, and they cast lots …” It says dashed, not increased.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… she carried away. She went into captivity. Her young children also were increased in pieces at the head of all the streets, and they cast lots …” (3:10, WEB)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The oracle ends by asking who has escaped that evil. Its judgment concerns an oppressive empire; it is not permission to hate people because of their ethnicity.",
+    "options" : [
+      "The verse commands readers to attack all Assyrians forever.",
+      "They have suffered under Nineveh's continual cruelty.",
+      "The nations are condemned for caring about cruelty.",
+      "Nineveh has never harmed anyone."
+    ],
+    "prompt" : "Why do the nations react to Nineveh's fall in the closing verse? (3:19)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… am against you,\" says Yahweh of Hosts, \"and I will lift your skirts over your face. I will show the nations your nakedness, and the kingdoms …” The missing terms belong in that order.",
+    "options" : [
+      "Hosts show"
+    ],
+    "prompt" : "Supply the missing words in order: “… am against you,\" says Yahweh of ____, \"and I will lift your skirts over your face. I will the nations your nakedness, and the kingdoms …” (3:5, WEB)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nahum 3:4 uses nations: “… the prostitution of the alluring prostitute, the mistress of witchcraft, who sells nations through her prostitution, and families through her witchcraft.”",
+    "options" : [
+      "officials",
+      "sells",
+      "chariots",
+      "nations"
+    ],
+    "prompt" : "Which word completes “… the prostitution of the alluring prostitute, the mistress of witchcraft, who sells ______ through her prostitution, and families through her witchcraft.”? (3:4, WEB)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nahum",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “All your fortresses will be like fig trees with the first-ripe figs: if they are shaken, they fall into the mouth of the eater.”; verse 13 reads “… gates of your land are set wide open to your enemies. The fire has devoured your bars.”. These establish the first and second answers respectively.",
+    "options" : [
+      "eighty; fire",
+      "fire; first",
+      "first; fire",
+      "first; water"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “All your fortresses will be like fig trees with the ______-ripe figs: if they are shaken, they fall into the mouth of the eater.” (3:12); “… gates of your land are set wide open to your enemies. The ______ has devoured your bars.” (3:13, WEB)",
+    "reference" : "Nahum 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]
