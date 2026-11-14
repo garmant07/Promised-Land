@@ -1,0 +1,530 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Whereas Edom says, \"We are beaten down, but we will return and build the waste places;\" thus says Yahweh of Hosts, \"They shall build, but I …”",
+    "options" : [
+      "Edom"
+    ],
+    "prompt" : "Complete the quotation: “Whereas ____ says, \"We are beaten down, but we will return and build the waste places;\" thus says Yahweh of Hosts, \"They shall build, but I …” (1:4, WEB)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… pleasure in you,\" says Yahweh of hosts, \"neither will I accept an offering at your hand.” It says offering, not thanksgiving.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… pleasure in you,\" says Yahweh of hosts, \"neither will I accept an thanksgiving at your hand.” (1:10, WEB)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Malachi 1:2 records: “\"I have loved you,\" says Yahweh. Yet you say, \"How have you loved us?\" \"Wasn't Esau Jacob's brother?\" says Yahweh, \"Yet I loved Jacob;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said He loved Jacob but hated Esau. (1:2-3)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Malachi 1:6 uses priests: “… where is the respect due me? Says Yahweh of Hosts to you, priests, who despise my name. You say, 'How have we despised your name?'”",
+    "options" : [
+      "soldier",
+      "father",
+      "priests",
+      "king"
+    ],
+    "prompt" : "Which word completes “… where is the respect due me? Says Yahweh of Hosts to you, ______, who despise my name. You say, 'How have we despised your name?'”? (1:6, WEB)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sacrifice: “When you offer the blind for sacrifice, isn't that evil? And when you offer the lame and sick, isn't that evil? Present it now to your …”",
+    "options" : [
+      "power",
+      "offering",
+      "deliverance",
+      "sacrifice"
+    ],
+    "prompt" : "Which detail belongs in this passage: “When you offer the blind for ______, isn't that evil? And when you offer the lame and sick, isn't that evil? Present it now to your …”? (1:8, WEB)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The oracle addresses covenant history and Edom's devastation. Later debates about election should not ignore this setting; Romans 9 also draws on the wording.",
+    "options" : [
+      "The oracle denies any relation to Israel's history.",
+      "The passage discusses Israel and Edom as peoples as well as their ancestral names.",
+      "The passage discusses only two unrelated modern individuals.",
+      "Edom is never mentioned."
+    ],
+    "prompt" : "Why must the language about Jacob and Esau be read with the oracle's national setting in view? (1:2-5)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “\"Now, please entreat the favor of God, that he may be gracious to us. With this, will he accept any of you?\" says Yahweh of Hosts.”; verse 11 reads “… name, and a pure offering: for my name is great among the nations,\" says Yahweh of Hosts.”. These establish the first and second answers respectively.",
+    "options" : [
+      "jackals; nations",
+      "entreat; vows",
+      "entreat; nations",
+      "nations; entreat"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “\"Now, please ______ the favor of God, that he may be gracious to us. With this, will he accept any of you?\" says Yahweh of Hosts.” (1:9); “… name, and a pure offering: for my name is great among the ______,\" says Yahweh of Hosts.” (1:11, WEB)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “You offer polluted bread on my altar. You say, 'How have we polluted you?' In that you say, 'Yahweh's table contemptible.'” The missing terms belong in that order.",
+    "options" : [
+      "bread altar"
+    ],
+    "prompt" : "Supply the missing words in order: “You offer polluted ____ on my . You say, 'How have we polluted you?' In that you say, 'Yahweh's table contemptible.'” (1:7, WEB)",
+    "reference" : "Malachi 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… listen, and if you will not lay it to heart, to give glory to my name,\" says Yahweh of Hosts, \"then will I send the curse …”",
+    "options" : [
+      "glory"
+    ],
+    "prompt" : "Complete the quotation: “… listen, and if you will not lay it to heart, to give ____ to my name,\" says Yahweh of Hosts, \"then will I send the curse …” (2:2, WEB)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Verse 14 explicitly identifies a covenant relationship. Verse 16 has translation difficulties, so this question avoids treating one rendering about divorce as the only possible wording.",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "In the rebuke of marital treachery, a wife is called the wife of your ____. (2:14)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies knowledge: “For the priest's lips should keep knowledge, and they should seek the law at his mouth; for he is the messenger of Yahweh of Hosts.”",
+    "options" : [
+      "honor",
+      "truth",
+      "anger",
+      "knowledge"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For the priest's lips should keep ______, and they should seek the law at his mouth; for he is the messenger of Yahweh of Hosts.”? (2:7, WEB)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Some translations read that God hates divorce; others refer to a man who hates and divorces his wife. The shared context condemns unfaithfulness and violence, rather than settling every later divorce case.",
+    "options" : [
+      "Ignore the surrounding discussion of covenant faithfulness.",
+      "Use the verse as permission for abuse.",
+      "Read the difficult wording alongside the clear rebuke of treachery and violence against a covenant wife.",
+      "Pretend all translations have identical wording."
+    ],
+    "prompt" : "What is a sound approach to the differing translations of verse 16? (2:14-16)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The law of truth was in his mouth, and unrighteousness was not found in his lips. He walked with me in peace and uprightness, and turned …” The missing terms belong in that order.",
+    "options" : [
+      "law truth"
+    ],
+    "prompt" : "Supply the missing words in order: “The ____ of was in his mouth, and unrighteousness was not found in his lips. He walked with me in peace and uprightness, and turned …” (2:6, WEB)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… Why do we deal treacherously every man against his brother, profaning the covenant of our fathers?”; verse 12 reads “… him who wakes and him who answers, out of the tents of Jacob, and him who offers an offering to Yahweh of Hosts.”. These establish the first and second answers respectively.",
+    "options" : [
+      "covenant; Jacob",
+      "judgments; Jacob",
+      "Jacob; covenant",
+      "covenant; Sarah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Why do we deal treacherously every man against his brother, profaning the ______ of our fathers?” (2:10); “… him who wakes and him who answers, out of the tents of ______, and him who offers an offering to Yahweh of Hosts.” (2:12, WEB)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Malachi 2:5 uses peace: “\"My covenant was with him of life and peace; and I gave them to him who he might be reverent toward me; and he was reverent …”",
+    "options" : [
+      "wrath",
+      "justice",
+      "kindness",
+      "peace"
+    ],
+    "prompt" : "Which word completes “\"My covenant was with him of life and ______; and I gave them to him who he might be reverent toward me; and he was reverent …”? (2:5, WEB)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… many to stumble in the law. You have corrupted the covenant of Levi,\" says Yahweh of Hosts.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… many to stumble in the law. You have corrupted the covenant of Levi,\" says Yahweh of Hosts.” (2:8, WEB)",
+    "reference" : "Malachi 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now we call the proud happy; yes, those who work wickedness are built up; yes, they tempt God, and escape.'”; the second reads “Then those who feared Yahweh spoke one with another; and Yahweh listened, and heard, and a book of memory was written before him, for those who …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "proud feared"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now we call the ____ happy; yes, those who work wickedness are built up; yes, they tempt God, and escape.'” (3:15); “Then those who Yahweh spoke one with another; and Yahweh listened, and heard, and a book of memory was written before him, for those who …” (3:16, WEB)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Malachi 3:7 records: “… the days of your fathers you have turned aside from my ordinances, and have not kept them. Return to me, and I will return to you,\" says Yahweh of Hosts. \"But you say, 'How shall we …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said, \"Return to Me, and I will return to you.\" (3:7)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies offerings: “… me! But you say, 'How have we robbed you?' In tithes and offerings.”",
+    "options" : [
+      "praise",
+      "refuge",
+      "rest",
+      "offerings"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… me! But you say, 'How have we robbed you?' In tithes and ______.”? (3:8, WEB)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Malachi 3:5 uses fatherless: “… those who oppress the hireling in his wages, the widow, and the fatherless, and who deprive the foreigner of justice, and don't fear me,\" says Yahweh …”",
+    "options" : [
+      "days",
+      "hosts",
+      "tithes",
+      "fatherless"
+    ],
+    "prompt" : "Which word completes “… those who oppress the hireling in his wages, the widow, and the ______, and who deprive the foreigner of justice, and don't fear me,\" says Yahweh …”? (3:5, WEB)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… will purify the sons of Levi, and refine them as gold and silver; and they shall offer to Yahweh offerings in righteousness.”",
+    "options" : [
+      "silver"
+    ],
+    "prompt" : "Complete the quotation: “… will purify the sons of Levi, and refine them as gold and ____; and they shall offer to Yahweh offerings in righteousness.” (3:3, WEB)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “I will rebuke the devourer for your sakes, and he shall not destroy the fruits of your ground; neither shall your vine cast its fruit before …”; verse 14 reads “You have said, 'It is vain to serve God;' and 'What profit is it that we have kept his charge, and that we have walked mournfully …”. These establish the first and second answers respectively.",
+    "options" : [
+      "walked; serve",
+      "devourer; silver",
+      "devourer; serve",
+      "serve; devourer"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “I will rebuke the ______ for your sakes, and he shall not destroy the fruits of your ground; neither shall your vine cast its fruit before …” (3:11); “You have said, 'It is vain to ______ God;' and 'What profit is it that we have kept his charge, and that we have walked mournfully …” (3:14, WEB)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “\"For I, Yahweh, don't change; therefore you, sons of Jacob, are not consumed.” The missing terms belong in that order.",
+    "options" : [
+      "Jacob consumed"
+    ],
+    "prompt" : "Supply the missing words in order: “\"For I, Yahweh, don't change; therefore you, sons of ____, are not .” (3:6, WEB)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "malachi",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… into the store-house, that there may be food in my house, and test me now in this,\" says Yahweh of hosts, \"if I will not open …” It says test, not built.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… into the store-house, that there may be food in my house, and built me now in this,\" says Yahweh of hosts, \"if I will not open …” (3:10, WEB)",
+    "reference" : "Malachi 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… who work wickedness, will be stubble; and the day that comes will burn them up,\" says Yahweh of Hosts, \"that it shall leave them neither root …”",
+    "options" : [
+      "burn"
+    ],
+    "prompt" : "Complete the quotation: “… who work wickedness, will be stubble; and the day that comes will ____ them up,\" says Yahweh of Hosts, \"that it shall leave them neither root …” (4:1, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies curse: “… to their fathers, lest I come and strike the earth with a curse.\"”",
+    "options" : [
+      "curse",
+      "prayer",
+      "power",
+      "life"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to their fathers, lest I come and strike the earth with a ______.\"”? (4:6, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “But to you who fear my name shall the sun of righteousness arise with healing in its wings. You will go out, and leap like calves …”",
+    "options" : [
+      "fear"
+    ],
+    "prompt" : "Complete the quotation: “But to you who ____ my name shall the sun of righteousness arise with healing in its wings. You will go out, and leap like calves …” (4:2, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Malachi 4:4 uses law: “\"Remember the law of Moses my servant, which I commanded to him in Horeb for all Israel, even statutes and ordinances.”",
+    "options" : [
+      "commandment",
+      "judgments",
+      "teaching",
+      "law"
+    ],
+    "prompt" : "Which word completes “\"Remember the ______ of Moses my servant, which I commanded to him in Horeb for all Israel, even statutes and ordinances.”? (4:4, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Behold, I will send you Elijah the prophet before the great and terrible day of Yahweh comes.” It says Elijah, not Korah.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Behold, I will send you Korah the prophet before the great and terrible day of Yahweh comes.” (4:5, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 4 reads “… servant, which I commanded to him in Horeb for all Israel, even statutes and ordinances.”; verse 5 reads “Behold, I will send you Elijah the prophet before the great and terrible day of Yahweh comes.”. These establish the first and second answers respectively.",
+    "options" : [
+      "statutes; name",
+      "statutes; terrible",
+      "terrible; statutes",
+      "law; terrible"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… servant, which I commanded to him in Horeb for all Israel, even ______ and ordinances.” (4:4); “Behold, I will send you Elijah the prophet before the great and ______ day of Yahweh comes.” (4:5, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… will turn the hearts of the fathers to the children, and the hearts of the children to their fathers, lest I come and strike the earth …”; the second reads “… burns as a furnace; and all the proud, and all who work wickedness, will be stubble; and the day that comes will burn them up,\" says …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "hearts wickedness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… will turn the hearts of the fathers to the children, and the ____ of the children to their fathers, lest I come and strike the earth …” (4:6); “… burns as a furnace; and all the proud, and all who work , will be stubble; and the day that comes will burn them up,\" says …” (4:1, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "malachi",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… for they will be ashes under the soles of your feet in the day that I make,\" says Yahweh of Hosts.” The missing terms belong in that order.",
+    "options" : [
+      "ashes Hosts"
+    ],
+    "prompt" : "Supply the missing words in order: “… for they will be ____ under the soles of your feet in the day that I make,\" says Yahweh of .” (4:3, WEB)",
+    "reference" : "Malachi 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

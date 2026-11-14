@@ -1,0 +1,1701 @@
+[
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 1:6 uses salvation: “But if we are afflicted, it is for your comfort and salvation. If we are comforted, it is for your comfort, which produces in you the …”",
+    "options" : [
+      "power",
+      "offerings",
+      "worship",
+      "salvation"
+    ],
+    "prompt" : "Which word completes “But if we are afflicted, it is for your comfort and ______. If we are comforted, it is for your comfort, which produces in you the …”? (1:6, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “as also you acknowledged us in part, that we are your boasting, even as you also are ours, in the day of our Lord Jesus.” It says part, not confidence.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “as also you acknowledged us in confidence, that we are your boasting, even as you also are ours, in the day of our Lord Jesus.” (1:14, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… fellow workers with you for your joy. For you stand firm in faith.”; the second reads “But I call God for a witness to my soul, that I didn't come to Corinth to spare you.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "faith witness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… fellow workers with you for your joy. For you stand firm in ____.” (1:24); “But I call God for a to my soul, that I didn't come to Corinth to spare you.” (1:23, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of Christ abound to us, even so our comfort also abounds through Christ.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… of Christ abound to us, even so our comfort also abounds through ____.” (1:5, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Paul, an apostle of Christ Jesus through the will of God, and Timothy our brother, to the assembly of God which is at Corinth, with all …”",
+    "options" : [
+      "apostle"
+    ],
+    "prompt" : "Complete the quotation: “Paul, an ____ of Christ Jesus through the will of God, and Timothy our brother, to the assembly of God which is at Corinth, with all …” (1:1, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of so great a death, and does deliver; on whom we have set our hope that he will also still deliver us;” The missing terms belong in that order.",
+    "options" : [
+      "death deliver"
+    ],
+    "prompt" : "Supply the missing words in order: “… of so great a ____, and does deliver; on whom we have set our hope that he will also still us;” (1:10, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “When I therefore was thus determined, did I show fickleness? Or the things that I purpose, do I purpose according to the flesh, that with me …”; verse 19 reads “… Christ, who was preached among you by us, by me, Silvanus, and Timothy, was not \"Yes and no,\" but in him is \"Yes.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "determined; Timothy",
+      "determined; Jonah",
+      "sealed; Timothy",
+      "Timothy; determined"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “When I therefore was thus ______, did I show fickleness? Or the things that I purpose, do I purpose according to the flesh, that with me …” (1:17); “… Christ, who was preached among you by us, by me, Silvanus, and ______, was not \"Yes and no,\" but in him is \"Yes.\"” (1:19, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies testimony: “For our boasting is this: the testimony of our conscience, that in holiness and sincerity of God, not in fleshly wisdom but in the grace of …”",
+    "options" : [
+      "testimony",
+      "covenant",
+      "teaching",
+      "testimonies"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For our boasting is this: the ______ of our conscience, that in holiness and sincerity of God, not in fleshly wisdom but in the grace of …”? (1:12, WEB)",
+    "reference" : "2 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “to the one a stench from death to death; to the other a sweet aroma from life to life. Who is sufficient for these things?”; the second reads “For we are not as so many, peddling the word of God. But as of sincerity, but as of God, in the sight of God, we …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "death peddling"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “to the one a stench from ____ to death; to the other a sweet aroma from life to life. Who is sufficient for these things?” (2:16); “For we are not as so many, the word of God. But as of sincerity, but as of God, in the sight of God, we …” (2:17, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… on the contrary you should rather forgive him and comfort him, lest by any means such a one should be swallowed up with his excessive sorrow.” The missing terms belong in that order.",
+    "options" : [
+      "rather swallowed"
+    ],
+    "prompt" : "Supply the missing words in order: “… on the contrary you should ____ forgive him and comfort him, lest by any means such a one should be up with his excessive sorrow.” (2:7, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “that no advantage may be gained over us by Satan; for we are not ignorant of his schemes.” It says advantage, not forgive.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “that no forgive may be gained over us by Satan; for we are not ignorant of his schemes.” (2:11, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… whom I ought to rejoice; having confidence in you all, that my joy would be shared by all of you.”",
+    "options" : [
+      "joy"
+    ],
+    "prompt" : "Complete the quotation: “… whom I ought to rejoice; having confidence in you all, that my ____ would be shared by all of you.” (2:3, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… my brother, but taking my leave of them, I went out into Macedonia.”; verse 14 reads “… triumph in Christ, and reveals through us the sweet aroma of his knowledge in every place.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Macedonia; knowledge",
+      "knowledge; Macedonia",
+      "Caesarea; knowledge",
+      "Macedonia; joy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… my brother, but taking my leave of them, I went out into ______.” (2:13); “… triumph in Christ, and reveals through us the sweet aroma of his ______ in every place.” (2:14, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Christ: “… I have forgiven that one for your sakes in the presence of Christ,”",
+    "options" : [
+      "Martha",
+      "Christ",
+      "Syntyche",
+      "Felix"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… I have forgiven that one for your sakes in the presence of ______,”? (2:10, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… that you should be made sorry, but that you might know the love that I have so abundantly for you.”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “… that you should be made sorry, but that you might know the ____ that I have so abundantly for you.” (2:4, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 2:5 uses sorrow: “But if any has caused sorrow, he has caused sorrow, not to me, but in part (that I not press too heavily) to you all.”",
+    "options" : [
+      "always",
+      "word",
+      "sorrow",
+      "Gospel"
+    ],
+    "prompt" : "Which word completes “But if any has caused ______, he has caused sorrow, not to me, but in part (that I not press too heavily) to you all.”? (2:5, WEB)",
+    "reference" : "2 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… Moses, who put a veil on his face, that the children of Israel wouldn't look steadfastly on the end of that which was passing away.”; verse 14 reads “… the reading of the old covenant the same veil remains, because in Christ it passes away.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Christ; Israel",
+      "Israel; Christ",
+      "Israel; Aquila",
+      "Agabus; Christ"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Moses, who put a veil on his face, that the children of ______ wouldn't look steadfastly on the end of that which was passing away.” (3:13); “… the reading of the old covenant the same veil remains, because in ______ it passes away.” (3:14, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 3:7 uses glory: “But if the service of death, written engraved on stones, came with glory, so that the children of Israel could not look steadfastly on the face …”",
+    "options" : [
+      "honor",
+      "glory",
+      "grief",
+      "kindness"
+    ],
+    "prompt" : "Which word completes “But if the service of death, written engraved on stones, came with ______, so that the children of Israel could not look steadfastly on the face …”? (3:7, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of Christ, ministered by us, written not with ink, but with the Spirit of the living God; not in tablets of stone, but in tablets that …”",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "Complete the quotation: “… of Christ, ministered by us, written not with ink, but with the ____ of the living God; not in tablets of stone, but in tablets that …” (3:3, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies assuredly: “For most assuredly that which has been made glorious has not been made glorious in this respect, by reason of the glory that surpasses.”",
+    "options" : [
+      "Spirit",
+      "assuredly",
+      "righteousness",
+      "written"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For most ______ that which has been made glorious has not been made glorious in this respect, by reason of the glory that surpasses.”? (3:10, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For if that which passes away was with glory, much more that which remains is in glory.” It says passes, not righteousness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For if that which righteousness away was with glory, much more that which remains is in glory.” (3:11, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For if the service of condemnation has glory, the service of righteousness exceeds much more in glory.” The missing terms belong in that order.",
+    "options" : [
+      "service righteousness"
+    ],
+    "prompt" : "Supply the missing words in order: “For if the service of condemnation has glory, the ____ of exceeds much more in glory.” (3:9, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But we all, with unveiled face beholding as in a mirror the glory of the Lord, are transformed into the same image from glory to glory, …”; the second reads “… the Spirit and where the Spirit of the Lord is, there is liberty.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "unveiled liberty"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But we all, with ____ face beholding as in a mirror the glory of the Lord, are transformed into the same image from glory to glory, …” (3:18); “… the Spirit and where the Spirit of the Lord is, there is .” (3:17, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “who also made us sufficient as servants of a new covenant; not of the letter, but of the Spirit. For the letter kills, but the Spirit …”",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "Complete the quotation: “who also made us sufficient as servants of a new ____; not of the letter, but of the Spirit. For the letter kills, but the Spirit …” (3:6, WEB)",
+    "reference" : "2 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… handling the word of God deceitfully; but by the manifestation of the truth commending ourselves to every man's conscience in the sight of God.”",
+    "options" : [
+      "truth"
+    ],
+    "prompt" : "Complete the quotation: “… handling the word of God deceitfully; but by the manifestation of the ____ commending ourselves to every man's conscience in the sight of God.” (4:2, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… outward man is decaying, yet our inward man is renewed day by day.”; the second reads “For our light affliction, which is for the moment, works for us more and more exceedingly an eternal weight of glory;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "day light"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… outward man is decaying, yet our inward man is renewed day by ____.” (4:16); “For our affliction, which is for the moment, works for us more and more exceedingly an eternal weight of glory;” (4:17, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies life: “… the body the putting to death of the Lord Jesus, that the life of Jesus may also be revealed in our body.”",
+    "options" : [
+      "curse",
+      "life",
+      "offerings",
+      "inheritance"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the body the putting to death of the Lord Jesus, that the ______ of Jesus may also be revealed in our body.”? (4:10, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For we who live are always delivered to death for Jesus' sake, that the life also of Jesus may be revealed in our mortal flesh.” It says death, not sacrifice.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For we who live are always delivered to sacrifice for Jesus' sake, that the life also of Jesus may be revealed in our mortal flesh.” (4:11, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But we have this treasure in clay vessels, that the exceeding greatness of the power may be of God, and not from ourselves.” The missing terms belong in that order.",
+    "options" : [
+      "exceeding greatness"
+    ],
+    "prompt" : "Supply the missing words in order: “But we have this treasure in clay vessels, that the ____ of the power may be of God, and not from ourselves.” (4:7, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “But having the same spirit of faith, according to that which is written, \"I believed, and therefore I spoke.\" We also believe, and therefore also we …”; verse 15 reads “… sakes, that the grace, being multiplied through the many, may cause the thanksgiving to abound to the glory of God.”. These establish the first and second answers respectively.",
+    "options" : [
+      "thanksgiving; spirit",
+      "spirit; curse",
+      "spirit; thanksgiving",
+      "Jesus; thanksgiving"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But having the same ______ of faith, according to that which is written, \"I believed, and therefore I spoke.\" We also believe, and therefore also we …” (4:13); “… sakes, that the grace, being multiplied through the many, may cause the ______ to abound to the glory of God.” (4:15, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 4:6 uses darkness: “seeing it is God who said, \"Light will shine out of darkness,\" who has shone in our hearts, to give the light of the knowledge of …”",
+    "options" : [
+      "wine",
+      "understanding",
+      "darkness",
+      "redemption"
+    ],
+    "prompt" : "Which word completes “seeing it is God who said, \"Light will shine out of ______,\" who has shone in our hearts, to give the light of the knowledge of …”? (4:6, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… minds of the unbelieving, that the light of the Gospel of the glory of Christ, who is the image of God, should not dawn on them.”",
+    "options" : [
+      "glory"
+    ],
+    "prompt" : "Complete the quotation: “… minds of the unbelieving, that the light of the Gospel of the ____ of Christ, who is the image of God, should not dawn on them.” (4:4, WEB)",
+    "reference" : "2 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to be clothed, that what is mortal may be swallowed up by life.”",
+    "options" : [
+      "life"
+    ],
+    "prompt" : "Complete the quotation: “… to be clothed, that what is mortal may be swallowed up by ____.” (5:4, WEB)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God reconciles through Christ and entrusts the message of reconciliation to His ambassadors. The course describes salvation as restored relationship that gives believers a responsibility toward others. The initiative is God's; the ambassadors do not present themselves as independent saviors.",
+    "options" : [
+      "Paul says Christ's love has no effect on how people live.",
+      "Restored relationship removes every responsibility toward others.",
+      "God reconciles through Christ and entrusts the message of reconciliation to His ambassadors.",
+      "The ambassadors produce reconciliation without God."
+    ],
+    "prompt" : "How does reconciliation shape the community's mission? (5:14-21)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of our tent is dissolved, we have a building from God, a house not made with hands, eternal, in the heavens.”",
+    "options" : [
+      "house"
+    ],
+    "prompt" : "Complete the quotation: “… of our tent is dissolved, we have a building from God, a ____ not made with hands, eternal, in the heavens.” (5:1, WEB)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… have something to answer those who boast in appearance, and not in heart.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… have something to answer those who boast in appearance, and not in heart.” (5:12, WEB)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 5:6 uses body: “… good courage, and knowing that, while we are at home in the body, we are absent from the Lord;”",
+    "options" : [
+      "live",
+      "trespasses",
+      "body",
+      "habitation"
+    ],
+    "prompt" : "Which word completes “… good courage, and knowing that, while we are at home in the ______, we are absent from the Lord;”? (5:6, WEB)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “He died for all, that those who live should no longer live to themselves, but to him who for their sakes died and rose again.”; verse 17 reads “Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new.”. These establish the first and second answers respectively.",
+    "options" : [
+      "died; Christ",
+      "committed; Christ",
+      "Christ; died",
+      "died; Israel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “He ______ for all, that those who live should no longer live to themselves, but to him who for their sakes died and rose again.” (5:15); “Therefore if anyone is in ______, he is a new creation. The old things have passed away. Behold, all things have become new.” (5:17, WEB)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fear: “Knowing therefore the fear of the Lord, we persuade men, but we are revealed to God; and I hope that we are revealed also in your …”",
+    "options" : [
+      "truth",
+      "fear",
+      "wisdom",
+      "joy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Knowing therefore the ______ of the Lord, we persuade men, but we are revealed to God; and I hope that we are revealed also in your …”? (5:11, WEB)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “We are of good courage, I say, and are willing rather to be absent from the body, and to be at home with the Lord.” The missing terms belong in that order.",
+    "options" : [
+      "willing absent"
+    ],
+    "prompt" : "Supply the missing words in order: “We are of good courage, I say, and are ____ rather to be from the body, and to be at home with the Lord.” (5:8, WEB)",
+    "reference" : "2 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies known: “as unknown, and yet well known; as dying, and behold, we live; as punished, and not killed;”",
+    "options" : [
+      "helped",
+      "open",
+      "portion",
+      "known"
+    ],
+    "prompt" : "Which detail belongs in this passage: “as unknown, and yet well ______; as dying, and behold, we live; as punished, and not killed;”? (6:9, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… \"At an acceptable time I listened to you, In a day of salvation I helped you.\" Behold, now is the acceptable time. Behold, now is the …”",
+    "options" : [
+      "salvation"
+    ],
+    "prompt" : "Complete the quotation: “… \"At an acceptable time I listened to you, In a day of ____ I helped you.\" Behold, now is the acceptable time. Behold, now is the …” (6:2, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “What agreement has a temple of God with idols? For you are a temple of the living God. Even as God said, \"I will dwell in …”; the second reads “… Father. You will be to me sons and daughters,' says the Lord Almighty.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "temple Almighty"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “What agreement has a ____ of God with idols? For you are a temple of the living God. Even as God said, \"I will dwell in …” (6:16); “… Father. You will be to me sons and daughters,' says the Lord .\"” (6:18, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “in the word of truth, in the power of God; by the armor of righteousness on the right hand and on the left,” The missing terms belong in that order.",
+    "options" : [
+      "truth righteousness"
+    ],
+    "prompt" : "Supply the missing words in order: “in the word of ____, in the power of God; by the armor of on the right hand and on the left,” (6:7, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “but in everything commending ourselves, as servants of God, in great endurance, in afflictions, in hardships, in distresses,”",
+    "options" : [
+      "servants"
+    ],
+    "prompt" : "Complete the quotation: “but in everything commending ourselves, as ____ of God, in great endurance, in afflictions, in hardships, in distresses,” (6:4, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Our mouth is open to you, Corinthians. Our heart is enlarged.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Our mouth is open to you, Corinthians. Our heart is enlarged.” (6:11, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “Don't be unequally yoked with unbelievers, for what fellowship have righteousness and iniquity? Or what communion has light with darkness?”; verse 15 reads “What agreement has Christ with Belial? Or what portion has a believer with an unbeliever?”. These establish the first and second answers respectively.",
+    "options" : [
+      "sins; Christ",
+      "Christ; iniquity",
+      "iniquity; Christ",
+      "iniquity; Rachel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Don't be unequally yoked with unbelievers, for what fellowship have righteousness and ______? Or what communion has light with darkness?” (6:14); “What agreement has ______ with Belial? Or what portion has a believer with an unbeliever?” (6:15, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 6:6 uses knowledge: “in pureness, in knowledge, in patience, in kindness, in the Holy Spirit, in sincere love,”",
+    "options" : [
+      "anger",
+      "kindness",
+      "fear",
+      "knowledge"
+    ],
+    "prompt" : "Which word completes “in pureness, in ______, in patience, in kindness, in the Holy Spirit, in sincere love,”? (6:6, WEB)",
+    "reference" : "2 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… boasting on your behalf. I am filled with comfort. I overflow with joy in all our affliction.”",
+    "options" : [
+      "joy"
+    ],
+    "prompt" : "Complete the quotation: “… boasting on your behalf. I am filled with comfort. I overflow with ____ in all our affliction.” (7:4, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… wrong, nor for his cause that suffered the wrong, but that your earnest care for us might be revealed in you in the sight of God.”; verse 13 reads “… In our comfort we rejoiced the more exceedingly for the joy of Titus, because his spirit has been refreshed by you all.”. These establish the first and second answers respectively.",
+    "options" : [
+      "earnest; Titus",
+      "Titus; earnest",
+      "affection; Titus",
+      "earnest; Ham"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… wrong, nor for his cause that suffered the wrong, but that your ______ care for us might be revealed in you in the sight of God.” (7:12); “… In our comfort we rejoiced the more exceedingly for the joy of ______, because his spirit has been refreshed by you all.” (7:13, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sorry: “For though I made you sorry with my letter, I do not regret it, though I did regret it. For I see that my letter made …”",
+    "options" : [
+      "care",
+      "inside",
+      "sight",
+      "sorry"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For though I made you ______ with my letter, I do not regret it, though I did regret it. For I see that my letter made …”? (7:8, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 7:5 uses Macedonia: “For even when we had come into Macedonia, our flesh had no relief, but we were afflicted on every side. Fightings were outside. Fear was inside.”",
+    "options" : [
+      "Philadelphia",
+      "Ephesus",
+      "Macedonia",
+      "Derbe"
+    ],
+    "prompt" : "Which word completes “For even when we had come into ______, our flesh had no relief, but we were afflicted on every side. Fightings were outside. Fear was inside.”? (7:5, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For godly sorrow works repentance to salvation, which brings no regret. But the sorrow of the world works death.” It says repentance, not flesh.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For godly sorrow works flesh to salvation, which brings no regret. But the sorrow of the world works death.” (7:10, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… abundantly toward you, while he remembers all of your obedience, how with fear and trembling you received him.”; the second reads “… was not disappointed. But as we spoke all things to you in truth, so our glorying also which I made before Titus was found to be …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fear truth"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… abundantly toward you, while he remembers all of your obedience, how with ____ and trembling you received him.” (7:15); “… was not disappointed. But as we spoke all things to you in , so our glorying also which I made before Titus was found to be …” (7:14, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… also by the comfort with which he was comforted in you, while he told us of your longing, your mourning, and your zeal for me; so …” The missing terms belong in that order.",
+    "options" : [
+      "comforted longing"
+    ],
+    "prompt" : "Supply the missing words in order: “… also by the comfort with which he was ____ in you, while he told us of your , your mourning, and your zeal for me; so …” (7:7, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… let us cleanse ourselves from all defilement of flesh and spirit, perfecting holiness in the fear of God.”",
+    "options" : [
+      "holiness"
+    ],
+    "prompt" : "Complete the quotation: “… let us cleanse ourselves from all defilement of flesh and spirit, perfecting ____ in the fear of God.” (7:1, WEB)",
+    "reference" : "2 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Generous care is shaped by Christ's self-giving and concern that needs be met. Paul discusses willingness, ability and a fair sharing of provision. This is not a formula by which a donation purchases personal riches.",
+    "options" : [
+      "The aim is to enrich a few while ignoring need.",
+      "Every donation guarantees financial profit.",
+      "Willingness and actual ability are declared irrelevant.",
+      "Generous care is shaped by Christ's self-giving and concern that needs be met."
+    ],
+    "prompt" : "What does the appeal to Christ's generosity contribute to the collection for others? (8:7-15)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… who puts the same earnest care for you into the heart of Titus.”; verse 19 reads “… with us in this grace, which is served by us to the glory of the Lord himself, and to show our readiness.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Titus; faithfulness",
+      "glory; Titus",
+      "Titus; glory",
+      "Matthias; glory"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… who puts the same earnest care for you into the heart of ______.” (8:16); “… with us in this grace, which is served by us to the ______ of the Lord himself, and to show our readiness.” (8:19, WEB)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… their lack, that their abundance also may become a supply for your lack; that there may be equality.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… their lack, that their abundance also may become a supply for your lack; that there may be equality.” (8:14, WEB)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies ability: “… be willing, so there may be the completion also out of your ability.”",
+    "options" : [
+      "accord",
+      "proving",
+      "indeed",
+      "ability"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… be willing, so there may be the completion also out of your ______.”? (8:11, WEB)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 8:7 uses love: “… abound in everything, in faith, utterance, knowledge, all earnestness, and in your love to us, see that you also abound in this grace.”",
+    "options" : [
+      "honor",
+      "shame",
+      "love",
+      "wisdom"
+    ],
+    "prompt" : "Which word completes “… abound in everything, in faith, utterance, knowledge, all earnestness, and in your ______ to us, see that you also abound in this grace.”? (8:7, WEB)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the grace of our Lord Jesus Christ, that, though he was rich, yet for your sakes he became poor, that you through his poverty might become …” The missing terms belong in that order.",
+    "options" : [
+      "Christ poor"
+    ],
+    "prompt" : "Supply the missing words in order: “… the grace of our Lord Jesus ____, that, though he was rich, yet for your sakes he became , that you through his poverty might become …” (8:9, WEB)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “begging us with much entreaty to receive this grace and the fellowship in the service to the saints.”",
+    "options" : [
+      "grace"
+    ],
+    "prompt" : "Complete the quotation: “begging us with much entreaty to receive this ____ and the fellowship in the service to the saints.” (8:4, WEB)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “how that in much proof of affliction the abundance of their joy and their deep poverty abounded to the riches of their liberality.”",
+    "options" : [
+      "joy"
+    ],
+    "prompt" : "Complete the quotation: “how that in much proof of affliction the abundance of their ____ and their deep poverty abounded to the riches of their liberality.” (8:2, WEB)",
+    "reference" : "2 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… supplication on your behalf, yearn for you by reason of the exceeding grace of God in you.”; the second reads “Now thanks be to God for his unspeakable gift!”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "grace unspeakable"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… supplication on your behalf, yearn for you by reason of the exceeding ____ of God in you.” (9:14); “Now thanks be to God for his gift!” (9:15, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… for lack among the saints, but abounds also through many givings of thanks to God;”; verse 13 reads “… service, they glorify God for the obedience of your confession to the Gospel of Christ, and for the liberality of your contribution to them and to …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Gospel; thanks",
+      "thanks; Macedonia",
+      "thanks; Gospel",
+      "loves; Gospel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… for lack among the saints, but abounds also through many givings of ______ to God;” (9:12); “… service, they glorify God for the obedience of your confession to the ______ of Christ, and for the liberality of your contribution to them and to …” (9:13, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies heart: “Let each man give according as he has determined in his heart; not grudgingly, or under compulsion; for God loves a cheerful giver.”",
+    "options" : [
+      "blood",
+      "heart",
+      "tongue",
+      "bones"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Let each man give according as he has determined in his ______; not grudgingly, or under compulsion; for God loves a cheerful giver.”? (9:7, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… your readiness, of which I boast on your behalf to them of Macedonia, that Achaia has been prepared for a year past. Your zeal has stirred …”",
+    "options" : [
+      "Macedonia"
+    ],
+    "prompt" : "Complete the quotation: “… your readiness, of which I boast on your behalf to them of ____, that Achaia has been prepared for a year past. Your zeal has stirred …” (9:2, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… unprepared, we (to say nothing of you) should be disappointed in this confident boasting.”",
+    "options" : [
+      "confident"
+    ],
+    "prompt" : "Complete the quotation: “… unprepared, we (to say nothing of you) should be disappointed in this ____ boasting.” (9:4, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… and multiply your seed for sowing, and increase the fruits of your righteousness;” It says righteousness, not joy.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… and multiply your seed for sowing, and increase the fruits of your joy;” (9:10, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 9:5 uses brothers: “I thought it necessary therefore to entreat the brothers that they would go before to you, and arrange ahead of time the generous gift that you …”",
+    "options" : [
+      "husband",
+      "wife",
+      "brothers",
+      "husbands"
+    ],
+    "prompt" : "Which word completes “I thought it necessary therefore to entreat the ______ that they would go before to you, and arrange ahead of time the generous gift that you …”? (9:5, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Remember this: he who sows sparingly will also reap sparingly. He who sows bountifully will also reap bountifully.” The missing terms belong in that order.",
+    "options" : [
+      "sparingly bountifully"
+    ],
+    "prompt" : "Supply the missing words in order: “Remember this: he who sows ____ will also reap sparingly. He who sows bountifully will also reap .” (9:6, WEB)",
+    "reference" : "2 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “But we will not boast beyond proper limits, but within the boundaries with which God appointed to us, which reach even to you.”; verse 15 reads “… proper limits in other men's labors, but having hope that as your faith grows, we will be abundantly enlarged by you in our sphere of influence,”. These establish the first and second answers respectively.",
+    "options" : [
+      "men's; faith",
+      "boundaries; faith",
+      "faith; boundaries",
+      "boundaries; someone"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But we will not boast beyond proper limits, but within the ______ with which God appointed to us, which reach even to you.” (10:13); “… proper limits in other men's labors, but having hope that as your ______ grows, we will be abundantly enlarged by you in our sphere of influence,” (10:15, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Now I Paul, myself, entreat you by the humility and gentleness of Christ; I who in your presence am lowly among you, but being absent am …”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “Now I ____, myself, entreat you by the humility and gentleness of Christ; I who in your presence am lowly among you, but being absent am …” (10:1, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bodily: “For, \"His letters,\" they say, \"are weighty and strong, but his bodily presence is weak, and his speech is despised.\"”",
+    "options" : [
+      "bodily",
+      "wage",
+      "presence",
+      "don't"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For, \"His letters,\" they say, \"are weighty and strong, but his ______ presence is weak, and his speech is despised.\"”? (10:10, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “throwing down imaginations and every high thing that is exalted against the knowledge of God, and bringing every thought into captivity to the obedience of Christ;”",
+    "options" : [
+      "knowledge"
+    ],
+    "prompt" : "Complete the quotation: “throwing down imaginations and every high thing that is exalted against the ____ of God, and bringing every thought into captivity to the obedience of Christ;” (10:5, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… we are absent, such are we also in deed when we are present.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… we are absent, such are we also in deed when we are present.” (10:11, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For though I should boast somewhat abundantly concerning our authority, (which the Lord gave for building you up, and not for casting you down) I will …” The missing terms belong in that order.",
+    "options" : [
+      "boast building"
+    ],
+    "prompt" : "Supply the missing words in order: “For though I should ____ somewhat abundantly concerning our authority, (which the Lord gave for you up, and not for casting you down) I will …” (10:8, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “so as to preach the Gospel even to the parts beyond you, not to boast in what someone else has already done.”; the second reads “… isn't he who commends himself who is approved, but whom the Lord commends.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Gospel commends"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “so as to preach the ____ even to the parts beyond you, not to boast in what someone else has already done.” (10:16); “… isn't he who commends himself who is approved, but whom the Lord .” (10:18, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 10:7 uses consider: “… face? If anyone trusts in himself that he is Christ's, let him consider this again with himself, that, even as he is Christ's, so also we …”",
+    "options" : [
+      "readiness",
+      "present",
+      "faith",
+      "consider"
+    ],
+    "prompt" : "Which word completes “… face? If anyone trusts in himself that he is Christ's, let him ______ this again with himself, that, even as he is Christ's, so also we …”? (10:7, WEB)",
+    "reference" : "2 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For such men are false apostles, deceitful workers, masquerading as Christ's apostles.” The missing terms belong in that order.",
+    "options" : [
+      "apostles deceitful"
+    ],
+    "prompt" : "Supply the missing words in order: “For such men are false ____, workers, masquerading as Christ's apostles.” (11:13, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… though I am unskilled in speech, yet I am not unskilled in knowledge. No, in every way we have been revealed to you in all things.”",
+    "options" : [
+      "knowledge"
+    ],
+    "prompt" : "Complete the quotation: “… though I am unskilled in speech, yet I am not unskilled in ____. No, in every way we have been revealed to you in all things.” (11:6, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 11:9 uses Macedonia: “… wasn't a burden on anyone, for the brothers, when they came from Macedonia, supplied the measure of my need. In everything I kept myself from being …”",
+    "options" : [
+      "Ephesus",
+      "Macedonia",
+      "Persia",
+      "Bethsaida"
+    ],
+    "prompt" : "Which word completes “… wasn't a burden on anyone, for the brothers, when they came from ______, supplied the measure of my need. In everything I kept myself from being …”? (11:9, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… bear with a man, if he brings you into bondage, if he devours you, if he takes you captive, if he exalts himself, if he strikes …” It says devours, not rods.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… bear with a man, if he brings you into bondage, if he rods you, if he takes you captive, if he exalts himself, if he strikes …” (11:20, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies servants: “It is no great thing therefore if his ministers also masquerade as servants of righteousness, whose end will be according to their works.”",
+    "options" : [
+      "mothers",
+      "servants",
+      "priests",
+      "shepherd"
+    ],
+    "prompt" : "Which detail belongs in this passage: “It is no great thing therefore if his ministers also masquerade as ______ of righteousness, whose end will be according to their works.”? (11:15, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… not weak? Who is caused to stumble, and I don't burn with indignation?”; the second reads “In Damascus the governor under Aretas the king guarded the city of the Damascenes desiring to arrest me.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "indignation king"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… not weak? Who is caused to stumble, and I don't burn with ____?” (11:29); “In Damascus the governor under Aretas the guarded the city of the Damascenes desiring to arrest me.” (11:32, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “Are they servants of Christ? (I speak as one beside himself) I am more so; in labors more abundantly, in prisons more abundantly, in stripes above …”; verse 26 reads “… rivers, perils of robbers, perils from my countrymen, perils from the Gentiles, perils in the city, perils in the wilderness, perils in the sea, perils among …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Christ; Damascus",
+      "Cornelius; perils",
+      "perils; Christ",
+      "Christ; perils"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Are they servants of ______? (I speak as one beside himself) I am more so; in labors more abundantly, in prisons more abundantly, in stripes above …” (11:23); “… rivers, perils of robbers, perils from my countrymen, perils from the Gentiles, ______ in the city, perils in the wilderness, perils in the sea, perils among …” (11:26, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “But I am afraid that somehow, as the serpent deceived Eve in his craftiness, so your minds might be corrupted from the simplicity that is in …”",
+    "options" : [
+      "Eve"
+    ],
+    "prompt" : "Complete the quotation: “But I am afraid that somehow, as the serpent deceived ____ in his craftiness, so your minds might be corrupted from the simplicity that is in …” (11:3, WEB)",
+    "reference" : "2 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 12:6 uses truth: “… to boast, I will not be foolish; for I will speak the truth. But I forbear, so that no man may account of me above that …”",
+    "options" : [
+      "knowledge",
+      "glory",
+      "peace",
+      "truth"
+    ],
+    "prompt" : "Which word completes “… to boast, I will not be foolish; for I will speak the ______. But I forbear, so that no man may account of me above that …”? (12:6, WEB)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “I know a man in Christ, fourteen years ago (whether in the body, I don't know, or whether out of the body, I don't know; God …”",
+    "options" : [
+      "fourteen"
+    ],
+    "prompt" : "Complete the quotation: “I know a man in Christ, ____ years ago (whether in the body, I don't know, or whether out of the body, I don't know; God …” (12:2, WEB)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Truly the signs of an apostle were worked among you in all patience, in signs and wonders and mighty works.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Truly the signs of an apostle were worked among you in all patience, in signs and wonders and mighty works.” (12:12, WEB)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to me, \"My grace is sufficient for you, for my power is made perfect in weakness.\" Most gladly therefore I will rather glory in my weaknesses, …” The missing terms belong in that order.",
+    "options" : [
+      "grace glory"
+    ],
+    "prompt" : "Supply the missing words in order: “… to me, \"My ____ is sufficient for you, for my power is made perfect in weakness.\" Most gladly therefore I will rather in my weaknesses, …” (12:9, WEB)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's sufficient grace and power can be displayed without first removing the weakness. The thorn's precise identity is not stated with certainty. The passage should not be used to promise that faithful prayer always removes every bodily or circumstantial limitation.",
+    "options" : [
+      "The passage identifies the thorn beyond any interpretive debate.",
+      "God's sufficient grace and power can be displayed without first removing the weakness.",
+      "Paul is told his prayer proves he has no faith.",
+      "God's power can never be present in weakness."
+    ],
+    "prompt" : "How does the answer to Paul's repeated plea reinterpret weakness? (12:7-10)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… will most gladly spend and be spent for your souls. If I love you more abundantly, am I loved the less?”; verse 18 reads “I exhorted Titus, and I sent the brother with him. Did Titus take any advantage of you? Didn't we walk in the same spirit? Didn't we …”. These establish the first and second answers respectively.",
+    "options" : [
+      "love; Titus",
+      "Titus; love",
+      "love; Phoebe",
+      "knowledge; Titus"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… will most gladly spend and be spent for your souls. If I ______ you more abundantly, am I loved the less?” (12:15); “I exhorted ______, and I sent the brother with him. Did Titus take any advantage of you? Didn't we walk in the same spirit? Didn't we …” (12:18, WEB)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies persecutions: “Therefore I take pleasure in weaknesses, in injuries, in necessities, in persecutions, in distresses, for Christ's sake. For when I am weak, then am I strong.”",
+    "options" : [
+      "whisperings",
+      "persecutions",
+      "hears",
+      "unless"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Therefore I take pleasure in weaknesses, in injuries, in necessities, in ______, in distresses, for Christ's sake. For when I am weak, then am I strong.”? (12:10, WEB)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… caught up into Paradise, and heard unspeakable words, which it is not lawful for a man to utter.”",
+    "options" : [
+      "lawful"
+    ],
+    "prompt" : "Complete the quotation: “… caught up into Paradise, and heard unspeakable words, which it is not ____ for a man to utter.” (12:4, WEB)",
+    "reference" : "2 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies appear: “… pray to God that you do no evil; not that we may appear approved, but that you may do that which is honorable, though we are …”",
+    "options" : [
+      "truth",
+      "established",
+      "appear",
+      "perfected"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… pray to God that you do no evil; not that we may ______ approved, but that you may do that which is honorable, though we are …”? (13:7, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Corinthians 13:5 uses faith: “Test your own selves, whether you are in the faith. Test your own selves. Or don't you know as to your own selves, that Jesus Christ …”",
+    "options" : [
+      "established",
+      "write",
+      "faith",
+      "weakness"
+    ],
+    "prompt" : "Which word completes “Test your own selves, whether you are in the ______. Test your own selves. Or don't you know as to your own selves, that Jesus Christ …”? (13:5, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… write to those who have sinned before now, and to all the rest, that, if I come again, I will not spare;”",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "Complete the quotation: “… write to those who have sinned before now, and to all the ____, that, if I come again, I will not spare;” (13:2, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “seeing that you seek a proof of Christ who speaks in me; who toward you is not weak, but is powerful in you.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “seeing that you seek a proof of ____ who speaks in me; who toward you is not weak, but is powerful in you.” (13:3, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But I hope that you will know that we aren't disqualified.” The missing terms belong in that order.",
+    "options" : [
+      "hope aren't"
+    ],
+    "prompt" : "Supply the missing words in order: “But I ____ that you will know that we disqualified.” (13:6, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… be of the same mind, live in peace, and the God of love and peace will be with you.”; verse 14 reads “The grace of the Lord Jesus Christ, the love of God, and the communion of the Holy Spirit, be with you all. Amen.”. These establish the first and second answers respectively.",
+    "options" : [
+      "wisdom; grace",
+      "grace; love",
+      "love; grace",
+      "love; Jesus"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… be of the same mind, live in peace, and the God of ______ and peace will be with you.” (13:11); “The ______ of the Lord Jesus Christ, the love of God, and the communion of the Holy Spirit, be with you all. Amen.” (13:14, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For this cause I write these things while absent, that I may not deal sharply when present, according to the authority which the Lord gave me …” It says absent, not communion.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For this cause I write these things while communion, that I may not deal sharply when present, according to the authority which the Lord gave me …” (13:10, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2corinthians",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “All the saints greet you.”; the second reads “Greet one another with a holy kiss.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "greet holy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “All the saints ____ you.” (13:13); “Greet one another with a kiss.” (13:12, WEB)",
+    "reference" : "2 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

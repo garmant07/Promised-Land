@@ -1,0 +1,393 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… laid waste. The land mourns, for the grain is destroyed, The new wine has dried up, And the oil languishes.” It says wine, not figs.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… laid waste. The land mourns, for the grain is destroyed, The new figs has dried up, And the oil languishes.” (1:10, WEB)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Hear this, you elders, And listen, all you inhabitants of the land. Has this ever happened in your days, Or in the days of your fathers?”",
+    "options" : [
+      "elders"
+    ],
+    "prompt" : "Complete the quotation: “Hear this, you ____, And listen, all you inhabitants of the land. Has this ever happened in your days, Or in the days of your fathers?” (1:2, WEB)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… tree, Even all of the trees of the field are withered; For joy has withered away from the sons of men.”; verse 14 reads “… a solemn assembly. Gather the elders, And all the inhabitants of the land, to the house of Yahweh, your God, And cry to Yahweh.”. These establish the first and second answers respectively.",
+    "options" : [
+      "joy; countries",
+      "wisdom; land",
+      "land; joy",
+      "joy; land"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… tree, Even all of the trees of the field are withered; For ______ has withered away from the sons of men.” (1:12); “… a solemn assembly. Gather the elders, And all the inhabitants of the ______, to the house of Yahweh, your God, And cry to Yahweh.” (1:14, WEB)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies priests: “… offering and the drink offering are cut off from Yahweh's house. The priests, Yahweh's ministers, mourn.”",
+    "options" : [
+      "priests",
+      "soldier",
+      "elders",
+      "husband"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… offering and the drink offering are cut off from Yahweh's house. The ______, Yahweh's ministers, mourn.”? (1:9, WEB)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Isn't the food cut off before our eyes; Joy and gladness from the house of our God?”; the second reads “How the animals groan! The herds of cattle are perplexed, because they have no pasture. Yes, the flocks of sheep are made desolate.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Isn't perplexed"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “____ the food cut off before our eyes; Joy and gladness from the house of our God?” (1:16); “How the animals groan! The herds of cattle are , because they have no pasture. Yes, the flocks of sheep are made desolate.” (1:18, WEB)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joel 1:4 uses eaten: “… the grasshopper has eaten. What the grasshopper has left, the caterpillar has eaten.”",
+    "options" : [
+      "tree",
+      "keepers",
+      "fathers",
+      "eaten"
+    ],
+    "prompt" : "Which word completes “… the grasshopper has eaten. What the grasshopper has left, the caterpillar has ______.”? (1:4, WEB)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joel 1:6 records: “For a nation has come up on my land, strong, and without number. His teeth are the teeth of a lion, And he has the fangs of a lioness.”",
+    "options" : [
+      "land"
+    ],
+    "prompt" : "In this paraphrase, joel called the drunkards to wake up and weep, because a nation had come against the ____. (1:5-6)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He has laid my vine waste, And stripped my fig tree. He has stripped its bark, and thrown it away. Its branches are made white.” The missing terms belong in that order.",
+    "options" : [
+      "tree bark"
+    ],
+    "prompt" : "Supply the missing words in order: “He has laid my vine waste, And stripped my fig ____. He has stripped its , and thrown it away. Its branches are made white.” (1:7, WEB)",
+    "reference" : "Joel 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Joel 2:28 records: “\"It will happen afterward, that I will pour out my Spirit on all flesh; And your sons and your daughters will prophesy. Your old men will dream dreams. Your young men will see visions.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Joel said God would pour out His Spirit on all flesh. (2:28)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “A fire devours before them, And behind them, a flame burns. The land is as the garden of Eden before them, And behind them, a desolate …”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “A ____ devours before them, And behind them, a flame burns. The land is as the garden of Eden before them, And behind them, a desolate …” (2:3, WEB)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Joel speaks of the Spirit reaching across age, sex and social position. Acts makes a Christian connection explicitly; interpreters still discuss how the surrounding cosmic imagery unfolds.",
+    "options" : [
+      "He says the Spirit will never be given.",
+      "He denies that Joel's words have any relevance.",
+      "He says Joel was speaking only about wealthy kings.",
+      "He cites it to explain the outpouring at Pentecost."
+    ],
+    "prompt" : "How does Peter use the promise about God's Spirit? (2:28-32; Acts 2:16-21)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies merciful: “… garments, And turn to Yahweh, your God; For he is gracious and merciful, Slow to anger, and abundant in loving kindness, And relents from sending calamity.”",
+    "options" : [
+      "unclean",
+      "obedient",
+      "foolish",
+      "merciful"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… garments, And turn to Yahweh, your God; For he is gracious and ______, Slow to anger, and abundant in loving kindness, And relents from sending calamity.”? (2:13, WEB)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… has eaten, The great locust, the grasshopper, and the caterpillar, My great army, which I sent among you.”; the second reads “You will have plenty to eat, and be satisfied, And will praise the name of Yahweh, your God, Who has dealt wondrously with you; And my …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "army praise"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… has eaten, The great locust, the grasshopper, and the caterpillar, My great ____, which I sent among you.” (2:25); “You will have plenty to eat, and be satisfied, And will the name of Yahweh, your God, Who has dealt wondrously with you; And my …” (2:26, WEB)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joel 2:5 uses battle: “… of fire that devours the stubble, As a strong people set in battle array.”",
+    "options" : [
+      "people",
+      "close",
+      "battle",
+      "garments"
+    ],
+    "prompt" : "Which word completes “… of fire that devours the stubble, As a strong people set in ______ array.”? (2:5, WEB)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Gather the people. Sanctify the assembly. Assemble the elders. Gather the children, and those who suck the breasts. Let the bridegroom go forth from his room, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Gather the people. Sanctify the assembly. Assemble the elders. Gather the children, and those who suck the breasts. Let the bridegroom go forth from his room, …” (2:16, WEB)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… on the city. They run on the wall. They climb up into the houses. They enter in at the windows like thieves.” The missing terms belong in that order.",
+    "options" : [
+      "climb enter"
+    ],
+    "prompt" : "Supply the missing words in order: “… on the city. They run on the wall. They ____ up into the houses. They in at the windows like thieves.” (2:9, WEB)",
+    "reference" : "Joel 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “And have sold the children of Judah and the children of Jerusalem to the sons of the Greeks, That you may remove them far from their …” The missing terms belong in that order.",
+    "options" : [
+      "Judah Jerusalem"
+    ],
+    "prompt" : "Supply the missing words in order: “And have sold the children of ____ and the children of to the sons of the Greeks, That you may remove them far from their …” (3:6, WEB)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “Put in the sickle; For the harvest is ripe. Come, tread, for the winepress is full, The vats overflow, for their wickedness is great.\"”; verse 14 reads “Multitudes, multitudes in the valley of decision! For the day of Yahweh is near, in the valley of decision.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Prepare; Multitudes",
+      "ripe; Multitudes",
+      "ripe; wickedness",
+      "Multitudes; ripe"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Put in the sickle; For the harvest is ______. Come, tread, for the winepress is full, The vats overflow, for their wickedness is great.\"” (3:13); “______, multitudes in the valley of decision! For the day of Yahweh is near, in the valley of decision.” (3:14, WEB)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Beat your plowshares into swords, And your pruning hooks into spears. Let the weak say, \"I am strong.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Beat your plowshares into swords, And your pruning hooks into spears. Let the weak say, \"I am strong.\"” (3:10, WEB)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “\"So you will know that I am Yahweh, your God, Dwelling in Zion, my holy mountain. Then Jerusalem will be holy, And no strangers will pass …”; the second reads “Egypt will be a desolation, And Edom will be a desolate wilderness, For the violence done to the children of Judah, Because they have shed innocent …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Zion Edom"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “\"So you will know that I am Yahweh, your God, Dwelling in ____, my holy mountain. Then Jerusalem will be holy, And no strangers will pass …” (3:17); “Egypt will be a desolation, And will be a desolate wilderness, For the violence done to the children of Judah, Because they have shed innocent …” (3:19, WEB)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Joel 3:16 records: “Yahweh will roar from Zion, And thunder from Jerusalem; And the heavens and the earth will shake; But Yahweh will be a refuge to his people, And a stronghold to the children of Israel.”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "In this paraphrase, joel said the LORD would roar from ____, and the heavens and earth would shake. (3:16)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Joel 3:4 uses repay: “… all the regions of Philistia? Will you repay me? And if you repay me, I will swiftly and speedily return your repayment on your own head.”",
+    "options" : [
+      "brooks",
+      "place",
+      "execute",
+      "repay"
+    ],
+    "prompt" : "Which word completes “… all the regions of Philistia? Will you repay me? And if you ______ me, I will swiftly and speedily return your repayment on your own head.”? (3:4, WEB)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… people, And for my heritage, Israel, whom they have scattered among the nations. They have divided my land,”",
+    "options" : [
+      "nations"
+    ],
+    "prompt" : "Complete the quotation: “… people, And for my heritage, Israel, whom they have scattered among the ____. They have divided my land,” (3:2, WEB)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "joel",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nation: “… they will sell them to the men of Sheba, To a faraway nation, For Yahweh has spoken it.\"”",
+    "options" : [
+      "glory",
+      "altar",
+      "nation",
+      "silver"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… they will sell them to the men of Sheba, To a faraway ______, For Yahweh has spoken it.\"”? (3:8, WEB)",
+    "reference" : "Joel 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -1,0 +1,522 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… mercy in that day); and in how many things he served at Ephesus, you know very well.”; the second reads “but when he was in Rome, he sought me diligently, and found me”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Ephesus Rome"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… mercy in that day); and in how many things he served at ____, you know very well.” (1:18); “but when he was in , he sought me diligently, and found me” (1:17, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… the pattern of sound words which you have heard from me, in faith and love which is in Christ Jesus.”; verse 16 reads “May the Lord grant mercy to the house of Onesiphorus, for he often refreshed me, and was not ashamed of my chain,”. These establish the first and second answers respectively.",
+    "options" : [
+      "faith; righteousness",
+      "conscience; mercy",
+      "mercy; faith",
+      "faith; mercy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the pattern of sound words which you have heard from me, in ______ and love which is in Christ Jesus.” (1:13); “May the Lord grant ______ to the house of Onesiphorus, for he often refreshed me, and was not ashamed of my chain,” (1:16, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… don't be ashamed of the testimony of our Lord, nor of me his prisoner; but endure hardship for the Gospel according to the power of God,” The missing terms belong in that order.",
+    "options" : [
+      "testimony Gospel"
+    ],
+    "prompt" : "Supply the missing words in order: “… don't be ashamed of the ____ of our Lord, nor of me his prisoner; but endure hardship for the according to the power of God,” (1:8, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Savior, Christ Jesus, who abolished death, and brought life and immortality to light through the Gospel.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Savior, Christ Jesus, who abolished death, and brought life and immortality to light through the Gospel.” (1:10, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “to Timothy, my beloved child: Grace, mercy, and peace, from God the Father and Christ Jesus our Lord.”",
+    "options" : [
+      "Grace"
+    ],
+    "prompt" : "Complete the quotation: “to Timothy, my beloved child: ____, mercy, and peace, from God the Father and Christ Jesus our Lord.” (1:2, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Timothy 1:7 uses fear: “For God didn't give us a spirit of fear, but of power, love, and self-control.”",
+    "options" : [
+      "mercy",
+      "fear",
+      "faithfulness",
+      "grief"
+    ],
+    "prompt" : "Which word completes “For God didn't give us a spirit of ______, but of power, love, and self-control.”? (1:7, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies holy: “who saved us and called us with a holy calling, not according to our works, but according to his own purpose and grace, which was given …”",
+    "options" : [
+      "foolish",
+      "poor",
+      "clean",
+      "holy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “who saved us and called us with a ______ calling, not according to our works, but according to his own purpose and grace, which was given …”? (1:9, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… been reminded of the unfeigned faith that is in you; which lived first in your grandmother Lois, and your mother Eunice, and, I am persuaded, in …”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “… been reminded of the unfeigned faith that is in you; which lived ____ in your grandmother Lois, and your mother Eunice, and, I am persuaded, in …” (1:5, WEB)",
+    "reference" : "2 Timothy 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Timothy 2:8 uses David: “Remember Jesus Christ, risen from the dead, of the seed of David, according to my Gospel,”",
+    "options" : [
+      "Haggai",
+      "Asher",
+      "Hezekiah",
+      "David"
+    ],
+    "prompt" : "Which word completes “Remember Jesus Christ, risen from the dead, of the seed of ______, according to my Gospel,”? (2:8, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies faithless: “If we are faithless, He remains faithful. He can't deny himself.”",
+    "options" : [
+      "Lord's",
+      "ones",
+      "faithless",
+      "Jesus"
+    ],
+    "prompt" : "Which detail belongs in this passage: “If we are ______, He remains faithful. He can't deny himself.”? (2:13, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Also, if anyone competes in athletics, he isn't crowned unless he has competed by the rules.”",
+    "options" : [
+      "competes"
+    ],
+    "prompt" : "Complete the quotation: “Also, if anyone ____ in athletics, he isn't crowned unless he has competed by the rules.” (2:5, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… workman who doesn't need to be ashamed, properly handling the Word of Truth.” It says Truth, not wisdom.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… workman who doesn't need to be ashamed, properly handling the Word of wisdom.” (2:15, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “men who have erred concerning the truth, saying that the resurrection is already past, and overthrowing the faith of some.”; verse 20 reads “Now in a great house there are not only vessels of gold and of silver, but also of wood and of clay. Some are for honor, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "resurrection; gold",
+      "repentance; gold",
+      "gold; resurrection",
+      "resurrection; bronze"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “men who have erred concerning the truth, saying that the ______ is already past, and overthrowing the faith of some.” (2:18); “Now in a great house there are not only vessels of ______ and of silver, but also of wood and of clay. Some are for honor, …” (2:20, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Flee from youthful lusts; but pursue righteousness, faith, love, and peace with those who call on the Lord out of a pure heart.”; the second reads “in gentleness correcting those who oppose him: perhaps God may give them repentance leading to a full knowledge of the truth,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "peace repentance"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Flee from youthful lusts; but pursue righteousness, faith, love, and ____ with those who call on the Lord out of a pure heart.” (2:22); “in gentleness correcting those who oppose him: perhaps God may give them leading to a full knowledge of the truth,” (2:25, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the chosen ones' sake, that they also may obtain the salvation which is in Christ Jesus with eternal glory.” The missing terms belong in that order.",
+    "options" : [
+      "salvation Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “… the chosen ones' sake, that they also may obtain the ____ which is in Jesus with eternal glory.” (2:10, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… you have heard from me among many witnesses, commit the same to faithful men, who will be able to teach others also.”",
+    "options" : [
+      "faithful"
+    ],
+    "prompt" : "Complete the quotation: “… you have heard from me among many witnesses, commit the same to ____ men, who will be able to teach others also.” (2:2, WEB)",
+    "reference" : "2 Timothy 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It equips God's servant through teaching, correction and training for good works. Paul joins Scripture's authority with formation and service. The course's emphasis on practice fits this stated purpose; the text is not merely an invitation to accumulate information.",
+    "options" : [
+      "Scripture is useful only to make someone win arguments.",
+      "Its purpose excludes transformed conduct.",
+      "It equips God's servant through teaching, correction and training for good works.",
+      "Correction and training are explicitly rejected."
+    ],
+    "prompt" : "What purpose accompanies the claim that Scripture is God-breathed? (3:14-17)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “persecutions, and sufferings: those things that happened to me at Antioch, Iconium, and Lystra. I endured those persecutions. Out of them all the Lord delivered me.” It says Antioch, not Capernaum.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “persecutions, and sufferings: those things that happened to me at Capernaum, Iconium, and Lystra. I endured those persecutions. Out of them all the Lord delivered me.” (3:11, WEB)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… opposed Moses, so do these also oppose the truth; men corrupted in mind, reprobate concerning the faith.” The missing terms belong in that order.",
+    "options" : [
+      "truth faith"
+    ],
+    "prompt" : "Supply the missing words in order: “… opposed Moses, so do these also oppose the ____; men corrupted in mind, reprobate concerning the .” (3:8, WEB)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “without natural affection, unforgiving, slanderers, without self-control, fierce, no lovers of good,”",
+    "options" : [
+      "fierce"
+    ],
+    "prompt" : "Complete the quotation: “without natural affection, unforgiving, slanderers, without self-control, ____, no lovers of good,” (3:3, WEB)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Timothy 3:6 uses sins: “… who creep into houses, and take captive gullible women loaded down with sins, led away by various lusts,”",
+    "options" : [
+      "sins",
+      "iniquity",
+      "wickedness",
+      "transgression"
+    ],
+    "prompt" : "Which word completes “… who creep into houses, and take captive gullible women loaded down with ______, led away by various lusts,”? (3:6, WEB)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For men will be lovers of self, lovers of money, boastful, arrogant, blasphemers, disobedient to parents, unthankful, unholy,”",
+    "options" : [
+      "arrogant"
+    ],
+    "prompt" : "Complete the quotation: “For men will be lovers of self, lovers of money, boastful, ____, blasphemers, disobedient to parents, unthankful, unholy,” (3:2, WEB)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… for teaching, for reproof, for correction, and for instruction which is in righteousness,”; the second reads “that the man of God may be complete, thoroughly equipped for every good work.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "righteousness equipped"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… for teaching, for reproof, for correction, and for instruction which is in ____,” (3:16); “that the man of God may be complete, thoroughly for every good work.” (3:17, WEB)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2timothy",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “But you did follow my teaching, conduct, purpose, faith, patience, love, steadfastness,”",
+    "options" : [
+      "joy",
+      "love",
+      "mercy",
+      "righteousness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But you did follow my teaching, conduct, purpose, faith, patience, ______, steadfastness,”? (3:10, WEB)",
+    "reference" : "2 Timothy 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Erastus remained at Corinth, but I left Trophimus at Miletus sick.”; the second reads “The Lord Jesus Christ be with your spirit. Grace be with you. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Corinth Grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Erastus remained at ____, but I left Trophimus at Miletus sick.” (4:20); “The Lord Jesus Christ be with your spirit. be with you. Amen.” (4:22, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Mark: “Only Luke is with me. Take Mark, and bring him with you, for he is useful to me for ministering.”",
+    "options" : [
+      "Jonathan",
+      "Mark",
+      "Syntyche",
+      "Cornelius"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Only Luke is with me. Take ______, and bring him with you, for he is useful to me for ministering.”? (4:11, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and will turn away their ears from the truth, and turn aside to fables.”",
+    "options" : [
+      "truth"
+    ],
+    "prompt" : "Complete the quotation: “and will turn away their ears from the ____, and turn aside to fables.” (4:4, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Bring the cloak that I left at Troas with Carpus when you come, and the books, especially the parchments.” It says Troas, not Laodicea.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Bring the cloak that I left at Laodicea with Carpus when you come, and the books, especially the parchments.” (4:13, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… left me, having loved this present world, and went to Thessalonica; Crescens to Galatia, and Titus to Dalmatia.” The missing terms belong in that order.",
+    "options" : [
+      "Thessalonica Titus"
+    ],
+    "prompt" : "Supply the missing words in order: “… left me, having loved this present world, and went to ____; Crescens to Galatia, and to Dalmatia.” (4:10, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "2 Timothy 4:8 uses righteousness: “From now on, there is stored up for me the crown of righteousness, which the Lord, the righteous judge, will give to me on that day; …”",
+    "options" : [
+      "justice",
+      "righteousness",
+      "faithfulness",
+      "mercy"
+    ],
+    "prompt" : "Which word completes “From now on, there is stored up for me the crown of ______, which the Lord, the righteous judge, will give to me on that day; …”? (4:8, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “preach the word; be urgent in season and out of season; reprove, rebuke, and exhort, with all patience and teaching.”",
+    "options" : [
+      "season"
+    ],
+    "prompt" : "Complete the quotation: “preach the word; be urgent in ____ and out of season; reprove, rebuke, and exhort, with all patience and teaching.” (4:2, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "2timothy",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… all the Gentiles might hear; and I was delivered out of the mouth of the lion.”; verse 18 reads “And the Lord will deliver me from every evil work, and will preserve me for his heavenly Kingdom; to whom be the glory forever and ever. …”. These establish the first and second answers respectively.",
+    "options" : [
+      "mouth; aside",
+      "deliver; mouth",
+      "mouth; deliver",
+      "lips; deliver"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… all the Gentiles might hear; and I was delivered out of the ______ of the lion.” (4:17); “And the Lord will ______ me from every evil work, and will preserve me for his heavenly Kingdom; to whom be the glory forever and ever. …” (4:18, WEB)",
+    "reference" : "2 Timothy 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

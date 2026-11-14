@@ -1,0 +1,3668 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Salmon became the father of Boaz by Rahab. Boaz became the father of Obed by Ruth. Obed became the father of Jesse.”",
+    "options" : [
+      "Boaz"
+    ],
+    "prompt" : "Complete the quotation: “Salmon became the father of Boaz by Rahab. ____ became the father of Obed by Ruth. Obed became the father of Jesse.” (1:5, WEB)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Hezekiah became the father of Manasseh. Manasseh became the father of Amon. Amon became the father of Josiah.” The missing terms belong in that order.",
+    "options" : [
+      "Manasseh Josiah"
+    ],
+    "prompt" : "Supply the missing words in order: “Hezekiah became the father of ____. Manasseh became the father of Amon. Amon became the father of .” (1:10, WEB)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 1:7 uses Solomon: “Solomon became the father of Rehoboam. Rehoboam became the father of Abijah. Abijah became the father of Asa.”",
+    "options" : [
+      "Balaam",
+      "Solomon",
+      "Eleazar",
+      "Gaius"
+    ],
+    "prompt" : "Which word completes “______ became the father of Rehoboam. Rehoboam became the father of Abijah. Abijah became the father of Asa.”? (1:7, WEB)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Eleazar. Eleazar became the father of Matthan. Matthan became the father of Jacob.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Eleazar. Eleazar became the father of Matthan. Matthan became the father of Jacob.” (1:15, WEB)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Zerubbabel: “… Babylon, Jechoniah became the father of Shealtiel. Shealtiel became the father of Zerubbabel.”",
+    "options" : [
+      "Crispus",
+      "Seth",
+      "Sergius",
+      "Zerubbabel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Babylon, Jechoniah became the father of Shealtiel. Shealtiel became the father of ______.”? (1:12, WEB)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He stands in Israel's promised family line and comes to save His people from their sins. Matthew names David and Abraham, then explains Jesus' name and Immanuel. The course connects Christ with God's covenant promises rather than treating His coming as an unrelated story.",
+    "options" : [
+      "The genealogy makes repentance unnecessary.",
+      "Jesus' mission concerns ancestry without addressing sin.",
+      "Immanuel means that God has abandoned His people.",
+      "He stands in Israel's promised family line and comes to save His people from their sins."
+    ],
+    "prompt" : "How do the genealogy and the naming of Jesus introduce His mission? (1:1, 20-23)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Abraham became the father of Isaac. Isaac became the father of Jacob. Jacob became the father of Judah and his brothers.”",
+    "options" : [
+      "Abraham"
+    ],
+    "prompt" : "Complete the quotation: “____ became the father of Isaac. Isaac became the father of Jacob. Jacob became the father of Judah and his brothers.” (1:2, WEB)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… child, And shall bring forth a son. They shall call his name Immanuel;\" Which is, being interpreted, \"God with us.\"”; the second reads “… sexually until she had brought forth her firstborn son. He named him Jesus.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Immanuel Jesus"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… child, And shall bring forth a son. They shall call his name ____;\" Which is, being interpreted, \"God with us.\"” (1:23); “… sexually until she had brought forth her firstborn son. He named him .” (1:25, WEB)",
+    "reference" : "Matthew 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… king, went their way; and behold, the star, which they saw in the east, went before them, until it came and stood over where the young …” The missing terms belong in that order.",
+    "options" : [
+      "way stood"
+    ],
+    "prompt" : "Supply the missing words in order: “… king, went their ____; and behold, the star, which they saw in the east, went before them, until it came and over where the young …” (2:9, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and take the young child and his mother, and go into the land of Israel, for those who sought the young child's life are dead.\"”; the second reads “… there. Being warned in a dream, he withdrew into the region of Galilee,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "land Galilee"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and take the young child and his mother, and go into the ____ of Israel, for those who sought the young child's life are dead.\"” (2:20); “… there. Being warned in a dream, he withdrew into the region of ,” (2:22, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 2:7 uses Herod: “Then Herod secretly called the wise men, and learned from them exactly what time the star appeared.”",
+    "options" : [
+      "Dorcas",
+      "Herod",
+      "Aaron",
+      "Abraham"
+    ],
+    "prompt" : "Which word completes “Then ______ secretly called the wise men, and learned from them exactly what time the star appeared.”? (2:7, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… was born in Bethlehem of Judea in the days of Herod the king, behold, wise men from the east came to Jerusalem, saying,”",
+    "options" : [
+      "king"
+    ],
+    "prompt" : "Complete the quotation: “… was born in Bethlehem of Judea in the days of Herod the ____, behold, wise men from the east came to Jerusalem, saying,” (2:1, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Mary: “They came into the house and saw the young child with Mary, his mother, and they fell down and worshiped him. Opening their treasures, they offered …”",
+    "options" : [
+      "Mary",
+      "Onesimus",
+      "Ahab",
+      "Sarah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “They came into the house and saw the young child with ______, his mother, and they fell down and worshiped him. Opening their treasures, they offered …”? (2:11, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… land of Judah, Are in no way least among the princes of Judah: For out of you shall come forth a governor, Who shall shepherd my …”",
+    "options" : [
+      "Judah"
+    ],
+    "prompt" : "Complete the quotation: “… land of Judah, Are in no way least among the princes of ____: For out of you shall come forth a governor, Who shall shepherd my …” (2:6, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… when they had departed, behold, an angel of the Lord appeared to Joseph in a dream, saying, \"Arise and take the young child and his mother, …” It says Joseph, not Cornelius.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… when they had departed, behold, an angel of the Lord appeared to Cornelius in a dream, saying, \"Arise and take the young child and his mother, …” (2:13, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… children who were in Bethlehem and in all the surrounding countryside, from two years old and under, according to the exact time which he had learned …”; verse 18 reads “\"A voice was heard in Ramah, Lamentation, weeping and great mourning, Rachel weeping for her children; She wouldn't be comforted, Because they are no more.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "thirty; Rachel",
+      "two; Rachel",
+      "Rachel; two",
+      "two; Ithamar"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… children who were in Bethlehem and in all the surrounding countryside, from ______ years old and under, according to the exact time which he had learned …” (2:16); “\"A voice was heard in Ramah, Lamentation, weeping and great mourning, ______ weeping for her children; She wouldn't be comforted, Because they are no more.\"” (2:18, WEB)",
+    "reference" : "Matthew 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 3:5 uses Jordan: “… people from Jerusalem, all of Judea, and all the region around the Jordan went out to him.”",
+    "options" : [
+      "Bethlehem",
+      "Cana",
+      "Philippi",
+      "Jordan"
+    ],
+    "prompt" : "Which word completes “… people from Jerusalem, all of Judea, and all the region around the ______ went out to him.”? (3:5, WEB)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Jesus is baptized, the Spirit descends, and the Father speaks. The scene distinguishes Father, Son and Spirit while presenting their united action. The course's Trinitarian framework does not treat them as one person temporarily wearing three roles.",
+    "options" : [
+      "Jesus is baptized, the Spirit descends, and the Father speaks.",
+      "The Spirit is absent from the scene.",
+      "John is declared the Father of Jesus.",
+      "The Father is the one baptized by John."
+    ],
+    "prompt" : "What is shown together at Jesus' baptism? (3:16-17)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Abraham: “Don't think to yourselves, 'We have Abraham for our father,' for I tell you that God is able to raise up children to Abraham from these …”",
+    "options" : [
+      "Ananias",
+      "Saul",
+      "Abraham",
+      "Aaron"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Don't think to yourselves, 'We have ______ for our father,' for I tell you that God is able to raise up children to Abraham from these …”? (3:9, WEB)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Pharisees and Sadducees coming for his baptism, he said to them, \"You offspring of vipers, who warned you to flee from the wrath to come?” The missing terms belong in that order.",
+    "options" : [
+      "baptism flee"
+    ],
+    "prompt" : "Supply the missing words in order: “… Pharisees and Sadducees coming for his ____, he said to them, \"You offspring of vipers, who warned you to from the wrath to come?” (3:7, WEB)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For this is he who was spoken of by Isaiah the prophet, saying, \"The voice of one crying in the wilderness, Make ready the way of …”",
+    "options" : [
+      "Isaiah"
+    ],
+    "prompt" : "Complete the quotation: “For this is he who was spoken of by ____ the prophet, saying, \"The voice of one crying in the wilderness, Make ready the way of …” (3:3, WEB)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… and he will thoroughly cleanse his threshing floor. He will gather his wheat into the barn, but the chaff he will burn up with unquenchable fire.\"”; verse 13 reads “Then Jesus came from Galilee to the Jordan to John, to be baptized by him.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Galilee; wheat",
+      "wheat; Philadelphia",
+      "corn; Galilee",
+      "wheat; Galilee"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and he will thoroughly cleanse his threshing floor. He will gather his ______ into the barn, but the chaff he will burn up with unquenchable fire.\"” (3:12); “Then Jesus came from ______ to the Jordan to John, to be baptized by him.” (3:13, WEB)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… doesn't bring forth good fruit is cut down, and cast into the fire.” It says fire, not wild.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… doesn't bring forth good fruit is cut down, and cast into the wild.” (3:10, WEB)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now John himself wore clothing made of camel's hair, with a leather belt around his waist. His food was locusts and wild honey.”",
+    "options" : [
+      "John"
+    ],
+    "prompt" : "Complete the quotation: “Now ____ himself wore clothing made of camel's hair, with a leather belt around his waist. His food was locusts and wild honey.” (3:4, WEB)",
+    "reference" : "Matthew 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But he answered, \"It is written, 'Man shall not live by bread alone, but by every word that proceeds out of the mouth of God.'\"”",
+    "options" : [
+      "bread"
+    ],
+    "prompt" : "Complete the quotation: “But he answered, \"It is written, 'Man shall not live by ____ alone, but by every word that proceeds out of the mouth of God.'\"” (4:4, WEB)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Zebulun and the land of Naphtali, Toward the sea, beyond the Jordan, Galilee of the Gentiles,” It says Galilee, not Tarshish.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Zebulun and the land of Naphtali, Toward the sea, beyond the Jordan, Tarshish of the Gentiles,” (4:15, WEB)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “When he had fasted forty days and forty nights, he was hungry afterward.”",
+    "options" : [
+      "forty"
+    ],
+    "prompt" : "Complete the quotation: “When he had fasted ____ days and forty nights, he was hungry afterward.” (4:2, WEB)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He refuses to turn a promise into a demand that God prove Himself. The tempter quotes Scripture, and Jesus answers with Scripture in context. Quoting a true text does not make a misuse of it faithful.",
+    "options" : [
+      "He agrees that confidence requires a dangerous display.",
+      "He refuses to turn a promise into a demand that God prove Himself.",
+      "He jumps in order to force God's hand.",
+      "He says Scripture has no authority."
+    ],
+    "prompt" : "How does Jesus answer the temptation to test God's protection? (4:5-7)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then Jesus said to him, \"Get behind me, Satan! For it is written, 'You shall worship the Lord your God, and him only shall you serve.'\"” The missing terms belong in that order.",
+    "options" : [
+      "Jesus worship"
+    ],
+    "prompt" : "Supply the missing words in order: “Then ____ said to him, \"Get behind me, Satan! For it is written, 'You shall the Lord your God, and him only shall you serve.'\"” (4:10, WEB)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Capernaum: “Leaving Nazareth, he came and lived in Capernaum, which is by the sea, in the region of Zebulun and Naphtali,”",
+    "options" : [
+      "Athens",
+      "Samaria",
+      "Capernaum",
+      "Tarsus"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Leaving Nazareth, he came and lived in ______, which is by the sea, in the region of Zebulun and Naphtali,”? (4:13, WEB)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 4:8 uses glory: “… mountain, and showed him all the kingdoms of the world, and their glory.”",
+    "options" : [
+      "understanding",
+      "peace",
+      "hope",
+      "glory"
+    ],
+    "prompt" : "Which word completes “… mountain, and showed him all the kingdoms of the world, and their ______.”? (4:8, WEB)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… in all Galilee, teaching in their synagogues, preaching the Gospel of the Kingdom, and healing every disease and every sickness among the people.”; the second reads “Great multitudes from Galilee, Decapolis, Jerusalem, Judea and from beyond the Jordan followed him.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Kingdom Jordan"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… in all Galilee, teaching in their synagogues, preaching the Gospel of the ____, and healing every disease and every sickness among the people.” (4:23); “Great multitudes from Galilee, Decapolis, Jerusalem, Judea and from beyond the followed him.” (4:25, WEB)",
+    "reference" : "Matthew 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “\"Blessed are the poor in spirit, For theirs is the Kingdom of Heaven.”",
+    "options" : [
+      "spirit"
+    ],
+    "prompt" : "Complete the quotation: “\"Blessed are the poor in ____, For theirs is the Kingdom of Heaven.” (5:3, WEB)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "They address the heart and desires as well as outward actions. The examples move beyond avoiding an external offense to confronting its inward sources. The course connects belief about God with the practice and motives of daily life.",
+    "options" : [
+      "They address the heart and desires as well as outward actions.",
+      "Inner motives make harmful actions harmless.",
+      "The commands apply only to public ceremonies.",
+      "Outward conduct is the only thing that matters."
+    ],
+    "prompt" : "How do Jesus' teachings about anger and lust deepen attention to obedience? (5:21-30)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 5:13 uses earth: “\"You are the salt of the earth, but if the salt has lost its flavor, with what will it be salted? It is then good for …”",
+    "options" : [
+      "fields",
+      "garden",
+      "earth",
+      "lands"
+    ],
+    "prompt" : "Which word completes “\"You are the salt of the ______, but if the salt has lost its flavor, with what will it be salted? It is then good for …”? (5:13, WEB)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… to lust after her has committed adultery with her already in his heart.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… to lust after her has committed adultery with her already in his heart.” (5:28, WEB)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… not even one smallest letter or one tiny pen stroke shall in any way pass away from the law, until all things are accomplished.” The missing terms belong in that order.",
+    "options" : [
+      "tiny law"
+    ],
+    "prompt" : "Supply the missing words in order: “… not even one smallest letter or one ____ pen stroke shall in any way pass away from the , until all things are accomplished.” (5:18, WEB)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies judgment: “… with his brother without a cause shall be in danger of the judgment; and whoever shall say to his brother, 'Raca!' shall be in danger of …”",
+    "options" : [
+      "testimony",
+      "covenant",
+      "teaching",
+      "judgment"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… with his brother without a cause shall be in danger of the ______; and whoever shall say to his brother, 'Raca!' shall be in danger of …”? (5:22, WEB)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… those who have been persecuted for righteousness' sake, For theirs is the Kingdom of Heaven.”",
+    "options" : [
+      "Kingdom"
+    ],
+    "prompt" : "Complete the quotation: “… those who have been persecuted for righteousness' sake, For theirs is the ____ of Heaven.” (5:10, WEB)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 32 reads “… you that whoever puts away his wife, except for the cause of sexual immorality, makes her an adulteress; and whoever marries her when she is put …”; verse 36 reads “Neither shall you swear by your head, for you can't make one hair white or black.”. These establish the first and second answers respectively.",
+    "options" : [
+      "hair; sexual",
+      "sexual; hair",
+      "sexual; head",
+      "Gehenna; hair"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… you that whoever puts away his wife, except for the cause of ______ immorality, makes her an adulteress; and whoever marries her when she is put …” (5:32); “Neither shall you swear by your head, for you can't make one ______ white or black.” (5:36, WEB)",
+    "reference" : "Matthew 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “\"For if you forgive men their trespasses, your heavenly Father will also forgive you.” The missing terms belong in that order.",
+    "options" : [
+      "heavenly forgive"
+    ],
+    "prompt" : "Supply the missing words in order: “\"For if you forgive men their trespasses, your ____ Father will also you.” (6:14, WEB)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Jesus calls disciples to trust the Father and seek His kingdom amid daily trouble. The teaching does not say that discipleship removes every hardship or material need.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jesus' warning against anxious striving promises that His followers will never face material need. (6:25-34)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… your Father who is in secret, and your Father who sees in secret will reward you openly.”",
+    "options" : [
+      "secret"
+    ],
+    "prompt" : "Complete the quotation: “… your Father who is in secret, and your Father who sees in ____ will reward you openly.” (6:6, WEB)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… into the oven, won't he much more clothe you, you of little faith?”; the second reads “But seek first God's Kingdom, and his righteousness; and all these things will be given to you as well.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "faith Kingdom"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… into the oven, won't he much more clothe you, you of little ____?” (6:30); “But seek first God's , and his righteousness; and all these things will be given to you as well.” (6:33, WEB)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 6:9 uses holy: “Pray like this: 'Our Father in heaven, may your name be kept holy.”",
+    "options" : [
+      "wise",
+      "holy",
+      "rich",
+      "obedient"
+    ],
+    "prompt" : "Which word completes “Pray like this: 'Our Father in heaven, may your name be kept ______.”? (6:9, WEB)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “but lay up for yourselves treasures in heaven, where neither moth nor rust consume, and where thieves don't break through and steal;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “but lay up for yourselves treasures in heaven, where neither moth nor rust consume, and where thieves don't break through and steal;” (6:20, WEB)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies hypocrites: “\"Moreover when you fast, don't be like the hypocrites, with sad faces. For they disfigure their faces, that they may be seen by men to be …”",
+    "options" : [
+      "exists",
+      "barns",
+      "hypocrites",
+      "debtors"
+    ],
+    "prompt" : "Which detail belongs in this passage: “\"Moreover when you fast, don't be like the ______, with sad faces. For they disfigure their faces, that they may be seen by men to be …”? (6:16, WEB)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Therefore when you do merciful deeds, don't sound a trumpet before yourself, as the hypocrites do in the synagogues and in the streets, that they may …”",
+    "options" : [
+      "merciful"
+    ],
+    "prompt" : "Complete the quotation: “Therefore when you do ____ deeds, don't sound a trumpet before yourself, as the hypocrites do in the synagogues and in the streets, that they may …” (6:2, WEB)",
+    "reference" : "Matthew 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For with whatever judgment you judge, you will be judged; and with whatever measure you measure, it will be measured to you.”",
+    "options" : [
+      "judgment"
+    ],
+    "prompt" : "Complete the quotation: “For with whatever ____ you judge, you will be judged; and with whatever measure you measure, it will be measured to you.” (7:2, WEB)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Even so, every good tree produces good fruit; but the corrupt tree produces evil fruit.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Even so, every good tree produces good fruit; but the corrupt tree produces evil fruit.” (7:17, WEB)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Self-examination must come before attempting to correct another. Jesus criticizes hypocritical judgment and then speaks of seeing clearly to help a brother. The passage neither endorses contempt nor abolishes all moral discernment.",
+    "options" : [
+      "Self-examination must come before attempting to correct another.",
+      "A correct accusation excuses hypocrisy.",
+      "No moral discernment is ever permitted.",
+      "Only another person's faults require attention."
+    ],
+    "prompt" : "How does the warning about the plank in one's eye shape correction of another person? (7:1-5)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… evil, know how to give good gifts to your children, how much more will your Father who is in heaven give good things to those who …” The missing terms belong in that order.",
+    "options" : [
+      "gifts heaven"
+    ],
+    "prompt" : "Supply the missing words in order: “… evil, know how to give good ____ to your children, how much more will your Father who is in give good things to those who …” (7:11, WEB)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 7:8 uses receives: “For everyone who asks receives. He who seeks finds. To him who knocks it will be opened.”",
+    "options" : [
+      "seeks",
+      "asks",
+      "receives",
+      "winds"
+    ],
+    "prompt" : "Which word completes “For everyone who asks ______. He who seeks finds. To him who knocks it will be opened.”? (7:8, WEB)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “\"Don't give that which is holy to the dogs, neither throw your pearls before the pigs, lest perhaps they trample them under their feet, and turn …”",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "Complete the quotation: “\"Don't give that which is ____ to the dogs, neither throw your pearls before the pigs, lest perhaps they trample them under their feet, and turn …” (7:6, WEB)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… that doesn't grow good fruit is cut down, and thrown into the fire.”; verse 22 reads “… that day, 'Lord, Lord, didn't we prophesy in your name, in your name cast out demons, and in your name do many mighty works?'”. These establish the first and second answers respectively.",
+    "options" : [
+      "fire; Jesus",
+      "fire; name",
+      "name; fire",
+      "stone; name"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… that doesn't grow good fruit is cut down, and thrown into the ______.” (7:19); “… that day, 'Lord, Lord, didn't we prophesy in your name, in your ______ cast out demons, and in your name do many mighty works?'” (7:22, WEB)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies life: “… narrow is the gate, and restricted is the way that leads to life! Few are those who find it.”",
+    "options" : [
+      "offerings",
+      "praise",
+      "life",
+      "prayer"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… narrow is the gate, and restricted is the way that leads to ______! Few are those who find it.”? (7:14, WEB)",
+    "reference" : "Matthew 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “and saying, \"Lord, my servant lies in the house paralyzed, grievously tormented.\"”",
+    "options" : [
+      "servant"
+    ],
+    "prompt" : "Complete the quotation: “and saying, \"Lord, my ____ lies in the house paralyzed, grievously tormented.\"” (8:6, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… he came to the other side, into the country of the Gergesenes, two people possessed by demons met him there, coming out of the tombs, exceedingly …”; the second reads “… pigs rushed down the cliff into the sea, and died in the water.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "two water"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… he came to the other side, into the country of the Gergesenes, ____ people possessed by demons met him there, coming out of the tombs, exceedingly …” (8:28); “… pigs rushed down the cliff into the sea, and died in the .” (8:32, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Jesus stretched out his hand, and touched him, saying, \"I want to. Be made clean.\" Immediately his leprosy was cleansed.”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “____ stretched out his hand, and touched him, saying, \"I want to. Be made clean.\" Immediately his leprosy was cleansed.” (8:3, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Jesus said to him, \"The foxes have holes, and the birds of the sky have nests, but the Son of Man has nowhere to lay his …” It says holes, not Moses.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Jesus said to him, \"The foxes have Moses, and the birds of the sky have nests, but the Son of Man has nowhere to lay his …” (8:20, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “Behold, a great tempest arose in the sea, so much that the boat was covered with the waves, but he was asleep.”; verse 26 reads “… of little faith?\" Then he got up, rebuked the wind and the sea, and there was a great calm.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sea; boat",
+      "boat; countries",
+      "commanded; sea",
+      "boat; sea"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Behold, a great tempest arose in the sea, so much that the ______ was covered with the waves, but he was asleep.” (8:24); “… of little faith?\" Then he got up, rebuked the wind and the ______, and there was a great calm.” (8:26, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 8:10 uses faith: “… followed, \"Most assuredly I tell you, I haven't found so great a faith, not even in Israel.”",
+    "options" : [
+      "infirmities",
+      "faith",
+      "testimony",
+      "wife's"
+    ],
+    "prompt" : "Which word completes “… followed, \"Most assuredly I tell you, I haven't found so great a ______, not even in Israel.”? (8:10, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the centurion, \"Go your way. Let it be done for you as you have believed.\" His servant was healed in that hour.” The missing terms belong in that order.",
+    "options" : [
+      "way hour"
+    ],
+    "prompt" : "Supply the missing words in order: “… the centurion, \"Go your ____. Let it be done for you as you have believed.\" His servant was healed in that .” (8:13, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies healed: “… possessed with demons. He cast out the spirits with a word, and healed all who were sick;”",
+    "options" : [
+      "begged",
+      "tormented",
+      "rebuked",
+      "healed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… possessed with demons. He cast out the spirits with a word, and ______ all who were sick;”? (8:16, WEB)",
+    "reference" : "Matthew 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then John's disciples came to him, saying, \"Why do we and the Pharisees fast often, but your disciples don't fast?\"” The missing terms belong in that order.",
+    "options" : [
+      "John's fast"
+    ],
+    "prompt" : "Supply the missing words in order: “Then ____ disciples came to him, saying, \"Why do we and the Pharisees fast often, but your disciples don't ?\"” (9:14, WEB)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… Jesus, seeing their faith, said to the paralytic, \"Son, cheer up! Your sins are forgiven you.\"”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “… Jesus, seeing their faith, said to the paralytic, \"Son, cheer up! Your ____ are forgiven you.\"” (9:2, WEB)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies ruler: “While he told these things to them, behold, a ruler came and worshiped him, saying, \"My daughter has just died, but come and lay your hand …”",
+    "options" : [
+      "sons",
+      "ruler",
+      "sister",
+      "wives"
+    ],
+    "prompt" : "Which detail belongs in this passage: “While he told these things to them, behold, a ______ came and worshiped him, saying, \"My daughter has just died, but come and lay your hand …”? (9:18, WEB)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… (then he said to the paralytic), \"Get up, and take up your mat, and go up to your house.\"”",
+    "options" : [
+      "mat"
+    ],
+    "prompt" : "Complete the quotation: “… (then he said to the paralytic), \"Get up, and take up your ____, and go up to your house.\"” (9:6, WEB)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "His mission reaches people recognized as sinners rather than avoiding them to protect appearances. Jesus connects His table fellowship with the need for a physician and quotes Hosea. Mercy is not approval of sin; it explains His calling of sinners.",
+    "options" : [
+      "The meal proves that repentance is irrelevant to His mission.",
+      "Only respectable people may receive His call.",
+      "Jesus declares that sin does not exist.",
+      "His mission reaches people recognized as sinners rather than avoiding them to protect appearances."
+    ],
+    "prompt" : "What does the call for mercy in the setting of Jesus' meal explain? (9:9-13)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “But Jesus, turning around and seeing her, said, \"Daughter, cheer up! Your faith has made you well.\" And the woman was made well from that hour.” It says faith, not dead.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “But Jesus, turning around and seeing her, said, \"Daughter, cheer up! Your dead has made you well.\" And the woman was made well from that hour.” (9:22, WEB)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 9:10 uses disciples: “… tax collectors and sinners came and sat down with Jesus and his disciples.”",
+    "options" : [
+      "Pharisees",
+      "sinners",
+      "years",
+      "disciples"
+    ],
+    "prompt" : "Which word completes “… tax collectors and sinners came and sat down with Jesus and his ______.”? (9:10, WEB)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “… followed him, calling out and saying, \"Have mercy on us, son of David!\"”; verse 30 reads “Their eyes were opened. Jesus strictly charged them, saying, \"See that no one knows about this.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "Balaam; Jesus",
+      "Jesus; David",
+      "David; Jesus",
+      "David; Syntyche"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… followed him, calling out and saying, \"Have mercy on us, son of ______!\"” (9:27); “Their eyes were opened. ______ strictly charged them, saying, \"See that no one knows about this.\"” (9:30, WEB)",
+    "reference" : "Matthew 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Heal the sick, cleanse the lepers, and cast out demons. Freely you received, so freely give.”",
+    "options" : [
+      "received"
+    ],
+    "prompt" : "Complete the quotation: “Heal the sick, cleanse the lepers, and cast out demons. Freely you ____, so freely give.” (10:8, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 28 reads “… kill the body, but are not able to kill the soul. Rather, fear him who is able to destroy both soul and body in Gehenna.”; verse 33 reads “But whoever denies me before men, him I will also deny before my Father who is in heaven.”. These establish the first and second answers respectively.",
+    "options" : [
+      "fear; whoever",
+      "fear; receive",
+      "knowledge; whoever",
+      "whoever; fear"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… kill the body, but are not able to kill the soul. Rather, ______ him who is able to destroy both soul and body in Gehenna.” (10:28); “But ______ denies me before men, him I will also deny before my Father who is in heaven.” (10:33, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 10:10 uses two: “Take no bag for your journey, neither two coats, nor shoes, nor staff: for the laborer is worthy of his food.”",
+    "options" : [
+      "twelfth",
+      "ten",
+      "two",
+      "eighth"
+    ],
+    "prompt" : "Which word completes “Take no bag for your journey, neither ______ coats, nor shoes, nor staff: for the laborer is worthy of his food.”? (10:10, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… enough for the disciple that he be like his teacher, and the servant like his lord. If they have called the master of the house Beelzebul, …” It says servant, not brothers.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… enough for the disciple that he be like his teacher, and the brothers like his lord. If they have called the master of the house Beelzebul, …” (10:25, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Philip; Bartholomew; Thomas; Matthew the tax collector; James the son of Alphaeus; and Lebbaeus, whose surname was Thaddaeus;”",
+    "options" : [
+      "Bartholomew"
+    ],
+    "prompt" : "Complete the quotation: “Philip; ____; Thomas; Matthew the tax collector; James the son of Alphaeus; and Lebbaeus, whose surname was Thaddaeus;” (10:3, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… you, it will be more tolerable for the land of Sodom and Gomorrah in the day of judgment than for that city.” The missing terms belong in that order.",
+    "options" : [
+      "land judgment"
+    ],
+    "prompt" : "Supply the missing words in order: “… you, it will be more tolerable for the ____ of Sodom and Gomorrah in the day of than for that city.” (10:15, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies deliver: “\"Brother will deliver up brother to death, and the father his child. Children will rise up against parents, and cause them to be put to death.”",
+    "options" : [
+      "village",
+      "deliver",
+      "sickness",
+      "think"
+    ],
+    "prompt" : "Which detail belongs in this passage: “\"Brother will ______ up brother to death, and the father his child. Children will rise up against parents, and cause them to be put to death.”? (10:21, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… me is not worthy of me; and he who loves son or daughter more than me isn't worthy of me.”; the second reads “… and he who receives a righteous man in the name of a righteous man will receive a righteous man's reward.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "daughter righteous"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… me is not worthy of me; and he who loves son or ____ more than me isn't worthy of me.” (10:37); “… and he who receives a righteous man in the name of a man will receive a righteous man's reward.” (10:41, WEB)",
+    "reference" : "Matthew 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “and say, 'We played the flute for you, and you didn't dance. We mourned for you, and you didn't lament.'”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “and say, 'We played the flute for you, and you didn't dance. We mourned for you, and you didn't lament.'” (11:17, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies generation: “\"But to what shall I compare this generation? It is like children sitting in the marketplaces, who call to their companions”",
+    "options" : [
+      "fatherless",
+      "generation",
+      "fear",
+      "thanksgiving"
+    ],
+    "prompt" : "Which detail belongs in this passage: “\"But to what shall I compare this ______? It is like children sitting in the marketplaces, who call to their companions”? (11:16, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… knows the Son, except the Father; neither does anyone know the Father, except the Son, and he to whom the Son desires to reveal him.”; the second reads “… for I am gentle and lowly in heart; and you will find rest for your souls.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "except rest"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… knows the Son, except the Father; neither does anyone know the Father, ____ the Son, and he to whom the Son desires to reveal him.” (11:27); “… for I am gentle and lowly in heart; and you will find for your souls.” (11:29, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… in the prison the works of Christ, he sent two of his disciples”",
+    "options" : [
+      "disciples"
+    ],
+    "prompt" : "Complete the quotation: “… in the prison the works of Christ, he sent two of his ____” (11:2, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 11:8 uses soft: “But what did you go out to see? A man in soft clothing? Behold, those who wear soft clothing are in king's houses.”",
+    "options" : [
+      "soft",
+      "wisdom",
+      "king's",
+      "Heaven"
+    ],
+    "prompt" : "Which word completes “But what did you go out to see? A man in ______ clothing? Behold, those who wear soft clothing are in king's houses.”? (11:8, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “From the days of John the Baptizer until now, the Kingdom of Heaven suffers violence, and the violent take it by force.” The missing terms belong in that order.",
+    "options" : [
+      "John Kingdom"
+    ],
+    "prompt" : "Supply the missing words in order: “From the days of ____ the Baptizer until now, the of Heaven suffers violence, and the violent take it by force.” (11:12, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “\"Woe to you, Chorazin! Woe to you, Bethsaida! For if the mighty works had been done in Tyre and Sidon which were done in you, they …”; verse 23 reads “You, Capernaum, who are exalted to Heaven, you will go down to Hades. For if the mighty works had been done in Sodom which were done …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Tarsus; Capernaum",
+      "Capernaum; Bethsaida",
+      "Bethsaida; Troas",
+      "Bethsaida; Capernaum"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “\"Woe to you, Chorazin! Woe to you, ______! For if the mighty works had been done in Tyre and Sidon which were done in you, they …” (11:21); “You, ______, who are exalted to Heaven, you will go down to Hades. For if the mighty works had been done in Sodom which were done …” (11:23, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… are cleansed, the deaf hear, the dead are raised up, and the poor have good news preached to them.”",
+    "options" : [
+      "poor"
+    ],
+    "prompt" : "Complete the quotation: “… are cleansed, the deaf hear, the dead are raised up, and the ____ have good news preached to them.” (11:5, WEB)",
+    "reference" : "Matthew 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… servant whom I have chosen; My beloved in whom my soul is well pleased: I will put my Spirit on him. He will proclaim justice to …” The missing terms belong in that order.",
+    "options" : [
+      "servant justice"
+    ],
+    "prompt" : "Supply the missing words in order: “… ____ whom I have chosen; My beloved in whom my soul is well pleased: I will put my Spirit on him. He will proclaim to …” (12:18, WEB)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… eat, neither for those who were with him, but only for the priests?”",
+    "options" : [
+      "priests"
+    ],
+    "prompt" : "Complete the quotation: “… eat, neither for those who were with him, but only for the ____?” (12:4, WEB)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Jesus' opponents attribute His Spirit-empowered deliverance to the ruler of demons. The warning has this concrete setting. The Gospel Worldview professor emphasizes that context; Christians discuss its wider application, so ordinary anxious doubt should not simply be equated with this accusation.",
+    "options" : [
+      "Jesus condemns every sincere question about faith.",
+      "Jesus' opponents attribute His Spirit-empowered deliverance to the ruler of demons.",
+      "A healed man forgets to say thank you.",
+      "The disciples ask how to pray."
+    ],
+    "prompt" : "What accusation forms the setting of the warning about blasphemy against the Spirit? (12:22-32)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 12:13 uses hand: “Then he told the man, \"Stretch out your hand.\" He stretched it out; and it was restored whole, just like the other.”",
+    "options" : [
+      "eye",
+      "hair",
+      "eyes",
+      "hand"
+    ],
+    "prompt" : "Which word completes “Then he told the man, \"Stretch out your ______.\" He stretched it out; and it was restored whole, just like the other.”? (12:13, WEB)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… if you had known what this means, 'I desire mercy, and not sacrifice,' you would not have condemned the guiltless.”",
+    "options" : [
+      "sacrifice"
+    ],
+    "prompt" : "Complete the quotation: “… if you had known what this means, 'I desire mercy, and not ____,' you would not have condemned the guiltless.” (12:7, WEB)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies kingdom: “Knowing their thoughts, Jesus said to them, \"Every kingdom divided against itself is brought to desolation, and every city or house divided against itself will not …”",
+    "options" : [
+      "kingdom",
+      "condemn",
+      "Pharisees",
+      "charged"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Knowing their thoughts, Jesus said to them, \"Every ______ divided against itself is brought to desolation, and every city or house divided against itself will not …”? (12:25, WEB)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the house of the strong man, and plunder his goods, unless he first bind the strong man? Then he will plunder his house.” It says first, not seven.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the house of the strong man, and plunder his goods, unless he seven bind the strong man? Then he will plunder his house.” (12:29, WEB)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… he is gone out of the man, passes through waterless places, seeking rest, and doesn't find it.”; the second reads “He stretched out his hand towards his disciples, and said, \"Behold, my mother and my brothers!”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rest disciples"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… he is gone out of the man, passes through waterless places, seeking ____, and doesn't find it.” (12:43); “He stretched out his hand towards his , and said, \"Behold, my mother and my brothers!” (12:49, WEB)",
+    "reference" : "Matthew 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The explanation identifies different responses to the word and obstacles to fruitfulness. Jesus supplies the interpretation, including shallow reception and competing concerns. An interpreter should begin there rather than invent a separate meaning for every incidental detail.",
+    "options" : [
+      "Jesus gives no explanation of the parable.",
+      "The explanation identifies different responses to the word and obstacles to fruitfulness.",
+      "The soils describe only agricultural technique.",
+      "Every farming detail has an unrelated secret code."
+    ],
+    "prompt" : "Why should the sower's soils be interpreted using Jesus' own explanation? (13:18-23)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and will cast them into the furnace of fire. There will be the weeping and the gnashing of teeth.\"”; the second reads “Isn't this the carpenter's son? Isn't his mother called Mary, and his brothers, James, Joses, Simon, and Judas?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fire Mary"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and will cast them into the furnace of ____. There will be the weeping and the gnashing of teeth.\"” (13:50); “Isn't this the carpenter's son? Isn't his mother called , and his brothers, James, Joses, Simon, and Judas?” (13:55, WEB)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Others fell on rocky ground, where they didn't have much soil, and immediately they sprang up, because they had no depth of earth.”",
+    "options" : [
+      "immediately"
+    ],
+    "prompt" : "Complete the quotation: “Others fell on rocky ground, where they didn't have much soil, and ____ they sprang up, because they had no depth of earth.” (13:5, WEB)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He spoke another parable to them. \"The Kingdom of Heaven is like yeast, which a woman took, and hid in three measures of meal, until it …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He spoke another parable to them. \"The Kingdom of Heaven is like yeast, which a woman took, and hid in three measures of meal, until it …” (13:33, WEB)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies servants: “The servants of the householder came and said to him, 'Sir, didn't you sow good seed in your field? Where did this darnel come from?'”",
+    "options" : [
+      "soldiers",
+      "servants",
+      "mother",
+      "elders"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ of the householder came and said to him, 'Sir, didn't you sow good seed in your field? Where did this darnel come from?'”? (13:27, WEB)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 13:15 uses heart: “For this people's heart has grown callous, Their ears are dull of hearing, They have closed their eyes; Or else perhaps they might perceive with their …”",
+    "options" : [
+      "ear",
+      "heart",
+      "teeth",
+      "tooth"
+    ],
+    "prompt" : "Which word completes “For this people's ______ has grown callous, Their ears are dull of hearing, They have closed their eyes; Or else perhaps they might perceive with their …”? (13:15, WEB)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… no root in himself, but endures for a while. When oppression or persecution arises because of the word, immediately he stumbles.” The missing terms belong in that order.",
+    "options" : [
+      "endures stumbles"
+    ],
+    "prompt" : "Supply the missing words in order: “… no root in himself, but ____ for a while. When oppression or persecution arises because of the word, immediately he .” (13:21, WEB)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… good soil, and yielded fruit: some one hundred times as much, some sixty, and some thirty.”",
+    "options" : [
+      "sixty"
+    ],
+    "prompt" : "Complete the quotation: “… good soil, and yielded fruit: some one hundred times as much, some ____, and some thirty.” (13:8, WEB)",
+    "reference" : "Matthew 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But when Herod's birthday came, the daughter of Herodias danced among them and pleased Herod.”",
+    "options" : [
+      "danced"
+    ],
+    "prompt" : "Complete the quotation: “But when Herod's birthday came, the daughter of Herodias ____ among them and pleased Herod.” (14:6, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Those who ate were about five thousand men, besides women and children.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Those who ate were about five thousand men, besides women and children.” (14:21, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now when Jesus heard this, he withdrew from there in a boat, to a deserted place apart. When the multitudes heard it, they followed him on …” The missing terms belong in that order.",
+    "options" : [
+      "Jesus multitudes"
+    ],
+    "prompt" : "Supply the missing words in order: “Now when ____ heard this, he withdrew from there in a boat, to a deserted place apart. When the heard it, they followed him on …” (14:13, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 24 reads “But the boat was now in the middle of the sea, distressed by the waves, for the wind was contrary.”; verse 29 reads “He said, \"Come!\" Peter stepped down from the boat, and walked on the waters to come to Jesus.”. These establish the first and second answers respectively.",
+    "options" : [
+      "rivers; Peter",
+      "sea; Peter",
+      "Peter; sea",
+      "sea; Cyrus"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But the boat was now in the middle of the ______, distressed by the waves, for the wind was contrary.” (14:24); “He said, \"Come!\" ______ stepped down from the boat, and walked on the waters to come to Jesus.” (14:29, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies disciples: “… up to heaven, he blessed, broke and gave the loaves to the disciples, and the disciples gave to the multitudes.”",
+    "options" : [
+      "baskets",
+      "Herod's",
+      "disciples",
+      "multitudes"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… up to heaven, he blessed, broke and gave the loaves to the ______, and the disciples gave to the multitudes.”? (14:19, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… hand, took hold of him, and said to him, \"You of little faith, why did you doubt?\"”; the second reads “… into all that surrounding region, and brought to him all who were sick,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "faith sick"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… hand, took hold of him, and said to him, \"You of little ____, why did you doubt?\"” (14:31); “… into all that surrounding region, and brought to him all who were ,” (14:35, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For Herod had laid hold of John, and bound him, and put him in prison for the sake of Herodias, his brother Philip's wife.”",
+    "options" : [
+      "Herod"
+    ],
+    "prompt" : "Complete the quotation: “For ____ had laid hold of John, and bound him, and put him in prison for the sake of Herodias, his brother Philip's wife.” (14:3, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 14:9 uses king: “The king was grieved, but for the sake of his oaths, and of those who sat at the table with him, he commanded it to be …”",
+    "options" : [
+      "prince",
+      "father",
+      "wife",
+      "king"
+    ],
+    "prompt" : "Which word completes “The ______ was grieved, but for the sake of his oaths, and of those who sat at the table with him, he commanded it to be …”? (14:9, WEB)",
+    "reference" : "Matthew 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “\"Why do your disciples disobey the tradition of the elders? For they don't wash their hands when they eat bread.\"”",
+    "options" : [
+      "disciples"
+    ],
+    "prompt" : "Complete the quotation: “\"Why do your ____ disobey the tradition of the elders? For they don't wash their hands when they eat bread.\"” (15:2, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sins: “For out of the heart come forth evil thoughts, murders, adulteries, sexual sins, thefts, false testimony, and blasphemies.”",
+    "options" : [
+      "iniquity",
+      "rebellion",
+      "sins",
+      "iniquities"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For out of the heart come forth evil thoughts, murders, adulteries, sexual ______, thefts, false testimony, and blasphemies.”? (15:19, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 15:11 uses doesn't: “That which enters into the mouth doesn't defile the man; but that which proceeds out of the mouth, this defiles the man.\"”",
+    "options" : [
+      "besides",
+      "hands",
+      "doesn't",
+      "children's"
+    ],
+    "prompt" : "Which word completes “That which enters into the mouth ______ defile the man; but that which proceeds out of the mouth, this defiles the man.\"”? (15:11, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… borders, and cried, saying, \"Have mercy on me, Lord, you son of David! My daughter is severely demonized!\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… borders, and cried, saying, \"Have mercy on me, Lord, you son of David! My daughter is severely demonized!\"” (15:22, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… 'Whoever may tell his father or his mother, \"Whatever help you might otherwise have gotten from me is a gift devoted to God,\"”",
+    "options" : [
+      "otherwise"
+    ],
+    "prompt" : "Complete the quotation: “… 'Whoever may tell his father or his mother, \"Whatever help you might ____ have gotten from me is a gift devoted to God,\"” (15:5, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 26 reads “But he answered, \"It is not appropriate to take the children's bread and throw it to the dogs.\"”; verse 31 reads “… injured whole, lame walking, and blind seeing--and they glorified the God of Israel.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Israel; bread",
+      "bread; Israel",
+      "wheat; Israel",
+      "bread; James"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But he answered, \"It is not appropriate to take the children's ______ and throw it to the dogs.\"” (15:26); “… injured whole, lame walking, and blind seeing--and they glorified the God of ______.” (15:31, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Jesus said to them, \"How many loaves do you have?\" They said, \"Seven, and a few small fish.\"”; the second reads “Those who ate were four thousand men, besides women and children.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Seven four"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Jesus said to them, \"How many loaves do you have?\" They said, \"____, and a few small fish.\"” (15:34); “Those who ate were thousand men, besides women and children.” (15:38, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Leave them alone. They are blind guides of the blind. If the blind guide the blind, both will fall into a pit.\"” The missing terms belong in that order.",
+    "options" : [
+      "alone guides"
+    ],
+    "prompt" : "Supply the missing words in order: “Leave them ____. They are blind of the blind. If the blind guide the blind, both will fall into a pit.\"” (15:14, WEB)",
+    "reference" : "Matthew 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to you concerning bread? But beware of the yeast of the Pharisees and Sadducees.\"” The missing terms belong in that order.",
+    "options" : [
+      "Pharisees Sadducees"
+    ],
+    "prompt" : "Supply the missing words in order: “… to you concerning bread? But beware of the yeast of the ____ and .\"” (16:11, WEB)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Jesus answered him, \"Blessed are you, Simon Bar Jonah, for flesh and blood has not revealed this to you, but my Father who is in heaven.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Jesus answered him, \"Blessed are you, Simon Bar Jonah, for flesh and blood has not revealed this to you, but my Father who is in heaven.” (16:17, WEB)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Recognizing Jesus as Messiah does not mean Peter yet understands the way of the cross. Peter confesses Jesus and then resists the announced suffering. Jesus joins His own path to the call for disciples to deny themselves and follow Him.",
+    "options" : [
+      "The call to follow excludes any costly obedience.",
+      "Messiahship guarantees avoidance of suffering.",
+      "Recognizing Jesus as Messiah does not mean Peter yet understands the way of the cross.",
+      "Peter already accepts every part of the passion prediction."
+    ],
+    "prompt" : "What contrast emerges between Peter's confession and his objection to Jesus' suffering? (16:13-25)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 16:8 uses bread: “… reason among yourselves, you of little faith, 'because you have brought no bread?'”",
+    "options" : [
+      "bread",
+      "barley",
+      "wheat",
+      "olives"
+    ],
+    "prompt" : "Which word completes “… reason among yourselves, you of little faith, 'because you have brought no ______?'”? (16:8, WEB)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… the morning, 'It will be foul weather today, for the sky is red and threatening.' Hypocrites! You know how to discern the appearance of the sky, …”",
+    "options" : [
+      "red"
+    ],
+    "prompt" : "Complete the quotation: “… the morning, 'It will be foul weather today, for the sky is ____ and threatening.' Hypocrites! You know how to discern the appearance of the sky, …” (16:3, WEB)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… be no sign given to it, except the sign of the prophet Jonah.\" He left them, and departed.”",
+    "options" : [
+      "Jonah"
+    ],
+    "prompt" : "Complete the quotation: “… be no sign given to it, except the sign of the prophet ____.\" He left them, and departed.” (16:4, WEB)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Philippi: “Now when Jesus came into the parts of Caesarea Philippi, he asked his disciples, saying, \"Who do men say that I, the Son of Man, am?\"”",
+    "options" : [
+      "Thyatira",
+      "Smyrna",
+      "Tarshish",
+      "Philippi"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Now when Jesus came into the parts of Caesarea ______, he asked his disciples, saying, \"Who do men say that I, the Son of Man, am?\"”? (16:13, WEB)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to save his life will lose it, and whoever will lose his life for my sake will find it.”; the second reads “For the Son of Man will come in the glory of his Father with his angels, and then he will render to everyone according to his …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life glory"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to save his life will lose it, and whoever will lose his ____ for my sake will find it.” (16:25); “For the Son of Man will come in the of his Father with his angels, and then he will render to everyone according to his …” (16:27, WEB)",
+    "reference" : "Matthew 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Jesus answered, \"Faithless and perverse generation! How long will I be with you? How long will I bear with you? Bring him here to me.\"” It says generation, not priests.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Jesus answered, \"Faithless and perverse priests! How long will I be with you? How long will I bear with you? Bring him here to me.\"” (17:17, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “but I tell you that Elijah has come already, and they didn't recognize him, but did to him whatever they wanted to. Even so the Son …” The missing terms belong in that order.",
+    "options" : [
+      "Elijah wanted"
+    ],
+    "prompt" : "Supply the missing words in order: “but I tell you that ____ has come already, and they didn't recognize him, but did to him whatever they to. Even so the Son …” (17:12, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When they had come to Capernaum, those who collected the didrachma coins came to Peter, and said, \"Doesn't your teacher pay the didrachma?\"”; the second reads “… go to the sea, and cast a hook, and take up the first fish that comes up. When you have opened its mouth, you will find …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Capernaum first"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When they had come to ____, those who collected the didrachma coins came to Peter, and said, \"Doesn't your teacher pay the didrachma?\"” (17:24); “… go to the sea, and cast a hook, and take up the fish that comes up. When you have opened its mouth, you will find …” (17:27, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “After six days, Jesus took with him Peter, James, and John his brother, and brought them up into a high mountain by themselves.”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “After six days, Jesus took with him ____, James, and John his brother, and brought them up into a high mountain by themselves.” (17:1, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “While he was still speaking, behold, a bright cloud overshadowed them. Behold, a voice came out of the cloud, saying, \"This is my beloved Son, in …”",
+    "options" : [
+      "bright"
+    ],
+    "prompt" : "Complete the quotation: “While he was still speaking, behold, a ____ cloud overshadowed them. Behold, a voice came out of the cloud, saying, \"This is my beloved Son, in …” (17:5, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… he is epileptic, and suffers grievously; for he often falls into the fire, and often into the water.”",
+    "options" : [
+      "high",
+      "fire",
+      "three",
+      "beloved"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… he is epileptic, and suffers grievously; for he often falls into the ______, and often into the water.”? (17:15, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… of your unbelief. For most assuredly I tell you, if you have faith as a grain of mustard seed, you will tell this mountain, 'Move from …”; verse 22 reads “While they were staying in Galilee, Jesus said to them, \"The Son of Man is about to be delivered up into the hands of men,”. These establish the first and second answers respectively.",
+    "options" : [
+      "Galilee; faith",
+      "cure; Galilee",
+      "faith; Galilee",
+      "faith; Iconium"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of your unbelief. For most assuredly I tell you, if you have ______ as a grain of mustard seed, you will tell this mountain, 'Move from …” (17:20); “While they were staying in ______, Jesus said to them, \"The Son of Man is about to be delivered up into the hands of men,” (17:22, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 17:9 uses Jesus: “As they were coming down from the mountain, Jesus commanded them, saying, \"Don't tell anyone what you saw, until the Son of Man has risen from …”",
+    "options" : [
+      "Eli",
+      "Samuel",
+      "Jesus",
+      "Timothy"
+    ],
+    "prompt" : "Which word completes “As they were coming down from the mountain, ______ commanded them, saying, \"Don't tell anyone what you saw, until the Son of Man has risen from …”? (17:9, WEB)",
+    "reference" : "Matthew 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 18:10 uses always: “… these little ones, for I tell you that in heaven their angels always see the face of my Father who is in heaven.”",
+    "options" : [
+      "eyes",
+      "disciples",
+      "refuses",
+      "always"
+    ],
+    "prompt" : "Which word completes “… these little ones, for I tell you that in heaven their angels ______ see the face of my Father who is in heaven.”? (18:10, WEB)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… better for him that a huge millstone should be hung around his neck, and that he should be sunk in the depths of the sea.”",
+    "options" : [
+      "neck"
+    ],
+    "prompt" : "Complete the quotation: “… better for him that a huge millstone should be hung around his ____, and that he should be sunk in the depths of the sea.” (18:6, WEB)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gentile: “… to hear the assembly also, let him be to you as a Gentile or a tax collector.”",
+    "options" : [
+      "Gentile",
+      "listen",
+      "wanted",
+      "forgive"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to hear the assembly also, let him be to you as a ______ or a tax collector.”? (18:17, WEB)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… become as little children, you will in no way enter into the Kingdom of Heaven.”",
+    "options" : [
+      "Kingdom"
+    ],
+    "prompt" : "Complete the quotation: “… become as little children, you will in no way enter into the ____ of Heaven.” (18:3, WEB)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Teaching about correction, witnesses, the community and prayer. The promise assures Jesus' presence in a serious communal setting. It should not be reduced to a rule that God is absent whenever only one person prays.",
+    "options" : [
+      "A rule forbidding solitary prayer.",
+      "Teaching about correction, witnesses, the community and prayer.",
+      "An instruction about building dimensions.",
+      "A calculation of the minimum number God can hear."
+    ],
+    "prompt" : "What is the immediate setting of the promise about two or three gathered in Jesus' name? (18:15-20)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… assuredly I tell you, he rejoices over it more than over the ninety-nine which have not gone astray.” The missing terms belong in that order.",
+    "options" : [
+      "ninety nine"
+    ],
+    "prompt" : "Supply the missing words in order: “… assuredly I tell you, he rejoices over it more than over the ____- which have not gone astray.” (18:13, WEB)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Then Peter came and said to him, \"Lord, how often shall my brother sin against me, and I forgive him? Until seven times?\"” It says Peter, not Rhoda.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Then Rhoda came and said to him, \"Lord, how often shall my brother sin against me, and I forgive him? Until seven times?\"” (18:21, WEB)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “\"So his fellow servant fell down at his feet and begged him, saying, 'Have patience with me, and I will repay you!'”; the second reads “… also have had mercy on your fellow servant, even as I had mercy on you?'”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servant mercy"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “\"So his fellow ____ fell down at his feet and begged him, saying, 'Have patience with me, and I will repay you!'” (18:29); “… also have had mercy on your fellow servant, even as I had on you?'” (18:33, WEB)",
+    "reference" : "Matthew 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Kingdom: “… don't forbid them to come to me; for to such belongs the Kingdom of Heaven.\"”",
+    "options" : [
+      "Kingdom",
+      "mother's",
+      "divorce",
+      "commit"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… don't forbid them to come to me; for to such belongs the ______ of Heaven.\"”? (19:14, WEB)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For there are eunuchs who were born that way from their mother's womb, and there are eunuchs who were made eunuchs by men; and there are …” The missing terms belong in that order.",
+    "options" : [
+      "eunuchs born"
+    ],
+    "prompt" : "Supply the missing words in order: “For there are ____ who were that way from their mother's womb, and there are eunuchs who were made eunuchs by men; and there are …” (19:12, WEB)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 19:9 uses wife: “I tell you that whoever divorces his wife, except for sexual immorality, and marries another, commits adultery; and he who marries her when she is divorced …”",
+    "options" : [
+      "priest",
+      "brother",
+      "wife",
+      "wives"
+    ],
+    "prompt" : "Which word completes “I tell you that whoever divorces his ______, except for sexual immorality, and marries another, commits adultery; and he who marries her when she is divorced …”? (19:9, WEB)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… not commit adultery.' 'You shall not steal.' 'You shall not offer false testimony.'”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… not commit adultery.' 'You shall not steal.' 'You shall not offer false testimony.'” (19:18, WEB)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The creation account and the seriousness of the marriage bond. Jesus distinguishes God's creation purpose from a concession associated with hard hearts. Christians differ about some exceptions and remarriage cases; this text should never be used to excuse abuse.",
+    "options" : [
+      "A claim that Moses required all couples to separate.",
+      "Permission for any convenient dismissal of a spouse.",
+      "A command that every married person must divorce.",
+      "The creation account and the seriousness of the marriage bond."
+    ],
+    "prompt" : "What does Jesus put alongside His discussion of divorce and Moses' concession? (19:3-12)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… departed from Galilee, and came into the borders of Judea beyond the Jordan.”",
+    "options" : [
+      "Jordan"
+    ],
+    "prompt" : "Complete the quotation: “… departed from Galilee, and came into the borders of Judea beyond the ____.” (19:1, WEB)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… to be perfect, go, sell what you have, and give to the poor, and you will have treasure in heaven; and come, follow me.\"”; verse 23 reads “Jesus said to his disciples, \"Most assuredly I say to you, a rich man will enter into the Kingdom of Heaven with difficulty.”. These establish the first and second answers respectively.",
+    "options" : [
+      "poor; disciples",
+      "humble; disciples",
+      "disciples; poor",
+      "poor; multitudes"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… to be perfect, go, sell what you have, and give to the ______, and you will have treasure in heaven; and come, follow me.\"” (19:21); “Jesus said to his ______, \"Most assuredly I say to you, a rich man will enter into the Kingdom of Heaven with difficulty.” (19:23, WEB)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… his father and mother, and shall join to his wife; and the two shall become one flesh?'”",
+    "options" : [
+      "two"
+    ],
+    "prompt" : "Complete the quotation: “… his father and mother, and shall join to his wife; and the ____ shall become one flesh?'” (19:5, WEB)",
+    "reference" : "Matthew 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 20:8 uses first: “… laborers and pay them their wages, beginning from the last to the first.'”",
+    "options" : [
+      "first",
+      "five",
+      "eleven",
+      "seventeen"
+    ],
+    "prompt" : "Which word completes “… laborers and pay them their wages, beginning from the last to the ______.'”? (20:8, WEB)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He has kept his agreement and claims freedom to be generous to others. The complaint arises when workers compare what they received. The parable challenges resentment of generosity rather than providing a complete wage policy for every workplace.",
+    "options" : [
+      "He condemns all paid employment.",
+      "He has kept his agreement and claims freedom to be generous to others.",
+      "He says the last workers labored longer.",
+      "He admits he has broken the agreed payment."
+    ],
+    "prompt" : "How does the vineyard owner's answer challenge the first workers' complaint? (20:1-16)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “About the eleventh hour he went out, and found others standing idle. He said to them, 'Why do you stand here all day idle?'”",
+    "options" : [
+      "idle"
+    ],
+    "prompt" : "Complete the quotation: “About the eleventh hour he went out, and found others standing ____. He said to them, 'Why do you stand here all day idle?'” (20:6, WEB)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “\"For the Kingdom of Heaven is like a man who was the master of a household, who went out early in the morning to hire laborers …”",
+    "options" : [
+      "Kingdom"
+    ],
+    "prompt" : "Complete the quotation: “\"For the ____ of Heaven is like a man who was the master of a household, who went out early in the morning to hire laborers …” (20:1, WEB)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… made them equal to us, who have borne the burden of the day and the scorching heat!'” The missing terms belong in that order.",
+    "options" : [
+      "burden scorching"
+    ],
+    "prompt" : "Supply the missing words in order: “… made them equal to us, who have borne the ____ of the day and the heat!'” (20:12, WEB)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… mother of the sons of Zebedee came to him with her sons, kneeling and asking a certain thing of him.” It says kneeling, not passing.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… mother of the sons of Zebedee came to him with her sons, passing and asking a certain thing of him.” (20:20, WEB)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies disciples: “As Jesus was going up to Jerusalem, he took the twelve disciples aside, and on the way he said to them,”",
+    "options" : [
+      "disciples",
+      "priests",
+      "laborers",
+      "rulers"
+    ],
+    "prompt" : "Which detail belongs in this passage: “As Jesus was going up to Jerusalem, he took the twelve ______ aside, and on the way he said to them,”? (20:17, WEB)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “… them, \"You will indeed drink my cup, and be baptized with the baptism that I am baptized with, but to sit on my right hand and …”; verse 25 reads “… the rulers of the Gentiles lord it over them, and their great ones exercise authority over them.”. These establish the first and second answers respectively.",
+    "options" : [
+      "servant; ones",
+      "baptism; ones",
+      "ones; baptism",
+      "baptism; brothers"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… them, \"You will indeed drink my cup, and be baptized with the ______ that I am baptized with, but to sit on my right hand and …” (20:23); “… the rulers of the Gentiles lord it over them, and their great ______ exercise authority over them.” (20:25, WEB)",
+    "reference" : "Matthew 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… their clothes on the road. Others cut branches from the trees, and spread them on the road.”",
+    "options" : [
+      "spread"
+    ],
+    "prompt" : "Complete the quotation: “… their clothes on the road. Others cut branches from the trees, and ____ them on the road.” (21:8, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “They told him, \"He will miserably destroy those miserable men, and will lease out the vineyard to other farmers, who will give him the fruit in …”; the second reads “He who falls on this stone will be broken to pieces, but on whoever it will fall, it will scatter him as dust.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "miserable falls"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “They told him, \"He will miserably destroy those ____ men, and will lease out the vineyard to other farmers, who will give him the fruit in …” (21:41); “He who on this stone will be broken to pieces, but on whoever it will fall, it will scatter him as dust.\"” (21:44, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “\"Tell the daughter of Zion, Behold, your King comes to you, Humble, and riding on a donkey, On a colt, the foal of a donkey.\"”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "Complete the quotation: “\"Tell the daughter of ____, Behold, your King comes to you, Humble, and riding on a donkey, On a colt, the foal of a donkey.\"” (21:5, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… are saying?\" Jesus said to them, \"Yes. Did you never read, 'Out of the mouth of babes and nursing babies you have perfected praise?'\"” The missing terms belong in that order.",
+    "options" : [
+      "Jesus praise"
+    ],
+    "prompt" : "Supply the missing words in order: “… are saying?\" ____ said to them, \"Yes. Did you never read, 'Out of the mouth of babes and nursing babies you have perfected ?'\"” (21:16, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies faith: “Jesus answered them, \"Most assuredly I tell you, if you have faith, and don't doubt, you will not only do what is done to the fig …”",
+    "options" : [
+      "withered",
+      "leased",
+      "faith",
+      "spread"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Jesus answered them, \"Most assuredly I tell you, if you have ______, and don't doubt, you will not only do what is done to the fig …”? (21:21, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 31 reads “… you that the tax collectors and the prostitutes are entering into the Kingdom of God before you.”; verse 34 reads “When the season for the fruit drew near, he sent his servants to the farmers, to receive his fruit.”. These establish the first and second answers respectively.",
+    "options" : [
+      "branches; servants",
+      "servants; Kingdom",
+      "Kingdom; mother",
+      "Kingdom; servants"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… you that the tax collectors and the prostitutes are entering into the ______ of God before you.” (21:31); “When the season for the fruit drew near, he sent his ______ to the farmers, to receive his fruit.” (21:34, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… if we say, 'From men,' we fear the multitude, for all hold John as a prophet.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… if we say, 'From men,' we fear the multitude, for all hold John as a prophet.\"” (21:26, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 21:12 uses temple: “… and drove out all of those who sold and bought in the temple, and overthrew the money-changers' tables and the seats of those who sold the …”",
+    "options" : [
+      "tabernacle",
+      "wall",
+      "walls",
+      "temple"
+    ],
+    "prompt" : "Which word completes “… and drove out all of those who sold and bought in the ______, and overthrew the money-changers' tables and the seats of those who sold the …”? (21:12, WEB)",
+    "reference" : "Matthew 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Again he sent out other servants, saying, 'Tell those who are invited, \"Behold, I have made ready my dinner. My oxen and my fatlings are killed, …”",
+    "options" : [
+      "servants"
+    ],
+    "prompt" : "Complete the quotation: “Again he sent out other ____, saying, 'Tell those who are invited, \"Behold, I have made ready my dinner. My oxen and my fatlings are killed, …” (22:4, WEB)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… their disciples to him, along with the Herodians, saying, \"Teacher, we know that you are honest, and teach the way of God in truth, no matter …” The missing terms belong in that order.",
+    "options" : [
+      "disciples truth"
+    ],
+    "prompt" : "Supply the missing words in order: “… their ____ to him, along with the Herodians, saying, \"Teacher, we know that you are honest, and teach the way of God in , no matter …” (22:16, WEB)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Love of God and love of neighbor belong at its center. Jesus says the Law and the Prophets depend on these commands. The course treats spiritual life as relational: love for God shapes love for other people.",
+    "options" : [
+      "Love for God makes treatment of neighbors irrelevant.",
+      "Neighbor-love replaces all concern for God.",
+      "Love of God and love of neighbor belong at its center.",
+      "The commands concern only private feelings without action."
+    ],
+    "prompt" : "How do Jesus' two great commandments summarize the law? (22:34-40)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Moses: “saying, \"Teacher, Moses said, 'If a man dies, having no children, his brother shall marry his wife, and raise up seed for his brother.'”",
+    "options" : [
+      "Lazarus",
+      "Apollos",
+      "Christ",
+      "Moses"
+    ],
+    "prompt" : "Which detail belongs in this passage: “saying, \"Teacher, ______ said, 'If a man dies, having no children, his brother shall marry his wife, and raise up seed for his brother.'”? (22:24, WEB)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “In like manner the second also, and the third, to the seventh.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “In like manner the second also, and the third, to the seventh.” (22:26, WEB)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… to his servants, 'The wedding is ready, but those who were invited weren't worthy.”",
+    "options" : [
+      "weren't"
+    ],
+    "prompt" : "Complete the quotation: “… to his servants, 'The wedding is ready, but those who were invited ____ worthy.” (22:8, WEB)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 30 reads “For in the resurrection they neither marry, nor are given in marriage, but are like God's angels in heaven.”; verse 37 reads “Jesus said to him, \"'You shall love the Lord your God with all your heart, and with all your soul, and with all your mind.'”. These establish the first and second answers respectively.",
+    "options" : [
+      "resurrection; wisdom",
+      "resurrection; love",
+      "love; resurrection",
+      "holiness; love"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For in the ______ they neither marry, nor are given in marriage, but are like God's angels in heaven.” (22:30); “Jesus said to him, \"'You shall ______ the Lord your God with all your heart, and with all your soul, and with all your mind.'” (22:37, WEB)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 22:13 uses king: “Then the king said to the servants, 'Bind him hand and foot, take him away, and throw him into the outer darkness; there is where the …”",
+    "options" : [
+      "king",
+      "servants",
+      "prince",
+      "judge"
+    ],
+    "prompt" : "Which word completes “Then the ______ said to the servants, 'Bind him hand and foot, take him away, and throw him into the outer darkness; there is where the …”? (22:13, WEB)",
+    "reference" : "Matthew 22",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies altar: “'Whoever swears by the altar, it is nothing; but whoever swears by the gift that is on it, he is obligated.'”",
+    "options" : [
+      "altar",
+      "scroll",
+      "wall",
+      "sanctuary"
+    ],
+    "prompt" : "Which detail belongs in this passage: “'Whoever swears by the ______, it is nothing; but whoever swears by the gift that is on it, he is obligated.'”? (23:18, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… sea and land to make one proselyte; and when he becomes one, you make him twice as much of a son of Gehenna as yourselves.” The missing terms belong in that order.",
+    "options" : [
+      "land Gehenna"
+    ],
+    "prompt" : "Supply the missing words in order: “… sea and ____ to make one proselyte; and when he becomes one, you make him twice as much of a son of as yourselves.” (23:15, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “the salutations in the marketplaces, and to be called 'Rabbi, Rabbi' by men.”",
+    "options" : [
+      "Rabbi"
+    ],
+    "prompt" : "Complete the quotation: “the salutations in the marketplaces, and to be called 'Rabbi, ____' by men.” (23:7, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… dill, and cumin, and have left undone the weightier matters of the law: justice, mercy, and faith. But you ought to have done these, and not …” It says law, not judgment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… dill, and cumin, and have left undone the weightier matters of the judgment: justice, mercy, and faith. But you ought to have done these, and not …” (23:23, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 26 reads “You blind Pharisee, first clean the inside of the cup and of the platter, that the outside of it may become clean also.”; verse 30 reads “… of our fathers, we wouldn't have been partakers with them in the blood of the prophets.'”. These establish the first and second answers respectively.",
+    "options" : [
+      "blood; first",
+      "first; foot",
+      "seventy; blood",
+      "first; blood"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “You blind Pharisee, ______ clean the inside of the cup and of the platter, that the outside of it may become clean also.” (23:26); “… of our fathers, we wouldn't have been partakers with them in the ______ of the prophets.'” (23:30, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 23:13 uses prayers: “… For you devour widows' houses, and as a pretense you make long prayers. Therefore you will receive greater condemnation.”",
+    "options" : [
+      "garments",
+      "chickens",
+      "prayers",
+      "grievous"
+    ],
+    "prompt" : "Which word completes “… For you devour widows' houses, and as a pretense you make long ______. Therefore you will receive greater condemnation.”? (23:13, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Therefore, behold, I send to you prophets, wise men, and scribes. Some of them you will kill and crucify; and some of them you will scourge …”; the second reads “\"Jerusalem, Jerusalem, who kills the prophets, and stones those who are sent to her! How often would I have gathered your children together, even as a …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "prophets Jerusalem"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Therefore, behold, I send to you ____, wise men, and scribes. Some of them you will kill and crucify; and some of them you will scourge …” (23:34); “\"Jerusalem, , who kills the prophets, and stones those who are sent to her! How often would I have gathered your children together, even as a …” (23:37, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For they bind heavy burdens that are grievous to be borne, and lay them on men's shoulders; but they themselves will not lift a finger to …”",
+    "options" : [
+      "lay"
+    ],
+    "prompt" : "Complete the quotation: “For they bind heavy burdens that are grievous to be borne, and ____ them on men's shoulders; but they themselves will not lift a finger to …” (23:4, WEB)",
+    "reference" : "Matthew 23",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The passage calls for watchfulness and says the day and hour are unknown. Christians differ over how the chapter relates Jerusalem's destruction and the final coming; date-setting is not the clear instruction.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jesus gives His hearers an unambiguous calendar date for His coming. (24:32-44)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “As he sat on the Mount of Olives, the disciples came to him privately, saying, \"Tell us, when will these things be? What is the sign …”",
+    "options" : [
+      "disciples"
+    ],
+    "prompt" : "Complete the quotation: “As he sat on the Mount of Olives, the ____ came to him privately, saying, \"Tell us, when will these things be? What is the sign …” (24:3, WEB)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But woe to those who are with child and to nursing mothers in those days!” The missing terms belong in that order.",
+    "options" : [
+      "woe child"
+    ],
+    "prompt" : "Supply the missing words in order: “But ____ to those who are with and to nursing mothers in those days!” (24:19, WEB)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies false: “For there will arise false christs, and false prophets, and they will show great signs and wonders, so as to lead astray, if possible, even the …”",
+    "options" : [
+      "Don't",
+      "know",
+      "show",
+      "false"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For there will arise false christs, and ______ prophets, and they will show great signs and wonders, so as to lead astray, if possible, even the …”? (24:24, WEB)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Then they will deliver you up to oppression, and will kill you. You will be hated by all of the nations for my name's sake.”",
+    "options" : [
+      "deliver"
+    ],
+    "prompt" : "Complete the quotation: “Then they will ____ you up to oppression, and will kill you. You will be hated by all of the nations for my name's sake.” (24:9, WEB)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 32 reads “… the fig tree learn this parable. When its branch has now become tender, and puts forth its leaves, you know that the summer is near.”; verse 38 reads “… and giving in marriage, until the day that Noah entered into the ark,”. These establish the first and second answers respectively.",
+    "options" : [
+      "tender; ark",
+      "rise; ark",
+      "tender; seat",
+      "ark; tender"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the fig tree learn this parable. When its branch has now become ______, and puts forth its leaves, you know that the summer is near.” (24:32); “… and giving in marriage, until the day that Noah entered into the ______,” (24:38, WEB)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… days, the sun will be darkened, the moon will not give its light, the stars will fall from the sky, and the powers of the heavens …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… days, the sun will be darkened, the moon will not give its light, the stars will fall from the sky, and the powers of the heavens …” (24:29, WEB)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 24:14 uses testimony: “… of the Kingdom will be preached in the whole world for a testimony to all the nations, and then the end will come.”",
+    "options" : [
+      "counsel",
+      "instruction",
+      "testimony",
+      "commandment"
+    ],
+    "prompt" : "Which word completes “… of the Kingdom will be preached in the whole world for a ______ to all the nations, and then the end will come.”? (24:14, WEB)",
+    "reference" : "Matthew 24",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “In like manner he also who got the two gained another two.” The missing terms belong in that order.",
+    "options" : [
+      "like two"
+    ],
+    "prompt" : "Supply the missing words in order: “In ____ manner he also who got the two gained another .” (25:17, WEB)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies talents: “… you delivered to me two talents. Behold, I have gained another two talents besides them.'”",
+    "options" : [
+      "accounts",
+      "brothers",
+      "talents",
+      "besides"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you delivered to me two talents. Behold, I have gained another two ______ besides them.'”? (25:22, WEB)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Jesus identifies Himself with those whose need is met or neglected. The scene gives concrete weight to mercy. Interpreters differ over the precise scope of these brothers, but the text does not allow indifference to embodied acts of care.",
+    "options" : [
+      "Both groups know they are visibly serving a crowned king.",
+      "Concrete acts of care never matter.",
+      "The scene says verbal claims automatically excuse cruelty.",
+      "Jesus identifies Himself with those whose need is met or neglected."
+    ],
+    "prompt" : "What does the scene of the sheep and goats reveal about treatment of the least of these? (25:31-46)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “\"But his lord answered him, 'You wicked and slothful servant. You knew that I reap where I didn't sow, and gather where I didn't scatter.” It says servant, not prophet.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “\"But his lord answered him, 'You wicked and slothful prophet. You knew that I reap where I didn't sow, and gather where I didn't scatter.” (25:26, WEB)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 25:13 uses hour: “Watch therefore, for you don't know the day nor the hour in which the Son of Man is coming.”",
+    "options" : [
+      "besides",
+      "trimmed",
+      "entrusted",
+      "hour"
+    ],
+    "prompt" : "Which word completes “Watch therefore, for you don't know the day nor the ______ in which the Son of Man is coming.”? (25:13, WEB)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 31 reads “… angels with him, then he will sit on the throne of his glory.”; verse 34 reads “… those on his right hand, 'Come, blessed of my Father, inherit the Kingdom prepared for you from the foundation of the world;”. These establish the first and second answers respectively.",
+    "options" : [
+      "glory; Kingdom",
+      "glory; nations",
+      "Kingdom; glory",
+      "wrath; Kingdom"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… angels with him, then he will sit on the throne of his ______.” (25:31); “… those on his right hand, 'Come, blessed of my Father, inherit the ______ prepared for you from the foundation of the world;” (25:34, WEB)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “but the wise took oil in their vessels with their lamps.”",
+    "options" : [
+      "oil"
+    ],
+    "prompt" : "Complete the quotation: “but the wise took ____ in their vessels with their lamps.” (25:4, WEB)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The foolish said to the wise, 'Give us some of your oil, for our lamps are going out.'”",
+    "options" : [
+      "wise"
+    ],
+    "prompt" : "Complete the quotation: “The foolish said to the ____, 'Give us some of your oil, for our lamps are going out.'” (25:8, WEB)",
+    "reference" : "Matthew 25",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 26:20 uses disciples: “… evening had come, he was reclining at the table with the twelve disciples.”",
+    "options" : [
+      "disciples",
+      "pieces",
+      "witnesses",
+      "goes"
+    ],
+    "prompt" : "Which word completes “… evening had come, he was reclining at the table with the twelve ______.”? (26:20, WEB)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Most assuredly I tell you, wherever this Gospel is preached in the whole world, what this woman has done will also be spoken of as a …”",
+    "options" : [
+      "Gospel"
+    ],
+    "prompt" : "Complete the quotation: “Most assuredly I tell you, wherever this ____ is preached in the whole world, what this woman has done will also be spoken of as a …” (26:13, WEB)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… gathered together in the court of the high priest, who was called Caiaphas.”",
+    "options" : [
+      "Caiaphas"
+    ],
+    "prompt" : "Complete the quotation: “… gathered together in the court of the high priest, who was called ____.” (26:3, WEB)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He associates it with His covenant blood poured out for forgiveness. The meal links His coming death with covenant and forgiveness. Christian traditions differ about the sacrament's manner of presence; the question asks what the text explicitly associates.",
+    "options" : [
+      "It concerns forgiveness without any reference to His death.",
+      "It marks the cancellation of every covenant promise.",
+      "It is explained only as a prediction of political victory.",
+      "He associates it with His covenant blood poured out for forgiveness."
+    ],
+    "prompt" : "How does Jesus explain the cup at the meal? (26:26-29)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies three: “… tell you that tonight, before the rooster crows, you will deny me three times.\"”",
+    "options" : [
+      "first",
+      "ninety",
+      "three",
+      "eighty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… tell you that tonight, before the rooster crows, you will deny me ______ times.\"”? (26:34, WEB)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Then the high priest tore his clothing, saying, \"He has spoken blasphemy! Why do we need any more witnesses? Behold, now you have heard his blasphemy.”; the second reads “After a little while those who stood by came and said to Peter, \"Surely you are also one of them, for your speech makes you known.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "high Peter"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Then the ____ priest tore his clothing, saying, \"He has spoken blasphemy! Why do we need any more witnesses? Behold, now you have heard his blasphemy.” (26:65); “After a little while those who stood by came and said to , \"Surely you are also one of them, for your speech makes you known.\"” (26:73, WEB)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… this is my blood of the new covenant, which is poured out for many for the remission of sins.” The missing terms belong in that order.",
+    "options" : [
+      "covenant sins"
+    ],
+    "prompt" : "Supply the missing words in order: “… this is my blood of the new ____, which is poured out for many for the remission of .” (26:28, WEB)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Again, a second time he went away, and prayed, saying, \"My Father, if this cup can't pass away from me unless I drink it, your desire …” It says second, not fifteen.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Again, a fifteen time he went away, and prayed, saying, \"My Father, if this cup can't pass away from me unless I drink it, your desire …” (26:42, WEB)",
+    "reference" : "Matthew 26",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Among them were Mary Magdalene, Mary the mother of James and Joses, and the mother of the sons of Zebedee.”; the second reads “Command therefore that the tomb be made secure until the third day, lest perhaps his disciples come at night and steal him away, and tell the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Mary third"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Among them were ____ Magdalene, Mary the mother of James and Joses, and the mother of the sons of Zebedee.” (27:56); “Command therefore that the tomb be made secure until the day, lest perhaps his disciples come at night and steal him away, and tell the …” (27:64, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… his hands before the multitude, saying, \"I am innocent of the blood of this righteous person. You see to it.\"” The missing terms belong in that order.",
+    "options" : [
+      "blood righteous"
+    ],
+    "prompt" : "Supply the missing words in order: “… his hands before the multitude, saying, \"I am innocent of the ____ of this person. You see to it.\"” (27:24, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 27:17 uses Pilate: “When therefore they were gathered together, Pilate said to them, \"Whom do you want me to release to you? Barabbas, or Jesus, who is called Christ?\"”",
+    "options" : [
+      "Agrippa",
+      "Gomer",
+      "Pilate",
+      "Cyrus"
+    ],
+    "prompt" : "Which word completes “When therefore they were gathered together, ______ said to them, \"Whom do you want me to release to you? Barabbas, or Jesus, who is called Christ?\"”? (27:17, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 45 reads “Now from the sixth hour there was darkness over all the land until the ninth hour.”; verse 51 reads “Behold, the veil of the temple was torn in two from the top to the bottom. The earth quaked and the rocks were split.”. These establish the first and second answers respectively.",
+    "options" : [
+      "land; temple",
+      "land; book",
+      "temple; land",
+      "vineyards; temple"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Now from the sixth hour there was darkness over all the ______ until the ninth hour.” (27:45); “Behold, the veil of the ______ was torn in two from the top to the bottom. The earth quaked and the rocks were split.” (27:51, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “They set up over his head the accusation against him written, \"THIS IS JESUS, THE KING OF THE JEWS.\"” It says head, not teeth.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “They set up over his teeth the accusation against him written, \"THIS IS JESUS, THE KING OF THE JEWS.\"” (27:37, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… before the governor: and the governor asked him, saying, \"Are you the King of the Jews?\" Jesus said to him, \"So you say.\"”",
+    "options" : [
+      "King"
+    ],
+    "prompt" : "Complete the quotation: “… before the governor: and the governor asked him, saying, \"Are you the ____ of the Jews?\" Jesus said to him, \"So you say.\"” (27:11, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies robe: “When they had mocked him, they took the robe off of him, and put his clothes on him, and led him away to crucify him.”",
+    "options" : [
+      "robe",
+      "remorse",
+      "divided",
+      "Command"
+    ],
+    "prompt" : "Which detail belongs in this passage: “When they had mocked him, they took the ______ off of him, and put his clothes on him, and led him away to crucify him.”? (27:31, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Then Judas, who betrayed him, when he saw that Jesus was condemned, felt remorse, and brought back the thirty pieces of silver to the chief priests …”",
+    "options" : [
+      "Judas"
+    ],
+    "prompt" : "Complete the quotation: “Then ____, who betrayed him, when he saw that Jesus was condemned, felt remorse, and brought back the thirty pieces of silver to the chief priests …” (27:3, WEB)",
+    "reference" : "Matthew 27",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For fear of him, the guards shook, and became like dead men.”",
+    "options" : [
+      "fear"
+    ],
+    "prompt" : "Complete the quotation: “For ____ of him, the guards shook, and became like dead men.” (28:4, WEB)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jesus: “As they went to tell his disciples, behold, Jesus met them, saying, \"Rejoice!\" They came and took hold of his feet, and worshiped him.”",
+    "options" : [
+      "Jesus",
+      "Demas",
+      "Simon",
+      "Aaron"
+    ],
+    "prompt" : "Which detail belongs in this passage: “As they went to tell his disciples, behold, ______ met them, saying, \"Rejoice!\" They came and took hold of his feet, and worshiped him.”? (28:9, WEB)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Jesus sends disciples to the nations to baptize and teach obedience under His authority. The commission includes belonging, instruction and lived obedience, with Jesus' promised presence. It is broader than merely collecting verbal decisions.",
+    "options" : [
+      "Jesus sends disciples to the nations to baptize and teach obedience under His authority.",
+      "The disciples must act without Jesus' authority or presence.",
+      "Teaching obedience is excluded.",
+      "The mission is limited to one ethnic people."
+    ],
+    "prompt" : "How are disciple-making, baptism and teaching joined in the commission? (28:18-20)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “If this comes to the governor's ears, we will persuade him and make you free of worry.\"”; verse 16 reads “But the eleven disciples went into Galilee, to the mountain where Jesus had sent them.”. These establish the first and second answers respectively.",
+    "options" : [
+      "observe; Galilee",
+      "persuade; Galilee",
+      "Galilee; persuade",
+      "persuade; Troas"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “If this comes to the governor's ears, we will ______ him and make you free of worry.\"” (28:14); “But the eleven disciples went into ______, to the mountain where Jesus had sent them.” (28:16, WEB)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… from the sky, and came and rolled away the stone from the door, and sat on it.”",
+    "options" : [
+      "door"
+    ],
+    "prompt" : "Complete the quotation: “… from the sky, and came and rolled away the stone from the ____, and sat on it.” (28:2, WEB)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Matthew 28:5 uses seek: “… angel answered the women, \"Don't be afraid, for I know that you seek Jesus, who has been crucified.”",
+    "options" : [
+      "keep",
+      "hate",
+      "forget",
+      "seek"
+    ],
+    "prompt" : "Which word completes “… angel answered the women, \"Don't be afraid, for I know that you ______ Jesus, who has been crucified.”? (28:5, WEB)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the elders, and had taken counsel, they gave a large amount of silver to the soldiers,” It says silver, not bronze.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the elders, and had taken counsel, they gave a large amount of bronze to the soldiers,” (28:12, WEB)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "matthew",
+    "chapter" : 28,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… departed quickly from the tomb with fear and great joy, and ran to bring his disciples word.” The missing terms belong in that order.",
+    "options" : [
+      "joy disciples"
+    ],
+    "prompt" : "Supply the missing words in order: “… departed quickly from the tomb with fear and great ____, and ran to bring his word.” (28:8, WEB)",
+    "reference" : "Matthew 28",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

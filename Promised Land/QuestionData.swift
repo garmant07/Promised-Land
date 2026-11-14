@@ -32,20 +32,120 @@ struct ChapterQuestion: ReviewableContent, Equatable {
     var format: QuestionFormat = .multipleChoice
 }
 
+private struct ImportedQuestion: Decodable {
+    let bookID: String
+    let chapter: Int
+    let prompt: String
+    let options: [String]
+    let answer: Int
+    let reference: String
+    let translation: String
+    let reviewed: Bool
+    let lesson: String
+    let difficulty: String
+    let format: String
+
+    var chapterQuestion: ChapterQuestion? {
+        guard let questionDifficulty = QuestionDifficulty(rawValue: difficulty),
+              let questionFormat = QuestionFormat(rawValue: format) else { return nil }
+        return ChapterQuestion(bookID: bookID, chapter: chapter, prompt: prompt, options: options,
+                               answer: answer, reference: reference, translation: translation,
+                               reviewed: reviewed, lesson: lesson, difficulty: questionDifficulty,
+                               format: questionFormat)
+    }
+}
+
+private final class QuestionResourceBundleToken {}
+
 enum QuestionData {
+    private static var importedCache: [String: [ChapterQuestion]] = [:]
+
     /// The question for a chapter (only reviewed ones in Release builds).
     static func question(bookID: String, chapter: Int) -> ChapterQuestion? {
-        all.first { $0.bookID == bookID && $0.chapter == chapter }.flatMap { ContentGate.isVisible($0) ? $0 : nil }
+        importedQuestions(bookID: bookID).first { $0.chapter == chapter }
+            ?? all.first { $0.bookID == bookID && $0.chapter == chapter }
+                .flatMap { ContentGate.isVisible($0) ? $0 : nil }
     }
 
-    /// Questions for a chapter. A bundled set takes priority; otherwise this returns
-    /// the existing hand-written or generated question as a one-item array.
+    /// Questions for a chapter. Imported questions take priority, then the older
+    /// hand-written or generated question as a one-item fallback.
     static func questions(bookID: String, chapter: Int) -> [ChapterQuestion] {
-        let set = bundledSets.first { $0.first?.bookID == bookID && $0.first?.chapter == chapter } ?? []
-        if !set.isEmpty {
-            return ContentGate.visible(set)
+        let imported = importedQuestions(bookID: bookID).filter { $0.chapter == chapter }
+        if !imported.isEmpty {
+            return imported
         }
-        return question(bookID: bookID, chapter: chapter).map { [$0] } ?? []
+        return all.first { $0.bookID == bookID && $0.chapter == chapter }
+            .flatMap { ContentGate.isVisible($0) ? [$0] : nil } ?? []
+    }
+
+    /// Selects the three questions for one quiz presentation and prepares any fill-in chips.
+    /// This is called once when the reading check opens; the view keeps the returned array.
+    static func quizQuestions(bookID: String, chapter: Int, service: any BibleService, translation: BibleTranslation?) -> [ChapterQuestion] {
+        let available = questions(bookID: bookID, chapter: chapter, service: service, translation: translation)
+        guard available.count > 3 else { return available }
+        return Array(available.shuffled().prefix(3)).map { question in
+            question.format == .fillInBlank ? questionWithWordBank(question, bookID: bookID) : question
+        }
+    }
+
+    private static func questionWithWordBank(_ question: ChapterQuestion, bookID: String) -> ChapterQuestion {
+        guard let correct = question.options[safe: question.answer] else { return question }
+        let correctKey = normalizedAnswer(correct)
+        let targetWordCount = wordCount(correct)
+        let testament = BibleCatalog.book(id: bookID)?.testament
+        let sameBook = importedQuestions(bookID: bookID)
+            .filter { $0.format == .fillInBlank && $0.bookID == bookID }
+        let sameTestament = BibleCatalog.books
+            .filter { $0.testament == testament && $0.id != bookID }
+            .flatMap { importedQuestions(bookID: $0.id) }
+            .filter { $0.format == .fillInBlank }
+        let candidates = sameBook + sameTestament
+        var words: [String] = []
+        for candidate in candidates.shuffled() {
+            guard let option = candidate.options[safe: candidate.answer],
+                  normalizedAnswer(option) != correctKey,
+                  !words.contains(where: { normalizedAnswer($0) == normalizedAnswer(option) }) else { continue }
+            if wordCount(option) == targetWordCount { words.append(option) }
+            if words.count == 3 { break }
+        }
+        if words.count < 3 {
+            for candidate in candidates.shuffled() {
+                guard let option = candidate.options[safe: candidate.answer],
+                      normalizedAnswer(option) != correctKey,
+                      !words.contains(where: { normalizedAnswer($0) == normalizedAnswer(option) }) else { continue }
+                words.append(option)
+                if words.count == 3 { break }
+            }
+        }
+        let shuffled = ([correct] + words).shuffled()
+        let answer = shuffled.firstIndex(of: correct) ?? 0
+        return ChapterQuestion(bookID: question.bookID, chapter: question.chapter, prompt: question.prompt,
+                               options: shuffled, answer: answer, reference: question.reference,
+                               translation: question.translation, reviewed: question.reviewed,
+                               lesson: question.lesson, difficulty: question.difficulty, format: question.format)
+    }
+
+    private static func normalizedAnswer(_ value: String) -> String {
+        value.lowercased().filter { $0.isLetter || $0.isNumber }
+    }
+
+    private static func wordCount(_ value: String) -> Int {
+        value.split { $0.isWhitespace || $0 == ";" }.count
+    }
+
+    private static func importedQuestions(bookID: String) -> [ChapterQuestion] {
+        if let cached = importedCache[bookID] { return cached }
+        let bundles = [Bundle.main, Bundle(for: QuestionResourceBundleToken.self)]
+        guard let url = bundles.compactMap({ $0.url(forResource: bookID, withExtension: "json")
+            ?? $0.url(forResource: bookID, withExtension: "json", subdirectory: "Questions") }).first,
+              let data = try? Data(contentsOf: url),
+              let imported = try? JSONDecoder().decode([ImportedQuestion].self, from: data) else {
+            importedCache[bookID] = []
+            return []
+        }
+        let questions = imported.compactMap(\.chapterQuestion)
+        importedCache[bookID] = questions
+        return questions
     }
 
     /// The hand-written question set, or one made from the chapter's text on the device
@@ -64,105 +164,6 @@ enum QuestionData {
     static func question(bookID: String, chapter: Int, service: any BibleService, translation: BibleTranslation?) -> ChapterQuestion? {
         questions(bookID: bookID, chapter: chapter, service: service, translation: translation).first
     }
-
-    private static let bundledSets: [[ChapterQuestion]] = [
-        [
-            ChapterQuestion(bookID: "genesis", chapter: 1,
-                            prompt: "“In the beginning God ____ the heavens and the earth.” (1:1)",
-                            options: ["named", "created", "blessed", "visited"],
-                            answer: 1, reference: "Genesis 1:1", reviewed: true,
-                            lesson: "God is the Creator and everything else is created. That line between Creator and creature runs through the whole Bible.",
-                            difficulty: .easy, format: .fillInBlank),
-            ChapterQuestion(bookID: "genesis", chapter: 1,
-                            prompt: "God created both male and female in His image. (1:27)",
-                            options: ["True", "False"],
-                            answer: 0, reference: "Genesis 1:27", reviewed: true,
-                            lesson: "Men and women carry God’s image equally, and that gives every person dignity and worth.",
-                            difficulty: .easy, format: .trueFalse),
-            ChapterQuestion(bookID: "genesis", chapter: 1,
-                            prompt: "How did God make light? (1:3)",
-                            options: ["He gathered it from the stars", "He took it from the sun", "Angels made it for Him", "He spoke, and it was"],
-                            answer: 3, reference: "Genesis 1:3", reviewed: true,
-                            lesson: "God's word has power. When He speaks, it happens, so His words to us can be trusted.",
-                            difficulty: .easy, format: .multipleChoice),
-            ChapterQuestion(bookID: "genesis", chapter: 1,
-                            prompt: "God made light on Day 1 but did not make the sun until Day 4. What can we learn from that?",
-                            options: ["Day 1 was really nighttime", "The sun is not important", "God is the source of light, and the sun is just something He made", "The writer made a mistake"],
-                            answer: 2, reference: "Genesis 1:3–16", reviewed: true,
-                            lesson: "The nations around Israel worshiped the sun. Genesis shows it is a created thing God uses, not a god.",
-                            difficulty: .medium, format: .multipleChoice),
-            ChapterQuestion(bookID: "genesis", chapter: 1,
-                            prompt: "After describing the completed creation, what verdict does Genesis 1 give? (1:31)",
-                            options: ["Creation was evil", "God regretted creating", "Everything God had made was very good", "Only people were good"],
-                            answer: 2, reference: "Genesis 1:31", reviewed: true,
-                            lesson: "The verdict concerns the whole creation, including humanity, and affirms the goodness of God's completed work.",
-                            difficulty: .hard, format: .multipleChoice)
-        ],
-        [
-            ChapterQuestion(bookID: "genesis", chapter: 2,
-                            prompt: "“It is not good for the man to be ____.” (2:18)",
-                            options: ["hungry", "quiet", "alone", "tired"],
-                            answer: 2, reference: "Genesis 2:18", reviewed: true,
-                            lesson: "Loneliness is the first thing God calls “not good.” We were made for relationship with God and with each other.",
-                            difficulty: .easy, format: .fillInBlank),
-            ChapterQuestion(bookID: "genesis", chapter: 2,
-                            prompt: "God gave Adam the job of working the garden and taking care of it. (2:15)",
-                            options: ["True", "False"],
-                            answer: 0, reference: "Genesis 2:15", reviewed: true,
-                            lesson: "Work was part of God’s good design before sin ever entered the world.",
-                            difficulty: .easy, format: .trueFalse),
-            ChapterQuestion(bookID: "genesis", chapter: 2,
-                            prompt: "What did God form the man from? (2:7)",
-                            options: ["A tree", "Stone", "The dust of the ground", "Water"],
-                            answer: 2, reference: "Genesis 2:7", reviewed: true,
-                            lesson: "God formed the man from dust and breathed life into him.",
-                            difficulty: .easy, format: .multipleChoice),
-            ChapterQuestion(bookID: "genesis", chapter: 2,
-                            prompt: "God calls the woman a “helper” (ezer) for the man (2:18). Where else does the Old Testament use that same word?",
-                            options: ["For slaves", "For farm animals", "For servants", "For God helping Israel"],
-                            answer: 3, reference: "Genesis 2:18", reviewed: true,
-                            lesson: "Ezer is often used of God Himself, so “helper” does not mean lesser. Man and woman were made as partners.",
-                            difficulty: .medium, format: .multipleChoice),
-            ChapterQuestion(bookID: "genesis", chapter: 2,
-                            prompt: "God rested on the seventh day and made it holy (2:2–3). Why did He rest?",
-                            options: ["He ran out of ideas", "His work was finished, and He set a pattern of rest for His people", "He was tired", "He was waiting for Adam"],
-                            answer: 1, reference: "Genesis 2:2–3", reviewed: true,
-                            lesson: "God doesn’t get tired. The Sabbath is a sign of trust: we stop working and remember that God provides.",
-                            difficulty: .hard, format: .multipleChoice)
-        ],
-        [
-            ChapterQuestion(bookID: "genesis", chapter: 3,
-                            prompt: "After Adam and Eve sinned, God called to the man, “Where are ____?” (3:9)",
-                            options: ["they", "we", "she", "you"],
-                            answer: 3, reference: "Genesis 3:9", reviewed: true,
-                            lesson: "God already knew the answer. He asked to draw Adam back into relationship. God pursues us even after we fail.",
-                            difficulty: .easy, format: .fillInBlank),
-            ChapterQuestion(bookID: "genesis", chapter: 3,
-                            prompt: "Genesis 3:6 explicitly says Adam was absent when Eve gave him the fruit. (3:6)",
-                            options: ["True", "False"],
-                            answer: 1, reference: "Genesis 3:6", reviewed: true,
-                            lesson: "It describes her husband as with her when she gave him the fruit. The verse does not specify every detail of his location throughout the earlier conversation.",
-                            difficulty: .medium, format: .trueFalse),
-            ChapterQuestion(bookID: "genesis", chapter: 3,
-                            prompt: "God told Adam not to eat from the tree. What did Eve say God had commanded? (3:3)",
-                            options: ["Only Adam can’t eat it", "You may eat it on the seventh day", "Exactly what God said", "Don’t eat it, and don’t even touch it"],
-                            answer: 3, reference: "Genesis 3:3", reviewed: true,
-                            lesson: "Eve added “don’t touch it” to God’s words. It matters to know what God actually said.",
-                            difficulty: .medium, format: .multipleChoice),
-            ChapterQuestion(bookID: "genesis", chapter: 3,
-                            prompt: "What three things did Eve do with the fruit, in order? (3:6)",
-                            options: ["Heard, ran, hid", "Asked, waited, ate", "Saw, took, ate", "Smelled, touched, threw"],
-                            answer: 2, reference: "Genesis 3:6", reviewed: true,
-                            lesson: "The same pattern shows up again with Achan and with David. Sin often starts with what we let ourselves look at.",
-                            difficulty: .medium, format: .multipleChoice),
-            ChapterQuestion(bookID: "genesis", chapter: 3,
-                            prompt: "God told the serpent that the woman’s offspring would crush its head (3:15). How have Christians understood this promise?",
-                            options: ["The first promise of a rescuer who would defeat evil, pointing to Jesus", "A rule for farming", "A warning about snakes", "A curse on Eve"],
-                            answer: 0, reference: "Genesis 3:15", reviewed: true,
-                            lesson: "In the same moment He judges sin, God promises a way back. The hope of the whole Bible starts here.",
-                            difficulty: .hard, format: .multipleChoice)
-        ]
-    ]
 
 
     private static func q(_ book: String, _ chapter: Int, _ prompt: String, _ options: [String], _ answer: Int, _ ref: String) -> ChapterQuestion {
@@ -207,4 +208,10 @@ enum QuestionData {
         q("1corinthians", 13, "Which is called the greatest of faith, hope and love?", ["Love", "Faith", "Hope"], 0, "1 Corinthians 13:13"),
         q("revelation", 21, "What did John see coming down out of heaven?", ["The holy city, new Jerusalem", "A ladder", "A great ship"], 0, "Revelation 21:2"),
     ]
+}
+
+private extension Array {
+    subscript(safe index: Index) -> Element? {
+        indices.contains(index) ? self[index] : nil
+    }
 }

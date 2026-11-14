@@ -1,0 +1,919 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Moresheth-gath. The houses of Achzib will be a deceitful thing to the kings of Israel.”; the second reads “Shave your heads, And cut off your hair for the children of your delight. Enlarge your baldness like the vulture; For they have gone into captivity …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "kings cut"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Moresheth-gath. The houses of Achzib will be a deceitful thing to the ____ of Israel.” (1:14); “Shave your heads, And off your hair for the children of your delight. Enlarge your baldness like the vulture; For they have gone into captivity …” (1:16, WEB)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the disobedience of Jacob, And for the sins of the house of Israel. What is the disobedience of Jacob? Isn't it Samaria? And what are the …” The missing terms belong in that order.",
+    "options" : [
+      "sins Jacob"
+    ],
+    "prompt" : "Supply the missing words in order: “… the disobedience of Jacob, And for the ____ of the house of Israel. What is the disobedience of ? Isn't it Samaria? And what are the …” (1:5, WEB)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… shame. The inhabitant of Zaanan won't come out. The wailing of Beth Ezel will take from you his protection.”; verse 13 reads “… of Lachish. She was the beginning of sin to the daughter of Zion; For the transgressions of Israel were found in you.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Ezel; Edom",
+      "Ezel; Zion",
+      "Zion; Ezel",
+      "reaches; Zion"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… shame. The inhabitant of Zaanan won't come out. The wailing of Beth ______ will take from you his protection.” (1:11); “… of Lachish. She was the beginning of sin to the daughter of ______; For the transgressions of Israel were found in you.” (1:13, WEB)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Micah 1:4 uses fire: “… melt under him, And the valleys split apart, Like wax before the fire, Like waters that are poured down a steep place.”",
+    "options" : [
+      "fire",
+      "sins",
+      "waters",
+      "rubble"
+    ],
+    "prompt" : "Which word completes “… melt under him, And the valleys split apart, Like wax before the ______, Like waters that are poured down a steep place.”? (1:4, WEB)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Micah 1:3 records: “For, behold, Yahweh comes forth out of his place, And will come down and tread on the high places of the earth.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Micah said the LORD was coming out of His place. (1:3)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of Jotham, Ahaz, and Hezekiah, kings of Judah, which he saw concerning Samaria and Jerusalem.”",
+    "options" : [
+      "Samaria"
+    ],
+    "prompt" : "Complete the quotation: “… of Jotham, Ahaz, and Hezekiah, kings of Judah, which he saw concerning ____ and Jerusalem.” (1:1, WEB)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies temple: “All her idols will be beaten to pieces, And all her temple gifts will be burned with fire, And all her images I will destroy; For …”",
+    "options" : [
+      "tower",
+      "tabernacle",
+      "temple",
+      "seat"
+    ],
+    "prompt" : "Which detail belongs in this passage: “All her idols will be beaten to pieces, And all her ______ gifts will be burned with fire, And all her images I will destroy; For …”? (1:7, WEB)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For this I will lament and wail; I will go stripped and naked; I will howl like the jackals, And moan like the daughters of owls.” It says stripped, not gathered.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For this I will lament and wail; I will go gathered and naked; I will howl like the jackals, And moan like the daughters of owls.” (1:8, WEB)",
+    "reference" : "Micah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… you, And lament with a doleful lamentation, saying, 'We are utterly ruined! My people's possession is divided up. Indeed he takes it from me and assigns …” The missing terms belong in that order.",
+    "options" : [
+      "doleful takes"
+    ],
+    "prompt" : "Supply the missing words in order: “… you, And lament with a ____ lamentation, saying, 'We are utterly ruined! My people's possession is divided up. Indeed he it from me and assigns …” (2:4, WEB)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “If a man walking in a spirit of falsehood lies: 'I will prophesy to you of wine and of strong drink;' He would be the prophet …”; the second reads “… before them. They break through the gate, and go out. And their king passes on before them, With Yahweh at their head.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "spirit king"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “If a man walking in a ____ of falsehood lies: 'I will prophesy to you of wine and of strong drink;' He would be the prophet …” (2:11); “… before them. They break through the gate, and go out. And their passes on before them, With Yahweh at their head.\"” (2:13, WEB)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… from their pleasant houses; From their young children you take away my blessing forever.”; verse 10 reads “Arise, and depart! For this is not your resting place, Because of uncleanness that destroys, Even with a grievous destruction.”. These establish the first and second answers respectively.",
+    "options" : [
+      "blessing; Jacob",
+      "Arise; blessing",
+      "blessing; Arise",
+      "deliverance; Arise"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… from their pleasant houses; From their young children you take away my ______ forever.” (2:9); “______, and depart! For this is not your resting place, Because of uncleanness that destroys, Even with a grievous destruction.” (2:10, WEB)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Woe to those who devise iniquity And work evil on their beds! When the morning is light, they practice it, Because it is in the power …”",
+    "options" : [
+      "iniquity"
+    ],
+    "prompt" : "Complete the quotation: “Woe to those who devise ____ And work evil on their beds! When the morning is light, they practice it, Because it is in the power …” (2:1, WEB)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… lately my people have risen up as an enemy. You strip the robe and clothing from those who pass by without a care, returning from battle.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… lately my people have risen up as an enemy. You strip the robe and clothing from those who pass by without a care, returning from battle.” (2:8, WEB)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Micah 2:12 records: “… surely assemble, Jacob, all of you; I will surely gather the remnant of Israel; I will put them together as the sheep of Bozrah, As a flock in the midst of their pasture; They will swarm …”",
+    "options" : [
+      "fold"
+    ],
+    "prompt" : "In this paraphrase, micah said the LORD would gather the remnant of Israel like sheep in the ____. (2:12)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Micah 2:3 uses planning: “Therefore thus says Yahweh: \"Behold, I am planning against these people a disaster, From which you will not remove your necks, Neither will you walk haughtily; …”",
+    "options" : [
+      "walking",
+      "king",
+      "morning",
+      "planning"
+    ],
+    "prompt" : "Which word completes “Therefore thus says Yahweh: \"Behold, I am ______ against these people a disaster, From which you will not remove your necks, Neither will you walk haughtily; …”? (2:3, WEB)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jacob: “Shall it be said, O house of Jacob: \"Is the Spirit of Yahweh angry? Are these his doings? Don't my words do good to him who …”",
+    "options" : [
+      "Manasseh",
+      "Jacob",
+      "Eleazar",
+      "Elisha"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Shall it be said, O house of ______: \"Is the Spirit of Yahweh angry? Are these his doings? Don't my words do good to him who …”? (2:7, WEB)",
+    "reference" : "Micah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Micah 3:5 uses Peace: “… lead my people astray; for those who feed their teeth, they proclaim, \"Peace!\" and whoever doesn't provide for their mouths, they prepare war against him:”",
+    "options" : [
+      "glory",
+      "Peace",
+      "shame",
+      "knowledge"
+    ],
+    "prompt" : "Which word completes “… lead my people astray; for those who feed their teeth, they proclaim, \"______!\" and whoever doesn't provide for their mouths, they prepare war against him:”? (3:5, WEB)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sun: “… it is dark to you, that you may not divine; And the sun will go down on the prophets, And the day will be black over …”",
+    "options" : [
+      "divine",
+      "whoever",
+      "sun",
+      "declare"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… it is dark to you, that you may not divine; And the ______ will go down on the prophets, And the day will be black over …”? (3:6, WEB)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… of might, To declare to Jacob his disobedience, And to Israel his sin.”; verse 9 reads “Please listen to this, you heads of the house of Jacob, And rulers of the house of Israel, Who abhor justice, And pervert all equity.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jacob; sin",
+      "iniquities; Jacob",
+      "sin; Jacob",
+      "sin; Jezebel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of might, To declare to Jacob his disobedience, And to Israel his ______.” (3:8); “Please listen to this, you heads of the house of ______, And rulers of the house of Israel, Who abhor justice, And pervert all equity.” (3:9, WEB)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… answer them. Yes, he will hide his face from them at that time, Because they made their deeds evil.\"” The missing terms belong in that order.",
+    "options" : [
+      "face deeds"
+    ],
+    "prompt" : "Supply the missing words in order: “… answer them. Yes, he will hide his ____ from them at that time, Because they made their evil.\"” (3:4, WEB)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… seers shall be disappointed, And the diviners confounded. Yes, they shall all cover their lips; For there is no answer from God.\"” It says cover, not like.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… seers shall be disappointed, And the diviners confounded. Yes, they shall all like their lips; For there is no answer from God.\"” (3:7, WEB)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “They build up Zion with blood, And Jerusalem with iniquity.”; the second reads “Her leaders judge for bribes, And her priests teach for a price, And her prophets of it tell forturnes for money: Yet they lean on Yahweh, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "blood priests"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “They build up Zion with ____, And Jerusalem with iniquity.” (3:10); “Her leaders judge for bribes, And her teach for a price, And her prophets of it tell forturnes for money: Yet they lean on Yahweh, …” (3:11, WEB)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Micah 3:1 records: “I said, \"Please listen, you heads of Jacob, And rulers of the house of Israel: Isn't it for you to know justice?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Micah condemned leaders who hate good and love evil. (3:1-2)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… flesh of my people, And flay their skin from off them, And break their bones, And chop them in pieces, as for the pot, And as …”",
+    "options" : [
+      "break"
+    ],
+    "prompt" : "Complete the quotation: “… flesh of my people, And flay their skin from off them, And ____ their bones, And chop them in pieces, as for the pot, And as …” (3:3, WEB)",
+    "reference" : "Micah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… they don't know the thoughts of Yahweh, Neither do they understand his counsel; For he has gathered them like the sheaves to the threshing floor.”; the second reads “… I will make your horn iron, And I will make your hoofs brass; And you will beat in pieces many peoples: And I will devote their …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "counsel brass"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… they don't know the thoughts of Yahweh, Neither do they understand his ____; For he has gathered them like the sheaves to the threshing floor.” (4:12); “… I will make your horn iron, And I will make your hoofs ; And you will beat in pieces many peoples: And I will devote their …” (4:13, WEB)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Micah 4:3 records: “… judge between many peoples, And will decide concerning strong nations afar off. They will beat their swords into plowshares, And their spears into pruning hooks. Nation will not lift up sword against nation, Neither will they …”",
+    "options" : [
+      "plowshares"
+    ],
+    "prompt" : "In this paraphrase, micah said they would beat their swords into ____. (4:3)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Yes, the former dominion will come, The kingdom of the daughter of Jerusalem.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Yes, the former dominion will come, The kingdom of the daughter of Jerusalem.” (4:8, WEB)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies nation: “… lame a remnant, And that which was cast far off a strong nation: And Yahweh will reign over them on Mount Zion from then on, even …”",
+    "options" : [
+      "darkness",
+      "nation",
+      "oil",
+      "light"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… lame a remnant, And that which was cast far off a strong ______: And Yahweh will reign over them on Mount Zion from then on, even …”? (4:7, WEB)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “Now why do you cry out aloud? Is there no king in you? Has your counselor perished, That pains have taken hold of you as of …”; verse 10 reads “… come even to Babylon. There you will be rescued. There Yahweh will redeem you from the hand of your enemies.”. These establish the first and second answers respectively.",
+    "options" : [
+      "redeem; king",
+      "king; redeem",
+      "prince; redeem",
+      "king; defiled"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Now why do you cry out aloud? Is there no ______ in you? Has your counselor perished, That pains have taken hold of you as of …” (4:9); “… come even to Babylon. There you will be rescued. There Yahweh will ______ you from the hand of your enemies.” (4:10, WEB)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Micah 4:4 uses vine: “But they will sit every man under his vine and under his fig tree; And no one will make them afraid: For the mouth of Yahweh …”",
+    "options" : [
+      "defiled",
+      "afflicted",
+      "vine",
+      "driven"
+    ],
+    "prompt" : "Which word completes “But they will sit every man under his ______ and under his fig tree; And no one will make them afraid: For the mouth of Yahweh …”? (4:4, WEB)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… his ways, And we will walk in his paths.\" For out of Zion will go forth the law, And the word of Yahweh from Jerusalem;”",
+    "options" : [
+      "Zion"
+    ],
+    "prompt" : "Complete the quotation: “… his ways, And we will walk in his paths.\" For out of ____ will go forth the law, And the word of Yahweh from Jerusalem;” (4:2, WEB)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Indeed all the nations may walk in the name of their gods; But we will walk in the name of Yahweh our God forever and ever.” The missing terms belong in that order.",
+    "options" : [
+      "Indeed nations"
+    ],
+    "prompt" : "Supply the missing words in order: “____ all the may walk in the name of their gods; But we will walk in the name of Yahweh our God forever and ever.” (4:5, WEB)",
+    "reference" : "Micah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… and your pillars out of your midst; And you shall no more worship the work of your hands.”; the second reads “… uproot your Asherim out of your midst; And I will destroy your cities.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "worship cities"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… and your pillars out of your midst; And you shall no more ____ the work of your hands.” (5:13); “… uproot your Asherim out of your midst; And I will destroy your .” (5:14, WEB)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Micah 5:2 records: “But you, Bethlehem Ephrathah, Being small among the clans of Judah, Out of you one will come forth to me that is to be ruler in Israel; Whose goings forth are from of old, from everlasting.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Micah prophesied that a ruler would come from Bethlehem Ephrathah. (5:2)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies deliver: “… the sword, And the land of Nimrod in its gates. He will deliver us from the Assyrian, When he invades our land, And when he marches …”",
+    "options" : [
+      "anger",
+      "remnant",
+      "invades",
+      "deliver"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the sword, And the land of Nimrod in its gates. He will ______ us from the Assyrian, When he invades our land, And when he marches …”? (5:6, WEB)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Micah 5:3 uses rest: “… the time that she who is in labor gives birth. Then the rest of his brothers will return to the children of Israel.”",
+    "options" : [
+      "power",
+      "thanksgiving",
+      "rest",
+      "redemption"
+    ],
+    "prompt" : "Which word completes “… the time that she who is in labor gives birth. Then the ______ of his brothers will return to the children of Israel.”? (5:3, WEB)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The remnant of Jacob will be among the nations, In the midst of many peoples, Like a lion among the animals of the forest, Like a …” It says Jacob, not Caleb.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The remnant of Caleb will be among the nations, In the midst of many peoples, Like a lion among the animals of the forest, Like a …” (5:8, WEB)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now you shall gather yourself in troops, Daughter of troops. He has laid siege against us; They will strike the judge of Israel with a rod …”",
+    "options" : [
+      "laid"
+    ],
+    "prompt" : "Complete the quotation: “Now you shall gather yourself in troops, Daughter of troops. He has ____ siege against us; They will strike the judge of Israel with a rod …” (5:1, WEB)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “He will be our peace when Assyria invades our land, And when he marches through our fortresses, Then we will raise against him seven shepherds, And …” The missing terms belong in that order.",
+    "options" : [
+      "peace Assyria"
+    ],
+    "prompt" : "Supply the missing words in order: “He will be our ____ when invades our land, And when he marches through our fortresses, Then we will raise against him seven shepherds, And …” (5:5, WEB)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… cut off your horses out of the midst of you, And will destroy your chariots.”; verse 11 reads “I will cut off the cities of your land, And will tear down all your strongholds.”. These establish the first and second answers respectively.",
+    "options" : [
+      "destroy; garden",
+      "land; destroy",
+      "destroy; land",
+      "mourn; land"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… cut off your horses out of the midst of you, And will ______ your chariots.” (5:10); “I will cut off the cities of your ______, And will tear down all your strongholds.” (5:11, WEB)",
+    "reference" : "Micah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Micah 6:4 uses Aaron: “… you out of the house of bondage. I sent before you Moses, Aaron, and Miriam.”",
+    "options" : [
+      "Jonah",
+      "Korah",
+      "Haman",
+      "Aaron"
+    ],
+    "prompt" : "Which word completes “… you out of the house of bondage. I sent before you Moses, ______, and Miriam.”? (6:4, WEB)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The passage moves from costly offerings to doing justice, loving kindness and walking humbly with God. Worship and conduct belong together.",
+    "options" : [
+      "Justice is irrelevant to knowing God.",
+      "The largest payment automatically removes every duty.",
+      "Human sacrifice is prescribed as the best offering.",
+      "God seeks a faithful way of life rather than an attempt to buy His favor."
+    ],
+    "prompt" : "How does the answer about justice, kindness and humility respond to the escalating offerings? (6:6-8)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… yet treasures of wickedness in the house of the wicked, And a short ephah that is accursed?”; verse 12 reads “Her rich men are full of violence, Her inhabitants speak lies, And their tongue is deceitful in their speech.”. These establish the first and second answers respectively.",
+    "options" : [
+      "rich; short",
+      "short; rich",
+      "short; obedient",
+      "struck; rich"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… yet treasures of wickedness in the house of the wicked, And a ______ ephah that is accursed?” (6:10); “Her ______ men are full of violence, Her inhabitants speak lies, And their tongue is deceitful in their speech.” (6:12, WEB)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “My people, remember now what Balak king of Moab devised, And what Balaam the son of Beor answered him from Shittim to Gilgal, That you may …” The missing terms belong in that order.",
+    "options" : [
+      "Balak Balaam"
+    ],
+    "prompt" : "Supply the missing words in order: “My people, remember now what ____ king of Moab devised, And what the son of Beor answered him from Shittim to Gilgal, That you may …” (6:5, WEB)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Yahweh's voice calls to the city, And wisdom sees your name: \"Listen to the rod, And he who appointed it.” It says wisdom, not glory.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Yahweh's voice calls to the city, And glory sees your name: \"Listen to the rod, And he who appointed it.” (6:9, WEB)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Micah 6:8 records: “He has shown you, O man, what is good. What does Yahweh require of you, but to act justly, To love mercy, and to walk humbly with your God?”",
+    "options" : [
+      "God"
+    ],
+    "prompt" : "In this paraphrase, the LORD requires you to do justice, love kindness, and walk humbly with your ____. (6:8)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sin: “… my firstborn for my disobedience? The fruit of my body for the sin of my soul?”",
+    "options" : [
+      "rebellion",
+      "iniquities",
+      "violence",
+      "sin"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… my firstborn for my disobedience? The fruit of my body for the ______ of my soul?”? (6:7, WEB)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… controversy, And you enduring foundations of the earth; For Yahweh has a controversy with his people, And he will contend with Israel.”",
+    "options" : [
+      "controversy"
+    ],
+    "prompt" : "Complete the quotation: “… controversy, And you enduring foundations of the earth; For Yahweh has a ____ with his people, And he will contend with Israel.” (6:2, WEB)",
+    "reference" : "Micah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… they shall come trembling out of their dens. They will come with fear to Yahweh our God, And will be afraid because of you.”; the second reads “Who is a God like you, who pardons iniquity, And passes over the disobedience of the remnant of his heritage? He doesn't retain his anger forever, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fear iniquity"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… they shall come trembling out of their dens. They will come with ____ to Yahweh our God, And will be afraid because of you.” (7:17); “Who is a God like you, who pardons , And passes over the disobedience of the remnant of his heritage? He doesn't retain his anger forever, …” (7:18, WEB)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… is no one upright among men. They all lie in wait for blood; Every man hunts his brother with a net.”",
+    "options" : [
+      "blood"
+    ],
+    "prompt" : "Complete the quotation: “… is no one upright among men. They all lie in wait for ____; Every man hunts his brother with a net.” (7:2, WEB)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Micah 7:4 uses watchmen: “… most upright is worse than a thorn hedge. The day of your watchmen, Even your visitation, has come; Now is the time of their confusion.”",
+    "options" : [
+      "godly",
+      "pasture",
+      "watchmen",
+      "cluster"
+    ],
+    "prompt" : "Which word completes “… most upright is worse than a thorn hedge. The day of your ______, Even your visitation, has come; Now is the time of their confusion.”? (7:4, WEB)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Micah 7:7 records: “But as for me, I will look to Yahweh. I will wait for the God of my salvation. My God will hear me.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Micah said he would wait for the God of his salvation. (7:7)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies light: “… I will arise. When I sit in darkness, Yahweh will be a light to me.”",
+    "options" : [
+      "show",
+      "cast",
+      "light",
+      "Misery"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… I will arise. When I sit in darkness, Yahweh will be a ______ to me.”? (7:8, WEB)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… will see me and will cover her shame. Now she will be trodden down like the mire of the streets.” It says trodden, not tread.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… will see me and will cover her shame. Now she will be tread down like the mire of the streets.” (7:10, WEB)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “In that day they will come to you from Assyria and the cities of Egypt, And from Egypt even to the River, And from sea to …”; verse 14 reads “Shepherd your people with your staff, The flock of your heritage, Who dwell by themselves in a forest, In the midst of fertile pasture land, let …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jericho; Shepherd",
+      "Assyria; Shepherd",
+      "Assyria; son",
+      "Shepherd; Assyria"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “In that day they will come to you from ______ and the cities of Egypt, And from Egypt even to the River, And from sea to …” (7:12); “______ your people with your staff, The flock of your heritage, Who dwell by themselves in a forest, In the midst of fertile pasture land, let …” (7:14, WEB)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "micah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the father, The daughter rises up against her mother, The daughter-in-law against her mother-in-law; A man's enemies are the men of his own house.” The missing terms belong in that order.",
+    "options" : [
+      "law man's"
+    ],
+    "prompt" : "Supply the missing words in order: “… the father, The daughter rises up against her mother, The daughter-in-____ against her mother-in-law; A enemies are the men of his own house.” (7:6, WEB)",
+    "reference" : "Micah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

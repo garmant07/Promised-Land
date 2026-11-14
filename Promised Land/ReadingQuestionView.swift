@@ -95,7 +95,7 @@ struct ReadingQuestionView: View {
             .tint(Color.primaryBrown)
         }
         .task(id: "\(book.id)-\(chapter)-\(translation.current?.rawValue ?? "")") {
-            questionSet = QuestionData.questions(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)
+            questionSet = QuestionData.quizQuestions(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)
             questionIndex = 0
         }
     }

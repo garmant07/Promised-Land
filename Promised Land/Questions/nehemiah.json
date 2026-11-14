@@ -1,0 +1,1699 @@
+[
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sins: “… night, for the children of Israel your servants while I confess the sins of the children of Israel, which we have sinned against you. Yes, I …”",
+    "options" : [
+      "transgression",
+      "sin",
+      "sins",
+      "disobedience"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… night, for the children of Israel your servants while I confess the ______ of the children of Israel, which we have sinned against you. Yes, I …”? (1:6, WEB)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of heaven, the great and awesome God, who keeps covenant and loving kindness with those who love him and keep his commandments:” The missing terms belong in that order.",
+    "options" : [
+      "covenant love"
+    ],
+    "prompt" : "Supply the missing words in order: “… of heaven, the great and awesome God, who keeps ____ and loving kindness with those who him and keep his commandments:” (1:5, WEB)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Hanani, one of my brothers, came, he and certain men out of Judah; and I asked them concerning the Jews who had escaped, who were left …”",
+    "options" : [
+      "Judah"
+    ],
+    "prompt" : "Complete the quotation: “… Hanani, one of my brothers, came, he and certain men out of ____; and I asked them concerning the Jews who had escaped, who were left …” (1:2, WEB)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… very corruptly against you, and have not kept the commandments, nor the statutes, nor the ordinances, which you commanded your servant Moses.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… very corruptly against you, and have not kept the commandments, nor the statutes, nor the ordinances, which you commanded your servant Moses.” (1:7, WEB)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nehemiah 1:3 records: “… said to me, The remnant who are left of the captivity there in the province are in great affliction and reproach: the wall of Jerusalem also is broken down, and the gates of it are burned …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Nehemiah wept and prayed when he heard about the broken walls of Jerusalem. (1:3-4)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “Remember, I beg you, the word that you commanded your servant Moses, saying, If you trespass, I will scatter you abroad among the peoples:”; verse 9 reads “but if you return to me, and keep my commandments and do them, though your outcasts were in the uttermost part of the heavens, yet will …”. These establish the first and second answers respectively.",
+    "options" : [
+      "servant; commandments",
+      "commandments; servant",
+      "servant; instruction",
+      "princes; commandments"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Remember, I beg you, the word that you commanded your ______ Moses, saying, If you trespass, I will scatter you abroad among the peoples:” (1:8); “but if you return to me, and keep my ______ and do them, though your outcasts were in the uttermost part of the heavens, yet will …” (1:9, WEB)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… your servant, and to the prayer of your servants, who delight to fear your name; and please prosper your servant this day, and grant him mercy …”; the second reads “Now these are your servants and your people, whom you have redeemed by your great power, and by your strong hand.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fear servants"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… your servant, and to the prayer of your servants, who delight to ____ your name; and please prosper your servant this day, and grant him mercy …” (1:11); “Now these are your and your people, whom you have redeemed by your great power, and by your strong hand.” (1:10, WEB)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 1:1 uses Nehemiah: “The words of Nehemiah the son of Hacaliah. Now it happened in the month Chislev, in the twentieth year, as I was in Shushan the palace,”",
+    "options" : [
+      "Nahum",
+      "Sarai",
+      "Nehemiah",
+      "Joseph"
+    ],
+    "prompt" : "Which word completes “The words of ______ the son of Hacaliah. Now it happened in the month Chislev, in the twentieth year, as I was in Shushan the palace,”? (1:1, WEB)",
+    "reference" : "Nehemiah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… any man what my God put into my heart to do for Jerusalem; neither was there any animal with me, except the animal that I rode …”; verse 14 reads “… there was no place for the animal that was under me to pass.”. These establish the first and second answers respectively.",
+    "options" : [
+      "pass; Jerusalem",
+      "Jerusalem; beams",
+      "Jerusalem; pass",
+      "Canaan; pass"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… any man what my God put into my heart to do for ______; neither was there any animal with me, except the animal that I rode …” (2:12); “… there was no place for the animal that was under me to ______.” (2:14, WEB)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… seeing you are not sick? this is nothing else but sorrow of heart. Then I was very sore afraid.”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Complete the quotation: “… seeing you are not sick? this is nothing else but sorrow of ____. Then I was very sore afraid.” (2:2, WEB)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “When Sanballat the Horonite, and Tobiah the servant, the Ammonite, heard of it, it grieved them exceedingly, because a man had come to seek the welfare …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “When Sanballat the Horonite, and Tobiah the servant, the Ammonite, heard of it, it grieved them exceedingly, because a man had come to seek the welfare …” (2:10, WEB)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nehemiah 2:5 records: “… said to the king, If it please the king, and if your servant have found favor in your sight, that you would send me to Judah, to the city of my fathers' tombs, that I may …”",
+    "options" : [
+      "tombs"
+    ],
+    "prompt" : "In this paraphrase, nehemiah asked to rebuild the city of his fathers' ____. (2:5)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… priests, nor to the nobles, nor to the rulers, nor to the rest who did the work.”; the second reads “… he had spoken to me. They said, Let us rise up and build. So they strengthened their hands for the good work.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rest build"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… priests, nor to the nobles, nor to the rulers, nor to the ____ who did the work.” (2:16); “… he had spoken to me. They said, Let us rise up and . So they strengthened their hands for the good work.” (2:18, WEB)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies enter: “… the wall of the city, and for the house that I shall enter into. The king granted me, according to the good hand of my God …”",
+    "options" : [
+      "nobles",
+      "turned",
+      "seek",
+      "enter"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… the wall of the city, and for the house that I shall ______ into. The king granted me, according to the good hand of my God …”? (2:8, WEB)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… by him), For how long shall your journey be? and when will you return? So it pleased the king to send me; and I set him …” The missing terms belong in that order.",
+    "options" : [
+      "journey king"
+    ],
+    "prompt" : "Supply the missing words in order: “… by him), For how long shall your ____ be? and when will you return? So it pleased the to send me; and I set him …” (2:6, WEB)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 2:3 uses fire: “… fathers' tombs, lies waste, and the gates of it are consumed with fire?”",
+    "options" : [
+      "animal",
+      "fire",
+      "else",
+      "governors"
+    ],
+    "prompt" : "Which word completes “… fathers' tombs, lies waste, and the gates of it are consumed with ______?”? (2:3, WEB)",
+    "reference" : "Nehemiah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Next to them repaired Rephaiah the son of Hur, the ruler of half the district of Jerusalem.” The missing terms belong in that order.",
+    "options" : [
+      "Hur Jerusalem"
+    ],
+    "prompt" : "Supply the missing words in order: “Next to them repaired Rephaiah the son of ____, the ruler of half the district of .” (3:9, WEB)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of the pool of Shelah by the king's garden, even to the stairs that go down from the city of David.” It says stairs, not brothers.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of the pool of Shelah by the king's garden, even to the brothers that go down from the city of David.” (3:15, WEB)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… their brothers, Bavvai the son of Henadad, the ruler of half the district of Keilah.”; verse 23 reads “After them repaired Benjamin and Hasshub over against their house. After them repaired Azariah the son of Maaseiah the son of Ananiah beside his own house.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Benjamin; district",
+      "Nehemiah; Benjamin",
+      "district; Benjamin",
+      "district; Boaz"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… their brothers, Bavvai the son of Henadad, the ruler of half the ______ of Keilah.” (3:18); “After them repaired ______ and Hasshub over against their house. After them repaired Azariah the son of Maaseiah the son of Ananiah beside his own house.” (3:23, WEB)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The fish gate did the sons of Hassenaah build; they laid the beams of it, and set up the doors of it, the bolts of it, …”",
+    "options" : [
+      "gate"
+    ],
+    "prompt" : "Complete the quotation: “The fish ____ did the sons of Hassenaah build; they laid the beams of it, and set up the doors of it, the bolts of it, …” (3:3, WEB)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… repaired over against the turning of the wall, and the tower that stands out from the upper house of the king, which is by the court …”; the second reads “Above the horse gate repaired the priests, everyone over against his own house.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "stands priests"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… repaired over against the turning of the wall, and the tower that ____ out from the upper house of the king, which is by the court …” (3:25); “Above the horse gate repaired the , everyone over against his own house.” (3:28, WEB)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 3:6 uses Paseah: “The old gate repaired Joiada the son of Paseah and Meshullam the son of Besodeiah; they laid the beams of it, and set up the doors …”",
+    "options" : [
+      "Above",
+      "half",
+      "work",
+      "Paseah"
+    ],
+    "prompt" : "Which word completes “The old gate repaired Joiada the son of ______ and Meshullam the son of Besodeiah; they laid the beams of it, and set up the doors …”? (3:6, WEB)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies ruler: “Next to him repaired Shallum the son of Hallohesh, the ruler of half the district of Jerusalem, he and his daughters.”",
+    "options" : [
+      "ruler",
+      "daughters",
+      "brothers",
+      "elder"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Next to him repaired Shallum the son of Hallohesh, the ______ of half the district of Jerusalem, he and his daughters.”? (3:12, WEB)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nehemiah 3:1 records: “… high priest rose up with his brothers the priests, and they built the sheep gate; they sanctified it, and set up the doors of it; even to the tower of Hammeah they sanctified it, to the …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Different groups each repaired a section of the wall. (3:1-2)",
+    "reference" : "Nehemiah 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nehemiah 4:13 records: “Therefore set I in the lowest parts of the space behind the wall, in the open places, I set there the people after their families with their swords, their spears, and their bows.”",
+    "options" : [
+      "bows"
+    ],
+    "prompt" : "In this paraphrase, nehemiah armed the workers with swords, spears and ____. (4:13)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… and said to the nobles, and to the rulers, and to the rest of the people, Don't be you afraid of them: remember the Lord, who …”; verse 16 reads “It happened from that time forth, that half of my servants worked in the work, and half of them held the spears, the shields, and the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "servants; rest",
+      "rest; servants",
+      "praise; servants",
+      "rest; wives"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… and said to the nobles, and to the rulers, and to the ______ of the people, Don't be you afraid of them: remember the Lord, who …” (4:14); “It happened from that time forth, that half of my ______ worked in the work, and half of them held the spears, the shields, and the …” (4:16, WEB)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 4:5 uses iniquity: “and don't cover their iniquity, and don't let their sin be blotted out from before you; for they have provoked you to anger before the builders.”",
+    "options" : [
+      "iniquity",
+      "iniquities",
+      "idolatry",
+      "sins"
+    ],
+    "prompt" : "Which word completes “and don't cover their ______, and don't let their sin be blotted out from before you; for they have provoked you to anger before the builders.”? (4:5, WEB)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He spoke before his brothers and the army of Samaria, and said, What are these feeble Jews doing? will they fortify themselves? will they sacrifice? will …”",
+    "options" : [
+      "Samaria"
+    ],
+    "prompt" : "Complete the quotation: “He spoke before his brothers and the army of ____, and said, What are these feeble Jews doing? will they fortify themselves? will they sacrifice? will …” (4:2, WEB)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Judah: “Judah said, The strength of the bearers of burdens is decayed, and there is much rubbish; so that we are not able to build the wall.”",
+    "options" : [
+      "Job",
+      "Miriam",
+      "Judah",
+      "Boaz"
+    ],
+    "prompt" : "Which detail belongs in this passage: “______ said, The strength of the bearers of burdens is decayed, and there is much rubbish; so that we are not able to build the wall.”? (4:10, WEB)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “So we built the wall; and all the wall was joined together to half the height of it: for the people had a mind to work.” The missing terms belong in that order.",
+    "options" : [
+      "joined half"
+    ],
+    "prompt" : "Supply the missing words in order: “So we built the wall; and all the wall was ____ together to the height of it: for the people had a mind to work.” (4:6, WEB)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… until we come into the midst of them, and kill them, and cause the work to cease.” It says cause, not repairing.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… until we come into the midst of them, and kill them, and repairing the work to cease.” (4:11, WEB)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and the builders, everyone had his sword girded by his side, and so built. He who sounded the trumpet was by me.”; the second reads “… held the spears from the rising of the morning until the stars appeared.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "everyone appeared"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and the builders, ____ had his sword girded by his side, and so built. He who sounded the trumpet was by me.” (4:18); “… held the spears from the rising of the morning until the stars .” (4:21, WEB)",
+    "reference" : "Nehemiah 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nehemiah 5:14 records: “… was appointed to be their governor in the land of Judah, from the twentieth year even to the two and thirtieth year of Artaxerxes the king, that is, twelve years, I and my brothers have not …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Nehemiah refused to take the food allowance because of the people's burden. (5:14-18)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… so will we do, even as you say. Then I called the priests, and took an oath of them, that they would do according to this …”; the second reads “Remember to me, my God, for good, all that I have done for this people.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "priests Remember"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… so will we do, even as you say. Then I called the ____, and took an oath of them, that they would do according to this …” (5:12); “ to me, my God, for good, all that I have done for this people.” (5:19, WEB)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I likewise, my brothers and my servants, do lend them money and grain. Please let us leave off this usury.” It says servants, not wives.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I likewise, my brothers and my wives, do lend them money and grain. Please let us leave off this usury.” (5:10, WEB)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… the hundredth part of the money, and of the grain, the new wine, and the oil, that you exact of them.”; verse 13 reads “… assembly said, Amen, and praised Yahweh. The people did according to this promise.”. These establish the first and second answers respectively.",
+    "options" : [
+      "barley; promise",
+      "wine; statutes",
+      "promise; wine",
+      "wine; promise"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the hundredth part of the money, and of the grain, the new ______, and the oil, that you exact of them.” (5:11); “… assembly said, Amen, and praised Yahweh. The people did according to this ______.” (5:13, WEB)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… said, We, our sons and our daughters, are many: let us get grain, that we may eat and live.”",
+    "options" : [
+      "grain"
+    ],
+    "prompt" : "Complete the quotation: “… said, We, our sons and our daughters, are many: let us get ____, that we may eat and live.” (5:2, WEB)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… myself, and contended with the nobles and the rulers, and said to them, You exact usury, everyone of his brother. I held a great assembly against …” The missing terms belong in that order.",
+    "options" : [
+      "rulers everyone"
+    ],
+    "prompt" : "Supply the missing words in order: “… myself, and contended with the nobles and the ____, and said to them, You exact usury, of his brother. I held a great assembly against …” (5:7, WEB)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies peace: “… brothers, and should they be sold to us? Then held they their peace, and found never a word.”",
+    "options" : [
+      "understanding",
+      "mercy",
+      "peace",
+      "grief"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… brothers, and should they be sold to us? Then held they their ______, and found never a word.”? (5:8, WEB)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 5:4 uses king's: “There were also that said, We have borrowed money for the king's tribute on our fields and our vineyards.”",
+    "options" : [
+      "sons",
+      "enemies",
+      "fowls",
+      "king's"
+    ],
+    "prompt" : "Which word completes “There were also that said, We have borrowed money for the ______ tribute on our fields and our vineyards.”? (5:4, WEB)",
+    "reference" : "Nehemiah 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… said, Let us meet together in the house of God, within the temple, and let us shut the doors of the temple: for they will come …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… said, Let us meet together in the house of God, within the temple, and let us shut the doors of the temple: for they will come …” (6:10, WEB)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “It happened, when all our enemies heard of it, that all the nations that were about us feared, and were much cast down in their own …”; the second reads “… there were many in Judah sworn to him, because he was the son-in-law of Shecaniah the son of Arah; and his son Jehohanan had taken the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "enemies law"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “It happened, when all our ____ heard of it, that all the nations that were about us feared, and were much cast down in their own …” (6:16); “… there were many in Judah sworn to him, because he was the son-in- of Shecaniah the son of Arah; and his son Jehohanan had taken the …” (6:18, WEB)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… It is reported among the nations, and Gashmu says it, that you and the Jews think to rebel; for which cause you are building the wall: …” The missing terms belong in that order.",
+    "options" : [
+      "nations cause"
+    ],
+    "prompt" : "Supply the missing words in order: “… It is reported among the ____, and Gashmu says it, that you and the Jews think to rebel; for which you are building the wall: …” (6:6, WEB)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… being such as I, would go into the temple to save his life? I will not go in.”; verse 14 reads “… according to these their works, and also the prophetess Noadiah, and the rest of the prophets, that would have put me in fear.”. These establish the first and second answers respectively.",
+    "options" : [
+      "rest; life",
+      "deliverance; rest",
+      "life; rest",
+      "life; deliverance"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… being such as I, would go into the temple to save his ______? I will not go in.” (6:11); “… according to these their works, and also the prophetess Noadiah, and the ______ of the prophets, that would have put me in fear.” (6:14, WEB)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 6:5 uses servant: “Then sent Sanballat his servant to me in like manner the fifth time with an open letter in his hand,”",
+    "options" : [
+      "father",
+      "brother",
+      "rulers",
+      "servant"
+    ],
+    "prompt" : "Which word completes “Then sent Sanballat his ______ to me in like manner the fifth time with an open letter in his hand,”? (6:5, WEB)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nehemiah 6:15 records: “So the wall was finished in the twenty-fifth day of the month Elul, in fifty-two days.”",
+    "options" : [
+      "fifty-two"
+    ],
+    "prompt" : "In this paraphrase, the wall was completed in ____ days. (6:15)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies king: “… a king in Judah: and now shall it be reported to the king according to these words. Come now therefore, and let us take counsel together.”",
+    "options" : [
+      "husband",
+      "king",
+      "prophet",
+      "father"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a king in Judah: and now shall it be reported to the ______ according to these words. Come now therefore, and let us take counsel together.”? (6:7, WEB)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Come, let us meet together in one of the villages in the plain of Ono. But they thought to do me mischief.”",
+    "options" : [
+      "plain"
+    ],
+    "prompt" : "Complete the quotation: “… Come, let us meet together in one of the villages in the ____ of Ono. But they thought to do me mischief.” (6:2, WEB)",
+    "reference" : "Nehemiah 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The children of Solomon's servants: the children of Sotai, the children of Sophereth, the children of Perida,”; the second reads “Of the priests: the children of Hobaiah, the children of Hakkoz, the children of Barzillai, who took a wife of the daughters of Barzillai the Gileadite, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servants priests"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The children of Solomon's ____: the children of Sotai, the children of Sophereth, the children of Perida,” (7:57); “Of the : the children of Hobaiah, the children of Hakkoz, the children of Barzillai, who took a wife of the daughters of Barzillai the Gileadite, …” (7:63, WEB)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies eighty: “The men of Bethlehem and Netophah, one hundred eighty-eight.”",
+    "options" : [
+      "eighty",
+      "seventy",
+      "ninety",
+      "sixth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The men of Bethlehem and Netophah, one hundred ______-eight.”? (7:26, WEB)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 7:12 uses four: “The children of Elam, one thousand two hundred fifty-four.”",
+    "options" : [
+      "sixty",
+      "second",
+      "twelfth",
+      "four"
+    ],
+    "prompt" : "Which word completes “The children of Elam, one thousand two hundred fifty-______.”? (7:12, WEB)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The children of the other Elam, one thousand two hundred fifty-four.” It says thousand, not eight.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The children of the other Elam, one eight two hundred fifty-four.” (7:34, WEB)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the book of the genealogy of those who came up at the first, and I found written therein:”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “… the book of the genealogy of those who came up at the ____, and I found written therein:” (7:5, WEB)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 41 reads “The children of Pashhur, one thousand two hundred forty-seven.”; verse 48 reads “the children of Lebana, the children of Hagaba, the children of Salmai,”. These establish the first and second answers respectively.",
+    "options" : [
+      "Salmai; forty",
+      "first; Salmai",
+      "forty; people",
+      "forty; Salmai"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The children of Pashhur, one thousand two hundred ______-seven.” (7:41); “the children of Lebana, the children of Hagaba, the children of ______,” (7:48, WEB)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nehemiah 7:1 records: “Now it happened, when the wall was built, and I had set up the doors, and the porters and the singers and the Levites were appointed,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Nehemiah appointed gatekeepers and singers. (7:1)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “The children of Bigvai, two thousand sixty-seven.” The missing terms belong in that order.",
+    "options" : [
+      "two sixty"
+    ],
+    "prompt" : "Supply the missing words in order: “The children of Bigvai, ____ thousand -seven.” (7:19, WEB)",
+    "reference" : "Nehemiah 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 8:4 uses Zechariah: “… his left hand, Pedaiah, and Mishael, and Malchijah, and Hashum, and Hashbaddanah, Zechariah, and Meshullam.”",
+    "options" : [
+      "Belshazzar",
+      "Sarai",
+      "Ezekiel",
+      "Zechariah"
+    ],
+    "prompt" : "Which word completes “… his left hand, Pedaiah, and Mishael, and Malchijah, and Hashum, and Hashbaddanah, ______, and Meshullam.”? (8:4, WEB)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… children of Israel should dwell in booths in the feast of the seventh month;”; the second reads “… of the house of God, and in the broad place of the water gate, and in the broad place of the gate of Ephraim.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "seventh water"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… children of Israel should dwell in booths in the feast of the ____ month;” (8:14); “… of the house of God, and in the broad place of the gate, and in the broad place of the gate of Ephraim.” (8:16, WEB)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nehemiah 8:9 records: “… Ezra the priest the scribe, and the Levites who taught the people, said to all the people, This day is holy to Yahweh your God; don't mourn, nor weep. For all the people wept, when they …”",
+    "options" : [
+      "Law"
+    ],
+    "prompt" : "In this paraphrase, the people wept when they heard the words of the ____. (8:9)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… men and women, and all who could hear with understanding, on the first day of the seventh month.”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “… men and women, and all who could hear with understanding, on the ____ day of the seventh month.” (8:2, WEB)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… day is holy to our Lord: neither be you grieved; for the joy of Yahweh is your strength.” It says joy, not righteousness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… day is holy to our Lord: neither be you grieved; for the righteousness of Yahweh is your strength.” (8:10, WEB)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies law: “… Jozabad, Hanan, Pelaiah, and the Levites, caused the people to understand the law: and the people stood in their place.”",
+    "options" : [
+      "judgment",
+      "law",
+      "judgments",
+      "covenant"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… Jozabad, Hanan, Pelaiah, and the Levites, caused the people to understand the ______: and the people stood in their place.”? (8:7, WEB)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… stilled all the people, saying, Hold your peace, for the day is holy; neither be you grieved.”; verse 13 reads “… gathered together the heads of fathers' houses of all the people, the priests, and the Levites, to Ezra the scribe, even to give attention to the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "obedient; priests",
+      "holy; priests",
+      "priests; holy",
+      "holy; mothers"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… stilled all the people, saying, Hold your peace, for the day is ______; neither be you grieved.” (8:11); “… gathered together the heads of fathers' houses of all the people, the ______, and the Levites, to Ezra the scribe, even to give attention to the …” (8:13, WEB)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Ezra opened the book in the sight of all the people; (for he was above all the people;) and when he opened it, all the people …” The missing terms belong in that order.",
+    "options" : [
+      "Ezra sight"
+    ],
+    "prompt" : "Supply the missing words in order: “____ opened the book in the of all the people; (for he was above all the people;) and when he opened it, all the people …” (8:5, WEB)",
+    "reference" : "Nehemiah 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “… after their portions: so they possessed the land of Sihon, even the land of the king of Heshbon, and the land of Og king of Bashan.”; verse 26 reads “… against you, and cast your law behind their back, and killed your prophets that testified against them to turn them again to you, and they committed …”. These establish the first and second answers respectively.",
+    "options" : [
+      "land; prophets",
+      "prophets; land",
+      "desert; prophets",
+      "land; brothers"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… after their portions: so they possessed the land of Sihon, even the ______ of the king of Heshbon, and the land of Og king of Bashan.” (9:22); “… against you, and cast your law behind their back, and killed your ______ that testified against them to turn them again to you, and they committed …” (9:26, WEB)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 9:4 uses Chenani: “… of the Levites, Jeshua, and Bani, Kadmiel, Shebaniah, Bunni, Sherebiah, Bani, and Chenani, and cried with a loud voice to Yahweh their God.”",
+    "options" : [
+      "abundant",
+      "Chenani",
+      "Heshbon",
+      "Bani"
+    ],
+    "prompt" : "Which word completes “… of the Levites, Jeshua, and Bani, Kadmiel, Shebaniah, Bunni, Sherebiah, Bani, and ______, and cried with a loud voice to Yahweh their God.”? (9:4, WEB)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Israel separated themselves from all foreigners, and stood and confessed their sins, and the iniquities of their fathers.” The missing terms belong in that order.",
+    "options" : [
+      "sins iniquities"
+    ],
+    "prompt" : "Supply the missing words in order: “… Israel separated themselves from all foreigners, and stood and confessed their ____, and the of their fathers.” (9:2, WEB)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… stood up in their place, and read in the book of the law of Yahweh their God a fourth part of the day; and another fourth …”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “… stood up in their place, and read in the book of the ____ of Yahweh their God a fourth part of the day; and another fourth …” (9:3, WEB)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nehemiah 9:13 records: “You came down also on Mount Sinai, and spoke with them from heaven, and gave them right ordinances and true laws, good statutes and commandments,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Levites prayed a long prayer recounting Israel's history. (9:5-37)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies twenty: “Now in the twenty-fourth day of this month the children of Israel were assembled with fasting, and with sackcloth, and earth on them.”",
+    "options" : [
+      "sixteen",
+      "twenty",
+      "thousand",
+      "ninth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Now in the ______-fourth day of this month the children of Israel were assembled with fasting, and with sackcloth, and earth on them.”? (9:1, WEB)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… years did you bear with them, and testified against them by your Spirit through your prophets: yet would they not give ear: therefore gave you them …”; the second reads “neither have our kings, our princes, our priests, nor our fathers, kept your law, nor listened to your commandments and your testimonies with which you did …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Spirit kings"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… years did you bear with them, and testified against them by your ____ through your prophets: yet would they not give ear: therefore gave you them …” (9:30); “neither have our , our princes, our priests, nor our fathers, kept your law, nor listened to your commandments and your testimonies with which you did …” (9:34, WEB)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Yet for all this we make a sure covenant, and write it; and our princes, our Levites, and our priests, seal to it.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Yet for all this we make a sure covenant, and write it; and our princes, our Levites, and our priests, seal to it.” (9:38, WEB)",
+    "reference" : "Nehemiah 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “and their brothers, Shebaniah, Hodiah, Kelita, Pelaiah, Hanan,” The missing terms belong in that order.",
+    "options" : [
+      "Shebaniah Kelita"
+    ],
+    "prompt" : "Supply the missing words in order: “and their brothers, ____, Hodiah, , Pelaiah, Hanan,” (10:10, WEB)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nehemiah 10:39 records: “… shall bring the heave-offering of the grain, of the new wine, and of the oil, to the chambers, where are the vessels of the sanctuary, and the priests who minister, and the porters, and the singers: …”",
+    "options" : [
+      "God"
+    ],
+    "prompt" : "In this paraphrase, the people made a binding agreement not to neglect the house of their ____. (10:39)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Sabbath, or on a holy day; and that we would forego the seventh year, and the exaction of every debt.”; the second reads “We cast lots, the priests, the Levites, and the people, for the wood-offering, to bring it into the house of our God, according to our fathers' …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "seventh priests"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Sabbath, or on a holy day; and that we would forego the ____ year, and the exaction of every debt.” (10:31); “We cast lots, the , the Levites, and the people, for the wood-offering, to bring it into the house of our God, according to our fathers' …” (10:34, WEB)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “Pelatiah, Hanan, Anaiah,”; verse 28 reads “The rest of the people, the priests, the Levites, the porters, the singers, the Nethinim, and all those who had separated themselves from the peoples of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Pelatiah; rest",
+      "Ater; rest",
+      "Pelatiah; salvation",
+      "rest; Pelatiah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “______, Hanan, Anaiah,” (10:22); “The ______ of the people, the priests, the Levites, the porters, the singers, the Nethinim, and all those who had separated themselves from the peoples of …” (10:28, WEB)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Pashhur, Amariah, Malchijah,”",
+    "options" : [
+      "Pashhur"
+    ],
+    "prompt" : "Complete the quotation: “____, Amariah, Malchijah,” (10:3, WEB)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Hariph, Anathoth, Nobai,” It says Hariph, not meal.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “meal, Anathoth, Nobai,” (10:19, WEB)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies chiefs: “The chiefs of the people: Parosh, Pahath-moab, Elam, Zattu, Bani,”",
+    "options" : [
+      "wives",
+      "chiefs",
+      "lots",
+      "God's"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The ______ of the people: Parosh, Pahath-moab, Elam, Zattu, Bani,”? (10:14, WEB)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 10:9 uses Henadad: “… Levites: namely, Jeshua the son of Azaniah, Binnui of the sons of Henadad, Kadmiel;”",
+    "options" : [
+      "Henadad",
+      "entered",
+      "Nehemiah",
+      "walk"
+    ],
+    "prompt" : "Which word completes “… Levites: namely, Jeshua the son of Azaniah, Binnui of the sons of ______, Kadmiel;”? (10:9, WEB)",
+    "reference" : "Nehemiah 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “… the Levites, were in all the cities of Judah, everyone in his inheritance.”; verse 25 reads “As for the villages, with their fields, some of the children of Judah lived in Kiriath Arba and the towns of it, and in Dibon and …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Judah; inheritance",
+      "rest; Judah",
+      "inheritance; Judah",
+      "inheritance; Nehemiah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the Levites, were in all the cities of Judah, everyone in his ______.” (11:20); “As for the villages, with their fields, some of the children of ______ lived in Kiriath Arba and the towns of it, and in Dibon and …” (11:25, WEB)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies forty: “and his brothers, chiefs of fathers' houses, two hundred forty-two; and Amashsai the son of Azarel, the son of Ahzai, the son of Meshillemoth, the son …”",
+    "options" : [
+      "fifth",
+      "fifteen",
+      "nineteen",
+      "forty"
+    ],
+    "prompt" : "Which detail belongs in this passage: “and his brothers, chiefs of fathers' houses, two hundred ______-two; and Amashsai the son of Azarel, the son of Ahzai, the son of Meshillemoth, the son …”? (11:13, WEB)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… of it, Azekah and the towns of it. So they encamped from Beersheba to the valley of Hinnom.”; the second reads “The children of Benjamin also lived from Geba onward, at Michmash and Aija, and at Bethel and the towns of it,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Beersheba Benjamin"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… of it, Azekah and the towns of it. So they encamped from ____ to the valley of Hinnom.” (11:30); “The children of also lived from Geba onward, at Michmash and Aija, and at Bethel and the towns of it,” (11:31, WEB)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Joel the son of Zichri was their overseer; and Judah the son of Hassenuah was second over the city.” The missing terms belong in that order.",
+    "options" : [
+      "Joel second"
+    ],
+    "prompt" : "Supply the missing words in order: “____ the son of Zichri was their overseer; and Judah the son of Hassenuah was over the city.” (11:9, WEB)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nehemiah 11:1 records: “The princes of the people lived in Jerusalem: the rest of the people also cast lots, to bring one of ten to dwell in Jerusalem the holy city, and nine parts in the other cities.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Some people were chosen by lot to live in Jerusalem. (11:1)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Zabdi, the son of Asaph, who was the chief to begin the thanksgiving in prayer, and Bakbukiah, the second among his brothers; and Abda the son …” It says thanksgiving, not offering.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Zabdi, the son of Asaph, who was the chief to begin the offering in prayer, and Bakbukiah, the second among his brothers; and Abda the son …” (11:17, WEB)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… priests, and the Levites, and the Nethinim, and the children of Solomon's servants.”",
+    "options" : [
+      "servants"
+    ],
+    "prompt" : "Complete the quotation: “… priests, and the Levites, and the Nethinim, and the children of Solomon's ____.” (11:3, WEB)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 11:6 uses four: “All the sons of Perez who lived in Jerusalem were four hundred sixty-eight valiant men.”",
+    "options" : [
+      "seven",
+      "eleven",
+      "four",
+      "forty"
+    ],
+    "prompt" : "Which word completes “All the sons of Perez who lived in Jerusalem were ______ hundred sixty-eight valiant men.”? (11:6, WEB)",
+    "reference" : "Nehemiah 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and his brothers, Shemaiah, and Azarel, Milalai, Gilalai, Maai, Nethanel, and Judah, Hanani, with the musical instruments of David the man of God; and Ezra the …”; the second reads “and the priests, Eliakim, Maaseiah, Miniamin, Micaiah, Elioenai, Zechariah, and Hananiah, with trumpets;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Hanani Zechariah"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and his brothers, Shemaiah, and Azarel, Milalai, Gilalai, Maai, Nethanel, and Judah, ____, with the musical instruments of David the man of God; and Ezra the …” (12:36); “and the priests, Eliakim, Maaseiah, Miniamin, Micaiah, Elioenai, , and Hananiah, with trumpets;” (12:41, WEB)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Nehemiah 12:27 records: “… dedication of the wall of Jerusalem they sought the Levites out of all their places, to bring them to Jerusalem, to keep the dedication with gladness, both with giving thanks, and with singing, with cymbals, psalteries, …”",
+    "options" : [
+      "thanksgiving"
+    ],
+    "prompt" : "In this paraphrase, the wall was dedicated with ____ and singing. (12:27)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… went up with Zerubbabel the son of Shealtiel, and Jeshua: Seraiah, Jeremiah, Ezra,”",
+    "options" : [
+      "Ezra"
+    ],
+    "prompt" : "Complete the quotation: “… went up with Zerubbabel the son of Shealtiel, and Jeshua: Seraiah, Jeremiah, ____,” (12:1, WEB)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Piltai: “of Abijah, Zichri; of Miniamin, of Moadiah, Piltai;”",
+    "options" : [
+      "companies",
+      "Piltai",
+      "Maaseiah",
+      "next"
+    ],
+    "prompt" : "Which detail belongs in this passage: “of Abijah, Zichri; of Miniamin, of Moadiah, ______;”? (12:17, WEB)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 12:8 uses thanksgiving: “… Levites: Jeshua, Binnui, Kadmiel, Sherebiah, Judah, and Mattaniah, who was over the thanksgiving, he and his brothers.”",
+    "options" : [
+      "refuge",
+      "offerings",
+      "life",
+      "thanksgiving"
+    ],
+    "prompt" : "Which word completes “… Levites: Jeshua, Binnui, Kadmiel, Sherebiah, Judah, and Mattaniah, who was over the ______, he and his brothers.”? (12:8, WEB)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “In the days of Joiakim were priests, heads of fathers' houses: of Seraiah, Meraiah; of Jeremiah, Hananiah;” The missing terms belong in that order.",
+    "options" : [
+      "priests Jeremiah"
+    ],
+    "prompt" : "Supply the missing words in order: “In the days of Joiakim were ____, heads of fathers' houses: of Seraiah, Meraiah; of , Hananiah;” (12:12, WEB)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… the heads of fathers' houses; also the priests, in the reign of Darius the Persian.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… the heads of fathers' houses; also the priests, in the reign of Darius the Persian.” (12:22, WEB)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "nehemiah",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 26 reads “… son of Jeshua, the son of Jozadak, and in the days of Nehemiah the governor, and of Ezra the priest the scribe.”; verse 31 reads “Then I brought up the princes of Judah on the wall, and appointed two great companies who gave thanks and went in procession. One went on …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Laban; Judah",
+      "Nehemiah; Darius",
+      "Nehemiah; Judah",
+      "Judah; Nehemiah"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… son of Jeshua, the son of Jozadak, and in the days of ______ the governor, and of Ezra the priest the scribe.” (12:26); “Then I brought up the princes of ______ on the wall, and appointed two great companies who gave thanks and went in procession. One went on …” (12:31, WEB)",
+    "reference" : "Nehemiah 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “… should not be opened until after the Sabbath: and some of my servants set I over the gates, that there should no burden be brought in …”; verse 22 reads “… to me, my God, this also, and spare me according to the greatness of your loving kindness.”. These establish the first and second answers respectively.",
+    "options" : [
+      "servants; greatness",
+      "prince; greatness",
+      "greatness; servants",
+      "servants; deliverance"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… should not be opened until after the Sabbath: and some of my ______ set I over the gates, that there should no burden be brought in …” (13:19); “… to me, my God, this also, and spare me according to the ______ of your loving kindness.” (13:22, WEB)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Nehemiah 13:4 records: “Now before this, Eliashib the priest, who was appointed over the chambers of the house of our God, being allied to Tobiah,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Nehemiah removed Tobiah's belongings from a room in the temple. (13:4-8)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… meet the children of Israel with bread and with water, but hired Balaam against them, to curse them: however our God turned the curse into a …”",
+    "options" : [
+      "Balaam"
+    ],
+    "prompt" : "Complete the quotation: “… meet the children of Israel with bread and with water, but hired ____ against them, to curse them: however our God turned the curse into a …” (13:2, WEB)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies grain: “Then brought all Judah the tithe of the grain and the new wine and the oil to the treasuries.”",
+    "options" : [
+      "flour",
+      "wine",
+      "grapes",
+      "grain"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Then brought all Judah the tithe of the ______ and the new wine and the oil to the treasuries.”? (13:12, WEB)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Nehemiah 13:3 uses law: “It came to pass, when they had heard the law, that they separated from Israel all the mixed multitude.”",
+    "options" : [
+      "law",
+      "counsel",
+      "promise",
+      "statutes"
+    ],
+    "prompt" : "Which word completes “It came to pass, when they had heard the ______, that they separated from Israel all the mixed multitude.”? (13:3, WEB)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… and all manner of burdens, which they brought into Jerusalem on the Sabbath day: and I testified against them in the day in which they sold …” It says Sabbath, not evening.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… and all manner of burdens, which they brought into Jerusalem on the evening day: and I testified against them in the day in which they sold …” (13:15, WEB)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “I contended with them, and cursed them, and struck certain of them, and plucked off their hair, and made them swear by God, saying, You shall …”; the second reads “Did not Solomon king of Israel sin by these things? yet among many nations was there no king like him, and he was beloved of his …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "certain Solomon"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “I contended with them, and cursed them, and struck ____ of them, and plucked off their hair, and made them swear by God, saying, You shall …” (13:25); “Did not king of Israel sin by these things? yet among many nations was there no king like him, and he was beloved of his …” (13:26, WEB)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "nehemiah",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… commanded, and they cleansed the chambers: and there brought I again the vessels of the house of God, with the meal-offerings and the frankincense.” The missing terms belong in that order.",
+    "options" : [
+      "chambers offerings"
+    ],
+    "prompt" : "Supply the missing words in order: “… commanded, and they cleansed the ____: and there brought I again the vessels of the house of God, with the meal- and the frankincense.” (13:9, WEB)",
+    "reference" : "Nehemiah 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

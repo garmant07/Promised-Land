@@ -1,0 +1,132 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Paul, a prisoner of Christ Jesus, and Timothy our brother, to Philemon, our beloved fellow worker,”",
+    "options" : [
+      "Philemon"
+    ],
+    "prompt" : "Complete the quotation: “Paul, a prisoner of Christ Jesus, and Timothy our brother, to ____, our beloved fellow worker,” (1:1, WEB)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gospel: “… on your behalf he might serve me in my chains for the Gospel.”",
+    "options" : [
+      "while",
+      "Gospel",
+      "grace",
+      "Philemon"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… on your behalf he might serve me in my chains for the ______.”? (1:13, WEB)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “no longer as a slave, but more than a slave, a beloved brother, especially to me, but how much rather to you, both in the flesh …” It says longer, not prepare.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “no prepare as a slave, but more than a slave, a beloved brother, especially to me, but how much rather to you, both in the flesh …” (1:16, WEB)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He asks Philemon to receive Onesimus as a beloved brother and as he would receive Paul. The letter addresses an actual ancient slavery situation. Its appeal to brotherhood and voluntary love should not be turned into an endorsement of owning people or a complete modern legal policy.",
+    "options" : [
+      "Onesimus is described as having no place in Christian fellowship.",
+      "He asks Philemon to receive Onesimus as a beloved brother and as he would receive Paul.",
+      "Paul asks that brotherhood make no difference to treatment.",
+      "The letter commands Christians in every era to own slaves."
+    ],
+    "prompt" : "How does Paul's appeal concerning Onesimus challenge an ordinary master-slave relationship? (1:8-21)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Epaphras, my fellow prisoner in Christ Jesus, greets you,”; the second reads “The grace of our Lord Jesus Christ be with your spirit. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Epaphras grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “____, my fellow prisoner in Christ Jesus, greets you,” (1:23); “The of our Lord Jesus Christ be with your spirit. Amen.” (1:25, WEB)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Philemon 1:7 uses joy: “For we have much joy and comfort in your love, because the hearts of the saints have been refreshed through you, brother.”",
+    "options" : [
+      "mercy",
+      "fear",
+      "love",
+      "joy"
+    ],
+    "prompt" : "Which word completes “For we have much ______ and comfort in your love, because the hearts of the saints have been refreshed through you, brother.”? (1:7, WEB)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “hearing of your love, and of the faith which you have toward the Lord Jesus, and toward all the saints;”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “hearing of your love, and of the ____ which you have toward the Lord Jesus, and toward all the saints;” (1:5, WEB)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "philemon",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… I rather beg, being such a one as Paul, the aged, but also a prisoner of Jesus Christ.” The missing terms belong in that order.",
+    "options" : [
+      "Paul Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “… I rather beg, being such a one as ____, the aged, but also a prisoner of Jesus .” (1:9, WEB)",
+    "reference" : "Philemon 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

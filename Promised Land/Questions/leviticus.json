@@ -1,0 +1,3566 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God requires the best, without blemish.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The burnt offering was to be a male animal without defect. (1:3)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Laying on the hand shows the offerer's identification with the offering.",
+    "options" : [
+      "He washed it in oil",
+      "He laid it on the head of the animal",
+      "He held it up to the sky",
+      "He hid it in his robe"
+    ],
+    "prompt" : "What did the offerer do with his hand before the burnt offering was accepted? (1:4)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The blood of atonement is central to worship.",
+    "options" : [
+      "throw"
+    ],
+    "prompt" : "The priests were to ____ the blood against the sides of the altar. (1:5)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Holiness requires clean and whole offerings.",
+    "options" : [
+      "For use as fuel",
+      "So the whole offering is clean and holy before God",
+      "To be eaten by the priests",
+      "For decoration"
+    ],
+    "prompt" : "Why were the entrails and legs of the burnt offering to be washed? (1:9)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The whole offering rises to God and shows full devotion.",
+    "options" : [
+      "aroma"
+    ],
+    "prompt" : "A burnt offering is a pleasing ____ to the LORD, an offering made by fire. (1:9)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Even the poor could bring an acceptable offering.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "If the offering was birds, the priest was to wring off the head of the bird. (1:14-15)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Complete devotion is offered to God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The burnt offering was burned entirely on the altar, with nothing kept back. (1:9)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Coming to God means taking responsibility before Him.",
+    "options" : [
+      "He sold it",
+      "He hid it",
+      "He killed it before the LORD",
+      "He released it"
+    ],
+    "prompt" : "What did the offerer do with the animal before it was offered? (1:5)",
+    "reference" : "Leviticus 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Priests share in the holy portions of God's table.",
+    "options" : [
+      "Nothing",
+      "A portion that is holy and most holy",
+      "Only the oil",
+      "All of it"
+    ],
+    "prompt" : "What was the priest's share of the grain offering? (2:3, 10)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The salt of the covenant was never to be missing from God's offerings.",
+    "options" : [
+      "Honey",
+      "Salt",
+      "Leaven",
+      "Sugar"
+    ],
+    "prompt" : "What was to be included in every grain offering? (2:13)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Offerings are prepared with careful work.",
+    "options" : [
+      "fine"
+    ],
+    "prompt" : "The grain offering baked in the oven was made of ____ flour mixed with oil. (2:4)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Fragrance and oil show honor offered to God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The grain offering of firstfruits was offered with oil and frankincense laid on it. (2:15)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Daily labor belongs to God.",
+    "options" : [
+      "Thanks and devotion with the fruit of human labor",
+      "A replacement for blood",
+      "A feast for the dead",
+      "A payment for sin"
+    ],
+    "prompt" : "Which statement best summarizes the grain offering? (2:1-16)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Thanksgiving and devotion are offered from daily bread and labor.",
+    "options" : [
+      "oil"
+    ],
+    "prompt" : "A grain offering was made of fine flour mixed with ____ and frankincense. (2:1)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Gratitude to God for the first harvest is part of worship.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A grain offering of firstfruits could be new grain roasted in the fire and crushed. (2:14-16)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Leaven and honey were not to be offered by fire to the LORD.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Leaven and honey were to be burned on the altar as a food offering to the LORD. (2:11-12)",
+    "reference" : "Leviticus 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Life belongs to God, so blood is not eaten.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Blood and fat were not to be eaten at any time by the people. (3:17)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Life and the best portions belong to God.",
+    "options" : [
+      "Only priests may eat blood",
+      "Fat belongs to the LORD, and blood must not be eaten",
+      "They may eat both",
+      "Blood is for sale"
+    ],
+    "prompt" : "What is the rule about eating fat and blood? (3:16-17)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God receives the best portions of the offering.",
+    "options" : [
+      "The horns",
+      "The hooves",
+      "The fat tail",
+      "The wool"
+    ],
+    "prompt" : "Which part of the sheep was offered whole with the fat? (3:9)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Fellowship offerings come from God's provision in the flock and herd.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The peace offering was made from animals of the herd or the flock. (3:1)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The law of worship is lasting, not temporary.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The fat and blood rule was to be kept as a statute forever throughout the generations. (3:17)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God is honored with the best.",
+    "options" : [
+      "without defect"
+    ],
+    "prompt" : "The peace offering could come from the herd or the flock, and it had to be ____. (3:1)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Worship is brought to the place where God meets His people.",
+    "options" : [
+      "door"
+    ],
+    "prompt" : "Whether the offering was a lamb or a goat, it was brought before the ____ of the tent of meeting. (3:7)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The fat belongs to the LORD.",
+    "options" : [
+      "The skin",
+      "The bones",
+      "The fat around the entrails and the kidneys",
+      "The meat"
+    ],
+    "prompt" : "Which fat was to be burned on the altar in the peace offering? (3:3-4)",
+    "reference" : "Leviticus 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The one who sins brings the offering.",
+    "options" : [
+      "Pharaoh",
+      "The leader himself",
+      "The king's son",
+      "Moses only"
+    ],
+    "prompt" : "Who was to lay a hand on the head of the goat in the sin offering of a leader? (4:24)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The LORD receives His portion of every sacrifice.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The fat of the sin offering was burned on the altar, as with the peace offering. (4:8-10)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God makes provision even for sins committed without knowledge.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Sin offerings were made for sins committed unintentionally. (4:2)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Corporate sin brings corporate guilt and a need for atonement.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The sin offering for the whole congregation included a young bull. (4:13-14)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Forgiveness comes through the offering God appointed.",
+    "options" : [
+      "atonement"
+    ],
+    "prompt" : "The priest shall make ____ for them, and they shall be forgiven. (4:20)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Each person is responsible for their own sin and its offering.",
+    "options" : [
+      "The priest only",
+      "The common person",
+      "Pharaoh",
+      "The king's guard"
+    ],
+    "prompt" : "Who was to bring a goat for a sin offering if a common person sinned? (4:27-28)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Atonement is made before the LORD's presence.",
+    "options" : [
+      "On the ground",
+      "Seven times before the LORD, on the horns of the altar of incense",
+      "On the people",
+      "In the river"
+    ],
+    "prompt" : "Where was the blood of the priest's sin offering placed? (4:6-7)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Sin brings guilt on the people, so the offering must be pure.",
+    "options" : [
+      "defect"
+    ],
+    "prompt" : "If a priest sinned unintentionally, he was to bring a young bull without ____. (4:3)",
+    "reference" : "Leviticus 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Confession comes before restoration.",
+    "options" : [
+      "Confess the sin",
+      "Hide it",
+      "Blame others",
+      "Sell property"
+    ],
+    "prompt" : "What must a person do when he is guilty of sin? (5:5)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Holy things must be honored and, when wronged, repaired.",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "If a person unintentionally breaks faith with the LORD in the ____ things, he shall bring a guilt offering. (5:15)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God makes worship possible for the poor.",
+    "options" : [
+      "Gold",
+      "Nothing",
+      "Two turtledoves or two pigeons",
+      "A bull"
+    ],
+    "prompt" : "What was to be brought when a person could not afford a lamb? (5:7)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's justice calls for repayment as well as honest acknowledgment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The guilt offering required the person to add a fifth to the value of what was wronged. (5:16)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Silence in the face of wrong carries responsibility.",
+    "options" : [
+      "guilt"
+    ],
+    "prompt" : "A person who was called to testify but kept silent bears ____ for it. (5:1)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Uncleanness and guilt are taken seriously before God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A person who touched something unclean and did not know it was still guilty and had to bring an offering. (5:2)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Restitution and atonement go together.",
+    "options" : [
+      "Restoring what was wronged and making atonement",
+      "Celebrating the harvest",
+      "Feasting",
+      "Dedicating a house"
+    ],
+    "prompt" : "What was the guilt offering for? (5:14-16)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Forgiveness comes through the provision God appointed.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priest was to make atonement for the unintentional sin, and the person would be forgiven. (5:18)",
+    "reference" : "Leviticus 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Priests share in the holy portions God provides.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priests were to eat the grain offering in a holy place within the courtyard of the tent of meeting. (6:16)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Some offerings are holy beyond ordinary sharing.",
+    "options" : [
+      "It was kept",
+      "It was given to the poor",
+      "It was burned with fire and not eaten",
+      "It was sold"
+    ],
+    "prompt" : "What was to be done with a sin offering whose blood was brought into the tent of meeting? (6:30)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Holiness governs who eats what and where.",
+    "options" : [
+      "courtyard"
+    ],
+    "prompt" : "The sin offering was to be eaten in the holy place of the ____ of the tent of meeting. (6:26)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "What is holy is handled with order.",
+    "options" : [
+      "Keep them as treasure",
+      "Burn them again in a lamp",
+      "Sprinkle them on people",
+      "Carry them outside the camp to a clean place"
+    ],
+    "prompt" : "What were the priests to do with the ashes from the burnt offering? (6:10-11)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Holy portions go to the priests who serve God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Every male among the descendants of Aaron may eat the grain offering. (6:18)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Daily faithfulness is part of worship.",
+    "options" : [
+      "A bull",
+      "Oil only",
+      "Incense",
+      "A tenth of an ephah of fine flour, half in the morning and half in the evening"
+    ],
+    "prompt" : "What was the priest's offering every day, on the day he was anointed? (6:20)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Priests approach God's holy work dressed in holiness.",
+    "options" : [
+      "undergarments"
+    ],
+    "prompt" : "The priest was to put on his linen robe and linen ____. (6:10)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's worship is meant to burn continually in His house.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The fire on the altar was to burn continually and never go out. (6:13)",
+    "reference" : "Leviticus 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Blood belongs to God and is not to be eaten.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Anyone who ate blood was to be cut off from his people. (7:27)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's law provides for the priest's service.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priest who offers a burnt offering may keep its skin. (7:8)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The holy portion is eaten by the priests in God's presence.",
+    "options" : [
+      "eaten"
+    ],
+    "prompt" : "The guilt offering was to be ____ in the holy place. (7:6)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Fellowship meals celebrate God's goodness.",
+    "options" : [
+      "The one who brought it, on the day it was offered",
+      "The animals",
+      "No one",
+      "Only the priests, a year later"
+    ],
+    "prompt" : "Who was to eat the flesh of a thank offering from the peace offerings? (7:15)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Offerings lifted before God are presented to Him.",
+    "options" : [
+      "Offered by fire only",
+      "Offered by pouring water",
+      "Offered by throwing into a river",
+      "Offered by lifting it up before the LORD"
+    ],
+    "prompt" : "What was a wave offering? (7:30)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Holy boundaries apply to what God gives.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The fat of an animal that died on its own could be eaten by Israelites. (7:24)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God provides for those who serve Him.",
+    "options" : [
+      "The head",
+      "The breast and the right thigh",
+      "The skin",
+      "The bones"
+    ],
+    "prompt" : "What is the priest's share of the peace offering? (7:31-34)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Thanksgiving is received and remembered fresh.",
+    "options" : [
+      "morning"
+    ],
+    "prompt" : "A thank offering was to be eaten on the day it was offered, and none was to be left until the ____. (7:15)",
+    "reference" : "Leviticus 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The whole life of the priest is set apart for God.",
+    "options" : [
+      "Incense",
+      "Honey",
+      "Gold",
+      "Blood of the ram of ordination"
+    ],
+    "prompt" : "What did Moses put on the tip of Aaron's right ear, right thumb and right big toe? (8:23)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Consecration takes time and faithful waiting before God.",
+    "options" : [
+      "seven"
+    ],
+    "prompt" : "Aaron and his sons were to remain at the entrance of the tent of meeting for ____ days. (8:33)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Holiness is God's gift and His command.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses anointed the tabernacle and everything in it with oil to make it holy. (8:10-11)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Holy service is prepared with exact obedience.",
+    "options" : [
+      "unleavened"
+    ],
+    "prompt" : "Moses took Aaron and his sons, their garments, the anointing oil, a bull, two rams and a basket of ____ bread. (8:2)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The priests eat the holy portion as God commanded.",
+    "options" : [
+      "Burned them",
+      "Gave them to Pharaoh",
+      "Ate them in a holy place at the entrance of the tent of meeting",
+      "Buried them"
+    ],
+    "prompt" : "What did the priests do with the bread and meat of the ram of ordination? (8:31)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Obedience is the mark of faithful service.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses did everything the LORD commanded through him. (8:36)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Priests must be washed clean before they serve.",
+    "options" : [
+      "Pharaoh",
+      "Aaron and his sons",
+      "The Levites only",
+      "The elders"
+    ],
+    "prompt" : "Who did Moses wash before they were clothed as priests? (8:6)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Faithfulness in God's service is required.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priests were to stay at the tent of meeting day and night for seven days and keep the LORD's charge. (8:35)",
+    "reference" : "Leviticus 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God accepts sacrifice offered in obedience.",
+    "options" : [
+      "It burned the camp",
+      "It consumed the offering on the altar",
+      "It went out",
+      "It warmed the tent"
+    ],
+    "prompt" : "What did fire from the LORD do after Aaron lifted his hands and blessed the people? (9:24)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Leaders serve God by blessing the people.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses and Aaron went into the tent of meeting, came out and blessed the people. (9:23)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Worship is led in the presence of the community.",
+    "options" : [
+      "Israel"
+    ],
+    "prompt" : "On the eighth day Moses called Aaron, his sons and the elders of ____. (9:1)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Priests bring the people's sins before God after dealing with their own.",
+    "options" : [
+      "Pharaoh",
+      "Aaron offered the people's sin offering",
+      "Moses only",
+      "Joshua"
+    ],
+    "prompt" : "Who was to bring the offering for the people after the offering for himself? (9:15)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Priests deal with their own sin before serving others.",
+    "options" : [
+      "He offered nothing",
+      "He offered a calf for his own sin",
+      "He offered gold",
+      "He fled"
+    ],
+    "prompt" : "What did Aaron do first when he began the sacrifices? (9:8)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Offerings are presented before God by the priest.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Aaron lifted his hands toward the people and offered them as a wave offering before the LORD. (9:21)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Awe before God's glory is the right response.",
+    "options" : [
+      "faces"
+    ],
+    "prompt" : "The people shouted and fell on their ____ when they saw the fire from the LORD. (9:24)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God shows His presence when His people worship in His way.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The glory of the LORD appeared to all the people after the offerings were made. (9:23)",
+    "reference" : "Leviticus 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Service before the LORD comes first.",
+    "options" : [
+      "They were in exile",
+      "They had no feelings",
+      "The anointing oil was on them, and they had to stay at the tent of meeting",
+      "They were forbidden to speak"
+    ],
+    "prompt" : "Why could Aaron and his sons not mourn openly for Nadab and Abihu? (10:6-7)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Holy living requires careful discernment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said priests must distinguish between the holy and the common, and between the clean and the unclean. (10:10)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God is honored by those who draw near in His way.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said, \"Among those who are near me I will be shown holy.\" (10:3)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God's holiness is not to be treated lightly.",
+    "options" : [
+      "Fire came out from the LORD and consumed them",
+      "They became kings",
+      "They were forgiven at once",
+      "They were exiled"
+    ],
+    "prompt" : "What happened to Nadab and Abihu? (10:2)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Following God's exact instructions matters, even in grief.",
+    "options" : [
+      "They worshiped idols",
+      "They refused to work",
+      "They were drunk",
+      "They did not eat the sin offering in the holy place as commanded"
+    ],
+    "prompt" : "Why did Moses become angry with Eleazar and Ithamar? (10:16-18)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Aaron accepted God's judgment in silence.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Aaron was silent when this happened. (10:3)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Clear minds are needed for holy service.",
+    "options" : [
+      "die"
+    ],
+    "prompt" : "Aaron and his sons were not to drink wine or strong drink when they entered the tent of meeting, so that they would not ____. (10:9)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God must be approached in the way He has commanded.",
+    "options" : [
+      "strange"
+    ],
+    "prompt" : "Nadab and Abihu offered ____ fire before the LORD, which He had not commanded. (10:1)",
+    "reference" : "Leviticus 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God marks boundaries that set His people apart.",
+    "options" : [
+      "clean"
+    ],
+    "prompt" : "Animals that chew the cud and have a divided hoof are ____. (11:3)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's holiness is the reason for His people's holiness.",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "The LORD said, \"You shall be holy, for I am ____.\" (11:44)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Uncleanness can spread, so God's people guard their lives.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Anything on which an unclean carcass falls became unclean. (11:32)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Holiness extends to all of life.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Creeping things that crawl on the ground were unclean. (11:41-43)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God's distinctions teach Israel to be set apart for Him.",
+    "options" : [
+      "The camel",
+      "The goat",
+      "The sheep",
+      "The ox"
+    ],
+    "prompt" : "Which of these animals is unclean? (11:4)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's law gives clear guidance for daily life.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Fish with fins and scales may be eaten. (11:9)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Israel's holiness reflects God's holiness and His deliverance.",
+    "options" : [
+      "Diet improves health only",
+      "It was Pharaoh's rule",
+      "God is holy and brought Israel up out of Egypt",
+      "Animals are sacred"
+    ],
+    "prompt" : "What is the central reason given for the laws in Leviticus 11? (11:44-45)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Carrying the carcass requires washing clothes and waiting until evening. Ritual uncleanness is not a claim that a person has less dignity.",
+    "options" : [
+      "Do nothing",
+      "Become a priest",
+      "Wash their clothes and remain unclean until evening",
+      "Pay the king"
+    ],
+    "prompt" : "What must someone do after carrying the carcass of one of the animals described here? (11:24-25)",
+    "reference" : "Leviticus 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God provides for the poor in worship.",
+    "options" : [
+      "A bull",
+      "Nothing",
+      "Gold",
+      "Two turtledoves or two pigeons"
+    ],
+    "prompt" : "What did a poor mother offer instead of a lamb? (12:8)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The woman returns to the community of worship.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "When the days of purification were over, she brought the offering to the priest at the entrance of the tent of meeting. (12:6)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's law gives weight to every part of human life.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Leviticus 12 gives different periods of purification for a son and for a daughter. (12:2-5)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Purification is a time of separation and restoration.",
+    "options" : [
+      "Seven days",
+      "No time at all",
+      "Fourteen days, then sixty-six more days",
+      "A year"
+    ],
+    "prompt" : "How long was the mother's purification after the birth of a daughter? (12:5)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The lamb was a burnt offering and the bird a purification or sin offering. The law also provides a less costly offering for a poor mother.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "After the purification period, a mother who could afford it brought a lamb and a bird. (12:6-8)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God cares for the ordinary, bodily life of His people.",
+    "options" : [
+      "seven"
+    ],
+    "prompt" : "After a woman gave birth to a boy, she was unclean for ____ days. (12:2)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Even the joys of life are covered by God's provision.",
+    "options" : [
+      "atonement"
+    ],
+    "prompt" : "The priest was to make ____ for the woman, and she would be clean. (12:7)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The passage concerns ritual purification. It does not call childbirth itself a moral sin or assign less human worth to a mother or daughter.",
+    "options" : [
+      "A declaration that daughters lack worth",
+      "Atonement and cleansing from the flow of blood",
+      "Payment to the king",
+      "Punishment for having a child"
+    ],
+    "prompt" : "What is the stated result of the priest's offering after childbirth? (12:6-8)",
+    "reference" : "Leviticus 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The priest judges by careful examination, not by appearance alone.",
+    "options" : [
+      "unclean"
+    ],
+    "prompt" : "If the hair in a sore has turned white and the sore goes deeper than the skin, the priest shall pronounce the person ____. (13:3)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Uncleanness was contained to protect others and the holy camp.",
+    "options" : [
+      "He stayed in the camp as usual",
+      "He was executed at once",
+      "He became a priest",
+      "He lived outside the camp and called out, Unclean!"
+    ],
+    "prompt" : "What rule applied to a person declared unclean by a skin disease? (13:45-46)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's concern for holiness reached even clothing.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priest also examined garments for a mildew-like spot. (13:47)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's law allows time for careful observation.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "If the sore had not spread after the first seven days, the priest could shut the person up for seven more days. (13:5)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's law protects both the community and the holiness of worship.",
+    "options" : [
+      "To punish sin with disease",
+      "To choose the king",
+      "To judge clean and unclean so the camp was protected and holy",
+      "To test people's wealth"
+    ],
+    "prompt" : "What was the main purpose of the laws in Leviticus 13? (13:59)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The priest examined visible signs with careful judgment, not personal feeling.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A person's uncleanness from a skin disease was judged only by how the person felt. (13:2-3)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Patient observation was part of God's law.",
+    "options" : [
+      "seventh"
+    ],
+    "prompt" : "The priest examined the person again on the ____ day. (13:6)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Careful waiting protects the community.",
+    "options" : [
+      "Gave him a feast",
+      "Sent him to the king",
+      "Shut the person up for seven days",
+      "Burned his house"
+    ],
+    "prompt" : "What did the priest do with a sore that was not yet clearly defined? (13:4)",
+    "reference" : "Leviticus 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Life and death are both part of restoration.",
+    "options" : [
+      "Bread",
+      "The living bird, with cedar, scarlet yarn and hyssop",
+      "Oil",
+      "Gold"
+    ],
+    "prompt" : "What was dipped into the blood of the slaughtered bird before the sprinkling? (14:6-7)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Restoration to worship is confirmed before the LORD.",
+    "options" : [
+      "priest"
+    ],
+    "prompt" : "On the eighth day the cleansed person brought his offerings to the ____ at the entrance of the tent of meeting. (14:11)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Consecration reached the whole person, from head to foot.",
+    "options" : [
+      "In his mouth",
+      "On the ground",
+      "On the bread",
+      "Right ear, right thumb and right big toe"
+    ],
+    "prompt" : "Where did the priest put some of the blood of the guilt offering on the person being cleansed? (14:14)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Oil and blood were both applied as a sign of consecration.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priest sprinkled some of the oil with his finger seven times before the LORD. (14:16)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Cleansing involved visible, ordered steps of renewal.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The person being cleansed shaved all his hair, washed his clothes and bathed. (14:8-9)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The reduced provision still includes a lamb, flour and oil as well as two birds. Saying the poor person brought only birds leaves out part of the requirement.",
+    "options" : [
+      "One male lamb for a guilt offering, with flour and oil",
+      "A bull",
+      "A golden calf",
+      "No other offering"
+    ],
+    "prompt" : "Which offering remained required when a poor person used birds in the cleansing ceremony? (14:21-22)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Cleansing involved restored life.",
+    "options" : [
+      "birds"
+    ],
+    "prompt" : "For the cleansing of a healed skin disease, the priest was to take two live, clean ____. (14:4)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The law took the health of homes seriously.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "If mildew returned to a house after it was scraped, the priest could have the house torn down. (14:43-45)",
+    "reference" : "Leviticus 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "This is a ritual classification; verse 13 prescribes further waiting and washing after the discharge has stopped.",
+    "options" : [
+      "unclean"
+    ],
+    "prompt" : "A man with the discharge described in this law was declared ritually ____. (15:2-3)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The laws aimed to protect life and God's dwelling among His people.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said these laws keep Israel separate from uncleanness so they do not die in it. (15:31)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Cleansing required a period of waiting and washing.",
+    "options" : [
+      "Seven days",
+      "Forever",
+      "A year",
+      "One day"
+    ],
+    "prompt" : "How long was a man unclean after his discharge had stopped? (15:13)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The rule for prolonged cases lasted as long as the condition did.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A woman with a prolonged discharge was unclean for as long as the discharge lasted. (15:25)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "This temporary ritual status does not say that menstruation is a moral wrongdoing or that women have less worth.",
+    "options" : [
+      "seven"
+    ],
+    "prompt" : "The regular menstrual period described here brought ritual uncleanness for ____ days. (15:19)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Uncleanness passed by contact and required washing.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Anyone who touched the bed of a man with a discharge had to wash his clothes and bathe. (15:5)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Cleansing led to offering before the LORD.",
+    "options" : [
+      "A bull only",
+      "Silver",
+      "Two doves or two pigeons",
+      "Nothing"
+    ],
+    "prompt" : "What offering did a man bring after his cleansing from a discharge? (15:14-15)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's holiness reaches into everyday life.",
+    "options" : [
+      "Holiness covers ordinary bodily life, not only the altar",
+      "Holiness is only for priests",
+      "There are no rules for bodily life",
+      "Holiness depends on wealth"
+    ],
+    "prompt" : "What does Leviticus 15 teach about God's concern for holiness? (15:31)",
+    "reference" : "Leviticus 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The day called people to humble themselves and rest before God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Day of Atonement was to be a permanent statute and a day of solemn rest for self-denial. (16:29-31)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Ritual washing marked the high priest's holy work.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The high priest was to bathe his body in water before and after the work of the day. (16:4, 16:24)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's choice guided the sacrifice, not human preference.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Aaron was to cast lots over two goats, one for the LORD and one for the scapegoat. (16:8)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Confession and substitution went together.",
+    "options" : [
+      "Israelites"
+    ],
+    "prompt" : "Aaron was to put his hands on the head of the live goat and confess the sins of the ____. (16:21)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The annual ceremony includes the high priest's prescribed entry behind the curtain. The chapter regulates how he approaches God's holy presence.",
+    "options" : [
+      "Every week",
+      "Never",
+      "Once a year",
+      "Every day"
+    ],
+    "prompt" : "How often was the annual Day of Atonement ceremony to be performed for Israel? (16:29-34)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Blood made atonement for the holy place.",
+    "options" : [
+      "Poured it on the ground outside the camp",
+      "Sprinkled it on the mercy seat and before it",
+      "Drank it",
+      "Put it on the scapegoat"
+    ],
+    "prompt" : "What did the high priest do with the blood of the bull and the goat? (16:14-15)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Even the high priest needed atonement before serving.",
+    "options" : [
+      "sin"
+    ],
+    "prompt" : "On the Day of Atonement, Aaron was to offer a young bull as a ____ offering for himself. (16:11)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Sin was carried away from the camp.",
+    "options" : [
+      "It was sold",
+      "It was made king",
+      "It carried the people's sins away from the camp",
+      "It was eaten by the priests"
+    ],
+    "prompt" : "What was done with the goat sent into the wilderness? (16:21-22)",
+    "reference" : "Leviticus 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Sacrifice was to be brought to the LORD at the place He appointed.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD told Israel they could no longer offer sacrifices in the open field. (17:5)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God set one place for worship, so it was not a matter of personal choice.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israelites could offer sacrifices wherever they chose in the open country. (17:3-5)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God gave blood on the altar to make atonement for life.",
+    "options" : [
+      "blood"
+    ],
+    "prompt" : "The LORD said that the life of the flesh is in the ____. (17:11)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Worship and daily life were kept under God's oversight.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Any ox, lamb or goat killed in the camp had to be brought to the entrance of the tent of meeting. (17:3-4)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Life belongs to God and is honored in how His people eat.",
+    "options" : [
+      "Blood belonged to God as a means of atonement",
+      "Blood was sold to the king",
+      "Blood was poisonous",
+      "Blood made animals holy"
+    ],
+    "prompt" : "Why was Israel forbidden to eat blood? (17:11)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The sacredness of life shapes the way God's people eat.",
+    "options" : [
+      "Because meat was expensive",
+      "Because the nations asked for them",
+      "To punish the poor",
+      "Because life is in the blood and belongs to God"
+    ],
+    "prompt" : "Why did God command these rules in Leviticus 17? (17:11, 17:14)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Uncleanness was dealt with by washing and waiting.",
+    "options" : [
+      "He was executed at once",
+      "He became a priest",
+      "Nothing happened",
+      "He washed his clothes, bathed and was unclean until evening"
+    ],
+    "prompt" : "What had to happen to someone who ate an animal that died on its own or was torn by beasts? (17:15)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Sin against God's gift affects one's place among God's people.",
+    "options" : [
+      "people"
+    ],
+    "prompt" : "Whoever eats blood, the LORD said He would set His face against that person and cut him off from his ____. (17:10)",
+    "reference" : "Leviticus 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Sin has consequences for the whole land.",
+    "options" : [
+      "There was a famine",
+      "They defiled it with detestable practices",
+      "The land was too small",
+      "There was a war only"
+    ],
+    "prompt" : "Why did God say the land spewed out the nations? (18:24-28)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The LORD's identity is the foundation of Israel's way of life.",
+    "options" : [
+      "Egypt was defeated",
+      "The priests wrote them",
+      "The king demanded it",
+      "I am the LORD your God"
+    ],
+    "prompt" : "What reason did God give for these laws? (18:3-5)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's warning applies to His own people too.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God warned that Israel would be spewed out of the land too if they defiled it the same way. (18:28)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's name is holy and must not be dishonored.",
+    "options" : [
+      "profane"
+    ],
+    "prompt" : "You shall not ____ the name of your God. (18:21)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's law was given to lead to life, not burden.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said that a person who keeps His statutes and rules shall live by them. (18:5)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The land's judgment reflected the nations' sins.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The land was defiled by the nations, and God said it would spew out its inhabitants for their sins. (18:24-25)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Holiness meant living differently from the surrounding nations.",
+    "options" : [
+      "Canaan"
+    ],
+    "prompt" : "The LORD said, \"You shall not do as they do in the land of Egypt, nor as they do in the land of ____.\" (18:3)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's people must not give their children to idols.",
+    "options" : [
+      "Keeping the sabbath",
+      "Wearing linen",
+      "Giving children to the false god Molech",
+      "Planting fields"
+    ],
+    "prompt" : "Which practice did God forbid in Leviticus 18:21? (18:21)",
+    "reference" : "Leviticus 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Justice in business reflects God's character.",
+    "options" : [
+      "Double weights",
+      "Whatever price the seller wants",
+      "No measures at all",
+      "Honest weights, measures and scales"
+    ],
+    "prompt" : "What did God require in trade? (19:35-36)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God provides for the poor through the generosity of others.",
+    "options" : [
+      "Sell them",
+      "Burn them",
+      "Leave them for the poor and the sojourner",
+      "Plant them with gold"
+    ],
+    "prompt" : "What did God command about the edges of the field at harvest? (19:9-10)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Honest confrontation is better than hidden hatred.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God told Israel not to hate their brother in their heart, but to rebuke him honestly. (19:17)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's love extended to the foreigner.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The sojourner living among you was to be treated as a native among you. (19:34)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Honesty is part of holiness in daily life.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said, \"You shall not steal, nor deal falsely, nor lie to one another.\" (19:11)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God's people protect the vulnerable.",
+    "options" : [
+      "Ignore them",
+      "Mock them",
+      "Do not curse the deaf or put a stumbling block before the blind",
+      "Make them work first"
+    ],
+    "prompt" : "What is the right way to treat the deaf and the blind? (19:14)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Respect for elders honors God.",
+    "options" : [
+      "elderly"
+    ],
+    "prompt" : "You shall stand up before the gray head and honor the ____. (19:32)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's love for His people shapes how they love others.",
+    "options" : [
+      "neighbor"
+    ],
+    "prompt" : "\"You shall love your ____ as yourself: I am the LORD.\" (19:18)",
+    "reference" : "Leviticus 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Holiness marks Israel's identity as God's own people.",
+    "options" : [
+      "He chose them for their wealth",
+      "He had separated them so they would be His own",
+      "He was ashamed of them",
+      "He forgot them"
+    ],
+    "prompt" : "What did God say about separating Israel from the peoples? (20:24-26)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God calls His people to seek Him alone.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God forbade His people to turn to mediums and spiritists for guidance. (20:6)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Holiness is both God's gift and Israel's calling.",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "\"You shall consecrate yourselves and be ____, for I am the LORD your God.\" (20:7)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's holiness sets the pattern for His people.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said, \"You shall be holy to me, for I the LORD am holy.\" (20:26)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's judgment on sin is just.",
+    "options" : [
+      "The land was poor",
+      "Egypt demanded it",
+      "They had done these abominations",
+      "Israel asked for it"
+    ],
+    "prompt" : "What reason did God give for removing the nations before Israel? (20:23)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Dishonor to parents was taken seriously.",
+    "options" : [
+      "death"
+    ],
+    "prompt" : "If a man curses his father or his mother, he shall surely be put to ____. (20:9)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "This describes a judicial penalty in Israel's covenant law. It gives no private person permission to use violence against a family member.",
+    "options" : [
+      "A tax exemption",
+      "A promotion",
+      "No penalty",
+      "Death"
+    ],
+    "prompt" : "What penalty does this ancient Israelite law prescribe for cursing one's father or mother? (20:9)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Obedience secured Israel's place in the land.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD told Israel to keep His statutes and rules so that the land would not spew them out. (20:22)",
+    "reference" : "Leviticus 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "A blemish barred him from presenting offerings at the altar.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A priest with a bodily blemish could still present the offerings to the LORD at the altar. (21:21)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Priests had special holiness, yet family love still mattered.",
+    "options" : [
+      "sister"
+    ],
+    "prompt" : "Priests were not to make themselves unclean for the dead, except for close family such as a mother, father, son, daughter, brother or unmarried ____. (21:1-3)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The restriction concerns altar service; verse 22 permits him to eat holy food. It is not a statement that disability removes a person's human dignity.",
+    "options" : [
+      "Presenting offerings at the altar",
+      "Belonging to Aaron's family",
+      "Eating all holy food",
+      "Living among Israel"
+    ],
+    "prompt" : "What service was restricted for a descendant of Aaron with one of the listed physical conditions? (21:17-23)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "A blemish barred the priest from offering, but not from holy food.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A priest with a blemish could not come near the altar to offer food to God, but could still eat the holy food. (21:21-22)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Holiness set the priests apart in visible ways.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The priests were not to shave their heads or cut the corners of their beards. (21:5)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God sets His people apart for Himself.",
+    "options" : [
+      "sanctify"
+    ],
+    "prompt" : "The LORD said, \"I am the LORD who ____ you.\" (21:8)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "These verses concern the high priest specifically. The requirements for other priests are given separately in verses 7-9.",
+    "options" : [
+      "A foreign slave",
+      "A king's widow",
+      "Any woman without restriction",
+      "A virgin from his own people"
+    ],
+    "prompt" : "Whom was the high priest instructed to marry? (21:10, 13-14)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's holy work requires holy workers.",
+    "options" : [
+      "Priests were wealthy",
+      "Priests ruled the people",
+      "Priests were chosen for their beauty",
+      "The offerings are God's food and He makes them holy"
+    ],
+    "prompt" : "Why did God require the priests to be holy? (21:6-8)",
+    "reference" : "Leviticus 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Offerings were ordered with care.",
+    "options" : [
+      "Born in the wilderness",
+      "Ten years old",
+      "Eight days old or more",
+      "Blind"
+    ],
+    "prompt" : "What was the age requirement for an animal offered as a sacrifice? (22:27)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Uncleanness required washing and waiting.",
+    "options" : [
+      "evening"
+    ],
+    "prompt" : "Priests who were unclean were not to eat the holy things until ____. (22:6-7)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Thanksgiving was a joyful meal eaten before God.",
+    "options" : [
+      "It was eaten the same day, with none left until morning",
+      "It was sold",
+      "It was burned in the wilderness",
+      "Nothing was done with it"
+    ],
+    "prompt" : "What had to happen to a thank offering? (22:29-30)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God asks for the best from His people.",
+    "options" : [
+      "maimed"
+    ],
+    "prompt" : "You shall not offer to the LORD an animal that is blind, injured, or ____. (22:22)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The text distinguishes eligible household members from visitors and hired workers and gives conditions for a priest's daughter.",
+    "options" : [
+      "Every hired worker",
+      "Eligible members of his household, including those born there or bought",
+      "Every foreign guest",
+      "Every visitor"
+    ],
+    "prompt" : "Who, besides a priest, could eat the sacred food under these rules? (22:10-13)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Offerings were to be whole and without defect.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Animals with a blemish could not be offered to the LORD. (22:20)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's holiness is tied to His act of deliverance.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said, \"I am the LORD who sanctifies you, who brought you out of the land of Egypt to be your God.\" (22:32-33)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 22,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Thanksgiving was to be offered with a willing heart.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A thank offering was to be offered so that it would be accepted. (22:29)",
+    "reference" : "Leviticus 22",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God's people gather before Him for rest and worship.",
+    "options" : [
+      "convocation"
+    ],
+    "prompt" : "The seventh day is a Sabbath of solemn rest, a holy ____. (23:3)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The day called for humility and rest before God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Leviticus 23 said that the Day of Atonement was to be a day of self-denial. (23:27)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Israel's temporary dwelling was a reminder of God's provision.",
+    "options" : [
+      "To hide from enemies",
+      "To punish the poor",
+      "To remember that God made them dwell in booths when He brought them out of Egypt",
+      "To sell goods"
+    ],
+    "prompt" : "Why were the Israelites to live in booths for seven days? (23:42-43)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Passover marked God's deliverance from Egypt.",
+    "options" : [
+      "Booths",
+      "Trumpets",
+      "Weeks",
+      "Passover"
+    ],
+    "prompt" : "Which feast was held on the fourteenth day of the first month? (23:5)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The first harvest was given back to God.",
+    "options" : [
+      "A golden lamp",
+      "A trumpet",
+      "A bundle of ash",
+      "A sheaf of the first harvest"
+    ],
+    "prompt" : "What did the priest wave before the LORD at the Feast of Firstfruits? (23:10-11)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The feasts belonged to the LORD, not to human calendars.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said the feasts were His appointed feasts, to be proclaimed as holy convocations. (23:2)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's people remembered their hasty departure from Egypt.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Feast of Unleavened Bread was to last seven days. (23:6)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 23,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Trumpets called Israel to remember and rest before God.",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "The Feast of Trumpets was a day of solemn ____ and a memorial blowing of trumpets. (23:24)",
+    "reference" : "Leviticus 23",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The bread was a standing sign of God's covenant with His people.",
+    "options" : [
+      "pure"
+    ],
+    "prompt" : "Take fine flour and bake twelve cakes, and set them in two rows on the ____ table before the LORD. (24:6)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's people sought God's word before judgment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Moses put the blasphemer under guard until the LORD's decision was made known. (24:12)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Justice is measured and proportionate.",
+    "options" : [
+      "Exile",
+      "Like for like",
+      "Double payment",
+      "Forgiveness only"
+    ],
+    "prompt" : "What measure of justice did the law give for injury? (24:19-20)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's table was served with regular faithfulness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The bread of the Presence was to be replaced every Sabbath. (24:8)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The holiness of God's name is protected in the community.",
+    "options" : [
+      "He was made a priest",
+      "He was forgiven at once",
+      "He was brought out and stoned by the congregation",
+      "He was sent to Egypt"
+    ],
+    "prompt" : "What happened to the son of the Israelite woman who blasphemed the Name? (24:10-14)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Light was kept before the LORD continually.",
+    "options" : [
+      "Incense",
+      "A candle at the king's house",
+      "The lamp",
+      "The altar fire on the mountain"
+    ],
+    "prompt" : "What was to be kept burning continually outside the veil? (24:2-3)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The rule concerns taking human life, not every act of striking someone. The separate laws about bodily injury appear in verses 19-20.",
+    "options" : [
+      "death"
+    ],
+    "prompt" : "Under this law, someone who intentionally kills a human being is to be put to ____. (24:17, 21)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 24,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "God's name is holy, and blasphemy is taken seriously.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A man who blasphemed the name of the LORD was to be brought out of the camp and stoned. (24:14)",
+    "reference" : "Leviticus 24",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "Generosity to the poor reflects God's mercy.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The Israelites were not to take interest from a poor brother. (25:36-37)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Ownership belonged to God, and families were stewards.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The land was not to be sold permanently, for the land belongs to God. (25:23)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "The jubilee restored families and land to their place.",
+    "options" : [
+      "A tax",
+      "A new king",
+      "Liberty throughout the land",
+      "War"
+    ],
+    "prompt" : "In the fiftieth year, what was the trumpet to proclaim? (25:9-10)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God's people care for the poor among them.",
+    "options" : [
+      "sojourner"
+    ],
+    "prompt" : "If your brother becomes poor and cannot support himself, you shall help him, as you would a stranger or ____. (25:35)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "Atonement and liberty were proclaimed together.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The jubilee year was to be proclaimed on the Day of Atonement. (25:9)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Israel's freedom reflects God's deliverance.",
+    "options" : [
+      "Kings demand it",
+      "Land is cheap",
+      "Priests decide it",
+      "I brought you out of Egypt and you are My servants"
+    ],
+    "prompt" : "What reason does God give for the rules in Leviticus 25? (25:38, 25:55)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "God gave the land rest as part of His care.",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "In the sabbath year the land was to have a sabbath of ____ to the LORD. (25:4)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 25,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "God protects families from permanent loss.",
+    "options" : [
+      "A relative could buy back the property",
+      "It was given to the priests",
+      "It was burned",
+      "The king took it"
+    ],
+    "prompt" : "What was the purpose of the right of redemption when a family member became poor? (25:25)",
+    "reference" : "Leviticus 25",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "God's covenant faithfulness holds even in judgment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God said He would not abhor His people so as to destroy them utterly or break His covenant. (26:44)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's sabbath rest for the land is honored even in exile.",
+    "options" : [
+      "The land would become a city",
+      "The land would enjoy its sabbaths",
+      "The land would be sold",
+      "The land would be destroyed forever"
+    ],
+    "prompt" : "What did God say about the land while His people were exiled? (26:34-35)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "The covenant relationship is God's promise.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God promised, \"I will be your God, and you shall be My people.\" (26:12)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "God takes His covenant seriously.",
+    "options" : [
+      "breaking"
+    ],
+    "prompt" : "If you despise My statutes and abhor My rules, I will bring a sword upon you to avenge the ____ of My covenant. (26:25)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "God's presence is the greatest blessing.",
+    "options" : [
+      "Give them gold",
+      "Set His dwelling among them and walk among them",
+      "Make them kings of the world",
+      "Send them back to Egypt"
+    ],
+    "prompt" : "What did God promise to do if His people walked in His statutes? (26:11-12)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "God's faithfulness remains even in judgment.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "God promised to remember His covenant with Jacob, with Isaac and with Abraham, even in exile. (26:42)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Disobedience brings the consequences of the covenant.",
+    "options" : [
+      "Make them wealthy",
+      "Set His face against them so they were defeated",
+      "Forgive them at once",
+      "Ignore them"
+    ],
+    "prompt" : "What did God say He would do if His people refused to obey? (26:14-17)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 26,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Obedience brings blessing to the land.",
+    "options" : [
+      "produce"
+    ],
+    "prompt" : "If you walk in My statutes and keep My commandments, I will give you rain in its season, and the land shall yield its ____. (26:4)",
+    "reference" : "Leviticus 26",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Vows were valued with fairness and care.",
+    "options" : [
+      "shekels"
+    ],
+    "prompt" : "If a man vows the value of a male aged twenty to sixty, the value is fifty ____ of silver. (27:3)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "Redemption required paying the value plus an added fifth.",
+    "options" : [
+      "fifth"
+    ],
+    "prompt" : "If a man consecrates his house as holy to the LORD, the owner may redeem it by adding a ____ to its value. (27:15)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Even the flock was counted holy to God.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Every tenth animal that passes under the shepherd's rod is holy to the LORD. (27:32)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The firstborn already belonged to the LORD and could not be vowed as a gift.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A firstborn animal could be consecrated again as a vow, since it was already the LORD's. (27:26)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The LORD gave these rules to Moses at Mount Sinai.",
+    "options" : [
+      "They are the priests' customs",
+      "They come from Egypt",
+      "They are the king's laws",
+      "These are the commandments the LORD gave to Moses on Mount Sinai"
+    ],
+    "prompt" : "What closing reason does Leviticus 27 give for these holy things? (27:34)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "Devoted gifts were set apart completely.",
+    "options" : [
+      "A devoted thing, which is most holy to the LORD",
+      "A field",
+      "A cow",
+      "A house"
+    ],
+    "prompt" : "What could not be sold or redeemed once it was devoted to the LORD? (27:28)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "hard",
+    "format" : "trueFalse",
+    "lesson" : "The firstborn already belonged to the LORD, whereas a house could be dedicated and redeemed under the stated terms.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A firstborn ox or sheep could be presented as a new voluntary dedication in the same way as a house. (27:14-15, 26)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "leviticus",
+    "chapter" : 27,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Tithes acknowledge that everything belongs to God.",
+    "options" : [
+      "It is burned",
+      "It is sold to the king",
+      "It is kept by the poor",
+      "It belongs to the LORD and is holy"
+    ],
+    "prompt" : "What was to be done with a tithe of the land and of the trees? (27:30)",
+    "reference" : "Leviticus 27",
+    "reviewed" : true,
+    "translation" : "Course"
+  }
+]

@@ -1,0 +1,2753 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 1:14 uses grace: “… as of the one and only Son of the Father, full of grace and truth.”",
+    "options" : [
+      "grace",
+      "Galilee",
+      "ones",
+      "declared"
+    ],
+    "prompt" : "Which word completes “… as of the one and only Son of the Father, full of ______ and truth.”? (1:14, WEB)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The Word is with God, is God, and becomes flesh. John joins divine identity with genuine human life. The course's Christology preserves both without describing Jesus as merely a created messenger or treating His humanity as an illusion.",
+    "options" : [
+      "The Word is described as a mere illusion of flesh.",
+      "Being with God is said to mean being unrelated to God.",
+      "The Word is with God, is God, and becomes flesh.",
+      "The Word begins to exist only at Bethlehem."
+    ],
+    "prompt" : "What must be held together in the description of the Word? (1:1-3, 14)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… him, and said, \"Behold, the Lamb of God, who takes away the sin of the world!”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… him, and said, \"Behold, the Lamb of God, who takes away the sin of the world!” (1:29, WEB)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 33 reads “I didn't recognize him, but he who sent me to baptize in water, he said to me, 'On whomever you will see the Spirit descending, and …”; verse 40 reads “One of the two who heard John, and followed him, was Andrew, Simon Peter's brother.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Simon; water",
+      "water; Simon",
+      "water; Naphtali",
+      "grain; Simon"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “I didn't recognize him, but he who sent me to baptize in ______, he said to me, 'On whomever you will see the Spirit descending, and …” (1:33); “One of the two who heard John, and followed him, was Andrew, ______ Peter's brother.” (1:40, WEB)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “The light shines in the darkness, and the darkness hasn't overcome it.”",
+    "options" : [
+      "darkness"
+    ],
+    "prompt" : "Complete the quotation: “The light shines in the darkness, and the ____ hasn't overcome it.” (1:5, WEB)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “This is John's testimony, when the Jews sent priests and Levites from Jerusalem to ask him, \"Who are you?\"” The missing terms belong in that order.",
+    "options" : [
+      "priests Jerusalem"
+    ],
+    "prompt" : "Supply the missing words in order: “This is John's testimony, when the Jews sent ____ and Levites from to ask him, \"Who are you?\"” (1:19, WEB)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Isaiah: “… crying in the wilderness, 'Make straight the way of the Lord,' as Isaiah the prophet said.\"”",
+    "options" : [
+      "Adam",
+      "Isaiah",
+      "Habakkuk",
+      "Demas"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… crying in the wilderness, 'Make straight the way of the Lord,' as ______ the prophet said.\"”? (1:23, WEB)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The true light that enlightens everyone was coming into the world.”",
+    "options" : [
+      "light"
+    ],
+    "prompt" : "Complete the quotation: “The true ____ that enlightens everyone was coming into the world.” (1:9, WEB)",
+    "reference" : "John 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He made a whip of cords, and threw all out of the temple, both the sheep and the oxen; and he poured out the changers' money, …” It says temple, not lampstand.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He made a whip of cords, and threw all out of the lampstand, both the sheep and the oxen; and he poured out the changers' money, …” (2:15, WEB)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 2:7 uses Jesus: “Jesus said to them, \"Fill the water pots with water.\" They filled them up to the brim.”",
+    "options" : [
+      "Aristarchus",
+      "Elihu",
+      "Jesus",
+      "Thaddaeus"
+    ],
+    "prompt" : "Which word completes “______ said to them, \"Fill the water pots with water.\" They filled them up to the brim.”? (2:7, WEB)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Capernaum: “After this, he went down to Capernaum, he, and his mother, his brothers, and his disciples; and they stayed there a few days.”",
+    "options" : [
+      "Troas",
+      "Persia",
+      "Capernaum",
+      "Colossae"
+    ],
+    "prompt" : "Which detail belongs in this passage: “After this, he went down to ______, he, and his mother, his brothers, and his disciples; and they stayed there a few days.”? (2:12, WEB)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He was speaking about the temple of His body. The narrator supplies the interpretation and connects the disciples' later understanding with the resurrection. That explanation should guide the reading before other symbolic meanings are proposed.",
+    "options" : [
+      "He is referring only to a Roman palace.",
+      "The narrator says the disciples never remembered the saying.",
+      "He was speaking about the temple of His body.",
+      "Jesus is giving instructions to demolish every synagogue."
+    ],
+    "prompt" : "How does the narrator explain Jesus' saying about destroying and raising the temple? (2:18-22)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “The third day, there was a marriage in Cana of Galilee. Jesus' mother was there.”",
+    "options" : [
+      "Cana"
+    ],
+    "prompt" : "Complete the quotation: “The third day, there was a marriage in ____ of Galilee. Jesus' mother was there.” (2:1, WEB)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now there were six water pots of stone set there after the Jews' manner of purifying, containing two or three metretes apiece.”",
+    "options" : [
+      "water"
+    ],
+    "prompt" : "Complete the quotation: “Now there were six ____ pots of stone set there after the Jews' manner of purifying, containing two or three metretes apiece.” (2:6, WEB)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… from the dead, his disciples remembered that he said this, and they believed the Scripture, and the word which Jesus had said.”; the second reads “and because he didn't need for anyone to testify concerning man; for he himself knew what was in man.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "believed need"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… from the dead, his disciples remembered that he said this, and they ____ the Scripture, and the word which Jesus had said.” (2:22); “and because he didn't for anyone to testify concerning man; for he himself knew what was in man.” (2:25, WEB)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the good wine first, and when the guests have drunk freely, then that which is worse. You have kept the good wine until now!\"” The missing terms belong in that order.",
+    "options" : [
+      "first wine"
+    ],
+    "prompt" : "Supply the missing words in order: “… the good wine ____, and when the guests have drunk freely, then that which is worse. You have kept the good until now!\"” (2:10, WEB)",
+    "reference" : "John 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies believes: “He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the …”",
+    "options" : [
+      "wants",
+      "believes",
+      "Moses",
+      "wilderness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “He who ______ in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the …”? (3:18, WEB)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Entry into God's kingdom requires new life associated with the Spirit. Christians differ over the precise reference to water, including baptismal and cleansing readings. The passage clearly resists treating spiritual life as something produced merely by natural ancestry or human control.",
+    "options" : [
+      "Natural ancestry alone guarantees entry.",
+      "The Spirit is under Nicodemus' control.",
+      "Entry into God's kingdom requires new life associated with the Spirit.",
+      "The passage settles every later dispute about baptismal practice explicitly."
+    ],
+    "prompt" : "What is clear in Jesus' teaching about birth from above despite debate about water and Spirit? (3:3-8)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “As Moses lifted up the serpent in the wilderness, even so must the Son of Man be lifted up,” The missing terms belong in that order.",
+    "options" : [
+      "Moses lifted"
+    ],
+    "prompt" : "Supply the missing words in order: “As ____ lifted up the serpent in the wilderness, even so must the Son of Man be up,” (3:14, WEB)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Jesus answered, \"Most assuredly I tell you, unless one is born of water and spirit, he can't enter into the Kingdom of God!”",
+    "options" : [
+      "water"
+    ],
+    "prompt" : "Complete the quotation: “Jesus answered, \"Most assuredly I tell you, unless one is born of ____ and spirit, he can't enter into the Kingdom of God!” (3:5, WEB)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.” (3:20, WEB)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 3:10 uses Israel: “Jesus answered him, \"Are you the teacher of Israel, and don't understand these things?”",
+    "options" : [
+      "Jonathan",
+      "Israel",
+      "Reuben",
+      "Jacob"
+    ],
+    "prompt" : "Which word completes “Jesus answered him, \"Are you the teacher of ______, and don't understand these things?”? (3:10, WEB)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Nicodemus said to him, \"How can a man be born when he is old? Can he enter a second time into his mother's womb, and be …”",
+    "options" : [
+      "Nicodemus"
+    ],
+    "prompt" : "Complete the quotation: “____ said to him, \"How can a man be born when he is old? Can he enter a second time into his mother's womb, and be …” (3:4, WEB)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to the Earth, and speaks of the Earth. He who comes from heaven is above all.”; the second reads “One who believes in the Son has eternal life, but one who disobeys the Son won't see life, but the wrath of God remains on him.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "heaven life"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to the Earth, and speaks of the Earth. He who comes from ____ is above all.” (3:31); “One who believes in the Son has eternal , but one who disobeys the Son won't see life, but the wrath of God remains on him.\"” (3:36, WEB)",
+    "reference" : "John 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He points to worship of the Father in spirit and truth. The conversation moves beyond competition between two locations while still naming the story of salvation. The course distinguishes living relationship with God from treating a building as God's limit.",
+    "options" : [
+      "He points to worship of the Father in spirit and truth.",
+      "Worship is reduced to possession of a building.",
+      "God can hear only on one mountain.",
+      "Truth is declared irrelevant to worship."
+    ],
+    "prompt" : "How does Jesus' answer reshape the question about the right worship site? (4:19-24)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… that you, being a Jew, ask for a drink from me, a Samaritan woman?\" (For Jews have no dealings with Samaritans.)”",
+    "options" : [
+      "Samaritan"
+    ],
+    "prompt" : "Complete the quotation: “… that you, being a Jew, ask for a drink from me, a ____ woman?\" (For Jews have no dealings with Samaritans.)” (4:9, WEB)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… therefore again to Cana of Galilee, where he made the water into wine. There was a certain nobleman whose son was sick at Capernaum.”; the second reads “… that hour in which Jesus said to him, \"Your son lives.\" He believed, as did his whole house.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "wine believed"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… therefore again to Cana of Galilee, where he made the water into ____. There was a certain nobleman whose son was sick at Capernaum.” (4:46); “… that hour in which Jesus said to him, \"Your son lives.\" He , as did his whole house.” (4:53, WEB)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “In the meanwhile, the disciples urged him, saying, \"Rabbi, eat.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “In the meanwhile, the disciples urged him, saying, \"Rabbi, eat.\"” (4:31, WEB)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… Sychar, near the parcel of ground that Jacob gave to his son, Joseph.”",
+    "options" : [
+      "Joseph"
+    ],
+    "prompt" : "Complete the quotation: “… Sychar, near the parcel of ground that Jacob gave to his son, ____.” (4:5, WEB)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Christ: “… said to him, \"I know that Messiah comes,\" (he who is called Christ). \"When he has come, he will declare to us all things.\"”",
+    "options" : [
+      "Ezekiel",
+      "Daniel",
+      "Tabitha",
+      "Christ"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… said to him, \"I know that Messiah comes,\" (he who is called ______). \"When he has come, he will declare to us all things.\"”? (4:25, WEB)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 4:14 uses water: “but whoever drinks of the water that I will give him will never thirst again; but the water that I will give him will become in …”",
+    "options" : [
+      "water",
+      "flour",
+      "honey",
+      "grain"
+    ],
+    "prompt" : "Which word completes “but whoever drinks of the ______ that I will give him will never thirst again; but the water that I will give him will become in …”? (4:14, WEB)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Our fathers worshiped in this mountain, and you Jews say that in Jerusalem is the place where people ought to worship.\"” The missing terms belong in that order.",
+    "options" : [
+      "mountain Jerusalem"
+    ],
+    "prompt" : "Supply the missing words in order: “Our fathers worshiped in this ____, and you Jews say that in is the place where people ought to worship.\"” (4:20, WEB)",
+    "reference" : "John 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 5:13 uses Jesus: “But he who was healed didn't know who it was, for Jesus had withdrawn, a crowd being in the place.”",
+    "options" : [
+      "Caiaphas",
+      "Diotrephes",
+      "Job",
+      "Jesus"
+    ],
+    "prompt" : "Which word completes “But he who was healed didn't know who it was, for ______ had withdrawn, a crowd being in the place.”? (5:13, WEB)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The Son acts in unity with the Father and is to receive honor corresponding to the Father. The passage speaks both of relationship and shared divine action. The course's Trinitarian reading should not collapse Father and Son into one person or turn their distinction into unrelated rival gods.",
+    "options" : [
+      "The Son is commanded never to receive honor.",
+      "The Father and Son pursue opposing purposes.",
+      "The Son acts in unity with the Father and is to receive honor corresponding to the Father.",
+      "Relationship means the Father and Son are the same person."
+    ],
+    "prompt" : "How are the Son's works and His relationship to the Father presented together? (5:19-23)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… I have no one to put me into the pool when the water is stirred up, but while I'm coming, another steps down before me.\"”",
+    "options" : [
+      "water"
+    ],
+    "prompt" : "Complete the quotation: “… I have no one to put me into the pool when the ____ is stirred up, but while I'm coming, another steps down before me.\"” (5:7, WEB)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… therefore the Jews sought all the more to kill him, because he not only broke the Sabbath, but also called God his own Father, making himself …” The missing terms belong in that order.",
+    "options" : [
+      "kill Sabbath"
+    ],
+    "prompt" : "Supply the missing words in order: “… therefore the Jews sought all the more to ____ him, because he not only broke the , but also called God his own Father, making himself …” (5:18, WEB)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… gate, there is a pool, which is called in Hebrew, \"Bethesda,\" having five porches.”",
+    "options" : [
+      "five"
+    ],
+    "prompt" : "Complete the quotation: “… gate, there is a pool, which is called in Hebrew, \"Bethesda,\" having ____ porches.” (5:2, WEB)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies honor: “… honor the Son, even as they honor the Father. He who doesn't honor the Son doesn't honor the Father who sent him.”",
+    "options" : [
+      "honor",
+      "fear",
+      "justice",
+      "understanding"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… honor the Son, even as they honor the Father. He who doesn't ______ the Son doesn't honor the Father who sent him.”? (5:23, WEB)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 32 reads “It is another who testifies about me. I know that the testimony which he testifies about me is true.”; verse 36 reads “But the testimony which I have is greater than that of John, for the works which the Father gave me to accomplish, the very works that …”. These establish the first and second answers respectively.",
+    "options" : [
+      "commandments; John",
+      "testimony; John",
+      "John; testimony",
+      "testimony; Matthew"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “It is another who testifies about me. I know that the ______ which he testifies about me is true.” (5:32); “But the testimony which I have is greater than that of ______, for the works which the Father gave me to accomplish, the very works that …” (5:36, WEB)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He also gave him authority to execute judgment, because he is a son of man.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He also gave him authority to execute judgment, because he is a son of man.” (5:27, WEB)",
+    "reference" : "John 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Jesus answered them, \"Most assuredly I tell you, you seek me, not because you saw signs, but because you ate of the loaves, and were filled.” The missing terms belong in that order.",
+    "options" : [
+      "Jesus loaves"
+    ],
+    "prompt" : "Supply the missing words in order: “____ answered them, \"Most assuredly I tell you, you seek me, not because you saw signs, but because you ate of the , and were filled.” (6:26, WEB)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Jesus presents Himself as the source of life and calls people to come to and believe in Him. Christians differ about the passage's relation to the Eucharist. A quiz should distinguish that debate from the repeated claim that life is found in Jesus' self-giving.",
+    "options" : [
+      "Jesus presents Himself as the source of life and calls people to come to and believe in Him.",
+      "Physical bread alone is said to remove the need for faith.",
+      "The passage promises life apart from Jesus.",
+      "All traditions explain its sacramental language identically."
+    ],
+    "prompt" : "What remains central across Christian interpretations of the bread-of-life teaching? (6:35, 47-58)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Moses: “Jesus therefore said to them, \"Most assuredly, I tell you, it wasn't Moses who gave you the bread out of heaven, but my Father gives you …”",
+    "options" : [
+      "Caleb",
+      "Diotrephes",
+      "Moses",
+      "Phoebe"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Jesus therefore said to them, \"Most assuredly, I tell you, it wasn't ______ who gave you the bread out of heaven, but my Father gives you …”? (6:32, WEB)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But Jesus knowing in himself that his disciples murmured at this, said to them, \"Does this cause you to stumble?”; the second reads “Simon Peter answered him, \"Lord, to whom would we go? You have the words of eternal life.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "murmured Simon"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But Jesus knowing in himself that his disciples ____ at this, said to them, \"Does this cause you to stumble?” (6:61); “ Peter answered him, \"Lord, to whom would we go? You have the words of eternal life.” (6:68, WEB)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… everyone who sees the Son, and believes in him, should have eternal life; and I will raise him up at the last day.\"” It says life, not thanksgiving.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… everyone who sees the Son, and believes in him, should have eternal thanksgiving; and I will raise him up at the last day.\"” (6:40, WEB)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… was coming to him, said to Philip, \"Where are we to buy bread, that these may eat?\"”",
+    "options" : [
+      "bread"
+    ],
+    "prompt" : "Complete the quotation: “… was coming to him, said to Philip, \"Where are we to buy ____, that these may eat?\"” (6:5, WEB)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Jesus took the loaves; and having given thanks, he distributed to the disciples, and the disciples to those who were sitting down; likewise also of the …”",
+    "options" : [
+      "disciples"
+    ],
+    "prompt" : "Complete the quotation: “Jesus took the loaves; and having given thanks, he distributed to the ____, and the disciples to those who were sitting down; likewise also of the …” (6:11, WEB)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 6:19 uses five: “When therefore they had rowed about twenty-five or thirty stadia, they saw Jesus walking on the sea, and drawing near to the boat; and they were …”",
+    "options" : [
+      "third",
+      "eleven",
+      "twelfth",
+      "five"
+    ],
+    "prompt" : "Which word completes “When therefore they had rowed about twenty-______ or thirty stadia, they saw Jesus walking on the sea, and drawing near to the boat; and they were …”? (6:19, WEB)",
+    "reference" : "John 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The officers therefore came to the chief priests and Pharisees, and they said to them, \"Why didn't you bring him?\"”; the second reads “\"Does our law judge a man, unless it first hears from him personally and knows what he does?\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "priests first"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The officers therefore came to the chief ____ and Pharisees, and they said to them, \"Why didn't you bring him?\"” (7:45); “\"Does our law judge a man, unless it hears from him personally and knows what he does?\"” (7:51, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For no one does anything in secret, and himself seeks to be known openly. If you do these things, reveal yourself to the world.\"”",
+    "options" : [
+      "secret"
+    ],
+    "prompt" : "Complete the quotation: “For no one does anything in ____, and himself seeks to be known openly. If you do these things, reveal yourself to the world.\"” (7:4, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 7:14 uses temple: “… was now the midst of the feast, Jesus went up into the temple and taught.”",
+    "options" : [
+      "temple",
+      "tabernacle",
+      "book",
+      "wall"
+    ],
+    "prompt" : "Which word completes “… was now the midst of the feast, Jesus went up into the ______ and taught.”? (7:14, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “But of the multitude, many believed in him. They said, \"When the Christ comes, he won't do more signs than those which this man has done, …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “But of the multitude, many believed in him. They said, \"When the Christ comes, he won't do more signs than those which this man has done, …” (7:31, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… feast. I am not yet going up to this feast, because my time is not yet fulfilled.\"”",
+    "options" : [
+      "time"
+    ],
+    "prompt" : "Complete the quotation: “… feast. I am not yet going up to this feast, because my ____ is not yet fulfilled.\"” (7:8, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Didn't Moses give you the law, and yet none of you keeps the law? Why do you seek to kill me?\"” The missing terms belong in that order.",
+    "options" : [
+      "Moses law"
+    ],
+    "prompt" : "Supply the missing words in order: “Didn't ____ give you the , and yet none of you keeps the law? Why do you seek to kill me?\"” (7:19, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 37 reads “Now on the last and greatest day of the feast, Jesus stood and cried out, \"If anyone is thirsty, let him come to me and drink!”; verse 42 reads “… said that the Christ comes of the seed of David, and from Bethlehem, the village where David was?\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jesus; Tarshish",
+      "Elisha; Bethlehem",
+      "Jesus; Bethlehem",
+      "Bethlehem; Jesus"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Now on the last and greatest day of the feast, ______ stood and cried out, \"If anyone is thirsty, let him come to me and drink!” (7:37); “… said that the Christ comes of the seed of David, and from ______, the village where David was?\"” (7:42, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Sabbath: “… with me, because I made a man every bit whole on the Sabbath?”",
+    "options" : [
+      "evening",
+      "Sabbath",
+      "north",
+      "morning"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… with me, because I made a man every bit whole on the ______?”? (7:23, WEB)",
+    "reference" : "John 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Jesus answered them, \"Most assuredly I tell you, everyone who commits sin is the bondservant of sin.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Jesus answered them, \"Most assuredly I tell you, everyone who commits sin is the bondservant of sin.” (8:34, WEB)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It presents a claim about His identity that His opponents treat as profoundly offensive. The Gospel Worldview course connects the I am wording with Jesus' divine identity. Read it within John's larger witness, not as an isolated claim that every use of the words I am has the same meaning.",
+    "options" : [
+      "The audience treats the statement as an ordinary age calculation.",
+      "It presents a claim about His identity that His opponents treat as profoundly offensive.",
+      "The statement has no connection to the dispute about His identity.",
+      "Jesus says His existence began after Abraham's."
+    ],
+    "prompt" : "How does Jesus' statement before Abraham was belong to the chapter's conflict? (8:48-59)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 8:17 uses two: “It's also written in your law that the testimony of two people is valid.”",
+    "options" : [
+      "fourteen",
+      "two",
+      "ninth",
+      "sixteen"
+    ],
+    "prompt" : "Which word completes “It's also written in your law that the testimony of ______ people is valid.”? (8:17, WEB)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Father: “… I am he, and I do nothing of myself, but as my Father taught me, I say these things.”",
+    "options" : [
+      "servants",
+      "rulers",
+      "Father",
+      "mother"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… I am he, and I do nothing of myself, but as my ______ taught me, I say these things.”? (8:28, WEB)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The Pharisees therefore said to him, \"You testify about yourself. Your testimony is not valid.\"”",
+    "options" : [
+      "testimony"
+    ],
+    "prompt" : "Complete the quotation: “The Pharisees therefore said to him, \"You testify about yourself. Your ____ is not valid.\"” (8:13, WEB)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 39 reads “… them, \"If you were Abraham's children, you would do the works of Abraham.”; verse 44 reads “… the beginning, and doesn't stand in the truth, because there is no truth in him. When he speaks a lie, he speaks on his own; for …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Abraham; truth",
+      "truth; Abraham",
+      "Stephen; truth",
+      "Abraham; glory"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… them, \"If you were Abraham's children, you would do the works of ______.” (8:39); “… the beginning, and doesn't stand in the truth, because there is no ______ in him. When he speaks a lie, he speaks on his own; for …” (8:44, WEB)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Jesus said therefore again to them, \"I am going away, and you will seek me, and you will die in your sins. Where I go, you …” The missing terms belong in that order.",
+    "options" : [
+      "Jesus sins"
+    ],
+    "prompt" : "Supply the missing words in order: “____ said therefore again to them, \"I am going away, and you will seek me, and you will die in your . Where I go, you …” (8:21, WEB)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Again, therefore, Jesus spoke to them, saying, \"I am the light of the world. He who follows me will not walk in the darkness, but will …”",
+    "options" : [
+      "light"
+    ],
+    "prompt" : "Complete the quotation: “Again, therefore, Jesus spoke to them, saying, \"I am the ____ of the world. He who follows me will not walk in the darkness, but will …” (8:12, WEB)",
+    "reference" : "John 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Jesus answered, \"Neither did this man sin, nor his parents; but, that the works of God might be revealed in him.”",
+    "options" : [
+      "sin"
+    ],
+    "prompt" : "Complete the quotation: “Jesus answered, \"Neither did this man ____, nor his parents; but, that the works of God might be revealed in him.” (9:3, WEB)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sees: “but how he now sees, we don't know; or who opened his eyes, we don't know. He is of age. Ask him. He will speak for …”",
+    "options" : [
+      "sees",
+      "sinners",
+      "comes",
+      "man's"
+    ],
+    "prompt" : "Which detail belongs in this passage: “but how he now ______, we don't know; or who opened his eyes, we don't know. He is of age. Ask him. He will speak for …”? (9:21, WEB)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… God, because he doesn't keep the Sabbath.\" Others said, \"How can a man who is a sinner do such signs?\" There was division among them.” The missing terms belong in that order.",
+    "options" : [
+      "Sabbath signs"
+    ],
+    "prompt" : "Supply the missing words in order: “… God, because he doesn't keep the ____.\" Others said, \"How can a man who is a sinner do such ?\" There was division among them.” (9:16, WEB)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "That his condition must be explained by a specific sin of either him or his parents. Jesus redirects the disciples toward God's work in the situation. The scene warns against using disability or suffering as automatic evidence of personal moral failure.",
+    "options" : [
+      "Healing is impossible because the man has never seen.",
+      "Every disability proves an unusually serious personal sin.",
+      "That his condition must be explained by a specific sin of either him or his parents.",
+      "The parents are explicitly identified as the sole cause."
+    ],
+    "prompt" : "What assumption does Jesus reject when asked why the man was born blind? (9:1-7)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “… want to hear it again? You don't also want to become his disciples, do you?\"”; verse 32 reads “Since the world began it has never been heard of that anyone opened the eyes of someone born blind.”. These establish the first and second answers respectively.",
+    "options" : [
+      "disciples; anyone",
+      "anyone; disciples",
+      "disciples; pool",
+      "sinners; anyone"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… want to hear it again? You don't also want to become his ______, do you?\"” (9:27); “Since the world began it has never been heard of that ______ opened the eyes of someone born blind.” (9:32, WEB)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… in the pool of Siloam\" (which means \"Sent\"). So he went away, washed, and came back seeing.”",
+    "options" : [
+      "washed"
+    ],
+    "prompt" : "Complete the quotation: “… in the pool of Siloam\" (which means \"Sent\"). So he went away, ____, and came back seeing.” (9:7, WEB)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 9:11 uses Jesus: “He answered, \"A man called Jesus made mud, anointed my eyes, and said to me, 'Go to the pool of Siloam, and wash.' So I went …”",
+    "options" : [
+      "Simon",
+      "Jesus",
+      "Dorcas",
+      "Bildad"
+    ],
+    "prompt" : "Which word completes “He answered, \"A man called ______ made mud, anointed my eyes, and said to me, 'Go to the pool of Siloam, and wash.' So I went …”? (9:11, WEB)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… man who was blind a second time, and said to him, \"Give glory to God. We know that this man is a sinner.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… man who was blind a second time, and said to him, \"Give glory to God. We know that this man is a sinner.\"” (9:24, WEB)",
+    "reference" : "John 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The good shepherd gives His life and keeps His sheep in His and the Father's care. The passage offers strong assurance. Christians debate how this relates to perseverance and warning passages; the question asks about the protective claim actually made here.",
+    "options" : [
+      "The shepherd abandons the sheep at the first danger.",
+      "The sheep are said to be valuable only as wages.",
+      "The Father and Son oppose one another's care.",
+      "The good shepherd gives His life and keeps His sheep in His and the Father's care."
+    ],
+    "prompt" : "What picture explains Jesus' protective care for His people? (10:11-18, 27-30)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies isn't: “… \"These are not the sayings of one possessed by a demon. It isn't possible for a demon to open the eyes of the blind, is it?\"”",
+    "options" : [
+      "lays",
+      "calls",
+      "leaves",
+      "isn't"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… \"These are not the sayings of one possessed by a demon. It ______ possible for a demon to open the eyes of the blind, is it?\"”? (10:21, WEB)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “even as the Father knows me, and I know the Father. I lay down my life for the sheep.” The missing terms belong in that order.",
+    "options" : [
+      "Father life"
+    ],
+    "prompt" : "Supply the missing words in order: “even as the Father knows me, and I know the ____. I lay down my for the sheep.” (10:15, WEB)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… the sheep listen to his voice. He calls his own sheep by name, and leads them out.”",
+    "options" : [
+      "name"
+    ],
+    "prompt" : "Complete the quotation: “… the sheep listen to his voice. He calls his own sheep by ____, and leads them out.” (10:3, WEB)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Jesus therefore said to them again, \"Most assuredly, I tell you, I am the sheep's door.”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “____ therefore said to them again, \"Most assuredly, I tell you, I am the sheep's door.” (10:7, WEB)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… \"How long will you hold us in suspense? If you are the Christ, tell us plainly.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… \"How long will you hold us in suspense? If you are the Christ, tell us plainly.\"” (10:24, WEB)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 28 reads “I give eternal life to them. They will never perish, and no one will snatch them out of my hand.”; verse 33 reads “The Jews answered him, \"We don't stone you for a good work, but for blasphemy: because you, being a man, make yourself God.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "stone; perish",
+      "perish; stone",
+      "Christ; stone",
+      "perish; wood"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “I give eternal life to them. They will never ______, and no one will snatch them out of my hand.” (10:28); “The Jews answered him, \"We don't ______ you for a good work, but for blasphemy: because you, being a man, make yourself God.\"” (10:33, WEB)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 10:12 uses shepherd: “He who is a hired hand, and not a shepherd, who doesn't own the sheep, sees the wolf coming, leaves the sheep, and flees. The wolf …”",
+    "options" : [
+      "daughters",
+      "shepherd",
+      "priests",
+      "priest"
+    ],
+    "prompt" : "Which word completes “He who is a hired hand, and not a ______, who doesn't own the sheep, sees the wolf coming, leaves the sheep, and flees. The wolf …”? (10:12, WEB)",
+    "reference" : "John 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “But when Jesus heard it, he said, \"This sickness is not to death, but for the glory of God, that God's Son may be glorified by …”",
+    "options" : [
+      "death"
+    ],
+    "prompt" : "Complete the quotation: “But when Jesus heard it, he said, \"This sickness is not to ____, but for the glory of God, that God's Son may be glorified by …” (11:4, WEB)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Christ: “… him, \"Yes, Lord. I have come to believe that you are the Christ, God's Son, he who comes into the world.\"”",
+    "options" : [
+      "Noah",
+      "Demas",
+      "Elisha",
+      "Christ"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… him, \"Yes, Lord. I have come to believe that you are the ______, God's Son, he who comes into the world.\"”? (11:27, WEB)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 11:16 uses Thomas: “Thomas therefore, who is called Didymus, said to his fellow disciples, \"Let's go also, that we may die with him.\"”",
+    "options" : [
+      "Thomas",
+      "Ithamar",
+      "Judas",
+      "Titus"
+    ],
+    "prompt" : "Which word completes “______ therefore, who is called Didymus, said to his fellow disciples, \"Let's go also, that we may die with him.\"”? (11:16, WEB)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Therefore when Mary came to where Jesus was, and saw him, she fell down at his feet, saying to him, \"Lord, if you would have been …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Therefore when Mary came to where Jesus was, and saw him, she fell down at his feet, saying to him, \"Lord, if you would have been …” (11:32, WEB)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "They show His real participation in grief alongside His authority to give life. The course holds together Jesus' genuine humanity and divinity. His power does not make His tears unreal, and His tears do not cancel His authority.",
+    "options" : [
+      "They show His real participation in grief alongside His authority to give life.",
+      "His tears prove He cannot act.",
+      "The narrator says Lazarus never entered the tomb.",
+      "His power means His grief must be a pretense."
+    ],
+    "prompt" : "How do Jesus' tears and His raising of Lazarus contribute to the portrait of Him? (11:32-44)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… man walks in the day, he doesn't stumble, because he sees the light of this world.”",
+    "options" : [
+      "light"
+    ],
+    "prompt" : "Complete the quotation: “… man walks in the day, he doesn't stumble, because he sees the ____ of this world.” (11:9, WEB)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Therefore Martha said to Jesus, \"Lord, if you would have been here, my brother wouldn't have died.” The missing terms belong in that order.",
+    "options" : [
+      "Martha Jesus"
+    ],
+    "prompt" : "Supply the missing words in order: “Therefore ____ said to , \"Lord, if you would have been here, my brother wouldn't have died.” (11:21, WEB)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But a certain one of them, Caiaphas, being high priest that year, said to them, \"You know nothing at all,”; the second reads “… the Jews was at hand. Many went up from the country to Jerusalem before the Passover, to purify themselves.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Caiaphas Jerusalem"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But a certain one of them, ____, being high priest that year, said to them, \"You know nothing at all,” (11:49); “… the Jews was at hand. Many went up from the country to before the Passover, to purify themselves.” (11:55, WEB)",
+    "reference" : "John 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 34 reads “The multitude answered him, \"We have heard out of the law that the Christ remains forever. How do you say, 'The Son of Man must be …”; verse 38 reads “that the word of Isaiah the prophet might be fulfilled, which he spoke, \"Lord, who has believed our report? To whom has the arm of the …”. These establish the first and second answers respectively.",
+    "options" : [
+      "law; Simon",
+      "law; Isaiah",
+      "judgments; Isaiah",
+      "Isaiah; law"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The multitude answered him, \"We have heard out of the ______ that the Christ remains forever. How do you say, 'The Son of Man must be …” (12:34); “that the word of ______ the prophet might be fulfilled, which he spoke, \"Lord, who has believed our report? To whom has the arm of the …” (12:38, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Mary, therefore, took a pound of ointment of pure nard, very precious, and anointed the feet of Jesus, and wiped his feet with her hair. The …”",
+    "options" : [
+      "Mary"
+    ],
+    "prompt" : "Complete the quotation: “____, therefore, took a pound of ointment of pure nard, very precious, and anointed the feet of Jesus, and wiped his feet with her hair. The …” (12:3, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “His disciples didn't understand these things at first, but when Jesus was glorified, then they remembered that these things were written about him, and that they …” The missing terms belong in that order.",
+    "options" : [
+      "disciples first"
+    ],
+    "prompt" : "Supply the missing words in order: “His ____ didn't understand these things at , but when Jesus was glorified, then they remembered that these things were written about him, and that they …” (12:16, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Father, glorify your name!\" Then there came a voice out of the sky, saying, \"I have both glorified it, and will glorify it again.\"” It says glorify, not served.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Father, served your name!\" Then there came a voice out of the sky, saying, \"I have both glorified it, and will glorify it again.\"” (12:28, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… they came, not for Jesus' sake only, but that they might see Lazarus also, whom he had raised from the dead.”",
+    "options" : [
+      "Lazarus"
+    ],
+    "prompt" : "Complete the quotation: “… they came, not for Jesus' sake only, but that they might see ____ also, whom he had raised from the dead.” (12:9, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 12:13 uses Israel: “… he who comes in the name of the Lord, the King of Israel!\"”",
+    "options" : [
+      "Haggai",
+      "Paul",
+      "Israel",
+      "Micah"
+    ],
+    "prompt" : "Which word completes “… he who comes in the name of the Lord, the King of ______!\"”? (12:13, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “for they loved men's praise more than God's praise.”; the second reads “… me, and doesn't receive my sayings, has one who judges him. The word that I spoke, the same will judge him in the last day.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "praise word"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “for they loved men's ____ more than God's praise.” (12:43); “… me, and doesn't receive my sayings, has one who judges him. The that I spoke, the same will judge him in the last day.” (12:48, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wheat: “Most assuredly I tell you, unless a grain of wheat falls into the earth and dies, it remains by itself alone. But if it dies, it …”",
+    "options" : [
+      "flour",
+      "wheat",
+      "honey",
+      "grain"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Most assuredly I tell you, unless a grain of ______ falls into the earth and dies, it remains by itself alone. But if it dies, it …”? (12:24, WEB)",
+    "reference" : "John 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The disciples are to love one another as He has loved them. The course emphasizes love received from Jesus as the pattern for love practiced in community. The command is not merely a demand for agreeable feelings.",
+    "options" : [
+      "The disciples are to love one another as He has loved them.",
+      "Love should follow whatever preserves personal status.",
+      "Receiving Jesus' love has no relation to how they treat one another.",
+      "The disciples' public identity rests only on their arguments."
+    ],
+    "prompt" : "How does Jesus define the new commandment's standard? (13:34-35)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… children, I will be with you a little while longer. You will seek me, and as I said to the Jews, 'Where I am going, you …”; the second reads “… I tell you, the rooster won't crow until you have denied me three times.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "seek three"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… children, I will be with you a little while longer. You will ____ me, and as I said to the Jews, 'Where I am going, you …” (13:33); “… I tell you, the rooster won't crow until you have denied me times.” (13:38, WEB)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Peter said to him, \"You will never wash my feet!\" Jesus answered him, \"If I don't wash you, you have no part with me.\"”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “____ said to him, \"You will never wash my feet!\" Jesus answered him, \"If I don't wash you, you have no part with me.\"” (13:8, WEB)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bread: “… have chosen. But that the Scripture may be fulfilled, 'He who eats bread with me has lifted up his heel against me.'”",
+    "options" : [
+      "honey",
+      "fruit",
+      "bread",
+      "flour"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… have chosen. But that the Scripture may be fulfilled, 'He who eats ______ with me has lifted up his heel against me.'”? (13:18, WEB)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “After supper, the devil having already put into the heart of Judas Iscariot, Simon's son, to betray him,”",
+    "options" : [
+      "Judas"
+    ],
+    "prompt" : "Complete the quotation: “After supper, the devil having already put into the heart of ____ Iscariot, Simon's son, to betray him,” (13:2, WEB)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Lord and the Teacher, have washed your feet, you also ought to wash one another's feet.” The missing terms belong in that order.",
+    "options" : [
+      "ought feet"
+    ],
+    "prompt" : "Supply the missing words in order: “… Lord and the Teacher, have washed your feet, you also ____ to wash one another's .” (13:14, WEB)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “One of his disciples, whom Jesus loved, was at the table, leaning against Jesus' breast.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “One of his disciples, whom Jesus loved, was at the table, leaning against Jesus' breast.” (13:23, WEB)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 13:10 uses completely: “… who has bathed only needs to have his feet washed, but is completely clean. You are clean, but not all of you.\"”",
+    "options" : [
+      "correctly",
+      "ought",
+      "Simon",
+      "completely"
+    ],
+    "prompt" : "Which word completes “… who has bathed only needs to have his feet washed, but is ______ clean. You are clean, but not all of you.\"”? (13:10, WEB)",
+    "reference" : "John 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Spirit: “the Spirit of truth, whom the world can't receive; for it doesn't see him, neither knows him. You know him, for he lives with you, and …”",
+    "options" : [
+      "Arise",
+      "Holy",
+      "while",
+      "Spirit"
+    ],
+    "prompt" : "Which detail belongs in this passage: “the ______ of truth, whom the world can't receive; for it doesn't see him, neither knows him. You know him, for he lives with you, and …”? (14:17, WEB)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The Son asks the Father, and the Father sends the Spirit as another Helper. The passage differentiates their relationships while describing God's continuing presence with the disciples. The course uses this to resist both modalism and treating the Spirit as an impersonal force.",
+    "options" : [
+      "The Spirit is described only as an object without personal action.",
+      "Father, Son and Spirit are explicitly called one person.",
+      "The Son refuses any continuing help for the disciples.",
+      "The Son asks the Father, and the Father sends the Spirit as another Helper."
+    ],
+    "prompt" : "What distinguishes the promised Helper from the Father and the Son? (14:16-17, 26)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… so, I would have told you. I am going to prepare a place for you.”",
+    "options" : [
+      "place"
+    ],
+    "prompt" : "Complete the quotation: “… so, I would have told you. I am going to prepare a ____ for you.” (14:2, WEB)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “One who has my commandments, and keeps them, that person is one who loves me. One who loves me will be loved by my Father, and …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “One who has my commandments, and keeps them, that person is one who loves me. One who loves me will be loved by my Father, and …” (14:21, WEB)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… in the Father, and the Father in me; or else believe me for the very works' sake.” The missing terms belong in that order.",
+    "options" : [
+      "believe works"
+    ],
+    "prompt" : "Supply the missing words in order: “… in the Father, and the Father in me; or else ____ me for the very ' sake.” (14:11, WEB)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “Judas (not Iscariot) said to him, \"Lord, what has happened that you are about to reveal yourself to us, and not to the world?\"”; verse 24 reads “He who doesn't love me doesn't keep my words. The word which you hear isn't mine, but the Father's who sent me.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Ham; love",
+      "Judas; anger",
+      "Judas; love",
+      "love; Judas"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “______ (not Iscariot) said to him, \"Lord, what has happened that you are about to reveal yourself to us, and not to the world?\"” (14:22); “He who doesn't ______ me doesn't keep my words. The word which you hear isn't mine, but the Father's who sent me.” (14:24, WEB)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 14:9 uses Philip: “… with you such a long time, and do you not know me, Philip? He who has seen me has seen the Father. How do you say, …”",
+    "options" : [
+      "Ahab",
+      "Philip",
+      "Timothy",
+      "Matthew"
+    ],
+    "prompt" : "Which word completes “… with you such a long time, and do you not know me, ______? He who has seen me has seen the Father. How do you say, …”? (14:9, WEB)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Jesus said to him, \"I am the way, the truth, and the life. No one comes to the Father, except through me.”",
+    "options" : [
+      "truth"
+    ],
+    "prompt" : "Complete the quotation: “Jesus said to him, \"I am the way, the ____, and the life. No one comes to the Father, except through me.” (14:6, WEB)",
+    "reference" : "John 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 15:8 uses disciples: “… glorified, that you bear much fruit; and so you will be my disciples.”",
+    "options" : [
+      "hates",
+      "disciples",
+      "unless",
+      "branches"
+    ],
+    "prompt" : "Which word completes “… glorified, that you bear much fruit; and so you will be my ______.”? (15:8, WEB)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… in my love; even as I have kept my Father's commandments, and remain in his love.” The missing terms belong in that order.",
+    "options" : [
+      "commandments love"
+    ],
+    "prompt" : "Supply the missing words in order: “… in my love; even as I have kept my Father's ____, and remain in his .” (15:10, WEB)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Life and fruitfulness depend on abiding in Jesus, expressed in love and obedience. The image joins dependence with a lived response. Christians differ over some details of the warning about branches; it should not be detached from the surrounding call to remain in Jesus' love.",
+    "options" : [
+      "Love and obedience are excluded from abiding.",
+      "A branch is most fruitful when wholly detached.",
+      "Life and fruitfulness depend on abiding in Jesus, expressed in love and obedience.",
+      "The image promises that outward association alone removes every warning."
+    ],
+    "prompt" : "What does the vine-and-branches image teach about fruitfulness? (15:1-12)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies life: “Greater love has no one than this, that someone lay down his life for his friends.”",
+    "options" : [
+      "prayer",
+      "life",
+      "worship",
+      "power"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Greater love has no one than this, that someone lay down his ______ for his friends.”? (15:13, WEB)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “You didn't choose me, but I chose you, and appointed you, that you should go and bear fruit, and that your fruit should remain; that whatever …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “You didn't choose me, but I chose you, and appointed you, that you should go and bear fruit, and that your fruit should remain; that whatever …” (15:16, WEB)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Every branch in me that doesn't bear fruit, he takes away. Every branch that bears fruit, he prunes, that it may bear more fruit.”",
+    "options" : [
+      "branch"
+    ],
+    "prompt" : "Complete the quotation: “Every ____ in me that doesn't bear fruit, he takes away. Every branch that bears fruit, he prunes, that it may bear more fruit.” (15:2, WEB)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… them the works which no one else did, they wouldn't have had sin. But now have they seen and also hated both me and my Father.”; the second reads “… whom I will send to you from the Father, the Spirit of truth, who proceeds from the Father, he will testify about me.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sin truth"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… them the works which no one else did, they wouldn't have had ____. But now have they seen and also hated both me and my Father.” (15:24); “… whom I will send to you from the Father, the Spirit of , who proceeds from the Father, he will testify about me.” (15:26, WEB)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… branch, and is withered; and they gather them, throw them into the fire, and they are burned.”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “… branch, and is withered; and they gather them, throw them into the ____, and they are burned.” (15:6, WEB)",
+    "reference" : "John 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “His disciples said to him, \"Behold, now you speak plainly, and speak no figures of speech.”; the second reads “… own place, and you will leave me alone. Yet I am not alone, because the Father is with me.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "plainly alone"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “His disciples said to him, \"Behold, now you speak ____, and speak no figures of speech.” (16:29); “… own place, and you will leave me alone. Yet I am not , because the Father is with me.” (16:32, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Therefore Jesus perceived that they wanted to ask him, and he said to them, \"Do you inquire among yourselves concerning this, that I said, 'A little …” It says ask, not remember.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Therefore Jesus perceived that they wanted to remember him, and he said to them, \"Do you inquire among yourselves concerning this, that I said, 'A little …” (16:19, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies disciples: “Some of his disciples therefore said to one another, \"What is this that he says to us, 'A little while, and you won't see me, and …”",
+    "options" : [
+      "loves",
+      "comes",
+      "takes",
+      "disciples"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Some of his ______ therefore said to one another, \"What is this that he says to us, 'A little while, and you won't see me, and …”? (16:17, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “They will put you out of the synagogues. Yes, the time comes that whoever kills you will think that he offers service to God.”",
+    "options" : [
+      "comes"
+    ],
+    "prompt" : "Complete the quotation: “They will put you out of the synagogues. Yes, the time ____ that whoever kills you will think that he offers service to God.” (16:2, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “… day you will ask me no questions. Most assuredly I tell you, whatever you may ask of the Father in my name, he will give it …”; verse 25 reads “… time is coming when I will no more speak to you in figures of speech, but will tell you plainly about the Father.”. These establish the first and second answers respectively.",
+    "options" : [
+      "whatever; hears",
+      "whatever; figures",
+      "figures; whatever",
+      "questions; figures"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… day you will ask me no questions. Most assuredly I tell you, ______ you may ask of the Father in my name, he will give it …” (16:23); “… time is coming when I will no more speak to you in ______ of speech, but will tell you plainly about the Father.” (16:25, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Nevertheless I tell you the truth: It is to your advantage that I go away, for if I don't go away, the Counselor won't come to …”",
+    "options" : [
+      "truth"
+    ],
+    "prompt" : "Complete the quotation: “Nevertheless I tell you the ____: It is to your advantage that I go away, for if I don't go away, the Counselor won't come to …” (16:7, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 16:8 uses judgment: “… come, he will convict the world about sin, about righteousness, and about judgment;”",
+    "options" : [
+      "testimonies",
+      "statutes",
+      "instruction",
+      "judgment"
+    ],
+    "prompt" : "Which word completes “… come, he will convict the world about sin, about righteousness, and about ______;”? (16:8, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “However when he, the Spirit of truth, has come, he will guide you into all truth, for he will not speak from himself; but whatever he …” The missing terms belong in that order.",
+    "options" : [
+      "Spirit guide"
+    ],
+    "prompt" : "Supply the missing words in order: “However when he, the ____ of truth, has come, he will you into all truth, for he will not speak from himself; but whatever he …” (16:13, WEB)",
+    "reference" : "John 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I have given them your word. The world hated them, because they are not of the world, even as I am not of the world.” It says world, not Holy.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I have given them your word. The Holy hated them, because they are not of the world, even as I am not of the world.” (17:14, WEB)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Jesus said these things, and lifting up his eyes to heaven, he said, \"Father, the time has come. Glorify your Son, that your Son may also …”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “____ said these things, and lifting up his eyes to heaven, he said, \"Father, the time has come. Glorify your Son, that your Son may also …” (17:1, WEB)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Their unity bears witness to the world concerning the Father's sending and love. Jesus prays for those who will believe through the disciples' word. The course connects communal life with witness, rather than treating unity as merely the absence of visible disagreement.",
+    "options" : [
+      "The prayer concerns only avoiding all conversation.",
+      "Future believers are explicitly excluded.",
+      "Their unity bears witness to the world concerning the Father's sending and love.",
+      "Unity is said to make the Father's mission unnecessary."
+    ],
+    "prompt" : "What purpose accompanies Jesus' prayer for His followers' unity? (17:20-23)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… these are in the world, and I am coming to you. Holy Father, keep them through your name which you have given me, that they may …” The missing terms belong in that order.",
+    "options" : [
+      "Holy keep"
+    ],
+    "prompt" : "Supply the missing words in order: “… these are in the world, and I am coming to you. ____ Father, them through your name which you have given me, that they may …” (17:11, WEB)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Father, I desire that they also whom you have given me be with me where I am, that they may see my glory, which you have …”; the second reads “Righteous Father, the world hasn't known you, but I knew you; and these knew that you sent me.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Father Righteous"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “____, I desire that they also whom you have given me be with me where I am, that they may see my glory, which you have …” (17:24); “ Father, the world hasn't known you, but I knew you; and these knew that you sent me.” (17:25, WEB)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now, Father, glorify me with your own self with the glory which I had with you before the world existed.”",
+    "options" : [
+      "glory"
+    ],
+    "prompt" : "Complete the quotation: “Now, Father, glorify me with your own self with the ____ which I had with you before the world existed.” (17:5, WEB)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 17:8 uses knew: “… given me I have given to them, and they received them, and knew for sure that I came forth from you, and they have believed that …”",
+    "options" : [
+      "self",
+      "knew",
+      "eternal",
+      "Christ"
+    ],
+    "prompt" : "Which word completes “… given me I have given to them, and they received them, and ______ for sure that I came forth from you, and they have believed that …”? (17:8, WEB)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies lost: “… whom you have given me I have kept. None of them is lost, except the son of destruction, that the Scripture might be fulfilled.”",
+    "options" : [
+      "words",
+      "lifting",
+      "time",
+      "lost"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… whom you have given me I have kept. None of them is ______, except the son of destruction, that the Scripture might be fulfilled.”? (17:12, WEB)",
+    "reference" : "John 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies disciples: “The high priest therefore asked Jesus about his disciples, and about his teaching.”",
+    "options" : [
+      "disciples",
+      "lanterns",
+      "synagogues",
+      "Malchus"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The high priest therefore asked Jesus about his ______, and about his teaching.”? (18:19, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… then, having taken a detachment of soldiers and officers from the chief priests and the Pharisees, came there with lanterns, torches, and weapons.”",
+    "options" : [
+      "priests"
+    ],
+    "prompt" : "Complete the quotation: “… then, having taken a detachment of soldiers and officers from the chief ____ and the Pharisees, came there with lanterns, torches, and weapons.” (18:3, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “They answered him, \"Jesus of Nazareth.\" Jesus said to them, \"I AM.\" Judas also, who betrayed him, was standing with them.”",
+    "options" : [
+      "Judas"
+    ],
+    "prompt" : "Complete the quotation: “They answered him, \"Jesus of Nazareth.\" Jesus said to them, \"I AM.\" ____ also, who betrayed him, was standing with them.” (18:5, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 18:11 uses Peter: “Jesus therefore said to Peter, \"Put the sword into its sheath. The cup which the Father has given me, shall I not surely drink it?\"”",
+    "options" : [
+      "Peter",
+      "Darius",
+      "Lois",
+      "Joshua"
+    ],
+    "prompt" : "Which word completes “Jesus therefore said to ______, \"Put the sword into its sheath. The cup which the Father has given me, shall I not surely drink it?\"”? (18:11, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Simon Peter followed Jesus, as did another disciple. Now that disciple was known to the high priest, and entered in with Jesus into the court of …” The missing terms belong in that order.",
+    "options" : [
+      "disciple priest"
+    ],
+    "prompt" : "Supply the missing words in order: “Simon Peter followed Jesus, as did another ____. Now that disciple was known to the high , and entered in with Jesus into the court of …” (18:15, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “When he had said this, one of the officers standing by slapped Jesus with his hand, saying, \"Do you answer the high priest like that?\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “When he had said this, one of the officers standing by slapped Jesus with his hand, saying, \"Do you answer the high priest like that?\"” (18:22, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Pilate answered, \"I'm not a Jew, am I? Your own nation and the chief priests delivered you to me. What have you done?\"”; the second reads “… the Passover. Therefore do you want me to release to you the King of the Jews?\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "nation King"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Pilate answered, \"I'm not a Jew, am I? Your own ____ and the chief priests delivered you to me. What have you done?\"” (18:35); “… the Passover. Therefore do you want me to release to you the of the Jews?\"” (18:39, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 28 reads “They led Jesus therefore from Caiaphas into the Praetorium. It was early, and they themselves didn't enter into the Praetorium, that they might not be defiled, …”; verse 31 reads “Pilate therefore said to them, \"Take him yourselves, and judge him according to your law.\" Therefore the Jews said to him, \"It is not lawful for …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Caiaphas; Adam",
+      "Pilate; Caiaphas",
+      "Jacob; Pilate",
+      "Caiaphas; Pilate"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “They led Jesus therefore from ______ into the Praetorium. It was early, and they themselves didn't enter into the Praetorium, that they might not be defiled, …” (18:28); “______ therefore said to them, \"Take him yourselves, and judge him according to your law.\" Therefore the Jews said to him, \"It is not lawful for …” (18:31, WEB)",
+    "reference" : "John 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jesus: “Therefore many of the Jews read this title, for the place where Jesus was crucified was near the city; and it was written in Hebrew, in …”",
+    "options" : [
+      "Jesus",
+      "Jonathan",
+      "Erastus",
+      "Demetrius"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Therefore many of the Jews read this title, for the place where ______ was crucified was near the city; and it was written in Hebrew, in …”? (19:20, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… with him! Crucify him!\" Pilate said to them, \"Shall I crucify your King?\" The chief priests answered, \"We have no king but Caesar!\"” The missing terms belong in that order.",
+    "options" : [
+      "crucify priests"
+    ],
+    "prompt" : "Supply the missing words in order: “… with him! Crucify him!\" Pilate said to them, \"Shall I ____ your King?\" The chief answered, \"We have no king but Caesar!\"” (19:15, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The Jews answered him, \"We have a law, and by our law he ought to die, because he made himself the Son of God.\"”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “The Jews answered him, \"We have a law, and by our ____ he ought to die, because he made himself the Son of God.\"” (19:7, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 29 reads “… a vessel full of vinegar was set there; so they put a sponge full of the vinegar on hyssop, and held it at his mouth.”; verse 31 reads “… the bodies wouldn't remain on the cross on the Sabbath (for that Sabbath was a special one), asked of Pilate that their legs might be broken, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Joseph; Sabbath",
+      "sponge; west",
+      "Sabbath; sponge",
+      "sponge; Sabbath"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… a vessel full of vinegar was set there; so they put a ______ full of the vinegar on hyssop, and held it at his mouth.” (19:29); “… the bodies wouldn't remain on the cross on the Sabbath (for that ______ was a special one), asked of Pilate that their legs might be broken, …” (19:31, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… says, \"They parted my garments among them. For my cloak they cast lots.\" Therefore the soldiers did these things.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… says, \"They parted my garments among them. For my cloak they cast lots.\" Therefore the soldiers did these things.” (19:24, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… body. Pilate gave him permission. He came therefore and took away his body.”; the second reads “… it in linen cloths with the spices, as the custom of the Jews is to bury.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "body Jews"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… body. Pilate gave him permission. He came therefore and took away his ____.” (19:38); “… it in linen cloths with the spices, as the custom of the is to bury.” (19:40, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 19:12 uses Pilate: “At this, Pilate was seeking to release him, but the Jews cried out, saying, \"If you release this man, you aren't Caesar's friend! Everyone who makes …”",
+    "options" : [
+      "Gallio",
+      "Haggai",
+      "Pilate",
+      "Nahum"
+    ],
+    "prompt" : "Which word completes “At this, ______ was seeking to release him, but the Jews cried out, saying, \"If you release this man, you aren't Caesar's friend! Everyone who makes …”? (19:12, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “They kept saying, \"Hail, King of the Jews!\" and they kept slapping him.”",
+    "options" : [
+      "King"
+    ],
+    "prompt" : "Complete the quotation: “They kept saying, \"Hail, ____ of the Jews!\" and they kept slapping him.” (19:3, WEB)",
+    "reference" : "John 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "They are written so readers may believe Jesus is the Christ, the Son of God, and have life in His name. The narrator states the purpose after Thomas' encounter. Evidence, belief and life are joined; Thomas' questions do not prevent Jesus from meeting him.",
+    "options" : [
+      "The signs aim to prove that Jesus is unrelated to God.",
+      "The purpose is simply to list every deed Jesus ever performed.",
+      "They are written so readers may believe Jesus is the Christ, the Son of God, and have life in His name.",
+      "The narrator says belief has no relation to life."
+    ],
+    "prompt" : "How does John explain the purpose of the signs recorded in the Gospel? (20:30-31)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… day of the week, and when the doors were locked where the disciples were assembled, for fear of the Jews, Jesus came and stood in the …” It says disciples, not brothers.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… day of the week, and when the doors were locked where the brothers were assembled, for fear of the Jews, Jesus came and stood in the …” (20:19, WEB)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “Whoever's sins you forgive, they are forgiven them. Whoever's sins you retain, they have been retained.\"”; verse 26 reads “… came, the doors being locked, and stood in the midst, and said, \"Peace be to you.\"”. These establish the first and second answers respectively.",
+    "options" : [
+      "guilt; Peace",
+      "sins; Peace",
+      "Peace; sins",
+      "sins; honor"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Whoever's sins you forgive, they are forgiven them. Whoever's ______ you retain, they have been retained.\"” (20:23); “… came, the doors being locked, and stood in the midst, and said, \"______ be to you.\"” (20:26, WEB)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies supposing: “… her, \"Woman, why are you weeping? Who are you looking for?\" She, supposing him to be the gardener, said to him, \"Sir, if you have carried …”",
+    "options" : [
+      "weeping",
+      "ascending",
+      "supposing",
+      "standing"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… her, \"Woman, why are you weeping? Who are you looking for?\" She, ______ him to be the gardener, said to him, \"Sir, if you have carried …”? (20:15, WEB)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Then Simon Peter came, following him, and entered into the tomb. He saw the linen cloths lying,”",
+    "options" : [
+      "Simon"
+    ],
+    "prompt" : "Complete the quotation: “Then ____ Peter came, following him, and entered into the tomb. He saw the linen cloths lying,” (20:6, WEB)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “and she saw two angels in white sitting, one at the head, and one at the feet, where the body of Jesus had lain.” The missing terms belong in that order.",
+    "options" : [
+      "two body"
+    ],
+    "prompt" : "Supply the missing words in order: “and she saw ____ angels in white sitting, one at the head, and one at the feet, where the of Jesus had lain.” (20:12, WEB)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Therefore she ran and came to Simon Peter, and to the other disciple whom Jesus loved, and said to them, \"They have taken away the Lord …”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “Therefore she ran and came to Simon ____, and to the other disciple whom Jesus loved, and said to them, \"They have taken away the Lord …” (20:2, WEB)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "john",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 20:8 uses disciple: “So then the other disciple who came first to the tomb also entered in, and he saw and believed.”",
+    "options" : [
+      "Peter",
+      "believed",
+      "disciple",
+      "doors"
+    ],
+    "prompt" : "Which word completes “So then the other ______ who came first to the tomb also entered in, and he saw and believed.”? (20:8, WEB)",
+    "reference" : "John 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jesus: “Jesus said to them, \"Come and eat breakfast.\" None of the disciples dared inquire of him, \"Who are you?\" knowing that it was the Lord.”",
+    "options" : [
+      "Barnabas",
+      "Balaam",
+      "Sarai",
+      "Jesus"
+    ],
+    "prompt" : "Which detail belongs in this passage: “______ said to them, \"Come and eat breakfast.\" None of the disciples dared inquire of him, \"Who are you?\" knowing that it was the Lord.”? (21:12, WEB)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… breakfast, Jesus said to Simon Peter, \"Simon, son of Jonah, do you love me more than these?\" He said to him, \"Yes, Lord; you know that …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… breakfast, Jesus said to Simon Peter, \"Simon, son of Jonah, do you love me more than these?\" He said to him, \"Yes, Lord; you know that …” (21:15, WEB)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Peter's profession of love is followed by a charge to feed and tend Jesus' sheep. The repeated questions recall Peter's failure without making failure the end of his calling. The course presents devotion as love expressed through faithful care.",
+    "options" : [
+      "The conversation presents care for others as unrelated to Jesus.",
+      "Peter's profession of love is followed by a charge to feed and tend Jesus' sheep.",
+      "Love excuses Peter from every responsibility.",
+      "Peter is told never to serve again."
+    ],
+    "prompt" : "How does the conversation with Peter join love for Jesus and care for others? (21:15-19)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "John 21:7 uses disciple: “That disciple therefore whom Jesus loved said to Peter, \"It's the Lord!\" So when Simon Peter heard that it was the Lord, he wrapped his coat …”",
+    "options" : [
+      "glorify",
+      "disciple",
+      "Peter",
+      "breast"
+    ],
+    "prompt" : "Which word completes “That ______ therefore whom Jesus loved said to Peter, \"It's the Lord!\" So when Simon Peter heard that it was the Lord, he wrapped his coat …”? (21:7, WEB)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… when day had already come, Jesus stood on the beach, yet the disciples didn't know that it was Jesus.”",
+    "options" : [
+      "disciples"
+    ],
+    "prompt" : "Complete the quotation: “… when day had already come, Jesus stood on the beach, yet the ____ didn't know that it was Jesus.” (21:4, WEB)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Simon Peter went up, and drew the net to land, full of great fish, one hundred fifty-three; and even though there were so many, the net …” The missing terms belong in that order.",
+    "options" : [
+      "Simon fifty"
+    ],
+    "prompt" : "Supply the missing words in order: “____ Peter went up, and drew the net to land, full of great fish, one hundred -three; and even though there were so many, the net …” (21:11, WEB)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… went out among the brothers, that this disciple wouldn't die. Yet Jesus didn't say to him that he wouldn't die, but, \"If I desire that he …”; the second reads “… many other things which Jesus did, which if they would all be written, I suppose that even the world itself wouldn't have room for the books …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "didn't written"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… went out among the brothers, that this disciple wouldn't die. Yet Jesus ____ say to him that he wouldn't die, but, \"If I desire that he …” (21:23); “… many other things which Jesus did, which if they would all be , I suppose that even the world itself wouldn't have room for the books …” (21:25, WEB)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "john",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Simon Peter, Thomas called Didymus, Nathanael of Cana in Galilee, and the sons of Zebedee, and two others of his disciples were together.”",
+    "options" : [
+      "Peter"
+    ],
+    "prompt" : "Complete the quotation: “Simon ____, Thomas called Didymus, Nathanael of Cana in Galilee, and the sons of Zebedee, and two others of his disciples were together.” (21:2, WEB)",
+    "reference" : "John 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

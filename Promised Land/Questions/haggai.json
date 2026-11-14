@@ -1,0 +1,263 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… you aren't filled with drink. You clothe yourselves, but no one is warm, and he who earns wages earns wages to put them into a bag …” The missing terms belong in that order.",
+    "options" : [
+      "clothe wages"
+    ],
+    "prompt" : "Supply the missing words in order: “… you aren't filled with drink. You ____ yourselves, but no one is warm, and he who earns wages earns to put them into a bag …” (1:6, WEB)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Haggai 1:5 records: “Now therefore this is what Yahweh of Hosts says: Consider your ways.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Haggai told the people to consider their ways. (1:5)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies busy: “… \"Because of my house that lies waste, while each of you is busy with his own house.”",
+    "options" : [
+      "clothe",
+      "busy",
+      "blew",
+      "feared"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… \"Because of my house that lies waste, while each of you is ______ with his own house.”? (1:9, WEB)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Haggai 1:4 uses waste: “… you yourselves to dwell in your paneled houses, while this house lies waste?”",
+    "options" : [
+      "waste",
+      "Judah",
+      "fourth",
+      "blew"
+    ],
+    "prompt" : "Which word completes “… you yourselves to dwell in your paneled houses, while this house lies ______?”? (1:4, WEB)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Then Zerubbabel, the son of Shealtiel, and Joshua, the son of Jehozadak, the high priest, with all the remnant of the people, obeyed the voice of …”; the second reads “… spirit of Zerubbabel, the son of Shealtiel, governor of Judah, and the spirit of Joshua, the son of Jehozadak, the high priest, and the spirit of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Zerubbabel spirit"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Then ____, the son of Shealtiel, and Joshua, the son of Jehozadak, the high priest, with all the remnant of the people, obeyed the voice of …” (1:12); “… spirit of Zerubbabel, the son of Shealtiel, governor of Judah, and the of Joshua, the son of Jehozadak, the high priest, and the spirit of …” (1:14, WEB)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… to the mountain, bring wood, and build the house. I will take pleasure in it, and I will be glorified,\" says Yahweh.” It says pleasure, not mountains.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… to the mountain, bring wood, and build the house. I will take mountains in it, and I will be glorified,\" says Yahweh.” (1:8, WEB)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the first day of the month, the Word of Yahweh came by Haggai, the prophet, to Zerubbabel, the son of Shealtiel, governor of Judah, and to …”",
+    "options" : [
+      "Haggai"
+    ],
+    "prompt" : "Complete the quotation: “… the first day of the month, the Word of Yahweh came by ____, the prophet, to Zerubbabel, the son of Shealtiel, governor of Judah, and to …” (1:1, WEB)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “Therefore for your sake the heavens withhold the dew, and the earth withholds its fruit.”; verse 11 reads “… called for a drought on the land, on the mountains, on the grain, on the new wine, on the oil, on that which the ground brings …”. These establish the first and second answers respectively.",
+    "options" : [
+      "withhold; grain",
+      "withhold; barley",
+      "mountains; grain",
+      "grain; withhold"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Therefore for your sake the heavens ______ the dew, and the earth withholds its fruit.” (1:10); “… called for a drought on the land, on the mountains, on the ______, on the new wine, on the oil, on that which the ground brings …” (1:11, WEB)",
+    "reference" : "Haggai 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… all nations. The precious things of all nations will come, and I will fill this house with glory, says Yahweh of Hosts.” The missing terms belong in that order.",
+    "options" : [
+      "nations glory"
+    ],
+    "prompt" : "Supply the missing words in order: “… all nations. The precious things of all ____ will come, and I will fill this house with , says Yahweh of Hosts.” (2:7, WEB)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Haggai 2:6 records: “For this is what Yahweh of Hosts says: 'Yet once, it is a little while, and I will shake the heavens, the earth, the sea, and the dry land;”",
+    "options" : [
+      "earth"
+    ],
+    "prompt" : "In this paraphrase, the LORD said He would shake the heavens and the ____. (2:6)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The passage acknowledges comparison with the former house and directs attention to God's presence and promised glory. The reference to the nations is interpreted in different ways.",
+    "options" : [
+      "God says He has permanently abandoned them.",
+      "The people are told to stop all work forever.",
+      "The text says outward comparison is their only source of hope.",
+      "The people are called to be strong because God's Spirit remains among them."
+    ],
+    "prompt" : "How does God's promise of His presence answer discouragement about the rebuilt temple? (2:1-9)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Haggai 2:4 uses Joshua: “Yet now be strong, Zerubbabel,' says Yahweh. 'Be strong, Joshua, son of Jehozadak, the high priest. Be strong, all you people of the land,' says Yahweh, …”",
+    "options" : [
+      "Zephaniah",
+      "Joshua",
+      "Sarah",
+      "Enoch"
+    ],
+    "prompt" : "Which word completes “Yet now be strong, Zerubbabel,' says Yahweh. 'Be strong, ______, son of Jehozadak, the high priest. Be strong, all you people of the land,' says Yahweh, …”? (2:4, WEB)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies peace: “… former,' says Yahweh of Hosts; 'and in this place will I give peace,' says Yahweh of Hosts.\"”",
+    "options" : [
+      "wisdom",
+      "peace",
+      "knowledge",
+      "mercy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… former,' says Yahweh of Hosts; 'and in this place will I give ______,' says Yahweh of Hosts.\"”? (2:9, WEB)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… fold of his garment, and with his fold touches bread, stew, wine, oil, or any food, will it become holy?'\" The priests answered, \"No.\"” It says oil, not grapes.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… fold of his garment, and with his fold touches bread, stew, wine, grapes, or any food, will it become holy?'\" The priests answered, \"No.\"” (2:12, WEB)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “\"Speak now to Zerubbabel, the son of Shealtiel, governor of Judah, and to Joshua, the son of Jehozadak, the high priest, and to the remnant of …”",
+    "options" : [
+      "Zerubbabel"
+    ],
+    "prompt" : "Complete the quotation: “\"Speak now to ____, the son of Shealtiel, governor of Judah, and to Joshua, the son of Jehozadak, the high priest, and to the remnant of …” (2:2, WEB)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "haggai",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “'Consider, please, from this day and backward, from the twenty-fourth day of the ninth month, since the day that the foundation of Yahweh's temple was laid, …”; the second reads “The Word of Yahweh came the second time to Haggai in the twenty-fourth day of the month, saying,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fourth twenty"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “'Consider, please, from this day and backward, from the twenty-____ day of the ninth month, since the day that the foundation of Yahweh's temple was laid, …” (2:18); “The Word of Yahweh came the second time to Haggai in the -fourth day of the month, saying,” (2:20, WEB)",
+    "reference" : "Haggai 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

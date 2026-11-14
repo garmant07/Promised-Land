@@ -1,0 +1,1046 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Song of Solomon 1:5 records: “I am dark, but lovely, You daughters of Jerusalem, Like Kedar's tents, Like Solomon's curtains.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The bride says, \"I am dark but lovely.\" (1:5)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “My beloved is to me a cluster of henna blossoms From the vineyards of En Gedi. Lover”; the second reads “Behold, you are beautiful, my beloved, yes, pleasant; And our couch is verdant. Lover”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "henna couch"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “My beloved is to me a cluster of ____ blossoms From the vineyards of En Gedi. Lover” (1:14); “Behold, you are beautiful, my beloved, yes, pleasant; And our is verdant. Lover” (1:16, WEB)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… you don't know, most beautiful among women, Follow the tracks of the sheep. Graze your young goats beside the shepherds' tents.” It says sheep, not serpent.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… you don't know, most beautiful among women, Follow the tracks of the serpent. Graze your young goats beside the shepherds' tents.” (1:8, WEB)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Don't stare at me because I am dark, Because the sun has scorched me. My mother's sons were angry with me. They made me keeper of …” The missing terms belong in that order.",
+    "options" : [
+      "dark scorched"
+    ],
+    "prompt" : "Supply the missing words in order: “Don't stare at me because I am ____, Because the sun has me. My mother's sons were angry with me. They made me keeper of …” (1:6, WEB)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 1:4 uses love: “… We will be glad and rejoice in you. We will praise your love more than wine! Beloved They are right to love you.”",
+    "options" : [
+      "righteousness",
+      "knowledge",
+      "love",
+      "grief"
+    ],
+    "prompt" : "Which word completes “… We will be glad and rejoice in you. We will praise your ______ more than wine! Beloved They are right to love you.”? (1:4, WEB)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “Your cheeks are beautiful with earrings, Your neck with strings of jewels.”; verse 12 reads “While the king sat at his table, My perfume spread its fragrance.”. These establish the first and second answers respectively.",
+    "options" : [
+      "king; neck",
+      "bone; king",
+      "neck; ruler",
+      "neck; king"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Your cheeks are beautiful with earrings, Your ______ with strings of jewels.” (1:10); “While the ______ sat at his table, My perfume spread its fragrance.” (1:12, WEB)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Your oils have a pleasing fragrance. Your name is oil poured forth, Therefore the virgins love you.”",
+    "options" : [
+      "oil"
+    ],
+    "prompt" : "Complete the quotation: “Your oils have a pleasing fragrance. Your name is ____ poured forth, Therefore the virgins love you.” (1:3, WEB)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies rest: “… you whom my soul loves, Where you graze your flock, Where you rest them at noon; For why should I be as one who is veiled …”",
+    "options" : [
+      "offerings",
+      "rest",
+      "sacrifice",
+      "inheritance"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you whom my soul loves, Where you graze your flock, Where you ______ them at noon; For why should I be as one who is veiled …”? (1:7, WEB)",
+    "reference" : "Song of Songs 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… has come, And the voice of the turtle-dove is heard in our land.”; verse 13 reads “… forth their fragrance. Arise, my love, my beautiful one, And come away. Lover”. These establish the first and second answers respectively.",
+    "options" : [
+      "land; Lover",
+      "land; daughters",
+      "Lover; land",
+      "river; Lover"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… has come, And the voice of the turtle-dove is heard in our ______.” (2:12); “… forth their fragrance. Arise, my love, my beautiful one, And come away. ______” (2:13, WEB)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 2:4 uses love: “He brought me to the banquet hall. His banner over me is love.”",
+    "options" : [
+      "grief",
+      "love",
+      "wrath",
+      "wisdom"
+    ],
+    "prompt" : "Which word completes “He brought me to the banquet hall. His banner over me is ______.”? (2:4, WEB)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “As the apple tree among the trees of the wood, So is my beloved among the sons. I sat down under his shadow with great delight, …”",
+    "options" : [
+      "wood"
+    ],
+    "prompt" : "Complete the quotation: “As the apple tree among the trees of the ____, So is my beloved among the sons. I sat down under his shadow with great delight, …” (2:3, WEB)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “My dove in the clefts of the rock, In the hiding places of the mountainside, Let me see your face. Let me hear your voice; For …”; the second reads “… us the foxes, The little foxes that spoil the vineyards; For our vineyards are in blossom. Beloved”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "hiding vineyards"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “My dove in the clefts of the rock, In the ____ places of the mountainside, Let me see your face. Let me hear your voice; For …” (2:14); “… us the foxes, The little foxes that spoil the vineyards; For our are in blossom. Beloved” (2:15, WEB)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Strengthen me with raisins, Refresh me with apples; For I am faint with love.” The missing terms belong in that order.",
+    "options" : [
+      "Refresh apples"
+    ],
+    "prompt" : "Supply the missing words in order: “Strengthen me with raisins, ____ me with ; For I am faint with love.” (2:5, WEB)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Song of Solomon 2:2 records: “As a lily among thorns, So is my love among the daughters. Beloved”",
+    "options" : [
+      "thorns"
+    ],
+    "prompt" : "In this paraphrase, the lover says the beloved is a lily among ____. (2:2)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… he stands behind our wall! He looks in at the windows. He glances through the lattice.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… he stands behind our wall! He looks in at the windows. He glances through the lattice.” (2:9, WEB)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Jerusalem: “I adjure you, daughters of Jerusalem, By the roes, or by the hinds of the field, That you not stir up, nor awaken love, Until it …”",
+    "options" : [
+      "Jerusalem",
+      "Judah",
+      "Zion",
+      "Hebron"
+    ],
+    "prompt" : "Which detail belongs in this passage: “I adjure you, daughters of ______, By the roes, or by the hinds of the field, That you not stir up, nor awaken love, Until it …”? (2:7, WEB)",
+    "reference" : "Song of Songs 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… you, daughters of Jerusalem, By the roes, or by the hinds of the field, That you not stir up, nor awaken love, Until it so desires.” The missing terms belong in that order.",
+    "options" : [
+      "Jerusalem love"
+    ],
+    "prompt" : "Supply the missing words in order: “… you, daughters of ____, By the roes, or by the hinds of the field, That you not stir up, nor awaken , Until it so desires.” (3:5, WEB)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Behold, it is Solomon's carriage! Sixty mighty men are around it, Of the mighty men of Israel.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Behold, it is Solomon's carriage! Sixty mighty men are around it, Of the mighty men of Israel.” (3:7, WEB)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Go forth, you daughters of Zion, and see king Solomon, With the crown with which his mother has crowned him, In the day of his weddings, …”; the second reads “King Solomon made himself a carriage Of the wood of Lebanon.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Solomon King"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Go forth, you daughters of Zion, and see king ____, With the crown with which his mother has crowned him, In the day of his weddings, …” (3:11); “ Solomon made himself a carriage Of the wood of Lebanon.” (3:9, WEB)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “I will get up now, and go about the city; In the streets and in the squares I will seek him whom my soul loves. I …”",
+    "options" : [
+      "streets"
+    ],
+    "prompt" : "Complete the quotation: “I will get up now, and go about the city; In the ____ and in the squares I will seek him whom my soul loves. I …” (3:2, WEB)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… in war. Every man has his sword on his thigh, Because of fear in the night.”; verse 10 reads “He made its pillars of silver, Its bottom of gold, its seat of purple, Its midst being paved with love, From the daughters of Jerusalem.”. These establish the first and second answers respectively.",
+    "options" : [
+      "grief; silver",
+      "fear; silver",
+      "fear; ashes",
+      "silver; fear"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… in war. Every man has his sword on his thigh, Because of ______ in the night.” (3:8); “He made its pillars of ______, Its bottom of gold, its seat of purple, Its midst being paved with love, From the daughters of Jerusalem.” (3:10, WEB)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 3:4 uses loves: “… had scarcely passed from them, When I found him whom my soul loves. I held him, and would not let him go, Until I had brought …”",
+    "options" : [
+      "loves",
+      "hinds",
+      "pillars",
+      "daughters"
+    ],
+    "prompt" : "Which word completes “… had scarcely passed from them, When I found him whom my soul ______. I held him, and would not let him go, Until I had brought …”? (3:4, WEB)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies smoke: “Who is this who comes up from the wilderness like pillars of smoke, Perfumed with myrrh and frankincense, With all spices of the merchant?”",
+    "options" : [
+      "smoke",
+      "frankincense",
+      "squares",
+      "chamber"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Who is this who comes up from the wilderness like pillars of ______, Perfumed with myrrh and frankincense, With all spices of the merchant?”? (3:6, WEB)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Song of Solomon 3:1 records: “By night on my bed, I sought him whom my soul loves. I sought him, but I didn't find him.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The bride sought her beloved at night. (3:1)",
+    "reference" : "Song of Songs 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Look from the top of Amana, From the top of Senir and Hermon, From the lions' dens, From the mountains of the leopards.” It says Hermon, not behind.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Look from the top of Amana, From the top of Senir and behind, From the lions' dens, From the mountains of the leopards.” (4:8, WEB)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Song of Solomon 4:3 records: “Your lips are like scarlet thread. Your mouth is lovely. Your temples are like a piece of a pomegranate behind your veil.”",
+    "options" : [
+      "thread"
+    ],
+    "prompt" : "In this paraphrase, the lover described his beloved's lips as a ____ of scarlet. (4:3)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Your shoots are an orchard of pomegranates, with precious fruits: Henna with spikenard plants,”; the second reads “A fountain of gardens, A well of living waters, Flowing streams from Lebanon. Beloved”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "fruits living"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Your shoots are an orchard of pomegranates, with precious ____: Henna with spikenard plants,” (4:13); “A fountain of gardens, A well of waters, Flowing streams from Lebanon. Beloved” (4:15, WEB)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 4:4 uses thousand: “… is like David's tower built for an armory, Whereon there hang a thousand shields, All the shields of the mighty men.”",
+    "options" : [
+      "three",
+      "twenty",
+      "thirty",
+      "thousand"
+    ],
+    "prompt" : "Which word completes “… is like David's tower built for an armory, Whereon there hang a ______ shields, All the shields of the mighty men.”? (4:4, WEB)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Behold, you are beautiful, my love. Behold, you are beautiful. Your eyes are doves behind your veil. Your hair is as a flock of goats, That …”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “Behold, you are beautiful, my ____. Behold, you are beautiful. Your eyes are doves behind your veil. Your hair is as a flock of goats, That …” (4:1, WEB)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies myrrh: “… and the shadows flee away, I will go to the mountain of myrrh, To the hill of frankincense.”",
+    "options" : [
+      "honeycomb",
+      "goats",
+      "love",
+      "myrrh"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and the shadows flee away, I will go to the mountain of ______, To the hill of frankincense.”? (4:6, WEB)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… love, my sister, my bride! How much better is your love than wine! The fragrance of your perfumes than all manner of spices!”; verse 11 reads “Your lips, my bride, drip like the honeycomb. Honey and milk are under your tongue. The smell of your garments is like the smell of Lebanon.”. These establish the first and second answers respectively.",
+    "options" : [
+      "honeycomb; wine",
+      "wine; honeycomb",
+      "wine; lilies",
+      "honey; honeycomb"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… love, my sister, my bride! How much better is your love than ______! The fragrance of your perfumes than all manner of spices!” (4:10); “Your lips, my bride, drip like the ______. Honey and milk are under your tongue. The smell of your garments is like the smell of Lebanon.” (4:11, WEB)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Your two breasts are like two fawns That are twins of a roe, Which feed among the lilies.” The missing terms belong in that order.",
+    "options" : [
+      "two roe"
+    ],
+    "prompt" : "Supply the missing words in order: “Your ____ breasts are like two fawns That are twins of a , Which feed among the lilies.” (4:5, WEB)",
+    "reference" : "Song of Songs 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… voice of my beloved who knocks: Open to me, my sister, my love, my dove, my undefiled; For my head is filled with dew, My hair …”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “… voice of my beloved who knocks: Open to me, my sister, my ____, my dove, my undefiled; For my head is filled with dew, My hair …” (5:2, WEB)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Song of Solomon 5:8 records: “I adjure you, daughters of Jerusalem, If you find my beloved, That you tell him that I am faint with love. Friends”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The bride told the daughters of Jerusalem she was faint with love. (5:8)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… beloved, You fairest among women? How is your beloved better than another beloved, That you do so adjure us? Beloved”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… beloved, You fairest among women? How is your beloved better than another beloved, That you do so adjure us? Beloved” (5:9, WEB)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “His cheeks are like a bed of spices with towers of perfumes. His lips are like lilies, dropping liquid myrrh.”; the second reads “His hands are like rings of gold set with beryl. His body is like ivory work overlaid with sapphires.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "spices gold"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “His cheeks are like a bed of ____ with towers of perfumes. His lips are like lilies, dropping liquid myrrh.” (5:13); “His hands are like rings of set with beryl. His body is like ivory work overlaid with sapphires.” (5:14, WEB)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “My beloved is white and ruddy. The best among ten thousand.”; verse 12 reads “His eyes are like doves beside the water brooks, Washed with milk, mounted like jewels.”. These establish the first and second answers respectively.",
+    "options" : [
+      "water; thousand",
+      "fifth; water",
+      "thousand; water",
+      "thousand; figs"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “My beloved is white and ruddy. The best among ten ______.” (5:10); “His eyes are like doves beside the ______ brooks, Washed with milk, mounted like jewels.” (5:12, WEB)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I rose up to open for my beloved. My hands dripped with myrrh, My fingers with liquid myrrh, On the handles of the lock.” The missing terms belong in that order.",
+    "options" : [
+      "rose handles"
+    ],
+    "prompt" : "Supply the missing words in order: “I ____ up to open for my beloved. My hands dripped with myrrh, My fingers with liquid myrrh, On the of the lock.” (5:5, WEB)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 5:4 uses heart: “My beloved thrust his hand in through the latch opening. My heart pounded for him.”",
+    "options" : [
+      "hair",
+      "heart",
+      "foot",
+      "knee"
+    ],
+    "prompt" : "Which word completes “My beloved thrust his hand in through the latch opening. My ______ pounded for him.”? (5:4, WEB)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "songofsongs",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies keepers: “… about the city found me. They beat me. They bruised me. The keepers of the walls took my cloak away from me.”",
+    "options" : [
+      "sweetness",
+      "eyes",
+      "keepers",
+      "lilies"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… about the city found me. They beat me. They bruised me. The ______ of the walls took my cloak away from me.”? (5:7, WEB)",
+    "reference" : "Song of Songs 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 6:4 uses love: “You are beautiful, my love, as Tirzah, Lovely as Jerusalem, Awesome as an army with banners.”",
+    "options" : [
+      "wrath",
+      "love",
+      "honor",
+      "peace"
+    ],
+    "prompt" : "Which word completes “You are beautiful, my ______, as Tirzah, Lovely as Jerusalem, Awesome as an army with banners.”? (6:4, WEB)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies flock: “Your teeth are like a flock of ewes, Which have come up from the washing; Of which every one has twins; None is bereaved among them.”",
+    "options" : [
+      "moon",
+      "banners",
+      "flock",
+      "tree"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Your teeth are like a ______ of ewes, Which have come up from the washing; Of which every one has twins; None is bereaved among them.”? (6:6, WEB)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the beds of spices, To feed in the gardens, and to gather lilies.”",
+    "options" : [
+      "lilies"
+    ],
+    "prompt" : "Complete the quotation: “… the beds of spices, To feed in the gardens, and to gather ____.” (6:2, WEB)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… me, For they have overcome me. Your hair is like a flock of goats, That lie along the side of Gilead.” The missing terms belong in that order.",
+    "options" : [
+      "overcome Gilead"
+    ],
+    "prompt" : "Supply the missing words in order: “… me, For they have ____ me. Your hair is like a flock of goats, That lie along the side of .” (6:5, WEB)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “My dove, my perfect one, is unique. She is her mother's only daughter. She is the favorite one of her who bore her. The daughters saw …”; verse 10 reads “… as the moon, Clear as the sun, Awesome as an army with banners?”. These establish the first and second answers respectively.",
+    "options" : [
+      "banners; mother's",
+      "mother's; eyes",
+      "mother's; banners",
+      "looks; banners"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “My dove, my perfect one, is unique. She is her ______ only daughter. She is the favorite one of her who bore her. The daughters saw …” (6:9); “… as the moon, Clear as the sun, Awesome as an army with ______?” (6:10, WEB)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “There are sixty queens, eighty concubines, And virgins without number.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “There are sixty queens, eighty concubines, And virgins without number.” (6:8, WEB)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Song of Solomon 6:3 records: “I am my beloved's, and my beloved is mine. He browses among the lilies,”",
+    "options" : [
+      "mine"
+    ],
+    "prompt" : "In this paraphrase, the bride said, I am my beloved's, and my beloved is ____. (6:3)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… plants of the valley, To see whether the vine budded, And the pomegranates were in flower.”; the second reads “Return, return, Shulammite! Return, return, that we may gaze at you. Lover Why do you desire to gaze at the Shulammite, As at the dance of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "pomegranates Return"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… plants of the valley, To see whether the vine budded, And the ____ were in flower.” (6:11); “Return, return, Shulammite! , return, that we may gaze at you. Lover Why do you desire to gaze at the Shulammite, As at the dance of …” (6:13, WEB)",
+    "reference" : "Song of Songs 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “Your mouth like the best wine, That goes down smoothly for my beloved, Gliding through the lips of those who are asleep.”; verse 12 reads “Let's go early up to the vineyards. Let's see whether the vine has budded, Its blossom is open, And the pomegranates are in flower. There I …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Let's; wine",
+      "wine; sandals",
+      "grapes; Let's",
+      "wine; Let's"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Your mouth like the best ______, That goes down smoothly for my beloved, Gliding through the lips of those who are asleep.” (7:9); “______ go early up to the vineyards. Let's see whether the vine has budded, Its blossom is open, And the pomegranates are in flower. There I …” (7:12, WEB)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Your head on you is like Carmel, The hair of your head like purple; The king is held captive in its tresses.” The missing terms belong in that order.",
+    "options" : [
+      "hair king"
+    ],
+    "prompt" : "Supply the missing words in order: “Your head on you is like Carmel, The ____ of your head like purple; The is held captive in its tresses.” (7:5, WEB)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The mandrakes give forth fragrance. At our doors are all kinds of precious fruits, new and old, Which I have stored up for you, my beloved.”; the second reads “Come, my beloved, let us go forth into the field. Let us lodge in the villages.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "doors field"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The mandrakes give forth fragrance. At our ____ are all kinds of precious fruits, new and old, Which I have stored up for you, my beloved.” (7:13); “Come, my beloved, let us go forth into the . Let us lodge in the villages.” (7:11, WEB)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… your breasts be like clusters of the vine, The smell of your breath like apples, Beloved” It says breath, not field.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… your breasts be like clusters of the vine, The smell of your field like apples, Beloved” (7:8, WEB)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… rounded thighs are like jewels, The work of the hands of a skillful workman.”",
+    "options" : [
+      "skillful"
+    ],
+    "prompt" : "Complete the quotation: “… rounded thighs are like jewels, The work of the hands of a ____ workman.” (7:1, WEB)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Love: “How beautiful and how pleasant are you, Love, for delights!”",
+    "options" : [
+      "fear",
+      "peace",
+      "hope",
+      "Love"
+    ],
+    "prompt" : "Which detail belongs in this passage: “How beautiful and how pleasant are you, ______, for delights!”? (7:6, WEB)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 7:3 uses two: “Your two breasts are like two fawns, That are twins of a roe.”",
+    "options" : [
+      "hundred",
+      "seventeen",
+      "two",
+      "twenty"
+    ],
+    "prompt" : "Which word completes “Your two breasts are like ______ fawns, That are twins of a roe.”? (7:3, WEB)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Song of Solomon 7:4 records: “Your neck is like an ivory tower. Your eyes are like the pools in Heshbon by the gate of Bath-rabbim; Your nose is like the tower of Lebanon which looks toward Damascus.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The lover praised his beloved's eyes like pools in Heshbon. (7:4)",
+    "reference" : "Song of Songs 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Song of Solomon 8:6 records: “Set me as a seal on your heart, As a seal on your arm; For love is strong as death. Jealousy is as cruel as Sheol; Its flashes are flashes of fire, A very flame of …”",
+    "options" : [
+      "death"
+    ],
+    "prompt" : "In this paraphrase, love is as strong as ____. (8:6)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… mother's house, Who would instruct me. I would have you drink spiced wine, Of the juice of my pomegranate.”",
+    "options" : [
+      "wine"
+    ],
+    "prompt" : "Complete the quotation: “… mother's house, Who would instruct me. I would have you drink spiced ____, Of the juice of my pomegranate.” (8:2, WEB)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "These are poetic comparisons. Reading the images as poetry allows the passage's celebration of committed love to speak without turning each image into a literal mechanism.",
+    "options" : [
+      "The poem teaches that all fire is a person.",
+      "The passage dismisses love as worthless.",
+      "Love is powerful, enduring and not something wealth can purchase.",
+      "Love can always be bought."
+    ],
+    "prompt" : "What does the comparison of love with death and unquenchable fire communicate? (8:6-7)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “My own vineyard is before me. The thousand are for you, Solomon; Two hundred for those who tend its fruit. Lover”; the second reads “You who dwell in the gardens, with friends in attendance, Let me hear your voice! Beloved”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "thousand friends"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “My own vineyard is before me. The ____ are for you, Solomon; Two hundred for those who tend its fruit. Lover” (8:12); “You who dwell in the gardens, with in attendance, Let me hear your voice! Beloved” (8:13, WEB)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… Leaning on her beloved? Under the apple tree I aroused you. There your mother conceived you. There she was in labor and bore you.” The missing terms belong in that order.",
+    "options" : [
+      "beloved bore"
+    ],
+    "prompt" : "Supply the missing words in order: “… Leaning on her ____? Under the apple tree I aroused you. There your mother conceived you. There she was in labor and you.” (8:5, WEB)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Song of Solomon 8:4 uses love: “… adjure you, daughters of Jerusalem, That you not stir up, nor awaken love, Until it so desires. Friends”",
+    "options" : [
+      "love",
+      "understanding",
+      "peace",
+      "wrath"
+    ],
+    "prompt" : "Which word completes “… adjure you, daughters of Jerusalem, That you not stir up, nor awaken ______, Until it so desires. Friends”? (8:4, WEB)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… she is a wall, We will build on her a turret of silver. If she is a door, We will enclose her with boards of cedar. …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… she is a wall, We will build on her a turret of silver. If she is a door, We will enclose her with boards of cedar. …” (8:9, WEB)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "songofsongs",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies utterly: “… give all the wealth of his house for love, He would be utterly scorned. Friends”",
+    "options" : [
+      "utterly",
+      "Solomon",
+      "tend",
+      "flame"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… give all the wealth of his house for love, He would be ______ scorned. Friends”? (8:7, WEB)",
+    "reference" : "Song of Songs 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

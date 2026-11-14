@@ -1,0 +1,661 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Then the lust, when it has conceived, bears sin; and the sin, when it is full grown, brings forth death.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Then the lust, when it has conceived, bears sin; and the sin, when it is full grown, brings forth death.” (1:15, WEB)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies tempted: “Let no man say when he is tempted, \"I am tempted by God,\" for God can't be tempted by evil, and he himself tempts no one.”",
+    "options" : [
+      "approved",
+      "deceived",
+      "minded",
+      "tempted"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Let no man say when he is tempted, \"I am ______ by God,\" for God can't be tempted by evil, and he himself tempts no one.”? (1:13, WEB)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "James 1:8 uses double: “He is a double-minded man, unstable in all his ways.”",
+    "options" : [
+      "double",
+      "looks",
+      "drawn",
+      "pass"
+    ],
+    "prompt" : "Which word completes “He is a ______-minded man, unstable in all his ways.”? (1:8, WEB)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Trials can produce endurance, while temptation toward evil is linked with disordered desire rather than God's evil intent. The chapter uses related language in different connections. It calls for wisdom and rejects blaming God as the one who seduces people into wrongdoing.",
+    "options" : [
+      "God is portrayed as morally tempted by evil.",
+      "Trials can produce endurance, while temptation toward evil is linked with disordered desire rather than God's evil intent.",
+      "Every difficult circumstance proves that endurance is pointless.",
+      "Human desire plays no role in the description of temptation."
+    ],
+    "prompt" : "How does James distinguish testing from God's enticing someone into evil? (1:2-18)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “Of his own will he brought us forth by the word of truth, that we should be a kind of first fruits of his creatures.”; verse 21 reads “Therefore, putting away all filthiness and overflowing of wickedness, receive with humility the implanted word, which is able to save your souls.”. These establish the first and second answers respectively.",
+    "options" : [
+      "truth; save",
+      "peace; humility",
+      "humility; truth",
+      "truth; humility"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Of his own will he brought us forth by the word of ______, that we should be a kind of first fruits of his creatures.” (1:18); “Therefore, putting away all filthiness and overflowing of wickedness, receive with ______ the implanted word, which is able to save your souls.” (1:21, WEB)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are in the Dispersion: Greetings.”",
+    "options" : [
+      "servant"
+    ],
+    "prompt" : "Complete the quotation: “James, a ____ of God and of the Lord Jesus Christ, to the twelve tribes which are in the Dispersion: Greetings.” (1:1, WEB)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But let him ask in faith, without any doubting, for he who doubts is like a wave of the sea, driven by the wind and tossed.”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “But let him ask in ____, without any doubting, for he who doubts is like a wave of the sea, driven by the wind and tossed.” (1:6, WEB)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and the flower in it falls, and the beauty of its appearance perishes. So also will the rich man fade away in his pursuits.” The missing terms belong in that order.",
+    "options" : [
+      "falls fade"
+    ],
+    "prompt" : "Supply the missing words in order: “… and the flower in it ____, and the beauty of its appearance perishes. So also will the rich man away in his pursuits.” (1:11, WEB)",
+    "reference" : "James 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "James 2:8 uses love: “… if you fulfill the royal law, according to the Scripture, \"You shall love your neighbor as yourself,\" you do well.”",
+    "options" : [
+      "love",
+      "knowledge",
+      "kindness",
+      "truth"
+    ],
+    "prompt" : "Which word completes “… if you fulfill the royal law, according to the Scripture, \"You shall ______ your neighbor as yourself,\" you do well.”? (2:8, WEB)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "A claimed faith that fails to act in response to real need. James uses a needy brother or sister and Abraham's action to expose empty profession. Christian traditions discuss how his justification language relates to Paul, but the criticism of barren claims is explicit.",
+    "options" : [
+      "Every responsive act of mercy is rejected.",
+      "The passage says Abraham's conduct never expresses his faith.",
+      "Merely speaking kind wishes always supplies food and clothing.",
+      "A claimed faith that fails to act in response to real need."
+    ],
+    "prompt" : "What kind of faith is criticized when James says faith without works is dead? (2:14-26)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For whoever shall keep the whole law, and yet stumble in one point, he has become guilty of all.” The missing terms belong in that order.",
+    "options" : [
+      "law point"
+    ],
+    "prompt" : "Supply the missing words in order: “For whoever shall keep the whole ____, and yet stumble in one , he has become guilty of all.” (2:10, WEB)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… in this world to be rich in faith, and heirs of the Kingdom which he promised to those who love him?”",
+    "options" : [
+      "Kingdom"
+    ],
+    "prompt" : "Complete the quotation: “… in this world to be rich in faith, and heirs of the ____ which he promised to those who love him?” (2:5, WEB)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… warmed and filled;\" and yet you didn't give them the things the body needs, what good is it?” It says body, not offered.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… warmed and filled;\" and yet you didn't give them the things the offered needs, what good is it?” (2:16, WEB)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For if a man with a gold ring, in fine clothing, comes into your assembly, and a poor man in filthy clothing also comes in;”",
+    "options" : [
+      "gold"
+    ],
+    "prompt" : "Complete the quotation: “For if a man with a ____ ring, in fine clothing, comes into your assembly, and a poor man in filthy clothing also comes in;” (2:2, WEB)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “Yes, a man will say, \"You have faith, and I have works.\" Show me your faith from your works, and I by my works will show …”; verse 21 reads “Wasn't Abraham our father justified by works, in that he offered up Isaac his son on the altar?”. These establish the first and second answers respectively.",
+    "options" : [
+      "accounted; Isaac",
+      "Isaac; faith",
+      "faith; Ruth",
+      "faith; Isaac"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Yes, a man will say, \"You have ______, and I have works.\" Show me your faith from your works, and I by my works will show …” (2:18); “Wasn't Abraham our father justified by works, in that he offered up ______ his son on the altar?” (2:21, WEB)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "james",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies judgment: “… without mercy to him who has shown no mercy. Mercy triumphs over judgment.”",
+    "options" : [
+      "testimony",
+      "promises",
+      "judgment",
+      "commandments"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… without mercy to him who has shown no mercy. Mercy triumphs over ______.”? (2:13, WEB)",
+    "reference" : "James 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Its qualities include peace, gentleness, mercy and good fruits. James contrasts wise conduct with jealousy and selfish ambition. The course connects knowing God with the way a person treats others, rather than with cleverness alone.",
+    "options" : [
+      "Mercy is excluded from the description.",
+      "Selfish ambition is listed as wisdom's highest fruit.",
+      "Its qualities include peace, gentleness, mercy and good fruits.",
+      "Wisdom is defined only by winning disputes."
+    ],
+    "prompt" : "How does the description of wisdom from above test more than intellectual ability? (3:13-18)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bless: “With it we bless our God and Father, and with it we curse men, who are made in the image of God.”",
+    "options" : [
+      "hate",
+      "rejoice",
+      "bless",
+      "disobey"
+    ],
+    "prompt" : "Which detail belongs in this passage: “With it we ______ our God and Father, and with it we curse men, who are made in the image of God.”? (3:9, WEB)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For every kind of animal, bird, creeping thing, and thing in the sea, is tamed, and has been tamed by mankind.” The missing terms belong in that order.",
+    "options" : [
+      "creeping sea"
+    ],
+    "prompt" : "Supply the missing words in order: “For every kind of animal, bird, ____ thing, and thing in the , is tamed, and has been tamed by mankind.” (3:7, WEB)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… is from above is first pure, then peaceful, gentle, reasonable, full of mercy and good fruits, without partiality, and without hypocrisy.”; the second reads “Now the fruit of righteousness is sown in peace by those who make peace.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "mercy righteousness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… is from above is first pure, then peaceful, gentle, reasonable, full of ____ and good fruits, without partiality, and without hypocrisy.” (3:17); “Now the fruit of is sown in peace by those who make peace.” (3:18, WEB)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… winds, are yet guided by a very small rudder, wherever the pilot desires.”",
+    "options" : [
+      "desires"
+    ],
+    "prompt" : "Complete the quotation: “… winds, are yet guided by a very small rudder, wherever the pilot ____.” (3:4, WEB)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… word, the same is a perfect man, able to bridle the whole body also.”",
+    "options" : [
+      "body"
+    ],
+    "prompt" : "Complete the quotation: “… word, the same is a perfect man, able to bridle the whole ____ also.” (3:2, WEB)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "James 3:6 uses fire: “… members is the tongue, which defiles the whole body, and sets on fire the course of nature, and is set on fire by Gehenna.”",
+    "options" : [
+      "winds",
+      "fire",
+      "mouths",
+      "doesn't"
+    ],
+    "prompt" : "Which word completes “… members is the tongue, which defiles the whole body, and sets on ______ the course of nature, and is set on fire by Gehenna.”? (3:6, WEB)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… a vine figs? Thus no spring yields both salt water and fresh water.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… a vine figs? Thus no spring yields both salt water and fresh water.” (3:12, WEB)",
+    "reference" : "James 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "James 4:5 uses Spirit: “Or do you think that the Scripture says in vain, \"The Spirit who lives in us yearns jealously\"?”",
+    "options" : [
+      "gloom",
+      "pleasures",
+      "judges",
+      "Spirit"
+    ],
+    "prompt" : "Which word completes “Or do you think that the Scripture says in vain, \"The ______ who lives in us yearns jealously\"?”? (4:5, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies joy: “… mourn, and weep. Let your laughter be turned to mourning, and your joy to gloom.”",
+    "options" : [
+      "peace",
+      "joy",
+      "faithfulness",
+      "fear"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… mourn, and weep. Let your laughter be turned to mourning, and your ______ to gloom.”? (4:9, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “You lust, and don't have. You kill, covet, and can't obtain. You fight and make war. You don't have, because you don't ask.”",
+    "options" : [
+      "kill"
+    ],
+    "prompt" : "Complete the quotation: “You lust, and don't have. You ____, covet, and can't obtain. You fight and make war. You don't have, because you don't ask.” (4:2, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… know that friendship with the world is enmity with God? Whoever therefore wants to be a friend of the world makes himself an enemy of God.”",
+    "options" : [
+      "wants"
+    ],
+    "prompt" : "Complete the quotation: “… know that friendship with the world is enmity with God? Whoever therefore ____ to be a friend of the world makes himself an enemy of God.” (4:4, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… say, \"Today or tomorrow let's go into this city, and spend a year there, trade, and make a profit.\"”; verse 14 reads “… know what your life will be like tomorrow. For what is your life? For you are a vapor, that appears for a little time, and then …”. These establish the first and second answers respectively.",
+    "options" : [
+      "save; life",
+      "year; praise",
+      "year; life",
+      "life; year"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… say, \"Today or tomorrow let's go into this city, and spend a ______ there, trade, and make a profit.\"” (4:13); “… know what your life will be like tomorrow. For what is your ______? For you are a vapor, that appears for a little time, and then …” (4:14, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to God, and he will draw near to you. Cleanse your hands, you sinners; and purify your hearts, you double-minded.” The missing terms belong in that order.",
+    "options" : [
+      "draw double"
+    ],
+    "prompt" : "Supply the missing words in order: “… to God, and he will ____ near to you. Cleanse your hands, you sinners; and purify your hearts, you -minded.” (4:8, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… who speaks against a brother and judges his brother, speaks against the law and judges the law. But if you judge the law, you are not …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… who speaks against a brother and judges his brother, speaks against the law and judges the law. But if you judge the law, you are not …” (4:11, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But now you glory in your boasting. All such boasting is evil.”; the second reads “… knows to do good, and doesn't do it, to him it is sin.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "glory sin"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But now you ____ in your boasting. All such boasting is evil.” (4:16); “… knows to do good, and doesn't do it, to him it is .” (4:17, WEB)",
+    "reference" : "James 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… be for a testimony against you, and will eat your flesh like fire. You have laid up your treasure in the last days.”",
+    "options" : [
+      "fire"
+    ],
+    "prompt" : "Complete the quotation: “… be for a testimony against you, and will eat your flesh like ____. You have laid up your treasure in the last days.” (5:3, WEB)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The community is called to pray, seek care and confess, while healing remains God's action. Christians differ about anointing and how the promise is applied. The passage should not be used to assume that everyone who remains ill lacks faith or must have committed a particular hidden sin.",
+    "options" : [
+      "The community is called to pray, seek care and confess, while healing remains God's action.",
+      "Every continuing illness proves a named hidden sin.",
+      "The text makes the elders independent sources of divine power.",
+      "Prayer for another person is forbidden."
+    ],
+    "prompt" : "What must be held together in the instructions about prayer for the sick? (5:13-18)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies mercy: “… in the outcome, and how the Lord is full of compassion and mercy.”",
+    "options" : [
+      "joy",
+      "knowledge",
+      "mercy",
+      "honor"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… in the outcome, and how the Lord is full of compassion and ______.”? (5:11, WEB)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… kept back by fraud, cry out, and the cries of those who reaped have entered into the ears of the Lord of Hosts.”",
+    "options" : [
+      "reaped"
+    ],
+    "prompt" : "Complete the quotation: “… kept back by fraud, cry out, and the cries of those who ____ have entered into the ears of the Lord of Hosts.” (5:4, WEB)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… sick, and the Lord will raise him up. If he has committed sins, he will be forgiven.”; verse 16 reads “… another, that you may be healed. The effective, earnest prayer of a righteous man is powerfully effective.”. These establish the first and second answers respectively.",
+    "options" : [
+      "sins; righteous",
+      "iniquity; righteous",
+      "sins; faithful",
+      "righteous; sins"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… sick, and the Lord will raise him up. If he has committed ______, he will be forgiven.” (5:15); “… another, that you may be healed. The effective, earnest prayer of a ______ man is powerfully effective.” (5:16, WEB)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Don't grumble, brothers, against one another, so that you won't be judged. Behold, the judge stands at the door.” The missing terms belong in that order.",
+    "options" : [
+      "grumble stands"
+    ],
+    "prompt" : "Supply the missing words in order: “Don't ____, brothers, against one another, so that you won't be judged. Behold, the judge at the door.” (5:9, WEB)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "James 5:7 uses waits: “… patient therefore, brothers, until the coming of the Lord. Behold, the farmer waits for the precious fruit of the earth, being patient over it, until it …”",
+    "options" : [
+      "waits",
+      "righteous",
+      "miseries",
+      "precious"
+    ],
+    "prompt" : "Which word completes “… patient therefore, brothers, until the coming of the Lord. Behold, the farmer ______ for the precious fruit of the earth, being patient over it, until it …”? (5:7, WEB)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "james",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… all things, my brothers, don't swear, neither by heaven, nor by the earth, nor by any other oath; but let your \"yes\" be \"yes,\" and your …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… all things, my brothers, don't swear, neither by heaven, nor by the earth, nor by any other oath; but let your \"yes\" be \"yes,\" and your …” (5:12, WEB)",
+    "reference" : "James 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

@@ -13,9 +13,9 @@ struct TrueFalseQuestionTests {
         #expect(SwipeStatementCard.decision(offset: -20, predictedEnd: -200) == .falseAnswer)
     }
 
-    @Test("True and false Genesis questions use the shared answer state")
+    @Test("Imported true and false Genesis questions use the shared answer state")
     func trueFalseAnswerState() {
-        let trueQuestion = QuestionData.questions(bookID: "genesis", chapter: 1)[1]
+        let trueQuestion = QuestionData.questions(bookID: "genesis", chapter: 1).first { $0.format == .trueFalse }!
         #expect(trueQuestion.format == .trueFalse)
         #expect(trueQuestion.options == ["True", "False"])
 
@@ -38,11 +38,10 @@ struct TrueFalseQuestionTests {
         #expect(wrong.isRight)
         #expect(wrong.canContinue)
 
-        let falseQuestion = QuestionData.questions(bookID: "genesis", chapter: 3)[1]
-        #expect(falseQuestion.answer == 1)
+        let falseQuestion = QuestionData.questions(bookID: "genesis", chapter: 3).first { $0.format == .trueFalse }!
         var falseState = MultipleChoiceAnswerState()
         falseState.select(index: 1, correctIndex: falseQuestion.answer)
-        #expect(falseState.isRight)
-        #expect(falseState.canContinue)
+        #expect(falseState.isRight == (falseQuestion.answer == 1))
+        #expect(falseState.canContinue == (falseQuestion.answer == 1))
     }
 }

@@ -1,0 +1,658 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Concerning this salvation, the prophets sought and searched diligently, who prophesied of the grace that would come to you,” The missing terms belong in that order.",
+    "options" : [
+      "salvation grace"
+    ],
+    "prompt" : "Supply the missing words in order: “Concerning this ____, the prophets sought and searched diligently, who prophesied of the that would come to you,” (1:10, WEB)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “who by the power of God are guarded through faith for a salvation ready to be revealed in the last time.”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “who by the power of God are guarded through ____ for a salvation ready to be revealed in the last time.” (1:5, WEB)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's gift of new hope calls for a faithful, reverent way of life amid testing. The course treats salvation as affecting how believers live now. Future inheritance does not erase suffering, and suffering does not automatically invalidate that hope.",
+    "options" : [
+      "God's gift of new hope calls for a faithful, reverent way of life amid testing.",
+      "Resurrection is excluded from the explanation of hope.",
+      "Conduct is said to have no connection to God's call.",
+      "Hope guarantees that testing never occurs."
+    ],
+    "prompt" : "How does living hope connect Christ's resurrection with holy conduct? (1:3-9, 13-21)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… work, pass the time of your living as strangers here in reverent fear:”; verse 18 reads “knowing that you were redeemed, not with corruptible things, with silver or gold, from the useless way of life handed down from your fathers,”. These establish the first and second answers respectively.",
+    "options" : [
+      "fear; bronze",
+      "silver; fear",
+      "fear; silver",
+      "mercy; silver"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… work, pass the time of your living as strangers here in reverent ______:” (1:17); “knowing that you were redeemed, not with corruptible things, with ______ or gold, from the useless way of life handed down from your fathers,” (1:18, WEB)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… and Father of our Lord Jesus Christ, who according to his great mercy became our father again to a living hope through the resurrection of Jesus …”",
+    "options" : [
+      "mercy"
+    ],
+    "prompt" : "Complete the quotation: “… and Father of our Lord Jesus Christ, who according to his great ____ became our father again to a living hope through the resurrection of Jesus …” (1:3, WEB)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Therefore, prepare your minds for action, be sober and set your hope fully on the grace that will be brought to you at the revelation of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Therefore, prepare your minds for action, be sober and set your hope fully on the grace that will be brought to you at the revelation of …” (1:13, WEB)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Holy: “… to you through those who preached the Gospel to you by the Holy Spirit sent out from heaven; which things angels desire to look into.”",
+    "options" : [
+      "gracious",
+      "Holy",
+      "clean",
+      "pure"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to you through those who preached the Gospel to you by the ______ Spirit sent out from heaven; which things angels desire to look into.”? (1:12, WEB)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Peter 1:7 uses gold: “that the proof of your faith, which is more precious than gold that perishes even though it is tested by fire, may be found to result …”",
+    "options" : [
+      "gold",
+      "ashes",
+      "bronze",
+      "iron"
+    ],
+    "prompt" : "Which word completes “that the proof of your faith, which is more precious than ______ that perishes even though it is tested by fire, may be found to result …”? (1:7, WEB)",
+    "reference" : "1 Peter 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Peter 2:7 uses honor: “For you therefore who believe is the honor, but for such as are disobedient, \"The stone which the builders rejected, Has become the chief cornerstone,\"”",
+    "options" : [
+      "faithfulness",
+      "honor",
+      "glory",
+      "hope"
+    ],
+    "prompt" : "Which word completes “For you therefore who believe is the ______, but for such as are disobedient, \"The stone which the builders rejected, Has become the chief cornerstone,\"”? (2:7, WEB)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… past were no people, but now are God's people, who had not obtained mercy, but now have obtained mercy.” The missing terms belong in that order.",
+    "options" : [
+      "obtained mercy"
+    ],
+    "prompt" : "Supply the missing words in order: “… past were no people, but now are God's people, who had not ____, but now have obtained mercy.” (2:10, WEB)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… long for the pure milk of the Word, that you may grow thereby,”",
+    "options" : [
+      "thereby"
+    ],
+    "prompt" : "Complete the quotation: “… long for the pure milk of the Word, that you may grow ____,” (2:2, WEB)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… that by well-doing you should put to silence the ignorance of foolish men:” It says men, not steps.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… that by well-doing you should put to silence the ignorance of foolish steps:” (2:15, WEB)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "It addresses vulnerable people within an existing unjust relationship and points to Christ's endurance. Addressing endurance under mistreatment does not make ownership of people or abuse morally good. The passage must not be used to demand that victims remain in danger or to exempt abusers from accountability.",
+    "options" : [
+      "Victims' dignity depends on a master's approval.",
+      "It addresses vulnerable people within an existing unjust relationship and points to Christ's endurance.",
+      "Abuse becomes righteous because a powerful person commits it.",
+      "The passage commands Christians in every age to own people."
+    ],
+    "prompt" : "How should the account of suffering under unjust masters be distinguished from approval of slavery? (2:18-25)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… back. When he suffered, didn't threaten, but committed himself to him who judges righteously;”; the second reads “who his own self bore our sins in his body on the tree, that we, having died to sins, might live to righteousness; by whose stripes …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "judges body"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… back. When he suffered, didn't threaten, but committed himself to him who ____ righteously;” (2:23); “who his own self bore our sins in his on the tree, that we, having died to sins, might live to righteousness; by whose stripes …” (2:24, WEB)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies soul: “… foreigners and pilgrims, to abstain from fleshly lusts, which war against the soul;”",
+    "options" : [
+      "toward",
+      "spiritual",
+      "precious",
+      "soul"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… foreigners and pilgrims, to abstain from fleshly lusts, which war against the ______;”? (2:11, WEB)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… living stones, are built up as a spiritual house, to be a holy priesthood, to offer up spiritual sacrifices, acceptable to God through Jesus Christ.”",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "Complete the quotation: “… living stones, are built up as a spiritual house, to be a ____ priesthood, to offer up spiritual sacrifices, acceptable to God through Jesus Christ.” (2:5, WEB)",
+    "reference" : "1 Peter 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… even if you should suffer for righteousness' sake, you are blessed. \"Don't fear what they fear, neither be troubled.\"” It says fear, not shame.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… even if you should suffer for righteousness' sake, you are blessed. \"Don't shame what they fear, neither be troubled.\"” (3:14, WEB)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Peter 3:7 uses knowledge: “You husbands, in like manner, live with your wives according to knowledge, giving honor to the woman, as to the weaker vessel, as being also joint …”",
+    "options" : [
+      "justice",
+      "love",
+      "knowledge",
+      "righteousness"
+    ],
+    "prompt" : "Which word completes “You husbands, in like manner, live with your wives according to ______, giving honor to the woman, as to the weaker vessel, as being also joint …”? (3:7, WEB)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He distinguishes it from washing dirt away and relates it to an appeal or pledge toward God through Jesus' resurrection. The explicit qualifications matter. The Gospel Worldview professor emphasizes baptism as a declaration of faith; other Christian traditions explain its saving relation differently, so that course view should be labeled rather than treated as universal.",
+    "options" : [
+      "External washing alone is the entire explanation.",
+      "He distinguishes it from washing dirt away and relates it to an appeal or pledge toward God through Jesus' resurrection.",
+      "Every tradition explains the phrase in exactly the same way.",
+      "Jesus' resurrection is said to be irrelevant."
+    ],
+    "prompt" : "How does the author qualify the statement about baptism saving? (3:18-22)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… being built. In it, few, that is, eight souls, were saved through water.”; the second reads “This is a symbol of baptism, which now saves you-- not the putting away of the filth of the flesh, but the answer of a good …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "water baptism"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… being built. In it, few, that is, eight souls, were saved through ____.” (3:20); “This is a symbol of , which now saves you-- not the putting away of the filth of the flesh, but the answer of a good …” (3:21, WEB)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… if any don't obey the Word, they may be won by the behavior of their wives without a word;”",
+    "options" : [
+      "behavior"
+    ],
+    "prompt" : "Complete the quotation: “… if any don't obey the Word, they may be won by the ____ of their wives without a word;” (3:1, WEB)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… or reviling for reviling; but instead blessing; knowing that to this were you called, that you may inherit a blessing.” The missing terms belong in that order.",
+    "options" : [
+      "instead blessing"
+    ],
+    "prompt" : "Supply the missing words in order: “… or reviling for reviling; but ____ blessing; knowing that to this were you called, that you may inherit a .” (3:9, WEB)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies love: “For, \"He who would love life, And see good days, Let him keep his tongue from evil, And his lips from speaking deceit.”",
+    "options" : [
+      "faithfulness",
+      "fear",
+      "love",
+      "grief"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For, \"He who would ______ life, And see good days, Let him keep his tongue from evil, And his lips from speaking deceit.”? (3:10, WEB)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “but in the hidden person of the heart, in the incorruptible adornment of a gentle and quiet spirit, which is in the sight of God very …”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Complete the quotation: “but in the hidden person of the ____, in the incorruptible adornment of a gentle and quiet spirit, which is in the sight of God very …” (3:4, WEB)",
+    "reference" : "1 Peter 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… all things be earnest in your love among yourselves, for love covers a multitude of sins.” The missing terms belong in that order.",
+    "options" : [
+      "love sins"
+    ],
+    "prompt" : "Supply the missing words in order: “… all things be earnest in your love among yourselves, for ____ covers a multitude of .” (4:8, WEB)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “that you no longer should live the rest of your time in the flesh for the lusts of men, but for the will of God.”",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "Complete the quotation: “that you no longer should live the ____ of your time in the flesh for the lusts of men, but for the will of God.” (4:2, WEB)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Suffering for doing wrong is distinguished from suffering associated with faithfulness to Christ. The passage neither calls every pain persecution nor makes wrongdoing acceptable. It encourages faithful conduct and trust amid a particular kind of hostility.",
+    "options" : [
+      "Suffering for doing wrong is distinguished from suffering associated with faithfulness to Christ.",
+      "The text promises that believers will never face hostility.",
+      "Every consequence of wrongdoing is automatically Christian persecution.",
+      "Harmful conduct becomes acceptable if the offender uses Christian language."
+    ],
+    "prompt" : "What distinction does Peter make concerning suffering? (4:12-19)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies grace: “… a gift, be ministering it among yourselves, as good stewards of the grace of God in its various forms.”",
+    "options" : [
+      "part",
+      "matter",
+      "love",
+      "grace"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… a gift, be ministering it among yourselves, as good stewards of the ______ of God in its various forms.”? (4:10, WEB)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… at the revelation of his glory also you may rejoice with exceeding joy.”; verse 15 reads “… a thief, or an evil doer, or as a meddler in other men's matters.”. These establish the first and second answers respectively.",
+    "options" : [
+      "joy; souls",
+      "shame; men's",
+      "joy; men's",
+      "men's; joy"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… at the revelation of his glory also you may rejoice with exceeding ______.” (4:13); “… a thief, or an evil doer, or as a meddler in other ______ matters.” (4:15, WEB)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Peter 4:6 uses Gospel: “For to this end was the Gospel preached even to the dead, that they might be judged indeed as men in the flesh, but live as …”",
+    "options" : [
+      "exceeding",
+      "suffers",
+      "ready",
+      "Gospel"
+    ],
+    "prompt" : "Which word completes “For to this end was the ______ preached even to the dead, that they might be judged indeed as men in the flesh, but live as …”? (4:6, WEB)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… of our past time doing the desire of the Gentiles, and having walked in lewdness, lusts, drunken binges, orgies, carousings, and abominable idolatries.”",
+    "options" : [
+      "walked"
+    ],
+    "prompt" : "Complete the quotation: “… of our past time doing the desire of the Gentiles, and having ____ in lewdness, lusts, drunken binges, orgies, carousings, and abominable idolatries.” (4:3, WEB)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… trial which has come upon you, to test you, as though a strange thing happened to you.” It says strange, not account.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… trial which has come upon you, to test you, as though a account thing happened to you.” (4:12, WEB)",
+    "reference" : "1 Peter 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “Through Silvanus, our faithful brother, as I consider him, I have written to you briefly, exhorting, and testifying that this is the true grace of God …”; verse 14 reads “Greet one another with a kiss of love. Peace be to you all who are in Christ Jesus. Amen.”. These establish the first and second answers respectively.",
+    "options" : [
+      "faithful; Peace",
+      "holy; Peace",
+      "faithful; truth",
+      "Peace; faithful"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Through Silvanus, our ______ brother, as I consider him, I have written to you briefly, exhorting, and testifying that this is the true grace of God …” (5:12); “Greet one another with a kiss of love. ______ be to you all who are in Christ Jesus. Amen.” (5:14, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Shepherd the flock of God which is among you, exercising the oversight, not under compulsion, but voluntarily, not for dishonest gain, but willingly;”",
+    "options" : [
+      "Shepherd"
+    ],
+    "prompt" : "Complete the quotation: “____ the flock of God which is among you, exercising the oversight, not under compulsion, but voluntarily, not for dishonest gain, but willingly;” (5:2, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Be sober and self-controlled. Be watchful. Your adversary the devil, walks around like a roaring lion, seeking whom he may devour.” The missing terms belong in that order.",
+    "options" : [
+      "adversary roaring"
+    ],
+    "prompt" : "Supply the missing words in order: “Be sober and self-controlled. Be watchful. Your ____ the devil, walks around like a lion, seeking whom he may devour.” (5:8, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “But may the God of all grace, who called you to his eternal glory by Christ Jesus, after you have suffered a little while, perfect, establish, …” It says grace, not gird.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “But may the God of all gird, who called you to his eternal glory by Christ Jesus, after you have suffered a little while, perfect, establish, …” (5:10, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… is in Babylon, chosen together with you, greets you; and so does Mark, my son.”; the second reads “To him be the glory and the power forever and ever. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Mark Amen"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… is in Babylon, chosen together with you, greets you; and so does ____, my son.” (5:13); “To him be the glory and the power forever and ever. .” (5:11, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Peter 5:5 uses humility: “… be subject to the elder. Yes, all of you gird yourselves with humility, to subject yourselves to one another; for \"God resists the proud, but gives …”",
+    "options" : [
+      "walks",
+      "controlled",
+      "humility",
+      "Withstand"
+    ],
+    "prompt" : "Which word completes “… be subject to the elder. Yes, all of you gird yourselves with ______, to subject yourselves to one another; for \"God resists the proud, but gives …”? (5:5, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies faith: “Withstand him steadfast in your faith, knowing that your brothers who are in the world are undergoing the same sufferings.”",
+    "options" : [
+      "subject",
+      "faith",
+      "chosen",
+      "revealed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Withstand him steadfast in your ______, knowing that your brothers who are in the world are undergoing the same sufferings.”? (5:9, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1peter",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “When the chief Shepherd is revealed, you will receive the crown of glory that doesn't fade away.”",
+    "options" : [
+      "glory"
+    ],
+    "prompt" : "Complete the quotation: “When the chief Shepherd is revealed, you will receive the crown of ____ that doesn't fade away.” (5:4, WEB)",
+    "reference" : "1 Peter 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

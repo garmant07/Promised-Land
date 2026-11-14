@@ -1,0 +1,2749 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 1:1 records: “It happened after the death of Joshua, the children of Israel asked of Yahweh, saying, Who shall go up for us first against the Canaanites, to fight against them?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Judah and Simeon fought against the Canaanites in the land. (1:1-4)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “It happened, when Israel had grown strong, that they put the Canaanites to forced labor, and did not utterly drive them out.”; the second reads “Asher didn't drive out the inhabitants of Acco, nor the inhabitants of Sidon, nor of Ahlab, nor of Achzib, nor of Helbah, nor of Aphik, nor …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Israel Asher"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “It happened, when ____ had grown strong, that they put the Canaanites to forced labor, and did not utterly drive them out.” (1:28); “ didn't drive out the inhabitants of Acco, nor the inhabitants of Sidon, nor of Ahlab, nor of Achzib, nor of Helbah, nor of Aphik, nor …” (1:31, WEB)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But Adoni-bezek fled; and they pursued after him, and caught him, and cut off his thumbs and his great toes.”",
+    "options" : [
+      "pursued"
+    ],
+    "prompt" : "Complete the quotation: “But Adoni-bezek fled; and they ____ after him, and caught him, and cut off his thumbs and his great toes.” (1:6, WEB)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 1:7 uses kings: “Adoni-bezek said, \"Seventy kings, having their thumbs and their great toes cut off, gathered their food under my table: as I have done, so God has …”",
+    "options" : [
+      "ruler",
+      "kings",
+      "king",
+      "servants"
+    ],
+    "prompt" : "Which word completes “Adoni-bezek said, \"Seventy ______, having their thumbs and their great toes cut off, gathered their food under my table: as I have done, so God has …”? (1:7, WEB)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… Jebusites who inhabited Jerusalem; but the Jebusites dwell with the children of Benjamin in Jerusalem to this day.”; verse 24 reads “… out of the city, and they said to him, Show us, we pray you, the entrance into the city, and we will deal kindly with you.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Judah; pray",
+      "pray; Benjamin",
+      "Benjamin; Canaanites",
+      "Benjamin; pray"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Jebusites who inhabited Jerusalem; but the Jebusites dwell with the children of ______ in Jerusalem to this day.” (1:21); “… out of the city, and they said to him, Show us, we ______ you, the entrance into the city, and we will deal kindly with you.” (1:24, WEB)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Judah went against the Canaanites who lived in Hebron (now the name of Hebron before was Kiriath Arba); and they struck Sheshai, and Ahiman, and Talmai.” The missing terms belong in that order.",
+    "options" : [
+      "Judah Hebron"
+    ],
+    "prompt" : "Supply the missing words in order: “____ went against the Canaanites who lived in Hebron (now the name of before was Kiriath Arba); and they struck Sheshai, and Ahiman, and Talmai.” (1:10, WEB)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Judah went with Simeon his brother, and they struck the Canaanites who inhabited Zephath, and utterly destroyed it. The name of the city was called Hormah.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Judah went with Simeon his brother, and they struck the Canaanites who inhabited Zephath, and utterly destroyed it. The name of the city was called Hormah.” (1:17, WEB)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Caleb: “… her father a field: and she alighted from off her donkey; and Caleb said to her, What would you?”",
+    "options" : [
+      "Habakkuk",
+      "Joseph",
+      "Caleb",
+      "Hosea"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… her father a field: and she alighted from off her donkey; and ______ said to her, What would you?”? (1:14, WEB)",
+    "reference" : "Judges 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 2:4 uses Israel: “… the angel of Yahweh spoke these words to all the children of Israel, that the people lifted up their voice, and wept.”",
+    "options" : [
+      "Israel",
+      "Haggai",
+      "Leah",
+      "Zophar"
+    ],
+    "prompt" : "Which word completes “… the angel of Yahweh spoke these words to all the children of ______, that the people lifted up their voice, and wept.”? (2:4, WEB)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Yahweh, the God of their fathers, who brought them out of the land of Egypt, and followed other gods, of the gods of the peoples who …” It says land, not vineyard.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Yahweh, the God of their fathers, who brought them out of the vineyard of Egypt, and followed other gods, of the gods of the peoples who …” (2:12, WEB)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “When Yahweh raised them up judges, then Yahweh was with the judge, and saved them out of the hand of their enemies all the days of …”; the second reads “… anger of Yahweh was kindled against Israel; and he said, Because this nation have transgressed my covenant which I commanded their fathers, and have not listened …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "judge nation"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “When Yahweh raised them up judges, then Yahweh was with the ____, and saved them out of the hand of their enemies all the days of …” (2:18); “… anger of Yahweh was kindled against Israel; and he said, Because this have transgressed my covenant which I commanded their fathers, and have not listened …” (2:20, WEB)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The angel quotes God's command and rebukes Israel for not obeying it. This is the specific action named in verse 2.",
+    "options" : [
+      "altars"
+    ],
+    "prompt" : "Israel was commanded to break down the inhabitants' ____ rather than make covenants with them. (2:2)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies inheritance: “They buried him in the border of his inheritance in Timnath Heres, in the hill country of Ephraim, on the north of the mountain of Gaash.”",
+    "options" : [
+      "prayer",
+      "strength",
+      "life",
+      "inheritance"
+    ],
+    "prompt" : "Which detail belongs in this passage: “They buried him in the border of his ______ in Timnath Heres, in the hill country of Ephraim, on the north of the mountain of Gaash.”? (2:9, WEB)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… swore to your fathers; and I said, I will never break my covenant with you:”",
+    "options" : [
+      "covenant"
+    ],
+    "prompt" : "Complete the quotation: “… swore to your fathers; and I said, I will never break my ____ with you:” (2:1, WEB)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… who despoiled them; and he sold them into the hands of their enemies round about, so that they could not any longer stand before their enemies.”; verse 17 reads “… quickly out of the way in which their fathers walked, obeying the commandments of Yahweh; but they didn't do so.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Baals; commandments",
+      "enemies; commandments",
+      "commandments; enemies",
+      "enemies; promises"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… who despoiled them; and he sold them into the hands of their ______ round about, so that they could not any longer stand before their enemies.” (2:14); “… quickly out of the way in which their fathers walked, obeying the ______ of Yahweh; but they didn't do so.” (2:17, WEB)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the days of Joshua, and all the days of the elders who outlived Joshua, who had seen all the great work of Yahweh that he had …” The missing terms belong in that order.",
+    "options" : [
+      "outlived Joshua"
+    ],
+    "prompt" : "Supply the missing words in order: “… the days of Joshua, and all the days of the elders who ____, who had seen all the great work of Yahweh that he had …” (2:7, WEB)",
+    "reference" : "Judges 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Ehud made him a sword which had two edges, a cubit in length; and he girded it under his clothing on his right thigh.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Ehud made him a sword which had two edges, a cubit in length; and he girded it under his clothing on his right thigh.” (3:16, WEB)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 3:5 uses Israel: “The children of Israel lived among the Canaanites, the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites:”",
+    "options" : [
+      "Elijah",
+      "Leah",
+      "Isaiah",
+      "Israel"
+    ],
+    "prompt" : "Which word completes “The children of ______ lived among the Canaanites, the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites:”? (3:5, WEB)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 3:15 records: “… when the children of Israel cried to Yahweh, Yahweh raised them up a savior, Ehud the son of Gera, the Benjamite, a man left-handed. The children of Israel sent tribute by him to Eglon the king …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Ehud was a left-handed man who delivered Israel from Moab. (3:15)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Moab: “… in the sight of Yahweh: and Yahweh strengthened Eglon the king of Moab against Israel, because they had done that which was evil in the sight …”",
+    "options" : [
+      "Jordan",
+      "Canaan",
+      "Jericho",
+      "Moab"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… in the sight of Yahweh: and Yahweh strengthened Eglon the king of ______ against Israel, because they had done that which was evil in the sight …”? (3:12, WEB)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “namely, the five lords of the Philistines, and all the Canaanites, and the Sidonians, and the Hivites who lived on Mount Lebanon, from Mount Baal Hermon …”",
+    "options" : [
+      "five"
+    ],
+    "prompt" : "Complete the quotation: “namely, the ____ lords of the Philistines, and all the Canaanites, and the Sidonians, and the Hivites who lived on Mount Lebanon, from Mount Baal Hermon …” (3:3, WEB)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now when he was gone out, his servants came; and they saw, and, behold, the doors of the upper room were locked; and they said, Surely …”; the second reads “It happened, when he had come, that he blew a trumpet in the hill-country of Ephraim; and the children of Israel went down with him from …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "servants trumpet"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now when he was gone out, his ____ came; and they saw, and, behold, the doors of the upper room were locked; and they said, Surely …” (3:24); “It happened, when he had come, that he blew a in the hill-country of Ephraim; and the children of Israel went down with him from …” (3:27, WEB)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 19 reads “But he himself turned back from the quarries that were by Gilgal, and said, I have a secret errand to you, king. He said, Keep silence. …”; verse 20 reads “… and he was sitting by himself alone in the cool upper room. Ehud said, I have a message from God to you. He arose out of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Egypt; Ehud",
+      "Gilgal; Cushan",
+      "Ehud; Gilgal",
+      "Gilgal; Ehud"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But he himself turned back from the quarries that were by ______, and said, I have a secret errand to you, king. He said, Keep silence. …” (3:19); “… and he was sitting by himself alone in the cool upper room. ______ said, I have a message from God to you. He arose out of …” (3:20, WEB)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… cried to Yahweh, Yahweh raised up a savior to the children of Israel, who saved them, even Othniel the son of Kenaz, Caleb's younger brother.” The missing terms belong in that order.",
+    "options" : [
+      "savior Othniel"
+    ],
+    "prompt" : "Supply the missing words in order: “… cried to Yahweh, Yahweh raised up a ____ to the children of Israel, who saved them, even the son of Kenaz, Caleb's younger brother.” (3:9, WEB)",
+    "reference" : "Judges 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He said to her, Please give me a little water to drink; for I am thirsty. She opened a bottle of milk, and gave him drink, …”; the second reads “Then Jael Heber's wife took a tent-pin, and took a hammer in her hand, and went softly to him, and struck the pin into his temples, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "water pin"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He said to her, Please give me a little ____ to drink; for I am thirsty. She opened a bottle of milk, and gave him drink, …” (4:19); “Then Jael Heber's wife took a tent-, and took a hammer in her hand, and went softly to him, and struck the pin into his temples, …” (4:21, WEB)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Yahweh sold them into the hand of Jabin king of Canaan, who reigned in Hazor; the captain of whose host was Sisera, who lived in Harosheth …”",
+    "options" : [
+      "Canaan"
+    ],
+    "prompt" : "Complete the quotation: “Yahweh sold them into the hand of Jabin king of ____, who reigned in Hazor; the captain of whose host was Sisera, who lived in Harosheth …” (4:2, WEB)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 4:5 uses judgment: “… of Ephraim: and the children of Israel came up to her for judgment.”",
+    "options" : [
+      "judgment",
+      "covenant",
+      "commandment",
+      "teaching"
+    ],
+    "prompt" : "Which word completes “… of Ephraim: and the children of Israel came up to her for ______.”? (4:5, WEB)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 4:4 records: “Now Deborah, a prophetess, the wife of Lappidoth, she judged Israel at that time.”",
+    "options" : [
+      "Deborah"
+    ],
+    "prompt" : "In this paraphrase, the prophetess ____ judged Israel under a palm tree. (4:4)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Zebulun: “Barak called Zebulun and Naphtali together to Kedesh; and there went up ten thousand men at his feet: and Deborah went up with him.”",
+    "options" : [
+      "Daniel",
+      "Boaz",
+      "Zebulun",
+      "Gomer"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Barak called ______ and Naphtali together to Kedesh; and there went up ten thousand men at his feet: and Deborah went up with him.”? (4:10, WEB)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… to the river Kishon, Sisera, the captain of Jabin's army, with his chariots and his multitude; and I will deliver him into your hand.” The missing terms belong in that order.",
+    "options" : [
+      "captain deliver"
+    ],
+    "prompt" : "Supply the missing words in order: “… to the river Kishon, Sisera, the ____ of Jabin's army, with his chariots and his multitude; and I will him into your hand.” (4:7, WEB)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 14 reads “… gone out before you? So Barak went down from Mount Tabor, and ten thousand men after him.”; verse 17 reads “… tent of Jael the wife of Heber the Kenite; for there was peace between Jabin the king of Hazor and the house of Heber the Kenite.”. These establish the first and second answers respectively.",
+    "options" : [
+      "ten; kindness",
+      "peace; ten",
+      "ten; peace",
+      "fifty; peace"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… gone out before you? So Barak went down from Mount Tabor, and ______ thousand men after him.” (4:14); “… tent of Jael the wife of Heber the Kenite; for there was ______ between Jabin the king of Hazor and the house of Heber the Kenite.” (4:17, WEB)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Sisera gathered together all his chariots, even nine hundred chariots of iron, and all the people who were with him, from Harosheth of the Gentiles, to …” It says nine, not eighteen.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Sisera gathered together all his chariots, even eighteen hundred chariots of iron, and all the people who were with him, from Harosheth of the Gentiles, to …” (4:13, WEB)",
+    "reference" : "Judges 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 5:1 records: “Then sang Deborah and Barak the son of Abinoam on that day, saying,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Deborah's song celebrates Israel's victory over Sisera. (5:1-3)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 5:6 uses Anath: “In the days of Shamgar the son of Anath, In the days of Jael, the highways were unoccupied, The travelers walked through byways.”",
+    "options" : [
+      "chariots",
+      "carpets",
+      "Anath",
+      "waters"
+    ],
+    "prompt" : "Which word completes “In the days of Shamgar the son of ______, In the days of Jael, the highways were unoccupied, The travelers walked through byways.”? (5:6, WEB)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Deborah: “Awake, awake, Deborah; Awake, awake, utter a song: Arise, Barak, and lead away your captives, you son of Abinoam.”",
+    "options" : [
+      "reason",
+      "Deborah",
+      "spear",
+      "praise"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Awake, awake, ______; Awake, awake, utter a song: Arise, Barak, and lead away your captives, you son of Abinoam.”? (5:12, WEB)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “Zebulun was a people that jeopardized their lives to the death, Naphtali, on the high places of the field.”; verse 21 reads “… Kishon swept them away, That ancient river, the river Kishon. My soul, march on with strength.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Naphtali; Ephraim",
+      "march; Naphtali",
+      "Ruth; march",
+      "Naphtali; march"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Zebulun was a people that jeopardized their lives to the death, ______, on the high places of the field.” (5:18); “… Kishon swept them away, That ancient river, the river Kishon. My soul, ______ on with strength.” (5:21, WEB)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… forth out of Seir, When you marched out of the field of Edom, The earth trembled, the sky also dropped, Yes, the clouds dropped water.”",
+    "options" : [
+      "Edom"
+    ],
+    "prompt" : "Complete the quotation: “… forth out of Seir, When you marched out of the field of ____, The earth trembled, the sky also dropped, Yes, the clouds dropped water.” (5:4, WEB)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Blessed above women shall Jael be, The wife of Heber the Kenite; Blessed shall she be above women in the tent.”; the second reads “At her feet he bowed, he fell, he lay; At her feet he bowed, he fell; Where he bowed, there he fell down dead.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Jael feet"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Blessed above women shall ____ be, The wife of Heber the Kenite; Blessed shall she be above women in the tent.” (5:24); “At her he bowed, he fell, he lay; At her feet he bowed, he fell; Where he bowed, there he fell down dead.” (5:27, WEB)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “My heart is toward the governors of Israel, Who offered themselves willingly among the people: Bless you Yahweh.” The missing terms belong in that order.",
+    "options" : [
+      "heart toward"
+    ],
+    "prompt" : "Supply the missing words in order: “My ____ is the governors of Israel, Who offered themselves willingly among the people: Bless you Yahweh.” (5:9, WEB)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The princes of Issachar were with Deborah; As was Issachar, so was Barak; Into the valley they rushed forth at his feet. By the watercourses of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The princes of Issachar were with Deborah; As was Issachar, so was Barak; Into the valley they rushed forth at his feet. By the watercourses of …” (5:15, WEB)",
+    "reference" : "Judges 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 6:8 uses Egypt: “… Thus says Yahweh, the God of Israel, I brought you up from Egypt, and brought you forth out of the house of bondage;”",
+    "options" : [
+      "Egypt",
+      "Canaan",
+      "Beersheba",
+      "Persia"
+    ],
+    "prompt" : "Which word completes “… Thus says Yahweh, the God of Israel, I brought you up from ______, and brought you forth out of the house of bondage;”? (6:8, WEB)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “… Lord Yahweh! because I have seen the angel of Yahweh face to face.”; verse 27 reads “Then Gideon took ten men of his servants, and did as Yahweh had spoken to him: and it happened, because he feared his father's household and …”. These establish the first and second answers respectively.",
+    "options" : [
+      "ten; face",
+      "head; ten",
+      "face; hundred",
+      "face; ten"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Lord Yahweh! because I have seen the angel of Yahweh face to ______.” (6:22); “Then Gideon took ______ men of his servants, and did as Yahweh had spoken to him: and it happened, because he feared his father's household and …” (6:27, WEB)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the earth, until you come to Gaza, and left no sustenance in Israel, neither sheep, nor ox, nor donkey.”",
+    "options" : [
+      "Israel"
+    ],
+    "prompt" : "Complete the quotation: “… the earth, until you come to Gaza, and left no sustenance in ____, neither sheep, nor ox, nor donkey.” (6:4, WEB)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… him? he who will contend for him, let him be put to death while it is yet morning: if he be a god, let him contend …”; the second reads “… gathered together after him: and he sent messengers to Asher, and to Zebulun, and to Naphtali; and they came up to meet them.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "death Zebulun"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… him? he who will contend for him, let him be put to ____ while it is yet morning: if he be a god, let him contend …” (6:31); “… gathered together after him: and he sent messengers to Asher, and to , and to Naphtali; and they came up to meet them.” (6:35, WEB)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… said to you, I am Yahweh your God; you shall not fear the gods of the Amorites, in whose land you dwell. But you have not …” The missing terms belong in that order.",
+    "options" : [
+      "fear gods"
+    ],
+    "prompt" : "Supply the missing words in order: “… said to you, I am Yahweh your God; you shall not ____ the of the Amorites, in whose land you dwell. But you have not …” (6:10, WEB)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… cakes of an ephah of meal: the flesh he put in a basket, and he put the broth in a pot, and brought it out to …” It says basket, not while.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… cakes of an ephah of meal: the flesh he put in a while, and he put the broth in a pot, and brought it out to …” (6:19, WEB)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Manasseh: “… which shall I save Israel? behold, my family is the poorest in Manasseh, and I am the least in my father's house.”",
+    "options" : [
+      "Jacob",
+      "Hosea",
+      "Naomi",
+      "Manasseh"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… which shall I save Israel? behold, my family is the poorest in ______, and I am the least in my father's house.”? (6:15, WEB)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 6:11 records: “The angel of Yahweh came, and sat under the oak which was in Ophrah, that pertained to Joash the Abiezrite: and his son Gideon was beating out wheat in the winepress, to hide it from the …”",
+    "options" : [
+      "winepress"
+    ],
+    "prompt" : "In this paraphrase, gideon threshed wheat in a ____ to hide from the Midianites. (6:11)",
+    "reference" : "Judges 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… of it, that he worshiped; and he returned into the camp of Israel, and said, Arise; for Yahweh has delivered into your hand the host of …”; verse 16 reads “He divided the three hundred men into three companies, and he put into the hands of all of them trumpets, and empty pitchers, with torches within …”. These establish the first and second answers respectively.",
+    "options" : [
+      "hundred; Israel",
+      "Israel; eight",
+      "Sarah; hundred",
+      "Israel; hundred"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of it, that he worshiped; and he returned into the camp of ______, and said, Arise; for Yahweh has delivered into your hand the host of …” (7:15); “He divided the three ______ men into three companies, and he put into the hands of all of them trumpets, and empty pitchers, with torches within …” (7:16, WEB)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 7:5 uses water: “… the water: and Yahweh said to Gideon, Everyone who laps of the water with his tongue, as a dog laps, him shall you set by himself; …”",
+    "options" : [
+      "water",
+      "grapes",
+      "salt",
+      "pomegranates"
+    ],
+    "prompt" : "Which word completes “… the water: and Yahweh said to Gideon, Everyone who laps of the ______ with his tongue, as a dog laps, him shall you set by himself; …”? (7:5, WEB)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies servant: “… go down into the camp. Then went he down with Purah his servant to the outermost part of the armed men who were in the camp.”",
+    "options" : [
+      "daughters",
+      "wife",
+      "servant",
+      "servants"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… go down into the camp. Then went he down with Purah his ______ to the outermost part of the armed men who were in the camp.”? (7:11, WEB)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… who lapped, putting their hand to their mouth, was three hundred men: but all the rest of the people bowed down on their knees to drink …” The missing terms belong in that order.",
+    "options" : [
+      "three rest"
+    ],
+    "prompt" : "Supply the missing words in order: “… who lapped, putting their hand to their mouth, was ____ hundred men: but all the of the people bowed down on their knees to drink …” (7:6, WEB)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… him return and depart from Mount Gilead. There returned of the people twenty-two thousand; and there remained ten thousand.”",
+    "options" : [
+      "twenty"
+    ],
+    "prompt" : "Complete the quotation: “… him return and depart from Mount Gilead. There returned of the people ____-two thousand; and there remained ten thousand.” (7:3, WEB)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 7:7 records: “Yahweh said to Gideon, By the three hundred men who lapped will I save you, and deliver the Midianites into your hand; and let all the people go every man to his place.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Gideon's army was reduced to three hundred men. (7:7)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Amalekites and all the children of the east lay along in the valley like locusts for multitude; and their camels were without number, as the sand …” It says valley, not mountain.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Amalekites and all the children of the east lay along in the mountain like locusts for multitude; and their camels were without number, as the sand …” (7:12, WEB)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the torches in their left hands, and the trumpets in their right hands with which to blow; and they cried, The sword of Yahweh and of …”; the second reads “… as far as Beth-shittah toward Zererah, as far as the border of Abel Meholah, by Tabbath.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "hands Abel"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the torches in their left hands, and the trumpets in their right ____ with which to blow; and they cried, The sword of Yahweh and of …” (7:20); “… as far as Beth-shittah toward Zererah, as far as the border of Meholah, by Tabbath.” (7:22, WEB)",
+    "reference" : "Judges 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “God has delivered into your hand the princes of Midian, Oreb and Zeeb: and what was I able to do in comparison with you? Then their …”",
+    "options" : [
+      "delivered"
+    ],
+    "prompt" : "Complete the quotation: “God has ____ into your hand the princes of Midian, Oreb and Zeeb: and what was I able to do in comparison with you? Then their …” (8:3, WEB)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… all Israel played the prostitute after it there; and it became a snare to Gideon, and to his house.”; the second reads “Gideon the son of Joash died in a good old age, and was buried in the tomb of Joash his father, in Ophrah of the Abiezrites.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "snare Joash"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… all Israel played the prostitute after it there; and it became a ____ to Gideon, and to his house.” (8:27); “Gideon the son of died in a good old age, and was buried in the tomb of Joash his father, in Ophrah of the Abiezrites.” (8:32, WEB)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… about fifteen thousand men, all who were left of all the host of the children of the east; for there fell one hundred twenty thousand men …” The missing terms belong in that order.",
+    "options" : [
+      "fifteen twenty"
+    ],
+    "prompt" : "Supply the missing words in order: “… about ____ thousand men, all who were left of all the host of the children of the east; for there fell one hundred thousand men …” (8:10, WEB)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Then said he to Zebah and Zalmunna, What manner of men were they whom you killed at Tabor? They answered, As you are, so were they; …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Then said he to Zebah and Zalmunna, What manner of men were they whom you killed at Tabor? They answered, As you are, so were they; …” (8:18, WEB)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 8:23 records: “Gideon said to them, I will not rule over you, neither shall my son rule over you: Yahweh shall rule over you.”",
+    "options" : [
+      "ruler"
+    ],
+    "prompt" : "In this paraphrase, gideon refused to rule over Israel because God was their ____. (8:23)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 20 reads “He said to Jether his firstborn, Up, and kill them. But the youth didn't draw his sword; for he feared, because he was yet a youth.”; verse 24 reads “… you, that you would give me every man the ear-rings of his spoil. (For they had golden ear-rings, because they were Ishmaelites.)”. These establish the first and second answers respectively.",
+    "options" : [
+      "youth; Ophrah",
+      "youth; spoil",
+      "spoil; youth",
+      "break; spoil"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “He said to Jether his firstborn, Up, and kill them. But the ______ didn't draw his sword; for he feared, because he was yet a youth.” (8:20); “… you, that you would give me every man the ear-rings of his ______. (For they had golden ear-rings, because they were Ishmaelites.)” (8:24, WEB)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies seven: “… described for him the princes of Succoth, and the elders of it, seventy-seven men.”",
+    "options" : [
+      "tenth",
+      "eight",
+      "sixth",
+      "seven"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… described for him the princes of Succoth, and the elders of it, seventy-______ men.”? (8:14, WEB)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 8:6 uses bread: “… of Zebah and Zalmunna now in your hand, that we should give bread to your army?”",
+    "options" : [
+      "oil",
+      "fruit",
+      "bread",
+      "milk"
+    ],
+    "prompt" : "Which word completes “… of Zebah and Zalmunna now in your hand, that we should give ______ to your army?”? (8:6, WEB)",
+    "reference" : "Judges 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “They gave him seventy pieces of silver out of the house of Baal Berith, with which Abimelech hired vain and light fellows, who followed him.”",
+    "options" : [
+      "silver"
+    ],
+    "prompt" : "Complete the quotation: “They gave him seventy pieces of ____ out of the house of Baal Berith, with which Abimelech hired vain and light fellows, who followed him.” (9:4, WEB)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… me king over you, then come and take refuge in my shade; and if not, let fire come out of the bramble, and devour the cedars …” The missing terms belong in that order.",
+    "options" : [
+      "refuge fire"
+    ],
+    "prompt" : "Supply the missing words in order: “… me king over you, then come and take ____ in my shade; and if not, let come out of the bramble, and devour the cedars …” (9:15, WEB)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fear: “… ran away, and fled, and went to Beer, and lived there, for fear of Abimelech his brother.”",
+    "options" : [
+      "knowledge",
+      "anger",
+      "faithfulness",
+      "fear"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… ran away, and fled, and went to Beer, and lived there, for ______ of Abimelech his brother.”? (9:21, WEB)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 9:9 uses leave: “But the olive tree said to them, Should I leave my fatness, with which by me they honor God and man, and go to wave back …”",
+    "options" : [
+      "sword",
+      "Shechem",
+      "leave",
+      "place"
+    ],
+    "prompt" : "Which word completes “But the olive tree said to them, Should I ______ my fatness, with which by me they honor God and man, and go to wave back …”? (9:9, WEB)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “They went out into the field, and gathered their vineyards, and trod the grapes, and held festival, and went into the house of their god, and …” It says gathered, not lifted.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “They went out into the field, and lifted their vineyards, and trod the grapes, and held festival, and went into the house of their god, and …” (9:27, WEB)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 33 reads “… the morning, as soon as the sun is up, you shall rise early, and rush on the city; and, behold, when he and the people who …”; verse 38 reads “Then said Zebul to him, Where is now your mouth, that you said, Who is Abimelech, that we should serve him? is not this the people …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Zebul; early",
+      "olive; Zebul",
+      "early; Zebul",
+      "early; rush"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the morning, as soon as the sun is up, you shall rise ______, and rush on the city; and, behold, when he and the people who …” (9:33); “Then said ______ to him, Where is now your mouth, that you said, Who is Abimelech, that we should serve him? is not this the people …” (9:38, WEB)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… in the entrance of the gate of the city: and the two companies rushed on all who were in the field, and struck them.”; the second reads “… all the men of the tower of Shechem died also, about a thousand men and women.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "companies thousand"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… in the entrance of the gate of the city: and the two ____ rushed on all who were in the field, and struck them.” (9:44); “… all the men of the tower of Shechem died also, about a men and women.” (9:49, WEB)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 9:6 records: “All the men of Shechem assembled themselves together, and all the house of Millo, and went and made Abimelech king, by the oak of the pillar that was in Shechem.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Abimelech was made king at Shechem. (9:6)",
+    "reference" : "Judges 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… have sinned: do you to us whatever seems good to you; only deliver us, we pray you, this day.”; the second reads “… Ammon were gathered together, and encamped in Gilead. The children of Israel assembled themselves together, and encamped in Mizpah.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "deliver assembled"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… have sinned: do you to us whatever seems good to you; only ____ us, we pray you, this day.” (10:15); “… Ammon were gathered together, and encamped in Gilead. The children of Israel themselves together, and encamped in Mizpah.” (10:17, WEB)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The children of Ammon passed over the Jordan to fight also against Judah, and against Benjamin, and against the house of Ephraim; so that Israel was …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The children of Ammon passed over the Jordan to fight also against Judah, and against Benjamin, and against the house of Ephraim; so that Israel was …” (10:9, WEB)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 10:10 records: “The children of Israel cried to Yahweh, saying, We have sinned against you, even because we have forsaken our God, and have served the Baals.”",
+    "options" : [
+      "sinned"
+    ],
+    "prompt" : "In this paraphrase, the people of Israel cried out to God and said, We have ____. (10:10)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “He judged Israel twenty-three years, and died, and was buried in Shamir.”",
+    "options" : [
+      "twenty"
+    ],
+    "prompt" : "Complete the quotation: “He judged Israel ____-three years, and died, and was buried in Shamir.” (10:2, WEB)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the gods of Syria, and the gods of Sidon, and the gods of Moab, and the gods of the children of Ammon, and the gods of …” The missing terms belong in that order.",
+    "options" : [
+      "gods Moab"
+    ],
+    "prompt" : "Supply the missing words in order: “… the gods of Syria, and the gods of Sidon, and the ____ of , and the gods of the children of Ammon, and the gods of …” (10:6, WEB)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 10:4 uses Gilead: “… called Havvoth Jair to this day, which are in the land of Gilead.”",
+    "options" : [
+      "Edom",
+      "Assyria",
+      "Gilead",
+      "Hebron"
+    ],
+    "prompt" : "Which word completes “… called Havvoth Jair to this day, which are in the land of ______.”? (10:4, WEB)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… you from the Egyptians, and from the Amorites, from the children of Ammon, and from the Philistines?”; verse 12 reads “The Sidonians also, and the Amalekites, and the Maonites, did oppress you; and you cried to me, and I saved you out of their hand.”. These establish the first and second answers respectively.",
+    "options" : [
+      "thirty; oppress",
+      "Ammon; seems",
+      "oppress; Ammon",
+      "Ammon; oppress"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… you from the Egyptians, and from the Amorites, from the children of ______, and from the Philistines?” (10:11); “The Sidonians also, and the Amalekites, and the Maonites, did ______ you; and you cried to me, and I saved you out of their hand.” (10:12, WEB)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “The anger of Yahweh was kindled against Israel, and he sold them into the hand of the Philistines, and into the hand of the children of …”",
+    "options" : [
+      "Enoch",
+      "Joseph",
+      "Israel",
+      "Mordecai"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The anger of Yahweh was kindled against ______, and he sold them into the hand of the Philistines, and into the hand of the children of …”? (10:7, WEB)",
+    "reference" : "Judges 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 11:7 uses Gilead: “Jephthah said to the elders of Gilead, Didn't you hate me, and drive me out of my father's house? and why are you come to me …”",
+    "options" : [
+      "Gilead",
+      "Damascus",
+      "Jerusalem",
+      "Jordan"
+    ],
+    "prompt" : "Which word completes “Jephthah said to the elders of ______, Didn't you hate me, and drive me out of my father's house? and why are you come to me …”? (11:7, WEB)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Many readers understand the outcome as sacrifice; others argue for lifelong dedication. Both must reckon with the text's wording and grief. The Spirit's empowerment does not endorse every decision Jephthah makes.",
+    "options" : [
+      "Every vow is automatically morally right.",
+      "The narrative records his vow and its tragic outcome without making it God's command.",
+      "God explicitly commands Jephthah to make the vow.",
+      "The chapter depicts a joyful, uncomplicated result."
+    ],
+    "prompt" : "What must be distinguished when interpreting Jephthah's vow? (11:29-40)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 11:30 records: “Jephthah vowed a vow to Yahweh, and said, If you will indeed deliver the children of Ammon into my hand,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Jephthah made a rash vow before going to battle. (11:30-31)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the people made him head and chief over them: and Jephthah spoke all his words before Yahweh in Mizpah.” The missing terms belong in that order.",
+    "options" : [
+      "chief Mizpah"
+    ],
+    "prompt" : "Supply the missing words in order: “… the people made him head and ____ over them: and Jephthah spoke all his words before Yahweh in .” (11:11, WEB)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Israel sent messengers to Sihon king of the Amorites, the king of Heshbon; and Israel said to him, Let us pass, we pray you, through your …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Israel sent messengers to Sihon king of the Amorites, the king of Heshbon; and Israel said to him, Let us pass, we pray you, through your …” (11:19, WEB)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Moab: “… to him, Thus says Jephthah: Israel didn't take away the land of Moab, nor the land of the children of Ammon,”",
+    "options" : [
+      "Moab",
+      "Goshen",
+      "Edom",
+      "Gilgal"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to him, Thus says Jephthah: Israel didn't take away the land of ______, nor the land of the children of Ammon,”? (11:15, WEB)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “So now Yahweh, the God of Israel, has dispossessed the Amorites from before his people Israel, and should you possess them?”; verse 27 reads “I therefore have not sinned against you, but you do me wrong to war against me: Yahweh, the Judge, be judge this day between the children …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Amorites; Sihon",
+      "Amorites; wrong",
+      "words; wrong",
+      "wrong; Amorites"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “So now Yahweh, the God of Israel, has dispossessed the ______ from before his people Israel, and should you possess them?” (11:23); “I therefore have not sinned against you, but you do me ______ to war against me: Yahweh, the Judge, be judge this day between the children …” (11:27, WEB)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Then Jephthah fled from his brothers, and lived in the land of Tob: and there were gathered vain fellows to Jephthah, and they went out with …”",
+    "options" : [
+      "land"
+    ],
+    "prompt" : "Complete the quotation: “Then Jephthah fled from his brothers, and lived in the ____ of Tob: and there were gathered vain fellows to Jephthah, and they went out with …” (11:3, WEB)",
+    "reference" : "Judges 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies six: “Jephthah judged Israel six years. Then died Jephthah the Gileadite, and was buried in one of the cities of Gilead.”",
+    "options" : [
+      "fifty",
+      "four",
+      "six",
+      "third"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Jephthah judged Israel ______ years. Then died Jephthah the Gileadite, and was buried in one of the cities of Gilead.”? (12:7, WEB)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the Jordan against the Ephraimites. It was so, that when any of the fugitives of Ephraim said, Let me go over, the men of Gilead said …” The missing terms belong in that order.",
+    "options" : [
+      "Jordan Gilead"
+    ],
+    "prompt" : "Supply the missing words in order: “… the ____ against the Ephraimites. It was so, that when any of the fugitives of Ephraim said, Let me go over, the men of said …” (12:5, WEB)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “He had forty sons and thirty sons' sons, who rode on seventy donkey colts: and he judged Israel eight years.”; the second reads “… of Hillel the Pirathonite died, and was buried in Pirathon in the land of Ephraim, in the hill-country of the Amalekites.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "forty land"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “He had ____ sons and thirty sons' sons, who rode on seventy donkey colts: and he judged Israel eight years.” (12:14); “… of Hillel the Pirathonite died, and was buried in Pirathon in the of Ephraim, in the hill-country of the Amalekites.” (12:15, WEB)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “He had thirty sons; and thirty daughters he sent abroad, and thirty daughters he brought in from abroad for his sons. He judged Israel seven years.” It says thirty, not five.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “He had five sons; and thirty daughters he sent abroad, and thirty daughters he brought in from abroad for his sons. He judged Israel seven years.” (12:9, WEB)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 12:6 records: “… him, Say now Shibboleth; and he said Sibboleth; for he couldn't manage to pronounce it right: then they laid hold on him, and killed him at the fords of the Jordan. There fell at that time …”",
+    "options" : [
+      "Ephraim"
+    ],
+    "prompt" : "In this paraphrase, the men of Gilead used the word Shibboleth to test people from ____. (12:6)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 12:3 uses life: “When I saw that you didn't save me, I put my life in my hand, and passed over against the children of Ammon, and Yahweh delivered …”",
+    "options" : [
+      "life",
+      "offerings",
+      "thanksgiving",
+      "inheritance"
+    ],
+    "prompt" : "Which word completes “When I saw that you didn't save me, I put my ______ in my hand, and passed over against the children of Ammon, and Yahweh delivered …”? (12:3, WEB)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… I and my people were at great strife with the children of Ammon; and when I called you, you didn't save me out of their hand.”",
+    "options" : [
+      "Ammon"
+    ],
+    "prompt" : "Complete the quotation: “… I and my people were at great strife with the children of ____; and when I called you, you didn't save me out of their hand.” (12:2, WEB)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “After him Elon the Zebulunite judged Israel; and he judged Israel ten years.”; verse 12 reads “… the Zebulunite died, and was buried in Aijalon in the land of Zebulun.”. These establish the first and second answers respectively.",
+    "options" : [
+      "ten; Zebulun",
+      "sixth; Zebulun",
+      "ten; Joel",
+      "Zebulun; ten"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “After him Elon the Zebulunite judged Israel; and he judged Israel ______ years.” (12:11); “… the Zebulunite died, and was buried in Aijalon in the land of ______.” (12:12, WEB)",
+    "reference" : "Judges 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “There was a certain man of Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren, and didn't bear.”",
+    "options" : [
+      "certain"
+    ],
+    "prompt" : "Complete the quotation: “There was a ____ man of Zorah, of the family of the Danites, whose name was Manoah; and his wife was barren, and didn't bear.” (13:2, WEB)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… Yahweh, I pray you, let us detain you, that we may make ready a kid for you.”; verse 16 reads “… said to Manoah, Though you detain me, I won't eat of your bread; and if you will make ready a burnt offering, you must offer it …”. These establish the first and second answers respectively.",
+    "options" : [
+      "bread; ready",
+      "offering; bread",
+      "ready; bread",
+      "ready; fruit"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… Yahweh, I pray you, let us detain you, that we may make ______ a kid for you.” (13:15); “… said to Manoah, Though you detain me, I won't eat of your ______; and if you will make ready a burnt offering, you must offer it …” (13:16, WEB)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies appeared: “… and told her husband, and said to him, Behold, the man has appeared to me, who came to me the other day.”",
+    "options" : [
+      "blessed",
+      "delivered",
+      "appeared",
+      "received"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and told her husband, and said to him, Behold, the man has ______ to me, who came to me the other day.”? (13:10, WEB)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 13:3 records: “The angel of Yahweh appeared to the woman, and said to her, See now, you are barren, and don't bear; but you shall conceive, and bear a son.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "An angel announced the birth of Samson to his mother. (13:3)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “but he said to me, Behold, you shall conceive, and bear a son; and now drink no wine nor strong drink, and eat not any unclean …” The missing terms belong in that order.",
+    "options" : [
+      "conceive wine"
+    ],
+    "prompt" : "Supply the missing words in order: “but he said to me, Behold, you shall ____, and bear a son; and now drink no nor strong drink, and eat not any unclean …” (13:7, WEB)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… altar, that the angel of Yahweh ascended in the flame of the altar: and Manoah and his wife looked on; and they fell on their faces …”; the second reads “… Yahweh were pleased to kill us, he wouldn't have received a burnt offering and a meal-offering at our hand, neither would he have shown us all …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "altar offering"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… altar, that the angel of Yahweh ascended in the flame of the ____: and Manoah and his wife looked on; and they fell on their faces …” (13:20); “… Yahweh were pleased to kill us, he wouldn't have received a burnt and a meal-offering at our hand, neither would he have shown us all …” (13:23, WEB)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… that comes of the vine, neither let her drink wine or strong drink, nor eat any unclean thing; all that I commanded her let her observe.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… that comes of the vine, neither let her drink wine or strong drink, nor eat any unclean thing; all that I commanded her let her observe.” (13:14, WEB)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 13:5 uses Israel: “… Nazirite to God from the womb: and he shall begin to save Israel out of the hand of the Philistines.”",
+    "options" : [
+      "Jacob",
+      "Phinehas",
+      "Zechariah",
+      "Israel"
+    ],
+    "prompt" : "Which word completes “… Nazirite to God from the womb: and he shall begin to save ______ out of the hand of the Philistines.”? (13:5, WEB)",
+    "reference" : "Judges 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… and his father and his mother, to Timnah, and came to the vineyards of Timnah: and, behold, a young lion roared against him.” The missing terms belong in that order.",
+    "options" : [
+      "mother roared"
+    ],
+    "prompt" : "Supply the missing words in order: “… and his father and his ____, to Timnah, and came to the vineyards of Timnah: and, behold, a young lion against him.” (14:5, WEB)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… came to his father and mother, and gave to them, and they ate: but he didn't tell them that he had taken the honey out of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… came to his father and mother, and gave to them, and they ate: but he didn't tell them that he had taken the honey out of …” (14:9, WEB)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… of the feast, and find it out, then I will give you thirty linen garments and thirty changes of clothing;”; verse 14 reads “… forth food, Out of the strong came forth sweetness. They couldn't in three days declare the riddle.”. These establish the first and second answers respectively.",
+    "options" : [
+      "thirty; sixth",
+      "three; thirty",
+      "hundred; three",
+      "thirty; three"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… of the feast, and find it out, then I will give you ______ linen garments and thirty changes of clothing;” (14:12); “… forth food, Out of the strong came forth sweetness. They couldn't in ______ days declare the riddle.” (14:14, WEB)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 14:6 records: “… Spirit of Yahweh came mightily on him, and he tore him as he would have torn a kid; and he had nothing in his hand: but he didn't tell his father or his mother what he …”",
+    "options" : [
+      "lion"
+    ],
+    "prompt" : "In this paraphrase, samson killed a young ____ with his bare hands. (14:6)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 14:4 uses Philistines: “… he sought an occasion against the Philistines. Now at that time the Philistines had rule over Israel.”",
+    "options" : [
+      "Philistines",
+      "garments",
+      "sweetness",
+      "pleases"
+    ],
+    "prompt" : "Which word completes “… he sought an occasion against the Philistines. Now at that time the ______ had rule over Israel.”? (14:4, WEB)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies lion: “… take her; and he turned aside to see the carcass of the lion: and, behold, there was a swarm of bees in the body of the …”",
+    "options" : [
+      "lion",
+      "eagles",
+      "bear",
+      "horse"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… take her; and he turned aside to see the carcass of the ______: and, behold, there was a swarm of bees in the body of the …”? (14:8, WEB)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… father and his mother, and said, I have seen a woman in Timnah of the daughters of the Philistines: now therefore get her for me as …”",
+    "options" : [
+      "Timnah"
+    ],
+    "prompt" : "Complete the quotation: “… father and his mother, and said, I have seen a woman in ____ of the daughters of the Philistines: now therefore get her for me as …” (14:2, WEB)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… wept before him, and said, You do but hate me, and don't love me: you have put forth a riddle to the children of my people, …”; the second reads “The men of the city said to him on the seventh day before the sun went down, What is sweeter than honey? and what is stronger …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "love seventh"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… wept before him, and said, You do but hate me, and don't ____ me: you have put forth a riddle to the children of my people, …” (14:16); “The men of the city said to him on the day before the sun went down, What is sweeter than honey? and what is stronger …” (14:18, WEB)",
+    "reference" : "Judges 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Samson said, With the jawbone of a donkey, heaps on heaps, With the jawbone of a donkey I have struck a thousand men.”; the second reads “… thirsty, and called on Yahweh, and said, You have given this great deliverance by the hand of your servant; and now shall I die for thirst, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "heaps deliverance"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Samson said, With the jawbone of a donkey, heaps on ____, With the jawbone of a donkey I have struck a thousand men.” (15:16); “… thirsty, and called on Yahweh, and said, You have given this great by the hand of your servant; and now shall I die for thirst, …” (15:18, WEB)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Then three thousand men of Judah went down to the cleft of the rock of Etam, and said to Samson, \"Don't you know that the Philistines …” It says thousand, not ninety.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Then three ninety men of Judah went down to the cleft of the rock of Etam, and said to Samson, \"Don't you know that the Philistines …” (15:11, WEB)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 15:4 uses three: “Samson went and caught three hundred foxes, and took firebrands, and turned tail to tail, and put a firebrand in the midst between every two tails.”",
+    "options" : [
+      "nineteen",
+      "four",
+      "ten",
+      "three"
+    ],
+    "prompt" : "Which word completes “Samson went and caught ______ hundred foxes, and took firebrands, and turned tail to tail, and put a firebrand in the midst between every two tails.”? (15:4, WEB)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 15:15 records: “He found a fresh jawbone of a donkey, and put forth his hand, and took it, and struck a thousand men therewith.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Samson killed a thousand men with the jawbone of a donkey. (15:15)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Then the Philistines said, Who has done this? They said, Samson, the son-in-law of the Timnite, because he has taken his wife, and given her to …” The missing terms belong in that order.",
+    "options" : [
+      "Philistines law"
+    ],
+    "prompt" : "Supply the missing words in order: “Then the ____ said, Who has done this? They said, Samson, the son-in- of the Timnite, because he has taken his wife, and given her to …” (15:6, WEB)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… therefore I gave her to your companion: isn't her younger sister more beautiful than she? Please take her, instead.”",
+    "options" : [
+      "beautiful"
+    ],
+    "prompt" : "Complete the quotation: “… therefore I gave her to your companion: isn't her younger sister more ____ than she? Please take her, instead.” (15:2, WEB)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… to him, We have come down to bind you, that we may deliver you into the hand of the Philistines. Samson said to them, Swear to …”; verse 14 reads “… came to Lehi, the Philistines shouted as they met him: and the Spirit of Yahweh came mightily on him, and the ropes that were on his …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Spirit; deliver",
+      "foxes; Spirit",
+      "deliver; flax",
+      "deliver; Spirit"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… to him, We have come down to bind you, that we may ______ you into the hand of the Philistines. Samson said to them, Swear to …” (15:12); “… came to Lehi, the Philistines shouted as they met him: and the ______ of Yahweh came mightily on him, and the ropes that were on his …” (15:14, WEB)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies thigh: “He struck them hip and thigh with a great slaughter: and he went down and lived in the cleft of the rock of Etam.”",
+    "options" : [
+      "Judah",
+      "burnt",
+      "father",
+      "thigh"
+    ],
+    "prompt" : "Which detail belongs in this passage: “He struck them hip and ______ with a great slaughter: and he went down and lived in the cleft of the rock of Etam.”? (15:8, WEB)",
+    "reference" : "Judges 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… god; for they said, Our god has delivered into our hand our enemy, and the destroyer of our country, who has slain many of us.”; the second reads “… the Philistines were there; and there were on the roof about three thousand men and women, who saw while Samson made sport.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "enemy thousand"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… god; for they said, Our god has delivered into our hand our ____, and the destroyer of our country, who has slain many of us.” (16:24); “… the Philistines were there; and there were on the roof about three men and women, who saw while Samson made sport.” (16:27, WEB)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “She said to him, How can you say, I love you, when your heart is not with me? you have mocked me these three times, and …” It says love, not glory.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “She said to him, How can you say, I glory you, when your heart is not with me? you have mocked me these three times, and …” (16:15, WEB)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “When Delilah saw that he had told her all his heart, she sent and called for the lords of the Philistines, saying, Come up this once, …”; verse 21 reads “… they brought him down to Gaza, and bound him with fetters of brass; and he did grind in the prison-house.”. These establish the first and second answers respectively.",
+    "options" : [
+      "heart; brass",
+      "brass; heart",
+      "heart; wood",
+      "blood; brass"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “When Delilah saw that he had told her all his ______, she sent and called for the lords of the Philistines, saying, Come up this once, …” (16:18); “… they brought him down to Gaza, and bound him with fetters of ______; and he did grind in the prison-house.” (16:21, WEB)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… city, and were quiet all the night, saying, Let be until morning light, then we will kill him.”",
+    "options" : [
+      "light"
+    ],
+    "prompt" : "Complete the quotation: “… city, and were quiet all the night, saying, Let be until morning ____, then we will kill him.” (16:2, WEB)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 16:5 uses silver: “… and we will each give you of us eleven hundred pieces of silver.”",
+    "options" : [
+      "sand",
+      "gold",
+      "silver",
+      "copper"
+    ],
+    "prompt" : "Which word completes “… and we will each give you of us eleven hundred pieces of ______.”? (16:5, WEB)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 16:6 records: “Delilah said to Samson, Tell me, Please, in which your great strength lies, and with which you might be bound to afflict you.”",
+    "options" : [
+      "strength"
+    ],
+    "prompt" : "In this paraphrase, delilah discovered the secret of Samson's ____. (16:6)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies thread: “… in the inner chamber. He broke them off his arms like a thread.”",
+    "options" : [
+      "carried",
+      "work",
+      "thread",
+      "Manoah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… in the inner chamber. He broke them off his arms like a ______.”? (16:12, WEB)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… him, The Philistines are on you, Samson. He broke the cords, as a string of tow is broken when it touches the fire. So his strength …” The missing terms belong in that order.",
+    "options" : [
+      "Philistines fire"
+    ],
+    "prompt" : "Supply the missing words in order: “… him, The ____ are on you, Samson. He broke the cords, as a string of tow is broken when it touches the . So his strength …” (16:9, WEB)",
+    "reference" : "Judges 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… a curse, and did also speak it in my ears, behold, the silver is with me; I took it. His mother said, Blessed be my son …”",
+    "options" : [
+      "silver"
+    ],
+    "prompt" : "Complete the quotation: “… a curse, and did also speak it in my ears, behold, the ____ is with me; I took it. His mother said, Blessed be my son …” (17:2, WEB)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Micah: “… and he came to the hill-country of Ephraim to the house of Micah, as he traveled.”",
+    "options" : [
+      "Miriam",
+      "Micah",
+      "Simeon",
+      "Manasseh"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and he came to the hill-country of Ephraim to the house of ______, as he traveled.”? (17:8, WEB)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “In those days there was no king in Israel: every man did that which was right in his own eyes.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “In those days there was no king in Israel: every man did that which was right in his own eyes.” (17:6, WEB)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 17:4 records: “… restored the money to his mother, his mother took two hundred pieces of silver, and gave them to the founder, who made of it an engraved image and a molten image: and it was in the …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Micah kept an idol in his house. (17:4-5)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… him, Dwell with me, and be to me a father and a priest, and I will give you ten pieces of silver by the year, and …”; verse 9 reads “… to him, Whence come you? He said to him, I am a Levite of Bethlehem Judah, and I go to sojourn where I may find a …”. These establish the first and second answers respectively.",
+    "options" : [
+      "priest; Judah",
+      "priests; Levite",
+      "priest; Levite",
+      "Levite; priest"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… him, Dwell with me, and be to me a father and a ______, and I will give you ten pieces of silver by the year, and …” (17:10); “… to him, Whence come you? He said to him, I am a ______ of Bethlehem Judah, and I go to sojourn where I may find a …” (17:9, WEB)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… man out of Bethlehem Judah, of the family of Judah, who was a Levite; and he sojourned there.” The missing terms belong in that order.",
+    "options" : [
+      "Judah sojourned"
+    ],
+    "prompt" : "Supply the missing words in order: “… man out of Bethlehem Judah, of the family of ____, who was a Levite; and he there.” (17:7, WEB)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Micah consecrated the Levite, and the young man became his priest, and was in the house of Micah.”; the second reads “Then said Micah, Now know I that Yahweh will do me good, seeing I have a Levite to my priest.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "consecrated seeing"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Micah ____ the Levite, and the young man became his priest, and was in the house of Micah.” (17:12); “Then said Micah, Now know I that Yahweh will do me good, I have a Levite to my priest.” (17:13, WEB)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 17,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 17:3 uses hundred: “He restored the eleven hundred pieces of silver to his mother; and his mother said, I most assuredly dedicate the silver to Yahweh from my hand …”",
+    "options" : [
+      "fourth",
+      "hundred",
+      "sixty",
+      "fourteen"
+    ],
+    "prompt" : "Which word completes “He restored the eleven ______ pieces of silver to his mother; and his mother said, I most assuredly dedicate the silver to Yahweh from my hand …”? (17:3, WEB)",
+    "reference" : "Judges 17",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… engraved image, the ephod, and the teraphim, and the molten image, the priest said to them, What do you?”; verse 20 reads “The priest's heart was glad, and he took the ephod, and the teraphim, and the engraved image, and went in the midst of the people.”. These establish the first and second answers respectively.",
+    "options" : [
+      "priest; back",
+      "judge; heart",
+      "priest; heart",
+      "heart; priest"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… engraved image, the ephod, and the teraphim, and the molten image, the ______ said to them, What do you?” (18:18); “The priest's ______ was glad, and he took the ephod, and the teraphim, and the engraved image, and went in the midst of the people.” (18:20, WEB)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… good: and are you still? don't be slothful to go and to enter in to possess the land.” The missing terms belong in that order.",
+    "options" : [
+      "slothful land"
+    ],
+    "prompt" : "Supply the missing words in order: “… good: and are you still? don't be ____ to go and to enter in to possess the .” (18:9, WEB)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies dan: “… and encamped in Kiriath Jearim, in Judah: therefore they called that place Mahaneh-dan, to this day; behold, it is behind Kiriath Jearim.”",
+    "options" : [
+      "Sidonians",
+      "Kiriath",
+      "hand",
+      "dan"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and encamped in Kiriath Jearim, in Judah: therefore they called that place Mahaneh-______, to this day; behold, it is behind Kiriath Jearim.”? (18:12, WEB)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… among us, lest angry fellows fall on you, and you lose your life, with the lives of your household.\"”; the second reads “… no dealings with any man; and it was in the valley that lies by Beth Rehob. They built the city, and lived therein.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "life lies"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… among us, lest angry fellows fall on you, and you lose your ____, with the lives of your household.\"” (18:25); “… no dealings with any man; and it was in the valley that by Beth Rehob. They built the city, and lived therein.” (18:28, WEB)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 18:7 uses five: “Then the five men departed, and came to Laish, and saw the people who were therein, how they lived in security, after the manner of the …”",
+    "options" : [
+      "twelfth",
+      "seven",
+      "five",
+      "eighteen"
+    ],
+    "prompt" : "Which word completes “Then the ______ men departed, and came to Laish, and saw the people who were therein, how they lived in security, after the manner of the …”? (18:7, WEB)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… that there is in these houses an ephod, and teraphim, and an engraved image, and a molten image? now therefore consider what you have to do.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… that there is in these houses an ephod, and teraphim, and an engraved image, and a molten image? now therefore consider what you have to do.” (18:14, WEB)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “When they were by the house of Micah, they knew the voice of the young man the Levite; and they turned aside there, and said to …”",
+    "options" : [
+      "Micah"
+    ],
+    "prompt" : "Complete the quotation: “When they were by the house of ____, they knew the voice of the young man the Levite; and they turned aside there, and said to …” (18:3, WEB)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 18,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 18:27 records: “… took that which Micah had made, and the priest whom he had, and came to Laish, to a people quiet and secure, and struck them with the edge of the sword; and they burnt the city …”",
+    "options" : [
+      "Laish"
+    ],
+    "prompt" : "In this paraphrase, the Danites captured the city of ____ and made it their home. (18:27)",
+    "reference" : "Judges 18",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The narrative exposes brutal failures toward a vulnerable woman. Recording these actions does not endorse them; the book's closing refrain highlights the community's disorder.",
+    "options" : [
+      "As an example of proper hospitality.",
+      "As a command to repeat the men's actions.",
+      "As evidence of moral collapse, not a model of faithful conduct.",
+      "As proof that every Israelite acts faithfully."
+    ],
+    "prompt" : "How should the abuse in Gibeah be read within Judges' closing account? (19:22-30; 21:25)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies lodge: “… and let us turn aside into this city of the Jebusites, and lodge in it.”",
+    "options" : [
+      "abused",
+      "departed",
+      "lodge",
+      "won't"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… and let us turn aside into this city of the Jebusites, and ______ in it.”? (19:11, WEB)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… hill-country of Ephraim; from there am I, and I went to Bethlehem Judah: and I am now going to the house of Yahweh; and there is …”; verse 20 reads “The old man said, Peace be to you; howsoever let all your wants lie on me; only don't lodge in the street.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Judah; grief",
+      "Peace; Judah",
+      "Judah; Peace",
+      "Hezekiah; Peace"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… hill-country of Ephraim; from there am I, and I went to Bethlehem ______: and I am now going to the house of Yahweh; and there is …” (19:18); “The old man said, ______ be to you; howsoever let all your wants lie on me; only don't lodge in the street.” (19:20, WEB)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… man rose up to depart, he, and his concubine, and his servant, his father-in-law, the young lady's father, said to him, Behold, now the day draws …” The missing terms belong in that order.",
+    "options" : [
+      "servant law"
+    ],
+    "prompt" : "Supply the missing words in order: “… man rose up to depart, he, and his concubine, and his ____, his father-in-, the young lady's father, said to him, Behold, now the day draws …” (19:9, WEB)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “They turned aside there, to go in to lodge in Gibeah: and he went in, and sat him down in the street of the city; for …” It says Gibeah, not consider.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “They turned aside there, to go in to lodge in consider: and he went in, and sat him down in the street of the city; for …” (19:15, WEB)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 19:5 uses bread: “… father said to his son-in-law, Strengthen your heart with a morsel of bread, and afterward you shall go your way.”",
+    "options" : [
+      "olives",
+      "bread",
+      "corn",
+      "salt"
+    ],
+    "prompt" : "Which word completes “… father said to his son-in-law, Strengthen your heart with a morsel of ______, and afterward you shall go your way.”? (19:5, WEB)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… her, to speak kindly to her, to bring her again, having his servant with him, and a couple of donkeys: and she brought him into her …”",
+    "options" : [
+      "servant"
+    ],
+    "prompt" : "Complete the quotation: “… her, to speak kindly to her, to bring her again, having his ____ with him, and a couple of donkeys: and she brought him into her …” (19:3, WEB)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 19,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 19:22 records: “… the men of the city, certain base fellows, beset the house round about, beating at the door; and they spoke to the master of the house, the old man, saying, Bring forth the man who came …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "A Levite's concubine was abused in Gibeah. (19:22-25)",
+    "reference" : "Judges 19",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Bethel: “The children of Israel arose, and went up to Bethel, and asked counsel of God; and they said, Who shall go up for us first to …”",
+    "options" : [
+      "Zion",
+      "Damascus",
+      "Bethel",
+      "Edom"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The children of Israel arose, and went up to ______, and asked counsel of God; and they said, Who shall go up for us first to …”? (20:18, WEB)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Judges 20:11 records: “So all the men of Israel were gathered against the city, knit together as one man.”",
+    "options" : [
+      "Benjamin"
+    ],
+    "prompt" : "In this paraphrase, the tribes of Israel gathered against the tribe of ____. (20:11)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “(Now the children of Benjamin heard that the children of Israel had gone up to Mizpah.) The children of Israel said, Tell us, how was this …”",
+    "options" : [
+      "Benjamin"
+    ],
+    "prompt" : "Complete the quotation: “(Now the children of ____ heard that the children of Israel had gone up to Mizpah.) The children of Israel said, Tell us, how was this …” (20:3, WEB)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “The liers-in-wait hurried, and rushed on Gibeah; and the liers-in-wait drew themselves along, and struck all the city with the edge of the sword.”; the second reads “… of Israel to the way of the wilderness; but the battle followed hard after them; and those who came out of the cities destroyed them in …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "liers hard"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “The ____-in-wait hurried, and rushed on Gibeah; and the liers-in-wait drew themselves along, and struck all the city with the edge of the sword.” (20:37); “… of Israel to the way of the wilderness; but the battle followed after them; and those who came out of the cities destroyed them in …” (20:42, WEB)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The children of Israel went up and wept before Yahweh until even; and they asked of Yahweh, saying, Shall I again draw near to battle against …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The children of Israel went up and wept before Yahweh until even; and they asked of Yahweh, saying, Shall I again draw near to battle against …” (20:23, WEB)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 28 reads “and Phinehas, the son of Eleazar, the son of Aaron, stood before it in those days), saying, Shall I yet again go out to battle against …”; verse 32 reads “… of Benjamin said, They are struck down before us, as at the first. But the children of Israel said, Let us flee, and draw them away …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Miriam; first",
+      "Eleazar; fifty",
+      "first; Eleazar",
+      "Eleazar; first"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and Phinehas, the son of ______, the son of Aaron, stood before it in those days), saying, Shall I yet again go out to battle against …” (20:28); “… of Benjamin said, They are struck down before us, as at the ______. But the children of Israel said, Let us flee, and draw them away …” (20:32, WEB)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 20:10 uses ten: “and we will take ten men of one hundred throughout all the tribes of Israel, and one hundred of one thousand, and a thousand out of …”",
+    "options" : [
+      "twelfth",
+      "forty",
+      "sixty",
+      "ten"
+    ],
+    "prompt" : "Which word completes “and we will take ______ men of one hundred throughout all the tribes of Israel, and one hundred of one thousand, and a thousand out of …”? (20:10, WEB)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 20,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now therefore deliver up the men, the base fellows, who are in Gibeah, that we may put them to death, and put away evil from Israel. …” The missing terms belong in that order.",
+    "options" : [
+      "deliver death"
+    ],
+    "prompt" : "Supply the missing words in order: “Now therefore ____ up the men, the base fellows, who are in Gibeah, that we may put them to , and put away evil from Israel. …” (20:13, WEB)",
+    "reference" : "Judges 20",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “The people repented them for Benjamin, because that Yahweh had made a breach in the tribes of Israel.”; verse 17 reads “They said, There must be an inheritance for those who are escaped of Benjamin, that a tribe not be blotted out from Israel.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jeremiah; inheritance",
+      "Benjamin; redemption",
+      "Benjamin; inheritance",
+      "inheritance; Benjamin"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The people repented them for ______, because that Yahweh had made a breach in the tribes of Israel.” (21:15); “They said, There must be an ______ for those who are escaped of Benjamin, that a tribe not be blotted out from Israel.” (21:17, WEB)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The people came to Bethel, and sat there until evening before God, and lifted up their voices, and wept sore.”",
+    "options" : [
+      "Bethel"
+    ],
+    "prompt" : "Complete the quotation: “The people came to ____, and sat there until evening before God, and lifted up their voices, and wept sore.” (21:2, WEB)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Judges 21:5 uses death: “… up to Yahweh to Mizpah, saying, He shall surely be put to death.”",
+    "options" : [
+      "rest",
+      "death",
+      "inheritance",
+      "life"
+    ],
+    "prompt" : "Which word completes “… up to Yahweh to Mizpah, saying, He shall surely be put to ______.”? (21:5, WEB)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the tribes of Israel who didn't come up to Yahweh to Mizpah? Behold, there came none to the camp from Jabesh Gilead to the assembly.” The missing terms belong in that order.",
+    "options" : [
+      "Israel Gilead"
+    ],
+    "prompt" : "Supply the missing words in order: “… the tribes of ____ who didn't come up to Yahweh to Mizpah? Behold, there came none to the camp from Jabesh to the assembly.” (21:8, WEB)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies twelve: “The congregation sent there twelve thousand men of the most valiant, and commanded them, saying, Go and strike the inhabitants of Jabesh Gilead with the edge …”",
+    "options" : [
+      "ten",
+      "thirty",
+      "twelve",
+      "ninety"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The congregation sent there ______ thousand men of the most valiant, and commanded them, saying, Go and strike the inhabitants of Jabesh Gilead with the edge …”? (21:10, WEB)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… is the thing that you shall do: you shall utterly destroy every male, and every woman who has lain by man.” It says male, not highway.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… is the thing that you shall do: you shall utterly destroy every highway, and every woman who has lain by man.” (21:11, WEB)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Behold, there is a feast of Yahweh from year to year in Shiloh, which is on the north of Bethel, on the east side of the …”; the second reads “… to complain to us, that we will say to them, Grant them graciously to us, because we didn't take for each man his wife in battle, …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Shiloh graciously"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Behold, there is a feast of Yahweh from year to year in ____, which is on the north of Bethel, on the east side of the …” (21:19); “… to complain to us, that we will say to them, Grant them to us, because we didn't take for each man his wife in battle, …” (21:22, WEB)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "judges",
+    "chapter" : 21,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Judges 21:12 records: “They found among the inhabitants of Jabesh Gilead four hundred young virgins, who had not known man by lying with him; and they brought them to the camp to Shiloh, which is in the land of …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The men of Israel gave wives to the Benjamites from Jabesh-gilead. (21:12-14)",
+    "reference" : "Judges 21",
+    "reviewed" : true,
+    "translation" : "Course"
+  }
+]

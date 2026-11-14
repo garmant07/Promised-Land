@@ -1,0 +1,788 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of our inheritance, to the redemption of God's own possession, to the praise of his glory.” It says praise, not worship.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of our inheritance, to the redemption of God's own possession, to the worship of his glory.” (1:14, WEB)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The passage celebrates God's purpose in Christ, while Christians differ over some accounts of how that purpose relates to human response. The course discusses both sovereignty and responsibility. A quiz can test the stated blessings without grading every later Calvinist or Arminian inference as if the chapter explicitly names one system.",
+    "options" : [
+      "Adoption and redemption are absent from the blessing.",
+      "The passage locates its blessings wholly apart from Christ.",
+      "The passage celebrates God's purpose in Christ, while Christians differ over some accounts of how that purpose relates to human response.",
+      "Every theological tradition draws identical conclusions."
+    ],
+    "prompt" : "What should be distinguished when interpreting election and predestination in this blessing? (1:3-14)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ephesians 1:7 uses grace: “… blood, the forgiveness of our trespasses, according to the riches of his grace,”",
+    "options" : [
+      "possession",
+      "word",
+      "heavens",
+      "grace"
+    ],
+    "prompt" : "Which word completes “… blood, the forgiveness of our trespasses, according to the riches of his ______,”? (1:7, WEB)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… may give to you a spirit of wisdom and revelation in the knowledge of him;”; verse 18 reads “… the hope of his calling, and what are the riches of the glory of his inheritance in the saints,”. These establish the first and second answers respectively.",
+    "options" : [
+      "joy; glory",
+      "knowledge; grief",
+      "knowledge; glory",
+      "glory; knowledge"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… may give to you a spirit of wisdom and revelation in the ______ of him;” (1:17); “… the hope of his calling, and what are the riches of the ______ of his inheritance in the saints,” (1:18, WEB)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Paul, an apostle of Christ Jesus through the will of God, to the saints who are at Ephesus, and the faithful in Christ Jesus:”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “____, an apostle of Christ Jesus through the will of God, to the saints who are at Ephesus, and the faithful in Christ Jesus:” (1:1, WEB)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “to an administration of the fullness of the times, to sum up all things in Christ, the things in the heavens, and the things on the …” The missing terms belong in that order.",
+    "options" : [
+      "fullness Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “to an administration of the ____ of the times, to sum up all things in , the things in the heavens, and the things on the …” (1:10, WEB)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “having predestined us for adoption as children through Jesus Christ to himself, according to the good pleasure of his desire,”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “having predestined us for adoption as children through ____ Christ to himself, according to the good pleasure of his desire,” (1:5, WEB)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ephesians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Holy: “… of your salvation,--in whom, having also believed, you were sealed with the Holy Spirit of promise,”",
+    "options" : [
+      "innocent",
+      "guilty",
+      "rich",
+      "Holy"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… of your salvation,--in whom, having also believed, you were sealed with the ______ Spirit of promise,”? (1:13, WEB)",
+    "reference" : "Ephesians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Salvation is God's gift, and those created anew in Christ are called to the good works God prepares. Works do not become a reason for boasting about earning salvation. The course pairs receiving grace with transformation rather than setting grace against every obedient response.",
+    "options" : [
+      "Salvation is God's gift, and those created anew in Christ are called to the good works God prepares.",
+      "Paul says believers were created anew for no purpose.",
+      "Grace means conduct can never matter.",
+      "Good works are the price that forces God to save."
+    ],
+    "prompt" : "How do grace, faith and good works fit together? (2:8-10)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the mind, and were by nature children of wrath, even as the rest.”",
+    "options" : [
+      "rest"
+    ],
+    "prompt" : "Complete the quotation: “… the mind, and were by nature children of wrath, even as the ____.” (2:3, WEB)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “and might reconcile them both in one body to God through the cross, having killed the hostility thereby.”; verse 19 reads “So then you are no longer strangers and foreigners, but you are fellow citizens with the saints, and of the household of God,”. These establish the first and second answers respectively.",
+    "options" : [
+      "strangers; cross",
+      "cross; strangers",
+      "transgressions; strangers",
+      "cross; saints"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “and might reconcile them both in one body to God through the ______, having killed the hostility thereby.” (2:16); “So then you are no longer ______ and foreigners, but you are fellow citizens with the saints, and of the household of God,” (2:19, WEB)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies promise: “… from the commonwealth of Israel, and strangers from the covenants of the promise, having no hope and without God in the world.”",
+    "options" : [
+      "judgments",
+      "promises",
+      "promise",
+      "testimony"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… from the commonwealth of Israel, and strangers from the covenants of the ______, having no hope and without God in the world.”? (2:12, WEB)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ephesians 2:7 uses grace: “… the ages to come he might show the exceeding riches of his grace in kindness toward us in Christ Jesus;”",
+    "options" : [
+      "walk",
+      "grace",
+      "works",
+      "built"
+    ],
+    "prompt" : "Which word completes “… the ages to come he might show the exceeding riches of his ______ in kindness toward us in Christ Jesus;”? (2:7, WEB)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… world, according to the prince of the powers of the air, the spirit who now works in the children of disobedience;”",
+    "options" : [
+      "spirit"
+    ],
+    "prompt" : "Complete the quotation: “… world, according to the prince of the powers of the air, the ____ who now works in the children of disobedience;” (2:2, WEB)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For we are his workmanship, created in Christ Jesus for good works, which God prepared before that we would walk in them.” The missing terms belong in that order.",
+    "options" : [
+      "Christ Jesus"
+    ],
+    "prompt" : "Supply the missing words in order: “For we are his workmanship, created in ____ for good works, which God prepared before that we would walk in them.” (2:10, WEB)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… he might create in himself one new man of the two, making peace;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… he might create in himself one new man of the two, making peace;” (2:15, WEB)",
+    "reference" : "Ephesians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wisdom: “to the intent that now through the assembly the manifold wisdom of God might be made known to the principalities and the powers in the heavenly …”",
+    "options" : [
+      "righteousness",
+      "wisdom",
+      "shame",
+      "understanding"
+    ],
+    "prompt" : "Which detail belongs in this passage: “to the intent that now through the assembly the manifold ______ of God might be made known to the principalities and the powers in the heavenly …”? (3:10, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “and to know Christ's love which surpasses knowledge, that you may be filled with all the fullness of God.”; the second reads “… the glory in the assembly and in Christ Jesus to all generations forever and ever. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "knowledge forever"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “and to know Christ's love which surpasses ____, that you may be filled with all the fullness of God.” (3:19); “… the glory in the assembly and in Christ Jesus to all generations and ever. Amen.” (3:21, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… of the mystery which for ages has been hidden in God, who created all things through Jesus Christ;” The missing terms belong in that order.",
+    "options" : [
+      "hidden Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “… of the mystery which for ages has been ____ in God, who created all things through Jesus ;” (3:9, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “that he would grant you, according to the riches of his glory, that you may be strengthened with power through his Spirit in the inward man;”; verse 17 reads “… through faith; to the end that you, being rooted and grounded in love,”. These establish the first and second answers respectively.",
+    "options" : [
+      "love; glory",
+      "fear; love",
+      "glory; glory",
+      "glory; love"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “that he would grant you, according to the riches of his ______, that you may be strengthened with power through his Spirit in the inward man;” (3:16); “… through faith; to the end that you, being rooted and grounded in ______,” (3:17, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the children of men, as it has now been revealed to his holy apostles and prophets in the Spirit;”",
+    "options" : [
+      "holy"
+    ],
+    "prompt" : "Complete the quotation: “… the children of men, as it has now been revealed to his ____ apostles and prophets in the Spirit;” (3:5, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Therefore I ask that you may not lose heart at my troubles for you, which are your glory.” It says heart, not flesh.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Therefore I ask that you may not lose flesh at my troubles for you, which are your glory.” (3:13, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “For this cause I, Paul, am the prisoner of Christ Jesus on behalf of you Gentiles,”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “For this cause I, ____, am the prisoner of Christ Jesus on behalf of you Gentiles,” (3:1, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ephesians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ephesians 3:6 uses body: “that the Gentiles are fellow heirs, and fellow members of the body, and fellow partakers of his promise in Christ Jesus through the Gospel,”",
+    "options" : [
+      "dwell",
+      "understanding",
+      "Spirit",
+      "body"
+    ],
+    "prompt" : "Which word completes “that the Gentiles are fellow heirs, and fellow members of the ______, and fellow partakers of his promise in Christ Jesus through the Gospel,”? (3:6, WEB)",
+    "reference" : "Ephesians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… eager to keep the unity of the Spirit in the bond of peace.”",
+    "options" : [
+      "peace"
+    ],
+    "prompt" : "Complete the quotation: “… eager to keep the unity of the Spirit in the bond of ____.” (4:3, WEB)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “being darkened in their understanding, alienated from the life of God, because of the ignorance that is in them, because of the hardening of their hearts;” It says understanding, not kindness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “being darkened in their kindness, alienated from the life of God, because of the ignorance that is in them, because of the hardening of their hearts;” (4:18, WEB)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ephesians 4:9 uses first: “Now this, \"He ascended,\" what is it but that he also first descended into the lower parts of the earth?”",
+    "options" : [
+      "three",
+      "fifth",
+      "sixty",
+      "first"
+    ],
+    "prompt" : "Which word completes “Now this, \"He ascended,\" what is it but that he also ______ descended into the lower parts of the earth?”? (4:9, WEB)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “until we all attain to the unity of the faith, and of the knowledge of the Son of God, to a full grown man, to the …” The missing terms belong in that order.",
+    "options" : [
+      "unity knowledge"
+    ],
+    "prompt" : "Supply the missing words in order: “until we all attain to the ____ of the faith, and of the of the Son of God, to a full grown man, to the …” (4:13, WEB)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Different ministries equip the saints and build the body toward unity and maturity in Christ. The course understands church as a people whose members serve one another. Unity is not defined by making every member's work identical.",
+    "options" : [
+      "Maturity means remaining vulnerable to every teaching.",
+      "Different ministries equip the saints and build the body toward unity and maturity in Christ.",
+      "Only one visible leader is allowed to do meaningful service.",
+      "Difference of gifts makes unity impossible."
+    ],
+    "prompt" : "How does the body image connect different gifts with maturity? (4:1-16)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies body: “… according to the working in measure of each individual part, makes the body increase to the building up of itself in love.”",
+    "options" : [
+      "grace",
+      "Christ",
+      "body",
+      "fitted"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… according to the working in measure of each individual part, makes the ______ increase to the building up of itself in love.”? (4:16, WEB)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Let him who stole steal no more; but rather let him labor, working with his hands the thing that is good, that he may have something …”; the second reads “Let all bitterness, wrath, anger, outcry, and slander, be put away from you, with all malice.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "steal outcry"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Let him who stole ____ no more; but rather let him labor, working with his hands the thing that is good, that he may have something …” (4:28); “Let all bitterness, wrath, anger, , and slander, be put away from you, with all malice.” (4:31, WEB)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Therefore he says, \"When he ascended on high, he led captivity captive, and gave gifts to men.\"”",
+    "options" : [
+      "ascended"
+    ],
+    "prompt" : "Complete the quotation: “Therefore he says, \"When he ____ on high, he led captivity captive, and gave gifts to men.\"” (4:8, WEB)",
+    "reference" : "Ephesians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Life filled by the Spirit, mutual submission and the husband's obligation to Christlike self-giving love. Christians debate the precise ordering of roles. The passage never gives permission for abuse, coercion or neglect of the command to love as Christ gives Himself.",
+    "options" : [
+      "Life filled by the Spirit, mutual submission and the husband's obligation to Christlike self-giving love.",
+      "The household discussion is unrelated to life in the Spirit.",
+      "Husbands are exempt from Christlike love.",
+      "A spouse's power makes abusive conduct righteous."
+    ],
+    "prompt" : "What context must accompany the household instructions? (5:18-33)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ephesians 5:9 uses truth: “… the fruit of the Spirit is in all goodness and righteousness and truth,”",
+    "options" : [
+      "truth",
+      "shame",
+      "honor",
+      "wrath"
+    ],
+    "prompt" : "Which word completes “… the fruit of the Spirit is in all goodness and righteousness and ______,”? (5:9, WEB)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… loved you, and gave himself up for us, an offering and a sacrifice to God for a sweet-smelling fragrance.”",
+    "options" : [
+      "sacrifice"
+    ],
+    "prompt" : "Complete the quotation: “… loved you, and gave himself up for us, an offering and a ____ to God for a sweet-smelling fragrance.” (5:2, WEB)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… nor unclean person, nor covetous man, who is an idolater, has any inheritance in the Kingdom of Christ and God.”",
+    "options" : [
+      "inheritance"
+    ],
+    "prompt" : "Complete the quotation: “… nor unclean person, nor covetous man, who is an idolater, has any ____ in the Kingdom of Christ and God.” (5:5, WEB)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… in psalms, hymns, and spiritual songs; singing, and singing praises in your heart to the Lord;”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… in psalms, hymns, and spiritual songs; singing, and singing praises in your heart to the Lord;” (5:19, WEB)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “But all things, when they are reproved, are revealed by the light, for everything that is revealed is light.” The missing terms belong in that order.",
+    "options" : [
+      "reproved light"
+    ],
+    "prompt" : "Supply the missing words in order: “But all things, when they are ____, are revealed by the light, for everything that is revealed is .” (5:13, WEB)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For no man ever hated his own flesh; but nourishes and cherishes it, even as the Lord also does the assembly;”; the second reads “… his father and mother, and will be joined to his wife. The two will become one flesh.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "cherishes two"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For no man ever hated his own flesh; but nourishes and ____ it, even as the Lord also does the assembly;” (5:29); “… his father and mother, and will be joined to his wife. The will become one flesh.\"” (5:31, WEB)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ephesians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies watch: “Therefore watch carefully how you walk, not as unwise, but as wise;”",
+    "options" : [
+      "word",
+      "pleasing",
+      "watch",
+      "cleansed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Therefore ______ carefully how you walk, not as unwise, but as wise;”? (5:15, WEB)",
+    "reference" : "Ephesians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies darkness: “… against the principalities, against the powers, against the world's rulers of the darkness of this age, and against the spiritual hosts of wickedness in the heavenly …”",
+    "options" : [
+      "wickedness",
+      "singleness",
+      "darkness",
+      "boldness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… against the principalities, against the powers, against the world's rulers of the ______ of this age, and against the spiritual hosts of wickedness in the heavenly …”? (6:12, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “with all prayer and requests, praying at all times in the Spirit, and being watchful to this end in all perseverance and requests for all the …”; verse 19 reads “… opening my mouth, to make known with boldness the mystery of the Gospel,”. These establish the first and second answers respectively.",
+    "options" : [
+      "whole; Gospel",
+      "Spirit; Gospel",
+      "Spirit; provoke",
+      "Gospel; Spirit"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “with all prayer and requests, praying at all times in the ______, and being watchful to this end in all perseverance and requests for all the …” (6:18); “… opening my mouth, to make known with boldness the mystery of the ______,” (6:19, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Ephesians 6:6 uses servants: “… of service only when eyes are on you, as men-pleasers; but as servants of Christ, doing the will of God from the heart;”",
+    "options" : [
+      "brother",
+      "shepherd",
+      "servants",
+      "wives"
+    ],
+    "prompt" : "Which word completes “… of service only when eyes are on you, as men-pleasers; but as ______ of Christ, doing the will of God from the heart;”? (6:6, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “\"Honor your father and mother,\" which is the first commandment with a promise:”",
+    "options" : [
+      "promise"
+    ],
+    "prompt" : "Complete the quotation: “\"Honor your father and mother,\" which is the first commandment with a ____:” (6:2, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… obedient to those who according to the flesh are your masters, with fear and trembling, in singleness of your heart, as to Christ;”",
+    "options" : [
+      "fear"
+    ],
+    "prompt" : "Complete the quotation: “… obedient to those who according to the flesh are your masters, with ____ and trembling, in singleness of your heart, as to Christ;” (6:5, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Stand therefore, having the utility belt of truth buckled around your waist, and having put on the breastplate of righteousness,”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Stand therefore, having the utility belt of truth buckled around your waist, and having put on the breastplate of righteousness,” (6:14, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “But that you also may know my affairs, how I am doing, Tychicus, the beloved brother and faithful servant in the Lord, will make known to …”; the second reads “Grace be with all those who love our Lord Jesus Christ with incorruptible love. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Tychicus Grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “But that you also may know my affairs, how I am doing, ____, the beloved brother and faithful servant in the Lord, will make known to …” (6:21); “ be with all those who love our Lord Jesus Christ with incorruptible love. Amen.” (6:24, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "ephesians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “You masters, do the same things to them, and give up threatening, knowing that he who is both their Master and yours is in heaven, and …” The missing terms belong in that order.",
+    "options" : [
+      "masters Master"
+    ],
+    "prompt" : "Supply the missing words in order: “You ____, do the same things to them, and give up threatening, knowing that he who is both their and yours is in heaven, and …” (6:9, WEB)",
+    "reference" : "Ephesians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

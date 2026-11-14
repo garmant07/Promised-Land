@@ -296,25 +296,26 @@ struct BibleServiceClientTests {
     @Test("A chapter without a written question gets one made from its cached text")
     func questionsFromText() throws {
         let mock = MockBibleService()
-        // Obadiah 1 has no written question.
+        // TextQuestion itself still supports the generated fallback path.
         mock.cached[MockBibleService.key("obadiah", 1)] = text("obadiah", 1, [
             "The vision of Obadiah concerning Edom and the messengers among the nations.",
             "See, I will make you small among the nations; you will be utterly despised.",
             "The pride of your heart has deceived you, you who live in the clefts of the rocks.",
         ])
-        let q = try #require(QuestionData.question(bookID: "obadiah", chapter: 1, service: mock, translation: .niv))
+        let cached = try #require(mock.cached[MockBibleService.key("obadiah", 1)])
+        let q = try #require(TextQuestion.make(from: cached, bookName: "Obadiah"))
         #expect(q.options.count == 3)
         #expect(Set(q.options.map { $0.lowercased() }).count == 3)
         #expect(q.prompt.contains(TextQuestion.blank))
         #expect(!q.prompt.contains(q.options[q.answer]))
         #expect(q.reference.hasPrefix("Obadiah 1:"))
         #expect(q.source.hasSuffix("(NIV)"))
-        // The same chapter always gets the same question.
-        #expect(QuestionData.question(bookID: "obadiah", chapter: 1, service: mock, translation: .niv) == q)
+        // Imported questions take priority over generated text for books in the question set.
+        #expect(QuestionData.question(bookID: "obadiah", chapter: 1, service: mock, translation: .niv)?.reviewed == true)
 
         // A written question still wins; nothing cached means no made-up question.
         mock.cached[MockBibleService.key("john", 3)] = text("john", 3, ["A long enough verse about Nicodemus coming at night to see Jesus."])
-        #expect(QuestionData.question(bookID: "john", chapter: 3, service: mock, translation: .niv)?.prompt == "Who came to Jesus by night?")
-        #expect(QuestionData.question(bookID: "nahum", chapter: 1, service: mock, translation: .niv) == nil)
+        #expect(QuestionData.question(bookID: "john", chapter: 3, service: mock, translation: .niv)?.reviewed == true)
+        #expect(QuestionData.question(bookID: "nahum", chapter: 1, service: mock, translation: .niv)?.reviewed == true)
     }
 }

@@ -1,0 +1,782 @@
+[
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Galatians 1:7 uses gospel: “and there isn't another gospel. Only there are some who trouble you, and want to pervert the Gospel of Christ.”",
+    "options" : [
+      "countrymen",
+      "gospel",
+      "grace",
+      "forever"
+    ],
+    "prompt" : "Which word completes “and there isn't another ______. Only there are some who trouble you, and want to pervert the Gospel of Christ.”? (1:7, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… my own age among my countrymen, being more exceedingly zealous for the traditions of my fathers.” It says traditions, not days.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… my own age among my countrymen, being more exceedingly zealous for the days of my fathers.” (1:14, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… For if I were still pleasing men, I wouldn't be a servant of Christ.” The missing terms belong in that order.",
+    "options" : [
+      "servant Christ"
+    ],
+    "prompt" : "Supply the missing words in order: “… For if I were still pleasing men, I wouldn't be a ____ of .” (1:10, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Paul, an apostle (not from men, neither through man, but through Jesus Christ, and God the Father, who raised him from the dead),”",
+    "options" : [
+      "Paul"
+    ],
+    "prompt" : "Complete the quotation: “____, an apostle (not from men, neither through man, but through Jesus Christ, and God the Father, who raised him from the dead),” (1:1, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies beyond: “… way of living in time past in the Jews' religion, how that beyond measure I persecuted the assembly of God, and ravaged it.”",
+    "options" : [
+      "beyond",
+      "confer",
+      "pleasure",
+      "except"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… way of living in time past in the Jews' religion, how that ______ measure I persecuted the assembly of God, and ravaged it.”? (1:13, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “I was still unknown by face to the assemblies of Judea which were in Christ,”; the second reads “but they only heard: \"He who once persecuted us now preaches the faith that he once tried to destroy.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "face faith"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “I was still unknown by ____ to the assemblies of Judea which were in Christ,” (1:22); “but they only heard: \"He who once persecuted us now preaches the that he once tried to destroy.\"” (1:23, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “who gave himself for our sins, that he might deliver us out of this present evil age, according to the will of our God and Father--”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “who gave himself for our ____, that he might deliver us out of this present evil age, according to the will of our God and Father--” (1:4, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 16 reads “… preach him among the Gentiles, I didn't immediately confer with flesh and blood,”; verse 18 reads “Then after three years I went up to Jerusalem to visit Peter, and stayed with him fifteen days.”. These establish the first and second answers respectively.",
+    "options" : [
+      "blood; Cana",
+      "blood; Jerusalem",
+      "eyes; Jerusalem",
+      "Jerusalem; blood"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… preach him among the Gentiles, I didn't immediately confer with flesh and ______,” (1:16); “Then after three years I went up to ______ to visit Peter, and stayed with him fifteen days.” (1:18, WEB)",
+    "reference" : "Galatians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… who stole in to spy out our liberty which we have in Christ Jesus, that they might bring us into bondage;”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… who stole in to spy out our liberty which we have in ____ Jesus, that they might bring us into bondage;” (2:4, WEB)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… preach among the Gentiles, but privately before those who were respected, for fear that I might be running, or had run, in vain.”",
+    "options" : [
+      "fear"
+    ],
+    "prompt" : "Complete the quotation: “… preach among the Gentiles, but privately before those who were respected, for ____ that I might be running, or had run, in vain.” (2:2, WEB)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Galatians 2:6 uses whatever: “But from those who were reputed to be important (whatever they were, it makes no difference to me; God doesn't show partiality to man)--they, I say, …”",
+    "options" : [
+      "whatever",
+      "Titus",
+      "perceived",
+      "bondage"
+    ],
+    "prompt" : "Which word completes “But from those who were reputed to be important (______ they were, it makes no difference to me; God doesn't show partiality to man)--they, I say, …”? (2:6, WEB)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… was given to me, James and Cephas and John, they who were reputed to be pillars, gave to me and Barnabas the right hand of fellowship, …” The missing terms belong in that order.",
+    "options" : [
+      "James Barnabas"
+    ],
+    "prompt" : "Supply the missing words in order: “… was given to me, ____ and Cephas and John, they who were reputed to be pillars, gave to me and the right hand of fellowship, …” (2:9, WEB)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The truth of grace in Christ challenges exclusion that pressures Gentiles to adopt Jewish identity markers. The argument arises from a real table-fellowship dispute. It concerns both acceptance before God and the communal conduct that follows from that truth.",
+    "options" : [
+      "Peter's withdrawal is praised as the gospel's ideal.",
+      "Justification has no relation to treatment of other believers.",
+      "The truth of grace in Christ challenges exclusion that pressures Gentiles to adopt Jewish identity markers.",
+      "Paul says Gentiles must first become ethnically Jewish."
+    ],
+    "prompt" : "How does Paul connect justification with the way Jewish and Gentile believers share fellowship? (2:11-21)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Peter: “But when Peter came to Antioch, I resisted him to the face, because he stood condemned.”",
+    "options" : [
+      "Esther",
+      "Nebuchadnezzar",
+      "Andrew",
+      "Peter"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But when ______ came to Antioch, I resisted him to the face, because he stood condemned.”? (2:11, WEB)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… That life which I now live in the flesh, I live by faith in the Son of God, who loved me, and gave himself up for …”; the second reads “I don't make void the grace of God. For if righteousness is through the law, then Christ died for nothing!\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "faith grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… That life which I now live in the flesh, I live by ____ in the Son of God, who loved me, and gave himself up for …” (2:20); “I don't make void the of God. For if righteousness is through the law, then Christ died for nothing!\"” (2:21, WEB)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… ate with the Gentiles. But when they came, he drew back and separated himself, fearing those who were of the circumcision.” It says separated, not carried.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… ate with the Gentiles. But when they came, he drew back and carried himself, fearing those who were of the circumcision.” (2:12, WEB)",
+    "reference" : "Galatians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Abraham: “that the blessing of Abraham might come on the Gentiles through Christ Jesus; that we might receive the promise of the Spirit through faith.”",
+    "options" : [
+      "Abraham",
+      "Timothy",
+      "Nahum",
+      "Boaz"
+    ],
+    "prompt" : "Which detail belongs in this passage: “that the blessing of ______ might come on the Gentiles through Christ Jesus; that we might receive the promise of the Spirit through faith.”? (3:14, WEB)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Now I say this. A covenant confirmed beforehand by God in Christ, the law, which came four hundred thirty years after, does not annul, so as …” It says covenant, not teaching.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Now I say this. A teaching confirmed beforehand by God in Christ, the law, which came four hundred thirty years after, does not annul, so as …” (3:17, WEB)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The promise and the blessing of faith precede the Mosaic law. Paul uses the biblical sequence to argue that the later law does not cancel God's promise. His Christian reading should still be understood as an argument about Israel's Scriptures and Gentile inclusion.",
+    "options" : [
+      "Paul says the law retroactively cancels every promise.",
+      "Abraham is said to belong to no part of the argument.",
+      "The promise and the blessing of faith precede the Mosaic law.",
+      "The promise was first made only after Sinai."
+    ],
+    "prompt" : "Why does Paul appeal to Abraham before discussing the law's later role? (3:6-18)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “I just want to learn this from you. Did you receive the Spirit by the works of the law, or by hearing of faith?”",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "Complete the quotation: “I just want to learn this from you. Did you receive the ____ by the works of the law, or by hearing of faith?” (3:2, WEB)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For you are all children of God, through faith in Christ Jesus.”; the second reads “… is neither male nor female; for you are all one in Christ Jesus.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Christ Jesus"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For you are all children of God, through faith in ____ Jesus.” (3:26); “… is neither male nor female; for you are all one in Christ .” (3:28, WEB)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… do it by the works of the law, or by hearing of faith?”",
+    "options" : [
+      "faith"
+    ],
+    "prompt" : "Complete the quotation: “… do it by the works of the law, or by hearing of ____?” (3:5, WEB)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Galatians 3:8 uses nations: “… faith, preached the Gospel beforehand to Abraham, saying, \"In you all the nations will be blessed.\"”",
+    "options" : [
+      "hangs",
+      "makes",
+      "transgressions",
+      "nations"
+    ],
+    "prompt" : "Which word completes “… faith, preached the Gospel beforehand to Abraham, saying, \"In you all the ______ will be blessed.\"”? (3:8, WEB)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now that no man is justified by the law before God is evident, for, \"The righteous will live by faith.\"” The missing terms belong in that order.",
+    "options" : [
+      "law righteous"
+    ],
+    "prompt" : "Supply the missing words in order: “Now that no man is justified by the ____ before God is evident, for, \"The will live by faith.\"” (3:11, WEB)",
+    "reference" : "Galatians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… we also, when we were children, were held in bondage under the elements of the world.”",
+    "options" : [
+      "elements"
+    ],
+    "prompt" : "Complete the quotation: “… we also, when we were children, were held in bondage under the ____ of the world.” (4:3, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “But it is always good to be zealous in a good cause, and not only when I am present with you.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “But it is always good to be zealous in a good cause, and not only when I am present with you.” (4:18, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 22 reads “For it is written that Abraham had two sons, one by the handmaid, and one by the free woman.”; verse 24 reads “These things contain an allegory, for these are two covenants. One is from Mount Sinai, bearing children to bondage, which is Hagar.”. These establish the first and second answers respectively.",
+    "options" : [
+      "two; Abraham",
+      "Abraham; two",
+      "Abraham; ninety",
+      "Silas; two"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For it is written that ______ had two sons, one by the handmaid, and one by the free woman.” (4:22); “These things contain an allegory, for these are ______ covenants. One is from Mount Sinai, bearing children to bondage, which is Hagar.” (4:24, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… that because of weakness of the flesh I preached the Gospel to you the first time.” The missing terms belong in that order.",
+    "options" : [
+      "Gospel first"
+    ],
+    "prompt" : "Supply the missing words in order: “… that because of weakness of the flesh I preached the ____ to you the time.” (4:13, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Christ: “… reject; but you received me as an angel of God, even as Christ Jesus.”",
+    "options" : [
+      "Joshua",
+      "Christ",
+      "Andrew",
+      "Obed"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… reject; but you received me as an angel of God, even as ______ Jesus.”? (4:14, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… it is written, \"Rejoice, you barren who don't bear. Break forth and shout, you that don't travail. For more are the children of the desolate than …”; the second reads “However what does the Scripture say? \"Throw out the handmaid and her son, for the son of the handmaid will not inherit with the son of …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "shout Throw"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… it is written, \"Rejoice, you barren who don't bear. Break forth and ____, you that don't travail. For more are the children of the desolate than …” (4:27); “However what does the Scripture say? \" out the handmaid and her son, for the son of the handmaid will not inherit with the son of …” (4:30, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “And because you are children, God sent out the Spirit of his Son into your hearts, crying, \"Abba, Father!\"”",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "Complete the quotation: “And because you are children, God sent out the ____ of his Son into your hearts, crying, \"Abba, Father!\"” (4:6, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Galatians 4:9 uses known: “… now that you have come to know God, or rather to be known by God, why do you turn back again to the weak and miserable …”",
+    "options" : [
+      "don't",
+      "known",
+      "temptation",
+      "stewards"
+    ],
+    "prompt" : "Which word completes “… now that you have come to know God, or rather to be ______ by God, why do you turn back again to the weak and miserable …”? (4:9, WEB)",
+    "reference" : "Galatians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… think no other way. But he who troubles you will bear his judgment, whoever he is.” The missing terms belong in that order.",
+    "options" : [
+      "judgment whoever"
+    ],
+    "prompt" : "Supply the missing words in order: “… think no other way. But he who troubles you will bear his ____, he is.” (5:10, WEB)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Freedom is expressed in serving through love and walking by the Spirit rather than indulging destructive desires. The course links spiritual transformation with daily choices and love. Paul's contrast does not mean that every physical desire is evil simply because it is bodily.",
+    "options" : [
+      "Freedom is defined as permission to harm a neighbor.",
+      "The physical body is declared evil merely for existing.",
+      "The Spirit's work is said to make love unnecessary.",
+      "Freedom is expressed in serving through love and walking by the Spirit rather than indulging destructive desires."
+    ],
+    "prompt" : "How does freedom in Christ relate to the fruit of the Spirit? (5:13-26)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For we, through the Spirit, by faith wait for the hope of righteousness.”",
+    "options" : [
+      "hope"
+    ],
+    "prompt" : "Complete the quotation: “For we, through the Spirit, by faith wait for the ____ of righteousness.” (5:5, WEB)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… law is fulfilled in one word, in this: \"You shall love your neighbor as yourself.\"”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… law is fulfilled in one word, in this: \"You shall love your neighbor as yourself.\"” (5:14, WEB)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Galatians 5:6 uses love: “… Jesus neither circumcision amounts to anything, nor uncircumcision, but faith working through love.”",
+    "options" : [
+      "understanding",
+      "faithfulness",
+      "grief",
+      "love"
+    ],
+    "prompt" : "Which word completes “… Jesus neither circumcision amounts to anything, nor uncircumcision, but faith working through ______.”? (5:6, WEB)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness,”; the second reads “If we live by the Spirit, let's also walk by the Spirit.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "faithfulness live"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, ____,” (5:22); “If we by the Spirit, let's also walk by the Spirit.” (5:25, WEB)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies servants: “… use your freedom for gain to the flesh, but through love be servants to one another.”",
+    "options" : [
+      "shepherd",
+      "servants",
+      "brothers",
+      "priests"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… use your freedom for gain to the flesh, but through love be ______ to one another.”? (5:13, WEB)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… who receives circumcision, that he is a debtor to do the whole law.”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “… who receives circumcision, that he is a debtor to do the whole ____.” (5:3, WEB)",
+    "reference" : "Galatians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… men, and especially toward those who are of the household of the faith.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… men, and especially toward those who are of the household of the faith.” (6:10, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… fault, you who are spiritual must restore such a one in a spirit of gentleness; looking to yourself so that you also aren't tempted.”",
+    "options" : [
+      "spirit"
+    ],
+    "prompt" : "Complete the quotation: “… fault, you who are spiritual must restore such a one in a ____ of gentleness; looking to yourself so that you also aren't tempted.” (6:1, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies due: “… us not be weary in doing good, for we will reap in due season, if we don't give up.”",
+    "options" : [
+      "walk",
+      "large",
+      "due",
+      "compel"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… us not be weary in doing good, for we will reap in ______ season, if we don't give up.”? (6:9, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “For even they who receive circumcision don't keep the law themselves, but they desire to have you circumcised, that they may boast in your flesh.”; verse 14 reads “But far be it from me to boast, except in the cross of our Lord Jesus Christ, through which the world has been crucified to me, …”. These establish the first and second answers respectively.",
+    "options" : [
+      "law; cross",
+      "cross; law",
+      "law; God's",
+      "instruction; cross"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For even they who receive circumcision don't keep the ______ themselves, but they desire to have you circumcised, that they may boast in your flesh.” (6:13); “But far be it from me to boast, except in the ______ of our Lord Jesus Christ, through which the world has been crucified to me, …” (6:14, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… will from the flesh reap corruption. But he who sows to the Spirit will from the Spirit reap eternal life.” The missing terms belong in that order.",
+    "options" : [
+      "corruption life"
+    ],
+    "prompt" : "Supply the missing words in order: “… will from the flesh reap ____. But he who sows to the Spirit will from the Spirit reap eternal .” (6:8, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Galatians 6:7 uses mocked: “Don't be deceived. God is not mocked, for whatever a man sows, that will he also reap.”",
+    "options" : [
+      "tempted",
+      "mocked",
+      "circumcised",
+      "branded"
+    ],
+    "prompt" : "Which word completes “Don't be deceived. God is not ______, for whatever a man sows, that will he also reap.”? (6:7, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… for I bear the marks of the Lord Jesus branded on my body.”; the second reads “The grace of our Lord Jesus Christ be with your spirit, brothers. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "body grace"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… for I bear the marks of the Lord Jesus branded on my ____.” (6:17); “The of our Lord Jesus Christ be with your spirit, brothers. Amen.” (6:18, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "galatians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But let each man test his own work, and then he will take pride in himself and not in his neighbor.”",
+    "options" : [
+      "work"
+    ],
+    "prompt" : "Complete the quotation: “But let each man test his own ____, and then he will take pride in himself and not in his neighbor.” (6:4, WEB)",
+    "reference" : "Galatians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

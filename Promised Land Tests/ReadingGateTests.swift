@@ -156,7 +156,7 @@ struct ReadingGateTests {
         #expect(ReadingStrictness.current(stored: "relaxed", ageGroup: AgeGroup.under13.rawValue) == .relaxed)
     }
 
-    @Test("Questions are about real chapters, have one right answer, and are unreviewed")
+    @Test("Legacy questions are about real chapters and have one right answer")
     func questions() {
         for q in QuestionData.all {
             #expect(!q.reviewed)
@@ -166,6 +166,6 @@ struct ReadingGateTests {
         }
         // Every chapter with bundled text has a question.
         for (book, chapters) in SampleText.chapters { for c in chapters { #expect(QuestionData.question(bookID: book, chapter: c.number) != nil, "\(book) \(c.number)") } }
-        #expect(QuestionData.question(bookID: "obadiah", chapter: 1) == nil) // falls back to a reflection
+        #expect(QuestionData.questions(bookID: "obadiah", chapter: 1).count == 8)
     }
 }

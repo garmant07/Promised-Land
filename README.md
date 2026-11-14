@@ -57,3 +57,17 @@ a small server that holds the key and forwards chapter requests.
 xcodebuild test -scheme "Promised Land" -destination 'platform=iOS Simulator,name=iPhone 17'
 ```
 Bible text is tested with a mock `BibleService` and a mock HTTP transport. Tests never call the API.
+
+## Imported chapter questions
+
+The approved question exports live in `QuestionSource/`. To regenerate all 66 bundled book files
+after those documents change, run this from the repository root:
+
+```sh
+swift Tools/QuestionImport/main.swift --generate
+```
+
+The command performs the Stage 0 dry-run report and then writes the JSON resources to
+`Promised Land/Questions/`. The converter is not part of the app target. Questions load lazily
+one book at a time when a chapter's reading check opens; the quiz selects three of that chapter's
+eight questions and creates fill-in word chips at that point.

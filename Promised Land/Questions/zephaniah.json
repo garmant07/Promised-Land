@@ -1,0 +1,393 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “Wail, you inhabitants of Maktesh, for all the people of Canaan are undone! All those who were loaded with silver are cut off.”; verse 13 reads “… but won't inhabit them. They will plant vineyards, but won't drink their wine.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Canaan; wine",
+      "wine; Canaan",
+      "Canaan; barley",
+      "Israel; wine"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Wail, you inhabitants of Maktesh, for all the people of ______ are undone! All those who were loaded with silver are cut off.” (1:11); “… but won't inhabit them. They will plant vineyards, but won't drink their ______.” (1:13, WEB)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “those who worship the host of the sky on the housetops, those who worship and swear by Yahweh and also swear by Malcam,” The missing terms belong in that order.",
+    "options" : [
+      "worship Malcam"
+    ],
+    "prompt" : "Supply the missing words in order: “those who ____ the host of the sky on the housetops, those who worship and swear by Yahweh and also swear by ,” (1:5, WEB)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… the son of Amariah, the son of Hezekiah, in the days of Josiah, the son of Amon, king of Judah.”",
+    "options" : [
+      "Josiah"
+    ],
+    "prompt" : "Complete the quotation: “… the son of Amariah, the son of Hezekiah, in the days of ____, the son of Amon, king of Judah.” (1:1, WEB)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… those who leap over the threshold, who fill their master's house with violence and deceit.” It says violence, not transgression.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… those who leap over the threshold, who fill their master's house with transgression and deceit.” (1:9, WEB)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The list of descriptions occurs in verse 15; verse 14 announces that the day is near.",
+    "options" : [
+      "distress"
+    ],
+    "prompt" : "The approaching day is described as a day of wrath, trouble and ____. (1:14-15)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zephaniah 1:4 uses priests: “… of Baal from this place: the name of the idolatrous and pagan priests,”",
+    "options" : [
+      "fathers",
+      "king",
+      "priest",
+      "priests"
+    ],
+    "prompt" : "Which word completes “… of Baal from this place: the name of the idolatrous and pagan ______,”? (1:4, WEB)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sacrifice: “It will happen in the day of Yahweh's sacrifice, that I will punish the princes, the king's sons, and all those who as are clothed with …”",
+    "options" : [
+      "thanksgiving",
+      "power",
+      "sacrifice",
+      "offerings"
+    ],
+    "prompt" : "Which detail belongs in this passage: “It will happen in the day of Yahweh's ______, that I will punish the princes, the king's sons, and all those who as are clothed with …”? (1:8, WEB)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… distress and anguish, a day of trouble and ruin, a day of darkness and gloom, a day of clouds and blackness,”; the second reads “Neither their silver nor their gold will be able to deliver them in the day of Yahweh's wrath, but the whole land will be devoured by …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "darkness gold"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… distress and anguish, a day of trouble and ruin, a day of ____ and gloom, a day of clouds and blackness,” (1:15); “Neither their silver nor their will be able to deliver them in the day of Yahweh's wrath, but the whole land will be devoured by …” (1:18, WEB)",
+    "reference" : "Zephaniah 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Zephaniah 2:3 records: “Seek Yahweh, all you humble of the land, who have kept his ordinances. Seek righteousness. Seek humility. It may be that you will be hidden in the day of Yahweh's anger.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Zephaniah said to seek the LORD, all you humble of the land. (2:3)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “before the appointed time when the day passes as the chaff, before the fierce anger of Yahweh comes on you, before the day of Yahweh's anger …”",
+    "options" : [
+      "appointed"
+    ],
+    "prompt" : "Complete the quotation: “before the ____ time when the day passes as the chaff, before the fierce anger of Yahweh comes on you, before the day of Yahweh's anger …” (2:2, WEB)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “Therefore as I live, says Yahweh of Hosts, the God of Israel, surely Moab will be as Sodom, and the children of Ammon as Gomorrah, a …”; verse 11 reads “… worship him, everyone from his place, even all the shores of the nations.”. These establish the first and second answers respectively.",
+    "options" : [
+      "obey; nations",
+      "live; survivors",
+      "nations; live",
+      "live; nations"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Therefore as I ______, says Yahweh of Hosts, the God of Israel, surely Moab will be as Sodom, and the children of Ammon as Gomorrah, a …” (2:9); “… worship him, everyone from his place, even all the shores of the ______.” (2:11, WEB)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Judah: “The coast will be for the remnant of the house of Judah. They will find pasture. In the houses of Ashkelon, they will lie down in …”",
+    "options" : [
+      "Manasseh",
+      "Enoch",
+      "Judah",
+      "Amos"
+    ],
+    "prompt" : "Which detail belongs in this passage: “The coast will be for the remnant of the house of ______. They will find pasture. In the houses of Ashkelon, they will lie down in …”? (2:7, WEB)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… stretch out his hand against the north, destroy Assyria, and will make Nineveh a desolation, and dry like the wilderness.”; the second reads “Herds will lie down in the midst of her, all the animals of the nations. Both the pelican and the porcupine will lodge in its capitals. …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Nineveh midst"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… stretch out his hand against the north, destroy Assyria, and will make ____ a desolation, and dry like the wilderness.” (2:13); “Herds will lie down in the of her, all the animals of the nations. Both the pelican and the porcupine will lodge in its capitals. …” (2:14, WEB)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “I have heard the reproach of Moab, and the insults of the children of Ammon, with which they have reproached my people, and magnified themselves against …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “I have heard the reproach of Moab, and the insults of the children of Ammon, with which they have reproached my people, and magnified themselves against …” (2:8, WEB)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the inhabitants of the sea coast, the nation of the Cherethites! The word of Yahweh is against you, Canaan, the land of the Philistines. I will …” The missing terms belong in that order.",
+    "options" : [
+      "nation Canaan"
+    ],
+    "prompt" : "Supply the missing words in order: “… the inhabitants of the sea coast, the ____ of the Cherethites! The word of Yahweh is against you, , the land of the Philistines. I will …” (2:5, WEB)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "zephaniah",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zephaniah 2:4 uses drive: “For Gaza will be forsaken, and Ashkelon a desolation. They will drive out Ashdod at noonday, and Ekron will be rooted up.”",
+    "options" : [
+      "Philistines",
+      "Ashdod",
+      "drive",
+      "inherit"
+    ],
+    "prompt" : "Which word completes “For Gaza will be forsaken, and Ashkelon a desolation. They will ______ out Ashdod at noonday, and Ekron will be rooted up.”? (2:4, WEB)",
+    "reference" : "Zephaniah 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The ending includes purification, renewed worship and God's joy over His people. Hope does not require denying the wrongdoing named earlier.",
+    "options" : [
+      "The book offers judgment without any restoration.",
+      "The ending declares injustice harmless.",
+      "Humility is rejected as a fault.",
+      "God judges corruption and also promises a humble, restored people."
+    ],
+    "prompt" : "How do the promises of restoration relate to the earlier rebukes of the city? (3:1-5, 9-20)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “She didn't obey the voice. She didn't receive correction. She didn't trust in Yahweh. She didn't draw near to her God.”",
+    "options" : [
+      "obey"
+    ],
+    "prompt" : "Complete the quotation: “She didn't ____ the voice. She didn't receive correction. She didn't trust in Yahweh. She didn't draw near to her God.” (3:2, WEB)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Zephaniah 3:17 records: “Yahweh, your God, is in the midst of you, a mighty one who will save. He will rejoice over you with joy. He will rest in his love. He will rejoice over you with singing.”",
+    "options" : [
+      "singing"
+    ],
+    "prompt" : "In this paraphrase, the LORD will rejoice over His people with ____. (3:17)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… my fierce anger, for all the earth will be devoured with the fire of my jealousy.”",
+    "options" : [
+      "rise",
+      "honor",
+      "serve",
+      "fire"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… my fierce anger, for all the earth will be devoured with the ______ of my jealousy.”? (3:8, WEB)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I have cut off nations. Their battlements are desolate. I have made their streets waste, so that no one passes by. Their cities are destroyed, so …” The missing terms belong in that order.",
+    "options" : [
+      "nations waste"
+    ],
+    "prompt" : "Supply the missing words in order: “I have cut off ____. Their battlements are desolate. I have made their streets , so that no one passes by. Their cities are destroyed, so …” (3:6, WEB)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Zephaniah 3:4 uses law: “… Her priests have profaned the sanctuary. They have done violence to the law.”",
+    "options" : [
+      "law",
+      "testimonies",
+      "teaching",
+      "words"
+    ],
+    "prompt" : "Which word completes “… Her priests have profaned the sanctuary. They have done violence to the ______.”? (3:4, WEB)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… my worshipers, even the daughter of my dispersed people, will bring my offering.” It says offering, not deliverance.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… my worshipers, even the daughter of my dispersed people, will bring my deliverance.” (3:10, WEB)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "zephaniah",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “In that day, it will be said to Jerusalem, \"Don't be afraid, Zion. Don't let your hands be slack.\"”; the second reads “… lame, and gather those who were driven away. I will give them praise and honor, whose shame has been in all the earth.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Jerusalem praise"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “In that day, it will be said to ____, \"Don't be afraid, Zion. Don't let your hands be slack.\"” (3:16); “… lame, and gather those who were driven away. I will give them and honor, whose shame has been in all the earth.” (3:19, WEB)",
+    "reference" : "Zephaniah 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

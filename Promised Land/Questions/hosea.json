@@ -1,0 +1,1830 @@
+[
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… they will appoint themselves one head, and will go up from the land; for great will be the day of Jezreel.”; the second reads “He said, \"Call his name Lo-Ammi; for you are not my people, and I will not be yours.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "land Ammi"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… they will appoint themselves one head, and will go up from the ____; for great will be the day of Jezreel.” (1:11); “He said, \"Call his name Lo-; for you are not my people, and I will not be yours.” (1:9, WEB)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “Now when she had weaned Lo-Ruhamah, she conceived, and bore a son.”; verse 10 reads “Yet the number of the children of Israel will be as the sand of the sea, which can't be measured nor numbered; and it will come …”. These establish the first and second answers respectively.",
+    "options" : [
+      "bore; sand",
+      "bore; clay",
+      "save; sand",
+      "sand; bore"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Now when she had weaned Lo-Ruhamah, she conceived, and ______ a son.” (1:8); “Yet the number of the children of Israel will be as the ______ of the sea, which can't be measured nor numbered; and it will come …” (1:10, WEB)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 1:3 uses Gomer: “So he went and took Gomer the daughter of Diblaim; and she conceived, and bore him a son.”",
+    "options" : [
+      "Ahab",
+      "Gomer",
+      "Noah",
+      "Ezekiel"
+    ],
+    "prompt" : "Which word completes “So he went and took ______ the daughter of Diblaim; and she conceived, and bore him a son.”? (1:3, WEB)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… yet a little while, and I will avenge the blood of Jezreel on the house of Jehu, and will cause the kingdom of the house of …” The missing terms belong in that order.",
+    "options" : [
+      "blood Jehu"
+    ],
+    "prompt" : "Supply the missing words in order: “… yet a little while, and I will avenge the ____ of Jezreel on the house of , and will cause the kingdom of the house of …” (1:4, WEB)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The word of Yahweh that came to Hosea the son of Beeri, in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah, and in …”",
+    "options" : [
+      "Hosea"
+    ],
+    "prompt" : "Complete the quotation: “The word of Yahweh that came to ____ the son of Beeri, in the days of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah, and in …” (1:1, WEB)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies mercy: “… to him, \"Call her name Lo-Ruhamah; for I will no longer have mercy on the house of Israel, that I should in any way pardon them.”",
+    "options" : [
+      "mercy",
+      "fear",
+      "truth",
+      "understanding"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… to him, \"Call her name Lo-Ruhamah; for I will no longer have ______ on the house of Israel, that I should in any way pardon them.”? (1:6, WEB)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Hosea 1:2 records: “When Yahweh spoke at the first by Hosea, Yahweh said to Hosea, \"Go, take for yourself a wife of prostitution and children of unfaithfulness; for the land commits great adultery against from Yahweh.\"”",
+    "options" : [
+      "harlotry"
+    ],
+    "prompt" : "In this paraphrase, the LORD told Hosea to take a wife of ____. (1:2)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “But I will have mercy on the house of Judah, and will save them by Yahweh their God, and will not save them by bow, nor …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “But I will have mercy on the house of Judah, and will save them by Yahweh their God, and will not save them by bow, nor …” (1:7, WEB)",
+    "reference" : "Hosea 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 13 reads “… will visit on her the days of the Baals, To which she burned incense, When she decked herself with her earrings and her jewels, And went …”; verse 15 reads “… in the day when she came up out of the land of Egypt.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Egypt; burned",
+      "naked; Egypt",
+      "burned; Egypt",
+      "burned; Israel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… will visit on her the days of the Baals, To which she ______ incense, When she decked herself with her earrings and her jewels, And went …” (2:13); “… in the day when she came up out of the land of ______.” (2:15, WEB)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies wine: “… I will take back my grain in its time, And my new wine in its season, And will pluck away my wool and my flax which …”",
+    "options" : [
+      "milk",
+      "grapes",
+      "meat",
+      "wine"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… I will take back my grain in its time, And my new ______ in its season, And will pluck away my wool and my flax which …”? (2:9, WEB)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… mother! Contend, for she is not my wife, Neither am I her husband; And let her put away her prostitution from her face, And her adulteries …”",
+    "options" : [
+      "husband"
+    ],
+    "prompt" : "Complete the quotation: “… mother! Contend, for she is not my wife, Neither am I her ____; And let her put away her prostitution from her face, And her adulteries …” (2:2, WEB)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… she did not know that I gave her the grain, the new wine, and the oil, And multiplied to her silver and gold, which they used …” The missing terms belong in that order.",
+    "options" : [
+      "grain oil"
+    ],
+    "prompt" : "Supply the missing words in order: “… she did not know that I gave her the ____, the new wine, and the , And multiplied to her silver and gold, which they used …” (2:8, WEB)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 2:5 uses water: “… will go after my lovers, Who give me my bread and my water, My wool and my flax, My oil and my drink.'”",
+    "options" : [
+      "wheat",
+      "water",
+      "olives",
+      "bread"
+    ],
+    "prompt" : "Which word completes “… will go after my lovers, Who give me my bread and my ______, My wool and my flax, My oil and my drink.'”? (2:5, WEB)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 2:14 records: “\"Therefore, behold, I will allure her, And bring her into the wilderness, And speak tenderly to her.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said He would allure Israel and speak tenderly to her. (2:14)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… cause all her celebrations to cease: Her feasts, her new moons, her Sabbaths, and all her solemn assemblies.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… cause all her celebrations to cease: Her feasts, her new moons, her Sabbaths, and all her solemn assemblies.” (2:11, WEB)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “In that day I will make a covenant for them with the animals of the field, And with the birds of the sky, And with the …”; the second reads “… respond,\" says Yahweh, I will respond to the heavens, And they will respond to the earth;”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "covenant respond"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “In that day I will make a ____ for them with the animals of the field, And with the birds of the sky, And with the …” (2:18); “… respond,\" says Yahweh, I will respond to the heavens, And they will to the earth;” (2:21, WEB)",
+    "reference" : "Hosea 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 3:2 records: “So I bought her for myself for fifteen pieces of silver and a homer and a half of barley.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Hosea bought his wife back with silver and barley. (3:2)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 3:4 uses sacrifice: “… Israel shall abide many days without king, and without prince, and without sacrifice, and without sacred stone, and without ephod or idols.”",
+    "options" : [
+      "rest",
+      "sacrifice",
+      "prayer",
+      "redemption"
+    ],
+    "prompt" : "Which word completes “… Israel shall abide many days without king, and without prince, and without ______, and without sacred stone, and without ephod or idols.”? (3:4, WEB)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I said to her, \"You shall stay with me many days. You shall not play the prostitute, and you shall not be with any other man. …” The missing terms belong in that order.",
+    "options" : [
+      "stay play"
+    ],
+    "prompt" : "Supply the missing words in order: “I said to her, \"You shall ____ with me many days. You shall not the prostitute, and you shall not be with any other man. …” (3:3, WEB)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… their king, and shall come with trembling to Yahweh and to his blessings in the last days.”; the second reads “… love a woman loved by another, and an adulteress, even as Yahweh loves the children of Israel, though they turn to other gods, and love cakes …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "blessings loves"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… their king, and shall come with trembling to Yahweh and to his ____ in the last days.” (3:5); “… love a woman loved by another, and an adulteress, even as Yahweh the children of Israel, though they turn to other gods, and love cakes …” (3:1, WEB)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “Afterward the children of Israel shall return, and seek Yahweh their God, and David their king, and shall come with trembling to Yahweh and to his …”",
+    "options" : [
+      "Joshua",
+      "Israel",
+      "Nahum",
+      "Naomi"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Afterward the children of ______ shall return, and seek Yahweh their God, and David their king, and shall come with trembling to Yahweh and to his …”? (3:5, WEB)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Yahweh said to me, \"Go again, love a woman loved by another, and an adulteress, even as Yahweh loves the children of Israel, though they turn …”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “Yahweh said to me, \"Go again, ____ a woman loved by another, and an adulteress, even as Yahweh loves the children of Israel, though they turn …” (3:1, WEB)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 4 reads “… days without king, and without prince, and without sacrifice, and without sacred stone, and without ephod or idols.”; verse 5 reads “… the children of Israel shall return, and seek Yahweh their God, and David their king, and shall come with trembling to Yahweh and to his blessings …”. These establish the first and second answers respectively.",
+    "options" : [
+      "stone; David",
+      "David; stone",
+      "stone; Zechariah",
+      "brass; David"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… days without king, and without prince, and without sacrifice, and without sacred ______, and without ephod or idols.” (3:4); “… the children of Israel shall return, and seek Yahweh their God, and ______ their king, and shall come with trembling to Yahweh and to his blessings …” (3:5, WEB)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For the children of Israel shall abide many days without king, and without prince, and without sacrifice, and without sacred stone, and without ephod or idols.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For the children of Israel shall abide many days without king, and without prince, and without sacrifice, and without sacred stone, and without ephod or idols.” (3:4, WEB)",
+    "reference" : "Hosea 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… the day, And the prophet will also stumble with you in the night; And I will destroy your mother.” The missing terms belong in that order.",
+    "options" : [
+      "stumble mother"
+    ],
+    "prompt" : "Supply the missing words in order: “… the day, And the prophet will also ____ with you in the night; And I will destroy your .” (4:5, WEB)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 12 reads “… their wooded idol, And answer to a stick of wood. Indeed the spirit of prostitution has led them astray, And they have been unfaithful to their …”; verse 13 reads “They sacrifice on the tops of the mountains, And burn incense on the hills, under oaks and poplars and terebinths, Because its shade is good. Therefore …”. These establish the first and second answers respectively.",
+    "options" : [
+      "sacrifice; spirit",
+      "Ephraim; sacrifice",
+      "spirit; sacrifice",
+      "spirit; curse"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… their wooded idol, And answer to a stick of wood. Indeed the ______ of prostitution has led them astray, And they have been unfaithful to their …” (4:12); “They ______ on the tops of the mountains, And burn incense on the hills, under oaks and poplars and terebinths, Because its shade is good. Therefore …” (4:13, WEB)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “It will be, like people, like priest; And I will punish them for their ways, And will repay them for their deeds.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “It will be, like people, like priest; And I will punish them for their ways, And will repay them for their deeds.” (4:9, WEB)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “There is cursing, lying, murder, stealing, and committing adultery; They break boundaries, and bloodshed causes bloodshed.”",
+    "options" : [
+      "committing"
+    ],
+    "prompt" : "Complete the quotation: “There is cursing, lying, murder, stealing, and ____ adultery; They break boundaries, and bloodshed causes bloodshed.” (4:2, WEB)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 4:3 uses land: “Therefore the land will mourn, And everyone who dwells therein will waste away. All living things in her, Even the animals of the field and the …”",
+    "options" : [
+      "field",
+      "earth",
+      "mountain",
+      "land"
+    ],
+    "prompt" : "Which word completes “Therefore the ______ will mourn, And everyone who dwells therein will waste away. All living things in her, Even the animals of the field and the …”? (4:3, WEB)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 4:6 records: “… people are destroyed for lack of knowledge. Because you have rejected knowledge, I will also reject you, That you may be no priest to me. Because you have your God's law, I will also forget your …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said His people were destroyed for lack of knowledge. (4:6)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… play the prostitute, Yet don't let Judah offend; And don't come to Gilgal, Neither go up to Beth Aven, Nor swear, 'As Yahweh lives.'”; the second reads “… drink has become sour. They play the prostitute continually. Her rulers dearly love their shameful way.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Gilgal love"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… play the prostitute, Yet don't let Judah offend; And don't come to ____, Neither go up to Beth Aven, Nor swear, 'As Yahweh lives.'” (4:15); “… drink has become sour. They play the prostitute continually. Her rulers dearly their shameful way.” (4:18, WEB)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies glory: “… they were multiplied, so they sinned against me. I will change their glory into shame.”",
+    "options" : [
+      "wrath",
+      "righteousness",
+      "glory",
+      "justice"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… they were multiplied, so they sinned against me. I will change their ______ into shame.”? (4:7, WEB)",
+    "reference" : "Hosea 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… testifies to his face. Therefore Israel and Ephraim will stumble in their iniquity. Judah also will stumble with them.” The missing terms belong in that order.",
+    "options" : [
+      "iniquity Judah"
+    ],
+    "prompt" : "Supply the missing words in order: “… testifies to his face. Therefore Israel and Ephraim will stumble in their ____. also will stumble with them.” (5:5, WEB)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… house of Israel, And give ear, house of the king! For the judgment is against you; For you have been a snare at Mizpah, And a …”",
+    "options" : [
+      "judgment"
+    ],
+    "prompt" : "Complete the quotation: “… house of Israel, And give ear, house of the king! For the ____ is against you; For you have been a snare at Mizpah, And a …” (5:1, WEB)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… remove a landmark. I will pour out my wrath on them like water.”; verse 11 reads “… is crushed in judgment; Because he is intent in his pursuit of idols.”. These establish the first and second answers respectively.",
+    "options" : [
+      "idols; water",
+      "water; idols",
+      "water; testifies",
+      "grapes; idols"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… remove a landmark. I will pour out my wrath on them like ______.” (5:10); “… is crushed in judgment; Because he is intent in his pursuit of ______.” (5:11, WEB)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies herds: “They will go with their flocks and with their herds to seek Yahweh; But they won't find him. He has withdrawn himself from them.”",
+    "options" : [
+      "princes",
+      "herds",
+      "priests",
+      "idols"
+    ],
+    "prompt" : "Which detail belongs in this passage: “They will go with their flocks and with their ______ to seek Yahweh; But they won't find him. He has withdrawn himself from them.”? (5:6, WEB)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Hosea 5:13 records: “When Ephraim saw his sickness, And Judah his wound, Then Ephraim went to Assyria, And sent to king Jareb: But he is not able to heal you, Neither will he cure you of your wound.”",
+    "options" : [
+      "Assyria"
+    ],
+    "prompt" : "In this paraphrase, when Ephraim saw his sickness, he went to ____ for help. (5:13)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… to Ephraim like a moth, And to the house of Judah like rottenness.”; the second reads “… away. I will carry off, and there will be no one to deliver.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "rottenness deliver"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… to Ephraim like a moth, And to the house of Judah like ____.” (5:12); “… away. I will carry off, and there will be no one to .” (5:14, WEB)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… trumpet in Ramah! Sound a battle cry at Beth Aven, behind you, Benjamin!” It says Benjamin, not Manasseh.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… trumpet in Ramah! Sound a battle cry at Beth Aven, behind you, Manasseh!” (5:8, WEB)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 5:3 uses Israel: “I know Ephraim, And Israel is not hidden from me; For now, Ephraim, you have played the prostitute. Israel is defiled.”",
+    "options" : [
+      "Ham",
+      "Israel",
+      "Asher",
+      "Aaron"
+    ],
+    "prompt" : "Which word completes “I know Ephraim, And ______ is not hidden from me; For now, Ephraim, you have played the prostitute. Israel is defiled.”? (5:3, WEB)",
+    "reference" : "Hosea 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “\"Come, and let us return to Yahweh; For he has torn us to pieces, And he will heal us; He has injured us, And he will …”",
+    "options" : [
+      "torn"
+    ],
+    "prompt" : "Complete the quotation: “\"Come, and let us return to Yahweh; For he has ____ us to pieces, And he will heal us; He has injured us, And he will …” (6:1, WEB)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies cut: “Therefore I have cut them to pieces with the prophets; I killed them with the words of my mouth. Your judgments are like a flash of …”",
+    "options" : [
+      "cloud",
+      "horrible",
+      "cut",
+      "house"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Therefore I have ______ them to pieces with the prophets; I killed them with the words of my mouth. Your judgments are like a flash of …”? (6:5, WEB)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 6:6 records: “For I desire mercy, and not sacrifice; And the knowledge of God more than burnt offerings.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD desires steadfast love and not sacrifice. (6:6)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The contrast addresses fleeting loyalty and empty ritual. It should not be turned into a claim that the Old Testament never valued God-given worship.",
+    "options" : [
+      "Steadfast love is forbidden.",
+      "Religious ritual detached from faithful love and relationship with God.",
+      "All sacrifices were invented without any divine instruction.",
+      "God asks for ritual without any knowledge of Him."
+    ],
+    "prompt" : "What does God's preference for steadfast love and knowledge of Him over sacrifice criticize? (6:4-6)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “\"Ephraim, what shall I do to you? Judah, what shall I do to you? For your love is like a morning cloud, And like the dew …” The missing terms belong in that order.",
+    "options" : [
+      "Judah love"
+    ],
+    "prompt" : "Supply the missing words in order: “\"Ephraim, what shall I do to you? ____, what shall I do to you? For your is like a morning cloud, And like the dew …” (6:4, WEB)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “But they, like Adam, have broken the covenant. They were unfaithful to me, there.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “But they, like Adam, have broken the covenant. They were unfaithful to me, there.” (6:7, WEB)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 6:3 uses press: “Let us acknowledge Yahweh. Let us press on to know Yahweh. As surely as the sun rises, Yahweh will appear. He will come to us like …”",
+    "options" : [
+      "priests",
+      "press",
+      "fortunes",
+      "waters"
+    ],
+    "prompt" : "Which word completes “Let us acknowledge Yahweh. Let us ______ on to know Yahweh. As surely as the sun rises, Yahweh will appear. He will come to us like …”? (6:3, WEB)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Israel I have seen a horrible thing. There is prostitution in Ephraim. Israel is defiled.”; the second reads “… Judah, there is a harvest appointed for you, When I restore the fortunes of my people.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Israel fortunes"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Israel I have seen a horrible thing. There is prostitution in Ephraim. ____ is defiled.” (6:10); “… Judah, there is a harvest appointed for you, When I restore the of my people.” (6:11, WEB)",
+    "reference" : "Hosea 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Israel, Then the iniquity of Ephraim is uncovered, Also the wickedness of Samaria; For they commit falsehood, And the thief enters in, And the gang of …”",
+    "options" : [
+      "Samaria"
+    ],
+    "prompt" : "Complete the quotation: “… Israel, Then the iniquity of Ephraim is uncovered, Also the wickedness of ____; For they commit falsehood, And the thief enters in, And the gang of …” (7:1, WEB)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “The pride of Israel testifies to his face; Yet they haven't returned to Yahweh their God, Nor sought him, for all this.”; verse 12 reads “When they go, I will spread my net on them. I will bring them down like the birds of the sky. I will chastise them, as …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Israel; dough",
+      "Israel; net",
+      "Sarah; net",
+      "net; Israel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “The pride of ______ testifies to his face; Yet they haven't returned to Yahweh their God, Nor sought him, for all this.” (7:10); “When they go, I will spread my ______ on them. I will bring them down like the birds of the sky. I will chastise them, as …” (7:12, WEB)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Strangers have devoured his strength, And he doesn't realize it. Indeed, gray hairs are here and there on him, And he doesn't realize it.” It says Strangers, not beds.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “beds have devoured his strength, And he doesn't realize it. Indeed, gray hairs are here and there on him, And he doesn't realize it.” (7:9, WEB)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fire: “… sleeps all the night. In the morning it burns as a flaming fire.”",
+    "options" : [
+      "pancake",
+      "wait",
+      "princes",
+      "fire"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… sleeps all the night. In the morning it burns as a flaming ______.”? (7:6, WEB)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Hosea 7:14 records: “They haven't cried to me with their heart, But they howl on their beds. They assemble themselves for grain and new wine. They turn away from me.”",
+    "options" : [
+      "beds"
+    ],
+    "prompt" : "In this paraphrase, they do not cry to God from their hearts, but they wail on their ____. (7:14)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… Destruction to them! For they have trespassed against me. Though I would redeem them, Yet they have spoken lies against me.”; the second reads “… of their tongue. This will be their derision in the land of Egypt.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "redeem Egypt"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… Destruction to them! For they have trespassed against me. Though I would ____ them, Yet they have spoken lies against me.” (7:13); “… of their tongue. This will be their derision in the land of .” (7:16, WEB)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 7:4 uses stirring: “… all adulterers. They are burning like an oven that the baker stops stirring, From the kneading of the dough, until it is leavened.”",
+    "options" : [
+      "morning",
+      "flaming",
+      "king",
+      "stirring"
+    ],
+    "prompt" : "Which word completes “… all adulterers. They are burning like an oven that the baker stops ______, From the kneading of the dough, until it is leavened.”? (7:4, WEB)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… our king, the princes made themselves sick with the heat of wine. He joined his hand with mockers.” The missing terms belong in that order.",
+    "options" : [
+      "wine joined"
+    ],
+    "prompt" : "Supply the missing words in order: “… our king, the princes made themselves sick with the heat of ____. He his hand with mockers.” (7:5, WEB)",
+    "reference" : "Hosea 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For they have gone up to Assyria, Like a wild donkey wandering alone. Ephraim has hired lovers for himself.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For they have gone up to Assyria, Like a wild donkey wandering alone. Ephraim has hired lovers for himself.” (8:9, WEB)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 8:7 records: “For they sow the wind, And they will reap the whirlwind. He has no standing grain. The stalk will yield no head. If it does yield, strangers will swallow it up.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel had sown the wind and would reap the whirlwind. (8:7)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Israel: “For this is even from Israel! The workman made it, and it is no God; Indeed, the calf of Samaria shall be broken in pieces.”",
+    "options" : [
+      "Obadiah",
+      "Israel",
+      "Samuel",
+      "Jonah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For this is even from ______! The workman made it, and it is no God; Indeed, the calf of Samaria shall be broken in pieces.”? (8:6, WEB)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… Yahweh's house, Because they have broken my covenant, And rebelled against my law.”",
+    "options" : [
+      "law"
+    ],
+    "prompt" : "Complete the quotation: “… Yahweh's house, Because they have broken my covenant, And rebelled against my ____.” (8:1, WEB)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Let Samaria throw out his calf-idol! My anger burns against them! How long will it be before the are capable of purity?” The missing terms belong in that order.",
+    "options" : [
+      "Samaria idol"
+    ],
+    "prompt" : "Supply the missing words in order: “Let ____ throw out his calf-! My anger burns against them! How long will it be before the are capable of purity?” (8:5, WEB)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 8:4 uses kings: “They have set up kings, but not by me. They have made princes, and I didn't approve. Of their silver and their gold they have made …”",
+    "options" : [
+      "rulers",
+      "ruler",
+      "kings",
+      "soldiers"
+    ],
+    "prompt" : "Which word completes “They have set up ______, but not by me. They have made princes, and I didn't approve. Of their silver and their gold they have made …”? (8:4, WEB)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “But although they sold themselves among the nations, I will now gather them; and they begin to waste away because of the oppression of the king …”; verse 11 reads “Because Ephraim has multiplied altars for sinning, They became for him altars for sinning.”. These establish the first and second answers respectively.",
+    "options" : [
+      "nations; altars",
+      "strangers; altars",
+      "altars; nations",
+      "nations; nations"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “But although they sold themselves among the ______, I will now gather them; and they begin to waste away because of the oppression of the king …” (8:10); “Because Ephraim has multiplied altars for sinning, They became for him ______ for sinning.” (8:11, WEB)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “As for the sacrifices of my offerings, they sacrifice flesh and eat it; But Yahweh doesn't accept them. Now he will remember their iniquity, And punish …”; the second reads “… palaces; And Judah has multiplied fortified cities; But I will send a fire on his cities, And it will devour its fortresses.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sacrifices fire"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “As for the ____ of my offerings, they sacrifice flesh and eat it; But Yahweh doesn't accept them. Now he will remember their iniquity, And punish …” (8:13); “… palaces; And Judah has multiplied fortified cities; But I will send a on his cities, And it will devour its fortresses.\"” (8:14, WEB)",
+    "reference" : "Hosea 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies sins: “… who is inspired to be insane, Because of the abundance of your sins, And because your hostility is great.”",
+    "options" : [
+      "disobedience",
+      "sins",
+      "wickedness",
+      "transgressions"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… who is inspired to be insane, Because of the abundance of your ______, And because your hostility is great.”? (9:7, WEB)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “A prophet watches over Ephraim with my God. A fowler's snare is on all of his paths, And hostility in the house of his God.” It says fowler's, not winepress.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “A prophet watches over Ephraim with my God. A winepress snare is on all of his paths, And hostility in the house of his God.” (9:8, WEB)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 9:4 uses bread: “… be pleasing to him. Their sacrifices will be to them like the bread of mourners; All who eat of it will be polluted; For their bread …”",
+    "options" : [
+      "grain",
+      "water",
+      "salt",
+      "bread"
+    ],
+    "prompt" : "Which word completes “… be pleasing to him. Their sacrifices will be to them like the ______ of mourners; All who eat of it will be polluted; For their bread …”? (9:4, WEB)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “The threshing floor and the winepress won't feed them, And the new wine will fail her.”",
+    "options" : [
+      "wine"
+    ],
+    "prompt" : "Complete the quotation: “The threshing floor and the winepress won't feed them, And the new ____ will fail her.” (9:2, WEB)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Ephraim, like I have seen Tyre, is planted in a pleasant place; But Ephraim will bring out his children to the killer.”; the second reads “… their deeds I will drive them out of my house! I will love them no more. All their princes are rebels.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Tyre love"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Ephraim, like I have seen ____, is planted in a pleasant place; But Ephraim will bring out his children to the killer.” (9:13); “… their deeds I will drive them out of my house! I will them no more. All their princes are rebels.” (9:15, WEB)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Hosea 9:10 records: “… grapes in the wilderness. I saw your fathers as the first ripe in the fig tree at its first season; But they came to Baal Peor, and consecrated themselves to the shameful thing, And became abominable …”",
+    "options" : [
+      "wilderness"
+    ],
+    "prompt" : "In this paraphrase, the LORD said He found Israel like grapes in the ____. (9:10)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… gone away from destruction. Egypt will gather them up. Memphis will bury them. Nettles will possess their pleasant things of silver. Thorns will be in their …” The missing terms belong in that order.",
+    "options" : [
+      "Egypt silver"
+    ],
+    "prompt" : "Supply the missing words in order: “… gone away from destruction. ____ will gather them up. Memphis will bury them. Nettles will possess their pleasant things of . Thorns will be in their …” (9:6, WEB)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “As for Ephraim, their glory will fly away like a bird. There will be no birth, none with child, and no conception.”; verse 12 reads “… will bereave them, so that not a man shall be left. Indeed, woe also to them when I depart from them!”. These establish the first and second answers respectively.",
+    "options" : [
+      "glory; snare",
+      "shame; woe",
+      "glory; woe",
+      "woe; glory"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “As for Ephraim, their ______ will fly away like a bird. There will be no birth, none with child, and no conception.” (9:11); “… will bereave them, so that not a man shall be left. Indeed, ______ also to them when I depart from them!” (9:12, WEB)",
+    "reference" : "Hosea 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Assyria: “It also will be carried to Assyria for a present to a great king. Ephraim will receive shame, And Israel will be ashamed of his own …”",
+    "options" : [
+      "Gilgal",
+      "Assyria",
+      "Beersheba",
+      "Egypt"
+    ],
+    "prompt" : "Which detail belongs in this passage: “It also will be carried to ______ for a present to a great king. Ephraim will receive shame, And Israel will be ashamed of his own …”? (10:6, WEB)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… For it is time to seek Yahweh, Until he comes and rains righteousness on you.”; the second reads “… the fruit of lies, For you trusted in your way, in the multitude of your mighty men.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "righteousness multitude"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… For it is time to seek Yahweh, Until he comes and rains ____ on you.” (10:12); “… the fruit of lies, For you trusted in your way, in the of your mighty men.” (10:13, WEB)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Their heart is divided. Now they will be found guilty. He will demolish their altars. He will destroy their sacred stones.”",
+    "options" : [
+      "heart"
+    ],
+    "prompt" : "Complete the quotation: “Their ____ is divided. Now they will be found guilty. He will demolish their altars. He will destroy their sacred stones.” (10:2, WEB)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “The high places also of Aven, the sin of Israel, will be destroyed. The thorn and the thistle will come up on their altars. They will …” It says sin, not sins.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “The high places also of Aven, the sins of Israel, will be destroyed. The thorn and the thistle will come up on their altars. They will …” (10:8, WEB)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 10:4 uses judgment: “They make promises, swearing falsely in making covenants. Therefore judgment springs up like poisonous weeds in the furrows of the field.”",
+    "options" : [
+      "words",
+      "judgment",
+      "promises",
+      "law"
+    ],
+    "prompt" : "Which word completes “They make promises, swearing falsely in making covenants. Therefore ______ springs up like poisonous weeds in the furrows of the field.”? (10:4, WEB)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… days of Gibeah. There they remained. The battle against the children of iniquity doesn't overtake them in Gibeah.”; verse 11 reads “… beautiful neck. I will set a rider on Ephraim. Judah will plow. Jacob will break his clods.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Jacob; iniquity",
+      "idolatry; Jacob",
+      "iniquity; Jacob",
+      "iniquity; Shem"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… days of Gibeah. There they remained. The battle against the children of ______ doesn't overtake them in Gibeah.” (10:9); “… beautiful neck. I will set a rider on Ephraim. Judah will plow. ______ will break his clods.” (10:11, WEB)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… inhabitants of Samaria will be in terror for the calves of Beth Aven; For its people will mourn over it, Along with its priests who rejoiced …” The missing terms belong in that order.",
+    "options" : [
+      "Samaria priests"
+    ],
+    "prompt" : "Supply the missing words in order: “… inhabitants of ____ will be in terror for the calves of Beth Aven; For its people will mourn over it, Along with its who rejoiced …” (10:5, WEB)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 10:1 records: “Israel is a luxuriant vine that puts forth his fruit. According to the abundance of his fruit he has multiplied his altars. As their land has prospered, they have adorned their sacred stones.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Israel was described as a vine that bears fruit for itself. (10:1)",
+    "reference" : "Hosea 10",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… love; And I was to them like those who lift up the yoke on their necks; And I bent down to him and I fed him.” The missing terms belong in that order.",
+    "options" : [
+      "love fed"
+    ],
+    "prompt" : "Supply the missing words in order: “… ____; And I was to them like those who lift up the yoke on their necks; And I bent down to him and I him.” (11:4, WEB)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 11:3 uses taught: “Yet I taught Ephraim to walk. I took them by his arms; But they didn't know that I healed them.”",
+    "options" : [
+      "Though",
+      "healed",
+      "unfaithful",
+      "taught"
+    ],
+    "prompt" : "Which word completes “Yet I ______ Ephraim to walk. I took them by his arms; But they didn't know that I healed them.”? (11:3, WEB)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… from them. They sacrificed to the Baals, And burned incense to engraved images.”",
+    "options" : [
+      "images"
+    ],
+    "prompt" : "Complete the quotation: “… from them. They sacrificed to the Baals, And burned incense to engraved ____.” (11:2, WEB)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… from me. Though they call to the Most High, He certainly won't exalt them.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… from me. Though they call to the Most High, He certainly won't exalt them.” (11:7, WEB)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Hosea 11:1 records: “\"When Israel was a child, then I loved him, And called my son out of Egypt.”",
+    "options" : [
+      "son"
+    ],
+    "prompt" : "In this paraphrase, the LORD said, When Israel was a child, I loved him, and out of Egypt I called My ____. (11:1)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… can I give you up, Ephraim? How can I hand you over, Israel? How can I make you like Admah? How can I make you like …”; verse 9 reads “… return to destroy Ephraim: For I am God, and not man; the Holy One in the midst of you; And I will not come in wrath.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Israel; poor",
+      "Israel; Holy",
+      "Job; Holy",
+      "Holy; Israel"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… can I give you up, Ephraim? How can I hand you over, ______? How can I make you like Admah? How can I make you like …” (11:8); “… return to destroy Ephraim: For I am God, and not man; the ______ One in the midst of you; And I will not come in wrath.” (11:9, WEB)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… walk after Yahweh, Who will roar like a lion; For he will roar, and the children will come trembling from the west.”; the second reads “… out of Egypt, And like a dove out of the land of Assyria; And I will settle them in their houses,\" says Yahweh.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "roar Assyria"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… walk after Yahweh, Who will roar like a lion; For he will ____, and the children will come trembling from the west.” (11:10); “… out of Egypt, And like a dove out of the land of ; And I will settle them in their houses,\" says Yahweh.” (11:11, WEB)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Egypt: “\"They won't return into the land of Egypt; But the Assyrian will be their king, Because they refused to repent.”",
+    "options" : [
+      "Egypt",
+      "Edom",
+      "Canaan",
+      "Jerusalem"
+    ],
+    "prompt" : "Which detail belongs in this passage: “\"They won't return into the land of ______; But the Assyrian will be their king, Because they refused to repent.”? (11:5, WEB)",
+    "reference" : "Hosea 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Therefore turn to your God. Keep kindness and justice, And wait for your God continually.” The missing terms belong in that order.",
+    "options" : [
+      "kindness justice"
+    ],
+    "prompt" : "Supply the missing words in order: “Therefore turn to your God. Keep ____ and , And wait for your God continually.” (12:6, WEB)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 12:3 records: “In the womb he took his brother by the heel; And in his manhood he had power with God.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "Hosea recalled that Jacob strove with God and with the angel. (12:3-4)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 12:1 uses covenant: “… the east wind. He continually multiplies lies and desolation. They make a covenant with Assyria, And oil is carried into Egypt.”",
+    "options" : [
+      "law",
+      "teaching",
+      "covenant",
+      "judgments"
+    ],
+    "prompt" : "Which word completes “… the east wind. He continually multiplies lies and desolation. They make a ______ with Assyria, And oil is carried into Egypt.”? (12:1, WEB)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… myself wealth. In all my wealth they won't find in me any iniquity that is sin.\"” It says iniquity, not guilt.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… myself wealth. In all my wealth they won't find in me any guilt that is sin.\"” (12:8, WEB)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Yahweh also has a controversy with Judah, And will punish Jacob according to his ways; According to his deeds he will repay him.”",
+    "options" : [
+      "Jacob"
+    ],
+    "prompt" : "Complete the quotation: “Yahweh also has a controversy with Judah, And will punish ____ according to his ways; According to his deeds he will repay him.” (12:2, WEB)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Jacob fled into the country of Aram, And Israel served to get a wife, And for a wife he tended flocks and herds.”; the second reads “Ephraim has provoked to anger most bitterly. Therefore his blood will be left on him, And his his Lord will repay his contempt.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Israel blood"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Jacob fled into the country of Aram, And ____ served to get a wife, And for a wife he tended flocks and herds.” (12:12); “Ephraim has provoked to anger most bitterly. Therefore his will be left on him, And his his Lord will repay his contempt.” (12:14, WEB)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies defraud: “A merchant has dishonest scales in his hand. He loves to defraud.”",
+    "options" : [
+      "rich",
+      "defraud",
+      "Gilead",
+      "multiplies"
+    ],
+    "prompt" : "Which detail belongs in this passage: “A merchant has dishonest scales in his hand. He loves to ______.”? (12:7, WEB)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “\"But I am Yahweh your God from the land of Egypt. I will yet again make you to dwell in tents, As in the days of …”; verse 11 reads “If Gilead is wicked, Surely they are worthless. In Gilgal they sacrifice bulls. Indeed, their altars are like heaps in the furrows of the field.”. These establish the first and second answers respectively.",
+    "options" : [
+      "Gilgal; sacrifice",
+      "sacrifice; Egypt",
+      "Egypt; sacrifice",
+      "Egypt; praise"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “\"But I am Yahweh your God from the land of ______. I will yet again make you to dwell in tents, As in the days of …” (12:9); “If Gilead is wicked, Surely they are worthless. In Gilgal they ______ bulls. Indeed, their altars are like heaps in the furrows of the field.” (12:11, WEB)",
+    "reference" : "Hosea 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Now they sin more and more, And have made themselves molten images of their silver, Even idols according to their own understanding, All of them the …”",
+    "options" : [
+      "sin"
+    ],
+    "prompt" : "Complete the quotation: “Now they ____ more and more, And have made themselves molten images of their silver, Even idols according to their own understanding, All of them the …” (13:2, WEB)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies devour: “… And will tear the covering of their heart. And there I will devour them like a lioness. The wild animal will tear them.”",
+    "options" : [
+      "path",
+      "exalted",
+      "plagues",
+      "devour"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… And will tear the covering of their heart. And there I will ______ them like a lioness. The wild animal will tear them.”? (13:8, WEB)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… he is fruitful among his brothers, an east wind will come, The breath of Yahweh coming up from the wilderness; And his spring will become dry, …”; the second reads “Samaria will bear her guilt; For she has rebelled against her God. They will fall by the sword. Their infants will be dashed in pieces, And …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "breath Samaria"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… he is fruitful among his brothers, an east wind will come, The ____ of Yahweh coming up from the wilderness; And his spring will become dry, …” (13:15); “ will bear her guilt; For she has rebelled against her God. They will fall by the sword. Their infants will be dashed in pieces, And …” (13:16, WEB)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "Hosea 13:14 records: “I will ransom them from the power of Sheol. I will redeem them from death! Death, where are your plagues? Sheol, where is your destruction? Compassion will be hidden from my eyes.”",
+    "options" : [
+      "destruction"
+    ],
+    "prompt" : "In this paraphrase, the LORD said, O Death, where are your plagues? O Sheol, where is your ____? (13:14)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… your cities? And your judges, of whom you said, 'Give me a king and princes?'”; verse 13 reads “… sorrows of a travailing woman will come on him. He is an unwise son; For when it is time, he doesn't come to the opening of …”. These establish the first and second answers respectively.",
+    "options" : [
+      "king; anger",
+      "king; unwise",
+      "sons; unwise",
+      "unwise; king"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… your cities? And your judges, of whom you said, 'Give me a ______ and princes?'” (13:10); “… sorrows of a travailing woman will come on him. He is an ______ son; For when it is time, he doesn't come to the opening of …” (13:13, WEB)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… their pasture, so were they filled; They were filled, and their heart was exalted. Therefore they have forgotten me.” The missing terms belong in that order.",
+    "options" : [
+      "heart exalted"
+    ],
+    "prompt" : "Supply the missing words in order: “… their pasture, so were they filled; They were filled, and their ____ was . Therefore they have forgotten me.” (13:6, WEB)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 13:3 uses passes: “… they will be like the morning cloud, And like the dew that passes away early, Like the chaff that is driven with the whirlwind out of …”",
+    "options" : [
+      "calves",
+      "cities",
+      "passes",
+      "images"
+    ],
+    "prompt" : "Which word completes “… they will be like the morning cloud, And like the dew that ______ away early, Like the chaff that is driven with the whirlwind out of …”? (13:3, WEB)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Therefore am I to them like a lion; Like a leopard I will lurk by the path.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Therefore am I to them like a lion; Like a leopard I will lurk by the path.” (13:7, WEB)",
+    "reference" : "Hosea 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 8 reads “… answer, and will take care of him. I am like a green fir tree; From me your fruit is found.\"”; verse 9 reads “… may know them? For the ways of Yahweh are right, And the righteous walk in them; But the rebellious stumble in them.”. These establish the first and second answers respectively.",
+    "options" : [
+      "finds; righteous",
+      "fir; righteous",
+      "fir; obedient",
+      "righteous; fir"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… answer, and will take care of him. I am like a green ______ tree; From me your fruit is found.\"” (14:8); “… may know them? For the ways of Yahweh are right, And the ______ walk in them; But the rebellious stumble in them.” (14:9, WEB)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "trueFalse",
+    "lesson" : "Hosea 14:4 records: “\"I will heal their waywardness. I will love them freely; For my anger is turned away from him.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The LORD said He would heal their apostasy and love them freely. (14:4)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… words with you, and return to Yahweh. Tell him, \"Forgive all our sins, And accept that which is good: So we offer like bulls our lips.”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “… words with you, and return to Yahweh. Tell him, \"Forgive all our ____, And accept that which is good: So we offer like bulls our lips.” (14:2, WEB)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "Hosea 14:3 uses mercy: “… work of our hands, 'Our gods!' For in you the fatherless finds mercy.\"”",
+    "options" : [
+      "wrath",
+      "fear",
+      "honor",
+      "mercy"
+    ],
+    "prompt" : "Which word completes “… work of our hands, 'Our gods!' For in you the fatherless finds ______.\"”? (14:3, WEB)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “I will be like the dew to Israel. He will blossom like the lily, And send down his roots like Lebanon.” The missing terms belong in that order.",
+    "options" : [
+      "Israel lily"
+    ],
+    "prompt" : "Supply the missing words in order: “I will be like the dew to ____. He will blossom like the , And send down his roots like Lebanon.” (14:5, WEB)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… return to Yahweh your God; For you have fallen because of your sin.”; the second reads “Who is wise, that he may understand these things? Who is prudent, that he may know them? For the ways of Yahweh are right, And the …”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sin wise"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… return to Yahweh your God; For you have fallen because of your ____.” (14:1); “Who is , that he may understand these things? Who is prudent, that he may know them? For the ways of Yahweh are right, And the …” (14:9, WEB)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies spread: “His branches will spread, And his beauty will be like the olive tree, And his fragrance like Lebanon.”",
+    "options" : [
+      "Assyria",
+      "bulls",
+      "branches",
+      "spread"
+    ],
+    "prompt" : "Which detail belongs in this passage: “His branches will ______, And his beauty will be like the olive tree, And his fragrance like Lebanon.”? (14:6, WEB)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "hosea",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “Men will dwell in his shade. They will revive like the grain, And blossom like the vine. Their fragrance will be like the wine of Lebanon.” It says grain, not fruit.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “Men will dwell in his shade. They will revive like the fruit, And blossom like the vine. Their fragrance will be like the wine of Lebanon.” (14:7, WEB)",
+    "reference" : "Hosea 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]

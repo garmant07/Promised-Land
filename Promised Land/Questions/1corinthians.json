@@ -1,0 +1,2094 @@
+[
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "God's saving work in Christ overturns confidence in status and human prestige. The congregation's divisions are answered by the message of the crucified Christ. The course critiques making the church an extension of a human leader's importance.",
+    "options" : [
+      "Paul encourages each faction to make its leader the savior.",
+      "The cross is treated as irrelevant to community divisions.",
+      "Prestige is the ground of every believer's acceptance.",
+      "God's saving work in Christ overturns confidence in status and human prestige."
+    ],
+    "prompt" : "How does Paul's account of the cross challenge factional boasting? (1:10-31)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 1:10 uses judgment: “… you be perfected together in the same mind and in the same judgment.”",
+    "options" : [
+      "statutes",
+      "testimonies",
+      "judgment",
+      "judgments"
+    ],
+    "prompt" : "Which word completes “… you be perfected together in the same mind and in the same ______.”? (1:10, WEB)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… saints, with all who call on the name of our Lord Jesus Christ in every place, both theirs and ours:”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… saints, with all who call on the name of our Lord Jesus ____ in every place, both theirs and ours:” (1:2, WEB)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… I mean this, that each one of you says, \"I follow Paul,\" \"I follow Apollos,\" \"I follow Cephas,\" and, \"I follow Christ.\"” The missing terms belong in that order.",
+    "options" : [
+      "Paul Apollos"
+    ],
+    "prompt" : "Supply the missing words in order: “… I mean this, that each one of you says, \"I follow ____,\" \"I follow ,\" \"I follow Cephas,\" and, \"I follow Christ.\"” (1:12, WEB)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… chose the weak things of the world, that he might put to shame the things that are strong;”; the second reads “… in Christ Jesus, who was made to us wisdom from God, and righteousness and sanctification, and redemption:”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "shame righteousness"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… chose the weak things of the world, that he might put to ____ the things that are strong;” (1:27); “… in Christ Jesus, who was made to us wisdom from God, and and sanctification, and redemption:” (1:30, WEB)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For the word of the cross is foolishness to those who are dying, but to us who are saved it is the power of God.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For the word of the cross is foolishness to those who are dying, but to us who are saved it is the power of God.” (1:18, WEB)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… come behind in no gift; waiting for the revelation of our Lord Jesus Christ;”",
+    "options" : [
+      "Jesus"
+    ],
+    "prompt" : "Complete the quotation: “… come behind in no gift; waiting for the revelation of our Lord ____ Christ;” (1:7, WEB)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 1,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Gospel: “For Christ sent me not to baptize, but to preach the Gospel--not in wisdom of words, so that the cross of Christ wouldn't be made void.”",
+    "options" : [
+      "Gospel",
+      "shame",
+      "Sosthenes",
+      "weakness"
+    ],
+    "prompt" : "Which detail belongs in this passage: “For Christ sent me not to baptize, but to preach the ______--not in wisdom of words, so that the cross of Christ wouldn't be made void.”? (1:17, WEB)",
+    "reference" : "1 Corinthians 1",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… speak God's wisdom in a mystery, the wisdom that has been hidden, which God foreordained before the worlds for our glory,” The missing terms belong in that order.",
+    "options" : [
+      "mystery glory"
+    ],
+    "prompt" : "Supply the missing words in order: “… speak God's wisdom in a ____, the wisdom that has been hidden, which God foreordained before the worlds for our ,” (2:7, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies world: “which none of the rulers of this world has known. For had they known it, they wouldn't have crucified the Lord of glory.”",
+    "options" : [
+      "spiritually",
+      "written",
+      "world",
+      "excellence"
+    ],
+    "prompt" : "Which detail belongs in this passage: “which none of the rulers of this ______ has known. For had they known it, they wouldn't have crucified the Lord of glory.”? (2:8, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 2:6 uses wisdom: “We speak wisdom, however, among those who are full grown; yet a wisdom not of this world, nor of the rulers of this world, who are …”",
+    "options" : [
+      "fear",
+      "honor",
+      "wisdom",
+      "anger"
+    ],
+    "prompt" : "Which word completes “We speak ______, however, among those who are full grown; yet a wisdom not of this world, nor of the rulers of this world, who are …”? (2:6, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… not in persuasive words of human wisdom, but in demonstration of the Spirit and of power,”",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "Complete the quotation: “… not in persuasive words of human wisdom, but in demonstration of the ____ and of power,” (2:4, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… into the heart of man, These God has prepared for those who love him.\"” It says love, not joy.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… into the heart of man, These God has prepared for those who joy him.\"” (2:9, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “For who among men knows the things of a man, except the spirit of the man, which is in him? Even so, no one knows the …”; verse 13 reads “… we speak, not in words which man's wisdom teaches, but which the Holy Spirit teaches, comparing spiritual things with spiritual things.”. These establish the first and second answers respectively.",
+    "options" : [
+      "worlds; Holy",
+      "knows; Holy",
+      "Holy; knows",
+      "knows; guilty"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “For who among men ______ the things of a man, except the spirit of the man, which is in him? Even so, no one knows the …” (2:11); “… we speak, not in words which man's wisdom teaches, but which the ______ Spirit teaches, comparing spiritual things with spiritual things.” (2:13, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… are foolishness to him, and he can't know them, because they are spiritually discerned.”; the second reads “\"For who has known the mind of the Lord, that he should instruct him?\" But we have Christ's mind.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "spiritually mind"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… are foolishness to him, and he can't know them, because they are ____ discerned.” (2:14); “\"For who has known the of the Lord, that he should instruct him?\" But we have Christ's mind.” (2:16, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 2,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… come with excellence of speech or of wisdom, proclaiming to you the testimony of God.”",
+    "options" : [
+      "testimony"
+    ],
+    "prompt" : "Complete the quotation: “… come with excellence of speech or of wisdom, proclaiming to you the ____ of God.” (2:1, WEB)",
+    "reference" : "1 Corinthians 2",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies silver: “But if anyone builds on the foundation with gold, silver, costly stones, wood, hay, or stubble;”",
+    "options" : [
+      "stone",
+      "sand",
+      "silver",
+      "stones"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But if anyone builds on the foundation with gold, ______, costly stones, wood, hay, or stubble;”? (3:12, WEB)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “According to the grace of God which was given to me, as a wise master builder I laid a foundation, and another builds on it. But …” The missing terms belong in that order.",
+    "options" : [
+      "grace master"
+    ],
+    "prompt" : "Supply the missing words in order: “According to the ____ of God which was given to me, as a wise builder I laid a foundation, and another builds on it. But …” (3:10, WEB)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For when one says, \"I follow Paul,\" and another, \"I follow Apollos,\" aren't you fleshly?”",
+    "options" : [
+      "Apollos"
+    ],
+    "prompt" : "Complete the quotation: “For when one says, \"I follow Paul,\" and another, \"I follow ____,\" aren't you fleshly?” (3:4, WEB)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… meat; for you weren't yet ready. Indeed, not even now are you ready,”",
+    "options" : [
+      "ready"
+    ],
+    "prompt" : "Complete the quotation: “… meat; for you weren't yet ready. Indeed, not even now are you ____,” (3:2, WEB)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 3:6 uses planted: “I planted. Apollos watered. But God gave the increase.”",
+    "options" : [
+      "believed",
+      "revealed",
+      "planted",
+      "watered"
+    ],
+    "prompt" : "Which word completes “I ______. Apollos watered. But God gave the increase.”? (3:6, WEB)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "They are servants with distinct tasks, while God gives the growth. Paul reduces rivalry without making faithful labor meaningless. The community belongs to God rather than to competing personalities.",
+    "options" : [
+      "The image makes rivalry the aim of ministry.",
+      "Servants are to replace God as the owner of the field.",
+      "They are servants with distinct tasks, while God gives the growth.",
+      "Each worker produces life independently of God."
+    ],
+    "prompt" : "What does the planting-and-watering image say about the roles of Paul and Apollos? (3:5-9)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “whether Paul, or Apollos, or Cephas, or the world, or life, or death, or things present, or things to come. All are yours,”; the second reads “and you are Christ's, and Christ is God's.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "death Christ"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “whether Paul, or Apollos, or Cephas, or the world, or life, or ____, or things present, or things to come. All are yours,” (3:22); “and you are Christ's, and is God's.” (3:23, WEB)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 3,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… Day will declare it, because it is revealed in fire; and the fire itself will test what sort of work each man's work is.” It says fire, not craftiness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… Day will declare it, because it is revealed in fire; and the craftiness itself will test what sort of work each man's work is.” (3:13, WEB)",
+    "reference" : "1 Corinthians 3",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… reveal the counsels of the hearts. Then each man will get his praise from God.”",
+    "options" : [
+      "praise"
+    ],
+    "prompt" : "Complete the quotation: “… reveal the counsels of the hearts. Then each man will get his ____ from God.” (4:5, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 4:6 uses Apollos: “… these things, brothers, I have in a figure transferred to myself and Apollos for your sakes, that in us you might learn not to think beyond …”",
+    "options" : [
+      "Balak",
+      "Dorcas",
+      "Apollos",
+      "Lazarus"
+    ],
+    "prompt" : "Which word completes “… these things, brothers, I have in a figure transferred to myself and ______ for your sakes, that in us you might learn not to think beyond …”? (4:6, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 15 reads “… many fathers. For in Christ Jesus, I became your father through the Gospel.”; verse 17 reads “… this I have sent Timothy to you, who is my beloved and faithful child in the Lord, who will remind you of my ways which are …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Gospel; faithful",
+      "Gospel; rich",
+      "faithful; Gospel",
+      "didn't; faithful"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… many fathers. For in Christ Jesus, I became your father through the ______.” (4:15); “… this I have sent Timothy to you, who is my beloved and ______ child in the Lord, who will remind you of my ways which are …” (4:17, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… small thing that I should be judged by you, or by man's judgment. Yes, I don't judge my own self.”",
+    "options" : [
+      "judgment"
+    ],
+    "prompt" : "Complete the quotation: “… small thing that I should be judged by you, or by man's ____. Yes, I don't judge my own self.” (4:3, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies beaten: “Even to this present hour we hunger, thirst, are naked, are beaten, and have no certain dwelling place.”",
+    "options" : [
+      "judges",
+      "darkness",
+      "thousand",
+      "beaten"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Even to this present hour we hunger, thirst, are naked, are ______, and have no certain dwelling place.”? (4:11, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… I think that God has displayed us, the apostles, last of all, like men sentenced to death. For we are made a spectacle to the world, …” The missing terms belong in that order.",
+    "options" : [
+      "apostles death"
+    ],
+    "prompt" : "Supply the missing words in order: “… I think that God has displayed us, the ____, last of all, like men sentenced to . For we are made a spectacle to the world, …” (4:9, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… shortly, if the Lord is willing. And I will know, not the word of those who are puffed up, but the power.”; the second reads “… you want? Shall I come to you with a rod, or in love and a spirit of gentleness?”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "word love"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… shortly, if the Lord is willing. And I will know, not the ____ of those who are puffed up, but the power.” (4:19); “… you want? Shall I come to you with a rod, or in and a spirit of gentleness?” (4:21, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 4,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “We toil, working with our own hands. When people curse us, we bless. Being persecuted, we endure.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “We toil, working with our own hands. When people curse us, we bless. Being persecuted, we endure.” (4:12, WEB)",
+    "reference" : "1 Corinthians 4",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 10 reads “… sinners of this world, or with the covetous and extortioners, or with idolaters; for then you would have to leave the world.”; verse 11 reads “… associate with anyone who is called a brother who is a sexual sinner, or covetous, or an idolater, or a slanderer, or a drunkard, or an …”. These establish the first and second answers respectively.",
+    "options" : [
+      "sinner; idolaters",
+      "wickedness; sinner",
+      "idolaters; sinner",
+      "idolaters; place"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… sinners of this world, or with the covetous and extortioners, or with ______; for then you would have to leave the world.” (5:10); “… associate with anyone who is called a brother who is a sexual ______, or covetous, or an idolater, or a slanderer, or a drunkard, or an …” (5:11, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies indeed: “… you may be a new lump, even as you are unleavened. For indeed Christ, our Passover, has been sacrificed in our place.”",
+    "options" : [
+      "sacrificed",
+      "gathered",
+      "indeed",
+      "judged"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… you may be a new lump, even as you are unleavened. For ______ Christ, our Passover, has been sacrificed in our place.”? (5:7, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… of malice and wickedness, but with the unleavened bread of sincerity and truth.” It says truth, not righteousness.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… of malice and wickedness, but with the unleavened bread of sincerity and righteousness.” (5:8, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For I most assuredly, as being absent in body but present in spirit, have already, as though I were present, judged him who has done this …”",
+    "options" : [
+      "body"
+    ],
+    "prompt" : "Complete the quotation: “For I most assuredly, as being absent in ____ but present in spirit, have already, as though I were present, judged him who has done this …” (5:3, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 5:4 uses Christ: “… gathered together, and my spirit, with the power of our Lord Jesus Christ,”",
+    "options" : [
+      "Lois",
+      "Jesse",
+      "Malachi",
+      "Christ"
+    ],
+    "prompt" : "Which word completes “… gathered together, and my spirit, with the power of our Lord Jesus ______,”? (5:4, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “For what have I to do with also judging those who are outside? Don't you judge those who are within?”; the second reads “But those who are outside, God judges. \"Put away the wicked man from among yourselves.\"”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "judging wicked"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “For what have I to do with also ____ those who are outside? Don't you judge those who are within?” (5:12); “But those who are outside, God judges. \"Put away the man from among yourselves.\"” (5:13, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “are to deliver such a one to Satan for the destruction of the flesh, that the spirit may be saved in the day of the Lord …” The missing terms belong in that order.",
+    "options" : [
+      "deliver spirit"
+    ],
+    "prompt" : "Supply the missing words in order: “are to ____ such a one to Satan for the destruction of the flesh, that the may be saved in the day of the Lord …” (5:5, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 5,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “It is actually reported that there is sexual immorality among you, and such sexual immorality as is not even named among the Gentiles, that one has …”",
+    "options" : [
+      "sexual"
+    ],
+    "prompt" : "Complete the quotation: “It is actually reported that there is ____ immorality among you, and such sexual immorality as is not even named among the Gentiles, that one has …” (5:1, WEB)",
+    "reference" : "1 Corinthians 5",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “If then, you have to judge things pertaining to this life, do you set them to judge who are of no account in the assembly?”",
+    "options" : [
+      "life"
+    ],
+    "prompt" : "Complete the quotation: “If then, you have to judge things pertaining to this ____, do you set them to judge who are of no account in the assembly?” (6:4, WEB)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The body belongs to the Lord and is described as a temple of the Holy Spirit. The passage refuses to treat bodily choices as spiritually irrelevant. The course opposes the dualist idea that only the spirit matters while the body is disposable or inherently evil.",
+    "options" : [
+      "Freedom means every use of the body is beneficial.",
+      "The body has no relation to discipleship.",
+      "The body belongs to the Lord and is described as a temple of the Holy Spirit.",
+      "Resurrection concerns no embodied life at all."
+    ],
+    "prompt" : "How does Paul connect bodily conduct with belonging to Christ? (6:12-20)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies slanderers: “nor thieves, nor covetous, nor drunkards, nor slanderers, nor extortioners, will inherit the Kingdom of God.”",
+    "options" : [
+      "unbelievers",
+      "sins",
+      "foods",
+      "slanderers"
+    ],
+    "prompt" : "Which detail belongs in this passage: “nor thieves, nor covetous, nor drunkards, nor ______, nor extortioners, will inherit the Kingdom of God.”? (6:10, WEB)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… know that the unrighteous will not inherit the Kingdom of God? Don't be deceived. Neither the sexually immoral, nor idolaters, nor adulterers, nor male prostitutes, nor …” The missing terms belong in that order.",
+    "options" : [
+      "Kingdom sexually"
+    ],
+    "prompt" : "Supply the missing words in order: “… know that the unrighteous will not inherit the ____ of God? Don't be deceived. Neither the immoral, nor idolaters, nor adulterers, nor male prostitutes, nor …” (6:9, WEB)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… the world? And if the world is judged by you, are you unworthy to judge the smallest matters?”",
+    "options" : [
+      "unworthy"
+    ],
+    "prompt" : "Complete the quotation: “… the world? And if the world is judged by you, are you ____ to judge the smallest matters?” (6:2, WEB)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 6:7 uses rather: “… have lawsuits one with another. Why not rather be wronged? Why not rather be defrauded?”",
+    "options" : [
+      "pertain",
+      "rather",
+      "temple",
+      "decide"
+    ],
+    "prompt" : "Which word completes “… have lawsuits one with another. Why not rather be wronged? Why not ______ be defrauded?”? (6:7, WEB)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Flee sexual immorality! \"Every sin that a man does is outside the body,\" but he who commits sexual immorality sins against his own body.”; the second reads “… with a price. Therefore glorify God in your body and in your spirit, which are God's.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "sin spirit"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Flee sexual immorality! \"Every ____ that a man does is outside the body,\" but he who commits sexual immorality sins against his own body.” (6:18); “… with a price. Therefore glorify God in your body and in your , which are God's.” (6:20, WEB)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 6,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… for sexual immorality, but for the Lord; and the Lord for the body.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… for sexual immorality, but for the Lord; and the Lord for the body.” (6:13, WEB)",
+    "reference" : "1 Corinthians 6",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 7:11 uses else: “(but if she departs, let her remain unmarried, or else be reconciled to her husband), and that the husband not leave his wife.”",
+    "options" : [
+      "else",
+      "self",
+      "Satan",
+      "attend"
+    ],
+    "prompt" : "Which word completes “(but if she departs, let her remain unmarried, or ______ be reconciled to her husband), and that the husband not leave his wife.”? (7:11, WEB)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “The wife doesn't have authority over her own body, but the husband. Likewise also the husband doesn't have authority over his own body, but the wife.”",
+    "options" : [
+      "body"
+    ],
+    "prompt" : "Complete the quotation: “The wife doesn't have authority over her own ____, but the husband. Likewise also the husband doesn't have authority over his own body, but the wife.” (7:4, WEB)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… brother or the sister is not under bondage in such cases, but God has called us in peace.” The missing terms belong in that order.",
+    "options" : [
+      "bondage peace"
+    ],
+    "prompt" : "Supply the missing words in order: “… brother or the sister is not under ____ in such cases, but God has called us in .” (7:15, WEB)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies circumcised: “Was anyone called having been circumcised? Let him not become uncircumcised. Has anyone been called in uncircumcision? Let him not be circumcised.”",
+    "options" : [
+      "distributed",
+      "sanctified",
+      "reconciled",
+      "circumcised"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Was anyone called having been ______? Let him not become uncircumcised. Has anyone been called in uncircumcision? Let him not be circumcised.”? (7:18, WEB)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "He recognizes different gifts and addresses practical concerns about devoted service. Paul values faithfulness in differing circumstances. Later traditions discuss some applications, but the passage does not make marriage or singleness proof of greater human worth.",
+    "options" : [
+      "He recognizes different gifts and addresses practical concerns about devoted service.",
+      "Only married believers can serve God.",
+      "Every believer is said to receive exactly the same gift.",
+      "Only unmarried people have human dignity."
+    ],
+    "prompt" : "How does Paul's discussion of marriage and singleness resist one simple ranking of all Christians? (7:1-9, 25-35)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 27 reads “Are you bound to a wife? Don't seek to be freed. Are you free from a wife? Don't seek a wife.”; verse 31 reads “… as not using it to the fullest. For the mode of this world passes away.”. These establish the first and second answers respectively.",
+    "options" : [
+      "freed; husband",
+      "owed; world",
+      "freed; world",
+      "world; freed"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “Are you bound to a wife? Don't seek to be ______. Are you free from a wife? Don't seek a wife.” (7:27); “… as not using it to the fullest. For the mode of this ______ passes away.” (7:31, WEB)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For he who was called in the Lord being a bondservant is the Lord's free man. Likewise he who was called being free is Christ's bondservant.” It says bondservant, not bound.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For he who was called in the Lord being a bound is the Lord's free man. Likewise he who was called being free is Christ's bondservant.” (7:22, WEB)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 7,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… However each man has his own gift from God, one of this kind, and another of that kind.”",
+    "options" : [
+      "kind"
+    ],
+    "prompt" : "Complete the quotation: “… However each man has his own gift from God, one of this ____, and another of that kind.” (7:7, WEB)",
+    "reference" : "1 Corinthians 7",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 8:4 uses idols: “Therefore concerning the eating of things sacrificed to idols, we know that no idol is anything in the world, and that there is no other God …”",
+    "options" : [
+      "builds",
+      "heavens",
+      "perishes",
+      "idols"
+    ],
+    "prompt" : "Which word completes “Therefore concerning the eating of things sacrificed to ______, we know that no idol is anything in the world, and that there is no other God …”? (8:4, WEB)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But if anyone thinks that he knows anything, he doesn't yet know as he ought to know.”",
+    "options" : [
+      "doesn't"
+    ],
+    "prompt" : "Complete the quotation: “But if anyone thinks that he knows anything, he ____ yet know as he ought to know.” (8:2, WEB)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “However, that knowledge isn't in all men. But some, with consciousness of the idol until now, eat as of a thing sacrificed to an idol, and …” The missing terms belong in that order.",
+    "options" : [
+      "However knowledge"
+    ],
+    "prompt" : "Supply the missing words in order: “____, that isn't in all men. But some, with consciousness of the idol until now, eat as of a thing sacrificed to an idol, and …” (8:7, WEB)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… idols: We know that we all have knowledge. Knowledge puffs up, but love builds up.”",
+    "options" : [
+      "love"
+    ],
+    "prompt" : "Complete the quotation: “… idols: We know that we all have knowledge. Knowledge puffs up, but ____ builds up.” (8:1, WEB)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Correct information can be used without the love that builds others up. Paul distinguishes knowing about idols from loving conduct toward another person. The course's link between doctrine and practice helps explain why being factually right does not excuse harm.",
+    "options" : [
+      "The weaker believer is to be treated with contempt.",
+      "Knowledge automatically excuses every harmful action.",
+      "Love requires affirming that idols are true gods.",
+      "Correct information can be used without the love that builds others up."
+    ],
+    "prompt" : "What is the danger of knowledge that ignores a vulnerable believer? (8:1-13)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 9 reads “… that by no means does this liberty of yours become a stumbling block to the weak.”; verse 11 reads “… your knowledge, he who is weak perishes, the brother for whose sake Christ died.”. These establish the first and second answers respectively.",
+    "options" : [
+      "defiled; Christ",
+      "block; Rachel",
+      "Christ; block",
+      "block; Christ"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… that by no means does this liberty of yours become a stumbling ______ to the weak.” (8:9); “… your knowledge, he who is weak perishes, the brother for whose sake ______ died.” (8:11, WEB)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies food: “But food will not commend us to God. For neither, if we don't eat, are we the worse; nor, if we eat, are we the better.”",
+    "options" : [
+      "gods",
+      "food",
+      "idols",
+      "builds"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But ______ will not commend us to God. For neither, if we don't eat, are we the worse; nor, if we eat, are we the better.”? (8:8, WEB)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 8,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… sees you who have knowledge sitting in an idol's temple, won't his conscience, if he is weak, be emboldened to eat things sacrificed to idols?”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… sees you who have knowledge sitting in an idol's temple, won't his conscience, if he is weak, be emboldened to eat things sacrificed to idols?” (8:10, WEB)",
+    "reference" : "1 Corinthians 8",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… because he who plows ought to plow in hope, and he who threshes in hope should partake of his hope.” The missing terms belong in that order.",
+    "options" : [
+      "plow hope"
+    ],
+    "prompt" : "Supply the missing words in order: “… because he who plows ought to ____ in hope, and he who threshes in hope should partake of his .” (9:10, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 18 reads “… That, when I preach the Gospel, I may present the Gospel of Christ without charge, so as not to abuse my authority in the Gospel.”; verse 21 reads “to those who are without law, as without law (not being without law toward God, but under law toward Christ), that I might win those who …”. These establish the first and second answers respectively.",
+    "options" : [
+      "Christ; law",
+      "law; Christ",
+      "Epaphras; law",
+      "Christ; testimony"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… That, when I preach the Gospel, I may present the Gospel of ______ without charge, so as not to abuse my authority in the Gospel.” (9:18); “to those who are without law, as without law (not being without ______ toward God, but under law toward Christ), that I might win those who …” (9:21, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “For if I preach the Gospel, I have nothing to boast about; for necessity is laid on me; but woe is to me, if I don't …”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “For if I preach the Gospel, I have nothing to boast about; for necessity is laid on me; but woe is to me, if I don't …” (9:16, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Am I not free? Am I not an apostle? Haven't I seen Jesus Christ, our Lord? Aren't you my work in the Lord?”",
+    "options" : [
+      "apostle"
+    ],
+    "prompt" : "Complete the quotation: “Am I not free? Am I not an ____? Haven't I seen Jesus Christ, our Lord? Aren't you my work in the Lord?” (9:1, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Don't you know that those who run in a race all run, but one receives the prize? Run like that, that you may win.”; the second reads “I therefore run like that, as not uncertainly. I fight like that, as not beating the air,”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "run uncertainly"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Don't you know that those who ____ in a race all run, but one receives the prize? Run like that, that you may win.” (9:24); “I therefore run like that, as not . I fight like that, as not beating the air,” (9:26, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 9:7 uses drink: “… doesn't eat of its fruit? Or who feeds a flock, and doesn't drink from the flock's milk?”",
+    "options" : [
+      "abuse",
+      "while",
+      "drink",
+      "apostleship"
+    ],
+    "prompt" : "Which word completes “… doesn't eat of its fruit? Or who feeds a flock, and doesn't ______ from the flock's milk?”? (9:7, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies altar: “… from the things of the temple, and those who wait on the altar have their portion with the altar?”",
+    "options" : [
+      "tabernacle",
+      "temple",
+      "altar",
+      "ark"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… from the things of the temple, and those who wait on the ______ have their portion with the altar?”? (9:13, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 9,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… a wife who is a believer, even as the rest of the apostles, and the brothers of the Lord, and Cephas?”",
+    "options" : [
+      "apostles"
+    ],
+    "prompt" : "Complete the quotation: “… a wife who is a believer, even as the rest of the ____, and the brothers of the Lord, and Cephas?” (9:5, WEB)",
+    "reference" : "1 Corinthians 9",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… drank of a spiritual rock that followed them, and the rock was Christ.”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… drank of a spiritual rock that followed them, and the rock was ____.” (10:4, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “But I say that the things which the Gentiles sacrifice, they sacrifice to demons, and not to God, and I don't desire that you would have …” It says sacrifice, not inheritance.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “But I say that the things which the Gentiles inheritance, they sacrifice to demons, and not to God, and I don't desire that you would have …” (10:20, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies bread: “… we bless, isn't it a communion of the blood of Christ? The bread which we break, isn't it a communion of the body of Christ?”",
+    "options" : [
+      "fruit",
+      "bread",
+      "wheat",
+      "wine"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… we bless, isn't it a communion of the blood of Christ? The ______ which we break, isn't it a communion of the body of Christ?”? (10:16, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 10:8 uses thousand: “… sexual immorality, as some of them committed, and in one day twenty-three thousand fell.”",
+    "options" : [
+      "eighty",
+      "two",
+      "eighth",
+      "thousand"
+    ],
+    "prompt" : "Which word completes “… sexual immorality, as some of them committed, and in one day twenty-three ______ fell.”? (10:8, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 21 reads “… partake of the table of the Lord, and of the table of demons.”; verse 25 reads “… in the butcher shop, eat, asking no question for the sake of conscience,”. These establish the first and second answers respectively.",
+    "options" : [
+      "conscience; demons",
+      "demons; conscience",
+      "thinks; conscience",
+      "demons; occasions"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… partake of the table of the Lord, and of the table of ______.” (10:21); “… in the butcher shop, eat, asking no question for the sake of ______,” (10:25, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… \"The people sat down to eat and drink, and rose up to play.\"”",
+    "options" : [
+      "play"
+    ],
+    "prompt" : "Complete the quotation: “… \"The people sat down to eat and drink, and rose up to ____.\"” (10:7, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… man. God is faithful, who will not allow you to be tempted above what you are able, but will with the temptation also make the way …” The missing terms belong in that order.",
+    "options" : [
+      "faithful temptation"
+    ],
+    "prompt" : "Supply the missing words in order: “… man. God is ____, who will not allow you to be tempted above what you are able, but will with the also make the way …” (10:13, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 10,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… not your own, but the other's conscience. For why is my liberty judged by another conscience?”; the second reads “even as I also please all men in all things, not seeking my own profit, but the profit of the many, that they may be saved.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "judged men"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… not your own, but the other's conscience. For why is my liberty ____ by another conscience?” (10:29); “even as I also please all in all things, not seeking my own profit, but the profit of the many, that they may be saved.” (10:33, WEB)",
+    "reference" : "1 Corinthians 10",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Judge for yourselves. Is it appropriate that a woman pray to God unveiled?” The missing terms belong in that order.",
+    "options" : [
+      "Judge appropriate"
+    ],
+    "prompt" : "Supply the missing words in order: “____ for yourselves. Is it that a woman pray to God unveiled?” (11:13, WEB)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… is not covered, let her also be shorn. But if it is shameful for a woman to be shorn or shaved, let her be covered.”",
+    "options" : [
+      "shameful"
+    ],
+    "prompt" : "Complete the quotation: “… is not covered, let her also be shorn. But if it is ____ for a woman to be shorn or shaved, let her be covered.” (11:6, WEB)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Their treatment of one another contradicts the meal they claim to share. Paul addresses a communal practice in which some are shamed while others indulge. Christian views of Christ's presence differ, but the passage explicitly connects the meal with accountable care for the body.",
+    "options" : [
+      "The meal is unrelated to how participants treat one another.",
+      "The chapter commends the divisions as its ideal.",
+      "Their treatment of one another contradicts the meal they claim to share.",
+      "Shaming the poor is described as proper worship."
+    ],
+    "prompt" : "Why does the instruction about the Lord's Supper include criticism of divisions and hunger? (11:17-34)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 11:10 uses head: “For this cause the woman ought to have authority on her head, because of the angels.”",
+    "options" : [
+      "head",
+      "hands",
+      "teeth",
+      "blood"
+    ],
+    "prompt" : "Which word completes “For this cause the woman ought to have authority on her ______, because of the angels.”? (11:10, WEB)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 23 reads “… the Lord Jesus on the night in which he was betrayed took bread.”; verse 27 reads “… in a manner unworthy of the Lord will be guilty of the body and the blood of the Lord.”. These establish the first and second answers respectively.",
+    "options" : [
+      "bread; hungry",
+      "flour; body",
+      "body; bread",
+      "bread; body"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… the Lord Jesus on the night in which he was betrayed took ______.” (11:23); “… in a manner unworthy of the Lord will be guilty of the ______ and the blood of the Lord.” (11:27, WEB)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… I would have you know that the head of every man is Christ, and the head of the woman is the man, and the head of …”",
+    "options" : [
+      "Christ"
+    ],
+    "prompt" : "Complete the quotation: “… I would have you know that the head of every man is ____, and the head of the woman is the man, and the head of …” (11:3, WEB)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… you assemble yourselves together, it is not possible to eat the Lord's supper.” It says supper, not praying.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… you assemble yourselves together, it is not possible to eat the Lord's praying.” (11:20, WEB)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 11,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies contentious: “But if any man seems to be contentious, we have no such custom, neither do God's assemblies.”",
+    "options" : [
+      "contentious",
+      "comes",
+      "takes",
+      "drinks"
+    ],
+    "prompt" : "Which detail belongs in this passage: “But if any man seems to be ______, we have no such custom, neither do God's assemblies.”? (11:16, WEB)",
+    "reference" : "1 Corinthians 11",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 12:9 uses faith: “to another faith, by the same Spirit; and to another gifts of healings, by the same Spirit;”",
+    "options" : [
+      "faith",
+      "desired",
+      "manifestation",
+      "suffer"
+    ],
+    "prompt" : "Which word completes “to another ______, by the same Spirit; and to another gifts of healings, by the same Spirit;”? (12:9, WEB)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “For to one is given through the Spirit the word of wisdom, and to another the word of knowledge, according to the same Spirit;”",
+    "options" : [
+      "wisdom"
+    ],
+    "prompt" : "Complete the quotation: “For to one is given through the Spirit the word of ____, and to another the word of knowledge, according to the same Spirit;” (12:8, WEB)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For in one Spirit we were all baptized into one body, whether Jews or Greeks, whether bond or free; and were all given to drink into …” The missing terms belong in that order.",
+    "options" : [
+      "body Jews"
+    ],
+    "prompt" : "Supply the missing words in order: “For in one Spirit we were all baptized into one ____, whether or Greeks, whether bond or free; and were all given to drink into …” (12:13, WEB)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The one body contains different gifts and members rather than requiring every member to perform the same function. The course treats tongues as a gift rather than the necessary sign that every believer has the Spirit. This passage explicitly emphasizes diversity within one Spirit-given body.",
+    "options" : [
+      "The one body contains different gifts and members rather than requiring every member to perform the same function.",
+      "A less visible member is not needed.",
+      "Diversity proves that there can be no unity.",
+      "Every member must possess every identical gift."
+    ],
+    "prompt" : "How does Paul's question about whether all speak in tongues relate to his body image? (12:12-30)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “If the whole body were an eye, where would the hearing be? If the whole were hearing, where would the smelling be?” It says eye, not hands.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “If the whole body were an hands, where would the hearing be? If the whole were hearing, where would the smelling be?” (12:17, WEB)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies foot: “If the foot would say, \"Because I'm not the hand, I'm not part of the body,\" it is not therefore not part of the body.”",
+    "options" : [
+      "foot",
+      "face",
+      "arm",
+      "teeth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “If the ______ would say, \"Because I'm not the hand, I'm not part of the body,\" it is not therefore not part of the body.”? (12:15, WEB)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “God has set some in the assembly: first apostles, second prophets, third teachers, then miracle workers, then gifts of healings, helps, governments, and various kinds of …”; the second reads “But earnestly desire the best gifts. Moreover, I show a most excellent way to you.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "apostles way"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “God has set some in the assembly: first ____, second prophets, third teachers, then miracle workers, then gifts of healings, helps, governments, and various kinds of …” (12:28); “But earnestly desire the best gifts. Moreover, I show a most excellent to you.” (12:31, WEB)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 12,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “Therefore I make known to you that no man speaking by God's Spirit says, \"Jesus is accursed.\" No one can say, \"Jesus is Lord,\" but by …”",
+    "options" : [
+      "Spirit"
+    ],
+    "prompt" : "Complete the quotation: “Therefore I make known to you that no man speaking by God's ____ says, \"Jesus is accursed.\" No one can say, \"Jesus is Lord,\" but by …” (12:3, WEB)",
+    "reference" : "1 Corinthians 12",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies fails: “Love never fails. But where there are prophecies, they will be done away with. Where there are various languages, they will cease. Where there is knowledge, …”",
+    "options" : [
+      "takes",
+      "brass",
+      "mountains",
+      "fails"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Love never ______. But where there are prophecies, they will be done away with. Where there are various languages, they will cease. Where there is knowledge, …”? (13:8, WEB)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… I have the gift of prophecy, and know all mysteries and all knowledge; and if I have all faith, so as to remove mountains, but don't …”",
+    "options" : [
+      "knowledge"
+    ],
+    "prompt" : "Complete the quotation: “… I have the gift of prophecy, and know all mysteries and all ____; and if I have all faith, so as to remove mountains, but don't …” (13:2, WEB)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Without love, impressive gifts and sacrifices fail their proper purpose. The chapter belongs within the discussion of the church's life, not only romantic relationships. The course identifies love as the motive and practice of Christian devotion.",
+    "options" : [
+      "Without love, impressive gifts and sacrifices fail their proper purpose.",
+      "Paul says love ends before every other gift.",
+      "The most visible gift automatically proves maturity.",
+      "Love makes treatment of others irrelevant."
+    ],
+    "prompt" : "What does love contribute to Paul's surrounding discussion of spiritual gifts? (13:1-13)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 13:4 uses Love: “Love is patient and is kind; love doesn't envy. Love doesn't brag, is not proud,”",
+    "options" : [
+      "wisdom",
+      "glory",
+      "honor",
+      "Love"
+    ],
+    "prompt" : "Which word completes “______ is patient and is kind; love doesn't envy. Love doesn't brag, is not proud,”? (13:4, WEB)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “doesn't behave itself inappropriately, doesn't seek its own way, is not provoked, takes no account of evil;” The missing terms belong in that order.",
+    "options" : [
+      "doesn't provoked"
+    ],
+    "prompt" : "Supply the missing words in order: “____ behave itself inappropriately, doesn't seek its own way, is not , takes no account of evil;” (13:5, WEB)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “bears all things, believes all things, hopes all things, endures all things.”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “bears all things, believes all things, hopes all things, endures all things.” (13:7, WEB)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “If I dole out all my goods to feed the poor, and if I give my body to be burned, but don't have love, it profits …”",
+    "options" : [
+      "poor"
+    ],
+    "prompt" : "Complete the quotation: “If I dole out all my goods to feed the ____, and if I give my body to be burned, but don't have love, it profits …” (13:3, WEB)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 13,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 11 reads “… was a child, I spoke as a child, I felt as a child, I thought as a child. Now that I have become a man, I …”; verse 12 reads “… face to face. Now I know in part, but then I will know fully, even as I was also fully known.”. These establish the first and second answers respectively.",
+    "options" : [
+      "child; know",
+      "inappropriately; know",
+      "child; mountains",
+      "know; child"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… was a child, I spoke as a child, I felt as a ______, I thought as a child. Now that I have become a man, I …” (13:11); “… face to face. Now I know in part, but then I will ______ fully, even as I was also fully known.” (13:12, WEB)",
+    "reference" : "1 Corinthians 13",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 14:11 uses foreigner: “… him who speaks a foreigner, and he who speaks would be a foreigner to me.”",
+    "options" : [
+      "person",
+      "strangers",
+      "comes",
+      "foreigner"
+    ],
+    "prompt" : "Which word completes “… him who speaks a foreigner, and he who speaks would be a ______ to me.”? (14:11, WEB)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies five: “However in the assembly I would rather speak five words with my understanding, that I might instruct others also, than ten thousand words in another language.”",
+    "options" : [
+      "fifteen",
+      "five",
+      "ninth",
+      "eighth"
+    ],
+    "prompt" : "Which detail belongs in this passage: “However in the assembly I would rather speak ______ words with my understanding, that I might instruct others also, than ten thousand words in another language.”? (14:19, WEB)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “But he who prophesies speaks to men for their edification, exhortation, and consolation.”",
+    "options" : [
+      "prophesies"
+    ],
+    "prompt" : "Complete the quotation: “But he who ____ speaks to men for their edification, exhortation, and consolation.” (14:3, WEB)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "The aim of orderly edification and the letter's earlier reference to women praying and prophesying. Christians differ over the scope and setting of the restriction. The text should be read with the whole discussion rather than used to pretend there is no interpretive question about how the passages fit together.",
+    "options" : [
+      "The aim of orderly edification and the letter's earlier reference to women praying and prophesying.",
+      "The letter never mentions women praying or prophesying.",
+      "Every Christian tradition applies the restriction identically.",
+      "The goal is to prevent anyone from being built up."
+    ],
+    "prompt" : "What must be considered when interpreting the instructions about women's speech? (14:26-40; 11:5)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “… own husbands at home, for it is shameful for a woman to chatter in the assembly.”; the second reads “Therefore, brothers, desire earnestly to prophesy, and don't forbid speaking with other languages.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "chatter brothers"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “… own husbands at home, for it is shameful for a woman to ____ in the assembly.” (14:35); “Therefore, , desire earnestly to prophesy, and don't forbid speaking with other languages.” (14:39, WEB)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… all speak with other languages, and unlearned or unbelieving people come in, won't they say that you are crazy?” It says won't, not revelation.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… all speak with other languages, and unlearned or unbelieving people come in, revelation they say that you are crazy?” (14:23, WEB)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “… with the spirit, and I will pray with the understanding also. I will sing with the spirit, and I will sing with the understanding also.” The missing terms belong in that order.",
+    "options" : [
+      "spirit understanding"
+    ],
+    "prompt" : "Supply the missing words in order: “… with the ____, and I will pray with the understanding also. I will sing with the spirit, and I will sing with the also.” (14:15, WEB)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 14,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “Even things without life, giving a voice, whether pipe or harp, if they didn't give a distinction in the sounds, how would it be known what …”",
+    "options" : [
+      "life"
+    ],
+    "prompt" : "Complete the quotation: “Even things without ____, giving a voice, whether pipe or harp, if they didn't give a distinction in the sounds, how would it be known what …” (14:7, WEB)",
+    "reference" : "1 Corinthians 14",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies excepted: “… \"All things are put in subjection,\" it is evident that he is excepted who subjected all things to him.”",
+    "options" : [
+      "received",
+      "appeared",
+      "hundred",
+      "excepted"
+    ],
+    "prompt" : "Which detail belongs in this passage: “… \"All things are put in subjection,\" it is evident that he is ______ who subjected all things to him.”? (15:27, WEB)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “But by the grace of God I am what I am. His grace which was bestowed on me was not futile, but I worked more than …”",
+    "options" : [
+      "grace"
+    ],
+    "prompt" : "Complete the quotation: “But by the grace of God I am what I am. His ____ which was bestowed on me was not futile, but I worked more than …” (15:10, WEB)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Christ's resurrection is joined to believers' future hope and transformed embodied life. Paul does not treat salvation as simple escape from an evil physical creation. The course likewise rejects the idea that the body itself is inherently bad.",
+    "options" : [
+      "Future hope is described as wholly unrelated to Christ.",
+      "Christ's resurrection is joined to believers' future hope and transformed embodied life.",
+      "The chapter defines the body as a mistake God will never redeem.",
+      "Paul says Christ's resurrection has no bearing on believers."
+    ],
+    "prompt" : "Why is bodily resurrection central to Paul's argument? (15:12-28, 35-49)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "Course"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “For since death came by man, the resurrection of the dead also came by man.” The missing terms belong in that order.",
+    "options" : [
+      "death resurrection"
+    ],
+    "prompt" : "Supply the missing words in order: “For since ____ came by man, the of the dead also came by man.” (15:21, WEB)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 3,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 15:15 uses Christ: “… witnesses of God, because we testified about God that he raised up Christ, whom he didn't raise up, if it is so that the dead are …”",
+    "options" : [
+      "Hosea",
+      "Gallio",
+      "Isaac",
+      "Christ"
+    ],
+    "prompt" : "Which word completes “… witnesses of God, because we testified about God that he raised up ______, whom he didn't raise up, if it is so that the dead are …”? (15:15, WEB)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 1,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “If I fought with animals at Ephesus for human purposes, what does it profit me? If the dead are not raised, then \"let us eat and …” It says Ephesus, not Damascus.",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “If I fought with animals at Damascus for human purposes, what does it profit me? If the dead are not raised, then \"let us eat and …” (15:32, WEB)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “Now I say this, brothers, that flesh and blood can't inherit the Kingdom of God; neither does corruption inherit incorruption.”; the second reads “The sting of death is sin, and the power of sin is the law.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "Kingdom sin"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “Now I say this, brothers, that flesh and blood can't inherit the ____ of God; neither does corruption inherit incorruption.” (15:50); “The sting of death is , and the power of sin is the law.” (15:56, WEB)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 15,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “… of all that which I also received: that Christ died for our sins according to the Scriptures,”",
+    "options" : [
+      "sins"
+    ],
+    "prompt" : "Complete the quotation: “… of all that which I also received: that Christ died for our ____ according to the Scriptures,” (15:3, WEB)",
+    "reference" : "1 Corinthians 15",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "fillInBlank",
+    "lesson" : "The wording is “Now if Timothy comes, see that he is with you without fear, for he does the work of the Lord, as I also do.” The missing terms belong in that order.",
+    "options" : [
+      "Timothy fear"
+    ],
+    "prompt" : "Supply the missing words in order: “Now if ____ comes, see that he is with you without , for he does the work of the Lord, as I also do.” (16:10, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "multipleChoice",
+    "lesson" : "Verse 17 reads “… at the coming of Stephanas, Fortunatus, and Achaicus; for that which was lacking on your part, they supplied.”; verse 19 reads “The assemblies of Asia greet you. Aquila and Priscilla greet you much in the Lord, together with the assembly that is in their house.”. These establish the first and second answers respectively.",
+    "options" : [
+      "lacking; Aquila",
+      "land; Aquila",
+      "lacking; Judah",
+      "Aquila; lacking"
+    ],
+    "prompt" : "Which pair completes BOTH passages in order? “… at the coming of Stephanas, Fortunatus, and Achaicus; for that which was ______ on your part, they supplied.” (16:17); “The assemblies of Asia greet you. ______ and Priscilla greet you much in the Lord, together with the assembly that is in their house.” (16:19, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "hard",
+    "format" : "fillInBlank",
+    "lesson" : "The first passage reads “If any man doesn't love the Lord Jesus Christ, let him be accursed. Come, Lord!”; the second reads “My love to all of you in Christ Jesus. Amen.”. Keeping the details with their own passages gives the stated order.",
+    "options" : [
+      "love Christ"
+    ],
+    "prompt" : "Connect the two passages by supplying both missing terms: “If any man doesn't ____ the Lord Jesus Christ, let him be accursed. Come, Lord!” (16:22); “My love to all of you in Jesus. Amen.” (16:24, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The cited words are “… send whoever you approve with letters to carry your gracious gift to Jerusalem.”",
+    "options" : [
+      "Jerusalem"
+    ],
+    "prompt" : "Complete the quotation: “… send whoever you approve with letters to carry your gracious gift to ____.” (16:3, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "trueFalse",
+    "lesson" : "The actual wording is “… know the house of Stephanas, that it is the first fruits of Achaia, and that they have set themselves to minister to the saints),”",
+    "options" : [
+      "True",
+      "False"
+    ],
+    "prompt" : "The following quotation matches the cited verse: “… know the house of Stephanas, that it is the first fruits of Achaia, and that they have set themselves to minister to the saints),” (16:15, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "fillInBlank",
+    "lesson" : "The verse reads, “On the first day of the week, let each one of you save, as he may prosper, that no collections be made when I come.”",
+    "options" : [
+      "first"
+    ],
+    "prompt" : "Complete the quotation: “On the ____ day of the week, let each one of you save, as he may prosper, that no collections be made when I come.” (16:2, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 2,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "medium",
+    "format" : "multipleChoice",
+    "lesson" : "The passage specifies Apollos: “Now concerning Apollos, the brother, I strongly urged him to come to you with the brothers; and it was not at all his desire to come …”",
+    "options" : [
+      "Elymas",
+      "Sapphira",
+      "Apollos",
+      "Leah"
+    ],
+    "prompt" : "Which detail belongs in this passage: “Now concerning ______, the brother, I strongly urged him to come to you with the brothers; and it was not at all his desire to come …”? (16:12, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  },
+  {
+    "answer" : 0,
+    "bookID" : "1corinthians",
+    "chapter" : 16,
+    "difficulty" : "easy",
+    "format" : "multipleChoice",
+    "lesson" : "1 Corinthians 16:7 uses hope: “… I do not wish to see you now in passing, but I hope to stay a while with you, if the Lord permits.”",
+    "options" : [
+      "hope",
+      "understanding",
+      "kindness",
+      "anger"
+    ],
+    "prompt" : "Which word completes “… I do not wish to see you now in passing, but I ______ to stay a while with you, if the Lord permits.”? (16:7, WEB)",
+    "reference" : "1 Corinthians 16",
+    "reviewed" : true,
+    "translation" : "WEB"
+  }
+]
