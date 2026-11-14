@@ -326,9 +326,7 @@ enum IslandPainter {
 
     /// Hand-made art, bottom-centre on the ground point, at `ArtAssets.pointsPerTile` per tile.
     private static func drawCustom(_ c: inout GraphicsContext, _ art: ArtAssets.Art, tileWidth: CGFloat) {
-        let k = tileWidth / ArtAssets.pointsPerTile
-        let w = art.size.width * k, h = art.size.height * k
-        c.draw(Image(decorative: art.image, scale: 1), in: CGRect(x: -w / 2, y: -h, width: w, height: h))
+        ArtAssets.draw(art, in: &c, at: .zero, tileWidth: tileWidth)
     }
 
     /// The pre-drawn picture for image-based kinds. None on the island now: the Library is drawn

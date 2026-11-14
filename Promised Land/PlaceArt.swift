@@ -438,7 +438,16 @@ enum PlaceArt {
 
     static func tree(_ pen: IsoPen, _ x: CGFloat, _ y: CGFloat, s: CGFloat, fruit: Bool, seed: Int) {
         guard s > 0.03 else { return }
+        if let art = ArtAssets.image("obj_tree") {
+            drawSprite(art, pen: pen, x: x, y: y)
+            return
+        }
         pen.tree(x, y, size: s, fruit: fruit, seed: seed)
+    }
+
+    private static func drawSprite(_ art: ArtAssets.Art, pen: IsoPen, x: CGFloat, y: CGFloat) {
+        var context = pen.c
+        ArtAssets.draw(art, in: &context, at: pen.p(x, y), tileWidth: 44 * pen.u)
     }
 
     static func cedar(_ pen: IsoPen, _ x: CGFloat, _ y: CGFloat, s: CGFloat) {
@@ -499,6 +508,10 @@ enum PlaceArt {
 
     static func house(_ pen: IsoPen, _ x: CGFloat, _ y: CGFloat, s: CGFloat, floors: Int, seed: Int, banner hasBanner: Bool) {
         guard s > 0.05 else { return }
+        if let art = ArtAssets.image("obj_house") {
+            drawSprite(art, pen: pen, x: x, y: y)
+            return
+        }
         let tones: [WallTone] = [.sand, .cream, .clay]
         let w = Earthy.walls(tones[abs(seed) % tones.count])
         let hx = 0.11 * s, h = 9 * s * CGFloat(floors)
@@ -701,7 +714,12 @@ enum PlaceArt {
         switch seed % 4 {
         case 0: cedar(pen, 0, 0, s: 0.9)
         case 1: palm(pen, 0, 0, s: 0.85)
-        default: pen.tree(0, 0, size: 0.6 + CGFloat(seed % 3) * 0.08, fruit: seed % 5 == 0, seed: seed)
+        default:
+            if let art = ArtAssets.image("obj_tree") {
+                drawSprite(art, pen: pen, x: 0, y: 0)
+            } else {
+                pen.tree(0, 0, size: 0.6 + CGFloat(seed % 3) * 0.08, fruit: seed % 5 == 0, seed: seed)
+            }
         }
     }
 
@@ -719,7 +737,11 @@ enum PlaceArt {
             for x in [-0.1, 0.1] { pen.box(CGFloat(x), 0, hx: 0.02, hy: 0.04, h: 3, wood, soft: 0.3) }
             pen.box(0, 0, hx: 0.14, hy: 0.05, z0: 3, h: 1.2, wood, soft: 0.3)
         case .tree:
-            pen.tree(0, 0, size: 0.65, fruit: seed % 2 == 0, seed: seed)
+            if let art = ArtAssets.image("obj_tree") {
+                drawSprite(art, pen: pen, x: 0, y: 0)
+            } else {
+                pen.tree(0, 0, size: 0.65, fruit: seed % 2 == 0, seed: seed)
+            }
         case .lamp:
             lamp(pen, 0, 0, s: 1, glow: 0.45)
         }

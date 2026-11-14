@@ -23,6 +23,17 @@ instead. No code changes are needed, and if an image is missing the code-drawn a
   `fishBasket`, `wheat`, `vine`, `oilLamp`, `harp`, `domedHouse`.
 - Examples: `bld_ruth_0`, `bld_ruth_1`, `bld_ruth_2`, `art_olive_3`, `char_moses`.
 
+## Object sprites (`obj_`)
+
+`obj_house` and `obj_tree` are transparent PNG sprites on a **128 × 192 pt canvas**.
+They are supplied **2x-only** at **256 × 384 px**. Their shared ground anchor is **(64, 150) pt**
+from the canvas's top-left corner (**(128, 300) px** at 2x); the anchor is mapped to the object's
+bottom-centre ground point when drawn. The full canvas is scaled using the same scale as the
+code-drawn width (`tileWidth / 64`), so the sprite follows the code art's world scale rather than
+its device pixel dimensions, then the per-sprite multiplier in `ArtAssets.spriteMultipliers` is
+applied. The current multipliers are `obj_house = 0.5` and `obj_tree = 0.5`; the anchor remains
+on the same ground point. The code-drawn fallback remains active when either asset is absent.
+
 ### Rotations
 
 Once the island can turn (Phase 3), each name can also come in four views: append `_r0`,
