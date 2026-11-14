@@ -22,29 +22,32 @@ struct QuestionDataTests {
         #expect(QuestionData.questions(bookID: "obadiah", chapter: 1).isEmpty)
     }
 
-    @Test("The Genesis 1–3 test sets return four questions with fill-in first")
+    @Test("The Genesis 1–3 test sets return five questions in fill-in, true-false, multiple-choice order")
     func genesisTestSetOrder() {
         for chapter in 1...3 {
             let questions = QuestionData.questions(bookID: "genesis", chapter: chapter)
-            #expect(questions.count == 4)
-            #expect(questions.first?.format == .fillInBlank)
+            #expect(questions.count == 5)
+            #expect(questions.map(\.format) == [.fillInBlank, .trueFalse, .multipleChoice, .multipleChoice, .multipleChoice])
         }
-        #expect(QuestionData.questions(bookID: "genesis", chapter: 1).map(\.answer) == [1, 3, 2, 2])
+        #expect(QuestionData.questions(bookID: "genesis", chapter: 1).map(\.answer) == [1, 0, 3, 2, 2])
     }
 
-    @Test("Every Genesis 1–3 test question has four reviewed options, a lesson and a difficulty")
+    @Test("Every Genesis 1–3 test question has valid reviewed metadata")
     func genesisTestSetMetadata() {
         for chapter in 1...3 {
             for question in QuestionData.questions(bookID: "genesis", chapter: chapter) {
-                #expect(question.options.count == 4)
                 #expect(question.options.indices.contains(question.answer))
                 #expect(question.lesson?.isEmpty == false)
                 #expect(question.difficulty != nil)
                 #expect(question.reviewed)
                 if question.format == .fillInBlank {
+                    #expect(question.options.count == 4)
                     #expect(question.prompt.components(separatedBy: "____").count == 2)
+                } else if question.format == .trueFalse {
+                    #expect(question.options == ["True", "False"])
                 } else {
                     #expect(question.format == .multipleChoice)
+                    #expect(question.options.count == 4)
                 }
             }
         }

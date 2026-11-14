@@ -36,7 +36,18 @@ struct ReadingQuestionView: View {
             ScrollView {
                 Group {
                     if let questionSet, let question = currentQuestion,
-                       question.format == .multipleChoice {
+                       question.format == .trueFalse {
+                        TrueFalseQuestionView(
+                            bookName: book.name,
+                            chapter: chapter,
+                            question: question,
+                            questionNumber: questionIndex + 1,
+                            questionCount: questionSet.count,
+                            onContinue: continueQuestion
+                        )
+                        .id(questionIndex)
+                    } else if let questionSet, let question = currentQuestion,
+                              question.format == .multipleChoice {
                         MultipleChoiceQuestionView(
                             bookName: book.name,
                             chapter: chapter,

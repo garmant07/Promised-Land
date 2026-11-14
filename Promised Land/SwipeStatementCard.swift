@@ -121,7 +121,7 @@ struct SwipeStatementCard: View {
                     }
                 }
                 .overlay(alignment: .topTrailing) {
-                    if let selectedAnswer {
+                    if selectedAnswer != nil {
                         Image(systemName: isRight ? "checkmark.circle.fill" : "xmark.circle.fill")
                             .font(.title2)
                             .foregroundStyle(isRight ? Color.olive : Color.terracotta)
@@ -185,7 +185,7 @@ struct SwipeStatementCard: View {
         selectedAnswer: nil,
         isRight: false,
         showsAnswer: false,
-        onAnswer: {}
+        onAnswer: { _ in }
     )
     .padding()
     .background(Color.cream)
