@@ -34,6 +34,9 @@ import UIKit
         navigationBar.tintColor = UIColor(Color.primaryBrown)
 
         #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-exportSprites") {
+            SpriteBaseExporter.export()
+        }
         // "-perfLog" prints frame rate and the island's main-thread time once a second.
         PerfProbe.setEnabled(UserDefaults.standard.bool(forKey: "debug.fpsOverlay"))
         #endif

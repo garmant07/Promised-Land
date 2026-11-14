@@ -13,6 +13,10 @@ import UIKit
 /// Each name is a plain image name.
 @MainActor
 enum ArtAssets {
+#if DEBUG
+    /// Temporarily makes the optional object sprites fall back to their code drawings.
+    static var forceCodeArt = false
+#endif
     /// Authoring scale: one island tile is 64pt wide in the image (128px @2x, 192px @3x).
     static let pointsPerTile: CGFloat = 64
 
@@ -48,6 +52,9 @@ enum ArtAssets {
     }
 
     private static func lookup(_ name: String) -> Art? {
+#if DEBUG
+        if forceCodeArt && name.hasPrefix("obj_") { return nil }
+#endif
         if let hit = cache[name] { return hit }
         let art = UIImage(named: name).flatMap { ui in
             ui.cgImage.map {

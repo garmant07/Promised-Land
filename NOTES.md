@@ -853,6 +853,12 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     mirroring and rotated asset lookup were removed. Existing camera and footprint rotation values
     remain stored but are ignored; no schema or reading history changes.
 
+117. **DEBUG sprite-base export.** Settings → Developer and `-exportSprites` write the current
+    code-drawn island pieces to `Documents/SpriteBases/` as 256 × 384 px transparent PNGs, with
+    `index.csv` and a cream contact sheet. The exporter temporarily forces `obj_` assets back to
+    code art and resets the DEBUG switch after the run. Remove `SpriteBaseExporter.swift`, its
+    Settings button and launch argument before release if sprite authoring is complete.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

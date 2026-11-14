@@ -95,6 +95,11 @@ struct DebugToolsSection: View {
                 .onChange(of: showsFPS) { _, enabled in PerfProbe.setEnabled(enabled) }
             Toggle("API.Bible usage in the reader", isOn: $showsAPIUsage).tint(Color.olive).frame(minHeight: 44)
             APIUsageBadge()
+            Button("Export sprite bases") {
+                SpriteBaseExporter.export()
+                message = "Sprite bases exported to Documents/SpriteBases."
+            }
+            .buttonStyle(SoftButtonStyle())
             if let api = bible as? APIBibleService {
                 Text(api.isLive ? "Key set · \(api.cache.count) chapters cached" : "No API key: bundled sample only (see README)")
                     .font(.footnote).foregroundStyle(Color.secondaryText)
