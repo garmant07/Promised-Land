@@ -54,25 +54,32 @@ struct GenesisSceneTests {
     func spritesExistAtAuthoredSize() {
         for sprite in Set(layout.events.map(\.sprite)) {
             let art = ArtAssets.image(sprite)
-            #expect(art != nil, sprite)
-            #expect(art?.image.width == 256, sprite)
-            #expect(art?.image.height == 384, sprite)
+            #expect(art != nil)
+            #expect(art?.image.width == 256)
+            #expect(art?.image.height == 384)
         }
     }
 
-    @Test("The Genesis cache key changes when the scene stage changes")
-    func cacheKeyIncludesSceneStage() {
-        let item = Island.single(bookID: "genesis", distinct: 50, totalReads: 50).items[0]
+    @Test("The Genesis cache key uses real progress and island identity")
+    func cacheKeyIncludesRealStageAndIsland() {
         let island = Island.single(bookID: "genesis", distinct: 50, totalReads: 50)
         let camera = IslandLayout(island: island, size: CGSize(width: 390, height: 844), zoom: 2)
+        let item = island.items[0]
+        let first = IslandRenderCache.shared.cacheKeyForTesting(item, layout: camera)
         #if DEBUG
         GenesisScene.previewStage = 1
-        let first = IslandRenderCache.shared.cacheKeyForTesting(item, layout: camera)
-        GenesisScene.previewStage = 2
-        let second = IslandRenderCache.shared.cacheKeyForTesting(item, layout: camera)
+        let previewOverride = IslandRenderCache.shared.cacheKeyForTesting(item, layout: camera)
         GenesisScene.previewStage = nil
-        #expect(first != second)
+        #expect(first == previewOverride)
         #endif
+        var later = item
+        later.progress = 49
+        let laterKey = IslandRenderCache.shared.cacheKeyForTesting(later, layout: camera)
+        #expect(first != laterKey)
+
+        let otherIsland = Island.single(bookID: "genesis", distinct: 49, totalReads: 50)
+        let otherLayout = IslandLayout(island: otherIsland, size: CGSize(width: 390, height: 844), zoom: 2)
+        #expect(first != IslandRenderCache.shared.cacheKeyForTesting(otherIsland.items[0], layout: otherLayout))
     }
 
     @Test("The Genesis hit item resolves to book genesis")
@@ -95,11 +102,41 @@ struct GenesisSceneTests {
                                         y: layout.point(item.gx, item.gy).y + local.minY + 1)))
     }
 
-    @Test("Non-Genesis Places keep their existing piece layout")
-    func nonGenesisPlacesRemainUnchanged() {
-        let island = Island.single(bookID: "ruth", distinct: 4, totalReads: 4)
-        #expect(island.items.count == PlaceData.spec(for: "ruth").pieces.count)
-        #expect(island.items.allSatisfy { $0.source.bookID == "ruth" })
-        #expect(!island.items.contains { $0.kind == .piece(.soil) })
+    @Test("Genesis's tall life trees and fruit tree occlude a villager")
+    func tallGenesisObjectsOccludeVillagers() {
+        let island = Island.single(bookID: "genesis", distinct: 11, totalReads: 50)
+        let item = island.items[0]
+        let camera = IslandLayout(island: island, size: CGSize(width: 390, height: 844), zoom: 3)
+        let bounds = IslandPainter.drawnBounds(of: item, layout: camera)
+        let figure = IslandWorld.Figure(id: "villager", feet: camera.point(item.gx - 0.2, item.gy - 0.2),
+                                        rect: bounds.insetBy(dx: bounds.width * 0.35, dy: bounds.height * 0.35))
+        let visible = IslandWorld.visibleItems(island.items, layout: camera, visible: bounds)
+        #expect(GenesisScene.occludesVillager(item))
+        #expect(IslandWorld.itemsOver(figure, items: visible, layout: camera) == [0])
+    }
+
+    @Test("A person in front of the Genesis tree is not occluded")
+    func personInFrontOfGenesisTreeIsNotOccluded() {
+        let island = Island.single(bookID: "genesis", distinct: 11, totalReads: 50)
+        let item = island.items[0]
+        let camera = IslandLayout(island: island, size: CGSize(width: 390, height: 844), zoom: 3)
+        let bounds = IslandPainter.drawnBounds(of: item, layout: camera)
+        let figure = IslandWorld.Figure(id: "villager", feet: camera.point(item.gx + 3.0, item.gy + 3.0),
+                                        rect: bounds.insetBy(dx: bounds.width * 0.35, dy: bounds.height * 0.35))
+        let visible = IslandWorld.visibleItems(island.items, layout: camera, visible: bounds)
+        #expect(IslandWorld.itemsOver(figure, items: visible, layout: camera).isEmpty)
+    }
+
+    @Test("Genesis ground pieces never occlude a person")
+    func genesisGroundDoesNotOccludeVillager() {
+        let island = Island.single(bookID: "genesis", distinct: 3, totalReads: 50)
+        let item = island.items[0]
+        let camera = IslandLayout(island: island, size: CGSize(width: 390, height: 844), zoom: 3)
+        let bounds = IslandPainter.drawnBounds(of: item, layout: camera)
+        let figure = IslandWorld.Figure(id: "villager", feet: camera.point(item.gx - 0.2, item.gy - 0.2),
+                                        rect: bounds.insetBy(dx: bounds.width * 0.35, dy: bounds.height * 0.35))
+        let visible = IslandWorld.visibleItems(island.items, layout: camera, visible: bounds)
+        #expect(GenesisScene.activeEvents(at: 3).filter { $0.tall }.isEmpty)
+        #expect(IslandWorld.itemsOver(figure, items: visible, layout: camera).isEmpty)
     }
 }

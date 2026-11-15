@@ -48,7 +48,8 @@ enum IslandWorld {
     /// pasted over its neighbours and nothing changes anywhere else on screen.
     static func itemsOver(_ f: Figure, items: [(item: Island.Item, bounds: CGRect)], layout: IslandLayout) -> [Int] {
         guard let first = items.firstIndex(where: { entry in
-            entry.item.kind.isTall && entry.bounds.intersects(f.rect) && IslandCamera.isBehind(feet: f.feet, item: entry.item, layout: layout)
+            (entry.item.kind.isTall || GenesisScene.occludesVillager(entry.item)) &&
+            entry.bounds.intersects(f.rect) && IslandCamera.isBehind(feet: f.feet, item: entry.item, layout: layout)
         }) else { return [] }
         return (first..<items.count).filter { i in
             items[i].bounds.intersects(f.rect) || pictureRect(items[i].item, layout: layout).intersects(f.rect)

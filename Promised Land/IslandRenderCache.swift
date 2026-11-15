@@ -15,6 +15,15 @@ final class IslandRenderCache {
 
     private let images = NSCache<NSString, ImageBox>()
     private var placeKeys: (signature: Int, keys: [String: Int]) = (0, [:])
+    /// The last complete picture for each Place, retained while a new zoom bucket is pending.
+    private var lastPlacePictures: [String: CGImage] = [:]
+
+    private func placePictureKey(island: Island, plot: Island.Plot, content: Int, scale: CGFloat,
+                                 stage: Int?) -> NSString {
+        "p\(island.signature)|\(plot.bookID)|\(content)|stage:\(stage.map(String.init) ?? String("all"))|\(Int(scale * 100))" as NSString
+    }
+    /// The baked/unbaked mode is sticky inside a small band around its transition.
+    private var bakedMode: Bool?
     /// `groundBounds` per ground key (it walks every tile, so never per frame).
     private var groundExtents: [String: CGRect] = [:]
     /// While warming ahead: how many more pictures may be rendered in this call (nil: no limit),
@@ -121,11 +130,11 @@ final class IslandRenderCache {
     }
 
     private func bucket(_ zb: CGFloat, island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat,
-                        bake: Bool, overrides: [Int: CGFloat], hidden: Set<Int>) -> Bucket {
+                        bake: Bool, overrides: [Int: CGFloat], hidden: Set<Int>, bakedOverride: Bool? = nil) -> Bucket {
         let lb = IslandLayout(island: island, size: size, insets: insets, zoom: zb)
         // Far out (and not mid-reveal), everything that stands still is baked into the ground
         // chunks too: a handful of images instead of a picture per Place and hundreds of items.
-        let baked = bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty
+        let baked = bakedOverride ?? (bake && lb.u < IslandLOD.middleShow && overrides.isEmpty && hidden.isEmpty)
         // Plain ground depends only on the land: a building growing never re-bakes it. Far out,
         // the still things are baked in too, so those chunks follow the whole island.
         let landKey = baked ? "b\(island.signature)" : "l\(groundSignature(island))"
@@ -183,6 +192,33 @@ final class IslandRenderCache {
 
     static let itemsPerSlice = 12
 
+    /// Prewarms the authored Genesis Place picture before the loading cover clears.
+    @discardableResult
+    func prewarmGenesis(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, pan: CGSize) -> Bool {
+        guard let plot = island.allPlots.first(where: { $0.bookID == GenesisScene.bookID }),
+              let content = placeContentKeys(island)[plot.bookID] else { return true }
+        let layout = IslandLayout(island: island, size: size, insets: insets, zoom: zoom)
+        let rect = placeRect(plot, layout: layout)
+        let indices = island.items.indices.filter { island.items[$0].plotKey == plot.bookID }
+        guard !indices.isEmpty else { return true }
+        let key = placePictureKey(island: island, plot: plot, content: content, scale: layout.scale,
+                                  stage: GenesisScene.stage(for: island.items[indices[0]]))
+        let draw: (inout GraphicsContext) -> Void = { c in
+            let local = layout.panned(CGSize(width: -rect.minX, height: -rect.minY))
+            for i in indices.sorted(by: { layout.depth(island.items[$0].gx, island.items[$0].gy) < layout.depth(island.items[$1].gx, island.items[$1].gy) }) {
+                IslandPainter.drawItem(&c, island.items[i], layout: local,
+                                       sceneLayer: island.items[i].source.bookID == GenesisScene.bookID ? .back : .all)
+            }
+        }
+        let wasCached = images.object(forKey: key) != nil
+        guard let image = picture(String(key), size: rect.size, draw: draw) else { return false }
+        #if DEBUG
+        if !wasCached { PerfProbe.genesisPictureBuild(key: key) }
+        #endif
+        lastPlacePictures[String(key)] = image
+        return true
+    }
+
     /// The other zoom buckets, nearest first (for drawing something that's already cached while a
     /// picture for this zoom is still being rendered).
     private static func neighbours(of zb: CGFloat) -> [CGFloat] {
@@ -199,7 +235,20 @@ final class IslandRenderCache {
                       groundOnly: Bool = false) -> Frame? {
         guard island.signature != 0, size.width > 0 else { return nil }
         let zb = Self.bucket(for: zoom)
-        let b = bucket(zb, island: island, size: size, insets: insets, zoom: zoom, bake: bake, overrides: overrides, hidden: hidden)
+        let liveU = IslandLayout(island: island, size: size, insets: insets, zoom: zoom).u
+        let eligibleForBake = bake && overrides.isEmpty && hidden.isEmpty
+        let baked: Bool
+        if !eligibleForBake {
+            bakedMode = false
+            baked = false
+        } else if let previous = bakedMode {
+            let margin: CGFloat = 0.04
+            baked = previous ? liveU < IslandLOD.middleShow + margin : liveU <= IslandLOD.middleShow - margin
+        } else {
+            baked = liveU < IslandLOD.middleShow
+        }
+        bakedMode = baked
+        let b = bucket(zb, island: island, size: size, insets: insets, zoom: zoom, bake: bake, overrides: overrides, hidden: hidden, bakedOverride: baked)
         let lb = b.lb
         let centre = CGPoint(x: insets.leading + (size.width - insets.leading - insets.trailing) / 2,
                              y: insets.top + (size.height - insets.top - insets.bottom) / 2)
@@ -331,6 +380,7 @@ final class IslandRenderCache {
                 // Mid-reveal: drawn item by item, at the growth the reveal says.
                 for i in indices {
                     var item = island.items[i]
+                    if item.source.bookID == GenesisScene.bookID { continue }
                     if let g = overrides[i] { guard g > 0 else { continue }; item.growth = g }
                     layers.append((lb.point(item.gx, item.gy).y + 0.001, .item(item)))
                 }
@@ -338,15 +388,33 @@ final class IslandRenderCache {
             }
             guard dest.intersects(view), wanted(dest) else { continue }
             // Keyed by what's in it and the layout's scale (not where it is).
-            let key = "p\(content)|\(Int(lb.scale * 100))" as NSString
+            let stage = plot.bookID == GenesisScene.bookID ? GenesisScene.stage(for: island.items[indices[0]]) : nil
+            let key = placePictureKey(island: island, plot: plot, content: content, scale: lb.scale, stage: stage)
             let draw: (inout GraphicsContext) -> Void = { c in
                 let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
                 for i in indices.sorted(by: { lb.depth(island.items[$0].gx, island.items[$0].gy) < lb.depth(island.items[$1].gx, island.items[$1].gy) }) {
-                    IslandPainter.drawItem(&c, island.items[i], layout: l)
+                    IslandPainter.drawItem(&c, island.items[i], layout: l,
+                                           sceneLayer: plot.bookID == GenesisScene.bookID ? .back : .all)
                 }
             }
             if let image = picture(key, using: &used) {
+                lastPlacePictures[String(key)] = image
+                #if DEBUG
+                if plot.bookID == GenesisScene.bookID {
+                    PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "cached picture")
+                }
+                #endif
                 layers.append((depth, .picture(image, dest)))
+                continue
+            }
+            if let image = lastPlacePictures[String(key)] {
+                #if DEBUG
+                if plot.bookID == GenesisScene.bookID {
+                    PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "cached picture")
+                }
+                #endif
+                layers.append((depth, .picture(image, dest)))
+                if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
                 continue
             }
             if deferMissing {
@@ -357,8 +425,13 @@ final class IslandRenderCache {
                     }
                 }
                 if let (image, b2) = others!.lazy.compactMap({ b2 -> (CGImage, Bucket)? in
-                    self.picture("p\(content)|\(Int(b2.lb.scale * 100))" as NSString, using: &used).map { ($0, b2) }
+                    self.picture(self.placePictureKey(island: island, plot: plot, content: content, scale: b2.lb.scale, stage: stage), using: &used).map { ($0, b2) }
                 }).first {
+                    #if DEBUG
+                    if plot.bookID == GenesisScene.bookID {
+                        PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: "p\(content)|\(Int(b2.lb.scale * 100))", drawn: "cached picture")
+                    }
+                    #endif
                     layers.append((depth, .picture(image, screen(placeRect(plot, layout: b2.lb), b2.k))))
                     if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
                     continue
@@ -367,17 +440,26 @@ final class IslandRenderCache {
                     // No picture of it at any zoom yet: its pieces are drawn directly meanwhile (never a
                     // picture rendered mid-gesture); it gets its picture once the camera stops.
                     if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
+                    #if DEBUG
+                    if plot.bookID == GenesisScene.bookID {
+                        PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "direct")
+                    }
+                    #endif
                     for i in indices { layers.append((lb.point(island.items[i].gx, island.items[i].gy).y, .item(island.items[i]))) }
                     continue
                 }
             }
             if let image = render(key: key, size: rect.size, draw: draw) {
+                #if DEBUG
+                if plot.bookID == GenesisScene.bookID { PerfProbe.genesisPictureBuild(key: key) }
+                #endif
                 used[key] = image
                 layers.append((depth, .picture(image, dest)))
             }
         }
         for i in loose {
             var item = island.items[i]
+            if item.source.bookID == GenesisScene.bookID, overrides[i] != nil { continue }
             if b.baked {
                 let at = screen(CGRect(origin: lb.point(item.gx, item.gy), size: .zero), b.k)
                 guard wanted(at.insetBy(dx: -30, dy: -60)) else { continue }
@@ -581,19 +663,31 @@ final class IslandRenderCache {
         images.object(forKey: itemKey(item, layout: layout)) != nil
     }
 
-    private func itemKey(_ item: Island.Item, layout: IslandLayout) -> NSString {
+    func cacheKeyForTesting(_ item: Island.Item, layout: IslandLayout) -> String {
         let ub = Self.sizeBucket(layout.u)
         var h = Hasher()
         h.combine(item.kind); h.combine(item.growth); h.combine(item.level); h.combine(item.facing)
         h.combine(item.seed); h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
         h.combine(item.cap); h.combine(item.source.bookID)
-        return "i\(h.finalize())|\(Int(ub * 1000))" as NSString
+        h.combine(layout.islandSignature)
+        if item.source.bookID == GenesisScene.bookID { h.combine(item.progress) }
+        return "i\(h.finalize())|\(Int(ub * 1000))"
     }
+
+    private func itemKey(_ item: Island.Item, layout: IslandLayout) -> NSString {
+        cacheKeyForTesting(item, layout: layout) as NSString
+    }
+
+    #if DEBUG
+    var bakedStateForTesting: Bool? { bakedMode }
+    #endif
 
     /// Drops every picture (for tests that render a lot, so they don't starve the rest of memory).
     func removeAll() {
         images.removeAllObjects()
         held = [:]
+        lastPlacePictures = [:]
+        bakedMode = nil
         pending = []
         partial = [:]
     }

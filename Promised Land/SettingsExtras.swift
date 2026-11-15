@@ -85,6 +85,7 @@ struct DebugToolsSection: View {
     @State private var message: String?
     @AppStorage("debug.fpsOverlay") private var showsFPS = false
     @AppStorage("debug.apiOverlay") private var showsAPIUsage = true
+    @AppStorage(GenesisScene.previewStageKey) private var previewGenesisStage = -1
     @State private var previewingBible = false
     @Environment(\.bibleService) private var bible
 
@@ -108,6 +109,13 @@ struct DebugToolsSection: View {
             }
             // TEMPORARY: remove with Debug/FullBiblePreview before release (NOTES.md).
             Button("Preview full Bible") { previewingBible = true }.buttonStyle(SoftButtonStyle())
+            Picker("Preview Genesis stage", selection: $previewGenesisStage) {
+                Text("Off").tag(-1)
+                ForEach(0...50, id: \.self) { stage in Text("Stage \(stage)").tag(stage) }
+            }
+            .pickerStyle(.menu)
+            .onAppear { updateGenesisPreview(previewGenesisStage) }
+            .onChange(of: previewGenesisStage) { _, stage in updateGenesisPreview(stage) }
             Button("Rebuild world") { rebuildWorld() }.buttonStyle(SoftButtonStyle())
             Button("Add 10 random reads") { addRandomReads() }.buttonStyle(SoftButtonStyle())
             Button("Complete a journey") { completeJourney() }.buttonStyle(SoftButtonStyle())
@@ -121,6 +129,10 @@ struct DebugToolsSection: View {
         } message: {
             Text("DEBUG only: every read, quiz, verse, journal entry, placement and setting is erased.")
         }
+    }
+
+    private func updateGenesisPreview(_ stage: Int) {
+        GenesisScene.previewStage = stage >= 0 ? min(stage, 50) : nil
     }
 
     /// Forgets where things were placed, so the island lays itself out again from your reading.

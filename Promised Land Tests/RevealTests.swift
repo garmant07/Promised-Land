@@ -57,4 +57,20 @@ struct RevealTests {
         #expect(change.allSatisfy { $0.to > $0.from })
         #expect(RevealPlanner.plan(island: i, before: ["psalms": 12], chapterOrder: order).steps.isEmpty)
     }
+
+    @Test("Genesis adds a new slot with a pop reveal")
+    func genesisPop() {
+        let (i, order) = island([("genesis", 1)])
+        let step = RevealPlanner.plan(island: i, before: [:], chapterOrder: order).steps[0]
+        #expect(step.changes.contains { $0.from == 0 && $0.to == 1 })
+        #expect(GenesisScene.revealKind(from: 0, to: 1) == .pop)
+    }
+
+    @Test("Genesis grows an existing slot with a crossfade reveal")
+    func genesisCrossfade() {
+        let (i, order) = island((1...11).map { ("genesis", $0) })
+        let step = RevealPlanner.plan(island: i, before: ["genesis": 10], chapterOrder: order).steps[0]
+        #expect(step.changes.contains { $0.from == 10 && $0.to == 11 })
+        #expect(GenesisScene.revealKind(from: 10, to: 11) == .crossfade)
+    }
 }

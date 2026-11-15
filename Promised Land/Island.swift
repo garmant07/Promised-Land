@@ -13,6 +13,7 @@ struct IslandLayout {
     /// The scale that fits the whole island (zoom 1), and the furthest you can zoom in.
     let fit: CGFloat
     let maxZoom: CGFloat
+    let islandSignature: Int
 
     /// Zoom 1 shows the whole island with a margin. Zooming in goes at least to 4×, and further
     /// on big islands: until a tile is over a third of the screen across, so a single Place
@@ -33,6 +34,7 @@ struct IslandLayout {
     static func clampedZoom(_ zoom: CGFloat, maxZoom: CGFloat) -> CGFloat { min(maxZoom * 1.3, max(minZoom * 0.75, zoom)) }
 
     init(island: Island, size: CGSize, insets: EdgeInsets = EdgeInsets(), zoom: CGFloat = 1) {
+        islandSignature = island.signature
         // Iso units: X = gx - gy, Y = (gx + gy) / 2.
         var minX = CGFloat.infinity, maxX = -CGFloat.infinity, minY = CGFloat.infinity, maxY = -CGFloat.infinity
         var memoKey: Int?
@@ -277,20 +279,22 @@ enum IslandPainter {
                                                  sourceRect: CGRect(x: 0, y: 0, width: 1, height: 1), scale: fill.scale))
     }
 
-    static func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout, scale: CGFloat = 1) {
+    static func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout, scale: CGFloat = 1,
+                         sceneLayer: SceneLayer = .all) {
         let p = layout.point(item.gx, item.gy)
         var g = c
         g.translateBy(x: p.x, y: p.y)
         g.scaleBy(x: scale, y: scale)
-        draw(&g, item, u: layout.u, tileWidth: layout.scale * 2)
+        draw(&g, item, u: layout.u, tileWidth: layout.scale * 2, sceneLayer: sceneLayer)
     }
 
     /// Draws an item around the context's origin (its ground point), as `drawItem` does.
-    static func drawAtOrigin(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat) {
-        draw(&c, item, u: u, tileWidth: u * 44)
+    static func drawAtOrigin(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, sceneLayer: SceneLayer = .all) {
+        draw(&c, item, u: u, tileWidth: u * 44, sceneLayer: sceneLayer)
     }
 
-    private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat) {
+    private static func draw(_ c: inout GraphicsContext, _ item: Island.Item, u: CGFloat, tileWidth: CGFloat,
+                             sceneLayer: SceneLayer = .all) {
         if let art = art(for: item) {
             c.draw(Image(decorative: art.image, scale: 2), in: imageRect(art, item: item, tileWidth: tileWidth))
             return
@@ -298,6 +302,10 @@ enum IslandPainter {
         let pen = IsoPen(c: c, u: u)
         switch item.kind {
         case .piece(let kind):
+            if case .place(let bookID, _) = item.source, bookID == "genesis" {
+                GenesisScene.draw(&c, item: item, u: u, layer: sceneLayer)
+                return
+            }
             if case .place(let bookID, _) = item.source,
                let custom = ArtAssets.place(bookID, piece: kind.rawValue, level: max(1, item.level)) {
                 drawCustom(&c, custom, tileWidth: tileWidth)
@@ -344,6 +352,9 @@ enum IslandPainter {
     /// The bounds of what's actually drawn for an item, in view points (before panning).
     static func drawnBounds(of item: Island.Item, layout: IslandLayout) -> CGRect {
         let base = layout.point(item.gx, item.gy)
+        if case .place(let bookID, _) = item.source, bookID == GenesisScene.bookID {
+            return GenesisScene.localBounds(item: item, u: layout.u).offsetBy(dx: base.x, dy: base.y)
+        }
         guard let art = art(for: item) else {
             return IslandHitTester.shape(of: item, base: base, u: layout.u)
         }

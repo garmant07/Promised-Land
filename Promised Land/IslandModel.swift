@@ -366,6 +366,15 @@ struct Island: Equatable {
                                    richness: Int) -> [Item] {
         var out: [Item] = []
         let s = CGFloat(plot.size)
+        if spec.bookID == "genesis" {
+            guard growth.isFounded else { return out }
+            let c = plot.centre
+            return [Item(kind: .piece(.soil), gx: c.x, gy: c.y, seed: hash("genesis-scene"),
+                         source: .place(book: spec.bookID, piece: 0),
+                         footprint: plot.rect.insetBy(dx: 0.1, dy: 0.1),
+                         progress: progress, total: total, level: max(1, richness), turned: 0,
+                         growth: CGFloat(progress), cap: total, span: s, facing: plot.bay ?? 1)]
+        }
         for (i, piece) in spec.pieces.enumerated() {
             guard let g = growth.pieces[i] else { continue }
             let p = position(piece.spot, in: plot)

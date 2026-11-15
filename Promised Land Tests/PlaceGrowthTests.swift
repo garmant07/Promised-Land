@@ -125,6 +125,14 @@ struct PlaceGrowthTests {
         let island = Island.single(bookID: "ruth", distinct: 4, totalReads: 4)
         #expect(island.items.count == PlaceData.spec(for: "ruth").pieces.count)
     }
+
+    @Test("Non-Genesis Places keep their existing piece layout")
+    func nonGenesisPlacesRemainUnchanged() {
+        let island = Island.single(bookID: "ruth", distinct: 4, totalReads: 4)
+        #expect(island.items.count == PlaceData.spec(for: "ruth").pieces.count)
+        #expect(island.items.allSatisfy { $0.source.bookID == "ruth" })
+        #expect(!island.items.contains { $0.kind == .piece(.soil) })
+    }
 }
 
 @MainActor

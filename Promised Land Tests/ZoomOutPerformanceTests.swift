@@ -92,6 +92,35 @@ struct ZoomOutPerformanceTests {
         #expect(IslandLOD.tier(u: at, previous: .middle) == .middle)
     }
 
+    @Test("A pending Place keeps its last good picture")
+    func pendingPlaceUsesPreviousPicture() {
+        let cache = IslandRenderCache.shared
+        let oldBackground = cache.rendersInBackground
+        defer { cache.rendersInBackground = oldBackground; cache.removeAll() }
+        cache.removeAll()
+        #expect(cache.prewarmGenesis(island: Self.island, size: Self.size, insets: Self.insets, zoom: 4, pan: .zero))
+        cache.rendersInBackground = false
+        let frame = frame(zoom: 5, pan: .zero)
+        #expect(frame?.layers.contains { layer in
+            if case .picture = layer { return true }
+            return false
+        } == true)
+    }
+
+    @Test("Baked mode has hysteresis around its zoom threshold")
+    func bakedModeHasHysteresis() {
+        let cache = IslandRenderCache.shared
+        defer { cache.removeAll() }
+        cache.removeAll()
+        let base = IslandLayout(island: Self.island, size: Self.size, insets: Self.insets).fit
+        let thresholdZoom = IslandLOD.middleShow * 22 / base
+        _ = frame(zoom: thresholdZoom * 0.98, pan: .zero)
+        let before = cache.bakedStateForTesting
+        _ = frame(zoom: thresholdZoom * 1.01, pan: .zero)
+        #expect(before == true)
+        #expect(cache.bakedStateForTesting == before)
+    }
+
     @Test("After the island appears, the first pan (a screen each way) needs no new pictures")
     func firstPanNeedsNothing() {
         let wasEnabled = PerfProbe.enabled

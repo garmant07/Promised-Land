@@ -1,0 +1,544 @@
+{
+ "book": "Genesis",
+ "chapters": 50,
+ "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+ "sprite_canvas": {
+  "size_px": [
+   256,
+   384
+  ],
+  "scale": "@2x",
+  "ground_point_px": [
+   128,
+   300
+  ]
+ },
+ "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+ "depth": "Draw in order of u+v, smallest first (back to front). A soft shadow ellipse sits under every sprite except obj_butterflies.",
+ "grow": "A grow event replaces the sprite already in that slot (same position).",
+ "events": [
+  {
+   "chapter": 1,
+   "action": "add",
+   "slot": "L",
+   "sprite": "obj_genesis_life_1",
+   "u": 0.42,
+   "v": 0.4,
+   "width": 0.0698,
+   "mirror": false,
+   "caption": "The tree of life sprouts"
+  },
+  {
+   "chapter": 2,
+   "action": "add",
+   "slot": "G1",
+   "sprite": "obj_grass",
+   "u": 0.18,
+   "v": 0.22,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 3,
+   "action": "add",
+   "slot": "P1",
+   "sprite": "obj_pebbles",
+   "u": 0.5,
+   "v": 0.76,
+   "width": 0.0889,
+   "mirror": false
+  },
+  {
+   "chapter": 4,
+   "action": "add",
+   "slot": "G2",
+   "sprite": "obj_grass",
+   "u": 0.72,
+   "v": 0.42,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 5,
+   "action": "add",
+   "slot": "F1",
+   "sprite": "obj_flowers",
+   "u": 0.22,
+   "v": 0.55,
+   "width": 0.1143,
+   "mirror": false
+  },
+  {
+   "chapter": 6,
+   "action": "add",
+   "slot": "S",
+   "sprite": "obj_genesis_spring",
+   "u": 0.62,
+   "v": 0.68,
+   "width": 0.0971,
+   "mirror": false,
+   "caption": "A spring bubbles up"
+  },
+  {
+   "chapter": 7,
+   "action": "add",
+   "slot": "G3",
+   "sprite": "obj_grass",
+   "u": 0.5,
+   "v": 0.62,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 8,
+   "action": "add",
+   "slot": "B1",
+   "sprite": "obj_bush",
+   "tall": true,
+   "u": 0.3,
+   "v": 0.12,
+   "width": 0.127,
+   "mirror": false
+  },
+  {
+   "chapter": 9,
+   "action": "add",
+   "slot": "G4",
+   "sprite": "obj_grass",
+   "u": 0.96,
+   "v": 0.12,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 10,
+   "action": "grow",
+   "slot": "S",
+   "sprite": "obj_genesis_spring",
+   "u": 0.62,
+   "v": 0.68,
+   "width": 0.1554,
+   "mirror": false
+  },
+  {
+   "chapter": 11,
+   "action": "grow",
+   "slot": "L",
+   "sprite": "obj_genesis_life_2",
+   "tall": true,
+   "u": 0.42,
+   "v": 0.4,
+   "width": 0.1206,
+   "mirror": false,
+   "caption": "The tree of life becomes a sapling"
+  },
+  {
+   "chapter": 12,
+   "action": "add",
+   "slot": "T1",
+   "sprite": "obj_seedling",
+   "u": 0.86,
+   "v": 0.16,
+   "width": 0.0495,
+   "mirror": false,
+   "caption": "A fruit tree is planted"
+  },
+  {
+   "chapter": 13,
+   "action": "add",
+   "slot": "R1",
+   "sprite": "obj_rocks",
+   "u": 0.66,
+   "v": 0.1,
+   "width": 0.1397,
+   "mirror": false
+  },
+  {
+   "chapter": 14,
+   "action": "add",
+   "slot": "G5",
+   "sprite": "obj_grass",
+   "u": 0.3,
+   "v": 0.72,
+   "width": 0.0508,
+   "mirror": true
+  },
+  {
+   "chapter": 15,
+   "action": "add",
+   "slot": "P2",
+   "sprite": "obj_pebbles",
+   "u": 0.22,
+   "v": 0.3,
+   "width": 0.0889,
+   "mirror": false
+  },
+  {
+   "chapter": 16,
+   "action": "add",
+   "slot": "F2",
+   "sprite": "obj_flowers",
+   "u": 0.88,
+   "v": 0.72,
+   "width": 0.1143,
+   "mirror": true
+  },
+  {
+   "chapter": 17,
+   "action": "grow",
+   "slot": "S",
+   "sprite": "obj_genesis_spring",
+   "u": 0.62,
+   "v": 0.68,
+   "width": 0.2159,
+   "mirror": false,
+   "caption": "The spring is full"
+  },
+  {
+   "chapter": 18,
+   "action": "add",
+   "slot": "G6",
+   "sprite": "obj_grass",
+   "u": 0.08,
+   "v": 0.94,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 19,
+   "action": "add",
+   "slot": "B3",
+   "sprite": "obj_bush",
+   "tall": true,
+   "u": 0.06,
+   "v": 0.4,
+   "width": 0.127,
+   "mirror": true
+  },
+  {
+   "chapter": 20,
+   "action": "add",
+   "slot": "T2",
+   "sprite": "obj_seedling",
+   "u": 0.16,
+   "v": 0.8,
+   "width": 0.0495,
+   "mirror": true
+  },
+  {
+   "chapter": 21,
+   "action": "grow",
+   "slot": "T1",
+   "sprite": "obj_tree_fruit",
+   "tall": true,
+   "u": 0.86,
+   "v": 0.16,
+   "width": 0.1304,
+   "mirror": false,
+   "caption": "The first fruit tree is grown"
+  },
+  {
+   "chapter": 22,
+   "action": "add",
+   "slot": "Y1",
+   "sprite": "obj_butterflies",
+   "u": 0.28,
+   "v": 0.6,
+   "width": 0.098,
+   "mirror": false,
+   "caption": "Butterflies arrive"
+  },
+  {
+   "chapter": 23,
+   "action": "add",
+   "slot": "G7",
+   "sprite": "obj_grass",
+   "u": 0.7,
+   "v": 0.96,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 24,
+   "action": "add",
+   "slot": "F3",
+   "sprite": "obj_flowers",
+   "u": 0.52,
+   "v": 0.14,
+   "width": 0.1143,
+   "mirror": false
+  },
+  {
+   "chapter": 25,
+   "action": "add",
+   "slot": "T3",
+   "sprite": "obj_seedling",
+   "u": 0.8,
+   "v": 0.46,
+   "width": 0.0495,
+   "mirror": false
+  },
+  {
+   "chapter": 26,
+   "action": "add",
+   "slot": "B2",
+   "sprite": "obj_bush",
+   "tall": true,
+   "u": 0.88,
+   "v": 0.94,
+   "width": 0.127,
+   "mirror": false
+  },
+  {
+   "chapter": 27,
+   "action": "add",
+   "slot": "G8",
+   "sprite": "obj_grass",
+   "u": 0.36,
+   "v": 0.3,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 28,
+   "action": "grow",
+   "slot": "T2",
+   "sprite": "obj_tree_fruit",
+   "tall": true,
+   "u": 0.16,
+   "v": 0.8,
+   "width": 0.1304,
+   "mirror": true
+  },
+  {
+   "chapter": 29,
+   "action": "add",
+   "slot": "Y2",
+   "sprite": "obj_butterflies",
+   "u": 0.84,
+   "v": 0.62,
+   "width": 0.098,
+   "mirror": false
+  },
+  {
+   "chapter": 30,
+   "action": "add",
+   "slot": "R2",
+   "sprite": "obj_rocks",
+   "u": 0.42,
+   "v": 0.9,
+   "width": 0.1397,
+   "mirror": false
+  },
+  {
+   "chapter": 31,
+   "action": "grow",
+   "slot": "L",
+   "sprite": "obj_genesis_life_3",
+   "tall": true,
+   "u": 0.42,
+   "v": 0.4,
+   "width": 0.2159,
+   "mirror": false,
+   "caption": "The tree of life grows tall"
+  },
+  {
+   "chapter": 32,
+   "action": "add",
+   "slot": "F4",
+   "sprite": "obj_flowers",
+   "u": 0.3,
+   "v": 0.96,
+   "width": 0.1143,
+   "mirror": false
+  },
+  {
+   "chapter": 33,
+   "action": "add",
+   "slot": "K1",
+   "sprite": "obj_bird",
+   "u": 0.54,
+   "v": 0.86,
+   "width": 0.0533,
+   "mirror": false,
+   "caption": "A songbird visits"
+  },
+  {
+   "chapter": 34,
+   "action": "grow",
+   "slot": "T3",
+   "sprite": "obj_tree_fruit",
+   "tall": true,
+   "u": 0.8,
+   "v": 0.46,
+   "width": 0.1304,
+   "mirror": false
+  },
+  {
+   "chapter": 35,
+   "action": "add",
+   "slot": "P3",
+   "sprite": "obj_pebbles",
+   "u": 0.78,
+   "v": 0.84,
+   "width": 0.0889,
+   "mirror": false
+  },
+  {
+   "chapter": 36,
+   "action": "add",
+   "slot": "G9",
+   "sprite": "obj_grass",
+   "u": 0.58,
+   "v": 0.5,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 37,
+   "action": "add",
+   "slot": "B4",
+   "sprite": "obj_bush",
+   "tall": true,
+   "u": 0.96,
+   "v": 0.55,
+   "width": 0.127,
+   "mirror": false
+  },
+  {
+   "chapter": 38,
+   "action": "add",
+   "slot": "F5",
+   "sprite": "obj_flowers",
+   "u": 0.72,
+   "v": 0.3,
+   "width": 0.1143,
+   "mirror": false
+  },
+  {
+   "chapter": 39,
+   "action": "add",
+   "slot": "K2",
+   "sprite": "obj_bird",
+   "u": 0.92,
+   "v": 0.28,
+   "width": 0.0533,
+   "mirror": true
+  },
+  {
+   "chapter": 40,
+   "action": "add",
+   "slot": "T4",
+   "sprite": "obj_seedling",
+   "u": 0.1,
+   "v": 0.52,
+   "width": 0.0495,
+   "mirror": true
+  },
+  {
+   "chapter": 41,
+   "action": "grow",
+   "slot": "L",
+   "sprite": "obj_genesis_life_3",
+   "tall": true,
+   "u": 0.42,
+   "v": 0.4,
+   "width": 0.254,
+   "mirror": false
+  },
+  {
+   "chapter": 42,
+   "action": "add",
+   "slot": "G10",
+   "sprite": "obj_grass",
+   "u": 0.94,
+   "v": 0.84,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 43,
+   "action": "add",
+   "slot": "F6",
+   "sprite": "obj_flowers",
+   "u": 0.06,
+   "v": 0.68,
+   "width": 0.1143,
+   "mirror": false
+  },
+  {
+   "chapter": 44,
+   "action": "add",
+   "slot": "Y3",
+   "sprite": "obj_butterflies",
+   "u": 0.62,
+   "v": 0.22,
+   "width": 0.098,
+   "mirror": false
+  },
+  {
+   "chapter": 45,
+   "action": "add",
+   "slot": "P4",
+   "sprite": "obj_pebbles",
+   "u": 0.94,
+   "v": 0.32,
+   "width": 0.0889,
+   "mirror": false
+  },
+  {
+   "chapter": 46,
+   "action": "grow",
+   "slot": "T4",
+   "sprite": "obj_tree_fruit",
+   "tall": true,
+   "u": 0.1,
+   "v": 0.52,
+   "width": 0.1304,
+   "mirror": true
+  },
+  {
+   "chapter": 47,
+   "action": "add",
+   "slot": "G11",
+   "sprite": "obj_grass",
+   "u": 0.2,
+   "v": 0.4,
+   "width": 0.0508,
+   "mirror": false
+  },
+  {
+   "chapter": 48,
+   "action": "add",
+   "slot": "F7",
+   "sprite": "obj_flowers",
+   "u": 0.66,
+   "v": 0.92,
+   "width": 0.1143,
+   "mirror": false
+  },
+  {
+   "chapter": 49,
+   "action": "grow",
+   "slot": "L",
+   "sprite": "obj_genesis_life_3",
+   "tall": true,
+   "u": 0.42,
+   "v": 0.4,
+   "width": 0.2921,
+   "mirror": false
+  },
+  {
+   "chapter": 50,
+   "action": "grow",
+   "slot": "L",
+   "sprite": "obj_genesis_life_4",
+   "tall": true,
+   "u": 0.42,
+   "v": 0.4,
+   "width": 0.381,
+   "mirror": false,
+   "caption": "The garden is complete"
+  }
+ ]
+}

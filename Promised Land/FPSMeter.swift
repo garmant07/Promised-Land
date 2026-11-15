@@ -9,14 +9,41 @@ enum PerfProbe {
     /// Seconds spent in each section, and how many times it ran, since the last report.
     static var totals: [String: (time: Double, calls: Int)] = [:]
     static let logging = ProcessInfo.processInfo.arguments.contains("-perfLog")
-    static var enabled = UserDefaults.standard.bool(forKey: "debug.fpsOverlay")
+    static var enabled = UserDefaults.standard.bool(forKey: "debug.fpsOverlay") || logging
+    private static let launchTime = CACurrentMediaTime()
+    private static var firstGenesisDraw: CFTimeInterval?
+    private static var genesisPictureBuilds = 0
+    private static var genesisTransition: String?
+    private static var lastGenesisTransition: String?
 
     static func setEnabled(_ value: Bool) {
-        enabled = value
+        enabled = value || logging
         totals.removeAll()
         RenderStats.reset()
-        if value && logging { FrameCounter.logger.start() }
+        if logging { FrameCounter.logger.start() }
         else { FrameCounter.logger.stop() }
+    }
+
+    static func genesisDraw() {
+        guard logging else { return }
+        if firstGenesisDraw == nil {
+            firstGenesisDraw = CACurrentMediaTime()
+            print(String(format: "GENESIS firstGardenDraw=%.0fms", (firstGenesisDraw! - launchTime) * 1000))
+        }
+    }
+
+    static func genesisPictureBuild(key: NSString) {
+        guard logging, CACurrentMediaTime() - launchTime <= 10 else { return }
+        genesisPictureBuilds += 1
+        print("GENESIS pictureBuild=\(genesisPictureBuilds) key=\(key)")
+    }
+
+    static func genesisTransition(zoomBucket: CGFloat, baked: Bool, cacheKey: String, drawn: String) {
+        guard logging else { return }
+        let value = String(format: "zoom=%.2f baked=%@ key=%@ drawn=%@", zoomBucket, baked ? "yes" : "no", cacheKey, drawn)
+        guard value != lastGenesisTransition else { return }
+        lastGenesisTransition = value
+        print("GENESIS transition \(value)")
     }
     #endif
 

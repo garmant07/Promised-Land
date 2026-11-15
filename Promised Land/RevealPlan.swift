@@ -138,6 +138,11 @@ enum RevealPlanner {
         let new = PlaceGrowth.after(b, spec: spec, chapters: book.chapterCount)
         var out: [RevealStep.Change] = []
         for (index, item) in island.items.enumerated() {
+            if bookID == "genesis", item.source.bookID == "genesis" {
+                let f = CGFloat(max(0, min(a, 50))), t = CGFloat(max(0, min(b, 50)))
+                if f != t { out.append(.init(index: index, from: f, to: t)) }
+                continue
+            }
             switch item.source {
             case .place(bookID, let piece):
                 let f = CGFloat(old.pieces[piece] ?? 0), t = CGFloat(new.pieces[piece] ?? 0)
