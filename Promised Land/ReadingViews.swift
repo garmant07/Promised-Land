@@ -316,6 +316,7 @@ struct ChapterReaderView: View {
     @State private var asking = false
     @State private var ownBible: ChapterRef?
     @State private var counted = false
+    @State private var chapterReadCoverVisible = false
 
     init(book: Book, chapter: Int) {
         self.book = book
@@ -387,6 +388,20 @@ struct ChapterReaderView: View {
         .navigationTitle("Chapter \(chapter)")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .topBarTrailing) { TranslationMenu() } }
+        .overlayPreferenceValue(HoldToFinishButtonBoundsKey.self) { anchor in
+            GeometryReader { proxy in
+                ChapterReadCover(
+                    bookName: book.name,
+                    chapter: chapter,
+                    center: anchor.map { frame in
+                        let rect = proxy[frame]
+                        return CGPoint(x: rect.midX, y: rect.midY)
+                    } ?? CGPoint(x: proxy.size.width / 2, y: proxy.size.height / 2),
+                    startsWithFlood: true,
+                    isVisible: $chapterReadCoverVisible
+                )
+            }
+        }
         #if DEBUG
         .overlay(alignment: .top) { if showsAPIUsage && bible.isLive { APIUsageBadge().allowsHitTesting(false) } }
         #endif
@@ -414,7 +429,13 @@ struct ChapterReaderView: View {
             }
         }
         .sheet(isPresented: $asking) {
-            ReadingQuestionView(book: book, chapter: chapter, strictMode: strictMode, onCounted: { countRead() }, onLookAgain: { asking = false })
+            ReadingQuestionView(
+                book: book,
+                chapter: chapter,
+                strictMode: strictMode,
+                onCounted: { countRead() },
+                onLookAgain: { asking = false }
+            )
         }
         .sheet(item: $ownBible) { ref in
             ReadingQuestionView(book: book, chapter: ref.chapter, strictMode: strictMode, onCounted: {
@@ -470,7 +491,7 @@ struct ChapterReaderView: View {
                     .foregroundStyle(Color.olive)
                     .frame(maxWidth: .infinity, minHeight: 44)
             } else if hasText {
-                SessionFinishButton(session: session, readBefore: isRead) { asking = true }
+                SessionFinishButton(session: session, readBefore: isRead) { startChapterReadMoment() }
             }
             if !counted {
                 Button { ownBible = ChapterRef(bookID: book.id, chapter: chapter) } label: {
@@ -508,6 +529,27 @@ struct ChapterReaderView: View {
         }
     }
 
+    private func startChapterReadMoment() {
+        guard !chapterReadCoverVisible else { return }
+        chapterReadCoverVisible = true
+        UIAccessibility.post(
+            notification: .announcement,
+            argument: "\(book.name) \(chapter) read"
+        )
+
+        Task { @MainActor in
+            try? await Task.sleep(
+                for: .seconds(ChapterReadTimings.floodDuration + ChapterReadTimings.coverHoldDuration)
+            )
+            guard !Task.isCancelled else { return }
+            chapterReadCoverVisible = false
+
+            try? await Task.sleep(for: .seconds(ChapterReadTimings.coverFadeDuration))
+            guard !Task.isCancelled else { return }
+            asking = true
+        }
+    }
+
     /// The question was answered: the chapter counts.
     private func countRead() {
         if needsCheck {
@@ -539,10 +581,14 @@ private struct SessionFinishButton: View {
 
     var body: some View {
         VStack(spacing: 4) {
-            FinishButton(progress: session.progress, enabled: session.canFinish,
-                         remaining: Double(session.secondsLeft), readBefore: readBefore, action: action)
-                // The ring moves once a second; easing each step keeps it smooth.
-                .animation(.linear(duration: 1), value: session.progress)
+            if ReadingGate.readingTimerEnabled {
+                FinishButton(progress: session.progress, enabled: session.canFinish,
+                             remaining: Double(session.secondsLeft), readBefore: readBefore, action: action)
+                    // The ring moves once a second; easing each step keeps it smooth.
+                    .animation(.linear(duration: 1), value: session.progress)
+            } else {
+                HoldToFinishButton(canFinish: session.canFinish, action: action)
+            }
             if ReadingGate.readingTimerEnabled {
                 #if DEBUG
                 // Developers: check the required time against the chapter's length.

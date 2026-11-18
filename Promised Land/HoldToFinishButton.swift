@@ -64,37 +64,30 @@ struct HoldToFinishButton: View {
     }
 
     var body: some View {
-        GeometryReader { proxy in
-            ZStack(alignment: .leading) {
-                Capsule()
-                    .fill(Color.card)
+        Text("Hold · I read this.")
+            .primaryButtonAppearance(background: .card, foreground: .bodyText)
+        .overlay {
+            GeometryReader { proxy in
+                ZStack(alignment: .leading) {
+                    Color.primaryBrown
+                        .frame(width: proxy.size.width * fillProgress)
+                        .opacity(fillOpacity)
 
-                Capsule()
-                    .fill(Color.primaryBrown)
-                    .frame(width: proxy.size.width * fillProgress)
-                    .opacity(fillOpacity)
-
-                ZStack {
                     Text("Hold · I read this.")
-                        .foregroundStyle(Color.bodyText)
-                    Text("Hold · I read this.")
+                        .font(.headline)
                         .foregroundStyle(Color.cream)
+                        .frame(maxWidth: .infinity, minHeight: 52)
+                        .padding(.horizontal, 16)
                         .mask(alignment: .leading) {
                             Rectangle()
                                 .frame(width: proxy.size.width * fillProgress)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
                 }
-                .frame(maxWidth: .infinity)
-                .frame(height: 48)
-                .contentShape(Capsule())
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             }
-            .clipShape(Capsule())
-            .contentShape(Capsule())
+            .allowsHitTesting(false)
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 48)
-        .padding(.horizontal, 12)
         .opacity(isEnabled ? 1 : 0.55)
         .anchorPreference(key: HoldToFinishButtonBoundsKey.self, value: .bounds) { $0 }
         .onLongPressGesture(
@@ -177,8 +170,7 @@ struct HoldToFinishButton: View {
     }
 }
 
-/// The brown chapter-complete moment, used both during the reader flood and as the
-/// first frame of the question sheet.
+/// The brown chapter-complete moment shown over the reader before the question sheet opens.
 struct ChapterReadCover: View {
     let bookName: String
     let chapter: Int
@@ -189,6 +181,8 @@ struct ChapterReadCover: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var circleScale = 0.001
     @State private var isFull = false
+    @State private var coverOpacity = 1.0
+    @State private var hasStarted = false
 
     var body: some View {
         GeometryReader { proxy in
@@ -218,27 +212,44 @@ struct ChapterReadCover: View {
                 .padding(24)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .opacity(isVisible ? 1 : 0)
+            .opacity(isVisible ? coverOpacity : 0)
             .animation(.easeOut(duration: ChapterReadTimings.coverFadeDuration), value: isVisible)
+            .allowsHitTesting(isVisible)
             .onAppear {
-                if startsWithFlood && !reduceMotion {
-                    withAnimation(.easeIn(duration: ChapterReadTimings.floodDuration)) {
-                        circleScale = 1
-                    }
-                    Task {
-                        try? await Task.sleep(for: .seconds(ChapterReadTimings.floodDuration))
-                        isFull = true
-                    }
-                } else {
-                    withAnimation(.easeIn(duration: 0.2)) {
-                        isFull = true
-                    }
+                startPresentationIfNeeded()
+            }
+            .onChange(of: isVisible) { _, visible in
+                if visible {
+                    startPresentationIfNeeded()
                 }
             }
         }
         .ignoresSafeArea()
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(bookName) \(chapter) read")
+    }
+
+    private func startPresentationIfNeeded() {
+        guard isVisible, !hasStarted else { return }
+        hasStarted = true
+
+        if startsWithFlood && !reduceMotion {
+            withAnimation(.easeIn(duration: ChapterReadTimings.floodDuration)) {
+                circleScale = 1
+            }
+            Task {
+                try? await Task.sleep(for: .seconds(ChapterReadTimings.floodDuration))
+                isFull = true
+            }
+        } else if reduceMotion {
+            coverOpacity = 0
+            withAnimation(.easeIn(duration: 0.2)) {
+                coverOpacity = 1
+                isFull = true
+            }
+        } else {
+            isFull = true
+        }
     }
 }
 

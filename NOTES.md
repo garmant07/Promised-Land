@@ -877,6 +877,38 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     reading-history, island, Library or GameProgress rules changed. The request to add a
     press-and-hold button is a separate later stage and is not included here.
 
+119. **Stage 5: hold to say “I read this.”** The normal reader's end-of-chapter action is now a
+    1.5-second press-and-hold in `HoldToFinishButton.swift`. Its brown fill animates across the
+    light card track, releases before completion animate back to empty, and Reduce Motion uses a
+    full-colour fade instead of a sliding fill. A light impact starts the hold and a heavy impact
+    confirms completion; early releases are silent. VoiceOver exposes “I read this” with the
+    finish hint and completes immediately through its action. The old ring/countdown `FinishButton`
+    remains behind `ReadingGate.readingTimerEnabled`, including its `canFinish` gate. No schema,
+    reading-history or chapter-count rules changed.
+
+120. **Stage 5b: slim hold bar and chapter-read cover.** The normal reader's hold control is a
+    48-point capsule with 12-point side insets; its former square shape came from an unconstrained
+    `GeometryReader` and `minHeight` frames. Completion now announces the chapter, floods brown
+    from the button's anchor-resolved centre over 0.45 seconds, holds the checkmark moment for one
+    second, and fades into the existing question/reflection sheet over 0.35 seconds. The sheet is
+    opened transactionally without presentation animation under the same cover, so there is no
+    reader flash or sheet slide. Reduce Motion fades the cover in instead of growing the circle;
+    the cover blocks input while visible. Tests cover exactly-once cover/finish completion and
+    early-release no-op behavior. No schema, reading-history or chapter-count rules changed.
+
+121. **Stage 5c: one chapter-read cover and standard hold button.** The hold control now reuses
+    `PrimaryButtonStyle`, including its 52-point height, 18-point continuous corners, padding,
+    headline font and standard colors; the brown progress sweep is clipped inside that shape.
+    The chapter-read cover remains over the reader for its flood and hold, fades out, and only
+    then presents the question/reflection sheet with the normal sheet animation. The duplicate
+    cover inside the sheet and the disabled sheet transaction were removed. No schema,
+    reading-history or chapter-count rules changed.
+
+    Stage 5d found that wrapping the hold view in a `Button(action: {})` caused the Button's
+    gesture handling to compete with the outer long-press gesture: the fill updated, but the
+    long-press completion was not reliable on device. The shared primary-button appearance is
+    now a reusable modifier, so the hold view keeps the same look without a Button wrapper.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

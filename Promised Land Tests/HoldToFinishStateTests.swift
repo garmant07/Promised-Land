@@ -5,40 +5,72 @@ struct HoldToFinishStateTests {
     @Test("Completing a hold can trigger the finish action only once")
     func completingTriggersOnce() {
         var state = HoldToFinishState()
+        var coverCount = 0
         var actionCount = 0
 
-        #expect(state.begin(readingTimerEnabled: false, canFinish: false))
-        if state.complete() {
-            actionCount += 1
+        let began = state.begin(readingTimerEnabled: false, canFinish: false)
+        let completed = state.complete()
+        let completedAgain = state.complete()
+        #expect(began)
+        if completed {
+            coverCount += 1
         }
-        if state.complete() {
+        if completedAgain {
+            coverCount += 1
+        }
+
+        #expect(coverCount == 1)
+        #expect(state.didComplete)
+
+        // Model the reader's ordering: presenting the sheet while the cover is visible is blocked.
+        var coverVisible = false
+        func presentAfterCover() {
+            guard !coverVisible else { return }
             actionCount += 1
         }
 
+        coverVisible = completed
+        presentAfterCover()
+        coverVisible = false
+        presentAfterCover()
         #expect(actionCount == 1)
-        #expect(state.didComplete)
     }
 
     @Test("Releasing early does not complete and resets the hold")
     func releasingEarlyResets() {
         var state = HoldToFinishState()
+        var coverCount = 0
+        var actionCount = 0
 
-        #expect(state.begin(readingTimerEnabled: false, canFinish: false))
+        let began = state.begin(readingTimerEnabled: false, canFinish: false)
         state.releaseEarly()
+        let completed = state.complete()
 
+        #expect(began)
         #expect(!state.isHolding)
         #expect(!state.didComplete)
-        #expect(!state.complete())
+        if completed {
+            coverCount += 1
+            actionCount += 1
+        }
+
+        #expect(!completed)
+        #expect(coverCount == 0)
+        #expect(actionCount == 0)
     }
 
     @Test("A timed finish cannot start until canFinish is true")
     func timedFinishRequiresGate() {
         var state = HoldToFinishState()
 
-        #expect(!state.begin(readingTimerEnabled: true, canFinish: false))
-        #expect(!state.isHolding)
-        #expect(!state.didComplete)
+        let blocked = state.begin(readingTimerEnabled: true, canFinish: false)
+        let stillHolding = state.isHolding
+        let stillCompleted = state.didComplete
+        let allowed = state.begin(readingTimerEnabled: true, canFinish: true)
 
-        #expect(state.begin(readingTimerEnabled: true, canFinish: true))
+        #expect(!blocked)
+        #expect(!stillHolding)
+        #expect(!stillCompleted)
+        #expect(allowed)
     }
 }
