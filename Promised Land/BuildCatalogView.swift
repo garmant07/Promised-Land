@@ -1,28 +1,30 @@
 import SwiftUI
 
-/// "What can I build?": every book's Place, what its chapters add to it, and the characters it
-/// helps bring to your island.
+/// "What can I build?": the 66 Places in Bible order.
 struct BuildCatalogView: View {
     @ProgressQuery private var progress: GameProgress
-    @State private var testament: Testament = .old
+
+    private let columns = [
+        GridItem(.flexible(), spacing: 12),
+        GridItem(.flexible(), spacing: 12)
+    ]
 
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 12) {
-                Text("Every book builds one Place on your island. Its first chapter founds it, every chapter adds something, and rereads make it richer.")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.secondaryText)
-                Picker("Testament", selection: $testament) {
-                    Text("Old Testament").tag(Testament.old)
-                    Text("New Testament").tag(Testament.new)
-                }
-                .pickerStyle(.segmented)
-                .tint(Color.primaryBrown)
-                ForEach(BibleCatalog.books.filter { $0.testament == testament }) { book in
-                    NavigationLink(value: book) {
-                        BuildPreviewRow(book: book, read: progress.chaptersRead(book.id))
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 12) {
+                PlaceSectionHeader(title: "Old Testament")
+                ForEach(BibleCatalog.books.filter { $0.testament == .old }) { book in
+                    PlaceTile(book: book, card: PlaceCardCatalog.card(for: book),
+                              read: progress.chaptersRead(book.id)) {
+                        // Stage 3 supplies the prepared card payload.
                     }
-                    .buttonStyle(.plain)
+                }
+                PlaceSectionHeader(title: "New Testament")
+                ForEach(BibleCatalog.books.filter { $0.testament == .new }) { book in
+                    PlaceTile(book: book, card: PlaceCardCatalog.card(for: book),
+                              read: progress.chaptersRead(book.id)) {
+                        // Stage 3 supplies the prepared card payload.
+                    }
                 }
             }
             .padding(16)
@@ -32,60 +34,170 @@ struct BuildCatalogView: View {
         .themedScreen()
         .navigationTitle("What can I build?")
         .navigationBarTitleDisplayMode(.inline)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            Text("Tap a place to see what it is")
+                .font(.subheadline)
+                .foregroundStyle(Color.secondaryText)
+                .frame(maxWidth: 720, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 16)
+                .padding(.top, 4)
+                .padding(.bottom, 8)
+                .background(Color.cream)
+        }
         .closeReadingButton()
     }
 }
 
-/// One book's Place, what grows there, and its characters.
-struct BuildPreviewRow: View {
-    let book: Book
-    let read: Int
+struct PlaceSectionHeader: View {
+    let title: String
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
-            InteriorHeaderArt(bookID: book.id, distinct: book.chapterCount, totalReads: book.chapterCount)
-                .frame(width: 92, height: 80)
-                .background(Earthy.groundLight.opacity(0.6), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .accessibilityHidden(true)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(PlaceData.spec(for: book.id).name)
-                    .font(.headline)
-                    .foregroundStyle(Color.bodyText)
-                Text("\(book.name) · \(read) of \(book.chapterCount) chapters")
-                    .font(.footnote)
-                    .foregroundStyle(Color.secondaryText)
-                Text(BuildPreview.artifactLine(book.id))
-                    .font(.footnote)
-                    .foregroundStyle(Color.secondaryText)
-                if let who = BuildPreview.characterLine(book.id) {
-                    Label(who, systemImage: "person.2.fill")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(Color.terracotta)
-                }
-            }
-            Spacer(minLength: 0)
-        }
-        .padding(12)
-        .background(Color.card, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        Text(title)
+            .font(.serifTitle(.title3))
+            .foregroundStyle(Color.bodyText)
+            .gridCellColumns(2)
+            .padding(.top, 8)
     }
 }
 
-/// Words for what a book builds. Pure, so it's testable.
+struct PlaceTile: View {
+    let book: Book
+    let card: PlaceCard?
+    let read: Int
+    let onTap: () -> Void
+
+    private var state: PlaceTileState {
+        PlaceTileState.forRead(read, total: book.chapterCount)
+    }
+
+    var body: some View {
+        Button(action: onTap) {
+            VStack(alignment: .leading, spacing: 8) {
+                PlaceTilePicture(book: book, faded: state == .notStarted)
+                    .aspectRatio(660.0 / 560.0, contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .accessibilityHidden(true)
+
+                Text(card?.name ?? PlaceData.spec(for: book.id).name)
+                    .font(.headline)
+                    .foregroundStyle(Color.bodyText)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+
+                PlaceTileStatus(book: book, state: state)
+
+                if case .inProgress(let chapters) = state {
+                    ProgressView(value: Double(chapters), total: Double(book.chapterCount))
+                        .tint(Color.olive)
+                        .scaleEffect(y: 0.7)
+                } else if state == .complete {
+                    ProgressView(value: 1)
+                        .tint(Color.olive)
+                        .scaleEffect(y: 0.7)
+                }
+            }
+            .padding(10)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.card, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(card?.name ?? book.name), \(PlaceTileState.accessibilityText(state, book: book))")
+    }
+}
+
+struct PlaceTileStatus: View {
+    let book: Book
+    let state: PlaceTileState
+
+    var body: some View {
+        Group {
+            switch state {
+            case .notStarted:
+                Label("Not started", systemImage: "lock.fill")
+            case .inProgress(let chapters):
+                Text("\(book.name) · \(chapters) of \(book.chapterCount)")
+            case .complete:
+                Text("\(book.name) · Complete")
+            }
+        }
+        .font(.caption)
+        .foregroundStyle(Color.secondaryText)
+        .lineLimit(1)
+        .truncationMode(.tail)
+    }
+}
+
+struct PlaceTilePicture: View {
+    let book: Book
+    let faded: Bool
+
+    var body: some View {
+        Group {
+            if let art = ArtAssets.image(PlaceCardCatalog.finishedArtName(for: book)) {
+                Image(decorative: art.image, scale: 1)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                InteriorHeaderArt(bookID: book.id, distinct: book.chapterCount, totalReads: book.chapterCount)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Earthy.groundLight.opacity(0.6))
+        .clipped()
+        .saturation(faded ? 0 : 1)
+        .opacity(faded ? 0.55 : 1)
+    }
+}
+
+/// The three display states for a catalogue tile.
+enum PlaceTileState: Equatable {
+    case notStarted
+    case inProgress(Int)
+    case complete
+
+    static func forRead(_ read: Int, total: Int) -> Self {
+        let capped = min(max(0, read), max(0, total))
+        if capped == 0 { return .notStarted }
+        if capped >= total { return .complete }
+        return .inProgress(capped)
+    }
+
+    static func accessibilityText(_ state: Self, book: Book) -> String {
+        switch state {
+        case .notStarted: "Not started"
+        case .inProgress(let chapters): "\(book.name), \(chapters) of \(book.chapterCount) chapters read"
+        case .complete: "Complete"
+        }
+    }
+}
+
+/// Words for what a book builds. Kept for existing previews and tests.
 enum BuildPreview {
-    /// What grows in a book's Place, in order (plain wording in Release until reviewed).
     static func artifactLine(_ bookID: String) -> String {
         let spec = PlaceData.spec(for: bookID)
         guard ContentGate.isVisible(spec) else { return "Grows with every chapter you read." }
-        return "Grows: " + spec.pieces.map(\.caption).joined(separator: ", then ").capitalizedFirst + "."
+        return "Grows: " + spec.pieces.map(\\.caption).joined(separator: ", then ").capitalizedFirst + "."
     }
 
     static func characterLine(_ bookID: String) -> String? {
-        let names = CharacterJourneys.all.filter { j in j.required.contains { $0.bookID == bookID } }.map(\.name)
+        let names = CharacterJourneys.all.filter { journey in
+            journey.required.contains { $0.bookID == bookID }
+        }.map(\\.name)
         guard !names.isEmpty else { return nil }
-        return "Counts toward " + names.map { "\($0)'s" }.joined(separator: ", ") + (names.count == 1 ? " journey" : " journeys")
+        return "Counts toward " + names.map { "\($0)'s" }.joined(separator: ", ") +
+            (names.count == 1 ? " journey" : " journeys")
     }
 }
 
 private extension String {
     var capitalizedFirst: String { prefix(1).uppercased() + dropFirst() }
+}
+
+#Preview {
+    NavigationStack {
+        BuildCatalogView()
+    }
+    .modelContainer(PreviewData.container)
 }
