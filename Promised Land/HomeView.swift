@@ -71,6 +71,8 @@ struct HomeView: View {
     @Environment(\.modelContext) private var context
 
     @State private var activeSheet: ActiveSheet?
+    /// A Place requested by a catalogue card, held until the outer presentation is gone.
+    @State private var placeFocus = PlaceFocusState()
     @State private var selectedItem: Int?
     /// The cloud cover over the island while it loads, and whether the island says it's ready.
     @State private var cloudsUp = true
@@ -214,15 +216,17 @@ struct HomeView: View {
         let island = PerfProbe.measure("home") { island }
         let baskets = baskets(island)
         let waiting = baskets.values.reduce(0, +)
+        let revealStepHandler: (RevealStep?) -> Void = { step in
+            withAnimation(.easeInOut(duration: 0.35)) { revealing = step }
+            if step == nil { revealActive = false }
+        }
+        let focusConsumed: () -> Void = { placeFocus.consume() }
         ZStack {
             Earthy.sea.ignoresSafeArea()
             // Added a moment after the clouds are up, so its first (heaviest) frame happens under them.
             if islandMounted {
             PlatformScene(avatar: avatar, island: island, reveal: reveal, revealInitial: revealInitial, revealID: revealID,
-                          onRevealStep: { step in
-                              withAnimation(.easeInOut(duration: 0.35)) { revealing = step }
-                              if step == nil { revealActive = false }
-                          },
+                          onRevealStep: revealStepHandler,
                           // The island fills the whole screen, under the status bar too; the insets
                           // only keep it clear of the status pill and the bar when fitting it.
                           insets: EdgeInsets(top: 70 + safeTop, leading: 8, bottom: 118, trailing: 8),
@@ -257,7 +261,10 @@ struct HomeView: View {
                               print(String(format: "ISLAND loaded %.2f s after launch", CACurrentMediaTime() - Self.launchTime))
                               #endif
                           },
-                          holdsBackgroundWork: cloudsUp) { index in open(index, in: island) }
+                          holdsBackgroundWork: cloudsUp,
+                          onTap: { index in open(index, in: island) },
+                          focusBookID: placeFocus.activeBookID,
+                          onFocusConsumed: focusConsumed)
                 .ignoresSafeArea()
             }
         }
@@ -355,7 +362,7 @@ struct HomeView: View {
                 .transition(.identity)
             }
         }
-        .sheet(item: $activeSheet) { sheet in
+        .sheet(item: $activeSheet, onDismiss: handleSheetDismissed) { sheet in
             content(for: sheet)
                 .presentationDetents(sheet.detents, selection: detentBinding(sheet))
                 .readingSizing(sheet.isReading)
@@ -365,13 +372,12 @@ struct HomeView: View {
             if sheet == nil { sheetDetent = .medium }
             if sheet == nil { selectedItem = nil; showNewGrowth() }
         }
-        .fullScreenCover(item: $interior, onDismiss: {
-            visitIndex = nil
-            selectedItem = nil
-            showNewGrowth()
-        }) { ref in
+        .fullScreenCover(item: $interior, onDismiss: handlePresentationDismissed) { ref in
             if ref.id == InteriorRef.library {
-                LibraryHubView { interior = nil }
+                LibraryHubView(onClose: { interior = nil }, onFocusPlace: { bookID in
+                    placeFocus.request(bookID)
+                    interior = nil
+                })
             } else if ref.id == InteriorRef.throne {
                 ThroneRoomView()
             } else {
@@ -428,11 +434,32 @@ struct HomeView: View {
         .padding(.top, 8)
     }
 
+    /// Hands a catalogue focus request to the island only after its outer presentation is gone.
+    private func beginPendingPlaceFocus() {
+        guard let bookID = placeFocus.pendingBookID else { return }
+        placeFocus.begin(isAvailable: island.placeIndex(bookID) != nil)
+    }
+
+    private func handleSheetDismissed() {
+        beginPendingPlaceFocus()
+    }
+
+    private func handlePresentationDismissed() {
+        beginPendingPlaceFocus()
+        visitIndex = nil
+        selectedItem = nil
+        showNewGrowth()
+    }
+
     @ViewBuilder
     private func content(for sheet: ActiveSheet) -> some View {
         switch sheet {
         case .read:
-            LibraryView(onClose: { activeSheet = nil }, showsSuggestion: true)
+            LibraryView(onClose: { activeSheet = nil },
+                        onFocusPlace: { bookID in
+                            placeFocus.request(bookID)
+                            activeSheet = nil
+                        }, showsSuggestion: true)
         case .journeys:
             JourneysSheet()
         case .friends:

@@ -1,8 +1,13 @@
 import SwiftUI
+import SwiftData
 
 /// "What can I build?": the 66 Places in Bible order.
 struct BuildCatalogView: View {
     @ProgressQuery private var progress: GameProgress
+    var onRead: (Book) -> Void = { _ in }
+    var onFocusPlace: (String) -> Void = { _ in }
+    @State private var selectedCard: PlaceCardRoute?
+    @State private var pendingRead: Book?
 
     private let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -16,14 +21,18 @@ struct BuildCatalogView: View {
                 ForEach(BibleCatalog.books.filter { $0.testament == .old }) { book in
                     PlaceTile(book: book, card: PlaceCardCatalog.card(for: book),
                               read: progress.chaptersRead(book.id)) {
-                        // Stage 3 supplies the prepared card payload.
+                        guard let card = PlaceCardCatalog.card(for: book) else { return }
+                        selectedCard = PlaceCardRoute(book: book, card: card,
+                                                      read: min(progress.chaptersRead(book.id), book.chapterCount))
                     }
                 }
                 PlaceSectionHeader(title: "New Testament")
                 ForEach(BibleCatalog.books.filter { $0.testament == .new }) { book in
                     PlaceTile(book: book, card: PlaceCardCatalog.card(for: book),
                               read: progress.chaptersRead(book.id)) {
-                        // Stage 3 supplies the prepared card payload.
+                        guard let card = PlaceCardCatalog.card(for: book) else { return }
+                        selectedCard = PlaceCardRoute(book: book, card: card,
+                                                      read: min(progress.chaptersRead(book.id), book.chapterCount))
                     }
                 }
             }
@@ -46,6 +55,52 @@ struct BuildCatalogView: View {
                 .background(Color.cream)
         }
         .closeReadingButton()
+        .sheet(item: $selectedCard, onDismiss: {
+            if let book = pendingRead {
+                pendingRead = nil
+                onRead(book)
+            }
+        }) { route in
+            PlaceCardView(route: route, onRead: {
+                pendingRead = route.book
+            }, onShowOnIsland: {
+                onFocusPlace(route.book.id)
+            })
+        }
+    }
+}
+
+/// The legacy reading-list row remains available to the Library's existing book list.
+struct BuildPreviewRow: View {
+    let book: Book
+    let read: Int
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            InteriorHeaderArt(bookID: book.id, distinct: book.chapterCount, totalReads: book.chapterCount)
+                .frame(width: 92, height: 80)
+                .background(Earthy.groundLight.opacity(0.6), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(PlaceData.spec(for: book.id).name)
+                    .font(.headline)
+                    .foregroundStyle(Color.bodyText)
+                Text("\(book.name) · \(read) of \(book.chapterCount) chapters")
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+                Text(BuildPreview.artifactLine(book.id))
+                    .font(.footnote)
+                    .foregroundStyle(Color.secondaryText)
+                if let who = BuildPreview.characterLine(book.id) {
+                    Label(who, systemImage: "person.2.fill")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Color.terracotta)
+                }
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(12)
+        .background(Color.card, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
     }
 }
 
@@ -178,13 +233,13 @@ enum BuildPreview {
     static func artifactLine(_ bookID: String) -> String {
         let spec = PlaceData.spec(for: bookID)
         guard ContentGate.isVisible(spec) else { return "Grows with every chapter you read." }
-        return "Grows: " + spec.pieces.map(\\.caption).joined(separator: ", then ").capitalizedFirst + "."
+        return "Grows: " + spec.pieces.map(\.caption).joined(separator: ", then ").capitalizedFirst + "."
     }
 
     static func characterLine(_ bookID: String) -> String? {
         let names = CharacterJourneys.all.filter { journey in
             journey.required.contains { $0.bookID == bookID }
-        }.map(\\.name)
+        }.map(\.name)
         guard !names.isEmpty else { return nil }
         return "Counts toward " + names.map { "\($0)'s" }.joined(separator: ", ") +
             (names.count == 1 ? " journey" : " journeys")

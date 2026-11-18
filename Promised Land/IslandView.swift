@@ -60,6 +60,9 @@ struct PlatformScene: View {
     var holdsBackgroundWork = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
+    /// A catalogue request to centre on a Place without opening or visiting it.
+    var focusBookID: String? = nil
+    var onFocusConsumed: (() -> Void)? = nil
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
@@ -429,6 +432,12 @@ struct PlatformScene: View {
                     centre(on: island.items[index], size: geo.size)
                     if !reduceMotion { startBounce([index]) }
                 }
+            }
+            .onChange(of: focusBookID) { _, bookID in
+                guard let bookID else { return }
+                defer { onFocusConsumed?() }
+                guard let index = island.placeIndex(bookID), island.items.indices.contains(index) else { return }
+                centre(on: island.items[index], size: geo.size)
             }
         }
         .onAppear {

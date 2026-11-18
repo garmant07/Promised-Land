@@ -291,7 +291,7 @@ enum PlaceData {
             s(.well, .frontRight, 0.7, "a well is dug"),
             g(.flock, .front, 0.8, "flocks graze nearby", "the flock grows", cap: 10),
         ]),
-        p("exodus", "The Camp", .camp, "More tents, banners over the tribes and cloud-white canopies.", [
+        p("exodus", "Mount Sinai", .camp, "More tents, banners over the tribes and cloud-white canopies.", [
             s(.tent, .centre, 0, "a single tent is pitched"),
             g(.tents, .left, 0.05, "the camp gathers around it", "the camp grows", cap: 14),
             s(.well, .frontLeft, 0.35, "a well gives water in the wilderness"),
@@ -317,7 +317,7 @@ enum PlaceData {
             s(.tabernacle, .right, 0.6, "the tabernacle stands in the middle of the camp"),
             g(.palms, .front, 0.8, "palms grow at an oasis", "another palm grows", cap: 6),
         ]),
-        p("deuteronomy", "The Mountain Overlook", .mountain, "Taller cedars, standing stones and a wider view.", [
+        p("deuteronomy", "Mount Nebo Lookout", .mountain, "Taller cedars, standing stones and a wider view.", [
             s(.hill, .centre, 0, "a hill rises"),
             s(.pillar, .front, 0.15, "a standing stone is set up"),
             g(.tents, .left, 0.25, "tents gather below the hill", "another tent is pitched", cap: 10),
@@ -326,7 +326,7 @@ enum PlaceData {
             s(.altar, .frontRight, 0.85, "an altar of stones is built"),
         ]),
         // MARK: History
-        p("joshua", "The Walled Town", .walledTown, "Stronger walls, more homes and fields beyond the gate.", [
+        p("joshua", "Jericho Gate", .walledTown, "Stronger walls, more homes and fields beyond the gate.", [
             s(.tent, .centre, 0, "a camp is pitched by the river"),
             s(.pillar, .frontRight, 0.15, "twelve stones are set up"),
             g(.wall, .back, 0.3, "town walls rise", "the walls grow", cap: 10),
@@ -334,7 +334,7 @@ enum PlaceData {
             s(.gate, .front, 0.65, "the town gate is built"),
             g(.field, .right, 0.8, "fields are sown in the new land", "the fields spread", cap: 8),
         ]),
-        p("judges", "The Hill Country Village", .shepherds, "Fuller fields, a busier threshing floor and more homes.", [
+        p("judges", "The Judges' Hilltop", .shepherds, "Fuller fields, a busier threshing floor and more homes.", [
             s(.house, .centre, 0, "a house stands in the hills"),
             g(.field, .left, 0.1, "a field is sown", "the field spreads", cap: 10),
             s(.threshingFloor, .back, 0.3, "a threshing floor is laid"),
@@ -350,7 +350,7 @@ enum PlaceData {
             s(.mill, .frontRight, 0.75, "a mill and oven are built"),
             s(.gate, .front, 1.0, "the town gate rises"),
         ]),
-        p("1samuel", "The Shepherd's Hill", .shepherds, "Bigger flocks, a taller watchtower and music by the fold.", [
+        p("1samuel", "Shiloh and the Valley", .shepherds, "Bigger flocks, a taller watchtower and music by the fold.", [
             s(.hut, .centre, 0, "a shepherd's hut stands on the hill"),
             g(.flock, .left, 0.05, "sheep graze", "the flock grows", cap: 14),
             s(.meetingHouse, .back, 0.2, "a house of prayer stands at Shiloh"),
@@ -365,7 +365,7 @@ enum PlaceData {
             s(.pavilion, .right, 0.5, "a tent is pitched for the ark"),
             g(.cedars, .front, 0.7, "cedars are planted", "another cedar grows", cap: 6),
         ]),
-        p("1kings", "The Temple Hill", .palace, "Gold on the temple, fuller courts and cedars on the hill.", [
+        p("1kings", "Solomon's Temple", .palace, "Gold on the temple, fuller courts and cedars on the hill.", [
             s(.palace, .left, 0, "a palace stands"),
             g(.cedars, .back, 0.08, "cedars are brought for building", "more cedars arrive", cap: 8),
             s(.temple, .centre, 0.25, "the temple rises"),
@@ -373,7 +373,7 @@ enum PlaceData {
             g(.houses, .right, 0.55, "the city fills in", "another home is built", cap: 10),
             g(.stalls, .front, 0.75, "traders bring their goods", "another stall opens", cap: 8),
         ]),
-        p("2kings", "The Kings' City", .city, "More homes, a busier gate and fuller fields.", [
+        p("2kings", "The Kings' Road", .city, "More homes, a busier gate and fuller fields.", [
             s(.house, .centre, 0, "a house stands in the city"),
             g(.houses, .left, 0.08, "the city grows", "another home is built", cap: 12),
             s(.well, .frontLeft, 0.25, "a spring is found"),
@@ -381,33 +381,33 @@ enum PlaceData {
             s(.gate, .front, 0.6, "a city gate is built"),
             g(.field, .right, 0.8, "fields are sown", "the fields spread", cap: 8),
         ]),
-        p("1chronicles", "The Hall of Records", .scrollHouse, "More scrolls, more singers and lamps in every window.", [
+        p("1chronicles", "The Record House", .scrollHouse, "More scrolls, more singers and lamps in every window.", [
             s(.hall, .centre, 0, "a hall of records is built"),
             g(.scrolls, .left, 0.05, "the family lines are written down", "another scroll is written", cap: 14),
             s(.pavilion, .back, 0.5, "a tent is pitched for the ark"),
             g(.terraces, .right, 0.6, "singers gather with harps", "more singers join", cap: 8),
             g(.lamps, .front, 0.8, "lamps are lit", "another lamp is lit", cap: 6),
         ]),
-        p("2chronicles", "The Temple City", .palace, "More worshippers, brighter lamps and stronger walls.", [
+        p("2chronicles", "The Temple Courtyard", .palace, "More worshippers, brighter lamps and stronger walls.", [
             s(.temple, .centre, 0, "the temple stands"),
             s(.altar, .front, 0.1, "a bronze altar is built"),
             g(.houses, .left, 0.2, "the city grows", "another home is built", cap: 12),
             g(.wall, .back, 0.45, "the walls rise", "the walls grow", cap: 10),
             g(.lamps, .right, 0.7, "lamps are lit", "another lamp is lit", cap: 8),
         ]),
-        p("ezra", "The Rebuilt Temple", .courts, "Fuller courts, more homes and scrolls read aloud.", [
+        p("ezra", "The Rebuilt Altar", .courts, "Fuller courts, more homes and scrolls read aloud.", [
             s(.altar, .centre, 0, "the altar is rebuilt"),
             s(.temple, .back, 0.3, "the temple is rebuilt"),
             g(.houses, .left, 0.45, "families return home", "another family returns", cap: 6),
             g(.scrolls, .right, 0.7, "the law is read", "another scroll is read", cap: 5),
         ]),
-        p("nehemiah", "The Rebuilt Walls", .walledTown, "Stronger walls, more homes and a busier gate.", [
+        p("nehemiah", "The City Wall", .walledTown, "Stronger walls, more homes and a busier gate.", [
             s(.gate, .front, 0, "a gate is repaired"),
             g(.wall, .centre, 0.08, "the walls are rebuilt", "another stretch of wall is rebuilt", cap: 10),
             g(.houses, .left, 0.5, "homes are built inside the walls", "another home is built", cap: 6),
             s(.tower, .right, 0.75, "a tower stands on the wall"),
         ]),
-        p("esther", "The Palace Gardens", .palace, "Fuller gardens, banners and a glittering banquet hall.", [
+        p("esther", "The Persian Palace", .palace, "Fuller gardens, banners and a glittering banquet hall.", [
             s(.palace, .centre, 0, "a palace rises"),
             g(.garden, .left, 0.1, "the palace gardens are laid out", "the gardens fill in", cap: 6),
             s(.pavilion, .back, 0.3, "a banquet tent is spread"),
@@ -415,7 +415,7 @@ enum PlaceData {
             g(.lamps, .right, 0.7, "lamps are lit for the feast", "another lamp is lit", cap: 4),
         ]),
         // MARK: Poetry & wisdom
-        p("job", "The Pasture", .shepherds, "Bigger flocks, more camels and a fuller tent.", [
+        p("job", "The Ash Heap Farm", .shepherds, "Bigger flocks, more camels and a fuller tent.", [
             s(.tent, .centre, 0, "a tent stands in the land"),
             g(.flock, .left, 0.05, "flocks graze", "the flock grows", cap: 14),
             g(.field, .back, 0.3, "fields are ploughed", "the fields spread", cap: 10),
@@ -442,7 +442,7 @@ enum PlaceData {
             g(.lamps, .back, 0.6, "lamps are lit in the windows", "another lamp is lit", cap: 6),
             g(.field, .front, 0.8, "fields are worked by diligent hands", "the fields spread", cap: 6),
         ]),
-        p("ecclesiastes", "The Quiet Garden", .garden, "Fuller pools, more trees and shade to sit in.", [
+        p("ecclesiastes", "The Sundial Garden", .garden, "Fuller pools, more trees and shade to sit in.", [
             s(.fountain, .centre, 0, "a pool is dug"),
             g(.orchard, .left, 0.1, "fruit trees are planted", "another fruit tree grows", cap: 8),
             g(.vineyard, .back, 0.3, "vineyards are planted", "another row of vines", cap: 6),
@@ -456,7 +456,7 @@ enum PlaceData {
             g(.orchard, .right, 0.7, "fruit trees blossom", "another fruit tree grows", cap: 4),
         ]),
         // MARK: Prophets
-        p("isaiah", "The Watchman's City", .city, "More homes, brighter lamps and gardens springing up.", [
+        p("isaiah", "The Prophet's Mountain", .city, "More homes, brighter lamps and gardens springing up.", [
             s(.tower, .centre, 0, "a watchman's tower is built"),
             g(.houses, .left, 0.02, "the city grows", "another home is built", cap: 14),
             g(.wall, .back, 0.2, "walls rise", "the walls grow", cap: 12),
@@ -465,7 +465,7 @@ enum PlaceData {
             g(.flowers, .frontLeft, 0.65, "the desert blossoms", "more blossoms in the desert", cap: 10),
             g(.lamps, .front, 0.8, "lamps shine", "another lamp is lit", cap: 8),
         ]),
-        p("jeremiah", "The Potter's Quarter", .city, "More homes, fuller fields and a busier workshop.", [
+        p("jeremiah", "The Potter's House", .city, "More homes, fuller fields and a busier workshop.", [
             s(.house, .centre, 0, "a potter's house is built"),
             g(.stalls, .left, 0.05, "pots line the workshop", "another pot is shaped", cap: 12),
             g(.houses, .back, 0.25, "the quarter fills with homes", "another home is built", cap: 12),
@@ -477,7 +477,7 @@ enum PlaceData {
             g(.flowers, .left, 0.2, "flowers grow among the stones", "more flowers grow", cap: 4),
             g(.lamps, .right, 0.6, "a lamp is lit", "another lamp is lit", cap: 3),
         ]),
-        p("ezekiel", "The River Valley", .oasis, "Deeper river, more trees and fruit every month.", [
+        p("ezekiel", "The Valley and the River", .oasis, "Deeper river, more trees and fruit every month.", [
             s(.well, .centre, 0, "a spring rises"),
             g(.river, .back, 0.05, "a river begins to flow", "the river widens", cap: 12),
             g(.palms, .left, 0.25, "trees grow on its banks", "another tree grows", cap: 12),
@@ -485,30 +485,30 @@ enum PlaceData {
             g(.orchard, .front, 0.7, "fruit trees line the river", "another fruit tree grows", cap: 10),
             g(.dock, .frontRight, 0.85, "fishers spread their nets by the river", "another fishing boat comes", cap: 6),
         ]),
-        p("daniel", "The Royal Court", .palace, "Brighter lamps, a fuller garden and lions at rest.", [
+        p("daniel", "The Exile Court", .palace, "Brighter lamps, a fuller garden and lions at rest.", [
             s(.palace, .centre, 0, "a royal palace stands"),
             g(.garden, .left, 0.15, "the court gardens grow", "the gardens fill in", cap: 6),
             s(.cave, .front, 0.5, "a den is dug"),
             g(.lamps, .right, 0.7, "lamps burn in an open window", "another lamp is lit", cap: 4),
         ]),
-        p("hosea", "The Vineyard Valley", .vineyard, "Fuller vines, grain and olive trees.", [
+        p("hosea", "The Restored Farm", .vineyard, "Fuller vines, grain and olive trees.", [
             s(.house, .centre, 0, "a house is built in the valley"),
             g(.vineyard, .left, 0.1, "vines are planted", "another row of vines", cap: 8),
             g(.field, .back, 0.4, "grain grows", "the grain spreads", cap: 4),
             g(.grove, .right, 0.7, "olive trees grow", "another olive tree grows", cap: 4),
         ]),
-        p("joel", "The Green Fields", .farmstead, "Fuller fields, vines and fig trees.", [
+        p("joel", "The Harvest Fields", .farmstead, "Fuller fields, vines and fig trees.", [
             s(.farmhouse, .centre, 0, "a farmhouse is rebuilt"),
             g(.field, .left, 0.3, "fields grow green again", "the fields spread", cap: 4),
             g(.vineyard, .right, 0.7, "vines and fig trees bear fruit", "another row of vines", cap: 4),
         ]),
-        p("amos", "The Herdsman's Field", .shepherds, "Bigger flocks and fruit in the sycomore figs.", [
+        p("amos", "The Shepherd's Orchard", .shepherds, "Bigger flocks and fruit in the sycomore figs.", [
             s(.hut, .centre, 0, "a herdsman's hut is built"),
             g(.flock, .left, 0.1, "flocks graze", "the flock grows", cap: 6),
             g(.orchard, .back, 0.4, "fig trees grow", "another fig tree grows", cap: 4),
             s(.pillar, .right, 0.7, "a plumb line is held against a wall"),
         ]),
-        p("obadiah", "The Rock", .mountain, "Flowers and a lamp on the rock.", [
+        p("obadiah", "The Cliff Fortress", .mountain, "Flowers and a lamp on the rock.", [
             s(.hill, .centre, 0, "a high rock rises"),
             s(.cave, .left, 0, "homes are cut in the rock"),
             g(.flowers, .front, 0, "flowers grow below", "more flowers grow", cap: 3),
@@ -519,28 +519,28 @@ enum PlaceData {
             s(.ship, .right, 0.5, "a ship sets sail"),
             s(.lighthouse, .back, 0.75, "a light is lit on the quay"),
         ]),
-        p("micah", "The Little Town", .city, "More homes, vines and fig trees for everyone.", [
+        p("micah", "Little Bethlehem", .city, "More homes, vines and fig trees for everyone.", [
             s(.house, .centre, 0, "a little town begins"),
             g(.houses, .left, 0.15, "homes are built", "another home is built", cap: 4),
             g(.vineyard, .right, 0.45, "vines are planted", "another row of vines", cap: 3),
             g(.orchard, .back, 0.75, "fig trees grow", "another fig tree grows", cap: 3),
         ]),
-        p("nahum", "The Watchtower", .watchtower, "A lamp on the tower and flowers at its foot.", [
+        p("nahum", "The River Gate", .watchtower, "A lamp on the tower and flowers at its foot.", [
             s(.tower, .centre, 0, "a watchtower is built"),
             g(.wall, .back, 0.3, "walls rise", "the walls grow", cap: 3),
             g(.flowers, .front, 0.7, "flowers grow on the mountains", "more flowers grow", cap: 3),
         ]),
-        p("habakkuk", "The Rampart", .watchtower, "Fuller fig trees and vines, and a lamp on the rampart.", [
+        p("habakkuk", "The Watchtower", .watchtower, "Fuller fig trees and vines, and a lamp on the rampart.", [
             s(.tower, .centre, 0, "a rampart is built to watch from"),
             g(.orchard, .left, 0.4, "fig trees grow", "another fig tree grows", cap: 3),
             g(.vineyard, .right, 0.7, "vines are planted", "another row of vines", cap: 3),
         ]),
-        p("zephaniah", "The Gathering Square", .city, "More homes and songs in the square.", [
+        p("zephaniah", "The Singing Square", .city, "More homes and songs in the square.", [
             s(.fountain, .centre, 0, "a square is laid out"),
             g(.houses, .left, 0.4, "people gather home", "another home is built", cap: 3),
             g(.lamps, .right, 0.7, "lamps are lit", "another lamp is lit", cap: 3),
         ]),
-        p("haggai", "The Builders' Yard", .courts, "Fuller fields and a finer temple.", [
+        p("haggai", "The Temple Builders' Yard", .courts, "Fuller fields and a finer temple.", [
             s(.altar, .centre, 0, "the builders gather"),
             s(.temple, .back, 0.5, "the temple is rebuilt"),
             g(.field, .left, 0.5, "the fields are sown", "the fields spread", cap: 3),
@@ -559,10 +559,10 @@ enum PlaceData {
             g(.flock, .right, 0.9, "calves leap in the stall", "the herd grows", cap: 3),
         ]),
         // MARK: Gospels & Acts
-        village("matthew", "The Lakeside Village", middle: g(.crowd, .frontRight, 0.45, "a crowd gathers on the hillside", "the crowd grows", cap: 10)),
-        village("mark", "The Fishers' Village", middle: s(.house, .frontRight, 0.45, "a house is opened to visitors")),
-        village("luke", "The Shoreline Village", middle: g(.field, .frontRight, 0.45, "fields are sown above the village", "the fields spread", cap: 8)),
-        village("john", "The Vine Village", middle: g(.vineyard, .frontRight, 0.45, "the vineyard is planted", "the vineyard grows another row", cap: 10)),
+        village("matthew", "Fishing Village", middle: g(.crowd, .frontRight, 0.45, "a crowd gathers on the hillside", "the crowd grows", cap: 10)),
+        village("mark", "Lakeside Village", middle: s(.house, .frontRight, 0.45, "a house is opened to visitors")),
+        village("luke", "Shepherds' Village", middle: g(.field, .frontRight, 0.45, "fields are sown above the village", "the fields spread", cap: 8)),
+        village("john", "Vineyard Village", middle: g(.vineyard, .frontRight, 0.45, "the vineyard is planted", "the vineyard grows another row", cap: 10)),
         p("acts", "The Upper Room Town", .gatheringTown, "More homes, a busier square and lamps in every window.", [
             s(.upperRoom, .centre, 0, "an upper room is built"),
             g(.crowd, .front, 0.05, "people gather", "more people gather", cap: 12),
@@ -572,41 +572,41 @@ enum PlaceData {
             s(.meetingHouse, .back, 0.8, "a meeting hall is built"),
         ]),
         // MARK: Letters
-        coastTown("romans", "Roman Road Town", .hall, "a hall is built on the road", .marketHall, "a busy market hall opens"),
-        coastTown("1corinthians", "Corinth Quay", .meetingHouse, "a meeting house is built", .marketHall, "a market hall opens by the quay"),
+        coastTown("romans", "Rome Road Town", .hall, "a hall is built on the road", .marketHall, "a busy market hall opens"),
+        coastTown("1corinthians", "Corinth Workshop", .meetingHouse, "a meeting house is built", .marketHall, "a market hall opens by the quay"),
         coastTown("2corinthians", "Corinth Harbour", .house, "a house is built by the sea", .lighthouse, "a light shines on the quay"),
-        coastTown("galatians", "Hill Road Town", .house, "a house is built on the road", .field, "fields are sown"),
-        coastTown("ephesians", "Ephesus Quay", .hall, "a hall is built", .lamps, "lamps line the street"),
-        coastTown("philippians", "Riverside Town", .house, "a house is built by the river", .garden, "a riverside garden is planted"),
-        coastTown("colossians", "Valley Town", .house, "a house is built", .orchard, "fruit trees grow"),
-        coastTown("1thessalonians", "Thessalonica Quay", .meetingHouse, "a meeting house is built", .marketHall, "a market hall opens"),
-        coastTown("2thessalonians", "Workshop Lane", .house, "a workshop is built", .stalls, "workshops line the lane"),
-        coastTown("1timothy", "Teacher's Town", .meetingHouse, "a meeting house is built", .scrolls, "a shelf of scrolls is filled"),
-        coastTown("2timothy", "Scroll Harbour", .house, "a house is built", .scrolls, "books and parchments are kept safe"),
-        coastTown("titus", "Island Port", .house, "a house is built on the island", .grove, "olive trees grow"),
+        coastTown("galatians", "Galatian Fruit Garden", .house, "a house is built on the road", .field, "fields are sown"),
+        coastTown("ephesians", "Ephesus Armoury", .hall, "a hall is built", .lamps, "lamps line the street"),
+        coastTown("philippians", "Philippi Riverside", .house, "a house is built by the river", .garden, "a riverside garden is planted"),
+        coastTown("colossians", "Colossae Hilltown", .house, "a house is built", .orchard, "fruit trees grow"),
+        coastTown("1thessalonians", "Thessalonica Lamp Street", .meetingHouse, "a meeting house is built", .marketHall, "a market hall opens"),
+        coastTown("2thessalonians", "Thessalonica Workshop", .house, "a workshop is built", .stalls, "workshops line the lane"),
+        coastTown("1timothy", "The Teacher's House", .meetingHouse, "a meeting house is built", .scrolls, "a shelf of scrolls is filled"),
+        coastTown("2timothy", "The Scroll Room", .house, "a house is built", .scrolls, "books and parchments are kept safe"),
+        coastTown("titus", "Crete Village", .house, "a house is built on the island", .grove, "olive trees grow"),
         coastTown("philemon", "The Welcome House", .house, "a welcoming house is built", .garden, "a guest room is made ready"),
-        p("hebrews", "The Pilgrims' Hall", .scrollHouse, "Brighter lamps and more scrolls.", [
+        p("hebrews", "The Hall of Faith", .scrollHouse, "Brighter lamps and more scrolls.", [
             s(.hall, .centre, 0, "a hall is built"),
             g(.scrolls, .left, 0.1, "scrolls fill the shelves", "another scroll is added", cap: 6),
             s(.altar, .front, 0.3, "an altar stands in the court"),
             g(.lamps, .right, 0.5, "lamps are lit", "another lamp is lit", cap: 6),
             g(.tents, .back, 0.75, "pilgrims' tents are pitched", "another tent is pitched", cap: 4),
         ]),
-        p("james", "The Well Square", .oasis, "Fuller fields and a busier well.", [
+        p("james", "The Well and Garden", .oasis, "Fuller fields and a busier well.", [
             s(.well, .centre, 0, "a well is dug in the square"),
             g(.field, .left, 0.2, "fields are sown", "the fields spread", cap: 4),
             g(.houses, .right, 0.6, "homes are built", "another home is built", cap: 3),
             g(.orchard, .back, 0.8, "fig trees grow", "another fig tree grows", cap: 3),
         ]),
-        coastTown("1peter", "Shepherd's Cove", .hut, "a shepherd's hut is built by the sea", .field, "pastures are fenced"),
-        coastTown("2peter", "Lamp Point", .house, "a house is built on the point", .lighthouse, "a lamp shines in a dark place"),
-        p("1john", "The Lamplit Houses", .gatheringTown, "Brighter lamps and more homes.", [
+        coastTown("1peter", "Living Stones House", .hut, "a shepherd's hut is built by the sea", .field, "pastures are fenced"),
+        coastTown("2peter", "The Lamp Path", .house, "a house is built on the point", .lighthouse, "a lamp shines in a dark place"),
+        p("1john", "The Light House", .gatheringTown, "Brighter lamps and more homes.", [
             s(.house, .centre, 0, "a house of welcome is built"),
             g(.lamps, .left, 0.2, "lamps are lit", "another lamp is lit", cap: 4),
             g(.houses, .right, 0.6, "neighbours move in", "another home is built", cap: 3),
             g(.crowd, .front, 0.9, "friends gather", "more friends gather", cap: 3),
         ]),
-        p("2john", "The Lady's House", .gatheringTown, "Flowers at the door.", [
+        p("2john", "The Lady's Cottage", .gatheringTown, "Flowers at the door.", [
             s(.house, .centre, 0, "a house is built"),
             g(.flowers, .left, 0, "flowers bloom at the door", "more flowers bloom", cap: 2),
         ]),
@@ -614,7 +614,7 @@ enum PlaceData {
             s(.house, .centre, 0, "a guest house is built"),
             g(.lamps, .left, 0, "a lamp is lit for travellers", "another lamp is lit", cap: 2),
         ]),
-        p("jude", "The Lighthouse", .watchtower, "A brighter beam.", [
+        p("jude", "The Keeper's Tower", .watchtower, "A brighter beam.", [
             s(.lighthouse, .centre, 0, "a lighthouse is built"),
             g(.flowers, .left, 0, "flowers grow at its foot", "more flowers grow", cap: 2),
         ]),

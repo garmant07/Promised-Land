@@ -6,6 +6,7 @@ import SwiftData
 /// of reading: "What can I build?" and your journals.
 struct LibraryHubView: View {
     var onClose: () -> Void
+    var onFocusPlace: (String) -> Void = { _ in }
 
     @ProgressQuery private var progress: GameProgress
     @Query private var journal: [JournalEntry]
@@ -51,7 +52,8 @@ struct LibraryHubView: View {
                 // The page has its own big title; keep the bar clear.
                 ToolbarItem(placement: .principal) { Color.clear.frame(width: 1, height: 1) }
             }
-            .readingDestinations()
+            .readingDestinations(onCatalogRead: { book in path.append(book) },
+                                  onCatalogFocus: onFocusPlace)
             .sheet(isPresented: $showingJournals) { LibraryShelfView() }
         }
         .environment(\.closeReading, CloseReadingAction(action: onClose))

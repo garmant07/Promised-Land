@@ -9,6 +9,7 @@ struct LibraryView: View {
     var startAt: ChapterRef? = nil
     /// Shown as a close button when reading is presented from the home page.
     var onClose: (() -> Void)? = nil
+    var onFocusPlace: (String) -> Void = { _ in }
     /// Shows "Continue reading" at the top (in the Read sheet).
     var showsSuggestion = false
     @State private var path = NavigationPath()
@@ -89,7 +90,8 @@ struct LibraryView: View {
             .debugOpenBook($path)
             .navigationTitle("Read")
             .hiddenNavigationBar()
-            .readingDestinations()
+            .readingDestinations(onCatalogRead: { book in path.append(book) },
+                                  onCatalogFocus: onFocusPlace)
         }
         .environment(\.closeReading, onClose.map(CloseReadingAction.init))
         .onAppear {
@@ -103,10 +105,11 @@ struct LibraryView: View {
 extension View {
     /// Navigation destinations shared by every stack. Each screen gets a close button
     /// that leaves reading entirely, wherever you are.
-    func readingDestinations() -> some View {
+    func readingDestinations(onCatalogRead: @escaping (Book) -> Void = { _ in },
+                             onCatalogFocus: @escaping (String) -> Void = { _ in }) -> some View {
         self
             .navigationDestination(for: Book.self) { BookView(book: $0).closeReadingButton() }
-            .navigationDestination(for: CatalogLink.self) { _ in BuildCatalogView() }
+            .navigationDestination(for: CatalogLink.self) { _ in BuildCatalogView(onRead: onCatalogRead, onFocusPlace: onCatalogFocus) }
             .navigationDestination(for: Landmark.self) { PlaceDetailView(landmark: $0).closeReadingButton() }
             .navigationDestination(for: ChapterRef.self) { ref in
                 if let book = BibleCatalog.book(id: ref.bookID) {

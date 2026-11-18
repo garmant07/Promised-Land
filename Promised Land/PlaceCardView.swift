@@ -8,12 +8,26 @@ struct PlaceCardRoute: Identifiable {
     var id: String { book.id }
 }
 
+enum PlaceCardShowOnIslandAction: Equatable {
+    case showMessage(String)
+    case focus
+}
+
+func placeCardShowOnIslandAction(read: Int, bookName: String) -> PlaceCardShowOnIslandAction {
+    read > 0
+        ? .focus
+        : .showMessage("You haven't started \(bookName) yet")
+}
+
 struct PlaceCardView: View {
     let route: PlaceCardRoute
     let onRead: () -> Void
     let onShowOnIsland: () -> Void
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var unavailableMessage: String?
+    @State private var unavailableMessageToken = 0
 
     var body: some View {
         ScrollView {
@@ -59,16 +73,26 @@ struct PlaceCardView: View {
                     }
                     .buttonStyle(PrimaryButtonStyle())
 
-                    if route.read > 0 {
-                        Button {
+                    Button {
+                        switch placeCardShowOnIslandAction(read: route.read, bookName: route.book.name) {
+                        case .focus:
                             onShowOnIsland()
                             dismiss()
-                        } label: {
-                            Label("Show on my island", systemImage: "mappin.and.ellipse")
-                                .frame(maxWidth: .infinity, minHeight: 52)
-                                .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                        case .showMessage(let message):
+                            showUnavailableMessage(message)
                         }
-                        .buttonStyle(SoftButtonStyle())
+                    } label: {
+                        Label("Show on my island", systemImage: "mappin.and.ellipse")
+                            .frame(maxWidth: .infinity, minHeight: 52)
+                            .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    }
+                    .buttonStyle(SoftButtonStyle())
+                }
+                .overlay(alignment: .top) {
+                    if let unavailableMessage {
+                        PlaceCardUnavailableMessage(text: unavailableMessage)
+                            .offset(y: -38)
+                            .transition(.opacity)
                     }
                 }
             }
@@ -78,6 +102,46 @@ struct PlaceCardView: View {
         }
         .themedScreen()
         .presentationDragIndicator(.visible)
+        .sensoryFeedback(.impact(weight: .light), trigger: unavailableMessageToken)
+        .animation(reduceMotion ? nil : .easeIn(duration: 0.2), value: unavailableMessage != nil)
+        .task(id: unavailableMessageToken) {
+            guard unavailableMessageToken > 0 else { return }
+            try? await Task.sleep(for: .seconds(2))
+            guard !Task.isCancelled else { return }
+            if reduceMotion {
+                unavailableMessage = nil
+            } else {
+                withAnimation(.easeOut(duration: 0.2)) {
+                    unavailableMessage = nil
+                }
+            }
+        }
+    }
+
+    private func showUnavailableMessage(_ message: String) {
+        unavailableMessageToken += 1
+        if reduceMotion {
+            unavailableMessage = message
+        } else {
+            withAnimation(.easeIn(duration: 0.2)) {
+                unavailableMessage = message
+            }
+        }
+        AccessibilityNotification.Announcement(message).post()
+    }
+}
+
+struct PlaceCardUnavailableMessage: View {
+    let text: String
+
+    var body: some View {
+        Label(text, systemImage: "info.circle")
+            .font(.caption)
+            .foregroundStyle(Color.cream)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(Color.primaryBrown, in: Capsule())
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
 
