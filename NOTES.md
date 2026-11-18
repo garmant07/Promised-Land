@@ -859,6 +859,24 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     code art and resets the DEBUG switch after the run. Remove `SpriteBaseExporter.swift`, its
     Settings button and launch argument before release if sprite authoring is complete.
 
+118. **Stage 19: timer off, one Strict switch and quiz Skip.** Supersedes the earlier reading
+    setting and timer decisions in `NOTES.md:92–103`, `NOTES.md:324–350` and
+    `NOTES.md:367–385`. The reading timer code remains in place, including its pace math in
+    `ReadingGate.timedMinimumSeconds`, but `ReadingGate.readingTimerEnabled` is deliberately
+    `false`; `minimumSeconds` is therefore zero while the last-page gate remains required.
+    The ring, countdown, Keep reading state and DEBUG required-time label are hidden while the
+    switch is off. A new `reading.strictMode` Boolean replaces the three-level UI; the legacy
+    `reading.strictness` key is retained only for the one-time migration, recorded by
+    `reading.strictMode.migrated`. Legacy `strict` maps to on; `relaxed`, `standard`, empty and
+    unknown values, plus new users, map to off. The migration runs in `MyApp.init()` before any
+    view reads the setting, and never overwrites a later user change. Strict is off by default for
+    every profile, including Kids, and no grown-up sum is involved. With Strict off, the quiz's
+    top-right Skip item appears for questions and reflections in both normal and own-Bible flows;
+    it uses the existing count path, creates no QuizPass and saves no reflection. Strict on keeps
+    questions and reflections required. Back to reading still does not count. No SwiftData schema,
+    reading-history, island, Library or GameProgress rules changed. The request to add a
+    press-and-hold button is a separate later stage and is not included here.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

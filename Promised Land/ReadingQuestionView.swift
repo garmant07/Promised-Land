@@ -1,6 +1,30 @@
 import SwiftUI
 import SwiftData
 
+/// The actions available from the after-chapter sheet, kept pure for the answer/count rules.
+enum ReadingQuestionFlow {
+    enum Action {
+        case answer
+        case skip
+        case backToReading
+    }
+
+    static func showsSkip(strictMode: Bool) -> Bool {
+        !strictMode
+    }
+
+    static func countsChapter(_ action: Action, strictMode: Bool) -> Bool {
+        switch action {
+        case .answer:
+            true
+        case .skip:
+            !strictMode
+        case .backToReading:
+            false
+        }
+    }
+}
+
 /// After "Mark complete": one easy question about the chapter. A right answer counts it (and the island
 /// grows); a wrong one has no penalty: "Have another look", then try again. Chapters without a
 /// question yet get a gentle reflection instead (anything you write counts, and it's saved to
@@ -8,6 +32,7 @@ import SwiftData
 struct ReadingQuestionView: View {
     let book: Book
     let chapter: Int
+    let strictMode: Bool
     /// Called once the chapter counts.
     var onCounted: () -> Void
     /// "Have another look": back to the text.
@@ -91,6 +116,12 @@ struct ReadingQuestionView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Back to reading") { onLookAgain() }.tint(Color.primaryBrown) }
+                if ReadingQuestionFlow.showsSkip(strictMode: strictMode) {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Skip") { skip() }
+                            .accessibilityLabel("Skip questions")
+                    }
+                }
             }
             .tint(Color.primaryBrown)
         }
@@ -161,6 +192,11 @@ struct ReadingQuestionView: View {
         }
     }
 
+    private func skip() {
+        guard ReadingQuestionFlow.countsChapter(.skip, strictMode: strictMode) else { return }
+        count()
+    }
+
     private func count() {
         Task {
             try? await Task.sleep(for: .milliseconds(650))
@@ -200,36 +236,40 @@ struct FinishButton: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 10) {
-                ZStack {
-                    Circle().stroke(Color.onPrimary.opacity(0.3), lineWidth: 3)
-                    Circle().trim(from: 0, to: progress)
-                        .stroke(Color.onPrimary, style: StrokeStyle(lineWidth: 3, lineCap: .round))
-                        .rotationEffect(.degrees(-90))
-                    if enabled { Image(systemName: "checkmark").font(.caption.weight(.bold)) }
+            if ReadingGate.readingTimerEnabled {
+                HStack(spacing: 10) {
+                    ZStack {
+                        Circle().stroke(Color.onPrimary.opacity(0.3), lineWidth: 3)
+                        Circle().trim(from: 0, to: progress)
+                            .stroke(Color.onPrimary, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                            .rotationEffect(.degrees(-90))
+                        if enabled { Image(systemName: "checkmark").font(.caption.weight(.bold)) }
+                    }
+                    .frame(width: 22, height: 22)
+                    Text(Self.label(enabled: enabled, remaining: remaining, readBefore: readBefore))
+                        .monospacedDigit()
+                        .contentTransition(.numericText(countsDown: true))
+                        // The digits roll once a second, and the switch to Mark complete eases in.
+                        .animation(.easeInOut(duration: 0.25), value: Self.label(enabled: enabled, remaining: remaining, readBefore: readBefore))
                 }
-                .frame(width: 22, height: 22)
-                Text(Self.label(enabled: enabled, remaining: remaining, readBefore: readBefore))
-                    .monospacedDigit()
-                    .contentTransition(.numericText(countsDown: true))
-                    // The digits roll once a second, and the switch to Mark complete eases in.
-                    .animation(.easeInOut(duration: 0.25), value: Self.label(enabled: enabled, remaining: remaining, readBefore: readBefore))
+            } else {
+                Text(Self.title(readBefore: readBefore))
             }
         }
         .buttonStyle(PrimaryButtonStyle())
         .opacity(enabled ? 1 : 0.75)
         .disabled(!enabled)
-        .accessibilityLabel(enabled ? Self.title(readBefore: readBefore) : "Keep reading")
-        .accessibilityValue(enabled ? "Ready" : remaining > 0 ? Self.spokenTimeLeft(remaining) : "Read to the end")
+        .accessibilityLabel(Self.title(readBefore: readBefore))
+        .accessibilityValue(enabled ? "Ready" : "Read to the end")
     }
 }
 
 #Preview("Question") {
-    ReadingQuestionView(book: BibleCatalog.book(id: "john")!, chapter: 15, onCounted: {}, onLookAgain: {})
+    ReadingQuestionView(book: BibleCatalog.book(id: "john")!, chapter: 15, strictMode: false, onCounted: {}, onLookAgain: {})
         .modelContainer(PreviewData.container)
 }
 
 #Preview("Reflection") {
-    ReadingQuestionView(book: BibleCatalog.book(id: "obadiah")!, chapter: 1, onCounted: {}, onLookAgain: {})
+    ReadingQuestionView(book: BibleCatalog.book(id: "obadiah")!, chapter: 1, strictMode: false, onCounted: {}, onLookAgain: {})
         .modelContainer(PreviewData.container)
 }

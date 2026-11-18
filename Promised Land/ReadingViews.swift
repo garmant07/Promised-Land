@@ -300,8 +300,7 @@ struct ChapterReaderView: View {
     @Environment(\.closeReading) private var closeReading
     @Query private var reads: [ChapterRead]
     @State private var deepDive: (dive: DeepDive, text: String)?
-    @AppStorage(StorageKeys.readingStrictness) private var strictnessRaw = ""
-    @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
+    @AppStorage(StorageKeys.readingStrictMode) private var strictMode = false
     @Environment(\.bibleService) private var bible
     private var translation = TranslationChoice()
     @State private var loader = ChapterLoader()
@@ -330,7 +329,7 @@ struct ChapterReaderView: View {
     private var isRead: Bool { !reads.isEmpty }
     /// A read from before the reading gate, still waiting for its quick check.
     private var needsCheck: Bool { reads.first.map { !$0.checked } ?? false }
-    private var strictness: ReadingStrictness { .current(stored: strictnessRaw, ageGroup: ageGroup) }
+    private var strictness: ReadingStrictness { strictMode ? .strict : .standard }
 
     var body: some View {
         Group {
@@ -415,10 +414,10 @@ struct ChapterReaderView: View {
             }
         }
         .sheet(isPresented: $asking) {
-            ReadingQuestionView(book: book, chapter: chapter, onCounted: { countRead() }, onLookAgain: { asking = false })
+            ReadingQuestionView(book: book, chapter: chapter, strictMode: strictMode, onCounted: { countRead() }, onLookAgain: { asking = false })
         }
         .sheet(item: $ownBible) { ref in
-            ReadingQuestionView(book: book, chapter: ref.chapter, onCounted: {
+            ReadingQuestionView(book: book, chapter: ref.chapter, strictMode: strictMode, onCounted: {
                 context.recordRead(ref.bookID, ref.chapter, checked: true)
                 ownBible = nil
                 finishedReading()
@@ -544,12 +543,14 @@ private struct SessionFinishButton: View {
                          remaining: Double(session.secondsLeft), readBefore: readBefore, action: action)
                 // The ring moves once a second; easing each step keeps it smooth.
                 .animation(.linear(duration: 1), value: session.progress)
-            #if DEBUG
-            // Developers: check the required time against the chapter's length.
-            Text("DEBUG: \(session.words ?? 0) words → \(Int(session.requiredSeconds))s required (\(session.strictness.title))")
-                .font(.caption2.monospacedDigit())
-                .foregroundStyle(Color.secondaryText)
-            #endif
+            if ReadingGate.readingTimerEnabled {
+                #if DEBUG
+                // Developers: check the required time against the chapter's length.
+                Text("DEBUG: \(session.words ?? 0) words → \(Int(session.requiredSeconds))s required (\(session.strictness.title))")
+                    .font(.caption2.monospacedDigit())
+                    .foregroundStyle(Color.secondaryText)
+                #endif
+            }
         }
     }
 }
