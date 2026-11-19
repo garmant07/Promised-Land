@@ -147,7 +147,7 @@ struct AvatarCustomizeView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        AvatarCreatorView(onDone: { dismiss() })
+        AvatarEditingFlowView { dismiss() }
     }
 }
 

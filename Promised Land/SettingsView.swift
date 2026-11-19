@@ -87,7 +87,7 @@ struct SettingsView: View {
                         .tint(Color.primaryBrown)
                 }
             }
-            .sheet(isPresented: $editingCharacter) { AvatarCustomizeView() }
+            .sheet(isPresented: $editingCharacter) { AvatarEditingFlowView { editingCharacter = false } }
             .confirmationDialog("Reset all progress?", isPresented: $confirmingReset, titleVisibility: .visible) {
                 Button("Reset everything", role: .destructive) { resetProgress() }
             } message: {

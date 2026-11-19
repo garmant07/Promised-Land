@@ -58,7 +58,7 @@ struct ProfileView: View {
                 }
             }
             .sheet(isPresented: $showingSettings) { SettingsView() }
-            .sheet(isPresented: $editingCharacter) { AvatarCustomizeView() }
+            .sheet(isPresented: $editingCharacter) { AvatarEditingFlowView { editingCharacter = false } }
             .sheet(isPresented: $showingStats) { StatsView() }
             .sheet(isPresented: $showingBasket) { BasketView() }
             .sheet(isPresented: $showingCrowns) { CrownsView() }

@@ -236,6 +236,63 @@ struct LibraryHubTests {
 
 @MainActor
 struct AvatarSexRulesTests {
+    @Test("Avatar update routing only applies after onboarding to side-less avatars")
+    func updateRouting() {
+        #expect(AvatarUpdateRouting.shouldPresent(hasOnboarded: true, sex: nil))
+        #expect(!AvatarUpdateRouting.shouldPresent(hasOnboarded: false, sex: nil))
+        #expect(!AvatarUpdateRouting.shouldPresent(hasOnboarded: true, sex: .male))
+        #expect(!AvatarUpdateRouting.shouldPresent(hasOnboarded: true, sex: .female))
+        var old = AvatarConfig()
+        old.skin = .deep
+        let selected = AvatarUpdateRouting.selectedConfig(old, side: .female)
+        #expect(selected.sex == .female && selected.skin == .deep)
+    }
+
+    @Test("Onboarding starts with a saved side-specific default")
+    func onboardingDefaults() {
+        for sex in [AvatarSex.male, .female] {
+            let config = OnboardingAvatarSelection.config(for: sex)
+            #expect(config.sex == sex)
+            #expect(config == AvatarSexRules.defaults(for: sex))
+        }
+    }
+    @Test("Creator tabs and options follow each side's rules")
+    func creatorOptions() {
+        #expect(AvatarCreatorRules.tabs(for: .male) == [.skin, .hair, .beard, .head, .robe, .cloak, .item, .sandals])
+        #expect(AvatarCreatorRules.tabs(for: .female) == [.skin, .hair, .head, .robe, .cloak, .item, .sandals])
+        #expect(AvatarCreatorRules.hair(for: .male) == AvatarSexRules.allowedHair(for: .male))
+        #expect(AvatarCreatorRules.hair(for: .female) == AvatarSexRules.allowedHair(for: .female))
+        #expect(AvatarCreatorRules.beard(for: .male) == AvatarSexRules.allowedBeard(for: .male))
+        #expect(AvatarCreatorRules.beard(for: .female) == AvatarSexRules.allowedBeard(for: .female))
+        #expect(AvatarCreatorRules.head(for: .male) == AvatarSexRules.allowedHeadCovering(for: .male))
+        #expect(AvatarCreatorRules.head(for: .female) == AvatarSexRules.allowedHeadCovering(for: .female))
+        #expect(AvatarCreatorRules.robe(for: .male) == AvatarSexRules.allowedRobe(for: .male))
+        #expect(AvatarCreatorRules.robe(for: .female) == AvatarSexRules.allowedRobe(for: .female))
+    }
+
+    @Test("Creator presets are filtered to the selected side")
+    func creatorPresets() {
+        #expect(AvatarCreatorRules.presets(for: .male).allSatisfy { AvatarPresets.config(for: $0).sex == .male })
+        #expect(AvatarCreatorRules.presets(for: .female).allSatisfy { AvatarPresets.config(for: $0).sex == .female })
+        #expect(Set(AvatarCreatorRules.presets(for: .female)) == ["mary", "sarah", "ruth"])
+    }
+
+    @Test("Switch requests identify their target side")
+    func switchRequest() {
+        let request = AvatarSexSwitchRequest(id: .female, target: .female)
+        #expect(request.id == .female && request.target == .female)
+    }
+
+    @Test("Switching clears the editor history model")
+    func switchingClearsHistory() {
+        var history = [AvatarConfig.random(for: .male)]
+        let config = AvatarSexRules.defaults(for: .male)
+        let switched = config.switched(to: .female)
+        history.removeAll()
+        #expect(history.isEmpty)
+        #expect(switched.sex == .female && switched.skin == config.skin)
+    }
+
     @Test("Every preset and mock friend fits its side")
     func allowedLooks() {
         for id in PresetAccess.ids {
