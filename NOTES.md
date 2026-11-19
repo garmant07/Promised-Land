@@ -909,6 +909,20 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     long-press completion was not reliable on device. The shared primary-button appearance is
     now a reusable modifier, so the hold view keeps the same look without a Button wrapper.
 
+122. **Stage 25 scene-frame measurement and remaining limit.** Scene shadows were removed from
+    the scene renderer; `shadowWidth` remains decoded but is unused for drawing. A DEBUG-only
+    headless benchmark draws a fully built island with 18 scene books and six villager/occlusion
+    cases at far, middle and close zooms, with a scene-off switch. On the test iPhone 16 run,
+    scene-on versus scene-off averaged 2.65/1.29 ms at zoom 1, 2.66/1.33 ms at zoom 4 and
+    2.72/1.39 ms at max zoom (about 2.05×, 1.99× and 1.96×; not within the 25% target).
+    Before the fix, repeated automatic tall decisions caused 174/120/66 opaque measurements;
+    after caching active events and tall decisions they were 0 at all three steady-frame zooms.
+    Scene occlusion now uses current-scale-bucket tall-piece pictures, and the direct all-scene
+    launch prewarm was removed. No scene-picture renders or alpha/opaque measurements occurred
+    in the measured steady frames; tall-layer redraws were 27 on versus 63 equivalent ordinary
+    tall redraws off. The remaining gap is the cost of drawing scene content in this synthetic
+    headless comparison; no additional non-approved optimization was attempted.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.

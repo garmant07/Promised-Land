@@ -1,0 +1,13 @@
+{
+  "images": [
+    {
+      "filename": "obj_esther_banquet_table.png",
+      "idiom": "universal",
+      "scale": "2x"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

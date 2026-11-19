@@ -1,0 +1,262 @@
+{
+  "book": "Esther",
+  "chapters": 10,
+  "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+  "sprite_canvas": {
+    "size_px": [
+      256,
+      384
+    ],
+    "scale": "@2x",
+    "ground_point_px": [
+      128,
+      300
+    ]
+  },
+  "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+  "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+  "depth": "Draw in order of u+v, smallest first (back to front).",
+  "grow": "A grow event replaces the sprite already in that slot (same position).",
+  "shared_sprites": "Sprites not in this folder live elsewhere in Art/Sprites/ (Shared/, Genesis/ or the book folder that first used them). Every sprite name is unique across Art/Sprites.",
+  "events": [
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "KG",
+      "sprite": "obj_esther_gate_1",
+      "u": 0.5119,
+      "v": 0.5024,
+      "width": 0.4055,
+      "mirror": false,
+      "shadowWidth": 0.331,
+      "caption": "The king's gate"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "TB",
+      "sprite": "obj_esther_banquet_table",
+      "u": 0.819,
+      "v": 0.9095,
+      "width": 0.1229,
+      "mirror": false,
+      "shadowWidth": 0.1,
+      "caption": "The king's banquet"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "JA",
+      "sprite": "obj_jars",
+      "u": 0.559,
+      "v": 0.9682,
+      "width": 0.0713,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "PV",
+      "sprite": "obj_esther_pavilion",
+      "u": 0.2905,
+      "v": 0.8571,
+      "width": 0.1131,
+      "mirror": false,
+      "shadowWidth": 0.092,
+      "caption": "The garden court"
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "F1",
+      "sprite": "obj_flowers",
+      "u": 0.2738,
+      "v": 0.6354,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    },
+    {
+      "chapter": 4,
+      "action": "grow",
+      "slot": "KG",
+      "sprite": "obj_esther_gate_2",
+      "u": 0.5119,
+      "v": 0.5024,
+      "width": 0.4055,
+      "mirror": false,
+      "shadowWidth": 0.331,
+      "caption": "Mordecai at the gate"
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "PA",
+      "sprite": "obj_palm",
+      "u": 0.7593,
+      "v": 0.2736,
+      "width": 0.1065,
+      "mirror": false,
+      "shadowWidth": 0.087
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "F2",
+      "sprite": "obj_flowers",
+      "u": 0.9809,
+      "v": 0.6378,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "G2",
+      "sprite": "obj_grass",
+      "u": 0.976,
+      "v": 0.9186,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 6,
+      "action": "add",
+      "slot": "HO",
+      "sprite": "obj_horse",
+      "u": 0.8976,
+      "v": 0.4405,
+      "width": 0.0762,
+      "mirror": false,
+      "shadowWidth": 0.062,
+      "caption": "Mordecai honoured"
+    },
+    {
+      "chapter": 6,
+      "action": "add",
+      "slot": "OL1",
+      "sprite": "obj_terebinth",
+      "u": 0.2101,
+      "v": 0.6048,
+      "width": 0.129,
+      "mirror": false,
+      "shadowWidth": 0.105
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "P2",
+      "sprite": "obj_pebbles",
+      "u": 0.9715,
+      "v": 0.2664,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "F3",
+      "sprite": "obj_flowers",
+      "u": 0.9809,
+      "v": 0.3854,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "P1",
+      "sprite": "obj_pebbles",
+      "u": 0.8048,
+      "v": 0.7522,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "CM",
+      "sprite": "obj_camel",
+      "u": 0.8619,
+      "v": 0.1905,
+      "width": 0.1008,
+      "mirror": false,
+      "shadowWidth": 0.082,
+      "caption": "The couriers ride"
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "G3",
+      "sprite": "obj_grass",
+      "u": 0.3807,
+      "v": 0.9758,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "SA",
+      "sprite": "obj_grain_sacks",
+      "u": 0.9286,
+      "v": 0.7143,
+      "width": 0.086,
+      "mirror": false,
+      "shadowWidth": 0.07,
+      "caption": "Gifts for the poor"
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "LY",
+      "sprite": "obj_harp",
+      "u": 0.4812,
+      "v": 0.7858,
+      "width": 0.0562,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "G1",
+      "sprite": "obj_grass",
+      "u": 0.6498,
+      "v": 0.8353,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 10,
+      "action": "grow",
+      "slot": "KG",
+      "sprite": "obj_esther_gate_3",
+      "u": 0.5119,
+      "v": 0.5024,
+      "width": 0.4055,
+      "mirror": false,
+      "shadowWidth": 0.331,
+      "caption": "The gate ready for Purim"
+    },
+    {
+      "chapter": 10,
+      "action": "add",
+      "slot": "OL2",
+      "sprite": "obj_terebinth",
+      "u": 0.622,
+      "v": 0.2072,
+      "width": 0.129,
+      "mirror": false,
+      "shadowWidth": 0.105
+    }
+  ]
+}

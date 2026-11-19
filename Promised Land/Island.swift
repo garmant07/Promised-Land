@@ -323,8 +323,8 @@ enum IslandPainter {
         let pen = IsoPen(c: c, u: u)
         switch item.kind {
         case .piece(let kind):
-            if case .place(let bookID, _) = item.source, bookID == "genesis" {
-                GenesisScene.draw(&c, item: item, u: u, layer: sceneLayer)
+            if case .place = item.source, SceneSystem.isSceneBook(item.source.bookID ?? "") {
+                SceneSystem.draw(&c, item: item, u: u, layer: sceneLayer)
                 return
             }
             if case .place(let bookID, _) = item.source,
@@ -365,8 +365,8 @@ enum IslandPainter {
     /// The visible art region, using a cached alpha mask for sprite-backed Place art.
     static func artRegion(of item: Island.Item, layout: IslandLayout) -> HitRegion? {
         let base = layout.point(item.gx, item.gy)
-        if case .place(let bookID, _) = item.source, bookID == GenesisScene.bookID {
-            let parts = GenesisScene.artRegions(item: item, u: layout.u).map {
+        if case .place = item.source, SceneSystem.isSceneBook(item.source.bookID ?? "") {
+            let parts = SceneSystem.artRegions(item: item, u: layout.u).map {
                 HitRegion.Part(bounds: $0.bounds.offsetBy(dx: base.x, dy: base.y), alpha: $0.alpha)
             }
             return parts.isEmpty ? nil : HitRegion(parts: parts)
@@ -395,8 +395,8 @@ enum IslandPainter {
     /// The bounds of what's actually drawn for an item, in view points (before panning).
     static func drawnBounds(of item: Island.Item, layout: IslandLayout) -> CGRect {
         let base = layout.point(item.gx, item.gy)
-        if case .place(let bookID, _) = item.source, bookID == GenesisScene.bookID {
-            return GenesisScene.localBounds(item: item, u: layout.u).offsetBy(dx: base.x, dy: base.y)
+        if case .place = item.source, SceneSystem.isSceneBook(item.source.bookID ?? "") {
+            return SceneSystem.localBounds(item: item, u: layout.u).offsetBy(dx: base.x, dy: base.y)
         }
         if let region = artRegion(of: item, layout: layout) {
             return region.bounds
@@ -429,6 +429,9 @@ enum LandmarkMiniCache {
 
     static func alphaMask(_ name: String, _ image: CGImage) -> [UInt8] {
         if let cached = masks[name] { return cached }
+        #if DEBUG
+        PerfProbe.alphaMeasurement()
+        #endif
         let mask = OpaqueBounds.alphaMask(of: image)
         masks[name] = mask
         return mask

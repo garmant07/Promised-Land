@@ -122,15 +122,23 @@ struct PlaceGrowthTests {
 
     @Test("One Place on its own (for its inside page) has all its pieces")
     func single() {
-        let island = Island.single(bookID: "ruth", distinct: 4, totalReads: 4)
-        #expect(island.items.count == PlaceData.spec(for: "ruth").pieces.count)
+        let island = Island.single(bookID: "psalms", distinct: 150, totalReads: 150)
+        let pieces = island.items.filter { item in
+            if case .piece = item.kind { return true }
+            return false
+        }
+        #expect(pieces.count == PlaceData.spec(for: "psalms").pieces.count)
     }
 
-    @Test("Non-Genesis Places keep their existing piece layout")
+    @Test("Books without scenes keep their existing piece layout")
     func nonGenesisPlacesRemainUnchanged() {
-        let island = Island.single(bookID: "ruth", distinct: 4, totalReads: 4)
-        #expect(island.items.count == PlaceData.spec(for: "ruth").pieces.count)
-        #expect(island.items.allSatisfy { $0.source.bookID == "ruth" })
+        let island = Island.single(bookID: "psalms", distinct: 150, totalReads: 150)
+        let pieces = island.items.filter { item in
+            if case .piece = item.kind { return true }
+            return false
+        }
+        #expect(pieces.count == PlaceData.spec(for: "psalms").pieces.count)
+        #expect(island.items.allSatisfy { $0.source.bookID == "psalms" })
         #expect(!island.items.contains { $0.kind == .piece(.soil) })
     }
 }
@@ -281,17 +289,17 @@ struct PlacementTests {
 
     @Test("Saved Place rotation is ignored while its position and pieces remain stable")
     func savedRotationIsIgnored() {
-        let plain = Island.build(chapters: [("ruth", 1, start)], quizzes: [], verses: [],
-                                 placements: ["ruth": IslandPlacement(x: 20, y: 20, rotation: 0, moved: true)])
-        let i = Island.build(chapters: [("ruth", 1, start)], quizzes: [], verses: [],
-                             placements: ["ruth": IslandPlacement(x: 20, y: 20, rotation: 3, moved: true)])
+        let plain = Island.build(chapters: [("psalms", 1, start)], quizzes: [], verses: [],
+                                 placements: ["psalms": IslandPlacement(x: 20, y: 20, rotation: 0, moved: true)])
+        let i = Island.build(chapters: [("psalms", 1, start)], quizzes: [], verses: [],
+                             placements: ["psalms": IslandPlacement(x: 20, y: 20, rotation: 3, moved: true)])
         #expect(i.signature == plain.signature)
         #expect(i.plots.map { "\($0.x),\($0.y)" } == plain.plots.map { "\($0.x),\($0.y)" })
         #expect(i.items.map { "\($0.gx)|\($0.gy)|\($0.turned)" } == plain.items.map { "\($0.gx)|\($0.gy)|\($0.turned)" })
         let layout = IslandLayout(island: i, size: CGSize(width: 390, height: 844), zoom: 3)
-        let index = i.items.firstIndex { $0.kind == .piece(.farmhouse) }!
+        let index = i.items.firstIndex { $0.kind == .piece(.pavilion) }!
         let b = i.items[index]
         let hit = IslandHitTester.hit(point: layout.point(b.gx, b.gy), layout: layout, items: i.items)
-        #expect(hit.map { i.items[$0].source.bookID } == "ruth")
+        #expect(hit.map { i.items[$0].source.bookID } == "psalms")
     }
 }

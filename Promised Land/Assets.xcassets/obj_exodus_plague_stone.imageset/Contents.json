@@ -1,0 +1,13 @@
+{
+  "images": [
+    {
+      "filename": "obj_exodus_plague_stone.png",
+      "idiom": "universal",
+      "scale": "2x"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

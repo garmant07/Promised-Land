@@ -232,7 +232,7 @@ struct PlatformScene: View {
                             IslandGroundLayer(key: .init(signature: island.signature, zoom: zoom, pan: drawPan, size: geo.size,
                                                          insets: insets, selected: selected.wrappedValue, editing: editing != nil,
                                                          editSelected: editing?.selected, overrides: overrides, hidden: moving,
-                                                         rendered: IslandRenderProgress.shared.generation + GenesisScene.renderGeneration),
+                                                         rendered: IslandRenderProgress.shared.generation + SceneSystem.renderGeneration),
                                               island: island, ordered: ordered, editing: editing)
                                 .equatable()
                                 .zIndex(-1)
@@ -256,12 +256,6 @@ struct PlatformScene: View {
                                     }
                                     // Smoke rises above the roofs (under the people, as before).
                                     if lifeOn { _ = IslandLife.drawSmoke(&c, life: life, tier: tier, layout: layout, time: lifeTime, visible: viewport) }
-                                    // Genesis scene trees and bushes are kept out of the cached back layer.
-                                    // Draw their tall layer here first; the clipped redraw below puts it back
-                                    // over people who are behind it.
-                                    for entry in nearItems where entry.item.source.bookID == GenesisScene.bookID {
-                                        IslandPainter.drawItem(&c, entry.item, layout: layout, sceneLayer: .tall)
-                                    }
                                     for (k, person) in people.enumerated() {
                                         if person.id == "me" {
                                             if let me = c.resolveSymbol(id: "me") {
@@ -282,8 +276,10 @@ struct PlatformScene: View {
                                             g.clip(to: Path(person.rect.insetBy(dx: -1, dy: -1)))
                                             for i in over[k] {
                                                 // Mid-zoom, drawn directly rather than rendering a new picture each step.
-                                                if nearItems[i].item.source.bookID == GenesisScene.bookID {
-                                                    IslandPainter.drawItem(&g, nearItems[i].item, layout: layout, sceneLayer: .tall)
+                                                if nearItems[i].item.source.bookID.map(SceneSystem.isSceneBook) == true {
+                                                    let item = nearItems[i].item
+                                                    let sceneDepth = IslandWorld.sceneDepth(for: person.feet, item: item, layout: layout)
+                                                    IslandRenderCache.shared.drawItem(&g, item, layout: layout, sceneLayer: .front(sceneDepth))
                                                 } else if zooming {
                                                     IslandPainter.drawItem(&g, nearItems[i].item, layout: layout)
                                                 } else {
@@ -587,8 +583,6 @@ struct PlatformScene: View {
         let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(viewSize))
         let around = canvas.insetBy(dx: -viewSize.width / 2, dy: -viewSize.height / 2)
-        _ = cache.prewarmGenesis(island: island, size: viewSize, insets: insets, zoom: zoom, pan: PanStep.drawPan(pan))
-
         // First, under the loading clouds (nothing on screen to keep smooth, so up to 40 ms of each
         // frame): the whole-island overview (the ground alone), then every picture the first view needs.
         var overviewDone = false, viewDone = false
@@ -1327,8 +1321,8 @@ struct PlatformScene: View {
         }) where island.items.indices.contains(change.index) {
             var item = island.items[change.index]
             let e = 1 - pow(1 - t, 3)
-            if item.source.bookID == GenesisScene.bookID {
-                GenesisScene.drawReveal(&c, item: item, u: layout.u, from: Int(change.from), to: Int(change.to), progress: CGFloat(e))
+            if item.source.bookID.map(SceneSystem.isSceneBook) == true {
+                SceneSystem.drawReveal(&c, item: item, u: layout.u, from: Int(change.from), to: Int(change.to), progress: CGFloat(e))
             } else if item.kind == .library {
                 // The new stage rises out of the old: the old fades as the new one grows up.
                 if t < 1 {

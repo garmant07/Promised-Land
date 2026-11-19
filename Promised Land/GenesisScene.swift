@@ -48,7 +48,7 @@ struct SceneEvent: Decodable, Equatable {
 }
 
 enum SceneRevealKind: Equatable { case pop, crossfade }
-enum SceneLayer { case all, back, tall }
+enum SceneLayer: Equatable { case all, back, tall, front(CGFloat) }
 
 enum SceneLayoutLoader {
     static func load(bookID: String, bundle: Bundle = .main) -> SceneLayout? {
@@ -65,13 +65,20 @@ enum SceneSystem {
     static let previewBookKey = "debug.sceneBook"
     static let previewStageKey = "debug.sceneStage"
     private static var layouts: [String: SceneLayout?] = [:]
+    private static var eventsCache: [String: [SceneEvent]] = [:]
+    private static var tallCache: [String: Bool] = [:]
 
     #if DEBUG
     static var previewBookID: String?
     static var previewStage: Int?
+    /// Test-only switch used by the headless renderer benchmark. Release always uses scenes.
+    static var scenesEnabled = true
     #endif
 
     static func layout(for bookID: String) -> SceneLayout? {
+        #if DEBUG
+        guard scenesEnabled else { return nil }
+        #endif
         if let cached = layouts[bookID] { return cached }
         let layout = SceneLayoutLoader.load(bookID: bookID)
         layouts[bookID] = layout
@@ -104,16 +111,29 @@ enum SceneSystem {
     }
 
     static func activeEvents(for bookID: String, at stage: Int) -> [SceneEvent] {
-        layout(for: bookID)?.events(at: stage) ?? []
+        guard let layout = layout(for: bookID) else { return [] }
+        let clampedStage = max(0, min(stage, layout.chapters))
+        let key = "\(bookID)|\(clampedStage)"
+        if let cached = eventsCache[key] { return cached }
+        let result = layout.events(at: clampedStage)
+        eventsCache[key] = result
+        return result
     }
 
     static func isTall(_ event: SceneEvent, item: Island.Item) -> Bool {
         if let tall = event.tall { return tall }
+        let key = "\(event.sprite)|\(event.width)|\(item.span)"
+        if let cached = tallCache[key] { return cached }
         guard let art = ArtAssets.image(event.sprite) else { return false }
+        #if DEBUG
+        PerfProbe.opaqueMeasurement()
+        #endif
         let top = OpaqueBounds.unitRect(of: art.image).minY * 384
         let plotWidth = item.span * 44
         let drawnHeight = max(0, (300 - top) / 384) * 1.5 * event.width * plotWidth
-        return drawnHeight >= 7.5
+        let result = drawnHeight >= 7.5
+        tallCache[key] = result
+        return result
     }
 
     static func activeEvents(for item: Island.Item, at stage: Int? = nil) -> [SceneEvent] {
@@ -127,13 +147,27 @@ enum SceneSystem {
 
     static func revealKind(from: Int, to: Int) -> SceneRevealKind { from == 0 ? .pop : .crossfade }
 
-    static func localBounds(item: Island.Item, u: CGFloat, stage: Int? = nil) -> CGRect {
+    static func localBounds(item: Island.Item, u: CGFloat, stage: Int? = nil,
+                             layer: SceneLayer = .all) -> CGRect {
         let sceneStage = stage ?? self.stage(for: item)
         let halfWidth = item.span * 22 * u
         let halfHeight = item.span * 11 * u
         let plotWidth = halfWidth * 2
         var result = CGRect.null
         for event in activeEvents(for: item, at: sceneStage) {
+            let tall = isTall(event, item: item)
+            let visible: Bool
+            switch layer {
+            case .all:
+                visible = true
+            case .back:
+                visible = !tall
+            case .tall:
+                visible = tall
+            case .front(let depth):
+                visible = event.u + event.v >= depth
+            }
+            guard visible else { continue }
             guard let art = ArtAssets.image(event.sprite) else { continue }
             let ground = CGPoint(x: (event.u - event.v) * halfWidth,
                                  y: (event.u + event.v - 1) * halfHeight)
@@ -171,6 +205,10 @@ enum SceneSystem {
     }
 
     static func draw(_ context: inout GraphicsContext, item: Island.Item, u: CGFloat, layer: SceneLayer = .all) {
+        #if DEBUG
+        PerfProbe.sceneDraw()
+        if layer == .tall { PerfProbe.tallLayerRedraw() }
+        #endif
         drawStage(&context, item: item, u: u, stage: self.stage(for: item), layer: layer)
     }
 
@@ -204,9 +242,20 @@ enum SceneSystem {
         let halfWidth = item.span * 22 * u
         let halfHeight = item.span * 11 * u
         let plotWidth = halfWidth * 2
-        for event in events {
+        for event in events.sorted(by: { ($0.u + $0.v, $0.chapter) < ($1.u + $1.v, $1.chapter) }) {
             let tall = isTall(event, item: item)
-            guard layer == .all || (layer == .tall && tall) || (layer == .back && !tall) else { continue }
+            let visible: Bool
+            switch layer {
+            case .all:
+                visible = true
+            case .back:
+                visible = !tall
+            case .tall:
+                visible = tall
+            case .front(let depth):
+                visible = event.u + event.v >= depth
+            }
+            guard visible else { continue }
             guard let art = ArtAssets.image(event.sprite) else { continue }
             let ground = CGPoint(x: (event.u - event.v) * halfWidth,
                                  y: (event.u + event.v - 1) * halfHeight)
@@ -214,19 +263,6 @@ enum SceneSystem {
             let imageScale = width / art.size.width
             let size = CGSize(width: art.size.width * imageScale, height: art.size.height * imageScale)
             let anchor = CGPoint(x: size.width / 2, y: size.height * 300 / 384)
-            let shadowWidth: CGFloat
-            if let authored = event.shadowWidth {
-                shadowWidth = max(0, authored)
-            } else {
-                shadowWidth = event.sprite == "obj_butterflies" ? 0 : 0.52
-            }
-            if shadowWidth > 0 {
-                let shadow = CGRect(x: ground.x - plotWidth * shadowWidth / 2,
-                                    y: ground.y - plotWidth * shadowWidth * 0.14,
-                                    width: plotWidth * shadowWidth,
-                                    height: plotWidth * shadowWidth * 0.28)
-                context.fill(Path(ellipseIn: shadow), with: .color(.black.opacity(0.10)))
-            }
             var sprite = context
             sprite.opacity = opacity
             if scale != 1 {
@@ -238,6 +274,9 @@ enum SceneSystem {
                 sprite.translateBy(x: ground.x * 2, y: 0)
                 sprite.scaleBy(x: -1, y: 1)
             }
+            #if DEBUG
+            PerfProbe.spriteImageDrawn()
+            #endif
             sprite.draw(Image(decorative: art.image, scale: 1),
                         in: CGRect(x: ground.x - anchor.x, y: ground.y - anchor.y,
                                    width: size.width, height: size.height))

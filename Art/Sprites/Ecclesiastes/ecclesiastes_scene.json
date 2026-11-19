@@ -1,0 +1,319 @@
+{
+  "book": "Ecclesiastes",
+  "chapters": 12,
+  "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+  "sprite_canvas": {
+    "size_px": [
+      256,
+      384
+    ],
+    "scale": "@2x",
+    "ground_point_px": [
+      128,
+      300
+    ]
+  },
+  "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+  "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+  "depth": "Draw in order of u+v, smallest first (back to front).",
+  "grow": "A grow event replaces the sprite already in that slot (same position).",
+  "shared_sprites": "Sprites not in this folder live elsewhere in Art/Sprites/ (Shared/, Genesis/ or the book folder that first used them). Every sprite name is unique across Art/Sprites.",
+  "events": [
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "AL",
+      "sprite": "obj_ecclesiastes_almond_1",
+      "u": 0.2006,
+      "v": 0.7994,
+      "width": 0.1081,
+      "mirror": false,
+      "shadowWidth": 0.088,
+      "caption": "Everything has its time: the trees are planted"
+    },
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "FI",
+      "sprite": "obj_ecclesiastes_fig_1",
+      "u": 0.2006,
+      "v": 0.1994,
+      "width": 0.1069,
+      "mirror": false,
+      "shadowWidth": 0.087
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "PO",
+      "sprite": "obj_ecclesiastes_pomegranate_1",
+      "u": 0.8006,
+      "v": 0.1994,
+      "width": 0.1081,
+      "mirror": false,
+      "shadowWidth": 0.088,
+      "caption": "I made myself gardens and pools of water"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "OA",
+      "sprite": "obj_ecclesiastes_oak_1",
+      "u": 0.7906,
+      "v": 0.7894,
+      "width": 0.1081,
+      "mirror": false,
+      "shadowWidth": 0.088
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "PL",
+      "sprite": "obj_ecclesiastes_garden_pool",
+      "u": 0.5048,
+      "v": 0.5,
+      "width": 0.1352,
+      "mirror": false,
+      "shadowWidth": 0.11
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "ST",
+      "sprite": "obj_ecclesiastes_stone_pile",
+      "u": 0.8648,
+      "v": 0.52,
+      "width": 0.0959,
+      "mirror": false,
+      "shadowWidth": 0.078,
+      "caption": "A time to plant, a time to gather stones"
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "FD",
+      "sprite": "obj_field_1",
+      "u": 0.5266,
+      "v": 0.8612,
+      "width": 0.1843,
+      "mirror": false,
+      "shadowWidth": 0.15
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "CO",
+      "sprite": "obj_ecclesiastes_threefold_cord",
+      "u": 0.3648,
+      "v": 0.62,
+      "width": 0.0566,
+      "mirror": false,
+      "shadowWidth": 0.046,
+      "caption": "A cord of three strands is not quickly broken"
+    },
+    {
+      "chapter": 4,
+      "action": "grow",
+      "slot": "AL",
+      "sprite": "obj_ecclesiastes_almond_2",
+      "u": 0.2006,
+      "v": 0.7994,
+      "width": 0.1229,
+      "mirror": false,
+      "shadowWidth": 0.1
+    },
+    {
+      "chapter": 5,
+      "action": "grow",
+      "slot": "FI",
+      "sprite": "obj_ecclesiastes_fig_2",
+      "u": 0.2018,
+      "v": 0.1982,
+      "width": 0.1278,
+      "mirror": false,
+      "shadowWidth": 0.104
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "G1",
+      "sprite": "obj_grass",
+      "u": 0.0776,
+      "v": 0.9526,
+      "width": 0.0508,
+      "mirror": false,
+      "shadowWidth": 0.041
+    },
+    {
+      "chapter": 6,
+      "action": "grow",
+      "slot": "PO",
+      "sprite": "obj_ecclesiastes_pomegranate_2",
+      "u": 0.8012,
+      "v": 0.1988,
+      "width": 0.1241,
+      "mirror": false,
+      "shadowWidth": 0.101,
+      "caption": "The field sprouts"
+    },
+    {
+      "chapter": 6,
+      "action": "grow",
+      "slot": "FD",
+      "sprite": "obj_field_2",
+      "u": 0.5269,
+      "v": 0.8614,
+      "width": 0.1843,
+      "mirror": false,
+      "shadowWidth": 0.15
+    },
+    {
+      "chapter": 7,
+      "action": "grow",
+      "slot": "OA",
+      "sprite": "obj_ecclesiastes_oak_2",
+      "u": 0.7906,
+      "v": 0.7894,
+      "width": 0.1241,
+      "mirror": false,
+      "shadowWidth": 0.101
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "PI",
+      "sprite": "obj_ecclesiastes_pitcher_bowl",
+      "u": 0.6448,
+      "v": 0.38,
+      "width": 0.0786,
+      "mirror": false,
+      "shadowWidth": 0.064
+    },
+    {
+      "chapter": 8,
+      "action": "grow",
+      "slot": "FI",
+      "sprite": "obj_ecclesiastes_fig_3",
+      "u": 0.1976,
+      "v": 0.2024,
+      "width": 0.2899,
+      "mirror": false,
+      "shadowWidth": 0.236,
+      "caption": "Summer: the fig tree"
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "P1",
+      "sprite": "obj_pebbles",
+      "u": 0.3571,
+      "v": 0.4321,
+      "width": 0.0584,
+      "mirror": false,
+      "shadowWidth": 0.048
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "TB",
+      "sprite": "obj_ecclesiastes_bread_table",
+      "u": 0.5048,
+      "v": 0.2,
+      "width": 0.086,
+      "mirror": false,
+      "shadowWidth": 0.07,
+      "caption": "Eat your bread with joy"
+    },
+    {
+      "chapter": 9,
+      "action": "grow",
+      "slot": "FD",
+      "sprite": "obj_field_3",
+      "u": 0.5269,
+      "v": 0.8614,
+      "width": 0.1843,
+      "mirror": false,
+      "shadowWidth": 0.15
+    },
+    {
+      "chapter": 10,
+      "action": "grow",
+      "slot": "PO",
+      "sprite": "obj_ecclesiastes_pomegranate_3",
+      "u": 0.8,
+      "v": 0.2,
+      "width": 0.2899,
+      "mirror": false,
+      "shadowWidth": 0.236,
+      "caption": "Autumn: the pomegranate"
+    },
+    {
+      "chapter": 10,
+      "action": "grow",
+      "slot": "G1",
+      "sprite": "obj_flowers",
+      "u": 0.0788,
+      "v": 0.9539,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 11,
+      "action": "grow",
+      "slot": "OA",
+      "sprite": "obj_ecclesiastes_oak_3",
+      "u": 0.7876,
+      "v": 0.7924,
+      "width": 0.2862,
+      "mirror": false,
+      "shadowWidth": 0.233,
+      "caption": "Winter: the oak stands bare"
+    },
+    {
+      "chapter": 11,
+      "action": "grow",
+      "slot": "P1",
+      "sprite": "obj_rocks",
+      "u": 0.3629,
+      "v": 0.4378,
+      "width": 0.0813,
+      "mirror": false,
+      "shadowWidth": 0.066
+    },
+    {
+      "chapter": 11,
+      "action": "add",
+      "slot": "G2",
+      "sprite": "obj_grass",
+      "u": 0.9576,
+      "v": 0.0726,
+      "width": 0.0508,
+      "mirror": false,
+      "shadowWidth": 0.041
+    },
+    {
+      "chapter": 12,
+      "action": "grow",
+      "slot": "AL",
+      "sprite": "obj_ecclesiastes_almond_3",
+      "u": 0.1994,
+      "v": 0.8006,
+      "width": 0.2028,
+      "mirror": false,
+      "shadowWidth": 0.165,
+      "caption": "Spring: the almond tree blossoms"
+    },
+    {
+      "chapter": 12,
+      "action": "add",
+      "slot": "WE",
+      "sprite": "obj_ecclesiastes_well_wheel",
+      "u": 0.2048,
+      "v": 0.5,
+      "width": 0.1032,
+      "mirror": false,
+      "shadowWidth": 0.084
+    }
+  ]
+}

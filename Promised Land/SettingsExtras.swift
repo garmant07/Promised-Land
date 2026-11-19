@@ -55,7 +55,8 @@ struct DebugToolsSection: View {
     @State private var message: String?
     @AppStorage("debug.fpsOverlay") private var showsFPS = false
     @AppStorage("debug.apiOverlay") private var showsAPIUsage = true
-    @AppStorage(GenesisScene.previewStageKey) private var previewGenesisStage = -1
+    @AppStorage(SceneSystem.previewBookKey) private var previewSceneBook = ""
+    @AppStorage(SceneSystem.previewStageKey) private var previewSceneStage = -1
     @State private var previewingBible = false
     @Environment(\.bibleService) private var bible
 
@@ -79,13 +80,23 @@ struct DebugToolsSection: View {
             }
             // TEMPORARY: remove with Debug/FullBiblePreview before release (NOTES.md).
             Button("Preview full Bible") { previewingBible = true }.buttonStyle(SoftButtonStyle())
-            Picker("Preview Genesis stage", selection: $previewGenesisStage) {
-                Text("Off").tag(-1)
-                ForEach(0...50, id: \.self) { stage in Text("Stage \(stage)").tag(stage) }
+            Picker("Preview scene", selection: $previewSceneBook) {
+                Text("Off").tag("")
+                ForEach(SceneSystem.bookIDs, id: \.self) { bookID in
+                    Text(BibleCatalog.book(id: bookID)?.name ?? bookID).tag(bookID)
+                }
             }
             .pickerStyle(.menu)
-            .onAppear { updateGenesisPreview(previewGenesisStage) }
-            .onChange(of: previewGenesisStage) { _, stage in updateGenesisPreview(stage) }
+            if let book = BibleCatalog.book(id: previewSceneBook), SceneSystem.isSceneBook(book.id) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Stage \(previewSceneStage < 0 ? 0 : previewSceneStage) of \(book.chapterCount)")
+                        .font(.footnote).foregroundStyle(Color.secondaryText)
+                    Slider(value: Binding(get: {
+                        Double(max(0, min(previewSceneStage, book.chapterCount)))
+                    }, set: { previewSceneStage = Int($0.rounded()) }),
+                           in: 0...Double(book.chapterCount), step: 1)
+                }
+            }
             Button("Rebuild world") { rebuildWorld() }.buttonStyle(SoftButtonStyle())
             Button("Add 10 random reads") { addRandomReads() }.buttonStyle(SoftButtonStyle())
             Button("Complete a journey") { completeJourney() }.buttonStyle(SoftButtonStyle())
@@ -93,6 +104,9 @@ struct DebugToolsSection: View {
             if let message { Text(message).font(.footnote).foregroundStyle(Color.secondaryText) }
         }
         .cardStyle()
+        .onAppear { updateScenePreview() }
+        .onChange(of: previewSceneBook) { _, _ in updateScenePreview() }
+        .onChange(of: previewSceneStage) { _, _ in updateScenePreview() }
         .fullScreenCover(isPresented: $previewingBible) { FullBiblePreviewView { previewingBible = false } }
         .confirmationDialog("Reset all data?", isPresented: $confirmingWipe, titleVisibility: .visible) {
             Button("Erase everything", role: .destructive) { wipe() }
@@ -101,8 +115,16 @@ struct DebugToolsSection: View {
         }
     }
 
-    private func updateGenesisPreview(_ stage: Int) {
-        GenesisScene.previewStage = stage >= 0 ? min(stage, 50) : nil
+    private func updateScenePreview() {
+        guard !previewSceneBook.isEmpty,
+              let layout = SceneSystem.layout(for: previewSceneBook) else {
+            SceneSystem.previewBookID = nil
+            SceneSystem.previewStage = nil
+            return
+        }
+        previewSceneStage = max(0, min(previewSceneStage, layout.chapters))
+        SceneSystem.previewBookID = previewSceneBook
+        SceneSystem.previewStage = previewSceneStage
     }
 
     /// Forgets where things were placed, so the island lays itself out again from your reading.

@@ -2,6 +2,7 @@ import Testing
 import Foundation
 import CoreGraphics
 import SwiftUI
+import QuartzCore
 @testable import Promised_Land
 
 /// The performance pass: what's worked out once instead of per frame, and the rounded-pan layers.
@@ -117,5 +118,104 @@ struct PerformanceTests {
         draw()
         draw()
         #expect(cache.renders == after)
+    }
+
+    @Test("A full island frame reports scene costs at three zooms")
+    func fullIslandSceneFrameBenchmark() {
+        #if DEBUG
+        let cache = IslandRenderCache.shared
+        let oldScenesEnabled = SceneSystem.scenesEnabled
+        defer {
+            SceneSystem.scenesEnabled = oldScenesEnabled
+            cache.removeAll()
+            PerfProbe.resetFrameCounters()
+        }
+
+        struct Result {
+            let averageMilliseconds: Double
+            let counters: PerfProbe.FrameCounters
+            let overCount: Int
+        }
+
+        func renderFrame(zoom: CGFloat, scenesEnabled: Bool) -> Result {
+            SceneSystem.scenesEnabled = scenesEnabled
+            cache.removeAll()
+            let layout = IslandLayout(island: Self.island, size: Self.size, zoom: zoom)
+            let viewport = CGRect(origin: .zero, size: Self.size)
+            let ordered = Self.island.items.sorted { layout.depth($0.gx, $0.gy) < layout.depth($1.gx, $1.gy) }
+            let staticFrame = cache.frame(island: Self.island, size: Self.size, insets: EdgeInsets(),
+                                          zoom: zoom, pan: .zero, overrides: [:], hidden: [],
+                                          viewport: viewport, deferMissing: false)!
+            let sceneItems = ordered.filter {
+                $0.source.bookID.map(SceneSystem.isSceneBook) == true &&
+                SceneSystem.occludesVillager($0)
+            }
+            let selected = scenesEnabled
+                ? Array(sceneItems.prefix(6))
+                : Array(ordered.filter(\.kind.isTall).prefix(6))
+            var overCount = 0
+
+            func drawOnce() -> CGImage? {
+                let renderer = ImageRenderer(content: Canvas { context, _ in
+                    for ground in staticFrame.ground {
+                        context.draw(Image(decorative: ground.image, scale: 1), in: ground.rect)
+                    }
+                    for layer in staticFrame.layers {
+                        switch layer {
+                        case .picture(let image, let rect):
+                            context.draw(Image(decorative: image, scale: 1), in: rect)
+                        case .item(let item):
+                            IslandPainter.drawItem(&context, item, layout: layout)
+                        }
+                    }
+                    for item in selected {
+                        let base = layout.point(item.gx, item.gy)
+                        let figure = IslandWorld.Figure(
+                            id: "benchmark-" + (item.source.bookID ?? "scene"),
+                            feet: CGPoint(x: base.x, y: base.y - 2 * layout.u),
+                            rect: CGRect(x: base.x - 4 * layout.u, y: base.y - 17 * layout.u,
+                                         width: 8 * layout.u, height: 15 * layout.u)
+                        )
+                        let visibleItems = IslandWorld.visibleItems(
+                            ordered, layout: layout,
+                            visible: CGRect(x: -10_000, y: -10_000, width: 20_000, height: 20_000)
+                        )
+                        let indices = IslandWorld.itemsOver(figure, items: visibleItems, layout: layout)
+                        overCount += indices.count
+                        context.fill(Path(ellipseIn: figure.rect), with: .color(.brown))
+                        for index in indices {
+                            IslandRenderCache.shared.drawItem(&context, visibleItems[index].item, layout: layout,
+                                                                       sceneLayer: .tall)
+                        }
+                    }
+                }.frame(width: Self.size.width, height: Self.size.height))
+                return renderer.cgImage
+            }
+
+            _ = drawOnce()
+            PerfProbe.resetFrameCounters()
+            let start = CACurrentMediaTime()
+            let samples = 3
+            for _ in 0..<samples { _ = drawOnce() }
+            let average = (CACurrentMediaTime() - start) / Double(samples) * 1000
+            let counters = PerfProbe.frameCounters
+            return Result(averageMilliseconds: average, counters: counters, overCount: overCount)
+        }
+
+        for zoom in [IslandLayout.minZoom, CGFloat(4), IslandLayout.maxZoom(island: Self.island, size: Self.size)] {
+            let on = renderFrame(zoom: zoom, scenesEnabled: true)
+            let off = renderFrame(zoom: zoom, scenesEnabled: false)
+            print(String(format: "SCENE BENCH zoom=%.3f on=%.3fms off=%.3fms ratio=%.2f over=%d onCounters sprites=%d loaded=%d alpha=%d opaque=%d tall=%d pictures=%d offCounters sprites=%d loaded=%d alpha=%d opaque=%d tall=%d pictures=%d",
+                         zoom, on.averageMilliseconds, off.averageMilliseconds,
+                         on.averageMilliseconds / max(0.001, off.averageMilliseconds), on.overCount,
+                         on.counters.spriteImagesDrawn, on.counters.imagesLoadedOrDecoded,
+                         on.counters.alphaMeasurements, on.counters.opaqueMeasurements,
+                         on.counters.tallLayerRedraws, on.counters.scenePictureRenders,
+                         off.counters.spriteImagesDrawn, off.counters.imagesLoadedOrDecoded,
+                         off.counters.alphaMeasurements, off.counters.opaqueMeasurements,
+                         off.counters.tallLayerRedraws, off.counters.scenePictureRenders))
+            #expect(on.overCount >= 0)
+        }
+        #endif
     }
 }
