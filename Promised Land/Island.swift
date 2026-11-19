@@ -119,16 +119,37 @@ enum IslandHitTester {
     ///   - point: the touch, in the island view's coordinates.
     ///   - pan: the view's current pan offset (subtracted before mapping to the grid).
     /// - Returns: the index of the front-most item under the touch, or nil for empty ground.
-    static func hit(point: CGPoint, layout: IslandLayout, pan: CGSize = .zero, items: [Island.Item]) -> Int? {
+    static func hit(point: CGPoint, layout: IslandLayout, pan: CGSize = .zero, items: [Island.Item],
+                       plots: [Island.Plot] = []) -> Int? {
         let p = CGPoint(x: point.x - pan.width, y: point.y - pan.height)
-        return HitPicker.pick(p, from: candidates(at: p, layout: layout, items: items), minimumTarget: minimumTarget)
+        return HitPicker.pick(p, from: candidates(at: p, layout: layout, items: items, plots: plots), minimumTarget: minimumTarget)
     }
 
-    static func candidates(at p: CGPoint, layout: IslandLayout, items: [Island.Item]) -> [HitCandidate<Int>] {
+    static func directHit(point: CGPoint, layout: IslandLayout, pan: CGSize = .zero, items: [Island.Item],
+                          plots: [Island.Plot] = []) -> Int? {
+        let p = CGPoint(x: point.x - pan.width, y: point.y - pan.height)
+        return HitPicker.direct(p, from: candidates(at: p, layout: layout, items: items, plots: plots))
+    }
+
+    static func fallbackHit(point: CGPoint, layout: IslandLayout, pan: CGSize = .zero, items: [Island.Item],
+                            plots: [Island.Plot] = []) -> Int? {
+        let p = CGPoint(x: point.x - pan.width, y: point.y - pan.height)
+        return HitPicker.nearestFallback(p, from: candidates(at: p, layout: layout, items: items, plots: plots),
+                                          minimumTarget: minimumTarget)
+    }
+
+    static func candidates(at p: CGPoint, layout: IslandLayout, items: [Island.Item],
+                           plots: [Island.Plot] = []) -> [HitCandidate<Int>] {
         let g = layout.grid(p)
         return items.enumerated().map { i, item in
-            HitCandidate(id: i, depth: layout.depth(item.gx, item.gy), onGround: item.footprint.contains(g),
-                         bounds: IslandPainter.drawnBounds(of: item, layout: layout))
+            let bookID = item.source.bookID
+            let plot = bookID.flatMap { id in plots.first { $0.bookID == id } }
+            let isPlace = item.source.isPlace
+            let art = IslandPainter.artRegion(of: item, layout: layout)
+            return HitCandidate(id: i, depth: layout.depth(item.gx, item.gy),
+                                onGround: isPlace ? (plot?.rect.contains(g) ?? false) : item.footprint.contains(g),
+                                bounds: IslandPainter.drawnBounds(of: item, layout: layout),
+                                art: art, allowsFallback: !isPlace)
         }
     }
 
@@ -341,6 +362,28 @@ enum IslandPainter {
     /// in code for its stage (LibraryArt); `LandmarkMiniCache.library()` stays for the reading lists.
     static func art(for item: Island.Item) -> LandmarkImage? { nil }
 
+    /// The visible art region, using a cached alpha mask for sprite-backed Place art.
+    static func artRegion(of item: Island.Item, layout: IslandLayout) -> HitRegion? {
+        let base = layout.point(item.gx, item.gy)
+        if case .place(let bookID, _) = item.source, bookID == GenesisScene.bookID {
+            let parts = GenesisScene.artRegions(item: item, u: layout.u).map {
+                HitRegion.Part(bounds: $0.bounds.offsetBy(dx: base.x, dy: base.y), alpha: $0.alpha)
+            }
+            return parts.isEmpty ? nil : HitRegion(parts: parts)
+        }
+        guard case .piece(let kind) = item.kind,
+              case .place(let bookID, _) = item.source,
+              let custom = ArtAssets.place(bookID, piece: kind.rawValue, level: max(1, item.level)) else {
+            return nil
+        }
+        let tileWidth = layout.scale * 2
+        let scale = tileWidth / ArtAssets.pointsPerTile * (ArtAssets.spriteMultipliers[custom.name] ?? 1)
+        let size = CGSize(width: custom.size.width * scale, height: custom.size.height * scale)
+        let anchor = CGPoint(x: custom.anchor.x * size.width, y: custom.anchor.y * size.height)
+        let rect = CGRect(x: base.x - anchor.x, y: base.y - anchor.y, width: size.width, height: size.height)
+        return HitRegion(bounds: rect, alpha: LandmarkMiniCache.alphaMask(custom.name, custom.image))
+    }
+
     /// Where an image-based item is drawn, relative to its ground point. Shared by drawing and tapping.
     static func imageRect(_ art: LandmarkImage, item _: Island.Item, tileWidth: CGFloat) -> CGRect {
         // The Library's picture covers a 3-tile footprint; it's shown on its 2 × 2 spot.
@@ -354,6 +397,9 @@ enum IslandPainter {
         let base = layout.point(item.gx, item.gy)
         if case .place(let bookID, _) = item.source, bookID == GenesisScene.bookID {
             return GenesisScene.localBounds(item: item, u: layout.u).offsetBy(dx: base.x, dy: base.y)
+        }
+        if let region = artRegion(of: item, layout: layout) {
+            return region.bounds
         }
         guard let art = art(for: item) else {
             return IslandHitTester.shape(of: item, base: base, u: layout.u)
@@ -370,6 +416,7 @@ enum IslandPainter {
 enum LandmarkMiniCache {
     private static var libraryArt: LandmarkImage?
     private static var opaque: [String: CGRect] = [:]
+    private static var masks: [String: [UInt8]] = [:]
 
     /// The visible part of an item's picture (a unit rect, y down), measured once per picture.
     static func opaqueUnitRect(_ kind: Island.Kind, level: Int, _ art: LandmarkImage) -> CGRect {
@@ -378,6 +425,13 @@ enum LandmarkMiniCache {
         let rect = OpaqueBounds.unitRect(of: art.image)
         opaque[key] = rect
         return rect
+    }
+
+    static func alphaMask(_ name: String, _ image: CGImage) -> [UInt8] {
+        if let cached = masks[name] { return cached }
+        let mask = OpaqueBounds.alphaMask(of: image)
+        masks[name] = mask
+        return mask
     }
 
     /// The Library building, drawn by the same painter as on the world map (3-tile footprint).

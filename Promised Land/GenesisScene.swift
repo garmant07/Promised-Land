@@ -108,6 +108,30 @@ enum GenesisScene {
         return result.isNull ? .zero : result
     }
 
+    /// Each Genesis sprite's drawn rectangle and cached opaque-pixel mask.
+    static func artRegions(item: Island.Item, u: CGFloat, stage: Int? = nil) -> [HitRegion.Part] {
+        let sceneStage = stage ?? self.stage(for: item)
+        let halfWidth = item.span * 22 * u
+        let halfHeight = item.span * 11 * u
+        let plotWidth = halfWidth * 2
+        return activeEvents(at: sceneStage).compactMap { event in
+            guard let art = ArtAssets.image(event.sprite) else { return nil }
+            let ground = CGPoint(x: (event.u - event.v) * halfWidth,
+                                 y: (event.u + event.v - 1) * halfHeight)
+            let width = plotWidth * event.width
+            let imageScale = width / art.size.width
+            let size = CGSize(width: art.size.width * imageScale, height: art.size.height * imageScale)
+            let anchor = CGPoint(x: size.width / 2, y: size.height * 300 / 384)
+            let x = event.mirror ? ground.x + anchor.x - size.width : ground.x - anchor.x
+            let rect = CGRect(x: x, y: ground.y - anchor.y, width: size.width, height: size.height)
+            let mask = LandmarkMiniCache.alphaMask(event.sprite, art.image)
+            let alpha = event.mirror
+                ? stride(from: 0, to: mask.count, by: 64).flatMap { mask[$0..<$0 + 64].reversed() }
+                : mask
+            return HitRegion.Part(bounds: rect, alpha: alpha)
+        }
+    }
+
     /// Draws all events through the current chapter. The item is anchored at the Place centre.
     static func draw(_ context: inout GraphicsContext, item: Island.Item, u: CGFloat, layer: SceneLayer = .all) {
         #if DEBUG

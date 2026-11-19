@@ -57,6 +57,13 @@ struct Island: Equatable {
             case .feature, .extra: nil
             }
         }
+
+        var isPlace: Bool {
+            switch self {
+            case .place, .flourish: true
+            default: false
+            }
+        }
     }
 
     /// Feature buildings: features unlock as buildings on the island.

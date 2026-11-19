@@ -21,4 +21,15 @@ struct SpriteArtTests {
         #expect(houseOpaque.width > 0)
         #expect(treeOpaque.width > 0)
     }
+
+    @Test("Opaque sprite masks reject transparent corners and reuse the cached mask")
+    func opaqueMaskIsSampled() throws {
+        let tree = try #require(ArtAssets.image("obj_tree"))
+        let first = LandmarkMiniCache.alphaMask(tree.name, tree.image)
+        let second = LandmarkMiniCache.alphaMask(tree.name, tree.image)
+        #expect(first == second)
+        let region = HitRegion(bounds: CGRect(x: 0, y: 0, width: 128, height: 192), alpha: first)
+        #expect(!region.contains(CGPoint(x: 0, y: 0)))
+        #expect(region.contains(CGPoint(x: 64, y: 96)))
+    }
 }

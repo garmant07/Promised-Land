@@ -102,6 +102,43 @@ struct GenesisSceneTests {
                                         y: layout.point(item.gx, item.gy).y + local.minY + 1)))
     }
 
+    @Test("Genesis hit testing exposes sprite masks rather than one union rectangle")
+    func genesisSpriteMasksAreIndividual() {
+        let island = Island.single(bookID: "genesis", distinct: 50, totalReads: 50)
+        let layout = IslandLayout(island: island, size: CGSize(width: 390, height: 844), zoom: 3)
+        let item = island.items[0]
+        guard let region = IslandPainter.artRegion(of: item, layout: layout) else {
+            Issue.record("Genesis should expose sprite hit regions")
+            return
+        }
+        #expect(region.parts.count == GenesisScene.activeEvents(at: 50).count)
+        let transparent = region.parts.first { part in
+            guard let alpha = part.alpha else { return false }
+            return alpha.contains(0)
+        }
+        if let transparent, let alpha = transparent.alpha, let index = alpha.firstIndex(of: 0) {
+            let x = CGFloat(index % 64)
+            let y = CGFloat(index / 64)
+            let point = CGPoint(x: transparent.bounds.minX + (x + 0.5) * transparent.bounds.width / 64,
+                                y: transparent.bounds.minY + (y + 0.5) * transparent.bounds.height / 64)
+            let maskedPart = HitRegion(bounds: transparent.bounds, alpha: alpha)
+            #expect(alpha[index] == 0)
+            #expect(maskedPart.contains(point) == false)
+        }
+        let centre = CGPoint(x: region.parts[0].bounds.midX, y: region.parts[0].bounds.midY)
+        #expect(region.contains(centre))
+    }
+
+    @Test("Genesis outside its plot and art does not hit")
+    func genesisOutsidePlotDoesNotHit() {
+        let island = Island.single(bookID: "genesis", distinct: 50, totalReads: 50)
+        let layout = IslandLayout(island: island, size: CGSize(width: 390, height: 844), zoom: 3)
+        let item = island.items[0]
+        let plot = island.plots.first { $0.bookID == "genesis" }!
+        let point = layout.point(CGFloat(plot.x) - 4, CGFloat(plot.y) - 4)
+        #expect(IslandHitTester.hit(point: point, layout: layout, items: island.items, plots: island.allPlots) == nil)
+    }
+
     @Test("Genesis's tall life trees and fruit tree occlude a villager")
     func tallGenesisObjectsOccludeVillagers() {
         let island = Island.single(bookID: "genesis", distinct: 11, totalReads: 50)
