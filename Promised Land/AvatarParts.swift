@@ -36,7 +36,7 @@ nonisolated enum SkinTone: String, AvatarSwatch {
 }
 
 nonisolated enum HairStyle: String, AvatarOption {
-    case bald, baldWithSides, shortCurly, longWavy, longStraight
+    case bald, baldWithSides, shortCurly, longWavy, longStraight, braid, bun
 }
 
 nonisolated enum HairColour: String, AvatarSwatch {
@@ -58,7 +58,7 @@ nonisolated enum BeardStyle: String, AvatarOption {
 }
 
 nonisolated enum HeadCovering: String, AvatarOption {
-    case none, headband, veil, veilWithWrap, headdress, crown
+    case none, headband, veil, veilWithWrap, headdress, crown, queenCrown
 }
 
 nonisolated enum RobeStyle: String, AvatarOption {
@@ -110,6 +110,7 @@ nonisolated struct AvatarConfig: Hashable, Codable, Sendable {
     static let currentVersion = 1
 
     var version = AvatarConfig.currentVersion
+    var sex: AvatarSex? = nil
     var skin: SkinTone = .warm
     var hair: HairStyle = .longStraight
     var hairColour: HairColour = .brown
@@ -130,6 +131,7 @@ nonisolated struct AvatarConfig: Hashable, Codable, Sendable {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         let d = AvatarConfig()
         version = (try? c.decodeIfPresent(Int.self, forKey: .version)) ?? d.version
+        sex = (try? c.decodeIfPresent(AvatarSex.self, forKey: .sex))
         skin = (try? c.decodeIfPresent(SkinTone.self, forKey: .skin)) ?? d.skin
         hair = (try? c.decodeIfPresent(HairStyle.self, forKey: .hair)) ?? d.hair
         hairColour = (try? c.decodeIfPresent(HairColour.self, forKey: .hairColour)) ?? d.hairColour
@@ -180,6 +182,7 @@ nonisolated struct AvatarConfig: Hashable, Codable, Sendable {
 enum AvatarPresets {
     static func config(for id: String) -> AvatarConfig {
         var a = AvatarConfig()
+        a.sex = ["mary", "sarah", "ruth"].contains(id) ? .female : .male
         a.cloak = .none; a.head = .none; a.sash = .none; a.item = .none; a.beard = .none
         switch id {
         case "jesus":

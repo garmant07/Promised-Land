@@ -3,7 +3,7 @@ import SwiftUI
 extension AvatarRenderer {
     /// Female geometry keeps the shared 100 × 160 canvas and foot anchor, while narrowing the
     /// shoulders and giving both supported robes a wider hem.
-    static func femaleLayers(_ a: AvatarConfig) -> [Layer] {
+    nonisolated static func femaleLayers(_ a: AvatarConfig) -> [Layer] {
         let skin = RGBValue(hex: a.skin.hex)
         let hair = RGBValue(hex: a.hairColour.hex)
         let robe = RGBValue(hex: a.robeColour.hex)

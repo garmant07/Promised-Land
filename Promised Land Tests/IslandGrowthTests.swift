@@ -235,6 +235,100 @@ struct LibraryHubTests {
 
 
 @MainActor
+struct AvatarSexRulesTests {
+    @Test("Every preset and mock friend fits its side")
+    func allowedLooks() {
+        for id in PresetAccess.ids {
+            let config = AvatarPresets.config(for: id)
+            #expect(config.sex != nil)
+            #expect(AvatarSexRules.allowedHair(for: config.sex).contains(config.hair))
+            #expect(AvatarSexRules.allowedBeard(for: config.sex).contains(config.beard))
+            #expect(AvatarSexRules.allowedHeadCovering(for: config.sex).contains(config.head))
+            #expect(AvatarSexRules.allowedRobe(for: config.sex).contains(config.robe))
+        }
+        let friends = [FriendLooks.hannah, FriendLooks.eli, FriendLooks.joy]
+        for config in friends {
+            #expect(AvatarSexRules.allowedHair(for: config.sex).contains(config.hair))
+            #expect(AvatarSexRules.allowedBeard(for: config.sex).contains(config.beard))
+            #expect(AvatarSexRules.allowedHeadCovering(for: config.sex).contains(config.head))
+            #expect(AvatarSexRules.allowedRobe(for: config.sex).contains(config.robe))
+        }
+    }
+
+    @Test("Converting retains allowed features and all colours")
+    func converted() {
+        var source = AvatarConfig()
+        source.skin = .deep
+        source.hair = .bald
+        source.hairColour = .white
+        source.beard = .longFlowing
+        source.head = .crown
+        source.headColour = .ochre
+        source.robe = .kneeTunic
+        source.robeColour = .slatePurple
+        source.sash = .redSash
+        source.cloak = .coat
+        source.cloakColour = .rose
+        source.item = .book
+        source.sandals = .darkBrown
+
+        let female = source.converted(to: .female)
+        #expect(female.sex == .female && female.skin == .deep)
+        #expect(female.hair == .longWavy && female.beard == .none && female.head == .none && female.robe == .robeWithPanel)
+        #expect(female.hairColour == .white && female.headColour == .ochre && female.robeColour == .slatePurple)
+        #expect(female.sash == .redSash && female.cloak == .coat && female.cloakColour == .rose && female.item == .book && female.sandals == .darkBrown)
+
+        var alreadyAllowed = AvatarSexRules.defaults(for: .female)
+        alreadyAllowed.hair = .longWavy
+        alreadyAllowed.head = .veil
+        alreadyAllowed.robe = .longRobe
+        alreadyAllowed.hairColour = .grey
+        #expect(alreadyAllowed.converted(to: .female) == alreadyAllowed)
+    }
+
+    @Test("Switching sides retains only skin")
+    func switched() {
+        var source = AvatarConfig()
+        source.skin = .tan
+        source.hair = .bald
+        source.hairColour = .white
+        source.beard = .full
+        source.head = .crown
+        source.robe = .kneeTunic
+        source.robeColour = .slatePurple
+        source.item = .staff
+
+        let female = source.switched(to: .female)
+        #expect(female == AvatarSexRules.defaults(for: .female).withSkin(.tan))
+        #expect(female.sex == .female)
+    }
+
+    @Test("Side random looks stay inside each side's lists")
+    func randomLooks() {
+        var g = SeededGenerator(seed: 21)
+        for sex in [AvatarSex.male, .female] {
+            for _ in 0..<300 {
+                let config = AvatarConfig.random(for: sex, using: &g)
+                #expect(config.sex == sex)
+                #expect(AvatarSexRules.allowedHair(for: sex).contains(config.hair))
+                #expect(AvatarSexRules.allowedBeard(for: sex).contains(config.beard))
+                #expect(AvatarSexRules.allowedHeadCovering(for: sex).contains(config.head))
+                #expect(AvatarSexRules.allowedRobe(for: sex).contains(config.robe))
+                if sex == .female { #expect(config.beard == .none) }
+            }
+        }
+    }
+}
+
+private extension AvatarConfig {
+    func withSkin(_ skin: SkinTone) -> AvatarConfig {
+        var copy = self
+        copy.skin = skin
+        return copy
+    }
+}
+
+@MainActor
 struct AvatarRenderingTests {
     let canvas = CGRect(origin: .zero, size: AvatarRenderer.canvas)
 
@@ -297,6 +391,68 @@ struct AvatarRenderingTests {
         #expect(old.head == .veil)
         #expect(old.beard == .longFlowing)
         #expect(old.sash == .brownBelt)
+        #expect(old.sex == nil)
+    }
+
+    @Test("Avatar sex is optional and backward-compatible")
+    func sexCoding() throws {
+        let oldJSON = #"{"version":1,"skin":"tan","hair":"shortCurly","hairColour":"auburn","beard":"full","head":"headband","headColour":"ochre","robe":"robeWithPanel","robeColour":"sage","sash":"goldTrim","cloak":"longCloak","cloakColour":"slatePurple","item":"book","sandals":"darkBrown"}"#
+        let old = try JSONDecoder().decode(AvatarConfig.self, from: Data(oldJSON.utf8))
+        #expect(old.sex == nil)
+        #expect(old.skin == .tan && old.hair == .shortCurly && old.hairColour == .auburn)
+        #expect(old.beard == .full && old.head == .headband && old.headColour == .ochre)
+        #expect(old.robe == .robeWithPanel && old.robeColour == .sage && old.sash == .goldTrim)
+        #expect(old.cloak == .longCloak && old.cloakColour == .slatePurple && old.item == .book && old.sandals == .darkBrown)
+
+        let unknown = try JSONDecoder().decode(AvatarConfig.self, from: Data(#"{"sex":"other","hair":"bald"}"#.utf8))
+        #expect(unknown.sex == nil && unknown.hair == .bald)
+
+        for sex in [AvatarSex.male, .female] {
+            var config = AvatarConfig()
+            config.sex = sex
+            let roundTrip = try JSONDecoder().decode(AvatarConfig.self, from: JSONEncoder().encode(config))
+            #expect(roundTrip == config)
+        }
+    }
+
+    @Test("Female combinations stay inside the canvas and on the shared foot anchor")
+    func femaleRendering() {
+        let base = AvatarSexRules.defaults(for: .female)
+        for hair in AvatarSexRules.allowedHair(for: .female) {
+            var config = base
+            config.hair = hair
+            config.head = .none
+            check(config)
+        }
+        for head in AvatarSexRules.allowedHeadCovering(for: .female) {
+            var config = base
+            config.head = head
+            check(config)
+        }
+        for robe in AvatarSexRules.allowedRobe(for: .female) {
+            var config = base
+            config.robe = robe
+            check(config)
+        }
+        for id in ["mary", "ruth", "sarah"] {
+            check(AvatarPresets.config(for: id))
+        }
+    }
+
+    @Test("Male and nil avatars use identical renderer geometry")
+    func maleAndNilRenderingMatch() {
+        var nilConfig = AvatarConfig()
+        nilConfig.head = .none
+        var maleConfig = nilConfig
+        maleConfig.sex = .male
+        let nilLayers = AvatarRenderer.layers(nilConfig)
+        let maleLayers = AvatarRenderer.layers(maleConfig)
+        #expect(nilLayers.count == maleLayers.count)
+        for (nilLayer, maleLayer) in zip(nilLayers, maleLayers) {
+            #expect(nilLayer.name == maleLayer.name)
+            #expect(nilLayer.option == maleLayer.option)
+            #expect(nilLayer.shapes.map { $0.path.boundingRect } == maleLayer.shapes.map { $0.path.boundingRect })
+        }
     }
 }
 

@@ -5,19 +5,24 @@ nonisolated enum AvatarSexRules {
     static func allowedHair(for sex: AvatarSex?) -> [HairStyle] {
         switch sex {
         case .male: [.bald, .baldWithSides, .shortCurly, .longWavy, .longStraight]
-        case .female: [.longStraight, .longWavy, .shortCurly, .braid, .bun]
+        case .female:
+            HairStyle.allCases.filter { ["longStraight", "longWavy", "shortCurly", "braid", "bun"].contains($0.rawValue) }
         case nil: HairStyle.allCases
         }
     }
 
     static func allowedBeard(for sex: AvatarSex?) -> [BeardStyle] {
-        sex == .female ? [.none] : BeardStyle.allCases.filter { sex != .male || true }
+        switch sex {
+        case .female: [.none]
+        case .male, nil: BeardStyle.allCases
+        }
     }
 
     static func allowedHeadCovering(for sex: AvatarSex?) -> [HeadCovering] {
         switch sex {
         case .male: [.none, .headband, .headdress, .crown]
-        case .female: [.none, .veil, .veilWithWrap, .queenCrown]
+        case .female:
+            HeadCovering.allCases.filter { ["none", "veil", "veilWithWrap", "queenCrown"].contains($0.rawValue) }
         case nil: HeadCovering.allCases
         }
     }

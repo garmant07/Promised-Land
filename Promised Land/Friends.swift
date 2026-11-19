@@ -37,16 +37,16 @@ protocol FriendsService {
 /// The sample friends' looks.
 enum FriendLooks {
     static var hannah: AvatarConfig {
-        var a = AvatarConfig(); a.skin = .warm; a.hair = .longStraight; a.hairColour = .darkBrown; a.head = .none
+        var a = AvatarConfig(); a.sex = .female; a.skin = .warm; a.hair = .longStraight; a.hairColour = .darkBrown; a.head = .none
         a.robeColour = .slatePurple; a.sash = .goldTrim; a.sandals = .tan; a.item = .scroll; return a
     }
     static var eli: AvatarConfig {
-        var a = AvatarConfig(); a.skin = .brown; a.hair = .shortCurly; a.hairColour = .darkBrown; a.head = .none
+        var a = AvatarConfig(); a.sex = .male; a.skin = .brown; a.hair = .shortCurly; a.hairColour = .darkBrown; a.head = .none
         a.robe = .kneeTunic; a.robeColour = .skyBlue; a.sash = .brownBelt; a.cloak = .shoulderCloak; a.cloakColour = .sand
         a.sandals = .darkBrown; return a
     }
     static var joy: AvatarConfig {
-        var a = AvatarConfig(); a.skin = .porcelain; a.hair = .longWavy; a.hairColour = .lightBrown; a.head = .headband
+        var a = AvatarConfig(); a.sex = .female; a.skin = .porcelain; a.hair = .longWavy; a.hairColour = .lightBrown; a.head = .none
         a.headColour = .rose; a.robeColour = .sage; a.sash = .none; a.item = .dove; a.sandals = .tan; return a
     }
 }
