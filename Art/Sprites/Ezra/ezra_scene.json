@@ -1,0 +1,262 @@
+{
+  "book": "Ezra",
+  "chapters": 10,
+  "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+  "sprite_canvas": {
+    "size_px": [
+      256,
+      384
+    ],
+    "scale": "@2x",
+    "ground_point_px": [
+      128,
+      300
+    ]
+  },
+  "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+  "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+  "depth": "Draw in order of u+v, smallest first (back to front).",
+  "grow": "A grow event replaces the sprite already in that slot (same position).",
+  "shared_sprites": "Sprites not in this folder live elsewhere in Art/Sprites/ (Shared/, Genesis/ or the book folder that first used them). Every sprite name is unique across Art/Sprites.",
+  "events": [
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "TE",
+      "sprite": "obj_ezra_temple_1",
+      "u": 0.4167,
+      "v": 0.4786,
+      "width": 0.4805,
+      "mirror": false,
+      "shadowWidth": 0.392,
+      "caption": "The ruins cleared"
+    },
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "RO",
+      "sprite": "obj_rocks",
+      "u": 0.1515,
+      "v": 0.7558,
+      "width": 0.1041,
+      "mirror": false,
+      "shadowWidth": 0.085
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "DO",
+      "sprite": "obj_donkey",
+      "u": 0.9095,
+      "v": 0.5238,
+      "width": 0.0713,
+      "mirror": false,
+      "shadowWidth": 0.058,
+      "caption": "The families return"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "CM",
+      "sprite": "obj_camel",
+      "u": 0.8262,
+      "v": 0.2262,
+      "width": 0.1008,
+      "mirror": false,
+      "shadowWidth": 0.082
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "AL",
+      "sprite": "obj_ezra_altar",
+      "u": 0.4452,
+      "v": 0.8452,
+      "width": 0.0983,
+      "mirror": false,
+      "shadowWidth": 0.08,
+      "caption": "The altar rebuilt"
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "BE",
+      "sprite": "obj_1kings_cedar_beams",
+      "u": 0.3749,
+      "v": 0.9698,
+      "width": 0.0959,
+      "mirror": false,
+      "shadowWidth": 0.078
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "G1",
+      "sprite": "obj_grass",
+      "u": 0.6141,
+      "v": 0.9805,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046,
+      "caption": "The work stopped"
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "P1",
+      "sprite": "obj_pebbles",
+      "u": 0.262,
+      "v": 0.8331,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 5,
+      "action": "grow",
+      "slot": "TE",
+      "sprite": "obj_ezra_temple_2",
+      "u": 0.4167,
+      "v": 0.4786,
+      "width": 0.4657,
+      "mirror": false,
+      "shadowWidth": 0.38,
+      "caption": "The walls rise"
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "SN",
+      "sprite": "obj_cut_stones",
+      "u": 0.719,
+      "v": 0.9048,
+      "width": 0.1167,
+      "mirror": false,
+      "shadowWidth": 0.095
+    },
+    {
+      "chapter": 6,
+      "action": "grow",
+      "slot": "TE",
+      "sprite": "obj_ezra_temple_3",
+      "u": 0.4167,
+      "v": 0.4786,
+      "width": 0.4731,
+      "mirror": false,
+      "shadowWidth": 0.386,
+      "caption": "The temple finished"
+    },
+    {
+      "chapter": 6,
+      "action": "add",
+      "slot": "LY",
+      "sprite": "obj_harp",
+      "u": 0.8027,
+      "v": 0.7501,
+      "width": 0.0562,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 6,
+      "action": "add",
+      "slot": "SH",
+      "sprite": "obj_sheep",
+      "u": 0.9836,
+      "v": 0.8167,
+      "width": 0.0639,
+      "mirror": false,
+      "shadowWidth": 0.052
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "SS",
+      "sprite": "obj_scroll_stand",
+      "u": 0.9548,
+      "v": 0.4357,
+      "width": 0.0762,
+      "mirror": false,
+      "shadowWidth": 0.062,
+      "caption": "Ezra's scroll"
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "PA",
+      "sprite": "obj_palm",
+      "u": 0.7736,
+      "v": 0.3736,
+      "width": 0.1065,
+      "mirror": false,
+      "shadowWidth": 0.087
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "JA",
+      "sprite": "obj_jars",
+      "u": 0.8971,
+      "v": 0.973,
+      "width": 0.0713,
+      "mirror": false,
+      "shadowWidth": 0.058,
+      "caption": "Gifts for the temple"
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "G2",
+      "sprite": "obj_grass",
+      "u": 0.976,
+      "v": 0.1996,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "F1",
+      "sprite": "obj_flowers",
+      "u": 0.4738,
+      "v": 0.7354,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "G3",
+      "sprite": "obj_grass",
+      "u": 0.7569,
+      "v": 0.5139,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 10,
+      "action": "add",
+      "slot": "OL",
+      "sprite": "obj_terebinth",
+      "u": 0.22,
+      "v": 0.9528,
+      "width": 0.1352,
+      "mirror": false,
+      "shadowWidth": 0.11
+    },
+    {
+      "chapter": 10,
+      "action": "add",
+      "slot": "F2",
+      "sprite": "obj_flowers",
+      "u": 0.9809,
+      "v": 0.6807,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    }
+  ]
+}
