@@ -368,8 +368,7 @@ struct ChapterReaderView: View {
                                 .foregroundStyle(Color.secondaryText)
                             #if DEBUG
                             if !bible.isLive {
-                                // Developers: most chapters have no text until an API.Bible key is set.
-                                Label("DEBUG: no API.Bible key is set, so only the bundled sample chapters have text. Put your key in Secrets.xcconfig (see README) and run again.",
+                                Label("DEBUG: no API.Bible key is set. Choose ASV for the complete built-in Bible, or add a key for API translations (see README).",
                                       systemImage: "key")
                                     .font(.footnote)
                                     .foregroundStyle(Color.terracotta)
@@ -434,14 +433,14 @@ struct ChapterReaderView: View {
     }
 
     /// At the bottom of every chapter: the translation's copyright, and a note when the text is
-    /// an old copy or the bundled sample.
+    /// an old copy or the built-in ASV fallback.
     private func textNotice(_ text: ChapterText) -> some View {
         VStack(spacing: 4) {
             switch text.origin {
             case .staleCache:
                 Label("Saved copy (couldn't refresh it just now)", systemImage: "clock.arrow.circlepath")
-            case .bundled where bible.isLive:
-                Label("You're offline: showing the bundled sample", systemImage: "wifi.slash")
+            case .bundled where bible.isLive && text.translation != translation.current?.abbreviation:
+                Label("You're offline: showing the built-in ASV", systemImage: "wifi.slash")
             default:
                 EmptyView()
             }
@@ -473,7 +472,7 @@ struct ChapterReaderView: View {
             } else if hasText {
                 SessionFinishButton(session: session, readBefore: isRead) { asking = true }
             }
-            if !counted {
+            if !counted && translation.current?.isBuiltIn != true {
                 Button { ownBible = ChapterRef(bookID: book.id, chapter: chapter) } label: {
                     Label("I read this in my own Bible", systemImage: "book.closed")
                 }

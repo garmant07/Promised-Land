@@ -859,6 +859,39 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     code art and resets the DEBUG switch after the run. Remove `SpriteBaseExporter.swift`, its
     Settings button and launch argument before release if sprite authoring is complete.
 
+## Round: built-in ASV (stage 1 of public-domain Bibles) (Nov 2026)
+
+118. **The complete ASV is built in and offline.** The source is eBible.org's public-domain
+    `eng-asv_usfm.zip` (`https://ebible.org/Scriptures/eng-asv_usfm.zip`, details at
+    `https://ebible.org/details.php?id=eng-asv`). `LocalBibleService` loads one book only when a
+    chapter in it opens and holds up to three decoded books in `NSCache`, which can discard them
+    under memory pressure. `RoutedBibleService` sends ASV to that service and NIV/NLT/CSB to
+    `APIBibleService`; the views still use only `\.bibleService`. ASV never calls the network and is
+    never written to `Application Support/BibleText/`. A fresh install, no key, or no available API
+    translations chooses ASV; an available saved choice is preserved.
+119. **Development-time import.** `Tools/BibleImport/import_bible.py` uses only Python's standard
+    library. The source archive belongs in gitignored `Tools/BibleSources/`. From the repository root:
+    `python3 Tools/BibleImport/import_bible.py Tools/BibleSources/eng-asv_usfm.zip ASV`.
+    The deterministic output is 66 files in `Promised Land/Bible/Texts/ASV/`, named
+    `ASV_<USFM BOOK>.json`. Each file is `{ "chapters": { "1": { "verses":
+    [{ "n": 1, "t": "…" }], "title": "…" } } }`; `title` is optional. The importer keeps the
+    source verse numbers, rejects non-integer or duplicate verse numbers, strips notes,
+    cross-references, headings, word metadata and paragraph markup, and retains all 116
+    straightforward Psalm `\d` titles. No verse-numbering quirks were found in this source.
+120. **Size and resource naming.** The 66 JSON files total 4,631,076 bytes (4.5 MiB on disk), below
+    the roughly 6 MB compression threshold, so they are not compressed. Xcode's synchronized group
+    flattens JSON resources into the app bundle. Plain `JOB.json` collided with the existing
+    `Questions/job.json` on the case-insensitive build filesystem, so every built-in Bible resource
+    must be named `<TRANSLATION>_<BOOK>.json` (for example `ASV_JOB.json`). Tests check that bundle
+    JSON names are unique and that every catalogued built-in translation has all 66 prefixed files.
+121. **Adding KJV or BSB later:** put its approved public-domain USFM zip in
+    `Tools/BibleSources/`; run the same script with its abbreviation; add the generated prefixed
+    files; then add one `TranslationCatalog.Entry` (name, abbreviation, `.bundled(folder:)`, and
+    end-of-chapter notice) in `BibleService.swift`. Do not add API ids, cache paths, view cases or
+    project folder settings. Run the corpus, exact-source, markup, offline, resource-name and timer
+    switching tests. The retained small `SampleText` and `BundledBibleService` remain for deep dives,
+    existing review records and direct API-service fallback tests; they were not deleted.
+
 ## Remove before release
 
 - **`Promised Land/Debug/FullBiblePreview/`** (the whole folder) — the temporary full-Bible preview.
