@@ -30,8 +30,8 @@ struct LibraryHubView: View {
                         bookShelf(section)
                     }
                     Text(bible.isLive
-                         ? "Chapters load as you open them and are kept for reading offline. In any chapter, choose “I read this in my own Bible” and answer a quick question or reflection to count your reading."
-                         : "American Standard Version sample text is available for some chapters. Every chapter also has “I read this in my own Bible”, followed by a quick question or reflection.")
+                         ? "ASV is built in and works offline. NIV, NLT and CSB chapters load as you open them and are kept for reading offline."
+                         : "The complete American Standard Version is built in and works offline.")
                         .font(.caption)
                         .foregroundStyle(Color.secondaryText)
                 }

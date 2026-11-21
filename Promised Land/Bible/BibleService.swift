@@ -1,27 +1,50 @@
 import SwiftUI
 
 // Bible text. Views ask a `BibleService` for a chapter and never fetch, parse or cache anything
-// themselves. The app's service is `APIBibleService` (live text from API.Bible, cached per chapter
-// on the device) with the bundled ASV sample (`BundledBibleService`) as its fallback. Only Bible
-// TEXT comes from the network; reading progress, the island, journeys and everything else stay
-// on the device and work offline.
+// themselves. `RoutedBibleService` sends built-in translations to `LocalBibleService` and the
+// licensed translations to API.Bible. Reading progress and all other app data stay on the device.
 
-/// The translations the app offers from API.Bible. Their Bible ids are looked up on first run
-/// (never hard-coded); one that isn't on the API plan is simply hidden.
-nonisolated enum BibleTranslation: String, CaseIterable, Identifiable, Codable, Sendable {
-    case niv = "NIV"
-    case nlt = "NLT"
-    case csb = "CSB"
+/// One translation. Add a public-domain Bible by importing its files and adding one catalog entry.
+nonisolated struct BibleTranslation: RawRepresentable, CaseIterable, Identifiable, Codable, Hashable, Sendable {
+    enum Source: Hashable, Sendable { case bundled(folder: String), apiBible }
+
+    let rawValue: String
+
+    init?(rawValue: String) {
+        guard TranslationCatalog.entries.contains(where: { $0.abbreviation == rawValue }) else { return nil }
+        self.rawValue = rawValue
+    }
+
+    private init(known rawValue: String) { self.rawValue = rawValue }
+
+    init(from decoder: Decoder) throws {
+        let rawValue = try decoder.singleValueContainer().decode(String.self)
+        guard let value = BibleTranslation(rawValue: rawValue) else {
+            throw DecodingError.dataCorruptedError(in: try decoder.singleValueContainer(), debugDescription: "Unknown Bible translation")
+        }
+        self = value
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(rawValue)
+    }
+
+    static let asv = BibleTranslation(known: "ASV")
+    static let niv = BibleTranslation(known: "NIV")
+    static let nlt = BibleTranslation(known: "NLT")
+    static let csb = BibleTranslation(known: "CSB")
+    static var allCases: [BibleTranslation] { TranslationCatalog.entries.map { BibleTranslation(known: $0.abbreviation) } }
 
     var id: String { rawValue }
     var abbreviation: String { rawValue }
+    var name: String { definition.name }
+    var source: Source { definition.source }
+    var chapterNotice: String { definition.chapterNotice }
+    var isBuiltIn: Bool { if case .bundled = source { true } else { false } }
 
-    var name: String {
-        switch self {
-        case .niv: "New International Version"
-        case .nlt: "New Living Translation"
-        case .csb: "Christian Standard Bible"
-        }
+    private var definition: TranslationCatalog.Entry {
+        TranslationCatalog.entries.first { $0.abbreviation == rawValue }!
     }
 
     /// The stored choice if it's available, otherwise the first one that is (nil: none are).
@@ -30,11 +53,31 @@ nonisolated enum BibleTranslation: String, CaseIterable, Identifiable, Codable, 
     }
 }
 
+nonisolated enum TranslationCatalog {
+    struct Entry: Sendable {
+        let name: String
+        let abbreviation: String
+        let source: BibleTranslation.Source
+        let chapterNotice: String
+    }
+
+    static let entries: [Entry] = [
+        Entry(name: "American Standard Version", abbreviation: "ASV", source: .bundled(folder: "ASV"),
+              chapterNotice: "American Standard Version (1901). Public domain."),
+        Entry(name: "New International Version", abbreviation: "NIV", source: .apiBible, chapterNotice: ""),
+        Entry(name: "New Living Translation", abbreviation: "NLT", source: .apiBible, chapterNotice: ""),
+        Entry(name: "Christian Standard Bible", abbreviation: "CSB", source: .apiBible, chapterNotice: ""),
+    ]
+
+    static var builtIn: [BibleTranslation] { BibleTranslation.allCases.filter(\.isBuiltIn) }
+    static var apiBible: [BibleTranslation] { BibleTranslation.allCases.filter { $0.source == .apiBible } }
+}
+
 /// One chapter's text, as shown in the reader.
 nonisolated struct ChapterText: Codable, Equatable, Sendable {
     let bookID: String
     let chapter: Int
-    /// "NIV", "NLT", "CSB", or "ASV" for the bundled sample.
+    /// The translation abbreviation.
     let translation: String
     let verses: [Verse]
     /// Shown at the bottom of the chapter (from the API response for live text).
@@ -51,7 +94,7 @@ nonisolated struct ChapterText: Codable, Equatable, Sendable {
         case cache
         /// From the cache, older than 30 days: it couldn't be refreshed (offline or an error).
         case staleCache
-        /// The bundled ASV sample (no API key, or offline with nothing cached).
+        /// Text bundled in the app (the full ASV or the retained small sample).
         case bundled
     }
 
@@ -130,13 +173,13 @@ nonisolated enum BibleError: Error, Equatable, Sendable {
 protocol BibleService: AnyObject, Sendable {
     /// Live text is set up (an API key is configured).
     var isLive: Bool { get }
-    /// Translations that can be picked now (empty: only the bundled sample).
+    /// Translations that can be picked now.
     var translations: [BibleTranslation] { get }
     /// Translations looked for but not on the API plan.
     var unavailableTranslations: [BibleTranslation] { get }
     /// First run: looks up the Bible ids of the translations (no-op once known).
     func prepare() async
-    /// A chapter, from the cache, the network or the bundled sample.
+    /// A chapter, from a built-in resource, the cache or the network.
     func chapter(bookID: String, chapter: Int, translation: BibleTranslation?) async throws -> ChapterText
     /// A chapter already on the device, without touching the network (for word counts and questions).
     func cachedChapter(bookID: String, chapter: Int, translation: BibleTranslation?) -> ChapterText?
@@ -172,7 +215,7 @@ final class BundledBibleService: BibleService {
 /// The app's one Bible service.
 @MainActor
 enum BibleServices {
-    static let shared: any BibleService = APIBibleService.fromBundle()
+    static let shared: any BibleService = RoutedBibleService.fromBundle()
 }
 
 extension EnvironmentValues {
@@ -187,6 +230,6 @@ extension EnvironmentValues {
 }
 
 extension StorageKeys {
-    /// The chosen translation ("NIV", "NLT" or "CSB").
+    /// The chosen translation, using its abbreviation. This storage key is intentionally unchanged.
     static let bibleTranslation = "bible.translation"
 }

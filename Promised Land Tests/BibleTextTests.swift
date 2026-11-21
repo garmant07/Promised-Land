@@ -263,6 +263,94 @@ struct APIBibleServiceTests {
     }
 }
 
+// MARK: - Built-in ASV
+
+@MainActor
+struct LocalBibleServiceTests {
+    @Test("Bundled Bible resources use unique translation-prefixed file names")
+    func resourceNamesAreUnique() throws {
+        let resourceURL = try #require(Bundle.main.resourceURL)
+        let resources = try FileManager.default.contentsOfDirectory(at: resourceURL, includingPropertiesForKeys: nil)
+            .filter { $0.pathExtension == "json" }
+            .map(\.lastPathComponent)
+        #expect(Set(resources).count == resources.count)
+
+        for translation in TranslationCatalog.builtIn {
+            for code in USFM.codes {
+                let name = "\(translation.abbreviation)_\(code)"
+                #expect(Bundle.main.url(forResource: name, withExtension: "json") != nil)
+            }
+        }
+    }
+
+    @Test("ASV contains all 66 books and all 1,189 chapters without USFM markup")
+    func completeCorpus() async throws {
+        let service = LocalBibleService()
+        var chapters = 0
+        #expect(service.translations == [.asv])
+        #expect(BibleCatalog.books.count == 66)
+
+        for book in BibleCatalog.books {
+            for chapter in book.chapterNumbers {
+                let loaded = try? await service.chapter(bookID: book.id, chapter: chapter, translation: .asv)
+                let text = try #require(loaded, "Missing ASV text for \(book.id) \(chapter)")
+                #expect(!text.verses.isEmpty)
+                #expect(text.verses.allSatisfy { !$0.text.contains("\\") && !$0.text.contains("|") && !$0.text.contains("+") })
+                chapters += 1
+            }
+        }
+        #expect(chapters == 1_189)
+    }
+
+    @Test("ASV spot checks match the eBible eng-asv source")
+    func sourceText() async throws {
+        let service = LocalBibleService()
+        let genesis = try await service.chapter(bookID: "genesis", chapter: 1, translation: .asv)
+        let psalm = try await service.chapter(bookID: "psalms", chapter: 23, translation: .asv)
+        let john = try await service.chapter(bookID: "john", chapter: 3, translation: .asv)
+
+        #expect(genesis.verses.first { $0.number == 1 }?.text == "In the beginning God created the heavens and the earth.")
+        #expect(psalm.verses.first { $0.number == 1 }?.text == "Jehovah is my shepherd; I shall not want.")
+        #expect(john.verses.first { $0.number == 16 }?.text == "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life.")
+        #expect(john.copyright == "American Standard Version (1901). Public domain.")
+    }
+
+    @Test("ASV loads without an API key or a network request")
+    func offline() async throws {
+        let transport = MockTransport()
+        transport.offline = true
+        let local = LocalBibleService()
+        let api = APIBibleService(key: nil, transport: transport, fallback: local)
+        let service = RoutedBibleService(local: local, api: api)
+
+        #expect(local.cachedChapter(bookID: "obadiah", chapter: 1, translation: .asv) == nil)
+        let text = try await service.chapter(bookID: "obadiah", chapter: 1, translation: .asv)
+        #expect(text.translation == "ASV")
+        #expect(text.origin == .bundled)
+        #expect(local.cachedChapter(bookID: "obadiah", chapter: 1, translation: .asv) == text)
+        #expect(transport.requests.isEmpty)
+    }
+
+    @Test("ASV uses the current finish flow and switching text updates the session word count")
+    func asvUsesCurrentFinishFlowAndSwitchingUpdatesWordCount() async throws {
+        let local = LocalBibleService()
+        let asv = try await local.chapter(bookID: "genesis", chapter: 1, translation: .asv)
+        let api = text("genesis", 1, ["one two three", "four five"], translation: "NIV")
+        let session = ReadingSession(bookID: "translation-switch-test", chapter: 1)
+
+        session.setText(asv, strictness: .standard)
+        #expect(session.words == asv.words)
+        session.markReachedEnd()
+        #expect(session.canFinish)
+        #expect(ReadingQuestionFlow.countsChapter(.skip, strictMode: false))
+        #expect(!ReadingQuestionFlow.countsChapter(.skip, strictMode: true))
+        session.setText(api, strictness: .standard)
+        #expect(session.words == 5)
+        session.setText(asv, strictness: .standard)
+        #expect(session.words == asv.words)
+    }
+}
+
 // MARK: - Through the BibleService protocol (mock service)
 
 @MainActor

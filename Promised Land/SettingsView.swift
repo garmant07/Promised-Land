@@ -69,7 +69,7 @@ struct SettingsView: View {
                     #endif
 
                     section("About") {
-                        Text("Scripture text comes from API.Bible (NIV, NLT or CSB; each chapter shows its copyright notice). Chapters load when you open them and are kept on this device for reading offline. A small American Standard Version (1901, public domain) sample is bundled.")
+                        Text("The American Standard Version (1901, public domain) is built in and works offline. NIV, NLT and CSB come from API.Bible; their chapters load when you open them, are kept on this device, and show the translation's copyright notice.")
                             .foregroundStyle(Color.secondaryText)
                         Text("Only Bible text is downloaded. Your reading, island and journal stay on this device, with no account, and everything else works offline. Your journal is private: it never leaves your phone. \"Reset all progress\" clears reading only; journal entries are kept.")
                             .foregroundStyle(Color.secondaryText)

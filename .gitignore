@@ -1,4 +1,8 @@
 # The API.Bible key (see README). Never commit it.
 Secrets.xcconfig
 
+# Development-only source archives for the bundled public-domain Bibles.
+Tools/BibleSources/
+
 .DS_Store
+xcuserdata/

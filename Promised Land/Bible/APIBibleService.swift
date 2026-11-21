@@ -23,7 +23,7 @@ struct URLSessionTransport: HTTPTransport {
 final class APIBibleService: BibleService {
     static let baseURL = URL(string: "https://rest.api.bible/v1")!
 
-    /// The API key, or nil when none is configured (then only the bundled sample shows).
+    /// The API key, or nil when none is configured.
     let key: String?
     let cache: ChapterCache
     let usage: APIUsage
@@ -38,7 +38,7 @@ final class APIBibleService: BibleService {
 
     static let directoryKey = "bible.directory"
 
-    /// Nil arguments mean the app's own: URLSession, the cache folder, the shared counter and the bundled sample.
+    /// Nil arguments mean the app's own URLSession, cache folder, shared counter and sample fallback.
     init(key: String?, transport: HTTPTransport? = nil, cache: ChapterCache? = nil, usage: APIUsage? = nil,
          fallback: (any BibleService)? = nil, defaults: UserDefaults = .standard) {
         let key = key?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -52,8 +52,8 @@ final class APIBibleService: BibleService {
     }
 
     /// The key from Info.plist (`APIBibleKey`, filled from API_BIBLE_KEY in Secrets.xcconfig).
-    static func fromBundle(_ bundle: Bundle = .main) -> APIBibleService {
-        APIBibleService(key: configuredKey(bundle.object(forInfoDictionaryKey: "APIBibleKey") as? String))
+    static func fromBundle(_ bundle: Bundle = .main, fallback: (any BibleService)? = nil) -> APIBibleService {
+        APIBibleService(key: configuredKey(bundle.object(forInfoDictionaryKey: "APIBibleKey") as? String), fallback: fallback)
     }
 
     /// A usable key, or nil for an empty value, an unexpanded `$(…)` or the example placeholder.
@@ -96,8 +96,8 @@ final class APIBibleService: BibleService {
                 cached.origin = .staleCache
                 return cached
             }
-            // Offline with nothing cached: the bundled sample if this chapter has one.
-            if error == .offline, let bundled = fallback.cachedChapter(bookID: bookID, chapter: chapter, translation: nil) {
+            // Offline with nothing cached: use the configured bundled fallback.
+            if error == .offline, let bundled = try? await fallback.chapter(bookID: bookID, chapter: chapter, translation: nil) {
                 return bundled
             }
             throw error
@@ -105,8 +105,8 @@ final class APIBibleService: BibleService {
     }
 
     func cachedChapter(bookID: String, chapter: Int, translation: BibleTranslation?) -> ChapterText? {
-        // The chosen translation first, then any other one on the device, then the bundled sample.
-        let order = (translation.map { [$0] } ?? []) + BibleTranslation.allCases.filter { $0 != translation }
+        // The chosen API translation first, then another cached API translation, then the fallback.
+        let order = (translation.map { [$0] } ?? []) + TranslationCatalog.apiBible.filter { $0 != translation }
         for t in order {
             if let text = cache.load(translation: t.abbreviation, bookID: bookID, chapter: chapter) { return text }
         }
@@ -221,14 +221,14 @@ nonisolated struct TranslationDirectory: Codable, Equatable, Sendable {
     var ids: [BibleTranslation: String]
     let checked: Date
 
-    var available: [BibleTranslation] { BibleTranslation.allCases.filter { ids[$0] != nil } }
-    var unavailable: [BibleTranslation] { BibleTranslation.allCases.filter { ids[$0] == nil } }
+    var available: [BibleTranslation] { TranslationCatalog.apiBible.filter { ids[$0] != nil } }
+    var unavailable: [BibleTranslation] { TranslationCatalog.apiBible.filter { ids[$0] == nil } }
 
     /// Picks each translation from the bibles list: by abbreviation first, then by full name.
     static func match(_ bibles: [BibleSummary], checked: Date) -> TranslationDirectory {
         func clean(_ s: String?) -> String { (s ?? "").uppercased().filter { $0.isLetter || $0.isNumber } }
         var ids: [BibleTranslation: String] = [:]
-        for t in BibleTranslation.allCases {
+        for t in TranslationCatalog.apiBible {
             let byAbbreviation = bibles.first { clean($0.abbreviation) == t.abbreviation || clean($0.abbreviationLocal) == t.abbreviation }
             let byName = bibles.first { $0.name.localizedCaseInsensitiveContains(t.name) }
             if let bible = byAbbreviation ?? byName { ids[t] = bible.id }

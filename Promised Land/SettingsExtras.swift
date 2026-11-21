@@ -72,8 +72,8 @@ struct DebugToolsSection: View {
                 message = "Sprite bases exported to Documents/SpriteBases."
             }
             .buttonStyle(SoftButtonStyle())
-            if let api = bible as? APIBibleService {
-                Text(api.isLive ? "Key set · \(api.cache.count) chapters cached" : "No API key: bundled sample only (see README)")
+            if let api = (bible as? APIBibleService) ?? (bible as? RoutedBibleService)?.api {
+                Text(api.isLive ? "Key set · \(api.cache.count) chapters cached" : "No API key: built-in ASV available offline")
                     .font(.footnote).foregroundStyle(Color.secondaryText)
                 Button("Clear cached Bible text") { api.cache.removeAll(); message = "Cached chapters cleared." }
                     .buttonStyle(SoftButtonStyle())

@@ -27,18 +27,18 @@ Promised Land is an iOS app where reading the Bible grows an isometric island. E
 - **Platform:** iOS 26.0 minimum (lowered from 27.0 on purpose — do not raise it). iPhone and iPad (`TARGETED_DEVICE_FAMILY = 1,2`); iPhone supports portrait and landscape.
 - **Swift:** Swift 5 language mode with `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor`. Code is main-actor by default; types used off the main actor are marked `nonisolated` (see `AppSchema.swift`).
 - **Frameworks:** SwiftUI, SwiftData, AVAudioEngine (synthesised Collect All whoosh). **No SpriteKit** — the island is a SwiftUI `Canvas`. No third-party packages.
-- **Data:** everything is local and works offline. The single network feature is Bible text from API.Bible (§5). Friends and Groups are mocks (`MockFriendsService`, `MockGroupsService`); nothing is sent anywhere.
+- **Data:** everything is local and works offline. ASV Bible text is built in; NIV, NLT and CSB are the only network-backed text and come from API.Bible (§5). Friends and Groups are mocks (`MockFriendsService`, `MockGroupsService`); nothing is sent anywhere.
 - **Bundle ID / signing:** `com.tylergarmanpersonalteam.PromisedLand`. Do not change bundle IDs, team, signing or entitlements unless asked.
 
 ### Configuration and secrets
 
 - `Config.xcconfig` is the app target's base configuration and does `#include? "Secrets.xcconfig"`. `Info.plist` maps `APIBibleKey = $(API_BIBLE_KEY)`; `APIBibleService.fromBundle()` reads it.
 - `Secrets.xcconfig` is gitignored and holds the real API.Bible key. **Never commit it, print it, or include it in reports.** `Secrets.example.xcconfig` is the template.
-- Without a key the app still builds and runs (bundled ASV sample text only). A missing key is not a build failure to "fix".
+- Without a key the app still builds and runs with the complete built-in ASV. A missing key is not a build failure to "fix".
 
 ## 3. Read first: the project's own records
 
-- **`NOTES.md`** — numbered decisions and lessons from every round (currently up to ~112). This is the project's memory: read the notes touching your area before changing it, and don't undo a recorded decision without saying so.
+- **`NOTES.md`** — numbered decisions and lessons from every round (currently up to ~126). This is the project's memory: read the notes touching your area before changing it, and don't undo a recorded decision without saying so.
 - **`AUDIT.md`** — status per section of the master build prompt.
 - **`REVIEW.md`** — content awaiting human review before launch.
 - **`ART_ASSETS.md`** — asset naming for swapping code-drawn art with images.
@@ -76,10 +76,12 @@ There is no `CLAUDE.md`; this file and the documents above are the conventions.
 - Kids (Under 13) default to Strict; changing it on a Kids profile requires the grown-up sum.
 - Island growth counts distinct checked reads of a book, not which chapter was read.
 
-### Bible text (API.Bible)
+### Bible text (built-in ASV and API.Bible)
 
+- The complete ASV is bundled, public domain and fully offline. It loads one book resource at a time and never enters the API cache.
 - Base `https://rest.api.bible/v1`, header `api-key`. Translations (NIV, NLT, CSB) are found by abbreviation from `GET /bibles?language=eng`; **never hard-code Bible ids**.
 - Fetch one chapter at a time, only when opened. Cache per translation in `Application Support/BibleText/<translation>/<book>.<chapter>.json`, refresh after 30 days when online, always show the saved copy offline. Never download whole Bibles.
+- The “never download whole Bibles” rule applies to API.Bible; development-time imports of public-domain built-in translations are separate.
 - Show the translation's copyright notice at the end of every chapter. Handle 401/403/429 with clear messages.
 - Reading-time word counts and generated questions use the saved text, never the network.
 - **Tests never call the API.** Use the mock `BibleService` and mock HTTP transport.
