@@ -49,25 +49,45 @@ extension Font {
 // MARK: - Buttons
 
 struct PrimaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        PrimaryButtonStyleBody(configuration: configuration)
+    let background: Color
+    let foreground: Color
+
+    init(background: Color = .primaryBrown, foreground: Color = .onPrimary) {
+        self.background = background
+        self.foreground = foreground
     }
 
-    private struct PrimaryButtonStyleBody: View {
-        let configuration: PrimaryButtonStyle.Configuration
-        @Environment(\.isEnabled) private var isEnabled
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .primaryButtonAppearance(background: background, foreground: foreground)
+            .scaleEffect(configuration.isPressed ? 0.97 : 1)
+            .animation(.easeOut(duration: 0.15), value: configuration.isPressed)
+    }
+}
 
-        var body: some View {
-            configuration.label
-                .font(.headline)
-                .foregroundStyle(Color.onPrimary)
-                .frame(maxWidth: .infinity, minHeight: 52)
-                .padding(.horizontal, 16)
-                .background(Color.primaryBrown.opacity(isEnabled ? 1 : 0.4),
-                            in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                .scaleEffect(configuration.isPressed ? 0.97 : 1)
-                .animation(.easeOut(duration: 0.15), value: configuration.isPressed)
-        }
+struct PrimaryButtonAppearance: ViewModifier {
+    let background: Color
+    let foreground: Color
+
+    @Environment(\.isEnabled) private var isEnabled
+
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .foregroundStyle(foreground)
+            .frame(maxWidth: .infinity, minHeight: 52)
+            .padding(.horizontal, 16)
+            .background(background.opacity(isEnabled ? 1 : 0.4),
+                        in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+    }
+}
+
+extension View {
+    func primaryButtonAppearance(
+        background: Color = .primaryBrown,
+        foreground: Color = .onPrimary
+    ) -> some View {
+        modifier(PrimaryButtonAppearance(background: background, foreground: foreground))
     }
 }
 

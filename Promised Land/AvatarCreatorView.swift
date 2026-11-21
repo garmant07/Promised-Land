@@ -7,6 +7,7 @@ import SwiftData
 struct AvatarCreatorView: View {
     /// Called by Done. Nil when embedded (onboarding), where there's no Done button.
     var onDone: (() -> Void)?
+    var onBack: (() -> Void)?
     var showsName = true
 
     @Environment(\.modelContext) private var context
@@ -16,16 +17,18 @@ struct AvatarCreatorView: View {
     @State private var history: [AvatarConfig] = []
     @State private var tab: Tab = .skin
     @State private var choosingCharacter = false
+    @State private var switchRequest: AvatarSexSwitchRequest?
     @State private var loaded = false
 
-    enum Tab: String, CaseIterable, Identifiable {
-        case skin, hair, beard, head, robe, cloak, item, sandals
-        var id: String { rawValue }
-        var title: String { rawValue.capitalized }
-    }
+    typealias Tab = AvatarCreatorTab
 
     var body: some View {
         let content = VStack(spacing: 14) {
+            if let sex = config.sex {
+                CreatorSexHeader(current: sex) { target in
+                    switchRequest = AvatarSexSwitchRequest(id: target, target: target)
+                }
+            }
             preview
             if showsName {
                 TextField("Your name", text: $name)
@@ -37,22 +40,39 @@ struct AvatarCreatorView: View {
             }
             actions
             tabs
-            AvatarPartPicker(tab: tab, config: config) { change($0) }
+            if let sex = config.sex {
+                AvatarPartPicker(tab: tab, sex: sex, config: config) { change($0) }
+            }
         }
         .onAppear(perform: load)
         .sheet(isPresented: $choosingCharacter) {
-            CharacterPresetPicker { preset in change(preset); choosingCharacter = false }
+            if let sex = config.sex {
+                CharacterPresetPicker(sex: sex) { preset in change(preset); choosingCharacter = false }
+            }
+        }
+        .sheet(item: $switchRequest) { request in
+            AvatarSwitchSheet(current: config, target: request.target) {
+                applySwitch(to: request.target)
+            }
         }
 
-        if let onDone {
+        if onDone != nil || onBack != nil {
             NavigationStack {
                 ScrollView { content.padding(16) }
                     .themedScreen()
                     .navigationTitle("Your character")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
+                        if let onBack {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Back", action: onBack)
+                                    .tint(Color.primaryBrown)
+                            }
+                        }
+                        if let onDone {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") { try? context.save(); onDone() }.tint(Color.primaryBrown)
+                        }
                         }
                     }
             }
@@ -80,6 +100,14 @@ struct AvatarCreatorView: View {
         profile?.apply(new)
     }
 
+    private func applySwitch(to sex: AvatarSex) {
+        let new = config.switched(to: sex)
+        withAnimation(.spring(duration: 0.3)) { config = new }
+        profile?.apply(new)
+        history.removeAll()
+        tab = .skin
+    }
+
     private var preview: some View {
         TimelineView(.animation) { t in
             let bob = sin(t.date.timeIntervalSinceReferenceDate * 2) * 2.5
@@ -98,7 +126,10 @@ struct AvatarCreatorView: View {
 
     private var actions: some View {
         HStack(spacing: 8) {
-            Button { change(.random()) } label: { Label("Randomise", systemImage: "dice") }
+            Button {
+                guard let sex = config.sex else { return }
+                change(.random(for: sex))
+            } label: { Label("Randomise", systemImage: "dice") }
             Button { choosingCharacter = true } label: { Label("Start from a character", systemImage: "person.2") }
             Button {
                 guard let last = history.popLast() else { return }
@@ -113,7 +144,7 @@ struct AvatarCreatorView: View {
     private var tabs: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 6) {
-                ForEach(Tab.allCases) { t in
+                ForEach(config.sex.map(AvatarCreatorRules.tabs(for:)) ?? []) { t in
                     Button(t.title) { tab = t }
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(tab == t ? Color.onPrimary : Color.primaryBrown)
@@ -123,6 +154,31 @@ struct AvatarCreatorView: View {
                         .accessibilityAddTraits(tab == t ? .isSelected : [])
                 }
             }
+        }
+    }
+}
+
+private struct CreatorSexHeader: View {
+    let current: AvatarSex
+    var onChoose: (AvatarSex) -> Void
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "chevron.left")
+                .foregroundStyle(Color.secondaryText)
+                .opacity(0)
+                .frame(width: 44, height: 44)
+            HStack(spacing: 0) {
+                ForEach([AvatarSex.male, .female], id: \.self) { sex in
+                    Button(sex.rawValue.capitalized) { if sex != current { onChoose(sex) } }
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(sex == current ? Color.onPrimary : Color.primaryBrown)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .background(sex == current ? Color.primaryBrown : Color.card)
+                        .contentShape(Rectangle())
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         }
     }
 }

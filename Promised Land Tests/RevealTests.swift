@@ -22,9 +22,9 @@ struct RevealTests {
         #expect(step.caption == "Ruth 2: the barn is built")
         #expect(step.progressLabel == "The Farmstead · 2 of 4 chapters")
         #expect(step.kind == .grow)
-        // The barn starts hidden and pops up.
-        #expect(step.changes.contains { $0.index == step.focus && $0.from == 0 && $0.to == 1 })
-        #expect(plan.initial[step.focus] == 0)
+        // The scene's single book-level item crossfades to the new authored stage.
+        #expect(step.changes.contains { $0.index == step.focus && $0.from == 1 && $0.to == 2 })
+        #expect(plan.initial[step.focus] == 1)
     }
 
     @Test("Founding and completing are bigger moments")
@@ -63,7 +63,7 @@ struct RevealTests {
         let (i, order) = island([("genesis", 1)])
         let step = RevealPlanner.plan(island: i, before: [:], chapterOrder: order).steps[0]
         #expect(step.changes.contains { $0.from == 0 && $0.to == 1 })
-        #expect(GenesisScene.revealKind(from: 0, to: 1) == .pop)
+        #expect(SceneSystem.revealKind(from: 0, to: 1) == .pop)
     }
 
     @Test("Genesis grows an existing slot with a crossfade reveal")
@@ -71,6 +71,6 @@ struct RevealTests {
         let (i, order) = island((1...11).map { ("genesis", $0) })
         let step = RevealPlanner.plan(island: i, before: ["genesis": 10], chapterOrder: order).steps[0]
         #expect(step.changes.contains { $0.from == 10 && $0.to == 11 })
-        #expect(GenesisScene.revealKind(from: 10, to: 11) == .crossfade)
+        #expect(SceneSystem.revealKind(from: 10, to: 11) == .crossfade)
     }
 }

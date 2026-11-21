@@ -859,9 +859,73 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     code art and resets the DEBUG switch after the run. Remove `SpriteBaseExporter.swift`, its
     Settings button and launch argument before release if sprite authoring is complete.
 
+118. **Stage 19: timer off, one Strict switch and quiz Skip.** Supersedes the earlier reading
+    setting and timer decisions in `NOTES.md:92–103`, `NOTES.md:324–350` and
+    `NOTES.md:367–385`. The reading timer code remains in place, including its pace math in
+    `ReadingGate.timedMinimumSeconds`, but `ReadingGate.readingTimerEnabled` is deliberately
+    `false`; `minimumSeconds` is therefore zero while the last-page gate remains required.
+    The ring, countdown, Keep reading state and DEBUG required-time label are hidden while the
+    switch is off. A new `reading.strictMode` Boolean replaces the three-level UI; the legacy
+    `reading.strictness` key is retained only for the one-time migration, recorded by
+    `reading.strictMode.migrated`. Legacy `strict` maps to on; `relaxed`, `standard`, empty and
+    unknown values, plus new users, map to off. The migration runs in `MyApp.init()` before any
+    view reads the setting, and never overwrites a later user change. Strict is off by default for
+    every profile, including Kids, and no grown-up sum is involved. With Strict off, the quiz's
+    top-right Skip item appears for questions and reflections in both normal and own-Bible flows;
+    it uses the existing count path, creates no QuizPass and saves no reflection. Strict on keeps
+    questions and reflections required. Back to reading still does not count. No SwiftData schema,
+    reading-history, island, Library or GameProgress rules changed. The request to add a
+    press-and-hold button is a separate later stage and is not included here.
+
+119. **Stage 5: hold to say “I read this.”** The normal reader's end-of-chapter action is now a
+    1.5-second press-and-hold in `HoldToFinishButton.swift`. Its brown fill animates across the
+    light card track, releases before completion animate back to empty, and Reduce Motion uses a
+    full-colour fade instead of a sliding fill. A light impact starts the hold and a heavy impact
+    confirms completion; early releases are silent. VoiceOver exposes “I read this” with the
+    finish hint and completes immediately through its action. The old ring/countdown `FinishButton`
+    remains behind `ReadingGate.readingTimerEnabled`, including its `canFinish` gate. No schema,
+    reading-history or chapter-count rules changed.
+
+120. **Stage 5b: slim hold bar and chapter-read cover.** The normal reader's hold control is a
+    48-point capsule with 12-point side insets; its former square shape came from an unconstrained
+    `GeometryReader` and `minHeight` frames. Completion now announces the chapter, floods brown
+    from the button's anchor-resolved centre over 0.45 seconds, holds the checkmark moment for one
+    second, and fades into the existing question/reflection sheet over 0.35 seconds. The sheet is
+    opened transactionally without presentation animation under the same cover, so there is no
+    reader flash or sheet slide. Reduce Motion fades the cover in instead of growing the circle;
+    the cover blocks input while visible. Tests cover exactly-once cover/finish completion and
+    early-release no-op behavior. No schema, reading-history or chapter-count rules changed.
+
+121. **Stage 5c: one chapter-read cover and standard hold button.** The hold control now reuses
+    `PrimaryButtonStyle`, including its 52-point height, 18-point continuous corners, padding,
+    headline font and standard colors; the brown progress sweep is clipped inside that shape.
+    The chapter-read cover remains over the reader for its flood and hold, fades out, and only
+    then presents the question/reflection sheet with the normal sheet animation. The duplicate
+    cover inside the sheet and the disabled sheet transaction were removed. No schema,
+    reading-history or chapter-count rules changed.
+
+    Stage 5d found that wrapping the hold view in a `Button(action: {})` caused the Button's
+    gesture handling to compete with the outer long-press gesture: the fill updated, but the
+    long-press completion was not reliable on device. The shared primary-button appearance is
+    now a reusable modifier, so the hold view keeps the same look without a Button wrapper.
+
+122. **Stage 25 scene-frame measurement and remaining limit.** Scene shadows were removed from
+    the scene renderer; `shadowWidth` remains decoded but is unused for drawing. A DEBUG-only
+    headless benchmark draws a fully built island with 18 scene books and six villager/occlusion
+    cases at far, middle and close zooms, with a scene-off switch. On the test iPhone 16 run,
+    scene-on versus scene-off averaged 2.65/1.29 ms at zoom 1, 2.66/1.33 ms at zoom 4 and
+    2.72/1.39 ms at max zoom (about 2.05×, 1.99× and 1.96×; not within the 25% target).
+    Before the fix, repeated automatic tall decisions caused 174/120/66 opaque measurements;
+    after caching active events and tall decisions they were 0 at all three steady-frame zooms.
+    Scene occlusion now uses current-scale-bucket tall-piece pictures, and the direct all-scene
+    launch prewarm was removed. No scene-picture renders or alpha/opaque measurements occurred
+    in the measured steady frames; tall-layer redraws were 27 on versus 63 equivalent ordinary
+    tall redraws off. The remaining gap is the cost of drawing scene content in this synthetic
+    headless comparison; no additional non-approved optimization was attempted.
+
 ## Round: built-in ASV (stage 1 of public-domain Bibles) (Nov 2026)
 
-118. **The complete ASV is built in and offline.** The source is eBible.org's public-domain
+123. **The complete ASV is built in and offline.** The source is eBible.org's public-domain
     `eng-asv_usfm.zip` (`https://ebible.org/Scriptures/eng-asv_usfm.zip`, details at
     `https://ebible.org/details.php?id=eng-asv`). `LocalBibleService` loads one book only when a
     chapter in it opens and holds up to three decoded books in `NSCache`, which can discard them
@@ -869,7 +933,7 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     `APIBibleService`; the views still use only `\.bibleService`. ASV never calls the network and is
     never written to `Application Support/BibleText/`. A fresh install, no key, or no available API
     translations chooses ASV; an available saved choice is preserved.
-119. **Development-time import.** `Tools/BibleImport/import_bible.py` uses only Python's standard
+124. **Development-time import.** `Tools/BibleImport/import_bible.py` uses only Python's standard
     library. The source archive belongs in gitignored `Tools/BibleSources/`. From the repository root:
     `python3 Tools/BibleImport/import_bible.py Tools/BibleSources/eng-asv_usfm.zip ASV`.
     The deterministic output is 66 files in `Promised Land/Bible/Texts/ASV/`, named
@@ -878,19 +942,20 @@ runs (and the 4g build has the preload problem above), so both are measured agai
     source verse numbers, rejects non-integer or duplicate verse numbers, strips notes,
     cross-references, headings, word metadata and paragraph markup, and retains all 116
     straightforward Psalm `\d` titles. No verse-numbering quirks were found in this source.
-120. **Size and resource naming.** The 66 JSON files total 4,631,076 bytes (4.5 MiB on disk), below
+125. **Size and resource naming.** The 66 JSON files total 4,631,076 bytes (4.5 MiB on disk), below
     the roughly 6 MB compression threshold, so they are not compressed. Xcode's synchronized group
     flattens JSON resources into the app bundle. Plain `JOB.json` collided with the existing
     `Questions/job.json` on the case-insensitive build filesystem, so every built-in Bible resource
     must be named `<TRANSLATION>_<BOOK>.json` (for example `ASV_JOB.json`). Tests check that bundle
     JSON names are unique and that every catalogued built-in translation has all 66 prefixed files.
-121. **Adding KJV or BSB later:** put its approved public-domain USFM zip in
+126. **Adding KJV or BSB later:** put its approved public-domain USFM zip in
     `Tools/BibleSources/`; run the same script with its abbreviation; add the generated prefixed
     files; then add one `TranslationCatalog.Entry` (name, abbreviation, `.bundled(folder:)`, and
     end-of-chapter notice) in `BibleService.swift`. Do not add API ids, cache paths, view cases or
-    project folder settings. Run the corpus, exact-source, markup, offline, resource-name and timer
-    switching tests. The retained small `SampleText` and `BundledBibleService` remain for deep dives,
-    existing review records and direct API-service fallback tests; they were not deleted.
+    project folder settings. Run the corpus, exact-source, markup, offline, resource-name and
+    reading-session word-count switching tests. The retained small `SampleText` and
+    `BundledBibleService` remain for deep dives, existing review records and direct API-service
+    fallback tests; they were not deleted.
 
 ## Remove before release
 

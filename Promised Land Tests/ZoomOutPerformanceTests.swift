@@ -98,7 +98,7 @@ struct ZoomOutPerformanceTests {
         let oldBackground = cache.rendersInBackground
         defer { cache.rendersInBackground = oldBackground; cache.removeAll() }
         cache.removeAll()
-        #expect(cache.prewarmGenesis(island: Self.island, size: Self.size, insets: Self.insets, zoom: 4, pan: .zero))
+        #expect(cache.prewarmScenes(island: Self.island, size: Self.size, insets: Self.insets, zoom: 4, pan: .zero))
         cache.rendersInBackground = false
         let frame = frame(zoom: 5, pan: .zero)
         #expect(frame?.layers.contains { layer in

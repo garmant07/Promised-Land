@@ -19,6 +19,8 @@ nonisolated enum AvatarRenderer {
     }
 
     static func layers(_ a: AvatarConfig) -> [Layer] {
+        if a.sex == .female { return femaleLayers(a) }
+
         let skin = RGBValue(hex: a.skin.hex)
         let hair = RGBValue(hex: a.hairColour.hex)
         let robe = RGBValue(hex: a.robeColour.hex)
@@ -69,6 +71,8 @@ nonisolated enum AvatarRenderer {
                 back.append((ellipse(50 - cos(t) * 26, 50 - sin(t) * 25 + 6, 9, 9), hair.shaded(0.92)))
             }
         case .bald, .baldWithSides:
+            break
+        case .braid, .bun:
             break
         }
         out.append(Layer(name: "hairBack", option: a.hair.rawValue, tint: hair, shapes: back))
@@ -225,6 +229,8 @@ nonisolated enum AvatarRenderer {
             front.append((ellipse(73, 50, 4.5, 9), hair))
         case .bald:
             break
+        case .braid, .bun:
+            break
         }
         if a.hair == .bald || a.hair == .baldWithSides {
             front.append((ellipse(43, 33, 8, 4), skin.shaded(1.12))) // a soft shine
@@ -268,6 +274,8 @@ nonisolated enum AvatarRenderer {
             cover.append((ellipse(50, 24, 2.2, 2.2), RGBValue(hex: "#C8574A")))
             cover.append((ellipse(40, 26, 1.6, 1.6), RGBValue(hex: "#9DB8D2")))
             cover.append((ellipse(60, 26, 1.6, 1.6), RGBValue(hex: "#9DB8D2")))
+        case .queenCrown:
+            break
         case .none:
             break
         }

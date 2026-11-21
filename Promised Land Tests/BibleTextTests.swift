@@ -331,8 +331,8 @@ struct LocalBibleServiceTests {
         #expect(transport.requests.isEmpty)
     }
 
-    @Test("Switching between ASV and API text updates the reading timer word count")
-    func switchingUpdatesWordCount() async throws {
+    @Test("ASV uses the current finish flow and switching text updates the session word count")
+    func asvUsesCurrentFinishFlowAndSwitchingUpdatesWordCount() async throws {
         let local = LocalBibleService()
         let asv = try await local.chapter(bookID: "genesis", chapter: 1, translation: .asv)
         let api = text("genesis", 1, ["one two three", "four five"], translation: "NIV")
@@ -340,6 +340,10 @@ struct LocalBibleServiceTests {
 
         session.setText(asv, strictness: .standard)
         #expect(session.words == asv.words)
+        session.markReachedEnd()
+        #expect(session.canFinish)
+        #expect(ReadingQuestionFlow.countsChapter(.skip, strictMode: false))
+        #expect(!ReadingQuestionFlow.countsChapter(.skip, strictMode: true))
         session.setText(api, strictness: .standard)
         #expect(session.words == 5)
         session.setText(asv, strictness: .standard)

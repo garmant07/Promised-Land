@@ -20,8 +20,18 @@ final class IslandRenderCache {
 
     private func placePictureKey(island: Island, plot: Island.Plot, content: Int, scale: CGFloat,
                                  stage: Int?) -> NSString {
-        "p\(island.signature)|\(plot.bookID)|\(content)|stage:\(stage.map(String.init) ?? String("all"))|\(Int(scale * 100))" as NSString
+        if let scene = SceneSystem.layout(for: plot.bookID), let stage {
+            let bucket = Int(Self.sizeBucket(scale) * 1000)
+            return "scene|\(plot.bookID)|\(scene.identity)|stage:\(stage)|bucket:\(bucket)" as NSString
+        }
+        return "p\(island.signature)|\(plot.bookID)|\(content)|stage:all|\(Int(scale * 100))" as NSString
     }
+
+    #if DEBUG
+    func scenePictureKeyForTesting(bookID: String, stage: Int, scale: CGFloat, layoutIdentity: String) -> String {
+        "scene|\(bookID)|\(layoutIdentity)|stage:\(stage)|bucket:\(Int(Self.sizeBucket(scale) * 1000))"
+    }
+    #endif
     /// The baked/unbaked mode is sticky inside a small band around its transition.
     private var bakedMode: Bool?
     /// `groundBounds` per ground key (it walks every tile, so never per frame).
@@ -192,30 +202,32 @@ final class IslandRenderCache {
 
     static let itemsPerSlice = 12
 
-    /// Prewarms the authored Genesis Place picture before the loading cover clears.
+    /// Prewarms authored scene pictures before the loading cover clears.
     @discardableResult
-    func prewarmGenesis(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, pan: CGSize) -> Bool {
-        guard let plot = island.allPlots.first(where: { $0.bookID == GenesisScene.bookID }),
-              let content = placeContentKeys(island)[plot.bookID] else { return true }
+    func prewarmScenes(island: Island, size: CGSize, insets: EdgeInsets, zoom: CGFloat, pan: CGSize) -> Bool {
+        let plots = island.allPlots.filter { SceneSystem.isSceneBook($0.bookID) }
+        guard !plots.isEmpty else { return true }
         let layout = IslandLayout(island: island, size: size, insets: insets, zoom: zoom)
-        let rect = placeRect(plot, layout: layout)
-        let indices = island.items.indices.filter { island.items[$0].plotKey == plot.bookID }
-        guard !indices.isEmpty else { return true }
-        let key = placePictureKey(island: island, plot: plot, content: content, scale: layout.scale,
-                                  stage: GenesisScene.stage(for: island.items[indices[0]]))
-        let draw: (inout GraphicsContext) -> Void = { c in
-            let local = layout.panned(CGSize(width: -rect.minX, height: -rect.minY))
-            for i in indices.sorted(by: { layout.depth(island.items[$0].gx, island.items[$0].gy) < layout.depth(island.items[$1].gx, island.items[$1].gy) }) {
-                IslandPainter.drawItem(&c, island.items[i], layout: local,
-                                       sceneLayer: island.items[i].source.bookID == GenesisScene.bookID ? .back : .all)
+        for plot in plots {
+            guard let content = placeContentKeys(island)[plot.bookID] else { continue }
+            let rect = placeRect(plot, layout: layout)
+            let indices = island.items.indices.filter { island.items[$0].plotKey == plot.bookID }
+            guard let first = indices.first else { continue }
+            let key = placePictureKey(island: island, plot: plot, content: content, scale: layout.scale,
+                                      stage: SceneSystem.stage(for: island.items[first]))
+            let draw: (inout GraphicsContext) -> Void = { c in
+                let local = layout.panned(CGSize(width: -rect.minX, height: -rect.minY))
+                for i in indices.sorted(by: { layout.depth(island.items[$0].gx, island.items[$0].gy) < layout.depth(island.items[$1].gx, island.items[$1].gy) }) {
+                    IslandPainter.drawItem(&c, island.items[i], layout: local, sceneLayer: .all)
+                }
             }
+            let wasCached = images.object(forKey: key) != nil
+            guard let image = picture(String(key), size: rect.size, draw: draw) else { return false }
+            #if DEBUG
+            if !wasCached { PerfProbe.scenePictureBuild(key: key) }
+            #endif
+            lastPlacePictures[String(key)] = image
         }
-        let wasCached = images.object(forKey: key) != nil
-        guard let image = picture(String(key), size: rect.size, draw: draw) else { return false }
-        #if DEBUG
-        if !wasCached { PerfProbe.genesisPictureBuild(key: key) }
-        #endif
-        lastPlacePictures[String(key)] = image
         return true
     }
 
@@ -373,14 +385,25 @@ final class IslandRenderCache {
         var others: [Bucket]?
         for plot in island.allPlots {
             guard let indices = byPlot[plot.bookID], let content = keys[plot.bookID] else { continue }
-            let rect = placeRect(plot, layout: lb)
+            let rect: CGRect
+            if SceneSystem.isSceneBook(plot.bookID) {
+                var bounds = CGRect.null
+                for index in indices {
+                    bounds = bounds.union(IslandPainter.drawnBounds(of: island.items[index], layout: lb))
+                }
+                rect = bounds.isNull
+                    ? placeRect(plot, layout: lb)
+                    : bounds.insetBy(dx: -4 * lb.u, dy: -4 * lb.u).integral
+            } else {
+                rect = placeRect(plot, layout: lb)
+            }
             let dest = screen(rect, b.k)
             let depth = lb.point(plot.centre.x, plot.centre.y).y
             if indices.contains(where: { overrides[$0] != nil }) {
                 // Mid-reveal: drawn item by item, at the growth the reveal says.
                 for i in indices {
                     var item = island.items[i]
-                    if item.source.bookID == GenesisScene.bookID { continue }
+                    if item.source.bookID.map(SceneSystem.isSceneBook) == true { continue }
                     if let g = overrides[i] { guard g > 0 else { continue }; item.growth = g }
                     layers.append((lb.point(item.gx, item.gy).y + 0.001, .item(item)))
                 }
@@ -388,36 +411,43 @@ final class IslandRenderCache {
             }
             guard dest.intersects(view), wanted(dest) else { continue }
             // Keyed by what's in it and the layout's scale (not where it is).
-            let stage = plot.bookID == GenesisScene.bookID ? GenesisScene.stage(for: island.items[indices[0]]) : nil
+            let stage = SceneSystem.isSceneBook(plot.bookID) ? SceneSystem.stage(for: island.items[indices[0]]) : nil
             let key = placePictureKey(island: island, plot: plot, content: content, scale: lb.scale, stage: stage)
             let draw: (inout GraphicsContext) -> Void = { c in
                 let l = lb.panned(CGSize(width: -rect.minX, height: -rect.minY))
                 for i in indices.sorted(by: { lb.depth(island.items[$0].gx, island.items[$0].gy) < lb.depth(island.items[$1].gx, island.items[$1].gy) }) {
                     IslandPainter.drawItem(&c, island.items[i], layout: l,
-                                           sceneLayer: plot.bookID == GenesisScene.bookID ? .back : .all)
+                                           sceneLayer: .all)
                 }
             }
             if let image = picture(key, using: &used) {
                 lastPlacePictures[String(key)] = image
                 #if DEBUG
-                if plot.bookID == GenesisScene.bookID {
-                    PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "cached picture")
+                if SceneSystem.isSceneBook(plot.bookID) {
+                    PerfProbe.sceneTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "cached picture")
                 }
                 #endif
                 layers.append((depth, .picture(image, dest)))
                 continue
             }
-            if let image = lastPlacePictures[String(key)] {
-                #if DEBUG
-                if plot.bookID == GenesisScene.bookID {
-                    PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "cached picture")
-                }
-                #endif
+            if let image = lastPlacePictures[String(key)], !SceneSystem.isSceneBook(plot.bookID) {
                 layers.append((depth, .picture(image, dest)))
                 if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
                 continue
             }
             if deferMissing {
+                if SceneSystem.isSceneBook(plot.bookID) {
+                    // A scene has a different silhouette at every bucket. Until its exact
+                    // picture is ready, draw its pieces directly at this camera's geometry.
+                    if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
+                    #if DEBUG
+                    PerfProbe.sceneTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "direct")
+                    #endif
+                    for i in indices {
+                        layers.append((lb.point(island.items[i].gx, island.items[i].gy).y, .item(island.items[i])))
+                    }
+                    continue
+                }
                 // Not rendered at this zoom yet: the same Place's picture from the nearest zoom that has it.
                 if others == nil {
                     others = Self.neighbours(of: zb).map {
@@ -428,8 +458,8 @@ final class IslandRenderCache {
                     self.picture(self.placePictureKey(island: island, plot: plot, content: content, scale: b2.lb.scale, stage: stage), using: &used).map { ($0, b2) }
                 }).first {
                     #if DEBUG
-                    if plot.bookID == GenesisScene.bookID {
-                        PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: "p\(content)|\(Int(b2.lb.scale * 100))", drawn: "cached picture")
+                    if SceneSystem.isSceneBook(plot.bookID) {
+                        PerfProbe.sceneTransition(zoomBucket: zb, baked: b.baked, cacheKey: "p\(content)|\(Int(b2.lb.scale * 100))", drawn: "cached picture")
                     }
                     #endif
                     layers.append((depth, .picture(image, screen(placeRect(plot, layout: b2.lb), b2.k))))
@@ -441,8 +471,8 @@ final class IslandRenderCache {
                     // picture rendered mid-gesture); it gets its picture once the camera stops.
                     if !b.baked { queued.append(Pending(key: key, size: rect.size, scale: renderScale, steps: [draw])) }
                     #if DEBUG
-                    if plot.bookID == GenesisScene.bookID {
-                        PerfProbe.genesisTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "direct")
+                    if SceneSystem.isSceneBook(plot.bookID) {
+                        PerfProbe.sceneTransition(zoomBucket: zb, baked: b.baked, cacheKey: String(key), drawn: "direct")
                     }
                     #endif
                     for i in indices { layers.append((lb.point(island.items[i].gx, island.items[i].gy).y, .item(island.items[i]))) }
@@ -451,7 +481,7 @@ final class IslandRenderCache {
             }
             if let image = render(key: key, size: rect.size, draw: draw) {
                 #if DEBUG
-                if plot.bookID == GenesisScene.bookID { PerfProbe.genesisPictureBuild(key: key) }
+                if SceneSystem.isSceneBook(plot.bookID) { PerfProbe.scenePictureBuild(key: key) }
                 #endif
                 used[key] = image
                 layers.append((depth, .picture(image, dest)))
@@ -459,7 +489,7 @@ final class IslandRenderCache {
         }
         for i in loose {
             var item = island.items[i]
-            if item.source.bookID == GenesisScene.bookID, overrides[i] != nil { continue }
+            if item.source.bookID.map(SceneSystem.isSceneBook) == true, overrides[i] != nil { continue }
             if b.baked {
                 let at = screen(CGRect(origin: lb.point(item.gx, item.gy), size: .zero), b.k)
                 guard wanted(at.insetBy(dx: -30, dy: -60)) else { continue }
@@ -632,8 +662,21 @@ final class IslandRenderCache {
     /// Draws one item from its cached picture (rendered once per look and zoom bucket),
     /// positioned only from its grid point: used to put buildings back in front of someone standing
     /// behind them (clipped to that person), so they don't cost a full redraw every frame.
-    func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout) {
-        guard let p = itemPicture(item, layout: layout) else { IslandPainter.drawItem(&c, item, layout: layout); return }
+    func drawItem(_ c: inout GraphicsContext, _ item: Island.Item, layout: IslandLayout,
+                   sceneLayer: SceneLayer = .all) {
+        #if DEBUG
+        if sceneLayer == .tall { PerfProbe.tallLayerRedraw() }
+        #endif
+        if case .front = sceneLayer {
+            // A walker-specific scene subset is never cached: draw the exact current-bucket
+            // geometry directly, so no other walker's subset or bucket can be stretched into it.
+            IslandPainter.drawItem(&c, item, layout: layout, sceneLayer: sceneLayer)
+            return
+        }
+        guard let p = itemPicture(item, layout: layout, sceneLayer: sceneLayer) else {
+            IslandPainter.drawItem(&c, item, layout: layout, sceneLayer: sceneLayer)
+            return
+        }
         let k = layout.u / p.ub
         let base = layout.point(item.gx, item.gy)
         c.draw(Image(decorative: p.image, scale: 1),
@@ -642,15 +685,21 @@ final class IslandRenderCache {
 
     /// An item's picture at this camera's size bucket (rendered if it isn't cached), with
     /// its frame relative to the item's grid point, in bucket units.
-    private func itemPicture(_ item: Island.Item, layout: IslandLayout) -> (image: CGImage, frame: CGRect, ub: CGFloat)? {
+    private func itemPicture(_ item: Island.Item, layout: IslandLayout,
+                             sceneLayer: SceneLayer) -> (image: CGImage, frame: CGRect, ub: CGFloat)? {
         let ub = Self.sizeBucket(layout.u)
-        let shape = IslandHitTester.shape(of: item, base: .zero, u: ub)
+        let shape: CGRect
+        if sceneLayer == .tall, item.source.bookID.map(SceneSystem.isSceneBook) == true {
+            shape = SceneSystem.localBounds(item: item, u: ub, layer: .tall)
+        } else {
+            shape = IslandHitTester.shape(of: item, base: .zero, u: ub)
+        }
         let frame = shape.insetBy(dx: -shape.width * 0.3 - 4 * ub, dy: -shape.height * 0.2 - 4 * ub).integral
         guard frame.width > 0, frame.height > 0, frame.width * frame.height < 4_000_000 else { return nil }
-        let key = itemKey(item, layout: layout)
+        let key = itemKey(item, layout: layout, sceneLayer: sceneLayer)
         guard let image = images.object(forKey: key)?.image ?? render(key: key, size: frame.size, draw: { g in
             g.translateBy(x: -frame.minX, y: -frame.minY)
-            IslandPainter.drawAtOrigin(&g, item, u: ub)
+            IslandPainter.drawAtOrigin(&g, item, u: ub, sceneLayer: sceneLayer)
         }) else { return nil }
         return (image, frame, ub)
     }
@@ -670,12 +719,21 @@ final class IslandRenderCache {
         h.combine(item.seed); h.combine(item.progress); h.combine(item.total); h.combine(item.libraryTouches); h.combine(item.span)
         h.combine(item.cap); h.combine(item.source.bookID)
         h.combine(layout.islandSignature)
-        if item.source.bookID == GenesisScene.bookID { h.combine(item.progress) }
+        if item.source.bookID.map(SceneSystem.isSceneBook) == true { h.combine(SceneSystem.stage(for: item)) }
         return "i\(h.finalize())|\(Int(ub * 1000))"
     }
 
-    private func itemKey(_ item: Island.Item, layout: IslandLayout) -> NSString {
-        cacheKeyForTesting(item, layout: layout) as NSString
+    private func itemKey(_ item: Island.Item, layout: IslandLayout, sceneLayer: SceneLayer = .all) -> NSString {
+        let base = cacheKeyForTesting(item, layout: layout)
+        guard item.source.bookID.map(SceneSystem.isSceneBook) == true else { return base as NSString }
+        let suffix: String
+        switch sceneLayer {
+        case .all: suffix = "|all"
+        case .back: suffix = "|back"
+        case .tall: suffix = "|tall"
+        case .front: suffix = "|front"
+        }
+        return (base + suffix) as NSString
     }
 
     #if DEBUG

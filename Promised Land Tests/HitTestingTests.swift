@@ -76,6 +76,29 @@ struct HitTestingTests {
         #expect(IslandHitTester.hit(point: CGPoint(x: base.x + 60, y: base.y + 60), layout: layout, items: [lone]) == nil)
     }
 
+    @Test("Place pieces use their plot, not their individual footprint, and never get a fallback",
+          arguments: zooms)
+    func placePlotIsTheDirectGroundTarget(zoom: CGFloat) {
+        let layout = Fixture.layout(zoom: zoom)
+        let piece = Island.Item(kind: .piece(.soil), gx: 12.5, gy: 12.5, seed: 1,
+                                source: .place(book: "john", piece: 0),
+                                footprint: CGRect(x: 12.45, y: 12.45, width: 0.1, height: 0.1),
+                                span: 3)
+        let plot = Island.Plot(bookID: "john", x: 11, y: 11, size: 3)
+        #expect(IslandHitTester.hit(point: layout.point(12.1, 12.1), layout: layout,
+                                    items: [piece], plots: [plot]) == 0)
+        #expect(IslandHitTester.hit(point: layout.point(10.5, 10.5), layout: layout,
+                                    items: [piece], plots: [plot]) == nil)
+    }
+
+    @Test("A direct hit wins over a character's fallback box")
+    func directHitWinsOverFallback() {
+        let c = [HitCandidate(id: "place", depth: 1, onGround: true, bounds: .zero, allowsFallback: false),
+                 HitCandidate(id: "character", depth: 9, onGround: false,
+                              bounds: CGRect(x: 20, y: 20, width: 4, height: 4))]
+        #expect(HitPicker.pick(.zero, from: c, minimumTarget: 44) == "place")
+    }
+
     @Test("Empty ground hits nothing")
     func emptyGround() {
         let layout = Fixture.layout(zoom: IslandLayout.baseMaxZoom)

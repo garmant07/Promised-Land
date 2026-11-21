@@ -138,8 +138,9 @@ enum RevealPlanner {
         let new = PlaceGrowth.after(b, spec: spec, chapters: book.chapterCount)
         var out: [RevealStep.Change] = []
         for (index, item) in island.items.enumerated() {
-            if bookID == "genesis", item.source.bookID == "genesis" {
-                let f = CGFloat(max(0, min(a, 50))), t = CGFloat(max(0, min(b, 50)))
+            if SceneSystem.isSceneBook(bookID), item.source.bookID == bookID {
+                let chapters = BibleCatalog.book(id: bookID)?.chapterCount ?? 0
+                let f = CGFloat(max(0, min(a, chapters))), t = CGFloat(max(0, min(b, chapters)))
                 if f != t { out.append(.init(index: index, from: f, to: t)) }
                 continue
             }

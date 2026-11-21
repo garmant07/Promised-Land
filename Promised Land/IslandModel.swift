@@ -57,6 +57,13 @@ struct Island: Equatable {
             case .feature, .extra: nil
             }
         }
+
+        var isPlace: Bool {
+            switch self {
+            case .place, .flourish: true
+            default: false
+            }
+        }
     }
 
     /// Feature buildings: features unlock as buildings on the island.
@@ -366,10 +373,10 @@ struct Island: Equatable {
                                    richness: Int) -> [Item] {
         var out: [Item] = []
         let s = CGFloat(plot.size)
-        if spec.bookID == "genesis" {
+        if SceneSystem.isSceneBook(spec.bookID) {
             guard growth.isFounded else { return out }
             let c = plot.centre
-            return [Item(kind: .piece(.soil), gx: c.x, gy: c.y, seed: hash("genesis-scene"),
+            return [Item(kind: .piece(.soil), gx: c.x, gy: c.y, seed: hash("\(spec.bookID)-scene"),
                          source: .place(book: spec.bookID, piece: 0),
                          footprint: plot.rect.insetBy(dx: 0.1, dy: 0.1),
                          progress: progress, total: total, level: max(1, richness), turned: 0,

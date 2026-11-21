@@ -28,7 +28,7 @@ enum ReadingStrictness: String, CaseIterable, Identifiable {
     }
 
     /// Words a minute the timer assumes (nil: no timer).
-    var wordsPerMinute: Double? { self == .relaxed ? nil : ReadingGate.wordsPerMinute }
+    nonisolated var wordsPerMinute: Double? { self == .relaxed ? nil : ReadingGate.wordsPerMinute }
 
     /// Kids accounts start Strict (a grown-up can change it); everyone else Standard.
     static func defaultFor(ageGroup: String) -> ReadingStrictness {
@@ -41,8 +41,30 @@ enum ReadingStrictness: String, CaseIterable, Identifiable {
     }
 }
 
+/// The one-time bridge from the old three-level preference to the Strict switch.
+enum ReadingStrictMode {
+    static let key = "reading.strictMode"
+    static let migrationKey = "reading.strictMode.migrated"
+
+    static func migrate(defaults: UserDefaults = .standard) {
+        guard !defaults.bool(forKey: migrationKey) else { return }
+        if defaults.object(forKey: key) == nil {
+            let oldValue = defaults.string(forKey: StorageKeys.readingStrictness)?.lowercased()
+            defaults.set(oldValue == ReadingStrictness.strict.rawValue, forKey: key)
+        }
+        defaults.set(true, forKey: migrationKey)
+    }
+
+    static func isStrict(defaults: UserDefaults = .standard) -> Bool {
+        defaults.bool(forKey: key)
+    }
+}
+
 /// The rules for when "Mark complete" unlocks. Pure, so it's testable.
 enum ReadingGate {
+    /// The reading timer remains in the code, but is currently disabled for the product.
+    nonisolated static let readingTimerEnabled = false
+
     /// A typical chapter's length, used when the text isn't bundled (reading in your own Bible).
     static let typicalChapterWords = 650
 
@@ -63,11 +85,16 @@ enum ReadingGate {
     nonisolated static let minimumFloor: Double = 30
     nonisolated static let minimumCap: Double = 12 * 60
 
-    /// Seconds of reading needed before Finish unlocks (0 = no timer): the words at 200 a minute,
-    /// between 30 seconds and 12 minutes.
-    static func minimumSeconds(words: Int, strictness: ReadingStrictness) -> Double {
+    /// The timed pace calculation, retained so the timer can be re-enabled and tested independently.
+    nonisolated static func timedMinimumSeconds(words: Int, strictness: ReadingStrictness) -> Double {
         guard let wpm = strictness.wordsPerMinute else { return 0 }
         return min(minimumCap, max(minimumFloor, Double(max(0, words)) / wpm * 60))
+    }
+
+    /// Seconds of reading needed before Finish unlocks. Zero while the product timer is off.
+    static func minimumSeconds(words: Int, strictness: ReadingStrictness) -> Double {
+        guard readingTimerEnabled else { return 0 }
+        return timedMinimumSeconds(words: words, strictness: strictness)
     }
 
     /// Does the timer apply? In-app reading: unless Relaxed. Your own Bible: only when Strict.

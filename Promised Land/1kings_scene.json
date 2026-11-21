@@ -1,0 +1,276 @@
+{
+ "book": "1 Kings",
+ "chapters": 22,
+ "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+ "sprite_canvas": {
+  "size_px": [
+   256,
+   384
+  ],
+  "scale": "@2x",
+  "ground_point_px": [
+   128,
+   300
+  ]
+ },
+ "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+ "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+ "depth": "Draw in order of u+v, smallest first (back to front).",
+ "grow": "A grow event replaces the sprite already in that slot (same position).",
+ "shared_sprites": "Sprites not in this folder live in Art/Sprites/Shared/ or Art/Sprites/Genesis/.",
+ "events": [
+  {
+   "chapter": 1,
+   "action": "add",
+   "slot": "CE1",
+   "sprite": "obj_cedar_tree",
+   "u": 0.84,
+   "v": 0.27,
+   "width": 0.1413,
+   "mirror": false,
+   "shadowWidth": 0.115,
+   "caption": "A cedar of Lebanon"
+  },
+  {
+   "chapter": 2,
+   "action": "add",
+   "slot": "CB1",
+   "sprite": "obj_1kings_cedar_beams",
+   "u": 0.61,
+   "v": 0.96,
+   "width": 0.1167,
+   "mirror": false,
+   "shadowWidth": 0.095,
+   "caption": "Cedar beams arrive"
+  },
+  {
+   "chapter": 3,
+   "action": "add",
+   "slot": "TE",
+   "sprite": "obj_1kings_temple_1",
+   "u": 0.4675,
+   "v": 0.5175,
+   "width": 0.3687,
+   "mirror": false,
+   "shadowWidth": 0.3,
+   "caption": "The temple foundation"
+  },
+  {
+   "chapter": 4,
+   "action": "add",
+   "slot": "G1",
+   "sprite": "obj_grass",
+   "u": 0.5781,
+   "v": 0.1585,
+   "width": 0.0467,
+   "mirror": false,
+   "shadowWidth": 0.038
+  },
+  {
+   "chapter": 5,
+   "action": "add",
+   "slot": "CB2",
+   "sprite": "obj_1kings_cedar_beams",
+   "u": 0.9,
+   "v": 0.96,
+   "width": 0.1167,
+   "mirror": true,
+   "shadowWidth": 0.095
+  },
+  {
+   "chapter": 6,
+   "action": "grow",
+   "slot": "TE",
+   "sprite": "obj_1kings_temple_2",
+   "u": 0.4675,
+   "v": 0.5175,
+   "width": 0.3687,
+   "mirror": false,
+   "shadowWidth": 0.3,
+   "caption": "The walls rise"
+  },
+  {
+   "chapter": 7,
+   "action": "add",
+   "slot": "P1",
+   "sprite": "obj_pebbles",
+   "u": 0.4949,
+   "v": 0.0864,
+   "width": 0.0811,
+   "mirror": false,
+   "shadowWidth": 0.066
+  },
+  {
+   "chapter": 8,
+   "action": "add",
+   "slot": "R1",
+   "sprite": "obj_rock_outcrop",
+   "u": 0.35,
+   "v": 0.96,
+   "width": 0.0836,
+   "mirror": false,
+   "shadowWidth": 0.068
+  },
+  {
+   "chapter": 9,
+   "action": "add",
+   "slot": "G2",
+   "sprite": "obj_grass",
+   "u": 0.9195,
+   "v": 0.3801,
+   "width": 0.0467,
+   "mirror": false,
+   "shadowWidth": 0.038
+  },
+  {
+   "chapter": 10,
+   "action": "grow",
+   "slot": "TE",
+   "sprite": "obj_1kings_temple_3",
+   "u": 0.4675,
+   "v": 0.5175,
+   "width": 0.3687,
+   "mirror": false,
+   "shadowWidth": 0.3,
+   "caption": "The temple is roofed"
+  },
+  {
+   "chapter": 11,
+   "action": "add",
+   "slot": "PI1",
+   "sprite": "obj_1kings_bronze_pillar",
+   "u": 0.4048,
+   "v": 0.881,
+   "width": 0.1431,
+   "mirror": false,
+   "shadowWidth": 0.04,
+   "caption": "A bronze pillar"
+  },
+  {
+   "chapter": 12,
+   "action": "add",
+   "slot": "G3",
+   "sprite": "obj_grass",
+   "u": 0.6655,
+   "v": 0.8177,
+   "width": 0.0467,
+   "mirror": false,
+   "shadowWidth": 0.038
+  },
+  {
+   "chapter": 13,
+   "action": "add",
+   "slot": "PI2",
+   "sprite": "obj_1kings_bronze_pillar",
+   "u": 0.8214,
+   "v": 0.4643,
+   "width": 0.1431,
+   "mirror": false,
+   "shadowWidth": 0.04,
+   "caption": "The second pillar"
+  },
+  {
+   "chapter": 14,
+   "action": "add",
+   "slot": "P2",
+   "sprite": "obj_pebbles",
+   "u": 0.1447,
+   "v": 0.7617,
+   "width": 0.0811,
+   "mirror": false,
+   "shadowWidth": 0.066
+  },
+  {
+   "chapter": 15,
+   "action": "add",
+   "slot": "SE",
+   "sprite": "obj_1kings_bronze_sea",
+   "u": 0.96,
+   "v": 0.79,
+   "width": 0.086,
+   "mirror": false,
+   "shadowWidth": 0.07,
+   "caption": "The bronze sea"
+  },
+  {
+   "chapter": 16,
+   "action": "add",
+   "slot": "G4",
+   "sprite": "obj_grass",
+   "u": 0.7169,
+   "v": 0.3501,
+   "width": 0.0467,
+   "mirror": false,
+   "shadowWidth": 0.038
+  },
+  {
+   "chapter": 17,
+   "action": "add",
+   "slot": "PA",
+   "sprite": "obj_1kings_palace",
+   "u": 0.22,
+   "v": 0.89,
+   "width": 0.2151,
+   "mirror": false,
+   "shadowWidth": 0.175,
+   "caption": "Solomon's palace"
+  },
+  {
+   "chapter": 18,
+   "action": "add",
+   "slot": "EL",
+   "sprite": "obj_1kings_elijah_altar",
+   "u": 0.96,
+   "v": 0.52,
+   "width": 0.129,
+   "mirror": false,
+   "shadowWidth": 0.105,
+   "caption": "Elijah's altar and fire"
+  },
+  {
+   "chapter": 19,
+   "action": "add",
+   "slot": "P3",
+   "sprite": "obj_pebbles",
+   "u": 0.6886,
+   "v": 0.2008,
+   "width": 0.0811,
+   "mirror": false,
+   "shadowWidth": 0.066
+  },
+  {
+   "chapter": 20,
+   "action": "add",
+   "slot": "OL",
+   "sprite": "obj_olive_tree",
+   "u": 0.78,
+   "v": 0.91,
+   "width": 0.1081,
+   "mirror": false,
+   "shadowWidth": 0.088
+  },
+  {
+   "chapter": 21,
+   "action": "add",
+   "slot": "G5",
+   "sprite": "obj_grass",
+   "u": 0.838,
+   "v": 0.0844,
+   "width": 0.0467,
+   "mirror": false,
+   "shadowWidth": 0.038
+  },
+  {
+   "chapter": 22,
+   "action": "grow",
+   "slot": "TE",
+   "sprite": "obj_1kings_temple_4",
+   "u": 0.4675,
+   "v": 0.5175,
+   "width": 0.3687,
+   "mirror": false,
+   "shadowWidth": 0.3,
+   "caption": "The temple is finished"
+  }
+ ]
+}

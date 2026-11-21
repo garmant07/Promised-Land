@@ -23,6 +23,8 @@ import UIKit
     #endif
 
     init() {
+        // Migrate before ContentView and any @AppStorage-backed setting can be read.
+        ReadingStrictMode.migrate()
         let navigationAppearance = UINavigationBarAppearance()
         navigationAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.bodyText)]
         navigationAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(Color.bodyText)]

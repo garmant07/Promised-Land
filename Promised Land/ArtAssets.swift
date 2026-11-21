@@ -56,6 +56,9 @@ enum ArtAssets {
         if forceCodeArt && name.hasPrefix("obj_") { return nil }
 #endif
         if let hit = cache[name] { return hit }
+        #if DEBUG
+        PerfProbe.imageLoadedOrDecoded()
+        #endif
         let art = UIImage(named: name).flatMap { ui in
             ui.cgImage.map {
                 let anchor = name == "obj_tree" || name == "obj_house"

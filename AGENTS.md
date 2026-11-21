@@ -38,7 +38,7 @@ Promised Land is an iOS app where reading the Bible grows an isometric island. E
 
 ## 3. Read first: the project's own records
 
-- **`NOTES.md`** — numbered decisions and lessons from every round (currently up to ~112). This is the project's memory: read the notes touching your area before changing it, and don't undo a recorded decision without saying so.
+- **`NOTES.md`** — numbered decisions and lessons from every round (currently up to ~126). This is the project's memory: read the notes touching your area before changing it, and don't undo a recorded decision without saying so.
 - **`AUDIT.md`** — status per section of the master build prompt.
 - **`REVIEW.md`** — content awaiting human review before launch.
 - **`ART_ASSETS.md`** — asset naming for swapping code-drawn art with images.

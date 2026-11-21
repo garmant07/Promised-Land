@@ -1,0 +1,353 @@
+{
+  "book": "1 Chronicles",
+  "chapters": 29,
+  "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+  "sprite_canvas": {
+    "size_px": [
+      256,
+      384
+    ],
+    "scale": "@2x",
+    "ground_point_px": [
+      128,
+      300
+    ]
+  },
+  "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+  "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+  "depth": "Draw in order of u+v, smallest first (back to front).",
+  "grow": "A grow event replaces the sprite already in that slot (same position).",
+  "shared_sprites": "Sprites not in this folder live elsewhere in Art/Sprites/ (Shared/, Genesis/ or the book folder that first used them). Every sprite name is unique across Art/Sprites.",
+  "events": [
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "RH",
+      "sprite": "obj_1chronicles_record_house_1",
+      "u": 0.3881,
+      "v": 0.3833,
+      "width": 0.3797,
+      "mirror": false,
+      "shadowWidth": 0.309,
+      "caption": "The Record House foundation"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "G1",
+      "sprite": "obj_grass",
+      "u": 0.8474,
+      "v": 0.9805,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "P1",
+      "sprite": "obj_pebbles",
+      "u": 0.1405,
+      "v": 0.8926,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "OL1",
+      "sprite": "obj_terebinth",
+      "u": 0.2235,
+      "v": 0.7086,
+      "width": 0.1376,
+      "mirror": false,
+      "shadowWidth": 0.112
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "G2",
+      "sprite": "obj_grass",
+      "u": 0.5355,
+      "v": 0.9781,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 6,
+      "action": "add",
+      "slot": "R1",
+      "sprite": "obj_rocks",
+      "u": 0.4253,
+      "v": 0.9534,
+      "width": 0.1041,
+      "mirror": false,
+      "shadowWidth": 0.085
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "P2",
+      "sprite": "obj_pebbles",
+      "u": 0.9691,
+      "v": 0.3069,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "G3",
+      "sprite": "obj_grass",
+      "u": 0.7212,
+      "v": 0.3115,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 9,
+      "action": "grow",
+      "slot": "RH",
+      "sprite": "obj_1chronicles_record_house_2",
+      "u": 0.3881,
+      "v": 0.3833,
+      "width": 0.3687,
+      "mirror": false,
+      "shadowWidth": 0.3,
+      "caption": "Walls and shelves"
+    },
+    {
+      "chapter": 10,
+      "action": "add",
+      "slot": "OL2",
+      "sprite": "obj_terebinth",
+      "u": 0.9473,
+      "v": 0.2277,
+      "width": 0.1376,
+      "mirror": false,
+      "shadowWidth": 0.112
+    },
+    {
+      "chapter": 11,
+      "action": "add",
+      "slot": "P3",
+      "sprite": "obj_pebbles",
+      "u": 0.7524,
+      "v": 0.9617,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 12,
+      "action": "add",
+      "slot": "G4",
+      "sprite": "obj_grass",
+      "u": 0.7569,
+      "v": 0.7043,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 13,
+      "action": "add",
+      "slot": "CA",
+      "sprite": "obj_1chronicles_cart",
+      "u": 0.6595,
+      "v": 0.8929,
+      "width": 0.1167,
+      "mirror": false,
+      "shadowWidth": 0.095,
+      "caption": "The new cart"
+    },
+    {
+      "chapter": 14,
+      "action": "add",
+      "slot": "R2",
+      "sprite": "obj_rocks",
+      "u": 0.5991,
+      "v": 0.6891,
+      "width": 0.1041,
+      "mirror": false,
+      "shadowWidth": 0.085
+    },
+    {
+      "chapter": 15,
+      "action": "add",
+      "slot": "LY",
+      "sprite": "obj_harp",
+      "u": 0.47,
+      "v": 0.8459,
+      "width": 0.0592,
+      "mirror": false,
+      "shadowWidth": 0.048,
+      "caption": "The lyre"
+    },
+    {
+      "chapter": 16,
+      "action": "add",
+      "slot": "AT",
+      "sprite": "obj_2samuel_ark_tent",
+      "u": 0.2781,
+      "v": 0.8204,
+      "width": 0.1475,
+      "mirror": false,
+      "shadowWidth": 0.12,
+      "caption": "The ark's tent"
+    },
+    {
+      "chapter": 17,
+      "action": "add",
+      "slot": "G5",
+      "sprite": "obj_grass",
+      "u": 0.9784,
+      "v": 0.7924,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 18,
+      "action": "add",
+      "slot": "P4",
+      "sprite": "obj_pebbles",
+      "u": 0.7215,
+      "v": 0.1212,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 19,
+      "action": "add",
+      "slot": "G6",
+      "sprite": "obj_grass",
+      "u": 0.82,
+      "v": 0.4984,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 20,
+      "action": "add",
+      "slot": "G8",
+      "sprite": "obj_grass",
+      "u": 0.5962,
+      "v": 0.1031,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 21,
+      "action": "add",
+      "slot": "TH",
+      "sprite": "obj_1chronicles_threshing_floor",
+      "u": 0.9024,
+      "v": 0.6738,
+      "width": 0.1475,
+      "mirror": false,
+      "shadowWidth": 0.12,
+      "caption": "The threshing floor of Ornan"
+    },
+    {
+      "chapter": 22,
+      "action": "add",
+      "slot": "ST",
+      "sprite": "obj_cut_stones",
+      "u": 0.8738,
+      "v": 0.369,
+      "width": 0.1229,
+      "mirror": false,
+      "shadowWidth": 0.1,
+      "caption": "Stones for the temple"
+    },
+    {
+      "chapter": 23,
+      "action": "add",
+      "slot": "BE",
+      "sprite": "obj_1kings_cedar_beams",
+      "u": 0.7105,
+      "v": 0.491,
+      "width": 0.1045,
+      "mirror": false,
+      "shadowWidth": 0.085,
+      "caption": "Cedar for the temple"
+    },
+    {
+      "chapter": 24,
+      "action": "add",
+      "slot": "G7",
+      "sprite": "obj_grass",
+      "u": 0.2807,
+      "v": 0.9758,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 25,
+      "action": "add",
+      "slot": "P5",
+      "sprite": "obj_pebbles",
+      "u": 0.5572,
+      "v": 0.8569,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 26,
+      "action": "add",
+      "slot": "JA",
+      "sprite": "obj_jars",
+      "u": 0.3661,
+      "v": 0.6706,
+      "width": 0.0713,
+      "mirror": false,
+      "shadowWidth": 0.058,
+      "caption": "Storage jars for the records"
+    },
+    {
+      "chapter": 27,
+      "action": "add",
+      "slot": "SH",
+      "sprite": "obj_sheep",
+      "u": 0.9217,
+      "v": 0.9405,
+      "width": 0.0639,
+      "mirror": false,
+      "shadowWidth": 0.052,
+      "caption": "David's flocks"
+    },
+    {
+      "chapter": 28,
+      "action": "add",
+      "slot": "R3",
+      "sprite": "obj_rocks",
+      "u": 0.961,
+      "v": 0.5034,
+      "width": 0.1041,
+      "mirror": false,
+      "shadowWidth": 0.085
+    },
+    {
+      "chapter": 29,
+      "action": "grow",
+      "slot": "RH",
+      "sprite": "obj_1chronicles_record_house_3",
+      "u": 0.3881,
+      "v": 0.3833,
+      "width": 0.3687,
+      "mirror": false,
+      "shadowWidth": 0.3,
+      "caption": "The Record House complete"
+    }
+  ]
+}

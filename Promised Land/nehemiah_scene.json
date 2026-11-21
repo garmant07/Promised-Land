@@ -1,0 +1,319 @@
+{
+  "book": "Nehemiah",
+  "chapters": 13,
+  "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+  "sprite_canvas": {
+    "size_px": [
+      256,
+      384
+    ],
+    "scale": "@2x",
+    "ground_point_px": [
+      128,
+      300
+    ]
+  },
+  "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+  "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+  "depth": "Draw in order of u+v, smallest first (back to front).",
+  "grow": "A grow event replaces the sprite already in that slot (same position).",
+  "shared_sprites": "Sprites not in this folder live elsewhere in Art/Sprites/ (Shared/, Genesis/ or the book folder that first used them). Every sprite name is unique across Art/Sprites.",
+  "events": [
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "GA",
+      "sprite": "obj_nehemiah_gate_1",
+      "u": 0.3881,
+      "v": 0.6357,
+      "width": 0.3908,
+      "mirror": false,
+      "shadowWidth": 0.318,
+      "caption": "The broken wall"
+    },
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "R1",
+      "sprite": "obj_rocks",
+      "u": 0.1086,
+      "v": 0.9558,
+      "width": 0.1041,
+      "mirror": false,
+      "shadowWidth": 0.085
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "DO",
+      "sprite": "obj_donkey",
+      "u": 0.6524,
+      "v": 0.9619,
+      "width": 0.0713,
+      "mirror": false,
+      "shadowWidth": 0.058,
+      "caption": "The night inspection"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "OL1",
+      "sprite": "obj_terebinth",
+      "u": 0.8879,
+      "v": 0.2112,
+      "width": 0.1327,
+      "mirror": false,
+      "shadowWidth": 0.108
+    },
+    {
+      "chapter": 3,
+      "action": "grow",
+      "slot": "GA",
+      "sprite": "obj_nehemiah_gate_2",
+      "u": 0.3881,
+      "v": 0.6357,
+      "width": 0.392,
+      "mirror": false,
+      "shadowWidth": 0.319,
+      "caption": "The builders at work"
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "ST",
+      "sprite": "obj_cut_stones",
+      "u": 0.769,
+      "v": 0.9024,
+      "width": 0.1167,
+      "mirror": false,
+      "shadowWidth": 0.095
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "R2",
+      "sprite": "obj_rocks",
+      "u": 0.7157,
+      "v": 0.1391,
+      "width": 0.1041,
+      "mirror": false,
+      "shadowWidth": 0.085,
+      "caption": "The rubble"
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "G1",
+      "sprite": "obj_grass",
+      "u": 0.8998,
+      "v": 0.9758,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "SA",
+      "sprite": "obj_grain_sacks",
+      "u": 0.9214,
+      "v": 0.4833,
+      "width": 0.0885,
+      "mirror": false,
+      "shadowWidth": 0.072,
+      "caption": "Grain for the poor"
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "P1",
+      "sprite": "obj_pebbles",
+      "u": 0.9715,
+      "v": 0.895,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 6,
+      "action": "grow",
+      "slot": "GA",
+      "sprite": "obj_nehemiah_gate_3",
+      "u": 0.3881,
+      "v": 0.6357,
+      "width": 0.392,
+      "mirror": false,
+      "shadowWidth": 0.319,
+      "caption": "The wall complete"
+    },
+    {
+      "chapter": 6,
+      "action": "add",
+      "slot": "F1",
+      "sprite": "obj_flowers",
+      "u": 0.8071,
+      "v": 0.5164,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "PA",
+      "sprite": "obj_palm",
+      "u": 0.3022,
+      "v": 0.9783,
+      "width": 0.1065,
+      "mirror": false,
+      "shadowWidth": 0.087
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "G2",
+      "sprite": "obj_grass",
+      "u": 0.345,
+      "v": 0.9686,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "PL",
+      "sprite": "obj_nehemiah_reading_platform",
+      "u": 0.8857,
+      "v": 0.7857,
+      "width": 0.1106,
+      "mirror": false,
+      "shadowWidth": 0.09,
+      "caption": "The Law read aloud"
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "F2",
+      "sprite": "obj_flowers",
+      "u": 0.5357,
+      "v": 0.9735,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "G3",
+      "sprite": "obj_grass",
+      "u": 0.9688,
+      "v": 0.2067,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 9,
+      "action": "add",
+      "slot": "P2",
+      "sprite": "obj_pebbles",
+      "u": 0.0667,
+      "v": 0.7141,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    },
+    {
+      "chapter": 10,
+      "action": "add",
+      "slot": "SH",
+      "sprite": "obj_sheep",
+      "u": 0.9812,
+      "v": 0.7048,
+      "width": 0.0639,
+      "mirror": false,
+      "shadowWidth": 0.052,
+      "caption": "Firstborn of the flock"
+    },
+    {
+      "chapter": 10,
+      "action": "add",
+      "slot": "F3",
+      "sprite": "obj_flowers",
+      "u": 0.0785,
+      "v": 0.0973,
+      "width": 0.066,
+      "mirror": false,
+      "shadowWidth": 0.054
+    },
+    {
+      "chapter": 11,
+      "action": "add",
+      "slot": "OL2",
+      "sprite": "obj_terebinth",
+      "u": 0.5236,
+      "v": 0.3088,
+      "width": 0.1327,
+      "mirror": false,
+      "shadowWidth": 0.108
+    },
+    {
+      "chapter": 11,
+      "action": "add",
+      "slot": "G4",
+      "sprite": "obj_grass",
+      "u": 0.645,
+      "v": 0.64,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 12,
+      "action": "grow",
+      "slot": "GA",
+      "sprite": "obj_nehemiah_gate_4",
+      "u": 0.3881,
+      "v": 0.6357,
+      "width": 0.3932,
+      "mirror": false,
+      "shadowWidth": 0.32,
+      "caption": "The dedication"
+    },
+    {
+      "chapter": 12,
+      "action": "add",
+      "slot": "LY",
+      "sprite": "obj_harp",
+      "u": 0.7074,
+      "v": 0.3215,
+      "width": 0.0562,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 13,
+      "action": "add",
+      "slot": "JA",
+      "sprite": "obj_jars",
+      "u": 0.9161,
+      "v": 0.2682,
+      "width": 0.0713,
+      "mirror": false,
+      "shadowWidth": 0.058,
+      "caption": "The storerooms restored"
+    },
+    {
+      "chapter": 13,
+      "action": "add",
+      "slot": "P3",
+      "sprite": "obj_pebbles",
+      "u": 0.5905,
+      "v": 0.1569,
+      "width": 0.0711,
+      "mirror": false,
+      "shadowWidth": 0.058
+    }
+  ]
+}

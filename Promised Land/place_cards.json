@@ -1,0 +1,535 @@
+{
+  "version": 1,
+  "approved": "2026-11-18",
+  "note": "Owner-approved card text for the What can I build catalogue. Show exactly as written, in Debug and Release.",
+  "cards": [
+    {
+      "order": 1,
+      "testament": "old",
+      "book": "Genesis",
+      "name": "The Garden",
+      "what": "A garden with fruit trees and a river, plus separate story pieces: Noah's ark, the tower of Babel, and the tents and wells of Abraham's family.",
+      "why": "Genesis begins with God planting a garden in Eden for the first people (Genesis 2:8–10), then follows the flood, Babel and Abraham's family (Genesis 6–50)."
+    },
+    {
+      "order": 2,
+      "testament": "old",
+      "book": "Exodus",
+      "name": "Mount Sinai",
+      "what": "The mountain where Israel camped, with a burning bush, a path through the parted sea, and tents at its foot.",
+      "why": "God spoke to Moses from a burning bush, led Israel through the sea, and gave the Ten Commandments at Mount Sinai (Exodus 3, 14, 19–20)."
+    },
+    {
+      "order": 3,
+      "testament": "old",
+      "book": "Leviticus",
+      "name": "The Tabernacle Courts",
+      "what": "A linen courtyard with the bronze altar and basin. Inside are the lampstand, the bread table and the incense altar, with the ark behind the veil.",
+      "why": "God told Israel to make a sanctuary so he could live among them (Exodus 25:8). Leviticus gives his instructions for worship there (Leviticus 1, 16)."
+    },
+    {
+      "order": 4,
+      "testament": "old",
+      "book": "Numbers",
+      "name": "The Wilderness Camp",
+      "what": "Tribal tents set out under their banners, a bronze snake on a pole, and water flowing from a rock.",
+      "why": "Israel camped by tribes in the wilderness (Numbers 2). God gave water from the rock (Numbers 20) and healed those who looked at the bronze snake (Numbers 21:8–9)."
+    },
+    {
+      "order": 5,
+      "testament": "old",
+      "book": "Deuteronomy",
+      "name": "Mount Nebo Lookout",
+      "what": "A stone path up a hill to a lookout over the Promised Land.",
+      "why": "Moses taught Israel God's law before they entered the land. Then he climbed Mount Nebo, where God showed him the whole land (Deuteronomy 34:1–4)."
+    },
+    {
+      "order": 6,
+      "testament": "old",
+      "book": "Joshua",
+      "name": "Jericho Gate",
+      "what": "Memorial stones from the Jordan, a camp at Gilgal, Jericho's fallen walls, and fields marked out for each tribe.",
+      "why": "Israel crossed the Jordan and set up stones to remember it (Joshua 4). Jericho's walls fell (Joshua 6), and the land was shared among the tribes (Joshua 13–21)."
+    },
+    {
+      "order": 7,
+      "testament": "old",
+      "book": "Judges",
+      "name": "The Judges' Hilltop",
+      "what": "Deborah's palm tree, a winepress, a fleece on a threshing floor, and watchtowers.",
+      "why": "Deborah judged Israel under a palm tree (Judges 4:5). Gideon was threshing wheat in a winepress when God called him, then asked for a sign with a fleece (Judges 6)."
+    },
+    {
+      "order": 8,
+      "testament": "old",
+      "book": "Ruth",
+      "name": "The Farmstead",
+      "what": "A farmhouse, barley and wheat fields, a threshing floor and the town gate.",
+      "why": "Ruth gathered grain in Boaz's fields at harvest. She met him at the threshing floor, and he redeemed her at Bethlehem's town gate (Ruth 2–4)."
+    },
+    {
+      "order": 9,
+      "testament": "old",
+      "book": "1 Samuel",
+      "name": "Shiloh and the Valley",
+      "what": "The house of the Lord at Shiloh, a shepherd's field, and the Valley of Elah with its stream and stones.",
+      "why": "Samuel grew up serving at Shiloh (1 Samuel 1–3). David the shepherd chose five smooth stones from a stream to face Goliath (1 Samuel 17:40)."
+    },
+    {
+      "order": 10,
+      "testament": "old",
+      "book": "2 Samuel",
+      "name": "The City of David",
+      "what": "A walled hill city with David's house, the tent for the ark, terraces and towers.",
+      "why": "David took Jerusalem, built his house there, and brought the ark into the tent he had set up for it (2 Samuel 5:7–11; 6:17)."
+    },
+    {
+      "order": 11,
+      "testament": "old",
+      "book": "1 Kings",
+      "name": "Solomon's Temple",
+      "what": "The temple with cedar beams and two bronze pillars, Solomon's palace, and Elijah's altar on a hillside.",
+      "why": "Solomon built the temple and his palace in Jerusalem (1 Kings 6–7). Later, God answered Elijah with fire on Mount Carmel (1 Kings 18)."
+    },
+    {
+      "order": 12,
+      "testament": "old",
+      "book": "2 Kings",
+      "name": "The Kings' Road",
+      "what": "Elisha's rooftop room, the Jordan River, chariots and city walls along a road. These are different places from different stories.",
+      "why": "A woman of Shunem made a room for Elisha (2 Kings 4:8–11), and Naaman was healed in the Jordan (2 Kings 5:14). The book follows the kings of Israel and Judah."
+    },
+    {
+      "order": 13,
+      "testament": "old",
+      "book": "1 Chronicles",
+      "name": "The Record House",
+      "what": "A symbolic house of scroll shelves and family-line banners, with musicians and supplies for the temple.",
+      "why": "1 Chronicles opens with Israel's family records (chapters 1–9). Then David appoints musicians and gathers what's needed for the temple (chapters 15–16, 29)."
+    },
+    {
+      "order": 14,
+      "testament": "old",
+      "book": "2 Chronicles",
+      "name": "The Temple Courtyard",
+      "what": "Temple courts, a great bronze basin, a gathering square and repair scaffolding.",
+      "why": "Solomon made a huge bronze basin for the temple (2 Chronicles 4:2). Later kings like Joash and Josiah repaired the temple (2 Chronicles 24, 34)."
+    },
+    {
+      "order": 15,
+      "testament": "old",
+      "book": "Ezra",
+      "name": "The Rebuilt Altar",
+      "what": "Rubble cleared away and the altar rebuilt, then the foundation and walls of the second temple.",
+      "why": "Exiles came home from Babylon, rebuilt the altar, laid the temple's foundation and finished the house of God (Ezra 3; 6:15)."
+    },
+    {
+      "order": 16,
+      "testament": "old",
+      "book": "Nehemiah",
+      "name": "The City Wall",
+      "what": "Wall sections and gates rising with workers' scaffolds, and a wooden platform for reading.",
+      "why": "Nehemiah led the people to rebuild Jerusalem's wall (Nehemiah 3–6). Ezra then read the Law to them from a wooden platform (Nehemiah 8:4)."
+    },
+    {
+      "order": 17,
+      "testament": "old",
+      "book": "Esther",
+      "name": "The Persian Palace",
+      "what": "A palace gate, a royal garden and a banquet hall.",
+      "why": "Esther became queen in the Persian king's palace. She risked her life at a banquet to save her people, and they still remember it at Purim (Esther 2, 7, 9)."
+    },
+    {
+      "order": 18,
+      "testament": "old",
+      "book": "Job",
+      "name": "The Ash Heap Farm",
+      "what": "An ash heap that becomes a farm, with herds and a household restored.",
+      "why": "Job sat in ashes in his suffering (Job 2:8). At the end, God restored his fortunes and gave him twice as much as before (Job 42:10–12)."
+    },
+    {
+      "order": 19,
+      "testament": "old",
+      "book": "Psalms",
+      "name": "The Music Garden",
+      "what": "Harps, terraces, fountains and flowers, growing piece by piece.",
+      "why": "Psalms is Israel's songbook of praise and prayer, sung with harps and lyres (Psalm 33:2; 150)."
+    },
+    {
+      "order": 20,
+      "testament": "old",
+      "book": "Proverbs",
+      "name": "The House of Wisdom",
+      "what": "A house with seven pillars, seats by the gate, an ant hill and a fruitful vine.",
+      "why": "Wisdom is pictured building her house with seven pillars (Proverbs 9:1) and calling out at the city gates (Proverbs 8:3). The ant shows how to work hard (Proverbs 6:6)."
+    },
+    {
+      "order": 21,
+      "testament": "old",
+      "book": "Ecclesiastes",
+      "name": "The Sundial Garden",
+      "what": "A garden that changes with the seasons, with a sundial, a wind vane and a quiet bench as symbols of time.",
+      "why": "Ecclesiastes says there is a time for everything (3:1–8) and watches the sun and the wind go round and round (1:5–6)."
+    },
+    {
+      "order": 22,
+      "testament": "old",
+      "book": "Song of Songs",
+      "name": "The Vineyard Garden",
+      "what": "Vines, lilies and pomegranates inside a garden wall with a fountain.",
+      "why": "The Song pictures love as a locked garden with a fountain, full of pomegranates, among vineyards and lilies (Song of Songs 2:1; 4:12–15)."
+    },
+    {
+      "order": 23,
+      "testament": "old",
+      "book": "Isaiah",
+      "name": "The Prophet's Mountain",
+      "what": "A path up a mountain, a stump with a new shoot, a highway in the desert, and a meadow where the wolf lives with the lamb.",
+      "why": "Isaiah sees nations coming to God's mountain (2:2–3), a shoot from Jesse's stump (11:1), peace between animals (11:6–7) and a highway of holiness (35:8)."
+    },
+    {
+      "order": 24,
+      "testament": "old",
+      "book": "Jeremiah",
+      "name": "The Potter's House",
+      "what": "A potter's wheel, clay jars, an almond branch and a muddy cistern.",
+      "why": "God showed Jeremiah an almond branch (1:11–12) and sent him to watch a potter shape clay (18). Jeremiah was later lowered into a muddy cistern (38:6)."
+    },
+    {
+      "order": 25,
+      "testament": "old",
+      "book": "Lamentations",
+      "name": "The Mourning Wall",
+      "what": "Broken stones and small memorial lights.",
+      "why": "Lamentations grieves Jerusalem after its fall, yet holds on to hope because God's mercies are new every morning (3:22–23)."
+    },
+    {
+      "order": 26,
+      "testament": "old",
+      "book": "Ezekiel",
+      "name": "The Valley and the River",
+      "what": "A valley of dry bones coming to life, a temple, and a river lined with trees.",
+      "why": "Ezekiel saw dry bones become a living army, a picture of Israel restored (37:1–14). He also saw a river flowing from the temple with fruit trees on its banks (47:1–12)."
+    },
+    {
+      "order": 27,
+      "testament": "old",
+      "book": "Daniel",
+      "name": "The Exile Court",
+      "what": "A royal court, a great statue, a furnace, a lions' den and a window open for prayer.",
+      "why": "These come from different stories in Daniel: the king's dream of a statue (2), the fiery furnace (3), and Daniel praying at his window before the lions' den (6)."
+    },
+    {
+      "order": 28,
+      "testament": "old",
+      "book": "Hosea",
+      "name": "The Restored Farm",
+      "what": "A dry field that turns into a vineyard and grain.",
+      "why": "Hosea promises that when Israel returns to God, they will grow like grain and blossom like a vine (Hosea 14:7)."
+    },
+    {
+      "order": 29,
+      "testament": "old",
+      "book": "Joel",
+      "name": "The Harvest Fields",
+      "what": "Fields stripped by locusts that grow back full.",
+      "why": "Locusts destroyed Judah's crops (1:4), and God promised to restore the years the locusts had eaten (2:25)."
+    },
+    {
+      "order": 30,
+      "testament": "old",
+      "book": "Amos",
+      "name": "The Shepherd's Orchard",
+      "what": "A sheepfold, sycamore-fig trees, a plumb line and a basket of fruit.",
+      "why": "Amos was a shepherd who looked after sycamore figs (7:14). God showed him a plumb line (7:7–8) and a basket of summer fruit (8:1–2)."
+    },
+    {
+      "order": 31,
+      "testament": "old",
+      "book": "Obadiah",
+      "name": "The Cliff Fortress",
+      "what": "A fortress high in the cliffs, finished in one read.",
+      "why": "Obadiah warns Edom, who lived in the clefts of the rock, that their pride would bring them down (1:3–4)."
+    },
+    {
+      "order": 32,
+      "testament": "old",
+      "book": "Jonah",
+      "name": "The Harbour",
+      "what": "A dock at Joppa, a ship, a great fish and a shade plant.",
+      "why": "Jonah ran from God on a ship from Joppa, was swallowed by a great fish, and later sat under a plant God provided (1:3, 1:17, 4:6)."
+    },
+    {
+      "order": 33,
+      "testament": "old",
+      "book": "Micah",
+      "name": "Little Bethlehem",
+      "what": "A small town of houses with a vine and a fig tree.",
+      "why": "Micah foretold a ruler coming from little Bethlehem (5:2) and a day when everyone sits under their own vine and fig tree (4:4)."
+    },
+    {
+      "order": 34,
+      "testament": "old",
+      "book": "Nahum",
+      "name": "The River Gate",
+      "what": "Nineveh's river gates and a river channel.",
+      "why": "Nahum foretold Nineveh's fall, when its river gates are opened and the palace melts away (2:6). The gates mark the city's judgment."
+    },
+    {
+      "order": 35,
+      "testament": "old",
+      "book": "Habakkuk",
+      "name": "The Watchtower",
+      "what": "A watchtower, a tablet stand, and a deer on the heights.",
+      "why": "Habakkuk waited at his watchpost for God's answer and was told to write the vision on tablets (2:1–2). He trusted God to make his feet like a deer's (3:19)."
+    },
+    {
+      "order": 36,
+      "testament": "old",
+      "book": "Zephaniah",
+      "name": "The Singing Square",
+      "what": "A town square that fills with people and song.",
+      "why": "Zephaniah ends with God gathering his people and rejoicing over them with singing (3:14–20)."
+    },
+    {
+      "order": 37,
+      "testament": "old",
+      "book": "Haggai",
+      "name": "The Temple Builders' Yard",
+      "what": "Stacks of stone and a temple wall rising.",
+      "why": "Haggai urged the people back from exile to stop neglecting God's house and rebuild the temple (1:4–8, 14)."
+    },
+    {
+      "order": 38,
+      "testament": "old",
+      "book": "Zechariah",
+      "name": "The Lampstand Court",
+      "what": "A gold lampstand between two olive trees, horses, and a city without walls.",
+      "why": "These come from separate visions: horses among myrtle trees (1:8), Jerusalem without walls (2:4–5) and the lampstand with two olive trees (4:2–3)."
+    },
+    {
+      "order": 39,
+      "testament": "old",
+      "book": "Malachi",
+      "name": "The Storehouse",
+      "what": "A storehouse that fills up, a refiner's fire and a sunrise.",
+      "why": "God invites his people to bring the full tithe into the storehouse (3:10), promises to refine them like silver (3:2–3), and speaks of the sun of righteousness rising (4:2)."
+    },
+    {
+      "order": 40,
+      "testament": "new",
+      "book": "Matthew",
+      "name": "Fishing Village",
+      "what": "A fishing hut, boats, a hillside, homes and a market by the lake.",
+      "why": "Jesus made his home in Capernaum (4:13), called fishermen by the Sea of Galilee (4:18–22), and taught the Sermon on the Mount on a hillside (5–7)."
+    },
+    {
+      "order": 41,
+      "testament": "new",
+      "book": "Mark",
+      "name": "Lakeside Village",
+      "what": "A hut, a boat on the water, nets and a meadow for crowds.",
+      "why": "Jesus called fishermen from their nets (1:16–20), taught the crowd from a boat (4:1), and fed 5,000 people sitting on green grass (6:39–44)."
+    },
+    {
+      "order": 42,
+      "testament": "new",
+      "book": "Luke",
+      "name": "Shepherds' Village",
+      "what": "A manger, a shepherds' field, homes and a road with an inn.",
+      "why": "Jesus was laid in a manger, and shepherds came from the fields to see him (2:7–16). The roadside inn comes from the Good Samaritan story (10:30–35)."
+    },
+    {
+      "order": 43,
+      "testament": "new",
+      "book": "John",
+      "name": "Vineyard Village",
+      "what": "A wedding at Cana, Jacob's well, a vineyard and a garden tomb. These are separate places.",
+      "why": "Jesus turned water into wine at Cana (2), met a woman at Jacob's well (4:5–6), called himself the true vine (15:1–5), and was buried in a garden tomb (19:41–42)."
+    },
+    {
+      "order": 44,
+      "testament": "new",
+      "book": "Acts",
+      "name": "The Upper Room Town",
+      "what": "An upper room that grows into a town, with a road and a harbour where a ship is wrecked.",
+      "why": "The disciples gathered in an upper room (1:13), the church grew in Jerusalem (2), and the gospel travelled by road and sea, including Paul's shipwreck (27)."
+    },
+    {
+      "order": 45,
+      "testament": "new",
+      "book": "Romans",
+      "name": "Rome Road Town",
+      "what": "A small town on the coast road, a letter post and an olive tree.",
+      "why": "Paul wrote this letter to the believers in Rome (1:7). He pictured God's people as an olive tree with new branches grafted in (11:17–24)."
+    },
+    {
+      "order": 46,
+      "testament": "new",
+      "book": "1 Corinthians",
+      "name": "Corinth Workshop",
+      "what": "A tentmaker's shop, a gathering house and a market.",
+      "why": "In Corinth, Paul made tents with Aquila and Priscilla (Acts 18:1–3). His letter speaks about the church gathering together and food sold in the market (10:25; 11)."
+    },
+    {
+      "order": 47,
+      "testament": "new",
+      "book": "2 Corinthians",
+      "name": "Corinth Harbour",
+      "what": "A port with jars of clay holding treasure.",
+      "why": "Paul says we hold the treasure of the gospel in jars of clay, to show the power belongs to God (4:7)."
+    },
+    {
+      "order": 48,
+      "testament": "new",
+      "book": "Galatians",
+      "name": "Galatian Fruit Garden",
+      "what": "A garden with nine kinds of fruit.",
+      "why": "Paul names nine fruit of the Spirit: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control (5:22–23)."
+    },
+    {
+      "order": 49,
+      "testament": "new",
+      "book": "Ephesians",
+      "name": "Ephesus Armoury",
+      "what": "A home with pieces of armour on stands.",
+      "why": "Paul tells believers to put on the full armour of God: belt, breastplate, shoes, shield, helmet and sword (6:10–18)."
+    },
+    {
+      "order": 50,
+      "testament": "new",
+      "book": "Philippians",
+      "name": "Philippi Riverside",
+      "what": "A riverside prayer spot, Lydia's house and a prison.",
+      "why": "On his first visit to Philippi, Paul met Lydia by the river and was jailed with Silas (Acts 16:13–40). Philippians is his letter back to that church."
+    },
+    {
+      "order": 51,
+      "testament": "new",
+      "book": "Colossians",
+      "name": "Colossae Hilltown",
+      "what": "Hillside houses and a deeply rooted tree.",
+      "why": "Paul urges believers to be rooted and built up in Christ (2:6–7)."
+    },
+    {
+      "order": 52,
+      "testament": "new",
+      "book": "1 Thessalonians",
+      "name": "Thessalonica Lamp Street",
+      "what": "A street of homes with lamps lit.",
+      "why": "Paul calls believers children of light who stay awake and ready for Jesus' return (5:4–8)."
+    },
+    {
+      "order": 53,
+      "testament": "new",
+      "book": "2 Thessalonians",
+      "name": "Thessalonica Workshop",
+      "what": "Work benches and tools.",
+      "why": "Paul reminds the church he worked night and day so he wouldn't be a burden, and tells them to work quietly too (3:7–12)."
+    },
+    {
+      "order": 54,
+      "testament": "new",
+      "book": "1 Timothy",
+      "name": "The Teacher's House",
+      "what": "A house church with a scroll table.",
+      "why": "Paul writes about how to live in God's household, the church (3:15), and tells Timothy to give himself to reading Scripture and teaching (4:13)."
+    },
+    {
+      "order": 55,
+      "testament": "new",
+      "book": "2 Timothy",
+      "name": "The Scroll Room",
+      "what": "A cloak on a peg, with books and parchments.",
+      "why": "In his last letter, Paul asks Timothy to bring his cloak, books and parchments (4:13), and reminds him that all Scripture is God-breathed (3:16)."
+    },
+    {
+      "order": 56,
+      "testament": "new",
+      "book": "Titus",
+      "name": "Crete Village",
+      "what": "An island village with a harbour.",
+      "why": "Paul left Titus on the island of Crete to put things in order and appoint elders in every town (1:5)."
+    },
+    {
+      "order": 57,
+      "testament": "new",
+      "book": "Philemon",
+      "name": "The Welcome House",
+      "what": "A house with an open door, finished in one read.",
+      "why": "Paul asks Philemon to welcome back Onesimus as a brother, the way he would welcome Paul himself (1:15–17)."
+    },
+    {
+      "order": 58,
+      "testament": "new",
+      "book": "Hebrews",
+      "name": "The Hall of Faith",
+      "what": "A hall that fills with banners, and an anchor.",
+      "why": "Hebrews 11 remembers people who lived by faith, and the letter calls our hope an anchor for the soul (6:19)."
+    },
+    {
+      "order": 59,
+      "testament": "new",
+      "book": "James",
+      "name": "The Well and Garden",
+      "what": "A well, a garden and a small ship's rudder.",
+      "why": "James compares the tongue to a small rudder that steers a ship (3:4–5) and a spring that can't give both fresh and salt water (3:11–12)."
+    },
+    {
+      "order": 60,
+      "testament": "new",
+      "book": "1 Peter",
+      "name": "Living Stones House",
+      "what": "A house built stone by stone.",
+      "why": "Peter says believers are like living stones being built into a spiritual house (2:4–5)."
+    },
+    {
+      "order": 61,
+      "testament": "new",
+      "book": "2 Peter",
+      "name": "The Lamp Path",
+      "what": "A lamp lighting a dark path.",
+      "why": "Peter calls God's prophetic word a lamp shining in a dark place (1:19)."
+    },
+    {
+      "order": 62,
+      "testament": "new",
+      "book": "1 John",
+      "name": "The Light House",
+      "what": "A house that brightens chapter by chapter.",
+      "why": "John writes that God is light, and those who walk in the light share life with him and each other (1:5–7)."
+    },
+    {
+      "order": 63,
+      "testament": "new",
+      "book": "2 John",
+      "name": "The Lady's Cottage",
+      "what": "A small symbolic cottage, finished in one read.",
+      "why": "John writes to \"the chosen lady and her children\", which may mean a woman or a church, urging them to walk in truth and love (1:1–6)."
+    },
+    {
+      "order": 64,
+      "testament": "new",
+      "book": "3 John",
+      "name": "The Guest House",
+      "what": "A symbolic place of welcome for travellers, finished in one read.",
+      "why": "John praises Gaius for welcoming and supporting travelling believers (1:5–8)."
+    },
+    {
+      "order": 65,
+      "testament": "new",
+      "book": "Jude",
+      "name": "The Keeper's Tower",
+      "what": "A small symbolic tower, finished in one read.",
+      "why": "Jude urges believers to keep themselves in God's love, and praises God, who is able to keep them from stumbling (1:20–24)."
+    },
+    {
+      "order": 66,
+      "testament": "new",
+      "book": "Revelation",
+      "name": "The New Jerusalem",
+      "what": "Patmos, seven lampstands, and the New Jerusalem with pearl gates, the river of life and the tree of life.",
+      "why": "John received his visions on Patmos and saw Jesus among seven lampstands, the churches (1:9–20). He saw the holy city lit by God's glory, with the river and tree of life (21–22)."
+    }
+  ]
+}

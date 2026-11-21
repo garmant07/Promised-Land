@@ -41,6 +41,12 @@ enum IslandWorld {
         return shape.insetBy(dx: -shape.width * 0.3 - 4 * u, dy: -shape.height * 0.2 - 4 * u).offsetBy(dx: base.x, dy: base.y)
     }
 
+    /// The scene depth threshold for a walker, in the scene layout's u + v coordinates.
+    static func sceneDepth(for feet: CGPoint, item: Island.Item, layout: IslandLayout) -> CGFloat {
+        let walker = layout.grid(feet)
+        return (walker.x + walker.y - item.gx - item.gy) / max(0.001, item.span) + 1
+    }
+
     /// The items to draw again over someone, inside their rect only: if they stand behind a tall
     /// item overlapping them, that item and every item after it (in back-to-front order) that
     /// reaches into their rect; otherwise none. Drawn clipped to the person, this puts exactly the
@@ -48,8 +54,14 @@ enum IslandWorld {
     /// pasted over its neighbours and nothing changes anywhere else on screen.
     static func itemsOver(_ f: Figure, items: [(item: Island.Item, bounds: CGRect)], layout: IslandLayout) -> [Int] {
         guard let first = items.firstIndex(where: { entry in
-            (entry.item.kind.isTall || GenesisScene.occludesVillager(entry.item)) &&
-            entry.bounds.intersects(f.rect) && IslandCamera.isBehind(feet: f.feet, item: entry.item, layout: layout)
+            guard entry.bounds.intersects(f.rect) else { return false }
+            if entry.item.source.bookID.map(SceneSystem.isSceneBook) == true {
+                let depth = sceneDepth(for: f.feet, item: entry.item, layout: layout)
+                return SceneSystem.occludesVillager(entry.item) &&
+                    SceneSystem.activeEvents(for: entry.item).contains { $0.u + $0.v > depth }
+            }
+            return (entry.item.kind.isTall || SceneSystem.occludesVillager(entry.item)) &&
+                IslandCamera.isBehind(feet: f.feet, item: entry.item, layout: layout)
         }) else { return [] }
         return (first..<items.count).filter { i in
             items[i].bounds.intersects(f.rect) || pictureRect(items[i].item, layout: layout).intersects(f.rect)

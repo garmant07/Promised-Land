@@ -15,7 +15,10 @@ enum StorageKeys {
     static let journeyStopsSeen = "journeyStopsSeen"
     static let journeysCompleted = "journeysCompleted"
     static let throneRevealed = "throneRevealed"
+    // Legacy key retained for the one-time Strict-mode migration.
     static let readingStrictness = "reading.strictness"
+    static let readingStrictMode = ReadingStrictMode.key
+    static let readingStrictModeMigrated = ReadingStrictMode.migrationKey
 }
 
 struct SettingsView: View {
@@ -84,7 +87,7 @@ struct SettingsView: View {
                         .tint(Color.primaryBrown)
                 }
             }
-            .sheet(isPresented: $editingCharacter) { AvatarCustomizeView() }
+            .sheet(isPresented: $editingCharacter) { AvatarEditingFlowView { editingCharacter = false } }
             .confirmationDialog("Reset all progress?", isPresented: $confirmingReset, titleVisibility: .visible) {
                 Button("Reset everything", role: .destructive) { resetProgress() }
             } message: {

@@ -11,10 +11,9 @@ enum PerfProbe {
     static let logging = ProcessInfo.processInfo.arguments.contains("-perfLog")
     static var enabled = UserDefaults.standard.bool(forKey: "debug.fpsOverlay") || logging
     private static let launchTime = CACurrentMediaTime()
-    private static var firstGenesisDraw: CFTimeInterval?
-    private static var genesisPictureBuilds = 0
-    private static var genesisTransition: String?
-    private static var lastGenesisTransition: String?
+    private static var firstSceneDraw: CFTimeInterval?
+    private static var scenePictureBuilds = 0
+    private static var lastSceneTransition: String?
 
     static func setEnabled(_ value: Bool) {
         enabled = value || logging
@@ -24,26 +23,51 @@ enum PerfProbe {
         else { FrameCounter.logger.stop() }
     }
 
-    static func genesisDraw() {
+    static func sceneDraw() {
         guard logging else { return }
-        if firstGenesisDraw == nil {
-            firstGenesisDraw = CACurrentMediaTime()
-            print(String(format: "GENESIS firstGardenDraw=%.0fms", (firstGenesisDraw! - launchTime) * 1000))
+        if firstSceneDraw == nil {
+            firstSceneDraw = CACurrentMediaTime()
+            print(String(format: "SCENE firstDraw=%.0fms", (firstSceneDraw! - launchTime) * 1000))
         }
     }
 
-    static func genesisPictureBuild(key: NSString) {
-        guard logging, CACurrentMediaTime() - launchTime <= 10 else { return }
-        genesisPictureBuilds += 1
-        print("GENESIS pictureBuild=\(genesisPictureBuilds) key=\(key)")
+    struct FrameCounters {
+        var spriteImagesDrawn = 0
+        var imagesLoadedOrDecoded = 0
+        var alphaMeasurements = 0
+        var opaqueMeasurements = 0
+        var tallLayerRedraws = 0
+        var scenePictureRenders = 0
     }
 
-    static func genesisTransition(zoomBucket: CGFloat, baked: Bool, cacheKey: String, drawn: String) {
+    static private(set) var frameCounters = FrameCounters()
+
+    static func resetFrameCounters() { frameCounters = FrameCounters() }
+    static func spriteImageDrawn() { frameCounters.spriteImagesDrawn += 1 }
+    static func imageLoadedOrDecoded() { frameCounters.imagesLoadedOrDecoded += 1 }
+    static func alphaMeasurement() { frameCounters.alphaMeasurements += 1 }
+    static func opaqueMeasurement() { frameCounters.opaqueMeasurements += 1 }
+    static func tallLayerRedraw() { frameCounters.tallLayerRedraws += 1 }
+
+    static func scenePictureBuild(key: NSString) {
+        frameCounters.scenePictureRenders += 1
+        guard logging else { return }
+        scenePictureBuilds += 1
+        print("SCENE pictureBuild=\(scenePictureBuilds) key=\(key)")
+    }
+
+    static func reportFrame(_ label: String) {
+        guard logging else { return }
+        let c = frameCounters
+        print("SCENE frame=\(label) sprites=\(c.spriteImagesDrawn) loaded=\(c.imagesLoadedOrDecoded) alpha=\(c.alphaMeasurements) opaque=\(c.opaqueMeasurements) tall=\(c.tallLayerRedraws) pictures=\(c.scenePictureRenders)")
+    }
+
+    static func sceneTransition(zoomBucket: CGFloat, baked: Bool, cacheKey: String, drawn: String) {
         guard logging else { return }
         let value = String(format: "zoom=%.2f baked=%@ key=%@ drawn=%@", zoomBucket, baked ? "yes" : "no", cacheKey, drawn)
-        guard value != lastGenesisTransition else { return }
-        lastGenesisTransition = value
-        print("GENESIS transition \(value)")
+        guard value != lastSceneTransition else { return }
+        lastSceneTransition = value
+        print("SCENE transition \(value)")
     }
     #endif
 

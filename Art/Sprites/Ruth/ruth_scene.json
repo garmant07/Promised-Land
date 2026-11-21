@@ -1,0 +1,159 @@
+{
+  "book": "Ruth",
+  "chapters": 4,
+  "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+  "sprite_canvas": {
+    "size_px": [
+      256,
+      384
+    ],
+    "scale": "@2x",
+    "ground_point_px": [
+      128,
+      300
+    ]
+  },
+  "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+  "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+  "depth": "Draw in order of u+v, smallest first (back to front).",
+  "grow": "A grow event replaces the sprite already in that slot (same position).",
+  "shared_sprites": "Sprites not in this folder live elsewhere in Art/Sprites/ (Shared/, Genesis/ or the book folder that first used them). Every sprite name is unique across Art/Sprites.",
+  "events": [
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "NH",
+      "sprite": "obj_ruth_house_1",
+      "u": 0.1833,
+      "v": 0.2262,
+      "width": 0.3134,
+      "mirror": false,
+      "shadowWidth": 0.255,
+      "caption": "Naomi comes home to Bethlehem"
+    },
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "RD",
+      "sprite": "obj_ruth_road",
+      "u": 0.3548,
+      "v": 0.8786,
+      "width": 0.1966,
+      "mirror": false,
+      "shadowWidth": 0.16
+    },
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "OL",
+      "sprite": "obj_ruth_olive_tree",
+      "u": 0.2048,
+      "v": 0.619,
+      "width": 0.1659,
+      "mirror": false,
+      "shadowWidth": 0.135
+    },
+    {
+      "chapter": 2,
+      "action": "grow",
+      "slot": "NH",
+      "sprite": "obj_ruth_house_2",
+      "u": 0.1833,
+      "v": 0.2214,
+      "width": 0.3183,
+      "mirror": false,
+      "shadowWidth": 0.259,
+      "caption": "Ruth gleans in Boaz's field"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "BF",
+      "sprite": "obj_ruth_barley_field",
+      "u": 0.8738,
+      "v": 0.6595,
+      "width": 0.2335,
+      "mirror": false,
+      "shadowWidth": 0.19
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "SH",
+      "sprite": "obj_ruth_reapers_shade",
+      "u": 0.7548,
+      "v": 0.2976,
+      "width": 0.1376,
+      "mirror": false,
+      "shadowWidth": 0.112
+    },
+    {
+      "chapter": 3,
+      "action": "grow",
+      "slot": "NH",
+      "sprite": "obj_ruth_house_3",
+      "u": 0.1821,
+      "v": 0.2214,
+      "width": 0.3195,
+      "mirror": false,
+      "shadowWidth": 0.26,
+      "caption": "The night at the threshing floor"
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "TF",
+      "sprite": "obj_ruth_threshing_floor",
+      "u": 0.481,
+      "v": 0.5714,
+      "width": 0.1782,
+      "mirror": false,
+      "shadowWidth": 0.145
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "WN",
+      "sprite": "obj_ruth_winnowing_basket",
+      "u": 0.5881,
+      "v": 0.8929,
+      "width": 0.0959,
+      "mirror": false,
+      "shadowWidth": 0.078
+    },
+    {
+      "chapter": 4,
+      "action": "grow",
+      "slot": "NH",
+      "sprite": "obj_ruth_house_4",
+      "u": 0.1821,
+      "v": 0.1714,
+      "width": 0.3711,
+      "mirror": false,
+      "shadowWidth": 0.302,
+      "caption": "Boaz redeems Ruth, and Obed is born"
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "BW",
+      "sprite": "obj_ruth_town_wall",
+      "u": 0.6048,
+      "v": 0.0333,
+      "width": 0.4178,
+      "mirror": false,
+      "shadowWidth": 0.146
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "SV",
+      "sprite": "obj_ruth_sheaves",
+      "u": 0.8214,
+      "v": 0.8786,
+      "width": 0.1032,
+      "mirror": false,
+      "shadowWidth": 0.084
+    }
+  ]
+}

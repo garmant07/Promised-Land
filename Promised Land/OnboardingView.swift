@@ -6,8 +6,9 @@ struct OnboardingView: View {
 
     @State private var page = 0
     @Environment(\.modelContext) private var context
+    @Query private var profiles: [AvatarProfile]
     @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
-    /// The welcome pages, then your age group, then the character creator.
+    /// The welcome pages, then your age group, then the character pick and creator.
     private var pageCount: Int { pages.count + 2 }
 
     private let pages: [(symbol: String, title: String, text: String)] = [
@@ -49,12 +50,7 @@ struct OnboardingView: View {
                     .tag(pages.count)
                 ScrollView {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Make your character")
-                            .font(.serifTitle(.largeTitle))
-                            .foregroundStyle(Color.bodyText)
-                        Text("They'll walk your world as you read. You can change this any time.")
-                            .foregroundStyle(Color.secondaryText)
-                        AvatarCreatorView().padding(.top, 8)
+                        OnboardingCharacterFlow()
                     }
                     .padding(.horizontal, 24)
                     .padding(.top, 24)
@@ -70,7 +66,7 @@ struct OnboardingView: View {
                 if page < pageCount - 1 {
                     withAnimation { page += 1 }
                 } else {
-                    onFinish()
+                    if profiles.first?.config.sex != nil { onFinish() }
                 }
             }
             .buttonStyle(PrimaryButtonStyle())

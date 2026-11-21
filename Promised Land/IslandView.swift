@@ -60,6 +60,9 @@ struct PlatformScene: View {
     var holdsBackgroundWork = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
+    /// A catalogue request to centre on a Place without opening or visiting it.
+    var focusBookID: String? = nil
+    var onFocusConsumed: (() -> Void)? = nil
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
@@ -229,7 +232,7 @@ struct PlatformScene: View {
                             IslandGroundLayer(key: .init(signature: island.signature, zoom: zoom, pan: drawPan, size: geo.size,
                                                          insets: insets, selected: selected.wrappedValue, editing: editing != nil,
                                                          editSelected: editing?.selected, overrides: overrides, hidden: moving,
-                                                         rendered: IslandRenderProgress.shared.generation + GenesisScene.renderGeneration),
+                                                         rendered: IslandRenderProgress.shared.generation + SceneSystem.renderGeneration),
                                               island: island, ordered: ordered, editing: editing)
                                 .equatable()
                                 .zIndex(-1)
@@ -253,12 +256,6 @@ struct PlatformScene: View {
                                     }
                                     // Smoke rises above the roofs (under the people, as before).
                                     if lifeOn { _ = IslandLife.drawSmoke(&c, life: life, tier: tier, layout: layout, time: lifeTime, visible: viewport) }
-                                    // Genesis scene trees and bushes are kept out of the cached back layer.
-                                    // Draw their tall layer here first; the clipped redraw below puts it back
-                                    // over people who are behind it.
-                                    for entry in nearItems where entry.item.source.bookID == GenesisScene.bookID {
-                                        IslandPainter.drawItem(&c, entry.item, layout: layout, sceneLayer: .tall)
-                                    }
                                     for (k, person) in people.enumerated() {
                                         if person.id == "me" {
                                             if let me = c.resolveSymbol(id: "me") {
@@ -279,8 +276,10 @@ struct PlatformScene: View {
                                             g.clip(to: Path(person.rect.insetBy(dx: -1, dy: -1)))
                                             for i in over[k] {
                                                 // Mid-zoom, drawn directly rather than rendering a new picture each step.
-                                                if nearItems[i].item.source.bookID == GenesisScene.bookID {
-                                                    IslandPainter.drawItem(&g, nearItems[i].item, layout: layout, sceneLayer: .tall)
+                                                if nearItems[i].item.source.bookID.map(SceneSystem.isSceneBook) == true {
+                                                    let item = nearItems[i].item
+                                                    let sceneDepth = IslandWorld.sceneDepth(for: person.feet, item: item, layout: layout)
+                                                    IslandRenderCache.shared.drawItem(&g, item, layout: layout, sceneLayer: .front(sceneDepth))
                                                 } else if zooming {
                                                     IslandPainter.drawItem(&g, nearItems[i].item, layout: layout)
                                                 } else {
@@ -430,6 +429,12 @@ struct PlatformScene: View {
                     if !reduceMotion { startBounce([index]) }
                 }
             }
+            .onChange(of: focusBookID) { _, bookID in
+                guard let bookID else { return }
+                defer { onFocusConsumed?() }
+                guard let index = island.placeIndex(bookID), island.items.indices.contains(index) else { return }
+                centre(on: island.items[index], size: geo.size)
+            }
         }
         .onAppear {
             loadCamera()
@@ -578,8 +583,6 @@ struct PlatformScene: View {
         let everything = CGRect(x: -20_000, y: -20_000, width: 40_000, height: 40_000)
         let canvas = CGRect(origin: .zero, size: PanStep.canvasSize(viewSize))
         let around = canvas.insetBy(dx: -viewSize.width / 2, dy: -viewSize.height / 2)
-        _ = cache.prewarmGenesis(island: island, size: viewSize, insets: insets, zoom: zoom, pan: PanStep.drawPan(pan))
-
         // First, under the loading clouds (nothing on screen to keep smooth, so up to 40 ms of each
         // frame): the whole-island overview (the ground alone), then every picture the first view needs.
         var overviewDone = false, viewDone = false
@@ -752,17 +755,29 @@ struct PlatformScene: View {
                 } else if !pinched, !longPressed, TapClassifier.isTap(translation: value.translation) {
                     if let editing {
                         editing.onSelect(nil)
-                    } else if let book = basket(at: value.location, layout: layout) {
+                    } else if let book = basket(at: value.location, layout: layout, fallbackOnly: false) {
                         onBasket?(book)
                     } else if onCrowd != nil, crowdTapped(value.location, layout: layout) {
                         onCrowd?()
-                    } else if let c = character(at: value.location, layout: layout) {
+                    } else if let c = character(at: value.location, layout: layout, directOnly: true) {
                         speaking = (c.id, .now)
-                    } else {
+                    } else if let hit = IslandHitTester.directHit(point: value.location, layout: layout, pan: pan,
+                                                                    items: island.items, plots: island.allPlots) {
                         speaking = nil
-                        let hit = IslandHitTester.hit(point: value.location, layout: layout, pan: pan, items: island.items)
                         onTap?(hit)
-                        if hit == nil { groundTapped(at: value.location, size: size) }
+                    } else {
+                        switch fallbackTarget(at: value.location, layout: layout) {
+                        case .basket(let book):
+                            onBasket?(book)
+                        case .character(let id):
+                            speaking = (id, .now)
+                        case .item(let index):
+                            onTap?(index)
+                        case nil:
+                            speaking = nil
+                            onTap?(nil)
+                            groundTapped(at: value.location, size: size)
+                        }
                     }
                 }
             }
@@ -845,13 +860,14 @@ struct PlatformScene: View {
     }
 
     /// The basket under a tap, if any (generous target).
-    private func basket(at location: CGPoint, layout: IslandLayout) -> String? {
+    private func basket(at location: CGPoint, layout: IslandLayout, fallbackOnly: Bool = false) -> String? {
         guard layout.u >= IslandLife.minimumBasketU else { return nil }
         let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
         let t = Date.now.timeIntervalSinceReferenceDate
+        let radius = fallbackOnly ? max(24, 18 * layout.u) : 18 * layout.u
         return life.baskets.first { b in
             let s = IslandLife.basketPoint(layout.point(b.point.x, b.point.y), u: layout.u, time: t)
-            return hypot(s.x - p.x, s.y - p.y) < max(24, 18 * layout.u)
+            return hypot(s.x - p.x, s.y - p.y) < radius
         }?.bookID
     }
 
@@ -863,18 +879,53 @@ struct PlatformScene: View {
             .insetBy(dx: -0.2, dy: -0.2).contains(g)
     }
 
-    /// The character under a tap, if any (44pt minimum target).
-    private func character(at location: CGPoint, layout: IslandLayout) -> IslandCharacter? {
+    private func characterCandidates(layout: IslandLayout) -> [HitCandidate<String>] {
         let charH = Self.characterHeight * layout.u
-        let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
-        let candidates = characters.compactMap { c -> HitCandidate<String>? in
+        return characters.compactMap { c -> HitCandidate<String>? in
             guard let time = director.peek("c:\(c.id)"), director.opacity("c:\(c.id)") > 0.5 else { return nil }
             let g = c.position(at: time)
             let feet = layout.point(g.x, g.y)
             return HitCandidate(id: c.id, depth: feet.y, onGround: false,
-                                bounds: CGRect(x: feet.x - charH * 0.37, y: feet.y - charH * 1.05, width: charH * 0.75, height: charH * 1.05))
+                                bounds: CGRect(x: feet.x - charH * 0.37, y: feet.y - charH * 1.05,
+                                               width: charH * 0.75, height: charH * 1.05))
         }
-        return HitPicker.pick(p, from: candidates, minimumTarget: IslandHitTester.minimumTarget).flatMap { id in characters.first { $0.id == id } }
+    }
+
+    /// The character under a tap, if any (44pt minimum target).
+    private func character(at location: CGPoint, layout: IslandLayout, directOnly: Bool) -> IslandCharacter? {
+        let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
+        let candidates = characterCandidates(layout: layout)
+        let id = directOnly
+            ? HitPicker.direct(p, from: candidates)
+            : HitPicker.nearestFallback(p, from: candidates, minimumTarget: IslandHitTester.minimumTarget)
+        return id.flatMap { id in characters.first { $0.id == id } }
+    }
+
+    private nonisolated enum TapFallback: Hashable {
+        case basket(String)
+        case character(String)
+        case item(Int)
+    }
+
+    private func fallbackTarget(at location: CGPoint, layout: IslandLayout) -> TapFallback? {
+        let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
+        let t = Date.now.timeIntervalSinceReferenceDate
+        let basketCandidates = life.baskets.map { basket in
+            let center = IslandLife.basketPoint(layout.point(basket.point.x, basket.point.y), u: layout.u, time: t)
+            let size = max(48, 36 * layout.u)
+            return HitCandidate(id: TapFallback.basket(basket.bookID), depth: 0, onGround: false,
+                                bounds: CGRect(x: center.x - size / 2, y: center.y - size / 2,
+                                               width: size, height: size))
+        }
+        let characterCandidates = characterCandidates(layout: layout).map {
+            HitCandidate(id: TapFallback.character($0.id), depth: $0.depth, onGround: false, bounds: $0.bounds)
+        }
+        let itemCandidates = IslandHitTester.candidates(at: p, layout: layout, items: island.items, plots: island.allPlots).map {
+            HitCandidate(id: TapFallback.item($0.id), depth: $0.depth, onGround: false,
+                         bounds: $0.bounds, art: $0.art, allowsFallback: $0.allowsFallback)
+        }
+        let all = basketCandidates + characterCandidates + itemCandidates
+        return HitPicker.nearestFallback(p, from: all, minimumTarget: IslandHitTester.minimumTarget)
     }
 
     /// A finger went down: in edit mode, grab the plot under it; otherwise watch for a long press.
@@ -890,7 +941,7 @@ struct PlatformScene: View {
         let g = layout.grid(p)
         if editing != nil {
             // The plot under the finger, or the one whose building was touched.
-            let hitKey = IslandHitTester.hit(point: location, layout: layout, pan: pan, items: island.items)
+            let hitKey = IslandHitTester.hit(point: location, layout: layout, pan: pan, items: island.items, plots: island.allPlots)
                 .flatMap { island.items[$0].plotKey }
             let plots = island.allPlots
             if let key = hitKey ?? plots.first(where: { CGRect(x: $0.x, y: $0.y, width: $0.size, height: $0.size).contains(g) })?.bookID {
@@ -902,7 +953,7 @@ struct PlatformScene: View {
         Task {
             try? await Task.sleep(for: .milliseconds(500))
             guard touchDown, touchID == id, !isPanning, !pinched,
-                  let index = IslandHitTester.hit(point: location, layout: layout, pan: pan, items: island.items),
+                  let index = IslandHitTester.hit(point: location, layout: layout, pan: pan, items: island.items, plots: island.allPlots),
                   island.items[index].plotKey != nil else { return }
             longPressed = true
             onLongPress(index)
@@ -1092,23 +1143,36 @@ struct PlatformScene: View {
     }
 
     #if DEBUG
-    /// `-showHitBoxes`: outlines each item's tap area (drawn bounds in red, ground in blue,
-    /// 44pt minimum in grey) to diagnose taps that miss.
+    /// `-showHitBoxes`: Place plots in blue, art rectangles in red, and fallbacks in grey.
     static let showHitBoxes = ProcessInfo.processInfo.arguments.contains("-showHitBoxes")
 
     static func drawHitBoxes(_ c: inout GraphicsContext, island: Island, layout: IslandLayout) {
         for item in island.items {
             let bounds = IslandPainter.drawnBounds(of: item, layout: layout)
-            c.stroke(Path(HitPicker.expanded(bounds, to: IslandHitTester.minimumTarget)), with: .color(.gray.opacity(0.5)), lineWidth: 1)
+            if !item.source.isPlace {
+                c.stroke(Path(HitPicker.expanded(bounds, to: IslandHitTester.minimumTarget)),
+                         with: .color(.gray.opacity(0.5)), lineWidth: 1)
+            }
             c.stroke(Path(bounds), with: .color(.red), lineWidth: 1)
-            let f = item.footprint
-            var ground = Path()
-            ground.move(to: layout.point(f.minX, f.minY))
-            ground.addLine(to: layout.point(f.maxX, f.minY))
-            ground.addLine(to: layout.point(f.maxX, f.maxY))
-            ground.addLine(to: layout.point(f.minX, f.maxY))
-            ground.closeSubpath()
-            c.stroke(ground, with: .color(.blue), lineWidth: 1)
+            if let bookID = item.source.bookID, let plot = island.allPlots.first(where: { $0.bookID == bookID }) {
+                let f = plot.rect
+                var ground = Path()
+                ground.move(to: layout.point(f.minX, f.minY))
+                ground.addLine(to: layout.point(f.maxX, f.minY))
+                ground.addLine(to: layout.point(f.maxX, f.maxY))
+                ground.addLine(to: layout.point(f.minX, f.maxY))
+                ground.closeSubpath()
+                c.stroke(ground, with: .color(.blue), lineWidth: 1)
+            } else {
+                let f = item.footprint
+                var ground = Path()
+                ground.move(to: layout.point(f.minX, f.minY))
+                ground.addLine(to: layout.point(f.maxX, f.minY))
+                ground.addLine(to: layout.point(f.maxX, f.maxY))
+                ground.addLine(to: layout.point(f.minX, f.maxY))
+                ground.closeSubpath()
+                c.stroke(ground, with: .color(.blue), lineWidth: 1)
+            }
         }
     }
     #endif
@@ -1257,8 +1321,8 @@ struct PlatformScene: View {
         }) where island.items.indices.contains(change.index) {
             var item = island.items[change.index]
             let e = 1 - pow(1 - t, 3)
-            if item.source.bookID == GenesisScene.bookID {
-                GenesisScene.drawReveal(&c, item: item, u: layout.u, from: Int(change.from), to: Int(change.to), progress: CGFloat(e))
+            if item.source.bookID.map(SceneSystem.isSceneBook) == true {
+                SceneSystem.drawReveal(&c, item: item, u: layout.u, from: Int(change.from), to: Int(change.to), progress: CGFloat(e))
             } else if item.kind == .library {
                 // The new stage rises out of the old: the old fades as the new one grows up.
                 if t < 1 {

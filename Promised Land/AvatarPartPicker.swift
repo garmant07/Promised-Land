@@ -4,6 +4,7 @@ import SwiftUI
 /// swatches beneath where the part has a colour.
 struct AvatarPartPicker: View {
     let tab: AvatarCreatorView.Tab
+    let sex: AvatarSex
     let config: AvatarConfig
     var onChange: (AvatarConfig) -> Void
 
@@ -13,19 +14,19 @@ struct AvatarPartPicker: View {
             case .skin:
                 thumbnails(SkinTone.allCases, \.skin)
             case .hair:
-                thumbnails(HairStyle.allCases, \.hair)
+                thumbnails(AvatarCreatorRules.hair(for: sex), \.hair)
                 swatches("Hair colour", HairColour.allCases, \.hairColour)
             case .beard:
-                thumbnails(BeardStyle.allCases, \.beard)
-                swatches("Colour (matches hair)", HairColour.allCases, \.hairColour)
+                thumbnails(AvatarCreatorRules.beard(for: sex), \.beard)
+                swatches("Beard colour (matches hair)", HairColour.allCases, \.hairColour)
             case .head:
-                thumbnails(HeadCovering.allCases, \.head)
+                thumbnails(AvatarCreatorRules.head(for: sex), \.head)
                 if config.head != .none && config.head != .crown {
                     swatches("Cloth", ClothColour.allCases, \.headColour)
                 }
             case .robe:
-                thumbnails(RobeStyle.allCases, \.robe)
-                swatches("Robe colour", ClothColour.allCases, \.robeColour)
+                thumbnails(AvatarCreatorRules.robe(for: sex), \.robe)
+                swatches("Clothes colour", ClothColour.allCases, \.robeColour)
                 label("Sash or trim")
                 thumbnails(SashStyle.allCases, \.sash)
             case .cloak:
@@ -113,6 +114,7 @@ struct AvatarPartPicker: View {
 /// "Start from a character": the 12 character designs (and Jonah). Each is locked until that
 /// character's journey is complete.
 struct CharacterPresetPicker: View {
+    let sex: AvatarSex
     var onPick: (AvatarConfig) -> Void
     @ProgressQuery private var progress: GameProgress
     @Environment(\.dismiss) private var dismiss
@@ -122,7 +124,7 @@ struct CharacterPresetPicker: View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 12)], spacing: 12) {
-                    ForEach(PresetAccess.ids, id: \.self) { id in
+                    ForEach(AvatarCreatorRules.presets(for: sex), id: \.self) { id in
                         let open = unlocked.contains(id)
                         Button { if open { onPick(AvatarPresets.config(for: id)) } } label: {
                             VStack(spacing: 6) {
@@ -160,6 +162,6 @@ struct CharacterPresetPicker: View {
 }
 
 #Preview("Part picker") {
-    AvatarPartPicker(tab: .hair, config: AvatarPresets.config(for: "david")) { _ in }
+    AvatarPartPicker(tab: .hair, sex: .male, config: AvatarPresets.config(for: "david")) { _ in }
         .padding()
 }
