@@ -5,3 +5,4 @@ Secrets.xcconfig
 Tools/BibleSources/
 
 .DS_Store
+xcuserdata/
