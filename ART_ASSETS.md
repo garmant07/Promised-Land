@@ -69,6 +69,9 @@ used for all four island rotations.
 
 ## Included art
 
+The app icon source is `Art/AppIcon-1024.png`. The `AppIcon` asset catalogue icon set uses
+this 1024 × 1024 RGB PNG unmodified for its Any appearance image; Dark and Tinted are empty.
+
 The characters drawn for the art direction (the *Character style* board) are in the asset
 catalogue as `char_moses`, `char_ruth`, `char_david`, `char_daniel`, `char_paul`,
 `char_jesus` and `char_disciples` (John's picture). Their cream backgrounds were cut out
