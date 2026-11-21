@@ -1,0 +1,251 @@
+{
+  "book": "Song of Songs",
+  "chapters": 8,
+  "coordinates": "u,v run 0-1 across the plot diamond. (0,0)=back (top) corner, (1,0)=right corner, (0,1)=left corner, (1,1)=front (bottom) corner. Screen point = centre + (u-v)*halfWidth, (u+v-1)*halfHeight.",
+  "sprite_canvas": {
+    "size_px": [
+      256,
+      384
+    ],
+    "scale": "@2x",
+    "ground_point_px": [
+      128,
+      300
+    ]
+  },
+  "width": "Drawn width of the whole 256px sprite canvas, as a fraction of the plot width (left corner to right corner). Height follows at 1.5x width.",
+  "shadowWidth": "Full width of the soft shadow ellipse under the sprite, as a fraction of the plot width. Height is 0.28x that.",
+  "depth": "Draw in order of u+v, smallest first (back to front).",
+  "grow": "A grow event replaces the sprite already in that slot (same position).",
+  "shared_sprites": "Sprites not in this folder live elsewhere in Art/Sprites/ (Shared/, Genesis/ or the book folder that first used them). Every sprite name is unique across Art/Sprites.",
+  "events": [
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "GD",
+      "sprite": "obj_song_garden_1",
+      "u": 0.3541,
+      "v": 0.347,
+      "width": 0.4805,
+      "mirror": false,
+      "shadowWidth": 0.392,
+      "caption": "My own vineyard, and a sachet of myrrh"
+    },
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "M1",
+      "sprite": "obj_myrrh_bush",
+      "u": 0.9476,
+      "v": 0.619,
+      "width": 0.0959,
+      "mirror": false,
+      "shadowWidth": 0.078
+    },
+    {
+      "chapter": 1,
+      "action": "add",
+      "slot": "VN",
+      "sprite": "obj_vineyard_1",
+      "u": 0.5056,
+      "v": 0.8801,
+      "width": 0.1966,
+      "mirror": false,
+      "shadowWidth": 0.16
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "L1",
+      "sprite": "obj_song_lily",
+      "u": 0.3048,
+      "v": 0.86,
+      "width": 0.1008,
+      "mirror": false,
+      "shadowWidth": 0.082,
+      "caption": "A lily among thorns, the apple tree and the little foxes"
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "A1",
+      "sprite": "obj_apple_tree",
+      "u": 0.2019,
+      "v": 0.74,
+      "width": 0.1131,
+      "mirror": false,
+      "shadowWidth": 0.092
+    },
+    {
+      "chapter": 2,
+      "action": "add",
+      "slot": "FX",
+      "sprite": "obj_fox",
+      "u": 0.7648,
+      "v": 0.9,
+      "width": 0.0934,
+      "mirror": false,
+      "shadowWidth": 0.076
+    },
+    {
+      "chapter": 3,
+      "action": "grow",
+      "slot": "VN",
+      "sprite": "obj_vineyard_2",
+      "u": 0.5061,
+      "v": 0.8806,
+      "width": 0.1966,
+      "mirror": false,
+      "shadowWidth": 0.16,
+      "caption": "The vines grow"
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "G1",
+      "sprite": "obj_grass",
+      "u": 0.0776,
+      "v": 0.9326,
+      "width": 0.0508,
+      "mirror": false,
+      "shadowWidth": 0.041
+    },
+    {
+      "chapter": 3,
+      "action": "add",
+      "slot": "P1",
+      "sprite": "obj_pebbles",
+      "u": 0.9771,
+      "v": 0.9321,
+      "width": 0.0584,
+      "mirror": false,
+      "shadowWidth": 0.048
+    },
+    {
+      "chapter": 4,
+      "action": "grow",
+      "slot": "GD",
+      "sprite": "obj_song_garden_2",
+      "u": 0.3564,
+      "v": 0.354,
+      "width": 0.4903,
+      "mirror": false,
+      "shadowWidth": 0.4,
+      "caption": "A garden locked, a fountain sealed"
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "DV",
+      "sprite": "obj_doves_rock",
+      "u": 0.9048,
+      "v": 0.42,
+      "width": 0.1032,
+      "mirror": false,
+      "shadowWidth": 0.084
+    },
+    {
+      "chapter": 4,
+      "action": "add",
+      "slot": "M2",
+      "sprite": "obj_myrrh_bush",
+      "u": 0.7048,
+      "v": 0.74,
+      "width": 0.0959,
+      "mirror": false,
+      "shadowWidth": 0.078
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "L2",
+      "sprite": "obj_song_lily",
+      "u": 0.919,
+      "v": 0.2543,
+      "width": 0.1008,
+      "mirror": false,
+      "shadowWidth": 0.082,
+      "caption": "His lips are lilies"
+    },
+    {
+      "chapter": 5,
+      "action": "add",
+      "slot": "G2",
+      "sprite": "obj_grass",
+      "u": 0.9576,
+      "v": 0.0726,
+      "width": 0.0508,
+      "mirror": false,
+      "shadowWidth": 0.041
+    },
+    {
+      "chapter": 6,
+      "action": "grow",
+      "slot": "GD",
+      "sprite": "obj_song_garden_3",
+      "u": 0.36,
+      "v": 0.3588,
+      "width": 0.4916,
+      "mirror": false,
+      "shadowWidth": 0.401,
+      "caption": "He has gone down to his garden to gather lilies"
+    },
+    {
+      "chapter": 6,
+      "action": "grow",
+      "slot": "G1",
+      "sprite": "obj_flowers",
+      "u": 0.0788,
+      "v": 0.9339,
+      "width": 0.0559,
+      "mirror": false,
+      "shadowWidth": 0.046
+    },
+    {
+      "chapter": 7,
+      "action": "grow",
+      "slot": "VN",
+      "sprite": "obj_vineyard_3",
+      "u": 0.5061,
+      "v": 0.8806,
+      "width": 0.1966,
+      "mirror": false,
+      "shadowWidth": 0.16,
+      "caption": "Let us see whether the vines have budded"
+    },
+    {
+      "chapter": 7,
+      "action": "add",
+      "slot": "A2",
+      "sprite": "obj_apple_tree",
+      "u": 0.7976,
+      "v": 0.2043,
+      "width": 0.1131,
+      "mirror": false,
+      "shadowWidth": 0.092
+    },
+    {
+      "chapter": 8,
+      "action": "grow",
+      "slot": "GD",
+      "sprite": "obj_song_garden_4",
+      "u": 0.36,
+      "v": 0.36,
+      "width": 0.4903,
+      "mirror": false,
+      "shadowWidth": 0.4,
+      "caption": "Like a gazelle on the mountains of spices"
+    },
+    {
+      "chapter": 8,
+      "action": "add",
+      "slot": "GZ",
+      "sprite": "obj_gazelle",
+      "u": 0.8648,
+      "v": 0.72,
+      "width": 0.086,
+      "mirror": false,
+      "shadowWidth": 0.07
+    }
+  ]
+}
