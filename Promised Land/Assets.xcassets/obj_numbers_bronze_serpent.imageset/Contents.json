@@ -1,13 +1,21 @@
 {
-  "images": [
+  "images" : [
     {
-      "filename": "obj_numbers_bronze_serpent.png",
-      "idiom": "universal",
-      "scale": "2x"
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "obj_numbers_bronze_serpent.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
-  "info": {
-    "author": "xcode",
-    "version": 1
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
   }
 }
