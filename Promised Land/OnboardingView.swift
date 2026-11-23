@@ -5,81 +5,98 @@ struct OnboardingView: View {
     var onFinish: () -> Void
 
     @State private var page = 0
+    @State private var selectedCharacterSex: AvatarSex?
     @Environment(\.modelContext) private var context
     @Query private var profiles: [AvatarProfile]
     @AppStorage(StorageKeys.ageGroup) private var ageGroup = ""
-    /// The welcome pages, then your age group, then the character pick and creator.
-    private var pageCount: Int { pages.count + 2 }
+    @AppStorage(StorageKeys.playerName) private var playerName = ""
+    @State private var nameError: String?
 
-    private let pages: [(symbol: String, title: String, text: String)] = [
-        ("book.pages.fill", "Read, and the land grows",
-         "Every chapter you read lays stones in a world that stretches from Eden to the New Jerusalem."),
-        ("map.fill", "Read in any order",
-         "Each of the 66 books has a landmark. Start anywhere: fog lifts from a region as soon as you read there."),
-        ("sparkles", "Help it flourish",
-         "Pass a short quiz to decorate a landmark, and memorise its verse to make it glow. Keep a daily streak going."),
-    ]
+    private let pageCount = 3
 
     var body: some View {
         VStack(spacing: 24) {
             TabView(selection: $page) {
-                ForEach(pages.indices, id: \.self) { i in
-                    VStack(spacing: 20) {
-                        Spacer()
-                        Image(systemName: pages[i].symbol)
-                            .font(.system(size: 64))
-                            .foregroundStyle(Color.terracotta)
-                            .frame(width: 140, height: 140)
-                            .background(Color.card, in: Circle())
-                        Text(pages[i].title)
-                            .font(.serifTitle(.largeTitle))
-                            .foregroundStyle(Color.bodyText)
-                            .multilineTextAlignment(.center)
-                        Text(pages[i].text)
-                            .font(.body)
-                            .foregroundStyle(Color.secondaryText)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 8)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 24)
-                    .tag(i)
-                }
                 AgeGroupPicker(selection: $ageGroup)
                     .padding(.horizontal, 24)
-                    .tag(pages.count)
+                    .tag(0)
+
+                OnboardingNameView(name: $playerName, errorMessage: nameError)
+                    .padding(.horizontal, 24)
+                    .tag(1)
+
                 ScrollView {
                     VStack(alignment: .leading, spacing: 8) {
-                        OnboardingCharacterFlow()
+                        OnboardingCharacterFlow { sex in
+                            let profile = AvatarProfile.ensure(in: context)
+                            profile.apply(OnboardingAvatarSelection.config(for: sex))
+                            try? context.save()
+                            selectedCharacterSex = sex
+                        }
                     }
                     .padding(.horizontal, 24)
                     .padding(.top, 24)
                     .padding(.bottom, 40)
                 }
-                .tag(pages.count + 1)
+                .tag(2)
                 .task { AvatarProfile.ensure(in: context) }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
 
             Button(page < pageCount - 1 ? "Next" : "Begin the journey") {
+                if page == 1 {
+                    let normalized = FirstJourneyName.normalized(playerName)
+                    guard !normalized.isEmpty else {
+                        nameError = "Enter your first name"
+                        return
+                    }
+                    playerName = normalized
+                    nameError = nil
+                }
+
                 if page < pageCount - 1 {
                     withAnimation { page += 1 }
-                } else {
-                    if profiles.first?.config.sex != nil { onFinish() }
+                } else if profiles.first?.config.sex != nil {
+                    onFinish()
+                }
+            }
+            .onChange(of: playerName) { _, value in
+                if !value.isEmpty {
+                    nameError = nil
                 }
             }
             .buttonStyle(PrimaryButtonStyle())
             .padding(.horizontal, 24)
-
-            Button("Skip") { withAnimation { page = pageCount - 1 } }
-                .font(.subheadline)
-                .foregroundStyle(Color.secondaryText)
-                .frame(minHeight: 44)
-                .opacity(page < pageCount - 1 ? 1 : 0)
         }
         .padding(.bottom, 16)
         .background(Color.cream.ignoresSafeArea())
+        .fullScreenCover(
+            isPresented: Binding(
+                get: { selectedCharacterSex != nil },
+                set: { if !$0 { returnToCharacterChoice() } }
+            )
+        ) {
+            AvatarCreatorView(
+                onDone: {
+                    selectedCharacterSex = nil
+                    onFinish()
+                },
+                onBack: {
+                    returnToCharacterChoice()
+                },
+                showsName: false,
+                doneTitle: "Begin the journey"
+            )
+        }
+    }
+
+    private func returnToCharacterChoice() {
+        if let profile = profiles.first {
+            profile.apply(AvatarConfig())
+            try? context.save()
+        }
+        selectedCharacterSex = nil
     }
 }
 

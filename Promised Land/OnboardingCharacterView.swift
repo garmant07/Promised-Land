@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftData
 
 nonisolated enum OnboardingAvatarSelection {
     static func config(for sex: AvatarSex) -> AvatarConfig {
@@ -8,22 +7,10 @@ nonisolated enum OnboardingAvatarSelection {
 }
 
 struct OnboardingCharacterFlow: View {
-    @Environment(\.modelContext) private var context
-    @State private var selectedSide: AvatarSex?
+    var onPick: (AvatarSex) -> Void
 
     var body: some View {
-        if selectedSide != nil {
-            AvatarCreatorView(onBack: { self.selectedSide = nil }, showsName: true)
-        } else {
-            OnboardingCharacterPickView { sex in
-                let profile = AvatarProfile.ensure(in: context)
-                profile.apply(OnboardingAvatarSelection.config(for: sex))
-                try? context.save()
-                self.selectedSide = sex
-            } onBack: {
-                // The parent owns the onboarding page navigation.
-            }
-        }
+        OnboardingCharacterPickView(onPick: onPick, onBack: {})
     }
 }
 
