@@ -1,8 +1,14 @@
 import SwiftUI
+import SwiftData
 
 nonisolated enum OnboardingAvatarSelection {
     static func config(for sex: AvatarSex) -> AvatarConfig {
         AvatarSexRules.defaults(for: sex)
+    }
+
+    /// The cover's dismissal binding must not run the Back/reset path after Done.
+    nonisolated static func shouldResetAfterEditorDismissal(isFinishing: Bool) -> Bool {
+        !isFinishing
     }
 }
 

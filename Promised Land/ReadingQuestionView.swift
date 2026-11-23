@@ -48,6 +48,12 @@ struct ReadingQuestionView: View {
     @State private var selectedNotebook: JournalNotebook?
     @State private var picker: JournalPickerRoute?
     @State private var newJournal: JournalSheetRoute?
+    @AppStorage(FirstJourneyStore.stepKey) private var firstJourneyStepRaw = FirstJourneyStep.notStarted.rawValue
+    @State private var quizGuideVisible = false
+
+    private var isFirstJourneyPsalm1: Bool {
+        firstJourneyStepRaw == FirstJourneyStep.reading.rawValue && book.id == "psalms" && chapter == 1
+    }
 
     private var currentQuestion: ChapterQuestion? {
         guard let questionSet, questionSet.indices.contains(questionIndex) else { return nil }
@@ -124,6 +130,19 @@ struct ReadingQuestionView: View {
                 }
             }
             .tint(Color.primaryBrown)
+        }
+        .safeAreaInset(edge: .top, spacing: 8) {
+            if isFirstJourneyPsalm1 && quizGuideVisible {
+                FirstJourneyBubble(
+                    text: "Answer a few quick questions about what you read. You'll see why each answer is right.",
+                    buttonTitle: "Got it",
+                    onButton: { quizGuideVisible = false }
+                )
+                .padding(.horizontal, 16)
+            }
+        }
+        .onAppear {
+            if isFirstJourneyPsalm1 { quizGuideVisible = true }
         }
         .task(id: "\(book.id)-\(chapter)-\(translation.current?.rawValue ?? "")") {
             questionSet = QuestionData.quizQuestions(bookID: book.id, chapter: chapter, service: bible, translation: translation.current)

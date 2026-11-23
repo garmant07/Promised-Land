@@ -320,6 +320,8 @@ struct ChapterReaderView: View {
     @State private var ownBible: ChapterRef?
     @State private var counted = false
     @State private var chapterReadCoverVisible = false
+    @AppStorage(FirstJourneyStore.stepKey) private var firstJourneyStepRaw = FirstJourneyStep.notStarted.rawValue
+    @State private var readerGuideVisible = false
 
     init(book: Book, chapter: Int) {
         self.book = book
@@ -331,6 +333,9 @@ struct ChapterReaderView: View {
     }
 
     private var isRead: Bool { !reads.isEmpty }
+    private var isFirstJourneyPsalm1: Bool {
+        firstJourneyStepRaw == FirstJourneyStep.reading.rawValue && book.id == "psalms" && chapter == 1
+    }
     /// A read from before the reading gate, still waiting for its quick check.
     private var needsCheck: Bool { reads.first.map { !$0.checked } ?? false }
     private var strictness: ReadingStrictness { strictMode ? .strict : .standard }
@@ -387,6 +392,16 @@ struct ChapterReaderView: View {
             }
         }
         .themedScreen()
+        .safeAreaInset(edge: .top, spacing: 8) {
+            if isFirstJourneyPsalm1 && readerGuideVisible {
+                FirstJourneyBubble(
+                    text: "Read to the end, then press and hold the button when you're done.",
+                    buttonTitle: "Got it",
+                    onButton: { readerGuideVisible = false }
+                )
+                .padding(.horizontal, 16)
+            }
+        }
         .navigationTitle("Chapter \(chapter)")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .topBarTrailing) { TranslationMenu() } }
@@ -409,7 +424,10 @@ struct ChapterReaderView: View {
         #endif
         .task(id: translation.current) { await load() }
         .onAppear { context.recordBookStarted(book.id) }
-        .onAppear { onScreen = true }
+        .onAppear {
+            onScreen = true
+            if isFirstJourneyPsalm1 { readerGuideVisible = true }
+        }
         .onDisappear { onScreen = false }
         .onChange(of: loader.text, initial: true) { _, text in
             if let text { session.setText(text, strictness: strictness) }
@@ -560,6 +578,7 @@ struct ChapterReaderView: View {
             context.recordRead(book.id, chapter, checked: true)
         }
         asking = false
+        if isFirstJourneyPsalm1 { FirstJourneyStore.advance() }
         finishedReading()
     }
 

@@ -28,17 +28,37 @@ struct FirstJourneyBubble: View {
     }
 }
 
-struct FirstJourneySpotlight: Shape {
-    var hole: CGRect
+struct FirstJourneySpotlight: View {
+    let libraryBounds: CGRect
 
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.addRect(rect)
-        if !hole.isEmpty {
-            path.addPath(Path(roundedRect: hole.insetBy(dx: -10, dy: -10),
-                              cornerSize: CGSize(width: 18, height: 18)))
+    var body: some View {
+        GeometryReader { geometry in
+            let margin: CGFloat = 28
+            let radius = max(libraryBounds.width, libraryBounds.height) / 2 + margin
+            let diameter = radius * 2
+            let centre = CGPoint(x: libraryBounds.midX, y: libraryBounds.midY)
+
+            ZStack {
+                Color.black.opacity(0.58)
+
+                Circle()
+                    .fill(
+                        RadialGradient(
+                            colors: [.black, .black.opacity(0.82), .clear],
+                            center: .center,
+                            startRadius: radius * 0.58,
+                            endRadius: radius
+                        )
+                    )
+                    .frame(width: diameter, height: diameter)
+                    .position(centre)
+                    .blendMode(.destinationOut)
+            }
+            .compositingGroup()
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
-        return path
+        .ignoresSafeArea()
+        .allowsHitTesting(false)
     }
 }
 
@@ -71,39 +91,46 @@ struct FirstJourneyOverlay: View {
     var onWelcome: () -> Void
     var onExplore: () -> Void
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
-        ZStack {
-            if step == .library {
-                FirstJourneySpotlight(hole: libraryBounds)
-                    .fill(Color.black.opacity(0.58), style: FillStyle(eoFill: true))
-                    .ignoresSafeArea()
-                    .allowsHitTesting(false)
-                FirstJourneyBubble(text: "This is your Library. Tap it to open your first chapter.")
+        GeometryReader { geometry in
+            ZStack {
+                if step == .library, !libraryBounds.isEmpty {
+                    let radius = max(libraryBounds.width, libraryBounds.height) / 2 + 28
+                    FirstJourneySpotlight(libraryBounds: libraryBounds)
+                        .transition(.opacity)
+                    FirstJourneyBubble(text: "This is your Library. Tap it to open your first chapter.")
+                        .position(
+                            x: libraryBounds.midX,
+                            y: min(geometry.size.height - 90, libraryBounds.maxY + radius + 54)
+                        )
+                        .allowsHitTesting(false)
+                        .transition(.opacity)
+                } else if step == .welcome {
+                    FirstJourneyBubble(
+                        text: "Welcome to your island. It starts small, and it grows every time you read.",
+                        buttonTitle: "Let's begin",
+                        onButton: onWelcome
+                    )
                     .padding(.horizontal, 20)
-                    .padding(.top, 88)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                    .allowsHitTesting(false)
-            } else if step == .welcome {
-                FirstJourneyBubble(
-                    text: "Welcome to your island. It starts small, and it grows every time you read.",
-                    buttonTitle: "Let's begin",
-                    onButton: onWelcome
-                )
-                .padding(.horizontal, 20)
-                .padding(.bottom, 132)
-                .frame(maxHeight: .infinity, alignment: .bottom)
-            } else if step == .done {
-                EmptyView()
-            } else {
-                FirstJourneyBubble(
-                    text: "Every chapter you read grows your island. Explore whenever you're ready.",
-                    buttonTitle: "Start exploring",
-                    onButton: onExplore
-                )
-                .padding(.horizontal, 20)
-                .padding(.bottom, 132)
-                .frame(maxHeight: .infinity, alignment: .bottom)
+                    .padding(.bottom, 132)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                } else if step == .done {
+                    EmptyView()
+                } else if step != .library {
+                    FirstJourneyBubble(
+                        text: "Every chapter you read grows your island. Explore whenever you're ready.",
+                        buttonTitle: "Start exploring",
+                        onButton: onExplore
+                    )
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 132)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                }
             }
+            .opacity(step == .library && libraryBounds.isEmpty ? 0 : 1)
+            .animation(.easeInOut(duration: reduceMotion ? 0.12 : 0.4), value: libraryBounds.isEmpty)
         }
     }
 }

@@ -48,6 +48,9 @@ enum DebugSeed {
         if args.contains("-skipOnboarding") {
             UserDefaults.standard.set(true, forKey: StorageKeys.hasOnboarded)
         }
+        if args.contains("-replayFirstJourney") {
+            FirstJourneyStore.replay()
+        }
         // "-seedAll 2" reads every chapter of the Bible twice (for crowns and the throne room).
         if let i = args.firstIndex(of: "-seedAll"), i + 1 < args.count, let times = Int(args[i + 1]) {
             for book in BibleCatalog.books {

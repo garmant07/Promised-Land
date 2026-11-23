@@ -130,6 +130,14 @@ struct PlaceGrowthTests {
         #expect(pieces.count == PlaceData.spec(for: "psalms").pieces.count)
     }
 
+    @Test("Psalm 1 starts with the tree by the water, then the pavilion")
+    func psalmsFirstPieceOrder() {
+        let pieces = PlaceData.spec(for: "psalms").pieces
+        #expect(pieces.map(\.kind).prefix(3) == [.streamTree, .pavilion, .terraces])
+        #expect(pieces[0].caption == "a tree is planted beside the stream")
+        #expect(PlaceData.spec(for: "psalms").imageName(piece: 0, level: 1) == "place_psalms_streamtree_1")
+    }
+
     @Test("Books without scenes keep their existing piece layout")
     func nonGenesisPlacesRemainUnchanged() {
         let island = Island.single(bookID: "psalms", distinct: 150, totalReads: 150)
@@ -288,16 +296,22 @@ struct PlacementTests {
     }
 
     @Test("Saved Place rotation is ignored while its position and pieces remain stable")
-    func savedRotationIsIgnored() {
-        let plain = Island.build(chapters: [("psalms", 1, start)], quizzes: [], verses: [],
+    func savedRotationIsIgnored() throws {
+        let chapterOne = Island.build(chapters: [("psalms", 1, start)], quizzes: [], verses: [])
+        #expect(chapterOne.items.contains { $0.kind == .piece(.streamTree) })
+        #expect(!chapterOne.items.contains { $0.kind == .piece(.pavilion) })
+
+        let chapters = [("psalms", 1, start), ("psalms", 2, start.addingTimeInterval(86_400))]
+        let plain = Island.build(chapters: chapters, quizzes: [], verses: [],
                                  placements: ["psalms": IslandPlacement(x: 20, y: 20, rotation: 0, moved: true)])
-        let i = Island.build(chapters: [("psalms", 1, start)], quizzes: [], verses: [],
+        let i = Island.build(chapters: chapters, quizzes: [], verses: [],
                              placements: ["psalms": IslandPlacement(x: 20, y: 20, rotation: 3, moved: true)])
         #expect(i.signature == plain.signature)
         #expect(i.plots.map { "\($0.x),\($0.y)" } == plain.plots.map { "\($0.x),\($0.y)" })
         #expect(i.items.map { "\($0.gx)|\($0.gy)|\($0.turned)" } == plain.items.map { "\($0.gx)|\($0.gy)|\($0.turned)" })
         let layout = IslandLayout(island: i, size: CGSize(width: 390, height: 844), zoom: 3)
-        let index = i.items.firstIndex { $0.kind == .piece(.pavilion) }!
+        let index = try #require(i.items.firstIndex { $0.kind == .piece(.pavilion) })
+        #expect(i.items[index].source == .place(book: "psalms", piece: 1))
         let b = i.items[index]
         let hit = IslandHitTester.hit(point: layout.point(b.gx, b.gy), layout: layout, items: i.items)
         #expect(hit.map { i.items[$0].source.bookID } == "psalms")

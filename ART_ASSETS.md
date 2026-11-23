@@ -24,6 +24,9 @@ instead. No code changes are needed, and if an image is missing the code-drawn a
   `fishBasket`, `wheat`, `vine`, `oilLamp`, `harp`, `domedHouse`.
 - Examples: `bld_ruth_0`, `bld_ruth_1`, `bld_ruth_2`, `art_olive_3`, `char_moses`.
 
+The Psalm 1 Place's first piece is `place_psalms_streamtree_1`, a tree beside a small stream.
+It currently uses the code-drawn fallback in `PlaceArt` when the asset is not present.
+
 ## Object sprites (`obj_`)
 
 `obj_house` and `obj_tree` are transparent PNG sprites on a **128 × 192 pt canvas**.

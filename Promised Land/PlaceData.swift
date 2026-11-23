@@ -73,7 +73,7 @@ nonisolated enum PieceKind: String, Sendable, CaseIterable {
     case wall, scrolls, lamps, river, flowers, cedars, palms, crowd
     // Built once
     case soil, tent, tabernacle, altar, basin, lampstand, courtFence, farmhouse, barn, threshingFloor
-    case mill, oven, gate, well, hut, tower, palace, temple, house, upperRoom, fountain, pavilion
+    case mill, oven, gate, well, hut, tower, palace, temple, house, upperRoom, fountain, streamTree, pavilion
     case hall, lighthouse, pillar, marketHall, goldGate, ship, olivePress, winepress, meetingHouse
     case nets, hill, cave, throneSeat
 
@@ -146,7 +146,11 @@ struct PlaceSpec: Equatable, ReviewableContent {
     var isWaterside: Bool { style.isWaterside }
 
     /// The art-swap image name for a piece at a richness level.
-    func imageName(piece: Int, level: Int) -> String { "place_\(bookID)_\(pieces[piece].kind.rawValue)_\(level)" }
+    func imageName(piece: Int, level: Int) -> String {
+        let kind = pieces[piece].kind
+        let assetKind = kind == .streamTree ? "streamtree" : kind.rawValue
+        return "place_\(bookID)_\(assetKind)_\(level)"
+    }
 }
 
 // MARK: - Growth
@@ -424,6 +428,7 @@ enum PlaceData {
             g(.flowers, .front, 0.9, "wildflowers bloom", "more wildflowers bloom", cap: 8),
         ]),
         p("psalms", "The Music Garden", .musicGarden, "More harps, more singers and terraces in full bloom.", [
+            s(.streamTree, .centre, 0, "a tree is planted beside the stream"),
             s(.pavilion, .centre, 0, "a music pavilion is raised"),
             g(.terraces, .back, 0.01, "a terrace of harps is built", "the harp terraces grow", cap: 24),
             g(.flowers, .left, 0.1, "flowers bloom", "more flowers bloom", cap: 20),

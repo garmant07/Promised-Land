@@ -100,6 +100,8 @@ struct DebugToolsSection: View {
             Button("Rebuild world") { rebuildWorld() }.buttonStyle(SoftButtonStyle())
             Button("Add 10 random reads") { addRandomReads() }.buttonStyle(SoftButtonStyle())
             Button("Complete a journey") { completeJourney() }.buttonStyle(SoftButtonStyle())
+            Button("Replay first-time journey") { FirstJourneyStore.replay(); message = "First-time journey replayed." }
+                .buttonStyle(SoftButtonStyle())
             Button("Reset all data", role: .destructive) { confirmingWipe = true }.buttonStyle(SoftButtonStyle())
             if let message { Text(message).font(.footnote).foregroundStyle(Color.secondaryText) }
         }

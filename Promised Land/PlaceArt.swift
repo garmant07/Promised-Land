@@ -39,7 +39,7 @@ enum PlaceArt {
     private static func tall(_ kind: PieceKind) -> Bool {
         switch kind {
         case .orchard, .grove, .cedars, .palms, .houses, .lamps, .wall, .tower, .lighthouse, .palace, .temple, .upperRoom,
-             .tabernacle, .hall, .goldGate, .gate, .ship, .hill, .throneSeat, .lampstand, .tents: true
+             .tabernacle, .hall, .goldGate, .gate, .ship, .hill, .throneSeat, .lampstand, .tents, .streamTree: true
         default: false
         }
     }
@@ -279,6 +279,12 @@ enum PlaceArt {
             pen.ellipse(CGPoint(x: o.x - 3 * pen.u, y: o.y - 3 * pen.u), 5 * k, 1.6 * k, Earthy.waterShine)
             pen.rect(-1 * k, -10 * k, 2 * k, 8 * k, Earthy.stone, at: o)
             pen.ellipse(CGPoint(x: o.x, y: o.y - 11 * k * pen.u), 3 * k, 2 * k, Earthy.waterShine)
+        case .streamTree:
+            pen.shadow(0.05, 0.12, rx: 17 * k)
+            let o = pen.p(0, 0)
+            pen.ellipse(CGPoint(x: o.x + 7 * pen.u, y: o.y - 2 * k * pen.u), 15 * k, 4.5 * k, Earthy.water)
+            pen.ellipse(CGPoint(x: o.x + 10 * pen.u, y: o.y - 2.8 * k * pen.u), 9 * k, 2 * k, Earthy.waterShine)
+            tree(pen, -0.08, 0.02, s: 0.95 * k, fruit: false, seed: seed)
         case .pavilion:
             pen.shadow(0, 0, rx: 16 * k)
             for (x, y) in [(-0.2, -0.2), (0.2, -0.2), (-0.2, 0.2), (0.2, 0.2)] {

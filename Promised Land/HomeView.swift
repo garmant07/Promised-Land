@@ -71,6 +71,8 @@ struct HomeView: View {
     @Environment(\.modelContext) private var context
 
     @State private var activeSheet: ActiveSheet?
+    @AppStorage(FirstJourneyStore.stepKey) private var firstJourneyStepRaw = FirstJourneyStep.notStarted.rawValue
+    @State private var firstJourneyLibraryBounds: CGRect = .zero
     /// A Place requested by a catalogue card, held until the outer presentation is gone.
     @State private var placeFocus = PlaceFocusState()
     @State private var selectedItem: Int?
@@ -106,6 +108,8 @@ struct HomeView: View {
     @AppStorage("library.stageSeen") private var libraryStageSeen = -1
     /// True from when a "see it built" moment is planned until it has finished.
     @State private var revealActive = false
+    @State private var firstJourneyBannerVisible = false
+    @State private var firstJourneyClosingVisible = false
     /// The status bar's height (the island is drawn under it).
     @State private var safeTop: CGFloat = 0
 
@@ -169,6 +173,14 @@ struct HomeView: View {
     /// Characters whose journeys are complete.
     private var unlockedCharacters: [CharacterJourney] { progress.unlockedJourneys }
 
+    private var firstJourneyStep: FirstJourneyStep {
+        FirstJourneyStep(rawValue: firstJourneyStepRaw) ?? .notStarted
+    }
+
+    private var firstJourneyLibraryLocked: Bool {
+        firstJourneyStep == .library
+    }
+
     /// Every piece of reading, in order, laid out on the island. A book's quiz grows one
     /// fruit tree (its first pass), however many times it's taken.
     private var island: Island {
@@ -218,9 +230,23 @@ struct HomeView: View {
         let waiting = baskets.values.reduce(0, +)
         let revealStepHandler: (RevealStep?) -> Void = { step in
             withAnimation(.easeInOut(duration: 0.35)) { revealing = step }
-            if step == nil { revealActive = false }
+            if step == nil {
+                revealActive = false
+                if firstJourneyStep == .reveal {
+                    firstJourneyBannerVisible = true
+                }
+            }
         }
         let focusConsumed: () -> Void = { placeFocus.consume() }
+        let handleTap: (Int?) -> Void = { index in
+            if firstJourneyLibraryLocked {
+                guard isFirstJourneyLibraryTap(index, in: island) else { return }
+                FirstJourneyStore.advance()
+                activeSheet = .chapter(ChapterRef(bookID: "psalms", chapter: 1))
+                return
+            }
+            open(index, in: island)
+        }
         ZStack {
             Earthy.sea.ignoresSafeArea()
             // Added a moment after the clouds are up, so its first (heaviest) frame happens under them.
@@ -262,8 +288,15 @@ struct HomeView: View {
                               #endif
                           },
                           holdsBackgroundWork: cloudsUp,
-                          onTap: { index in open(index, in: island) },
-                          focusBookID: placeFocus.activeBookID,
+                          onTap: handleTap,
+                          gesturesLocked: firstJourneyLibraryLocked,
+                          onLibraryBounds: { bounds in
+                              guard bounds.origin.x.isFinite, bounds.origin.y.isFinite,
+                                    bounds.width.isFinite, bounds.height.isFinite,
+                                    bounds.width >= 0, bounds.height >= 0 else { return }
+                              firstJourneyLibraryBounds = bounds
+                          },
+                          focusBookID: firstJourneyLibraryLocked ? "library" : placeFocus.activeBookID,
                           onFocusConsumed: focusConsumed)
                 .ignoresSafeArea()
             }
@@ -278,8 +311,36 @@ struct HomeView: View {
             islandMounted = true
         }
         .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.top } action: { safeTop = $0 }
+        .onChange(of: firstJourneyStepRaw) { _, raw in
+            if raw == FirstJourneyStep.library.rawValue {
+                firstJourneyLibraryBounds = .zero
+            }
+        }
         // The status pill is read-only, so touches on it go through to the island.
         .overlay(alignment: .topLeading) { if !editingIsland { status.allowsHitTesting(false) } }
+        .overlay {
+            if firstJourneyStep == .welcome || firstJourneyStep == .library ||
+                (firstJourneyStep == .reveal && firstJourneyClosingVisible && !firstJourneyBannerVisible) {
+                FirstJourneyOverlay(
+                    step: firstJourneyStep,
+                    libraryBounds: firstJourneyLibraryBounds,
+                    onWelcome: { FirstJourneyStore.advance() },
+                    onExplore: {
+                        firstJourneyClosingVisible = false
+                        FirstJourneyStore.advance()
+                    }
+                )
+            }
+        }
+        .overlay {
+            if firstJourneyBannerVisible {
+                FirstPlaceBanner {
+                    firstJourneyBannerVisible = false
+                    firstJourneyClosingVisible = true
+                }
+                .padding(.horizontal, 16)
+            }
+        }
         .overlay(alignment: .bottom) {
             if let revealing {
                 RevealCaption(step: revealing)
@@ -336,7 +397,7 @@ struct HomeView: View {
         .journalSaveNotice(isVisible: activeSheet == nil && interior == nil)
         .sensoryFeedback(.success, trigger: notices.first?.id)
         .overlay(alignment: .bottom) {
-            if !editingIsland {
+            if !editingIsland && !firstJourneyLibraryLocked {
                 MainBar(active: activeSheet) { sheet in
                     // Read walks you into the Library, where every book is.
                     if sheet == .read, let library = island.index(of: .library) {
@@ -369,8 +430,10 @@ struct HomeView: View {
                 .presentationDragIndicator(.visible)
         }
         .onChange(of: activeSheet) { _, sheet in
-            if sheet == nil { sheetDetent = .medium }
-            if sheet == nil { selectedItem = nil; showNewGrowth() }
+            guard sheet == nil else { return }
+            sheetDetent = .medium
+            selectedItem = nil
+            showNewGrowth()
         }
         .fullScreenCover(item: $interior, onDismiss: handlePresentationDismissed) { ref in
             if ref.id == InteriorRef.library {
@@ -402,6 +465,11 @@ struct HomeView: View {
             if let book = BibleCatalog.book(id: ref.bookID) { ReflectionCard(book: book, chapter: ref.chapter) }
         }
         #endif
+    }
+
+    private func isFirstJourneyLibraryTap(_ index: Int?, in island: Island) -> Bool {
+        guard let index, island.items.indices.contains(index) else { return false }
+        return FirstJourneyLibraryTap.isAllowed(island.items[index].source)
     }
 
     /// Small and unobtrusive: streak and places.
@@ -441,6 +509,9 @@ struct HomeView: View {
     }
 
     private func handleSheetDismissed() {
+        if firstJourneyStep == .reading {
+            FirstJourneyStore.returnToLibrary()
+        }
         beginPendingPlaceFocus()
     }
 
@@ -789,7 +860,7 @@ struct HomeView: View {
         #else
         let quiet = false
         #endif
-        if !quiet {
+        if !quiet && firstJourneyStep != .reveal {
             welcomeCharacters()
             announceUnlocks(island)
         }
@@ -815,7 +886,10 @@ struct HomeView: View {
             plan.steps.append(step)
             for change in step.changes { plan.initial[change.index] = change.from }
         }
-        guard !plan.steps.isEmpty else { return }
+        guard !plan.steps.isEmpty else {
+            if firstJourneyStep == .reveal { firstJourneyClosingVisible = true }
+            return
+        }
         reveal = plan.steps
         revealInitial = plan.initial
         revealActive = true

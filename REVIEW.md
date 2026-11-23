@@ -24,6 +24,9 @@ those that point at the text, e.g.:
   Jer 17:8; Ezek 31:3, 47:12; Dan 4:10; Hos 14:6; Zech 4:3; Matt 7:17, 13:31–32; Mark 11:13;
   Luke 13:6, 19:4; Rom 11:17; Rev 22:2). Check the ASV wording.
 
+- **Psalms' first Place piece** — `place_psalms_streamtree_1`: "a tree is planted beside the
+  stream" (Psalm 1:3). Check the caption and the code-drawn tree-and-stream illustration.
+
 - **Feeding the crowd** — `FeedingTheCrowd` in `Produce.swift`: the ASV quote of John 6:9
   ("There is a lad here, who hath five barley loaves, and two fishes: but what are these among
   so many?") and the cross-references (Matt 14:13–21, Mark 6:30–44, Luke 9:10–17, John 6:1–14).

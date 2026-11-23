@@ -1,5 +1,13 @@
 import SwiftUI
 
+enum OnboardingModeChoice {
+    static let defaultIsStrict = false
+
+    static func save(isStrict: Bool, defaults: UserDefaults = .standard) {
+        defaults.set(isStrict, forKey: ReadingStrictMode.key)
+    }
+}
+
 struct OnboardingModeView: View {
     @Binding var isStrict: Bool
     var onNext: () -> Void

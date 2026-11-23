@@ -1,5 +1,21 @@
 import Foundation
 
+enum FirstJourneyName {
+    static let maximumLength = 20
+
+    static func normalized(_ value: String) -> String {
+        String(value.trimmingCharacters(in: .whitespacesAndNewlines).prefix(maximumLength))
+    }
+}
+
+enum FirstJourneyLibraryTap {
+    static func isAllowed(_ source: Island.Source?) -> Bool {
+        guard let source else { return false }
+        guard case .feature(.library) = source else { return false }
+        return true
+    }
+}
+
 enum FirstJourneyStep: String, CaseIterable, Sendable {
     case notStarted
     case welcome
@@ -37,12 +53,13 @@ enum FirstJourneyStore {
     }
 
     static func bootstrap(hasOnboarded: Bool, defaults: UserDefaults = .standard) -> FirstJourneyStep {
-        guard defaults.integer(forKey: versionKey) == version else {
+        if defaults.integer(forKey: versionKey) != version {
             defaults.set(version, forKey: versionKey)
             defaults.set(FirstJourneyStep.notStarted.rawValue, forKey: stepKey)
         }
 
-        if hasOnboarded, step != .done {
+        let current = FirstJourneyStep(rawValue: defaults.string(forKey: stepKey) ?? "") ?? .notStarted
+        if hasOnboarded, current != .done {
             set(.done, defaults: defaults)
         }
 

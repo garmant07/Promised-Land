@@ -9,6 +9,7 @@ struct AvatarCreatorView: View {
     var onDone: (() -> Void)?
     var onBack: (() -> Void)?
     var showsName = true
+    var doneTitle = "Done"
 
     @Environment(\.modelContext) private var context
     @Query private var profiles: [AvatarProfile]
@@ -71,7 +72,7 @@ struct AvatarCreatorView: View {
                         }
                         if let onDone {
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") { try? context.save(); onDone() }.tint(Color.primaryBrown)
+                            Button(doneTitle) { try? context.save(); onDone() }.tint(Color.primaryBrown)
                         }
                         }
                     }

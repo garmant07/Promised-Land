@@ -60,11 +60,16 @@ struct PlatformScene: View {
     var holdsBackgroundWork = false
     /// Called with the tapped item's index (nil for empty ground). Nil callback = read-only.
     var onTap: ((Int?) -> Void)? = nil
+    /// Temporarily prevents pan, zoom, double-tap zoom, long-press and island controls.
+    var gesturesLocked = false
+    /// Reports the settled Library bounds for guided spotlighting.
+    var onLibraryBounds: ((CGRect) -> Void)? = nil
     /// A catalogue request to centre on a Place without opening or visiting it.
     var focusBookID: String? = nil
     var onFocusConsumed: (() -> Void)? = nil
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @AppStorage(StorageKeys.playerName) private var playerName = ""
     @Environment(\.scenePhase) private var scenePhase
 
     // Camera
@@ -106,6 +111,7 @@ struct PlatformScene: View {
     @State private var revealToken = 0
     /// Level of detail and each figure's own clock (see IslandLOD.swift).
     @State private var director = LifeDirector()
+    @State private var lastLibraryBounds: CGRect = .null
     /// Items in drawing order, sorted only when something changes (see IslandLayers.swift).
     @State private var depthOrder = IslandDepthOrder()
     // Pinch: the point it started at, and the camera then.
@@ -127,6 +133,7 @@ struct PlatformScene: View {
     // Selection
     @State private var bounceStart = Date.distantPast
     @State private var bouncing = false
+    @State private var playerSelected = false
     @State private var bounceTargets: Set<Int> = []
 
     private var interactive: Bool { onTap != nil }
@@ -308,6 +315,20 @@ struct PlatformScene: View {
                             .allowsHitTesting(false)
                             .zIndex(IslandLayer.people.z)
 
+                            if playerSelected, !playerName.isEmpty {
+                                Text(playerName)
+                                    .font(.caption2.weight(.semibold))
+                                    .foregroundStyle(Color.bodyText)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(Color.card.opacity(0.94), in: Capsule())
+                                    .shadow(color: Color.primaryBrown.opacity(0.16), radius: 6, y: 2)
+                                    .position(x: base.point(pos.x, pos.y).x,
+                                              y: base.point(pos.x, pos.y).y - charH * 1.05 - 12)
+                                    .zIndex(IslandLayer.bubbles.z)
+                                    .allowsHitTesting(false)
+                            }
+
                             if beat != nil || bouncing {
                                 Canvas { c, _ in
                                     c.translateBy(x: -slide.width, y: -slide.height)
@@ -393,20 +414,23 @@ struct PlatformScene: View {
                 let limit = maxZoom(geo.size)
                 if zoom > limit { zoom = limit; zoomStart = limit; pan = clamp(pan, size: geo.size); panStart = pan }
             }
-            .onChange(of: geo.size) { _, size in viewSize = size; globalOrigin = geo.frame(in: .global).origin }
+            .onChange(of: geo.size) { _, size in
+                viewSize = size
+                globalOrigin = geo.frame(in: .global).origin
+            }
             .onChange(of: geo.frame(in: .global).origin) { _, origin in globalOrigin = origin }
             .onChange(of: collectFlight?.id) { _, _ in
                 if let collectFlight { startFlight(collectFlight, layout: layout, size: geo.size) }
             }
             .gesture(interactive ? dragGesture(layout: base, size: geo.size) : nil)
-            .simultaneousGesture(interactive ? zoomGesture(size: geo.size) : nil)
+            .simultaneousGesture(interactive && !gesturesLocked ? zoomGesture(size: geo.size) : nil)
             #if DEBUG
             .overlay(alignment: .topTrailing) {
                 if showsFPS { FPSMeter().padding(.top, insets.top - 8).padding(.trailing, 12).allowsHitTesting(false) }
             }
             #endif
             .overlay(alignment: .bottomTrailing) {
-                if interactive && (showsControls ?? persistsCamera) && editing == nil && beat == nil && overrides.isEmpty {
+                if interactive && !gesturesLocked && (showsControls ?? persistsCamera) && editing == nil && beat == nil && overrides.isEmpty {
                     controls(layout: base, size: geo.size)
                         .padding(.trailing, 14)
                         .padding(.bottom, insets.bottom + 6)
@@ -429,11 +453,20 @@ struct PlatformScene: View {
                     if !reduceMotion { startBounce([index]) }
                 }
             }
-            .onChange(of: focusBookID) { _, bookID in
+            .onChange(of: focusBookID, initial: true) { _, bookID in
                 guard let bookID else { return }
-                defer { onFocusConsumed?() }
-                guard let index = island.placeIndex(bookID), island.items.indices.contains(index) else { return }
-                centre(on: island.items[index], size: geo.size)
+                guard let index = bookID == "library" ? island.index(of: .library) : island.placeIndex(bookID),
+                      island.items.indices.contains(index) else {
+                    onFocusConsumed?()
+                    return
+                }
+                let guidedLibrary = bookID == "library"
+                centre(on: island.items[index], size: geo.size,
+                       duration: guidedLibrary ? 1.7 : 0.45,
+                       lock: guidedLibrary) {
+                    reportLibraryBounds(layout: base.panned(pan))
+                    onFocusConsumed?()
+                }
             }
         }
         .onAppear {
@@ -716,7 +749,17 @@ struct PlatformScene: View {
             .onChanged { value in
                 // A tap-to-zoom move is playing: touches wait until it lands.
                 if cameraLocked { return }
-                if !touchDown { touchBegan(at: value.startLocation, layout: layout) }
+                if !touchDown {
+                    if gesturesLocked {
+                        touchDown = true
+                        dragPan = DragPan()
+                        cameraGlide += 1
+                        gliding = false
+                    } else {
+                        touchBegan(at: value.startLocation, layout: layout)
+                    }
+                }
+                if gesturesLocked { return }
                 // In edit mode, dragging a plot moves it (in whole tiles) instead of panning.
                 if let drag = draggingPlot, let editing {
                     let g = layout.grid(CGPoint(x: value.location.x - pan.width, y: value.location.y - pan.height))
@@ -759,10 +802,15 @@ struct PlatformScene: View {
                         onBasket?(book)
                     } else if onCrowd != nil, crowdTapped(value.location, layout: layout) {
                         onCrowd?()
+                    } else if playerIsTapped(at: value.location, layout: layout) {
+                        playerSelected.toggle()
+                        speaking = nil
                     } else if let c = character(at: value.location, layout: layout, directOnly: true) {
+                        playerSelected = false
                         speaking = (c.id, .now)
                     } else if let hit = IslandHitTester.directHit(point: value.location, layout: layout, pan: pan,
                                                                     items: island.items, plots: island.allPlots) {
+                        playerSelected = false
                         speaking = nil
                         onTap?(hit)
                     } else {
@@ -774,6 +822,7 @@ struct PlatformScene: View {
                         case .item(let index):
                             onTap?(index)
                         case nil:
+                            playerSelected = false
                             speaking = nil
                             onTap?(nil)
                             groundTapped(at: value.location, size: size)
@@ -889,6 +938,14 @@ struct PlatformScene: View {
                                 bounds: CGRect(x: feet.x - charH * 0.37, y: feet.y - charH * 1.05,
                                                width: charH * 0.75, height: charH * 1.05))
         }
+    }
+
+    private func playerIsTapped(at location: CGPoint, layout: IslandLayout) -> Bool {
+        let p = CGPoint(x: location.x - pan.width, y: location.y - pan.height)
+        let feet = layout.point(spot.x, spot.y)
+        let height = Self.characterHeight * layout.u
+        let width = height * 0.625
+        return CGRect(x: feet.x - width / 2, y: feet.y - height, width: width, height: height).contains(p)
     }
 
     /// The character under a tap, if any (44pt minimum target).
@@ -1047,13 +1104,48 @@ struct PlatformScene: View {
         return CGSize(width: min(maxX, max(-maxX, p.width)), height: min(maxY, max(-maxY, p.height)))
     }
 
-    /// Eases the view so the selected item sits in the middle of the free area, above the card
-    /// that opens for it (the card covers the lower half, so "middle" is a third of the way down).
-    private func centre(on item: Island.Item, size: CGSize) {
-        let target = IslandCamera.freeCentre(size: size, insets: insets, fraction: 0.35)
-        animateCamera(zoom: zoom, pan: IslandCamera.pan(toCentre: IslandCamera.focus(of: item, in: island), island: island,
-                                                        size: size, insets: insets, zoom: zoom, target: target),
-                      duration: 0.45)
+    /// Centres a selected item in the visible area. The first-journey Library gets a
+    /// deliberately wider overview so its complete drawing remains visible with surrounding land.
+    private func centre(on item: Island.Item, size: CGSize, duration: Double = 0.45, lock: Bool = false,
+                           completion: (() -> Void)? = nil) {
+        let target = IslandCamera.freeCentre(size: size, insets: insets)
+        let targetZoom: CGFloat
+        let targetGrid: CGPoint
+
+        if item.kind == .library {
+            let overview = IslandLayout(island: island, size: size, insets: insets, zoom: 1)
+            let bounds = IslandPainter.drawnBounds(of: item, layout: overview)
+            let available = CGSize(width: max(1, size.width - insets.leading - insets.trailing),
+                                   height: max(1, size.height - insets.top - insets.bottom))
+            let widthZoom = available.width * 0.55 / max(1, bounds.width)
+            let heightZoom = available.height * 0.55 / max(1, bounds.height)
+            let limit = maxZoom(size)
+            targetZoom = min(limit, max(IslandLayout.minZoom, min(widthZoom, heightZoom)))
+            let zoomedLayout = IslandLayout(island: island, size: size, insets: insets, zoom: targetZoom)
+            let drawnBounds = IslandPainter.drawnBounds(of: item, layout: zoomedLayout)
+            let drawnCentre = CGPoint(x: drawnBounds.midX, y: drawnBounds.midY)
+            targetGrid = zoomedLayout.grid(drawnCentre)
+        } else {
+            targetZoom = zoom
+            targetGrid = IslandCamera.focus(of: item, in: island)
+        }
+
+        let targetPan = IslandCamera.pan(toCentre: targetGrid, island: island, size: size,
+                                         insets: insets, zoom: targetZoom, target: target)
+        animateCamera(zoom: targetZoom, pan: targetPan, duration: duration, lock: lock, completion: completion)
+    }
+
+    private func reportLibraryBounds(layout: IslandLayout) {
+        guard let index = island.index(of: .library), island.items.indices.contains(index) else { return }
+        let bounds = IslandPainter.drawnBounds(of: island.items[index], layout: layout)
+        guard bounds.origin.x.isFinite, bounds.origin.y.isFinite, bounds.width.isFinite, bounds.height.isFinite,
+              bounds.width >= 0, bounds.height >= 0 else { return }
+        guard lastLibraryBounds.isNull || abs(bounds.midX - lastLibraryBounds.midX) > 1 ||
+                abs(bounds.midY - lastLibraryBounds.midY) > 1 ||
+                abs(bounds.width - lastLibraryBounds.width) > 1 ||
+                abs(bounds.height - lastLibraryBounds.height) > 1 else { return }
+        lastLibraryBounds = bounds
+        onLibraryBounds?(bounds)
     }
 
     private func startBounce(_ targets: Set<Int>, duration: Double = 0.55) {

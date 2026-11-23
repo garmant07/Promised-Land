@@ -964,4 +964,7 @@ runs (and the 4g build has the preload problem above), so both are measured agai
   `#if DEBUG`), and in `HomeView.swift` the `-fullBiblePreview` launch option and
   `debugBiblePreview` state (also DEBUG only).
 - `Promised Land Tests/FullBiblePreviewTests.swift`.
+- The DEBUG-only `Replay first-time journey` Settings button and `-replayFirstJourney` launch
+  argument reset only the first-time journey step to `welcome`; they do not touch reading history,
+  island layout, or SwiftData. Remove them before release with the other temporary developer tools.
 Everything above is compiled only in DEBUG builds, so Release is unaffected even if it stays.

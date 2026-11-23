@@ -10,6 +10,7 @@ enum StorageKeys {
     static let islandProgressSeen = "islandProgressSeen"
     static let offerReflection = "offerReflection"
     static let ageGroup = "profile.ageGroup"
+    static let playerName = "playerName"
     static let readingUnlocksApps = "settings.readingUnlocksApps"
     static let libraryRevealed = "libraryRevealed"
     static let journeyStopsSeen = "journeyStopsSeen"
@@ -25,6 +26,7 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     @AppStorage(StorageKeys.hasOnboarded) private var hasOnboarded = false
+    @AppStorage(StorageKeys.playerName) private var playerName = ""
 
     @State private var confirmingReset = false
     @State private var editingCharacter = false
@@ -35,6 +37,12 @@ struct SettingsView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     section("Your journey") {
+                        if !playerName.isEmpty {
+                            Text(playerName)
+                                .font(.serifTitle(.title2))
+                                .foregroundStyle(Color.bodyText)
+                                .accessibilityLabel("Your name: \(playerName)")
+                        }
                         Button("Edit your character") { editingCharacter = true }
                             .buttonStyle(SoftButtonStyle())
                         Button("Show the welcome again") {
